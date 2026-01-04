@@ -6583,6 +6583,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -6597,6 +6600,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -6610,6 +6616,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -6624,6 +6633,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -6637,6 +6649,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -6650,6 +6665,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Winner"
@@ -6662,6 +6680,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -6675,6 +6696,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -6688,6 +6712,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -6702,6 +6729,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 8
               }
             ],
             "pole_position": true,
@@ -6715,6 +6745,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -6728,6 +6761,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 17
               }
             ],
             "pole_position": true,
@@ -6742,6 +6778,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -6754,6 +6793,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -6767,6 +6809,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Winner"
@@ -6779,6 +6824,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Winner"
@@ -6791,6 +6839,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -6805,6 +6856,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
@@ -6818,263 +6872,13 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "pole_position": true,
             "background": "Winner"
-          },
-          "points": 703.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Third place"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "pole_position": true,
-            "background": "Third place"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2015_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
           },
           "points": 703.0
         },
@@ -7098,6 +6902,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -7110,6 +6917,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Winner"
@@ -7122,6 +6932,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -7134,6 +6947,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 5
               }
             ],
             "fastest_lap": true,
@@ -7147,6 +6963,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Third place"
@@ -7159,6 +6978,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Second place"
@@ -7171,6 +6993,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 5
               }
             ],
             "fastest_lap": true,
@@ -7184,6 +7009,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -7196,6 +7024,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Third place"
@@ -7208,6 +7039,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Winner"
@@ -7220,6 +7054,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -7232,6 +7069,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Second place"
@@ -7244,6 +7084,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -7257,6 +7100,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -7269,6 +7115,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 8
               }
             ],
             "fastest_lap": true,
@@ -7282,6 +7131,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -7292,6 +7144,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -7306,6 +7161,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -7318,251 +7176,12 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
-          },
-          "points": 428.0
-        },
-        {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2015_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
           },
           "points": 428.0
         },
@@ -7586,251 +7205,12 @@
             "results": [
               {
                 "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2015_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 257.0
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Other points position"
           },
           "mal": {
             "round": {
@@ -7838,6 +7218,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 6
               }
@@ -7851,6 +7234,9 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 6
               }
             ],
@@ -7862,6 +7248,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 10
               }
@@ -7875,6 +7264,9 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 6
               }
             ],
@@ -7886,6 +7278,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 15
               }
@@ -7899,10 +7294,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "aut": {
             "round": {
@@ -7911,10 +7309,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "gbr": {
             "round": {
@@ -7922,6 +7323,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -7935,6 +7339,9 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": 13
               }
             ],
@@ -7946,6 +7353,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 9
               }
@@ -7959,10 +7369,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "sin": {
             "round": {
@@ -7971,10 +7384,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "jpn": {
             "round": {
@@ -7983,10 +7399,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 17
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "rus": {
             "round": {
@@ -7995,10 +7414,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "usa": {
             "round": {
@@ -8006,6 +7428,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -8019,10 +7444,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "bra": {
             "round": {
@@ -8030,11 +7458,14 @@
               "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": "DSQ"
               }
             ],
-            "background": "Disqualified"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -8043,10 +7474,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "points": 257.0
         },
@@ -8070,6 +7504,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Other points position"
@@ -8082,6 +7519,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -8094,6 +7534,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8106,6 +7549,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -8118,6 +7564,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -8130,6 +7579,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Other points position"
@@ -8142,6 +7594,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -8154,6 +7609,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -8166,6 +7624,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8178,6 +7639,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Second place"
@@ -8190,6 +7654,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8202,6 +7669,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -8214,6 +7684,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 6
               }
             ],
             "fastest_lap": true,
@@ -8227,6 +7700,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -8239,6 +7715,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -8251,6 +7730,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8263,6 +7745,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Other points position"
@@ -8275,253 +7760,12 @@
             "results": [
               {
                 "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 187.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Red Bull",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2015_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Third place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -8529,6 +7773,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 10
               }
@@ -8557,246 +7804,7 @@
             "results": [
               {
                 "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2015_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 136.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Force India",
-              "url": "https://en.wikipedia.org/wiki/Force_India"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 10
               }
@@ -8810,6 +7818,9 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": 14
               }
             ],
@@ -8822,10 +7833,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bhr": {
             "round": {
@@ -8834,10 +7848,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "esp": {
             "round": {
@@ -8845,6 +7862,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 15
               }
@@ -8858,10 +7878,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -8870,10 +7893,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "aut": {
             "round": {
@@ -8881,6 +7907,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 9
               }
@@ -8893,6 +7922,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 9
               }
@@ -8907,6 +7939,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -8917,11 +7952,14 @@
               "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Other points position"
           },
           "ita": {
             "round": {
@@ -8929,6 +7967,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 7
               }
@@ -8942,10 +7983,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "jpn": {
             "round": {
@@ -8954,10 +7998,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "rus": {
             "round": {
@@ -8966,10 +8013,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "usa": {
             "round": {
@@ -8978,10 +8028,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mex": {
             "round": {
@@ -8989,6 +8042,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -9002,10 +8058,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -9013,6 +8072,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 7
               }
@@ -9041,6 +8103,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9053,6 +8118,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9065,6 +8133,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9077,6 +8148,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -9089,6 +8163,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9101,6 +8178,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9113,6 +8193,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -9125,6 +8208,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9135,6 +8221,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9149,6 +8238,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -9161,6 +8253,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -9173,6 +8268,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9185,246 +8283,7 @@
             "results": [
               {
                 "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 78.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Lotus_F1"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2015_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 13
               }
@@ -9438,6 +8297,9 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 8
               }
             ],
@@ -9450,10 +8312,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "usa": {
             "round": {
@@ -9462,10 +8327,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mex": {
             "round": {
@@ -9474,10 +8342,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bra": {
             "round": {
@@ -9485,6 +8356,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 10
               }
@@ -9498,10 +8372,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "points": 78.0
         },
@@ -9525,6 +8402,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9537,6 +8417,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -9549,246 +8432,7 @@
             "results": [
               {
                 "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2015_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 67.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Toro Rosso",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 17
               }
@@ -9803,6 +8447,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9814,10 +8461,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mon": {
             "round": {
@@ -9826,10 +8476,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -9837,6 +8490,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 15
               }
@@ -9850,10 +8506,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "gbr": {
             "round": {
@@ -9861,6 +8520,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9874,10 +8536,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "bel": {
             "round": {
@@ -9886,10 +8551,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "ita": {
             "round": {
@@ -9897,6 +8565,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 12
               }
@@ -9910,6 +8581,9 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 9
               }
             ],
@@ -9921,6 +8595,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 9
+              },
               {
                 "position": 10
               }
@@ -9934,10 +8611,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "usa": {
             "round": {
@@ -9945,6 +8625,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 7
               }
@@ -9958,10 +8641,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bra": {
             "round": {
@@ -9970,10 +8656,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -9981,6 +8670,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 16
               }
@@ -10009,246 +8701,7 @@
             "results": [
               {
                 "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2015_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 36.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Sauber",
-              "url": "https://en.wikipedia.org/wiki/Sauber"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 8
               }
@@ -10261,11 +8714,14 @@
               "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "chn": {
             "round": {
@@ -10273,6 +8729,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 10
               }
@@ -10286,6 +8745,9 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": 14
               }
             ],
@@ -10297,6 +8759,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 14
               }
@@ -10310,10 +8775,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "can": {
             "round": {
@@ -10321,6 +8789,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 16
               }
@@ -10334,6 +8805,9 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": 13
               }
             ],
@@ -10346,10 +8820,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Other classified position"
           },
           "hun": {
             "round": {
@@ -10358,10 +8835,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bel": {
             "round": {
@@ -10370,10 +8850,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "ita": {
             "round": {
@@ -10382,10 +8865,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "sin": {
             "round": {
@@ -10394,10 +8880,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "jpn": {
             "round": {
@@ -10405,6 +8894,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 20
               }
@@ -10418,10 +8910,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "usa": {
             "round": {
@@ -10430,10 +8925,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mex": {
             "round": {
@@ -10442,10 +8940,13 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bra": {
             "round": {
@@ -10453,6 +8954,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 16
               }
@@ -10465,6 +8969,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 15
               }
@@ -10493,6 +9000,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Other classified position"
@@ -10503,6 +9013,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10517,6 +9030,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -10529,6 +9045,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Other classified position"
@@ -10541,6 +9060,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10553,6 +9075,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10565,6 +9090,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -10575,6 +9103,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10589,6 +9120,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10601,6 +9135,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -10613,6 +9150,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -10625,6 +9165,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -10635,6 +9178,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10649,6 +9195,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -10661,6 +9210,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -10673,6 +9225,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -10685,6 +9240,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10697,246 +9255,7 @@
             "results": [
               {
                 "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 27.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2015_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 15
               }
@@ -10949,6 +9268,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 17
               }
@@ -10977,245 +9299,7 @@
             "results": [
               {
                 "position": "DNP"
-              }
-            ]
-          },
-          "mal": {
-            "round": {
-              "text": "MAL",
-              "url": "https://en.wikipedia.org/wiki/2015_Malaysian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "chn": {
-            "round": {
-              "text": "CHN",
-              "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2015_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2015_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/2015_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2015_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2015_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2015_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sin": {
-            "round": {
-              "text": "SIN",
-              "url": "https://en.wikipedia.org/wiki/2015_Singapore_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2015_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/2015_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Marussia",
-              "url": "https://en.wikipedia.org/wiki/Marussia_F1"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aus": {
-            "round": {
-              "text": "AUS",
-              "url": "https://en.wikipedia.org/wiki/2015_Australian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "DNP"
               }
@@ -11228,10 +9312,13 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Other classified position"
           },
           "chn": {
             "round": {
@@ -11239,6 +9326,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Chinese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 16
               }
@@ -11252,6 +9342,9 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": 17
               }
             ],
@@ -11263,6 +9356,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 17
+              },
               {
                 "position": 18
               }
@@ -11276,6 +9372,9 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": 17
               }
             ],
@@ -11288,10 +9387,13 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "aut": {
             "round": {
@@ -11300,10 +9402,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "gbr": {
             "round": {
@@ -11311,6 +9416,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 13
               }
@@ -11324,6 +9432,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 16
               }
             ],
@@ -11335,6 +9446,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 16
               }
@@ -11348,6 +9462,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 16
               }
             ],
@@ -11360,6 +9477,9 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": 15
               }
             ],
@@ -11371,6 +9491,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Japanese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 18
+              },
               {
                 "position": 19
               }
@@ -11384,6 +9507,9 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": 14
               }
             ],
@@ -11396,10 +9522,13 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "mex": {
             "round": {
@@ -11407,6 +9536,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Mexican_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 16
               }
@@ -11420,6 +9552,9 @@
             },
             "results": [
               {
+                "position": 17
+              },
+              {
                 "position": 18
               }
             ],
@@ -11431,6 +9566,9 @@
               "url": "https://en.wikipedia.org/wiki/2015_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 18
+              },
               {
                 "position": 19
               }

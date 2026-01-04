@@ -8345,6 +8345,12 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
+              },
+              {
+                "position": 37
               }
             ]
           },
@@ -8356,6 +8362,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -8369,6 +8378,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 1
               }
             ],
             "background": "Second place"
@@ -8381,6 +8393,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Other points position"
@@ -8393,6 +8408,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Other classified position"
@@ -8405,6 +8423,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 1
               }
             ],
             "background": "Not classified, retired"
@@ -8417,6 +8438,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "fastest_lap": true,
@@ -8430,6 +8454,12 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 4
+              },
+              {
+                "position": "EX"
               }
             ],
             "fastest_lap": true,
@@ -8443,6 +8473,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other classified position"
@@ -8455,6 +8488,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Not classified, retired"
@@ -8467,6 +8503,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "fastest_lap": true,
@@ -8480,208 +8519,7 @@
             "results": [
               {
                 "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Third place"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "points": 95.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 2
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 5
               }
@@ -8695,10 +8533,14 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "fastest_lap": true,
+            "background": "Third place"
           },
           "ita": {
             "round": {
@@ -8707,11 +8549,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 3
               }
             ],
-            "fastest_lap": true,
-            "background": "Third place"
+            "background": "Second place"
           },
           "can": {
             "round": {
@@ -8720,10 +8564,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 10
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "cpl": {
             "round": {
@@ -8732,58 +8579,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 8
               }
             ],
-            "pole_position": true,
-            "background": "Other classified position"
+            "background": "Winner"
           },
-          "points": 95.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 37
-              }
-            ]
-          },
-          "usw": null,
-          "bra": null,
-          "arg": null,
-          "smr": null,
-          "bel": null,
-          "mon": null,
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "EX"
-              }
-            ]
-          },
-          "fra": null,
-          "gbr": null,
-          "ger": null,
-          "aut": null,
-          "ned": null,
-          "ita": null,
-          "can": null,
-          "cpl": null,
           "points": 95.0
         },
         {
@@ -8802,6 +8605,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 6
               }
             ]
           },
@@ -8813,6 +8619,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -8825,6 +8634,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -8838,6 +8650,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -8852,6 +8667,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Winner"
@@ -8862,6 +8680,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -8876,6 +8697,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "pole_position": true,
@@ -8887,6 +8711,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -8901,6 +8728,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Third place"
@@ -8913,6 +8743,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Not classified, retired"
@@ -8925,6 +8758,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Winner"
@@ -8937,6 +8773,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -8949,6 +8788,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Second place"
@@ -8961,6 +8803,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8973,6 +8818,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -8986,210 +8834,12 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
-          },
-          "points": 61.0
-        },
-        {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Brabham",
-              "url": "https://en.wikipedia.org/wiki/Brabham"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 6
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
           },
           "points": 61.0
         },
@@ -9209,6 +8859,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 16
               }
             ]
           },
@@ -9220,6 +8873,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Not classified, retired"
@@ -9230,6 +8886,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9244,6 +8903,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Third place"
@@ -9256,6 +8918,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Not classified, retired"
@@ -9268,213 +8933,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "points": 54.0
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 16
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Not classified, retired"
           },
           "mon": {
             "round": {
@@ -9482,6 +8946,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9495,10 +8962,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "fra": {
             "round": {
@@ -9507,11 +8977,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 4
               }
             ],
-            "pole_position": true,
-            "background": "Other points position"
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "gbr": {
             "round": {
@@ -9520,12 +8993,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 9
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "ger": {
             "round": {
@@ -9534,10 +9008,14 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "pole_position": true,
+            "background": "Second place"
           },
           "aut": {
             "round": {
@@ -9546,11 +9024,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 2
               }
             ],
-            "pole_position": true,
-            "background": "Second place"
+            "background": "Not classified, retired"
           },
           "ned": {
             "round": {
@@ -9559,10 +9039,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "pole_position": true,
+            "background": "Winner"
           },
           "ita": {
             "round": {
@@ -9571,11 +9055,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "pole_position": true,
-            "background": "Not classified, retired"
+            "background": "Winner"
           },
           "can": {
             "round": {
@@ -9583,6 +9069,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9596,10 +9085,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Second place"
           },
           "points": 54.0
         },
@@ -9619,6 +9111,9 @@
             "results": [
               {
                 "position": 25
+              },
+              {
+                "position": 26
               }
             ]
           },
@@ -9628,6 +9123,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9642,6 +9140,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other classified position"
@@ -9654,6 +9155,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Did not qualify"
@@ -9666,6 +9170,9 @@
             "results": [
               {
                 "position": "NC"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9678,6 +9185,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Not classified, retired"
@@ -9690,6 +9200,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Did not qualify"
@@ -9702,6 +9215,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 2
               }
             ],
             "background": "Not classified, retired"
@@ -9712,6 +9228,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9726,6 +9245,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Not classified, retired"
@@ -9738,6 +9260,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Not classified, retired"
@@ -9750,6 +9275,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 1
               }
             ],
             "background": "Not classified, retired"
@@ -9760,6 +9288,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -9774,207 +9305,7 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 44.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Talbot Ligier",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
-            },
-            "engine_constructor": {
-              "text": "Matra",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 26
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "pole_position": true,
-            "background": "Second place"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
@@ -9988,10 +9319,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 1
               }
             ],
-            "background": "Winner"
+            "background": "Not classified, retired"
           },
           "cpl": {
             "round": {
@@ -10000,10 +9334,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "points": 44.0
         },
@@ -10023,6 +9360,9 @@
             "results": [
               {
                 "position": 27
+              },
+              {
+                "position": 28
               }
             ]
           },
@@ -10032,6 +9372,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10046,6 +9389,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -10056,6 +9402,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10070,6 +9419,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 5
               }
             ],
             "pole_position": true,
@@ -10084,210 +9436,12 @@
             "results": [
               {
                 "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DSQ"
-              }
-            ],
-            "background": "Disqualified"
-          },
-          "points": 34.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 28
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "mon": {
             "round": {
@@ -10296,10 +9450,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Winner"
           },
           "esp": {
             "round": {
@@ -10307,11 +9464,14 @@
               "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 1
+              },
               {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Winner"
           },
           "fra": {
             "round": {
@@ -10320,10 +9480,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "gbr": {
             "round": {
@@ -10331,6 +9494,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10344,10 +9510,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "aut": {
             "round": {
@@ -10356,10 +9525,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "ned": {
             "round": {
@@ -10367,6 +9539,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10380,10 +9555,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "can": {
             "round": {
@@ -10392,10 +9570,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "cpl": {
             "round": {
@@ -10404,11 +9585,13 @@
             },
             "results": [
               {
+                "position": "DSQ"
+              },
+              {
                 "position": 9
               }
             ],
-            "fastest_lap": true,
-            "background": "Other classified position"
+            "background": "Disqualified"
           },
           "points": 34.0
         },
@@ -10428,6 +9611,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 8
               }
             ]
           },
@@ -10437,6 +9623,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10451,6 +9640,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10463,6 +9655,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Not classified, retired"
@@ -10475,6 +9670,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other classified position"
@@ -10487,6 +9685,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10497,6 +9698,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10511,6 +9715,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -10523,6 +9730,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Second place"
@@ -10535,6 +9745,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Winner"
@@ -10547,6 +9760,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10559,6 +9775,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -10571,6 +9790,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Not classified, retired"
@@ -10583,6 +9805,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Not classified, retired"
@@ -10595,6 +9820,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "fastest_lap": true,
@@ -10608,205 +9836,7 @@
             "results": [
               {
                 "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 28.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 8
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 12
               }
@@ -10831,6 +9861,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 12
               }
             ]
           },
@@ -10840,6 +9873,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10854,6 +9890,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -10866,6 +9905,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10876,6 +9918,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
             },
             "results": [
+              {
+                "position": "WD"
+              },
               {
                 "position": "WD"
               }
@@ -10889,6 +9934,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Other points position"
@@ -10899,6 +9947,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10913,6 +9964,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other points position"
@@ -10925,6 +9979,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -10937,6 +9994,9 @@
             "results": [
               {
                 "position": "DSQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Disqualified"
@@ -10949,6 +10009,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10961,6 +10024,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -10973,6 +10039,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10985,6 +10054,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10997,6 +10069,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -11009,209 +10084,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 22.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Lotus",
-              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 12
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "WD"
-              }
-            ]
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Not classified, retired"
           },
           "points": 22.0
         },
@@ -11231,6 +10109,9 @@
             "results": [
               {
                 "position": 29
+              },
+              {
+                "position": 30
               }
             ]
           },
@@ -11242,6 +10123,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "pole_position": true,
@@ -11255,6 +10139,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -11267,6 +10154,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other classified position"
@@ -11279,6 +10169,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Second place"
@@ -11289,6 +10182,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11303,6 +10199,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11313,6 +10212,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11327,6 +10229,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other classified position"
@@ -11339,6 +10244,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11351,6 +10259,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Not classified, retired"
@@ -11361,6 +10272,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11375,6 +10289,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Not classified, retired"
@@ -11387,6 +10304,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Not classified, retired"
@@ -11399,6 +10319,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Not classified, retired"
@@ -11411,210 +10334,12 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other classified position"
-          },
-          "points": 10.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Arrows",
-              "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 30
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
           },
           "points": 10.0
         },
@@ -11634,205 +10359,7 @@
             "results": [
               {
                 "position": 22
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 10.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Alfa Romeo",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 23
               }
@@ -11845,10 +10372,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "bra": {
             "round": {
@@ -11857,10 +10387,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": "NC"
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "arg": {
             "round": {
@@ -11868,6 +10401,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 10
               }
@@ -11882,6 +10418,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11892,6 +10431,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 10
+              },
               {
                 "position": 9
               }
@@ -11906,6 +10448,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11916,6 +10461,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 10
               }
@@ -11928,6 +10476,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 15
               }
@@ -11942,6 +10493,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11952,6 +10506,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": 9
+              },
               {
                 "position": 15
               }
@@ -11966,6 +10523,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -11976,6 +10536,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11989,10 +10552,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "can": {
             "round": {
@@ -12001,10 +10567,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Other classified position"
           },
           "cpl": {
             "round": {
@@ -12013,10 +10582,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Not classified, retired"
           },
           "points": 10.0
         },
@@ -12036,6 +10608,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ]
           },
@@ -12047,6 +10622,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other points position"
@@ -12059,6 +10637,9 @@
             "results": [
               {
                 "position": "NC"
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other classified position"
@@ -12071,6 +10652,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Not classified, retired"
@@ -12081,6 +10665,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12095,6 +10682,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -12107,6 +10697,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -12119,6 +10712,9 @@
             "results": [
               {
                 "position": "NC"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other classified position"
@@ -12131,205 +10727,7 @@
             "results": [
               {
                 "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 10.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Tyrrell",
-              "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 4
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 16
               }
@@ -12343,10 +10741,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "ger": {
             "round": {
@@ -12355,10 +10756,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Other points position"
           },
           "aut": {
             "round": {
@@ -12367,10 +10771,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Did not qualify"
           },
           "ned": {
             "round": {
@@ -12379,10 +10786,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "ita": {
             "round": {
@@ -12390,6 +10800,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -12403,6 +10816,9 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": 11
               }
             ],
@@ -12415,10 +10831,13 @@
             },
             "results": [
               {
+                "position": "Ret"
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Not classified, retired"
           },
           "points": 10.0
         },
@@ -12841,6 +11260,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ]
           },
@@ -12888,6 +11310,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Did not qualify"
@@ -12904,7 +11329,18 @@
             ],
             "background": "Did not qualify"
           },
-          "mon": null,
+          "mon": {
+            "round": {
+              "text": "MON",
+              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
+            },
+            "results": [
+              {
+                "position": "DNPQ"
+              }
+            ],
+            "background": "Did not qualify"
+          },
           "esp": {
             "round": {
               "text": "ESP",
@@ -13016,64 +11452,6 @@
           "points": 1.0
         },
         {
-          "pos": 13,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "ATS",
-              "url": "https://en.wikipedia.org/wiki/ATS_(wheels)"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 10
-              }
-            ]
-          },
-          "usw": null,
-          "bra": null,
-          "arg": null,
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": null,
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNPQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "esp": null,
-          "fra": null,
-          "gbr": null,
-          "ger": null,
-          "aut": null,
-          "ned": null,
-          "ita": null,
-          "can": null,
-          "cpl": null,
-          "points": 1.0
-        },
-        {
           "pos": null,
           "constructor": {
             "chassis_constructor": {
@@ -13089,6 +11467,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": 18
               }
             ]
           },
@@ -13098,6 +11479,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -13112,6 +11496,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -13122,6 +11509,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -13136,6 +11526,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Not classified, retired"
@@ -13148,6 +11541,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -13158,6 +11554,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNPQ"
+              },
               {
                 "position": "DNPQ"
               }
@@ -13278,108 +11677,6 @@
           "pos": null,
           "constructor": {
             "chassis_constructor": {
-              "text": "March",
-              "url": "https://en.wikipedia.org/wiki/March_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 18
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNPQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "esp": null,
-          "fra": null,
-          "gbr": null,
-          "ger": null,
-          "aut": null,
-          "ned": null,
-          "ita": null,
-          "can": null,
-          "cpl": null,
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
               "text": "Fittipaldi",
               "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
             },
@@ -13392,6 +11689,9 @@
             "results": [
               {
                 "position": 20
+              },
+              {
+                "position": 21
               }
             ]
           },
@@ -13403,6 +11703,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Not classified, retired"
@@ -13415,6 +11718,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -13425,6 +11731,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -13439,6 +11748,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Not classified, retired"
@@ -13451,6 +11763,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -13461,6 +11776,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -13475,6 +11793,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other classified position"
@@ -13487,6 +11808,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Not classified, retired"
@@ -13499,6 +11823,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Not classified, retired"
@@ -13509,6 +11836,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -13524,6 +11854,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -13536,6 +11869,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -13546,6 +11882,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -13560,199 +11899,12 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Other classified position"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Fittipaldi",
-              "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 21
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "aut": null,
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
           },
           "points": 0.0
         },
@@ -13772,6 +11924,9 @@
             "results": [
               {
                 "position": 31
+              },
+              {
+                "position": 32
               }
             ]
           },
@@ -13783,6 +11938,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Did not qualify"
@@ -13793,6 +11951,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -13807,6 +11968,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -13817,6 +11981,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -13831,6 +11998,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -13843,205 +12013,7 @@
             "results": [
               {
                 "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Osella",
-              "url": "https://en.wikipedia.org/wiki/Osella"
-            },
-            "engine_constructor": {
-              "text": "Ford",
-              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
-            }
-          },
-          "car_no.": {
-            "results": [
-              {
-                "position": 32
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "DNQ"
               }
@@ -14056,6 +12028,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -14066,10 +12041,14 @@
               "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "WD"
               }
-            ]
+            ],
+            "background": "Did not qualify"
           },
           "gbr": {
             "round": {
@@ -14078,10 +12057,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "background": "Did not qualify"
           },
           "ger": {
             "round": {
@@ -14090,10 +12072,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other classified position"
+            "background": "Did not qualify"
           },
           "aut": {
             "round": {
@@ -14101,11 +12086,14 @@
               "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": 10
               }
             ],
-            "background": "Other classified position"
+            "background": "Did not qualify"
           },
           "ned": {
             "round": {
@@ -14114,10 +12102,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Did not qualify"
           },
           "ita": {
             "round": {
@@ -14126,10 +12117,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": 9
               }
             ],
-            "background": "Other classified position"
+            "background": "Did not qualify"
           },
           "can": {
             "round": {
@@ -14138,10 +12132,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Did not qualify"
           },
           "cpl": {
             "round": {
@@ -14150,10 +12147,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Did not qualify"
           },
           "points": 0.0
         },
@@ -14173,172 +12173,7 @@
             "results": [
               {
                 "position": 35
-              }
-            ]
-          },
-          "usw": null,
-          "bra": null,
-          "arg": null,
-          "smr": {
-            "round": {
-              "text": "SMR",
-              "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNPQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "cpl": {
-            "round": {
-              "text": "CPL",
-              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ"
-              }
-            ],
-            "background": "Did not qualify"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Toleman",
-              "url": "https://en.wikipedia.org/wiki/Toleman"
-            },
-            "engine_constructor": {
-              "text": "Hart",
-              "url": "https://en.wikipedia.org/wiki/Hart_Racing_Engines"
-            }
-          },
-          "car_no.": {
-            "results": [
+              },
               {
                 "position": 36
               }
@@ -14355,6 +12190,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -14365,6 +12203,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -14379,6 +12220,9 @@
             "results": [
               {
                 "position": "DNPQ"
+              },
+              {
+                "position": "DNPQ"
               }
             ],
             "background": "Did not qualify"
@@ -14389,6 +12233,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -14403,6 +12250,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -14413,6 +12263,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -14427,6 +12280,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -14437,6 +12293,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -14451,6 +12310,9 @@
             "results": [
               {
                 "position": "DNQ"
+              },
+              {
+                "position": "DNQ"
               }
             ],
             "background": "Did not qualify"
@@ -14462,10 +12324,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "DNQ"
               }
             ],
-            "background": "Did not qualify"
+            "background": "Other classified position"
           },
           "can": {
             "round": {
@@ -14473,6 +12338,9 @@
               "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
             },
             "results": [
+              {
+                "position": "DNQ"
+              },
               {
                 "position": "DNQ"
               }
@@ -14486,10 +12354,13 @@
             },
             "results": [
               {
+                "position": "DNQ"
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Did not qualify"
           },
           "points": 0.0
         }

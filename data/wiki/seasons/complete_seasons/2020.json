@@ -6102,243 +6102,13 @@
             "results": [
               {
                 "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "70a": {
-            "round": {
-              "text": "70A",
-              "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "tus": {
-            "round": {
-              "text": "TUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "eif": {
-            "round": {
-              "text": "EIF",
-              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2020_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "skh": {
-            "round": {
-              "text": "SKH",
-              "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "pole_position": true,
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "points": 573.0
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            }
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "pole_position": true,
+            "background": "Winner"
           },
           "sty": {
             "round": {
@@ -6347,10 +6117,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "pole_position": true,
+            "background": "Winner"
           },
           "hun": {
             "round": {
@@ -6359,10 +6133,15 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "gbr": {
             "round": {
@@ -6370,11 +6149,15 @@
               "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 1
+              },
               {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "pole_position": true,
+            "background": "Winner"
           },
           "70a": {
             "round": {
@@ -6383,11 +6166,14 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 3
               }
             ],
-            "pole_position": true,
-            "background": "Third place"
+            "fastest_lap": true,
+            "background": "Second place"
           },
           "esp": {
             "round": {
@@ -6396,11 +6182,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 3
               }
             ],
-            "fastest_lap": true,
-            "background": "Third place"
+            "pole_position": true,
+            "background": "Winner"
           },
           "bel": {
             "round": {
@@ -6409,10 +6198,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "pole_position": true,
+            "background": "Winner"
           },
           "ita": {
             "round": {
@@ -6421,11 +6214,12 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 7
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
             "background": "Other points position"
           },
           "tus": {
@@ -6435,10 +6229,15 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "rus": {
             "round": {
@@ -6447,11 +6246,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 3
               }
             ],
-            "pole_position": true,
-            "background": "Third place"
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "eif": {
             "round": {
@@ -6460,11 +6262,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "pole_position": true,
-            "background": "Not classified, retired"
+            "background": "Winner"
           },
           "por": {
             "round": {
@@ -6473,10 +6277,15 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "background": "Second place"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "emi": {
             "round": {
@@ -6485,11 +6294,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 2
               }
             ],
-            "pole_position": true,
-            "background": "Second place"
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "tur": {
             "round": {
@@ -6498,10 +6310,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Winner"
           },
           "bhr": {
             "round": {
@@ -6510,10 +6325,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 8
               }
             ],
-            "background": "Other points position"
+            "pole_position": true,
+            "background": "Winner"
           },
           "skh": {
             "round": {
@@ -6522,10 +6341,13 @@
             },
             "results": [
               {
+                "position": 8
+              },
+              {
                 "position": 9
               }
             ],
-            "fastest_lap": true,
+            "pole_position": true,
             "background": "Other points position"
           },
           "abu": {
@@ -6535,10 +6357,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Second place"
           },
           "points": 573.0
         },
@@ -6562,6 +6387,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -6574,6 +6402,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Third place"
@@ -6586,6 +6417,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Second place"
@@ -6598,6 +6432,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 8
               }
             ],
             "fastest_lap": true,
@@ -6611,6 +6448,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Winner"
@@ -6623,6 +6463,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Second place"
@@ -6635,6 +6478,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Third place"
@@ -6647,6 +6493,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -6659,6 +6508,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Third place"
@@ -6671,6 +6523,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Second place"
@@ -6683,6 +6538,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "fastest_lap": true,
@@ -6696,6 +6554,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Third place"
@@ -6708,6 +6569,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -6720,6 +6584,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -6732,6 +6599,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "fastest_lap": true,
@@ -6745,6 +6615,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -6757,6 +6630,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "pole_position": true,
@@ -6765,224 +6641,6 @@
           "points": 319.0
         },
         {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Red Bull Racing",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "70a": {
-            "round": {
-              "text": "70A",
-              "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "tus": {
-            "round": {
-              "text": "TUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "eif": {
-            "round": {
-              "text": "EIF",
-              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2020_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "skh": {
-            "round": {
-              "text": "SKH",
-              "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 319.0
-        },
-        {
           "pos": 3,
           "constructor": {
             "chassis_constructor": {
@@ -7002,6 +6660,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "fastest_lap": true,
@@ -7015,6 +6676,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -7027,6 +6691,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -7039,6 +6706,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -7051,6 +6721,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -7063,6 +6736,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -7075,6 +6751,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "DNS"
               }
             ],
             "background": "Other points position"
@@ -7087,6 +6766,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Second place"
@@ -7099,6 +6781,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -7111,6 +6796,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -7123,6 +6811,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -7135,6 +6826,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -7147,223 +6841,7 @@
             "results": [
               {
                 "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "skh": {
-            "round": {
-              "text": "SKH",
-              "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 202.0
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "70a": {
-            "round": {
-              "text": "70A",
-              "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ],
-            "background": "Did not start"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "tus": {
-            "round": {
-              "text": "TUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "eif": {
-            "round": {
-              "text": "EIF",
-              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2020_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 8
               }
@@ -7377,10 +6855,12 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 8
               }
             ],
-            "fastest_lap": true,
             "background": "Other points position"
           },
           "bhr": {
@@ -7389,6 +6869,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -7402,6 +6885,9 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 10
               }
             ],
@@ -7413,6 +6899,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 6
               }
@@ -7441,227 +6930,12 @@
             "results": [
               {
                 "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "70a": {
-            "round": {
-              "text": "70A",
-              "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "tus": {
-            "round": {
-              "text": "TUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "eif": {
-            "round": {
-              "text": "EIF",
-              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2020_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "skh": {
-            "round": {
-              "text": "SKH",
-              "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 195.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Racing Point",
-              "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "BWT Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "sty": {
             "round": {
@@ -7669,6 +6943,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 7
               }
@@ -7682,6 +6959,9 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 7
               }
             ],
@@ -7693,11 +6973,14 @@
               "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 9
+              },
               {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Other points position"
           },
           "70a": {
             "round": {
@@ -7705,6 +6988,9 @@
               "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 7
               }
@@ -7718,6 +7004,9 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 5
               }
             ],
@@ -7729,6 +7018,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 9
+              },
               {
                 "position": 10
               }
@@ -7742,10 +7034,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 10
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "tus": {
             "round": {
@@ -7754,10 +7049,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "rus": {
             "round": {
@@ -7766,10 +7064,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "eif": {
             "round": {
@@ -7777,6 +7078,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 8
               }
@@ -7790,10 +7094,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "emi": {
             "round": {
@@ -7802,10 +7109,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "tur": {
             "round": {
@@ -7814,11 +7124,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 9
               }
             ],
-            "pole_position": true,
-            "background": "Other points position"
+            "background": "Second place"
           },
           "bhr": {
             "round": {
@@ -7827,10 +7139,13 @@
             },
             "results": [
               {
+                "position": 18
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "skh": {
             "round": {
@@ -7839,10 +7154,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "background": "Winner"
           },
           "abu": {
             "round": {
@@ -7851,10 +7169,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "points": 195.0
         },
@@ -7878,6 +7199,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -7890,6 +7214,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -7902,6 +7229,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -7914,6 +7244,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other points position"
@@ -7926,6 +7259,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -7938,224 +7274,7 @@
             "results": [
               {
                 "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "tus": {
-            "round": {
-              "text": "TUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "eif": {
-            "round": {
-              "text": "EIF",
-              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2020_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "skh": {
-            "round": {
-              "text": "SKH",
-              "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "points": 181.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "70a": {
-            "round": {
-              "text": "70A",
-              "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 13
               }
@@ -8169,9 +7288,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 5
               }
             ],
+            "fastest_lap": true,
             "background": "Other points position"
           },
           "ita": {
@@ -8180,6 +7303,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 8
               }
@@ -8193,10 +7319,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "rus": {
             "round": {
@@ -8204,6 +7333,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 7
               }
@@ -8217,10 +7349,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "por": {
             "round": {
@@ -8228,6 +7363,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 9
               }
@@ -8241,10 +7379,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "tur": {
             "round": {
@@ -8253,10 +7394,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "bhr": {
             "round": {
@@ -8264,6 +7408,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 9
               }
@@ -8277,10 +7424,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Second place"
           },
           "abu": {
             "round": {
@@ -8289,9 +7439,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 9
               }
             ],
+            "fastest_lap": true,
             "background": "Other points position"
           },
           "points": 181.0
@@ -8316,6 +7470,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Second place"
@@ -8328,222 +7485,7 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "70a": {
-            "round": {
-              "text": "70A",
-              "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "tus": {
-            "round": {
-              "text": "TUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "eif": {
-            "round": {
-              "text": "EIF",
-              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2020_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "skh": {
-            "round": {
-              "text": "SKH",
-              "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 131.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
@@ -8556,11 +7498,14 @@
               "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 6
+              },
               {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "gbr": {
             "round": {
@@ -8569,10 +7514,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 10
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "70a": {
             "round": {
@@ -8581,10 +7529,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "esp": {
             "round": {
@@ -8593,10 +7544,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "bel": {
             "round": {
@@ -8604,6 +7558,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 14
               }
@@ -8618,6 +7575,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -8628,6 +7588,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 10
               }
@@ -8641,10 +7604,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "eif": {
             "round": {
@@ -8653,10 +7619,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "por": {
             "round": {
@@ -8664,6 +7633,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 10
               }
@@ -8677,10 +7649,13 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "tur": {
             "round": {
@@ -8689,10 +7664,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 4
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "bhr": {
             "round": {
@@ -8701,10 +7679,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 13
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "skh": {
             "round": {
@@ -8713,10 +7694,13 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "abu": {
             "round": {
@@ -8724,6 +7708,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 14
               }
@@ -8752,6 +7739,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -8764,6 +7754,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -8776,6 +7769,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -8788,6 +7784,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8800,6 +7799,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -8812,6 +7814,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -8824,6 +7829,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -8836,6 +7844,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Winner"
@@ -8848,6 +7859,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8860,6 +7874,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -8872,6 +7889,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -8884,6 +7904,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other points position"
@@ -8896,6 +7919,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8908,6 +7934,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other classified position"
@@ -8920,6 +7949,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -8932,6 +7964,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -8944,227 +7979,12 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
-          },
-          "points": 107.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "AlphaTauri",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "70a": {
-            "round": {
-              "text": "70A",
-              "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "tus": {
-            "round": {
-              "text": "TUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "eif": {
-            "round": {
-              "text": "EIF",
-              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2020_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "skh": {
-            "round": {
-              "text": "SKH",
-              "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
           },
           "points": 107.0
         },
@@ -9188,227 +8008,12 @@
             "results": [
               {
                 "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "70a": {
-            "round": {
-              "text": "70A",
-              "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "tus": {
-            "round": {
-              "text": "TUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "eif": {
-            "round": {
-              "text": "EIF",
-              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2020_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "skh": {
-            "round": {
-              "text": "SKH",
-              "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 8.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo Racing",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "sty": {
             "round": {
@@ -9416,6 +8021,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 14
               }
@@ -9429,6 +8037,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 17
               }
             ],
@@ -9440,6 +8051,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 17
               }
@@ -9453,6 +8067,9 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": 17
               }
             ],
@@ -9464,6 +8081,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 16
               }
@@ -9477,10 +8097,13 @@
             },
             "results": [
               {
+                "position": 12
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ita": {
             "round": {
@@ -9488,6 +8111,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 16
               }
@@ -9501,10 +8127,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "rus": {
             "round": {
@@ -9512,6 +8141,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 14
               }
@@ -9525,10 +8157,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "por": {
             "round": {
@@ -9536,6 +8171,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 15
               }
@@ -9549,6 +8187,9 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 10
               }
             ],
@@ -9561,10 +8202,13 @@
             },
             "results": [
               {
+                "position": 15
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bhr": {
             "round": {
@@ -9572,6 +8216,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 16
               }
@@ -9585,6 +8232,9 @@
             },
             "results": [
               {
+                "position": 13
+              },
+              {
                 "position": 14
               }
             ],
@@ -9596,6 +8246,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 16
               }
@@ -9624,6 +8277,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -9636,6 +8292,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other classified position"
@@ -9648,6 +8307,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other points position"
@@ -9660,6 +8322,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9672,6 +8337,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9684,6 +8352,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other classified position"
@@ -9696,6 +8367,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -9708,6 +8382,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9720,6 +8397,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9732,6 +8412,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -9744,6 +8427,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -9756,6 +8442,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -9768,6 +8457,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9780,6 +8472,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9792,6 +8487,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9804,6 +8502,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -9816,222 +8517,7 @@
             "results": [
               {
                 "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 3.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Haas",
-              "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "70a": {
-            "round": {
-              "text": "70A",
-              "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "tus": {
-            "round": {
-              "text": "TUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "eif": {
-            "round": {
-              "text": "EIF",
-              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2020_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "skh": {
-            "round": {
-              "text": "SKH",
-              "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 19
               }
@@ -10060,227 +8546,12 @@
             "results": [
               {
                 "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2020_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "70a": {
-            "round": {
-              "text": "70A",
-              "url": "https://en.wikipedia.org/wiki/70th_Anniversary_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2020_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "tus": {
-            "round": {
-              "text": "TUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Tuscan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "eif": {
-            "round": {
-              "text": "EIF",
-              "url": "https://en.wikipedia.org/wiki/2020_Eifel_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2020_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2020_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "skh": {
-            "round": {
-              "text": "SKH",
-              "url": "https://en.wikipedia.org/wiki/2020_Sakhir_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2020_Austrian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "sty": {
             "round": {
@@ -10288,6 +8559,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Styrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 17
               }
@@ -10301,6 +8575,9 @@
             },
             "results": [
               {
+                "position": 18
+              },
+              {
                 "position": 19
               }
             ],
@@ -10312,6 +8589,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_British_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 15
               }
@@ -10325,6 +8605,9 @@
             },
             "results": [
               {
+                "position": 18
+              },
+              {
                 "position": 19
               }
             ],
@@ -10336,6 +8619,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 17
+              },
               {
                 "position": 18
               }
@@ -10349,10 +8635,13 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "ita": {
             "round": {
@@ -10360,6 +8649,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 14
               }
@@ -10373,10 +8665,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "rus": {
             "round": {
@@ -10384,6 +8679,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 18
               }
@@ -10397,10 +8695,13 @@
             },
             "results": [
               {
+                "position": 14
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "por": {
             "round": {
@@ -10408,6 +8709,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Portuguese_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": 18
               }
@@ -10421,10 +8725,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "tur": {
             "round": {
@@ -10433,10 +8740,13 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "bhr": {
             "round": {
@@ -10444,6 +8754,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Bahrain_Grand_Prix"
             },
             "results": [
+              {
+                "position": 12
+              },
               {
                 "position": 14
               }
@@ -10457,10 +8770,13 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "abu": {
             "round": {
@@ -10468,6 +8784,9 @@
               "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 15
+              },
               {
                 "position": 17
               }

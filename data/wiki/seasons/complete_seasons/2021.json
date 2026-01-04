@@ -7567,6 +7567,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Winner"
@@ -7579,6 +7582,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -7593,6 +7599,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Winner"
@@ -7605,6 +7614,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -7618,6 +7630,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": "Ret"
               }
             ],
             "fastest_lap": true,
@@ -7631,6 +7646,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -7643,6 +7661,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Second place"
@@ -7655,6 +7676,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "fastest_lap": true,
@@ -7668,6 +7692,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Second place"
@@ -7682,6 +7709,12 @@
                 "position": 1,
                 "footnotes": [
                   "2"
+                ]
+              },
+              {
+                "position": 3,
+                "footnotes": [
+                  "3"
                 ]
               }
             ],
@@ -7698,6 +7731,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "pole_position": true,
@@ -7713,311 +7749,12 @@
             "results": [
               {
                 "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "1"
-                ]
-              }
-            ],
-            "footnotes": [
-              "1"
-            ],
-            "background": "Third place"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Second place"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "background": "Winner"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "background": "Winner"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "points": 613.5
-        },
-        {
-          "pos": 1,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Third place"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2021_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Third place"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2021_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "3"
-                ]
-              }
-            ],
-            "footnotes": [
-              "3"
-            ],
-            "background": "Third place"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
+              },
               {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Third place"
           },
           "ned": {
             "round": {
@@ -8026,10 +7763,14 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "fastest_lap": true,
+            "background": "Second place"
           },
           "ita": {
             "round": {
@@ -8038,10 +7779,19 @@
             },
             "results": [
               {
+                "position": 3,
+                "footnotes": [
+                  "1"
+                ]
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "footnotes": [
+              "1"
+            ],
+            "background": "Third place"
           },
           "rus": {
             "round": {
@@ -8050,10 +7800,13 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "background": "Winner"
           },
           "tur": {
             "round": {
@@ -8062,10 +7815,15 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 5
               }
             ],
-            "background": "Other points position"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "usa": {
             "round": {
@@ -8074,10 +7832,14 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "fastest_lap": true,
+            "background": "Second place"
           },
           "mxc": {
             "round": {
@@ -8086,12 +7848,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 15
               }
             ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Other classified position"
+            "background": "Second place"
           },
           "sap": {
             "round": {
@@ -8100,17 +7863,16 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 3,
                 "footnotes": [
                   "1"
                 ]
               }
             ],
-            "pole_position": true,
-            "footnotes": [
-              "1"
-            ],
-            "background": "Third place"
+            "background": "Winner"
           },
           "qat": {
             "round": {
@@ -8119,10 +7881,14 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "pole_position": true,
+            "background": "Winner"
           },
           "sau": {
             "round": {
@@ -8131,10 +7897,15 @@
             },
             "results": [
               {
+                "position": 1
+              },
+              {
                 "position": 3
               }
             ],
-            "background": "Third place"
+            "pole_position": true,
+            "fastest_lap": true,
+            "background": "Winner"
           },
           "abu": {
             "round": {
@@ -8143,10 +7914,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Second place"
           },
           "points": 613.5
         },
@@ -8170,6 +7944,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 5
               }
             ],
             "pole_position": true,
@@ -8183,6 +7960,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Winner"
@@ -8195,6 +7975,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Second place"
@@ -8207,6 +7990,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 5
               }
             ],
             "fastest_lap": true,
@@ -8220,6 +8006,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Winner"
@@ -8232,6 +8021,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Winner"
@@ -8244,6 +8036,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -8258,6 +8053,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "pole_position": true,
@@ -8271,6 +8069,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 6
               }
             ],
             "pole_position": true,
@@ -8285,6 +8086,12 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": "Ret",
+                "footnotes": [
+                  "1"
+                ]
               }
             ],
             "fastest_lap": true,
@@ -8298,6 +8105,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -8312,6 +8122,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 19
               }
             ],
             "pole_position": true,
@@ -8325,6 +8138,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 8
               }
             ],
             "pole_position": true,
@@ -8338,6 +8154,12 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": "Ret",
+                "footnotes": [
+                  "2"
+                ]
               }
             ],
             "background": "Other points position"
@@ -8350,6 +8172,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Second place"
@@ -8362,6 +8187,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Second place"
@@ -8374,6 +8202,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "pole_position": true,
@@ -8387,6 +8218,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 3
               }
             ],
             "background": "Winner"
@@ -8402,6 +8236,9 @@
                 "footnotes": [
                   "2"
                 ]
+              },
+              {
+                "position": 4
               }
             ],
             "footnotes": [
@@ -8417,6 +8254,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 4
               }
             ],
             "fastest_lap": true,
@@ -8430,6 +8270,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Second place"
@@ -8442,6 +8285,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 15
               }
             ],
             "pole_position": true,
@@ -8451,302 +8297,6 @@
           "points": 585.5
         },
         {
-          "pos": 2,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Red Bull Racing",
-              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2021_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2021_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "1"
-                ]
-              }
-            ],
-            "pole_position": true,
-            "footnotes": [
-              "1"
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "2"
-                ]
-              }
-            ],
-            "pole_position": true,
-            "footnotes": [
-              "2"
-            ],
-            "background": "Not classified, retired"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 585.5
-        },
-        {
           "pos": 3,
           "constructor": {
             "chassis_constructor": {
@@ -8766,285 +8316,7 @@
             "results": [
               {
                 "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2021_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "pole_position": true,
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2021_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3
-              }
-            ],
-            "background": "Third place"
-          },
-          "points": 323.5
-        },
-        {
-          "pos": 3,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 8
               }
@@ -9058,6 +8330,9 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 5
               }
             ],
@@ -9070,10 +8345,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 11
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "esp": {
             "round": {
@@ -9081,6 +8359,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 7
               }
@@ -9093,12 +8374,14 @@
               "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
             },
             "results": [
+              {
+                "position": 2
+              },
               {
                 "position": "DNS"
               }
             ],
-            "pole_position": true,
-            "background": "Did not start"
+            "background": "Second place"
           },
           "aze": {
             "round": {
@@ -9107,9 +8390,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 8
               }
             ],
+            "pole_position": true,
             "background": "Other points position"
           },
           "fra": {
@@ -9118,6 +8405,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 16
               }
@@ -9131,6 +8421,9 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 7
               }
             ],
@@ -9142,6 +8435,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 8
               }
@@ -9155,10 +8451,13 @@
             },
             "results": [
               {
+                "position": 2
+              },
+              {
                 "position": 6
               }
             ],
-            "background": "Other points position"
+            "background": "Second place"
           },
           "hun": {
             "round": {
@@ -9167,10 +8466,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Third place"
           },
           "bel": {
             "round": {
@@ -9180,6 +8482,9 @@
               "points_multiplier": 0.5
             },
             "results": [
+              {
+                "position": 8
+              },
               {
                 "position": 10
               }
@@ -9193,6 +8498,9 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 7
               }
             ],
@@ -9204,6 +8512,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 6
               }
@@ -9217,10 +8528,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Third place"
           },
           "tur": {
             "round": {
@@ -9228,6 +8542,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 8
               }
@@ -9241,6 +8558,9 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": 7
               }
             ],
@@ -9252,6 +8572,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 6
               }
@@ -9265,14 +8588,14 @@
             },
             "results": [
               {
+                "position": 5
+              },
+              {
                 "position": 6,
                 "footnotes": [
                   "3"
                 ]
               }
-            ],
-            "footnotes": [
-              "3"
             ],
             "background": "Other points position"
           },
@@ -9282,6 +8605,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
             },
             "results": [
+              {
+                "position": 7
+              },
               {
                 "position": 8
               }
@@ -9295,6 +8621,9 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 8
               }
             ],
@@ -9307,10 +8636,13 @@
             },
             "results": [
               {
+                "position": 3
+              },
+              {
                 "position": 10
               }
             ],
-            "background": "Other points position"
+            "background": "Third place"
           },
           "points": 323.5
         },
@@ -9334,6 +8666,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -9346,6 +8681,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Third place"
@@ -9358,6 +8696,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -9370,6 +8711,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -9382,6 +8726,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Third place"
@@ -9394,6 +8741,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -9406,6 +8756,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 6
               }
             ],
             "background": "Other points position"
@@ -9418,6 +8771,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -9430,6 +8786,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Third place"
@@ -9442,6 +8801,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Other points position"
@@ -9454,6 +8816,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9468,6 +8833,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -9480,6 +8848,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -9495,6 +8866,9 @@
                 "footnotes": [
                   "3"
                 ]
+              },
+              {
+                "position": 2
               }
             ],
             "fastest_lap": true,
@@ -9511,6 +8885,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Other points position"
@@ -9523,6 +8900,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -9535,286 +8915,7 @@
             "results": [
               {
                 "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 275.0
-        },
-        {
-          "pos": 4,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "McLaren",
-              "url": "https://en.wikipedia.org/wiki/McLaren"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2021_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2021_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2
-              }
-            ],
-            "background": "Second place"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Other points position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 8
               }
@@ -9828,10 +8929,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "sap": {
             "round": {
@@ -9840,10 +8944,13 @@
             },
             "results": [
               {
+                "position": 10
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "qat": {
             "round": {
@@ -9852,10 +8959,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "sau": {
             "round": {
@@ -9863,6 +8973,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 5
+              },
               {
                 "position": 10
               }
@@ -9876,10 +8989,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 12
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "points": 275.0
         },
@@ -9903,6 +9019,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -9915,6 +9034,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -9927,6 +9049,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -9939,6 +9064,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other points position"
@@ -9951,6 +9079,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -9963,6 +9094,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -9975,6 +9109,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -9987,6 +9124,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -9999,6 +9139,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10011,6 +9154,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -10023,6 +9169,9 @@
             "results": [
               {
                 "position": 1
+              },
+              {
+                "position": 4
               }
             ],
             "background": "Winner"
@@ -10037,6 +9186,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -10049,6 +9201,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -10061,6 +9216,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -10073,6 +9231,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -10085,6 +9246,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other points position"
@@ -10095,6 +9259,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -10109,6 +9276,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -10121,6 +9291,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Other points position"
@@ -10133,6 +9306,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 5
               }
             ],
             "background": "Third place"
@@ -10145,6 +9321,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -10157,284 +9336,7 @@
             "results": [
               {
                 "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 155.0
-        },
-        {
-          "pos": 5,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alpine",
-              "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "Renault",
-              "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2021_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2021_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 9
               }
@@ -10463,6 +9365,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other points position"
@@ -10475,6 +9380,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -10487,6 +9395,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -10499,6 +9410,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10511,6 +9425,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other points position"
@@ -10523,6 +9440,9 @@
             "results": [
               {
                 "position": 3
+              },
+              {
+                "position": 7
               }
             ],
             "background": "Third place"
@@ -10535,6 +9455,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -10547,6 +9470,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10559,6 +9485,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -10571,6 +9500,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -10583,6 +9515,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 6
               }
             ],
             "fastest_lap": true,
@@ -10598,6 +9533,9 @@
             "results": [
               {
                 "position": 6
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -10610,6 +9548,9 @@
             "results": [
               {
                 "position": 4
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -10622,289 +9563,12 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4
-              }
-            ],
-            "background": "Other points position"
-          },
-          "points": 142.0
-        },
-        {
-          "pos": 6,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "AlphaTauri",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
-            },
-            "engine_constructor": {
-              "text": "Honda",
-              "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2021_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7
-              }
-            ],
-            "background": "Other points position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2021_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "DNS"
               }
             ],
-            "background": "Did not start"
+            "background": "Not classified, retired"
           },
           "rus": {
             "round": {
@@ -10912,6 +9576,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
             },
             "results": [
+              {
+                "position": 13
+              },
               {
                 "position": 17
               }
@@ -10925,10 +9592,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "usa": {
             "round": {
@@ -10937,10 +9607,13 @@
             },
             "results": [
               {
+                "position": 9
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "mxc": {
             "round": {
@@ -10949,10 +9622,13 @@
             },
             "results": [
               {
+                "position": 4
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other points position"
           },
           "sap": {
             "round": {
@@ -10961,10 +9637,13 @@
             },
             "results": [
               {
+                "position": 7
+              },
+              {
                 "position": 15
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "qat": {
             "round": {
@@ -10972,6 +9651,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 13
               }
@@ -10985,10 +9667,13 @@
             },
             "results": [
               {
+                "position": 6
+              },
+              {
                 "position": 14
               }
             ],
-            "background": "Other classified position"
+            "background": "Other points position"
           },
           "abu": {
             "round": {
@@ -10996,6 +9681,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 4
+              },
               {
                 "position": 5
               }
@@ -11024,6 +9712,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -11036,6 +9727,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -11048,6 +9742,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -11060,6 +9757,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other classified position"
@@ -11072,6 +9772,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -11084,6 +9787,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Second place"
@@ -11096,6 +9802,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 10
               }
             ],
             "background": "Other points position"
@@ -11108,6 +9817,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -11120,6 +9832,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -11132,6 +9847,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other points position"
@@ -11144,6 +9862,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "DSQ"
               }
             ],
             "background": "Not classified, retired"
@@ -11158,6 +9879,9 @@
             "results": [
               {
                 "position": 5
+              },
+              {
+                "position": 20
               }
             ],
             "background": "Other points position"
@@ -11170,6 +9894,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other classified position"
@@ -11182,6 +9909,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -11194,6 +9924,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other classified position"
@@ -11206,6 +9939,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other points position"
@@ -11218,6 +9954,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other points position"
@@ -11230,6 +9969,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other points position"
@@ -11242,6 +9984,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11254,284 +9999,7 @@
             "results": [
               {
                 "position": 6
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 77.0
-        },
-        {
-          "pos": 7,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Aston Martin",
-              "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2021_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 10
-              }
-            ],
-            "background": "Other points position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2021_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DSQ"
-              }
-            ],
-            "background": "Disqualified"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 20
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 10
               }
@@ -11545,10 +10013,13 @@
             },
             "results": [
               {
+                "position": 11
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "abu": {
             "round": {
@@ -11556,6 +10027,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 11
+              },
               {
                 "position": 13
               }
@@ -11584,6 +10058,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -11594,6 +10071,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
             },
             "results": [
+              {
+                "position": "Ret"
+              },
               {
                 "position": "Ret"
               }
@@ -11608,6 +10088,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -11620,6 +10103,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -11632,6 +10118,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -11644,6 +10133,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -11656,6 +10148,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -11668,6 +10163,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11680,6 +10178,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -11692,6 +10193,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -11704,6 +10208,9 @@
             "results": [
               {
                 "position": 7
+              },
+              {
+                "position": 8
               }
             ],
             "background": "Other points position"
@@ -11718,6 +10225,9 @@
             "results": [
               {
                 "position": 2
+              },
+              {
+                "position": 9
               }
             ],
             "background": "Second place"
@@ -11730,6 +10240,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -11742,6 +10255,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -11754,6 +10270,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other points position"
@@ -11766,6 +10285,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -11778,6 +10300,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -11790,6 +10315,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -11802,6 +10330,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other classified position"
@@ -11814,6 +10345,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11826,6 +10360,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -11838,284 +10375,7 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 23.0
-        },
-        {
-          "pos": 8,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Williams",
-              "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-            },
-            "engine_constructor": {
-              "text": "Mercedes",
-              "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2021_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2021_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8
-              }
-            ],
-            "background": "Other points position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 9
-              }
-            ],
-            "background": "Other points position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
@@ -12144,6 +10404,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other classified position"
@@ -12156,6 +10419,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -12168,6 +10434,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12180,6 +10449,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -12192,6 +10464,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -12204,6 +10479,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -12216,6 +10494,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -12228,6 +10509,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -12240,6 +10524,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -12252,6 +10539,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -12264,6 +10554,9 @@
             "results": [
               {
                 "position": 10
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other points position"
@@ -12278,6 +10571,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -12290,6 +10586,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -12302,6 +10601,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -12314,6 +10616,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 16
               }
             ],
             "background": "Other points position"
@@ -12326,6 +10631,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 12
               }
             ],
             "background": "Other classified position"
@@ -12338,6 +10646,9 @@
             "results": [
               {
                 "position": 11
+              },
+              {
+                "position": 13
               }
             ],
             "background": "Other classified position"
@@ -12350,6 +10661,9 @@
             "results": [
               {
                 "position": 8
+              },
+              {
+                "position": 11
               }
             ],
             "background": "Other points position"
@@ -12362,6 +10676,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -12374,6 +10691,9 @@
             "results": [
               {
                 "position": 14
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other classified position"
@@ -12386,6 +10706,9 @@
             "results": [
               {
                 "position": 9
+              },
+              {
+                "position": 15
               }
             ],
             "background": "Other points position"
@@ -12398,284 +10721,7 @@
             "results": [
               {
                 "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "points": 13.0
-        },
-        {
-          "pos": 9,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Alfa Romeo Racing",
-              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2021_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2021_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": "Ret"
               }
@@ -12704,6 +10750,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12716,6 +10765,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -12728,6 +10780,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other classified position"
@@ -12740,6 +10795,9 @@
             "results": [
               {
                 "position": 18
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other classified position"
@@ -12752,6 +10810,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -12764,6 +10825,9 @@
             "results": [
               {
                 "position": 13
+              },
+              {
+                "position": 14
               }
             ],
             "background": "Other classified position"
@@ -12776,6 +10840,9 @@
             "results": [
               {
                 "position": 19
+              },
+              {
+                "position": 20
               }
             ],
             "background": "Other classified position"
@@ -12788,6 +10855,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -12800,6 +10870,9 @@
             "results": [
               {
                 "position": 18
+              },
+              {
+                "position": 19
               }
             ],
             "background": "Other classified position"
@@ -12812,6 +10885,9 @@
             "results": [
               {
                 "position": 17
+              },
+              {
+                "position": 18
               }
             ],
             "background": "Other classified position"
@@ -12824,6 +10900,9 @@
             "results": [
               {
                 "position": 12
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12838,6 +10917,9 @@
             "results": [
               {
                 "position": 16
+              },
+              {
+                "position": 17
               }
             ],
             "background": "Other classified position"
@@ -12850,6 +10932,9 @@
             "results": [
               {
                 "position": 18
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12862,6 +10947,9 @@
             "results": [
               {
                 "position": 15
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12874,6 +10962,9 @@
             "results": [
               {
                 "position": 18
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Other classified position"
@@ -12886,284 +10977,7 @@
             "results": [
               {
                 "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/2021_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mxc": {
-            "round": {
-              "text": "MXC",
-              "url": "https://en.wikipedia.org/wiki/2021_Mexico_City_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sap": {
-            "round": {
-              "text": "SAP",
-              "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "qat": {
-            "round": {
-              "text": "QAT",
-              "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sau": {
-            "round": {
-              "text": "SAU",
-              "url": "https://en.wikipedia.org/wiki/2021_Saudi_Arabian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "abu": {
-            "round": {
-              "text": "ABU",
-              "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "points": 0.0
-        },
-        {
-          "pos": 10,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Haas",
-              "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
-            },
-            "engine_constructor": {
-              "text": "Ferrari",
-              "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
-            }
-          },
-          "bhr": {
-            "round": {
-              "text": "BHR",
-              "url": "https://en.wikipedia.org/wiki/2021_Bahrain_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "emi": {
-            "round": {
-              "text": "EMI",
-              "url": "https://en.wikipedia.org/wiki/2021_Emilia_Romagna_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "por": {
-            "round": {
-              "text": "POR",
-              "url": "https://en.wikipedia.org/wiki/2021_Portuguese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/2021_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/2021_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aze": {
-            "round": {
-              "text": "AZE",
-              "url": "https://en.wikipedia.org/wiki/2021_Azerbaijan_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 14
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/2021_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 20
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "sty": {
-            "round": {
-              "text": "STY",
-              "url": "https://en.wikipedia.org/wiki/2021_Styrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/2021_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 19
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 18
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "hun": {
-            "round": {
-              "text": "HUN",
-              "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": 17
-              }
-            ],
-            "background": "Other classified position"
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/2021_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "rus": {
-            "round": {
-              "text": "RUS",
-              "url": "https://en.wikipedia.org/wiki/2021_Russian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret"
-              }
-            ],
-            "background": "Not classified, retired"
-          },
-          "tur": {
-            "round": {
-              "text": "TUR",
-              "url": "https://en.wikipedia.org/wiki/2021_Turkish_Grand_Prix"
-            },
-            "results": [
+              },
               {
                 "position": 20
               }
@@ -13177,6 +10991,9 @@
             },
             "results": [
               {
+                "position": 16
+              },
+              {
                 "position": 17
               }
             ],
@@ -13189,10 +11006,13 @@
             },
             "results": [
               {
+                "position": 18
+              },
+              {
                 "position": "Ret"
               }
             ],
-            "background": "Not classified, retired"
+            "background": "Other classified position"
           },
           "sap": {
             "round": {
@@ -13200,6 +11020,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
             },
             "results": [
+              {
+                "position": 17
+              },
               {
                 "position": 18
               }
@@ -13212,6 +11035,9 @@
               "url": "https://en.wikipedia.org/wiki/2021_Qatar_Grand_Prix"
             },
             "results": [
+              {
+                "position": 16
+              },
               {
                 "position": 18
               }
@@ -13226,6 +11052,9 @@
             "results": [
               {
                 "position": "Ret"
+              },
+              {
+                "position": "Ret"
               }
             ],
             "background": "Not classified, retired"
@@ -13236,10 +11065,14 @@
               "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
             },
             "results": [
+              {
+                "position": 14
+              },
               {
                 "position": "WD"
               }
-            ]
+            ],
+            "background": "Other classified position"
           },
           "points": 0.0
         }
