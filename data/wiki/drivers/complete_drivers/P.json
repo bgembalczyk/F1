@@ -79,6 +79,10 @@
                   "text": "Brazilian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    },
+                    {
                       "text": "Brazilian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
                     }
@@ -2909,7 +2913,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -3020,7 +3029,7 @@
                 "text": "1979",
                 "url": "https://en.wikipedia.org/wiki/1979_European_Formula_Two_Championship"
               },
-              "entrant": [],
+              "entrant": null,
               "chassis": [
                 {
                   "text": "March 792",
@@ -3853,7 +3862,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swedish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Sweden"
+                    }
+                  ]
                 }
               },
               {
@@ -4032,6 +4046,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -4221,7 +4239,7 @@
                   "url": "https://en.wikipedia.org/wiki/T_Cars"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 6,
               "wins": "unknown",
               "poles": "unknown",
@@ -4282,7 +4300,7 @@
                   "url": "https://en.wikipedia.org/wiki/2007_Formula_Palmer_Audi_season"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 15,
               "wins": 2,
               "poles": 2,
@@ -4321,7 +4339,7 @@
                   "url": "https://en.wikipedia.org/wiki/2008_Formula_Palmer_Audi_season"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 20,
               "wins": 1,
               "poles": 3,
@@ -4338,7 +4356,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Palmer_Audi"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 6,
               "wins": 0,
               "poles": 0,
@@ -4355,7 +4373,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Palmer_Audi"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 3,
               "wins": 0,
               "poles": 0,
@@ -8481,6 +8499,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -13091,6 +13113,10 @@
                 "value": {
                   "text": "French",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
                     {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
@@ -18199,7 +18225,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Palmer_Audi"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 4,
               "wins": 0,
               "poles": 0,
@@ -23748,7 +23774,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -23945,6 +23976,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -25515,7 +25550,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -25631,7 +25671,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CL",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25644,7 +25684,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CL",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25657,7 +25697,7 @@
                 "url": "https://en.wikipedia.org/wiki/Swedish_Winter_Grand_Prix"
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA A-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -25670,7 +25710,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA A-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -25683,7 +25723,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CL",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25696,7 +25736,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CL",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25709,7 +25749,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CL",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25722,7 +25762,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25735,7 +25775,7 @@
                 "url": "https://en.wikipedia.org/wiki/Penya_Rhin_Grand_Prix"
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25748,7 +25788,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CL",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25761,7 +25801,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25774,7 +25814,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25787,7 +25827,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25800,7 +25840,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25813,7 +25853,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25826,7 +25866,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25862,7 +25902,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25921,7 +25961,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -25934,7 +25974,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -26002,7 +26042,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -26061,7 +26101,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -26262,7 +26302,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maserati 4CLT",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -26643,7 +26683,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Aston Martin DB3S",
                 "url": "https://en.wikipedia.org/wiki/Aston_Martin_DB3S"
@@ -26720,7 +26760,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Aston Martin DB3S",
                 "url": "https://en.wikipedia.org/wiki/Aston_Martin_DB3S"
@@ -26733,7 +26773,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Aston Martin DB3S",
                 "url": "https://en.wikipedia.org/wiki/Aston_Martin_DB3S"
@@ -28004,7 +28044,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -28520,6 +28565,10 @@
                 "value": {
                   "text": "Italian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    },
                     {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
@@ -35709,7 +35758,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Canadian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Canada"
+                    }
+                  ]
                 }
               },
               {
@@ -35859,7 +35913,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -36029,6 +36088,10 @@
                 "value": {
                   "text": "Italian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    },
                     {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
@@ -36243,6 +36306,10 @@
                 "value": {
                   "text": "Mexican",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Mexico"
+                    },
                     {
                       "text": "Mexican",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Mexico"
@@ -36502,7 +36569,7 @@
                 "series": "Easykart Mexico",
                 "class": "100 cc"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -44084,7 +44151,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Spanish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Spain"
+                    }
+                  ]
                 }
               },
               {
@@ -55685,6 +55757,10 @@
                   "text": "French",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
+                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -60769,7 +60845,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -62261,7 +62342,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -62425,6 +62511,10 @@
                   "text": "Swedish",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Sweden"
+                    },
+                    {
                       "text": "Swedish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
                     }
@@ -62570,7 +62660,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Three#Defunct_series"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -62587,7 +62677,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Three#Defunct_series"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -68105,6 +68195,10 @@
                   "text": "Russian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Russia"
+                    },
+                    {
                       "text": "Russian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Russia"
                     }
@@ -68205,6 +68299,10 @@
                 "value": {
                   "text": "FIA Platinum",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
                     {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
@@ -74084,7 +74182,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Argentine",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Argentina"
+                    }
+                  ]
                 }
               },
               {
@@ -74255,6 +74358,10 @@
                 "value": {
                   "text": "Australian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Australia"
+                    },
                     {
                       "text": "Australian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
@@ -74603,7 +74710,7 @@
                 "series": "IAME International Final",
                 "class": "X30 Junior"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -78853,6 +78960,10 @@
                   "text": "French",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
+                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -82246,7 +82357,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -82392,7 +82508,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    }
+                  ]
                 }
               },
               {
@@ -82549,7 +82670,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -83641,7 +83767,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    }
+                  ]
                 }
               },
               {
@@ -83789,7 +83920,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    }
+                  ]
                 }
               },
               {
@@ -86778,7 +86914,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -86916,7 +87057,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -88053,6 +88199,10 @@
                   "text": "Brazilian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    },
+                    {
                       "text": "Brazilian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
                     }
@@ -88269,7 +88419,7 @@
               "series": {
                 "series": "Campeonato Brasiliense de Divisão 4"
               },
-              "team": [],
+              "team": null,
               "races": 4,
               "wins": 1,
               "poles": 1,
@@ -88283,7 +88433,7 @@
               "series": {
                 "series": "Prêmio Aniversário de Brasília"
               },
-              "team": [],
+              "team": null,
               "races": 1,
               "wins": 0,
               "poles": 0,
@@ -88316,7 +88466,7 @@
               "series": {
                 "series": "Formula Super Vê Brasil"
               },
-              "team": [],
+              "team": null,
               "races": 6,
               "wins": 0,
               "poles": 0,
@@ -88350,7 +88500,7 @@
                 "series": "Cascavel de Ouro",
                 "class": "7° edição"
               },
-              "team": [],
+              "team": null,
               "races": 1,
               "wins": 1,
               "poles": 0,
@@ -94930,7 +95080,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -95087,6 +95242,10 @@
                 "value": {
                   "text": "French",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
                     {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
@@ -95299,7 +95458,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Renault"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -95316,7 +95475,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Renault"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -97429,6 +97588,10 @@
                   "text": "Italian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    },
+                    {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
                     }
@@ -97707,6 +97870,10 @@
                 "value": {
                   "text": "FIA Gold",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Gold_Driver.png"
+                    },
                     {
                       "text": "FIA Gold",
                       "url": "https://en.wikipedia.org/wiki/FIA_Gold_Categorisation"
@@ -105420,7 +105587,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    }
+                  ]
                 }
               },
               {
@@ -110178,7 +110350,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -110324,7 +110501,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Dutch",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Netherlands"
+                    }
+                  ]
                 }
               },
               {
@@ -110812,7 +110994,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -110960,7 +111147,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Spanish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Spain"
+                    }
+                  ]
                 }
               },
               {
@@ -111041,7 +111233,12 @@
                 "label": "Signature",
                 "value": {
                   "text": null,
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:Alfonso_de_Portago_signature.svg"
+                    }
+                  ]
                 }
               }
             ]
@@ -111171,7 +111368,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -111323,7 +111525,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    }
+                  ]
                 }
               },
               {
@@ -111485,7 +111692,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -112495,7 +112707,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -112907,8 +113124,8 @@
             },
             {
               "year": null,
-              "entrant": [],
-              "chassis": [],
+              "entrant": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": null,
@@ -114215,6 +114432,10 @@
                   "text": "French",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
+                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -114369,7 +114590,7 @@
                 "series": "French Championship",
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -114378,7 +114599,7 @@
                 "series": "French Championship",
                 "class": "Senior"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -114387,7 +114608,7 @@
                 "series": "European Championship",
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -114399,7 +114620,7 @@
                 },
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -114411,7 +114632,7 @@
                 },
                 "class": "Senior"
               },
-              "team": [],
+              "team": null,
               "position": "14th"
             },
             {
@@ -114420,7 +114641,7 @@
                 "series": "French Championship",
                 "class": "Senior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -114432,7 +114653,7 @@
                 },
                 "class": "Senior"
               },
-              "team": [],
+              "team": null,
               "position": "23rd"
             },
             {
@@ -114441,7 +114662,7 @@
                 "series": "French Championship",
                 "class": "Senior"
               },
-              "team": [],
+              "team": null,
               "position": "1st (DSQ)"
             },
             {
@@ -114453,7 +114674,7 @@
                 },
                 "class": "Senior"
               },
-              "team": [],
+              "team": null,
               "position": "9th"
             }
           ],
@@ -114535,7 +114756,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Renault#Championships_2"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 16,
               "wins": 6,
               "poles": 4,
@@ -119319,6 +119540,10 @@
                   "text": "British",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
+                    {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
                     }
@@ -119485,7 +119710,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {

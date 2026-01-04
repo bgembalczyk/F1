@@ -89,6 +89,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -172,6 +176,10 @@
                 "value": {
                   "text": "Japanese",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    },
                     {
                       "text": "Japanese",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
@@ -8238,6 +8246,10 @@
                   "text": "Japanese",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    },
+                    {
                       "text": "Japanese",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
                     }
@@ -11944,7 +11956,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Japanese",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    }
+                  ]
                 }
               },
               {
@@ -12425,6 +12442,10 @@
                 "value": {
                   "text": "Italian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    },
                     {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
@@ -21394,6 +21415,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -21497,6 +21522,10 @@
                 "value": {
                   "text": "Brazilian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    },
                     {
                       "text": "Brazilian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
@@ -27929,7 +27958,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -28093,7 +28127,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -28493,7 +28532,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -32620,7 +32664,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Danish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Denmark"
+                    }
+                  ]
                 }
               },
               {
@@ -32762,7 +32811,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    }
+                  ]
                 }
               },
               {
@@ -35925,7 +35979,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "New Zealander",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/New_Zealand"
+                    }
+                  ]
                 }
               },
               {
@@ -36067,7 +36126,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -36224,7 +36288,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -36352,7 +36421,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    }
+                  ]
                 }
               },
               {
@@ -36992,6 +37066,10 @@
                 "value": {
                   "text": "Swedish",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Sweden"
+                    },
                     {
                       "text": "Swedish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
@@ -43035,6 +43113,10 @@
                   "text": "British",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
+                    {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
                     }
@@ -43333,7 +43415,7 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "35th"
             },
             {
@@ -43342,7 +43424,7 @@
                 "series": "Formula Kart Stars MSA",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "21st"
             },
             {
@@ -43354,7 +43436,7 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "14th"
             },
             {
@@ -43363,7 +43445,7 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "27th"
             },
             {
@@ -43372,7 +43454,7 @@
                 "series": "Formula Kart Stars MSA",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "10th"
             },
             {
@@ -43384,7 +43466,7 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -43393,7 +43475,7 @@
                 "series": "Trent Valley Kart Club",
                 "class": "Minimax"
               },
-              "team": [],
+              "team": null,
               "position": "27th"
             },
             {
@@ -43402,7 +43484,7 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "25th"
             },
             {
@@ -43414,7 +43496,7 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -43423,7 +43505,7 @@
                 "series": "MSA British Championship",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "6th"
             },
             {
@@ -43449,7 +43531,7 @@
                 },
                 "class": "Rotax Mini Max"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -43458,7 +43540,7 @@
                 "series": "Formula Kart Stars",
                 "class": "Mini Max"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -43467,7 +43549,7 @@
                 "series": "Formula Kart Stars",
                 "class": "Junior Max"
               },
-              "team": [],
+              "team": null,
               "position": "18th"
             },
             {
@@ -43510,7 +43592,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -51549,7 +51631,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {

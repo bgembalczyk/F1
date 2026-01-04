@@ -83,6 +83,10 @@
                   "text": "Belgian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    },
+                    {
                       "text": "Belgian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Belgium"
                     }
@@ -5882,7 +5886,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -6623,7 +6632,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -9882,6 +9896,10 @@
                 "value": {
                   "text": "Irish",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Republic_of_Ireland"
+                    },
                     {
                       "text": "Irish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Ireland"
@@ -15174,7 +15192,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -15329,7 +15352,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Argentine",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Argentina"
+                    }
+                  ]
                 }
               },
               {
@@ -15553,6 +15581,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -21943,7 +21975,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swiss",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Switzerland"
+                    }
+                  ]
                 }
               },
               {
@@ -25533,6 +25570,10 @@
                 "value": {
                   "text": "French",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
                     {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
@@ -30017,6 +30058,10 @@
                   "text": "Brazilian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    },
+                    {
                       "text": "Brazilian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
                     }
@@ -33111,7 +33156,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -33249,7 +33299,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -35379,6 +35434,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -37584,7 +37643,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -37907,6 +37971,10 @@
                   "text": "Australian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Australia"
+                    },
+                    {
                       "text": "Australian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
                     }
@@ -38130,7 +38198,7 @@
                 "series": "SKUSA SuperNationals",
                 "class": "TaG Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "38th"
             },
             {
@@ -38139,7 +38207,7 @@
                 "series": "SKUSA Pro Tour",
                 "class": "TaG Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "16th"
             },
             {
@@ -38162,7 +38230,7 @@
                 "series": "Florida Winter Tour",
                 "class": "Rotax Micro Max"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -38171,7 +38239,7 @@
                 "series": "SKUSA Pro Tour",
                 "class": "TaG Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "20th"
             },
             {
@@ -38180,7 +38248,7 @@
                 "series": "Australian Kart Championship",
                 "class": "KA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -38189,7 +38257,7 @@
                 "series": "Australian Kart Championship",
                 "class": "KA2"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -38232,7 +38300,7 @@
                 "series": "ROK Cup International Final",
                 "class": "Junior ROK"
               },
-              "team": [],
+              "team": null,
               "position": "13th"
             },
             {
@@ -38241,7 +38309,7 @@
                 "series": "IAME International Final",
                 "class": "X30 Junior"
               },
-              "team": [],
+              "team": null,
               "position": "NC"
             },
             {
@@ -38369,7 +38437,7 @@
                 "series": "Australian Kart Championship",
                 "class": "KA2"
               },
-              "team": [],
+              "team": null,
               "position": "12th"
             }
           ],
@@ -44021,8 +44089,16 @@
                   "text": "Monégasque ( 2005 ) Dutch ( 2006 )",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Monaco"
+                    },
+                    {
                       "text": "2005",
                       "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+                    },
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Netherlands"
                     },
                     {
                       "text": "2006",
@@ -44389,7 +44465,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -44531,7 +44612,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -44722,7 +44808,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -44850,7 +44941,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    }
+                  ]
                 }
               },
               {
@@ -47029,7 +47125,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -48765,7 +48866,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -48923,7 +49029,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -49441,7 +49552,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Brazilian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    }
+                  ]
                 }
               },
               {

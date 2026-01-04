@@ -75,7 +75,7 @@
                 "url": "https://en.wikipedia.org/wiki/Eifelrennen"
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Velocette",
                 "url": "https://en.wikipedia.org/wiki/Velocette"
@@ -1024,7 +1024,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -1151,8 +1156,8 @@
                 "text": "1955",
                 "url": "https://en.wikipedia.org/wiki/1955_AAA_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -1311,8 +1316,8 @@
                 "text": "1962",
                 "url": "https://en.wikipedia.org/wiki/1962_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -1493,8 +1498,8 @@
                 "text": "1963",
                 "url": "https://en.wikipedia.org/wiki/1963_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -1664,8 +1669,8 @@
                 "text": "1964",
                 "url": "https://en.wikipedia.org/wiki/1964_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -1846,8 +1851,8 @@
                 "text": "1965",
                 "url": "https://en.wikipedia.org/wiki/1965_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -2083,8 +2088,8 @@
                 "text": "1966",
                 "url": "https://en.wikipedia.org/wiki/1966_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -2298,8 +2303,8 @@
                 "text": "1967",
                 "url": "https://en.wikipedia.org/wiki/1967_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -2579,7 +2584,7 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -2925,8 +2930,8 @@
                 "text": "1969",
                 "url": "https://en.wikipedia.org/wiki/1969_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -3228,8 +3233,8 @@
                 "text": "1970",
                 "url": "https://en.wikipedia.org/wiki/1970_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -3465,8 +3470,8 @@
                 "text": "1971",
                 "url": "https://en.wikipedia.org/wiki/1971_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -3636,8 +3641,8 @@
                 "text": "1972",
                 "url": "https://en.wikipedia.org/wiki/1972_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -3785,8 +3790,8 @@
                 "text": "1973",
                 "url": "https://en.wikipedia.org/wiki/1973_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -4000,8 +4005,8 @@
                 "text": "1974",
                 "url": "https://en.wikipedia.org/wiki/1974_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -5395,8 +5400,8 @@
                 "text": "1979",
                 "url": "https://en.wikipedia.org/wiki/1979_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -5511,8 +5516,8 @@
                 "text": "1980",
                 "url": "https://en.wikipedia.org/wiki/1980_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -5605,8 +5610,8 @@
                 "text": "1981-82",
                 "url": "https://en.wikipedia.org/wiki/1981%E2%80%9382_USAC_Championship_Car_season"
               },
-              "team": [],
-              "chassis": [],
+              "team": null,
+              "chassis": null,
               "engine": null,
               "1": {
                 "round": {
@@ -7267,7 +7272,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Uruguayan",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Uruguay"
+                    }
+                  ]
                 }
               },
               {

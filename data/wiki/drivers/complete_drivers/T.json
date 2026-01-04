@@ -66,7 +66,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -344,7 +349,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Japanese",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    }
+                  ]
                 }
               },
               {
@@ -3779,7 +3789,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Japanese",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    }
+                  ]
                 }
               },
               {
@@ -5253,6 +5268,10 @@
                 "value": {
                   "text": "French",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
                     {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
@@ -10526,7 +10545,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -10791,6 +10815,10 @@
                 "value": {
                   "text": "Italian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    },
                     {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
@@ -25918,6 +25946,10 @@
                   "text": "Italian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    },
+                    {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
                     }
@@ -26083,7 +26115,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -26550,7 +26587,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -27410,7 +27452,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -28514,7 +28561,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -28686,7 +28738,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -29477,7 +29534,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swiss",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Switzerland"
+                    }
+                  ]
                 }
               },
               {
@@ -29768,7 +29830,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "New Zealander",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/New_Zealand"
+                    }
+                  ]
                 }
               },
               {
@@ -33548,6 +33615,14 @@
                     {
                       "text": "clarification needed",
                       "url": "https://en.wikipedia.org/wiki/Wikipedia:Please_clarify"
+                    },
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    },
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
                     }
                   ]
                 }
@@ -33683,7 +33758,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -33821,7 +33901,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Connaught A",
                 "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
@@ -33857,7 +33937,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Connaught A",
                 "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
@@ -33893,7 +33973,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Connaught A",
                 "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
@@ -34743,7 +34823,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -35134,8 +35219,16 @@
                   "text": "Federation of Rhodesia and Nyasaland ( 1963 ) Rhodesian (1964) ( 1965 , 1967-1968 ) Rhodesian ( 1969 )",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Federation_of_Rhodesia_and_Nyasaland"
+                    },
+                    {
                       "text": "1963",
                       "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+                    },
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Rhodesia"
                     },
                     {
                       "text": "1965",
@@ -35148,6 +35241,10 @@
                     {
                       "text": "1968",
                       "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+                    },
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Rhodesia"
                     },
                     {
                       "text": "1969",
@@ -35304,7 +35401,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -35442,7 +35544,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -35600,7 +35707,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Argentine",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Argentina"
+                    }
+                  ]
                 }
               },
               {
@@ -36172,7 +36284,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    }
+                  ]
                 }
               },
               {
@@ -36325,7 +36442,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -40885,6 +41007,10 @@
                   "text": "French",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
+                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -44751,6 +44877,10 @@
                   "text": "West German",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/West_Germany"
+                    },
+                    {
                       "text": "West German",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
                     }
@@ -46827,6 +46957,10 @@
                 "value": {
                   "text": "Italian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    },
                     {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
@@ -52986,6 +53120,10 @@
                   "text": "Japanese",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    },
+                    {
                       "text": "Japanese",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
                     }
@@ -53204,7 +53342,7 @@
               "series": {
                 "series": "Nakai Inter Circuit Kids Class"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -53212,14 +53350,14 @@
               "series": {
                 "series": "East Japan Junior Comer 60"
               },
-              "team": []
+              "team": null
             },
             {
               "season": 2008,
               "series": {
                 "series": "Mobara West Cup Series"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -53228,7 +53366,7 @@
                 "series": "East Japan",
                 "class": "Junior Expert"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -53237,7 +53375,7 @@
                 "series": "Haruna Cup Series",
                 "class": "Yamaha Cadets Open"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -53246,7 +53384,7 @@
                 "series": "Shin",
                 "class": "Tokyo NIC Cup Series-Yamaha Cadets Open"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -53255,7 +53393,7 @@
                 "series": "JAF Junior Karting Championship",
                 "class": "FP-Jr Cadets Class"
               },
-              "team": [],
+              "team": null,
               "position": "6th"
             },
             {
@@ -53264,7 +53402,7 @@
                 "series": "Haruna Cup Series",
                 "class": "Yamaha Cadets Open"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -53273,7 +53411,7 @@
                 "series": "Shin",
                 "class": "Tokyo NIC Cup Series-Yamaha Cadets Open"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -53282,7 +53420,7 @@
                 "series": "JAF Junior Karting Championship",
                 "class": "FP-Jr Cadets Class"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -53291,7 +53429,7 @@
                 "series": "JAF Junior Karting Championship",
                 "class": "FP-Jr Cadets"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -53300,7 +53438,7 @@
                 "series": "JAF Regional Karting Championship",
                 "class": "FS125"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -53309,7 +53447,7 @@
                 "series": "Twin Ring Motegi Karting Race Series",
                 "class": "X30"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -53318,7 +53456,7 @@
                 "series": "JAF All Japan Karting Championship",
                 "class": "FS125"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -53327,7 +53465,7 @@
                 "series": "JAF All Japan Karting Championship",
                 "class": "FS125"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -53339,7 +53477,7 @@
                 },
                 "class": "KF"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             }
           ],
@@ -57331,7 +57469,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Argentine",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Argentina"
+                    }
+                  ]
                 }
               },
               {
@@ -58075,7 +58218,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    }
+                  ]
                 }
               },
               {
@@ -58217,7 +58365,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {

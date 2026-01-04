@@ -56,7 +56,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Canadian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Canada"
+                    }
+                  ]
                 }
               },
               {
@@ -197,6 +202,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -339,7 +348,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -492,6 +506,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/United_Kingdom"
@@ -8937,7 +8955,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -10689,7 +10712,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -10832,7 +10860,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Czech",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Czech_Republic"
+                    }
+                  ]
                 }
               },
               {
@@ -18883,7 +18916,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Australian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Australia"
+                    }
+                  ]
                 }
               },
               {
@@ -19200,6 +19238,10 @@
                   "text": "Swedish",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Sweden"
+                    },
+                    {
                       "text": "Swedish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
                     }
@@ -19384,7 +19426,7 @@
                 "series": "MKR Series Sweden",
                 "class": "Formula Micro"
               },
-              "team": [],
+              "team": null,
               "position": "18th"
             },
             {
@@ -19393,7 +19435,7 @@
                 "series": "MKR Series Sweden",
                 "class": "Formula Micro"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -19402,7 +19444,7 @@
                 "series": "MKR Series Sweden",
                 "class": "Formula Mini"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -19439,7 +19481,7 @@
                 "series": "Tom Trana Trophy",
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -19451,7 +19493,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "17th"
             },
             {
@@ -19480,7 +19522,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "25th"
             },
             {
@@ -19506,7 +19548,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "10th"
             },
             {
@@ -19515,7 +19557,7 @@
                 "series": "Torneo Industrie",
                 "class": "ICA"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -19524,7 +19566,7 @@
                 "series": "Nordic Championship",
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -19536,7 +19578,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -19579,7 +19621,7 @@
                 },
                 "class": "ICA"
               },
-              "team": [],
+              "team": null,
               "position": "16th"
             },
             {
@@ -19619,7 +19661,7 @@
                 "series": "Trofeo Andrea Margutti",
                 "class": "ICA"
               },
-              "team": [],
+              "team": null,
               "position": "26th"
             },
             {
@@ -19631,7 +19673,7 @@
                 },
                 "class": "ICA"
               },
-              "team": [],
+              "team": null,
               "position": "17th"
             },
             {
@@ -26986,7 +27028,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Austrian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Austria"
+                    }
+                  ]
                 }
               },
               {
@@ -27144,7 +27191,7 @@
                 "url": "https://en.wikipedia.org/wiki/Formula_Super_Vee"
               },
               "position": 12,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Maco-Volkswagen",
                 "url": null
@@ -27220,7 +27267,7 @@
                 "url": "https://en.wikipedia.org/wiki/Formula_Super_Vee"
               },
               "position": 19,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Horag-Volkswagen",
                 "url": null
@@ -27233,7 +27280,7 @@
                 "url": "https://en.wikipedia.org/wiki/Formula_Super_Vee"
               },
               "position": 21,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Horag-Volkswagen",
                 "url": null
@@ -30032,7 +30079,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Argentine",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Argentina"
+                    }
+                  ]
                 }
               },
               {
@@ -30180,7 +30232,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {

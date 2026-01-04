@@ -872,7 +872,7 @@
                   "url": "https://en.wikipedia.org/wiki/IROC_XXI"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 4,
               "wins": 0,
               "poles": 3,
@@ -6449,7 +6449,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Spanish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Spain"
+                    }
+                  ]
                 }
               },
               {
@@ -6999,7 +7004,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Brazilian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    }
+                  ]
                 }
               },
               {
@@ -7165,7 +7175,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -8300,7 +8315,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Argentine",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Argentina"
+                    }
+                  ]
                 }
               },
               {

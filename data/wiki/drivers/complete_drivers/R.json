@@ -68,7 +68,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -334,7 +339,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -659,6 +669,10 @@
                 "value": {
                   "text": "Finnish",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Finland"
+                    },
                     {
                       "text": "Finnish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Finland"
@@ -7870,7 +7884,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Brazilian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    }
+                  ]
                 }
               },
               {
@@ -8013,7 +8032,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -14060,6 +14084,10 @@
                   "text": "Austrian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Austria"
+                    },
+                    {
                       "text": "Austrian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"
                     }
@@ -14320,7 +14348,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Ford"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -14338,7 +14366,7 @@
                 },
                 "class": "Ford Race of Champions"
               },
-              "team": [],
+              "team": null,
               "races": 1,
               "wins": 1,
               "poles": 0,
@@ -16616,6 +16644,10 @@
                   "text": "Mexican",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Mexico"
+                    },
+                    {
                       "text": "Mexican",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Mexico"
                     }
@@ -16891,7 +16923,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 6,
               "wins": 0,
               "poles": 0,
@@ -19189,7 +19221,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -23140,7 +23177,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Rhodesian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Rhodesia"
+                    }
+                  ]
                 }
               },
               {
@@ -23420,7 +23462,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -23598,6 +23645,10 @@
                 "value": {
                   "text": "Swiss",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Switzerland"
+                    },
                     {
                       "text": "Swiss",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Switzerland"
@@ -29284,6 +29335,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -29370,6 +29425,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -29647,7 +29706,7 @@
                 "series": "Torneo Industrie Open",
                 "class": "100 Junior"
               },
-              "team": [],
+              "team": null,
               "position": "36th"
             },
             {
@@ -29659,7 +29718,7 @@
                 },
                 "class": "FIA Green Helmet Trophy-Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -29671,7 +29730,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -29680,7 +29739,7 @@
                 "series": "South Garda Winter Cup",
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -29692,7 +29751,7 @@
                 },
                 "class": "JICA"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -29704,7 +29763,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "10th"
             },
             {
@@ -29716,7 +29775,7 @@
                 },
                 "class": "JICA"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -29725,7 +29784,7 @@
                 "series": "South Garda Winter Cup",
                 "class": "Formula A"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -29737,7 +29796,7 @@
                 },
                 "class": "Formula A"
               },
-              "team": [],
+              "team": null,
               "position": "6th"
             },
             {
@@ -29780,7 +29839,7 @@
                 "series": "ERDF Masters Kart",
                 "class": "Stars"
               },
-              "team": [],
+              "team": null,
               "position": "8th"
             }
           ],
@@ -38243,6 +38302,10 @@
                   "text": "Argentine",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Argentina"
+                    },
+                    {
                       "text": "Argentine",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Argentina"
                     }
@@ -43159,6 +43222,10 @@
                 "value": {
                   "text": "American",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    },
                     {
                       "text": "American",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_States"
@@ -48504,7 +48571,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -50407,6 +50479,10 @@
                   "text": "Brazilian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    },
+                    {
                       "text": "Brazilian",
                       "url": "https://en.wikipedia.org/wiki/Brazil"
                     }
@@ -52178,6 +52254,10 @@
                 "value": {
                   "text": "Australian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Australia"
+                    },
                     {
                       "text": "Australian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
@@ -55762,7 +55842,7 @@
                   ]
                 }
               ],
-              "chassis": [],
+              "chassis": null,
               "engine": null,
               "1": null,
               "2": null,
@@ -59731,7 +59811,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -59871,7 +59956,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -60505,6 +60595,10 @@
                 "value": {
                   "text": "Austrian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Austria"
+                    },
                     {
                       "text": "Austrian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"
@@ -64279,7 +64373,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -64419,7 +64518,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -64547,7 +64651,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -64740,6 +64849,10 @@
                 "value": {
                   "text": "Mexican",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Mexico"
+                    },
                     {
                       "text": "Mexican",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Mexico"
@@ -68199,7 +68312,7 @@
             {
               "year": "1961",
               "race": "I GP Independencia",
-              "team": [],
+              "team": null,
               "chassis": [
                 "250 GT Cal"
               ],
@@ -68559,7 +68672,7 @@
                 "text": "12 Hours of Sebring",
                 "url": "https://en.wikipedia.org/wiki/12_Hours_of_Sebring"
               },
-              "team": [],
+              "team": null,
               "chassis": [
                 "250 GTO"
               ],
@@ -70793,7 +70906,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Mexican",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Mexico"
+                    }
+                  ]
                 }
               },
               {
@@ -71914,7 +72032,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -72061,7 +72184,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -72224,7 +72352,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Triumph Dolomite",
                 "url": "https://en.wikipedia.org/wiki/Triumph_Dolomite_(1934%E2%80%9340)"
@@ -72237,7 +72365,7 @@
                 "url": "https://en.wikipedia.org/wiki/British_Empire_Trophy"
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA B-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -72250,7 +72378,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Alfa Romeo Bimotore",
                 "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_8C#1935_Bimotore"
@@ -72263,7 +72391,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Delage-ERA 15S8",
                 "url": "https://en.wikipedia.org/wiki/Delage"
@@ -72276,7 +72404,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Delage-ERA 15S8",
                 "url": "https://en.wikipedia.org/wiki/Delage"
@@ -72289,7 +72417,7 @@
                 "url": "https://en.wikipedia.org/wiki/BRDC_International_Trophy"
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "HWM-Alta",
                 "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
@@ -72486,7 +72614,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Delage-ERA 15S8",
                 "url": "https://en.wikipedia.org/wiki/Delage"
@@ -73437,7 +73565,7 @@
                 "text": "1936",
                 "url": null
               },
-              "team": [],
+              "team": null,
               "co_drivers": [
                 {
                   "text": "Jack Elliott",
@@ -73623,7 +73751,7 @@
                 "text": "1948",
                 "url": null
               },
-              "team": [],
+              "team": null,
               "co_drivers": [
                 {
                   "text": "John Heath",
@@ -73704,7 +73832,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swedish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Sweden"
+                    }
+                  ]
                 }
               },
               {
@@ -73800,7 +73933,7 @@
                 "text": "1973",
                 "url": "https://en.wikipedia.org/wiki/1973_SCCA_Formula_Super_Vee_season"
               },
-              "team": [],
+              "team": null,
               "chassis": [
                 "TUI BH3"
               ],
@@ -74313,6 +74446,10 @@
                 "value": {
                   "text": "Spanish",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Spain"
+                    },
                     {
                       "text": "Spanish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Spain"
@@ -75762,7 +75899,7 @@
               "result": "1",
               "class": "1:8 IC Off-Road",
               "venue": "France",
-              "entrant": [],
+              "entrant": null,
               "car": "Yankee Enduro 84x4",
               "motor": "Picco"
             },
@@ -75771,7 +75908,7 @@
               "result": "1",
               "class": "1:8 IC Off-Road",
               "venue": "Sweden",
-              "entrant": [],
+              "entrant": null,
               "car": "Yankee Enduro 84x4",
               "motor": "Picco"
             }
@@ -75802,7 +75939,7 @@
               "result": "1",
               "class": "1:8 IC Off-Road",
               "venue": null,
-              "entrant": [],
+              "entrant": null,
               "car": "Garbo",
               "motor": "Picco"
             },
@@ -75811,7 +75948,7 @@
               "result": "1",
               "class": "1:8 IC Off-Road",
               "venue": null,
-              "entrant": [],
+              "entrant": null,
               "car": "Garbo",
               "motor": "Picco"
             },
@@ -75820,7 +75957,7 @@
               "result": "1",
               "class": "1:8 IC Off-Road",
               "venue": null,
-              "entrant": [],
+              "entrant": null,
               "car": "Garbo",
               "motor": "Picco"
             }
@@ -79733,6 +79870,10 @@
                 "value": {
                   "text": "Finnish",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Finland"
+                    },
                     {
                       "text": "Finnish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Finland"
@@ -86398,6 +86539,10 @@
                   "text": "German",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    },
+                    {
                       "text": "German",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
                     }
@@ -86556,7 +86701,7 @@
                 "series": "Trophee Jérôme Bernard",
                 "class": "Minimes"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -86565,7 +86710,7 @@
                 "series": "Trophee de France",
                 "class": "Minimes"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -86574,7 +86719,7 @@
                 "series": "Torneo Industrie",
                 "class": "100 Junior"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -86586,7 +86731,7 @@
                 },
                 "class": "FIA Green Helmet Trophy-Cadet"
               },
-              "team": [],
+              "team": null,
               "position": null
             },
             {
@@ -86626,7 +86771,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -86635,7 +86780,7 @@
                 "series": "Trofeo Andrea Margutti",
                 "class": "Formula A"
               },
-              "team": [],
+              "team": null,
               "position": "18th"
             },
             {
@@ -86695,7 +86840,7 @@
                 },
                 "class": "Formula A"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -86707,7 +86852,7 @@
                 },
                 "class": "Formula Super A"
               },
-              "team": [],
+              "team": null,
               "position": "16th"
             }
           ],
@@ -86737,7 +86882,7 @@
               "series": {
                 "series": "Formula BMW Junior Cup Iberia"
               },
-              "team": [],
+              "team": null,
               "races": 3,
               "wins": 0,
               "poles": 0,
@@ -91890,6 +92035,10 @@
                   "text": "French",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
+                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -96264,7 +96413,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Brazilian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    }
+                  ]
                 }
               },
               {
@@ -98597,6 +98751,10 @@
                 "value": {
                   "text": "American",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    },
                     {
                       "text": "American",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_States"
@@ -108521,7 +108679,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Dutch",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Netherlands"
+                    }
+                  ]
                 }
               },
               {
@@ -110390,7 +110553,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    }
+                  ]
                 }
               },
               {
@@ -111385,7 +111553,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swiss",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Switzerland"
+                    }
+                  ]
                 }
               },
               {
@@ -111565,6 +111738,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -111785,7 +111962,7 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "WTP Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "6th"
             },
             {
@@ -111794,7 +111971,7 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "WTP Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -111803,7 +111980,7 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "WTP Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -111812,7 +111989,7 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -111824,7 +112001,7 @@
                 },
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "16th"
             },
             {
@@ -111833,7 +112010,7 @@
                 "series": "Manchester & Buxton Kart Club",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "8th"
             },
             {
@@ -111845,7 +112022,7 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "20th"
             },
             {
@@ -111854,7 +112031,7 @@
                 "series": "British Open Championship",
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -111880,7 +112057,7 @@
                 },
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -111892,7 +112069,7 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -111901,7 +112078,7 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "Comer Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -111947,7 +112124,7 @@
                 },
                 "class": "Mini Max"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -111976,7 +112153,7 @@
                 },
                 "class": "Junior Max"
               },
-              "team": [],
+              "team": null,
               "position": "43rd"
             },
             {
@@ -111988,7 +112165,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -112000,7 +112177,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "17th"
             },
             {
@@ -112114,7 +112291,7 @@
                 },
                 "class": "Bercy-Junior"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -112143,7 +112320,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -112155,7 +112332,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -112269,7 +112446,7 @@
                 },
                 "class": "KF2"
               },
-              "team": [],
+              "team": null,
               "position": "9th"
             },
             {
@@ -118870,7 +119047,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -119048,7 +119230,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Canadian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Canada"
+                    }
+                  ]
                 }
               },
               {

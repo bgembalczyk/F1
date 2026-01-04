@@ -49,6 +49,10 @@
                   "text": "Japanese",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    },
+                    {
                       "text": "Japanese",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
                     }
@@ -5726,7 +5730,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Malaysian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Malaysia"
+                    }
+                  ]
                 }
               },
               {

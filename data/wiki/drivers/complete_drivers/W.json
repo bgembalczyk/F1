@@ -60,7 +60,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -214,7 +219,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Australian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Australia"
+                    }
+                  ]
                 }
               },
               {
@@ -449,7 +459,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA E-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -521,7 +531,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Cooper-ERA",
                 "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
@@ -557,7 +567,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Cooper-ERA",
                 "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
@@ -1702,7 +1712,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swiss",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Switzerland"
+                    }
+                  ]
                 }
               },
               {
@@ -2082,7 +2097,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -2298,6 +2318,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -9507,6 +9531,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -16930,6 +16958,10 @@
                   "text": "Australian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Australia"
+                    },
+                    {
                       "text": "Australian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
                     }
@@ -17191,6 +17223,10 @@
                     {
                       "text": "www.markwebber.com",
                       "url": "http://www.markwebber.com/"
+                    },
+                    {
+                      "text": "",
+                      "url": "https://www.wikidata.org/wiki/Q82667#P856"
                     }
                   ]
                 }
@@ -22893,6 +22929,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -22988,6 +23028,10 @@
                 "value": {
                   "text": "German",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    },
                     {
                       "text": "German",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
@@ -23310,7 +23354,7 @@
               "series": {
                 "series": "DMV Goldpokal Wittgenborn"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -23374,7 +23418,7 @@
               "series": {
                 "series": "DMV Goldpokal"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -23382,7 +23426,7 @@
               "series": {
                 "series": "Badenpokal"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -23566,7 +23610,7 @@
               "series": {
                 "series": "Graf Berghe von Trips Memorial"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             }
           ],
@@ -29693,7 +29737,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/West_Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -31642,7 +31691,7 @@
               "series": {
                 "series": "German Formula Ford 1600"
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -31656,7 +31705,7 @@
               "series": {
                 "series": "European Formula Ford 1600"
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -32908,7 +32957,7 @@
                 },
                 "class": "SP8"
               },
-              "team": [],
+              "team": null,
               "races": 1,
               "wins": 0,
               "poles": 0,
@@ -38955,7 +39004,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -39703,7 +39757,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -39887,7 +39946,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -40042,7 +40106,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -40164,7 +40233,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -40256,7 +40330,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA B-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -40287,7 +40361,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA B-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -40341,7 +40415,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Lister-Jaguar",
                 "url": "https://en.wikipedia.org/wiki/Lister_Cars"
@@ -40354,7 +40428,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Aston Martin DB3S",
                 "url": "https://en.wikipedia.org/wiki/Aston_Martin_DB3S"
@@ -40385,7 +40459,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Aston Martin DBR1/300",
                 "url": "https://en.wikipedia.org/wiki/Aston_Martin_DBR1"
@@ -40398,7 +40472,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Lola-Climax Mk.1",
                 "url": "https://en.wikipedia.org/wiki/Lola_Cars"
@@ -40411,7 +40485,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Ferrari 250 GT",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_250"
@@ -40917,7 +40991,7 @@
                 "text": "1953",
                 "url": null
               },
-              "team": [],
+              "team": null,
               "co_drivers": [
                 {
                   "text": "Tony Gaze",
@@ -41143,7 +41217,7 @@
                 "url": "https://en.wikipedia.org/wiki/Limerick_Grand_Prix"
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Alta",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -41228,7 +41302,7 @@
                 "url": "https://en.wikipedia.org/wiki/Australian_Hillclimb_Championship"
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA B-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -41241,7 +41315,7 @@
                 "url": "https://en.wikipedia.org/wiki/1938_Australian_Grand_Prix"
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA B-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -41272,7 +41346,7 @@
                 "url": "https://en.wikipedia.org/wiki/British_Empire_Trophy"
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA B-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -41285,7 +41359,7 @@
                 "url": "https://en.wikipedia.org/wiki/Czechoslovakian_Grand_Prix"
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -41298,7 +41372,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA B-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -41311,7 +41385,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA B-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -41324,7 +41398,7 @@
                 "url": "https://en.wikipedia.org/wiki/1949_French_Grand_Prix"
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -41337,7 +41411,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -41350,7 +41424,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -41363,7 +41437,7 @@
                 "url": "https://en.wikipedia.org/wiki/RAC_Tourist_Trophy"
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Jaguar XK120",
                 "url": "https://en.wikipedia.org/wiki/Jaguar_XK120"
@@ -41489,7 +41563,7 @@
                 "url": null
               },
               "position": 2,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "ERA E-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -41502,7 +41576,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -41515,7 +41589,7 @@
                 "url": null
               },
               "position": 3,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Ferrari 125/166",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -45546,7 +45620,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -45664,7 +45743,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -45802,7 +45886,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Canadian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Canada"
+                    }
+                  ]
                 }
               },
               {
@@ -45944,7 +46033,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -51797,7 +51891,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -52465,7 +52564,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -52979,7 +53083,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -53132,6 +53241,10 @@
                   "text": "South African",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    },
+                    {
                       "text": "South African",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_South_Africa"
                     }
@@ -53226,7 +53339,7 @@
               "series": {
                 "series": "South African Formula Vee Championship"
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -53240,7 +53353,7 @@
               "series": {
                 "series": "South African Formula Vee Championship"
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -53254,7 +53367,7 @@
               "series": {
                 "series": "South African Formula Ford Championship"
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -53268,7 +53381,7 @@
               "series": {
                 "series": "South African Formula Ford Championship"
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -53285,7 +53398,7 @@
                   "url": "https://en.wikipedia.org/wiki/List_of_Dutch_%26_Benelux_Formula_Ford_champions"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -53302,7 +53415,7 @@
                   "url": "https://en.wikipedia.org/wiki/List_of_Dutch_%26_Benelux_Formula_Ford_champions"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -53319,7 +53432,7 @@
                   "url": "https://en.wikipedia.org/wiki/British_Formula_Ford_Championship"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -53337,7 +53450,7 @@
                 },
                 "class": "Indy Series"
               },
-              "team": [],
+              "team": null,
               "races": 1,
               "wins": 0,
               "poles": 0,
@@ -53523,7 +53636,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Pacific"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 8,
               "wins": 0,
               "poles": 0,
@@ -56998,7 +57111,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -64925,6 +65043,10 @@
                   "text": "West German",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/West_Germany"
+                    },
+                    {
                       "text": "West German",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
                     }
@@ -67320,6 +67442,10 @@
                 "value": {
                   "text": "FIA Platinum",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
                     {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
@@ -76160,7 +76286,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swedish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Sweden"
+                    }
+                  ]
                 }
               },
               {
@@ -77803,7 +77934,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Dutch",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Netherlands"
+                    }
+                  ]
                 }
               },
               {
@@ -78774,6 +78910,10 @@
                 "value": {
                   "text": "Austrian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Austria"
+                    },
                     {
                       "text": "Austrian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"

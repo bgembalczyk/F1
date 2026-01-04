@@ -54,7 +54,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Austrian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Austria"
+                    }
+                  ]
                 }
               },
               {

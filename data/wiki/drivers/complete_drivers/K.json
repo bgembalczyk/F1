@@ -60,7 +60,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -187,6 +192,10 @@
                 "value": {
                   "text": "Indian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/India"
+                    },
                     {
                       "text": "Indian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_India"
@@ -605,7 +614,7 @@
               "series": {
                 "series": "MRF Madras Formula 3 Grand Prix"
               },
-              "team": [],
+              "team": null,
               "races": 4,
               "wins": 2,
               "poles": "unknown",
@@ -7144,7 +7153,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Japanese",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    }
+                  ]
                 }
               },
               {
@@ -11037,7 +11051,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Australian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Australia"
+                    }
+                  ]
                 }
               },
               {
@@ -11207,7 +11226,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -13206,7 +13230,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    }
+                  ]
                 }
               },
               {
@@ -13725,7 +13754,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Irish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Republic_of_Ireland"
+                    }
+                  ]
                 }
               },
               {
@@ -13861,7 +13895,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Irish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Republic_of_Ireland"
+                    }
+                  ]
                 }
               },
               {
@@ -15106,7 +15145,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swiss",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Switzerland"
+                    }
+                  ]
                 }
               },
               {
@@ -16691,7 +16735,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Danish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Denmark"
+                    }
+                  ]
                 }
               },
               {
@@ -19365,7 +19414,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Finnish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Finland"
+                    }
+                  ]
                 }
               },
               {
@@ -21099,7 +21153,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -21248,7 +21307,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    }
+                  ]
                 }
               },
               {
@@ -21426,6 +21490,10 @@
                 "value": {
                   "text": "Austrian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Austria"
+                    },
                     {
                       "text": "Austrian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"
@@ -28788,6 +28856,10 @@
                   "text": "West German",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/West_Germany"
+                    },
+                    {
                       "text": "West German",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
                     }
@@ -28941,7 +29013,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "East German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/East_Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -29160,6 +29237,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -29243,6 +29324,10 @@
                 "value": {
                   "text": "Japanese",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    },
                     {
                       "text": "Japanese",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
@@ -40567,7 +40652,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Austrian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Austria"
+                    }
+                  ]
                 }
               },
               {
@@ -40727,6 +40817,10 @@
                 "value": {
                   "text": "Finnish",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Finland"
+                    },
                     {
                       "text": "Finnish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Finland"
@@ -47443,7 +47537,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Finnish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Finland"
+                    }
+                  ]
                 }
               },
               {
@@ -47597,7 +47696,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -47733,7 +47837,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "East German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/East_Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -47912,6 +48021,10 @@
                 "value": {
                   "text": "FIA Platinum",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
                     {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
@@ -48119,7 +48232,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Polish",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Poland"
+                    }
+                  ]
                 }
               },
               {
@@ -48319,7 +48437,7 @@
                 "series": "Polish Championship",
                 "class": "Młodzik 02"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -48328,7 +48446,7 @@
                 "series": "Polish Championship",
                 "class": "Młodzik 02"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -48337,7 +48455,7 @@
                 "series": "Polish Championship",
                 "class": "Młodzik 02"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -48346,7 +48464,7 @@
                 "series": "Polish Championship",
                 "class": "Młodzik 01"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -48355,7 +48473,7 @@
                 "series": "Polish Championship",
                 "class": "Junior 100"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -48367,7 +48485,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -48379,7 +48497,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -48388,7 +48506,7 @@
                 "series": "Trofeo Andrea Margutti",
                 "class": "100 Junior"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -48400,7 +48518,7 @@
                 },
                 "class": "FIA Green Helmet Trophy-Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -48412,7 +48530,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -48421,7 +48539,7 @@
                 "series": "Torneo Industrie Open",
                 "class": "Formula A"
               },
-              "team": [],
+              "team": null,
               "position": "13th"
             },
             {
@@ -48430,7 +48548,7 @@
                 "series": "South Garda Winter Cup",
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -48442,7 +48560,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -48454,7 +48572,7 @@
                 },
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -48466,7 +48584,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -48492,7 +48610,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -48501,7 +48619,7 @@
                 "series": "Trofeo Andrea Margutti",
                 "class": "Formula A"
               },
-              "team": [],
+              "team": null,
               "position": "8th"
             },
             {
@@ -48510,7 +48628,7 @@
                 "series": "Torneo Industrie Open",
                 "class": "Formula A"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -48522,7 +48640,7 @@
                 },
                 "class": "Senior"
               },
-              "team": [],
+              "team": null,
               "position": "6th"
             },
             {
@@ -48534,7 +48652,7 @@
                 },
                 "class": "Formula A"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -48546,7 +48664,7 @@
                 },
                 "class": "Senior"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -48555,7 +48673,7 @@
                 "series": "South Garda Winter Cup",
                 "class": "Formula Super A"
               },
-              "team": [],
+              "team": null,
               "position": "13th"
             },
             {
@@ -48564,7 +48682,7 @@
                 "series": "Trofeo Andrea Margutti",
                 "class": "Formula A"
               },
-              "team": [],
+              "team": null,
               "position": "26th"
             }
           ],
@@ -57410,7 +57528,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -57538,7 +57661,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Japanese",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    }
+                  ]
                 }
               },
               {
@@ -57728,6 +57856,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -57802,6 +57934,10 @@
                 "value": {
                   "text": "Russian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Russia"
+                    },
                     {
                       "text": "Russian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Russia"
@@ -58096,7 +58232,7 @@
                 "series": "Torneo Industrie",
                 "class": "Minikart"
               },
-              "team": [],
+              "team": null,
               "position": "31st"
             },
             {
@@ -58105,7 +58241,7 @@
                 "series": "Torneo Industrie",
                 "class": "Minikart"
               },
-              "team": [],
+              "team": null,
               "position": "12th"
             },
             {
@@ -58117,7 +58253,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "16th"
             },
             {
@@ -58143,7 +58279,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -58189,7 +58325,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "37th"
             },
             {

@@ -70,7 +70,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -2417,6 +2422,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -2507,6 +2516,10 @@
                 "value": {
                   "text": "Belgian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    },
                     {
                       "text": "Belgian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Belgium"
@@ -2850,7 +2863,7 @@
                 "series": "Racehall of Champions",
                 "class": "80 kg"
               },
-              "team": [],
+              "team": null,
               "position": "12th"
             },
             {
@@ -2859,7 +2872,7 @@
                 "series": "Racehall of Champions",
                 "class": "80 kg"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             }
           ],
@@ -10050,6 +10063,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -10186,6 +10203,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -10276,6 +10297,10 @@
                 "value": {
                   "text": "France",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
                     {
                       "text": "France",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
@@ -18948,6 +18973,10 @@
                   "text": "Dutch",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Netherlands"
+                    },
+                    {
                       "text": "Dutch",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_Netherlands"
                     }
@@ -19140,7 +19169,7 @@
               "series": {
                 "series": "Formula Opel Lotus Benelux"
               },
-              "team": [],
+              "team": null,
               "races": 9,
               "wins": 8,
               "poles": "unknown",
@@ -19200,7 +19229,7 @@
               "series": {
                 "series": "Formula Opel Lotus Netherlands"
               },
-              "team": [],
+              "team": null,
               "races": 1,
               "wins": 0,
               "poles": 0,
@@ -19239,7 +19268,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Pacific"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 10,
               "wins": 3,
               "poles": "unknown",
@@ -19767,7 +19796,7 @@
                   "url": "https://en.wikipedia.org/wiki/2025_European_Rally_Championship"
                 }
               },
-              "team": [],
+              "team": null,
               "races": null,
               "wins": null,
               "poles": null,
@@ -22797,6 +22826,10 @@
                   "text": "Dutch",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Netherlands"
+                    },
+                    {
                       "text": "Dutch",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_Netherlands"
                     }
@@ -22991,7 +23024,7 @@
                 "series": "VAS Championship",
                 "class": "Mini Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -23000,7 +23033,7 @@
                 "series": "Dutch N.A.B. Championship",
                 "class": "Mini Junior"
               },
-              "team": [],
+              "team": null,
               "position": "16th"
             },
             {
@@ -23009,7 +23042,7 @@
                 "series": "Limburgs Kart Championship",
                 "class": "Mini Junior"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -23018,7 +23051,7 @@
                 "series": "VAS Championship",
                 "class": "Mini Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -23027,7 +23060,7 @@
                 "series": "Chrono Dutch Rotax Max Challenge",
                 "class": "Mini Max"
               },
-              "team": [],
+              "team": null,
               "position": "35th"
             },
             {
@@ -23036,7 +23069,7 @@
                 "series": "Dutch Championship",
                 "class": "Rotax Mini Max"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -23064,7 +23097,7 @@
                 "series": "VAS Championship",
                 "class": "Mini"
               },
-              "team": [],
+              "team": null,
               "position": "NC"
             },
             {
@@ -23130,7 +23163,7 @@
                 "series": "Rotax Max Challenge Belgium",
                 "class": "Mini Max"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -29555,6 +29588,10 @@
                   "text": "German",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    },
+                    {
                       "text": "German",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
                     }
@@ -29873,7 +29910,7 @@
                 "series": "Torneo Industrie Open",
                 "class": "100 Junior"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -29882,7 +29919,7 @@
                 "series": "Trofeo Andrea Margutti",
                 "class": "100 Junior"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -29894,7 +29931,7 @@
                 },
                 "class": "FIA Green Helmet Trophy-Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -29906,7 +29943,7 @@
                 },
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -29918,7 +29955,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "22nd"
             },
             {
@@ -29930,7 +29967,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -29959,7 +29996,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -29971,7 +30008,7 @@
                 },
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -29983,7 +30020,7 @@
                 },
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -37322,6 +37359,10 @@
                   "text": "Canadian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Canada"
+                    },
+                    {
                       "text": "Canadian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Canada"
                     }
@@ -39482,6 +39523,10 @@
                   "text": "Canadian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Canada"
+                    },
+                    {
                       "text": "Canadian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Canada"
                     }
@@ -41576,6 +41621,10 @@
                   "text": "Italian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    },
+                    {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
                     }
@@ -41748,6 +41797,10 @@
                 "value": {
                   "text": "Spanish",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Spain"
+                    },
                     {
                       "text": "Spanish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Spain"
@@ -42049,7 +42102,7 @@
                 "url": "https://en.wikipedia.org/wiki/European_Touring_Car_Championship"
               },
               "position": 14,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Ford Capri RS 2600",
                 "url": "https://en.wikipedia.org/wiki/Ford_Capri"
@@ -42234,7 +42287,7 @@
                 "url": null
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Ford Capri RS 3000",
                 "url": "https://en.wikipedia.org/wiki/Ford_Capri"
@@ -42288,7 +42341,7 @@
                 "url": null
               },
               "position": 8,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Porsche 944 Turbo",
                 "url": "https://en.wikipedia.org/wiki/Porsche_944"
@@ -42324,7 +42377,7 @@
                 "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Porsche 911 Carrera",
                 "url": "https://en.wikipedia.org/wiki/Porsche_911"
@@ -42337,7 +42390,7 @@
                 "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Porsche 911 Carrera",
                 "url": "https://en.wikipedia.org/wiki/Porsche_911"
@@ -42350,7 +42403,7 @@
                 "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
               },
               "position": 1,
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Porsche 911 Carrera",
                 "url": "https://en.wikipedia.org/wiki/Porsche_911"
@@ -46399,7 +46452,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swiss",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Switzerland"
+                    }
+                  ]
                 }
               },
               {
@@ -46535,7 +46593,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swiss",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Switzerland"
+                    }
+                  ]
                 }
               },
               {
@@ -47790,7 +47853,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Canadian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Canada"
+                    }
+                  ]
                 }
               },
               {
@@ -47975,8 +48043,16 @@
                   "text": "FIA Gold (until 2019) FIA Platinum (2020-)",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Gold_Driver.png"
+                    },
+                    {
                       "text": "FIA Gold",
                       "url": "https://en.wikipedia.org/wiki/FIA_Gold_Categorisation"
+                    },
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
                     },
                     {
                       "text": "FIA Platinum",
@@ -48099,6 +48175,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -48189,6 +48269,10 @@
                 "value": {
                   "text": "Dutch",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Netherlands"
+                    },
                     {
                       "text": "Dutch",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_Netherlands"
@@ -48455,7 +48539,7 @@
                 "series": "Open Belgian Championship",
                 "class": "Mini"
               },
-              "team": [],
+              "team": null,
               "position": "10th"
             },
             {
@@ -48464,7 +48548,7 @@
                 "series": "Championnat de France",
                 "class": "Minimes"
               },
-              "team": [],
+              "team": null,
               "position": "20th"
             },
             {
@@ -48473,7 +48557,7 @@
                 "series": "Belgian Championship",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -48482,7 +48566,7 @@
                 "series": "Dutch Championship",
                 "class": "ICA Junior"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -48491,7 +48575,7 @@
                 "series": "Chrono Rotax Max Winter Cup",
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -48503,7 +48587,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -48512,7 +48596,7 @@
                 "series": "Chrono Dutch Rotax Max Challenge",
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -48521,7 +48605,7 @@
                 "series": "Rotax Max Challenge Belgium",
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -48533,7 +48617,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -48613,7 +48697,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -48625,7 +48709,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "16th"
             },
             {
@@ -48671,7 +48755,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -48717,7 +48801,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "18th"
             },
             {
@@ -48899,7 +48983,7 @@
                 },
                 "class": "KZ2"
               },
-              "team": [],
+              "team": null,
               "position": "15th"
             },
             {
@@ -48928,7 +49012,7 @@
                 },
                 "class": "FIA World Championship-KF1"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             }
           ],
@@ -56704,7 +56788,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    }
+                  ]
                 }
               },
               {

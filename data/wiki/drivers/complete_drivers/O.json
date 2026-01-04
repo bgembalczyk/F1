@@ -48,7 +48,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -231,6 +236,10 @@
                 "value": {
                   "text": "French",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
                     {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
@@ -443,7 +452,7 @@
                 "series": "Championnat de France Regional Ile de France",
                 "class": "Minime"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -452,7 +461,7 @@
                 "series": "Coupe de France",
                 "class": "Mini Kart"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -461,7 +470,7 @@
                 "series": "Championnat de France",
                 "class": "Minime"
               },
-              "team": [],
+              "team": null,
               "position": "8th"
             },
             {
@@ -470,7 +479,7 @@
                 "series": "Championnat de France",
                 "class": "Minime"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -479,7 +488,7 @@
                 "series": "Bridgestone Cup",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "NC"
             },
             {
@@ -488,7 +497,7 @@
                 "series": "Championnat de France",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -500,7 +509,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "35th"
             },
             {
@@ -512,7 +521,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -524,7 +533,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "35th"
             },
             {
@@ -536,7 +545,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -548,7 +557,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -560,7 +569,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "35th"
             },
             {
@@ -572,7 +581,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "14th"
             },
             {
@@ -584,7 +593,7 @@
                 },
                 "class": "FIA European Championship-KF3"
               },
-              "team": [],
+              "team": null,
               "position": "NC"
             },
             {
@@ -596,7 +605,7 @@
                 },
                 "class": "FIA World Cup-KF3"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -608,7 +617,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -620,7 +629,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "39th"
             },
             {
@@ -632,7 +641,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "6th"
             },
             {
@@ -644,7 +653,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "6th"
             },
             {
@@ -656,7 +665,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -685,7 +694,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -697,7 +706,7 @@
                 },
                 "class": "FIA European Championship-KF3"
               },
-              "team": [],
+              "team": null,
               "position": "NC"
             },
             {
@@ -726,7 +735,7 @@
                 },
                 "class": "FIA Karting Academy Trophy"
               },
-              "team": [],
+              "team": null,
               "position": "27th"
             },
             {
@@ -738,7 +747,7 @@
                 },
                 "class": "FIA World Cup-KF3"
               },
-              "team": [],
+              "team": null,
               "position": "14th"
             },
             {
@@ -750,7 +759,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -759,7 +768,7 @@
                 "series": "ERDF Masters Kart",
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "9th"
             },
             {
@@ -771,7 +780,7 @@
                 },
                 "class": "KF2"
               },
-              "team": [],
+              "team": null,
               "position": "14th"
             }
           ],
@@ -7145,7 +7154,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Portuguese",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Portugal"
+                    }
+                  ]
                 }
               },
               {
@@ -7261,6 +7275,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -15796,7 +15814,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Liechtensteiner",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Liechtenstein"
+                    }
+                  ]
                 }
               },
               {
@@ -15940,7 +15963,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Austrian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Austria"
+                    }
+                  ]
                 }
               },
               {
@@ -16689,7 +16717,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {

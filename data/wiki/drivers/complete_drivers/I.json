@@ -109,6 +109,10 @@
                   "text": "Belgian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    },
+                    {
                       "text": "Belgian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Belgium"
                     }
@@ -12041,7 +12045,7 @@
           "rows": [
             {
               "year": "1964",
-              "team": [],
+              "team": null,
               "co_drivers": [
                 {
                   "text": "Teddy Pilette",
@@ -12807,7 +12811,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Japanese",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    }
+                  ]
                 }
               },
               {
@@ -18248,7 +18257,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Argentine",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Argentina"
+                    }
+                  ]
                 }
               },
               {
@@ -18380,7 +18394,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Japanese",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Japan"
+                    }
+                  ]
                 }
               },
               {
@@ -19584,6 +19603,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -24063,6 +24086,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -28778,7 +28805,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {

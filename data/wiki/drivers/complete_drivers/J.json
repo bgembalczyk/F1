@@ -58,7 +58,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -237,6 +242,10 @@
                 "value": {
                   "text": "French",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
                     {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
@@ -5496,7 +5505,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -5656,7 +5670,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -5819,6 +5838,10 @@
                 "value": {
                   "text": "French",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
                     {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
@@ -7109,7 +7132,7 @@
                   "url": "https://en.wikipedia.org/wiki/French_Supertouring_Championship"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": 2,
               "poles": "unknown",
@@ -7255,7 +7278,7 @@
                   "url": "https://en.wikipedia.org/wiki/Porsche_Supercup"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": 1,
               "poles": "unknown",
@@ -13387,7 +13410,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -13555,6 +13583,10 @@
                 "value": {
                   "text": "Swedish",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Sweden"
+                    },
                     {
                       "text": "Swedish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
@@ -23097,7 +23129,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -23407,7 +23444,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    }
+                  ]
                 }
               },
               {
@@ -23583,6 +23625,10 @@
                   "text": "Australian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Australia"
+                    },
+                    {
                       "text": "Australian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
                     }
@@ -23745,7 +23791,7 @@
                   "url": "https://en.wikipedia.org/wiki/British_Formula_3_International_Series"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 9,
               "wins": 0,
               "poles": 1,
@@ -24178,7 +24224,7 @@
                   "url": "https://en.wikipedia.org/wiki/1976_Shellsport_International_Series"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 2,
               "wins": 1,
               "poles": 1,
@@ -37113,7 +37159,7 @@
                   "title_sponsors": []
                 }
               ],
-              "co_drivers": [],
+              "co_drivers": null,
               "car": {
                 "text": "Mazda RX-7",
                 "url": "https://en.wikipedia.org/wiki/Mazda_RX-7"
@@ -37783,7 +37829,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -38101,6 +38152,10 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
+                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -38202,7 +38257,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Brazilian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    }
+                  ]
                 }
               },
               {
@@ -42368,6 +42428,10 @@
                   "text": "Spanish",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Spain"
+                    },
+                    {
                       "text": "Spanish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Spain"
                     }
@@ -42615,7 +42679,7 @@
                 "series": "Torneo Industrie",
                 "class": "Minikart"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -42624,7 +42688,7 @@
                 "series": "Copa de Campeones",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -42636,7 +42700,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -42648,7 +42712,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "12th"
             },
             {
@@ -42660,7 +42724,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "6th"
             },
             {
@@ -42672,7 +42736,7 @@
                 },
                 "class": "FIA Asia-Pacific Championship-KF3"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -42684,7 +42748,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "NC"
             },
             {
@@ -42696,7 +42760,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -42708,7 +42772,7 @@
                 },
                 "class": "FIA European Championship-KF3"
               },
-              "team": [],
+              "team": null,
               "position": "NC"
             },
             {
@@ -42720,7 +42784,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "16th"
             },
             {
@@ -42800,7 +42864,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {

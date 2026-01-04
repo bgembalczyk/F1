@@ -116,6 +116,10 @@
                   "text": "French",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    },
+                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -7355,7 +7359,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -8431,7 +8440,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Dutch",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Netherlands"
+                    }
+                  ]
                 }
               },
               {
@@ -15997,7 +16011,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Portuguese",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Portugal"
+                    }
+                  ]
                 }
               },
               {
@@ -23581,7 +23600,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Brazilian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Brazil"
+                    }
+                  ]
                 }
               },
               {
@@ -23746,7 +23770,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -24827,7 +24856,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -26197,6 +26231,10 @@
                 "value": {
                   "text": "Italian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    },
                     {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
@@ -36220,7 +36258,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Argentine",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Argentina"
+                    }
+                  ]
                 }
               },
               {
@@ -39322,7 +39365,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -40633,6 +40681,10 @@
                   "text": "Canadian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Canada"
+                    },
+                    {
                       "text": "Canadian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Canada"
                     }
@@ -40856,7 +40908,7 @@
                 "series": "Toronto Racing Association of Karters",
                 "class": "Rotax Junior"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -40865,7 +40917,7 @@
                 "series": "Canadian National Karting Championships",
                 "class": "Rotax Junior"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -40877,7 +40929,7 @@
                 },
                 "class": "KF2"
               },
-              "team": [],
+              "team": null,
               "position": "NC"
             },
             {
@@ -40886,7 +40938,7 @@
                 "series": "Canadian National Karting Championships",
                 "class": "Rotax Junior"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -40895,7 +40947,7 @@
                 "series": "Toronto Racing Association of Karters",
                 "class": "Rotax Junior"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -40907,7 +40959,7 @@
                 },
                 "class": "Junior"
               },
-              "team": [],
+              "team": null,
               "position": "13th"
             },
             {
@@ -40916,7 +40968,7 @@
                 "series": "Florida Winter Tour",
                 "class": "Rotax DD2"
               },
-              "team": [],
+              "team": null,
               "position": "8th"
             },
             {
@@ -40925,7 +40977,7 @@
                 "series": "Canadian National Karting Championships",
                 "class": "Rotax DD2"
               },
-              "team": [],
+              "team": null,
               "position": "23rd"
             },
             {
@@ -40934,7 +40986,7 @@
                 "series": "Rotax Euro Challenge",
                 "class": "DD2"
               },
-              "team": [],
+              "team": null,
               "position": "28th"
             },
             {
@@ -40946,7 +40998,7 @@
                 },
                 "class": "DD2"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -40955,7 +41007,7 @@
                 "series": "Florida Winter Tour",
                 "class": "Open Shifter"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -40964,7 +41016,7 @@
                 "series": "Florida Winter Tour",
                 "class": "Rotax DD2"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -40973,7 +41025,7 @@
                 "series": "Coupe de Quebec",
                 "class": "Rotax DD2"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -40982,7 +41034,7 @@
                 "series": "Canadian National Karting Championships",
                 "class": "Rotax DD2"
               },
-              "team": [],
+              "team": null,
               "position": "DNF"
             },
             {
@@ -47288,6 +47340,10 @@
                   "text": "Austrian",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Austria"
+                    },
+                    {
                       "text": "Austrian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"
                     }
@@ -52950,7 +53006,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    }
+                  ]
                 }
               },
               {
@@ -53094,7 +53155,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -55179,7 +55245,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -55706,6 +55777,10 @@
                   "text": "New Zealander",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/New_Zealand"
+                    },
+                    {
                       "text": "New Zealander",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_New_Zealand"
                     }
@@ -55953,7 +56028,7 @@
                 "series": "Kartsport NZ Schools Championship",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "13th"
             },
             {
@@ -55962,7 +56037,7 @@
                 "series": "Kartsport NZ National Sprint Championship",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "12th"
             },
             {
@@ -55971,7 +56046,7 @@
                 "series": "NZ Top Half Series",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": null
             },
             {
@@ -55980,7 +56055,7 @@
                 "series": "Kartsport Auckland City of Sails",
                 "class": "Cadet Raket"
               },
-              "team": [],
+              "team": null,
               "position": null
             },
             {
@@ -55989,7 +56064,7 @@
                 "series": "Blossom Festival",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -55998,7 +56073,7 @@
                 "series": "Kartsport NZ Schools Championship",
                 "class": "100cc Junior Restricted"
               },
-              "team": [],
+              "team": null,
               "position": "8th"
             },
             {
@@ -56007,7 +56082,7 @@
                 "series": "Kartsport NZ National Sprint Championship",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -56016,7 +56091,7 @@
                 "series": "Kartsport NZ North Island Sprint Championship",
                 "class": "100cc Junior Restricted"
               },
-              "team": [],
+              "team": null,
               "position": "6th"
             },
             {
@@ -56025,7 +56100,7 @@
                 "series": "NZ Top Half Series",
                 "class": "100cc Junior Yamaha"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -56034,7 +56109,7 @@
                 "series": "NZ Top Half Series",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "21st"
             },
             {
@@ -56043,7 +56118,7 @@
                 "series": "Kartsport Auckland City of Sails",
                 "class": "Cadet Raket"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -56052,7 +56127,7 @@
                 "series": "CIK Trophy of New Zealand Challenge Cup",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -56061,7 +56136,7 @@
                 "series": "Kartsport NZ Schools Championship",
                 "class": "100cc Junior Restricted"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -56070,7 +56145,7 @@
                 "series": "Kartsport NZ National Sprint Championship",
                 "class": "100cc Junior Restricted Yamaha"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -56079,7 +56154,7 @@
                 "series": "Kartsport NZ North Island Sprint Championship",
                 "class": "100cc Junior Restricted"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -56088,7 +56163,7 @@
                 "series": "NZ Top Half Series",
                 "class": "100cc Junior Yamaha"
               },
-              "team": [],
+              "team": null,
               "position": "10th"
             },
             {
@@ -56097,7 +56172,7 @@
                 "series": "Kartsport Auckland City of Sails",
                 "class": "100cc Junior Restricted"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -56106,7 +56181,7 @@
                 "series": "Kartsport NZ Schools Championship",
                 "class": "100cc Junior Restricted"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -56115,7 +56190,7 @@
                 "series": "Kartsport NZ National Sprint Championship",
                 "class": "100cc Junior Restricted Yamaha"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -56124,7 +56199,7 @@
                 "series": "Kartsport NZ North Island Sprint Championship",
                 "class": "Rotax Junior"
               },
-              "team": [],
+              "team": null,
               "position": "7th"
             },
             {
@@ -56133,7 +56208,7 @@
                 "series": "NZ Top Half Series",
                 "class": "100cc Junior Yamaha"
               },
-              "team": [],
+              "team": null,
               "position": null
             },
             {
@@ -56142,7 +56217,7 @@
                 "series": "Blossom Festival",
                 "class": "Rotax Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -56151,7 +56226,7 @@
                 "series": "Kartsport Auckland City of Sails",
                 "class": "100cc Junior Restricted"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -56160,7 +56235,7 @@
                 "series": "Kartsport NZ National Sprint Championship",
                 "class": "Rotax Junior"
               },
-              "team": [],
+              "team": null,
               "position": "3rd"
             },
             {
@@ -56169,7 +56244,7 @@
                 "series": "Kartsport NZ National Sprint Championship",
                 "class": "100cc Junior Restricted Yamaha"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -56178,7 +56253,7 @@
                 "series": "NZ Top Half Series",
                 "class": "Formula Junior"
               },
-              "team": [],
+              "team": null,
               "position": null
             },
             {
@@ -56218,7 +56293,7 @@
                 },
                 "class": "KZ2"
               },
-              "team": [],
+              "team": null,
               "position": "17th"
             },
             {
@@ -56230,7 +56305,7 @@
                 },
                 "class": "KZ2"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -56276,7 +56351,7 @@
                 },
                 "class": "Kartstars New Zealand-KZ2"
               },
-              "team": [],
+              "team": null,
               "position": "16th"
             }
           ],
@@ -58675,10 +58750,10 @@
               },
               "3": {
                 "round": {
-                  "text": "RBR‡FEA",
+                  "text": "RBRFEA",
                   "url": "https://en.wikipedia.org/wiki/2020_2nd_Spielberg_Formula_3_round"
                 },
-                "code": "RBR‡FEA",
+                "code": "RBRFEA",
                 "result": "RBR ‡ FEA 8",
                 "background": "#DFFFDF",
                 "pole_position": false,
@@ -61609,6 +61684,10 @@
                   "text": "Monégasque",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Monaco"
+                    },
+                    {
                       "text": "Monégasque",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Monaco"
                     }
@@ -61816,7 +61895,7 @@
                 "series": "Championnat de France Regional PACA",
                 "class": "Mini Kart"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -61825,7 +61904,7 @@
                 "series": "Coupe de France",
                 "class": "Mini Kart"
               },
-              "team": [],
+              "team": null,
               "position": "19th"
             },
             {
@@ -61834,7 +61913,7 @@
                 "series": "Championnat de France Regional PACA",
                 "class": "Mini Kart"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -61843,7 +61922,7 @@
                 "series": "Coupe de France",
                 "class": "Mini Kart"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -61852,7 +61931,7 @@
                 "series": "Championnat de France",
                 "class": "Minime"
               },
-              "team": [],
+              "team": null,
               "position": "22nd"
             },
             {
@@ -61861,7 +61940,7 @@
                 "series": "Championnat de France Regional PACA",
                 "class": "Minime"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -61870,7 +61949,7 @@
                 "series": "Trophée Claude Secq",
                 "class": "Minime"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -61879,7 +61958,7 @@
                 "series": "Bridgestone Cup",
                 "class": "Minime"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -61888,7 +61967,7 @@
                 "series": "Championnat de France",
                 "class": "Minime"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -61897,7 +61976,7 @@
                 "series": "Trophée de France",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "11th"
             },
             {
@@ -61906,7 +61985,7 @@
                 "series": "Coupe de France",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "4th"
             },
             {
@@ -61915,7 +61994,7 @@
                 "series": "Championnat de France",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -61924,7 +62003,7 @@
                 "series": "Bridgestone Cup",
                 "class": "Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -61933,7 +62012,7 @@
                 "series": "Championnat de la Ligue Rhône",
                 "class": "Alpes-Cadet"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -61996,7 +62075,7 @@
                 },
                 "class": "FIA Karting Academy Trophy"
               },
-              "team": [],
+              "team": null,
               "position": "5th"
             },
             {
@@ -62008,7 +62087,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -62020,7 +62099,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "2nd"
             },
             {
@@ -62083,7 +62162,7 @@
                 },
                 "class": "KF3"
               },
-              "team": [],
+              "team": null,
               "position": "44th"
             },
             {
@@ -62163,7 +62242,7 @@
                 },
                 "class": "Bercy-Junior"
               },
-              "team": [],
+              "team": null,
               "position": "1st"
             },
             {
@@ -62175,7 +62254,7 @@
                 },
                 "class": "KF2"
               },
-              "team": [],
+              "team": null,
               "position": "25th"
             },
             {
@@ -62187,7 +62266,7 @@
                 },
                 "class": "KF2"
               },
-              "team": [],
+              "team": null,
               "position": "10th"
             },
             {
@@ -67876,7 +67955,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -70203,7 +70287,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/South_Africa"
+                    }
+                  ]
                 }
               },
               {
@@ -70345,7 +70434,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -74581,7 +74675,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Dutch",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Netherlands"
+                    }
+                  ]
                 }
               },
               {
@@ -76722,7 +76821,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Belgium"
+                    }
+                  ]
                 }
               },
               {
@@ -76873,6 +76977,10 @@
                 "value": {
                   "text": "Finnish",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Finland"
+                    },
                     {
                       "text": "Finnish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Finland"
@@ -77164,7 +77272,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Ford"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 5,
               "wins": 0,
               "poles": "unknown",
@@ -77181,7 +77289,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Ford"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 1,
               "wins": 0,
               "poles": 0,
@@ -77220,7 +77328,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Ford"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 5,
               "wins": 3,
               "poles": "unknown",
@@ -77237,7 +77345,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Ford_Festival"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 1,
               "wins": 0,
               "poles": 0,
@@ -77308,7 +77416,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_Ford"
                 }
               },
-              "team": [],
+              "team": null,
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -83398,7 +83506,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -85964,7 +86077,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -87293,7 +87411,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -87435,7 +87558,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    }
+                  ]
                 }
               },
               {
@@ -87586,6 +87714,10 @@
                 "value": {
                   "text": "British",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                    },
                     {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
@@ -88685,7 +88817,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -90140,7 +90277,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -90324,6 +90466,10 @@
                 "value": {
                   "text": "Italian",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    },
                     {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
@@ -97074,7 +97220,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Dutch",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Netherlands"
+                    }
+                  ]
                 }
               },
               {
@@ -97220,7 +97371,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Italy"
+                    }
+                  ]
                 }
               },
               {
@@ -99268,7 +99424,7 @@
                 "text": "1984",
                 "url": "https://en.wikipedia.org/wiki/1984_Deutschen_Produktionswagen_Meisterschaft"
               },
-              "team": [],
+              "team": null,
               "car": {
                 "text": "Alfa Romeo Alfetta GTV6",
                 "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_Alfetta_GTV6"
@@ -99535,7 +99691,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Colombian",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Colombia"
+                    }
+                  ]
                 }
               },
               {
@@ -99672,7 +99833,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    }
+                  ]
                 }
               },
               {
@@ -99838,6 +100004,10 @@
                 "value": {
                   "text": "FIA Platinum",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
+                    },
                     {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
@@ -100036,6 +100206,10 @@
                 "value": {
                   "text": "German",
                   "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Germany"
+                    },
                     {
                       "text": "German",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
@@ -100427,7 +100601,7 @@
                   "url": "https://en.wikipedia.org/wiki/Formula_BMW"
                 }
               },
-              "team": [],
+              "team": null,
               "races": 20,
               "wins": 14,
               "poles": "unknown",
@@ -110088,7 +110262,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -110275,12 +110454,20 @@
                   "text": "Federation of Rhodesia and Nyasaland ( 1962-1964 ) Rhodesian (1964) ( 1965 and 1967-1968 ) Rhodesian ( 1969-1972 )",
                   "links": [
                     {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Federation_of_Rhodesia_and_Nyasaland"
+                    },
+                    {
                       "text": "1962",
                       "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
                     },
                     {
                       "text": "1964",
                       "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+                    },
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Rhodesia"
                     },
                     {
                       "text": "1965",
@@ -110293,6 +110480,10 @@
                     {
                       "text": "1968",
                       "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+                    },
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Rhodesia"
                     },
                     {
                       "text": "1969",
@@ -113922,7 +114113,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -115398,7 +115594,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -115660,7 +115861,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/France"
+                    }
+                  ]
                 }
               },
               {
@@ -115825,7 +116031,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/United_States"
+                    }
+                  ]
                 }
               },
               {
@@ -117863,7 +118074,12 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Argentine",
-                  "links": []
+                  "links": [
+                    {
+                      "text": "",
+                      "url": "https://en.wikipedia.org/wiki/Argentina"
+                    }
+                  ]
                 }
               },
               {
