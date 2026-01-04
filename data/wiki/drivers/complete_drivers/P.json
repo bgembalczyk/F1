@@ -50,16 +50,13 @@
         "title": null,
         "general": {
           "born": {
-            "date": "José Carlos Pace 6 October 1944 São Paulo , Brazil",
+            "date": "1944-10-06",
             "place": null
           },
           "died": {
-            "date": "1977-03-18",
+            "date": "18 March 1977 Mairiporã , São Paulo, Brazil",
             "place": [
-              {
-                "text": "Mairiporã",
-                "url": "https://en.wikipedia.org/wiki/Mairipor%C3%A3"
-              },
+              "(aged 32) Mairiporã",
               "São Paulo",
               "Brazil"
             ]
@@ -79,10 +76,6 @@
                   "text": "Brazilian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Brazil"
-                    },
-                    {
                       "text": "Brazilian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
                     }
@@ -91,10 +84,32 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1972,
-                  "end": 1977
-                }
+                "value": [
+                  {
+                    "year": 1972,
+                    "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
+                  },
+                  {
+                    "year": 1973,
+                    "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
+                  },
+                  {
+                    "year": 1974,
+                    "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                  },
+                  {
+                    "year": 1975,
+                    "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                  },
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -127,8 +142,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -200,15 +215,12 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1973",
-                  "links": [
-                    {
-                      "text": "1973",
-                      "url": "https://en.wikipedia.org/wiki/1973_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1973,
+                    "url": "https://en.wikipedia.org/wiki/1973_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -222,10 +234,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "2nd ( 1973 )",
+                  "result": "2nd",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "1973",
+                    "url": "https://en.wikipedia.org/wiki/1973_24_Hours_of_Le_Mans"
                   }
                 }
               },
@@ -2832,12 +2844,9 @@
             ]
           },
           "died": {
-            "date": "2003-10-19",
+            "date": "19 October 2003 Bresso , Lombardy , Italy",
             "place": [
-              {
-                "text": "Bresso",
-                "url": "https://en.wikipedia.org/wiki/Bresso"
-              },
+              "(aged 92) Bresso",
               {
                 "text": "Lombardy",
                 "url": "https://en.wikipedia.org/wiki/Lombardy"
@@ -2895,9 +2904,9 @@
             ]
           },
           "died": {
-            "date": "1982-06-13",
+            "date": "13 June 1982 Montreal, Quebec , Canada",
             "place": [
-              "Montreal",
+              "(aged 23) Montreal",
               "Quebec",
               "Canada"
             ]
@@ -2913,20 +2922,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1982,
-                  "end": 1982
-                }
+                "value": [
+                  {
+                    "year": 1982,
+                    "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -2947,8 +2953,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -3862,20 +3868,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Swedish",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Sweden"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1975,
-                  "end": 1975
-                }
+                "value": [
+                  {
+                    "year": 1975,
+                    "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -3896,8 +3899,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -3987,7 +3990,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Jolyon Carlyle Palmer 20 January 1991 Horsham, West Sussex , England",
+            "date": "1991-01-20",
             "place": null
           },
           "children": [],
@@ -4047,10 +4050,6 @@
                   "text": "British",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    },
-                    {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
                     }
@@ -4059,10 +4058,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2016,
-                  "end": 2017
-                }
+                "value": [
+                  {
+                    "year": 2016,
+                    "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2017,
+                    "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -4095,8 +4100,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -4160,8 +4165,20 @@
             },
             "years": [
               {
-                "text": "2011-2014",
-                "url": null
+                "year": 2011,
+                "url": "https://en.wikipedia.org/wiki/2011_GP2_Series"
+              },
+              {
+                "year": 2012,
+                "url": "https://en.wikipedia.org/wiki/2012_GP2_Series"
+              },
+              {
+                "year": 2013,
+                "url": "https://en.wikipedia.org/wiki/2013_GP2_Series"
+              },
+              {
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_GP2_Series"
               }
             ]
           },
@@ -4172,8 +4189,8 @@
             },
             "years": [
               {
-                "text": "2011",
-                "url": "https://en.wikipedia.org/wiki/2011_FIA_Formula_Two_Championship"
+                "year": 2011,
+                "url": "https://en.wikipedia.org/wiki/2011_GP2_Asia_Series"
               }
             ]
           },
@@ -4184,8 +4201,16 @@
             },
             "years": [
               {
-                "text": "2009-2011",
-                "url": null
+                "year": 2009,
+                "url": "https://en.wikipedia.org/wiki/2009_FIA_Formula_Two_Championship"
+              },
+              {
+                "year": 2010,
+                "url": "https://en.wikipedia.org/wiki/2010_FIA_Formula_Two_Championship"
+              },
+              {
+                "year": 2011,
+                "url": "https://en.wikipedia.org/wiki/2011_FIA_Formula_Two_Championship"
               }
             ]
           },
@@ -4196,7 +4221,11 @@
             },
             "years": [
               {
-                "text": "2007-2008",
+                "year": 2007,
+                "url": null
+              },
+              {
+                "year": 2008,
                 "url": null
               }
             ]
@@ -4208,7 +4237,15 @@
             },
             "years": [
               {
-                "text": "2005-2007",
+                "year": 2005,
+                "url": null
+              },
+              {
+                "year": 2006,
+                "url": null
+              },
+              {
+                "year": 2007,
                 "url": null
               }
             ]
@@ -8474,7 +8511,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Jonathan Charles Palmer 7 November 1956 Lewisham , London, England",
+            "date": "1956-11-07",
             "place": null
           },
           "children": [
@@ -8500,10 +8537,6 @@
                   "text": "British",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    },
-                    {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
                     }
@@ -8512,10 +8545,36 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1983,
-                  "end": 1989
-                }
+                "value": [
+                  {
+                    "year": 1983,
+                    "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1984,
+                    "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1985,
+                    "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1986,
+                    "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1987,
+                    "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1988,
+                    "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1989,
+                    "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -8548,8 +8607,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -8609,31 +8668,32 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1983-1985 , 1987 , 1990-1991",
-                  "links": [
-                    {
-                      "text": "1983",
-                      "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1985",
-                      "url": "https://en.wikipedia.org/wiki/1985_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1987",
-                      "url": "https://en.wikipedia.org/wiki/1987_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1990",
-                      "url": "https://en.wikipedia.org/wiki/1990_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1991",
-                      "url": "https://en.wikipedia.org/wiki/1991_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1983,
+                    "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1984,
+                    "url": "https://en.wikipedia.org/wiki/1984_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1985,
+                    "url": "https://en.wikipedia.org/wiki/1985_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1987,
+                    "url": "https://en.wikipedia.org/wiki/1987_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1990,
+                    "url": "https://en.wikipedia.org/wiki/1990_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1991,
+                    "url": "https://en.wikipedia.org/wiki/1991_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -8655,10 +8715,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "2nd ( 1985 )",
+                  "result": "2nd",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "1985",
+                    "url": "https://en.wikipedia.org/wiki/1985_24_Hours_of_Le_Mans"
                   }
                 }
               },
@@ -13083,17 +13143,7 @@
         "general": {
           "born": {
             "date": "1966-09-02",
-            "place": [
-              {
-                "text": "Oullins",
-                "url": "https://en.wikipedia.org/wiki/Oullins"
-              },
-              {
-                "text": "Lyon",
-                "url": "https://en.wikipedia.org/wiki/Lyon"
-              },
-              "France"
-            ]
+            "place": null
           },
           "children": [
             {
@@ -13114,10 +13164,6 @@
                   "text": "French",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/France"
-                    },
-                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -13126,10 +13172,48 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1994,
-                  "end": 1999
-                }
+                "value": [
+                  {
+                    "year": 1994,
+                    "url": "https://en.wikipedia.org/wiki/1994_Formula_One_season"
+                  },
+                  {
+                    "year": 1995,
+                    "url": "https://en.wikipedia.org/wiki/1995_Formula_One_season"
+                  },
+                  {
+                    "year": 1996,
+                    "url": "https://en.wikipedia.org/wiki/1996_Formula_One_season"
+                  },
+                  {
+                    "year": 1997,
+                    "url": "https://en.wikipedia.org/wiki/1997_Formula_One_season"
+                  },
+                  {
+                    "year": 1998,
+                    "url": "https://en.wikipedia.org/wiki/1998_Formula_One_season"
+                  },
+                  {
+                    "year": 1999,
+                    "url": "https://en.wikipedia.org/wiki/1999_Formula_One_season"
+                  },
+                  {
+                    "year": 2001,
+                    "url": "https://en.wikipedia.org/wiki/2001_Formula_One_season"
+                  },
+                  {
+                    "year": 2002,
+                    "url": "https://en.wikipedia.org/wiki/2002_Formula_One_season"
+                  },
+                  {
+                    "year": 2003,
+                    "url": "https://en.wikipedia.org/wiki/2003_Formula_One_season"
+                  },
+                  {
+                    "year": 2004,
+                    "url": "https://en.wikipedia.org/wiki/2004_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -13162,8 +13246,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -13235,19 +13319,24 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "2008-2011",
-                  "links": [
-                    {
-                      "text": "2008",
-                      "url": "https://en.wikipedia.org/wiki/2008_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2011",
-                      "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 2008,
+                    "url": "https://en.wikipedia.org/wiki/2008_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2009,
+                    "url": "https://en.wikipedia.org/wiki/2009_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2010,
+                    "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2011,
+                    "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -13261,10 +13350,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "5th ( 2009 , 2011 )",
+                  "result": "5th",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "2009",
+                    "url": "https://en.wikipedia.org/wiki/2009_24_Hours_of_Le_Mans"
                   }
                 }
               },
@@ -18129,13 +18218,7 @@
         "general": {
           "born": {
             "date": "1979-02-04",
-            "place": [
-              {
-                "text": "Conselve",
-                "url": "https://en.wikipedia.org/wiki/Conselve"
-              },
-              "Italy"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -23205,8 +23288,14 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Massimiliano Papis 3 October 1969 Como , Italy",
-            "place": null
+            "date": "1969-10-03",
+            "place": [
+              {
+                "text": "Como",
+                "url": "https://en.wikipedia.org/wiki/Como"
+              },
+              "Italy"
+            ]
           }
         },
         "championship_titles": [],
@@ -23231,10 +23320,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "43rd ( 2009 , 2010 )",
+                  "result": "43rd",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "2009",
+                    "url": "https://en.wikipedia.org/wiki/2009_NASCAR_Sprint_Cup_Series"
                   }
                 }
               },
@@ -23324,10 +23413,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "48th ( 2013 )",
+                  "result": "48th",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "2013",
+                    "url": "https://en.wikipedia.org/wiki/2013_NASCAR_Nationwide_Series"
                   }
                 }
               },
@@ -23417,10 +23506,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "18th ( 2011 )",
+                  "result": "18th",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "2011",
+                    "url": "https://en.wikipedia.org/wiki/2011_NASCAR_Camping_World_Truck_Series"
                   }
                 }
               },
@@ -23503,10 +23592,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "55th ( 2012 )",
+                  "result": "55th",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "2012",
+                    "url": "https://en.wikipedia.org/wiki/2012_NASCAR_Canadian_Tire_Series_season"
                   }
                 }
               },
@@ -23571,10 +23660,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "26th ( 2006 )",
+                  "result": "26th",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "2006",
+                    "url": "https://en.wikipedia.org/wiki/2006_IndyCar_Series_season"
                   }
                 }
               },
@@ -23657,10 +23746,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "5th ( 1999 )",
+                  "result": "5th",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "1999",
+                    "url": "https://en.wikipedia.org/wiki/1999_Champ_Car_season"
                   }
                 }
               },
@@ -23774,20 +23863,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1995,
-                  "end": 1995
-                }
+                "value": [
+                  {
+                    "year": 1995,
+                    "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -23808,8 +23894,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -23863,10 +23949,36 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1997, 2003-2008",
-                  "links": []
-                }
+                "value": [
+                  {
+                    "year": 1997,
+                    "url": null
+                  },
+                  {
+                    "year": 2003,
+                    "url": null
+                  },
+                  {
+                    "year": 2004,
+                    "url": null
+                  },
+                  {
+                    "year": 2005,
+                    "url": null
+                  },
+                  {
+                    "year": 2006,
+                    "url": null
+                  },
+                  {
+                    "year": 2007,
+                    "url": null
+                  },
+                  {
+                    "year": 2008,
+                    "url": null
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -23888,10 +24000,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "5th ( 2003 )",
+                  "result": "5th",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "2003",
+                    "url": "https://en.wikipedia.org/wiki/2003_24_Hours_of_Le_Mans"
                   }
                 }
               },
@@ -23949,16 +24061,13 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Michael Johnson Parkes 24 September 1931 Richmond, Surrey , England",
+            "date": "1931-09-24",
             "place": null
           },
           "died": {
-            "date": "1977-08-28",
+            "date": "28 August 1977 Riva presso Chieri , Turin, Italy",
             "place": [
-              {
-                "text": "Riva presso Chieri",
-                "url": "https://en.wikipedia.org/wiki/Riva_presso_Chieri"
-              },
+              "(aged 45) Riva presso Chieri",
               "Turin",
               "Italy"
             ]
@@ -23977,10 +24086,6 @@
                   "text": "British",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    },
-                    {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
                     }
@@ -23989,10 +24094,20 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1966,
-                  "end": 1967
-                }
+                "value": [
+                  {
+                    "year": 1959,
+                    "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+                  },
+                  {
+                    "year": 1966,
+                    "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
+                  },
+                  {
+                    "year": 1967,
+                    "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -24017,8 +24132,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -25532,9 +25647,9 @@
             ]
           },
           "died": {
-            "date": "1964-01-07",
+            "date": "7 January 1964 Derby, Derbyshire, England",
             "place": [
-              "Derby",
+              "(aged 52) Derby",
               "Derbyshire",
               "England"
             ]
@@ -25550,20 +25665,29 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1950,
-                  "end": 1952
-                }
+                "value": [
+                  {
+                    "year": 1950,
+                    "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+                  },
+                  {
+                    "year": 1951,
+                    "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+                  },
+                  {
+                    "year": 1952,
+                    "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -25600,8 +25724,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -28015,16 +28139,24 @@
         "title": "Tim Parnell",
         "general": {
           "born": {
-            "date": "Reginald Harold Haslam Parnell Jr. 25 June 1932 Derby , Derbyshire , England, UK",
-            "place": null
-          },
-          "died": {
-            "date": "2017-04-05",
+            "date": "1932-06-25",
             "place": [
               {
-                "text": "Littleover",
-                "url": "https://en.wikipedia.org/wiki/Littleover"
+                "text": "Derby",
+                "url": "https://en.wikipedia.org/wiki/Derby"
               },
+              {
+                "text": "Derbyshire",
+                "url": "https://en.wikipedia.org/wiki/Derbyshire"
+              },
+              "England",
+              "UK"
+            ]
+          },
+          "died": {
+            "date": "5 April 2017 Littleover , Derbyshire , England, UK",
+            "place": [
+              "(aged 84) Littleover",
               {
                 "text": "Derbyshire",
                 "url": "https://en.wikipedia.org/wiki/Derbyshire"
@@ -28044,20 +28176,25 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1959,
-                  "end": 1963
-                }
+                "value": [
+                  {
+                    "year": 1959,
+                    "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+                  },
+                  {
+                    "year": 1961,
+                    "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                  },
+                  {
+                    "year": 1963,
+                    "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -28082,8 +28219,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -28201,13 +28338,13 @@
         "title": null,
         "general": {
           "born": {
-            "date": "John Woodrow Parsons July 4, 1918 Los Angeles, California , U.S.",
+            "date": "1918-07-04",
             "place": null
           },
           "died": {
-            "date": "1984-09-08",
+            "date": "September 8, 1984 Los Angeles, California, U.S.",
             "place": [
-              "Los Angeles",
+              "(aged 66) Los Angeles",
               "California",
               "U.S."
             ]
@@ -28228,10 +28365,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "1st ( 1949 )",
+                  "result": "1st",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "1949",
+                    "url": "https://en.wikipedia.org/wiki/1949_AAA_Championship_Car_season"
                   }
                 }
               },
@@ -28353,10 +28490,44 @@
             "rows": [
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1950,
-                  "end": 1958
-                }
+                "value": [
+                  {
+                    "year": 1950,
+                    "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+                  },
+                  {
+                    "year": 1951,
+                    "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+                  },
+                  {
+                    "year": 1952,
+                    "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                  },
+                  {
+                    "year": 1953,
+                    "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  },
+                  {
+                    "year": 1955,
+                    "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
+                  },
+                  {
+                    "year": 1956,
+                    "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                  },
+                  {
+                    "year": 1957,
+                    "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+                  },
+                  {
+                    "year": 1958,
+                    "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -28381,8 +28552,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -28544,7 +28715,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Riccardo Gabriele Patrese 17 April 1954 Padua , Veneto , Italy",
+            "date": "1954-04-17",
             "place": null
           },
           "children": [
@@ -28566,10 +28737,6 @@
                   "text": "Italian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    },
-                    {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
                     }
@@ -28578,10 +28745,76 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1977,
-                  "end": 1993
-                }
+                "value": [
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  },
+                  {
+                    "year": 1978,
+                    "url": null
+                  },
+                  {
+                    "year": 1979,
+                    "url": null
+                  },
+                  {
+                    "year": 1980,
+                    "url": null
+                  },
+                  {
+                    "year": 1981,
+                    "url": null
+                  },
+                  {
+                    "year": 1982,
+                    "url": null
+                  },
+                  {
+                    "year": 1983,
+                    "url": null
+                  },
+                  {
+                    "year": 1984,
+                    "url": null
+                  },
+                  {
+                    "year": 1985,
+                    "url": null
+                  },
+                  {
+                    "year": 1986,
+                    "url": null
+                  },
+                  {
+                    "year": 1987,
+                    "url": null
+                  },
+                  {
+                    "year": 1988,
+                    "url": null
+                  },
+                  {
+                    "year": 1989,
+                    "url": null
+                  },
+                  {
+                    "year": 1990,
+                    "url": null
+                  },
+                  {
+                    "year": 1991,
+                    "url": null
+                  },
+                  {
+                    "year": 1992,
+                    "url": null
+                  },
+                  {
+                    "year": 1993,
+                    "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -28622,8 +28855,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -35730,16 +35963,23 @@
         "title": "Al Pease",
         "general": {
           "born": {
-            "date": "Alan Victor Pease 15 October 1921 Darlington , County Durham , England",
-            "place": null
-          },
-          "died": {
-            "date": "2014-05-04",
+            "date": "1921-10-15",
             "place": [
               {
-                "text": "Sevierville",
-                "url": "https://en.wikipedia.org/wiki/Sevierville"
+                "text": "Darlington",
+                "url": "https://en.wikipedia.org/wiki/Darlington"
               },
+              {
+                "text": "County Durham",
+                "url": "https://en.wikipedia.org/wiki/County_Durham"
+              },
+              "England"
+            ]
+          },
+          "died": {
+            "date": "4 May 2014 Sevierville , Tennessee , United States",
+            "place": [
+              "(aged 92) Sevierville",
               {
                 "text": "Tennessee",
                 "url": "https://en.wikipedia.org/wiki/Tennessee"
@@ -35758,20 +35998,25 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Canadian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Canada"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1967,
-                  "end": 1969
-                }
+                "value": [
+                  {
+                    "year": 1967,
+                    "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
+                  },
+                  {
+                    "year": 1968,
+                    "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+                  },
+                  {
+                    "year": 1969,
+                    "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -35792,8 +36037,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -35883,8 +36128,12 @@
         "title": "Roger Penske",
         "general": {
           "born": {
-            "date": "Roger Searle Penske February 20, 1937 Shaker Heights, Ohio , U.S.",
-            "place": null
+            "date": "1937-02-20",
+            "place": [
+              "Shaker Heights",
+              "Ohio",
+              "U.S."
+            ]
           },
           "relatives": [
             {
@@ -35913,20 +36162,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_States"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1961,
-                  "end": 1962
-                }
+                "value": [
+                  {
+                    "year": 1961,
+                    "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                  },
+                  {
+                    "year": 1962,
+                    "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -35951,8 +36201,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -36047,22 +36297,12 @@
         "general": {
           "born": {
             "date": "1932-10-21",
-            "place": [
-              {
-                "text": "Bologna",
-                "url": "https://en.wikipedia.org/wiki/Bologna"
-              },
-              "Emilia-Romagna",
-              "Italy"
-            ]
+            "place": null
           },
           "died": {
-            "date": "1998-05-10",
+            "date": "10 May 1998 Bologna , Emilia-Romagna, Italy",
             "place": [
-              {
-                "text": "Bologna",
-                "url": "https://en.wikipedia.org/wiki/Bologna"
-              },
+              "(aged 65) Bologna",
               "Emilia-Romagna",
               "Italy"
             ]
@@ -36089,10 +36329,6 @@
                   "text": "Italian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    },
-                    {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
                     }
@@ -36101,10 +36337,20 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1955,
-                  "end": 1957
-                }
+                "value": [
+                  {
+                    "year": 1955,
+                    "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
+                  },
+                  {
+                    "year": 1956,
+                    "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                  },
+                  {
+                    "year": 1957,
+                    "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -36129,8 +36375,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -36268,7 +36514,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Sergio Michel Pérez Mendoza 26 January 1990 Guadalajara , Jalisco, Mexico",
+            "date": "1990-01-26",
             "place": null
           },
           "children": [],
@@ -36306,10 +36552,6 @@
                 "value": {
                   "text": "Mexican",
                   "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Mexico"
-                    },
                     {
                       "text": "Mexican",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Mexico"
@@ -36355,8 +36597,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -36444,68 +36686,32 @@
             },
             "years": [
               {
-                "text": "2009-2010",
-                "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "GP2 Asia Series",
-              "url": "https://en.wikipedia.org/wiki/GP2_Asia_Series"
-            },
-            "years": [
-              {
-                "text": "2008-2010",
-                "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "British F3",
-              "url": "https://en.wikipedia.org/wiki/British_F3"
-            },
-            "years": [
-              {
-                "text": "2007-2008",
-                "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "A1 Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/A1_Grand_Prix"
-            },
-            "years": [
-              {
-                "text": "2006-2007",
-                "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Formula BMW ADAC",
-              "url": "https://en.wikipedia.org/wiki/Formula_BMW_ADAC"
-            },
-            "years": [
-              {
-                "text": "2005-2006",
-                "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Skip Barber National",
-              "url": "https://en.wikipedia.org/wiki/Skip_Barber_National"
-            },
-            "years": [
-              {
-                "text": "2004",
+                "year": 2004,
                 "url": "https://en.wikipedia.org/wiki/2004_Skip_Barber_National_Championship"
+              },
+              {
+                "year": 2005,
+                "url": null
+              },
+              {
+                "year": 2006,
+                "url": null
+              },
+              {
+                "year": 2007,
+                "url": "https://en.wikipedia.org/wiki/2007_British_Formula_3_International_Series"
+              },
+              {
+                "year": 2008,
+                "url": "https://en.wikipedia.org/wiki/2008_British_Formula_3_International_Series"
+              },
+              {
+                "year": 2009,
+                "url": "https://en.wikipedia.org/wiki/2009_GP2_Series"
+              },
+              {
+                "year": 2010,
+                "url": "https://en.wikipedia.org/wiki/2009-10_GP2_Asia_Series"
               }
             ]
           }
@@ -44137,8 +44343,14 @@
         "title": "Luis Pérez-Sala",
         "general": {
           "born": {
-            "date": "Luis Pérez-Sala Valls-Taberner 15 May 1959 Barcelona , Spain",
-            "place": null
+            "date": "1959-05-15",
+            "place": [
+              {
+                "text": "Barcelona",
+                "url": "https://en.wikipedia.org/wiki/Barcelona"
+              },
+              "Spain"
+            ]
           }
         },
         "championship_titles": [],
@@ -44151,20 +44363,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Spanish",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Spain"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1988,
-                  "end": 1989
-                }
+                "value": [
+                  {
+                    "year": 1988,
+                    "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1989,
+                    "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -45642,7 +45855,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Larry Clifton Perkins 18 March 1950 Murrayville , Victoria , Australia",
+            "date": "1950-03-18",
             "place": null
           }
         },
@@ -45691,10 +45904,20 @@
             "rows": [
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1976,
-                  "end": 1977
-                }
+                "value": [
+                  {
+                    "year": 1974,
+                    "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                  },
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -45731,8 +45954,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -54389,9 +54612,9 @@
             ]
           },
           "died": {
-            "date": "2008-12-08",
+            "date": "8 December 2008 Zürich, Switzerland",
             "place": [
-              "Zürich",
+              "(aged 76) Zürich",
               "Switzerland"
             ]
           }
@@ -54416,10 +54639,12 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1969,
-                  "end": 1969
-                }
+                "value": [
+                  {
+                    "year": 1969,
+                    "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -54440,8 +54665,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -55741,7 +55966,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Henri Jacques William Pescarolo 25 September 1942 Montfermeil , Seine-Saint-Denis , France",
+            "date": "1942-09-25",
             "place": null
           }
         },
@@ -55757,10 +55982,6 @@
                   "text": "French",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/France"
-                    },
-                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -55769,10 +55990,40 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1968,
-                  "end": 1974
-                }
+                "value": [
+                  {
+                    "year": 1968,
+                    "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+                  },
+                  {
+                    "year": 1969,
+                    "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
+                  },
+                  {
+                    "year": 1970,
+                    "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+                  },
+                  {
+                    "year": 1971,
+                    "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season"
+                  },
+                  {
+                    "year": 1972,
+                    "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
+                  },
+                  {
+                    "year": 1973,
+                    "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
+                  },
+                  {
+                    "year": 1974,
+                    "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                  },
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -55809,8 +56060,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -55870,27 +56121,140 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1966-1968 , 1970-1999",
-                  "links": [
-                    {
-                      "text": "1966",
-                      "url": "https://en.wikipedia.org/wiki/1966_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1968",
-                      "url": "https://en.wikipedia.org/wiki/1968_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1970",
-                      "url": "https://en.wikipedia.org/wiki/1970_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1999",
-                      "url": "https://en.wikipedia.org/wiki/1999_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1966,
+                    "url": "https://en.wikipedia.org/wiki/1966_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1967,
+                    "url": "https://en.wikipedia.org/wiki/1967_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1968,
+                    "url": "https://en.wikipedia.org/wiki/1968_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1970,
+                    "url": "https://en.wikipedia.org/wiki/1970_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1971,
+                    "url": "https://en.wikipedia.org/wiki/1971_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1972,
+                    "url": "https://en.wikipedia.org/wiki/1972_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1973,
+                    "url": "https://en.wikipedia.org/wiki/1973_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1974,
+                    "url": "https://en.wikipedia.org/wiki/1974_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1975,
+                    "url": "https://en.wikipedia.org/wiki/1975_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1978,
+                    "url": "https://en.wikipedia.org/wiki/1978_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1979,
+                    "url": "https://en.wikipedia.org/wiki/1979_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1980,
+                    "url": "https://en.wikipedia.org/wiki/1980_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1981,
+                    "url": "https://en.wikipedia.org/wiki/1981_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1982,
+                    "url": "https://en.wikipedia.org/wiki/1982_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1983,
+                    "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1984,
+                    "url": "https://en.wikipedia.org/wiki/1984_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1985,
+                    "url": "https://en.wikipedia.org/wiki/1985_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1986,
+                    "url": "https://en.wikipedia.org/wiki/1986_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1987,
+                    "url": "https://en.wikipedia.org/wiki/1987_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1988,
+                    "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1989,
+                    "url": "https://en.wikipedia.org/wiki/1989_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1990,
+                    "url": "https://en.wikipedia.org/wiki/1990_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1991,
+                    "url": "https://en.wikipedia.org/wiki/1991_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1992,
+                    "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1993,
+                    "url": "https://en.wikipedia.org/wiki/1993_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1994,
+                    "url": "https://en.wikipedia.org/wiki/1994_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1995,
+                    "url": "https://en.wikipedia.org/wiki/1995_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1996,
+                    "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1997,
+                    "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1998,
+                    "url": "https://en.wikipedia.org/wiki/1998_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1999,
+                    "url": "https://en.wikipedia.org/wiki/1999_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -55956,10 +56320,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "1st ( 1972 , 1973 , 1974 , 1984 )",
+                  "result": "1st",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "1972",
+                    "url": "https://en.wikipedia.org/wiki/1972_24_Hours_of_Le_Mans"
                   }
                 }
               },
@@ -60845,20 +61209,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1976,
-                  "end": 1976
-                }
+                "value": [
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -60879,8 +61240,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -62319,12 +62680,9 @@
             ]
           },
           "died": {
-            "date": "2001-04-24",
+            "date": "24 April 2001 Düsseldorf , Germany",
             "place": [
-              {
-                "text": "Düsseldorf",
-                "url": "https://en.wikipedia.org/wiki/D%C3%BCsseldorf"
-              },
+              "(aged 86) Düsseldorf",
               {
                 "text": "Germany",
                 "url": "https://en.wikipedia.org/wiki/Germany"
@@ -62342,20 +62700,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Germany"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1952,
-                  "end": 1952
-                }
+                "value": [
+                  {
+                    "year": 1952,
+                    "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -62376,8 +62731,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -62483,16 +62838,13 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Bengt Ronnie Peterson 14 February 1944 Örebro , Sweden",
+            "date": "1944-02-14",
             "place": null
           },
           "died": {
-            "date": "1978-09-11",
+            "date": "11 September 1978 Milan , Italy",
             "place": [
-              {
-                "text": "Milan",
-                "url": "https://en.wikipedia.org/wiki/Milan"
-              },
+              "(aged 34) Milan",
               "Italy"
             ]
           },
@@ -62511,10 +62863,6 @@
                   "text": "Swedish",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Sweden"
-                    },
-                    {
                       "text": "Swedish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
                     }
@@ -62523,10 +62871,44 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1970,
-                  "end": 1978
-                }
+                "value": [
+                  {
+                    "year": 1970,
+                    "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+                  },
+                  {
+                    "year": 1971,
+                    "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season"
+                  },
+                  {
+                    "year": 1972,
+                    "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
+                  },
+                  {
+                    "year": 1973,
+                    "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
+                  },
+                  {
+                    "year": 1974,
+                    "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                  },
+                  {
+                    "year": 1975,
+                    "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                  },
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  },
+                  {
+                    "year": 1978,
+                    "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -62559,8 +62941,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -68179,7 +68561,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Vitaly Aleksandrovich Petrov 8 September 1984 Vyborg , Russian SFSR , Soviet Union",
+            "date": "1984-09-08",
             "place": null
           }
         },
@@ -68195,10 +68577,6 @@
                   "text": "Russian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Russia"
-                    },
-                    {
                       "text": "Russian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Russia"
                     }
@@ -68207,10 +68585,20 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2010,
-                  "end": 2012
-                }
+                "value": [
+                  {
+                    "year": 2010,
+                    "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2011,
+                    "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2012,
+                    "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -68235,8 +68623,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -68300,10 +68688,6 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
-                    },
-                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -68312,10 +68696,24 @@
               },
               {
                 "label": "Years active",
-                "value": {
-                  "start": 2016,
-                  "end": 2019
-                }
+                "value": [
+                  {
+                    "year": 2016,
+                    "url": "https://en.wikipedia.org/wiki/2016_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2017,
+                    "url": null
+                  },
+                  {
+                    "year": 2018,
+                    "url": null
+                  },
+                  {
+                    "year": 2019,
+                    "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -68337,8 +68735,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -68351,10 +68749,7 @@
               },
               {
                 "label": "Poles",
-                "value": {
-                  "text": "0",
-                  "links": []
-                }
+                "value": 0
               },
               {
                 "label": "Fastest laps",
@@ -68365,8 +68760,12 @@
                 "value": {
                   "result": "4th",
                   "season": {
-                    "start": 2018,
-                    "end": 2019
+                    "text": "2018-19",
+                    "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship"
+                  },
+                  "class": {
+                    "text": "LMP1",
+                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
                   }
                 }
               },
@@ -68383,23 +68782,28 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "2007 , 2016-2019",
-                  "links": [
-                    {
-                      "text": "2007",
-                      "url": "https://en.wikipedia.org/wiki/2007_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2016",
-                      "url": "https://en.wikipedia.org/wiki/2016_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2019",
-                      "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 2007,
+                    "url": "https://en.wikipedia.org/wiki/2007_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2016,
+                    "url": "https://en.wikipedia.org/wiki/2016_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2017,
+                    "url": "https://en.wikipedia.org/wiki/2017_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2018,
+                    "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2019,
+                    "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -68421,10 +68825,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "3rd ( 2019 )",
+                  "result": "3rd",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "2019",
+                    "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Le_Mans"
                   }
                 }
               },
@@ -74159,12 +74563,9 @@
             ]
           },
           "died": {
-            "date": "1990-07-25",
+            "date": "25 July 1990 Las Rosas , Santa Fe",
             "place": [
-              {
-                "text": "Las Rosas",
-                "url": "https://en.wikipedia.org/wiki/Las_Rosas,_Santa_Fe"
-              },
+              "(aged 77) Las Rosas",
               {
                 "text": "Santa Fe",
                 "url": "https://en.wikipedia.org/wiki/Santa_Fe_Province"
@@ -74182,20 +74583,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Argentine",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Argentina"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1950,
-                  "end": 1950
-                }
+                "value": [
+                  {
+                    "year": 1950,
+                    "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -74216,8 +74614,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -74299,7 +74697,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Oscar Jack Piastri 6 April 2001 Melbourne , Victoria, Australia",
+            "date": "2001-04-06",
             "place": null
           }
         },
@@ -74359,10 +74757,6 @@
                   "text": "Australian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Australia"
-                    },
-                    {
                       "text": "Australian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
                     }
@@ -74407,8 +74801,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -74503,68 +74897,28 @@
             },
             "years": [
               {
-                "text": "2021",
-                "url": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "FIA Formula 3",
-              "url": "https://en.wikipedia.org/wiki/FIA_Formula_3"
-            },
-            "years": [
-              {
-                "text": "2020",
-                "url": "https://en.wikipedia.org/wiki/2020_FIA_Formula_3_Championship"
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Formula Renault Eurocup",
-              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Eurocup"
-            },
-            "years": [
-              {
-                "text": "2018-2019",
-                "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Formula Renault NEC",
-              "url": "https://en.wikipedia.org/wiki/Formula_Renault_NEC"
-            },
-            "years": [
-              {
-                "text": "2017-2018",
-                "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "F4 British",
-              "url": "https://en.wikipedia.org/wiki/F4_British"
-            },
-            "years": [
-              {
-                "text": "2017",
-                "url": "https://en.wikipedia.org/wiki/2017_F4_British_Championship"
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "F4 UAE",
-              "url": "https://en.wikipedia.org/wiki/F4_UAE"
-            },
-            "years": [
-              {
-                "text": "2016-2017",
+                "year": 2016,
                 "url": "https://en.wikipedia.org/wiki/2016-17_Formula_4_UAE_Championship"
+              },
+              {
+                "year": 2017,
+                "url": "https://en.wikipedia.org/wiki/2017_F4_British_Championship"
+              },
+              {
+                "year": 2018,
+                "url": "https://en.wikipedia.org/wiki/2018_Formula_Renault_Northern_European_Cup"
+              },
+              {
+                "year": 2019,
+                "url": "https://en.wikipedia.org/wiki/2019_Formula_Renault_Eurocup"
+              },
+              {
+                "year": 2020,
+                "url": "https://en.wikipedia.org/wiki/2020_FIA_Formula_3_Championship"
+              },
+              {
+                "year": 2021,
+                "url": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
               }
             ]
           }
@@ -78928,7 +79282,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Charles Maurice Marcel Pic 15 February 1990 Montélimar, Drôme , France",
+            "date": "1990-02-15",
             "place": null
           },
           "relatives": [
@@ -78960,10 +79314,6 @@
                   "text": "French",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/France"
-                    },
-                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -78972,10 +79322,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2012,
-                  "end": 2013
-                }
+                "value": [
+                  {
+                    "year": 2012,
+                    "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2013,
+                    "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -79000,8 +79356,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -79065,7 +79421,11 @@
             },
             "years": [
               {
-                "text": "2010-2011",
+                "year": 2010,
+                "url": null
+              },
+              {
+                "year": 2011,
                 "url": null
               }
             ]
@@ -79077,7 +79437,15 @@
             },
             "years": [
               {
-                "text": "2009-2011",
+                "year": 2009,
+                "url": null
+              },
+              {
+                "year": 2010,
+                "url": null
+              },
+              {
+                "year": 2011,
                 "url": null
               }
             ]
@@ -79089,7 +79457,11 @@
             },
             "years": [
               {
-                "text": "2008-2009",
+                "year": 2008,
+                "url": null
+              },
+              {
+                "year": 2009,
                 "url": null
               }
             ]
@@ -79101,7 +79473,7 @@
             },
             "years": [
               {
-                "text": "2007",
+                "year": 2007,
                 "url": null
               }
             ]
@@ -79113,7 +79485,7 @@
             },
             "years": [
               {
-                "text": "2007",
+                "year": 2007,
                 "url": null
               }
             ]
@@ -79125,7 +79497,7 @@
             },
             "years": [
               {
-                "text": "2006",
+                "year": 2006,
                 "url": null
               }
             ]
@@ -82337,12 +82709,9 @@
             ]
           },
           "died": {
-            "date": "1996-04-29",
+            "date": "29 April 1996 Nice , France",
             "place": [
-              {
-                "text": "Nice",
-                "url": "https://en.wikipedia.org/wiki/Nice"
-              },
+              "(aged 75) Nice",
               "France"
             ]
           }
@@ -82357,20 +82726,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/France"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1958,
-                  "end": 1958
-                }
+                "value": [
+                  {
+                    "year": 1958,
+                    "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -82391,8 +82757,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -82488,12 +82854,9 @@
             ]
           },
           "died": {
-            "date": "2017-11-01",
+            "date": "1 November 2017 Johannesburg , South Africa",
             "place": [
-              {
-                "text": "Johannesburg",
-                "url": "https://en.wikipedia.org/wiki/Johannesburg"
-              },
+              "(aged 79) Johannesburg",
               "South Africa"
             ]
           }
@@ -82508,20 +82871,25 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/South_Africa"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1962,
-                  "end": 1963
-                }
+                "value": [
+                  {
+                    "year": 1962,
+                    "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+                  },
+                  {
+                    "year": 1963,
+                    "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+                  },
+                  {
+                    "year": 1965,
+                    "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -82542,8 +82910,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -82650,12 +83018,9 @@
             ]
           },
           "died": {
-            "date": "2012-05-31",
+            "date": "31 May 2012 Titisee-Neustadt , Germany",
             "place": [
-              {
-                "text": "Titisee-Neustadt",
-                "url": "https://en.wikipedia.org/wiki/Titisee-Neustadt"
-              },
+              "(aged 100) Titisee-Neustadt",
               "Germany"
             ]
           }
@@ -82670,20 +83035,25 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Germany"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1950,
-                  "end": 1952
-                }
+                "value": [
+                  {
+                    "year": 1950,
+                    "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+                  },
+                  {
+                    "year": 1951,
+                    "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+                  },
+                  {
+                    "year": 1952,
+                    "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -83747,12 +84117,9 @@
             ]
           },
           "died": {
-            "date": "1993-12-27",
+            "date": "27 December 1993 Etterbeek , Belgium",
             "place": [
-              {
-                "text": "Etterbeek",
-                "url": "https://en.wikipedia.org/wiki/Etterbeek"
-              },
+              "(aged 75) Etterbeek",
               "Belgium"
             ]
           }
@@ -83767,20 +84134,41 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Belgium"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1953,
-                  "end": 1954
-                }
+                "value": [
+                  {
+                    "year": 1951,
+                    "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+                  },
+                  {
+                    "year": 1953,
+                    "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  },
+                  {
+                    "year": 1956,
+                    "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                  },
+                  {
+                    "year": 1961,
+                    "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                  },
+                  {
+                    "year": 1963,
+                    "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+                  },
+                  {
+                    "year": 1964,
+                    "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -83809,8 +84197,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -83920,20 +84308,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Belgium"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1974,
-                  "end": 1977
-                }
+                "value": [
+                  {
+                    "year": 1974,
+                    "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -83958,8 +84347,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -86891,12 +87280,9 @@
             ]
           },
           "died": {
-            "date": "1971-04-19",
+            "date": "19 April 1971 Godiasco , Italy",
             "place": [
-              {
-                "text": "Godiasco",
-                "url": "https://en.wikipedia.org/wiki/Godiasco"
-              },
+              "(aged 57) Godiasco",
               {
                 "text": "Italy",
                 "url": "https://en.wikipedia.org/wiki/Italy"
@@ -86914,20 +87300,29 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1955,
-                  "end": 1958
-                }
+                "value": [
+                  {
+                    "year": 1955,
+                    "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
+                  },
+                  {
+                    "year": 1956,
+                    "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                  },
+                  {
+                    "year": 1957,
+                    "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+                  },
+                  {
+                    "year": 1958,
+                    "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -86952,8 +87347,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -87057,20 +87452,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1959,
-                  "end": 1960
-                }
+                "value": [
+                  {
+                    "year": 1959,
+                    "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+                  },
+                  {
+                    "year": 1960,
+                    "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -87091,8 +87487,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -88169,7 +88565,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Nelson Piquet Souto Maior 17 August 1952 Rio de Janeiro , Brazil",
+            "date": "1952-08-17",
             "place": null
           },
           "children": [
@@ -88199,10 +88595,6 @@
                   "text": "Brazilian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Brazil"
-                    },
-                    {
                       "text": "Brazilian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
                     }
@@ -88211,10 +88603,64 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1978,
-                  "end": 1991
-                }
+                "value": [
+                  {
+                    "year": 1978,
+                    "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+                  },
+                  {
+                    "year": 1979,
+                    "url": null
+                  },
+                  {
+                    "year": 1980,
+                    "url": null
+                  },
+                  {
+                    "year": 1981,
+                    "url": null
+                  },
+                  {
+                    "year": 1982,
+                    "url": null
+                  },
+                  {
+                    "year": 1983,
+                    "url": null
+                  },
+                  {
+                    "year": 1984,
+                    "url": null
+                  },
+                  {
+                    "year": 1985,
+                    "url": null
+                  },
+                  {
+                    "year": 1986,
+                    "url": null
+                  },
+                  {
+                    "year": 1987,
+                    "url": null
+                  },
+                  {
+                    "year": 1988,
+                    "url": null
+                  },
+                  {
+                    "year": 1989,
+                    "url": null
+                  },
+                  {
+                    "year": 1990,
+                    "url": null
+                  },
+                  {
+                    "year": 1991,
+                    "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -88255,18 +88701,18 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "3 ( 1981 , 1983 , 1987 )",
-                  "links": [
+                  "count": 3,
+                  "championships": [
                     {
-                      "text": "1981",
+                      "year": 1981,
                       "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
                     },
                     {
-                      "text": "1983",
+                      "year": 1983,
                       "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
                     },
                     {
-                      "text": "1987",
+                      "year": 1987,
                       "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
                     }
                   ]
@@ -88353,19 +88799,16 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1996-1997",
-                  "links": [
-                    {
-                      "text": "1996",
-                      "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1997",
-                      "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1996,
+                    "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1997,
+                    "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -88379,10 +88822,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "8th ( 1996 )",
+                  "result": "8th",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "1996",
+                    "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
                   }
                 }
               },
@@ -95057,12 +95500,9 @@
             ]
           },
           "died": {
-            "date": "2002-07-29",
+            "date": "29 July 2002 Chieti , Italy",
             "place": [
-              {
-                "text": "Chieti",
-                "url": "https://en.wikipedia.org/wiki/Chieti"
-              },
+              "(aged 69) Chieti",
               {
                 "text": "Italy",
                 "url": "https://en.wikipedia.org/wiki/Italy"
@@ -95080,20 +95520,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1961,
-                  "end": 1961
-                }
+                "value": [
+                  {
+                    "year": 1961,
+                    "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -95114,8 +95551,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -95205,16 +95642,13 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Didier Joseph Louis Pironi 26 March 1952 Villecresnes , Val-de-Marne , France",
+            "date": "1952-03-26",
             "place": null
           },
           "died": {
-            "date": "1987-08-23",
+            "date": "23 August 1987 English Channel , off the Isle of Wight , England",
             "place": [
-              {
-                "text": "English Channel",
-                "url": "https://en.wikipedia.org/wiki/English_Channel"
-              },
+              "(aged 35) English Channel",
               "off the Isle of Wight",
               "England"
             ]
@@ -95243,10 +95677,6 @@
                   "text": "French",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/France"
-                    },
-                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -95255,10 +95685,28 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1978,
-                  "end": 1982
-                }
+                "value": [
+                  {
+                    "year": 1978,
+                    "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+                  },
+                  {
+                    "year": 1979,
+                    "url": null
+                  },
+                  {
+                    "year": 1980,
+                    "url": null
+                  },
+                  {
+                    "year": 1981,
+                    "url": null
+                  },
+                  {
+                    "year": 1982,
+                    "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -95287,8 +95735,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -95372,23 +95820,24 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1976-1978 , 1980",
-                  "links": [
-                    {
-                      "text": "1976",
-                      "url": "https://en.wikipedia.org/wiki/1976_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1978",
-                      "url": "https://en.wikipedia.org/wiki/1978_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1980",
-                      "url": "https://en.wikipedia.org/wiki/1980_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1978,
+                    "url": "https://en.wikipedia.org/wiki/1978_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1980,
+                    "url": "https://en.wikipedia.org/wiki/1980_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -95410,10 +95859,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "1st ( 1978 )",
+                  "result": "1st",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "1978",
+                    "url": "https://en.wikipedia.org/wiki/1978_24_Hours_of_Le_Mans"
                   }
                 }
               },
@@ -97525,13 +97974,7 @@
         "general": {
           "born": {
             "date": "1962-01-12",
-            "place": [
-              {
-                "text": "Rome",
-                "url": "https://en.wikipedia.org/wiki/Rome"
-              },
-              "Italy"
-            ]
+            "place": null
           },
           "children": []
         },
@@ -97588,10 +98031,6 @@
                   "text": "Italian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    },
-                    {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
                     }
@@ -97600,10 +98039,20 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1989,
-                  "end": 1991
-                }
+                "value": [
+                  {
+                    "year": 1989,
+                    "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1990,
+                    "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1991,
+                    "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -97628,8 +98077,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -97689,27 +98138,60 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1981 , 1998-2008 , 2010",
-                  "links": [
-                    {
-                      "text": "1981",
-                      "url": "https://en.wikipedia.org/wiki/1981_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1998",
-                      "url": "https://en.wikipedia.org/wiki/1998_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2008",
-                      "url": "https://en.wikipedia.org/wiki/2008_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2010",
-                      "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1981,
+                    "url": "https://en.wikipedia.org/wiki/1981_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1998,
+                    "url": "https://en.wikipedia.org/wiki/1998_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1999,
+                    "url": "https://en.wikipedia.org/wiki/1999_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2000,
+                    "url": "https://en.wikipedia.org/wiki/2000_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2001,
+                    "url": "https://en.wikipedia.org/wiki/2001_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2002,
+                    "url": "https://en.wikipedia.org/wiki/2002_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2003,
+                    "url": "https://en.wikipedia.org/wiki/2003_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2004,
+                    "url": "https://en.wikipedia.org/wiki/2004_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2005,
+                    "url": "https://en.wikipedia.org/wiki/2005_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2006,
+                    "url": "https://en.wikipedia.org/wiki/2006_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2007,
+                    "url": "https://en.wikipedia.org/wiki/2007_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2008,
+                    "url": "https://en.wikipedia.org/wiki/2008_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2010,
+                    "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -97739,10 +98221,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "1st ( 2000 , 2001 , 2002 , 2006 , 2007 )",
+                  "result": "1st",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "2000",
+                    "url": "https://en.wikipedia.org/wiki/2000_24_Hours_of_Le_Mans"
                   }
                 }
               },
@@ -97831,7 +98313,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Antônio Reginaldo Pizzonia Júnior 11 September 1980 Manaus , Amazonas , Brazil",
+            "date": "1980-09-11",
             "place": null
           }
         },
@@ -97871,10 +98353,6 @@
                   "text": "FIA Gold",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/File:FIA_Gold_Driver.png"
-                    },
-                    {
                       "text": "FIA Gold",
                       "url": "https://en.wikipedia.org/wiki/FIA_Gold_Categorisation"
                     }
@@ -97894,10 +98372,20 @@
             "rows": [
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2003,
-                  "end": 2005
-                }
+                "value": [
+                  {
+                    "year": 2003,
+                    "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2004,
+                    "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2005,
+                    "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -97922,8 +98410,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -105573,8 +106061,18 @@
         "title": "Eric van de Poele",
         "general": {
           "born": {
-            "date": "Eric Francis Edouard Ghislain Thérèse van de Poele 30 September 1961 Verviers , Liège , Belgium",
-            "place": null
+            "date": "1961-09-30",
+            "place": [
+              {
+                "text": "Verviers",
+                "url": "https://en.wikipedia.org/wiki/Verviers"
+              },
+              {
+                "text": "Liège",
+                "url": "https://en.wikipedia.org/wiki/Li%C3%A8ge_(province)"
+              },
+              "Belgium"
+            ]
           }
         },
         "championship_titles": [],
@@ -105587,20 +106085,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Belgium"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1991,
-                  "end": 1992
-                }
+                "value": [
+                  {
+                    "year": 1991,
+                    "url": "https://en.wikipedia.org/wiki/1991_Formula_One_season"
+                  },
+                  {
+                    "year": 1992,
+                    "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -105629,8 +106128,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -110330,12 +110829,9 @@
             ]
           },
           "died": {
-            "date": "1997-08-16",
+            "date": "16 August 1997 Paris , France",
             "place": [
-              {
-                "text": "Paris",
-                "url": "https://en.wikipedia.org/wiki/Paris"
-              },
+              "(aged 75) Paris",
               "France"
             ]
           }
@@ -110350,20 +110846,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/France"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1954,
-                  "end": 1955
-                }
+                "value": [
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  },
+                  {
+                    "year": 1955,
+                    "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -110384,8 +110881,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -110481,12 +110978,9 @@
             ]
           },
           "died": {
-            "date": "2019-09-30",
+            "date": "30 September 2019 Nijkerk , Netherlands",
             "place": [
-              {
-                "text": "Nijkerk",
-                "url": "https://en.wikipedia.org/wiki/Nijkerk"
-              },
+              "(aged 82) Nijkerk",
               "Netherlands"
             ]
           }
@@ -110501,20 +110995,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Dutch",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Netherlands"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1962,
-                  "end": 1962
-                }
+                "value": [
+                  {
+                    "year": 1962,
+                    "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -110539,8 +111030,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -110973,13 +111464,19 @@
         "title": "Dennis Poore",
         "general": {
           "born": {
-            "date": "Roger Dennistoun Poore 19 August 1916 London , England",
-            "place": null
+            "date": "1916-08-19",
+            "place": [
+              {
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
+              },
+              "England"
+            ]
           },
           "died": {
-            "date": "1987-02-12",
+            "date": "12 February 1987 London, England",
             "place": [
-              "London",
+              "(aged 70) London",
               "England"
             ]
           }
@@ -110994,20 +111491,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1952,
-                  "end": 1952
-                }
+                "value": [
+                  {
+                    "year": 1952,
+                    "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -111028,8 +111522,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -111119,16 +111613,16 @@
         "title": "Alfonso, Marquess of Portago",
         "general": {
           "born": {
-            "date": "Alfonso Antonio Vicente Eduardo Ángel Blas Francisco de Borja Cabeza de Vaca y Leighton 11 October 1928 London, England",
-            "place": null
+            "date": "1928-10-11",
+            "place": [
+              "London",
+              "England"
+            ]
           },
           "died": {
-            "date": "1957-05-12",
+            "date": "12 May 1957 Cavriana , Lombardy , Italy",
             "place": [
-              {
-                "text": "Cavriana",
-                "url": "https://en.wikipedia.org/wiki/Cavriana"
-              },
+              "(aged 28) Cavriana",
               {
                 "text": "Lombardy",
                 "url": "https://en.wikipedia.org/wiki/Lombardy"
@@ -111147,20 +111641,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Spanish",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Spain"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1956,
-                  "end": 1957
-                }
+                "value": [
+                  {
+                    "year": 1956,
+                    "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                  },
+                  {
+                    "year": 1957,
+                    "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -111181,8 +111676,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -111233,12 +111728,7 @@
                 "label": "Signature",
                 "value": {
                   "text": null,
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/File:Alfonso_de_Portago_signature.svg"
-                    }
-                  ]
+                  "links": []
                 }
               }
             ]
@@ -111285,17 +111775,7 @@
         "general": {
           "born": {
             "date": "1944-05-26",
-            "place": [
-              {
-                "text": "New York City",
-                "url": "https://en.wikipedia.org/wiki/New_York_City"
-              },
-              {
-                "text": "New York",
-                "url": "https://en.wikipedia.org/wiki/New_York_(state)"
-              },
-              "U.S."
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -111355,7 +111835,9 @@
           },
           "died": {
             "date": "2001-02-28",
-            "place": null
+            "place": [
+              "(aged 91)"
+            ]
           }
         },
         "championship_titles": [],
@@ -111368,20 +111850,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "French",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/France"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1950,
-                  "end": 1950
-                }
+                "value": [
+                  {
+                    "year": 1950,
+                    "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -111402,8 +111881,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -111502,12 +111981,9 @@
             ]
           },
           "died": {
-            "date": "2009-03-30",
+            "date": "30 March 2009 Johannesburg , South Africa",
             "place": [
-              {
-                "text": "Johannesburg",
-                "url": "https://en.wikipedia.org/wiki/Johannesburg"
-              },
+              "(aged 74) Johannesburg",
               {
                 "text": "South Africa",
                 "url": "https://en.wikipedia.org/wiki/South_Africa"
@@ -111525,20 +112001,29 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/South_Africa"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1965,
-                  "end": 1973
-                }
+                "value": [
+                  {
+                    "year": 1965,
+                    "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
+                  },
+                  {
+                    "year": 1968,
+                    "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+                  },
+                  {
+                    "year": 1971,
+                    "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season"
+                  },
+                  {
+                    "year": 1973,
+                    "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -111567,8 +112052,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -111668,12 +112153,9 @@
             ]
           },
           "died": {
-            "date": "1981-11-26",
+            "date": "26 November 1981 Innsbruck , Tyrol , Austria",
             "place": [
-              {
-                "text": "Innsbruck",
-                "url": "https://en.wikipedia.org/wiki/Innsbruck"
-              },
+              "(aged 58) Innsbruck",
               {
                 "text": "Tyrol",
                 "url": "https://en.wikipedia.org/wiki/Tyrol_(state)"
@@ -111692,20 +112174,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1962,
-                  "end": 1962
-                }
+                "value": [
+                  {
+                    "year": 1962,
+                    "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -111726,8 +112205,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -112683,12 +113162,9 @@
             ]
           },
           "died": {
-            "date": "1981-03-29",
+            "date": "29 March 1981 Silverstone , Northamptonshire , England",
             "place": [
-              {
-                "text": "Silverstone",
-                "url": "https://en.wikipedia.org/wiki/Silverstone"
-              },
+              "(aged 43) Silverstone",
               {
                 "text": "Northamptonshire",
                 "url": "https://en.wikipedia.org/wiki/Northamptonshire"
@@ -112707,20 +113183,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1963,
-                  "end": 1965
-                }
+                "value": [
+                  {
+                    "year": 1963,
+                    "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+                  },
+                  {
+                    "year": 1965,
+                    "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -112741,8 +113218,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -114410,7 +114887,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Alain Marie Pascal Prost 24 February 1955 Lorette, Loire , France",
+            "date": "1955-02-24",
             "place": null
           },
           "children": [
@@ -114432,10 +114909,6 @@
                   "text": "French",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/France"
-                    },
-                    {
                       "text": "French",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
                     }
@@ -114444,10 +114917,60 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1980,
-                  "end": 1991
-                }
+                "value": [
+                  {
+                    "year": 1980,
+                    "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
+                  },
+                  {
+                    "year": 1981,
+                    "url": null
+                  },
+                  {
+                    "year": 1982,
+                    "url": null
+                  },
+                  {
+                    "year": 1983,
+                    "url": null
+                  },
+                  {
+                    "year": 1984,
+                    "url": null
+                  },
+                  {
+                    "year": 1985,
+                    "url": null
+                  },
+                  {
+                    "year": 1986,
+                    "url": null
+                  },
+                  {
+                    "year": 1987,
+                    "url": null
+                  },
+                  {
+                    "year": 1988,
+                    "url": null
+                  },
+                  {
+                    "year": 1989,
+                    "url": null
+                  },
+                  {
+                    "year": 1990,
+                    "url": null
+                  },
+                  {
+                    "year": 1991,
+                    "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1993,
+                    "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -114480,22 +115003,22 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "4 ( 1985 , 1986 , 1989 , 1993 )",
-                  "links": [
+                  "count": 4,
+                  "championships": [
                     {
-                      "text": "1985",
+                      "year": 1985,
                       "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
                     },
                     {
-                      "text": "1986",
+                      "year": 1986,
                       "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
                     },
                     {
-                      "text": "1989",
+                      "year": 1989,
                       "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
                     },
                     {
-                      "text": "1993",
+                      "year": 1993,
                       "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
                     }
                   ]
@@ -119506,16 +120029,13 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Thomas Maldwyn Pryce 11 June 1949 Ruthin , Denbighshire, Wales",
+            "date": "1949-06-11",
             "place": null
           },
           "died": {
-            "date": "1977-03-05",
+            "date": "5 March 1977 Midrand , Transvaal , Union of South Africa",
             "place": [
-              {
-                "text": "Midrand",
-                "url": "https://en.wikipedia.org/wiki/Midrand"
-              },
+              "(aged 27) Midrand",
               {
                 "text": "Transvaal",
                 "url": "https://en.wikipedia.org/wiki/Transvaal_(province)"
@@ -119540,10 +120060,6 @@
                   "text": "British",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    },
-                    {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
                     }
@@ -119552,10 +120068,24 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1974,
-                  "end": 1977
-                }
+                "value": [
+                  {
+                    "year": 1974,
+                    "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                  },
+                  {
+                    "year": 1975,
+                    "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                  },
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -119580,8 +120110,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -119689,12 +120219,9 @@
             ]
           },
           "died": {
-            "date": "1985-07-02",
+            "date": "2 July 1985 English Channel , close to Bognor Regis, United Kingdom",
             "place": [
-              {
-                "text": "English Channel",
-                "url": "https://en.wikipedia.org/wiki/English_Channel"
-              },
+              "(aged 40) English Channel",
               "close to Bognor Regis",
               "United Kingdom"
             ]
@@ -119710,20 +120237,25 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1973,
-                  "end": 1974
-                }
+                "value": [
+                  {
+                    "year": 1973,
+                    "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
+                  },
+                  {
+                    "year": 1974,
+                    "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -119752,8 +120284,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -122322,10 +122854,12 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1965,
-                  "end": 1965
-                }
+                "value": [
+                  {
+                    "year": 1965,
+                    "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -122346,8 +122880,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {

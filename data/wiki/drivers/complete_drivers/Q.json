@@ -54,20 +54,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Austrian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Austria"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1969,
-                  "end": 1974
-                }
+                "value": [
+                  {
+                    "year": 1969,
+                    "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
+                  },
+                  {
+                    "year": 1974,
+                    "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -92,8 +93,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {

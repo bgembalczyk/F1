@@ -49,10 +49,6 @@
                   "text": "Japanese",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Japan"
-                    },
-                    {
                       "text": "Japanese",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
                     }
@@ -61,10 +57,20 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2006,
-                  "end": 2007
-                }
+                "value": [
+                  {
+                    "year": 2006,
+                    "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2007,
+                    "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2010,
+                    "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -93,8 +99,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -158,52 +164,148 @@
             },
             "years": [
               {
-                "text": "2020",
+                "year": 2020,
                 "url": "https://en.wikipedia.org/wiki/2020_Super_Formula_Lights"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
+            },
+            "years": [
               {
-                "text": "2015",
+                "year": 2015,
                 "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Formula_E_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "ADAC GT Masters",
+              "url": "https://en.wikipedia.org/wiki/ADAC_GT_Masters"
+            },
+            "years": [
               {
-                "text": "2009",
+                "year": 2009,
                 "url": null
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "GP2 Asia Series",
+              "url": "https://en.wikipedia.org/wiki/GP2_Asia_Series"
+            },
+            "years": [
               {
-                "text": "2008-2009",
+                "year": 2008,
                 "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_GP2_Asia_Series"
               },
               {
-                "text": "2007-2008",
+                "year": 2009,
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "GP2 Series",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
+            },
+            "years": [
+              {
+                "year": 2007,
                 "url": null
               },
               {
-                "text": "2005-2006",
+                "year": 2008,
                 "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Nippon",
+              "url": "https://en.wikipedia.org/wiki/Formula_Nippon"
+            },
+            "years": [
+              {
+                "year": 2005,
+                "url": "https://en.wikipedia.org/wiki/2005_Formula_Nippon_Championship"
               },
               {
-                "text": "2005-2006",
-                "url": null
+                "year": 2006,
+                "url": "https://en.wikipedia.org/wiki/2006_Formula_Nippon_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Super GT",
+              "url": "https://en.wikipedia.org/wiki/Super_GT"
+            },
+            "years": [
+              {
+                "year": 2005,
+                "url": "https://en.wikipedia.org/wiki/2005_Super_GT_Series"
               },
               {
-                "text": "2001",
+                "year": 2006,
+                "url": "https://en.wikipedia.org/wiki/2006_Super_GT_Series"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Japanese F3",
+              "url": "https://en.wikipedia.org/wiki/All-Japan_Formula_Three"
+            },
+            "years": [
+              {
+                "year": 2001,
                 "url": "https://en.wikipedia.org/wiki/2001_Japanese_Formula_3_Championship"
               },
               {
-                "text": "2004",
+                "year": 2004,
                 "url": "https://en.wikipedia.org/wiki/2004_Japanese_Formula_3_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "F3 Euro Series",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three_Euroseries"
+            },
+            "years": [
               {
-                "text": "2003",
+                "year": 2003,
                 "url": "https://en.wikipedia.org/wiki/2003_Formula_3_Euro_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "German F3",
+              "url": "https://en.wikipedia.org/wiki/German_Formula_Three_Championship"
+            },
+            "years": [
               {
-                "text": "2002",
+                "year": 2002,
                 "url": "https://en.wikipedia.org/wiki/2002_German_Formula_Three_Championship"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "British F3",
+              "url": "https://en.wikipedia.org/wiki/British_Formula_3_Championship"
+            },
+            "years": [
               {
-                "text": "2001",
-                "url": "https://en.wikipedia.org/wiki/2001_Japanese_Formula_3_Championship"
+                "year": 2001,
+                "url": null
               }
             ]
           }
@@ -5715,7 +5817,7 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Alexander Charles Yoong Loong 20 July 1976 Kuala Lumpur , Malaysia",
+            "date": "1976-07-20",
             "place": null
           },
           "children": []
@@ -5730,20 +5832,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Malaysian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Malaysia"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2001,
-                  "end": 2002
-                }
+                "value": [
+                  {
+                    "year": 2001,
+                    "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2002,
+                    "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -5764,8 +5867,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -5825,19 +5928,16 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "2006-2007",
-                  "links": [
-                    {
-                      "text": "2006",
-                      "url": "https://en.wikipedia.org/wiki/2006_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2007",
-                      "url": "https://en.wikipedia.org/wiki/2007_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 2006,
+                    "url": "https://en.wikipedia.org/wiki/2006_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2007,
+                    "url": "https://en.wikipedia.org/wiki/2007_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -5855,10 +5955,10 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "8th ( 2006 )",
+                  "result": "8th",
                   "season": {
-                    "start": null,
-                    "end": null
+                    "text": "2006",
+                    "url": "https://en.wikipedia.org/wiki/2006_24_Hours_of_Le_Mans"
                   }
                 }
               },

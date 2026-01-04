@@ -35,7 +35,16 @@
         "general": {
           "born": {
             "date": "1932-07-10",
-            "place": null
+            "place": [
+              {
+                "text": "Turin",
+                "url": "https://en.wikipedia.org/wiki/Turin"
+              },
+              {
+                "text": "Kingdom of Italy",
+                "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy"
+              }
+            ]
           },
           "died": {
             "date": "29 April 2019 Turin , Italy",
@@ -93,7 +102,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -600,14 +612,7 @@
         "general": {
           "born": {
             "date": "1913-03-21",
-            "place": [
-              {
-                "text": "Oatlands",
-                "url": "https://en.wikipedia.org/wiki/Oatlands,_Surrey"
-              },
-              "Surrey",
-              "England"
-            ]
+            "place": null
           },
           "died": {
             "date": "18 December 1991 Ibstone , Buckinghamshire, England",
@@ -2271,7 +2276,17 @@
         "general": {
           "born": {
             "date": "1957-11-27",
-            "place": null
+            "place": [
+              {
+                "text": "Cookstown",
+                "url": "https://en.wikipedia.org/wiki/Cookstown"
+              },
+              {
+                "text": "Northern Ireland",
+                "url": "https://en.wikipedia.org/wiki/Northern_Ireland"
+              },
+              "United Kingdom"
+            ]
           }
         },
         "championship_titles": [],
@@ -2318,7 +2333,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -6579,7 +6597,13 @@
         "general": {
           "born": {
             "date": "1941-10-03",
-            "place": null
+            "place": [
+              {
+                "text": "Trieste",
+                "url": "https://en.wikipedia.org/wiki/Trieste"
+              },
+              "Italy"
+            ]
           },
           "died": {
             "date": "2025-11-05",
@@ -6660,7 +6684,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -9647,7 +9674,13 @@
         "general": {
           "born": {
             "date": "1969-11-19",
-            "place": null
+            "place": [
+              {
+                "text": "Mouscron",
+                "url": "https://en.wikipedia.org/wiki/Mouscron"
+              },
+              "Belgium"
+            ]
           }
         },
         "championship_titles": [],
@@ -9690,7 +9723,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -10548,11 +10584,7 @@
         "general": {
           "born": {
             "date": "1912-12-15",
-            "place": [
-              "Long Valley",
-              "New Jersey",
-              "U.S."
-            ]
+            "place": null
           },
           "died": {
             "date": "November 25, 1982 Califon, New Jersey , U.S.",
@@ -10578,9 +10610,9 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "6th ( 1946 )",
+                  "result": "6th",
                   "season": {
-                    "year": 1946,
+                    "text": "1946",
                     "url": "https://en.wikipedia.org/wiki/1946_AAA_Championship_Car_season"
                   }
                 }
@@ -10716,7 +10748,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -10790,7 +10825,16 @@
         "general": {
           "born": {
             "date": "1921-11-05",
-            "place": null
+            "place": [
+              {
+                "text": "Stuttgart",
+                "url": "https://en.wikipedia.org/wiki/Stuttgart"
+              },
+              {
+                "text": "Weimar Republic",
+                "url": "https://en.wikipedia.org/wiki/Weimar_Republic"
+              }
+            ]
           },
           "died": {
             "date": "24 January 2012 Kreuth , Germany",
@@ -10843,7 +10887,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -10945,11 +10992,7 @@
         "general": {
           "born": {
             "date": "1913-08-21",
-            "place": [
-              "Modesto",
-              "California",
-              "U.S."
-            ]
+            "place": null
           },
           "died": {
             "date": "October 13, 1989 Alamo, California , U.S.",
@@ -11030,7 +11073,7 @@
                 "value": {
                   "result": "14th-1950 , 1954",
                   "season": {
-                    "year": 1950,
+                    "text": "1950",
                     "url": "https://en.wikipedia.org/wiki/1950_AAA_Championship_Car_season"
                   }
                 }
@@ -11194,7 +11237,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -14754,10 +14800,7 @@
         "general": {
           "born": {
             "date": "1995-09-23",
-            "place": [
-              "London",
-              "England"
-            ]
+            "place": null
           }
         },
         "championship_titles": [
@@ -14873,7 +14916,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -14896,7 +14942,7 @@
                 "value": {
                   "result": "2nd",
                   "season": {
-                    "year": 2025,
+                    "text": "2025",
                     "url": "https://en.wikipedia.org/wiki/2025_IMSA_SportsCar_Championship"
                   },
                   "class": {
@@ -14958,7 +15004,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -14981,7 +15030,7 @@
                 "value": {
                   "result": "8th",
                   "season": {
-                    "year": 2024,
+                    "text": "2024",
                     "url": "https://en.wikipedia.org/wiki/2024_Deutsche_Tourenwagen_Masters"
                   }
                 }
@@ -15036,7 +15085,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -15083,19 +15135,20 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "2022-2024",
-                  "links": [
-                    {
-                      "text": "2022",
-                      "url": "https://en.wikipedia.org/wiki/2022_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2024",
-                      "url": "https://en.wikipedia.org/wiki/2024_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 2022,
+                    "url": "https://en.wikipedia.org/wiki/2022_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2023,
+                    "url": "https://en.wikipedia.org/wiki/2023_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2024,
+                    "url": "https://en.wikipedia.org/wiki/2024_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -15109,12 +15162,8 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "17th ( 2023 )",
+                  "result": "17th",
                   "season": {
-                    "year": 2023,
-                    "url": "https://en.wikipedia.org/wiki/2023_24_Hours_of_Le_Mans"
-                  },
-                  "class": {
                     "text": "2023",
                     "url": "https://en.wikipedia.org/wiki/2023_24_Hours_of_Le_Mans"
                   }
@@ -15144,34 +15193,44 @@
             },
             "years": [
               {
-                "from": 2021,
-                "to": 2022,
-                "url_from": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship",
-                "url_to": "https://en.wikipedia.org/wiki/2022_GT_World_Challenge_Europe_Endurance_Cup"
+                "year": 2013,
+                "url": "https://en.wikipedia.org/wiki/2013_Formula_Renault_2.0_Northern_European_Cup"
               },
               {
-                "from": 2018,
-                "to": 2021,
-                "url_from": "https://en.wikipedia.org/wiki/2018_Formula_2_Championship",
-                "url_to": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
+                "year": 2014,
+                "url": null
               },
               {
-                "from": 2016,
-                "to": 2017,
-                "url_from": "https://en.wikipedia.org/wiki/2016_Euroformula_Open_Championship",
-                "url_to": "https://en.wikipedia.org/wiki/2017_GP3_Series"
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_Eurocup_Formula_Renault_2.0"
               },
               {
-                "from": 2014,
-                "to": 2015,
-                "url_from": "https://en.wikipedia.org/wiki/2014_Eurocup_Formula_Renault_2.0",
-                "url_to": "https://en.wikipedia.org/wiki/2015_Eurocup_Formula_Renault_2.0"
+                "year": 2016,
+                "url": "https://en.wikipedia.org/wiki/2016_Euroformula_Open_Championship"
               },
               {
-                "from": 2013,
-                "to": 2015,
-                "url_from": "https://en.wikipedia.org/wiki/2013_Formula_Renault_2.0_Northern_European_Cup",
-                "url_to": "https://en.wikipedia.org/wiki/2015_Eurocup_Formula_Renault_2.0"
+                "year": 2017,
+                "url": "https://en.wikipedia.org/wiki/2017_GP3_Series"
+              },
+              {
+                "year": 2018,
+                "url": "https://en.wikipedia.org/wiki/2018_Formula_2_Championship"
+              },
+              {
+                "year": 2019,
+                "url": null
+              },
+              {
+                "year": 2020,
+                "url": null
+              },
+              {
+                "year": 2021,
+                "url": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
+              },
+              {
+                "year": 2022,
+                "url": "https://en.wikipedia.org/wiki/2022_GT_World_Challenge_Europe_Endurance_Cup"
               }
             ]
           }
@@ -23333,7 +23392,17 @@
         "general": {
           "born": {
             "date": "1979-04-16",
-            "place": null
+            "place": [
+              {
+                "text": "Eindhoven",
+                "url": "https://en.wikipedia.org/wiki/Eindhoven"
+              },
+              {
+                "text": "North Brabant",
+                "url": "https://en.wikipedia.org/wiki/North_Brabant"
+              },
+              "Netherlands"
+            ]
           }
         },
         "championship_titles": [],
@@ -23392,7 +23461,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -27388,14 +27460,7 @@
         "general": {
           "born": {
             "date": "1996-03-23",
-            "place": [
-              {
-                "text": "Westminster",
-                "url": "https://en.wikipedia.org/wiki/City_of_Westminster"
-              },
-              "London",
-              "England"
-            ]
+            "place": null
           },
           "parents": [
             {
@@ -27471,7 +27536,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -27541,34 +27609,36 @@
             },
             "years": [
               {
-                "from": 2017,
-                "to": 2018,
-                "url_from": "https://en.wikipedia.org/wiki/2017_Formula_2_Championship",
-                "url_to": "https://en.wikipedia.org/wiki/2018_Formula_2_Championship"
+                "year": 2012,
+                "url": "https://en.wikipedia.org/wiki/2012_Formula_Renault_2.0_Alps_Series"
               },
               {
-                "from": 2013,
-                "to": 2014,
-                "url_from": "https://en.wikipedia.org/wiki/2013_Formula_Renault_2.0_Northern_European_Cup",
-                "url_to": "https://en.wikipedia.org/wiki/2014_Eurocup_Formula_Renault_2.0"
+                "year": 2013,
+                "url": "https://en.wikipedia.org/wiki/2013_Formula_Renault_2.0_Northern_European_Cup"
               },
               {
-                "from": 2012,
-                "to": 2014,
-                "url_from": "https://en.wikipedia.org/wiki/2012_Formula_Renault_2.0_Alps_Series",
-                "url_to": "https://en.wikipedia.org/wiki/2014_Eurocup_Formula_Renault_2.0"
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_Eurocup_Formula_Renault_2.0"
               },
               {
-                "year": 2021,
-                "url": "https://en.wikipedia.org/wiki/2021_Deutsche_Tourenwagen_Masters"
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_FIA_Formula_3_European_Championship"
               },
               {
                 "year": 2016,
                 "url": "https://en.wikipedia.org/wiki/2016_GP3_Series"
               },
               {
-                "year": 2015,
-                "url": "https://en.wikipedia.org/wiki/2015_FIA_Formula_3_European_Championship"
+                "year": 2017,
+                "url": "https://en.wikipedia.org/wiki/2017_Formula_2_Championship"
+              },
+              {
+                "year": 2018,
+                "url": "https://en.wikipedia.org/wiki/2018_Formula_2_Championship"
+              },
+              {
+                "year": 2021,
+                "url": "https://en.wikipedia.org/wiki/2021_Deutsche_Tourenwagen_Masters"
               }
             ]
           }
@@ -33503,17 +33573,7 @@
         "general": {
           "born": {
             "date": "1956-12-23",
-            "place": [
-              {
-                "text": "Milan",
-                "url": "https://en.wikipedia.org/wiki/Milan"
-              },
-              {
-                "text": "Lombardy",
-                "url": "https://en.wikipedia.org/wiki/Lombardy"
-              },
-              "Italy"
-            ]
+            "place": null
           },
           "died": {
             "date": "25 April 2001 Lausitzring , Brandenburg , Germany",
@@ -33650,7 +33710,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -33733,27 +33796,40 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1981-1983 , 1996-2000",
-                  "links": [
-                    {
-                      "text": "1981",
-                      "url": "https://en.wikipedia.org/wiki/1981_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1983",
-                      "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1996",
-                      "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2000",
-                      "url": "https://en.wikipedia.org/wiki/2000_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1981,
+                    "url": "https://en.wikipedia.org/wiki/1981_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1982,
+                    "url": "https://en.wikipedia.org/wiki/1982_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1983,
+                    "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1996,
+                    "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1997,
+                    "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1998,
+                    "url": "https://en.wikipedia.org/wiki/1998_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1999,
+                    "url": "https://en.wikipedia.org/wiki/1999_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2000,
+                    "url": "https://en.wikipedia.org/wiki/2000_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -33779,12 +33855,8 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "1st ( 1997 )",
+                  "result": "1st",
                   "season": {
-                    "year": 1997,
-                    "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans"
-                  },
-                  "class": {
                     "text": "1997",
                     "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans"
                   }
@@ -33890,17 +33962,7 @@
         "general": {
           "born": {
             "date": "1964-06-11",
-            "place": [
-              {
-                "text": "Avignon",
-                "url": "https://en.wikipedia.org/wiki/Avignon"
-              },
-              {
-                "text": "Vaucluse",
-                "url": "https://en.wikipedia.org/wiki/Vaucluse"
-              },
-              "France"
-            ]
+            "place": null
           },
           "children": [
             {
@@ -34022,7 +34084,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -34093,19 +34158,16 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1989 , 2010",
-                  "links": [
-                    {
-                      "text": "1989",
-                      "url": "https://en.wikipedia.org/wiki/1989_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2010",
-                      "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1989,
+                    "url": "https://en.wikipedia.org/wiki/1989_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2010,
+                    "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -34123,12 +34185,8 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "16th ( 2010 )",
+                  "result": "16th",
                   "season": {
-                    "year": 2010,
-                    "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
-                  },
-                  "class": {
                     "text": "2010",
                     "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
                   }
@@ -34285,7 +34343,7 @@
                 "value": {
                   "result": "5th",
                   "season": {
-                    "year": 2002,
+                    "text": "2002",
                     "url": "https://en.wikipedia.org/wiki/2002_Deutsche_Tourenwagen_Masters"
                   }
                 }
@@ -40607,13 +40665,7 @@
         "general": {
           "born": {
             "date": "1990-03-23",
-            "place": [
-              {
-                "text": "Barcelona",
-                "url": "https://en.wikipedia.org/wiki/Barcelona"
-              },
-              "Spain"
-            ]
+            "place": null
           },
           "parents": [
             {
@@ -40703,7 +40755,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -40766,30 +40821,108 @@
             },
             "years": [
               {
-                "from": 2014,
-                "to": 2015,
-                "url_from": "https://en.wikipedia.org/wiki/2014_ADAC_GT_Masters",
-                "url_to": "https://en.wikipedia.org/wiki/2015_ADAC_GT_Masters"
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Formula_E_Championship"
               },
               {
-                "from": 2006,
-                "to": 2007,
-                "url_from": "https://en.wikipedia.org/wiki/2006_Formula_Renault_2.0_Italia",
-                "url_to": "https://en.wikipedia.org/wiki/2007_Eurocup_Formula_Renault_2.0"
-              },
+                "year": 2015,
+                "url": null
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "ADAC GT Masters",
+              "url": "https://en.wikipedia.org/wiki/ADAC_GT_Masters"
+            },
+            "years": [
               {
-                "from": 2005,
-                "to": 2007,
-                "url_from": "https://en.wikipedia.org/wiki/2005_Eurocup_Formula_Renault_2.0",
-                "url_to": "https://en.wikipedia.org/wiki/2007_Eurocup_Formula_Renault_2.0"
-              },
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_ADAC_GT_Masters"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault 3.5",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_3.5"
+            },
+            "years": [
               {
                 "year": 2009,
                 "url": "https://en.wikipedia.org/wiki/2009_Formula_Renault_3.5_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "British F3",
+              "url": "https://en.wikipedia.org/wiki/British_F3"
+            },
+            "years": [
+              {
+                "year": 2008,
+                "url": "https://en.wikipedia.org/wiki/2008_British_Formula_3_International_Series"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Spanish F3",
+              "url": "https://en.wikipedia.org/wiki/Spanish_F3"
+            },
+            "years": [
               {
                 "year": 2008,
                 "url": "https://en.wikipedia.org/wiki/2008_Spanish_Formula_Three_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Italian Formula Renault",
+              "url": "https://en.wikipedia.org/wiki/Italian_Formula_Renault"
+            },
+            "years": [
+              {
+                "year": 2006,
+                "url": "https://en.wikipedia.org/wiki/2006_Formula_Renault_2.0_Italia"
+              },
+              {
+                "year": 2007,
+                "url": "https://en.wikipedia.org/wiki/2007_Formula_Renault_2.0_Italia"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Renault Eurocup",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Eurocup"
+            },
+            "years": [
+              {
+                "year": 2005,
+                "url": "https://en.wikipedia.org/wiki/2005_Eurocup_Formula_Renault_2.0"
+              },
+              {
+                "year": 2006,
+                "url": "https://en.wikipedia.org/wiki/2006_Eurocup_Formula_Renault_2.0"
+              },
+              {
+                "year": 2007,
+                "url": "https://en.wikipedia.org/wiki/2007_Eurocup_Formula_Renault_2.0"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula Junior 1600 Italia",
+              "url": null
+            },
+            "years": [
+              {
+                "year": 2005,
+                "url": null
               }
             ]
           }
@@ -44655,11 +44788,7 @@
         "general": {
           "born": {
             "date": "1954-07-27",
-            "place": [
-              "Voves",
-              "Eure-et-Loir",
-              "France"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -44751,7 +44880,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -44868,7 +45000,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -44899,43 +45034,48 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1981 , 1983 , 1986 , 1990-1993 , 1995-1996 , 2003",
-                  "links": [
-                    {
-                      "text": "1981",
-                      "url": "https://en.wikipedia.org/wiki/1981_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1983",
-                      "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1986",
-                      "url": "https://en.wikipedia.org/wiki/1986_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1990",
-                      "url": "https://en.wikipedia.org/wiki/1990_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1993",
-                      "url": "https://en.wikipedia.org/wiki/1993_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1995",
-                      "url": "https://en.wikipedia.org/wiki/1995_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1996",
-                      "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2003",
-                      "url": "https://en.wikipedia.org/wiki/2003_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1981,
+                    "url": "https://en.wikipedia.org/wiki/1981_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1983,
+                    "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1986,
+                    "url": "https://en.wikipedia.org/wiki/1986_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1990,
+                    "url": "https://en.wikipedia.org/wiki/1990_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1991,
+                    "url": "https://en.wikipedia.org/wiki/1991_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1992,
+                    "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1993,
+                    "url": "https://en.wikipedia.org/wiki/1993_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1995,
+                    "url": "https://en.wikipedia.org/wiki/1995_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1996,
+                    "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2003,
+                    "url": "https://en.wikipedia.org/wiki/2003_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -44965,12 +45105,8 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "3rd ( 1983 , 1992 , 1993 )",
+                  "result": "3rd",
                   "season": {
-                    "year": 1983,
-                    "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
-                  },
-                  "class": {
                     "text": "1983",
                     "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
                   }
@@ -50507,7 +50643,17 @@
         "general": {
           "born": {
             "date": "1932-02-08",
-            "place": null
+            "place": [
+              {
+                "text": "Brough",
+                "url": "https://en.wikipedia.org/wiki/Brough,_Cumbria"
+              },
+              {
+                "text": "Westmorland",
+                "url": "https://en.wikipedia.org/wiki/Westmorland"
+              },
+              "England"
+            ]
           },
           "died": {
             "date": "7 April 2005 Brough, Cumbria, England",
@@ -50582,7 +50728,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -50761,14 +50910,7 @@
         "general": {
           "born": {
             "date": "1981-07-29",
-            "place": [
-              {
-                "text": "Oviedo",
-                "url": "https://en.wikipedia.org/wiki/Oviedo"
-              },
-              "Asturias",
-              "Spain"
-            ]
+            "place": null
           }
         },
         "championship_titles": [
@@ -50851,7 +50993,19 @@
               },
               {
                 "label": "Championships",
-                "value": 2
+                "value": {
+                  "count": 2,
+                  "championships": [
+                    {
+                      "year": 2005,
+                      "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+                    },
+                    {
+                      "year": 2006,
+                      "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+                    }
+                  ]
+                }
               },
               {
                 "label": "Wins",
@@ -50979,7 +51133,15 @@
               },
               {
                 "label": "Championships",
-                "value": 1
+                "value": {
+                  "count": 1,
+                  "championships": [
+                    {
+                      "year": 2018,
+                      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship"
+                    }
+                  ]
+                }
               },
               {
                 "label": "Wins",
@@ -51002,7 +51164,7 @@
                 "value": {
                   "result": "1st",
                   "season": {
-                    "year": 2018,
+                    "text": "2018-19",
                     "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship"
                   },
                   "class": {
@@ -51043,12 +51205,8 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "21st ( 2017 )",
+                  "result": "21st",
                   "season": {
-                    "year": 2017,
-                    "url": "https://en.wikipedia.org/wiki/2017_IndyCar_Series"
-                  },
-                  "class": {
                     "text": "2017",
                     "url": "https://en.wikipedia.org/wiki/2017_IndyCar_Series"
                   }
@@ -51124,19 +51282,16 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "2018-2019",
-                  "links": [
-                    {
-                      "text": "2018",
-                      "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2019",
-                      "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 2018,
+                    "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2019,
+                    "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -51150,12 +51305,8 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "1st ( 2018 , 2019 )",
+                  "result": "1st",
                   "season": {
-                    "year": 2018,
-                    "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
-                  },
-                  "class": {
                     "text": "2018",
                     "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
                   }
@@ -51194,20 +51345,12 @@
             },
             "years": [
               {
-                "year": 2000,
-                "url": "https://en.wikipedia.org/wiki/2000_International_Formula_3000_Championship"
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Euro Open by Nissan",
-              "url": "https://en.wikipedia.org/wiki/Euro_Open_by_Nissan"
-            },
-            "years": [
-              {
                 "year": 1999,
                 "url": "https://en.wikipedia.org/wiki/1999_Euro_Open_by_Nissan"
+              },
+              {
+                "year": 2000,
+                "url": "https://en.wikipedia.org/wiki/2000_International_Formula_3000_Championship"
               }
             ]
           }
@@ -60883,7 +61026,13 @@
         "general": {
           "born": {
             "date": "1959-07-20",
-            "place": null
+            "place": [
+              {
+                "text": "Rome",
+                "url": "https://en.wikipedia.org/wiki/Rome"
+              },
+              "Italy"
+            ]
           }
         },
         "championship_titles": [],
@@ -60926,7 +61075,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -62045,14 +62197,7 @@
         "general": {
           "born": {
             "date": "1924-10-24",
-            "place": [
-              {
-                "text": "Vernonia",
-                "url": "https://en.wikipedia.org/wiki/Vernonia,_Oregon"
-              },
-              "Oregon",
-              "U.S."
-            ]
+            "place": null
           },
           "died": {
             "date": "April 4, 1959 Daytona Beach , Florida, U.S.",
@@ -62105,7 +62250,7 @@
                 "value": {
                   "result": "2nd-1958",
                   "season": {
-                    "year": 1958,
+                    "text": "1958",
                     "url": "https://en.wikipedia.org/wiki/1958_USAC_Championship_Car_season"
                   }
                 }
@@ -62261,7 +62406,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -62351,7 +62499,11 @@
         "general": {
           "born": {
             "date": "1929-01-19",
-            "place": null
+            "place": [
+              "Kansas City",
+              "Missouri",
+              "U.S."
+            ]
           },
           "died": {
             "date": "May 16, 1995 Crystal River, Florida , U.S.",
@@ -62410,7 +62562,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -62548,14 +62703,7 @@
         "general": {
           "born": {
             "date": "1943-07-20",
-            "place": [
-              {
-                "text": "Bulls",
-                "url": "https://en.wikipedia.org/wiki/Bulls,_New_Zealand"
-              },
-              "Rangitikei",
-              "New Zealand"
-            ]
+            "place": null
           },
           "died": {
             "date": "3 August 2016 Rotorua , Bay of Plenty, New Zealand",
@@ -62712,7 +62860,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -62771,31 +62922,40 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1964-1967 , 1969 , 1971-1973",
-                  "links": [
-                    {
-                      "text": "1964",
-                      "url": "https://en.wikipedia.org/wiki/1964_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1967",
-                      "url": "https://en.wikipedia.org/wiki/1967_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1969",
-                      "url": "https://en.wikipedia.org/wiki/1969_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1971",
-                      "url": "https://en.wikipedia.org/wiki/1971_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1973",
-                      "url": "https://en.wikipedia.org/wiki/1973_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1964,
+                    "url": "https://en.wikipedia.org/wiki/1964_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1965,
+                    "url": "https://en.wikipedia.org/wiki/1965_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1966,
+                    "url": "https://en.wikipedia.org/wiki/1966_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1967,
+                    "url": "https://en.wikipedia.org/wiki/1967_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1969,
+                    "url": "https://en.wikipedia.org/wiki/1969_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1971,
+                    "url": "https://en.wikipedia.org/wiki/1971_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1972,
+                    "url": "https://en.wikipedia.org/wiki/1972_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1973,
+                    "url": "https://en.wikipedia.org/wiki/1973_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -62825,12 +62985,8 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "1st ( 1966 )",
+                  "result": "1st",
                   "season": {
-                    "year": 1966,
-                    "url": "https://en.wikipedia.org/wiki/1966_24_Hours_of_Le_Mans"
-                  },
-                  "class": {
                     "text": "1966",
                     "url": "https://en.wikipedia.org/wiki/1966_24_Hours_of_Le_Mans"
                   }
@@ -70490,7 +70646,14 @@
         "general": {
           "born": {
             "date": "1931-05-19",
-            "place": null
+            "place": [
+              {
+                "text": "Hendon",
+                "url": "https://en.wikipedia.org/wiki/Hendon"
+              },
+              "London",
+              "UK"
+            ]
           },
           "died": {
             "date": "14 August 1967 Northampton , UK",
@@ -72843,7 +73006,13 @@
         "general": {
           "born": {
             "date": "1939-12-28",
-            "place": null
+            "place": [
+              {
+                "text": "Alingsås",
+                "url": "https://en.wikipedia.org/wiki/Alings%C3%A5s"
+              },
+              "Sweden"
+            ]
           }
         },
         "championship_titles": [],
@@ -72894,7 +73063,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -72980,11 +73152,7 @@
         "general": {
           "born": {
             "date": "1911-02-22",
-            "place": [
-              "Tinley Park",
-              "Illinois",
-              "U.S."
-            ]
+            "place": null
           },
           "died": {
             "date": "July 20, 1999 South Holland, Illinois , U.S.",
@@ -73010,9 +73178,9 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "3rd ( 1946 )",
+                  "result": "3rd",
                   "season": {
-                    "year": 1946,
+                    "text": "1946",
                     "url": "https://en.wikipedia.org/wiki/1946_AAA_Championship_Car_season"
                   }
                 }
@@ -73136,7 +73304,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -73267,14 +73438,7 @@
         "general": {
           "born": {
             "date": "1940-02-28",
-            "place": [
-              {
-                "text": "Montona",
-                "url": "https://en.wikipedia.org/wiki/Motovun"
-              },
-              "Istria",
-              "Kingdom of Italy"
-            ]
+            "place": null
           },
           "children": [
             {
@@ -73434,7 +73598,15 @@
               },
               {
                 "label": "Championships",
-                "value": 1
+                "value": {
+                  "count": 1,
+                  "championships": [
+                    {
+                      "year": 1978,
+                      "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+                    }
+                  ]
+                }
               },
               {
                 "label": "Wins",
@@ -73524,9 +73696,9 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "1st ( 1965 , 1966 , 1969 , 1984 )",
+                  "result": "1st",
                   "season": {
-                    "year": 1965,
+                    "text": "1965",
                     "url": "https://en.wikipedia.org/wiki/1965_USAC_Championship_Car_season"
                   }
                 }
@@ -73751,43 +73923,44 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1966-1967 , 1982-1983 , 1988 , 1995-1997 , 2000",
-                  "links": [
-                    {
-                      "text": "1966",
-                      "url": "https://en.wikipedia.org/wiki/1966_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1967",
-                      "url": "https://en.wikipedia.org/wiki/1967_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1982",
-                      "url": "https://en.wikipedia.org/wiki/1982_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1983",
-                      "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1988",
-                      "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1995",
-                      "url": "https://en.wikipedia.org/wiki/1995_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "1997",
-                      "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2000",
-                      "url": "https://en.wikipedia.org/wiki/2000_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 1966,
+                    "url": "https://en.wikipedia.org/wiki/1966_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1967,
+                    "url": "https://en.wikipedia.org/wiki/1967_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1982,
+                    "url": "https://en.wikipedia.org/wiki/1982_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1983,
+                    "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1988,
+                    "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1995,
+                    "url": "https://en.wikipedia.org/wiki/1995_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1996,
+                    "url": "https://en.wikipedia.org/wiki/1996_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 1997,
+                    "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2000,
+                    "url": "https://en.wikipedia.org/wiki/2000_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -73817,9 +73990,9 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "2nd ( 1995 )",
+                  "result": "2nd",
                   "season": {
-                    "year": 1995,
+                    "text": "1995",
                     "url": "https://en.wikipedia.org/wiki/1995_24_Hours_of_Le_Mans"
                   }
                 }
@@ -81369,11 +81542,7 @@
         "general": {
           "born": {
             "date": "1962-10-05",
-            "place": [
-              "Bethlehem",
-              "Pennsylvania",
-              "U.S."
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -81391,9 +81560,9 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "1st ( 1991 )",
+                  "result": "1st",
                   "season": {
-                    "year": 1991,
+                    "text": "1991",
                     "url": "https://en.wikipedia.org/wiki/1991_CART_season"
                   }
                 }
@@ -81523,9 +81692,9 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "24th ( 2003 , 2006 )",
+                  "result": "24th",
                   "season": {
-                    "year": 2003,
+                    "text": "2003",
                     "url": "https://en.wikipedia.org/wiki/2003_IndyCar_Series"
                   }
                 }
@@ -81640,7 +81809,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -81699,10 +81871,24 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "1982-1983, 1988, 1997",
-                  "links": []
-                }
+                "value": [
+                  {
+                    "year": 1982,
+                    "url": null
+                  },
+                  {
+                    "year": 1983,
+                    "url": null
+                  },
+                  {
+                    "year": 1988,
+                    "url": null
+                  },
+                  {
+                    "year": 1997,
+                    "url": null
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -81728,9 +81914,9 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "3rd ( 1983 )",
+                  "result": "3rd",
                   "season": {
-                    "year": 1983,
+                    "text": "1983",
                     "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
                   }
                 }
@@ -88150,11 +88336,7 @@
         "general": {
           "born": {
             "date": "1920-06-15",
-            "place": [
-              "Denver",
-              "Colorado",
-              "U.S."
-            ]
+            "place": null
           },
           "died": {
             "date": "May 15, 1957 Speedway, Indiana , U.S.",
@@ -88217,9 +88399,9 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "21st (tie) - 1954",
+                  "result": "21st",
                   "season": {
-                    "year": 1954,
+                    "text": "1954",
                     "url": "https://en.wikipedia.org/wiki/1954_AAA_Championship_Car_season"
                   }
                 }
@@ -88359,7 +88541,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -88473,13 +88658,7 @@
         "general": {
           "born": {
             "date": "1958-03-26",
-            "place": [
-              {
-                "text": "Rome",
-                "url": "https://en.wikipedia.org/wiki/Rome"
-              },
-              "Italy"
-            ]
+            "place": null
           },
           "died": {
             "date": "15 May 1986 Marseille , France",
@@ -88571,7 +88750,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -91268,14 +91450,7 @@
         "general": {
           "born": {
             "date": "2006-08-25",
-            "place": [
-              {
-                "text": "Bologna",
-                "url": "https://en.wikipedia.org/wiki/Bologna"
-              },
-              "Emilia-Romagna",
-              "Italy"
-            ]
+            "place": null
           },
           "parents": [
             {
@@ -91387,7 +91562,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -91457,18 +91635,20 @@
             },
             "years": [
               {
-                "from": 2021,
-                "to": 2022,
-                "url_from": "https://en.wikipedia.org/wiki/2021_Italian_F4_Championship",
-                "url_to": "https://en.wikipedia.org/wiki/2022_Italian_F4_Championship"
+                "year": 2021,
+                "url": "https://en.wikipedia.org/wiki/2021_Italian_F4_Championship"
               },
               {
-                "year": 2024,
-                "url": "https://en.wikipedia.org/wiki/2024_Formula_2_Championship"
+                "year": 2022,
+                "url": "https://en.wikipedia.org/wiki/2022_Italian_F4_Championship"
               },
               {
                 "year": 2023,
                 "url": "https://en.wikipedia.org/wiki/2023_Formula_Regional_Middle_East_Championship"
+              },
+              {
+                "year": 2024,
+                "url": "https://en.wikipedia.org/wiki/2024_Formula_2_Championship"
               }
             ]
           }
@@ -96418,10 +96598,7 @@
         "general": {
           "born": {
             "date": "1965-10-07",
-            "place": [
-              "near Bologna",
-              "Italy"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -100052,7 +100229,11 @@
         "general": {
           "born": {
             "date": "1918-10-12",
-            "place": null
+            "place": [
+              "Portland",
+              "Oregon",
+              "U.S."
+            ]
           },
           "died": {
             "date": "November 28, 1992 Watsonville, California , U.S.",
@@ -100115,7 +100296,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -100258,7 +100442,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -100388,10 +100575,7 @@
         "general": {
           "born": {
             "date": "1948-07-04",
-            "place": [
-              "Pontcharra Isère",
-              "France"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -100499,7 +100683,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -105586,14 +105773,7 @@
         "general": {
           "born": {
             "date": "1933-11-08",
-            "place": [
-              {
-                "text": "Ilford",
-                "url": "https://en.wikipedia.org/wiki/Ilford"
-              },
-              "Essex",
-              "England"
-            ]
+            "place": null
           },
           "died": {
             "date": "16 June 2009 King's Lynn , Norfolk, England",
@@ -105657,7 +105837,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -107872,20 +108055,7 @@
         "general": {
           "born": {
             "date": "1918-07-13",
-            "place": [
-              {
-                "text": "Milan",
-                "url": "https://en.wikipedia.org/wiki/Milan"
-              },
-              {
-                "text": "Lombardy",
-                "url": "https://en.wikipedia.org/wiki/Lombardy"
-              },
-              {
-                "text": "Kingdom of Italy",
-                "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy"
-              }
-            ]
+            "place": null
           },
           "died": {
             "date": "26 May 1955 Autodromo Nazionale di Monza , Lombardy , Italy",
@@ -107983,7 +108153,19 @@
               },
               {
                 "label": "Championships",
-                "value": 2
+                "value": {
+                  "count": 2,
+                  "championships": [
+                    {
+                      "year": 1952,
+                      "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                    },
+                    {
+                      "year": 1953,
+                      "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                    }
+                  ]
+                }
               },
               {
                 "label": "Wins",
@@ -113296,7 +113478,15 @@
         "general": {
           "born": {
             "date": "1934-10-16",
-            "place": null
+            "place": [
+              {
+                "text": "Danbury",
+                "url": "https://en.wikipedia.org/wiki/Danbury,_Essex"
+              },
+              "Essex",
+              "England",
+              "UK"
+            ]
           }
         },
         "championship_titles": [],
@@ -113339,7 +113529,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -113425,7 +113618,16 @@
         "general": {
           "born": {
             "date": "1947-10-26",
-            "place": null
+            "place": [
+              {
+                "text": "Wuppertal",
+                "url": "https://en.wikipedia.org/wiki/Wuppertal"
+              },
+              {
+                "text": "Germany",
+                "url": "https://en.wikipedia.org/wiki/Allied-occupied_Germany"
+              }
+            ]
           }
         },
         "championship_titles": [],
@@ -113496,7 +113698,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -115519,7 +115724,15 @@
         "general": {
           "born": {
             "date": "1936-07-25",
-            "place": null
+            "place": [
+              {
+                "text": "West Bromwich",
+                "url": "https://en.wikipedia.org/wiki/West_Bromwich"
+              },
+              "Staffordshire",
+              "England",
+              "U.K."
+            ]
           },
           "died": {
             "date": "2021-08-25",
@@ -115572,7 +115785,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -115658,7 +115874,18 @@
         "general": {
           "born": {
             "date": "1900-03-29",
-            "place": null
+            "place": [
+              {
+                "text": "Hopton",
+                "url": "https://en.wikipedia.org/wiki/Hopton,_Staffordshire"
+              },
+              {
+                "text": "Staffordshire",
+                "url": "https://en.wikipedia.org/wiki/Staffordshire"
+              },
+              "England",
+              "UK"
+            ]
           },
           "died": {
             "date": "4 March 1974 Lingfield , Surrey , England, UK",
@@ -115713,7 +115940,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -116515,7 +116745,14 @@
         "general": {
           "born": {
             "date": "1940-04-04",
-            "place": null
+            "place": [
+              {
+                "text": "Wolverhampton",
+                "url": "https://en.wikipedia.org/wiki/Wolverhampton"
+              },
+              "Staffordshire",
+              "England"
+            ]
           }
         },
         "championship_titles": [],
@@ -116586,7 +116823,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
@@ -118593,11 +118833,7 @@
         "general": {
           "born": {
             "date": "1921-10-20",
-            "place": [
-              "Burbank",
-              "California",
-              "U.S."
-            ]
+            "place": null
           },
           "died": {
             "date": "May 17, 1955 Indianapolis , Indiana, U.S.",
@@ -118662,7 +118898,7 @@
                 "value": {
                   "result": "2nd-1954",
                   "season": {
-                    "year": 1954,
+                    "text": "1954",
                     "url": "https://en.wikipedia.org/wiki/1954_AAA_Championship_Car_season"
                   }
                 }
@@ -118842,7 +119078,10 @@
               },
               {
                 "label": "Championships",
-                "value": 0
+                "value": {
+                  "count": 0,
+                  "championships": []
+                }
               },
               {
                 "label": "Wins",
