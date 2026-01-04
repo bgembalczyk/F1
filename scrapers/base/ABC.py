@@ -1,7 +1,6 @@
 from abc import ABC
 from pathlib import Path
 from typing import Callable, List, Optional, Sequence, TypeVar
-from urllib.parse import urljoin
 from uuid import uuid4
 
 from bs4 import BeautifulSoup
@@ -14,6 +13,7 @@ from scrapers.base.records import NormalizedRecord, RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.source_adapter import build_source_adapter
+from scrapers.base.helpers.url import normalize_url
 from scrapers.base.transformers import RecordTransformer
 from scrapers.base.errors import (
     ScraperError,
@@ -329,8 +329,8 @@ class F1Scraper(ABC):
 
     # ---------- Pomocnicze ----------
 
-    def _full_url(self, href: str) -> str:
-        return urljoin(self.url, href)
+    def _full_url(self, href: str) -> str | None:
+        return normalize_url(self.url, href)
 
     def get_http_policy(self, options: ScraperOptions) -> HttpPolicy:
         policy = options.policy

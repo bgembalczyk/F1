@@ -52,7 +52,7 @@ def normalize_single_link(
 def normalize_links(
     links: Iterable[LinkRecord] | LinkRecord | Tag | str | None,
     *,
-    full_url: Callable[[str], str] | None = None,
+    full_url: Callable[[str], str | None] | None = None,
     allow_local_anchors: bool = True,
     strip_marks: bool = True,
     drop_empty: bool = True,
