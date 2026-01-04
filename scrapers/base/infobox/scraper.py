@@ -42,6 +42,7 @@ class WikipediaInfoboxScraper:
         self.mapper = mapper or InfoboxFieldMapper(logger=self.logger)
         self.record_factory = options.record_factory
         self.debug_dir = options.debug_dir
+        self.error_report = options.error_report
         self.run_id = run_id
         self.url: str | None = None
 
@@ -51,7 +52,12 @@ class WikipediaInfoboxScraper:
 
     def scrape(self, url: str) -> Dict[str, Any]:
         """Pobiera i parsuje infobox z dowolnego artykułu Wikipedii."""
-        handler = ErrorHandler(logger=logging.getLogger(__name__))
+        handler = ErrorHandler(
+            logger=logging.getLogger(__name__),
+            debug_dir=self.debug_dir,
+            error_report_enabled=self.error_report,
+            run_id=self.run_id,
+        )
         html: str | None = None
         try:
             self.url = url

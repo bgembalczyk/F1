@@ -40,6 +40,12 @@ if __name__ == "__main__":
         default=True,
         help="Zapisz raport jakości do debug_dir/quality_report.json.",
     )
+    parser.add_argument(
+        "--error-report",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Zapisz raporty błędów do debug_dir/errors.jsonl.",
+    )
     args = parser.parse_args()
     run_and_export(
         SprintQualifyingPointsScraper,
@@ -49,5 +55,6 @@ if __name__ == "__main__":
             include_urls=True,
             debug_dir=Path("../../data/debug"),
             quality_report=args.quality_report,
+            error_report=args.error_report,
         ),
     )
