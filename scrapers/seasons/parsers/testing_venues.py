@@ -24,7 +24,7 @@ class TestingVenuesParser:
         # This table only exists in 2011 and 2009
         if season_year not in {2009, 2011}:
             return []
-        
+
         if season_year == 2011:
             return self._parse_2011(soup, season_year)
         else:  # 2009

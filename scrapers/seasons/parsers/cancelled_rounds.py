@@ -30,7 +30,7 @@ class CancelledRoundsParser:
         # Try different sections in order
         section_ids = [
             "Cancelled_Grands_Prix",
-            "Provisional_calendar", 
+            "Provisional_calendar",
             "Calendar"
         ]
         
