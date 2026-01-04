@@ -1,8 +1,12 @@
 from typing import Any, Optional, TypedDict
 
 
+from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
+from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
+from validation.records import NestedSchema
+from validation.records import RecordSchema
 from validation.records import RecordValidator
 
 
@@ -28,36 +32,24 @@ class ConstructorRecord(TypedDict, total=False):
     antecedent_teams: list[LinkRecord]
 
 
+CONSTRUCTOR_SCHEMA = RecordSchema(
+    required=("constructor", "engine", "based_in", "seasons", "antecedent_teams"),
+    types={
+        "constructor": dict,
+        "engine": list,
+        "based_in": list,
+        "seasons": list,
+        "antecedent_teams": list,
+    },
+    nested={
+        "constructor": NestedSchema(LINK_SCHEMA),
+        "engine": NestedSchema(LINK_SCHEMA, is_list=True),
+        "based_in": NestedSchema(LINK_SCHEMA, is_list=True),
+        "seasons": NestedSchema(SEASON_SCHEMA, is_list=True),
+        "antecedent_teams": NestedSchema(LINK_SCHEMA, is_list=True),
+    },
+)
+
+
 def validate_constructor_record(record: dict[str, Any]) -> list[str]:
-    errors: list[str] = []
-    errors.extend(
-        RecordValidator.require_keys(
-            record,
-            ["constructor", "engine", "based_in", "seasons", "antecedent_teams"],
-        )
-    )
-    errors.extend(RecordValidator.require_type(record, "constructor", dict))
-    errors.extend(RecordValidator.require_type(record, "engine", list))
-    errors.extend(RecordValidator.require_type(record, "based_in", list))
-    errors.extend(RecordValidator.require_type(record, "seasons", list))
-    errors.extend(RecordValidator.require_type(record, "antecedent_teams", list))
-
-    constructor = record.get("constructor")
-    if isinstance(constructor, dict):
-        errors.extend(RecordValidator.require_link_dict(constructor, "constructor"))
-
-    engine = record.get("engine")
-    if isinstance(engine, list):
-        errors.extend(RecordValidator.require_link_list(engine, "engine"))
-
-    based_in = record.get("based_in")
-    if isinstance(based_in, list):
-        errors.extend(RecordValidator.require_link_list(based_in, "based_in"))
-
-    antecedent_teams = record.get("antecedent_teams")
-    if isinstance(antecedent_teams, list):
-        errors.extend(
-            RecordValidator.require_link_list(antecedent_teams, "antecedent_teams")
-        )
-
-    return errors
+    return RecordValidator.validate_schema(record, CONSTRUCTOR_SCHEMA)

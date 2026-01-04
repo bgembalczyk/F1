@@ -1,6 +1,13 @@
 from typing import Any, TypedDict
 
+from validation.records import RecordSchema
 from validation.records import RecordValidator
+
+
+SEASON_SCHEMA = RecordSchema(
+    required=("year", "url"),
+    types={"year": int, "url": str},
+)
 
 
 class SeasonRecord(TypedDict):
@@ -9,7 +16,4 @@ class SeasonRecord(TypedDict):
 
 
 def validate_season_record(record: dict[str, Any]) -> list[str]:
-    errors: list[str] = []
-    errors.extend(RecordValidator.require_type(record, "year", int))
-    errors.extend(RecordValidator.require_type(record, "url", str))
-    return errors
+    return RecordValidator.validate_schema(record, SEASON_SCHEMA)

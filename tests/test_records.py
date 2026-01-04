@@ -7,6 +7,9 @@ from models.records import (
     LinkRecord,
     SeasonRecord,
 )
+from models.records.driver import DRIVER_SCHEMA
+from models.records.season import SEASON_SCHEMA
+from validation.records import RecordValidator
 
 
 def test_link_and_season_records_have_expected_keys() -> None:
@@ -68,3 +71,31 @@ def test_circuit_details_and_complete_records() -> None:
         "history",
         "layouts",
     }
+
+
+def test_validate_schema_reports_missing_and_type_errors() -> None:
+    errors = RecordValidator.validate_schema({"year": "2024"}, SEASON_SCHEMA)
+
+    assert "Missing key: url" in errors
+    assert "Invalid type for year: expected int, got str" in errors
+
+
+def test_validate_schema_handles_nested_records() -> None:
+    record = {
+        "driver": {"text": " ", "url": "https://example.com"},
+        "nationality": "Polish",
+        "seasons_competed": [{"year": "2024", "url": "https://example.com"}],
+        "drivers_championships": {
+            "count": 1,
+            "seasons": [{"year": 2020, "url": "https://example.com"}],
+        },
+        "is_active": True,
+        "is_world_champion": False,
+    }
+
+    errors = RecordValidator.validate_schema(record, DRIVER_SCHEMA)
+
+    assert "driver.text must be a non-empty string" in errors
+    assert (
+        "Invalid type for seasons_competed[0].year: expected int, got str" in errors
+    )
