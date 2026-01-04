@@ -3460,10 +3460,10 @@
             },
             "results": [
               {
-                "position": 1
+                "position": 1,
+                "background": "Winner"
               }
-            ],
-            "background": "Winner"
+            ]
           },
           "mon": {
             "round": {
@@ -3473,10 +3473,10 @@
             "results": [
               {
                 "position": 6,
-                "points_counted": false
+                "points_counted": false,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "bel": {
             "round": {
@@ -3485,11 +3485,11 @@
             },
             "results": [
               {
-                "position": 2
+                "position": 2,
+                "background": "Second place",
+                "pole_position": true
               }
-            ],
-            "pole_position": true,
-            "background": "Second place"
+            ]
           },
           "fra": {
             "round": {
@@ -3498,11 +3498,11 @@
             },
             "results": [
               {
-                "position": 9
+                "position": 9,
+                "background": "Other classified position",
+                "fastest_lap": true
               }
-            ],
-            "fastest_lap": true,
-            "background": "Other classified position"
+            ]
           },
           "gbr": {
             "round": {
@@ -3512,10 +3512,10 @@
             "results": [
               {
                 "position": 4,
-                "points_counted": false
+                "points_counted": false,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "ger": {
             "round": {
@@ -3524,11 +3524,11 @@
             },
             "results": [
               {
-                "position": 1
+                "position": 1,
+                "background": "Winner",
+                "fastest_lap": true
               }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
+            ]
           },
           "ita": {
             "round": {
@@ -3537,11 +3537,11 @@
             },
             "results": [
               {
-                "position": 1
+                "position": 1,
+                "background": "Winner",
+                "fastest_lap": true
               }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
+            ]
           },
           "usa": {
             "round": {
@@ -3551,10 +3551,10 @@
             "results": [
               {
                 "position": 2,
-                "points_counted": false
+                "points_counted": false,
+                "background": "Second place"
               }
-            ],
-            "background": "Second place"
+            ]
           },
           "rsa": {
             "round": {
@@ -3563,10 +3563,10 @@
             },
             "results": [
               {
-                "position": 1
+                "position": 1,
+                "background": "Winner"
               }
-            ],
-            "background": "Winner"
+            ]
           },
           "points": {
             "championship_points": 42.0,
@@ -3586,10 +3586,10 @@
             },
             "results": [
               {
-                "position": 9
+                "position": 9,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "mon": {
             "round": {
@@ -3598,12 +3598,12 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "pole_position": true,
+                "fastest_lap": true
               }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Not classified, retired"
+            ]
           },
           "bel": {
             "round": {
@@ -3612,11 +3612,11 @@
             },
             "results": [
               {
-                "position": 1
+                "position": 1,
+                "background": "Winner",
+                "fastest_lap": true
               }
-            ],
-            "fastest_lap": true,
-            "background": "Winner"
+            ]
           },
           "fra": {
             "round": {
@@ -3625,11 +3625,11 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "pole_position": true
               }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
+            ]
           },
           "gbr": {
             "round": {
@@ -3638,12 +3638,12 @@
             },
             "results": [
               {
-                "position": 1
+                "position": 1,
+                "background": "Winner",
+                "pole_position": true,
+                "fastest_lap": true
               }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
+            ]
           },
           "ger": {
             "round": {
@@ -3652,10 +3652,10 @@
             },
             "results": [
               {
-                "position": 4
+                "position": 4,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "ita": {
             "round": {
@@ -3664,11 +3664,11 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "pole_position": true
               }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
+            ]
           },
           "usa": {
             "round": {
@@ -3677,12 +3677,12 @@
             },
             "results": [
               {
-                "position": 1
+                "position": 1,
+                "background": "Winner",
+                "pole_position": true,
+                "fastest_lap": true
               }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Winner"
+            ]
           },
           "rsa": {
             "round": {
@@ -3691,12 +3691,12 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "pole_position": true,
+                "fastest_lap": true
               }
-            ],
-            "pole_position": true,
-            "fastest_lap": true,
-            "background": "Not classified, retired"
+            ]
           },
           "points": 30.0
         },
@@ -3713,11 +3713,11 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "fastest_lap": true
               }
-            ],
-            "fastest_lap": true,
-            "background": "Not classified, retired"
+            ]
           },
           "mon": {
             "round": {
@@ -3726,10 +3726,10 @@
             },
             "results": [
               {
-                "position": 1
+                "position": 1,
+                "background": "Winner"
               }
-            ],
-            "background": "Winner"
+            ]
           },
           "bel": {
             "round": {
@@ -3738,10 +3738,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "fra": {
             "round": {
@@ -3751,10 +3751,10 @@
             "results": [
               {
                 "position": 4,
-                "points_counted": false
+                "points_counted": false,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "gbr": {
             "round": {
@@ -3763,10 +3763,10 @@
             },
             "results": [
               {
-                "position": 3
+                "position": 3,
+                "background": "Third place"
               }
-            ],
-            "background": "Third place"
+            ]
           },
           "ger": {
             "round": {
@@ -3776,10 +3776,10 @@
             "results": [
               {
                 "position": 5,
-                "points_counted": false
+                "points_counted": false,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "ita": {
             "round": {
@@ -3788,10 +3788,10 @@
             },
             "results": [
               {
-                "position": 3
+                "position": 3,
+                "background": "Third place"
               }
-            ],
-            "background": "Third place"
+            ]
           },
           "usa": {
             "round": {
@@ -3800,10 +3800,10 @@
             },
             "results": [
               {
-                "position": 3
+                "position": 3,
+                "background": "Third place"
               }
-            ],
-            "background": "Third place"
+            ]
           },
           "rsa": {
             "round": {
@@ -3812,10 +3812,10 @@
             },
             "results": [
               {
-                "position": 2
+                "position": 2,
+                "background": "Second place"
               }
-            ],
-            "background": "Second place"
+            ]
           },
           "points": {
             "championship_points": 27.0,
@@ -3835,11 +3835,11 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "pole_position": true
               }
-            ],
-            "pole_position": true,
-            "background": "Not classified, retired"
+            ]
           },
           "mon": {
             "round": {
@@ -3848,10 +3848,10 @@
             },
             "results": [
               {
-                "position": 4
+                "position": 4,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "bel": {
             "round": {
@@ -3860,10 +3860,10 @@
             },
             "results": [
               {
-                "position": 5
+                "position": 5,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "fra": {
             "round": {
@@ -3872,10 +3872,10 @@
             },
             "results": [
               {
-                "position": 5
+                "position": 5,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "gbr": {
             "round": {
@@ -3884,10 +3884,10 @@
             },
             "results": [
               {
-                "position": 2
+                "position": 2,
+                "background": "Second place"
               }
-            ],
-            "background": "Second place"
+            ]
           },
           "ger": {
             "round": {
@@ -3896,10 +3896,10 @@
             },
             "results": [
               {
-                "position": 2
+                "position": 2,
+                "background": "Second place"
               }
-            ],
-            "background": "Second place"
+            ]
           },
           "ita": {
             "round": {
@@ -3908,10 +3908,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "usa": {
             "round": {
@@ -3920,10 +3920,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "rsa": {
             "round": {
@@ -3932,10 +3932,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "points": 19.0
         },
@@ -3952,10 +3952,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "mon": {
             "round": {
@@ -3964,10 +3964,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "bel": {
             "round": {
@@ -3976,10 +3976,10 @@
             },
             "results": [
               {
-                "position": "DNS"
+                "position": "DNS",
+                "background": "Did not start"
               }
-            ],
-            "background": "Did not start"
+            ]
           },
           "fra": {
             "round": {
@@ -3988,10 +3988,10 @@
             },
             "results": [
               {
-                "position": 1
+                "position": 1,
+                "background": "Winner"
               }
-            ],
-            "background": "Winner"
+            ]
           },
           "gbr": {
             "round": {
@@ -4000,10 +4000,10 @@
             },
             "results": [
               {
-                "position": 9
+                "position": 9,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ger": {
             "round": {
@@ -4012,11 +4012,11 @@
             },
             "results": [
               {
-                "position": 3
+                "position": 3,
+                "background": "Third place",
+                "pole_position": true
               }
-            ],
-            "pole_position": true,
-            "background": "Third place"
+            ]
           },
           "ita": {
             "round": {
@@ -4025,10 +4025,10 @@
             },
             "results": [
               {
-                "position": 13
+                "position": 13,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "usa": {
             "round": {
@@ -4037,10 +4037,10 @@
             },
             "results": [
               {
-                "position": 5
+                "position": 5,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "rsa": null,
           "points": 15.0
@@ -4058,10 +4058,10 @@
             },
             "results": [
               {
-                "position": 3
+                "position": 3,
+                "background": "Third place"
               }
-            ],
-            "background": "Third place"
+            ]
           },
           "mon": {
             "round": {
@@ -4070,10 +4070,10 @@
             },
             "results": [
               {
-                "position": 2
+                "position": 2,
+                "background": "Second place"
               }
-            ],
-            "background": "Second place"
+            ]
           },
           "bel": {
             "round": {
@@ -4082,10 +4082,10 @@
             },
             "results": [
               {
-                "position": 3
+                "position": 3,
+                "background": "Third place"
               }
-            ],
-            "background": "Third place"
+            ]
           },
           "fra": null,
           "gbr": {
@@ -4095,10 +4095,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ger": {
             "round": {
@@ -4107,10 +4107,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ita": {
             "round": {
@@ -4119,10 +4119,10 @@
             },
             "results": [
               {
-                "position": 11
+                "position": 11,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "usa": {
             "round": {
@@ -4131,10 +4131,10 @@
             },
             "results": [
               {
-                "position": "DNS"
+                "position": "DNS",
+                "background": "Did not start"
               }
-            ],
-            "background": "Did not start"
+            ]
           },
           "rsa": null,
           "points": 14.0
@@ -4152,10 +4152,10 @@
             },
             "results": [
               {
-                "position": 5
+                "position": 5,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "mon": {
             "round": {
@@ -4164,10 +4164,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "bel": {
             "round": {
@@ -4176,10 +4176,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "fra": {
             "round": {
@@ -4188,10 +4188,10 @@
             },
             "results": [
               {
-                "position": 2
+                "position": 2,
+                "background": "Second place"
               }
-            ],
-            "background": "Second place"
+            ]
           },
           "gbr": {
             "round": {
@@ -4200,10 +4200,10 @@
             },
             "results": [
               {
-                "position": 6
+                "position": 6,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "ger": {
             "round": {
@@ -4212,10 +4212,10 @@
             },
             "results": [
               {
-                "position": 9
+                "position": 9,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ita": {
             "round": {
@@ -4224,10 +4224,10 @@
             },
             "results": [
               {
-                "position": 7
+                "position": 7,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "usa": {
             "round": {
@@ -4236,10 +4236,10 @@
             },
             "results": [
               {
-                "position": 7
+                "position": 7,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "rsa": {
             "round": {
@@ -4248,10 +4248,10 @@
             },
             "results": [
               {
-                "position": 3
+                "position": 3,
+                "background": "Third place"
               }
-            ],
-            "background": "Third place"
+            ]
           },
           "points": 13.0
         },
@@ -4268,10 +4268,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "mon": {
             "round": {
@@ -4280,10 +4280,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "bel": {
             "round": {
@@ -4292,10 +4292,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "fra": {
             "round": {
@@ -4304,10 +4304,10 @@
             },
             "results": [
               {
-                "position": 3
+                "position": 3,
+                "background": "Third place"
               }
-            ],
-            "background": "Third place"
+            ]
           },
           "gbr": {
             "round": {
@@ -4316,10 +4316,10 @@
             },
             "results": [
               {
-                "position": 13
+                "position": 13,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ger": {
             "round": {
@@ -4328,10 +4328,10 @@
             },
             "results": [
               {
-                "position": 8
+                "position": 8,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ita": {
             "round": {
@@ -4340,10 +4340,10 @@
             },
             "results": [
               {
-                "position": 2
+                "position": 2,
+                "background": "Second place"
               }
-            ],
-            "background": "Second place"
+            ]
           },
           "usa": {
             "round": {
@@ -4352,10 +4352,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "rsa": {
             "round": {
@@ -4364,10 +4364,10 @@
             },
             "results": [
               {
-                "position": 7
+                "position": 7,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "points": 10.0
         },
@@ -4384,10 +4384,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "mon": {
             "round": {
@@ -4396,10 +4396,10 @@
             },
             "results": [
               {
-                "position": 8
+                "position": 8,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "bel": {
             "round": {
@@ -4408,10 +4408,10 @@
             },
             "results": [
               {
-                "position": 6
+                "position": 6,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "fra": {
             "round": {
@@ -4420,10 +4420,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "gbr": {
             "round": {
@@ -4432,10 +4432,10 @@
             },
             "results": [
               {
-                "position": 5
+                "position": 5,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "ger": {
             "round": {
@@ -4444,10 +4444,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ita": null,
           "usa": {
@@ -4457,10 +4457,10 @@
             },
             "results": [
               {
-                "position": 4
+                "position": 4,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "rsa": {
             "round": {
@@ -4469,10 +4469,10 @@
             },
             "results": [
               {
-                "position": 4
+                "position": 4,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "points": 9.0
         },
@@ -4489,10 +4489,10 @@
             },
             "results": [
               {
-                "position": 2
+                "position": 2,
+                "background": "Second place"
               }
-            ],
-            "background": "Second place"
+            ]
           },
           "mon": {
             "round": {
@@ -4501,10 +4501,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "bel": {
             "round": {
@@ -4513,10 +4513,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "fra": {
             "round": {
@@ -4525,10 +4525,10 @@
             },
             "results": [
               {
-                "position": 8
+                "position": 8,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "gbr": {
             "round": {
@@ -4537,10 +4537,10 @@
             },
             "results": [
               {
-                "position": 8
+                "position": 8,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ger": {
             "round": {
@@ -4549,10 +4549,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ita": {
             "round": {
@@ -4561,10 +4561,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "usa": {
             "round": {
@@ -4573,10 +4573,10 @@
             },
             "results": [
               {
-                "position": 12
+                "position": 12,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "rsa": {
             "round": {
@@ -4585,10 +4585,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "points": 6.0
         },
@@ -4605,10 +4605,10 @@
             },
             "results": [
               {
-                "position": 4
+                "position": 4,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "mon": null,
           "bel": {
@@ -4618,10 +4618,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "fra": null,
           "gbr": null,
@@ -4632,10 +4632,10 @@
             },
             "results": [
               {
-                "position": 10
+                "position": 10,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ita": {
             "round": {
@@ -4644,10 +4644,10 @@
             },
             "results": [
               {
-                "position": 5
+                "position": 5,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -4667,10 +4667,10 @@
             },
             "results": [
               {
-                "position": 3
+                "position": 3,
+                "background": "Third place"
               }
-            ],
-            "background": "Third place"
+            ]
           },
           "bel": null,
           "fra": null,
@@ -4682,10 +4682,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ita": {
             "round": {
@@ -4694,10 +4694,10 @@
             },
             "results": [
               {
-                "position": 8
+                "position": 8,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -4716,10 +4716,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "mon": {
             "round": {
@@ -4728,10 +4728,10 @@
             },
             "results": [
               {
-                "position": "DNS"
+                "position": "DNS",
+                "background": "Did not start"
               }
-            ],
-            "background": "Did not start"
+            ]
           },
           "bel": {
             "round": {
@@ -4740,10 +4740,10 @@
             },
             "results": [
               {
-                "position": 4
+                "position": 4,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "fra": null,
           "gbr": null,
@@ -4754,10 +4754,10 @@
             },
             "results": [
               {
-                "position": 6
+                "position": 6,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "ita": {
             "round": {
@@ -4766,10 +4766,10 @@
             },
             "results": [
               {
-                "position": 14
+                "position": 14,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -4789,10 +4789,10 @@
             },
             "results": [
               {
-                "position": 7
+                "position": 7,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "bel": {
             "round": {
@@ -4801,10 +4801,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "fra": null,
           "gbr": null,
@@ -4816,10 +4816,10 @@
             },
             "results": [
               {
-                "position": 4
+                "position": 4,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -4838,10 +4838,10 @@
             },
             "results": [
               {
-                "position": 7
+                "position": 7,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "mon": {
             "round": {
@@ -4850,10 +4850,10 @@
             },
             "results": [
               {
-                "position": 5
+                "position": 5,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "bel": null,
           "fra": {
@@ -4863,10 +4863,10 @@
             },
             "results": [
               {
-                "position": 10
+                "position": 10,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "gbr": {
             "round": {
@@ -4875,10 +4875,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ger": {
             "round": {
@@ -4887,10 +4887,10 @@
             },
             "results": [
               {
-                "position": 7
+                "position": 7,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ita": {
             "round": {
@@ -4899,10 +4899,10 @@
             },
             "results": [
               {
-                "position": 6
+                "position": 6,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "usa": {
             "round": {
@@ -4911,10 +4911,10 @@
             },
             "results": [
               {
-                "position": 13
+                "position": 13,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "rsa": null,
           "points": 3.0
@@ -4932,10 +4932,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "mon": {
             "round": {
@@ -4944,10 +4944,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "bel": {
             "round": {
@@ -4956,10 +4956,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "fra": {
             "round": {
@@ -4968,10 +4968,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "gbr": {
             "round": {
@@ -4980,10 +4980,10 @@
             },
             "results": [
               {
-                "position": 16
+                "position": 16,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ger": null,
           "ita": {
@@ -4993,10 +4993,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "usa": {
             "round": {
@@ -5005,10 +5005,10 @@
             },
             "results": [
               {
-                "position": 8
+                "position": 8,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "rsa": {
             "round": {
@@ -5017,10 +5017,10 @@
             },
             "results": [
               {
-                "position": 5
+                "position": 5,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "points": 2.0
         },
@@ -5037,10 +5037,10 @@
             },
             "results": [
               {
-                "position": 6
+                "position": 6,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "mon": {
             "round": {
@@ -5049,10 +5049,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "bel": {
             "round": {
@@ -5061,10 +5061,10 @@
             },
             "results": [
               {
-                "position": 7
+                "position": 7,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "fra": {
             "round": {
@@ -5073,10 +5073,10 @@
             },
             "results": [
               {
-                "position": 6
+                "position": 6,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "gbr": {
             "round": {
@@ -5085,10 +5085,10 @@
             },
             "results": [
               {
-                "position": 14
+                "position": 14,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ger": {
             "round": {
@@ -5097,10 +5097,10 @@
             },
             "results": [
               {
-                "position": 13
+                "position": 13,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ita": {
             "round": {
@@ -5109,10 +5109,10 @@
             },
             "results": [
               {
-                "position": 10
+                "position": 10,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "usa": {
             "round": {
@@ -5121,10 +5121,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "rsa": {
             "round": {
@@ -5133,10 +5133,10 @@
             },
             "results": [
               {
-                "position": 11
+                "position": 11,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "points": 2.0
         },
@@ -5153,10 +5153,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "mon": {
             "round": {
@@ -5165,10 +5165,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "bel": {
             "round": {
@@ -5177,10 +5177,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "fra": {
             "round": {
@@ -5189,10 +5189,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "gbr": {
             "round": {
@@ -5201,10 +5201,10 @@
             },
             "results": [
               {
-                "position": 7
+                "position": 7,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ger": null,
           "ita": {
@@ -5214,10 +5214,10 @@
             },
             "results": [
               {
-                "position": 12
+                "position": 12,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "usa": {
             "round": {
@@ -5226,10 +5226,10 @@
             },
             "results": [
               {
-                "position": 6
+                "position": 6,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "rsa": null,
           "points": 1.0
@@ -5255,10 +5255,10 @@
             },
             "results": [
               {
-                "position": 6
+                "position": 6,
+                "background": "Other points position"
               }
-            ],
-            "background": "Other points position"
+            ]
           },
           "points": 1.0
         },
@@ -5276,10 +5276,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "bel": {
             "round": {
@@ -5288,10 +5288,10 @@
             },
             "results": [
               {
-                "position": 8
+                "position": 8,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "fra": {
             "round": {
@@ -5300,10 +5300,10 @@
             },
             "results": [
               {
-                "position": 7
+                "position": 7,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "gbr": null,
           "ger": {
@@ -5313,10 +5313,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ita": {
             "round": {
@@ -5325,10 +5325,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "usa": {
             "round": {
@@ -5337,10 +5337,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "rsa": null,
           "points": 0.0
@@ -5358,10 +5358,10 @@
             },
             "results": [
               {
-                "position": 8
+                "position": 8,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "mon": {
             "round": {
@@ -5370,10 +5370,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "bel": null,
           "fra": {
@@ -5383,10 +5383,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "gbr": {
             "round": {
@@ -5395,10 +5395,10 @@
             },
             "results": [
               {
-                "position": 10
+                "position": 10,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ger": {
             "round": {
@@ -5407,10 +5407,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ita": null,
           "usa": null,
@@ -5438,10 +5438,10 @@
             },
             "results": [
               {
-                "position": 8
+                "position": 8,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "points": 0.0
         },
@@ -5459,10 +5459,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "bel": null,
           "fra": null,
@@ -5474,10 +5474,10 @@
             },
             "results": [
               {
-                "position": 15
+                "position": 15,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ita": {
             "round": {
@@ -5486,10 +5486,10 @@
             },
             "results": [
               {
-                "position": 9
+                "position": 9,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -5510,10 +5510,10 @@
             },
             "results": [
               {
-                "position": 9
+                "position": 9,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "fra": null,
           "gbr": null,
@@ -5524,10 +5524,10 @@
             },
             "results": [
               {
-                "position": 16
+                "position": 16,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ita": null,
           "usa": null,
@@ -5554,10 +5554,10 @@
             },
             "results": [
               {
-                "position": 9
+                "position": 9,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "rsa": null,
           "points": 0.0
@@ -5583,10 +5583,10 @@
             },
             "results": [
               {
-                "position": 9
+                "position": 9,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "points": 0.0
         },
@@ -5604,10 +5604,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "bel": {
             "round": {
@@ -5616,10 +5616,10 @@
             },
             "results": [
               {
-                "position": 10
+                "position": 10,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "fra": {
             "round": {
@@ -5628,10 +5628,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "gbr": null,
           "ger": {
@@ -5641,10 +5641,10 @@
             },
             "results": [
               {
-                "position": 12
+                "position": 12,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ita": {
             "round": {
@@ -5653,10 +5653,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -5682,10 +5682,10 @@
             },
             "results": [
               {
-                "position": 10
+                "position": 10,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "rsa": null,
           "points": 0.0
@@ -5711,10 +5711,10 @@
             },
             "results": [
               {
-                "position": 10
+                "position": 10,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "points": 0.0
         },
@@ -5735,10 +5735,10 @@
             },
             "results": [
               {
-                "position": 12
+                "position": 12,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ger": {
             "round": {
@@ -5747,10 +5747,10 @@
             },
             "results": [
               {
-                "position": 11
+                "position": 11,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ita": {
             "round": {
@@ -5759,10 +5759,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -5785,10 +5785,10 @@
             },
             "results": [
               {
-                "position": 11
+                "position": 11,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ger": null,
           "ita": {
@@ -5798,10 +5798,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -5822,10 +5822,10 @@
             },
             "results": [
               {
-                "position": 11
+                "position": 11,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "fra": null,
           "gbr": null,
@@ -5855,10 +5855,10 @@
             },
             "results": [
               {
-                "position": 11
+                "position": 11,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "rsa": null,
           "points": 0.0
@@ -5881,10 +5881,10 @@
             },
             "results": [
               {
-                "position": 14
+                "position": 14,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ita": null,
           "usa": null,
@@ -5908,10 +5908,10 @@
             },
             "results": [
               {
-                "position": 15
+                "position": 15,
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "ger": {
             "round": {
@@ -5920,10 +5920,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "ita": {
             "round": {
@@ -5932,10 +5932,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -5954,10 +5954,10 @@
             },
             "results": [
               {
-                "position": "NC"
+                "position": "NC",
+                "background": "Other classified position"
               }
-            ],
-            "background": "Other classified position"
+            ]
           },
           "mon": null,
           "bel": null,
@@ -5969,10 +5969,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ger": {
             "round": {
@@ -5981,10 +5981,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "ita": null,
           "usa": null,
@@ -6004,10 +6004,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "mon": {
             "round": {
@@ -6016,10 +6016,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "bel": null,
           "fra": {
@@ -6029,10 +6029,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "gbr": {
             "round": {
@@ -6041,10 +6041,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ger": {
             "round": {
@@ -6053,10 +6053,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ita": {
             "round": {
@@ -6065,10 +6065,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "usa": {
             "round": {
@@ -6077,10 +6077,10 @@
             },
             "results": [
               {
-                "position": "DNS"
+                "position": "DNS",
+                "background": "Did not start"
               }
-            ],
-            "background": "Did not start"
+            ]
           },
           "rsa": {
             "round": {
@@ -6089,10 +6089,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "points": 0.0
         },
@@ -6113,10 +6113,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ger": {
             "round": {
@@ -6125,10 +6125,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "ita": {
             "round": {
@@ -6137,10 +6137,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -6163,10 +6163,10 @@
             },
             "results": [
               {
-                "position": "DNS"
+                "position": "DNS",
+                "background": "Did not start"
               }
-            ],
-            "background": "Did not start"
+            ]
           },
           "ger": {
             "round": {
@@ -6175,10 +6175,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ita": {
             "round": {
@@ -6187,10 +6187,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -6209,10 +6209,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "mon": null,
           "bel": null,
@@ -6242,10 +6242,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ita": null,
           "usa": null,
@@ -6270,10 +6270,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "ita": null,
           "usa": null,
@@ -6300,10 +6300,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "rsa": null,
           "points": 0.0
@@ -6329,10 +6329,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "points": 0.0
         },
@@ -6357,10 +6357,10 @@
             },
             "results": [
               {
-                "position": "Ret"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
-            ],
-            "background": "Not classified, retired"
+            ]
           },
           "points": 0.0
         },
@@ -6382,10 +6382,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "ita": null,
           "usa": null,
@@ -6411,10 +6411,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -6439,10 +6439,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -6467,10 +6467,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -6495,10 +6495,10 @@
             },
             "results": [
               {
-                "position": "DNQ"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
-            ],
-            "background": "Did not qualify"
+            ]
           },
           "usa": null,
           "rsa": null,
@@ -6524,10 +6524,10 @@
             },
             "results": [
               {
-                "position": "DNS"
+                "position": "DNS",
+                "background": "Did not start"
               }
-            ],
-            "background": "Did not start"
+            ]
           },
           "rsa": null,
           "points": 0.0
