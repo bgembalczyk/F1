@@ -1,4 +1,7 @@
 from abc import ABC, abstractmethod
+from dataclasses import dataclass, field
+import json
+from pathlib import Path
 from typing import Any, Callable, Mapping, Sequence
 from typing import Dict
 from typing import TypeAlias
@@ -7,9 +10,18 @@ from typing import TypeAlias
 ExportRecord: TypeAlias = Dict[str, Any]
 
 
+@dataclass
+class QualityStats:
+    total_records: int = 0
+    rejected_records: int = 0
+    missing: dict[str, int] = field(default_factory=dict)
+    types: dict[str, int] = field(default_factory=dict)
+
+
 class RecordValidator(ABC):
     def __init__(self, record_factory: Callable[..., Any] | type | None = None) -> None:
         self.record_factory = record_factory
+        self._stats = QualityStats()
 
     @abstractmethod
     def validate(self, record: ExportRecord) -> list[str]:
@@ -17,6 +29,67 @@ class RecordValidator(ABC):
 
     def set_record_factory(self, record_factory: Callable[..., Any] | type | None) -> None:
         self.record_factory = record_factory
+
+    def reset_stats(self) -> None:
+        self._stats = QualityStats()
+
+    def record_validation_result(self, errors: Sequence[str]) -> None:
+        self._stats.total_records += 1
+        if errors:
+            self._stats.rejected_records += 1
+        self._track_errors(errors)
+
+    def _track_errors(self, errors: Sequence[str]) -> None:
+        for error in errors:
+            missing_key = self._extract_missing_key(error)
+            if missing_key:
+                self._stats.missing[missing_key] = (
+                    self._stats.missing.get(missing_key, 0) + 1
+                )
+                continue
+
+            type_key = self._extract_type_key(error)
+            if type_key:
+                self._stats.types[type_key] = self._stats.types.get(type_key, 0) + 1
+
+    @staticmethod
+    def _extract_missing_key(error: str) -> str | None:
+        if error.startswith("Missing key: "):
+            return error.replace("Missing key: ", "", 1).strip() or None
+        if error.startswith("Null value for: "):
+            return error.replace("Null value for: ", "", 1).strip() or None
+        if error.endswith(" is missing"):
+            return error[: -len(" is missing")].strip() or None
+        return None
+
+    @staticmethod
+    def _extract_type_key(error: str) -> str | None:
+        if error.startswith("Invalid type for "):
+            trimmed = error.replace("Invalid type for ", "", 1)
+            return trimmed.split(":", 1)[0].strip() or None
+        if " must be " in error:
+            return error.split(" must be ", 1)[0].strip() or None
+        return None
+
+    def build_quality_report(self) -> dict[str, Any]:
+        accepted = self._stats.total_records - self._stats.rejected_records
+        return {
+            "summary": {
+                "total_records": self._stats.total_records,
+                "accepted_records": accepted,
+                "rejected_records": self._stats.rejected_records,
+            },
+            "missing": dict(sorted(self._stats.missing.items())),
+            "types": dict(sorted(self._stats.types.items())),
+        }
+
+    def write_quality_report(self, debug_dir: Path) -> Path:
+        debug_dir.mkdir(parents=True, exist_ok=True)
+        report_path = debug_dir / "quality_report.json"
+        with report_path.open("w", encoding="utf-8") as handle:
+            json.dump(self.build_quality_report(), handle, ensure_ascii=False, indent=2)
+            handle.write("\n")
+        return report_path
 
     def validate_record_factory(self, record: ExportRecord) -> list[str]:
         record_factory = self.record_factory

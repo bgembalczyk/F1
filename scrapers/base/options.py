@@ -40,6 +40,7 @@ class ScraperOptions:
     record_factory: Callable[[Mapping[str, Any]], Any] | type | None = None
     run_id: str | None = None
     transformers: list[RecordTransformer] | None = None
+    quality_report: bool = False
 
     def __post_init__(self) -> None:
         if self.policy is None:

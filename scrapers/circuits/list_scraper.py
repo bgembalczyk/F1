@@ -64,6 +64,16 @@ class CircuitsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--quality-report",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Zapisz raport jakości do debug_dir/quality_report.json.",
+    )
+    args = parser.parse_args()
     run_and_export(
         CircuitsListScraper,
         "circuits/f1_circuits.json",
@@ -72,5 +82,6 @@ if __name__ == "__main__":
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),
+            quality_report=args.quality_report,
         ),
     )
