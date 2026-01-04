@@ -6,7 +6,7 @@ from bs4 import Tag
 from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text_normalization import clean_infobox_text
-from scrapers.base.helpers.wiki import build_full_url
+from scrapers.base.helpers.url import normalize_url
 
 
 class InfoboxLinkExtractor:
@@ -19,7 +19,7 @@ class InfoboxLinkExtractor:
             return []
         return normalize_links(
             cell,
-            full_url=lambda href: build_full_url(self._wikipedia_base, href),
+            full_url=lambda href: normalize_url(self._wikipedia_base, href),
             allow_local_anchors=False,
         )
 

@@ -8,7 +8,7 @@ from models.records.link import LinkRecord
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.helpers.wiki import build_full_url
+from scrapers.base.helpers.url import normalize_url
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.debug_dumps import (
     TablePipelineDebugContext,
@@ -232,7 +232,7 @@ class TablePipeline:
             return []
         return normalize_links(
             cell,
-            full_url=lambda href: build_full_url(self.base_url, href),
+            full_url=lambda href: normalize_url(self.base_url, href),
             drop_empty_text=True,
         )
 
@@ -255,7 +255,7 @@ class TablePipeline:
         if self.include_urls and header_cell is not None:
             header_links = normalize_links(
                 header_cell,
-                full_url=lambda href: build_full_url(self.base_url, href),
+                full_url=lambda href: normalize_url(self.base_url, href),
                 drop_empty_text=True,
             )
             header_text = clean_wiki_text(header)
