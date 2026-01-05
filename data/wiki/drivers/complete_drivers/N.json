@@ -89,10 +89,6 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
-                    },
-                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -101,10 +97,48 @@
               },
               {
                 "label": "Years active",
-                "value": {
-                  "start": 2012,
-                  "end": 2021
-                }
+                "value": [
+                  {
+                    "year": 2012,
+                    "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2013,
+                    "url": "https://en.wikipedia.org/wiki/2013_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2014,
+                    "url": "https://en.wikipedia.org/wiki/2014_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2015,
+                    "url": "https://en.wikipedia.org/wiki/2015_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2016,
+                    "url": "https://en.wikipedia.org/wiki/2016_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2017,
+                    "url": "https://en.wikipedia.org/wiki/2017_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2018,
+                    "url": "https://en.wikipedia.org/wiki/2018_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2019,
+                    "url": "https://en.wikipedia.org/wiki/2019_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2020,
+                    "url": "https://en.wikipedia.org/wiki/2020_FIA_World_Endurance_Championship"
+                  },
+                  {
+                    "year": 2021,
+                    "url": "https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -122,8 +156,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "1 ( 2018-19 )",
-                  "links": [
+                  "count": 1,
+                  "championships": [
                     {
                       "text": "2018-19",
                       "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship"
@@ -141,10 +175,7 @@
               },
               {
                 "label": "Poles",
-                "value": {
-                  "text": "10",
-                  "links": []
-                }
+                "value": 10
               },
               {
                 "label": "Fastest laps",
@@ -154,9 +185,15 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "start": 2018,
-                    "end": 2019
+                  "seasons": [
+                    {
+                      "text": "2018-19",
+                      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship"
+                    }
+                  ],
+                  "class": {
+                    "text": "LMP1",
+                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
                   }
                 }
               },
@@ -177,10 +214,6 @@
                   "text": "Japanese",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Japan"
-                    },
-                    {
                       "text": "Japanese",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
                     }
@@ -189,10 +222,20 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2007,
-                  "end": 2009
-                }
+                "value": [
+                  {
+                    "year": 2007,
+                    "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2008,
+                    "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2009,
+                    "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -213,8 +256,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -274,10 +317,52 @@
             "rows": [
               {
                 "label": "Years active",
-                "value": {
-                  "start": 2011,
-                  "end": 2021
-                }
+                "value": [
+                  {
+                    "year": 2011,
+                    "url": "https://en.wikipedia.org/wiki/2011_Formula_Nippon_Championship"
+                  },
+                  {
+                    "year": 2012,
+                    "url": null
+                  },
+                  {
+                    "year": 2013,
+                    "url": null
+                  },
+                  {
+                    "year": 2014,
+                    "url": null
+                  },
+                  {
+                    "year": 2015,
+                    "url": null
+                  },
+                  {
+                    "year": 2016,
+                    "url": null
+                  },
+                  {
+                    "year": 2017,
+                    "url": null
+                  },
+                  {
+                    "year": 2018,
+                    "url": null
+                  },
+                  {
+                    "year": 2019,
+                    "url": null
+                  },
+                  {
+                    "year": 2020,
+                    "url": null
+                  },
+                  {
+                    "year": 2021,
+                    "url": "https://en.wikipedia.org/wiki/2021_Super_Formula_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -295,14 +380,14 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "2 ( 2012 , 2014 )",
-                  "links": [
+                  "count": 2,
+                  "championships": [
                     {
-                      "text": "2012",
+                      "year": 2012,
                       "url": "https://en.wikipedia.org/wiki/2012_Formula_Nippon_Championship"
                     },
                     {
-                      "text": "2014",
+                      "year": 2014,
                       "url": "https://en.wikipedia.org/wiki/2014_Super_Formula_Championship"
                     }
                   ]
@@ -318,10 +403,7 @@
               },
               {
                 "label": "Poles",
-                "value": {
-                  "text": "5",
-                  "links": []
-                }
+                "value": 5
               },
               {
                 "label": "Fastest laps",
@@ -340,19 +422,48 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "2012-2021",
-                  "links": [
-                    {
-                      "text": "2012",
-                      "url": "https://en.wikipedia.org/wiki/2012_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2021",
-                      "url": "https://en.wikipedia.org/wiki/2021_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 2012,
+                    "url": "https://en.wikipedia.org/wiki/2012_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2013,
+                    "url": "https://en.wikipedia.org/wiki/2013_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2014,
+                    "url": "https://en.wikipedia.org/wiki/2014_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2015,
+                    "url": "https://en.wikipedia.org/wiki/2015_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2016,
+                    "url": "https://en.wikipedia.org/wiki/2016_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2017,
+                    "url": "https://en.wikipedia.org/wiki/2017_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2018,
+                    "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2019,
+                    "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2020,
+                    "url": "https://en.wikipedia.org/wiki/2020_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2021,
+                    "url": "https://en.wikipedia.org/wiki/2021_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -366,18 +477,8 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "1st ( 2018 , 2019 , 2020 )",
-                  "season": {
-                    "start": null,
-                    "end": null
-                  }
-                }
-              },
-              {
-                "label": "Class wins",
-                "value": {
-                  "text": "3 ( 2018 , 2019 , 2020 )",
-                  "links": [
+                  "result": "1st",
+                  "seasons": [
                     {
                       "text": "2018",
                       "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
@@ -388,6 +489,26 @@
                     },
                     {
                       "text": "2020",
+                      "url": "https://en.wikipedia.org/wiki/2020_24_Hours_of_Le_Mans"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Class wins",
+                "value": {
+                  "count": 3,
+                  "wins": [
+                    {
+                      "year": 2018,
+                      "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
+                    },
+                    {
+                      "year": 2019,
+                      "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Le_Mans"
+                    },
+                    {
+                      "year": 2020,
                       "url": "https://en.wikipedia.org/wiki/2020_24_Hours_of_Le_Mans"
                     }
                   ]
@@ -410,8 +531,64 @@
             },
             "years": [
               {
-                "text": "2005-2019",
-                "url": null
+                "year": 2005,
+                "url": "https://en.wikipedia.org/wiki/2005_Super_GT_Series"
+              },
+              {
+                "year": 2006,
+                "url": "https://en.wikipedia.org/wiki/2006_Super_GT_Series"
+              },
+              {
+                "year": 2007,
+                "url": "https://en.wikipedia.org/wiki/2007_Super_GT_Series"
+              },
+              {
+                "year": 2008,
+                "url": "https://en.wikipedia.org/wiki/2008_Super_GT_Series"
+              },
+              {
+                "year": 2009,
+                "url": "https://en.wikipedia.org/wiki/2009_Super_GT_Series"
+              },
+              {
+                "year": 2010,
+                "url": "https://en.wikipedia.org/wiki/2010_Super_GT_Series"
+              },
+              {
+                "year": 2011,
+                "url": "https://en.wikipedia.org/wiki/2011_Super_GT_Series"
+              },
+              {
+                "year": 2012,
+                "url": "https://en.wikipedia.org/wiki/2012_Super_GT_Series"
+              },
+              {
+                "year": 2013,
+                "url": "https://en.wikipedia.org/wiki/2013_Super_GT_Series"
+              },
+              {
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_Super_GT_Series"
+              },
+              {
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_Super_GT_Series"
+              },
+              {
+                "year": 2016,
+                "url": "https://en.wikipedia.org/wiki/2016_Super_GT_Series"
+              },
+              {
+                "year": 2017,
+                "url": "https://en.wikipedia.org/wiki/2017_Super_GT_Series"
+              },
+              {
+                "year": 2018,
+                "url": "https://en.wikipedia.org/wiki/2018_Super_GT_Series"
+              },
+              {
+                "year": 2019,
+                "url": "https://en.wikipedia.org/wiki/2019_Super_GT_Series"
               }
             ]
           },
@@ -422,7 +599,7 @@
             },
             "years": [
               {
-                "text": "2007",
+                "year": 2007,
                 "url": "https://en.wikipedia.org/wiki/2007_GP2_Series"
               }
             ]
@@ -434,7 +611,7 @@
             },
             "years": [
               {
-                "text": "2006",
+                "year": 2006,
                 "url": "https://en.wikipedia.org/wiki/2006_Formula_3_Euro_Series"
               }
             ]
@@ -446,8 +623,12 @@
             },
             "years": [
               {
-                "text": "2004-2005",
-                "url": null
+                "year": 2004,
+                "url": "https://en.wikipedia.org/wiki/2004_Japanese_Formula_3_Championship"
+              },
+              {
+                "year": 2005,
+                "url": "https://en.wikipedia.org/wiki/2004_Japanese_Formula_3_Championship"
               }
             ]
           },
@@ -458,7 +639,7 @@
             },
             "years": [
               {
-                "text": "2003",
+                "year": 2003,
                 "url": null
               }
             ]
@@ -8246,10 +8427,6 @@
                   "text": "Japanese",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Japan"
-                    },
-                    {
                       "text": "Japanese",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
                     }
@@ -8258,10 +8435,28 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1987,
-                  "end": 1991
-                }
+                "value": [
+                  {
+                    "year": 1987,
+                    "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1988,
+                    "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1989,
+                    "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1990,
+                    "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1991,
+                    "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -8286,8 +8481,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -8351,8 +8546,8 @@
             },
             "years": [
               {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Japanese_Formula_Two_Championship"
+                "year": 1986,
+                "url": "https://en.wikipedia.org/wiki/1986_International_Formula_3000_Championship"
               }
             ]
           },
@@ -8363,8 +8558,16 @@
             },
             "years": [
               {
-                "text": "1984-1986",
-                "url": null
+                "year": 1984,
+                "url": "https://en.wikipedia.org/wiki/1984_World_Sportscar_Championship"
+              },
+              {
+                "year": 1985,
+                "url": "https://en.wikipedia.org/wiki/1985_World_Sportscar_Championship"
+              },
+              {
+                "year": 1986,
+                "url": "https://en.wikipedia.org/wiki/1986_World_Sportscar_Championship"
               }
             ]
           },
@@ -8375,8 +8578,16 @@
             },
             "years": [
               {
-                "text": "1984-1986",
-                "url": null
+                "year": 1984,
+                "url": "https://en.wikipedia.org/wiki/1984_All_Japan_Endurance_Championship"
+              },
+              {
+                "year": 1985,
+                "url": "https://en.wikipedia.org/wiki/1985_All_Japan_Endurance_Championship"
+              },
+              {
+                "year": 1986,
+                "url": "https://en.wikipedia.org/wiki/1986_All_Japan_Endurance_Championship"
               }
             ]
           },
@@ -8399,7 +8610,7 @@
             },
             "years": [
               {
-                "text": "1982",
+                "year": 1982,
                 "url": "https://en.wikipedia.org/wiki/1982_European_Formula_Two_Championship"
               }
             ]
@@ -8411,7 +8622,15 @@
             },
             "years": [
               {
-                "text": "1979-1981",
+                "year": 1979,
+                "url": null
+              },
+              {
+                "year": 1980,
+                "url": null
+              },
+              {
+                "year": 1981,
                 "url": null
               }
             ]
@@ -8423,7 +8642,7 @@
             },
             "years": [
               {
-                "text": "1978",
+                "year": 1978,
                 "url": null
               }
             ]
@@ -11956,20 +12175,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Japanese",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Japan"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1997,
-                  "end": 1998
-                }
+                "value": [
+                  {
+                    "year": 1997,
+                    "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1998,
+                    "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -11998,8 +12218,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -12059,31 +12279,44 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "2005-2008 , 2011-2014 , 2016",
-                  "links": [
-                    {
-                      "text": "2005",
-                      "url": "https://en.wikipedia.org/wiki/2005_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2008",
-                      "url": "https://en.wikipedia.org/wiki/2008_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2011",
-                      "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2014",
-                      "url": "https://en.wikipedia.org/wiki/2014_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2016",
-                      "url": "https://en.wikipedia.org/wiki/2016_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 2005,
+                    "url": "https://en.wikipedia.org/wiki/2005_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2006,
+                    "url": "https://en.wikipedia.org/wiki/2006_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2007,
+                    "url": "https://en.wikipedia.org/wiki/2007_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2008,
+                    "url": "https://en.wikipedia.org/wiki/2008_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2011,
+                    "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2012,
+                    "url": "https://en.wikipedia.org/wiki/2012_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2013,
+                    "url": "https://en.wikipedia.org/wiki/2013_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2014,
+                    "url": "https://en.wikipedia.org/wiki/2014_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2016,
+                    "url": "https://en.wikipedia.org/wiki/2016_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -12109,18 +12342,20 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "14th ( 2011 )",
-                  "season": {
-                    "start": null,
-                    "end": null
-                  }
+                  "result": "14th",
+                  "seasons": [
+                    {
+                      "text": "2011",
+                      "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                    }
+                  ]
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "wins": []
                 }
               }
             ]
@@ -12170,8 +12405,12 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Dennis Clayton Nalon March 2, 1913 Chicago, Illinois , U.S.",
-            "place": null
+            "date": "1913-03-02",
+            "place": [
+              "Chicago",
+              "Illinois",
+              "U.S."
+            ]
           },
           "died": {
             "date": "2001-02-26",
@@ -12197,11 +12436,13 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "5th ( 1948 )",
-                  "season": {
-                    "start": null,
-                    "end": null
-                  }
+                  "result": "5th",
+                  "seasons": [
+                    {
+                      "text": "1948",
+                      "url": "https://en.wikipedia.org/wiki/1948_AAA_Championship_Car_season"
+                    }
+                  ]
                 }
               },
               {
@@ -12223,21 +12464,18 @@
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1953 Indianapolis 500 ( Indianapolis )",
-                  "links": [
-                    {
-                      "text": "1953",
-                      "url": "https://en.wikipedia.org/wiki/1953_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
-                    },
-                    {
-                      "text": "Indianapolis",
-                      "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1953",
+                    "url": "https://en.wikipedia.org/wiki/1953_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
+                  },
+                  "circuit": {
+                    "text": "Indianapolis",
+                    "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+                  }
                 }
               },
               {
@@ -12278,10 +12516,28 @@
             "rows": [
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1950,
-                  "end": 1954
-                }
+                "value": [
+                  {
+                    "year": 1950,
+                    "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+                  },
+                  {
+                    "year": 1951,
+                    "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+                  },
+                  {
+                    "year": 1952,
+                    "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                  },
+                  {
+                    "year": 1953,
+                    "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -12302,8 +12558,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -12443,10 +12699,6 @@
                   "text": "Italian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    },
-                    {
                       "text": "Italian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
                     }
@@ -12455,10 +12707,28 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1986,
-                  "end": 1990
-                }
+                "value": [
+                  {
+                    "year": 1986,
+                    "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1987,
+                    "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1988,
+                    "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1989,
+                    "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1990,
+                    "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -12483,8 +12753,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -16833,10 +17103,16 @@
             "rows": [
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1992,
-                  "end": 1993
-                }
+                "value": [
+                  {
+                    "year": 1992,
+                    "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1993,
+                    "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -16861,8 +17137,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -16938,7 +17214,7 @@
             },
             "years": [
               {
-                "text": "2006",
+                "year": 2006,
                 "url": "https://en.wikipedia.org/wiki/2006_Italian_Superturismo_Championship"
               }
             ]
@@ -16950,7 +17226,7 @@
             },
             "years": [
               {
-                "text": "2004",
+                "year": 2004,
                 "url": "https://en.wikipedia.org/wiki/2004_FIA_GT_Championship"
               }
             ]
@@ -16962,7 +17238,7 @@
             },
             "years": [
               {
-                "text": "2003",
+                "year": 2003,
                 "url": "https://en.wikipedia.org/wiki/2003_American_Le_Mans_Series"
               }
             ]
@@ -16974,7 +17250,7 @@
             },
             "years": [
               {
-                "text": "2002",
+                "year": 2002,
                 "url": "https://en.wikipedia.org/wiki/2002_American_Le_Mans_Series"
               }
             ]
@@ -16986,7 +17262,7 @@
             },
             "years": [
               {
-                "text": "2001",
+                "year": 2001,
                 "url": "https://en.wikipedia.org/wiki/2001_FIA_GT_Championship"
               }
             ]
@@ -16998,8 +17274,8 @@
             },
             "years": [
               {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_European_Super_Touring_Cup"
+                "year": 2000,
+                "url": "https://en.wikipedia.org/wiki/2000_24_Hours_of_Le_Mans"
               }
             ]
           },
@@ -17010,7 +17286,7 @@
             },
             "years": [
               {
-                "text": "2000",
+                "year": 2000,
                 "url": "https://en.wikipedia.org/wiki/2000_European_Super_Touring_Cup"
               }
             ]
@@ -17022,7 +17298,7 @@
             },
             "years": [
               {
-                "text": "1999",
+                "year": 1999,
                 "url": "https://en.wikipedia.org/wiki/1999_Italian_Superturismo_Championship"
               }
             ]
@@ -17034,7 +17310,7 @@
             },
             "years": [
               {
-                "text": "1998",
+                "year": 1998,
                 "url": "https://en.wikipedia.org/wiki/1998_Italian_Superturismo_Championship"
               }
             ]
@@ -17046,7 +17322,7 @@
             },
             "years": [
               {
-                "text": "1997",
+                "year": 1997,
                 "url": "https://en.wikipedia.org/wiki/1997_Italian_Superturismo_Championship"
               }
             ]
@@ -17058,7 +17334,7 @@
             },
             "years": [
               {
-                "text": "1996",
+                "year": 1996,
                 "url": "https://en.wikipedia.org/wiki/1996_Italian_Superturismo_Championship"
               }
             ]
@@ -17070,7 +17346,7 @@
             },
             "years": [
               {
-                "text": "1995",
+                "year": 1995,
                 "url": "https://en.wikipedia.org/wiki/1995_Italian_Superturismo_Championship"
               }
             ]
@@ -17082,7 +17358,7 @@
             },
             "years": [
               {
-                "text": "1994",
+                "year": 1994,
                 "url": "https://en.wikipedia.org/wiki/1994_Italian_Superturismo_Championship"
               }
             ]
@@ -21333,8 +21609,18 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Luiz Felipe de Oliveira Nasr 21 August 1992 Brasília , Federal District , Brazil",
-            "place": null
+            "date": "1992-08-21",
+            "place": [
+              {
+                "text": "Brasília",
+                "url": "https://en.wikipedia.org/wiki/Bras%C3%ADlia"
+              },
+              {
+                "text": "Federal District",
+                "url": "https://en.wikipedia.org/wiki/Federal_District_(Brazil)"
+              },
+              "Brazil"
+            ]
           },
           "relatives": [
             {
@@ -21415,10 +21701,6 @@
                   "text": "FIA Platinum",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
-                    },
-                    {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     }
@@ -21460,18 +21742,18 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "3 ( 2018 , 2021 , 2024 )",
-                  "links": [
+                  "count": 3,
+                  "championships": [
                     {
-                      "text": "2018",
+                      "year": 2018,
                       "url": "https://en.wikipedia.org/wiki/2018_IMSA_SportsCar_Championship"
                     },
                     {
-                      "text": "2021",
+                      "year": 2021,
                       "url": "https://en.wikipedia.org/wiki/2021_IMSA_SportsCar_Championship"
                     },
                     {
-                      "text": "2024",
+                      "year": 2024,
                       "url": "https://en.wikipedia.org/wiki/2024_IMSA_SportsCar_Championship"
                     }
                   ]
@@ -21487,10 +21769,7 @@
               },
               {
                 "label": "Poles",
-                "value": {
-                  "text": "8",
-                  "links": []
-                }
+                "value": 8
               },
               {
                 "label": "Fastest laps",
@@ -21500,9 +21779,23 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "start": 2018,
-                    "end": 2024
+                  "seasons": [
+                    {
+                      "text": "2018",
+                      "url": "https://en.wikipedia.org/wiki/2018_IMSA_SportsCar_Championship"
+                    },
+                    {
+                      "text": "2021",
+                      "url": "https://en.wikipedia.org/wiki/2021_IMSA_SportsCar_Championship"
+                    },
+                    {
+                      "text": "2024",
+                      "url": "https://en.wikipedia.org/wiki/2024_IMSA_SportsCar_Championship"
+                    }
+                  ],
+                  "class": {
+                    "text": "P",
+                    "url": "https://en.wikipedia.org/wiki/Daytona_Prototype_International"
                   }
                 }
               },
@@ -21523,10 +21816,6 @@
                   "text": "Brazilian",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Brazil"
-                    },
-                    {
                       "text": "Brazilian",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
                     }
@@ -21535,10 +21824,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 2015,
-                  "end": 2016
-                }
+                "value": [
+                  {
+                    "year": 2015,
+                    "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 2016,
+                    "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -21571,8 +21866,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -21632,23 +21927,28 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "2018 , 2021-2024",
-                  "links": [
-                    {
-                      "text": "2018",
-                      "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2021",
-                      "url": "https://en.wikipedia.org/wiki/2021_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2024",
-                      "url": "https://en.wikipedia.org/wiki/2024_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 2018,
+                    "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2021,
+                    "url": "https://en.wikipedia.org/wiki/2021_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2022,
+                    "url": "https://en.wikipedia.org/wiki/2022_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2023,
+                    "url": "https://en.wikipedia.org/wiki/2023_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2024,
+                    "url": "https://en.wikipedia.org/wiki/2024_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -21674,18 +21974,20 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "9th ( 2022 )",
-                  "season": {
-                    "start": null,
-                    "end": null
-                  }
+                  "result": "9th",
+                  "seasons": [
+                    {
+                      "text": "2022",
+                      "url": "https://en.wikipedia.org/wiki/2022_24_Hours_of_Le_Mans"
+                    }
+                  ]
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "wins": []
                 }
               },
               {
@@ -21705,7 +22007,15 @@
             },
             "years": [
               {
-                "text": "2012-2014",
+                "year": 2012,
+                "url": null
+              },
+              {
+                "year": 2013,
+                "url": null
+              },
+              {
+                "year": 2014,
                 "url": null
               }
             ]
@@ -21717,7 +22027,11 @@
             },
             "years": [
               {
-                "text": "2010-2011",
+                "year": 2010,
+                "url": null
+              },
+              {
+                "year": 2011,
                 "url": null
               }
             ]
@@ -21729,7 +22043,7 @@
             },
             "years": [
               {
-                "text": "2009",
+                "year": 2009,
                 "url": null
               }
             ]
@@ -21741,7 +22055,7 @@
             },
             "years": [
               {
-                "text": "2009",
+                "year": 2009,
                 "url": null
               }
             ]
@@ -21753,7 +22067,7 @@
             },
             "years": [
               {
-                "text": "2008",
+                "year": 2008,
                 "url": null
               }
             ]
@@ -27958,20 +28272,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Italian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Italy"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1961,
-                  "end": 1961
-                }
+                "value": [
+                  {
+                    "year": 1961,
+                    "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -27992,8 +28303,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -28127,20 +28438,33 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1957,
-                  "end": 1961
-                }
+                "value": [
+                  {
+                    "year": 1957,
+                    "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+                  },
+                  {
+                    "year": 1958,
+                    "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+                  },
+                  {
+                    "year": 1959,
+                    "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+                  },
+                  {
+                    "year": 1960,
+                    "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
+                  },
+                  {
+                    "year": 1961,
+                    "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -28165,8 +28489,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -28290,79 +28614,90 @@
               },
               {
                 "label": "Years active",
-                "value": {
-                  "start": 1950,
-                  "end": 1954
-                }
+                "value": [
+                  {
+                    "year": 1950,
+                    "url": null
+                  },
+                  {
+                    "year": 1951,
+                    "url": null
+                  },
+                  {
+                    "year": 1952,
+                    "url": null
+                  },
+                  {
+                    "year": 1953,
+                    "url": null
+                  },
+                  {
+                    "year": 1954,
+                    "url": null
+                  }
+                ]
               },
               {
                 "label": "Best finish",
                 "value": {
                   "result": "5th-1951",
-                  "season": {
-                    "start": null,
-                    "end": null
-                  }
+                  "seasons": [
+                    {
+                      "text": "1951",
+                      "url": "https://en.wikipedia.org/wiki/1951_AAA_Championship_Car_season"
+                    }
+                  ]
                 }
               },
               {
                 "label": "First race",
                 "value": {
-                  "text": "1951 Indianapolis 500 ( Indianapolis )",
-                  "links": [
-                    {
-                      "text": "1951",
-                      "url": "https://en.wikipedia.org/wiki/1951_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
-                    },
-                    {
-                      "text": "Indianapolis",
-                      "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1951",
+                    "url": "https://en.wikipedia.org/wiki/1951_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
+                  },
+                  "circuit": {
+                    "text": "Indianapolis",
+                    "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+                  }
                 }
               },
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1954 Syracuse 100 ( Syracuse )",
-                  "links": [
-                    {
-                      "text": "1954",
-                      "url": "https://en.wikipedia.org/wiki/1954_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Syracuse 100",
-                      "url": "https://en.wikipedia.org/wiki/Syracuse_Mile"
-                    },
-                    {
-                      "text": "Syracuse",
-                      "url": "https://en.wikipedia.org/wiki/Syracuse_Mile"
-                    }
-                  ]
+                  "season": {
+                    "text": "1954",
+                    "url": "https://en.wikipedia.org/wiki/1954_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Syracuse 100",
+                    "url": "https://en.wikipedia.org/wiki/Syracuse_Mile"
+                  },
+                  "circuit": {
+                    "text": "Syracuse",
+                    "url": "https://en.wikipedia.org/wiki/Syracuse_Mile"
+                  }
                 }
               },
               {
                 "label": "First win",
                 "value": {
-                  "text": "1952 Rex Mays Classic ( Milwaukee )",
-                  "links": [
-                    {
-                      "text": "1952",
-                      "url": "https://en.wikipedia.org/wiki/1952_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Rex Mays Classic",
-                      "url": "https://en.wikipedia.org/wiki/Rex_Mays_Classic"
-                    },
-                    {
-                      "text": "Milwaukee",
-                      "url": "https://en.wikipedia.org/wiki/Milwaukee_Mile"
-                    }
-                  ]
+                  "season": {
+                    "text": "1952",
+                    "url": "https://en.wikipedia.org/wiki/1952_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Rex Mays Classic",
+                    "url": "https://en.wikipedia.org/wiki/Rex_Mays_Classic"
+                  },
+                  "circuit": {
+                    "text": "Milwaukee",
+                    "url": "https://en.wikipedia.org/wiki/Milwaukee_Mile"
+                  }
                 }
               },
               {
@@ -28403,10 +28738,24 @@
             "rows": [
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1951,
-                  "end": 1954
-                }
+                "value": [
+                  {
+                    "year": 1951,
+                    "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+                  },
+                  {
+                    "year": 1952,
+                    "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                  },
+                  {
+                    "year": 1953,
+                    "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -28431,8 +28780,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -28518,8 +28867,18 @@
         "title": "Tiff Needell",
         "general": {
           "born": {
-            "date": "Timothy Richard Needell 29 October 1951 Havant , Hampshire , England",
-            "place": null
+            "date": "1951-10-29",
+            "place": [
+              {
+                "text": "Havant",
+                "url": "https://en.wikipedia.org/wiki/Havant"
+              },
+              {
+                "text": "Hampshire",
+                "url": "https://en.wikipedia.org/wiki/Hampshire"
+              },
+              "England"
+            ]
           }
         },
         "championship_titles": [],
@@ -28532,20 +28891,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1980,
-                  "end": 1980
-                }
+                "value": [
+                  {
+                    "year": 1980,
+                    "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -28566,8 +28922,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -28621,10 +28977,12 @@
             "rows": [
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1979,
-                  "end": 1979
-                }
+                "value": [
+                  {
+                    "year": 1979,
+                    "url": "https://en.wikipedia.org/wiki/1979_British_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Entries",
@@ -28636,8 +28994,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -32664,20 +33022,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Danish",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Denmark"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1976,
-                  "end": 1976
-                }
+                "value": [
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -32698,8 +33053,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -32811,20 +33166,25 @@
                 "label": "Nationality",
                 "value": {
                   "text": "Belgian",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Belgium"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1976,
-                  "end": 1978
-                }
+                "value": [
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  },
+                  {
+                    "year": 1978,
+                    "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -32853,8 +33213,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -35979,20 +36339,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "New Zealander",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/New_Zealand"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1974,
-                  "end": 1975
-                }
+                "value": [
+                  {
+                    "year": 1974,
+                    "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                  },
+                  {
+                    "year": 1975,
+                    "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -36013,8 +36374,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -36126,20 +36487,25 @@
                 "label": "Nationality",
                 "value": {
                   "text": "American",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_States"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1953,
-                  "end": 1955
-                }
+                "value": [
+                  {
+                    "year": 1953,
+                    "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  },
+                  {
+                    "year": 1955,
+                    "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -36164,8 +36530,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -36288,20 +36654,17 @@
                 "label": "Nationality",
                 "value": {
                   "text": "German",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Germany"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1952,
-                  "end": 1952
-                }
+                "value": [
+                  {
+                    "year": 1952,
+                    "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -36322,8 +36685,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -36421,12 +36784,7 @@
                 "label": "Nationality",
                 "value": {
                   "text": "South African",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/South_Africa"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
@@ -36455,8 +36813,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -37040,8 +37398,14 @@
         "title": null,
         "general": {
           "born": {
-            "date": "Gunnar Axel Arvid Nilsson 20 November 1948 Helsingborg , Sweden",
-            "place": null
+            "date": "1948-11-20",
+            "place": [
+              {
+                "text": "Helsingborg",
+                "url": "https://en.wikipedia.org/wiki/Helsingborg"
+              },
+              "Sweden"
+            ]
           },
           "died": {
             "date": "1978-10-20",
@@ -37067,10 +37431,6 @@
                   "text": "Swedish",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/Sweden"
-                    },
-                    {
                       "text": "Swedish",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
                     }
@@ -37079,10 +37439,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1976,
-                  "end": 1977
-                }
+                "value": [
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -37103,8 +37469,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -38565,10 +38931,12 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1994,
-                  "end": 1994
-                }
+                "value": [
+                  {
+                    "year": 1994,
+                    "url": "https://en.wikipedia.org/wiki/1994_Formula_One_Season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -38589,8 +38957,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {
@@ -38650,19 +39018,20 @@
             "rows": [
               {
                 "label": "Years",
-                "value": {
-                  "text": "2008-2010",
-                  "links": [
-                    {
-                      "text": "2008",
-                      "url": "https://en.wikipedia.org/wiki/2008_24_Hours_of_Le_Mans"
-                    },
-                    {
-                      "text": "2010",
-                      "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "year": 2008,
+                    "url": "https://en.wikipedia.org/wiki/2008_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2009,
+                    "url": "https://en.wikipedia.org/wiki/2009_24_Hours_of_Le_Mans"
+                  },
+                  {
+                    "year": 2010,
+                    "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -38671,18 +39040,20 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "26th ( 2010 )",
-                  "season": {
-                    "start": null,
-                    "end": null
-                  }
+                  "result": "26th",
+                  "seasons": [
+                    {
+                      "text": "2010",
+                      "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
+                    }
+                  ]
                 }
               },
               {
                 "label": "Class wins",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "wins": []
                 }
               }
             ]
@@ -43113,10 +43484,6 @@
                   "text": "British",
                   "links": [
                     {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    },
-                    {
                       "text": "British",
                       "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
                     }
@@ -43168,10 +43535,10 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "1 ( 2025 )",
-                  "links": [
+                  "count": 1,
+                  "championships": [
                     {
-                      "text": "2025",
+                      "year": 2025,
                       "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
                     }
                   ]
@@ -43269,8 +43636,12 @@
             },
             "years": [
               {
-                "text": "2017-2018",
-                "url": null
+                "year": 2017,
+                "url": "https://en.wikipedia.org/wiki/2017_Formula_2_Championship"
+              },
+              {
+                "year": 2018,
+                "url": "https://en.wikipedia.org/wiki/2018_Formula_2_Championship"
               }
             ]
           },
@@ -43281,8 +43652,12 @@
             },
             "years": [
               {
-                "text": "2016-2017",
-                "url": null
+                "year": 2016,
+                "url": "https://en.wikipedia.org/wiki/2016_FIA_Formula_3_European_Championship"
+              },
+              {
+                "year": 2017,
+                "url": "https://en.wikipedia.org/wiki/2017_FIA_Formula_3_European_Championship"
               }
             ]
           },
@@ -43293,8 +43668,8 @@
             },
             "years": [
               {
-                "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Toyota_Racing_Series"
+                "year": 2016,
+                "url": "https://en.wikipedia.org/wiki/2016_Eurocup_Formula_Renault_2.0"
               }
             ]
           },
@@ -43305,8 +43680,8 @@
             },
             "years": [
               {
-                "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Toyota_Racing_Series"
+                "year": 2016,
+                "url": "https://en.wikipedia.org/wiki/2016_Formula_Renault_2.0_Northern_European_Cup"
               }
             ]
           },
@@ -43317,8 +43692,8 @@
             },
             "years": [
               {
-                "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Toyota_Racing_Series"
+                "year": 2016,
+                "url": "https://en.wikipedia.org/wiki/2016_BRDC_British_Formula_3_Championship"
               }
             ]
           },
@@ -43329,7 +43704,7 @@
             },
             "years": [
               {
-                "text": "2016",
+                "year": 2016,
                 "url": "https://en.wikipedia.org/wiki/2016_Toyota_Racing_Series"
               }
             ]
@@ -43341,8 +43716,8 @@
             },
             "years": [
               {
-                "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_ADAC_Formula_4"
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_MSA_Formula_Championship"
               }
             ]
           },
@@ -43353,8 +43728,8 @@
             },
             "years": [
               {
-                "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_ADAC_Formula_4"
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_BRDC_Formula_4_Autumn_Trophy"
               }
             ]
           },
@@ -43365,8 +43740,8 @@
             },
             "years": [
               {
-                "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_ADAC_Formula_4"
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_Italian_Formula_4_Championship"
               }
             ]
           },
@@ -43377,7 +43752,7 @@
             },
             "years": [
               {
-                "text": "2015",
+                "year": 2015,
                 "url": "https://en.wikipedia.org/wiki/2015_ADAC_Formula_4"
               }
             ]
@@ -43389,7 +43764,7 @@
             },
             "years": [
               {
-                "text": "2014",
+                "year": 2014,
                 "url": "https://en.wikipedia.org/wiki/2014_Ginetta_Junior_Championship"
               }
             ]
@@ -51631,20 +52006,21 @@
                 "label": "Nationality",
                 "value": {
                   "text": "British",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
+                  "links": []
                 }
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1953,
-                  "end": 1954
-                }
+                "value": [
+                  {
+                    "year": 1953,
+                    "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -51665,8 +52041,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "0",
-                  "links": []
+                  "count": 0,
+                  "championships": []
                 }
               },
               {

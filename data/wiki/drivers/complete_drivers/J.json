@@ -13960,21 +13960,18 @@
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1996 Toyota Grand Prix of Monterey ( Laguna Seca )",
-                  "links": [
-                    {
-                      "text": "1996",
-                      "url": "https://en.wikipedia.org/wiki/1996_IndyCar_season"
-                    },
-                    {
-                      "text": "Toyota Grand Prix of Monterey",
-                      "url": "https://en.wikipedia.org/wiki/Toyota_Grand_Prix_of_Monterey"
-                    },
-                    {
-                      "text": "Laguna Seca",
-                      "url": "https://en.wikipedia.org/wiki/Laguna_Seca"
-                    }
-                  ]
+                  "season": {
+                    "text": "1996",
+                    "url": "https://en.wikipedia.org/wiki/1996_IndyCar_season"
+                  },
+                  "race": {
+                    "text": "Toyota Grand Prix of Monterey",
+                    "url": "https://en.wikipedia.org/wiki/Toyota_Grand_Prix_of_Monterey"
+                  },
+                  "circuit": {
+                    "text": "Laguna Seca",
+                    "url": "https://en.wikipedia.org/wiki/Laguna_Seca"
+                  }
                 }
               },
               {
@@ -14268,7 +14265,15 @@
             },
             "years": [
               {
-                "text": "1978-1980",
+                "year": 1978,
+                "url": null
+              },
+              {
+                "year": 1979,
+                "url": null
+              },
+              {
+                "year": 1980,
                 "url": null
               }
             ]
@@ -38522,8 +38527,8 @@
               {
                 "label": "Championships",
                 "value": {
-                  "text": "1 ( 2014-15 )",
-                  "links": [
+                  "count": 1,
+                  "championships": [
                     {
                       "text": "2014-15",
                       "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Formula_E_season"
