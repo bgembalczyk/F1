@@ -103,27 +103,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1969 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "1969 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1969 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1974 Austrian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1974 Austrian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1974_Austrian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1974 Austrian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1974_Austrian_Grand_Prix"
+                  }
+                ]
               }
             ]
           }

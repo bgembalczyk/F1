@@ -181,27 +181,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1991 Spanish Grand Prix",
-                  "links": [
-                    {
-                      "text": "1991 Spanish Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1991_Spanish_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1991 Spanish Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1991_Spanish_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1999 Japanese Grand Prix",
-                  "links": [
-                    {
-                      "text": "1999 Japanese Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1999_Japanese_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1999 Japanese Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1999_Japanese_Grand_Prix"
+                  }
+                ]
               }
             ]
           },
@@ -210,8 +204,7 @@
             "rows": [
               {
                 "full_data": {
-                  "text": "66 races run over 4 years",
-                  "links": []
+                  "races_run": 66
                 }
               },
               {
@@ -269,81 +262,74 @@
               },
               {
                 "label": "First race",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1996",
                     "url": "https://en.wikipedia.org/wiki/1996_PPG_Indy_Car_World_Series"
                   },
-                  "race": {
+                  {
                     "text": "Marlboro Grand Prix of Miami",
                     "url": "https://en.wikipedia.org/wiki/1996_Grand_Prix_of_Miami"
                   },
-                  "circuit": {
+                  {
                     "text": "Homestead",
                     "url": "https://en.wikipedia.org/wiki/Homestead-Miami_Speedway"
                   }
-                }
+                ]
               },
               {
                 "label": "Last race",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "2001",
                     "url": "https://en.wikipedia.org/wiki/2001_CART_season"
                   },
-                  "race": {
+                  {
                     "text": "American Memorial",
                     "url": "https://en.wikipedia.org/wiki/2001_American_Memorial"
                   },
-                  "circuit": {
+                  {
                     "text": "Lausitz",
                     "url": "https://en.wikipedia.org/wiki/EuroSpeedway_Lausitz"
                   }
-                }
+                ]
               },
               {
                 "label": "First win",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1996",
                     "url": "https://en.wikipedia.org/wiki/1996_PPG_Indy_Car_World_Series"
                   },
-                  "race": {
+                  {
                     "text": "Budweiser/G. I. Joe's 200",
                     "url": "https://en.wikipedia.org/wiki/Grand_Prix_of_Portland"
                   },
-                  "circuit": {
+                  {
                     "text": "Portland",
                     "url": "https://en.wikipedia.org/wiki/Portland_International_Raceway"
                   }
-                }
+                ]
               },
               {
                 "label": "Last win",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1998",
                     "url": "https://en.wikipedia.org/wiki/1998_CART_FedEx_Championship_Series"
                   },
-                  "race": {
+                  {
                     "text": "Honda Indy 300",
                     "url": "https://en.wikipedia.org/wiki/1998_Honda_Indy_300"
                   },
-                  "circuit": {
+                  {
                     "text": "Surfers Paradise",
                     "url": "https://en.wikipedia.org/wiki/Surfers_Paradise_Street_Circuit"
                   }
-                }
+                ]
               },
               {
                 "full_data": {
-                  "text": "Wins Podiums Poles 15 28 10",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
                   "wins": 15,
                   "podiums": 28,
                   "poles": 10
@@ -6532,7 +6518,10 @@
           "died": {
             "date": "6 August 1996 Huete , Castile-La Mancha , Spain",
             "place": [
-              "(aged 52) Huete",
+              {
+                "text": "Huete",
+                "url": "https://en.wikipedia.org/wiki/Huete,_Spain"
+              },
               {
                 "text": "Castile-La Mancha",
                 "url": "https://en.wikipedia.org/wiki/Castile-La_Mancha"
@@ -6608,15 +6597,12 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1976 Spanish Grand Prix",
-                  "links": [
-                    {
-                      "text": "1976 Spanish Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1976 Spanish Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -7194,27 +7180,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1999 Australian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1999 Australian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1999_Australian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1999 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1999_Australian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "2005 United States Grand Prix",
-                  "links": [
-                    {
-                      "text": "2005 United States Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2005_United_States_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2005 United States Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2005_United_States_Grand_Prix"
+                  }
+                ]
               }
             ]
           },
@@ -7279,7 +7259,10 @@
           "died": {
             "date": "15 May 2015 Magenta , Italy",
             "place": [
-              "(aged 68) Magenta",
+              {
+                "text": "Magenta",
+                "url": "https://en.wikipedia.org/wiki/Magenta,_Lombardy"
+              },
               "Italy"
             ]
           }
@@ -7367,27 +7350,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1975 Italian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1975 Italian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1975 Italian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1977 Spanish Grand Prix",
-                  "links": [
-                    {
-                      "text": "1977 Spanish Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1977_Spanish_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1977 Spanish Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1977_Spanish_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -8508,27 +8485,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1979 Canadian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1979 Canadian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1979 Canadian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1979_Canadian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1981 Argentine Grand Prix",
-                  "links": [
-                    {
-                      "text": "1981 Argentine Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1981 Argentine Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
+                  }
+                ]
               }
             ]
           }

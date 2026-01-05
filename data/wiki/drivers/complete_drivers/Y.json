@@ -125,27 +125,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "2006 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "2006 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2006_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2006 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2006_German_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "2010 Korean Grand Prix",
-                  "links": [
-                    {
-                      "text": "2010 Korean Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2010_Korean_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2010 Korean Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2010_Korean_Grand_Prix"
+                  }
+                ]
               },
               {
                 "full_data": {
@@ -5895,27 +5889,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "2001 Italian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2001 Italian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2001_Italian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2001 Italian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2001_Italian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "2002 Japanese Grand Prix",
-                  "links": [
-                    {
-                      "text": "2002 Japanese Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2002_Japanese_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2002 Japanese Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2002_Japanese_Grand_Prix"
+                  }
+                ]
               },
               {
                 "full_data": {
