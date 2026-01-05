@@ -426,3 +426,123 @@ def test_parse_racing_licence_with_beautiful_soup(cell_parser):
         if 'BeautifulSoup' in str(e):
             pytest.fail(f"BeautifulSoup is not imported: {e}")
         raise
+
+
+def test_car_number_with_present(cell_parser):
+    """Test that car number parsing handles 'present' as null end year."""
+    html = '''
+    <td class="infobox-data">
+        27 (<a href="/wiki/2014%E2%80%9315_Formula_E_Championship" title="2014–15 Formula E Championship">2014–2015</a>)<br>
+        25 (<a href="/wiki/2015%E2%80%9316_Formula_E_Championship" title="2015–16 Formula E Championship">2015</a>–present)
+    </td>
+    '''
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_car_numbers(cell)
+    
+    assert len(result) == 2
+    assert result[0]['number'] == 27
+    assert result[0]['years']['start'] == 2014
+    assert result[0]['years']['end'] == 2015
+    
+    assert result[1]['number'] == 25
+    assert result[1]['years']['start'] == 2015
+    assert result[1]['years']['end'] is None  # 'present' should be None
+
+
+def test_died_with_hidden_iso_date(general_parser):
+    """Test that died date extraction uses hidden ISO date span."""
+    html = '''
+    <tr><th scope="row" class="infobox-label">Died</th><td class="infobox-data">10 September 1961<span style="display:none">(1961-09-10)</span> (aged&nbsp;33)<br><div style="display:inline" class="deathplace"><a href="/wiki/Monza" title="Monza">Monza</a>, Italy</div></td></tr>
+    '''
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = general_parser._parse_date_place(cell)
+    
+    assert result['date'] == '1961-09-10'
+    assert len(result['place']) == 2
+    assert result['place'][0]['text'] == 'Monza'
+    assert result['place'][0]['url'] == 'https://en.wikipedia.org/wiki/Monza'
+    assert result['place'][1] == 'Italy'
+
+
+def test_died_with_deathplace_div(general_parser):
+    """Test that died date/place extraction works with div.deathplace."""
+    html = '''
+    <td class="infobox-data">May 2, 2021<span style="display:none">(2021-05-02)</span> (aged&nbsp;87)<br><div class="deathplace"><a href="/wiki/Albuquerque,_New_Mexico" title="Albuquerque, New Mexico">Albuquerque, New Mexico</a>, U.S.</div></td>
+    '''
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = general_parser._parse_date_place(cell)
+    
+    assert result['date'] == '2021-05-02'
+    # Place should be split by commas from the link and remaining text
+    assert len(result['place']) >= 2
+    # First element should be the link
+    assert result['place'][0]['text'] == 'Albuquerque, New Mexico'
+    assert result['place'][0]['url'] == 'https://en.wikipedia.org/wiki/Albuquerque,_New_Mexico'
+
+
+def test_best_finish_with_multiple_classes(cell_parser):
+    """Test that best finish associates class with specific season."""
+    html = '''
+    <td class="infobox-data">1st in <a href="/wiki/2019%E2%80%9320_FIA_World_Endurance_Championship" title="2019–20 FIA World Endurance Championship">2019–20</a><span class="nowrap">&nbsp;</span><small>(<a href="/wiki/Le_Mans_Prototype" title="Le Mans Prototype">LMP1</a>)</small>, <a href="/wiki/2021_FIA_World_Endurance_Championship" title="2021 FIA World Endurance Championship">2021</a><span class="nowrap">&nbsp;</span><small>(<a href="/wiki/Le_Mans_Hypercar" title="Le Mans Hypercar">LMH</a>)</small></td>
+    '''
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_best_finish(cell)
+    
+    assert result['result'] == '1st'
+    assert len(result['seasons']) == 2
+    
+    # First season with LMP1 class
+    assert result['seasons'][0]['text'] == '2019-20'
+    assert result['seasons'][0]['url'] == 'https://en.wikipedia.org/wiki/2019%E2%80%9320_FIA_World_Endurance_Championship'
+    assert 'class' in result['seasons'][0]
+    assert result['seasons'][0]['class']['text'] == 'LMP1'
+    assert result['seasons'][0]['class']['url'] == 'https://en.wikipedia.org/wiki/Le_Mans_Prototype'
+    
+    # Second season with LMH class
+    assert result['seasons'][1]['text'] == '2021'
+    assert result['seasons'][1]['url'] == 'https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship'
+    assert 'class' in result['seasons'][1]
+    assert result['seasons'][1]['class']['text'] == 'LMH'
+    assert result['seasons'][1]['class']['url'] == 'https://en.wikipedia.org/wiki/Le_Mans_Hypercar'
+
+
+def test_previous_series_with_year_urls(link_extractor, titles_parser):
+    """Test that previous series extracts year URLs from header correctly."""
+    html_label = '''
+    <th class="infobox-label">
+        <a href="/wiki/2004_Formula_Renault_seasons#2004_Asian_Formula_Renault_Challenge_season" title="2004 Formula Renault seasons">2004</a>
+    </th>
+    '''
+    html_value = '''
+    <td class="infobox-data">
+        <a href="/wiki/Asian_Formula_Renault_Challenge" class="mw-redirect" title="Asian Formula Renault Challenge">Asian Formula Renault</a>
+    </td>
+    '''
+    label_cell = BeautifulSoup(html_label, 'html.parser').find('th')
+    value_cell = BeautifulSoup(html_value, 'html.parser').find('td')
+    
+    rows = [{"label_cell": label_cell, "value_cell": value_cell}]
+    result = titles_parser.parse_previous_series(rows)
+    
+    assert len(result) == 1
+    assert result[0]['title']['text'] == 'Asian Formula Renault'
+    assert result[0]['title']['url'] == 'https://en.wikipedia.org/wiki/Asian_Formula_Renault_Challenge'
+    
+    # Year should have URL from header
+    assert len(result[0]['years']) == 1
+    assert result[0]['years'][0]['year'] == 2004
+    assert result[0]['years'][0]['url'] == 'https://en.wikipedia.org/wiki/2004_Formula_Renault_seasons#2004_Asian_Formula_Renault_Challenge_season'
+
+
+def test_racing_licence_with_images(cell_parser):
+    """Test racing licence parsing with image tags before links."""
+    html = '''
+    <td class="infobox-data"><span typeof="mw:File"><a href="/wiki/File:FIA_Platinum_Driver.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/1/17/FIA_Platinum_Driver.png/20px-FIA_Platinum_Driver.png" decoding="async" width="12" height="12" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/17/FIA_Platinum_Driver.png/40px-FIA_Platinum_Driver.png 2x" data-file-width="93" data-file-height="93"></a></span> <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a></td>
+    '''
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_racing_licence(cell)
+    
+    # Should extract the FIA Platinum link, ignoring the image link
+    assert len(result) >= 1
+    assert result[0]['licence']['text'] == 'FIA Platinum'
+    assert result[0]['licence']['url'] == 'https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation'
