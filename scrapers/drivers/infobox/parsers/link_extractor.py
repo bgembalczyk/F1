@@ -145,7 +145,16 @@ class InfoboxLinkExtractor:
         - Single link with range: <a>2018-2019</a> (keeps as-is, doesn't expand)
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        links = [link for link in self.extract_links(cell) if self.is_year_link(link)]
+        # Don't filter by is_year_link here - we want ALL year links including those with "season" in URL
+        all_links = self.extract_links(cell)
+        
+        # Filter to only links whose text is a year or year range
+        links = []
+        for link in all_links:
+            link_text = link.get("text", "")
+            # Check if text is a year (4 digits) or year range (YYYY-YYYY or YYYY-YY)
+            if re.fullmatch(r"\d{4}(?:\s*[-–]\s*\d{2,4})?", link_text.strip()):
+                links.append(link)
         
         # Check if any link contains a range pattern as its full text
         # If so, keep it as-is (don't expand the range)

@@ -116,9 +116,13 @@ class InfoboxCellParser:
         - "2018-2022" -> {start: 2018, end: 2022}
         - "2018-19–2022" -> {start: 2018, end: 2022}  # Multiple dashes
         - "2018" -> {start: 2018, end: 2018}
+        - "2015–present" -> {start: 2015, end: None}
         """
         try:
             normalized = clean_infobox_text(text) or ""
+            
+            # Check for "present" keyword
+            has_present = re.search(r'\bpresent\b', normalized, re.IGNORECASE) is not None
             
             # Extract all 4-digit years and 2-digit years
             all_years = []
@@ -141,7 +145,11 @@ class InfoboxCellParser:
             
             # Sort years and take first and last
             all_years.sort()
-            return {"start": all_years[0], "end": all_years[-1]}
+            start = all_years[0]
+            # If "present" is in text, end should be None
+            end = None if has_present else all_years[-1]
+            
+            return {"start": start, "end": end}
         except (TypeError, ValueError) as exc:
             raise DomainParseError(
                 f"Nie udało się sparsować zakresu lat: {text!r}.",
@@ -329,18 +337,99 @@ class InfoboxCellParser:
                 else:
                     result["result"] = text.strip() or None
             
-            # Extract season links
+            # Extract season links and small tags (classes) together
+            # Pattern: "1st in 2019–20 (LMP1), 2021 (LMH)"
+            # We need to pair each season with its corresponding class if present
+            
             links = self._link_extractor.extract_links(cell)
             season_links = [link for link in links if not self._is_class_link(link)]
+            
             if season_links:
-                # Use all season links
-                result["seasons"] = [
-                    {
-                        "text": link.get("text", ""),
-                        "url": link.get("url")
-                    }
-                    for link in season_links
-                ]
+                # Find all <small> tags that might contain class info
+                small_tags = cell.find_all("small")
+                
+                # Build a map of season positions to class links
+                # We'll match based on proximity/order in the HTML
+                season_data = []
+                
+                if small_tags and len(small_tags) > 0:
+                    # Parse HTML to find season-class pairs using BeautifulSoup navigation
+                    # Strategy: find each season link element, then look for the next <small> tag
+                    
+                    # For each season link, try to find associated class
+                    for season_link in season_links:
+                        season_entry = {
+                            "text": season_link.get("text", ""),
+                            "url": season_link.get("url")
+                        }
+                        
+                        # Find the actual <a> tag in the cell that matches this season
+                        season_text = season_link.get("text", "")
+                        season_url = season_link.get("url", "")
+                        
+                        if season_text:
+                            # Find the <a> tag with this text
+                            season_tag = None
+                            for a_tag in cell.find_all('a'):
+                                if clean_infobox_text(a_tag.get_text(strip=True)) == season_text:
+                                    # Verify URL matches if present
+                                    if not season_url or season_url in (a_tag.get('href', '') or ''):
+                                        season_tag = a_tag
+                                        break
+                            
+                            # Look for next <small> tag after this season tag
+                            if season_tag:
+                                # Navigate forward to find next small tag
+                                next_elem = season_tag
+                                found_small = None
+                                found_next_season = False
+                                
+                                # Search through next siblings
+                                while next_elem and not found_small and not found_next_season:
+                                    next_elem = next_elem.next_sibling
+                                    if next_elem:
+                                        if hasattr(next_elem, 'name'):
+                                            if next_elem.name == 'small':
+                                                found_small = next_elem
+                                                break
+                                            # Check if we hit another season link
+                                            if next_elem.name == 'a':
+                                                next_text = clean_infobox_text(next_elem.get_text(strip=True))
+                                                if any(s.get("text") == next_text for s in season_links if s != season_link):
+                                                    found_next_season = True
+                                                    break
+                                        # Also search descendants of text/tag siblings
+                                        if hasattr(next_elem, 'find'):
+                                            small_in_sibling = next_elem.find('small')
+                                            if small_in_sibling:
+                                                # Check if there's a season link before this small
+                                                for a_tag in next_elem.find_all('a'):
+                                                    a_text = clean_infobox_text(a_tag.get_text(strip=True))
+                                                    if any(s.get("text") == a_text for s in season_links if s != season_link):
+                                                        found_next_season = True
+                                                        break
+                                                if not found_next_season:
+                                                    found_small = small_in_sibling
+                                                    break
+                                
+                                # Extract class from found small tag
+                                if found_small:
+                                    class_links = self._link_extractor.extract_links(found_small)
+                                    if class_links:
+                                        season_entry["class"] = class_links[0]
+                        
+                        season_data.append(season_entry)
+                    
+                    result["seasons"] = season_data
+                else:
+                    # No small tags, just return seasons
+                    result["seasons"] = [
+                        {
+                            "text": link.get("text", ""),
+                            "url": link.get("url")
+                        }
+                        for link in season_links
+                    ]
             else:
                 # No links - try to extract years from parentheses
                 paren_match = re.search(r'\(([^)]+)\)', text)
@@ -351,28 +440,6 @@ class InfoboxCellParser:
                     if years:
                         result["seasons"] = years
             
-            # Check <small> tag for class or additional season info
-            small_tag = cell.find("small")
-            if small_tag:
-                small_links = self._link_extractor.extract_links(small_tag)
-                small_text = clean_infobox_text(small_tag.get_text(" ", strip=True)) or ""
-                
-                # Check if content is a year/season (number pattern) or a class (text)
-                is_year_pattern = re.search(r'\b\d{4}\b', small_text)
-                
-                if is_year_pattern and small_links:
-                    # It's a season, not a class
-                    if not result["seasons"]:  # Only set if not already set
-                        result["seasons"] = [
-                            {
-                                "text": link.get("text", ""),
-                                "url": link.get("url")
-                            }
-                            for link in small_links
-                        ]
-                elif small_links and not is_year_pattern:
-                    # It's a class
-                    result["class"] = small_links[0]
             
             return result
         except (TypeError, ValueError) as exc:
@@ -458,24 +525,39 @@ class InfoboxCellParser:
         -> [{licence: {...}, years: {start: None, end: 2019}}, {licence: {...}, years: {start: 2020, end: None}}]
         """
         try:
+            # Extract all links from the cell first, filtering out image/file links
+            all_links = self._link_extractor.extract_links(cell)
+            # Filter out links to files (images, etc.) - they typically contain "File:" in URL
+            licence_links = [link for link in all_links if not (link.get('url', '').lower().find('/file:') >= 0)]
+            
             # Split by <br> tags to get separate licence entries
-            parts = []
-            for br in cell.find_all('br'):
+            # Create a copy to avoid modifying the original
+            cell_copy = BeautifulSoup(str(cell), 'html.parser')
+            for br in cell_copy.find_all('br'):
                 br.replace_with('\n')
             
-            text = cell.get_text('\n', strip=True)
+            text = cell_copy.get_text('\n', strip=True)
             lines = [line.strip() for line in text.split('\n') if line.strip()]
             
             licences = []
+            link_index = 0  # Track which link we're processing
+            
             for line in lines:
-                # Extract licence link
-                line_soup = BeautifulSoup(f'<span>{line}</span>', 'html.parser')
-                line_links = self._link_extractor.extract_links(line_soup.find('span'))
-                
-                if not line_links:
+                # Skip lines that don't contain links or are just references (like [1])
+                if not any(link.get('text', '') in line for link in licence_links[link_index:]):
                     continue
                 
-                licence_link = line_links[0]  # First link is the licence
+                # Find the link for this line
+                licence_link = None
+                for i, link in enumerate(licence_links[link_index:], start=link_index):
+                    link_text = link.get('text', '')
+                    if link_text and link_text in line:
+                        licence_link = link
+                        link_index = i + 1
+                        break
+                
+                if not licence_link:
+                    continue
                 
                 # Extract year range from parentheses
                 years: Dict[str, int | None] = {"start": None, "end": None}
@@ -530,7 +612,7 @@ class InfoboxCellParser:
                 return payload
         
         # Check if this is "X races run over Y years" pattern
-        if text:
+        if text is not None:
             races_run_match = re.match(r'^(\d+)\s+races?\s+run\s+over', text)
             if races_run_match:
                 return {"races_run": int(races_run_match.group(1))}
