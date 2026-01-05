@@ -188,3 +188,47 @@ class TestCarNumberWithPresent:
         assert result[1]['number'] == 25
         assert result[1]['years']['start'] == 2015
         assert result[1]['years']['end'] is None  # 'present' should be None
+
+
+class TestBestFinishWithNavigableString:
+    """Tests for best finish parsing with NavigableString between elements."""
+    
+    def test_best_finish_with_text_between_link_and_class(self, cell_parser):
+        """Test that best finish handles NavigableString (text nodes) between season link and class."""
+        # This HTML has text between the season link and a span containing small tag
+        # The NavigableString followed by a span with small will trigger the bug
+        html = '''<td class="infobox-data">1st in <a href="/wiki/2009_Formula_E" title="2009 Formula E">2009</a>
+text here <span><small>(<a href="/wiki/LMP1" title="LMP1">LMP1</a>)</small></span></td>'''
+        
+        cell = BeautifulSoup(html, 'html.parser').find('td')
+        # This should not raise AttributeError: 'NavigableString' object has no attribute 'find_all'
+        result = cell_parser.parse_best_finish(cell)
+        
+        assert result['result'] == '1st'
+        assert len(result['seasons']) == 1
+        assert result['seasons'][0]['text'] == '2009'
+        # Should find the class even with text in between
+        assert 'class' in result['seasons'][0]
+        assert result['seasons'][0]['class']['text'] == 'LMP1'
+    
+    def test_best_finish_with_multiple_seasons_and_text_nodes(self, cell_parser):
+        """Test best finish with multiple seasons and text nodes between elements."""
+        html = '''<td class="infobox-data">1st in <a href="/wiki/2019_WEC" title="2019 WEC">2019</a>
+some text <span><small>(<a href="/wiki/LMP1" title="LMP1">LMP1</a>)</small></span>, <a href="/wiki/2021_WEC" title="2021 WEC">2021</a> 
+more text <span><small>(<a href="/wiki/LMH" title="LMH">LMH</a>)</small></span></td>'''
+        
+        cell = BeautifulSoup(html, 'html.parser').find('td')
+        result = cell_parser.parse_best_finish(cell)
+        
+        assert result['result'] == '1st'
+        assert len(result['seasons']) == 2
+        
+        # First season
+        assert result['seasons'][0]['text'] == '2019'
+        assert 'class' in result['seasons'][0]
+        assert result['seasons'][0]['class']['text'] == 'LMP1'
+        
+        # Second season
+        assert result['seasons'][1]['text'] == '2021'
+        assert 'class' in result['seasons'][1]
+        assert result['seasons'][1]['class']['text'] == 'LMH'
