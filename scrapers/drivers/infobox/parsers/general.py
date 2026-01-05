@@ -59,10 +59,14 @@ class InfoboxGeneralParser:
         return data
 
     def _parse_date_place(self, cell: Tag) -> Dict[str, Any]:
-        # Try to extract date from structured data (bday class)
+        # Try to extract date from structured data (bday or dday class)
         bday_span = cell.find("span", class_="bday")
+        dday_span = cell.find("span", class_="dday")
+        
         if bday_span:
             date_text = clean_infobox_text(bday_span.get_text(strip=True)) or ""
+        elif dday_span:
+            date_text = clean_infobox_text(dday_span.get_text(strip=True)) or ""
         else:
             # Fallback to text-based extraction
             text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
@@ -80,10 +84,10 @@ class InfoboxGeneralParser:
             date_text = filtered_parts[0] if filtered_parts else ""
             date_text = re.sub(r"\s*\([^)]*\)", "", date_text).strip()
         
-        # Extract place from birthplace element (div or span) if available
-        birthplace_span = cell.find(class_="birthplace")
-        if birthplace_span:
-            place_text = clean_infobox_text(birthplace_span.get_text(" ", strip=True)) or ""
+        # Extract place from birthplace/deathplace element (div or span) if available
+        place_span = cell.find(class_="birthplace") or cell.find(class_="deathplace")
+        if place_span:
+            place_text = clean_infobox_text(place_span.get_text(" ", strip=True)) or ""
         else:
             # Fallback to parsing from text
             text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
@@ -109,8 +113,8 @@ class InfoboxGeneralParser:
         place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
         place: List[str | LinkRecord] = place_parts
         if self._include_urls and place_parts:
-            # Extract links, preferring from birthplace span if available
-            links_source = birthplace_span if birthplace_span else cell
+            # Extract links, preferring from birthplace/deathplace span if available
+            links_source = place_span if place_span else cell
             links = self._link_extractor.extract_links(links_source)
             place = [
                 self._link_extractor.find_link_by_text(part, links) or part

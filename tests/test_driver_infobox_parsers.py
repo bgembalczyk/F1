@@ -101,7 +101,7 @@ def test_best_finish_multiple_seasons(cell_parser):
 
 
 def test_race_event_parsing(cell_parser):
-    """Test that race events are parsed into season, race, and circuit."""
+    """Test that race events are parsed as a list of links."""
     html = '''
     <td class="infobox-data">
         <a href="/wiki/2019_IndyCar_Series" title="2019 IndyCar Series">2019</a> 
@@ -112,12 +112,12 @@ def test_race_event_parsing(cell_parser):
     cell = BeautifulSoup(html, 'html.parser').find('td')
     result = cell_parser.parse_race_event(cell)
     
-    assert result['season'] is not None
-    assert result['season']['text'] == '2019'
-    assert result['race'] is not None
-    assert result['race']['text'] == 'Grand Prix of St. Petersburg'
-    assert result['circuit'] is not None
-    assert result['circuit']['text'] == 'St. Petersburg'
+    # Should return a list of all links
+    assert isinstance(result, list)
+    assert len(result) == 3
+    assert result[0]['text'] == '2019'
+    assert result[1]['text'] == 'Grand Prix of St. Petersburg'
+    assert result[2]['text'] == 'St. Petersburg'
 
 
 def test_stats_table_extraction(cell_parser):
@@ -143,12 +143,15 @@ def test_stats_table_extraction(cell_parser):
     cell = BeautifulSoup(html, 'html.parser').find('td')
     result = cell_parser.parse_full_data(cell)
     
+    # Should only have wins, podiums, poles - no text or links
     assert 'wins' in result
     assert 'podiums' in result
     assert 'poles' in result
     assert result['wins'] == 4
     assert result['podiums'] == 11
     assert result['poles'] == 0
+    assert 'text' not in result
+    assert 'links' not in result
 
 
 def test_class_wins_parsing(cell_parser):
@@ -253,3 +256,120 @@ def test_year_range_with_separate_links_expanded(link_extractor):
     # Should NOT have "text" field (which would indicate non-expansion)
     for entry in result:
         assert 'text' not in entry
+
+
+def test_races_run_extraction(cell_parser):
+    """Test extraction of races_run from 'X races run over Y years' text."""
+    html = '<td colspan="2" class="infobox-full-data">97 races run over 6 years</td>'
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_full_data(cell)
+    
+    assert result == {"races_run": 97}
+
+
+def test_championships_simple_links(cell_parser):
+    """Test that championships treats parentheses content as simple list of links."""
+    html = '''
+    <td class="infobox-data">
+        1 (<a href="/wiki/2021%E2%80%9322_Formula_E_World_Championship" 
+             title="2021–22 Formula E World Championship">2021–22</a>)
+    </td>
+    '''
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_championships(cell)
+    
+    assert result['count'] == 1
+    assert isinstance(result['championships'], list)
+    assert len(result['championships']) == 1
+    assert result['championships'][0]['text'] == '2021-22'
+    assert 'url' in result['championships'][0]
+
+
+def test_car_number_year_range_multiple_dashes(cell_parser):
+    """Test car number parsing with multiple dashes (e.g., 2018-19–2022)."""
+    html = '''
+    <td class="infobox-data">
+        5 (<a href="/wiki/2018%E2%80%9319_Formula_E_Championship">2018-19</a>–<a href="/wiki/2021%E2%80%9322_Formula_E_World_Championship">2022</a>)
+    </td>
+    '''
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_car_numbers(cell)
+    
+    assert len(result) == 1
+    assert result[0]['number'] == 5
+    assert result[0]['years']['start'] == 2018
+    assert result[0]['years']['end'] == 2022
+
+
+def test_best_finish_no_links_extracts_years(cell_parser):
+    """Test that best finish extracts years from parentheses when no links present."""
+    html = '<td class="infobox-data">DNF (1983)</td>'
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_best_finish(cell)
+    
+    assert result['result'] == 'DNF'
+    assert result['seasons'] == [1983]
+
+
+def test_finished_last_season_parsing(cell_parser):
+    """Test parsing of Finished last season into position and points."""
+    html = '<td class="infobox-data">14th (62 pts)</td>'
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_finished_last_season(cell)
+    
+    assert result['position'] == '14th'
+    assert result['points'] == 62
+
+
+def test_race_event_no_links(cell_parser):
+    """Test race event parsing when no links present - should return text."""
+    html = '<td class="infobox-data">1985 Provimi Veal 200 (Road America)</td>'
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_race_event(cell)
+    
+    assert isinstance(result, list)
+    assert len(result) == 1
+    assert result[0]['text'] == '1985 Provimi Veal 200 (Road America)'
+    assert result[0]['url'] is None
+
+
+def test_racing_licence_with_years(cell_parser):
+    """Test racing licence parsing with year ranges."""
+    html = '''
+    <td class="infobox-data">
+        <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a> 
+        <span style="font-size: 85%;">(until 2019)</span><br>
+        <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a> 
+        <span style="font-size: 85%;">(2020–)</span>
+    </td>
+    '''
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_racing_licence(cell)
+    
+    assert len(result) == 2
+    assert result[0]['licence']['text'] == 'FIA Gold'
+    assert result[0]['years']['end'] == 2019
+    assert result[0]['years']['start'] is None
+    
+    assert result[1]['licence']['text'] == 'FIA Platinum'
+    assert result[1]['years']['start'] == 2020
+    assert result[1]['years']['end'] is None
+
+
+def test_died_with_deathplace(general_parser):
+    """Test that died date/place extraction uses deathplace class."""
+    html = '''
+    <td class="infobox-data">
+        11 July 2015<span style="display:none">(2015-07-11)</span> (aged&nbsp;80)<br>
+        <span class="deathplace">
+            <a href="/wiki/Johannesburg" title="Johannesburg">Johannesburg</a>, South Africa
+        </span>
+    </td>
+    '''
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = general_parser._parse_date_place(cell)
+    
+    assert result['date'] == '2015-07-11'
+    assert len(result['place']) == 2
+    assert result['place'][0]['text'] == 'Johannesburg'
+    assert result['place'][1] == 'South Africa'
