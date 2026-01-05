@@ -109,9 +109,38 @@ class InfoboxCellParser:
 
     @staticmethod
     def _parse_year_range(text: str) -> Dict[str, int | None]:
+        """Parse year range from text.
+        
+        Handles cases like:
+        - "2018-2022" -> {start: 2018, end: 2022}
+        - "2018-19–2022" -> {start: 2018, end: 2022}  # Multiple dashes
+        - "2018" -> {start: 2018, end: 2018}
+        """
         try:
             normalized = clean_infobox_text(text) or ""
-            return parse_year_range(normalized)
+            
+            # Extract all 4-digit years and 2-digit years
+            all_years = []
+            
+            # Find all standalone 4-digit years
+            four_digit_years = [int(y) for y in re.findall(r'\b(\d{4})\b', normalized)]
+            all_years.extend(four_digit_years)
+            
+            # Find 2-digit years that come after 4-digit years (like "2018-19")
+            two_digit_pattern = re.finditer(r'\b(\d{4})\s*[-–]\s*(\d{2})\b', normalized)
+            for match in two_digit_pattern:
+                start_year = int(match.group(1))
+                end_suffix = match.group(2)
+                end_year = (start_year // 100) * 100 + int(end_suffix)
+                if end_year not in all_years:
+                    all_years.append(end_year)
+            
+            if not all_years:
+                return {"start": None, "end": None}
+            
+            # Sort years and take first and last
+            all_years.sort()
+            return {"start": all_years[0], "end": all_years[-1]}
         except (TypeError, ValueError) as exc:
             raise DomainParseError(
                 f"Nie udało się sparsować zakresu lat: {text!r}.",
@@ -153,11 +182,11 @@ class InfoboxCellParser:
             ) from exc
     
     def parse_championships(self, cell: Tag) -> Dict[str, Any]:
-        """Parse championships count with year and link information.
+        """Parse championships count with links.
         
         Handles cases like:
-        - "1 (2014)" -> {count: 1, championships: [{year: 2014, url: ...}]}
-        - "2 (2015, 2016)" -> {count: 2, championships: [{year: 2015, url: ...}, {year: 2016, url: ...}]}
+        - "1 (2014)" -> {count: 1, championships: [{text: "2014", url: ...}]}
+        - "2 (2015, 2016)" -> {count: 2, championships: [{text: "2015", url: ...}, {text: "2016", url: ...}]}
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         try:
@@ -165,30 +194,8 @@ class InfoboxCellParser:
             count_match = re.search(r"^(\d+)", text)
             count = int(count_match.group(1)) if count_match else 0
             
-            # Extract year links from parentheses
-            championships = []
-            links = self._link_extractor.extract_links(cell)
-            
-            # Build year -> url mapping from links
-            year_to_url: Dict[int, str | None] = {}
-            for link in links:
-                link_text = link.get("text", "")
-                year_match = re.search(r'\b(\d{4})\b', link_text)
-                if year_match:
-                    year = int(year_match.group(1))
-                    year_to_url[year] = link.get("url")
-            
-            # Extract all years from text (typically in parentheses)
-            paren_match = re.search(r'\(([^)]+)\)', text)
-            if paren_match:
-                paren_content = paren_match.group(1)
-                # Find all years in the parentheses
-                for year_match in re.finditer(r'\b(\d{4})\b', paren_content):
-                    year = int(year_match.group(1))
-                    championships.append({
-                        "year": year,
-                        "url": year_to_url.get(year)
-                    })
+            # Extract links from parentheses - treat as simple list of links
+            championships = self._link_extractor.extract_links(cell)
             
             return {
                 "count": count,
@@ -325,7 +332,7 @@ class InfoboxCellParser:
             links = self._link_extractor.extract_links(cell)
             season_links = [link for link in links if not self._is_class_link(link)]
             if season_links:
-                # Use all season links, not just the first one
+                # Use all season links
                 result["seasons"] = [
                     {
                         "text": link.get("text", ""),
@@ -333,6 +340,15 @@ class InfoboxCellParser:
                     }
                     for link in season_links
                 ]
+            else:
+                # No links - try to extract years from parentheses
+                paren_match = re.search(r'\(([^)]+)\)', text)
+                if paren_match:
+                    paren_content = paren_match.group(1)
+                    # Extract all years
+                    years = [int(y) for y in re.findall(r'\b(\d{4})\b', paren_content)]
+                    if years:
+                        result["seasons"] = years
             
             # Check <small> tag for class or additional season info
             small_tag = cell.find("small")
@@ -364,32 +380,25 @@ class InfoboxCellParser:
                 cause=exc,
             ) from exc
     
-    def parse_race_event(self, cell: Tag) -> Dict[str, Any]:
-        """Parse race event fields like First race, Last race, First win, Last win.
+    def parse_race_event(self, cell: Tag) -> List[Dict[str, Any]]:
+        """Parse race event fields like First race, Last race, First win, Last win, First entry, Last entry.
         
-        Expected format: SEASON RACE (CIRCUIT)
-        Example: 2019 Grand Prix of St. Petersburg ( St. Petersburg )
-        
-        Returns: {season: {...}, race: {...}, circuit: {...}}
+        Returns a list of all links found in the cell.
+        If no links are found, returns the text as a single-item list with text field.
         """
         try:
             links = self._link_extractor.extract_links(cell)
             
-            # Typically we have 3 links in order: season, race, circuit
-            result: Dict[str, Any | None] = {
-                "season": None,
-                "race": None,
-                "circuit": None
-            }
+            # If we have links, return them
+            if links:
+                return links
             
-            if len(links) >= 1:
-                result["season"] = links[0]
-            if len(links) >= 2:
-                result["race"] = links[1]
-            if len(links) >= 3:
-                result["circuit"] = links[2]
+            # If no links, return the text
+            text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+            if text:
+                return [{"text": text, "url": None}]
             
-            return result
+            return []
         except (TypeError, ValueError) as exc:
             text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
             raise DomainParseError(
@@ -408,23 +417,126 @@ class InfoboxCellParser:
         if re.search(r'\d{4}', text):
             return False
         return True
+    
+    def parse_finished_last_season(self, cell: Tag) -> Dict[str, Any]:
+        """Parse 'Finished last season' field.
+        
+        Example: "14th (62 pts)" -> {position: "14th", points: 62}
+        """
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        try:
+            result: Dict[str, Any] = {"position": None, "points": None}
+            
+            # Extract position (before parentheses)
+            pos_match = re.match(r'^([^(]+)', text)
+            if pos_match:
+                result["position"] = pos_match.group(1).strip() or None
+            
+            # Extract points from parentheses
+            pts_match = re.search(r'\((\d+(?:\.\d+)?)\s*pts?\)', text)
+            if pts_match:
+                points_str = pts_match.group(1)
+                try:
+                    # Try parsing as int first
+                    result["points"] = int(points_str)
+                except ValueError:
+                    # Fall back to float
+                    result["points"] = float(points_str)
+            
+            return result
+        except (TypeError, ValueError) as exc:
+            raise DomainParseError(
+                f"Nie udało się sparsować ostatniego sezonu: {text!r}.",
+                cause=exc,
+            ) from exc
+    
+    def parse_racing_licence(self, cell: Tag) -> List[Dict[str, Any]]:
+        """Parse 'Racing licence' field.
+        
+        Example: "FIA Gold (until 2019)" and "FIA Platinum (2020–)" 
+        -> [{licence: {...}, years: {start: None, end: 2019}}, {licence: {...}, years: {start: 2020, end: None}}]
+        """
+        try:
+            # Split by <br> tags to get separate licence entries
+            parts = []
+            for br in cell.find_all('br'):
+                br.replace_with('\n')
+            
+            text = cell.get_text('\n', strip=True)
+            lines = [line.strip() for line in text.split('\n') if line.strip()]
+            
+            licences = []
+            for line in lines:
+                # Extract licence link
+                line_soup = BeautifulSoup(f'<span>{line}</span>', 'html.parser')
+                line_links = self._link_extractor.extract_links(line_soup.find('span'))
+                
+                if not line_links:
+                    continue
+                
+                licence_link = line_links[0]  # First link is the licence
+                
+                # Extract year range from parentheses
+                years: Dict[str, int | None] = {"start": None, "end": None}
+                paren_match = re.search(r'\(([^)]+)\)', line)
+                if paren_match:
+                    year_text = paren_match.group(1)
+                    
+                    # Handle "until YEAR"
+                    if "until" in year_text.lower():
+                        year_match = re.search(r'\b(\d{4})\b', year_text)
+                        if year_match:
+                            years["end"] = int(year_match.group(1))
+                    # Handle "YEAR–" or "YEAR–present"
+                    elif re.search(r'\b(\d{4})\s*[–-]\s*(?:present)?$', year_text):
+                        year_match = re.search(r'\b(\d{4})\b', year_text)
+                        if year_match:
+                            years["start"] = int(year_match.group(1))
+                    # Handle "YEAR–YEAR"
+                    else:
+                        years = self._parse_year_range(year_text)
+                
+                licences.append({
+                    "licence": licence_link,
+                    "years": years
+                })
+            
+            return licences
+        except (TypeError, ValueError) as exc:
+            text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+            raise DomainParseError(
+                f"Nie udało się sparsować licencji wyścigowej: {text!r}.",
+                cause=exc,
+            ) from exc
 
     def parse_full_data(self, cell: Tag) -> Dict[str, Any]:
         text = clean_infobox_text(cell.get_text(" ", strip=True))
-        payload: Dict[str, Any] = {"text": text}
-        if self._include_urls:
-            payload["links"] = self._link_extractor.extract_links(cell)
-
+        
         nested_table = cell.find("table")
         if nested_table:
             table_data = self.parse_nested_table(nested_table)
             # Check if this is a Wins/Podiums/Poles table
             if self._is_stats_table(table_data):
-                # Extract the values directly
+                # Extract the values directly and return only stats
                 stats = self._extract_stats_from_table(table_data)
-                payload.update(stats)
+                return stats
             else:
+                # For other tables, include full metadata
+                payload: Dict[str, Any] = {"text": text}
+                if self._include_urls:
+                    payload["links"] = self._link_extractor.extract_links(cell)
                 payload["table"] = table_data
+                return payload
+        
+        # Check if this is "X races run over Y years" pattern
+        races_run_match = re.match(r'^(\d+)\s+races?\s+run\s+over', text)
+        if races_run_match:
+            return {"races_run": int(races_run_match.group(1))}
+        
+        # Default: return text and links
+        payload: Dict[str, Any] = {"text": text}
+        if self._include_urls:
+            payload["links"] = self._link_extractor.extract_links(cell)
         return payload
     
     @staticmethod
