@@ -33279,21 +33279,18 @@
               {
                 "label": "Last race",
                 "value": {
-                  "text": "1956 Milwaukee 250 ( Milwaukee )",
-                  "links": [
-                    {
-                      "text": "1956",
-                      "url": "https://en.wikipedia.org/wiki/1956_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Milwaukee 250",
-                      "url": "https://en.wikipedia.org/wiki/Rex_Mays_Classic"
-                    },
-                    {
-                      "text": "Milwaukee",
-                      "url": "https://en.wikipedia.org/wiki/Milwaukee_Mile"
-                    }
-                  ]
+                  "season": {
+                    "text": "1956",
+                    "url": "https://en.wikipedia.org/wiki/1956_USAC_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Milwaukee 250",
+                    "url": "https://en.wikipedia.org/wiki/Rex_Mays_Classic"
+                  },
+                  "circuit": {
+                    "text": "Milwaukee",
+                    "url": "https://en.wikipedia.org/wiki/Milwaukee_Mile"
+                  }
                 }
               },
               {

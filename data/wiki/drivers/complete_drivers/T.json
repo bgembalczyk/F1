@@ -5276,6 +5276,13 @@
               "France"
             ]
           },
+          "died": {
+            "date": "4 December 2022 Paris , France",
+            "place": [
+              "(aged 73) Paris",
+              "France"
+            ]
+          },
           "children": [
             {
               "text": "Adrien",
@@ -26045,6 +26052,16 @@
                 "text": "Rome",
                 "url": "https://en.wikipedia.org/wiki/Rome"
               },
+              {
+                "text": "Kingdom of Italy",
+                "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy"
+              }
+            ]
+          },
+          "died": {
+            "date": "12 January 1988 Rome , Italy",
+            "place": [
+              "(aged 81) Rome",
               "Italy"
             ]
           }
@@ -28986,6 +29003,14 @@
             "date": "1921-02-22",
             "place": [
               "Daytona Beach",
+              "Florida",
+              "U.S."
+            ]
+          },
+          "died": {
+            "date": "February 11, 1959 Daytona Beach, Florida , U.S.",
+            "place": [
+              "(aged 37) Daytona Beach",
               "Florida",
               "U.S."
             ]
