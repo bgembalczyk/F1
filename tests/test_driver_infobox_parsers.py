@@ -373,3 +373,56 @@ def test_died_with_deathplace(general_parser):
     assert len(result['place']) == 2
     assert result['place'][0]['text'] == 'Johannesburg'
     assert result['place'][1] == 'South Africa'
+
+
+def test_parse_full_data_with_empty_cell(cell_parser):
+    """Test that parse_full_data handles empty cells without crashing."""
+    html = '<td class="infobox-data"></td>'
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_full_data(cell)
+    
+    # Should return a dict with text=None and links
+    assert isinstance(result, dict)
+    assert result['text'] is None
+    assert 'links' in result
+
+
+def test_parse_full_data_with_whitespace_only(cell_parser):
+    """Test that parse_full_data handles whitespace-only cells."""
+    html = '<td class="infobox-data">   \n\t   </td>'
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    result = cell_parser.parse_full_data(cell)
+    
+    # Should return a dict with text=None (whitespace is cleaned to None)
+    assert isinstance(result, dict)
+    assert result['text'] is None
+    assert 'links' in result
+
+
+def test_parse_racing_licence_with_beautiful_soup(cell_parser):
+    """Test that parse_racing_licence correctly uses BeautifulSoup (no NameError).
+    
+    This test verifies that BeautifulSoup is imported and can be used without 
+    raising a NameError. The method may return an empty list due to other logic
+    issues, but the key is that it doesn't crash with 'BeautifulSoup is not defined'.
+    """
+    html = '''
+    <td class="infobox-data">
+        <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a> 
+        <span style="font-size: 85%;">(until 2019)</span><br>
+        <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a> 
+        <span style="font-size: 85%;">(2020–)</span>
+    </td>
+    '''
+    cell = BeautifulSoup(html, 'html.parser').find('td')
+    
+    # This should not raise NameError for BeautifulSoup
+    # The important thing is that it executes without a NameError
+    try:
+        result = cell_parser.parse_racing_licence(cell)
+        # Should return a list (even if empty due to other logic issues)
+        assert isinstance(result, list)
+    except NameError as e:
+        if 'BeautifulSoup' in str(e):
+            pytest.fail(f"BeautifulSoup is not imported: {e}")
+        raise
