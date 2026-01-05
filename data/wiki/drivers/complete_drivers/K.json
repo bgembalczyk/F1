@@ -117,15 +117,12 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1953 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "1953 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1953 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -266,27 +263,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "2005 Australian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2005 Australian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2005_Australian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2005 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2005_Australian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "2012 Brazilian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2012 Brazilian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2012_Brazilian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2012 Brazilian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2012_Brazilian_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -7245,27 +7236,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1992 South African Grand Prix",
-                  "links": [
-                    {
-                      "text": "1992 South African Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1992_South_African_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1992 South African Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1992_South_African_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1997 European Grand Prix",
-                  "links": [
-                    {
-                      "text": "1997 European Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1997 European Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix"
+                  }
+                ]
               },
               {
                 "full_data": {
@@ -11131,27 +11116,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1958 Monaco Grand Prix",
-                  "links": [
-                    {
-                      "text": "1958 Monaco Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1958 Monaco Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1958 Belgian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1958 Belgian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1958 Belgian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1958_Belgian_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -11327,27 +11306,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1977 Spanish Grand Prix",
-                  "links": [
-                    {
-                      "text": "1977 Spanish Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1977_Spanish_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1977 Spanish Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1977_Spanish_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1982 Caesars Palace Grand Prix",
-                  "links": [
-                    {
-                      "text": "1982 Caesars Palace Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1982 Caesars Palace Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
+                  }
+                ]
               }
             ]
           },
@@ -13330,27 +13303,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1973 South African Grand Prix",
-                  "links": [
-                    {
-                      "text": "1973 South African Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1973_South_African_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1973 South African Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1973_South_African_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1975 South African Grand Prix",
-                  "links": [
-                    {
-                      "text": "1975 South African Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1975 South African Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -13431,8 +13398,7 @@
             "rows": [
               {
                 "full_data": {
-                  "text": "29 races run over 6 years",
-                  "links": []
+                  "races_run": 29
                 }
               },
               {
@@ -13449,68 +13415,59 @@
               },
               {
                 "label": "First race",
-                "value": {
-                  "text": "1949 Race 4 ( Langhorne )",
-                  "links": [
-                    {
-                      "text": "1949",
-                      "url": "https://en.wikipedia.org/wiki/1949_NASCAR_Strictly_Stock_Series"
-                    },
-                    {
-                      "text": "Langhorne",
-                      "url": "https://en.wikipedia.org/wiki/Langhorne_Speedway"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1949",
+                    "url": "https://en.wikipedia.org/wiki/1949_NASCAR_Strictly_Stock_Series"
+                  },
+                  {
+                    "text": "Langhorne",
+                    "url": "https://en.wikipedia.org/wiki/Langhorne_Speedway"
+                  }
+                ]
               },
               {
                 "label": "Last race",
-                "value": {
-                  "text": "1956 Race 9 ( Lakewood )",
-                  "links": [
-                    {
-                      "text": "1956",
-                      "url": "https://en.wikipedia.org/wiki/1956_NASCAR_Grand_National_Series"
-                    },
-                    {
-                      "text": "Lakewood",
-                      "url": "https://en.wikipedia.org/wiki/Lakewood_Speedway"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1956",
+                    "url": "https://en.wikipedia.org/wiki/1956_NASCAR_Grand_National_Series"
+                  },
+                  {
+                    "text": "Lakewood",
+                    "url": "https://en.wikipedia.org/wiki/Lakewood_Speedway"
+                  }
+                ]
               },
               {
                 "label": "First win",
-                "value": {
-                  "text": "1954 Race 5 ( Savannah )",
-                  "links": [
-                    {
-                      "text": "1954",
-                      "url": "https://en.wikipedia.org/wiki/1954_NASCAR_Grand_National_Series"
-                    },
-                    {
-                      "text": "Savannah",
-                      "url": null
-                    }
-                  ]
-                }
-              },
-              {
-                "label": "Last win",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1954",
                     "url": "https://en.wikipedia.org/wiki/1954_NASCAR_Grand_National_Series"
                   },
-                  "race": {
+                  {
+                    "text": "Savannah",
+                    "url": null
+                  }
+                ]
+              },
+              {
+                "label": "Last win",
+                "value": [
+                  {
+                    "text": "1954",
+                    "url": "https://en.wikipedia.org/wiki/1954_NASCAR_Grand_National_Series"
+                  },
+                  {
                     "text": "International 100",
                     "url": "https://en.wikipedia.org/wiki/Linden_Airport"
                   },
-                  "circuit": {
+                  {
                     "text": "Linden Airport",
                     "url": "https://en.wikipedia.org/wiki/Linden_Airport"
                   }
-                }
+                ]
               },
               {
                 "full_data": {
@@ -13550,8 +13507,7 @@
             "rows": [
               {
                 "full_data": {
-                  "text": "31 races run over 8 years",
-                  "links": []
+                  "races_run": 31
                 }
               },
               {
@@ -13605,64 +13561,43 @@
               },
               {
                 "label": "First race",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1954",
                     "url": "https://en.wikipedia.org/wiki/1954_AAA_Championship_Car_season"
                   },
-                  "race": {
+                  {
                     "text": "Syracuse 100",
                     "url": "https://en.wikipedia.org/wiki/Syracuse_Mile"
                   },
-                  "circuit": {
+                  {
                     "text": "Syracuse",
                     "url": "https://en.wikipedia.org/wiki/Syracuse_Mile"
                   }
-                }
+                ]
               },
               {
                 "label": "Last race",
-                "value": {
-                  "text": "1961 Bobby Ball Memorial ( ASF )",
-                  "links": [
-                    {
-                      "text": "1961",
-                      "url": "https://en.wikipedia.org/wiki/1961_USAC_Championship_Car_season"
-                    },
-                    {
-                      "text": "Bobby Ball Memorial",
-                      "url": "https://en.wikipedia.org/wiki/Bobby_Ball_Memorial"
-                    },
-                    {
-                      "text": "ASF",
-                      "url": "https://en.wikipedia.org/wiki/Arizona_State_Fairgrounds"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1961",
+                    "url": "https://en.wikipedia.org/wiki/1961_USAC_Championship_Car_season"
+                  },
+                  {
+                    "text": "Bobby Ball Memorial",
+                    "url": "https://en.wikipedia.org/wiki/Bobby_Ball_Memorial"
+                  },
+                  {
+                    "text": "ASF",
+                    "url": "https://en.wikipedia.org/wiki/Arizona_State_Fairgrounds"
+                  }
+                ]
               },
               {
                 "full_data": {
-                  "text": "Wins Podiums Poles 0 4 2",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "4",
-                        "2"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "podiums": 4,
+                  "poles": 2
                 }
               },
               {
@@ -13754,27 +13689,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1955 Indianapolis 500",
-                  "links": [
-                    {
-                      "text": "1955 Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1955 Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1960 Indianapolis 500",
-                  "links": [
-                    {
-                      "text": "1960 Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1960_Indianapolis_500"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1960 Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1960_Indianapolis_500"
+                  }
+                ]
               }
             ]
           }
@@ -13911,27 +13840,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1950 British Grand Prix",
-                  "links": [
-                    {
-                      "text": "1950 British Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1950_British_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1950 British Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1950_British_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1951 British Grand Prix",
-                  "links": [
-                    {
-                      "text": "1951 British Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1951 British Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -14049,27 +13972,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1980 Argentine Grand Prix",
-                  "links": [
-                    {
-                      "text": "1980 Argentine Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1980_Argentine_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1980 Argentine Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1980_Argentine_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1980 French Grand Prix",
-                  "links": [
-                    {
-                      "text": "1980 French Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1980_French_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1980 French Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1980_French_Grand_Prix"
+                  }
+                ]
               },
               {
                 "full_data": {
@@ -15331,27 +15248,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1976 Spanish Grand Prix",
-                  "links": [
-                    {
-                      "text": "1976 Spanish Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1976 Spanish Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1976_Spanish_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1977 Italian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1977 Italian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1977_Italian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1977 Italian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1977_Italian_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -16790,15 +16701,12 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1958 Monaco Grand Prix",
-                  "links": [
-                    {
-                      "text": "1958 Monaco Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1958 Monaco Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -16920,27 +16828,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "2003 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "2003 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2003_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2003 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2003_German_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "2003 Japanese Grand Prix",
-                  "links": [
-                    {
-                      "text": "2003 Japanese Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2003_Japanese_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2003 Japanese Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2003_Japanese_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -19592,27 +19494,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1974 Belgian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1974 Belgian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1974_Belgian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1974 Belgian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1974_Belgian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1974 Italian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1974 Italian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1974_Italian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1974 Italian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1974_Italian_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -21036,67 +20932,48 @@
             "rows": [
               {
                 "full_data": {
-                  "text": "4 races run over 9 years",
-                  "links": []
+                  "races_run": 4
                 }
               },
               {
                 "label": "First race",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1946",
                     "url": "https://en.wikipedia.org/wiki/1946_AAA_Championship_Car_season"
                   },
-                  "race": {
+                  {
                     "text": "Indianapolis 500",
                     "url": "https://en.wikipedia.org/wiki/1946_Indianapolis_500"
                   },
-                  "circuit": {
+                  {
                     "text": "Indianapolis",
                     "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
                   }
-                }
+                ]
               },
               {
                 "label": "Last race",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1956",
                     "url": "https://en.wikipedia.org/wiki/1956_USAC_Championship_Car_season"
                   },
-                  "race": {
+                  {
                     "text": "Rex Mays Classic",
                     "url": "https://en.wikipedia.org/wiki/Rex_Mays_Classic"
                   },
-                  "circuit": {
+                  {
                     "text": "Milwaukee",
                     "url": "https://en.wikipedia.org/wiki/Milwaukee_Mile"
                   }
-                }
+                ]
               },
               {
                 "full_data": {
-                  "text": "Wins Podiums Poles 0 0 0",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "0",
-                        "0"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "podiums": 0,
+                  "poles": 0
                 }
               },
               {
@@ -21200,27 +21077,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1950 Indianapolis 500",
-                  "links": [
-                    {
-                      "text": "1950 Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1950_Indianapolis_500"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1950 Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1950_Indianapolis_500"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1957 Indianapolis 500",
-                  "links": [
-                    {
-                      "text": "1957 Indianapolis 500",
-                      "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1957 Indianapolis 500",
+                    "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
+                  }
+                ]
               }
             ]
           }
@@ -21348,15 +21219,12 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1952 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "1952 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1952 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -21515,27 +21383,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1963 South African Grand Prix",
-                  "links": [
-                    {
-                      "text": "1963 South African Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1963 South African Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1970 South African Grand Prix",
-                  "links": [
-                    {
-                      "text": "1970 South African Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1970_South_African_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1970 South African Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1970_South_African_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -21715,27 +21577,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "2004 Australian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2004 Australian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2004_Australian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2004 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2004_Australian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "2010 Abu Dhabi Grand Prix",
-                  "links": [
-                    {
-                      "text": "2010 Abu Dhabi Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2010_Abu_Dhabi_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2010 Abu Dhabi Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2010_Abu_Dhabi_Grand_Prix"
+                  }
+                ]
               },
               {
                 "full_data": {
@@ -29109,27 +28965,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1954 French Grand Prix",
-                  "links": [
-                    {
-                      "text": "1954 French Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1954_French_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1954 French Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1954_French_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1955 Italian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1955 Italian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1955 Italian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -29265,27 +29115,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1952 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "1952 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1952 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1953 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "1953 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1953 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -29437,15 +29281,12 @@
               },
               {
                 "label": "Former teams",
-                "value": {
-                  "text": "AF Corse",
-                  "links": [
-                    {
-                      "text": "AF Corse",
-                      "url": "https://en.wikipedia.org/wiki/AF_Corse"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "AF Corse",
+                    "url": "https://en.wikipedia.org/wiki/AF_Corse"
+                  }
+                ]
               },
               {
                 "label": "Starts",
@@ -29620,27 +29461,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "2009 Brazilian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2009 Brazilian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2009_Brazilian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2009 Brazilian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2009_Brazilian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "2014 Abu Dhabi Grand Prix",
-                  "links": [
-                    {
-                      "text": "2014 Abu Dhabi Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2014 Abu Dhabi Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix"
+                  }
+                ]
               },
               {
                 "full_data": {
@@ -29691,19 +29526,16 @@
               },
               {
                 "label": "Former teams",
-                "value": {
-                  "text": "KCMG , Le Mans",
-                  "links": [
-                    {
-                      "text": "KCMG",
-                      "url": "https://en.wikipedia.org/wiki/KC_Motorgroup"
-                    },
-                    {
-                      "text": "Le Mans",
-                      "url": "https://en.wikipedia.org/wiki/Team_LeMans"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "KCMG",
+                    "url": "https://en.wikipedia.org/wiki/KC_Motorgroup"
+                  },
+                  {
+                    "text": "Le Mans",
+                    "url": "https://en.wikipedia.org/wiki/Team_LeMans"
+                  }
+                ]
               },
               {
                 "label": "Starts",
@@ -40984,27 +40816,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1974 Austrian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1974 Austrian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1974_Austrian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1974 Austrian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1974_Austrian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1974 United States Grand Prix",
-                  "links": [
-                    {
-                      "text": "1974 United States Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1974_United_States_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1974 United States Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1974_United_States_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -41196,39 +41022,30 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "2007 Australian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2007 Australian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2007_Australian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2007 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2007_Australian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "First win",
-                "value": {
-                  "text": "2008 Hungarian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2008 Hungarian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2008_Hungarian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2008 Hungarian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2008_Hungarian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "2013 Brazilian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2013 Brazilian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2013_Brazilian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2013 Brazilian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2013_Brazilian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "full_data": {
@@ -41293,7 +41110,7 @@
                   "count": 1,
                   "championships": [
                     {
-                      "year": 2016,
+                      "text": "2016",
                       "url": "https://en.wikipedia.org/wiki/2016_Super_GT_Series"
                     }
                   ]
@@ -47923,27 +47740,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1977 Swedish Grand Prix",
-                  "links": [
-                    {
-                      "text": "1977 Swedish Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1977_Swedish_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1977 Swedish Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1977_Swedish_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1977 British Grand Prix",
-                  "links": [
-                    {
-                      "text": "1977 British Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1977_British_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1977 British Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1977_British_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -48079,15 +47890,12 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1952 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "1952 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1952 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -48221,27 +48029,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1952 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "1952 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1952 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1953 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "1953 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1953 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -48375,23 +48177,20 @@
               },
               {
                 "label": "Former teams",
-                "value": {
-                  "text": "HCR , Prema , WRT",
-                  "links": [
-                    {
-                      "text": "HCR",
-                      "url": "https://en.wikipedia.org/wiki/High_Class_Racing"
-                    },
-                    {
-                      "text": "Prema",
-                      "url": "https://en.wikipedia.org/wiki/Prema_Racing"
-                    },
-                    {
-                      "text": "WRT",
-                      "url": "https://en.wikipedia.org/wiki/W_Racing_Team"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "HCR",
+                    "url": "https://en.wikipedia.org/wiki/High_Class_Racing"
+                  },
+                  {
+                    "text": "Prema",
+                    "url": "https://en.wikipedia.org/wiki/Prema_Racing"
+                  },
+                  {
+                    "text": "WRT",
+                    "url": "https://en.wikipedia.org/wiki/W_Racing_Team"
+                  }
+                ]
               },
               {
                 "label": "Starts",
@@ -48403,7 +48202,7 @@
                   "count": 1,
                   "championships": [
                     {
-                      "year": 2023,
+                      "text": "2023",
                       "url": "https://en.wikipedia.org/wiki/2023_FIA_World_Endurance_Championship"
                     }
                   ]
@@ -48490,15 +48289,12 @@
               },
               {
                 "label": "Former teams",
-                "value": {
-                  "text": "WRT",
-                  "links": [
-                    {
-                      "text": "WRT",
-                      "url": "https://en.wikipedia.org/wiki/W_Racing_Team"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "WRT",
+                    "url": "https://en.wikipedia.org/wiki/W_Racing_Team"
+                  }
+                ]
               },
               {
                 "label": "Starts",
@@ -48510,11 +48306,11 @@
                   "count": 2,
                   "championships": [
                     {
-                      "year": 2021,
+                      "text": "2021",
                       "url": "https://en.wikipedia.org/wiki/2021_European_Le_Mans_Series"
                     },
                     {
-                      "year": 2024,
+                      "text": "2024",
                       "url": "https://en.wikipedia.org/wiki/2024_European_Le_Mans_Series"
                     }
                   ]
@@ -48676,39 +48472,30 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "2006 Hungarian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2006 Hungarian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2006_Hungarian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2006 Hungarian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2006_Hungarian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "First win",
-                "value": {
-                  "text": "2008 Canadian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2008 Canadian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2008_Canadian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2008 Canadian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2008_Canadian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "2021 Italian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2021 Italian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2021 Italian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "full_data": {
@@ -57956,15 +57743,12 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1963 German Grand Prix",
-                  "links": [
-                    {
-                      "text": "1963 German Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1963 German Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -58086,15 +57870,12 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1976 Japanese Grand Prix",
-                  "links": [
-                    {
-                      "text": "1976 Japanese Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1976 Japanese Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -58406,27 +58187,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "2014 Australian Grand Prix",
-                  "links": [
-                    {
-                      "text": "2014 Australian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2014 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2014_Australian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "2020 Abu Dhabi Grand Prix",
-                  "links": [
-                    {
-                      "text": "2020 Abu Dhabi Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "2020 Abu Dhabi Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2020_Abu_Dhabi_Grand_Prix"
+                  }
+                ]
               },
               {
                 "full_data": {

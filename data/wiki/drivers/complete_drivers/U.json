@@ -45,7 +45,10 @@
           "died": {
             "date": "4 November 1976 Düsseldorf , Germany",
             "place": [
-              "(aged 70) Düsseldorf",
+              {
+                "text": "Düsseldorf",
+                "url": "https://en.wikipedia.org/wiki/D%C3%BCsseldorf"
+              },
               {
                 "text": "Germany",
                 "url": "https://en.wikipedia.org/wiki/Germany"
@@ -818,8 +821,7 @@
             "rows": [
               {
                 "full_data": {
-                  "text": "258 races run over 21 years",
-                  "links": []
+                  "races_run": 258
                 }
               },
               {
@@ -840,95 +842,77 @@
               },
               {
                 "label": "First race",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1955",
                     "url": "https://en.wikipedia.org/wiki/1955_AAA_Championship_Car_season"
                   },
-                  "race": {
+                  {
                     "text": "Pikes Peak Hill Climb",
                     "url": "https://en.wikipedia.org/wiki/Pikes_Peak_Hill_Climb"
                   },
-                  "circuit": {
+                  {
                     "text": "Pikes Peak",
                     "url": "https://en.wikipedia.org/wiki/Pikes_Peak_Hill_Climb"
                   }
-                }
+                ]
               },
               {
                 "label": "Last race",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1981",
                     "url": "https://en.wikipedia.org/wiki/1981_CART_season"
                   },
-                  "race": {
+                  {
                     "text": "Miller High Life 150",
                     "url": "https://en.wikipedia.org/wiki/Bobby_Ball_Memorial"
                   },
-                  "circuit": {
+                  {
                     "text": "Phoenix",
                     "url": "https://en.wikipedia.org/wiki/Phoenix_International_Raceway"
                   }
-                }
+                ]
               },
               {
                 "label": "First win",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1966",
                     "url": "https://en.wikipedia.org/wiki/1966_USAC_Championship_Car_season"
                   },
-                  "race": {
+                  {
                     "text": "Pikes Peak Hill Climb",
                     "url": "https://en.wikipedia.org/wiki/Pikes_Peak_Hill_Climb"
                   },
-                  "circuit": {
+                  {
                     "text": "Pikes Peak",
                     "url": "https://en.wikipedia.org/wiki/Pikes_Peak_Hill_Climb"
                   }
-                }
+                ]
               },
               {
                 "label": "Last win",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1981",
                     "url": "https://en.wikipedia.org/wiki/1981_CART_season"
                   },
-                  "race": {
+                  {
                     "text": "Indianapolis 500",
                     "url": "https://en.wikipedia.org/wiki/1981_Indianapolis_500"
                   },
-                  "circuit": {
+                  {
                     "text": "Indianapolis",
                     "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
                   }
-                }
+                ]
               },
               {
                 "full_data": {
-                  "text": "Wins Podiums Poles 35 83 52",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "35",
-                        "83",
-                        "52"
-                      ]
-                    ]
-                  }
+                  "wins": 35,
+                  "podiums": 83,
+                  "poles": 52
                 }
               },
               {
@@ -944,43 +928,42 @@
             "rows": [
               {
                 "full_data": {
-                  "text": "4 races run over 3 years",
-                  "links": []
+                  "races_run": 4
                 }
               },
               {
                 "label": "First race",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1969",
                     "url": "https://en.wikipedia.org/wiki/1969_NASCAR_Grand_National_Series"
                   },
-                  "race": {
+                  {
                     "text": "Daytona Qualifier #2",
                     "url": "https://en.wikipedia.org/wiki/Budweiser_Duel"
                   },
-                  "circuit": {
+                  {
                     "text": "Daytona",
                     "url": "https://en.wikipedia.org/wiki/Daytona_International_Speedway"
                   }
-                }
+                ]
               },
               {
                 "label": "Last race",
-                "value": {
-                  "season": {
+                "value": [
+                  {
                     "text": "1973",
                     "url": "https://en.wikipedia.org/wiki/1973_NASCAR_Winston_Cup_Series"
                   },
-                  "race": {
+                  {
                     "text": "Winston Western 500",
                     "url": "https://en.wikipedia.org/wiki/1973_Winston_Western_500"
                   },
-                  "circuit": {
+                  {
                     "text": "Riverside",
                     "url": "https://en.wikipedia.org/wiki/Riverside_International_Raceway"
                   }
-                }
+                ]
               },
               {
                 "full_data": {
@@ -1079,27 +1062,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1968 Italian Grand Prix",
-                  "links": [
-                    {
-                      "text": "1968 Italian Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1968 Italian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1968 United States Grand Prix",
-                  "links": [
-                    {
-                      "text": "1968 United States Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1968 United States Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
@@ -7328,27 +7305,21 @@
               },
               {
                 "label": "First entry",
-                "value": {
-                  "text": "1955 Argentine Grand Prix",
-                  "links": [
-                    {
-                      "text": "1955 Argentine Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1955 Argentine Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
+                  }
+                ]
               },
               {
                 "label": "Last entry",
-                "value": {
-                  "text": "1956 Argentine Grand Prix",
-                  "links": [
-                    {
-                      "text": "1956 Argentine Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "1956 Argentine Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
+                  }
+                ]
               }
             ]
           }
