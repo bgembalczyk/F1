@@ -21794,8 +21794,8 @@
             },
             "years": [
               {
-                "text": "2002",
-                "url": "https://en.wikipedia.org/wiki/2002_Formula_Renault_2000_Eurocup"
+                "year": 2002,
+                "url": "https://en.wikipedia.org/wiki/2002_Formula_Renault_seasons#2002_Formula_Renault_2000_Germany_season"
               }
             ]
           },
@@ -29269,15 +29269,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Platinum",
-                  "links": [
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Former teams",
@@ -29811,8 +29814,8 @@
             },
             "years": [
               {
-                "text": "2004",
-                "url": "https://en.wikipedia.org/wiki/2004_Formula_Renault_2000_Italia"
+                "year": 2004,
+                "url": "https://en.wikipedia.org/wiki/2004_Formula_Renault_seasons#2004_Asian_Formula_Renault_Challenge_season"
               }
             ]
           },
@@ -48153,15 +48156,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Platinum",
-                  "links": [
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -58005,15 +58011,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Platinum",
-                  "links": [
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -58373,7 +58382,7 @@
             "years": [
               {
                 "year": 2010,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2010_Formula_BMW_Europe_season"
               }
             ]
           },
@@ -58385,7 +58394,7 @@
             "years": [
               {
                 "year": 2010,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2010_Formula_BMW_Pacific_season"
               }
             ]
           }

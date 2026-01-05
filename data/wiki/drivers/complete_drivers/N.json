@@ -85,15 +85,18 @@
             "rows": [
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Platinum",
-                  "links": [
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Years active",
@@ -8631,7 +8634,7 @@
             "years": [
               {
                 "year": 1978,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/1978_British_Formula_Three_season"
               }
             ]
           }
@@ -17142,8 +17145,8 @@
             },
             "years": [
               {
-                "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Italian_Superturismo_Championship"
+                "year": 2006,
+                "url": "https://en.wikipedia.org/wiki/2006_World_Touring_Car_Championship_season"
               }
             ]
           },
@@ -21637,15 +21640,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Platinum",
-                  "links": [
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -21939,15 +21945,15 @@
             "years": [
               {
                 "year": 2012,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2012_GP2_Series_season"
               },
               {
                 "year": 2013,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2013_GP2_Series_season"
               },
               {
                 "year": 2014,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2014_GP2_Series_season"
               }
             ]
           },
@@ -21959,11 +21965,11 @@
             "years": [
               {
                 "year": 2010,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2010_British_Formula_3_season"
               },
               {
                 "year": 2011,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2011_British_Formula_3_season"
               }
             ]
           },
@@ -21975,7 +21981,7 @@
             "years": [
               {
                 "year": 2009,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2009_Formula_BMW_Europe_season"
               }
             ]
           },
@@ -21987,7 +21993,7 @@
             "years": [
               {
                 "year": 2009,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2009_Formula_BMW_Pacific_season"
               }
             ]
           },
@@ -21999,7 +22005,7 @@
             "years": [
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_Formula_BMW_Americas_season"
               }
             ]
           }

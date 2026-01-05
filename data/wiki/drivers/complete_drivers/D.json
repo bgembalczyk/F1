@@ -5905,7 +5905,7 @@
             ]
           },
           "died": {
-            "date": "April 29, 2008 Newport Beach, California , U.S.",
+            "date": "2008-04-29",
             "place": [
               "Newport Beach",
               "California",
@@ -15408,7 +15408,7 @@
             ]
           },
           "died": {
-            "date": "9 March 1963 Buenos Aires, Argentina",
+            "date": "1963-03-09",
             "place": [
               "Buenos Aires",
               "Argentina"
@@ -21163,7 +21163,7 @@
             ]
           },
           "died": {
-            "date": "June 11, 1966 Burr Ridge, Illinois , U.S.",
+            "date": "1966-06-11",
             "place": [
               "Burr Ridge",
               "Illinois",
@@ -21496,7 +21496,7 @@
             ]
           },
           "died": {
-            "date": "19 December 2012 Cape Town , South Africa",
+            "date": "2012-12-19",
             "place": [
               {
                 "text": "Cape Town",
@@ -22099,7 +22099,7 @@
             ]
           },
           "died": {
-            "date": "April 4, 1966 Indianapolis, Indiana , U.S.",
+            "date": "1966-04-04",
             "place": [
               "Indianapolis",
               "Indiana",
@@ -25746,7 +25746,7 @@
             ]
           },
           "died": {
-            "date": "1 August 1980 Hockenheimring , Baden-Württemberg , West Germany",
+            "date": "1980-08-01",
             "place": [
               {
                 "text": "Hockenheimring",
@@ -33140,7 +33140,7 @@
             ]
           },
           "died": {
-            "date": "October 12, 1985 Port Orange, Florida , U.S.",
+            "date": "1985-10-12",
             "place": [
               "Port Orange",
               "Florida",
@@ -33503,7 +33503,7 @@
             ]
           },
           "died": {
-            "date": "16 April 1988 Saint-Just-Saint-Rambert , Loire , France",
+            "date": "1988-04-16",
             "place": [
               {
                 "text": "Saint-Just-Saint-Rambert",
@@ -37748,7 +37748,7 @@
             ]
           },
           "died": {
-            "date": "August 19, 1975 Graz , Austria",
+            "date": "1975-08-19",
             "place": [
               {
                 "text": "Graz",
@@ -38029,7 +38029,7 @@
                     "text": "Riverside",
                     "url": "https://en.wikipedia.org/wiki/Riverside_International_Raceway"
                   }
-                }
+                ]
               },
               {
                 "full_data": {
@@ -44543,7 +44543,7 @@
             "years": [
               {
                 "year": 2009,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2009_IndyCar_Series_season"
               }
             ]
           },
@@ -44554,12 +44554,8 @@
             },
             "years": [
               {
-                "year": 2008,
-                "url": null
-              },
-              {
-                "year": 2009,
-                "url": null
+                "text": "2008-09",
+                "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_A1_Grand_Prix_season"
               }
             ]
           },
@@ -44571,7 +44567,7 @@
             "years": [
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_Superleague_Formula_season"
               }
             ]
           },
@@ -44583,7 +44579,7 @@
             "years": [
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_Rolex_Sports_Car_Series_season"
               }
             ]
           },
@@ -44595,7 +44591,7 @@
             "years": [
               {
                 "year": 2007,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2007_Champ_Car_season"
               }
             ]
           },
@@ -44647,7 +44643,7 @@
             "years": [
               {
                 "year": 2004,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2004_International_Formula_3000_season"
               }
             ]
           },
@@ -44659,7 +44655,7 @@
             "years": [
               {
                 "year": 2003,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2003_Formula_Three_Euroseries_season"
               }
             ]
           },
@@ -44791,7 +44787,7 @@
             ]
           },
           "died": {
-            "date": "3 May 2004 Monte Carlo , Monaco",
+            "date": "2004-05-03",
             "place": [
               {
                 "text": "Monte Carlo",
@@ -44931,7 +44927,7 @@
             ]
           },
           "died": {
-            "date": "April 18, 1990 Woodland Hills, California , U.S.",
+            "date": "1990-04-18",
             "place": [
               "Woodland Hills",
               "California",
@@ -45119,7 +45115,7 @@
             ]
           },
           "died": {
-            "date": "28 April 1973 Bologna , Italy",
+            "date": "1973-04-28",
             "place": [
               {
                 "text": "Bologna",
@@ -49179,7 +49175,7 @@
             ]
           },
           "died": {
-            "date": "August 1, 1998 Lansdale, Pennsylvania , U.S.",
+            "date": "1998-08-01",
             "place": [
               "Lansdale",
               "Pennsylvania",
@@ -49339,7 +49335,7 @@
             ]
           },
           "died": {
-            "date": "7 November 1975 Victoria , Buenos Aires , Argentina",
+            "date": "1975-11-07",
             "place": [
               {
                 "text": "Victoria",
@@ -49856,7 +49852,7 @@
             ]
           },
           "died": {
-            "date": "August 31, 2020 Cascais e Estoril , Cascais , Portugal",
+            "date": "2020-08-31",
             "place": [
               {
                 "text": "Cascais e Estoril",

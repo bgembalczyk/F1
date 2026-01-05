@@ -14174,15 +14174,15 @@
             "years": [
               {
                 "year": 1978,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/1978_British_Formula_Three_season"
               },
               {
                 "year": 1979,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/1979_British_Formula_Three_season"
               },
               {
                 "year": 1980,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/1980_British_Formula_Three_season"
               }
             ]
           }
@@ -38360,15 +38360,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Platinum",
-                  "links": [
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -38442,8 +38445,8 @@
               {
                 "label": "Finished last season",
                 "value": {
-                  "text": "22nd",
-                  "links": []
+                  "position": "22nd",
+                  "points": null
                 }
               },
               {
@@ -42820,8 +42823,8 @@
             },
             "years": [
               {
-                "text": "2010",
-                "url": "https://en.wikipedia.org/wiki/2010_Eurocup_Formula_Renault_2.0"
+                "year": 2010,
+                "url": "https://en.wikipedia.org/wiki/2010_Formula_BMW_Europe_season"
               }
             ]
           },
@@ -42832,8 +42835,8 @@
             },
             "years": [
               {
-                "text": "2010",
-                "url": "https://en.wikipedia.org/wiki/2010_Eurocup_Formula_Renault_2.0"
+                "year": 2010,
+                "url": "https://en.wikipedia.org/wiki/2010_Formula_BMW_Pacific_season"
               }
             ]
           }

@@ -2405,15 +2405,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Platinum",
-                  "links": [
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -10114,15 +10117,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Platinum",
-                  "links": [
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -10244,15 +10250,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Platinum",
-                  "links": [
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -10529,11 +10538,11 @@
             "years": [
               {
                 "year": 2010,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2010_Formula_Renault_3.5_Series_season"
               },
               {
                 "year": 2011,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2011_Formula_Renault_3.5_Series_season"
               }
             ]
           },
@@ -10545,7 +10554,7 @@
             "years": [
               {
                 "year": 2010,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2010_British_Formula_3_season"
               }
             ]
           },
@@ -10557,7 +10566,7 @@
             "years": [
               {
                 "year": 2010,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2010_GP3_Series_season"
               }
             ]
           },
@@ -10569,11 +10578,11 @@
             "years": [
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_Eurocup_Formula_Renault_2.0_season"
               },
               {
                 "year": 2009,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2009_Eurocup_Formula_Renault_2.0_season"
               }
             ]
           },
@@ -10601,7 +10610,7 @@
             "years": [
               {
                 "year": 2007,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2007_Formula_Renault_seasons#2007_Championnat_de_France_FFSA_Formule_Campus_Renault_Elf_season"
               }
             ]
           }
@@ -29921,11 +29930,11 @@
             "years": [
               {
                 "year": 2003,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2003_Formula_BMW_ADAC_season"
               },
               {
                 "year": 2004,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2004_Formula_BMW_ADAC_season"
               }
             ]
           }
@@ -48297,15 +48306,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Platinum",
-                  "links": [
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Car number",
