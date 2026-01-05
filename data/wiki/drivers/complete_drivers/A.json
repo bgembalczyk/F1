@@ -47,7 +47,7 @@
             ]
           },
           "died": {
-            "date": "29 April 2019 Turin , Italy",
+            "date": "2019-04-29",
             "place": [
               {
                 "text": "Turin",
@@ -625,7 +625,7 @@
             ]
           },
           "died": {
-            "date": "18 December 1991 Ibstone , Buckinghamshire, England",
+            "date": "1991-12-18",
             "place": [
               {
                 "text": "Ibstone",
@@ -10586,7 +10586,7 @@
             ]
           },
           "died": {
-            "date": "November 25, 1982 Califon, New Jersey , U.S.",
+            "date": "1982-11-25",
             "place": [
               "Califon",
               "New Jersey",
@@ -10805,7 +10805,7 @@
             ]
           },
           "died": {
-            "date": "24 January 2012 Kreuth , Germany",
+            "date": "2012-01-24",
             "place": [
               {
                 "text": "Kreuth",
@@ -10967,7 +10967,7 @@
             ]
           },
           "died": {
-            "date": "October 13, 1989 Alamo, California , U.S.",
+            "date": "1989-10-13",
             "place": [
               "Alamo",
               "California",
@@ -14831,7 +14831,28 @@
               },
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Gold",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Gold_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  },
+                  {
+                    "licence": {
+                      "text": "FIA Platinum",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -14881,11 +14902,7 @@
                       "text": "2025",
                       "url": "https://en.wikipedia.org/wiki/2025_IMSA_SportsCar_Championship"
                     }
-                  ],
-                  "class": {
-                    "text": "GTP",
-                    "url": "https://en.wikipedia.org/wiki/LMDh"
-                  }
+                  ]
                 }
               },
               {
@@ -15252,11 +15269,11 @@
             "years": [
               {
                 "year": 2014,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_2.0_Alps_season"
               },
               {
                 "year": 2015,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2015_Formula_Renault_2.0_Alps_season"
               }
             ]
           },
@@ -33699,7 +33716,7 @@
             ]
           },
           "died": {
-            "date": "25 April 2001 Lausitzring , Brandenburg , Germany",
+            "date": "2001-04-25",
             "place": [
               {
                 "text": "Lausitzring",
@@ -50763,7 +50780,7 @@
             ]
           },
           "died": {
-            "date": "7 April 2005 Brough, Cumbria, England",
+            "date": "2005-04-07",
             "place": [
               "Brough",
               "Cumbria",
@@ -51191,7 +51208,18 @@
             "rows": [
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Platinum",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Years active",
@@ -51256,11 +51284,7 @@
                       "text": "2018-19",
                       "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship"
                     }
-                  ],
-                  "class": {
-                    "text": "LMP1",
-                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
-                  }
+                  ]
                 }
               },
               {
@@ -62282,7 +62306,7 @@
             ]
           },
           "died": {
-            "date": "April 4, 1959 Daytona Beach , Florida, U.S.",
+            "date": "1959-04-04",
             "place": [
               {
                 "text": "Daytona Beach",
@@ -62556,7 +62580,7 @@
             ]
           },
           "died": {
-            "date": "May 16, 1995 Crystal River, Florida , U.S.",
+            "date": "1995-05-16",
             "place": [
               "Crystal River",
               "Florida",
@@ -62757,7 +62781,7 @@
             ]
           },
           "died": {
-            "date": "3 August 2016 Rotorua , Bay of Plenty, New Zealand",
+            "date": "2016-08-03",
             "place": [
               {
                 "text": "Rotorua",
@@ -70706,7 +70730,7 @@
             ]
           },
           "died": {
-            "date": "14 August 1967 Northampton , UK",
+            "date": "1967-08-14",
             "place": [
               {
                 "text": "Northampton",
@@ -73206,7 +73230,7 @@
             ]
           },
           "died": {
-            "date": "July 20, 1999 South Holland, Illinois , U.S.",
+            "date": "1999-07-20",
             "place": [
               "South Holland",
               "Illinois",
@@ -88288,7 +88312,7 @@
             ]
           },
           "died": {
-            "date": "May 15, 1957 Speedway, Indiana , U.S.",
+            "date": "1957-05-15",
             "place": [
               "Speedway",
               "Indiana",
@@ -88584,7 +88608,7 @@
             ]
           },
           "died": {
-            "date": "15 May 1986 Marseille , France",
+            "date": "1986-05-15",
             "place": [
               {
                 "text": "Marseille",
@@ -100206,7 +100230,7 @@
             ]
           },
           "died": {
-            "date": "November 28, 1992 Watsonville, California , U.S.",
+            "date": "1992-11-28",
             "place": [
               "Watsonville",
               "California",
@@ -105732,7 +105756,7 @@
             ]
           },
           "died": {
-            "date": "16 June 2009 King's Lynn , Norfolk, England",
+            "date": "2009-06-16",
             "place": [
               {
                 "text": "King's Lynn",
@@ -108024,7 +108048,7 @@
             ]
           },
           "died": {
-            "date": "26 May 1955 Autodromo Nazionale di Monza , Lombardy , Italy",
+            "date": "1955-05-26",
             "place": [
               {
                 "text": "Autodromo Nazionale di Monza",
@@ -115830,7 +115854,7 @@
             ]
           },
           "died": {
-            "date": "4 March 1974 Lingfield , Surrey , England, UK",
+            "date": "1974-03-04",
             "place": [
               {
                 "text": "Lingfield",
@@ -118773,7 +118797,7 @@
             ]
           },
           "died": {
-            "date": "May 17, 1955 Indianapolis , Indiana, U.S.",
+            "date": "1955-05-17",
             "place": [
               {
                 "text": "Indianapolis",

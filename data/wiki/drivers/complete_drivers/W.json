@@ -42,7 +42,7 @@
             ]
           },
           "died": {
-            "date": "June 16, 1998 Lake Bluff, Illinois , U.S.",
+            "date": "1998-06-16",
             "place": [
               "Lake Bluff",
               "Illinois",
@@ -194,7 +194,7 @@
             ]
           },
           "died": {
-            "date": "24 May 2024 Queensland , Australia",
+            "date": "2024-05-24",
             "place": [
               {
                 "text": "Queensland",
@@ -352,7 +352,7 @@
             ]
           },
           "died": {
-            "date": "1 March 1984 Newtown, Worcestershire , England",
+            "date": "1984-03-01",
             "place": [
               "Newtown",
               {
@@ -1418,7 +1418,7 @@
             ]
           },
           "died": {
-            "date": "November 29, 1963 St. Petersburg, Florida , U.S.",
+            "date": "1963-11-29",
             "place": [
               "St. Petersburg",
               "Florida",
@@ -1671,7 +1671,7 @@
             ]
           },
           "died": {
-            "date": "12 May 2009 Aesch, Basel-Country , Switzerland",
+            "date": "2009-05-12",
             "place": [
               "Aesch",
               "Basel-Country",
@@ -1840,7 +1840,7 @@
             ]
           },
           "died": {
-            "date": "July 5, 2004 Anaheim, California , U.S.",
+            "date": "2004-07-05",
             "place": [
               "Anaheim",
               "California",
@@ -16738,7 +16738,7 @@
             ]
           },
           "died": {
-            "date": "January 27, 1990 McMinnville, Oregon , U.S.",
+            "date": "1990-01-27",
             "place": [
               "McMinnville",
               "Oregon",
@@ -17250,11 +17250,7 @@
                       "text": "2015",
                       "url": "https://en.wikipedia.org/wiki/2015_FIA_World_Endurance_Championship"
                     }
-                  ],
-                  "class": {
-                    "text": "LMP1",
-                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
-                  }
+                  ]
                 }
               },
               {
@@ -23038,7 +23034,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Platinum",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -23054,7 +23061,7 @@
                     "number": 1,
                     "years": {
                       "start": 2024,
-                      "end": 2024
+                      "end": null
                     }
                   }
                 ]
@@ -31257,7 +31264,7 @@
             ]
           },
           "died": {
-            "date": "October 13, 2005 Phoenix, Arizona, U.S.",
+            "date": "2005-10-13",
             "place": [
               "Phoenix",
               "Arizona",
@@ -39145,7 +39152,7 @@
             ]
           },
           "died": {
-            "date": "7 December 2015 Dorking, United Kingdom",
+            "date": "2015-12-07",
             "place": [
               "Dorking",
               "United Kingdom"
@@ -40085,7 +40092,7 @@
             ]
           },
           "died": {
-            "date": "12 January 1957 Ardmore , Auckland , New Zealand",
+            "date": "1957-01-12",
             "place": [
               {
                 "text": "Ardmore",
@@ -40258,7 +40265,7 @@
             ]
           },
           "died": {
-            "date": "18 October 1995 Perth, Australia",
+            "date": "1995-10-18",
             "place": [
               "Perth",
               "Australia"
@@ -41344,7 +41351,7 @@
             ]
           },
           "died": {
-            "date": "21 September 1958 Lasalle , France",
+            "date": "1958-09-21",
             "place": [
               {
                 "text": "Lasalle",
@@ -45769,7 +45776,7 @@
             ]
           },
           "died": {
-            "date": "14 July 1957 Reims , France",
+            "date": "1957-07-14",
             "place": [
               {
                 "text": "Reims",
@@ -46023,7 +46030,7 @@
             ]
           },
           "died": {
-            "date": "10 June 2020 Ontario , Canada",
+            "date": "2020-06-10",
             "place": [
               {
                 "text": "Ontario",
@@ -52032,7 +52039,7 @@
             ]
           },
           "died": {
-            "date": "31 August 2014 Arroyo de la Miel , Spain",
+            "date": "2014-08-31",
             "place": [
               {
                 "text": "Arroyo de la Miel",
@@ -52699,7 +52706,7 @@
             ]
           },
           "died": {
-            "date": "29 July 1973 Zandvoort , Netherlands",
+            "date": "1973-07-29",
             "place": [
               {
                 "text": "Zandvoort",
@@ -57024,7 +57031,7 @@
             ]
           },
           "died": {
-            "date": "24 August 2015 Lehigh Valley Hospital-Cedar Crest , Allentown, Pennsylvania , U.S.",
+            "date": "2015-08-24",
             "place": [
               {
                 "text": "Lehigh Valley Hospital-Cedar Crest",
@@ -57270,7 +57277,7 @@
             ]
           },
           "died": {
-            "date": "14 January 2001 Gerrards Cross , Buckinghamshire , England",
+            "date": "2001-01-14",
             "place": [
               {
                 "text": "Gerrards Cross",
@@ -65174,7 +65181,7 @@
             ]
           },
           "died": {
-            "date": "12 August 1985 Toronto, Ontario , Canada",
+            "date": "1985-08-12",
             "place": [
               "Toronto",
               "Ontario",
@@ -67620,7 +67627,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Platinum",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -67755,7 +67773,7 @@
             "years": [
               {
                 "year": 2011,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2011_FIA_GT1_World_Championship_season"
               },
               {
                 "year": 2012,
@@ -67771,7 +67789,7 @@
             "years": [
               {
                 "year": 2007,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2007_Formula_One_season"
               }
             ]
           },
@@ -67783,7 +67801,7 @@
             "years": [
               {
                 "year": 2006,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2006_Porsche_Supercup_season"
               }
             ]
           },
@@ -67795,7 +67813,7 @@
             "years": [
               {
                 "year": 2005,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2005_Formula_Renault_3.5_Series_season"
               }
             ]
           },
@@ -67807,23 +67825,23 @@
             "years": [
               {
                 "year": 2004,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2004_Deutsche_Tourenwagen_Masters_season"
               },
               {
                 "year": 2007,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2007_Deutsche_Tourenwagen_Masters_season"
               },
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_Deutsche_Tourenwagen_Masters_season"
               },
               {
                 "year": 2009,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2009_Deutsche_Tourenwagen_Masters_season"
               },
               {
                 "year": 2010,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2010_Deutsche_Tourenwagen_Masters_season"
               }
             ]
           },
@@ -67835,7 +67853,7 @@
             "years": [
               {
                 "year": 2003,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2003_Formula_3_Euro_Series_season"
               }
             ]
           },
@@ -76538,7 +76556,7 @@
             ]
           },
           "died": {
-            "date": "20 March 2022 Pattaya , Thailand",
+            "date": "2022-03-20",
             "place": [
               {
                 "text": "Pattaya",
@@ -79365,11 +79383,7 @@
                       "text": "2012",
                       "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship"
                     }
-                  ],
-                  "class": {
-                    "text": "LMP1",
-                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
-                  }
+                  ]
                 }
               },
               {

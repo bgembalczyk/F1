@@ -60,7 +60,7 @@
             ]
           },
           "died": {
-            "date": "18 March 1977 Mairiporã , São Paulo, Brazil",
+            "date": "1977-03-18",
             "place": [
               {
                 "text": "Mairiporã",
@@ -2846,7 +2846,7 @@
             ]
           },
           "died": {
-            "date": "19 October 2003 Bresso , Lombardy , Italy",
+            "date": "2003-10-19",
             "place": [
               {
                 "text": "Bresso",
@@ -2909,7 +2909,7 @@
             ]
           },
           "died": {
-            "date": "13 June 1982 Montreal, Quebec , Canada",
+            "date": "1982-06-13",
             "place": [
               "Montreal",
               "Quebec",
@@ -4213,11 +4213,11 @@
             "years": [
               {
                 "year": 2007,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2007_Formula_Palmer_Audi_season"
               },
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_Formula_Palmer_Audi_season"
               }
             ]
           },
@@ -24007,7 +24007,7 @@
             ]
           },
           "died": {
-            "date": "28 August 1977 Riva presso Chieri , Turin, Italy",
+            "date": "1977-08-28",
             "place": [
               {
                 "text": "Riva presso Chieri",
@@ -25586,7 +25586,7 @@
             ]
           },
           "died": {
-            "date": "7 January 1964 Derby, Derbyshire, England",
+            "date": "1964-01-07",
             "place": [
               "Derby",
               "Derbyshire",
@@ -28087,7 +28087,7 @@
             ]
           },
           "died": {
-            "date": "5 April 2017 Littleover , Derbyshire , England, UK",
+            "date": "2017-04-05",
             "place": [
               {
                 "text": "Littleover",
@@ -28276,7 +28276,7 @@
             ]
           },
           "died": {
-            "date": "September 8, 1984 Los Angeles, California, U.S.",
+            "date": "1984-09-08",
             "place": [
               "Los Angeles",
               "California",
@@ -35871,7 +35871,7 @@
             ]
           },
           "died": {
-            "date": "4 May 2014 Sevierville , Tennessee , United States",
+            "date": "2014-05-04",
             "place": [
               {
                 "text": "Sevierville",
@@ -36192,7 +36192,7 @@
             ]
           },
           "died": {
-            "date": "10 May 1998 Bologna , Emilia-Romagna, Italy",
+            "date": "1998-05-10",
             "place": [
               {
                 "text": "Bologna",
@@ -36622,12 +36622,8 @@
             },
             "years": [
               {
-                "year": 2006,
-                "url": null
-              },
-              {
-                "year": 2007,
-                "url": null
+                "text": "2006-2007",
+                "url": "https://en.wikipedia.org/wiki/2006-07_A1_Grand_Prix_season"
               }
             ]
           },
@@ -36639,11 +36635,11 @@
             "years": [
               {
                 "year": 2005,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2005_Formula_BMW_ADAC_season"
               },
               {
                 "year": 2006,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2006_Formula_BMW_ADAC_season"
               }
             ]
           },
@@ -54554,7 +54550,7 @@
             ]
           },
           "died": {
-            "date": "8 December 2008 Zürich, Switzerland",
+            "date": "2008-12-08",
             "place": [
               "Zürich",
               "Switzerland"
@@ -62628,7 +62624,7 @@
             ]
           },
           "died": {
-            "date": "24 April 2001 Düsseldorf , Germany",
+            "date": "2001-04-24",
             "place": [
               {
                 "text": "Düsseldorf",
@@ -62796,7 +62792,7 @@
             ]
           },
           "died": {
-            "date": "11 September 1978 Milan , Italy",
+            "date": "1978-09-11",
             "place": [
               {
                 "text": "Milan",
@@ -68636,7 +68632,18 @@
             "rows": [
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Platinum",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Years active",
@@ -68708,11 +68715,7 @@
                       "text": "2018-19",
                       "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship"
                     }
-                  ],
-                  "class": {
-                    "text": "LMP1",
-                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
-                  }
+                  ]
                 }
               },
               {
@@ -74511,7 +74514,7 @@
             ]
           },
           "died": {
-            "date": "25 July 1990 Las Rosas , Santa Fe",
+            "date": "1990-07-25",
             "place": [
               {
                 "text": "Las Rosas",
@@ -79411,11 +79414,11 @@
             "years": [
               {
                 "year": 2010,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2010_GP2_Series_season"
               },
               {
                 "year": 2011,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2011_GP2_Series_season"
               }
             ]
           },
@@ -79427,7 +79430,7 @@
             "years": [
               {
                 "year": 2009,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2009%E2%80%9310_GP2_Asia_Series_season"
               },
               {
                 "year": 2010,
@@ -79435,7 +79438,7 @@
               },
               {
                 "year": 2011,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2011_GP2_Asia_Series_season"
               }
             ]
           },
@@ -79447,11 +79450,11 @@
             "years": [
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_Formula_Renault_3.5_Series_season"
               },
               {
                 "year": 2009,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2009_Formula_Renault_3.5_Series_season"
               }
             ]
           },
@@ -79463,7 +79466,7 @@
             "years": [
               {
                 "year": 2007,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2007_Formula_Renault_seasons#2007_Formula_Renault_2.0_Eurocup_season"
               }
             ]
           },
@@ -79475,7 +79478,7 @@
             "years": [
               {
                 "year": 2007,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2007_Formula_Renault_seasons#2007_Championnat_de_France_Formula_Renault_2.0_season"
               }
             ]
           },
@@ -79487,7 +79490,7 @@
             "years": [
               {
                 "year": 2006,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2006_Formula_Renault_seasons#2006_Championnat_de_France_FFSA_Formule_Campus_Renault_Elf_season"
               }
             ]
           }
@@ -82698,7 +82701,7 @@
             ]
           },
           "died": {
-            "date": "29 April 1996 Nice , France",
+            "date": "1996-04-29",
             "place": [
               {
                 "text": "Nice",
@@ -82843,7 +82846,7 @@
             ]
           },
           "died": {
-            "date": "1 November 2017 Johannesburg , South Africa",
+            "date": "2017-11-01",
             "place": [
               {
                 "text": "Johannesburg",
@@ -83004,7 +83007,7 @@
             ]
           },
           "died": {
-            "date": "31 May 2012 Titisee-Neustadt , Germany",
+            "date": "2012-05-31",
             "place": [
               {
                 "text": "Titisee-Neustadt",
@@ -84100,7 +84103,7 @@
             ]
           },
           "died": {
-            "date": "27 December 1993 Etterbeek , Belgium",
+            "date": "1993-12-27",
             "place": [
               {
                 "text": "Etterbeek",
@@ -87254,7 +87257,7 @@
             ]
           },
           "died": {
-            "date": "19 April 1971 Godiasco , Italy",
+            "date": "1971-04-19",
             "place": [
               {
                 "text": "Godiasco",
@@ -95461,7 +95464,7 @@
             ]
           },
           "died": {
-            "date": "29 July 2002 Chieti , Italy",
+            "date": "2002-07-29",
             "place": [
               {
                 "text": "Chieti",
@@ -95617,7 +95620,7 @@
             ]
           },
           "died": {
-            "date": "23 August 1987 English Channel , off the Isle of Wight , England",
+            "date": "1987-08-23",
             "place": [
               {
                 "text": "English Channel",
@@ -98341,7 +98344,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Gold",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Gold_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "full_data": {
@@ -110801,7 +110815,7 @@
             ]
           },
           "died": {
-            "date": "16 August 1997 Paris , France",
+            "date": "1997-08-16",
             "place": [
               {
                 "text": "Paris",
@@ -110947,7 +110961,7 @@
             ]
           },
           "died": {
-            "date": "30 September 2019 Nijkerk , Netherlands",
+            "date": "2019-09-30",
             "place": [
               {
                 "text": "Nijkerk",
@@ -111443,7 +111457,7 @@
             ]
           },
           "died": {
-            "date": "12 February 1987 London, England",
+            "date": "1987-02-12",
             "place": [
               "London",
               "England"
@@ -111583,7 +111597,7 @@
             ]
           },
           "died": {
-            "date": "12 May 1957 Cavriana , Lombardy , Italy",
+            "date": "1957-05-12",
             "place": [
               {
                 "text": "Cavriana",
@@ -111948,7 +111962,7 @@
             ]
           },
           "died": {
-            "date": "30 March 2009 Johannesburg , South Africa",
+            "date": "2009-03-30",
             "place": [
               {
                 "text": "Johannesburg",
@@ -112117,7 +112131,7 @@
             ]
           },
           "died": {
-            "date": "26 November 1981 Innsbruck , Tyrol , Austria",
+            "date": "1981-11-26",
             "place": [
               {
                 "text": "Innsbruck",
@@ -113126,7 +113140,7 @@
             ]
           },
           "died": {
-            "date": "29 March 1981 Silverstone , Northamptonshire , England",
+            "date": "1981-03-29",
             "place": [
               {
                 "text": "Silverstone",
@@ -119993,7 +120007,7 @@
             ]
           },
           "died": {
-            "date": "5 March 1977 Midrand , Transvaal , Union of South Africa",
+            "date": "1977-03-05",
             "place": [
               {
                 "text": "Midrand",
@@ -120176,7 +120190,7 @@
             ]
           },
           "died": {
-            "date": "2 July 1985 English Channel , close to Bognor Regis, United Kingdom",
+            "date": "1985-07-02",
             "place": [
               {
                 "text": "English Channel",

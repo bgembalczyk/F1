@@ -23683,7 +23683,7 @@
             ]
           },
           "died": {
-            "date": "7 June 1989 São Paulo, Brazil",
+            "date": "1989-06-07",
             "place": [
               "São Paulo",
               "Brazil"
@@ -23849,7 +23849,7 @@
             ]
           },
           "died": {
-            "date": "19 October 1987 Bad Cannstatt, Baden-Württemberg , West Germany",
+            "date": "1987-10-19",
             "place": [
               "Bad Cannstatt",
               {
@@ -26768,11 +26768,7 @@
                       "text": "1992",
                       "url": "https://en.wikipedia.org/wiki/1992_Italian_Superturismo_Championship"
                     }
-                  ],
-                  "class": {
-                    "text": "S1",
-                    "url": "https://en.wikipedia.org/wiki/Group_A"
-                  }
+                  ]
                 }
               }
             ]
@@ -40523,7 +40519,7 @@
             ]
           },
           "died": {
-            "date": "June 11, 1966 Reading, Pennsylvania , U.S.",
+            "date": "1966-06-11",
             "place": [
               "Reading",
               "Pennsylvania",
@@ -47530,7 +47526,7 @@
             ]
           },
           "died": {
-            "date": "20 May 2019 Zürich , Switzerland",
+            "date": "2019-05-20",
             "place": [
               {
                 "text": "Zürich",
@@ -55462,7 +55458,7 @@
             ]
           },
           "died": {
-            "date": "13 August 2011 Burghill , Herefordshire",
+            "date": "2011-08-13",
             "place": [
               {
                 "text": "Burghill",
@@ -70492,7 +70488,7 @@
             ]
           },
           "died": {
-            "date": "17 May 2019 Knysna , Western Cape Province, South Africa",
+            "date": "2019-05-17",
             "place": [
               {
                 "text": "Knysna",
@@ -77065,7 +77061,7 @@
             ]
           },
           "died": {
-            "date": "23 February 1960 Haine-Saint-Pierre, Wallonia, Belgium",
+            "date": "1960-02-23",
             "place": [
               "Haine-Saint-Pierre",
               "Wallonia",
@@ -86365,7 +86361,7 @@
             ]
           },
           "died": {
-            "date": "13 May 2012 Bexhill-on-Sea , East Sussex , England",
+            "date": "2012-05-13",
             "place": [
               {
                 "text": "Bexhill-on-Sea",
@@ -87563,7 +87559,7 @@
             ]
           },
           "died": {
-            "date": "11 June 1955 Le Mans , France",
+            "date": "1955-06-11",
             "place": [
               {
                 "text": "Le Mans",
@@ -87700,7 +87696,7 @@
             ]
           },
           "died": {
-            "date": "March 13, 2002 Reno, Nevada , U.S.",
+            "date": "2002-03-13",
             "place": [
               "Reno",
               "Nevada",
@@ -87999,7 +87995,7 @@
             ]
           },
           "died": {
-            "date": "25 October 1958 East Grinstead , Sussex, England",
+            "date": "1958-10-25",
             "place": [
               {
                 "text": "East Grinstead",
@@ -89097,7 +89093,7 @@
             ]
           },
           "died": {
-            "date": "23 August 2015 Nevers , Nièvre , France",
+            "date": "2015-08-23",
             "place": [
               {
                 "text": "Nevers",
@@ -90290,7 +90286,7 @@
             ]
           },
           "died": {
-            "date": "February 11, 1987 Los Angeles, California , U.S.",
+            "date": "1987-02-11",
             "place": [
               "Los Angeles",
               "California",
@@ -90588,7 +90584,7 @@
             ]
           },
           "died": {
-            "date": "31 October 2011 Anzio , Italy",
+            "date": "2011-10-31",
             "place": [
               {
                 "text": "Anzio",
@@ -91006,11 +91002,11 @@
             "years": [
               {
                 "year": 2012,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2012_Superstars_Series_season"
               },
               {
                 "year": 2013,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2013_Superstars_Series_season"
               }
             ]
           },
@@ -91022,7 +91018,7 @@
             "years": [
               {
                 "year": 2009,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_A1_Grand_Prix_season"
               }
             ]
           },
@@ -91074,7 +91070,7 @@
             "years": [
               {
                 "year": 2002,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2002_Formula_Renault_seasons"
               }
             ]
           }
@@ -97645,7 +97641,7 @@
             ]
           },
           "died": {
-            "date": "24 May 1990 Enschede , Netherlands",
+            "date": "1990-05-24",
             "place": [
               {
                 "text": "Enschede",
@@ -97790,7 +97786,7 @@
             ]
           },
           "died": {
-            "date": "3 March 1992 Milan , Italy",
+            "date": "1992-03-03",
             "place": [
               {
                 "text": "Milan",
@@ -100109,7 +100105,7 @@
             ]
           },
           "died": {
-            "date": "18 July 2009 San Bernardo del Viento , Colombia",
+            "date": "2009-07-18",
             "place": [
               {
                 "text": "San Bernardo del Viento",
@@ -100242,7 +100238,7 @@
             ]
           },
           "died": {
-            "date": "3 March 1956 Bonn , West Germany",
+            "date": "1956-03-03",
             "place": [
               {
                 "text": "Bonn",
@@ -100427,7 +100423,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Platinum",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -100507,11 +100514,7 @@
                       "text": "2024",
                       "url": "https://en.wikipedia.org/wiki/2024_FIA_World_Endurance_Championship"
                     }
-                  ],
-                  "class": {
-                    "text": "LMP1",
-                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
-                  }
+                  ]
                 }
               },
               {
@@ -100960,11 +100963,7 @@
                       "text": "2009",
                       "url": "https://en.wikipedia.org/wiki/2009_Super_GT_Series"
                     }
-                  ],
-                  "class": {
-                    "text": "GT500",
-                    "url": "https://en.wikipedia.org/wiki/Super_GT#GT500"
-                  }
+                  ]
                 }
               },
               {
@@ -101108,7 +101107,7 @@
             "years": [
               {
                 "year": 2001,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2001_British_Formula_Three_season"
               }
             ]
           },
@@ -110824,7 +110823,7 @@
             ]
           },
           "died": {
-            "date": "7 January 1991 Orléans , Loiret",
+            "date": "1991-01-07",
             "place": [
               {
                 "text": "Orléans",
@@ -111012,7 +111011,7 @@
             ]
           },
           "died": {
-            "date": "25 April 2005 Bulawayo, Zimbabwe",
+            "date": "2005-04-25",
             "place": [
               "Bulawayo",
               {
@@ -114695,7 +114694,7 @@
             ]
           },
           "died": {
-            "date": "May 15, 2011 Tacoma, Washington , U.S.",
+            "date": "2011-05-15",
             "place": [
               "Tacoma",
               "Washington",
@@ -116319,7 +116318,7 @@
             ]
           },
           "died": {
-            "date": "27 September 2003 Saint-Martin-de-Ré , Charente-Maritime",
+            "date": "2003-09-27",
             "place": [
               {
                 "text": "Saint-Martin-de-Ré",

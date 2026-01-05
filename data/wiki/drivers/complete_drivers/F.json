@@ -11859,7 +11859,7 @@
             ]
           },
           "died": {
-            "date": "20 June 1952 Monte Carlo , Monaco",
+            "date": "1952-06-20",
             "place": [
               {
                 "text": "Monte Carlo",
@@ -13205,7 +13205,7 @@
             ]
           },
           "died": {
-            "date": "7 February 2002 Rugby , Warwickshire , England, UK",
+            "date": "2002-02-07",
             "place": [
               {
                 "text": "Rugby",
@@ -13443,7 +13443,7 @@
             ]
           },
           "died": {
-            "date": "17 July 1995 Buenos Aires , Argentina",
+            "date": "1995-07-17",
             "place": [
               {
                 "text": "Buenos Aires",
@@ -21743,7 +21743,7 @@
             ]
           },
           "died": {
-            "date": "30 June 1966 Aiguebelle , Savoie , France",
+            "date": "1966-06-30",
             "place": [
               {
                 "text": "Aiguebelle",
@@ -21966,7 +21966,7 @@
             ]
           },
           "died": {
-            "date": "April 22, 1956 Vallejo , California , U.S.",
+            "date": "1956-04-22",
             "place": [
               {
                 "text": "Vallejo",
@@ -24471,7 +24471,7 @@
             ]
           },
           "died": {
-            "date": "9 January 2016 Scanzorosciate , Lombardy, Italy",
+            "date": "2016-01-09",
             "place": [
               {
                 "text": "Scanzorosciate",
@@ -25337,7 +25337,7 @@
             ]
           },
           "died": {
-            "date": "8 March 1991 Bad Reichenhall , Upper Bavaria , Germany",
+            "date": "1991-03-08",
             "place": [
               {
                 "text": "Bad Reichenhall",
@@ -25485,7 +25485,7 @@
             ]
           },
           "died": {
-            "date": "30 December 1976 Lucerne , Switzerland",
+            "date": "1976-12-30",
             "place": [
               {
                 "text": "Lucerne",
@@ -26593,7 +26593,18 @@
             "rows": [
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Platinum",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Years active",
@@ -26693,11 +26704,7 @@
                       "text": "2013",
                       "url": "https://en.wikipedia.org/wiki/2013_FIA_World_Endurance_Championship"
                     }
-                  ],
-                  "class": {
-                    "text": "LMGTE Pro",
-                    "url": "https://en.wikipedia.org/wiki/LMGTE"
-                  }
+                  ]
                 }
               },
               {
@@ -36267,7 +36274,7 @@
             ]
           },
           "died": {
-            "date": "October 31, 2012 near Lime Rock, Connecticut , U.S.",
+            "date": "2012-10-31",
             "place": [
               "near Lime Rock",
               "Connecticut",
@@ -38211,7 +38218,28 @@
               },
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Platinum",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  },
+                  {
+                    "licence": {
+                      "text": "FIA Gold",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Gold_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -38697,7 +38725,7 @@
             "years": [
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_American_Le_Mans_Series_season"
               }
             ]
           },
@@ -38709,47 +38737,47 @@
             "years": [
               {
                 "year": 2003,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2003_Rolex_Sports_Car_Series_season"
               },
               {
                 "year": 2004,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2004_Rolex_Sports_Car_Series_season"
               },
               {
                 "year": 2005,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2005_Rolex_Sports_Car_Series_season"
               },
               {
                 "year": 2006,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2006_Rolex_Sports_Car_Series_season"
               },
               {
                 "year": 2007,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2007_Rolex_Sports_Car_Series_season"
               },
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_Rolex_Sports_Car_Series_season"
               },
               {
                 "year": 2009,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2009_Rolex_Sports_Car_Series_season"
               },
               {
                 "year": 2010,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2010_Rolex_Sports_Car_Series_season"
               },
               {
                 "year": 2011,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2011_Rolex_Sports_Car_Series_season"
               },
               {
                 "year": 2012,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2012_Rolex_Sports_Car_Series_season"
               },
               {
                 "year": 2013,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2013_Rolex_Sports_Car_Series_season"
               }
             ]
           },
@@ -38760,12 +38788,8 @@
             },
             "years": [
               {
-                "year": 2005,
-                "url": null
-              },
-              {
-                "year": 2006,
-                "url": null
+                "text": "2005-06",
+                "url": "https://en.wikipedia.org/wiki/2005%E2%80%9306_A1_Grand_Prix_season"
               }
             ]
           },
@@ -38845,7 +38869,7 @@
               },
               {
                 "year": 2002,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2002_CART_season"
               }
             ]
           },
@@ -38877,7 +38901,7 @@
             "years": [
               {
                 "year": 1991,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/1991_Formula_3000_season"
               }
             ]
           }
@@ -48235,7 +48259,28 @@
               },
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Gold",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Gold_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  },
+                  {
+                    "licence": {
+                      "text": "FIA Platinum",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -48298,11 +48343,7 @@
                       "text": "2025",
                       "url": "https://en.wikipedia.org/wiki/2025_IMSA_SportsCar_Championship"
                     }
-                  ],
-                  "class": {
-                    "text": "LMP2",
-                    "url": "https://en.wikipedia.org/wiki/LMP2"
-                  }
+                  ]
                 }
               },
               {
@@ -56592,7 +56633,7 @@
             ]
           },
           "died": {
-            "date": "23 February 2024 São Paulo, Brazil",
+            "date": "2024-02-23",
             "place": [
               "São Paulo",
               "Brazil"
@@ -56780,7 +56821,7 @@
             ]
           },
           "died": {
-            "date": "18 March 1982 Groß-Gerau , West Germany",
+            "date": "1982-03-18",
             "place": [
               {
                 "text": "Groß-Gerau",
@@ -56934,7 +56975,7 @@
             ]
           },
           "died": {
-            "date": "April 9, 2002 Oxnard, California , U.S.",
+            "date": "2002-04-09",
             "place": [
               "Oxnard",
               "California",
@@ -57264,7 +57305,7 @@
             ]
           },
           "died": {
-            "date": "26 December 1992 Leiden , Netherlands",
+            "date": "1992-12-26",
             "place": [
               {
                 "text": "Leiden",
@@ -57418,7 +57459,7 @@
             ]
           },
           "died": {
-            "date": "12 April 1962 Kallista , Victoria , Australia",
+            "date": "1962-04-12",
             "place": [
               {
                 "text": "Kallista",
@@ -58940,7 +58981,7 @@
             ]
           },
           "died": {
-            "date": "January 14, 1994 Milwaukee, Wisconsin , U.S.",
+            "date": "1994-01-14",
             "place": [
               "Milwaukee",
               "Wisconsin",
@@ -61002,7 +61043,7 @@
             ]
           },
           "died": {
-            "date": "June 14, 1958 Hatfield, Pennsylvania , U.S.",
+            "date": "1958-06-14",
             "place": [
               "Hatfield",
               "Pennsylvania",
@@ -64092,7 +64133,7 @@
             ]
           },
           "died": {
-            "date": "15 October 1981 Beckley, East Sussex",
+            "date": "1981-10-15",
             "place": [
               "Beckley",
               "East Sussex"
@@ -75413,7 +75454,7 @@
             ]
           },
           "died": {
-            "date": "November 2, 2007 San Diego , California, U.S.",
+            "date": "2007-11-02",
             "place": [
               {
                 "text": "San Diego",
@@ -81755,7 +81796,7 @@
             ]
           },
           "died": {
-            "date": "23 February 2008 Saint-Paul-de-Vence , France",
+            "date": "2008-02-23",
             "place": [
               {
                 "text": "Saint-Paul-de-Vence",
@@ -84759,7 +84800,7 @@
             ]
           },
           "died": {
-            "date": "29 July 1950 Blandford Motor Racing Circuit , Blandford Forum , Dorset , England",
+            "date": "1950-07-29",
             "place": [
               {
                 "text": "Blandford Motor Racing Circuit",

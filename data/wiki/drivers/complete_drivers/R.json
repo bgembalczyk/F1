@@ -48,7 +48,7 @@
             ]
           },
           "died": {
-            "date": "7 November 1967 London , England",
+            "date": "1967-11-07",
             "place": [
               {
                 "text": "London",
@@ -10488,7 +10488,7 @@
             ]
           },
           "died": {
-            "date": "February 1, 2000 Melbourne, Florida , U.S.",
+            "date": "2000-02-01",
             "place": [
               "Melbourne",
               "Florida",
@@ -13751,7 +13751,7 @@
             ]
           },
           "died": {
-            "date": "November 23, 2011 Melbourne, Florida , U.S.",
+            "date": "2011-11-23",
             "place": [
               "Melbourne",
               "Florida",
@@ -14131,7 +14131,7 @@
             ]
           },
           "died": {
-            "date": "30 April 1994 Bologna , Emilia-Romagna, Italy",
+            "date": "1994-04-30",
             "place": [
               {
                 "text": "Bologna",
@@ -22986,7 +22986,7 @@
             ]
           },
           "died": {
-            "date": "September 28, 1958 Trenton, New Jersey , U.S.",
+            "date": "1958-09-28",
             "place": [
               "Trenton",
               "New Jersey",
@@ -23256,7 +23256,7 @@
             ]
           },
           "died": {
-            "date": "8 May 1970 South Africa",
+            "date": "1970-05-08",
             "place": [
               {
                 "text": "South Africa",
@@ -23536,7 +23536,7 @@
             ]
           },
           "died": {
-            "date": "6 September 2024 Ascot, Berkshire , England",
+            "date": "2024-09-06",
             "place": [
               "Ascot",
               "Berkshire",
@@ -23719,7 +23719,7 @@
             ]
           },
           "died": {
-            "date": "15 December 2006 Fontevivo , Emilia-Romagna , Italy",
+            "date": "2006-12-15",
             "place": [
               {
                 "text": "Fontevivo",
@@ -29456,7 +29456,18 @@
               },
               {
                 "label": "Racing licence",
-                "value": []
+                "value": [
+                  {
+                    "licence": {
+                      "text": "FIA Platinum",
+                      "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": null,
+                      "end": null
+                    }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -29515,11 +29526,7 @@
                       "text": "2019-20",
                       "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_FIA_World_Endurance_Championship"
                     }
-                  ],
-                  "class": {
-                    "text": "LMP2",
-                    "url": "https://en.wikipedia.org/wiki/LMP2"
-                  }
+                  ]
                 }
               },
               {
@@ -43280,7 +43287,7 @@
             ]
           },
           "died": {
-            "date": "24 July 1972 Aspen, Colorado , U.S.",
+            "date": "1972-07-24",
             "place": [
               "Aspen",
               "Colorado",
@@ -43389,7 +43396,7 @@
             ]
           },
           "died": {
-            "date": "March 22, 1974 Kyalami , Gauteng , South Africa",
+            "date": "1974-03-22",
             "place": [
               {
                 "text": "Kyalami",
@@ -60158,7 +60165,7 @@
             ]
           },
           "died": {
-            "date": "15 May 1991 Samedan , Switzerland",
+            "date": "1991-05-15",
             "place": [
               {
                 "text": "Samedan",
@@ -60531,7 +60538,7 @@
             ]
           },
           "died": {
-            "date": "August 31, 1952 Dayton, Ohio , U.S.",
+            "date": "1952-08-31",
             "place": [
               "Dayton",
               "Ohio",
@@ -60788,7 +60795,7 @@
             ]
           },
           "died": {
-            "date": "5 September 1970 Monza Circuit , Lombardy, Italy",
+            "date": "1970-09-05",
             "place": [
               {
                 "text": "Monza Circuit",
@@ -64587,7 +64594,7 @@
             ]
           },
           "died": {
-            "date": "8 July 1993 Baan Kai Thuan , Thailand",
+            "date": "1993-07-08",
             "place": [
               {
                 "text": "Baan Kai Thuan",
@@ -64723,7 +64730,7 @@
             ]
           },
           "died": {
-            "date": "11 December 2008 Stresa , Piedmont",
+            "date": "2008-12-11",
             "place": [
               {
                 "text": "Stresa",
@@ -65031,7 +65038,7 @@
             ]
           },
           "died": {
-            "date": "11 July 1971 Norisring , Nuremberg , West Germany",
+            "date": "1971-07-11",
             "place": [
               {
                 "text": "Norisring",
@@ -71170,7 +71177,7 @@
             ]
           },
           "died": {
-            "date": "1 November 1962 Mexico City , Mexico",
+            "date": "1962-11-01",
             "place": [
               {
                 "text": "Mexico City",
@@ -72592,7 +72599,7 @@
             ]
           },
           "died": {
-            "date": "6 February 2008 Warwick , Warwickshire , England, UK",
+            "date": "2008-02-06",
             "place": [
               {
                 "text": "Warwick",
@@ -75000,11 +75007,7 @@
                       "text": "1997",
                       "url": "https://en.wikipedia.org/wiki/1997_JGTC_season"
                     }
-                  ],
-                  "class": {
-                    "text": "GT500",
-                    "url": "https://en.wikipedia.org/wiki/Super_GT#GT500"
-                  }
+                  ]
                 }
               }
             ]
@@ -92110,7 +92113,7 @@
             ]
           },
           "died": {
-            "date": "January 1, 1981 Royal Oak, Michigan , U.S.",
+            "date": "1981-01-01",
             "place": [
               "Royal Oak",
               "Michigan",
@@ -92370,7 +92373,7 @@
             ]
           },
           "died": {
-            "date": "29 October 1956 Neuilly-sur-Seine , Hauts-de-Seine , France",
+            "date": "1956-10-29",
             "place": [
               {
                 "text": "Neuilly-sur-Seine",
@@ -99367,7 +99370,7 @@
             "years": [
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_Formula_BMW_Europe_season"
               }
             ]
           },
@@ -99379,11 +99382,11 @@
             "years": [
               {
                 "year": 2007,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2007_Formula_BMW_USA_season"
               },
               {
                 "year": 2008,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2008_Formula_BMW_Americas_season"
               }
             ]
           },
@@ -99395,7 +99398,7 @@
             "years": [
               {
                 "year": 2006,
-                "url": null
+                "url": "https://en.wikipedia.org/wiki/2006_Formula_Renault_seasons#2006_Formula_TR_1600_Pro_Series_season"
               }
             ]
           },
@@ -110932,7 +110935,7 @@
             ]
           },
           "died": {
-            "date": "14 September 2023 New South Wales , Australia",
+            "date": "2023-09-14",
             "place": [
               {
                 "text": "New South Wales",
@@ -111657,7 +111660,7 @@
             ]
           },
           "died": {
-            "date": "March 23, 2009 Wichita Falls, Texas, U.S.",
+            "date": "2009-03-23",
             "place": [
               "Wichita Falls",
               "Texas",
@@ -118675,7 +118678,7 @@
             ]
           },
           "died": {
-            "date": "October 14, 2012 King, Wisconsin , U.S.",
+            "date": "2012-10-14",
             "place": [
               "King",
               "Wisconsin",
@@ -118951,7 +118954,7 @@
             ]
           },
           "died": {
-            "date": "February 13, 1976 Clearwater, Florida , U.S.",
+            "date": "1976-02-13",
             "place": [
               "Clearwater",
               "Florida",
@@ -119257,7 +119260,7 @@
             ]
           },
           "died": {
-            "date": "May 19, 1997 Lake Havasu City, Arizona , U.S.",
+            "date": "1997-05-19",
             "place": [
               "Lake Havasu City",
               "Arizona",
@@ -119652,7 +119655,7 @@
             ]
           },
           "died": {
-            "date": "2 July 1962 Paris , France",
+            "date": "1962-07-02",
             "place": [
               {
                 "text": "Paris",
