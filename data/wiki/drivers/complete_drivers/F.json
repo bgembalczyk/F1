@@ -2322,7 +2322,11 @@
                   "seasons": [
                     {
                       "text": "1993",
-                      "url": "https://en.wikipedia.org/wiki/1993_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/1993_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "1993",
+                        "url": "https://en.wikipedia.org/wiki/1993_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
@@ -26702,7 +26706,11 @@
                   "seasons": [
                     {
                       "text": "2013",
-                      "url": "https://en.wikipedia.org/wiki/2013_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2013_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "LMGTE Pro",
+                        "url": "https://en.wikipedia.org/wiki/LMGTE"
+                      }
                     }
                   ]
                 }
@@ -26799,11 +26807,19 @@
                   "seasons": [
                     {
                       "text": "2011",
-                      "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "2011",
+                        "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                      }
                     },
                     {
                       "text": "2014",
-                      "url": "https://en.wikipedia.org/wiki/2014_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/2014_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "2011",
+                        "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
@@ -38226,7 +38242,7 @@
                     },
                     "years": {
                       "start": null,
-                      "end": null
+                      "end": 2018
                     }
                   },
                   {
@@ -38235,7 +38251,7 @@
                       "url": "https://en.wikipedia.org/wiki/FIA_Gold_Categorisation"
                     },
                     "years": {
-                      "start": null,
+                      "start": 2019,
                       "end": null
                     }
                   }
@@ -39229,7 +39245,11 @@
                   "seasons": [
                     {
                       "text": "1989",
-                      "url": "https://en.wikipedia.org/wiki/1989_CART_season"
+                      "url": "https://en.wikipedia.org/wiki/1989_CART_season",
+                      "class": {
+                        "text": "1989",
+                        "url": "https://en.wikipedia.org/wiki/1989_CART_season"
+                      }
                     }
                   ]
                 }
@@ -48267,7 +48287,7 @@
                     },
                     "years": {
                       "start": null,
-                      "end": null
+                      "end": 2025
                     }
                   },
                   {
@@ -48276,7 +48296,7 @@
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     },
                     "years": {
-                      "start": null,
+                      "start": 2026,
                       "end": null
                     }
                   }
@@ -48341,7 +48361,11 @@
                   "seasons": [
                     {
                       "text": "2025",
-                      "url": "https://en.wikipedia.org/wiki/2025_IMSA_SportsCar_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2025_IMSA_SportsCar_Championship",
+                      "class": {
+                        "text": "LMP2",
+                        "url": "https://en.wikipedia.org/wiki/LMP2"
+                      }
                     }
                   ]
                 }
@@ -48564,7 +48588,11 @@
                   "seasons": [
                     {
                       "text": "2022",
-                      "url": "https://en.wikipedia.org/wiki/2022_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/2022_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "2022",
+                        "url": "https://en.wikipedia.org/wiki/2022_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
@@ -75990,7 +76018,11 @@
                   "seasons": [
                     {
                       "text": "1992",
-                      "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "1992",
+                        "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }

@@ -14839,7 +14839,7 @@
                     },
                     "years": {
                       "start": null,
-                      "end": null
+                      "end": 2022
                     }
                   },
                   {
@@ -14848,7 +14848,7 @@
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
                     },
                     "years": {
-                      "start": null,
+                      "start": 2023,
                       "end": null
                     }
                   }
@@ -14900,7 +14900,11 @@
                   "seasons": [
                     {
                       "text": "2025",
-                      "url": "https://en.wikipedia.org/wiki/2025_IMSA_SportsCar_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2025_IMSA_SportsCar_Championship",
+                      "class": {
+                        "text": "GTP",
+                        "url": "https://en.wikipedia.org/wiki/LMDh"
+                      }
                     }
                   ]
                 }
@@ -15123,7 +15127,11 @@
                   "seasons": [
                     {
                       "text": "2023",
-                      "url": "https://en.wikipedia.org/wiki/2023_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/2023_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "2023",
+                        "url": "https://en.wikipedia.org/wiki/2023_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
@@ -33990,7 +33998,11 @@
                   "seasons": [
                     {
                       "text": "1997",
-                      "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "1997",
+                        "url": "https://en.wikipedia.org/wiki/1997_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
@@ -34323,7 +34335,11 @@
                   "seasons": [
                     {
                       "text": "2010",
-                      "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "2010",
+                        "url": "https://en.wikipedia.org/wiki/2010_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
@@ -45223,15 +45239,27 @@
                   "seasons": [
                     {
                       "text": "1983",
-                      "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "1983",
+                        "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
+                      }
                     },
                     {
                       "text": "1992",
-                      "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/1992_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "1983",
+                        "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
+                      }
                     },
                     {
                       "text": "1993",
-                      "url": "https://en.wikipedia.org/wiki/1993_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/1993_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "1983",
+                        "url": "https://en.wikipedia.org/wiki/1983_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
@@ -51282,7 +51310,11 @@
                   "seasons": [
                     {
                       "text": "2018-19",
-                      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "LMP1",
+                        "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
+                      }
                     }
                   ]
                 }
@@ -51322,7 +51354,11 @@
                   "seasons": [
                     {
                       "text": "2017",
-                      "url": "https://en.wikipedia.org/wiki/2017_IndyCar_Series"
+                      "url": "https://en.wikipedia.org/wiki/2017_IndyCar_Series",
+                      "class": {
+                        "text": "2017",
+                        "url": "https://en.wikipedia.org/wiki/2017_IndyCar_Series"
+                      }
                     }
                   ]
                 }
@@ -51400,11 +51436,19 @@
                   "seasons": [
                     {
                       "text": "2018",
-                      "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "2018",
+                        "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
+                      }
                     },
                     {
                       "text": "2019",
-                      "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "2018",
+                        "url": "https://en.wikipedia.org/wiki/2018_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
@@ -63061,7 +63105,11 @@
                   "seasons": [
                     {
                       "text": "1966",
-                      "url": "https://en.wikipedia.org/wiki/1966_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/1966_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "1966",
+                        "url": "https://en.wikipedia.org/wiki/1966_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }

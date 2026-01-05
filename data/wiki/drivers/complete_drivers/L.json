@@ -367,7 +367,11 @@
                   "seasons": [
                     {
                       "text": "1974",
-                      "url": "https://en.wikipedia.org/wiki/1974_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/1974_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "1974",
+                        "url": "https://en.wikipedia.org/wiki/1974_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
@@ -8722,7 +8726,11 @@
                   "seasons": [
                     {
                       "text": "1988",
-                      "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "1988",
+                        "url": "https://en.wikipedia.org/wiki/1988_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
@@ -26766,7 +26774,11 @@
                   "seasons": [
                     {
                       "text": "1992",
-                      "url": "https://en.wikipedia.org/wiki/1992_Italian_Superturismo_Championship"
+                      "url": "https://en.wikipedia.org/wiki/1992_Italian_Superturismo_Championship",
+                      "class": {
+                        "text": "S1",
+                        "url": "https://en.wikipedia.org/wiki/Group_A"
+                      }
                     }
                   ]
                 }
@@ -100508,11 +100520,19 @@
                   "seasons": [
                     {
                       "text": "2012",
-                      "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2012_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "LMP1",
+                        "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
+                      }
                     },
                     {
                       "text": "2024",
-                      "url": "https://en.wikipedia.org/wiki/2024_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2024_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "HY",
+                        "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+                      }
                     }
                   ]
                 }
@@ -100957,11 +100977,19 @@
                   "seasons": [
                     {
                       "text": "2006",
-                      "url": "https://en.wikipedia.org/wiki/2006_Super_GT_Series"
+                      "url": "https://en.wikipedia.org/wiki/2006_Super_GT_Series",
+                      "class": {
+                        "text": "GT500",
+                        "url": "https://en.wikipedia.org/wiki/Super_GT#GT500"
+                      }
                     },
                     {
                       "text": "2009",
-                      "url": "https://en.wikipedia.org/wiki/2009_Super_GT_Series"
+                      "url": "https://en.wikipedia.org/wiki/2009_Super_GT_Series",
+                      "class": {
+                        "text": "GT500",
+                        "url": "https://en.wikipedia.org/wiki/Super_GT#GT500"
+                      }
                     }
                   ]
                 }
@@ -101062,15 +101090,27 @@
                   "seasons": [
                     {
                       "text": "2011",
-                      "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "2011",
+                        "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                      }
                     },
                     {
                       "text": "2012",
-                      "url": "https://en.wikipedia.org/wiki/2012_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/2012_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "2011",
+                        "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                      }
                     },
                     {
                       "text": "2014",
-                      "url": "https://en.wikipedia.org/wiki/2014_24_Hours_of_Le_Mans"
+                      "url": "https://en.wikipedia.org/wiki/2014_24_Hours_of_Le_Mans",
+                      "class": {
+                        "text": "2011",
+                        "url": "https://en.wikipedia.org/wiki/2011_24_Hours_of_Le_Mans"
+                      }
                     }
                   ]
                 }
