@@ -25955,25 +25955,23 @@
               {
                 "label": "First win",
                 "value": {
-                  "text": "1978 Monaco Grand Prix",
-                  "links": [
-                    {
-                      "text": "1978 Monaco Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1978_Monaco_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "1978 Monaco Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1978_Monaco_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
                 "label": "Last win",
                 "value": {
-                  "text": "1979 Spanish Grand Prix",
-                  "links": [
-                    {
-                      "text": "1979 Spanish Grand Prix",
-                      "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
-                    }
-                  ]
+                  "season": {
+                    "text": "1979 Spanish Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
+                  },
+                  "race": null,
+                  "circuit": null
                 }
               },
               {
@@ -33263,17 +33261,15 @@
               {
                 "label": "First race",
                 "value": {
-                  "text": "1946 Williams Grove Race #1 ( Mechanicsburg )",
-                  "links": [
-                    {
-                      "text": "1946",
-                      "url": "https://en.wikipedia.org/wiki/1946_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Mechanicsburg",
-                      "url": "https://en.wikipedia.org/wiki/Williams_Grove_Speedway"
-                    }
-                  ]
+                  "season": {
+                    "text": "1946",
+                    "url": "https://en.wikipedia.org/wiki/1946_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Mechanicsburg",
+                    "url": "https://en.wikipedia.org/wiki/Williams_Grove_Speedway"
+                  },
+                  "circuit": null
                 }
               },
               {
@@ -33296,17 +33292,15 @@
               {
                 "label": "First win",
                 "value": {
-                  "text": "1950 Golden State 100 ( Sacramento )",
-                  "links": [
-                    {
-                      "text": "1950",
-                      "url": "https://en.wikipedia.org/wiki/1950_AAA_Championship_Car_season"
-                    },
-                    {
-                      "text": "Sacramento",
-                      "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
-                    }
-                  ]
+                  "season": {
+                    "text": "1950",
+                    "url": "https://en.wikipedia.org/wiki/1950_AAA_Championship_Car_season"
+                  },
+                  "race": {
+                    "text": "Sacramento",
+                    "url": "https://en.wikipedia.org/wiki/California_State_Fairgrounds_Race_Track"
+                  },
+                  "circuit": null
                 }
               },
               {

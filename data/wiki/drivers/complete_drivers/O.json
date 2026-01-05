@@ -35,7 +35,9 @@
           },
           "died": {
             "date": "1987-02-10",
-            "place": null
+            "place": [
+              "(aged 78)"
+            ]
           }
         },
         "championship_titles": [],
@@ -6860,9 +6862,9 @@
             ]
           },
           "died": {
-            "date": "1958-05-30",
+            "date": "May 30, 1958 Speedway, Indiana , U.S.",
             "place": [
-              "Speedway",
+              "(aged 29) Speedway",
               "Indiana",
               "U.S."
             ]
@@ -7002,20 +7004,9 @@
                       "url": "https://en.wikipedia.org/wiki/Pole_position"
                     }
                   ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "2",
-                        "6",
-                        "1"
-                      ]
-                    ]
-                  }
+                  "wins": 2,
+                  "podiums": 6,
+                  "poles": 1
                 }
               },
               {
@@ -7182,9 +7173,9 @@
             ]
           },
           "died": {
-            "date": "1970-11-22",
+            "date": "22 November 1970 Porto, Portugal",
             "place": [
-              "Porto",
+              "(aged 63) Porto",
               "Portugal"
             ]
           }
@@ -7333,10 +7324,40 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1967,
-                  "end": 1973
-                }
+                "value": [
+                  {
+                    "year": 1967,
+                    "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
+                  },
+                  {
+                    "year": 1968,
+                    "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+                  },
+                  {
+                    "year": 1969,
+                    "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
+                  },
+                  {
+                    "year": 1970,
+                    "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+                  },
+                  {
+                    "year": 1971,
+                    "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season"
+                  },
+                  {
+                    "year": 1972,
+                    "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
+                  },
+                  {
+                    "year": 1973,
+                    "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
+                  },
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -11583,9 +11604,9 @@
             ]
           },
           "died": {
-            "date": "2022-02-26",
+            "date": "February 26, 2022 Anaheim, California , U.S.",
             "place": [
-              "Anaheim",
+              "(aged 79) Anaheim",
               "California",
               "U.S."
             ]
@@ -11605,10 +11626,64 @@
               },
               {
                 "label": "Years active",
-                "value": {
-                  "start": 1976,
-                  "end": 1987
-                }
+                "value": [
+                  {
+                    "year": 1968,
+                    "url": null
+                  },
+                  {
+                    "year": 1971,
+                    "url": null
+                  },
+                  {
+                    "year": 1976,
+                    "url": null
+                  },
+                  {
+                    "year": 1977,
+                    "url": null
+                  },
+                  {
+                    "year": 1978,
+                    "url": null
+                  },
+                  {
+                    "year": 1979,
+                    "url": null
+                  },
+                  {
+                    "year": 1980,
+                    "url": null
+                  },
+                  {
+                    "year": 1981,
+                    "url": null
+                  },
+                  {
+                    "year": 1982,
+                    "url": null
+                  },
+                  {
+                    "year": 1983,
+                    "url": null
+                  },
+                  {
+                    "year": 1984,
+                    "url": null
+                  },
+                  {
+                    "year": 1985,
+                    "url": null
+                  },
+                  {
+                    "year": 1986,
+                    "url": null
+                  },
+                  {
+                    "year": 1987,
+                    "url": null
+                  }
+                ]
               },
               {
                 "label": "Best finish",
@@ -11699,20 +11774,9 @@
                       "url": "https://en.wikipedia.org/wiki/Pole_position"
                     }
                   ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "6",
-                        "8",
-                        "11"
-                      ]
-                    ]
-                  }
+                  "wins": 6,
+                  "podiums": 8,
+                  "poles": 11
                 }
               },
               {
@@ -11787,20 +11851,9 @@
                       "url": "https://en.wikipedia.org/wiki/Pole_position"
                     }
                   ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Podiums",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "0",
-                        "0"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "podiums": 0,
+                  "poles": 0
                 }
               },
               {
@@ -16748,7 +16801,9 @@
           },
           "died": {
             "date": "2002-04-27",
-            "place": null
+            "place": [
+              "(aged 87)"
+            ]
           }
         },
         "championship_titles": [],

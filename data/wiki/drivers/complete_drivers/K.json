@@ -21822,8 +21822,36 @@
             },
             "years": [
               {
-                "text": "2016-2023",
+                "year": 2016,
+                "url": "https://en.wikipedia.org/wiki/2016_Blancpain_GT_Series_Endurance_Cup"
+              },
+              {
+                "year": 2017,
                 "url": null
+              },
+              {
+                "year": 2018,
+                "url": null
+              },
+              {
+                "year": 2019,
+                "url": null
+              },
+              {
+                "year": 2020,
+                "url": null
+              },
+              {
+                "year": 2021,
+                "url": null
+              },
+              {
+                "year": 2022,
+                "url": null
+              },
+              {
+                "year": 2023,
+                "url": "https://en.wikipedia.org/wiki/2023_GT_World_Challenge_Europe_Sprint_Cup"
               }
             ]
           },
@@ -21934,7 +21962,11 @@
             },
             "years": [
               {
-                "text": "2000-2001",
+                "year": 2000,
+                "url": null
+              },
+              {
+                "year": 2001,
                 "url": null
               }
             ]
@@ -29959,7 +29991,7 @@
             },
             "years": [
               {
-                "text": "2003",
+                "year": 2003,
                 "url": null
               }
             ]
