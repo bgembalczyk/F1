@@ -576,26 +576,34 @@ class InfoboxCellParser:
                 
                 # Look for the next year span after this licence tag
                 if licence_tag and year_spans:
+                    # Cache all <a> tags once to avoid repeated find_all calls
+                    all_a_tags = cell.find_all('a')
+                    
+                    # Build a map of licence text -> tag for efficient lookup
+                    licence_tag_map = {}
+                    for other_link in licence_links:
+                        if other_link == licence_link:
+                            continue
+                        other_text = other_link.get('text', '')
+                        if other_text and other_text not in licence_tag_map:
+                            for a_tag in all_a_tags:
+                                if clean_infobox_text(a_tag.get_text(strip=True)) == other_text:
+                                    a_href = a_tag.get('href', '') or ''
+                                    if '/file:' not in a_href.lower():
+                                        licence_tag_map[other_text] = a_tag
+                                        break
+                    
                     # Find which year span comes after this licence tag
                     for year_span in year_spans:
                         # Check if this span comes after the licence tag in the document order
-                        # We'll do this by checking if the licence tag is before the year span
                         if self._is_element_before(licence_tag, year_span):
                             # This span is after the licence tag
                             # Check if there's another licence link between them
                             has_licence_between = False
-                            for other_link in licence_links:
-                                if other_link == licence_link:
-                                    continue
-                                other_text = other_link.get('text', '')
-                                # Find other licence tag
-                                for other_a in cell.find_all('a'):
-                                    if clean_infobox_text(other_a.get_text(strip=True)) == other_text:
-                                        # Check if this other licence is between current licence and year span
-                                        if self._is_element_before(licence_tag, other_a) and self._is_element_before(other_a, year_span):
-                                            has_licence_between = True
-                                            break
-                                if has_licence_between:
+                            for other_tag in licence_tag_map.values():
+                                # Check if this other licence is between current licence and year span
+                                if self._is_element_before(licence_tag, other_tag) and self._is_element_before(other_tag, year_span):
+                                    has_licence_between = True
                                     break
                             
                             if not has_licence_between:
@@ -616,33 +624,33 @@ class InfoboxCellParser:
     
     @staticmethod
     def _is_element_before(elem1: Tag, elem2: Tag) -> bool:
-        """Check if elem1 comes before elem2 in document order."""
-        # Simple approach: get the common parent and check index in descendants
-        # Find common parent
-        elem1_parents = set(elem1.parents)
-        elem2_parents = set(elem2.parents)
-        common_parents = elem1_parents & elem2_parents
+        """Check if elem1 comes before elem2 in document order.
         
-        if not common_parents:
-            return False
+        Uses BeautifulSoup's built-in ordering to compare positions efficiently.
+        """
+        # Get all elements in order by traversing once
+        # Find the first occurrence - if it's elem1, then elem1 is before elem2
+        elem1_parents = list(elem1.parents)
+        elem2_parents = list(elem2.parents)
         
-        # Get the closest common parent (deepest in tree)
+        # Find deepest common parent
         common_parent = None
-        for parent in common_parents:
-            if common_parent is None or parent in common_parent.parents:
-                common_parent = parent
+        for p1 in elem1_parents:
+            if p1 in elem2_parents:
+                common_parent = p1
+                break
         
         if common_parent is None:
             return False
         
-        # Get all descendants and check order
-        descendants = list(common_parent.descendants)
-        try:
-            idx1 = descendants.index(elem1)
-            idx2 = descendants.index(elem2)
-            return idx1 < idx2
-        except ValueError:
-            return False
+        # Use BeautifulSoup's generator to avoid creating a full list
+        for descendant in common_parent.descendants:
+            if descendant is elem1:
+                return True
+            if descendant is elem2:
+                return False
+        
+        return False
     
     @staticmethod
     def _parse_licence_years(year_text: str) -> Dict[str, int | None]:
@@ -675,8 +683,9 @@ class InfoboxCellParser:
                 years["start"] = int(all_years[0])
                 years["end"] = int(all_years[-1])
             elif len(all_years) == 1:
-                # Single year - could be just start or just end depending on context
-                # Default to treating it as a range with same start and end
+                # Single year without context (e.g., just "(2015)")
+                # Treat as a single-year validity period (both start and end are the same)
+                # This is a reasonable assumption for racing licences that were valid only in one year
                 years["start"] = int(all_years[0])
                 years["end"] = int(all_years[0])
         
