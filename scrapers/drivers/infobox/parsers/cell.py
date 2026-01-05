@@ -353,9 +353,8 @@ class InfoboxCellParser:
                 season_data = []
                 
                 if small_tags and len(small_tags) > 0:
-                    # Parse HTML to find season-class pairs
-                    # Strategy: find each season link, then look for the next <small> tag
-                    cell_html = str(cell)
+                    # Parse HTML to find season-class pairs using BeautifulSoup navigation
+                    # Strategy: find each season link element, then look for the next <small> tag
                     
                     # For each season link, try to find associated class
                     for season_link in season_links:
@@ -364,40 +363,60 @@ class InfoboxCellParser:
                             "url": season_link.get("url")
                         }
                         
-                        # Find the season text in the HTML
+                        # Find the actual <a> tag in the cell that matches this season
                         season_text = season_link.get("text", "")
+                        season_url = season_link.get("url", "")
+                        
                         if season_text:
-                            # Look for <small> tag that comes after this season
-                            season_pos = cell_html.find(f'>{season_text}<')
-                            if season_pos == -1:
-                                season_pos = cell_html.find(season_text)
+                            # Find the <a> tag with this text
+                            season_tag = None
+                            for a_tag in cell.find_all('a'):
+                                if clean_infobox_text(a_tag.get_text(strip=True)) == season_text:
+                                    # Verify URL matches if present
+                                    if not season_url or season_url in (a_tag.get('href', '') or ''):
+                                        season_tag = a_tag
+                                        break
                             
-                            if season_pos >= 0:
-                                # Find the next <small> tag after this position
-                                small_start = cell_html.find('<small', season_pos)
-                                if small_start >= 0:
-                                    small_end = cell_html.find('</small>', small_start)
-                                    if small_end >= 0:
-                                        # Check if there's another season link before this small tag
-                                        next_season_pos = len(cell_html)
-                                        for other_season in season_links:
-                                            if other_season != season_link:
-                                                other_text = other_season.get("text", "")
-                                                other_pos = cell_html.find(other_text, season_pos + len(season_text))
-                                                if season_pos < other_pos < small_start:
-                                                    next_season_pos = other_pos
+                            # Look for next <small> tag after this season tag
+                            if season_tag:
+                                # Navigate forward to find next small tag
+                                next_elem = season_tag
+                                found_small = None
+                                found_next_season = False
+                                
+                                # Search through next siblings
+                                while next_elem and not found_small and not found_next_season:
+                                    next_elem = next_elem.next_sibling
+                                    if next_elem:
+                                        if hasattr(next_elem, 'name'):
+                                            if next_elem.name == 'small':
+                                                found_small = next_elem
+                                                break
+                                            # Check if we hit another season link
+                                            if next_elem.name == 'a':
+                                                next_text = clean_infobox_text(next_elem.get_text(strip=True))
+                                                if any(s.get("text") == next_text for s in season_links if s != season_link):
+                                                    found_next_season = True
                                                     break
-                                        
-                                        # Only associate if small tag is before next season
-                                        if small_start < next_season_pos:
-                                            # Extract class link from this small tag
-                                            small_html = cell_html[small_start:small_end + 8]
-                                            small_soup = BeautifulSoup(small_html, 'html.parser')
-                                            small_tag_obj = small_soup.find('small')
-                                            if small_tag_obj:
-                                                class_links = self._link_extractor.extract_links(small_tag_obj)
-                                                if class_links:
-                                                    season_entry["class"] = class_links[0]
+                                        # Also search descendants of text/tag siblings
+                                        if hasattr(next_elem, 'find'):
+                                            small_in_sibling = next_elem.find('small')
+                                            if small_in_sibling:
+                                                # Check if there's a season link before this small
+                                                for a_tag in next_elem.find_all('a'):
+                                                    a_text = clean_infobox_text(a_tag.get_text(strip=True))
+                                                    if any(s.get("text") == a_text for s in season_links if s != season_link):
+                                                        found_next_season = True
+                                                        break
+                                                if not found_next_season:
+                                                    found_small = small_in_sibling
+                                                    break
+                                
+                                # Extract class from found small tag
+                                if found_small:
+                                    class_links = self._link_extractor.extract_links(found_small)
+                                    if class_links:
+                                        season_entry["class"] = class_links[0]
                         
                         season_data.append(season_entry)
                     
