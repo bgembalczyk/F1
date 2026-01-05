@@ -3,6 +3,7 @@ from typing import Any
 from typing import Dict
 from typing import List
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.records.link import LinkRecord
@@ -529,9 +530,10 @@ class InfoboxCellParser:
                 return payload
         
         # Check if this is "X races run over Y years" pattern
-        races_run_match = re.match(r'^(\d+)\s+races?\s+run\s+over', text)
-        if races_run_match:
-            return {"races_run": int(races_run_match.group(1))}
+        if text:
+            races_run_match = re.match(r'^(\d+)\s+races?\s+run\s+over', text)
+            if races_run_match:
+                return {"races_run": int(races_run_match.group(1))}
         
         # Default: return text and links
         payload: Dict[str, Any] = {"text": text}
