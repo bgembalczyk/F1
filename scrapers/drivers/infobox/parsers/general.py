@@ -68,21 +68,36 @@ class InfoboxGeneralParser:
         elif dday_span:
             date_text = clean_infobox_text(dday_span.get_text(strip=True)) or ""
         else:
-            # Fallback to text-based extraction
-            text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
-            parts = [p.strip() for p in text.split("\n") if p.strip()]
+            # Try to find hidden span with ISO date format (style="display:none")
+            # Pattern: <span style="display:none">(YYYY-MM-DD)</span>
+            hidden_spans = cell.find_all("span", style=lambda x: x and "display:none" in x)
+            iso_date = None
+            for span in hidden_spans:
+                span_text = span.get_text(strip=True)
+                # Look for ISO date pattern in parentheses
+                iso_match = re.search(r'\((\d{4}-\d{2}-\d{2})\)', span_text)
+                if iso_match:
+                    iso_date = iso_match.group(1)
+                    break
             
-            # Filter out the original name (first part if it doesn't contain date pattern)
-            filtered_parts = []
-            for part in parts:
-                # Skip parts that look like names (no date pattern and no numbers)
-                if not re.search(self._DATE_PATTERN, part):
-                    # This might be the original name, skip it
-                    continue
-                filtered_parts.append(part)
-            
-            date_text = filtered_parts[0] if filtered_parts else ""
-            date_text = re.sub(r"\s*\([^)]*\)", "", date_text).strip()
+            if iso_date:
+                date_text = iso_date
+            else:
+                # Fallback to text-based extraction
+                text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
+                parts = [p.strip() for p in text.split("\n") if p.strip()]
+                
+                # Filter out the original name (first part if it doesn't contain date pattern)
+                filtered_parts = []
+                for part in parts:
+                    # Skip parts that look like names (no date pattern and no numbers)
+                    if not re.search(self._DATE_PATTERN, part):
+                        # This might be the original name, skip it
+                        continue
+                    filtered_parts.append(part)
+                
+                date_text = filtered_parts[0] if filtered_parts else ""
+                date_text = re.sub(r"\s*\([^)]*\)", "", date_text).strip()
         
         # Extract place from birthplace/deathplace element (div or span) if available
         place_span = cell.find(class_="birthplace") or cell.find(class_="deathplace")
