@@ -412,7 +412,7 @@ class InfoboxCellParser:
                                                         found_next_season = True
                                                         break
                                             # Also search descendants of text/tag siblings
-                                            if hasattr(next_elem, 'find'):
+                                            if isinstance(next_elem, Tag):
                                                 small_in_sibling = next_elem.find('small')
                                                 if small_in_sibling:
                                                     # Check if there's a season link before this small
