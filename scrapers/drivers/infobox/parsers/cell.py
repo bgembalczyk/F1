@@ -506,8 +506,10 @@ class InfoboxCellParser:
         -> [{licence: {...}, years: {start: None, end: 2019}}, {licence: {...}, years: {start: 2020, end: None}}]
         """
         try:
-            # Extract all links from the cell first
+            # Extract all links from the cell first, filtering out image/file links
             all_links = self._link_extractor.extract_links(cell)
+            # Filter out links to files (images, etc.) - they typically contain "File:" in URL
+            licence_links = [link for link in all_links if not (link.get('url', '').lower().find('/file:') >= 0)]
             
             # Split by <br> tags to get separate licence entries
             # Create a copy to avoid modifying the original
@@ -522,14 +524,15 @@ class InfoboxCellParser:
             link_index = 0  # Track which link we're processing
             
             for line in lines:
-                # Skip lines that don't contain links or are just references
-                if not any(link.get('text', '') in line for link in all_links[link_index:]):
+                # Skip lines that don't contain links or are just references (like [1])
+                if not any(link.get('text', '') in line for link in licence_links[link_index:]):
                     continue
                 
                 # Find the link for this line
                 licence_link = None
-                for i, link in enumerate(all_links[link_index:], start=link_index):
-                    if link.get('text', '') in line:
+                for i, link in enumerate(licence_links[link_index:], start=link_index):
+                    link_text = link.get('text', '')
+                    if link_text and link_text in line:
                         licence_link = link
                         link_index = i + 1
                         break
