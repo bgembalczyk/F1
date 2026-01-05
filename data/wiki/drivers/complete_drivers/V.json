@@ -2477,13 +2477,13 @@
                   "seasons": [
                     {
                       "text": "2021",
-                      "url": "https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "LMP2",
+                        "url": "https://en.wikipedia.org/wiki/LMP2"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "LMP2",
-                    "url": "https://en.wikipedia.org/wiki/LMP2"
-                  }
+                  ]
                 }
               },
               {
@@ -10322,13 +10322,13 @@
                   "seasons": [
                     {
                       "text": "2023",
-                      "url": "https://en.wikipedia.org/wiki/2023_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2023_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "HY",
+                        "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "HY",
-                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
-                  }
+                  ]
                 }
               },
               {
@@ -48180,27 +48180,28 @@
               },
               {
                 "label": "Racing licence",
-                "value": {
-                  "text": "FIA Gold (until 2019) FIA Platinum (2020-)",
-                  "links": [
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/File:FIA_Gold_Driver.png"
-                    },
-                    {
+                "value": [
+                  {
+                    "licence": {
                       "text": "FIA Gold",
                       "url": "https://en.wikipedia.org/wiki/FIA_Gold_Categorisation"
                     },
-                    {
-                      "text": "",
-                      "url": "https://en.wikipedia.org/wiki/File:FIA_Platinum_Driver.png"
-                    },
-                    {
+                    "years": {
+                      "start": null,
+                      "end": 2019
+                    }
+                  },
+                  {
+                    "licence": {
                       "text": "FIA Platinum",
                       "url": "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+                    },
+                    "years": {
+                      "start": 2020,
+                      "end": null
                     }
-                  ]
-                }
+                  }
+                ]
               },
               {
                 "label": "Car number",
@@ -48378,13 +48379,13 @@
                   "seasons": [
                     {
                       "text": "2024",
-                      "url": "https://en.wikipedia.org/wiki/2024_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2024_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "Hypercar",
+                        "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "Hypercar",
-                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
-                  }
+                  ]
                 }
               },
               {

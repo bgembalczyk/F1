@@ -191,13 +191,13 @@
                   "seasons": [
                     {
                       "text": "2018-19",
-                      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "LMP1",
+                        "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "LMP1",
-                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
-                  }
+                  ]
                 }
               },
               {

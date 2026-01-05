@@ -15672,13 +15672,13 @@
                   "seasons": [
                     {
                       "text": "2014",
-                      "url": "https://en.wikipedia.org/wiki/2014_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2014_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "LMP1",
+                        "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "LMP1",
-                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
-                  }
+                  ]
                 }
               },
               {

@@ -29334,17 +29334,21 @@
                   "seasons": [
                     {
                       "text": "2019-20",
-                      "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "LMP1",
+                        "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
+                      }
                     },
                     {
                       "text": "2021",
-                      "url": "https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "LMH",
+                        "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "LMP1",
-                    "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
-                  }
+                  ]
                 }
               },
               {
@@ -41142,13 +41146,13 @@
                   "seasons": [
                     {
                       "text": "2016",
-                      "url": "https://en.wikipedia.org/wiki/2016_Super_GT_Series"
+                      "url": "https://en.wikipedia.org/wiki/2016_Super_GT_Series",
+                      "class": {
+                        "text": "GT500",
+                        "url": "https://en.wikipedia.org/wiki/Super_GT#GT500"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "GT500",
-                    "url": "https://en.wikipedia.org/wiki/Super_GT#GT500"
-                  }
+                  ]
                 }
               },
               {
@@ -48237,13 +48241,13 @@
                   "seasons": [
                     {
                       "text": "2023",
-                      "url": "https://en.wikipedia.org/wiki/2023_FIA_World_Endurance_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2023_FIA_World_Endurance_Championship",
+                      "class": {
+                        "text": "LMP2",
+                        "url": "https://en.wikipedia.org/wiki/LMP2"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "LMP2",
-                    "url": "https://en.wikipedia.org/wiki/LMP2"
-                  }
+                  ]
                 }
               },
               {
@@ -48345,17 +48349,21 @@
                   "seasons": [
                     {
                       "text": "2021",
-                      "url": "https://en.wikipedia.org/wiki/2021_European_Le_Mans_Series"
+                      "url": "https://en.wikipedia.org/wiki/2021_European_Le_Mans_Series",
+                      "class": {
+                        "text": "LMP2",
+                        "url": "https://en.wikipedia.org/wiki/LMP2"
+                      }
                     },
                     {
                       "text": "2024",
-                      "url": "https://en.wikipedia.org/wiki/2024_European_Le_Mans_Series"
+                      "url": "https://en.wikipedia.org/wiki/2024_European_Le_Mans_Series",
+                      "class": {
+                        "text": "LMP2",
+                        "url": "https://en.wikipedia.org/wiki/LMP2"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "LMP2",
-                    "url": "https://en.wikipedia.org/wiki/LMP2"
-                  }
+                  ]
                 }
               },
               {
@@ -58070,13 +58078,13 @@
                   "seasons": [
                     {
                       "text": "2025",
-                      "url": "https://en.wikipedia.org/wiki/2025_IMSA_SportsCar_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2025_IMSA_SportsCar_Championship",
+                      "class": {
+                        "text": "GTP",
+                        "url": "https://en.wikipedia.org/wiki/LMDh"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "GTP",
-                    "url": "https://en.wikipedia.org/wiki/LMDh"
-                  }
+                  ]
                 }
               },
               {
