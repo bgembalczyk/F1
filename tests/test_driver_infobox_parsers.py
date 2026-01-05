@@ -210,3 +210,46 @@ def test_previous_series_list_items(titles_parser):
     assert len(result[1]['years']) == 2  # 2020, 2021
     assert result[1]['years'][0]['year'] == 2020
     assert result[1]['years'][1]['year'] == 2021
+
+
+def test_year_range_in_single_link_not_expanded(link_extractor):
+    """Test that year ranges within a single link are kept as-is, not expanded.
+    
+    This handles cases like MRF Challenge where "2018-2019" is a single season name,
+    not a range of years to expand.
+    """
+    html = '''
+    <li><a href="/wiki/2018%E2%80%9319_MRF_Challenge_Formula_2000_Championship" 
+           title="2018–19 MRF Challenge Formula 2000 Championship">2018–2019</a></li>
+    '''
+    cell = BeautifulSoup(html, 'html.parser')
+    result = link_extractor.extract_year_list_with_links(cell)
+    
+    # Should keep the range as-is in a single entry with "text" field
+    assert len(result) == 1
+    assert result[0]['text'] == '2018-2019'
+    assert result[0]['url'] == 'https://en.wikipedia.org/wiki/2018%E2%80%9319_MRF_Challenge_Formula_2000_Championship'
+    
+    # Should NOT have "year" field (which would indicate expansion)
+    assert 'year' not in result[0]
+
+
+def test_year_range_with_separate_links_expanded(link_extractor):
+    """Test that year ranges with separate start/end links are still expanded."""
+    html = '''
+    <div>
+        <a href="/wiki/2021_Formula_2_Championship">2021</a>–<a href="/wiki/2023_Formula_2_Championship">2023</a>
+    </div>
+    '''
+    cell = BeautifulSoup(html, 'html.parser')
+    result = link_extractor.extract_year_list_with_links(cell)
+    
+    # Should expand to individual years
+    assert len(result) == 3
+    assert result[0]['year'] == 2021
+    assert result[1]['year'] == 2022
+    assert result[2]['year'] == 2023
+    
+    # Should NOT have "text" field (which would indicate non-expansion)
+    for entry in result:
+        assert 'text' not in entry

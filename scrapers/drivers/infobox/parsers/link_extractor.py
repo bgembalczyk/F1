@@ -137,14 +137,31 @@ class InfoboxLinkExtractor:
         
         Similar to parse_active_years, but returns list in format:
         [{year: 2008, url: ...}, {year: 2009, url: ...}, ...]
+        or [{text: "2018-2019", url: ...}] if range is part of a single link.
         
         Handles cases like:
         - Individual years: 2002, 2005, 2007
         - Ranges: 2007-2008 (expands and interpolates missing links)
+        - Single link with range: <a>2018-2019</a> (keeps as-is, doesn't expand)
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         links = [link for link in self.extract_links(cell) if self.is_year_link(link)]
         
+        # Check if any link contains a range pattern as its full text
+        # If so, keep it as-is (don't expand the range)
+        range_links = []
+        for link in links:
+            link_text = link.get("text", "")
+            # Check if the link text is a range like "2018-2019" or "2018–2019"
+            if re.fullmatch(r'\d{4}\s*[-–]\s*\d{2,4}', link_text):
+                # This is a single link representing a season range, keep it as-is
+                range_links.append(link)
+        
+        # If we found links that are ranges themselves, return them as-is
+        if range_links:
+            return range_links
+        
+        # Otherwise, use the original logic to expand ranges
         # Build a map of year -> link
         year_to_url: Dict[int, str | None] = {}
         for link in links:
