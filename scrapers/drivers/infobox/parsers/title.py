@@ -22,20 +22,21 @@ class InfoboxTitlesParser:
                 continue
 
             title_links = self._link_extractor.extract_title_links(value_cell)
-            year_links = self._link_extractor.extract_year_links(label_cell)
+            # Use extract_year_list_with_links to expand year ranges to individual years
+            year_data = self._link_extractor.extract_year_list_with_links(label_cell)
 
             if (
                 title_links
-                and year_links
-                and len(title_links) == len(year_links)
+                and year_data
+                and len(title_links) == len(year_data)
                 and len(title_links) > 1
             ):
-                for title_link, year_link in zip(title_links, year_links):
-                    titles.append({"title": title_link, "years": [year_link]})
+                for title_link, year_item in zip(title_links, year_data):
+                    titles.append({"title": title_link, "years": [year_item]})
                 continue
 
-            if title_links and year_links:
-                titles.append({"title": title_links[0], "years": year_links})
+            if title_links and year_data:
+                titles.append({"title": title_links[0], "years": year_data})
                 continue
 
             if title_links:
@@ -45,7 +46,7 @@ class InfoboxTitlesParser:
 
             title_text = clean_infobox_text(value_cell.get_text(" ", strip=True))
             titles.append(
-                {"title": {"text": title_text or "", "url": None}, "years": year_links}
+                {"title": {"text": title_text or "", "url": None}, "years": year_data}
             )
 
         return titles
@@ -119,3 +120,70 @@ class InfoboxTitlesParser:
         parts = re.split(r'<br\s*/?>', html, flags=re.IGNORECASE)
         # Filter out empty parts
         return [p.strip() for p in parts if p.strip()]
+    
+    def parse_major_victories_from_full_data(self, cell: Tag) -> List[Dict[str, Any]]:
+        """Parse major victories from a full_data cell.
+        
+        Handles HTML like:
+        <b>Major victories</b> <br> 
+        <a href="/wiki/24_Hours_of_Le_Mans" title="24 Hours of Le Mans">24 Hours of Le Mans</a> 
+        (<a href="/wiki/1934_24_Hours_of_Le_Mans" title="1934 24 Hours of Le Mans">1934</a>)
+        """
+        victories: List[Dict[str, Any]] = []
+        
+        # Get text and check if it contains "Major victories"
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        if "major victories" not in text.lower():
+            return victories
+        
+        # Extract all links from the cell
+        all_links = self._link_extractor.extract_links(cell)
+        
+        # Filter out links that are years (4 digits)
+        event_links = []
+        year_links = []
+        
+        for link in all_links:
+            link_text = link.get("text", "")
+            # Check if link text is a year
+            if re.fullmatch(r'\d{4}', link_text):
+                year_links.append(link)
+            else:
+                event_links.append(link)
+        
+        # Group event links with their associated year links
+        # Strategy: for each event link, find year links that come after it in the text
+        for event_link in event_links:
+            event_text = event_link.get("text", "")
+            
+            # Find this event in the text
+            event_index = text.find(event_text)
+            if event_index < 0:
+                continue
+            
+            # Find year links that appear after this event
+            associated_years = []
+            for year_link in year_links:
+                year_text = year_link.get("text", "")
+                year_index = text.find(year_text, event_index)
+                if year_index >= event_index:
+                    # Check if this year is before the next event
+                    # Find next event link position
+                    next_event_index = len(text)
+                    for other_event in event_links:
+                        if other_event == event_link:
+                            continue
+                        other_event_text = other_event.get("text", "")
+                        other_index = text.find(other_event_text, event_index + 1)
+                        if event_index < other_index < next_event_index:
+                            next_event_index = other_index
+                    
+                    if year_index < next_event_index:
+                        associated_years.append(year_link)
+            
+            victories.append({
+                "title": event_link,
+                "years": associated_years
+            })
+        
+        return victories
