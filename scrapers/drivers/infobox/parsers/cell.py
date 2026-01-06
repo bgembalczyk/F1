@@ -16,7 +16,12 @@ from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
+
 class InfoboxCellParser:
+    # Regex patterns for year detection (compiled once for performance)
+    _FOUR_DIGIT_YEAR_PATTERN = re.compile(r'^(19|20)\d{2}$')
+    _TWO_DIGIT_SUFFIX_PATTERN = re.compile(r'^\d{2}$')
+    
     def __init__(self, *, include_urls: bool, link_extractor: InfoboxLinkExtractor) -> None:
         self._include_urls = include_urls
         self._link_extractor = link_extractor
@@ -531,33 +536,43 @@ class InfoboxCellParser:
             return False
         return True
     
-    @staticmethod
-    def _is_season_like_text(text: str) -> bool:
+    def _is_season_like_text(self, text: str) -> bool:
         """Check if text looks like season data (years) rather than a class name.
         
-        Season-like text contains:
-        - Only years (4 digits): "2013", "2014"
-        - Years with ranges: "2013-2014", "2013–2014"
-        - Years with commas: "2013, 2014, 2015"
+        Season-like text contains only years and separators:
+        - Single years: "2013", "2014"
+        - Year ranges with 2-digit suffix: "2013-14", "2019–20" (where "14" means 2014, "20" means 2020)
+        - Full year ranges: "2013-2014", "2013–2014"
+        - Multiple years: "2013, 2014, 2015"
         - Combinations: "2013-2015, 2018"
         
-        Class names typically contain letters and possibly numbers but not in pure year format.
-        Examples: "LMP1", "LMH", "LMP2", "GT3"
+        Class names typically contain letters (possibly with numbers) in non-year format.
+        Examples of class names: "LMP1", "LMH", "LMP2", "GT3", "LMP2-H"
+        
+        Args:
+            text: The text to check
+            
+        Returns:
+            True if the text looks like season/year data, False if it looks like a class name
         """
         if not text:
             return False
         
-        # Remove common separators and whitespace
+        # Remove common separators and whitespace to get individual parts
         cleaned = text.replace(',', ' ').replace('–', ' ').replace('-', ' ')
         parts = cleaned.split()
         
-        # Check if all parts are 4-digit years or 2-digit year suffixes
+        # Check if all parts are either 4-digit years or 2-digit year suffixes
+        # 2-digit suffixes appear in ranges like "2019-20" where "20" represents 2020
         for part in parts:
             part = part.strip()
             if not part:
                 continue
-            # Must be either a 4-digit year (1900-2099) or a 2-digit suffix
-            if not (re.match(r'^(19|20)\d{2}$', part) or re.match(r'^\d{2}$', part)):
+            # Must be either a 4-digit year (1900-2099) or a 2-digit suffix (00-99)
+            # Note: 2-digit pattern is intentionally permissive as it's only used
+            # when combined with valid 4-digit years in the same text
+            if not (self._FOUR_DIGIT_YEAR_PATTERN.match(part) or 
+                    self._TWO_DIGIT_SUFFIX_PATTERN.match(part)):
                 return False
         
         # If we have at least one part and all parts are year-like, it's season data
