@@ -21631,27 +21631,27 @@
             },
             "years": [
               {
-                "text": "2018-2019",
-                "url": null
+                "year": 2009,
+                "url": "https://en.wikipedia.org/wiki/2009_Formula_BMW_Europe_season"
               },
               {
-                "text": "2024",
-                "url": "https://en.wikipedia.org/wiki/2024_IMSA_SportsCar_Championship"
+                "year": 2011,
+                "url": "https://en.wikipedia.org/wiki/2011_British_Formula_3_season"
               },
               {
-                "text": "2018",
+                "year": 2018,
                 "url": "https://en.wikipedia.org/wiki/2018_IMSA_SportsCar_Championship"
               },
               {
-                "text": "2024",
+                "year": 2019,
+                "url": "https://en.wikipedia.org/wiki/2019_IMSA_SportsCar_Championship"
+              },
+              {
+                "year": 2024,
                 "url": "https://en.wikipedia.org/wiki/2024_IMSA_SportsCar_Championship"
               },
               {
-                "text": "2011",
-                "url": null
-              },
-              {
-                "text": "2009",
+                "year": 2025,
                 "url": null
               }
             ]
