@@ -8589,8 +8589,44 @@
             },
             "years": [
               {
-                "text": "1977-1986",
+                "year": 1977,
                 "url": null
+              },
+              {
+                "year": 1978,
+                "url": null
+              },
+              {
+                "year": 1979,
+                "url": null
+              },
+              {
+                "year": 1980,
+                "url": null
+              },
+              {
+                "year": 1981,
+                "url": null
+              },
+              {
+                "year": 1982,
+                "url": null
+              },
+              {
+                "year": 1983,
+                "url": null
+              },
+              {
+                "year": 1984,
+                "url": null
+              },
+              {
+                "year": 1985,
+                "url": null
+              },
+              {
+                "year": 1986,
+                "url": "https://en.wikipedia.org/wiki/1986_Japanese_Formula_Two_Championship"
               }
             ]
           },
@@ -36667,10 +36703,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1963,
-                  "end": 1965
-                }
+                "value": [
+                  {
+                    "year": 1963,
+                    "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+                  },
+                  {
+                    "year": 1965,
+                    "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",

@@ -5388,10 +5388,20 @@
             "rows": [
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1950,
-                  "end": 1954
-                }
+                "value": [
+                  {
+                    "year": 1950,
+                    "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+                  },
+                  {
+                    "year": 1952,
+                    "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",

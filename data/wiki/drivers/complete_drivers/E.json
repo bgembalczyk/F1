@@ -30122,10 +30122,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1960,
-                  "end": 1962
-                }
+                "value": [
+                  {
+                    "year": 1960,
+                    "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
+                  },
+                  {
+                    "year": 1962,
+                    "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",

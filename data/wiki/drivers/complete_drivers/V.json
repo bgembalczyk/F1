@@ -75,10 +75,20 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1961,
-                  "end": 1962
-                }
+                "value": [
+                  {
+                    "year": 1961,
+                    "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                  },
+                  {
+                    "year": 1962,
+                    "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+                  },
+                  {
+                    "year": 1965,
+                    "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -41967,10 +41977,28 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1976,
-                  "end": 1978
-                }
+                "value": [
+                  {
+                    "year": 1976,
+                    "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                  },
+                  {
+                    "year": 1977,
+                    "url": null
+                  },
+                  {
+                    "year": 1978,
+                    "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+                  },
+                  {
+                    "year": 1981,
+                    "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1982,
+                    "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -42119,10 +42147,24 @@
             "rows": [
               {
                 "label": "Years active",
-                "value": {
-                  "start": 1981,
-                  "end": 1982
-                }
+                "value": [
+                  {
+                    "year": 1981,
+                    "url": "https://en.wikipedia.org/wiki/1981_World_Sportscar_Championship"
+                  },
+                  {
+                    "year": 1982,
+                    "url": "https://en.wikipedia.org/wiki/1982_World_Sportscar_Championship"
+                  },
+                  {
+                    "year": 1986,
+                    "url": "https://en.wikipedia.org/wiki/1986_World_Sportscar_Championship"
+                  },
+                  {
+                    "year": 1987,
+                    "url": "https://en.wikipedia.org/wiki/1987_World_Sportscar_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -46614,10 +46656,20 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1956,
-                  "end": 1957
-                }
+                "value": [
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  },
+                  {
+                    "year": 1956,
+                    "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                  },
+                  {
+                    "year": 1957,
+                    "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",

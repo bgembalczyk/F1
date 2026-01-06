@@ -180,11 +180,13 @@
               {
                 "label": "Best finish",
                 "value": {
-                  "result": "23rd (tie) ( 1936 )",
-                  "season": {
-                    "start": null,
-                    "end": null
-                  }
+                  "result": "23rd",
+                  "seasons": [
+                    {
+                      "text": "1936",
+                      "url": "https://en.wikipedia.org/wiki/1936_AAA_Championship_Car_season"
+                    }
+                  ]
                 }
               },
               {
@@ -5273,10 +5275,44 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1977,
-                  "end": 1979
-                }
+                "value": [
+                  {
+                    "year": 1977,
+                    "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                  },
+                  {
+                    "year": 1978,
+                    "url": null
+                  },
+                  {
+                    "year": 1979,
+                    "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
+                  },
+                  {
+                    "year": 1981,
+                    "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1982,
+                    "url": null
+                  },
+                  {
+                    "year": 1983,
+                    "url": null
+                  },
+                  {
+                    "year": 1984,
+                    "url": null
+                  },
+                  {
+                    "year": 1985,
+                    "url": null
+                  },
+                  {
+                    "year": 1986,
+                    "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -10695,10 +10731,80 @@
             "rows": [
               {
                 "label": "Years active",
-                "value": {
-                  "start": 2005,
-                  "end": 2021
-                }
+                "value": [
+                  {
+                    "year": 1987,
+                    "url": "https://en.wikipedia.org/wiki/1987_World_Touring_Car_Championship"
+                  },
+                  {
+                    "year": 2005,
+                    "url": "https://en.wikipedia.org/wiki/2005_World_Touring_Car_Championship"
+                  },
+                  {
+                    "year": 2006,
+                    "url": null
+                  },
+                  {
+                    "year": 2007,
+                    "url": null
+                  },
+                  {
+                    "year": 2008,
+                    "url": null
+                  },
+                  {
+                    "year": 2009,
+                    "url": null
+                  },
+                  {
+                    "year": 2010,
+                    "url": null
+                  },
+                  {
+                    "year": 2011,
+                    "url": null
+                  },
+                  {
+                    "year": 2012,
+                    "url": null
+                  },
+                  {
+                    "year": 2013,
+                    "url": null
+                  },
+                  {
+                    "year": 2014,
+                    "url": null
+                  },
+                  {
+                    "year": 2015,
+                    "url": null
+                  },
+                  {
+                    "year": 2016,
+                    "url": null
+                  },
+                  {
+                    "year": 2017,
+                    "url": null
+                  },
+                  {
+                    "year": 2018,
+                    "url": null
+                  },
+                  {
+                    "year": 2019,
+                    "url": null
+                  },
+                  {
+                    "year": 2020,
+                    "url": null
+                  },
+                  {
+                    "year": 2021,
+                    "url": "https://en.wikipedia.org/wiki/2021_World_Touring_Car_Cup"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -10794,10 +10900,36 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1987,
-                  "end": 1992
-                }
+                "value": [
+                  {
+                    "year": 1987,
+                    "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1988,
+                    "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1989,
+                    "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1990,
+                    "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1991,
+                    "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1992,
+                    "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+                  },
+                  {
+                    "year": 1995,
+                    "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -11041,8 +11173,12 @@
             },
             "years": [
               {
-                "text": "1995-1996",
-                "url": null
+                "year": 1995,
+                "url": "https://en.wikipedia.org/wiki/1995_Deutsche_Tourenwagen_Meisterschaft"
+              },
+              {
+                "year": 1996,
+                "url": "https://en.wikipedia.org/wiki/1996_International_Touring_Car_Championship"
               }
             ]
           },
@@ -11073,8 +11209,12 @@
             },
             "years": [
               {
-                "text": "1983-1984",
+                "year": 1983,
                 "url": null
+              },
+              {
+                "year": 1984,
+                "url": "https://en.wikipedia.org/wiki/1984_Italian_Formula_Three_Championship"
               }
             ]
           }
@@ -26031,10 +26171,32 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1950,
-                  "end": 1952
-                }
+                "value": [
+                  {
+                    "year": 1950,
+                    "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+                  },
+                  {
+                    "year": 1951,
+                    "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+                  },
+                  {
+                    "year": 1952,
+                    "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  },
+                  {
+                    "year": 1955,
+                    "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
+                  },
+                  {
+                    "year": 1956,
+                    "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -27514,10 +27676,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1964,
-                  "end": 1966
-                }
+                "value": [
+                  {
+                    "year": 1964,
+                    "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+                  },
+                  {
+                    "year": 1966,
+                    "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -28784,10 +28952,32 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1961,
-                  "end": 1964
-                }
+                "value": [
+                  {
+                    "year": 1959,
+                    "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+                  },
+                  {
+                    "year": 1961,
+                    "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                  },
+                  {
+                    "year": 1962,
+                    "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+                  },
+                  {
+                    "year": 1963,
+                    "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+                  },
+                  {
+                    "year": 1964,
+                    "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+                  },
+                  {
+                    "year": 1966,
+                    "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -29168,10 +29358,28 @@
             "rows": [
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1953,
-                  "end": 1954
-                }
+                "value": [
+                  {
+                    "year": 1953,
+                    "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  },
+                  {
+                    "year": 1956,
+                    "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                  },
+                  {
+                    "year": 1957,
+                    "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+                  },
+                  {
+                    "year": 1958,
+                    "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -29877,10 +30085,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1980,
-                  "end": 1984
-                }
+                "value": [
+                  {
+                    "year": 1980,
+                    "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
+                  },
+                  {
+                    "year": 1984,
+                    "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -35337,10 +35551,28 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1967,
-                  "end": 1969
-                }
+                "value": [
+                  {
+                    "year": 1963,
+                    "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+                  },
+                  {
+                    "year": 1965,
+                    "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
+                  },
+                  {
+                    "year": 1967,
+                    "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
+                  },
+                  {
+                    "year": 1968,
+                    "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+                  },
+                  {
+                    "year": 1969,
+                    "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -35619,10 +35851,36 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1953,
-                  "end": 1954
-                }
+                "value": [
+                  {
+                    "year": 1951,
+                    "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
+                  },
+                  {
+                    "year": 1953,
+                    "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                  },
+                  {
+                    "year": 1954,
+                    "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
+                  },
+                  {
+                    "year": 1956,
+                    "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                  },
+                  {
+                    "year": 1957,
+                    "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+                  },
+                  {
+                    "year": 1958,
+                    "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+                  },
+                  {
+                    "year": 1959,
+                    "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -35771,10 +36029,16 @@
               },
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1957,
-                  "end": 1959
-                }
+                "value": [
+                  {
+                    "year": 1957,
+                    "url": "https://en.wikipedia.org/wiki/1957_Formula_One_season"
+                  },
+                  {
+                    "year": 1959,
+                    "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+                  }
+                ]
               },
               {
                 "label": "Teams",
@@ -36585,10 +36849,20 @@
             "rows": [
               {
                 "label": "Active years",
-                "value": {
-                  "start": 1978,
-                  "end": 1982
-                }
+                "value": [
+                  {
+                    "year": 1978,
+                    "url": "https://en.wikipedia.org/wiki/1978_British_Formula_One_Championship"
+                  },
+                  {
+                    "year": 1980,
+                    "url": "https://en.wikipedia.org/wiki/1980_British_Formula_One_Championship"
+                  },
+                  {
+                    "year": 1982,
+                    "url": "https://en.wikipedia.org/wiki/1982_British_Formula_One_Championship"
+                  }
+                ]
               },
               {
                 "label": "Entries",
