@@ -52,6 +52,8 @@ class InfoboxCareerParser:
                     value = self._cell_parser.parse_finished_last_season(value_cell)
                 elif label == "Racing licence":
                     value = self._cell_parser.parse_racing_licence(value_cell)
+                elif label == "Nationality":
+                    value = self._cell_parser.parse_nationality(value_cell)
                 else:
                     value = self._cell_parser.parse_cell(value_cell)
                 rows.append(
@@ -61,7 +63,15 @@ class InfoboxCareerParser:
                     }
                 )
             elif "full_data_cell" in row:
-                rows.append(
-                    {"full_data": self._cell_parser.parse_full_data(row["full_data_cell"])}
-                )
+                # Check if this is a collapsible career statistics table
+                if "collapsible_table" in row:
+                    # Parse as a career section
+                    collapsible_table = row["collapsible_table"]
+                    career_stats = self._cell_parser.parse_collapsible_career_table(collapsible_table)
+                    if career_stats:
+                        rows.append({"collapsible_career": career_stats})
+                else:
+                    rows.append(
+                        {"full_data": self._cell_parser.parse_full_data(row["full_data_cell"])}
+                    )
         return {"title": title, "rows": rows}

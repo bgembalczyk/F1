@@ -409,6 +409,7 @@ class InfoboxCellParser:
                                     while next_elem and not found_small and not found_next_season:
                                         next_elem = next_elem.next_sibling
                                         if next_elem:
+                                            # Check if next_elem is a Tag before calling find_all
                                             if hasattr(next_elem, 'name'):
                                                 if next_elem.name == 'small':
                                                     found_small = next_elem
@@ -464,14 +465,27 @@ class InfoboxCellParser:
                         for link in season_links
                     ]
             else:
-                # No links - try to extract years from parentheses
-                paren_match = re.search(r'\(([^)]+)\)', text)
-                if paren_match:
-                    paren_content = paren_match.group(1)
-                    # Extract all years
-                    years = [int(y) for y in re.findall(r'\b(\d{4})\b', paren_content)]
+                # No links - try to extract years from text
+                # Pattern 1: "1st in 1957" -> extract years after "in"
+                # Pattern 2: "1st in 1952, 1954" -> extract comma-separated years
+                if " in " in text:
+                    # Extract text after "in"
+                    _, years_text = text.split(" in ", 1)
+                    # Remove any parenthetical content
+                    years_text = re.sub(r'\s*\([^)]*\)', '', years_text).strip()
+                    # Extract all years from the text
+                    years = [int(y) for y in re.findall(r'\b(\d{4})\b', years_text)]
                     if years:
                         result["seasons"] = years
+                else:
+                    # Try to find years in parentheses
+                    paren_match = re.search(r'\(([^)]+)\)', text)
+                    if paren_match:
+                        paren_content = paren_match.group(1)
+                        # Extract all years
+                        years = [int(y) for y in re.findall(r'\b(\d{4})\b', paren_content)]
+                        if years:
+                            result["seasons"] = years
             
             
             return result
@@ -801,7 +815,7 @@ class InfoboxCellParser:
         nested_table = cell.find("table")
         if nested_table:
             table_data = self.parse_nested_table(nested_table)
-            # Check if this is a Wins/Podiums/Poles table
+            # Check if this is a Wins/Podiums/Poles table or Wins/Top tens/Poles table
             if self._is_stats_table(table_data):
                 # Extract the values directly and return only stats
                 stats = self._extract_stats_from_table(table_data)
@@ -815,6 +829,7 @@ class InfoboxCellParser:
                 return payload
         
         # Check if this is "X races run over Y years" pattern
+        # Only run regex if text is not None
         if text is not None:
             races_run_match = re.match(r'^(\d+)\s+races?\s+run\s+over', text)
             if races_run_match:
@@ -828,39 +843,59 @@ class InfoboxCellParser:
     
     @staticmethod
     def _is_stats_table(table_data: Dict[str, Any]) -> bool:
-        """Check if table is a Wins/Podiums/Poles stats table."""
+        """Check if table is a Wins/Podiums/Poles or Wins/Top tens/Poles stats table."""
         headers = table_data.get("headers", [])
         if len(headers) != 3:
             return False
         # Normalize headers for comparison
         normalized = [h.lower().strip() for h in headers]
-        expected = ["wins", "podiums", "poles"]
-        return normalized == expected
+        expected_wins_podiums_poles = ["wins", "podiums", "poles"]
+        expected_wins_topten_poles = ["wins", "top tens", "poles"]
+        return normalized == expected_wins_podiums_poles or normalized == expected_wins_topten_poles
     
     @staticmethod
     def _extract_stats_from_table(table_data: Dict[str, Any]) -> Dict[str, int | None]:
-        """Extract Wins, Podiums, Poles from stats table."""
+        """Extract Wins, Podiums/Top tens, Poles from stats table."""
+        headers = table_data.get("headers", [])
+        normalized = [h.lower().strip() for h in headers]
+        
         stats: Dict[str, int | None] = {
             "wins": None,
             "podiums": None,
+            "top_tens": None,
             "poles": None
         }
         rows = table_data.get("rows", [])
         if rows and len(rows[0]) >= 3:
             # First row contains the values
+            # Determine if we have podiums or top tens based on header
+            has_podiums = "podiums" in normalized
+            has_top_tens = "top tens" in normalized
+            
             try:
                 stats["wins"] = int(rows[0][0])
             except (ValueError, IndexError):
                 pass
-            try:
-                stats["podiums"] = int(rows[0][1])
-            except (ValueError, IndexError):
-                pass
+            
+            # Second column is either podiums or top tens
+            if has_podiums:
+                try:
+                    stats["podiums"] = int(rows[0][1])
+                except (ValueError, IndexError):
+                    pass
+            elif has_top_tens:
+                try:
+                    stats["top_tens"] = int(rows[0][1])
+                except (ValueError, IndexError):
+                    pass
+            
             try:
                 stats["poles"] = int(rows[0][2])
             except (ValueError, IndexError):
                 pass
-        return stats
+        
+        # Remove None values for cleaner output
+        return {k: v for k, v in stats.items() if v is not None}
 
     @staticmethod
     def parse_nested_table(table: Tag) -> Dict[str, Any]:
@@ -878,3 +913,154 @@ class InfoboxCellParser:
             if cells:
                 data_rows.append(cells)
         return {"headers": headers, "rows": data_rows}
+    
+    def parse_nationality(self, cell: Tag) -> List[str] | List[Dict[str, Any]]:
+        """Parse nationality field.
+        
+        Handles cases like:
+        - "American or Italian" -> ["American", "Italian"]
+        - "Federation of Rhodesia and Nyasaland (1963)" with year ranges -> structured data
+        """
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        
+        # Check if there are year references (indicating nationality changed by season)
+        has_years = re.search(r'\(\s*\d{4}', text)
+        
+        if has_years:
+            # Parse structured nationality with years
+            # Split by <br> tags to separate different nationalities
+            br_parts = []
+            html = str(cell)
+            parts = re.split(r'<br\s*/?>', html, flags=re.IGNORECASE)
+            
+            nationalities = []
+            
+            for part_html in parts:
+                if not part_html.strip():
+                    continue
+                
+                # Parse this part
+                from bs4 import BeautifulSoup
+                part_soup = BeautifulSoup(part_html, 'html.parser')
+                part_text = clean_infobox_text(part_soup.get_text(" ", strip=True)) or ""
+                
+                # Extract nationality name (before any year information)
+                # Pattern: "Nationality_name (year)" or "Nationality_name (year, year-year)"
+                # Remove year information to get nationality name
+                nationality_name = re.sub(r'\s*\([^)]*\d{4}[^)]*\)', '', part_text).strip()
+                
+                # Extract all year patterns from this part
+                # Look for individual years and year ranges in <small> tags or parentheses
+                years = []
+                
+                # Find all year patterns in text
+                # Pattern 1: (1963) -> single year
+                # Pattern 2: (1965, 1967-1968) -> multiple years and ranges
+                year_patterns = re.findall(r'\(([^)]*\d{4}[^)]*)\)', part_text)
+                
+                for year_pattern in year_patterns:
+                    # Extract individual years and ranges
+                    # Find ranges first
+                    for range_match in re.finditer(r'(\d{4})\s*[-–]\s*(\d{4})', year_pattern):
+                        start = int(range_match.group(1))
+                        end = int(range_match.group(2))
+                        for year in range(start, end + 1):
+                            if year not in years:
+                                years.append(year)
+                    
+                    # Find individual years
+                    for year_match in re.finditer(r'\b(\d{4})\b', year_pattern):
+                        year = int(year_match.group(1))
+                        if year not in years:
+                            years.append(year)
+                
+                if nationality_name and years:
+                    nationalities.append({
+                        "nationality": nationality_name,
+                        "years": sorted(years)
+                    })
+                elif nationality_name:
+                    # Nationality without specific years
+                    nationalities.append({
+                        "nationality": nationality_name,
+                        "years": []
+                    })
+            
+            return nationalities if nationalities else []
+        else:
+            # Simple case: just extract nationality names separated by "or"
+            # Split by "or" to get multiple nationalities
+            parts = re.split(r'\s+or\s+', text, flags=re.IGNORECASE)
+            nationalities = []
+            
+            for part in parts:
+                # Clean up each part
+                part = part.strip()
+                # Remove any reference markers like [1]
+                part = re.sub(r'\[\d+\]', '', part).strip()
+                if part:
+                    nationalities.append(part)
+            
+            return nationalities if len(nationalities) > 1 else (nationalities or [])
+    
+    def parse_collapsible_career_table(self, table: Tag) -> Dict[str, Any] | None:
+        """Parse collapsible career statistics table (e.g., motorcycle racing).
+        
+        Example structure:
+        <table class="mw-collapsible">
+          <tr><th>Title</th></tr>
+          <tr><th>Active years</th><td>1960-1964</td></tr>
+          <tr><th>Starts</th><td>129</td></tr>
+          ...
+        </table>
+        """
+        if not table:
+            return None
+        
+        # Extract the title from the first row
+        title_row = table.find("tr")
+        title = None
+        if title_row:
+            title_th = title_row.find("th")
+            if title_th:
+                title = clean_infobox_text(title_th.get_text(" ", strip=True))
+        
+        # Parse all label-value rows
+        rows = []
+        for tr in table.find_all("tr"):
+            # Skip the title row
+            th_cells = tr.find_all("th")
+            td_cells = tr.find_all("td")
+            
+            # If we have one th and one td, it's a label-value pair
+            if len(th_cells) == 1 and len(td_cells) == 1:
+                label = clean_infobox_text(th_cells[0].get_text(" ", strip=True))
+                value_cell = td_cells[0]
+                
+                # Parse value based on label
+                if label in {"Active years", "Years active"}:
+                    value = self.parse_active_years(value_cell)
+                elif label == "Team":
+                    value = self.parse_teams(value_cell)
+                elif label in {"Starts", "Wins", "Podiums", "Points"}:
+                    value = self.parse_int_cell(value_cell)
+                elif label in {"First race", "Last race", "First win", "Last win"}:
+                    value = self.parse_race_event(value_cell)
+                else:
+                    value = self.parse_cell(value_cell)
+                
+                rows.append({
+                    "label": label,
+                    "value": value
+                })
+            # If we have a full-width row with colspan=2, it might be a stats table
+            elif len(td_cells) == 1 and td_cells[0].get("colspan") == "2":
+                nested_table = td_cells[0].find("table")
+                if nested_table:
+                    table_data = self.parse_nested_table(nested_table)
+                    rows.append({"table": table_data})
+        
+        return {
+            "title": title,
+            "rows": rows
+        } if rows else None

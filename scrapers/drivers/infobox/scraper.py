@@ -127,9 +127,21 @@ class DriverInfoboxScraper:
             if title in self._IGNORED_SECTIONS:
                 continue
             if title == "Championship titles":
-                parsed["championship_titles"] = self._titles_parser.parse_titles(
-                    section["rows"]
-                )
+                # Parse championship titles and also check for major victories in full_data
+                champ_data = self._titles_parser.parse_titles(section["rows"])
+                parsed["championship_titles"] = champ_data
+                
+                # Check for major victories in full_data cells
+                for row in section.get("rows", []):
+                    if "full_data_cell" in row:
+                        full_data_cell = row["full_data_cell"]
+                        full_data_text = clean_infobox_text(full_data_cell.get_text(" ", strip=True)) or ""
+                        
+                        # Check if this contains "Major victories"
+                        if "major victories" in full_data_text.lower():
+                            # Parse major victories from this cell
+                            major_vics = self._titles_parser.parse_major_victories_from_full_data(full_data_cell)
+                            parsed["major_victories"].extend(major_vics)
                 continue
             if title == "Major victories":
                 parsed["major_victories"] = self._titles_parser.parse_titles(

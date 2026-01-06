@@ -125,6 +125,9 @@ class InfoboxGeneralParser:
                         place_text = (place_text + " " + remaining).strip()
                     break
         
+        # Filter out "(aged X)" pattern from place text
+        place_text = re.sub(r'\s*\(aged\s+\d+\)', '', place_text, flags=re.IGNORECASE)
+        
         place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
         place: List[str | LinkRecord] = place_parts
         if self._include_urls and place_parts:
