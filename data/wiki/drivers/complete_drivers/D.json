@@ -80,7 +80,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Belgian"
+                  {
+                    "text": "Belgian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Belgium"
+                  }
                 ]
               },
               {
@@ -9942,7 +9945,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Irish"
+                  {
+                    "text": "Irish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Ireland"
+                  }
                 ]
               },
               {
@@ -15683,7 +15689,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {
@@ -25762,7 +25771,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "French"
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
                 ]
               },
               {
@@ -30263,7 +30275,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Brazilian"
+                  {
+                    "text": "Brazilian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
+                  }
                 ]
               },
               {
@@ -35634,7 +35649,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {
@@ -38211,7 +38229,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Australian"
+                  {
+                    "text": "Australian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
+                  }
                 ]
               },
               {

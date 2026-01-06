@@ -1926,8 +1926,8 @@
             },
             "years": [
               {
-                "year": 1979,
-                "url": null
+                "year": 1983,
+                "url": "https://en.wikipedia.org/wiki/1983_Pocono_500"
               }
             ]
           },
@@ -1938,8 +1938,8 @@
             },
             "years": [
               {
-                "year": 1983,
-                "url": "https://en.wikipedia.org/wiki/1983_Pocono_500"
+                "year": 1979,
+                "url": null
               }
             ]
           }
@@ -1952,7 +1952,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Italian"
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
                 ]
               },
               {
@@ -11872,7 +11875,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Italian"
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
                 ]
               },
               {
@@ -13460,7 +13466,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Argentine"
+                  {
+                    "text": "Argentine",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Argentina"
+                  }
                 ]
               },
               {
@@ -21749,7 +21758,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Italian"
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
                 ]
               },
               {
@@ -25475,7 +25487,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Swiss"
+                  {
+                    "text": "Swiss",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Switzerland"
+                  }
                 ]
               },
               {
@@ -26373,7 +26388,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Italian"
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
                 ]
               },
               {
@@ -38984,7 +39002,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Brazilian"
+                  {
+                    "text": "Brazilian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
+                  }
                 ]
               },
               {
@@ -48347,7 +48368,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Brazilian"
+                  {
+                    "text": "Brazilian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
+                  }
                 ]
               },
               {
@@ -75972,7 +75996,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "German"
+                  {
+                    "text": "German",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
+                  }
                 ]
               },
               {

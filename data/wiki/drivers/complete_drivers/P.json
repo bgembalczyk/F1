@@ -82,7 +82,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Brazilian"
+                  {
+                    "text": "Brazilian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
+                  }
                 ]
               },
               {
@@ -4040,7 +4043,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {
@@ -8522,7 +8528,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {
@@ -13149,7 +13158,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "French"
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
                 ]
               },
               {
@@ -23935,7 +23947,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {
@@ -28601,7 +28616,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Italian"
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
                 ]
               },
               {
@@ -36176,7 +36194,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Italian"
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
                 ]
               },
               {
@@ -36395,7 +36416,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Mexican"
+                  {
+                    "text": "Mexican",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Mexico"
+                  }
                 ]
               },
               {
@@ -54488,7 +54512,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Swiss"
+                  {
+                    "text": "Swiss",
+                    "url": "https://en.wikipedia.org/wiki/Switzerland"
+                  }
                 ]
               },
               {
@@ -55837,7 +55864,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "French"
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
                 ]
               },
               {
@@ -62721,7 +62751,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Swedish"
+                  {
+                    "text": "Swedish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
+                  }
                 ]
               },
               {
@@ -68430,7 +68463,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Russian"
+                  {
+                    "text": "Russian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Russia"
+                  }
                 ]
               },
               {
@@ -74566,8 +74602,8 @@
             },
             "years": [
               {
-                "year": 2019,
-                "url": "https://en.wikipedia.org/wiki/2019_Formula_Renault_Eurocup"
+                "year": 2021,
+                "url": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
               }
             ]
           },
@@ -74590,8 +74626,8 @@
             },
             "years": [
               {
-                "year": 2021,
-                "url": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
+                "year": 2019,
+                "url": "https://en.wikipedia.org/wiki/2019_Formula_Renault_Eurocup"
               }
             ]
           },
@@ -74611,7 +74647,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Australian"
+                  {
+                    "text": "Australian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
+                  }
                 ]
               },
               {
@@ -79204,7 +79243,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "French"
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
                 ]
               },
               {
@@ -88450,7 +88492,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Brazilian"
+                  {
+                    "text": "Brazilian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
+                  }
                 ]
               },
               {
@@ -95532,7 +95577,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "French"
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
                 ]
               },
               {
@@ -97834,36 +97882,56 @@
             },
             "years": [
               {
-                "year": 1989,
-                "url": null
-              },
-              {
-                "year": 1994,
-                "url": "https://en.wikipedia.org/wiki/1994_Italian_Superturismo_Championship"
-              },
-              {
-                "year": 1995,
-                "url": "https://en.wikipedia.org/wiki/1995_Italian_Superturismo_Championship"
-              },
-              {
-                "year": 1996,
-                "url": "https://en.wikipedia.org/wiki/1996_Super_Tourenwagen_Cup"
-              },
-              {
                 "year": 2000,
                 "url": "https://en.wikipedia.org/wiki/2000_12_Hours_of_Sebring"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "ALMS",
+              "url": "https://en.wikipedia.org/wiki/American_Le_Mans_Series"
+            },
+            "years": [
               {
                 "year": 2001,
                 "url": "https://en.wikipedia.org/wiki/2001_American_Le_Mans_Series"
-              },
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Super Tourenwagen Cup",
+              "url": "https://en.wikipedia.org/wiki/Super_Tourenwagen_Cup"
+            },
+            "years": [
               {
-                "year": 2005,
-                "url": "https://en.wikipedia.org/wiki/2005_American_Le_Mans_Series"
-              },
+                "year": 1996,
+                "url": "https://en.wikipedia.org/wiki/1996_Super_Tourenwagen_Cup"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Italian Superturismo",
+              "url": "https://en.wikipedia.org/wiki/Italian_Superturismo"
+            },
+            "years": [
               {
-                "year": 2007,
-                "url": "https://en.wikipedia.org/wiki/2007_12_Hours_of_Sebring"
+                "year": 1994,
+                "url": "https://en.wikipedia.org/wiki/1994_Italian_Superturismo_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Nürburgring 24 Hours",
+              "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring_24_Hours"
+            },
+            "years": [
+              {
+                "year": 1989,
+                "url": null
               }
             ]
           }
@@ -97876,7 +97944,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Italian"
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
                 ]
               },
               {
@@ -114745,7 +114816,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "French"
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
                 ]
               },
               {
@@ -119888,7 +119962,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {
@@ -122658,7 +122735,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Rhodesian"
+                  {
+                    "text": "Rhodesian",
+                    "url": "https://en.wikipedia.org/wiki/Rhodesia"
+                  }
                 ]
               },
               {

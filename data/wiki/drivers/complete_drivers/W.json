@@ -2369,7 +2369,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {
@@ -9624,7 +9627,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {
@@ -17086,7 +17092,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Australian"
+                  {
+                    "text": "Australian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
+                  }
                 ]
               },
               {
@@ -23193,7 +23202,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "German"
+                  {
+                    "text": "German",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
+                  }
                 ]
               },
               {
@@ -53444,7 +53456,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "South African"
+                  {
+                    "text": "South African",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_South_Africa"
+                  }
                 ]
               },
               {
@@ -65262,7 +65277,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "West German"
+                  {
+                    "text": "West German",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
+                  }
                 ]
               },
               {
@@ -79236,7 +79254,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Austrian"
+                  {
+                    "text": "Austrian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"
+                  }
                 ]
               },
               {

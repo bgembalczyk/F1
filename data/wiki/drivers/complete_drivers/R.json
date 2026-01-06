@@ -731,7 +731,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Finnish"
+                  {
+                    "text": "Finnish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Finland"
+                  }
                 ]
               },
               {
@@ -14210,7 +14213,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Austrian"
+                  {
+                    "text": "Austrian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"
+                  }
                 ]
               },
               {
@@ -16773,7 +16779,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Mexican"
+                  {
+                    "text": "Mexican",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Mexico"
+                  }
                 ]
               },
               {
@@ -23794,7 +23803,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Swiss"
+                  {
+                    "text": "Swiss",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Switzerland"
+                  }
                 ]
               },
               {
@@ -29592,7 +29604,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {
@@ -38516,7 +38531,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Argentine"
+                  {
+                    "text": "Argentine",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Argentina"
+                  }
                 ]
               },
               {
@@ -43468,7 +43486,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "American"
+                  {
+                    "text": "American",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_States"
+                  }
                 ]
               },
               {
@@ -50687,7 +50708,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Brazilian"
+                  {
+                    "text": "Brazilian",
+                    "url": "https://en.wikipedia.org/wiki/Brazil"
+                  }
                 ]
               },
               {
@@ -52438,8 +52462,8 @@
             },
             "years": [
               {
-                "year": 2008,
-                "url": "https://en.wikipedia.org/wiki/2008_Formula_Renault_2.0_West_European_Cup"
+                "year": 2009,
+                "url": "https://en.wikipedia.org/wiki/2009_British_Formula_3_International_Series"
               }
             ]
           },
@@ -52450,8 +52474,8 @@
             },
             "years": [
               {
-                "year": 2009,
-                "url": "https://en.wikipedia.org/wiki/2009_British_Formula_3_International_Series"
+                "year": 2008,
+                "url": "https://en.wikipedia.org/wiki/2008_Formula_Renault_2.0_West_European_Cup"
               }
             ]
           }
@@ -52464,7 +52488,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Australian"
+                  {
+                    "text": "Australian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
+                  }
                 ]
               },
               {
@@ -60837,7 +60864,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Austrian"
+                  {
+                    "text": "Austrian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"
+                  }
                 ]
               },
               {
@@ -65084,7 +65114,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Mexican"
+                  {
+                    "text": "Mexican",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Mexico"
+                  }
                 ]
               },
               {
@@ -74736,7 +74769,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Spanish"
+                  {
+                    "text": "Spanish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Spain"
+                  }
                 ]
               },
               {
@@ -80197,7 +80233,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Finnish"
+                  {
+                    "text": "Finnish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Finland"
+                  }
                 ]
               },
               {
@@ -86887,7 +86926,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "German"
+                  {
+                    "text": "German",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
+                  }
                 ]
               },
               {
@@ -92432,7 +92474,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "French"
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
                 ]
               },
               {
@@ -99004,12 +99049,32 @@
             },
             "years": [
               {
-                "year": 2006,
-                "url": null
-              },
+                "year": 2008,
+                "url": "https://en.wikipedia.org/wiki/2008_Formula_BMW_Americas_season"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Formula BMW Americas",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW#United_States_&_Americas"
+            },
+            "years": [
               {
                 "year": 2008,
                 "url": "https://en.wikipedia.org/wiki/2008_Formula_BMW_Americas_season"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Skip Barber Western",
+              "url": "https://en.wikipedia.org/wiki/Skip_Barber_Racing_School"
+            },
+            "years": [
+              {
+                "year": 2006,
+                "url": null
               }
             ]
           }
@@ -99137,7 +99202,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "American"
+                  {
+                    "text": "American",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_States"
+                  }
                 ]
               },
               {
@@ -112146,8 +112214,8 @@
             },
             "years": [
               {
-                "year": 2014,
-                "url": "https://en.wikipedia.org/wiki/2014_BRDC_Formula_4_Championship"
+                "year": 2018,
+                "url": "https://en.wikipedia.org/wiki/2018_Formula_2_Championship"
               }
             ]
           },
@@ -112170,8 +112238,8 @@
             },
             "years": [
               {
-                "year": 2018,
-                "url": "https://en.wikipedia.org/wiki/2018_Formula_2_Championship"
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_BRDC_Formula_4_Championship"
               }
             ]
           }
@@ -112184,7 +112252,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {

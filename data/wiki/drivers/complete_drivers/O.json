@@ -201,8 +201,8 @@
             },
             "years": [
               {
-                "year": 2014,
-                "url": "https://en.wikipedia.org/wiki/2014_FIA_Formula_3_European_Championship"
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_GP3_Series"
               }
             ]
           },
@@ -213,8 +213,8 @@
             },
             "years": [
               {
-                "year": 2015,
-                "url": "https://en.wikipedia.org/wiki/2015_GP3_Series"
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_FIA_Formula_3_European_Championship"
               }
             ]
           },
@@ -234,7 +234,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "French"
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
                 ]
               },
               {
@@ -7279,7 +7282,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {

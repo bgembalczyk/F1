@@ -122,7 +122,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "French"
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
                 ]
               },
               {
@@ -26306,7 +26309,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Italian"
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
                 ]
               },
               {
@@ -40843,7 +40849,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Canadian"
+                  {
+                    "text": "Canadian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Canada"
+                  }
                 ]
               },
               {
@@ -47533,7 +47542,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Austrian"
+                  {
+                    "text": "Austrian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"
+                  }
                 ]
               },
               {
@@ -55945,16 +55957,16 @@
             },
             "years": [
               {
+                "year": 2019,
+                "url": "https://en.wikipedia.org/wiki/2019_Toyota_Racing_Series"
+              },
+              {
                 "year": 2016,
                 "url": null
               },
               {
                 "year": 2017,
                 "url": null
-              },
-              {
-                "year": 2019,
-                "url": "https://en.wikipedia.org/wiki/2019_Toyota_Racing_Series"
               }
             ]
           },
@@ -55974,7 +55986,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "New Zealander"
+                  {
+                    "text": "New Zealander",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_New_Zealand"
+                  }
                 ]
               },
               {
@@ -61854,8 +61869,8 @@
             },
             "years": [
               {
-                "year": 2016,
-                "url": "https://en.wikipedia.org/wiki/2016_GP3_Series"
+                "year": 2017,
+                "url": "https://en.wikipedia.org/wiki/2017_Formula_2_Championship"
               }
             ]
           },
@@ -61866,8 +61881,8 @@
             },
             "years": [
               {
-                "year": 2017,
-                "url": "https://en.wikipedia.org/wiki/2017_Formula_2_Championship"
+                "year": 2016,
+                "url": "https://en.wikipedia.org/wiki/2016_GP3_Series"
               }
             ]
           },
@@ -61887,7 +61902,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Monégasque"
+                  {
+                    "text": "Monégasque",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Monaco"
+                  }
                 ]
               },
               {
@@ -77193,7 +77211,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Finnish"
+                  {
+                    "text": "Finnish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Finland"
+                  }
                 ]
               },
               {
@@ -87970,7 +87991,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "British"
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
                 ]
               },
               {
@@ -90743,7 +90767,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Italian"
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
                 ]
               },
               {
@@ -100606,7 +100633,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "German"
+                  {
+                    "text": "German",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
+                  }
                 ]
               },
               {

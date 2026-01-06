@@ -46,7 +46,10 @@
               {
                 "label": "Nationality",
                 "value": [
-                  "Japanese"
+                  {
+                    "text": "Japanese",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
+                  }
                 ]
               },
               {
