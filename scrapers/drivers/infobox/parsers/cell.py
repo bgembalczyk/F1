@@ -17,6 +17,10 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
 class InfoboxCellParser:
+    # Regex patterns for year detection (compiled once for performance)
+    _FOUR_DIGIT_YEAR_PATTERN = re.compile(r'^(19|20)\d{2}$')
+    _TWO_DIGIT_SUFFIX_PATTERN = re.compile(r'^\d{2}$')
+    
     def __init__(self, *, include_urls: bool, link_extractor: InfoboxLinkExtractor) -> None:
         self._include_urls = include_urls
         self._link_extractor = link_extractor
@@ -358,6 +362,10 @@ class InfoboxCellParser:
                         class_links = self._link_extractor.extract_links(small_tags[0])
                         class_info = class_links[0] if class_links else None
                         
+                        # Validate that class_info is actually a class, not season data
+                        if not self._is_valid_class_info(class_info, season_links):
+                            class_info = None
+                        
                         for season_link in season_links:
                             season_entry = {
                                 "text": season_link.get("text", ""),
@@ -429,7 +437,19 @@ class InfoboxCellParser:
                                     if found_small:
                                         class_links = self._link_extractor.extract_links(found_small)
                                         if class_links:
-                                            season_entry["class"] = class_links[0]
+                                            class_candidate = class_links[0]
+                                            class_text = class_candidate.get("text", "")
+                                            class_url = class_candidate.get("url", "")
+                                            
+                                            # Validate that this is actually a class, not season data
+                                            # Check if it looks like season data (years only)
+                                            is_valid = not self._is_season_like_text(class_text)
+                                            # Check if it duplicates the current season
+                                            if is_valid and (season_text == class_text or season_url == class_url):
+                                                is_valid = False
+                                            
+                                            if is_valid:
+                                                season_entry["class"] = class_candidate
                             
                             season_data.append(season_entry)
                     
@@ -498,6 +518,90 @@ class InfoboxCellParser:
         if re.search(r'\d{4}', text):
             return False
         return True
+    
+    def _is_valid_class_info(
+        self, 
+        class_info: Dict[str, Any], 
+        season_links: List[Dict[str, Any]]
+    ) -> bool:
+        """Check if class_info is valid (not season data and not a duplicate).
+        
+        Args:
+            class_info: The potential class information to validate
+            season_links: List of season links to check for duplicates
+            
+        Returns:
+            True if class_info is a valid class, False if it's season data or a duplicate
+        """
+        if not class_info:
+            return False
+        
+        class_text = class_info.get("text", "")
+        class_url = class_info.get("url", "")
+        
+        # Check if class looks like season data (years only)
+        if self._is_season_like_text(class_text):
+            return False
+        
+        # Check if class duplicates any season
+        for season_link in season_links:
+            if season_link.get("text") == class_text or season_link.get("url") == class_url:
+                return False
+        
+        return True
+    
+    def _is_season_like_text(self, text: str) -> bool:
+        """Check if text looks like season data (years) rather than a class name.
+        
+        Season-like text contains only years and separators:
+        - Single years: "2013", "2014"
+        - Year ranges with 2-digit suffix: "2013-14", "2019–20" (where "14" means 2014, "20" means 2020)
+        - Full year ranges: "2013-2014", "2013–2014"
+        - Multiple years: "2013, 2014, 2015"
+        - Combinations: "2013-2015, 2018"
+        
+        Class names typically contain letters (possibly with numbers) in non-year format.
+        Examples of class names: "LMP1", "LMH", "LMP2", "GT3", "LMP2-H"
+        
+        Args:
+            text: The text to check
+            
+        Returns:
+            True if the text looks like season/year data, False if it looks like a class name
+        """
+        if not text:
+            return False
+        
+        # Remove common separators and whitespace to get individual parts
+        cleaned = text.replace(',', ' ').replace('–', ' ').replace('-', ' ')
+        parts = cleaned.split()
+        
+        if not parts:
+            return False
+        
+        # Check if all parts are either 4-digit years or 2-digit year suffixes
+        # and ensure at least one 4-digit year is present
+        has_four_digit_year = False
+        
+        for part in parts:
+            part = part.strip()
+            if not part:
+                continue
+            
+            if self._FOUR_DIGIT_YEAR_PATTERN.match(part):
+                # It's a 4-digit year (1900-2099)
+                has_four_digit_year = True
+            elif self._TWO_DIGIT_SUFFIX_PATTERN.match(part):
+                # It's a 2-digit suffix (00-99)
+                # These are only valid when combined with 4-digit years (like "2019-20")
+                pass
+            else:
+                # Not a year or suffix - likely a class name with letters
+                return False
+        
+        # Valid season-like text must have at least one 4-digit year
+        # 2-digit suffixes alone (like "20") are not sufficient
+        return has_four_digit_year
     
     def parse_finished_last_season(self, cell: Tag) -> Dict[str, Any]:
         """Parse 'Finished last season' field.

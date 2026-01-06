@@ -90,6 +90,35 @@ class TestBestFinishWithClass:
         # Should not have class field when not present
         assert 'class' not in result['seasons'][0]
         assert 'class' not in result['seasons'][1]
+    
+    def test_best_finish_season_in_small_tag_not_treated_as_class(self, cell_parser):
+        """Test that season link in small tag is not incorrectly treated as class."""
+        # Issue: When season is inside <small> tag without a real class,
+        # it was being duplicated as a class field
+        html = '''<td class="infobox-data">2nd <small>(<a href="/wiki/2013_24_Hours_of_Le_Mans" title="2013 24 Hours of Le Mans">2013</a>)</small></td>'''
+        
+        cell = BeautifulSoup(html, 'html.parser').find('td')
+        result = cell_parser.parse_best_finish(cell)
+        
+        assert result['result'] == '2nd'
+        assert len(result['seasons']) == 1
+        assert result['seasons'][0]['text'] == '2013'
+        assert result['seasons'][0]['url'] == 'https://en.wikipedia.org/wiki/2013_24_Hours_of_Le_Mans'
+        # Should NOT have class field because "2013" is a year, not a class
+        assert 'class' not in result['seasons'][0]
+    
+    def test_best_finish_with_year_range_in_small_not_treated_as_class(self, cell_parser):
+        """Test that year range in small tag is not treated as class."""
+        html = '''<td class="infobox-data">1st <small>(<a href="/wiki/2014_Le_Mans" title="2014 Le Mans">2014</a>, <a href="/wiki/2015_Le_Mans" title="2015 Le Mans">2015</a>)</small></td>'''
+        
+        cell = BeautifulSoup(html, 'html.parser').find('td')
+        result = cell_parser.parse_best_finish(cell)
+        
+        assert result['result'] == '1st'
+        assert len(result['seasons']) == 2
+        # Neither season should have a class field
+        assert 'class' not in result['seasons'][0]
+        assert 'class' not in result['seasons'][1]
 
 
 class TestRacingLicenceWithYears:
