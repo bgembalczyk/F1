@@ -3,6 +3,9 @@
 import re
 from typing import Dict
 
+from scrapers.base.errors import DomainParseError
+from scrapers.base.helpers.text_normalization import clean_infobox_text
+
 
 class YearParser:
     """Handles parsing of years and year ranges."""
@@ -17,9 +20,6 @@ class YearParser:
         - "2018" -> {start: 2018, end: 2018}
         - "2015–present" -> {start: 2015, end: None}
         """
-        from scrapers.base.errors import DomainParseError
-        from scrapers.base.helpers.text_normalization import clean_infobox_text
-
         try:
             normalized = clean_infobox_text(text) or ""
 

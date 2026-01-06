@@ -35,8 +35,7 @@ class InfoboxCellParser:
         self._include_urls = include_urls
         self._link_extractor = link_extractor
         
-        # Initialize helper parsers
-        self._year_parser = YearParser()
+        # Initialize helper parsers (for classes that need state)
         self._season_parser = SeasonParser()
         self._licence_parser = LicenceParser(link_extractor)
         self._best_finish_parser = BestFinishParser(link_extractor)
@@ -89,7 +88,7 @@ class InfoboxCellParser:
         # Try to interpolate URLs for missing years
         if len(year_to_link) >= 2:
             # Detect URL pattern
-            url_pattern = self._year_parser.detect_url_pattern(year_to_link)
+            url_pattern = YearParser.detect_url_pattern(year_to_link)
             if url_pattern:
                 for year in years_set:
                     if year not in year_to_link:
@@ -249,7 +248,7 @@ class InfoboxCellParser:
                 continue
             years_text = match.group("years") or ""
             years = (
-                self._year_parser.parse_year_range(years_text)
+                YearParser.parse_year_range(years_text)
                 if years_text
                 else {"start": None, "end": None}
             )

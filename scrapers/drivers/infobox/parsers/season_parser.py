@@ -15,8 +15,7 @@ class SeasonParser:
     _FOUR_DIGIT_YEAR_PATTERN = re.compile(r"^(19|20)\d{2}$")
     _TWO_DIGIT_SUFFIX_PATTERN = re.compile(r"^\d{2}$")
 
-    @staticmethod
-    def is_class_link(link: LinkRecord) -> bool:
+    def is_class_link(self, link: LinkRecord) -> bool:
         """Check if link is a class designation (e.g., LMP1) rather than a season."""
         url = (link.get("url") or "").lower()
         text = (link.get("text") or "").upper()
