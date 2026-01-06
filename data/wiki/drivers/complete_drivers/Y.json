@@ -45,15 +45,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": [
-                    {
-                      "text": "Japanese",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
-                    }
-                  ]
-                }
+                "value": [
+                  "Japanese"
+                ]
               },
               {
                 "label": "Active years",
@@ -5826,10 +5820,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Malaysian",
-                  "links": []
-                }
+                "value": [
+                  "Malaysian"
+                ]
               },
               {
                 "label": "Active years",

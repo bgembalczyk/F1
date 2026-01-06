@@ -35,9 +35,7 @@
           },
           "died": {
             "date": "1987-02-10",
-            "place": [
-              "(aged 78)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -48,10 +46,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -204,8 +201,8 @@
             },
             "years": [
               {
-                "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_GP3_Series"
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_FIA_Formula_3_European_Championship"
               }
             ]
           },
@@ -216,8 +213,8 @@
             },
             "years": [
               {
-                "text": "2014",
-                "url": "https://en.wikipedia.org/wiki/2014_FIA_Formula_3_European_Championship"
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_GP3_Series"
               }
             ]
           },
@@ -236,15 +233,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "2026 team",
@@ -6845,16 +6836,20 @@
           "born": {
             "date": "1928-10-09",
             "place": [
-              "North Vernon",
-              "Indiana",
+              {
+                "text": "North Vernon, Indiana",
+                "url": "https://en.wikipedia.org/wiki/North_Vernon,_Indiana"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1958-05-30",
             "place": [
-              "Speedway",
-              "Indiana",
+              {
+                "text": "Speedway, Indiana",
+                "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
+              },
               "U.S."
             ]
           }
@@ -7163,10 +7158,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Portuguese",
-                  "links": []
-                }
+                "value": [
+                  "Portuguese"
+                ]
               },
               {
                 "label": "Active years",
@@ -7284,15 +7278,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -11564,16 +11552,20 @@
           "born": {
             "date": "1942-05-21",
             "place": [
-              "Kahului",
-              "Hawaii",
+              {
+                "text": "Kahului, Hawaii",
+                "url": "https://en.wikipedia.org/wiki/Kahului,_Hawaii"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "2022-02-26",
             "place": [
-              "Anaheim",
-              "California",
+              {
+                "text": "Anaheim, California",
+                "url": "https://en.wikipedia.org/wiki/Anaheim,_California"
+              },
               "U.S."
             ]
           }
@@ -15855,10 +15847,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Liechtensteiner",
-                  "links": []
-                }
+                "value": [
+                  "Liechtensteiner"
+                ]
               },
               {
                 "label": "Active years",
@@ -15999,10 +15990,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Austrian",
-                  "links": []
-                }
+                "value": [
+                  "Austrian"
+                ]
               },
               {
                 "label": "Active years",
@@ -16736,9 +16726,7 @@
           },
           "died": {
             "date": "2002-04-27",
-            "place": [
-              "(aged 87)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -16749,10 +16737,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",

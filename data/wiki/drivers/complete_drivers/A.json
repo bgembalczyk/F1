@@ -65,10 +65,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -2310,10 +2309,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -6614,9 +6612,7 @@
           },
           "died": {
             "date": "2025-11-05",
-            "place": [
-              "(aged 84)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -6627,10 +6623,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -9692,10 +9687,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Belgian",
-                  "links": []
-                }
+                "value": [
+                  "Belgian"
+                ]
               },
               {
                 "label": "Active years",
@@ -10580,16 +10574,20 @@
           "born": {
             "date": "1912-12-15",
             "place": [
-              "Long Valley",
-              "New Jersey",
+              {
+                "text": "Long Valley, New Jersey",
+                "url": "https://en.wikipedia.org/wiki/Long_Valley,_New_Jersey"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1982-11-25",
             "place": [
-              "Califon",
-              "New Jersey",
+              {
+                "text": "Califon, New Jersey",
+                "url": "https://en.wikipedia.org/wiki/Califon,_New_Jersey"
+              },
               "U.S."
             ]
           }
@@ -10826,10 +10824,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "German",
-                  "links": []
-                }
+                "value": [
+                  "German"
+                ]
               },
               {
                 "label": "Active years",
@@ -10961,16 +10958,20 @@
           "born": {
             "date": "1913-08-21",
             "place": [
-              "Modesto",
-              "California",
+              {
+                "text": "Modesto, California",
+                "url": "https://en.wikipedia.org/wiki/Modesto,_California"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1989-10-13",
             "place": [
-              "Alamo",
-              "California",
+              {
+                "text": "Alamo, California",
+                "url": "https://en.wikipedia.org/wiki/Alamo,_California"
+              },
               "U.S."
             ]
           }
@@ -23492,10 +23493,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Dutch",
-                  "links": []
-                }
+                "value": [
+                  "Dutch"
+                ]
               },
               {
                 "label": "Active years",
@@ -50800,10 +50800,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -61156,10 +61155,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -62582,16 +62580,20 @@
           "born": {
             "date": "1929-01-19",
             "place": [
-              "Kansas City",
-              "Missouri",
+              {
+                "text": "Kansas City, Missouri",
+                "url": "https://en.wikipedia.org/wiki/Kansas_City,_Missouri"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1995-05-16",
             "place": [
-              "Crystal River",
-              "Florida",
+              {
+                "text": "Crystal River, Florida",
+                "url": "https://en.wikipedia.org/wiki/Crystal_River,_Florida"
+              },
               "U.S."
             ]
           }
@@ -62604,10 +62606,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -73108,10 +73109,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Swedish",
-                  "links": []
-                }
+                "value": [
+                  "Swedish"
+                ]
               },
               {
                 "label": "Active years",
@@ -73232,16 +73232,20 @@
           "born": {
             "date": "1911-02-22",
             "place": [
-              "Tinley Park",
-              "Illinois",
+              {
+                "text": "Tinley Park, Illinois",
+                "url": "https://en.wikipedia.org/wiki/Tinley_Park,_Illinois"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1999-07-20",
             "place": [
-              "South Holland",
-              "Illinois",
+              {
+                "text": "South Holland, Illinois",
+                "url": "https://en.wikipedia.org/wiki/South_Holland,_Illinois"
+              },
               "U.S."
             ]
           }
@@ -73910,27 +73914,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 1 3 0",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "1",
-                        "3",
-                        "0"
-                      ]
-                    ]
-                  }
+                  "wins": 1,
+                  "top_tens": 3,
+                  "poles": 0
                 }
               },
               {
@@ -81568,8 +81554,10 @@
           "born": {
             "date": "1962-10-05",
             "place": [
-              "Bethlehem",
-              "Pennsylvania",
+              {
+                "text": "Bethlehem, Pennsylvania",
+                "url": "https://en.wikipedia.org/wiki/Bethlehem,_Pennsylvania"
+              },
               "U.S."
             ]
           }
@@ -81758,10 +81746,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -88314,16 +88301,20 @@
           "born": {
             "date": "1920-06-15",
             "place": [
-              "Denver",
-              "Colorado",
+              {
+                "text": "Denver, Colorado",
+                "url": "https://en.wikipedia.org/wiki/Denver,_Colorado"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1957-05-15",
             "place": [
-              "Speedway",
-              "Indiana",
+              {
+                "text": "Speedway, Indiana",
+                "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
+              },
               "U.S."
             ]
           }
@@ -100232,16 +100223,20 @@
           "born": {
             "date": "1918-10-12",
             "place": [
-              "Portland",
-              "Oregon",
+              {
+                "text": "Portland, Oregon",
+                "url": "https://en.wikipedia.org/wiki/Portland,_Oregon"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1992-11-28",
             "place": [
-              "Watsonville",
-              "California",
+              {
+                "text": "Watsonville, California",
+                "url": "https://en.wikipedia.org/wiki/Watsonville,_California"
+              },
               "U.S."
             ]
           }
@@ -100254,10 +100249,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -100385,9 +100379,7 @@
           },
           "died": {
             "date": "1997-09-04",
-            "place": [
-              "(aged 71)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -100398,10 +100390,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -100566,7 +100557,11 @@
           "born": {
             "date": "1948-07-04",
             "place": [
-              "Pontcharra Isère",
+              {
+                "text": "Pontcharra",
+                "url": "https://en.wikipedia.org/wiki/Pontcharra"
+              },
+              "Isère",
               "France"
             ]
           }
@@ -113486,10 +113481,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -113624,10 +113618,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -115716,9 +115709,7 @@
           },
           "died": {
             "date": "2021-08-25",
-            "place": [
-              "(aged 85)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -115729,10 +115720,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -115885,10 +115875,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -116734,10 +116723,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -118799,8 +118787,10 @@
           "born": {
             "date": "1921-10-20",
             "place": [
-              "Burbank",
-              "California",
+              {
+                "text": "Burbank, California",
+                "url": "https://en.wikipedia.org/wiki/Burbank,_California"
+              },
               "U.S."
             ]
           },

@@ -52,10 +52,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Austrian",
-                  "links": []
-                }
+                "value": [
+                  "Austrian"
+                ]
               },
               {
                 "label": "Active years",

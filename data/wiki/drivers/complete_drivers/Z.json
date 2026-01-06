@@ -64,31 +64,19 @@
             },
             "years": [
               {
-                "text": "2005",
+                "year": 1990,
                 "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "CART FedEx Championship Series",
-              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
-            },
-            "years": [
+              },
               {
-                "text": "1997",
+                "year": 1997,
                 "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "European F3 Cup",
-              "url": "https://en.wikipedia.org/wiki/FIA_European_Formula_Three_Cup"
-            },
-            "years": [
+              },
               {
-                "text": "1990",
+                "year": 1998,
+                "url": null
+              },
+              {
+                "year": 2005,
                 "url": null
               }
             ]
@@ -6538,10 +6526,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Spanish",
-                  "links": []
-                }
+                "value": [
+                  "Spanish"
+                ]
               },
               {
                 "label": "Active years",
@@ -7097,10 +7084,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Brazilian",
-                  "links": []
-                }
+                "value": [
+                  "Brazilian"
+                ]
               },
               {
                 "label": "Active years",
@@ -7275,10 +7261,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -8401,8 +8386,10 @@
           "born": {
             "date": "1949-04-13",
             "place": [
-              "San Juan",
-              "Argentina"
+              {
+                "text": "San Juan, Argentina",
+                "url": "https://en.wikipedia.org/wiki/San_Juan,_Argentina"
+              }
             ]
           }
         },
@@ -8414,10 +8401,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Argentine",
-                  "links": []
-                }
+                "value": [
+                  "Argentine"
+                ]
               },
               {
                 "label": "Active years",

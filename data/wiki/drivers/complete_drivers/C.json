@@ -60,9 +60,7 @@
           },
           "died": {
             "date": "2020-08-17",
-            "place": [
-              "(aged 86)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -73,10 +71,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Portuguese",
-                  "links": []
-                }
+                "value": [
+                  "Portuguese"
+                ]
               },
               {
                 "label": "Active years",
@@ -239,10 +236,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -371,15 +367,19 @@
           "born": {
             "date": "1916-06-12",
             "place": [
-              "Charles City",
-              "Iowa"
+              {
+                "text": "Charles City, Iowa",
+                "url": "https://en.wikipedia.org/wiki/Charles_City,_Iowa"
+              }
             ]
           },
           "died": {
             "date": "2001-08-28",
             "place": [
-              "Winchester",
-              "Massachusetts"
+              {
+                "text": "Winchester, Massachusetts",
+                "url": "https://en.wikipedia.org/wiki/Winchester,_Massachusetts"
+              }
             ]
           }
         },
@@ -391,10 +391,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -520,15 +519,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -2911,10 +2904,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -3073,10 +3065,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Spanish",
-                  "links": []
-                }
+                "value": [
+                  "Spanish"
+                ]
               },
               {
                 "label": "Active years",
@@ -4170,8 +4161,10 @@
           "died": {
             "date": "1999-10-18",
             "place": [
-              "Quemado",
-              "New Mexico",
+              {
+                "text": "Quemado, New Mexico",
+                "url": "https://en.wikipedia.org/wiki/Quemado,_New_Mexico"
+              },
               "U.S."
             ]
           }
@@ -4184,10 +4177,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Canadian",
-                  "links": []
-                }
+                "value": [
+                  "Canadian"
+                ]
               },
               {
                 "label": "Active years",
@@ -4314,10 +4306,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Uruguayan",
-                  "links": []
-                }
+                "value": [
+                  "Uruguayan"
+                ]
               },
               {
                 "label": "Active years",
@@ -4433,9 +4424,7 @@
           },
           "died": {
             "date": "1996-01-22",
-            "place": [
-              "(aged 87)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -4446,10 +4435,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -4618,15 +4606,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -9735,10 +9717,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -9883,8 +9864,10 @@
           "born": {
             "date": "1913-05-05",
             "place": [
-              "Fresno",
-              "California",
+              {
+                "text": "Fresno, California",
+                "url": "https://en.wikipedia.org/wiki/Fresno,_California"
+              },
               "U.S."
             ]
           },
@@ -10203,8 +10186,10 @@
           "born": {
             "date": "1930-10-10",
             "place": [
-              "Lodi",
-              "Lombardy",
+              {
+                "text": "Lodi, Lombardy",
+                "url": "https://en.wikipedia.org/wiki/Lodi,_Lombardy"
+              },
               "Italy"
             ]
           },
@@ -10229,15 +10214,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -19871,15 +19850,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -25132,15 +25105,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -27272,10 +27239,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": []
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -27913,16 +27879,20 @@
           "born": {
             "date": "1925-12-29",
             "place": [
-              "Los Angeles",
-              "California",
+              {
+                "text": "Los Angeles, California",
+                "url": "https://en.wikipedia.org/wiki/Los_Angeles,_California"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "2001-08-01",
             "place": [
-              "Tucson",
-              "Arizona",
+              {
+                "text": "Tucson, Arizona",
+                "url": "https://en.wikipedia.org/wiki/Tucson,_Arizona"
+              },
               "U.S."
             ]
           }
@@ -27935,10 +27905,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -28073,15 +28042,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Indian",
-                  "links": [
-                    {
-                      "text": "Indian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_India"
-                    }
-                  ]
-                }
+                "value": [
+                  "Indian"
+                ]
               },
               {
                 "label": "Active years",
@@ -33997,10 +33960,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Belgian",
-                  "links": []
-                }
+                "value": [
+                  "Belgian"
+                ]
               },
               {
                 "label": "Active years",
@@ -34135,10 +34097,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -34304,10 +34265,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "South African",
-                  "links": []
-                }
+                "value": [
+                  "South African"
+                ]
               },
               {
                 "label": "Active years",
@@ -34476,10 +34436,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Portuguese",
-                  "links": []
-                }
+                "value": [
+                  "Portuguese"
+                ]
               },
               {
                 "label": "Active years",
@@ -36872,9 +36831,7 @@
           },
           "died": {
             "date": "1995-11-06",
-            "place": [
-              "(aged 68)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -36885,10 +36842,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -37061,8 +37017,10 @@
           "born": {
             "date": "1958-01-10",
             "place": [
-              "Phoenix",
-              "Arizona",
+              {
+                "text": "Phoenix, Arizona",
+                "url": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+              },
               "U.S."
             ]
           },
@@ -37097,15 +37055,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": [
-                    {
-                      "text": "American",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_States"
-                    }
-                  ]
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -46754,10 +46706,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Swiss",
-                  "links": []
-                }
+                "value": [
+                  "Swiss"
+                ]
               },
               {
                 "label": "Active years",
@@ -49031,8 +48982,10 @@
           "born": {
             "date": "1991-04-21",
             "place": [
-              "Redhill",
-              "Surrey",
+              {
+                "text": "Redhill, Surrey",
+                "url": "https://en.wikipedia.org/wiki/Redhill,_Surrey"
+              },
               "England"
             ]
           },
@@ -49055,15 +49008,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -54899,10 +54846,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Venezuelan",
-                  "links": []
-                }
+                "value": [
+                  "Venezuelan"
+                ]
               },
               {
                 "label": "Active years",
@@ -55049,10 +54995,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Monégasque",
-                  "links": []
-                }
+                "value": [
+                  "Monégasque"
+                ]
               },
               {
                 "label": "Active years",
@@ -55357,16 +55302,20 @@
           "born": {
             "date": "1912-04-14",
             "place": [
-              "Denison",
-              "Texas",
+              {
+                "text": "Denison, Texas",
+                "url": "https://en.wikipedia.org/wiki/Denison,_Texas"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1988-01-03",
             "place": [
-              "Tampa",
-              "Florida",
+              {
+                "text": "Tampa, Florida",
+                "url": "https://en.wikipedia.org/wiki/Tampa,_Florida"
+              },
               "U.S."
             ]
           }
@@ -55590,9 +55539,7 @@
           },
           "died": {
             "date": "2009-06-01",
-            "place": [
-              "(aged 85)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -55603,10 +55550,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -55797,10 +55743,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Belgian",
-                  "links": []
-                }
+                "value": [
+                  "Belgian"
+                ]
               },
               {
                 "label": "Active years",
@@ -55956,8 +55901,10 @@
           "died": {
             "date": "2005-10-22",
             "place": [
-              "Sunninghill",
-              "Gauteng",
+              {
+                "text": "Sunninghill, Gauteng",
+                "url": "https://en.wikipedia.org/wiki/Sunninghill,_Gauteng"
+              },
               {
                 "text": "South Africa",
                 "url": "https://en.wikipedia.org/wiki/South_Africa"
@@ -55973,10 +55920,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "South African",
-                  "links": []
-                }
+                "value": [
+                  "South African"
+                ]
               },
               {
                 "label": "Active years",
@@ -56156,15 +56102,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -63356,8 +63296,10 @@
           "born": {
             "date": "1956-03-31",
             "place": [
-              "Culver City",
-              "California",
+              {
+                "text": "Culver City, California",
+                "url": "https://en.wikipedia.org/wiki/Culver_City,_California"
+              },
               "U.S."
             ]
           }
@@ -63570,8 +63512,7 @@
               {
                 "full_data": {
                   "wins": 1,
-                  "podiums": 7,
-                  "poles": null
+                  "podiums": 7
                 }
               }
             ]
@@ -66844,8 +66785,10 @@
           "born": {
             "date": "2003-05-27",
             "place": [
-              "Pilar",
-              "Buenos Aires",
+              {
+                "text": "Pilar, Buenos Aires",
+                "url": "https://en.wikipedia.org/wiki/Pilar,_Buenos_Aires"
+              },
               "Argentina"
             ]
           }
@@ -66858,7 +66801,7 @@
             },
             "years": [
               {
-                "text": "2019",
+                "year": 2019,
                 "url": "https://en.wikipedia.org/wiki/2019_F4_Spanish_Championship"
               }
             ]
@@ -66871,15 +66814,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Argentine",
-                  "links": [
-                    {
-                      "text": "Argentine",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Argentina"
-                    }
-                  ]
-                }
+                "value": [
+                  "Argentine"
+                ]
               },
               {
                 "label": "2026 team",
@@ -72675,15 +72612,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -78442,10 +78373,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": []
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -78590,9 +78520,7 @@
           },
           "died": {
             "date": "2024-01-07",
-            "place": [
-              "(aged 77)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -78603,10 +78531,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -80916,15 +80843,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -85691,10 +85612,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -86533,16 +86453,20 @@
           "born": {
             "date": "1906-08-16",
             "place": [
-              "Rialto",
-              "California",
+              {
+                "text": "Rialto, California",
+                "url": "https://en.wikipedia.org/wiki/Rialto,_California"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "2001-03-28",
             "place": [
-              "Hesperia",
-              "California",
+              {
+                "text": "Hesperia, California",
+                "url": "https://en.wikipedia.org/wiki/Hesperia,_California"
+              },
               "U.S."
             ]
           }
@@ -86776,16 +86700,20 @@
           "born": {
             "date": "1918-02-22",
             "place": [
-              "Southbridge",
-              "Massachusetts",
+              {
+                "text": "Southbridge, Massachusetts",
+                "url": "https://en.wikipedia.org/wiki/Southbridge,_Massachusetts"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1968-01-07",
             "place": [
-              "New York",
-              "New York",
+              {
+                "text": "New York, New York",
+                "url": "https://en.wikipedia.org/wiki/New_York,_New_York"
+              },
               "U.S."
             ]
           }
@@ -86798,10 +86726,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -86921,10 +86848,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Canadian",
-                  "links": []
-                }
+                "value": [
+                  "Canadian"
+                ]
               },
               {
                 "label": "Active years",
@@ -87102,15 +87028,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -93893,15 +93813,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -96640,10 +96554,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -99182,8 +99095,10 @@
           "died": {
             "date": "2002-08-06",
             "place": [
-              "Tierra Verde",
-              "Florida",
+              {
+                "text": "Tierra Verde, Florida",
+                "url": "https://en.wikipedia.org/wiki/Tierra_Verde,_Florida"
+              },
               "United States"
             ]
           }
@@ -99196,10 +99111,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -104307,16 +104221,20 @@
           "born": {
             "date": "1915-10-26",
             "place": [
-              "Roswell",
-              "New Mexico",
+              {
+                "text": "Roswell, New Mexico",
+                "url": "https://en.wikipedia.org/wiki/Roswell,_New_Mexico"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1996-02-01",
             "place": [
-              "Los Angeles",
-              "California",
+              {
+                "text": "Los Angeles, California",
+                "url": "https://en.wikipedia.org/wiki/Los_Angeles,_California"
+              },
               "U.S."
             ]
           }
@@ -104329,10 +104247,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -104488,10 +104405,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Argentine",
-                  "links": []
-                }
+                "value": [
+                  "Argentine"
+                ]
               },
               {
                 "label": "Active years",
@@ -104618,10 +104534,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Spanish",
-                  "links": []
-                }
+                "value": [
+                  "Spanish"
+                ]
               },
               {
                 "label": "Active years",
@@ -104725,16 +104640,20 @@
           "born": {
             "date": "1926-10-23",
             "place": [
-              "Cambridge City",
-              "Indiana",
+              {
+                "text": "Cambridge City, Indiana",
+                "url": "https://en.wikipedia.org/wiki/Cambridge_City,_Indiana"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1955-03-20",
             "place": [
-              "Bristol",
-              "Pennsylvania",
+              {
+                "text": "Bristol, Pennsylvania",
+                "url": "https://en.wikipedia.org/wiki/Bristol,_Pennsylvania"
+              },
               "U.S."
             ]
           }
@@ -104938,9 +104857,7 @@
           },
           "died": {
             "date": "2014-01-21",
-            "place": [
-              "(aged 93)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -104951,10 +104868,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -105385,16 +105301,20 @@
           "born": {
             "date": "1918-01-24",
             "place": [
-              "Jersey City",
-              "New Jersey",
+              {
+                "text": "Jersey City, New Jersey",
+                "url": "https://en.wikipedia.org/wiki/Jersey_City,_New_Jersey"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "2005-04-15",
             "place": [
-              "LaPorte",
-              "Indiana",
+              {
+                "text": "LaPorte, Indiana",
+                "url": "https://en.wikipedia.org/wiki/LaPorte,_Indiana"
+              },
               "U.S."
             ]
           }
@@ -105407,10 +105327,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -105572,10 +105491,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -105715,10 +105633,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Moroccan",
-                  "links": []
-                }
+                "value": [
+                  "Moroccan"
+                ]
               },
               {
                 "label": "Active years",
@@ -106195,9 +106112,7 @@
           },
           "died": {
             "date": "2012-02-10",
-            "place": [
-              "(aged 88)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -106208,10 +106123,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Argentine",
-                  "links": []
-                }
+                "value": [
+                  "Argentine"
+                ]
               },
               {
                 "label": "Active years",

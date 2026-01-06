@@ -799,22 +799,146 @@
           "born": {
             "date": "1934-02-20",
             "place": [
-              "Colorado Springs",
-              "Colorado",
+              {
+                "text": "Colorado Springs, Colorado",
+                "url": "https://en.wikipedia.org/wiki/Colorado_Springs,_Colorado"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "2021-05-02",
             "place": [
-              "Albuquerque",
-              "New Mexico",
+              {
+                "text": "Albuquerque, New Mexico",
+                "url": "https://en.wikipedia.org/wiki/Albuquerque,_New_Mexico"
+              },
               "U.S."
             ]
           }
         },
         "championship_titles": [],
-        "major_victories": [],
+        "major_victories": [
+          {
+            "title": {
+              "text": "USAC",
+              "url": "https://en.wikipedia.org/wiki/United_States_Auto_Club"
+            },
+            "years": []
+          },
+          {
+            "title": {
+              "text": "Championship Car",
+              "url": "https://en.wikipedia.org/wiki/Championship_Car"
+            },
+            "years": [
+              {
+                "text": "1968",
+                "url": "https://en.wikipedia.org/wiki/1968_USAC_Championship_Car_season"
+              },
+              {
+                "text": "1974",
+                "url": "https://en.wikipedia.org/wiki/1974_USAC_Championship_Car_season"
+              },
+              {
+                "text": "1968",
+                "url": "https://en.wikipedia.org/wiki/1968_Indianapolis_500"
+              },
+              {
+                "text": "1974",
+                "url": "https://en.wikipedia.org/wiki/1974_California_500"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Pikes Peak Hill Climb",
+              "url": "https://en.wikipedia.org/wiki/Pikes_Peak_Hill_Climb"
+            },
+            "years": [
+              {
+                "text": "1968",
+                "url": "https://en.wikipedia.org/wiki/1968_USAC_Championship_Car_season"
+              },
+              {
+                "text": "1968",
+                "url": "https://en.wikipedia.org/wiki/1968_Indianapolis_500"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Indianapolis 500",
+              "url": "https://en.wikipedia.org/wiki/Indianapolis_500"
+            },
+            "years": [
+              {
+                "text": "1968",
+                "url": "https://en.wikipedia.org/wiki/1968_USAC_Championship_Car_season"
+              },
+              {
+                "text": "1968",
+                "url": "https://en.wikipedia.org/wiki/1968_Indianapolis_500"
+              },
+              {
+                "text": "1975",
+                "url": "https://en.wikipedia.org/wiki/1975_Indianapolis_500"
+              },
+              {
+                "text": "1981",
+                "url": "https://en.wikipedia.org/wiki/1981_Indianapolis_500"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "California 500",
+              "url": "https://en.wikipedia.org/wiki/California_500_(IndyCar)"
+            },
+            "years": [
+              {
+                "text": "1974",
+                "url": "https://en.wikipedia.org/wiki/1974_USAC_Championship_Car_season"
+              },
+              {
+                "text": "1974",
+                "url": "https://en.wikipedia.org/wiki/1974_California_500"
+              },
+              {
+                "text": "1976",
+                "url": "https://en.wikipedia.org/wiki/1976_California_500"
+              },
+              {
+                "text": "1979",
+                "url": "https://en.wikipedia.org/wiki/1979_California_500"
+              },
+              {
+                "text": "1980",
+                "url": "https://en.wikipedia.org/wiki/1980_California_500"
+              },
+              {
+                "text": "1980",
+                "url": "https://en.wikipedia.org/wiki/1980_Pocono_500"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Pocono 500",
+              "url": "https://en.wikipedia.org/wiki/Pocono_500_(IndyCar)"
+            },
+            "years": [
+              {
+                "text": "1980",
+                "url": "https://en.wikipedia.org/wiki/1980_California_500"
+              },
+              {
+                "text": "1980",
+                "url": "https://en.wikipedia.org/wiki/1980_Pocono_500"
+              }
+            ]
+          }
+        ],
         "career": [
           {
             "title": "Champ Car career",
@@ -967,27 +1091,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 0 2 0",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "2",
-                        "0"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "top_tens": 2,
+                  "poles": 0
                 }
               },
               {
@@ -1003,10 +1109,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -7242,10 +7347,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Uruguayan",
-                  "links": []
-                }
+                "value": [
+                  "Uruguayan"
+                ]
               },
               {
                 "label": "Active years",

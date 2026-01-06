@@ -81,15 +81,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Brazilian",
-                  "links": [
-                    {
-                      "text": "Brazilian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
-                    }
-                  ]
-                }
+                "value": [
+                  "Brazilian"
+                ]
               },
               {
                 "label": "Active years",
@@ -2911,8 +2905,10 @@
           "died": {
             "date": "1982-06-13",
             "place": [
-              "Montreal",
-              "Quebec",
+              {
+                "text": "Montreal, Quebec",
+                "url": "https://en.wikipedia.org/wiki/Montreal"
+              },
               "Canada"
             ]
           }
@@ -2925,10 +2921,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -3865,10 +3860,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Swedish",
-                  "links": []
-                }
+                "value": [
+                  "Swedish"
+                ]
               },
               {
                 "label": "Active years",
@@ -3985,8 +3979,10 @@
           "born": {
             "date": "1991-01-20",
             "place": [
-              "Horsham",
-              "West Sussex",
+              {
+                "text": "Horsham, West Sussex",
+                "url": "https://en.wikipedia.org/wiki/Horsham,_West_Sussex"
+              },
               "England"
             ]
           },
@@ -4018,8 +4014,8 @@
             },
             "years": [
               {
-                "text": "2014",
-                "url": "https://en.wikipedia.org/wiki/2014_GP2_Series"
+                "year": 2006,
+                "url": null
               }
             ]
           },
@@ -4030,8 +4026,8 @@
             },
             "years": [
               {
-                "text": "2006",
-                "url": null
+                "year": 2014,
+                "url": "https://en.wikipedia.org/wiki/2014_GP2_Series"
               }
             ]
           }
@@ -4043,15 +4039,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -8531,15 +8521,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -13164,15 +13148,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -23375,27 +23353,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 0 1 0",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "1",
-                        "0"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "top_tens": 1,
+                  "poles": 0
                 }
               }
             ]
@@ -23463,27 +23423,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 0 4 0",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "4",
-                        "0"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "top_tens": 4,
+                  "poles": 0
                 }
               }
             ]
@@ -23551,27 +23493,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 0 5 0",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "5",
-                        "0"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "top_tens": 5,
+                  "poles": 0
                 }
               }
             ]
@@ -23611,27 +23535,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 0 0 0",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "0",
-                        "0"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "top_tens": 0,
+                  "poles": 0
                 }
               },
               {
@@ -23803,10 +23709,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -24001,8 +23906,10 @@
           "born": {
             "date": "1931-09-24",
             "place": [
-              "Richmond",
-              "Surrey",
+              {
+                "text": "Richmond, Surrey",
+                "url": "https://en.wikipedia.org/wiki/Richmond,_Surrey"
+              },
               "England"
             ]
           },
@@ -24027,15 +23934,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -25602,10 +25503,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -28110,10 +28010,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -28270,8 +28169,10 @@
           "born": {
             "date": "1918-07-04",
             "place": [
-              "Los Angeles",
-              "California",
+              {
+                "text": "Los Angeles, California",
+                "url": "https://en.wikipedia.org/wiki/Los_Angeles,_California"
+              },
               "U.S."
             ]
           },
@@ -28285,7 +28186,67 @@
           }
         },
         "championship_titles": [],
-        "major_victories": [],
+        "major_victories": [
+          {
+            "title": {
+              "text": "AAA Midwest",
+              "url": "https://en.wikipedia.org/wiki/AAA_Contest_Board"
+            },
+            "years": []
+          },
+          {
+            "title": {
+              "text": "Midget Car",
+              "url": "https://en.wikipedia.org/wiki/Midget_car_racing"
+            },
+            "years": []
+          },
+          {
+            "title": {
+              "text": "AAA",
+              "url": "https://en.wikipedia.org/wiki/AAA_Contest_Board"
+            },
+            "years": []
+          },
+          {
+            "title": {
+              "text": "Championship Car",
+              "url": "https://en.wikipedia.org/wiki/Championship_Car"
+            },
+            "years": [
+              {
+                "text": "1949",
+                "url": "https://en.wikipedia.org/wiki/1949_AAA_Championship_Car_season"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "USAC Pacific Coast",
+              "url": "https://en.wikipedia.org/wiki/United_States_Auto_Club"
+            },
+            "years": []
+          },
+          {
+            "title": {
+              "text": "Midget Car",
+              "url": "https://en.wikipedia.org/wiki/Midget_car_racing"
+            },
+            "years": []
+          },
+          {
+            "title": {
+              "text": "Indianapolis 500",
+              "url": "https://en.wikipedia.org/wiki/Indianapolis_500"
+            },
+            "years": [
+              {
+                "text": "1950",
+                "url": "https://en.wikipedia.org/wiki/1950_Indianapolis_500"
+              }
+            ]
+          }
+        ],
         "career": [
           {
             "title": "Champ Car career",
@@ -28639,15 +28600,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -35893,10 +35848,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Canadian",
-                  "links": []
-                }
+                "value": [
+                  "Canadian"
+                ]
               },
               {
                 "label": "Active years",
@@ -36021,8 +35975,10 @@
           "born": {
             "date": "1937-02-20",
             "place": [
-              "Shaker Heights",
-              "Ohio",
+              {
+                "text": "Shaker Heights, Ohio",
+                "url": "https://en.wikipedia.org/wiki/Shaker_Heights,_Ohio"
+              },
               "U.S."
             ]
           },
@@ -36051,10 +36007,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -36220,15 +36175,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -36432,7 +36381,7 @@
             },
             "years": [
               {
-                "text": "2007",
+                "year": 2007,
                 "url": "https://en.wikipedia.org/wiki/2007_British_Formula_3_International_Series"
               }
             ]
@@ -36445,15 +36394,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Mexican",
-                  "links": [
-                    {
-                      "text": "Mexican",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Mexico"
-                    }
-                  ]
-                }
+                "value": [
+                  "Mexican"
+                ]
               },
               {
                 "label": "2026 team",
@@ -44301,10 +44244,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Spanish",
-                  "links": []
-                }
+                "value": [
+                  "Spanish"
+                ]
               },
               {
                 "label": "Active years",
@@ -45811,31 +45753,11 @@
             },
             "years": [
               {
-                "text": "1975",
+                "year": 1975,
                 "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Australian Formula 5000 Championship",
-              "url": "https://en.wikipedia.org/wiki/Rothmans_International_Series"
-            },
-            "years": [
+              },
               {
-                "text": "1979",
-                "url": null
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Australian Rallycross Championship",
-              "url": "https://en.wikipedia.org/wiki/1979_Australian_Rallycross_Championship"
-            },
-            "years": [
-              {
-                "text": "1979",
+                "year": 1979,
                 "url": null
               }
             ]
@@ -54565,15 +54487,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Swiss",
-                  "links": [
-                    {
-                      "text": "Swiss",
-                      "url": "https://en.wikipedia.org/wiki/Switzerland"
-                    }
-                  ]
-                }
+                "value": [
+                  "Swiss"
+                ]
               },
               {
                 "label": "Active years",
@@ -55920,15 +55836,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -61157,10 +61067,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -62645,10 +62554,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "German",
-                  "links": []
-                }
+                "value": [
+                  "German"
+                ]
               },
               {
                 "label": "Active years",
@@ -62812,15 +62720,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Swedish",
-                  "links": [
-                    {
-                      "text": "Swedish",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
-                    }
-                  ]
-                }
+                "value": [
+                  "Swedish"
+                ]
               },
               {
                 "label": "Active years",
@@ -68527,15 +68429,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Russian",
-                  "links": [
-                    {
-                      "text": "Russian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Russia"
-                    }
-                  ]
-                }
+                "value": [
+                  "Russian"
+                ]
               },
               {
                 "label": "Active years",
@@ -74539,10 +74435,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Argentine",
-                  "links": []
-                }
+                "value": [
+                  "Argentine"
+                ]
               },
               {
                 "label": "Active years",
@@ -74671,8 +74566,8 @@
             },
             "years": [
               {
-                "text": "2021",
-                "url": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
+                "year": 2019,
+                "url": "https://en.wikipedia.org/wiki/2019_Formula_Renault_Eurocup"
               }
             ]
           },
@@ -74683,7 +74578,7 @@
             },
             "years": [
               {
-                "text": "2020",
+                "year": 2020,
                 "url": "https://en.wikipedia.org/wiki/2020_FIA_Formula_3_Championship"
               }
             ]
@@ -74695,8 +74590,8 @@
             },
             "years": [
               {
-                "text": "2019",
-                "url": "https://en.wikipedia.org/wiki/2019_Formula_Renault_Eurocup"
+                "year": 2021,
+                "url": "https://en.wikipedia.org/wiki/2021_Formula_2_Championship"
               }
             ]
           },
@@ -74715,15 +74610,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Australian",
-                  "links": [
-                    {
-                      "text": "Australian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
-                    }
-                  ]
-                }
+                "value": [
+                  "Australian"
+                ]
               },
               {
                 "label": "2026 team",
@@ -79282,8 +79171,10 @@
           "born": {
             "date": "1990-02-15",
             "place": [
-              "Montélimar",
-              "Drôme",
+              {
+                "text": "Montélimar, Drôme",
+                "url": "https://en.wikipedia.org/wiki/Mont%C3%A9limar"
+              },
               "France"
             ]
           },
@@ -79312,15 +79203,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -82723,10 +82608,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": []
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -82868,10 +82752,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "South African",
-                  "links": []
-                }
+                "value": [
+                  "South African"
+                ]
               },
               {
                 "label": "Active years",
@@ -83029,10 +82912,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "German",
-                  "links": []
-                }
+                "value": [
+                  "German"
+                ]
               },
               {
                 "label": "Active years",
@@ -84125,10 +84007,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Belgian",
-                  "links": []
-                }
+                "value": [
+                  "Belgian"
+                ]
               },
               {
                 "label": "Active years",
@@ -84293,10 +84174,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Belgian",
-                  "links": []
-                }
+                "value": [
+                  "Belgian"
+                ]
               },
               {
                 "label": "Active years",
@@ -87256,8 +87136,10 @@
           "born": {
             "date": "1913-10-27",
             "place": [
-              "Milan",
-              "Italy"
+              {
+                "text": "Milan, Italy",
+                "url": "https://en.wikipedia.org/wiki/Milan,_Italy"
+              }
             ]
           },
           "died": {
@@ -87282,10 +87164,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -87428,10 +87309,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -88569,15 +88449,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Brazilian",
-                  "links": [
-                    {
-                      "text": "Brazilian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
-                    }
-                  ]
-                }
+                "value": [
+                  "Brazilian"
+                ]
               },
               {
                 "label": "Active years",
@@ -95489,10 +95363,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -95630,7 +95503,11 @@
                 "text": "English Channel",
                 "url": "https://en.wikipedia.org/wiki/English_Channel"
               },
-              "off the Isle of Wight",
+              {
+                "text": "Isle of Wight",
+                "url": "https://en.wikipedia.org/wiki/Isle_of_Wight"
+              },
+              "off the",
               "England"
             ]
           },
@@ -95654,15 +95531,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -97963,36 +97834,36 @@
             },
             "years": [
               {
-                "text": "2000",
-                "url": "https://en.wikipedia.org/wiki/2000_12_Hours_of_Sebring"
+                "year": 1989,
+                "url": null
               },
               {
-                "text": "2007",
-                "url": "https://en.wikipedia.org/wiki/2007_12_Hours_of_Sebring"
-              },
-              {
-                "text": "2001",
-                "url": "https://en.wikipedia.org/wiki/2001_American_Le_Mans_Series"
-              },
-              {
-                "text": "2005",
-                "url": "https://en.wikipedia.org/wiki/2005_American_Le_Mans_Series"
-              },
-              {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Super_Tourenwagen_Cup"
-              },
-              {
-                "text": "1994",
+                "year": 1994,
                 "url": "https://en.wikipedia.org/wiki/1994_Italian_Superturismo_Championship"
               },
               {
-                "text": "1995",
+                "year": 1995,
                 "url": "https://en.wikipedia.org/wiki/1995_Italian_Superturismo_Championship"
               },
               {
-                "text": "1989",
-                "url": null
+                "year": 1996,
+                "url": "https://en.wikipedia.org/wiki/1996_Super_Tourenwagen_Cup"
+              },
+              {
+                "year": 2000,
+                "url": "https://en.wikipedia.org/wiki/2000_12_Hours_of_Sebring"
+              },
+              {
+                "year": 2001,
+                "url": "https://en.wikipedia.org/wiki/2001_American_Le_Mans_Series"
+              },
+              {
+                "year": 2005,
+                "url": "https://en.wikipedia.org/wiki/2005_American_Le_Mans_Series"
+              },
+              {
+                "year": 2007,
+                "url": "https://en.wikipedia.org/wiki/2007_12_Hours_of_Sebring"
               }
             ]
           }
@@ -98004,15 +97875,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -106079,10 +105944,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Belgian",
-                  "links": []
-                }
+                "value": [
+                  "Belgian"
+                ]
               },
               {
                 "label": "Active years",
@@ -110837,10 +110701,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": []
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -110983,10 +110846,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Dutch",
-                  "links": []
-                }
+                "value": [
+                  "Dutch"
+                ]
               },
               {
                 "label": "Active years",
@@ -111476,10 +111338,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -111623,10 +111484,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Spanish",
-                  "links": []
-                }
+                "value": [
+                  "Spanish"
+                ]
               },
               {
                 "label": "Active years",
@@ -111823,9 +111683,7 @@
           },
           "died": {
             "date": "2001-02-28",
-            "place": [
-              "(aged 91)"
-            ]
+            "place": null
           }
         },
         "championship_titles": [],
@@ -111836,10 +111694,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": []
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -111987,10 +111844,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "South African",
-                  "links": []
-                }
+                "value": [
+                  "South African"
+                ]
               },
               {
                 "label": "Active years",
@@ -112157,10 +112013,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -113166,10 +113021,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -114868,8 +114722,10 @@
           "born": {
             "date": "1955-02-24",
             "place": [
-              "Lorette",
-              "Loire",
+              {
+                "text": "Lorette, Loire",
+                "url": "https://en.wikipedia.org/wiki/Lorette,_Loire"
+              },
               "France"
             ]
           },
@@ -114888,15 +114744,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -120037,15 +119887,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -120213,10 +120057,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -122814,15 +122657,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Rhodesian",
-                  "links": [
-                    {
-                      "text": "Rhodesian",
-                      "url": "https://en.wikipedia.org/wiki/Rhodesia"
-                    }
-                  ]
-                }
+                "value": [
+                  "Rhodesian"
+                ]
               },
               {
                 "label": "Active years",
