@@ -188,15 +188,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Indian",
-                  "links": [
-                    {
-                      "text": "Indian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_India"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Indian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_India"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -21475,15 +21472,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Austrian",
-                  "links": [
-                    {
-                      "text": "Austrian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Austrian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Austria"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -28879,15 +28873,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "West German",
-                  "links": [
-                    {
-                      "text": "West German",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "West German",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -29345,15 +29336,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": [
-                    {
-                      "text": "Japanese",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Japanese",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -40907,15 +40895,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Finnish",
-                  "links": [
-                    {
-                      "text": "Finnish",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Finland"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Finnish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Finland"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -57946,7 +57931,7 @@
             },
             "years": [
               {
-                "text": "2013",
+                "year": 2013,
                 "url": "https://en.wikipedia.org/wiki/2013_GP3_Series"
               }
             ]
@@ -57958,7 +57943,7 @@
             },
             "years": [
               {
-                "text": "2012",
+                "year": 2012,
                 "url": "https://en.wikipedia.org/wiki/2012_Formula_Renault_2.0_Alps_Series"
               }
             ]
@@ -58076,15 +58061,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Russian",
-                  "links": [
-                    {
-                      "text": "Russian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Russia"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Russian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Russia"
+                  }
+                ]
               },
               {
                 "label": "Active years",

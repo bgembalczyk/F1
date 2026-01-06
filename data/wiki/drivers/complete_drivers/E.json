@@ -206,15 +206,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -498,15 +495,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -19075,7 +19069,7 @@
             },
             "years": [
               {
-                "text": "2022",
+                "year": 2022,
                 "url": "https://en.wikipedia.org/wiki/2022_Indianapolis_500"
               }
             ]
@@ -19087,7 +19081,7 @@
             },
             "years": [
               {
-                "text": "2009",
+                "year": 2009,
                 "url": "https://en.wikipedia.org/wiki/2009_All-Japan_Formula_Three_Championship"
               }
             ]
@@ -19099,8 +19093,8 @@
             },
             "years": [
               {
-                "text": "2007",
-                "url": null
+                "year": 2007,
+                "url": "https://en.wikipedia.org/wiki/2007_Formula_BMW_UK_season"
               }
             ]
           }
@@ -19235,15 +19229,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Swedish",
-                  "links": [
-                    {
-                      "text": "Swedish",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Swedish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
+                  }
+                ]
               },
               {
                 "label": "Active years",

@@ -215,15 +215,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": [
-                    {
-                      "text": "Japanese",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Japanese",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -8436,15 +8433,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": [
-                    {
-                      "text": "Japanese",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Japanese",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -12710,15 +12704,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -21820,15 +21811,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Brazilian",
-                  "links": [
-                    {
-                      "text": "Brazilian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Brazilian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Brazil"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -37357,15 +37345,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Swedish",
-                  "links": [
-                    {
-                      "text": "Swedish",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Swedish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -43326,7 +43311,7 @@
             },
             "years": [
               {
-                "text": "2017",
+                "year": 2017,
                 "url": "https://en.wikipedia.org/wiki/2017_FIA_Formula_3_European_Championship"
               }
             ]
@@ -43338,7 +43323,7 @@
             },
             "years": [
               {
-                "text": "2016",
+                "year": 2016,
                 "url": "https://en.wikipedia.org/wiki/2016_Toyota_Racing_Series"
               }
             ]
@@ -43350,7 +43335,7 @@
             },
             "years": [
               {
-                "text": "2016",
+                "year": 2016,
                 "url": "https://en.wikipedia.org/wiki/2016_Toyota_Racing_Series"
               }
             ]
@@ -43362,7 +43347,7 @@
             },
             "years": [
               {
-                "text": "2016",
+                "year": 2016,
                 "url": "https://en.wikipedia.org/wiki/2016_Toyota_Racing_Series"
               }
             ]
@@ -43374,7 +43359,7 @@
             },
             "years": [
               {
-                "text": "2015",
+                "year": 2015,
                 "url": "https://en.wikipedia.org/wiki/2015_MSA_Formula_Championship"
               }
             ]
@@ -43394,15 +43379,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
+                ]
               },
               {
                 "label": "2026 team",

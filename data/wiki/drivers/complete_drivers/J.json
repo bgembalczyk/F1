@@ -248,15 +248,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -5872,15 +5869,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -13667,15 +13661,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Swedish",
-                  "links": [
-                    {
-                      "text": "Swedish",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Swedish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Sweden"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -23511,15 +23502,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -23834,15 +23822,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Australian",
-                  "links": [
-                    {
-                      "text": "Australian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Australian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Australia"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -38184,15 +38169,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Spanish",
-                  "links": [
-                    {
-                      "text": "Spanish",
-                      "url": "https://en.wikipedia.org/wiki/Spain"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Spanish",
+                    "url": "https://en.wikipedia.org/wiki/Spain"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -42541,7 +42523,7 @@
             },
             "years": [
               {
-                "text": "2014",
+                "year": 2014,
                 "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_3.5_Series"
               }
             ]
@@ -42553,7 +42535,7 @@
             },
             "years": [
               {
-                "text": "2011",
+                "year": 2011,
                 "url": "https://en.wikipedia.org/wiki/2011_Formula_Renault_2.0_Northern_European_Cup"
               }
             ]
@@ -42573,15 +42555,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Spanish",
-                  "links": [
-                    {
-                      "text": "Spanish",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Spain"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Spanish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Spain"
+                  }
+                ]
               },
               {
                 "label": "2026 team",

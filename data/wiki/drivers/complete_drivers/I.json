@@ -111,15 +111,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Belgian",
-                  "links": [
-                    {
-                      "text": "Belgian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Belgium"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Belgian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Belgium"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -19747,15 +19744,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -24269,15 +24263,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "British",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
+                  }
+                ]
               },
               {
                 "label": "Active years",

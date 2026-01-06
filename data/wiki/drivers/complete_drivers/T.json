@@ -5260,15 +5260,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -10702,7 +10699,7 @@
             },
             "years": [
               {
-                "text": "2003",
+                "year": 2003,
                 "url": "https://en.wikipedia.org/wiki/2003_European_Touring_Car_Championship"
               }
             ]
@@ -10714,7 +10711,7 @@
             },
             "years": [
               {
-                "text": "1994",
+                "year": 1994,
                 "url": "https://en.wikipedia.org/wiki/1994_British_Touring_Car_Championship"
               }
             ]
@@ -10884,15 +10881,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -26155,15 +26149,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -29913,15 +29904,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Monégasque",
-                  "links": [
-                    {
-                      "text": "Monégasque",
-                      "url": "https://en.wikipedia.org/wiki/Monaco"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Monégasque",
+                    "url": "https://en.wikipedia.org/wiki/Monaco"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -33957,8 +33945,10 @@
           "born": {
             "date": "1919-11-04",
             "place": [
-              "Ditton Hill",
-              "Surbiton",
+              {
+                "text": "Ditton Hill, Surbiton",
+                "url": "https://en.wikipedia.org/wiki/Surbiton"
+              },
               "Surrey",
               "England",
               "UK"
@@ -41321,15 +41311,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "French",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -45293,15 +45280,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "West German",
-                  "links": [
-                    {
-                      "text": "West German",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "West German",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -47387,15 +47371,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -53566,7 +53547,7 @@
             },
             "years": [
               {
-                "text": "2018",
+                "year": 2018,
                 "url": "https://en.wikipedia.org/wiki/2018_F4_Japanese_Championship"
               }
             ]
@@ -53578,7 +53559,7 @@
             },
             "years": [
               {
-                "text": "2017",
+                "year": 2017,
                 "url": null
               }
             ]
@@ -53590,7 +53571,7 @@
             },
             "years": [
               {
-                "text": "2016",
+                "year": 2016,
                 "url": null
               }
             ]
@@ -53603,15 +53584,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": [
-                    {
-                      "text": "Japanese",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Japanese",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Japan"
+                  }
+                ]
               },
               {
                 "label": "Active years",

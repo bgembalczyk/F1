@@ -2237,7 +2237,7 @@
             },
             "years": [
               {
-                "text": "2015",
+                "year": 2015,
                 "url": "https://en.wikipedia.org/wiki/2015_GP2_Series"
               }
             ]
@@ -2249,7 +2249,7 @@
             },
             "years": [
               {
-                "text": "2012",
+                "year": 2012,
                 "url": "https://en.wikipedia.org/wiki/2012_Eurocup_Formula_Renault_2.0"
               }
             ]
@@ -2261,7 +2261,7 @@
             },
             "years": [
               {
-                "text": "2010",
+                "year": 2010,
                 "url": "https://en.wikipedia.org/wiki/2010_F4_Eurocup_1.6"
               }
             ]
@@ -2508,15 +2508,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Belgian",
-                  "links": [
-                    {
-                      "text": "Belgian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Belgium"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Belgian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Belgium"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -10081,7 +10078,7 @@
             },
             "years": [
               {
-                "text": "2008",
+                "year": 2008,
                 "url": "https://en.wikipedia.org/wiki/2008_Formula_Renault_2.0_West_European_Cup#French_Formula_Renault_championship"
               }
             ]
@@ -10357,15 +10354,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "France",
-                  "links": [
-                    {
-                      "text": "France",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "France",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -19058,15 +19052,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Dutch",
-                  "links": [
-                    {
-                      "text": "Dutch",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_Netherlands"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Dutch",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_Netherlands"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -22937,15 +22928,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Dutch",
-                  "links": [
-                    {
-                      "text": "Dutch",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_Netherlands"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Dutch",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_Netherlands"
+                  }
+                ]
               },
               {
                 "label": "2026 team",
@@ -29683,15 +29671,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "German",
-                  "links": [
-                    {
-                      "text": "German",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "German",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Germany"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -37519,15 +37504,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Canadian",
-                  "links": [
-                    {
-                      "text": "Canadian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Canada"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Canadian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Canada"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -39693,15 +39675,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Canadian",
-                  "links": [
-                    {
-                      "text": "Canadian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Canada"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Canadian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Canada"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -41769,15 +41748,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Italian",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -41968,15 +41944,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Spanish",
-                  "links": [
-                    {
-                      "text": "Spanish",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Spain"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Spanish",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Spain"
+                  }
+                ]
               },
               {
                 "label": "Active years",
@@ -48171,7 +48144,7 @@
             },
             "years": [
               {
-                "text": "2019",
+                "year": 2019,
                 "url": "https://en.wikipedia.org/wiki/2019_Formula_2_Championship"
               }
             ]
@@ -48183,7 +48156,7 @@
             },
             "years": [
               {
-                "text": "2014",
+                "year": 2014,
                 "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_2.0_Alps_Series"
               }
             ]
@@ -48195,7 +48168,7 @@
             },
             "years": [
               {
-                "text": "2014",
+                "year": 2014,
                 "url": "https://en.wikipedia.org/wiki/2014_Formula_Renault_2.0_Alps_Series"
               }
             ]
@@ -48453,15 +48426,12 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Dutch",
-                  "links": [
-                    {
-                      "text": "Dutch",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_Netherlands"
-                    }
-                  ]
-                }
+                "value": [
+                  {
+                    "text": "Dutch",
+                    "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_Netherlands"
+                  }
+                ]
               },
               {
                 "label": "Active years",
