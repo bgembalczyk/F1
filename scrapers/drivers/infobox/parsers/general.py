@@ -103,6 +103,40 @@ class InfoboxGeneralParser:
         place_span = cell.find(class_="birthplace") or cell.find(class_="deathplace")
         if place_span:
             place_text = clean_infobox_text(place_span.get_text(" ", strip=True)) or ""
+            # When we have a deathplace/birthplace span, extract links first
+            # to avoid splitting links that contain commas
+            if self._include_urls:
+                links = self._link_extractor.extract_links(place_span)
+                if links:
+                    # Build place from links and remaining text
+                    place: List[str | LinkRecord] = []
+                    remaining_text = place_text
+                    
+                    # Remove link texts from remaining_text to find non-linked parts
+                    for link in links:
+                        link_text = link.get("text", "")
+                        if link_text in remaining_text:
+                            remaining_text = remaining_text.replace(link_text, "", 1)
+                    
+                    # Clean up remaining text (remove extra commas and spaces)
+                    remaining_text = re.sub(r'\s*,\s*', ', ', remaining_text).strip(', ')
+                    
+                    # Combine links and remaining text parts
+                    # Strategy: use the original text order
+                    # Add all links first
+                    place.extend(links)
+                    # Then add remaining text parts split by comma
+                    if remaining_text:
+                        remaining_parts = [p.strip() for p in remaining_text.split(",") if p.strip()]
+                        place.extend(remaining_parts)
+                else:
+                    # No links, just split by comma
+                    place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
+                    place = place_parts
+            else:
+                # No URL extraction, just split by comma
+                place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
+                place = place_parts
         else:
             # Fallback to parsing from text
             text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
@@ -124,20 +158,19 @@ class InfoboxGeneralParser:
                         remaining = " ".join(parts[i + 1:])
                         place_text = (place_text + " " + remaining).strip()
                     break
-        
-        # Filter out "(aged X)" pattern from place text
-        place_text = re.sub(r'\s*\(aged\s+\d+\)', '', place_text, flags=re.IGNORECASE)
-        
-        place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
-        place: List[str | LinkRecord] = place_parts
-        if self._include_urls and place_parts:
-            # Extract links, preferring from birthplace/deathplace span if available
-            links_source = place_span if place_span else cell
-            links = self._link_extractor.extract_links(links_source)
-            place = [
-                self._link_extractor.find_link_by_text(part, links) or part
-                for part in place_parts
-            ]
+            
+            # Filter out "(aged X)" pattern from place text (only in fallback case)
+            place_text = re.sub(r'\s*\(aged\s+\d+\)', '', place_text, flags=re.IGNORECASE)
+            
+            place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
+            place: List[str | LinkRecord] = place_parts
+            if self._include_urls and place_parts:
+                # Extract links from cell (not from span since we don't have one)
+                links = self._link_extractor.extract_links(cell)
+                place = [
+                    self._link_extractor.find_link_by_text(part, links) or part
+                    for part in place_parts
+                ]
         try:
             parsed_date = parse_date_text(date_text or "")
         except (TypeError, ValueError) as exc:
