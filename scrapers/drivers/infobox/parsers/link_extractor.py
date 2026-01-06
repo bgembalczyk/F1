@@ -162,20 +162,32 @@ class InfoboxLinkExtractor:
 
         # Check if we have list items (<li>) - if so, preserve their document order
         li_elements = cell.find_all("li", recursive=True)
-        if li_elements and len(li_elements) > 1:
+        if li_elements:
             # Extract years in document order from list items
             result = []
             year_to_url = YearExtractor.build_year_to_url_map(links)
             
             for li in li_elements:
                 li_text = clean_infobox_text(li.get_text(" ", strip=True)) or ""
-                # Extract year from this list item
-                year_match = re.search(r"\b(\d{4})\b", li_text)
-                if year_match:
-                    year = int(year_match.group(1))
-                    result.append({"year": year, "url": year_to_url.get(year)})
+                
+                # Check if this list item contains a range
+                if re.search(r"\b\d{4}\s*[-–]\s*\d{2,4}\b", li_text):
+                    # Extract and expand the range
+                    years_in_li = YearExtractor.extract_years_from_text(li_text)
+                    # Interpolate URLs for the range if possible
+                    li_year_to_url = YearExtractor.interpolate_urls(years_in_li, year_to_url)
+                    # Add years in sorted order (within this range)
+                    for year in sorted(years_in_li):
+                        result.append({"year": year, "url": li_year_to_url.get(year)})
+                else:
+                    # Single year in this list item
+                    year_match = re.search(r"\b(\d{4})\b", li_text)
+                    if year_match:
+                        year = int(year_match.group(1))
+                        result.append({"year": year, "url": year_to_url.get(year)})
             
-            return result
+            if result:  # Only return if we found years in list items
+                return result
 
         # Otherwise, use the shared logic to expand ranges and sort
         # Build a map of year -> link

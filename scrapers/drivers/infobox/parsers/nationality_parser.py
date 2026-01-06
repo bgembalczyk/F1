@@ -24,7 +24,7 @@ class NationalityParser:
         """
         self._link_extractor = link_extractor
 
-    def parse_nationality(self, cell: Tag) -> List[Union[str, Dict[str, Any]]]:
+    def parse_nationality(self, cell: Tag) -> Union[List[str], List[Dict[str, Any]]]:
         """Parse nationality field.
 
         Handles cases like:
@@ -36,7 +36,7 @@ class NationalityParser:
             cell: BeautifulSoup Tag representing the cell
             
         Returns:
-            List of nationality strings or dictionaries with text/url or nationality/years
+            List of nationality strings OR list of dictionaries with text/url or nationality/years
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
 

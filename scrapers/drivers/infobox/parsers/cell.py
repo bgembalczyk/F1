@@ -1,6 +1,7 @@
 from typing import Any
 from typing import Dict
 from typing import List
+from typing import Union
 
 from bs4 import Tag
 
@@ -140,7 +141,7 @@ class InfoboxCellParser:
     def parse_nested_table(table: Tag) -> Dict[str, Any]:
         return TableParser.parse_nested_table(table)
 
-    def parse_nationality(self, cell: Tag) -> List[str] | List[Dict[str, Any]]:
+    def parse_nationality(self, cell: Tag) -> Union[List[str], List[Dict[str, Any]]]:
         """Parse nationality field.
 
         Handles cases like:
