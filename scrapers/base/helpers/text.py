@@ -101,14 +101,18 @@ def clean_wiki_text(
     normalize_dashes: bool = True,
 ) -> str:
     """Normalizuje whitespace oraz opcjonalnie usuwa przypisy i markery językowe."""
+    # Store function references before parameters shadow them
+    _normalize_dashes = globals()['normalize_dashes']
+    _strip_lang_suffix = globals()['strip_lang_suffix']
+    
     t = coerce_text(text).replace("\xa0", " ").replace("&nbsp;", " ")
     if strip_refs:
         t = strip_wiki_refs(t)
     t = re.sub(r"\s+", " ", t).strip()
     if normalize_dashes:
-        t = normalize_dashes(t)
+        t = _normalize_dashes(t)
     if strip_lang_suffix:
-        t = strip_lang_suffix(t)
+        t = _strip_lang_suffix(t)
     return t
 
 
