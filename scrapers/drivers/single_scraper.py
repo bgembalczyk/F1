@@ -3,6 +3,7 @@ from typing import Any, Dict, List
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
@@ -280,17 +281,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         table: Tag,
         pipeline: TablePipeline,
     ) -> List[Dict[str, Any]]:
-        parser = HtmlTableParser()
-        records: List[Dict[str, Any]] = []
-        for row_index, row in enumerate(parser.parse_table(table)):
-            record = pipeline.parse_cells(
-                row.headers,
-                row.cells,
-                row_index=row_index,
-            )
-            if record:
-                records.append(record)
-        return records
+        return TableParsingHelper.parse_table_with_pipeline(table, pipeline)
 
     def _build_pipeline(
         self,
