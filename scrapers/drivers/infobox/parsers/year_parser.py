@@ -5,6 +5,7 @@ from typing import Dict
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.base.helpers.year_extraction import YearExtractor
 
 
 class YearParser:
@@ -66,22 +67,7 @@ class YearParser:
 
         Returns a pattern string with {year} placeholder if pattern is predictable.
         """
-        urls = [(year, url) for year, url in year_to_link.items() if url]
-        if len(urls) < 2:
-            return None
-
-        # Check if all URLs follow the same pattern
-        patterns = []
-        for year, url in urls:
-            # Replace the year in URL with a placeholder
-            pattern = url.replace(str(year), "{year}")
-            patterns.append(pattern)
-
-        # If all patterns are the same, we found a predictable pattern
-        if len(set(patterns)) == 1:
-            return patterns[0]
-
-        return None
+        return YearExtractor.detect_url_pattern(year_to_link)
 
     @staticmethod
     def parse_licence_years(year_text: str) -> Dict[str, int | None]:

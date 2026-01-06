@@ -5,6 +5,7 @@ from typing import List
 from bs4 import BeautifulSoup, Tag
 
 from scrapers.base.helpers.html_utils import find_section_elements
+from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
@@ -142,23 +143,7 @@ class CancelledRoundsParser:
             include_urls=self._table_parser._include_urls,
             normalize_empty_values=self._table_parser._options.normalize_empty_values,
         )
-        # Parse table directly without section filtering (table already located)
-        parser = HtmlTableParser(
-            section_id=None,  # Table already found, no need to filter by section
-            expected_headers=pipeline.expected_headers,
-        )
-
-        records: List[Dict[str, Any]] = []
-        for row_index, row in enumerate(parser.parse_table(table)):
-            record = pipeline.parse_cells(
-                row.headers,
-                row.cells,
-                row_index=row_index,
-            )
-            if record:
-                records.append(record)
-
-        return records
+        return TableParsingHelper.parse_table_with_pipeline(table, pipeline)
 
     def _is_same_as_calendar(
         self, cancelled_data: List[Dict[str, Any]], calendar_data: List[Dict[str, Any]]

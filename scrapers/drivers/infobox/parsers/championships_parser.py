@@ -9,6 +9,7 @@ from bs4 import Tag
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.base.helpers.year_extraction import YearExtractor
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
@@ -80,14 +81,8 @@ class ChampionshipsParser:
             wins = []
             links = self._link_extractor.extract_links(cell)
 
-            # Build year -> url mapping from links
-            year_to_url: Dict[int, str | None] = {}
-            for link in links:
-                link_text = link.get("text", "")
-                year_match = re.search(r"\b(\d{4})\b", link_text)
-                if year_match:
-                    year = int(year_match.group(1))
-                    year_to_url[year] = link.get("url")
+            # Build year -> url mapping using shared utility
+            year_to_url = YearExtractor.build_year_to_url_map(links)
 
             # Extract all years from text (typically in parentheses or <small> tag)
             # Check <small> tag first

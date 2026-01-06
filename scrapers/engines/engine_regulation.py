@@ -4,6 +4,7 @@ from typing import Any, List
 from bs4 import BeautifulSoup, Tag
 
 from models.validation.engine_regulation import EngineRegulation
+from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
@@ -71,7 +72,7 @@ class EngineRegulationScraper(F1TableScraper):
             table_css_class=self.table_css_class,
         )
         table = parser._find_table(soup)
-        headers, header_rows = self._build_headers(table)
+        headers, header_rows = MultiLevelHeaderBuilder.build_headers(table)
 
         records: list[dict[str, Any]] = []
         pending_rowspans: dict[int, dict[str, object]] = {}
@@ -101,53 +102,6 @@ class EngineRegulationScraper(F1TableScraper):
                 records.append(record)
 
         return records
-
-    @staticmethod
-    def _build_headers(table: Tag) -> tuple[List[str], int]:
-        header_rows: List[Tag] = []
-        for row in table.find_all("tr"):
-            if row.find_all("th"):
-                header_rows.append(row)
-                continue
-            if row.find_all("td"):
-                break
-
-        if not header_rows:
-            raise RuntimeError("Nie znaleziono nagłówków tabeli.")
-
-        first_row_cells = header_rows[0].find_all(["th", "td"])
-        second_row_cells: List[Tag] = []
-        if len(header_rows) > 1:
-            second_row_cells = header_rows[1].find_all(["th", "td"])
-
-        second_iter = iter(second_row_cells)
-        headers: List[str] = []
-        for cell in first_row_cells:
-            text = clean_wiki_text(cell.get_text(" ", strip=True))
-            try:
-                colspan = int(cell.get("colspan", 1))
-            except ValueError:
-                colspan = 1
-
-            if colspan > 1:
-                for _ in range(colspan):
-                    sub_text = None
-                    if second_row_cells:
-                        try:
-                            sub_cell = next(second_iter)
-                            sub_text = clean_wiki_text(
-                                sub_cell.get_text(" ", strip=True)
-                            )
-                        except StopIteration:
-                            sub_text = None
-                    if sub_text:
-                        headers.append(f"{text} - {sub_text}")
-                    else:
-                        headers.append(text)
-            else:
-                headers.append(text)
-
-        return headers, len(header_rows)
 
 
 if __name__ == "__main__":
