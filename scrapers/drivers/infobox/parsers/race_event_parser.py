@@ -1,0 +1,58 @@
+"""Helper class for parsing race event information from infobox cells."""
+
+from typing import Any
+from typing import Dict
+from typing import List
+
+from bs4 import Tag
+
+from scrapers.base.errors import DomainParseError
+from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
+
+
+class RaceEventParser:
+    """Handles parsing of race event fields (First race, Last race, etc.)."""
+
+    def __init__(self, link_extractor: InfoboxLinkExtractor):
+        """Initialize the race event parser.
+        
+        Args:
+            link_extractor: Link extractor for extracting URLs from cells
+        """
+        self._link_extractor = link_extractor
+
+    def parse_race_event(self, cell: Tag) -> List[Dict[str, Any]]:
+        """Parse race event fields like First race, Last race, First win, Last win.
+
+        Returns a list of all links found in the cell.
+        If no links are found, returns the text as a single-item list with text field.
+        
+        Args:
+            cell: BeautifulSoup Tag representing the cell
+            
+        Returns:
+            List of dictionaries with 'text' and 'url' keys
+            
+        Raises:
+            DomainParseError: If parsing fails
+        """
+        try:
+            links = self._link_extractor.extract_links(cell)
+
+            # If we have links, return them
+            if links:
+                return links
+
+            # If no links, return the text
+            text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+            if text:
+                return [{"text": text, "url": None}]
+
+            return []
+        except (TypeError, ValueError) as exc:
+            text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+            raise DomainParseError(
+                f"Nie udało się sparsować wydarzenia wyścigowego: {text!r}.",
+                cause=exc,
+            ) from exc
