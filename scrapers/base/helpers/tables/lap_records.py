@@ -1,10 +1,10 @@
 """Helper table scraper for lap record tables."""
 
-import re
 from typing import Any, Dict, List
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import Tag
 
+from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -56,30 +56,7 @@ class LapRecordsTableScraper(F1TableScraper):
             "korzystaj z parse_row()/parse_multi_row() na konkretnych tabelach."
         )
 
-    @staticmethod
-    def _split_cell_on_br(cell: Tag) -> List[Tag]:
-        """
-        Dzieli komórkę na segmenty po <br>. Jeśli nie ma <br>, zwraca [cell].
 
-        Każdy segment jest nowym sztucznym <span>, żeby można było niezależnie
-        liczyć tekst i linki (bez grzebania w oryginalnym drzewie DOM).
-        """
-        html = cell.decode_contents()
-        parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
-
-        segments: List[Tag] = []
-        soup = cell.soup or BeautifulSoup("", "html.parser")
-
-        for part in parts:
-            if not part.strip():
-                continue
-            frag_soup = BeautifulSoup(part, "html.parser")
-            span = soup.new_tag("span")
-            for el in list(frag_soup.contents):
-                span.append(el)
-            segments.append(span)
-
-        return segments or [cell]
 
     def parse_multi_row(
         self,
@@ -101,7 +78,7 @@ class LapRecordsTableScraper(F1TableScraper):
         max_segments = 1
 
         for cell in cells:
-            segs = self._split_cell_on_br(cell)
+            segs = split_cell_on_br(cell)
             per_cell_segments.append(segs)
             max_segments = max(max_segments, len(segs))
 

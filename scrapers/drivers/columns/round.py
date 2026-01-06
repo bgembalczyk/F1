@@ -1,6 +1,7 @@
 import re
 from typing import Any
 
+from scrapers.base.helpers.background import extract_background
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -49,7 +50,7 @@ class RoundColumn(BaseColumn):
             "round": round_link,
             "code": self._round_code(round_link, tokens),
             "result": result,
-            "background": self._extract_background(cell),
+            "background": extract_background(cell),
             "pole_position": self._has_tag(cell, ["b", "strong"]),
             "fastest_lap": self._has_tag(cell, ["i", "em"]),
             "superscript": self._superscript_text(cell),
@@ -61,20 +62,6 @@ class RoundColumn(BaseColumn):
             return clean_wiki_text(round_link["text"]).split()[0]
         if tokens:
             return tokens[0]
-        return None
-
-    @staticmethod
-    def _extract_background(cell) -> str | None:
-        style = cell.get("style") or ""
-        if style:
-            match = re.search(r"background(?:-color)?\s*:\s*([^;]+)", style, re.I)
-            if match:
-                return match.group(1).strip()
-
-        bgcolor = cell.get("bgcolor")
-        if bgcolor:
-            return str(bgcolor).strip()
-
         return None
 
     @staticmethod

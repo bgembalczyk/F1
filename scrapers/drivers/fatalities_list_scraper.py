@@ -2,10 +2,13 @@ from pathlib import Path
 from typing import Any
 
 from models.records.factories import build_fatality_record
+from scrapers.base.helpers.date_parsing import (
+    parse_date_with_category_marker,
+    parse_formula_category,
+)
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
-from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -76,22 +79,15 @@ class F1FatalitiesListScraper(F1TableScraper):
         ]
         super().__init__(options=options, config=config)
 
+    # Methods using shared utilities from date_parsing module
+    # Kept here for backward compatibility if they are used elsewhere
     @staticmethod
     def _parse_date(ctx: ColumnContext) -> str | None:
-        text = (ctx.clean_text or "").replace(MARK_F2_CATEGORY, "").strip()
-        if not text:
-            return None
-        parsed = parse_date_text(text)
-        iso = parsed.iso
-        if isinstance(iso, list):
-            return iso[0] if iso else None
-        return iso
+        return parse_date_with_category_marker(ctx, MARK_F2_CATEGORY)
 
     @staticmethod
     def _parse_formula_category(ctx: ColumnContext) -> str | None:
-        if not (ctx.raw_text or "").strip():
-            return None
-        return "F2" if MARK_F2_CATEGORY in (ctx.raw_text or "") else "F1"
+        return parse_formula_category(ctx, MARK_F2_CATEGORY)
 
     @staticmethod
     def _parse_event(ctx: ColumnContext) -> Any:

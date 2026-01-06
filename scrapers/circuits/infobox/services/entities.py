@@ -1,7 +1,7 @@
-from typing import Optional, Dict, Any, List, Callable, TypeVar
+from typing import Optional, Dict, Any, List, Callable
 
 from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.errors import ScraperError
+from scrapers.base.parsers.safe_parser_mixin import SafeParserMixin
 from scrapers.circuits.infobox.services.additional_info import (
     CircuitAdditionalInfoParser,
 )
@@ -16,10 +16,9 @@ from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 from scrapers.circuits.models.services.lap_record_merging import merge_two_records
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
 
-_T = TypeVar("_T")
 
-
-class CircuitEntitiesParser:
+class CircuitEntitiesParser(SafeParserMixin):
+    """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
 
     def __init__(
@@ -44,27 +43,6 @@ class CircuitEntitiesParser:
         self.additional_info_parser = additional_info_parser
         self.error_handler = error_handler
         self._url_provider = url_provider
-
-    def _safe_parse(
-        self,
-        fn: Callable[..., _T],
-        *args: Any,
-        **kwargs: Any,
-    ) -> Optional[_T]:
-        try:
-            return fn(*args, **kwargs)
-        except Exception as exc:
-            url = self._url_provider() if self._url_provider else None
-            error = (
-                exc
-                if isinstance(exc, ScraperError)
-                else self.error_handler.wrap_parse(exc, url=url)
-            )
-            if self.error_handler.handle(error):
-                return None
-            if error is exc:
-                raise
-            raise error from exc
 
     def _build_normalized_data(
         self, raw: Dict[str, Any], rows: Dict[str, Dict[str, Any]]

@@ -7,8 +7,8 @@ from scrapers.base.debug_dumps import write_infobox_dump
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
-from scrapers.base.transformers.helpers import apply_transformers
-from scrapers.base.transformers.record_factory import RecordFactoryTransformer
+from scrapers.base.helpers.transformers import build_transformers
+from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.drivers.infobox.parsers.career import InfoboxCareerParser
 from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
 from scrapers.drivers.infobox.parsers.general import InfoboxGeneralParser
@@ -16,7 +16,6 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.section_collector import InfoboxSectionCollector
 from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
-from scrapers.base.helpers.transformers import build_transformers
 
 
 class DriverInfoboxScraper:
@@ -96,18 +95,9 @@ class DriverInfoboxScraper:
         return [self._apply_transformers(parsed)]
 
     def _apply_transformers(self, record: Dict[str, Any]) -> Any:
-        transformers = list(self.transformers)
-        if self.record_factory is not None:
-            transformers.append(
-                RecordFactoryTransformer(
-                    self.record_factory,
-                    fallback_on_error=True,
-                )
-            )
-        if not transformers:
-            return record
-        transformed = apply_transformers(transformers, [record], logger=self.logger)
-        return transformed[0] if transformed else {}
+        return apply_transformers_with_factory(
+            self.transformers, record, self.record_factory, self.logger
+        )
 
     def _parse_infobox_with_sections(
         self, table: Tag, sections: List[Dict[str, Any]]
