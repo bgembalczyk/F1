@@ -56,6 +56,7 @@ class InfoboxCellParser:
         self._licence_parser = LicenceParser(link_extractor)
         self._best_finish_parser = BestFinishParser(link_extractor)
         self._collapsible_table_parser = CollapsibleTableParser(self)
+        self._nationality_parser = NationalityParser(link_extractor)
 
     def parse_cell(self, cell: Tag) -> Dict[str, Any]:
         text = clean_infobox_text(cell.get_text(" ", strip=True))
@@ -139,15 +140,15 @@ class InfoboxCellParser:
     def parse_nested_table(table: Tag) -> Dict[str, Any]:
         return TableParser.parse_nested_table(table)
 
-    @staticmethod
-    def parse_nationality(cell: Tag) -> List[str] | List[Dict[str, Any]]:
+    def parse_nationality(self, cell: Tag) -> List[str] | List[Dict[str, Any]]:
         """Parse nationality field.
 
         Handles cases like:
         - "American or Italian" -> ["American", "Italian"]
+        - "British" with link -> [{"text": "British", "url": "..."}]
         - "Federation of Rhodesia and Nyasaland (1963)" with year ranges -> structured data
         """
-        return NationalityParser.parse_nationality(cell)
+        return self._nationality_parser.parse_nationality(cell)
 
     def parse_collapsible_career_table(self, table: Tag) -> Dict[str, Any] | None:
         """Parse collapsible career statistics table (e.g., motorcycle racing).

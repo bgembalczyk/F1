@@ -132,6 +132,7 @@ class InfoboxLinkExtractor:
         - Individual years: 2002, 2005, 2007
         - Ranges: 2007-2008 (expands and interpolates missing links)
         - Single link with range: <a>2018-2019</a> (keeps as-is, doesn't expand)
+        - List items: preserves document order (e.g., <li>2022</li><li>2009</li><li>2007</li>)
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         # Don't filter by is_year_link here - we want ALL year links including those with "season" in URL
@@ -159,7 +160,24 @@ class InfoboxLinkExtractor:
         if range_links:
             return range_links
 
-        # Otherwise, use the shared logic to expand ranges
+        # Check if we have list items (<li>) - if so, preserve their document order
+        li_elements = cell.find_all("li", recursive=True)
+        if li_elements and len(li_elements) > 1:
+            # Extract years in document order from list items
+            result = []
+            year_to_url = YearExtractor.build_year_to_url_map(links)
+            
+            for li in li_elements:
+                li_text = clean_infobox_text(li.get_text(" ", strip=True)) or ""
+                # Extract year from this list item
+                year_match = re.search(r"\b(\d{4})\b", li_text)
+                if year_match:
+                    year = int(year_match.group(1))
+                    result.append({"year": year, "url": year_to_url.get(year)})
+            
+            return result
+
+        # Otherwise, use the shared logic to expand ranges and sort
         # Build a map of year -> link
         year_to_url = YearExtractor.build_year_to_url_map(links)
 
@@ -169,7 +187,7 @@ class InfoboxLinkExtractor:
         # Try to interpolate URLs for missing years
         year_to_url = YearExtractor.interpolate_urls(years_set, year_to_url)
 
-        # Build result list
+        # Build result list (sorted for non-list cases)
         result = []
         for year in sorted(years_set):
             result.append({"year": year, "url": year_to_url.get(year)})
