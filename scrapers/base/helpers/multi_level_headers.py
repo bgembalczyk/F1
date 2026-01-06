@@ -1,6 +1,6 @@
 """Shared utility for building multi-level table headers."""
 
-from typing import List
+from typing import List, Tuple
 
 from bs4 import Tag
 
@@ -11,7 +11,7 @@ class MultiLevelHeaderBuilder:
     """Helper for building headers from multi-row table headers with colspan support."""
 
     @staticmethod
-    def build_headers(table: Tag) -> tuple[List[str], int]:
+    def build_headers(table: Tag) -> Tuple[List[str], int]:
         """Build headers from multi-row table headers.
 
         Handles tables with colspan in the first row and sub-headers in the second row.

@@ -70,7 +70,7 @@ class EntryMerger:
         self,
         records: List[Dict[str, Any]],
         key: str,
-    ) -> dict[str, dict[str, Any]]:
+    ) -> Dict[str, Dict[str, Any]]:
         """Group records by the given key.
 
         Args:
@@ -80,7 +80,7 @@ class EntryMerger:
         Returns:
             Dictionary mapping group_key to {"value": value, "records": [records]}
         """
-        groups: dict[str, dict[str, Any]] = {}
+        groups: Dict[str, Dict[str, Any]] = {}
         for record in records:
             value = record.get(key)
             group_key = self._entry_group_key(value)
