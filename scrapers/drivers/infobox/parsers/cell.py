@@ -16,7 +16,6 @@ from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
-
 class InfoboxCellParser:
     # Regex patterns for year detection (compiled once for performance)
     _FOUR_DIGIT_YEAR_PATTERN = re.compile(r'^(19|20)\d{2}$')
@@ -546,8 +545,7 @@ class InfoboxCellParser:
         
         # Check if class duplicates any season
         for season_link in season_links:
-            if (season_link.get("text") == class_text or 
-                season_link.get("url") == class_url):
+            if season_link.get("text") == class_text or season_link.get("url") == class_url:
                 return False
         
         return True
@@ -590,12 +588,14 @@ class InfoboxCellParser:
             if not part:
                 continue
             
-            # Check if it's a 4-digit year (1900-2099)
             if self._FOUR_DIGIT_YEAR_PATTERN.match(part):
+                # It's a 4-digit year (1900-2099)
                 has_four_digit_year = True
-            # Check if it's a 2-digit suffix (00-99)
-            # These are only valid when combined with 4-digit years (like "2019-20")
-            elif not self._TWO_DIGIT_SUFFIX_PATTERN.match(part):
+            elif self._TWO_DIGIT_SUFFIX_PATTERN.match(part):
+                # It's a 2-digit suffix (00-99)
+                # These are only valid when combined with 4-digit years (like "2019-20")
+                pass
+            else:
                 # Not a year or suffix - likely a class name with letters
                 return False
         
