@@ -61,124 +61,147 @@ class InfoboxGeneralParser:
         return data
 
     def _parse_date_place(self, cell: Tag) -> Dict[str, Any]:
+        date_text = self._extract_date_text(cell)
+        place = self._extract_place(cell)
+        date_value = self._normalize_date_value(date_text)
+        return {
+            "date": date_value,
+            "place": place or None,
+        }
+
+    def _extract_date_text(self, cell: Tag) -> str:
+        """Extract date text from cell using structured data or fallback."""
         # Try to extract date from structured data (bday or dday class)
         bday_span = cell.find("span", class_="bday")
         dday_span = cell.find("span", class_="dday")
 
         if bday_span:
-            date_text = clean_infobox_text(bday_span.get_text(strip=True)) or ""
+            return clean_infobox_text(bday_span.get_text(strip=True)) or ""
         elif dday_span:
-            date_text = clean_infobox_text(dday_span.get_text(strip=True)) or ""
-        else:
-            # Try to find hidden span with ISO date format (style="display:none")
-            # Pattern: <span style="display:none">(YYYY-MM-DD)</span>
-            hidden_spans = cell.find_all(
-                "span", style=lambda x: x and "display:none" in x
-            )
-            iso_date = None
-            for span in hidden_spans:
-                span_text = span.get_text(strip=True)
-                # Look for ISO date pattern in parentheses
-                iso_match = re.search(r"\((\d{4}-\d{2}-\d{2})\)", span_text)
-                if iso_match:
-                    iso_date = iso_match.group(1)
-                    break
+            return clean_infobox_text(dday_span.get_text(strip=True)) or ""
+        
+        # Try to find hidden span with ISO date format (style="display:none")
+        iso_date = self._extract_iso_date_from_hidden_span(cell)
+        if iso_date:
+            return iso_date
+        
+        # Fallback to text-based extraction
+        return self._extract_date_from_text(cell)
 
-            if iso_date:
-                date_text = iso_date
-            else:
-                # Fallback to text-based extraction
-                text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
-                parts = [p.strip() for p in text.split("\n") if p.strip()]
+    def _extract_iso_date_from_hidden_span(self, cell: Tag) -> str | None:
+        """Extract ISO date from hidden span elements."""
+        hidden_spans = cell.find_all(
+            "span", style=lambda x: x and "display:none" in x
+        )
+        for span in hidden_spans:
+            span_text = span.get_text(strip=True)
+            # Look for ISO date pattern in parentheses
+            iso_match = re.search(r"\((\d{4}-\d{2}-\d{2})\)", span_text)
+            if iso_match:
+                return iso_match.group(1)
+        return None
 
-                # Filter out the original name (first part if it doesn't contain date pattern)
-                filtered_parts = []
-                for part in parts:
-                    # Skip parts that look like names (no date pattern and no numbers)
-                    if not re.search(self._DATE_PATTERN, part):
-                        # This might be the original name, skip it
-                        continue
-                    filtered_parts.append(part)
+    def _extract_date_from_text(self, cell: Tag) -> str:
+        """Extract date from cell text when structured data is not available."""
+        text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
+        parts = [p.strip() for p in text.split("\n") if p.strip()]
 
-                date_text = filtered_parts[0] if filtered_parts else ""
-                date_text = re.sub(r"\s*\([^)]*\)", "", date_text).strip()
+        # Filter out the original name (first part if it doesn't contain date pattern)
+        filtered_parts = []
+        for part in parts:
+            # Skip parts that look like names (no date pattern and no numbers)
+            if not re.search(self._DATE_PATTERN, part):
+                # This might be the original name, skip it
+                continue
+            filtered_parts.append(part)
 
+        date_text = filtered_parts[0] if filtered_parts else ""
+        return re.sub(r"\s*\([^)]*\)", "", date_text).strip()
+
+    def _extract_place(self, cell: Tag) -> List[str | LinkRecord]:
+        """Extract place information from cell."""
         # Extract place from birthplace/deathplace element (div or span) if available
         place_span = cell.find(class_="birthplace") or cell.find(class_="deathplace")
         if place_span:
-            place_text = clean_infobox_text(place_span.get_text(" ", strip=True)) or ""
-            # When we have a death place/birth place span, extract links first
-            # to avoid splitting links that contain commas
-            if self._include_urls:
-                links = self._link_extractor.extract_links(place_span)
-                if links:
-                    # Build place from links and remaining text
-                    place: List[str | LinkRecord] = []
-                    remaining_text = place_text
-
-                    # Remove link texts from remaining_text to find non-linked parts
-                    for link in links:
-                        link_text = link.get("text", "")
-                        if link_text in remaining_text:
-                            remaining_text = remaining_text.replace(link_text, "", 1)
-
-                    # Clean up remaining text (remove extra commas and spaces)
-                    remaining_text = re.sub(r"\s*,\s*", ", ", remaining_text).strip(
-                        ", "
-                    )
-
-                    # Combine links and remaining text parts
-                    # Strategy: use the original text order
-                    # Add all links first
-                    place.extend(links)
-                    # Then add remaining text parts split by comma
-                    if remaining_text:
-                        remaining_parts = [
-                            p.strip() for p in remaining_text.split(",") if p.strip()
-                        ]
-                        place.extend(remaining_parts)
-                else:
-                    # No links, just split by comma
-                    place = [p.strip() for p in place_text.split(",") if p.strip()]
-            else:
-                # No URL extraction, just split by comma
-                place = [p.strip() for p in place_text.split(",") if p.strip()]
+            return self._extract_place_from_span(place_span)
         else:
-            # Fallback to parsing from text
-            text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
-            parts = [p.strip() for p in text.split("\n") if p.strip()]
+            return self._extract_place_from_text(cell)
 
-            # Find the part with the date and take everything after it
-            place_text = ""
-            for i, part in enumerate(parts):
-                if re.search(self._DATE_PATTERN, part):
-                    # Found date part, check if place is on same line or next lines
-                    match = re.match(
-                        r"^(?:[0-9]{1,2}\s+[A-Za-z]+\s+\d{4}|[A-Za-z]+\s+\d{1,2},\s*\d{4}|\d{4})(?:\s*\([^)]*\))?\s*(.*)$",
-                        part,
-                    )
-                    if match:
-                        place_text = match.group(1).strip()
-                    # Also include following parts as place
-                    if i + 1 < len(parts):
-                        remaining = " ".join(parts[i + 1 :])
-                        place_text = (place_text + " " + remaining).strip()
-                    break
+    def _extract_place_from_span(self, place_span: Tag) -> List[str | LinkRecord]:
+        """Extract place from birthplace/deathplace span element."""
+        place_text = clean_infobox_text(place_span.get_text(" ", strip=True)) or ""
+        
+        if self._include_urls:
+            links = self._link_extractor.extract_links(place_span)
+            if links:
+                # Build place from links and remaining text
+                place: List[str | LinkRecord] = []
+                remaining_text = place_text
 
-            # Filter out "(aged X)" pattern from place text (only in fallback case)
-            place_text = re.sub(
-                r"\s*\(aged\s+\d+\)", "", place_text, flags=re.IGNORECASE
-            )
+                # Remove link texts from remaining_text to find non-linked parts
+                for link in links:
+                    link_text = link.get("text", "")
+                    if link_text in remaining_text:
+                        remaining_text = remaining_text.replace(link_text, "", 1)
 
-            place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
-            place: List[str | LinkRecord] = place_parts
-            if self._include_urls and place_parts:
-                # Extract links from cell (not from span since we don't have one)
-                links = self._link_extractor.extract_links(cell)
-                place = [
-                    self._link_extractor.find_link_by_text(part, links) or part
-                    for part in place_parts
-                ]
+                # Clean up remaining text (remove extra commas and spaces)
+                remaining_text = re.sub(r"\s*,\s*", ", ", remaining_text).strip(", ")
+
+                # Combine links and remaining text parts
+                place.extend(links)
+                if remaining_text:
+                    remaining_parts = [
+                        p.strip() for p in remaining_text.split(",") if p.strip()
+                    ]
+                    place.extend(remaining_parts)
+                return place
+            else:
+                # No links, just split by comma
+                return [p.strip() for p in place_text.split(",") if p.strip()]
+        else:
+            # No URL extraction, just split by comma
+            return [p.strip() for p in place_text.split(",") if p.strip()]
+
+    def _extract_place_from_text(self, cell: Tag) -> List[str | LinkRecord]:
+        """Fallback method to extract place from cell text."""
+        text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
+        parts = [p.strip() for p in text.split("\n") if p.strip()]
+
+        # Find the part with the date and take everything after it
+        place_text = ""
+        for i, part in enumerate(parts):
+            if re.search(self._DATE_PATTERN, part):
+                # Found date part, check if place is on same line or next lines
+                match = re.match(
+                    r"^(?:[0-9]{1,2}\s+[A-Za-z]+\s+\d{4}|[A-Za-z]+\s+\d{1,2},\s*\d{4}|\d{4})(?:\s*\([^)]*\))?\s*(.*)$",
+                    part,
+                )
+                if match:
+                    place_text = match.group(1).strip()
+                # Also include following parts as place
+                if i + 1 < len(parts):
+                    remaining = " ".join(parts[i + 1 :])
+                    place_text = (place_text + " " + remaining).strip()
+                break
+
+        # Filter out "(aged X)" pattern from place text
+        place_text = re.sub(r"\s*\(aged\s+\d+\)", "", place_text, flags=re.IGNORECASE)
+
+        place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
+        place: List[str | LinkRecord] = place_parts
+        
+        if self._include_urls and place_parts:
+            # Extract links from cell (not from span since we don't have one)
+            links = self._link_extractor.extract_links(cell)
+            place = [
+                self._link_extractor.find_link_by_text(part, links) or part
+                for part in place_parts
+            ]
+        
+        return place
+
+    def _normalize_date_value(self, date_text: str) -> str | None:
+        """Normalize date text to standard format."""
         try:
             parsed_date = parse_date_text(date_text or "")
         except (TypeError, ValueError) as exc:
@@ -186,17 +209,14 @@ class InfoboxGeneralParser:
                 f"Nie udało się sparsować daty miejsca: {date_text!r}.",
                 cause=exc,
             ) from exc
+        
         iso = parsed_date.iso
         if isinstance(iso, list):
-            date_value = iso[0] if iso else None
+            return iso[0] if iso else None
         elif isinstance(iso, str):
-            date_value = iso
+            return iso
         else:
-            date_value = parsed_date.raw or date_text or None
-        return {
-            "date": date_value,
-            "place": place or None,
-        }
+            return parsed_date.raw or date_text or None
 
     def _parse_relations(self, cell: Tag) -> List[Dict[str, Any]]:
         links = self._link_extractor.extract_links(cell)
