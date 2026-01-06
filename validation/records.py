@@ -198,7 +198,7 @@ class RecordValidator(ABC):
                     )
                     continue
                 errors.extend(
-                    cls._prefix_errors(
+                    cls.prefix_errors(
                         cls._validate_nested_schema(item, nested_schema.schema),
                         f"{key}[{index}]",
                     )
@@ -207,7 +207,7 @@ class RecordValidator(ABC):
         if not isinstance(value, Mapping):
             return [ValidationIssue.custom(f"{key} must be a mapping")]
         errors.extend(
-            cls._prefix_errors(
+            cls.prefix_errors(
                 cls._validate_nested_schema(value, nested_schema.schema),
                 key,
             )
@@ -226,7 +226,7 @@ class RecordValidator(ABC):
         return [cls._coerce_issue(error) for error in nested_schema(record)]
 
     @staticmethod
-    def _prefix_errors(
+    def prefix_errors(
         errors: Sequence[ValidationIssue], prefix: str
     ) -> list[ValidationIssue]:
         prefixed: list[ValidationIssue] = []

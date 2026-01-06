@@ -34,7 +34,7 @@ class InfoboxSchema:
                 key = self._normalize_label(label)
                 if key:
                     self._label_map[key] = field
-        self._required_keys = (
+        self.required_keys = (
             {key for key in required_keys}
             if required_keys is not None
             else {field.key for field in self.fields}
@@ -95,7 +95,7 @@ class InfoboxSchema:
         if logger is None:
             return
         present_set = {key for key in present_keys if key}
-        missing = sorted(self._required_keys - present_set)
+        missing = sorted(self.required_keys - present_set)
         if missing:
             logger.info(
                 "Missing infobox fields for %s: %s (context=%s)",

@@ -10,8 +10,9 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.extractors.table import TableExtractor
-from scrapers.base.transformers import RecordFactoryTransformer, apply_transformers
 from scrapers.base.table.row import TableRow
+from scrapers.base.transformers.helpers import apply_transformers
+from scrapers.base.transformers.record_factory import RecordFactoryTransformer
 
 
 class F1TableScraper(F1Scraper, ABC):

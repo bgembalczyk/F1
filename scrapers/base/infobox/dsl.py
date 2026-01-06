@@ -78,7 +78,7 @@ class InfoboxSchemaDSL:
     def from_schema(cls, schema: InfoboxSchema) -> "InfoboxSchemaDSL":
         return cls(
             name=schema.name,
-            required_keys=list(schema._required_keys),
+            required_keys=list(schema.required_keys),
             normalize_unknown=schema.normalize_unknown,
             fields=[
                 InfoboxFieldSpec(

@@ -81,7 +81,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         records: List[Dict[str, Any]] = []
 
         for section_title in sections:
-            section_soup = self._extract_section_by_id(
+            section_soup = self.extract_section_by_id(
                 soup, section_title.replace(" ", "_")
             )
             if section_soup is None:

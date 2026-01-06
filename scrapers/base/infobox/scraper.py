@@ -12,7 +12,8 @@ from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.transformers import RecordFactoryTransformer, apply_transformers
+from scrapers.base.transformers.helpers import apply_transformers
+from scrapers.base.transformers.record_factory import RecordFactoryTransformer
 
 
 class WikipediaInfoboxScraper:
