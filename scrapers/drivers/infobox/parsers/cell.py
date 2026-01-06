@@ -578,21 +578,30 @@ class InfoboxCellParser:
         cleaned = text.replace(',', ' ').replace('–', ' ').replace('-', ' ')
         parts = cleaned.split()
         
+        if not parts:
+            return False
+        
         # Check if all parts are either 4-digit years or 2-digit year suffixes
-        # 2-digit suffixes appear in ranges like "2019-20" where "20" represents 2020
+        # and ensure at least one 4-digit year is present
+        has_four_digit_year = False
+        
         for part in parts:
             part = part.strip()
             if not part:
                 continue
-            # Must be either a 4-digit year (1900-2099) or a 2-digit suffix (00-99)
-            # Note: 2-digit pattern is intentionally permissive as it's only used
-            # when combined with valid 4-digit years in the same text
-            if not (self._FOUR_DIGIT_YEAR_PATTERN.match(part) or 
-                    self._TWO_DIGIT_SUFFIX_PATTERN.match(part)):
+            
+            # Check if it's a 4-digit year (1900-2099)
+            if self._FOUR_DIGIT_YEAR_PATTERN.match(part):
+                has_four_digit_year = True
+            # Check if it's a 2-digit suffix (00-99)
+            # These are only valid when combined with 4-digit years (like "2019-20")
+            elif not self._TWO_DIGIT_SUFFIX_PATTERN.match(part):
+                # Not a year or suffix - likely a class name with letters
                 return False
         
-        # If we have at least one part and all parts are year-like, it's season data
-        return len(parts) > 0
+        # Valid season-like text must have at least one 4-digit year
+        # 2-digit suffixes alone (like "20") are not sufficient
+        return has_four_digit_year
     
     def parse_finished_last_season(self, cell: Tag) -> Dict[str, Any]:
         """Parse 'Finished last season' field.
