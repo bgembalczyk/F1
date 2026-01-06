@@ -103,7 +103,7 @@ class InfoboxGeneralParser:
         place_span = cell.find(class_="birthplace") or cell.find(class_="deathplace")
         if place_span:
             place_text = clean_infobox_text(place_span.get_text(" ", strip=True)) or ""
-            # When we have a deathplace/birthplace span, extract links first
+            # When we have a death place/birth place span, extract links first
             # to avoid splitting links that contain commas
             if self._include_urls:
                 links = self._link_extractor.extract_links(place_span)
@@ -131,12 +131,10 @@ class InfoboxGeneralParser:
                         place.extend(remaining_parts)
                 else:
                     # No links, just split by comma
-                    place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
-                    place = place_parts
+                    place = [p.strip() for p in place_text.split(",") if p.strip()]
             else:
                 # No URL extraction, just split by comma
-                place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
-                place = place_parts
+                place = [p.strip() for p in place_text.split(",") if p.strip()]
         else:
             # Fallback to parsing from text
             text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""

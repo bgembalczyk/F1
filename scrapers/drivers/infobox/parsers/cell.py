@@ -940,7 +940,6 @@ class InfoboxCellParser:
                     continue
                 
                 # Parse this part
-                from bs4 import BeautifulSoup
                 part_soup = BeautifulSoup(part_html, 'html.parser')
                 part_text = clean_infobox_text(part_soup.get_text(" ", strip=True)) or ""
                 
