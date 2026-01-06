@@ -14759,44 +14759,12 @@
             },
             "years": [
               {
-                "text": "2023",
+                "year": 2015,
+                "url": "https://en.wikipedia.org/wiki/2015_Pro_Mazda_Winterfest"
+              },
+              {
+                "year": 2023,
                 "url": "https://en.wikipedia.org/wiki/2023_IMSA_SportsCar_Championship"
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Formula Renault Eurocup",
-              "url": "https://en.wikipedia.org/wiki/Formula_Renault_Eurocup"
-            },
-            "years": [
-              {
-                "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_Pro_Mazda_Winterfest"
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Formula Renault 2.0 Alps",
-              "url": "https://en.wikipedia.org/wiki/Formula_Renault_2.0_Alps"
-            },
-            "years": [
-              {
-                "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_Pro_Mazda_Winterfest"
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Pro Mazda Winterfest",
-              "url": "https://en.wikipedia.org/wiki/Pro_Mazda_Championship"
-            },
-            "years": [
-              {
-                "text": "2015",
-                "url": "https://en.wikipedia.org/wiki/2015_Pro_Mazda_Winterfest"
               }
             ]
           }
@@ -15013,15 +14981,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -27569,15 +27531,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Thai",
-                  "links": [
-                    {
-                      "text": "Thai",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Thailand"
-                    }
-                  ]
-                }
+                "value": [
+                  "Thai"
+                ]
               },
               {
                 "label": "2026 team",
@@ -33744,15 +33700,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -34126,15 +34076,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -40815,8 +40759,8 @@
             },
             "years": [
               {
-                "text": "2008",
-                "url": "https://en.wikipedia.org/wiki/2008_British_Formula_3_International_Series"
+                "year": 2006,
+                "url": "https://en.wikipedia.org/wiki/2006_Formula_Renault_2.0_Italia#Winter_Series"
               }
             ]
           },
@@ -40827,8 +40771,8 @@
             },
             "years": [
               {
-                "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Formula_Renault_2.0_Italia#Winter_Series"
+                "year": 2008,
+                "url": "https://en.wikipedia.org/wiki/2008_British_Formula_3_International_Series"
               }
             ]
           }
@@ -40840,15 +40784,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Spanish",
-                  "links": [
-                    {
-                      "text": "Spanish",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Spain"
-                    }
-                  ]
-                }
+                "value": [
+                  "Spanish"
+                ]
               },
               {
                 "label": "Active years",
@@ -44909,8 +44847,10 @@
           "born": {
             "date": "1954-07-27",
             "place": [
-              "Voves",
-              "Eure-et-Loir",
+              {
+                "text": "Voves, Eure-et-Loir",
+                "url": "https://en.wikipedia.org/wiki/Voves"
+              },
               "France"
             ]
           }
@@ -44923,15 +44863,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -51049,8 +50983,8 @@
             },
             "years": [
               {
-                "text": "2019",
-                "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Daytona"
+                "year": 1999,
+                "url": "https://en.wikipedia.org/wiki/1999_Euro_Open_by_Nissan"
               }
             ]
           },
@@ -51061,8 +50995,8 @@
             },
             "years": [
               {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Euro_Open_by_Nissan"
+                "year": 2019,
+                "url": "https://en.wikipedia.org/wiki/2019_24_Hours_of_Daytona"
               }
             ]
           }
@@ -51074,15 +51008,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Spanish",
-                  "links": [
-                    {
-                      "text": "Spanish",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Spain"
-                    }
-                  ]
-                }
+                "value": [
+                  "Spanish"
+                ]
               },
               {
                 "label": "2026 team",
@@ -62810,15 +62738,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "New Zealander",
-                  "links": [
-                    {
-                      "text": "New Zealander",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_New_Zealand"
-                    }
-                  ]
-                }
+                "value": [
+                  "New Zealander"
+                ]
               },
               {
                 "label": "Active years",
@@ -73548,22 +73470,202 @@
           ]
         },
         "championship_titles": [],
-        "major_victories": [],
+        "major_victories": [
+          {
+            "title": {
+              "text": "IndyCar National Championship",
+              "url": "https://en.wikipedia.org/wiki/List_of_American_open-wheel_racing_national_champions"
+            },
+            "years": [
+              {
+                "text": "1965",
+                "url": "https://en.wikipedia.org/wiki/1965_USAC_Championship_Car_season"
+              },
+              {
+                "text": "1966",
+                "url": "https://en.wikipedia.org/wiki/1966_USAC_Championship_Car_season"
+              },
+              {
+                "text": "1969",
+                "url": "https://en.wikipedia.org/wiki/1969_USAC_Championship_Car_season"
+              },
+              {
+                "text": "1984",
+                "url": "https://en.wikipedia.org/wiki/1984_CART_season"
+              },
+              {
+                "text": "1969",
+                "url": "https://en.wikipedia.org/wiki/1969_Indianapolis_500"
+              },
+              {
+                "text": "1984",
+                "url": "https://en.wikipedia.org/wiki/1984_Michigan_500"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "USAC Silver Crown",
+              "url": "https://en.wikipedia.org/wiki/USAC_Silver_Crown_Series"
+            },
+            "years": []
+          },
+          {
+            "title": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            },
+            "years": []
+          },
+          {
+            "title": {
+              "text": "World Drivers' Championship",
+              "url": "https://en.wikipedia.org/wiki/World_Drivers%27_Championship"
+            },
+            "years": [
+              {
+                "text": "1978",
+                "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "IROC",
+              "url": "https://en.wikipedia.org/wiki/IROC_VI"
+            },
+            "years": []
+          },
+          {
+            "title": {
+              "text": "Daytona 500",
+              "url": "https://en.wikipedia.org/wiki/Daytona_500"
+            },
+            "years": [
+              {
+                "text": "1967",
+                "url": "https://en.wikipedia.org/wiki/1967_Daytona_500"
+              },
+              {
+                "text": "1967",
+                "url": "https://en.wikipedia.org/wiki/1967_World_Sportscar_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "12 Hours of Sebring",
+              "url": "https://en.wikipedia.org/wiki/12_Hours_of_Sebring"
+            },
+            "years": [
+              {
+                "text": "1967",
+                "url": "https://en.wikipedia.org/wiki/1967_Daytona_500"
+              },
+              {
+                "text": "1967",
+                "url": "https://en.wikipedia.org/wiki/1967_World_Sportscar_Championship"
+              },
+              {
+                "text": "1970",
+                "url": "https://en.wikipedia.org/wiki/1970_12_Hours_of_Sebring"
+              },
+              {
+                "text": "1972",
+                "url": "https://en.wikipedia.org/wiki/1972_World_Sportscar_Championship"
+              },
+              {
+                "text": "1972",
+                "url": "https://en.wikipedia.org/wiki/1972_World_Sportscar_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Indianapolis 500",
+              "url": "https://en.wikipedia.org/wiki/Indianapolis_500"
+            },
+            "years": [
+              {
+                "text": "1969",
+                "url": "https://en.wikipedia.org/wiki/1969_USAC_Championship_Car_season"
+              },
+              {
+                "text": "1969",
+                "url": "https://en.wikipedia.org/wiki/1969_Indianapolis_500"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Pikes Peak Hill Climb",
+              "url": "https://en.wikipedia.org/wiki/Pikes_Peak_Hill_Climb"
+            },
+            "years": [
+              {
+                "text": "1969",
+                "url": "https://en.wikipedia.org/wiki/1969_USAC_Championship_Car_season"
+              },
+              {
+                "text": "1969",
+                "url": "https://en.wikipedia.org/wiki/1969_Indianapolis_500"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "24 Hours of Daytona",
+              "url": "https://en.wikipedia.org/wiki/24_Hours_of_Daytona"
+            },
+            "years": [
+              {
+                "text": "1972",
+                "url": "https://en.wikipedia.org/wiki/1972_World_Sportscar_Championship"
+              },
+              {
+                "text": "1972",
+                "url": "https://en.wikipedia.org/wiki/1972_World_Sportscar_Championship"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Michigan 500",
+              "url": "https://en.wikipedia.org/wiki/Michigan_500"
+            },
+            "years": [
+              {
+                "text": "1984",
+                "url": "https://en.wikipedia.org/wiki/1984_CART_season"
+              },
+              {
+                "text": "1984",
+                "url": "https://en.wikipedia.org/wiki/1984_Michigan_500"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Pocono 500",
+              "url": "https://en.wikipedia.org/wiki/Pocono_500_(IndyCar)"
+            },
+            "years": [
+              {
+                "text": "1986",
+                "url": "https://en.wikipedia.org/wiki/1986_Pocono_500"
+              }
+            ]
+          }
+        ],
         "career": [
           {
             "title": "Formula One World Championship career",
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": [
-                    {
-                      "text": "American",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_States"
-                    }
-                  ]
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -81563,7 +81665,55 @@
           }
         },
         "championship_titles": [],
-        "major_victories": [],
+        "major_victories": [
+          {
+            "title": {
+              "text": "CART",
+              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
+            },
+            "years": []
+          },
+          {
+            "title": {
+              "text": "Championship Car",
+              "url": "https://en.wikipedia.org/wiki/Championship_Car"
+            },
+            "years": [
+              {
+                "text": "1991",
+                "url": "https://en.wikipedia.org/wiki/1991_CART_season"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Long Beach Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/Long_Beach_Grand_Prix"
+            },
+            "years": [
+              {
+                "text": "2002",
+                "url": "https://en.wikipedia.org/wiki/2002_Toyota_Grand_Prix_of_Long_Beach"
+              }
+            ]
+          },
+          {
+            "title": {
+              "text": "Michigan 500",
+              "url": "https://en.wikipedia.org/wiki/Michigan_500"
+            },
+            "years": [
+              {
+                "text": "1987",
+                "url": "https://en.wikipedia.org/wiki/1987_Michigan_500"
+              },
+              {
+                "text": "1989",
+                "url": "https://en.wikipedia.org/wiki/1989_Michigan_500"
+              }
+            ]
+          }
+        ],
         "career": [
           {
             "title": "Champ Car career",
@@ -88626,15 +88776,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -91414,44 +91558,12 @@
             },
             "years": [
               {
-                "text": "2023",
-                "url": "https://en.wikipedia.org/wiki/2023_Formula_Regional_Middle_East_Championship"
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "FR Middle East",
-              "url": "https://en.wikipedia.org/wiki/FR_Middle_East"
-            },
-            "years": [
-              {
-                "text": "2023",
-                "url": "https://en.wikipedia.org/wiki/2023_Formula_Regional_Middle_East_Championship"
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "ADAC F4",
-              "url": "https://en.wikipedia.org/wiki/ADAC_F4"
-            },
-            "years": [
-              {
-                "text": "2022",
+                "year": 2022,
                 "url": "https://en.wikipedia.org/wiki/2022_Italian_F4_Championship"
-              }
-            ]
-          },
-          {
-            "title": {
-              "text": "Italian F4",
-              "url": "https://en.wikipedia.org/wiki/Italian_F4"
-            },
-            "years": [
+              },
               {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Italian_F4_Championship"
+                "year": 2023,
+                "url": "https://en.wikipedia.org/wiki/2023_Formula_Regional_Middle_East_Championship"
               }
             ]
           }
@@ -91463,15 +91575,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "2026 team",
@@ -96589,7 +96695,11 @@
           "born": {
             "date": "1965-10-07",
             "place": [
-              "near Bologna",
+              {
+                "text": "Bologna",
+                "url": "https://en.wikipedia.org/wiki/Bologna"
+              },
+              "near",
               "Italy"
             ]
           }
@@ -100574,15 +100684,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": [
-                    {
-                      "text": "French",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_France"
-                    }
-                  ]
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -105778,15 +105882,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": [
-                    {
-                      "text": "British",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_the_United_Kingdom"
-                    }
-                  ]
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -108084,15 +108182,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": [
-                    {
-                      "text": "Italian",
-                      "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Italy"
-                    }
-                  ]
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
