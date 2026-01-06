@@ -34,7 +34,7 @@ class InfoboxCellParser:
     ) -> None:
         self._include_urls = include_urls
         self._link_extractor = link_extractor
-        
+
         # Initialize helper parsers (for classes that need state)
         self._season_parser = SeasonParser()
         self._licence_parser = LicenceParser(link_extractor)

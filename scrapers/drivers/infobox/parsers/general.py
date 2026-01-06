@@ -79,12 +79,12 @@ class InfoboxGeneralParser:
             return clean_infobox_text(bday_span.get_text(strip=True)) or ""
         elif dday_span:
             return clean_infobox_text(dday_span.get_text(strip=True)) or ""
-        
+
         # Try to find hidden span with ISO date format (style="display:none")
         iso_date = self._extract_iso_date_from_hidden_span(cell)
         if iso_date:
             return iso_date
-        
+
         # Fallback to text-based extraction
         return self._extract_date_from_text(cell)
 
@@ -130,7 +130,7 @@ class InfoboxGeneralParser:
     def _extract_place_from_span(self, place_span: Tag) -> List[str | LinkRecord]:
         """Extract place from birthplace/deathplace span element."""
         place_text = clean_infobox_text(place_span.get_text(" ", strip=True)) or ""
-        
+
         if self._include_urls:
             links = self._link_extractor.extract_links(place_span)
             if links:
@@ -189,7 +189,7 @@ class InfoboxGeneralParser:
 
         place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
         place: List[str | LinkRecord] = place_parts
-        
+
         if self._include_urls and place_parts:
             # Extract links from cell (not from span since we don't have one)
             links = self._link_extractor.extract_links(cell)
@@ -197,7 +197,7 @@ class InfoboxGeneralParser:
                 self._link_extractor.find_link_by_text(part, links) or part
                 for part in place_parts
             ]
-        
+
         return place
 
     def _normalize_date_value(self, date_text: str) -> str | None:
@@ -209,7 +209,7 @@ class InfoboxGeneralParser:
                 f"Nie udało się sparsować daty miejsca: {date_text!r}.",
                 cause=exc,
             ) from exc
-        
+
         iso = parsed_date.iso
         if isinstance(iso, list):
             return iso[0] if iso else None
