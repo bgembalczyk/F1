@@ -364,20 +364,8 @@ class InfoboxCellParser:
                         class_info = class_links[0] if class_links else None
                         
                         # Validate that class_info is actually a class, not season data
-                        if class_info:
-                            class_text = class_info.get("text", "")
-                            class_url = class_info.get("url", "")
-                            
-                            # Check if class looks like season data (years only)
-                            if self._is_season_like_text(class_text):
-                                class_info = None
-                            else:
-                                # Check if class duplicates any season
-                                for season_link in season_links:
-                                    if (season_link.get("text") == class_text or 
-                                        season_link.get("url") == class_url):
-                                        class_info = None
-                                        break
+                        if not self._is_valid_class_info(class_info, season_links):
+                            class_info = None
                         
                         for season_link in season_links:
                             season_entry = {
@@ -455,17 +443,13 @@ class InfoboxCellParser:
                                             class_url = class_candidate.get("url", "")
                                             
                                             # Validate that this is actually a class, not season data
-                                            is_valid_class = True
-                                            
                                             # Check if it looks like season data (years only)
-                                            if self._is_season_like_text(class_text):
-                                                is_valid_class = False
+                                            is_valid = not self._is_season_like_text(class_text)
                                             # Check if it duplicates the current season
-                                            elif (season_text == class_text or 
-                                                  season_url == class_url):
-                                                is_valid_class = False
+                                            if is_valid and (season_text == class_text or season_url == class_url):
+                                                is_valid = False
                                             
-                                            if is_valid_class:
+                                            if is_valid:
                                                 season_entry["class"] = class_candidate
                             
                             season_data.append(season_entry)
@@ -534,6 +518,38 @@ class InfoboxCellParser:
             return False
         if re.search(r'\d{4}', text):
             return False
+        return True
+    
+    def _is_valid_class_info(
+        self, 
+        class_info: Dict[str, Any], 
+        season_links: List[Dict[str, Any]]
+    ) -> bool:
+        """Check if class_info is valid (not season data and not a duplicate).
+        
+        Args:
+            class_info: The potential class information to validate
+            season_links: List of season links to check for duplicates
+            
+        Returns:
+            True if class_info is a valid class, False if it's season data or a duplicate
+        """
+        if not class_info:
+            return False
+        
+        class_text = class_info.get("text", "")
+        class_url = class_info.get("url", "")
+        
+        # Check if class looks like season data (years only)
+        if self._is_season_like_text(class_text):
+            return False
+        
+        # Check if class duplicates any season
+        for season_link in season_links:
+            if (season_link.get("text") == class_text or 
+                season_link.get("url") == class_url):
+                return False
+        
         return True
     
     def _is_season_like_text(self, text: str) -> bool:
