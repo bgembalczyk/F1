@@ -1,12 +1,10 @@
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field
 import json
 from pathlib import Path
 from typing import Any, Callable, Mapping, Sequence
 from typing import Dict
 from typing import TypeAlias
 
-from models.value_objects.link_utils import normalize_link, validate_link
 from validation.issue import ValidationIssue
 from validation.quality_stats import QualityStats
 from validation.schemas import NestedSchema
@@ -24,15 +22,15 @@ class RecordValidator(ABC):
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
         raise NotImplementedError
 
-    def set_record_factory(self, record_factory: Callable[..., Any] | type | None) -> None:
+    def set_record_factory(
+        self, record_factory: Callable[..., Any] | type | None
+    ) -> None:
         self.record_factory = record_factory
 
     def reset_stats(self) -> None:
         self._stats = QualityStats()
 
-    def record_validation_result(
-        self, errors: Sequence[ValidationIssue | str]
-    ) -> None:
+    def record_validation_result(self, errors: Sequence[ValidationIssue | str]) -> None:
         issues = [self._coerce_issue(error) for error in errors]
         self._stats.total_records += 1
         if issues:
@@ -47,7 +45,9 @@ class RecordValidator(ABC):
                 )
                 continue
             if error.code == "type" and error.field:
-                self._stats.types[error.field] = self._stats.types.get(error.field, 0) + 1
+                self._stats.types[error.field] = (
+                    self._stats.types.get(error.field, 0) + 1
+                )
 
     @staticmethod
     def _extract_missing_key(error: str) -> str | None:
@@ -291,9 +291,7 @@ class BaseDomainRecordValidator(RecordValidator):
         text = value.get("text")
         if not isinstance(text, str) or not text.strip():
             errors.append(
-                ValidationIssue.custom(
-                    f"{field_name}.text must be a non-empty string"
-                )
+                ValidationIssue.custom(f"{field_name}.text must be a non-empty string")
             )
         url = value.get("url")
         if url is not None and not isinstance(url, str):
@@ -310,9 +308,7 @@ class BaseDomainRecordValidator(RecordValidator):
         for index, item in enumerate(value):
             if not isinstance(item, dict):
                 errors.append(
-                    ValidationIssue.custom(
-                        f"{field_name}[{index}] must be a link dict"
-                    )
+                    ValidationIssue.custom(f"{field_name}[{index}] must be a link dict")
                 )
                 continue
             errors.extend(cls.require_link_dict(item, f"{field_name}[{index}]"))

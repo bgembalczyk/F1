@@ -57,6 +57,4 @@ def test_record_normalizer_normalizes_empty_lists_and_dicts() -> None:
 
     normalized = normalizer.normalize(data)
 
-    assert normalized == [
-        {"notes": None, "items": None, "meta": None, "value": "ok"}
-    ]
+    assert normalized == [{"notes": None, "items": None, "meta": None, "value": "ok"}]

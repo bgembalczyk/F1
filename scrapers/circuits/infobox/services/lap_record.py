@@ -10,7 +10,9 @@ from scrapers.circuits.models.services.lap_record_merging import merge_two_recor
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
 from scrapers.circuits.models.services.lap_record_utils import build_lap_record_key
 from scrapers.circuits.models.services.lap_record_utils import extract_year
-from scrapers.circuits.models.services.lap_record_utils import normalize_lap_record_entity
+from scrapers.circuits.models.services.lap_record_utils import (
+    normalize_lap_record_entity,
+)
 
 
 class CircuitLapRecordParser(CircuitTextProcessing):

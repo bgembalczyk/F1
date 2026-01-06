@@ -1,18 +1,16 @@
 import importlib
 import sys
 from pathlib import Path
+from scrapers.base.naming import NAMING_CONVENTIONS, SCRAPER_CONSTANT_PREFIXES
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
-from scrapers.base.naming import NAMING_CONVENTIONS, SCRAPER_CONSTANT_PREFIXES
-
 
 def test_scraper_constants_follow_prefix_and_suffix_conventions():
-    suffixes = tuple(
-        convention["suffix"] for convention in NAMING_CONVENTIONS.values()
-    )
+    suffixes = tuple(convention["suffix"] for convention in NAMING_CONVENTIONS.values())
     for module_path, prefixes in SCRAPER_CONSTANT_PREFIXES.items():
         module = importlib.import_module(module_path)
         for name, value in vars(module).items():

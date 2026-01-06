@@ -35,9 +35,7 @@ class EngineRegulation(ValidatedModel):
         self.fuel_composition = self._normalize_fuel_composition(self.fuel_composition)
 
     @staticmethod
-    def _normalize_displacement(
-        value: Dict[str, Any] | None
-    ) -> Dict[str, Any] | None:
+    def _normalize_displacement(value: Dict[str, Any] | None) -> Dict[str, Any] | None:
         if value is None:
             return None
         if not isinstance(value, dict):
@@ -75,9 +73,7 @@ class EngineRegulation(ValidatedModel):
         return result
 
     @staticmethod
-    def _normalize_configuration(
-        value: Dict[str, Any] | None
-    ) -> Dict[str, Any] | None:
+    def _normalize_configuration(value: Dict[str, Any] | None) -> Dict[str, Any] | None:
         if value is None:
             return None
         if not isinstance(value, dict):
@@ -109,7 +105,7 @@ class EngineRegulation(ValidatedModel):
 
     @staticmethod
     def _normalize_fuel_composition(
-        value: Dict[str, Any] | None
+        value: Dict[str, Any] | None,
     ) -> Dict[str, Any] | None:
         if value is None:
             return None

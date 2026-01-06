@@ -44,7 +44,14 @@ class InfoboxCareerParser:
                     value = self._cell_parser.parse_float_cell(value_cell)
                 elif label == "Best finish":
                     value = self._cell_parser.parse_best_finish(value_cell)
-                elif label in {"First race", "Last race", "First win", "Last win", "First entry", "Last entry"}:
+                elif label in {
+                    "First race",
+                    "Last race",
+                    "First win",
+                    "Last win",
+                    "First entry",
+                    "Last entry",
+                }:
                     value = self._cell_parser.parse_race_event(value_cell)
                 elif label == "Former teams":
                     value = self._cell_parser.parse_teams(value_cell)
@@ -67,11 +74,17 @@ class InfoboxCareerParser:
                 if "collapsible_table" in row:
                     # Parse as a career section
                     collapsible_table = row["collapsible_table"]
-                    career_stats = self._cell_parser.parse_collapsible_career_table(collapsible_table)
+                    career_stats = self._cell_parser.parse_collapsible_career_table(
+                        collapsible_table
+                    )
                     if career_stats:
                         rows.append({"collapsible_career": career_stats})
                 else:
                     rows.append(
-                        {"full_data": self._cell_parser.parse_full_data(row["full_data_cell"])}
+                        {
+                            "full_data": self._cell_parser.parse_full_data(
+                                row["full_data_cell"]
+                            )
+                        }
                     )
         return {"title": title, "rows": rows}

@@ -106,7 +106,9 @@ class TableSchemaDSL:
         if value is None or isinstance(value, (str, int, float, bool)):
             return value
         if isinstance(value, dict):
-            return {key: TableSchemaDSL._serialize_value(val) for key, val in value.items()}
+            return {
+                key: TableSchemaDSL._serialize_value(val) for key, val in value.items()
+            }
         if isinstance(value, (list, tuple)):
             return [TableSchemaDSL._serialize_value(item) for item in value]
         if isinstance(value, type):

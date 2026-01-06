@@ -16,4 +16,3 @@ class FailedToMakeRestartTransformer(RecordTransformer):
                 "reason": reason,
             }
         return records
-

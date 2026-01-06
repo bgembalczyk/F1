@@ -12,7 +12,11 @@ from models.validation.validators import (
     normalize_season_list,
 )
 from models.value_objects import Link, SeasonRef
-from validation.records import BaseDomainRecordValidator, RecordValidator, ValidationIssue
+from validation.records import (
+    BaseDomainRecordValidator,
+    RecordValidator,
+    ValidationIssue,
+)
 
 
 def test_validate_int_allows_none_and_rejects_invalid_values():
@@ -102,7 +106,9 @@ def test_normalize_season_list_filters_none_entries():
 def test_base_domain_validator_checks_required_and_type_rules():
     record = {"name": "Example", "count": "invalid"}
 
-    errors = BaseDomainRecordValidator.require_keys(record, ["name", "count", "missing"])
+    errors = BaseDomainRecordValidator.require_keys(
+        record, ["name", "count", "missing"]
+    )
 
     messages = [error.message for error in errors]
     assert "Missing key: missing" in messages

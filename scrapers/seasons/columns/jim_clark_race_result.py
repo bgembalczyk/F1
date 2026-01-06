@@ -6,17 +6,17 @@ from scrapers.seasons.columns.race_result import RaceResultColumn
 class JimClarkRaceResultColumn(RaceResultColumn):
     """
     Race result column for Jim Clark Trophy.
-    
+
     In this trophy, * mark at a race result means:
     "competed in insufficient events to be eligible for points"
     """
-    
+
     def _apply_result_notes(
         self, result: dict[str, Any], background: str | None
     ) -> None:
         # First apply the standard notes (except for * mark handling)
         super()._apply_result_notes(result, background)
-        
+
         # Add specific note for Jim Clark Trophy * mark
         marks = result.get("marks") or []
         if "*" in marks and background == "Other classified position":

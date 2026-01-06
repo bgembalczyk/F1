@@ -1,4 +1,4 @@
-from typing import Any, TypedDict
+from typing import Any
 
 from models.records.circuit_base import CIRCUIT_BASE_SCHEMA, CircuitBaseRecord
 from models.records.link import LINK_SCHEMA, LinkRecord

@@ -16,9 +16,7 @@ class NestedUnitListColumn(BaseColumn):
     def __init__(self, subkey: str) -> None:
         self.subkey = subkey
 
-    def _parse_min_max(
-        self, text: str
-    ) -> Dict[str, UnitValue] | List[UnitValue]:
+    def _parse_min_max(self, text: str) -> Dict[str, UnitValue] | List[UnitValue]:
         values = parse_unit_list(text)
         if not values:
             return []

@@ -21,12 +21,16 @@ class DriverNameStatusColumn(MultiColumn):
 
     @staticmethod
     def _is_active(ctx: ColumnContext) -> bool:
-        return (ctx.raw_text or "").strip().endswith(
-            (MARK_ACTIVE_DRIVER, MARK_ACTIVE_DRIVER_ALT)
+        return (
+            (ctx.raw_text or "")
+            .strip()
+            .endswith((MARK_ACTIVE_DRIVER, MARK_ACTIVE_DRIVER_ALT))
         )
 
     @staticmethod
     def _is_world_champion(ctx: ColumnContext) -> bool:
-        return (ctx.raw_text or "").strip().endswith(
-            (MARK_ACTIVE_DRIVER, MARK_WORLD_CHAMPION)
+        return (
+            (ctx.raw_text or "")
+            .strip()
+            .endswith((MARK_ACTIVE_DRIVER, MARK_WORLD_CHAMPION))
         )

@@ -78,7 +78,9 @@ class SeasonFreePracticeParser:
     def _filter_source_footer_records(
         self, records: List[Dict[str, Any]]
     ) -> List[Dict[str, Any]]:
-        return [record for record in records if not self._is_source_footer_record(record)]
+        return [
+            record for record in records if not self._is_source_footer_record(record)
+        ]
 
     def _is_source_footer_record(self, record: Dict[str, Any]) -> bool:
         texts: List[str] = []

@@ -17,7 +17,9 @@ from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.engines.columns.engine_rpm_limit import EngineRpmLimitColumn
 from scrapers.engines.columns.fuel_flow_rate import FuelFlowRateColumn
-from scrapers.engines.columns.fuel_injection_pressure_limit import FuelInjectionPressureLimitColumn
+from scrapers.engines.columns.fuel_injection_pressure_limit import (
+    FuelInjectionPressureLimitColumn,
+)
 from scrapers.engines.columns.fuel_limit_per_race import FuelLimitPerRaceColumn
 
 

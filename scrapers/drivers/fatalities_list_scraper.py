@@ -16,7 +16,6 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 from scrapers.drivers.columns.fatality_event import FatalityEventColumn
@@ -101,6 +100,7 @@ class F1FatalitiesListScraper(F1TableScraper):
         normalized = normalize_auto_value(auto_value, strip_marks=True)
         return {"event": normalized, "championship": championship}
 
+
 if __name__ == "__main__":
     run_and_export(
         F1FatalitiesListScraper,
@@ -111,5 +111,3 @@ if __name__ == "__main__":
             debug_dir=Path("../../data/debug"),
         ),
     )
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.auto import AutoColumn

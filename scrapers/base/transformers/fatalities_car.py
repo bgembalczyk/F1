@@ -20,4 +20,3 @@ class FatalitiesCarTransformer(RecordTransformer):
                     "formula_category": formula_category,
                 }
         return records  # type: ignore[return-value]
-

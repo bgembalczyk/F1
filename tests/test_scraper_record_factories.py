@@ -6,6 +6,10 @@ import sys
 import types
 
 import pytest
+from scrapers.base.options import ScraperOptions
+from scrapers.circuits.list_scraper import CircuitsListScraper
+from scrapers.drivers.list_scraper import F1DriversListScraper
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -46,10 +50,6 @@ if importlib.util.find_spec("pandas") is None:
 
 if importlib.util.find_spec("bs4") is None:
     pytest.skip("bs4 is required for scraper tests", allow_module_level=True)
-
-from scrapers.base.options import ScraperOptions
-from scrapers.circuits.list_scraper import CircuitsListScraper
-from scrapers.drivers.list_scraper import F1DriversListScraper
 
 
 class StubFetcher:

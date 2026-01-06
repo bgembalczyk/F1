@@ -8,7 +8,10 @@ from scrapers.base.helpers.text import (
 )
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.normalize import normalize_auto_value
-from scrapers.base.helpers.text_normalization import is_language_link, split_delimited_text
+from scrapers.base.helpers.text_normalization import (
+    is_language_link,
+    split_delimited_text,
+)
 from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.helpers.value_objects import NormalizedTime
@@ -239,9 +242,7 @@ def test_parse_time_text_prefers_text_fields():
 def test_normalize_url_builds_and_validates() -> None:
     base = "https://en.wikipedia.org/wiki/Foo"
 
-    assert (
-        normalize_url(base, "/wiki/Bar") == "https://en.wikipedia.org/wiki/Bar"
-    )
+    assert normalize_url(base, "/wiki/Bar") == "https://en.wikipedia.org/wiki/Bar"
     assert (
         normalize_url(base, "//en.wikipedia.org/wiki/Baz")
         == "https://en.wikipedia.org/wiki/Baz"

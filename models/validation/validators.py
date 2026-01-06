@@ -1,9 +1,8 @@
 import logging
-from typing import Any, Dict, Iterable, Optional
+from typing import Any, Dict, Iterable
 
-from models.records.link import LinkRecord
 from models.serializers import to_dict_any
-from models.validation.core import validate_float, validate_int
+from models.validation.core import validate_int
 from models.validation.utils import is_valid_url
 from models.value_objects.link import Link
 from models.value_objects.link_utils import validate_link as validate_link_payload

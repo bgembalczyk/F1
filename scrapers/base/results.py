@@ -96,7 +96,9 @@ class ScrapeResult:
                     )
 
         exporter = self._resolve_exporter(exporter)
-        exporter.to_csv(normalized, path, fieldnames=fieldnames, include_metadata=include_metadata)
+        exporter.to_csv(
+            normalized, path, fieldnames=fieldnames, include_metadata=include_metadata
+        )
 
     def to_dataframe(
         self,

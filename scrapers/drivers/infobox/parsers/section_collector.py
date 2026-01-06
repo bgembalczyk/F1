@@ -43,10 +43,9 @@ class InfoboxSectionCollector:
                 nested_table = full_data.find("table", class_="mw-collapsible")
                 if nested_table:
                     # Parse collapsible career statistics table
-                    current["rows"].append({
-                        "full_data_cell": full_data,
-                        "collapsible_table": nested_table
-                    })
+                    current["rows"].append(
+                        {"full_data_cell": full_data, "collapsible_table": nested_table}
+                    )
                 else:
                     current["rows"].append({"full_data_cell": full_data})
 

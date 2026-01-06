@@ -14,7 +14,9 @@ def is_points_record(record: Mapping[str, Any]) -> bool:
     return any(key in record for key in POINTS_KEYS)
 
 
-def map_record_to_contract(record: Mapping[str, Any]) -> DataContract | Mapping[str, Any]:
+def map_record_to_contract(
+    record: Mapping[str, Any],
+) -> DataContract | Mapping[str, Any]:
     if "driver" in record and (
         "is_active" in record or "drivers_championships" in record
     ):

@@ -55,11 +55,15 @@ class RaceResultColumn(BaseColumn):
         results = self._parse_results(text)
         if not results and background is None:
             return None
-        if background is None and all(result.get("position") is None for result in results):
+        if background is None and all(
+            result.get("position") is None for result in results
+        ):
             return None
 
         payload: dict[str, Any] = {}
-        if ctx.header_link and (ctx.header_link.get("url") or ctx.header_link.get("text")):
+        if ctx.header_link and (
+            ctx.header_link.get("url") or ctx.header_link.get("text")
+        ):
             round_link = dict(ctx.header_link)
             if not round_link.get("text"):
                 round_link["text"] = ctx.header
@@ -82,7 +86,11 @@ class RaceResultColumn(BaseColumn):
                 if background is not None:
                     # Special case: NC with blue background means "Not classified, finished"
                     position = result.get("position")
-                    if isinstance(position, str) and position.upper() == "NC" and background == "Other classified position":
+                    if (
+                        isinstance(position, str)
+                        and position.upper() == "NC"
+                        and background == "Other classified position"
+                    ):
                         result["background"] = "Not classified, finished"
                     else:
                         result["background"] = background

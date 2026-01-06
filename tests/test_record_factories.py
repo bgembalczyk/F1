@@ -12,7 +12,10 @@ from models.records.factories import (
 def test_build_season_record_adds_url() -> None:
     record = build_season_record({"year": "2021"})
     assert record["year"] == 2021
-    assert record["url"] == "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+    assert (
+        record["url"]
+        == "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+    )
 
 
 def test_build_driver_record_normalizes_championships_and_seasons() -> None:

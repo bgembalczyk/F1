@@ -1,6 +1,5 @@
 import re
 from dataclasses import dataclass
-from typing import Iterable
 
 from models.services.helpers import expand_all
 from models.services.helpers import expand_range
@@ -46,5 +45,3 @@ class RoundsService:
                 values.append(int(match.group(0)))
 
         return unique_sorted(values)
-
-

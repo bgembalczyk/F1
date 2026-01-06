@@ -20,6 +20,8 @@ class DriversChampionshipsRecord(TypedDict):
 
 
 def validate_drivers_championships_record(
-    record: dict[str, Any]
+    record: dict[str, Any],
 ) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(record, DRIVERS_CHAMPIONSHIPS_SCHEMA)
+    return BaseDomainRecordValidator.validate_schema(
+        record, DRIVERS_CHAMPIONSHIPS_SCHEMA
+    )

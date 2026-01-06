@@ -11,7 +11,9 @@ from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.config import ScraperConfig
-from scrapers.seasons.columns.colin_chapman_race_result import ColinChapmanRaceResultColumn
+from scrapers.seasons.columns.colin_chapman_race_result import (
+    ColinChapmanRaceResultColumn,
+)
 from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.parsers.standings import SeasonStandingsParser
 from scrapers.seasons.standings_scraper import F1StandingsScraper
@@ -26,12 +28,12 @@ class ColinChapmanTrophyParser:
     ) -> List[Dict[str, Any]]:
         """
         Parses the Colin Chapman Trophy table.
-        
+
         Table is identical to World Constructors' Championship standings,
         with one exception:
         - Mark * at race result means: "was not eligible for points, as the team had officially entered only one car for the entire championship"
         """
-        
+
         schema_columns = [
             column("Pos.", "pos", PositionColumn()),
             column("Pos", "pos", PositionColumn()),
@@ -44,7 +46,7 @@ class ColinChapmanTrophyParser:
             # Handle "Car<br>no." which becomes "Car no." after text extraction
             column("Car no.", "no", IntColumn()),
         ]
-        
+
         config = ScraperConfig(
             url=self._table_parser.url,
             section_id="Colin_Chapman_Trophy",
@@ -53,12 +55,9 @@ class ColinChapmanTrophyParser:
             default_column=ColinChapmanRaceResultColumn(season_year=season_year),
             record_factory=record_from_mapping,
         )
-        
-        scraper = F1StandingsScraper(
-            options=self._table_parser._options,
-            config=config
-        )
-        
+
+        scraper = F1StandingsScraper(options=self._table_parser._options, config=config)
+
         try:
             records = scraper.parse(soup)
             # Apply the same merging logic as constructors standings

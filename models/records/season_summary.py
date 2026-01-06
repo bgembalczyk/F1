@@ -15,9 +15,7 @@ class SeasonSummaryRecord(TypedDict, total=False):
     winners: int | None
 
 
-def validate_season_summary_record(
-    record: dict[str, Any]
-) -> list[ValidationIssue]:
+def validate_season_summary_record(record: dict[str, Any]) -> list[ValidationIssue]:
     errors: list[ValidationIssue] = []
     errors.extend(
         BaseDomainRecordValidator.require_keys(
@@ -30,7 +28,9 @@ def validate_season_summary_record(
         BaseDomainRecordValidator.require_type(record, "races", int, allow_none=True)
     )
     errors.extend(
-        BaseDomainRecordValidator.require_type(record, "countries", int, allow_none=True)
+        BaseDomainRecordValidator.require_type(
+            record, "countries", int, allow_none=True
+        )
     )
     errors.extend(
         BaseDomainRecordValidator.require_type(
@@ -58,7 +58,9 @@ def validate_season_summary_record(
     drivers = record.get("drivers_champion_team")
     if isinstance(drivers, list):
         errors.extend(
-            BaseDomainRecordValidator.require_link_list(drivers, "drivers_champion_team")
+            BaseDomainRecordValidator.require_link_list(
+                drivers, "drivers_champion_team"
+            )
         )
 
     constructors = record.get("constructors_champion")

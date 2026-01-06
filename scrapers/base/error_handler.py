@@ -2,7 +2,11 @@ import logging
 from pathlib import Path
 from typing import Optional
 
-from scrapers.base.errors import DomainParseError, ScraperNetworkError, ScraperParseError
+from scrapers.base.errors import (
+    DomainParseError,
+    ScraperNetworkError,
+    ScraperParseError,
+)
 from scrapers.base.errors_report import ErrorReport, write_error_report
 
 
@@ -50,9 +54,7 @@ class ErrorHandler:
         """
         self._write_report(error)
         if isinstance(error, DomainParseError):
-            self._logger.warning(
-                "Pomijam dane domenowe ze względu na błąd: %s", error
-            )
+            self._logger.warning("Pomijam dane domenowe ze względu na błąd: %s", error)
             return True
 
         critical = bool(getattr(error, "critical", False))

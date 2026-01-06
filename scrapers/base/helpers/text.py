@@ -59,6 +59,7 @@ def choose_richer_entity(a: object, b: object) -> object:
 
 # Centralne miejsce do usuwania przypisów wiki - nie duplikuj regexu w scraperach.
 
+
 def strip_wiki_refs(text: str) -> str:
     """Usuń przypisy w formacie [1], [note 3], ..."""
     return REF_RE.sub("", text)

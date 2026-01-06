@@ -1,7 +1,7 @@
-from typing import Any, TypedDict
+from typing import Any
 
 from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, RecordSchema, ValidationIssue
+from validation.records import BaseDomainRecordValidator, ValidationIssue
 from models.records.circuit_base import CIRCUIT_BASE_SCHEMA, CircuitBaseRecord
 
 

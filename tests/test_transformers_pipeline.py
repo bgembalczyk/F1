@@ -5,9 +5,6 @@ import sys
 
 import pytest
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.append(str(PROJECT_ROOT))
 
 from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.transformers import (
@@ -17,6 +14,10 @@ from scrapers.base.transformers import (
     TransformersPipeline,
 )
 from validation.records import ExportRecord
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
 
 
 def test_transformers_pipeline_applies_in_order_and_logs(

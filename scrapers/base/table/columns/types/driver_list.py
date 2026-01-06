@@ -14,9 +14,7 @@ class DriverListColumn(BaseColumn):
     """
 
     def parse(self, ctx: ColumnContext) -> Any:
-        links = [
-            link for link in normalize_links(ctx.links or []) if link.get("text")
-        ]
+        links = [link for link in normalize_links(ctx.links or []) if link.get("text")]
         if links:
             return links
 

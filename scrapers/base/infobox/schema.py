@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, Callable, Dict, Iterable, Optional, Sequence
+from typing import Any, Callable, Dict, Iterable, Sequence
 
 from scrapers.base.helpers.text_normalization import to_snake_case
 from scrapers.base.logging import get_logger

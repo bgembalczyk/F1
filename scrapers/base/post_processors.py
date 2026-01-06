@@ -6,8 +6,7 @@ from validation.records import ExportRecord
 
 
 class RecordPostProcessor(Protocol):
-    def post_process(self, records: list[ExportRecord]) -> list[ExportRecord]:
-        ...
+    def post_process(self, records: list[ExportRecord]) -> list[ExportRecord]: ...
 
 
 def apply_post_processors(

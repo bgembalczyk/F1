@@ -15,8 +15,10 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 class InfoboxGeneralParser:
     # Date pattern for matching common date formats
-    _DATE_PATTERN = r'\b\d{1,2}\s+[A-Za-z]+\s+\d{4}|\b[A-Za-z]+\s+\d{1,2},\s*\d{4}|\b\d{4}\b'
-    
+    _DATE_PATTERN = (
+        r"\b\d{1,2}\s+[A-Za-z]+\s+\d{4}|\b[A-Za-z]+\s+\d{1,2},\s*\d{4}|\b\d{4}\b"
+    )
+
     def __init__(
         self,
         *,
@@ -62,7 +64,7 @@ class InfoboxGeneralParser:
         # Try to extract date from structured data (bday or dday class)
         bday_span = cell.find("span", class_="bday")
         dday_span = cell.find("span", class_="dday")
-        
+
         if bday_span:
             date_text = clean_infobox_text(bday_span.get_text(strip=True)) or ""
         elif dday_span:
@@ -70,23 +72,25 @@ class InfoboxGeneralParser:
         else:
             # Try to find hidden span with ISO date format (style="display:none")
             # Pattern: <span style="display:none">(YYYY-MM-DD)</span>
-            hidden_spans = cell.find_all("span", style=lambda x: x and "display:none" in x)
+            hidden_spans = cell.find_all(
+                "span", style=lambda x: x and "display:none" in x
+            )
             iso_date = None
             for span in hidden_spans:
                 span_text = span.get_text(strip=True)
                 # Look for ISO date pattern in parentheses
-                iso_match = re.search(r'\((\d{4}-\d{2}-\d{2})\)', span_text)
+                iso_match = re.search(r"\((\d{4}-\d{2}-\d{2})\)", span_text)
                 if iso_match:
                     iso_date = iso_match.group(1)
                     break
-            
+
             if iso_date:
                 date_text = iso_date
             else:
                 # Fallback to text-based extraction
                 text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
                 parts = [p.strip() for p in text.split("\n") if p.strip()]
-                
+
                 # Filter out the original name (first part if it doesn't contain date pattern)
                 filtered_parts = []
                 for part in parts:
@@ -95,10 +99,10 @@ class InfoboxGeneralParser:
                         # This might be the original name, skip it
                         continue
                     filtered_parts.append(part)
-                
+
                 date_text = filtered_parts[0] if filtered_parts else ""
                 date_text = re.sub(r"\s*\([^)]*\)", "", date_text).strip()
-        
+
         # Extract place from birthplace/deathplace element (div or span) if available
         place_span = cell.find(class_="birthplace") or cell.find(class_="deathplace")
         if place_span:
@@ -111,23 +115,27 @@ class InfoboxGeneralParser:
                     # Build place from links and remaining text
                     place: List[str | LinkRecord] = []
                     remaining_text = place_text
-                    
+
                     # Remove link texts from remaining_text to find non-linked parts
                     for link in links:
                         link_text = link.get("text", "")
                         if link_text in remaining_text:
                             remaining_text = remaining_text.replace(link_text, "", 1)
-                    
+
                     # Clean up remaining text (remove extra commas and spaces)
-                    remaining_text = re.sub(r'\s*,\s*', ', ', remaining_text).strip(', ')
-                    
+                    remaining_text = re.sub(r"\s*,\s*", ", ", remaining_text).strip(
+                        ", "
+                    )
+
                     # Combine links and remaining text parts
                     # Strategy: use the original text order
                     # Add all links first
                     place.extend(links)
                     # Then add remaining text parts split by comma
                     if remaining_text:
-                        remaining_parts = [p.strip() for p in remaining_text.split(",") if p.strip()]
+                        remaining_parts = [
+                            p.strip() for p in remaining_text.split(",") if p.strip()
+                        ]
                         place.extend(remaining_parts)
                 else:
                     # No links, just split by comma
@@ -139,7 +147,7 @@ class InfoboxGeneralParser:
             # Fallback to parsing from text
             text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
             parts = [p.strip() for p in text.split("\n") if p.strip()]
-            
+
             # Find the part with the date and take everything after it
             place_text = ""
             for i, part in enumerate(parts):
@@ -153,13 +161,15 @@ class InfoboxGeneralParser:
                         place_text = match.group(1).strip()
                     # Also include following parts as place
                     if i + 1 < len(parts):
-                        remaining = " ".join(parts[i + 1:])
+                        remaining = " ".join(parts[i + 1 :])
                         place_text = (place_text + " " + remaining).strip()
                     break
-            
+
             # Filter out "(aged X)" pattern from place text (only in fallback case)
-            place_text = re.sub(r'\s*\(aged\s+\d+\)', '', place_text, flags=re.IGNORECASE)
-            
+            place_text = re.sub(
+                r"\s*\(aged\s+\d+\)", "", place_text, flags=re.IGNORECASE
+            )
+
             place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
             place: List[str | LinkRecord] = place_parts
             if self._include_urls and place_parts:

@@ -16,7 +16,9 @@ from scrapers.seasons.parsers.free_practice import (
 )
 from scrapers.seasons.parsers.jim_clark_trophy import JimClarkTrophyParser
 from scrapers.seasons.parsers.non_championship import SeasonNonChampionshipParser
-from scrapers.seasons.parsers.regional_championship import SeasonRegionalChampionshipParser
+from scrapers.seasons.parsers.regional_championship import (
+    SeasonRegionalChampionshipParser,
+)
 from scrapers.seasons.parsers.results import SeasonResultsParser
 from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
 from scrapers.seasons.parsers.standings import SeasonStandingsParser
@@ -73,14 +75,18 @@ class SingleSeasonScraper(F1Scraper):
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         # Parse calendar first, as cancelled_rounds may need it for comparison
         calendar_data = self._calendar_parser.parse(soup, self.season_year)
-        
+
         return [
             {
                 "entries": self._entries_parser.parse(soup, self.season_year),
                 "free_practice_drivers": self._free_practice_parser.parse(soup),
                 "calendar": calendar_data,
-                "cancelled_rounds": self._cancelled_rounds_parser.parse(soup, self.season_year, calendar_data),
-                "testing_venues_and_dates": self._testing_venues_parser.parse(soup, self.season_year),
+                "cancelled_rounds": self._cancelled_rounds_parser.parse(
+                    soup, self.season_year, calendar_data
+                ),
+                "testing_venues_and_dates": self._testing_venues_parser.parse(
+                    soup, self.season_year
+                ),
                 "results": self._results_parser.parse(soup),
                 "non_championship_races": self._non_championship_parser.parse(
                     soup, self.season_year

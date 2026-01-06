@@ -3,13 +3,6 @@ from pathlib import Path
 import sys
 
 import pytest
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.append(str(PROJECT_ROOT))
-
-pytest.importorskip("bs4")
-
 from bs4 import BeautifulSoup
 
 from scrapers.base.extractors import InfoboxExtractor, TableExtractor
@@ -17,7 +10,16 @@ from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 
 
-def test_table_extractor_extracts_records_and_logs(caplog: pytest.LogCaptureFixture) -> None:
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
+
+pytest.importorskip("bs4")
+
+
+def test_table_extractor_extracts_records_and_logs(
+    caplog: pytest.LogCaptureFixture,
+) -> None:
     html = """
     <table class="wikitable">
         <tr><th>Driver</th><th>Time</th></tr>

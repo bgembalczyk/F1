@@ -25,12 +25,12 @@ class JimClarkTrophyParser:
     ) -> List[Dict[str, Any]]:
         """
         Parses the Jim Clark Trophy table.
-        
+
         Table is identical to World Drivers' Championship standings,
         with one exception:
         - Mark * at race result means: "competed in insufficient events to be eligible for points"
         """
-        
+
         schema_columns = [
             column("Pos.", "pos", PositionColumn()),
             column("Pos", "pos", PositionColumn()),
@@ -41,7 +41,7 @@ class JimClarkTrophyParser:
             column("No.", "no", IntColumn()),
             column("No", "no", IntColumn()),
         ]
-        
+
         config = ScraperConfig(
             url=self._table_parser.url,
             section_id="Jim_Clark_Trophy",
@@ -50,12 +50,9 @@ class JimClarkTrophyParser:
             default_column=JimClarkRaceResultColumn(season_year=season_year),
             record_factory=record_from_mapping,
         )
-        
-        scraper = F1StandingsScraper(
-            options=self._table_parser._options,
-            config=config
-        )
-        
+
+        scraper = F1StandingsScraper(options=self._table_parser._options, config=config)
+
         try:
             records = scraper.parse(soup)
             return records

@@ -140,7 +140,9 @@ def build_drivers_championships_record(
     record: Mapping[str, Any],
 ) -> DriversChampionshipsRecord:
     payload = dict(record)
-    payload["count"] = normalize_int(payload.get("count"), "drivers_championships.count")
+    payload["count"] = normalize_int(
+        payload.get("count"), "drivers_championships.count"
+    )
     payload["count"] = payload["count"] or 0
     payload["seasons"] = normalize_seasons(payload.get("seasons"))
     return cast(DriversChampionshipsRecord, payload)
@@ -150,7 +152,9 @@ def build_driver_record(record: Mapping[str, Any]) -> DriverRecord:
     payload = apply_field_aliases(record, FIELD_ALIASES["driver"], record_name="driver")
     payload["driver"] = normalize_link_value(payload.get("driver"), "driver")
     nationality = payload.get("nationality")
-    payload["nationality"] = nationality.strip() if isinstance(nationality, str) else None
+    payload["nationality"] = (
+        nationality.strip() if isinstance(nationality, str) else None
+    )
     payload["seasons_competed"] = normalize_seasons(payload.get("seasons_competed"))
     championships = payload.get("drivers_championships") or {}
     if isinstance(championships, Mapping):
@@ -337,9 +341,13 @@ def build_season_summary_record(record: Mapping[str, Any]) -> SeasonSummaryRecor
 
 def build_grands_prix_record(record: Mapping[str, Any]) -> GrandsPrixRecord:
     payload = dict(record)
-    payload["race_title"] = normalize_link_value(payload.get("race_title"), "race_title")
+    payload["race_title"] = normalize_link_value(
+        payload.get("race_title"), "race_title"
+    )
     race_status = payload.get("race_status")
-    payload["race_status"] = race_status.strip() if isinstance(race_status, str) else None
+    payload["race_status"] = (
+        race_status.strip() if isinstance(race_status, str) else None
+    )
     payload["years_held"] = normalize_seasons(payload.get("years_held"))
     payload["country"] = normalize_link_list(payload.get("country"), "country")
     payload["circuits"] = normalize_int(payload.get("circuits"), "circuits")

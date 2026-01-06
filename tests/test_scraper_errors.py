@@ -2,6 +2,29 @@ import sys
 from pathlib import Path
 import types
 import pytest
+from scrapers.base.errors import (
+    ScraperNetworkError,
+    ScraperNotFoundError,
+    ScraperParseError,
+)
+from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.options import ScraperOptions
+from scrapers.base.ABC import F1Scraper
+from scrapers.circuits.infobox.services.additional_info import (
+    CircuitAdditionalInfoParser,
+)
+from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
+from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
+from scrapers.circuits.infobox.services.geo import CircuitGeoParser
+from scrapers.circuits.infobox.services.history import CircuitHistoryParser
+from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
+from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
+from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -66,29 +89,6 @@ if "pandas" not in sys.modules:
 
     pandas_stub.DataFrame = _StubDataFrame
     sys.modules["pandas"] = pandas_stub
-
-from scrapers.base.errors import (
-    ScraperNetworkError,
-    ScraperNotFoundError,
-    ScraperParseError,
-)
-from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
-from scrapers.base.list.scraper import F1ListScraper
-from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
-from scrapers.circuits.infobox.services.additional_info import (
-    CircuitAdditionalInfoParser,
-)
-from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
-from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
-from scrapers.circuits.infobox.services.geo import CircuitGeoParser
-from scrapers.circuits.infobox.services.history import CircuitHistoryParser
-from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
-from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
-from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
-from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
 
 class DummyFetcher:

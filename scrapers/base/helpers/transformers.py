@@ -11,8 +11,7 @@ def build_transformers(
 ) -> list[RecordTransformer]:
     resolved = list(transformers or [])
     if include_defaults and not any(
-        isinstance(transformer, NormalizeLinksTransformer)
-        for transformer in resolved
+        isinstance(transformer, NormalizeLinksTransformer) for transformer in resolved
     ):
         resolved.insert(0, NormalizeLinksTransformer())
     return resolved

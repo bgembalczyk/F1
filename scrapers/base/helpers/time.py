@@ -244,5 +244,3 @@ def normalize_time_value(rec: dict[str, Any]) -> None:
         return
 
     rec["time"] = txt
-
-

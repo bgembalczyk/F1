@@ -1,5 +1,4 @@
 from pathlib import Path
-import inspect
 from typing import Type
 from uuid import uuid4
 

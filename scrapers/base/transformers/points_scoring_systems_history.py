@@ -34,4 +34,3 @@ class PointsScoringSystemsHistoryTransformer(RecordTransformer):
                 merged.append(record)
 
         return merged
-

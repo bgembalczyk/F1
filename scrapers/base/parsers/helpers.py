@@ -1,5 +1,5 @@
 import re
-from typing import Any, Dict, List, Optional, Tuple, TypedDict
+from typing import Any, Dict, List, Optional, Tuple
 
 from bs4 import BeautifulSoup
 

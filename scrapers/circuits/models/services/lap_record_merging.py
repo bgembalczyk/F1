@@ -15,9 +15,15 @@ from scrapers.base.helpers.time import (
 from scrapers.circuits.models.services.lap_record_utils import build_lap_record_key
 from scrapers.circuits.models.services.lap_record_utils import extract_year
 from scrapers.circuits.models.services.lap_record_utils import extract_year_from_event
-from scrapers.circuits.models.services.lap_record_utils import normalize_lap_record_entity
-from scrapers.circuits.models.services.lap_record_utils import parse_lap_record_time_from_record
-from scrapers.circuits.models.services.lap_record_utils import select_best_field_with_url
+from scrapers.circuits.models.services.lap_record_utils import (
+    normalize_lap_record_entity,
+)
+from scrapers.circuits.models.services.lap_record_utils import (
+    parse_lap_record_time_from_record,
+)
+from scrapers.circuits.models.services.lap_record_utils import (
+    select_best_field_with_url,
+)
 
 
 def normalize_entity_value(value: Any) -> dict[str, Any] | None:

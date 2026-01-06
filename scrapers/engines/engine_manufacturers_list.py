@@ -9,7 +9,9 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.presets import BASE_STATS_COLUMNS, BASE_STATS_MAP
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.engines.columns.manufacturer_name_status import EngineManufacturerNameStatusColumn
+from scrapers.engines.columns.manufacturer_name_status import (
+    EngineManufacturerNameStatusColumn,
+)
 
 
 class EngineManufacturersListScraper(F1TableScraper):
@@ -23,9 +25,7 @@ class EngineManufacturersListScraper(F1TableScraper):
         column("Engines built in", "engines_built_in", LinksListColumn()),
     ]
     for header, key in BASE_STATS_MAP.items():
-        column_instance = (
-            FloatColumn() if key == "points" else BASE_STATS_COLUMNS[key]
-        )
+        column_instance = FloatColumn() if key == "points" else BASE_STATS_COLUMNS[key]
         schema_columns.append(column(header, key, column_instance))
 
     CONFIG = ScraperConfig(

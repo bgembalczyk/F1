@@ -68,9 +68,7 @@ def normalize_links(
                 continue
             href = str(anchor.get("href") or "")
             url = full_url(href) if full_url else href
-            links_iterable.append(
-                {"text": anchor.get_text(strip=True), "url": url}
-            )
+            links_iterable.append({"text": anchor.get_text(strip=True), "url": url})
     elif isinstance(links, dict):
         links_iterable: Iterable[LinkRecord] = [links]
     else:

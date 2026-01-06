@@ -10,7 +10,9 @@ from validation.issue import ValidationIssue
 
 @dataclass(frozen=True)
 class NestedSchema:
-    schema: "RecordSchema | Callable[[Mapping[str, Any]], Sequence[ValidationIssue | str]]"
+    schema: (
+        "RecordSchema | Callable[[Mapping[str, Any]], Sequence[ValidationIssue | str]]"
+    )
     is_list: bool = False
 
 

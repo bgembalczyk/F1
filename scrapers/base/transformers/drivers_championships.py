@@ -25,4 +25,3 @@ class DriversChampionshipsTransformer(RecordTransformer):
             champs_raw = row.get("drivers_championships")
             row["drivers_championships"] = self._parse_drivers_championships(champs_raw)
         return records
-
