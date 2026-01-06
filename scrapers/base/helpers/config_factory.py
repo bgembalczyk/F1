@@ -10,7 +10,7 @@ class ScraperCommonConfig:
     validation_mode: str = "soft"
 
 
-def _apply_common_config(
+def apply_common_config(
     options: ScraperOptions,
     config: ScraperCommonConfig,
 ) -> ScraperOptions:
@@ -27,7 +27,7 @@ def build_table_config(
 ) -> ScraperOptions:
     resolved = options or ScraperOptions()
     resolved_config = config or ScraperCommonConfig()
-    return _apply_common_config(resolved, resolved_config)
+    return apply_common_config(resolved, resolved_config)
 
 
 def build_list_config(
@@ -37,4 +37,4 @@ def build_list_config(
 ) -> ScraperOptions:
     resolved = options or ScraperOptions()
     resolved_config = config or ScraperCommonConfig()
-    return _apply_common_config(resolved, resolved_config)
+    return apply_common_config(resolved, resolved_config)

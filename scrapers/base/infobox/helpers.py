@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from typing import Any, Dict, TYPE_CHECKING
 
 from bs4 import BeautifulSoup

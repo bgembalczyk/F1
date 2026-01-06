@@ -1,6 +1,3 @@
-from __future__ import annotations
-
-
 from scrapers.base.table.columns.constants import POINTS_WITH_TOTAL_RE
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers import parse_points_value

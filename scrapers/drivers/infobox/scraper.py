@@ -7,6 +7,8 @@ from scrapers.base.debug_dumps import write_infobox_dump
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
+from scrapers.base.transformers.helpers import apply_transformers
+from scrapers.base.transformers.record_factory import RecordFactoryTransformer
 from scrapers.drivers.infobox.parsers.career import InfoboxCareerParser
 from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
 from scrapers.drivers.infobox.parsers.general import InfoboxGeneralParser
@@ -15,7 +17,6 @@ from scrapers.drivers.infobox.parsers.section_collector import InfoboxSectionCol
 from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
 from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.transformers import RecordFactoryTransformer, apply_transformers
 
 
 class DriverInfoboxScraper:

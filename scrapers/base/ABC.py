@@ -16,7 +16,6 @@ from scrapers.base.helpers.http import resolve_http_policy
 from scrapers.base.helpers.source_adapter import build_source_adapter
 from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.post_processors import apply_post_processors
-from scrapers.base.transformers import apply_transformers
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.errors import (
     ScraperError,
@@ -25,6 +24,7 @@ from scrapers.base.errors import (
     ScraperValidationError,
 )
 from scrapers.base.logging import get_logger
+from scrapers.base.transformers.helpers import apply_transformers
 from validation.records import ExportRecord
 from validation.records import RecordValidator
 

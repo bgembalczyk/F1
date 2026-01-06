@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Any, Callable, Mapping, Sequence
 
-from models.contracts import map_record_to_contract
+from models.contracts.helpers import map_record_to_contract
 from scrapers.base.helpers.text_normalization import drop_empty_fields
 from scrapers.base.helpers.text_normalization import normalize_record_keys
 from scrapers.base.logging import get_logger

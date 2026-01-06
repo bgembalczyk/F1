@@ -59,13 +59,3 @@ def normalize_range_item(value: Any, field_name: str) -> Any:
     if isinstance(value, (int, float, dict)):
         return normalize_unit_value(value, field_name)
     raise ValueError(f"Pole {field_name} ma nieprawidłowy typ")
-
-
-def deprecated_normalize_text(*args: Any, **kwargs: Any) -> Any:
-    warnings.warn(
-        "models.validation.helpers.normalize_text is deprecated; "
-        "use models.value_objects.helpers.normalize_text instead.",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    return normalize_text(*args, **kwargs)

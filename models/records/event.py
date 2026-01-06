@@ -8,7 +8,7 @@ from validation.records import RecordSchema
 from validation.records import BaseDomainRecordValidator, ValidationIssue
 
 
-def _validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
+def validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
     event = record.get("event")
     if isinstance(event, dict):
         return BaseDomainRecordValidator.validate_schema(event, LINK_SCHEMA)
@@ -41,7 +41,7 @@ class EventRecord(TypedDict, total=False):
 
 EVENT_SCHEMA = RecordSchema(
     types={"championship": bool},
-    custom_validators=(_validate_event_field,),
+    custom_validators=(validate_event_field,),
 )
 
 

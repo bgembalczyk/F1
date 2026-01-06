@@ -1,5 +1,3 @@
-# TODO: Podzielić na mniejsze klasy
-
 import re
 from typing import Any, Dict, List
 

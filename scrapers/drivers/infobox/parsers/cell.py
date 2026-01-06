@@ -1,3 +1,5 @@
+# TODO: Ta klasa jest dość duża; rozważ podział na mniejsze klasy lub moduły, jeśli to możliwe.
+
 import re
 from typing import Any
 from typing import Dict

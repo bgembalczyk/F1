@@ -4,7 +4,7 @@ from validation.records import RecordSchema
 from validation.records import BaseDomainRecordValidator, ValidationIssue
 
 
-def _validate_link_text(record: dict[str, Any]) -> list[ValidationIssue]:
+def validate_link_text(record: dict[str, Any]) -> list[ValidationIssue]:
     text = record.get("text")
     if isinstance(text, str) and not text.strip():
         return [ValidationIssue.custom("text must be a non-empty string")]
@@ -15,7 +15,7 @@ LINK_SCHEMA = RecordSchema(
     required=("text",),
     types={"text": str, "url": str},
     allow_none=("url",),
-    custom_validators=(_validate_link_text,),
+    custom_validators=(validate_link_text,),
 )
 
 

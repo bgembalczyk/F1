@@ -7,20 +7,20 @@ from scrapers.base.normalization import EmptyValuePolicy
 from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.records import ExportRecord
 
-_LINK_KEYS = {"text", "url"}
+LINK_KEYS = {"text", "url"}
 
 
-def _is_link_record(value: dict[str, Any]) -> bool:
+def is_link_record(value: dict[str, Any]) -> bool:
     if not value:
         return False
     keys = set(value.keys())
-    if not keys.issubset(_LINK_KEYS):
+    if not keys.issubset(LINK_KEYS):
         return False
-    return bool(keys & _LINK_KEYS)
+    return bool(keys & LINK_KEYS)
 
 
-def _is_link_list(value: Iterable[Any]) -> bool:
-    return all(isinstance(item, dict) and _is_link_record(item) for item in value)
+def is_link_list(value: Iterable[Any]) -> bool:
+    return all(isinstance(item, dict) and is_link_record(item) for item in value)
 
 
 class NormalizeLinksTransformer(RecordTransformer):
@@ -45,7 +45,7 @@ class NormalizeLinksTransformer(RecordTransformer):
                 continue
             updated: ExportRecord = dict(record)
             for key, value in record.items():
-                if isinstance(value, dict) and _is_link_record(value):
+                if isinstance(value, dict) and is_link_record(value):
                     updated[key] = normalize_single_link(
                         value,
                         strip_marks_text=self.strip_marks,
@@ -53,7 +53,7 @@ class NormalizeLinksTransformer(RecordTransformer):
                         strip_lang_suffix=self.strip_lang_suffix,
                     )
                     continue
-                if isinstance(value, list) and _is_link_list(value):
+                if isinstance(value, list) and is_link_list(value):
                     updated[key] = normalize_links(
                         value,
                         strip_marks=self.strip_marks,

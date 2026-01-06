@@ -64,13 +64,13 @@ def strip_wiki_refs(text: str) -> str:
     return REF_RE.sub("", text)
 
 
-def _normalize_dashes(text: str) -> str:
+def normalize_dashes(text: str) -> str:
     """Ujednolić warianty myślników i usuń spacje wokół '-'."""
     t = text.replace("–", "-").replace("—", "-").replace("−", "-")
     return re.sub(r"(?<=\w)\s*-\s*(?=\w)", "-", t)
 
 
-def _strip_lang_suffix(text: str) -> str:
+def strip_lang_suffix(text: str) -> str:
     """Usuń tokeny językowe na końcu (np. "(es)", " es")."""
     lang_alt = "|".join(sorted(LANG_CODES, key=len, reverse=True))
     t = text
@@ -105,9 +105,9 @@ def clean_wiki_text(
         t = strip_wiki_refs(t)
     t = re.sub(r"\s+", " ", t).strip()
     if normalize_dashes:
-        t = _normalize_dashes(t)
+        t = normalize_dashes(t)
     if strip_lang_suffix:
-        t = _strip_lang_suffix(t)
+        t = strip_lang_suffix(t)
     return t
 
 
