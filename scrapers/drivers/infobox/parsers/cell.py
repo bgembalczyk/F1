@@ -46,13 +46,10 @@ class InfoboxCellParser:
         self._include_urls = include_urls
         self._link_extractor = link_extractor
 
-        # Initialize specialized parsers
-        self._numeric_parser = NumericParser()
+        # Initialize specialized parsers (only those that need state/dependencies)
         self._active_years_parser = ActiveYearsParser(link_extractor)
         self._teams_parser = TeamsParser(link_extractor, include_urls)
         self._championships_parser = ChampionshipsParser(link_extractor)
-        self._car_numbers_parser = CarNumbersParser()
-        self._nationality_parser = NationalityParser()
         self._table_parser = TableParser(link_extractor)
         self._race_event_parser = RaceEventParser(link_extractor)
         self._finished_season_parser = FinishedSeasonParser()
@@ -79,11 +76,13 @@ class InfoboxCellParser:
     def parse_teams(self, cell: Tag) -> List[Any]:
         return self._teams_parser.parse_teams(cell)
 
-    def parse_entries(self, cell: Tag) -> Dict[str, int | None]:
-        return self._numeric_parser.parse_entries(cell)
+    @staticmethod
+    def parse_entries(cell: Tag) -> Dict[str, int | None]:
+        return NumericParser.parse_entries(cell)
 
-    def parse_int_cell(self, cell: Tag) -> int | None:
-        return self._numeric_parser.parse_int_cell(cell)
+    @staticmethod
+    def parse_int_cell(cell: Tag) -> int | None:
+        return NumericParser.parse_int_cell(cell)
 
     def parse_championships(self, cell: Tag) -> Dict[str, Any]:
         """Parse championships count with links.
@@ -102,11 +101,13 @@ class InfoboxCellParser:
         """
         return self._championships_parser.parse_class_wins(cell)
 
-    def parse_float_cell(self, cell: Tag) -> float | None:
-        return self._numeric_parser.parse_float_cell(cell)
+    @staticmethod
+    def parse_float_cell(cell: Tag) -> float | None:
+        return NumericParser.parse_float_cell(cell)
 
-    def parse_car_numbers(self, cell: Tag) -> List[Dict[str, Any]]:
-        return self._car_numbers_parser.parse_car_numbers(cell)
+    @staticmethod
+    def parse_car_numbers(cell: Tag) -> List[Dict[str, Any]]:
+        return CarNumbersParser.parse_car_numbers(cell)
 
     def parse_best_finish(self, cell: Tag) -> Dict[str, Any]:
         """Parse best finish field - delegates to BestFinishParser."""
@@ -134,17 +135,19 @@ class InfoboxCellParser:
     def parse_full_data(self, cell: Tag) -> Dict[str, Any]:
         return self._table_parser.parse_full_data(cell, self._include_urls)
 
-    def parse_nested_table(self, table: Tag) -> Dict[str, Any]:
-        return self._table_parser.parse_nested_table(table)
+    @staticmethod
+    def parse_nested_table(table: Tag) -> Dict[str, Any]:
+        return TableParser.parse_nested_table(table)
 
-    def parse_nationality(self, cell: Tag) -> List[str] | List[Dict[str, Any]]:
+    @staticmethod
+    def parse_nationality(cell: Tag) -> List[str] | List[Dict[str, Any]]:
         """Parse nationality field.
 
         Handles cases like:
         - "American or Italian" -> ["American", "Italian"]
         - "Federation of Rhodesia and Nyasaland (1963)" with year ranges -> structured data
         """
-        return self._nationality_parser.parse_nationality(cell)
+        return NationalityParser.parse_nationality(cell)
 
     def parse_collapsible_career_table(self, table: Tag) -> Dict[str, Any] | None:
         """Parse collapsible career statistics table (e.g., motorcycle racing).
