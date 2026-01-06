@@ -129,7 +129,7 @@ class WikipediaSectionByIdMixin:
         return collected
 
     @staticmethod
-    def _extract_section_by_id(
+    def extract_section_by_id(
         soup: BeautifulSoup,
         fragment: str,
     ) -> Optional[BeautifulSoup]:

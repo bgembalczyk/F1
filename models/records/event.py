@@ -21,7 +21,7 @@ def validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
                 )
                 continue
             errors.extend(
-                BaseDomainRecordValidator._prefix_errors(
+                BaseDomainRecordValidator.prefix_errors(
                     BaseDomainRecordValidator.validate_schema(item, LINK_SCHEMA),
                     f"event[{index}]",
                 )

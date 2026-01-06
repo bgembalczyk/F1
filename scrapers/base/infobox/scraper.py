@@ -13,6 +13,8 @@ from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
+from scrapers.base.transformers.helpers import apply_transformers
+from scrapers.base.transformers.record_factory import RecordFactoryTransformer
 
 
 class WikipediaInfoboxScraper:
