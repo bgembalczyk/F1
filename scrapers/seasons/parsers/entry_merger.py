@@ -22,16 +22,7 @@ class EntryMerger:
             return [merged]
 
         root_key = keys[0]
-        groups: dict[str, dict[str, Any]] = {}
-
-        for record in records:
-            value = record.get(root_key)
-            group_key = self._entry_group_key(value)
-            group = groups.get(group_key)
-            if group is None:
-                group = {"value": value, "records": []}
-                groups[group_key] = group
-            group["records"].append(record)
+        groups = self._group_records_by_key(records, root_key)
 
         merged_records: list[dict[str, Any]] = []
         for group in groups.values():
@@ -55,16 +46,7 @@ class EntryMerger:
             return merged
 
         key = keys[0]
-        groups: dict[str, dict[str, Any]] = {}
-
-        for record in records:
-            value = record.get(key)
-            group_key = self._entry_group_key(value)
-            group = groups.get(group_key)
-            if group is None:
-                group = {"value": value, "records": []}
-                groups[group_key] = group
-            group["records"].append(record)
+        groups = self._group_records_by_key(records, key)
 
         if len(groups) == 1:
             group = next(iter(groups.values()))
@@ -83,6 +65,31 @@ class EntryMerger:
             items.append(item)
 
         return {key: items}
+
+    def _group_records_by_key(
+        self,
+        records: List[Dict[str, Any]],
+        key: str,
+    ) -> dict[str, dict[str, Any]]:
+        """Group records by the given key.
+
+        Args:
+            records: List of records to group
+            key: Key to group by
+
+        Returns:
+            Dictionary mapping group_key to {"value": value, "records": [records]}
+        """
+        groups: dict[str, dict[str, Any]] = {}
+        for record in records:
+            value = record.get(key)
+            group_key = self._entry_group_key(value)
+            group = groups.get(group_key)
+            if group is None:
+                group = {"value": value, "records": []}
+                groups[group_key] = group
+            group["records"].append(record)
+        return groups
 
     def _merge_entry_drivers(
         self, records: List[Dict[str, Any]]
