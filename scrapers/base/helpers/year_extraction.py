@@ -1,7 +1,7 @@
 """Utility for extracting years and year ranges from text."""
 
 import re
-from typing import Dict, Set
+from typing import Any, Dict, List, Set
 
 
 class YearExtractor:
@@ -45,7 +45,7 @@ class YearExtractor:
 
     @staticmethod
     def build_year_to_url_map(
-        links: list,
+        links: List[Dict[str, Any]],
         url_key: str = "url",
         text_key: str = "text"
     ) -> Dict[int, str | None]:
@@ -112,12 +112,12 @@ class YearExtractor:
             Updated year to URL mapping with interpolated URLs
         """
         result = dict(year_to_url)
-        
+
         if len(year_to_url) >= 2:
             url_pattern = YearExtractor.detect_url_pattern(year_to_url)
             if url_pattern:
                 for year in years_set:
                     if year not in result:
                         result[year] = url_pattern.replace("{year}", str(year))
-        
+
         return result
