@@ -7,6 +7,7 @@ from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.url import normalize_url
+from scrapers.base.helpers.year_extraction import YearExtractor
 
 
 class InfoboxLinkExtractor:
@@ -68,13 +69,7 @@ class InfoboxLinkExtractor:
         links = [link for link in self.extract_links(cell) if self.is_year_link(link)]
 
         # Build year -> url mapping
-        year_to_url: Dict[int, str | None] = {}
-        for link in links:
-            link_text = link.get("text", "")
-            year_match = re.search(r"\b(\d{4})\b", link_text)
-            if year_match:
-                year = int(year_match.group(1))
-                year_to_url[year] = link.get("url")
+        year_to_url = YearExtractor.build_year_to_url_map(links)
 
         results: List[Dict[str, Any]] = []
 
@@ -164,43 +159,15 @@ class InfoboxLinkExtractor:
         if range_links:
             return range_links
 
-        # Otherwise, use the original logic to expand ranges
+        # Otherwise, use the shared logic to expand ranges
         # Build a map of year -> link
-        year_to_url: Dict[int, str | None] = {}
-        for link in links:
-            link_text = link.get("text", "")
-            year_match = re.search(r"\b(\d{4})\b", link_text)
-            if year_match:
-                year = int(year_match.group(1))
-                year_to_url[year] = link.get("url")
+        year_to_url = YearExtractor.build_year_to_url_map(links)
 
         # Extract all years and ranges from text
-        years_set: set[int] = set()
-
-        # Find ranges like "2007-2008" or "2007–2008"
-        for match in re.finditer(r"\b(\d{4})\s*[-–]\s*(\d{2,4})\b", text):
-            start = int(match.group(1))
-            end_text = match.group(2)
-            if len(end_text) == 2:
-                end = (start // 100) * 100 + int(end_text)
-            else:
-                end = int(end_text)
-            for year in range(start, end + 1):
-                years_set.add(year)
-
-        # Find individual years
-        for match in re.finditer(r"\b(\d{4})\b", text):
-            year = int(match.group(1))
-            years_set.add(year)
+        years_set = YearExtractor.extract_years_from_text(text)
 
         # Try to interpolate URLs for missing years
-        if len(year_to_url) >= 2:
-            # Detect URL pattern
-            url_pattern = self._detect_url_pattern(year_to_url)
-            if url_pattern:
-                for year in years_set:
-                    if year not in year_to_url:
-                        year_to_url[year] = url_pattern.replace("{year}", str(year))
+        year_to_url = YearExtractor.interpolate_urls(years_set, year_to_url)
 
         # Build result list
         result = []
@@ -208,29 +175,6 @@ class InfoboxLinkExtractor:
             result.append({"year": year, "url": year_to_url.get(year)})
 
         return result
-
-    @staticmethod
-    def _detect_url_pattern(year_to_url: Dict[int, str | None]) -> str | None:
-        """Detect a predictable URL pattern from available year links.
-
-        Returns a pattern string with {year} placeholder if pattern is predictable.
-        """
-        urls = [(year, url) for year, url in year_to_url.items() if url]
-        if len(urls) < 2:
-            return None
-
-        # Check if all URLs follow the same pattern
-        patterns = []
-        for year, url in urls:
-            # Replace the year in URL with a placeholder
-            pattern = url.replace(str(year), "{year}")
-            patterns.append(pattern)
-
-        # If all patterns are the same, we found a predictable pattern
-        if len(set(patterns)) == 1:
-            return patterns[0]
-
-        return None
 
     @staticmethod
     def find_link_by_text(text: str, links: List[LinkRecord]) -> LinkRecord | None:

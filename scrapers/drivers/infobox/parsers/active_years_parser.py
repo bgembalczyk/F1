@@ -8,6 +8,7 @@ from typing import List
 from bs4 import Tag
 
 from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.base.helpers.year_extraction import YearExtractor
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.year_parser import YearParser
 
@@ -39,42 +40,14 @@ class ActiveYearsParser:
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         links = self._link_extractor.extract_links(cell)
 
-        # Build a map of year -> link
-        year_to_link: Dict[int, str | None] = {}
-        for link in links:
-            link_text = link.get("text", "")
-            year_match = re.search(r"\b(\d{4})\b", link_text)
-            if year_match:
-                year = int(year_match.group(1))
-                year_to_link[year] = link.get("url")
+        # Build a map of year -> link using shared utility
+        year_to_link = YearExtractor.build_year_to_url_map(links)
 
-        # Extract all years and ranges from text
-        years_set: set[int] = set()
+        # Extract all years and ranges from text using shared utility
+        years_set = YearExtractor.extract_years_from_text(text)
 
-        # Find ranges like "2007-2008" or "2007–2008"
-        for match in re.finditer(r"\b(\d{4})\s*[-–]\s*(\d{2,4})\b", text):
-            start = int(match.group(1))
-            end_text = match.group(2)
-            if len(end_text) == 2:
-                end = (start // 100) * 100 + int(end_text)
-            else:
-                end = int(end_text)
-            for year in range(start, end + 1):
-                years_set.add(year)
-
-        # Find individual years
-        for match in re.finditer(r"\b(\d{4})\b", text):
-            year = int(match.group(1))
-            years_set.add(year)
-
-        # Try to interpolate URLs for missing years
-        if len(year_to_link) >= 2:
-            # Detect URL pattern
-            url_pattern = YearParser.detect_url_pattern(year_to_link)
-            if url_pattern:
-                for year in years_set:
-                    if year not in year_to_link:
-                        year_to_link[year] = url_pattern.replace("{year}", str(year))
+        # Try to interpolate URLs for missing years using shared utility
+        year_to_link = YearExtractor.interpolate_urls(years_set, year_to_link)
 
         # Build result list
         result = []
