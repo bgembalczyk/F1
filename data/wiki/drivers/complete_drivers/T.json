@@ -74,10 +74,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": []
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -335,10 +334,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": []
-                }
+                "value": [
+                  "Japanese"
+                ]
               },
               {
                 "label": "Active years",
@@ -3770,10 +3768,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": []
-                }
+                "value": [
+                  "Japanese"
+                ]
               },
               {
                 "label": "Active years",
@@ -10558,10 +10555,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -26339,10 +26335,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -26780,8 +26775,10 @@
           "born": {
             "date": "1932-12-16",
             "place": [
-              "Shefford",
-              "Bedfordshire",
+              {
+                "text": "Shefford, Bedfordshire",
+                "url": "https://en.wikipedia.org/wiki/Shefford,_Bedfordshire"
+              },
               "England",
               "UK"
             ]
@@ -26805,10 +26802,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -27638,8 +27634,10 @@
           "born": {
             "date": "1933-03-23",
             "place": [
-              "Anstey",
-              "Leicestershire",
+              {
+                "text": "Anstey, Leicestershire",
+                "url": "https://en.wikipedia.org/wiki/Anstey,_Leicestershire"
+              },
               "England"
             ]
           },
@@ -27669,10 +27667,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -28773,10 +28770,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -28945,10 +28941,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -29101,16 +29096,20 @@
           "born": {
             "date": "1921-02-22",
             "place": [
-              "Daytona Beach",
-              "Florida",
+              {
+                "text": "Daytona Beach, Florida",
+                "url": "https://en.wikipedia.org/wiki/Daytona_Beach,_Florida"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1959-02-11",
             "place": [
-              "Daytona Beach",
-              "Florida",
+              {
+                "text": "Daytona Beach, Florida",
+                "url": "https://en.wikipedia.org/wiki/Daytona_Beach,_Florida"
+              },
               "U.S."
             ]
           }
@@ -29253,27 +29252,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 7 11 2",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "7",
-                        "11",
-                        "2"
-                      ]
-                    ]
-                  }
+                  "wins": 7,
+                  "top_tens": 11,
+                  "poles": 2
                 }
               },
               {
@@ -29495,16 +29476,20 @@
           "born": {
             "date": "1919-08-12",
             "place": [
-              "Pueblo",
-              "Colorado",
+              {
+                "text": "Pueblo, Colorado",
+                "url": "https://en.wikipedia.org/wiki/Pueblo,_Colorado"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1962-08-24",
             "place": [
-              "Marion",
-              "Ohio",
+              {
+                "text": "Marion, Ohio",
+                "url": "https://en.wikipedia.org/wiki/Marion,_Ohio"
+              },
               "U.S."
             ]
           }
@@ -29787,10 +29772,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Swiss",
-                  "links": []
-                }
+                "value": [
+                  "Swiss"
+                ]
               },
               {
                 "label": "Active years",
@@ -30078,10 +30062,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "New Zealander",
-                  "links": []
-                }
+                "value": [
+                  "New Zealander"
+                ]
               },
               {
                 "label": "Active years",
@@ -34000,10 +33983,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -34780,8 +34762,10 @@
           "born": {
             "date": "1922-04-09",
             "place": [
-              "Lowell",
-              "Massachusetts",
+              {
+                "text": "Lowell, Massachusetts",
+                "url": "https://en.wikipedia.org/wiki/Lowell,_Massachusetts"
+              },
               "U.S."
             ]
           },
@@ -34792,8 +34776,10 @@
                 "text": "Allentown Fairgrounds",
                 "url": "https://en.wikipedia.org/wiki/Allentown_Fairgrounds"
               },
-              "Allentown",
-              "Pennsylvania",
+              {
+                "text": "Allentown, Pennsylvania",
+                "url": "https://en.wikipedia.org/wiki/Allentown,_Pennsylvania"
+              },
               "U.S."
             ]
           }
@@ -35096,10 +35082,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -35203,16 +35188,20 @@
           "born": {
             "date": "1928-04-04",
             "place": [
-              "Frazee",
-              "Minnesota",
+              {
+                "text": "Frazee, Minnesota",
+                "url": "https://en.wikipedia.org/wiki/Frazee,_Minnesota"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1981-07-30",
             "place": [
-              "Indianapolis",
-              "Indiana",
+              {
+                "text": "Indianapolis, Indiana",
+                "url": "https://en.wikipedia.org/wiki/Indianapolis,_Indiana"
+              },
               "U.S."
             ]
           }
@@ -35707,10 +35696,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -35822,16 +35810,20 @@
           "born": {
             "date": "1917-10-22",
             "place": [
-              "Victor",
-              "Colorado",
+              {
+                "text": "Victor, Colorado",
+                "url": "https://en.wikipedia.org/wiki/Victor,_Colorado"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1986-06-06",
             "place": [
-              "Redondo Beach",
-              "California",
+              {
+                "text": "Redondo Beach, California",
+                "url": "https://en.wikipedia.org/wiki/Redondo_Beach,_California"
+              },
               "U.S."
             ]
           }
@@ -35844,10 +35836,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -36022,10 +36013,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Argentine",
-                  "links": []
-                }
+                "value": [
+                  "Argentine"
+                ]
               },
               {
                 "label": "Active years",
@@ -36594,10 +36584,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Belgian",
-                  "links": []
-                }
+                "value": [
+                  "Belgian"
+                ]
               },
               {
                 "label": "Active years",
@@ -36747,10 +36736,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -57982,10 +57970,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Argentine",
-                  "links": []
-                }
+                "value": [
+                  "Argentine"
+                ]
               },
               {
                 "label": "Active years",
@@ -58722,10 +58709,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "South African",
-                  "links": []
-                }
+                "value": [
+                  "South African"
+                ]
               },
               {
                 "label": "Active years",
@@ -58841,16 +58827,20 @@
           "born": {
             "date": "1920-02-12",
             "place": [
-              "Seattle",
-              "Washington",
+              {
+                "text": "Seattle, Washington",
+                "url": "https://en.wikipedia.org/wiki/Seattle,_Washington"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "2004-09-12",
             "place": [
-              "Renton",
-              "Washington",
+              {
+                "text": "Renton, Washington",
+                "url": "https://en.wikipedia.org/wiki/Renton,_Washington"
+              },
               "U.S."
             ]
           }
@@ -58863,10 +58853,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",

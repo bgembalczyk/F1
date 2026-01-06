@@ -44,7 +44,11 @@
           "born": {
             "date": "1940-04-19",
             "place": [
-              "Braunschweig Germany"
+              {
+                "text": "Braunschweig",
+                "url": "https://en.wikipedia.org/wiki/Braunschweig"
+              },
+              "Germany"
             ]
           }
         },
@@ -56,10 +60,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "German",
-                  "links": []
-                }
+                "value": [
+                  "German"
+                ]
               },
               {
                 "label": "Active years",
@@ -5301,16 +5304,20 @@
           "born": {
             "date": "1910-07-25",
             "place": [
-              "Indianapolis",
-              "Indiana",
+              {
+                "text": "Indianapolis, Indiana",
+                "url": "https://en.wikipedia.org/wiki/Indianapolis,_Indiana"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1984-11-25",
             "place": [
-              "Desert Hot Springs",
-              "California",
+              {
+                "text": "Desert Hot Springs, California",
+                "url": "https://en.wikipedia.org/wiki/Desert_Hot_Springs,_California"
+              },
               "U.S."
             ]
           }
@@ -5509,16 +5516,20 @@
           "born": {
             "date": "1925-05-23",
             "place": [
-              "Saucier",
-              "Mississippi",
+              {
+                "text": "Saucier, Mississippi",
+                "url": "https://en.wikipedia.org/wiki/Saucier,_Mississippi"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1952-11-05",
             "place": [
-              "San Jose",
-              "California",
+              {
+                "text": "San Jose, California",
+                "url": "https://en.wikipedia.org/wiki/San_Jose,_California"
+              },
               "U.S."
             ]
           }
@@ -5531,10 +5542,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -5695,10 +5705,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -13487,10 +13496,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "French",
-                  "links": []
-                }
+                "value": [
+                  "French"
+                ]
               },
               {
                 "label": "Active years",
@@ -13646,8 +13654,8 @@
             },
             "years": [
               {
-                "text": "1980",
-                "url": null
+                "year": 1980,
+                "url": "https://en.wikipedia.org/wiki/1980_British_Formula_Three_season"
               }
             ]
           }
@@ -23308,10 +23316,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -23645,10 +23652,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "South African",
-                  "links": []
-                }
+                "value": [
+                  "South African"
+                ]
               },
               {
                 "label": "Active years",
@@ -38042,8 +38048,10 @@
           "died": {
             "date": "2015-05-29",
             "place": [
-              "Eastlake",
-              "Ohio",
+              {
+                "text": "Eastlake, Ohio",
+                "url": "https://en.wikipedia.org/wiki/Eastlake,_Ohio"
+              },
               "U.S."
             ]
           }
@@ -38056,10 +38064,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -38472,10 +38479,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Brazilian",
-                  "links": []
-                }
+                "value": [
+                  "Brazilian"
+                ]
               },
               {
                 "label": "Active years",
@@ -38605,27 +38611,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 0 0 0",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "0",
-                        "0",
-                        "0"
-                      ]
-                    ]
-                  }
+                  "wins": 0,
+                  "top_tens": 0,
+                  "poles": 0
                 }
               }
             ]
@@ -38710,27 +38698,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 1 7 1",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "1",
-                        "7",
-                        "1"
-                      ]
-                    ]
-                  }
+                  "wins": 1,
+                  "top_tens": 7,
+                  "poles": 1
                 }
               }
             ]
@@ -38832,27 +38802,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 2 28 4",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "2",
-                        "28",
-                        "4"
-                      ]
-                    ]
-                  }
+                  "wins": 2,
+                  "top_tens": 28,
+                  "poles": 4
                 }
               },
               {
@@ -50335,16 +50287,20 @@
           "born": {
             "date": "1932-11-15",
             "place": [
-              "Colorado Springs",
-              "Colorado",
+              {
+                "text": "Colorado Springs, Colorado",
+                "url": "https://en.wikipedia.org/wiki/Colorado_Springs,_Colorado"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1959-05-17",
             "place": [
-              "Indianapolis",
-              "Indiana",
+              {
+                "text": "Indianapolis, Indiana",
+                "url": "https://en.wikipedia.org/wiki/Indianapolis,_Indiana"
+              },
               "U.S."
             ]
           }
@@ -50383,10 +50339,9 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "start": 1957,
-                    "end": 1957
-                  }
+                  "seasons": [
+                    1957
+                  ]
                 }
               },
               {

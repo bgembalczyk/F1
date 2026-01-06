@@ -40,8 +40,10 @@
           "born": {
             "date": "1985-01-11",
             "place": [
-              "Okazaki",
-              "Aichi",
+              {
+                "text": "Okazaki, Aichi",
+                "url": "https://en.wikipedia.org/wiki/Okazaki,_Aichi"
+              },
               "Japan"
             ]
           },
@@ -72,7 +74,7 @@
             },
             "years": [
               {
-                "text": "2003",
+                "year": 2003,
                 "url": null
               }
             ]
@@ -8379,8 +8381,10 @@
           "born": {
             "date": "1953-02-23",
             "place": [
-              "Okazaki",
-              "Aichi",
+              {
+                "text": "Okazaki, Aichi",
+                "url": "https://en.wikipedia.org/wiki/Okazaki,_Aichi"
+              },
               "Japan"
             ]
           },
@@ -8403,12 +8407,24 @@
             },
             "years": [
               {
-                "text": "1981-1982",
+                "year": 1981,
                 "url": null
               },
               {
-                "text": "1984-1986",
+                "year": 1982,
                 "url": null
+              },
+              {
+                "year": 1984,
+                "url": null
+              },
+              {
+                "year": 1985,
+                "url": null
+              },
+              {
+                "year": 1986,
+                "url": "https://en.wikipedia.org/wiki/1986_Japanese_Formula_Two_Championship"
               }
             ]
           }
@@ -12186,8 +12202,10 @@
           "born": {
             "date": "1971-04-01",
             "place": [
-              "Takatsuki",
-              "Osaka",
+              {
+                "text": "Takatsuki, Osaka",
+                "url": "https://en.wikipedia.org/wiki/Takatsuki,_Osaka"
+              },
               "Japan"
             ]
           }
@@ -12200,10 +12218,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": []
-                }
+                "value": [
+                  "Japanese"
+                ]
               },
               {
                 "label": "Active years",
@@ -12428,16 +12445,20 @@
           "born": {
             "date": "1913-03-02",
             "place": [
-              "Chicago",
-              "Illinois",
+              {
+                "text": "Chicago, Illinois",
+                "url": "https://en.wikipedia.org/wiki/Chicago,_Illinois"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "2001-02-26",
             "place": [
-              "Indianapolis",
-              "Indiana",
+              {
+                "text": "Indianapolis, Indiana",
+                "url": "https://en.wikipedia.org/wiki/Indianapolis,_Indiana"
+              },
               "U.S."
             ]
           }
@@ -17075,7 +17096,7 @@
             },
             "years": [
               {
-                "text": "1997",
+                "year": 1997,
                 "url": "https://en.wikipedia.org/wiki/1997_Italian_Superturismo_Championship"
               }
             ]
@@ -28235,11 +28256,11 @@
           "died": {
             "date": "2017-09-19",
             "place": [
-              "Viterbo",
               {
                 "text": "Italy",
                 "url": "https://en.wikipedia.org/wiki/Italy"
-              }
+              },
+              "Viterbo"
             ]
           }
         },
@@ -28251,10 +28272,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Italian",
-                  "links": []
-                }
+                "value": [
+                  "Italian"
+                ]
               },
               {
                 "label": "Active years",
@@ -28411,10 +28431,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -28555,16 +28574,20 @@
           "born": {
             "date": "1921-10-02",
             "place": [
-              "Newark",
-              "New Jersey",
+              {
+                "text": "Newark, New Jersey",
+                "url": "https://en.wikipedia.org/wiki/Newark,_New_Jersey"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1955-05-01",
             "place": [
-              "Langhorne",
-              "Pennsylvania",
+              {
+                "text": "Langhorne, Pennsylvania",
+                "url": "https://en.wikipedia.org/wiki/Langhorne,_Pennsylvania"
+              },
               "U.S."
             ]
           }
@@ -28833,10 +28856,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -32958,10 +32980,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Danish",
-                  "links": []
-                }
+                "value": [
+                  "Danish"
+                ]
               },
               {
                 "label": "Active years",
@@ -33099,10 +33120,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Belgian",
-                  "links": []
-                }
+                "value": [
+                  "Belgian"
+                ]
               },
               {
                 "label": "Active years",
@@ -36266,10 +36286,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "New Zealander",
-                  "links": []
-                }
+                "value": [
+                  "New Zealander"
+                ]
               },
               {
                 "label": "Active years",
@@ -36408,10 +36427,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -36569,10 +36587,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "German",
-                  "links": []
-                }
+                "value": [
+                  "German"
+                ]
               },
               {
                 "label": "Active years",
@@ -36696,10 +36713,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "South African",
-                  "links": []
-                }
+                "value": [
+                  "South African"
+                ]
               },
               {
                 "label": "Active years",
@@ -38829,10 +38845,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": []
-                }
+                "value": [
+                  "Japanese"
+                ]
               },
               {
                 "label": "Active years",
@@ -51891,10 +51906,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",

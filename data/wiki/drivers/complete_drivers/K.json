@@ -58,10 +58,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "German",
-                  "links": []
-                }
+                "value": [
+                  "German"
+                ]
               },
               {
                 "label": "Active years",
@@ -173,8 +172,10 @@
           "born": {
             "date": "1977-01-14",
             "place": [
-              "Coimbatore",
-              "Tamil Nadu",
+              {
+                "text": "Coimbatore, Tamil Nadu",
+                "url": "https://en.wikipedia.org/wiki/Coimbatore,_Tamil_Nadu"
+              },
               "India"
             ]
           }
@@ -7149,10 +7150,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": []
-                }
+                "value": [
+                  "Japanese"
+                ]
               },
               {
                 "label": "Active years",
@@ -11057,10 +11057,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Australian",
-                  "links": []
-                }
+                "value": [
+                  "Australian"
+                ]
               },
               {
                 "label": "Active years",
@@ -11223,10 +11222,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -13232,10 +13230,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "South African",
-                  "links": []
-                }
+                "value": [
+                  "South African"
+                ]
               },
               {
                 "label": "Active years",
@@ -13376,16 +13373,20 @@
           "born": {
             "date": "1920-04-11",
             "place": [
-              "Alexander",
-              "New York",
+              {
+                "text": "Alexander, New York",
+                "url": "https://en.wikipedia.org/wiki/Alexander,_New_York"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1961-11-19",
             "place": [
-              "Phoenix",
-              "Arizona",
+              {
+                "text": "Phoenix, Arizona",
+                "url": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+              },
               "U.S."
             ]
           }
@@ -13471,27 +13472,9 @@
               },
               {
                 "full_data": {
-                  "text": "Wins Top tens Poles 2 12 1",
-                  "links": [
-                    {
-                      "text": "Poles",
-                      "url": "https://en.wikipedia.org/wiki/Pole_position"
-                    }
-                  ],
-                  "table": {
-                    "headers": [
-                      "Wins",
-                      "Top tens",
-                      "Poles"
-                    ],
-                    "rows": [
-                      [
-                        "2",
-                        "12",
-                        "1"
-                      ]
-                    ]
-                  }
+                  "wins": 2,
+                  "top_tens": 12,
+                  "poles": 1
                 }
               },
               {
@@ -13777,10 +13760,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Irish",
-                  "links": []
-                }
+                "value": [
+                  "Irish"
+                ]
               },
               {
                 "label": "Active years",
@@ -13913,10 +13895,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Irish",
-                  "links": []
-                }
+                "value": [
+                  "Irish"
+                ]
               },
               {
                 "label": "Active years",
@@ -15181,10 +15162,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Swiss",
-                  "links": []
-                }
+                "value": [
+                  "Swiss"
+                ]
               },
               {
                 "label": "Active years",
@@ -16631,8 +16611,10 @@
           "born": {
             "date": "1936-03-23",
             "place": [
-              "Seattle",
-              "Washington",
+              {
+                "text": "Seattle, Washington",
+                "url": "https://en.wikipedia.org/wiki/Seattle"
+              },
               "U.S."
             ]
           },
@@ -16765,10 +16747,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Danish",
-                  "links": []
-                }
+                "value": [
+                  "Danish"
+                ]
               },
               {
                 "label": "Active years",
@@ -19435,10 +19416,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Finnish",
-                  "links": []
-                }
+                "value": [
+                  "Finnish"
+                ]
               },
               {
                 "label": "Active years",
@@ -20910,16 +20890,20 @@
           "born": {
             "date": "1917-02-10",
             "place": [
-              "Crystal City",
-              "Missouri",
+              {
+                "text": "Crystal City, Missouri",
+                "url": "https://en.wikipedia.org/wiki/Crystal_City,_Missouri"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "2009-04-26",
             "place": [
-              "Joliet",
-              "Illinois",
+              {
+                "text": "Joliet, Illinois",
+                "url": "https://en.wikipedia.org/wiki/Joliet,_Illinois"
+              },
               "U.S."
             ]
           }
@@ -21160,10 +21144,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "German",
-                  "links": []
-                }
+                "value": [
+                  "German"
+                ]
               },
               {
                 "label": "Active years",
@@ -21308,10 +21291,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "South African",
-                  "links": []
-                }
+                "value": [
+                  "South African"
+                ]
               },
               {
                 "label": "Active years",
@@ -29052,10 +29034,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "East German",
-                  "links": []
-                }
+                "value": [
+                  "East German"
+                ]
               },
               {
                 "label": "Active years",
@@ -40746,8 +40727,10 @@
           "died": {
             "date": "1974-10-06",
             "place": [
-              "Watkins Glen",
-              "New York",
+              {
+                "text": "Watkins Glen, New York",
+                "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
+              },
               "U.S."
             ]
           }
@@ -40760,10 +40743,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Austrian",
-                  "links": []
-                }
+                "value": [
+                  "Austrian"
+                ]
               },
               {
                 "label": "Active years",
@@ -47688,10 +47670,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Finnish",
-                  "links": []
-                }
+                "value": [
+                  "Finnish"
+                ]
               },
               {
                 "label": "Active years",
@@ -47838,10 +47819,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "German",
-                  "links": []
-                }
+                "value": [
+                  "German"
+                ]
               },
               {
                 "label": "Active years",
@@ -47949,11 +47929,11 @@
           "born": {
             "date": "1907-03-30",
             "place": [
-              "Oberreichenbach",
               {
                 "text": "Reichenbach im Vogtland",
                 "url": "https://en.wikipedia.org/wiki/Reichenbach_im_Vogtland"
               },
+              "Oberreichenbach",
               "German Empire"
             ]
           },
@@ -47973,10 +47953,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "East German",
-                  "links": []
-                }
+                "value": [
+                  "East German"
+                ]
               },
               {
                 "label": "Active years",
@@ -48379,10 +48358,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Polish",
-                  "links": []
-                }
+                "value": [
+                  "Polish"
+                ]
               },
               {
                 "label": "Active years",
@@ -57698,10 +57676,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "German",
-                  "links": []
-                }
+                "value": [
+                  "German"
+                ]
               },
               {
                 "label": "Active years",
@@ -57825,10 +57802,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": []
-                }
+                "value": [
+                  "Japanese"
+                ]
               },
               {
                 "label": "Active years",

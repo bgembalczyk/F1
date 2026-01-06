@@ -40,8 +40,10 @@
           "born": {
             "date": "1945-11-12",
             "place": [
-              "Toronto",
-              "Ontario",
+              {
+                "text": "Toronto, Ontario",
+                "url": "https://en.wikipedia.org/wiki/Toronto"
+              },
               "Canada"
             ]
           }
@@ -54,10 +56,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Canadian",
-                  "links": []
-                }
+                "value": [
+                  "Canadian"
+                ]
               },
               {
                 "label": "Active years",
@@ -326,8 +327,10 @@
           "born": {
             "date": "1930-09-23",
             "place": [
-              "Santa Ana",
-              "California",
+              {
+                "text": "Santa Ana, California",
+                "url": "https://en.wikipedia.org/wiki/Santa_Ana,_California"
+              },
               "U.S."
             ]
           },
@@ -344,10 +347,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "American",
-                  "links": []
-                }
+                "value": [
+                  "American"
+                ]
               },
               {
                 "label": "Active years",
@@ -8946,10 +8948,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -10425,16 +10426,20 @@
           "born": {
             "date": "1926-12-09",
             "place": [
-              "Oakland",
-              "California",
+              {
+                "text": "Oakland, California",
+                "url": "https://en.wikipedia.org/wiki/Oakland,_California"
+              },
               "U.S."
             ]
           },
           "died": {
             "date": "1959-08-30",
             "place": [
-              "West Allis",
-              "Wisconsin",
+              {
+                "text": "West Allis, Wisconsin",
+                "url": "https://en.wikipedia.org/wiki/West_Allis,_Wisconsin"
+              },
               "U.S."
             ]
           }
@@ -10717,10 +10722,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
@@ -10860,10 +10864,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Czech",
-                  "links": []
-                }
+                "value": [
+                  "Czech"
+                ]
               },
               {
                 "label": "Active years",
@@ -18934,10 +18937,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Australian",
-                  "links": []
-                }
+                "value": [
+                  "Australian"
+                ]
               },
               {
                 "label": "Active years",
@@ -27057,10 +27059,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Austrian",
-                  "links": []
-                }
+                "value": [
+                  "Austrian"
+                ]
               },
               {
                 "label": "Active years",
@@ -30090,8 +30091,10 @@
           "born": {
             "date": "1932-11-18",
             "place": [
-              "Concepción",
-              "Tucumán",
+              {
+                "text": "Concepción, Tucumán",
+                "url": "https://en.wikipedia.org/wiki/Concepci%C3%B3n,_Tucum%C3%A1n"
+              },
               "Argentina"
             ]
           },
@@ -30115,10 +30118,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Argentine",
-                  "links": []
-                }
+                "value": [
+                  "Argentine"
+                ]
               },
               {
                 "label": "Active years",
@@ -30263,10 +30265,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",

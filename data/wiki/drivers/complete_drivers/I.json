@@ -12953,7 +12953,7 @@
               },
               {
                 "text": "Saitama",
-                "url": "https://en.wikipedia.org/wiki/Saitama,_Saitama"
+                "url": "https://en.wikipedia.org/wiki/Saitama_Prefecture"
               },
               "Japan"
             ]
@@ -12967,10 +12967,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": []
-                }
+                "value": [
+                  "Japanese"
+                ]
               },
               {
                 "label": "Active years",
@@ -18404,10 +18403,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Argentine",
-                  "links": []
-                }
+                "value": [
+                  "Argentine"
+                ]
               },
               {
                 "label": "Active years",
@@ -18535,10 +18533,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "Japanese",
-                  "links": []
-                }
+                "value": [
+                  "Japanese"
+                ]
               },
               {
                 "label": "Active years",
@@ -19733,8 +19730,10 @@
           "died": {
             "date": "1993-10-22",
             "place": [
-              "Reading",
-              "Berkshire",
+              {
+                "text": "Reading, Berkshire",
+                "url": "https://en.wikipedia.org/wiki/Reading,_Berkshire"
+              },
               "England"
             ]
           },
@@ -29015,10 +29014,9 @@
             "rows": [
               {
                 "label": "Nationality",
-                "value": {
-                  "text": "British",
-                  "links": []
-                }
+                "value": [
+                  "British"
+                ]
               },
               {
                 "label": "Active years",
