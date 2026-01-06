@@ -21725,21 +21725,29 @@
                   "seasons": [
                     {
                       "text": "2018",
-                      "url": "https://en.wikipedia.org/wiki/2018_IMSA_SportsCar_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2018_IMSA_SportsCar_Championship",
+                      "class": {
+                        "text": "P",
+                        "url": "https://en.wikipedia.org/wiki/Daytona_Prototype_International"
+                      }
                     },
                     {
                       "text": "2021",
-                      "url": "https://en.wikipedia.org/wiki/2021_IMSA_SportsCar_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2021_IMSA_SportsCar_Championship",
+                      "class": {
+                        "text": "DPi",
+                        "url": "https://en.wikipedia.org/wiki/Daytona_Prototype_International"
+                      }
                     },
                     {
                       "text": "2024",
-                      "url": "https://en.wikipedia.org/wiki/2024_IMSA_SportsCar_Championship"
+                      "url": "https://en.wikipedia.org/wiki/2024_IMSA_SportsCar_Championship",
+                      "class": {
+                        "text": "GTP",
+                        "url": "https://en.wikipedia.org/wiki/LMDh"
+                      }
                     }
-                  ],
-                  "class": {
-                    "text": "P",
-                    "url": "https://en.wikipedia.org/wiki/Daytona_Prototype_International"
-                  }
+                  ]
                 }
               },
               {
