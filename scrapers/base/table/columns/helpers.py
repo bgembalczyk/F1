@@ -2,11 +2,16 @@ import re
 from typing import Any
 from typing import Optional
 
-from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.records.link import LinkRecord
 from models.services.rounds_service import RoundsService
+from scrapers.base.helpers.background import extract_background
+from scrapers.base.helpers.cell_splitting import (
+    split_cell_on_br_dom_based,
+    split_cell_on_br as _split_cell_on_br,
+    split_cell_on_br_with_children,
+)
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.text import clean_wiki_text
@@ -19,78 +24,20 @@ from scrapers.base.table.columns.context import ColumnContext
 
 
 def split_cell_on_br(cell: Tag) -> list[Tag]:
-    html = cell.decode_contents()
-    frag_soup = BeautifulSoup(html, "html.parser")
-    segments: list[list[Tag]] = [[]]
+    """Split cell on <br> tags using DOM-based parsing. Kept for backward compatibility."""
+    return split_cell_on_br_dom_based(cell)
 
-    for node in list(frag_soup.contents):
-        if isinstance(node, Tag) and node.name == "br":
-            if segments[-1]:
-                segments.append([])
-            continue
-        segments[-1].append(node)
 
-    wrapped: list[Tag] = []
-    for segment in segments:
-        if not segment:
-            continue
-        span = frag_soup.new_tag("span")
-        for el in segment:
-            span.append(el)
-        wrapped.append(span)
-
-    return wrapped or [cell]
 
 
 def split_engine_cell_on_br(cell: Tag) -> list[Tag]:
-    html = replace_link_breaks(cell)
-    parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
-    segments: list[Tag] = []
-    soup = cell.soup or BeautifulSoup("", "html.parser")
-
-    for part in parts:
-        if not part.strip():
-            continue
-        frag_soup = BeautifulSoup(part, "html.parser")
-        span = soup.new_tag("span")
-        for el in list(frag_soup.contents):
-            span.append(el)
-        segments.append(span)
-
-    return segments or [cell]
+    """Split engine cell on <br> tags, replacing breaks inside links with spaces."""
+    return _split_cell_on_br(cell, replace_link_breaks=True)
 
 
 def split_entrant_cell_on_br(cell: Tag) -> list[Tag]:
-    parts: list[str] = []
-    current: list[str] = []
-
-    for child in list(cell.contents):
-        if isinstance(child, Tag) and child.name and child.name.lower() == "br":
-            if current:
-                parts.append("".join(current))
-                current = []
-            continue
-        current.append(str(child))
-
-    if current:
-        parts.append("".join(current))
-
-    if not parts:
-        html = cell.decode_contents()
-        parts = re.split(r"<br\\s*/?>", html, flags=re.IGNORECASE)
-    segments: list[Tag] = []
-    soup = cell.soup or BeautifulSoup("", "html.parser")
-
-    for part in parts:
-        if not part.strip():
-            continue
-        frag_soup = BeautifulSoup(part, "html.parser")
-        span = soup.new_tag("span")
-        for el in list(frag_soup.contents):
-            span.append(el)
-        segments.append(span)
-
-    return segments or [cell]
+    """Split entrant cell on <br> tags using children-based iteration."""
+    return split_cell_on_br_with_children(cell)
 
 
 def extract_layout_text(clean_text: str, link_text: str) -> Optional[str]:
@@ -340,20 +287,6 @@ def extract_engine_class(cell: Tag) -> str | None:
     return None
 
 
-def extract_background(cell: Tag) -> str | None:
-    style = cell.get("style") or ""
-    if style:
-        match = re.search(r"background(?:-color)?\s*:\s*([^;]+)", style, re.I)
-        if match:
-            return match.group(1).strip()
-
-    bgcolor = cell.get("bgcolor")
-    if bgcolor:
-        return str(bgcolor).strip()
-
-    return None
-
-
 def is_f2_background(background: str) -> bool:
     match = re.search(r"#?([0-9a-f]{6}|[0-9a-f]{3})", background, re.I)
     if not match:
@@ -363,13 +296,6 @@ def is_f2_background(background: str) -> bool:
         value = "".join(char * 2 for char in value)
     return value == "ffcccc"
 
-
-def replace_link_breaks(cell: Tag) -> str:
-    fragment = BeautifulSoup(cell.decode_contents(), "html.parser")
-    for br in fragment.find_all("br"):
-        if br.find_parent("a"):
-            br.replace_with(" ")
-    return str(fragment)
 
 
 def build_engine_link_lookup(links: list[LinkRecord]) -> dict[str, list[LinkRecord]]:
@@ -720,21 +646,11 @@ def parse_superscripts(ctx: ColumnContext) -> tuple[int | None, bool, bool]:
 
 
 def extract_race_result_background(ctx: ColumnContext) -> str | None:
+    """Extract background color from a table cell in ColumnContext. Kept for backward compatibility."""
     cell = ctx.cell
     if cell is None:
         return None
-
-    style = cell.get("style") or ""
-    if style:
-        match = re.search(r"background(?:-color)?\s*:\s*([^;]+)", style, re.I)
-        if match:
-            return match.group(1).strip()
-
-    bgcolor = cell.get("bgcolor")
-    if bgcolor:
-        return str(bgcolor).strip()
-
-    return None
+    return extract_background(cell)
 
 
 def has_year(text: str) -> bool:

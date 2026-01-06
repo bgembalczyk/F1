@@ -11,17 +11,17 @@ class ConstructorColumn(BaseColumn):
             line_contexts = split_constructor_lines(ctx)
             parsed_lines = []
             for line_ctx in line_contexts:
-                chassis = ConstructorPartColumn(0).parse(line_ctx)
-                engine = ConstructorPartColumn(1).parse(line_ctx)
-                data: dict[str, object] = {}
-                if chassis is not None:
-                    data["chassis_constructor"] = chassis
-                if engine is not None:
-                    data["engine_constructor"] = engine
+                data = self._parse_constructor_data(line_ctx)
                 if data:
                     parsed_lines.append(data)
             if parsed_lines:
                 return parsed_lines
+        data = self._parse_constructor_data(ctx)
+        return data or None
+
+    @staticmethod
+    def _parse_constructor_data(ctx: ColumnContext) -> dict[str, object]:
+        """Parses constructor data from a single context (line or full cell)."""
         chassis = ConstructorPartColumn(0).parse(ctx)
         engine = ConstructorPartColumn(1).parse(ctx)
         data: dict[str, object] = {}
@@ -29,4 +29,4 @@ class ConstructorColumn(BaseColumn):
             data["chassis_constructor"] = chassis
         if engine is not None:
             data["engine_constructor"] = engine
-        return data or None
+        return data

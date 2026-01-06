@@ -12,6 +12,7 @@ from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.helpers.transformers import build_transformers
+from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
 
@@ -110,18 +111,9 @@ class WikipediaInfoboxScraper:
             return record
 
     def _apply_transformers(self, record: Dict[str, Any]) -> Any:
-        transformers = list(self.transformers)
-        if self.record_factory is not None:
-            transformers.append(
-                RecordFactoryTransformer(
-                    self.record_factory,
-                    fallback_on_error=True,
-                )
-            )
-        if not transformers:
-            return record
-        transformed = apply_transformers(transformers, [record], logger=self.logger)
-        return transformed[0] if transformed else {}
+        return apply_transformers_with_factory(
+            self.transformers, record, self.record_factory, self.logger
+        )
 
     # ------------------------------
     # Internal helpers

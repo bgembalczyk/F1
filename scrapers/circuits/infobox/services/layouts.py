@@ -1,20 +1,19 @@
 import re
-from typing import List, Dict, Any, Optional, Callable, TypeVar
+from typing import List, Dict, Any, Optional, Callable
 
 from bs4 import BeautifulSoup
 
 from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.errors import ScraperError
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.parsers.safe_parser_mixin import SafeParserMixin
 from scrapers.circuits.infobox.schema import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
-_T = TypeVar("_T")
 
-
-class CircuitLayoutsParser:
+class CircuitLayoutsParser(SafeParserMixin):
+    """Logika parsowania sekcji layoutów z infoboksa toru."""
     """Logika parsowania sekcji layoutów z infoboksa toru."""
 
     def __init__(
@@ -34,27 +33,6 @@ class CircuitLayoutsParser:
         self.schema = CIRCUIT_INFOBOX_SCHEMA
         self.error_handler = error_handler
         self._url_provider = url_provider
-
-    def _safe_parse(
-        self,
-        fn: Callable[..., _T],
-        *args: Any,
-        **kwargs: Any,
-    ) -> Optional[_T]:
-        try:
-            return fn(*args, **kwargs)
-        except Exception as exc:
-            url = self._url_provider() if self._url_provider else None
-            error = (
-                exc
-                if isinstance(exc, ScraperError)
-                else self.error_handler.wrap_parse(exc, url=url)
-            )
-            if self.error_handler.handle(error):
-                return None
-            if error is exc:
-                raise
-            raise error from exc
 
     def parse_layout_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         table = self.infobox_scraper.parser.find_infobox(soup)
