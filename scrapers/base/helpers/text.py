@@ -93,6 +93,11 @@ def strip_lang_suffix(text: str) -> str:
     return t
 
 
+# Store references to avoid shadowing in clean_wiki_text
+_normalize_dashes_func = normalize_dashes
+_strip_lang_suffix_func = strip_lang_suffix
+
+
 def clean_wiki_text(
     text: str | Tag,
     *,
@@ -106,9 +111,9 @@ def clean_wiki_text(
         t = strip_wiki_refs(t)
     t = re.sub(r"\s+", " ", t).strip()
     if normalize_dashes:
-        t = normalize_dashes(t)
+        t = _normalize_dashes_func(t)
     if strip_lang_suffix:
-        t = strip_lang_suffix(t)
+        t = _strip_lang_suffix_func(t)
     return t
 
 
