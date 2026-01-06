@@ -26,7 +26,6 @@ class MultiLevelHeaderBuilder:
             RuntimeError: If no header rows found
         """
         header_rows: List[Tag] = []
-        
         # First try to find headers in thead
         thead = table.find("thead")
         if thead:

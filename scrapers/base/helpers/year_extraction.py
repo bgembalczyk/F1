@@ -47,7 +47,7 @@ class YearExtractor:
     def build_year_to_url_map(
         links: List[Dict[str, Any]],
         url_key: str = "url",
-        text_key: str = "text"
+        text_key: str = "text",
     ) -> Dict[int, str | None]:
         """Build a mapping from year to URL from a list of links.
 
