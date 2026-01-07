@@ -37,9 +37,12 @@ class TestRedFlaggedRacesScraperRobustness:
         <h2><span class="mw-headline" id="Red-flagged_races">Red-flagged races</span></h2>
         <table class="wikitable">
           <tr>
-            <th>Year</th><th>Grand Prix</th><th>Lap</th><th>R</th>
-            <th>Winner</th><th>Incident that prompted red flag</th>
-            <th colspan="2">Failed to make the restart</th><th>Ref.</th>
+            <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
+            <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
+            <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
+          </tr>
+          <tr>
+            <th>Drivers</th><th>Reason</th>
           </tr>
           <tr>
             <td>2024</td><td><a href="/wiki/Monaco">Monaco</a></td><td>5</td><td>Y</td>
@@ -64,9 +67,12 @@ class TestRedFlaggedRacesScraperRobustness:
         <div>Red-flagged races</div>
         <table class="wikitable">
           <tr>
-            <th>Year</th><th>Grand Prix</th><th>Lap</th><th>R</th>
-            <th>Winner</th><th>Incident that prompted red flag</th>
-            <th colspan="2">Failed to make the restart</th><th>Ref.</th>
+            <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
+            <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
+            <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
+          </tr>
+          <tr>
+            <th>Drivers</th><th>Reason</th>
           </tr>
           <tr>
             <td>2024</td><td><a href="/wiki/Monaco">Monaco</a></td><td>5</td><td>Y</td>
@@ -90,9 +96,12 @@ class TestRedFlaggedRacesScraperRobustness:
         <!-- Two tables, first is championship, second is non-championship -->
         <table class="wikitable">
           <tr>
-            <th>Year</th><th>Grand Prix</th><th>Lap</th><th>R</th>
-            <th>Winner</th><th>Incident that prompted red flag</th>
-            <th colspan="2">Failed to make the restart</th><th>Ref.</th>
+            <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
+            <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
+            <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
+          </tr>
+          <tr>
+            <th>Drivers</th><th>Reason</th>
           </tr>
           <tr>
             <td>2024</td><td>Monaco</td><td>5</td><td>Y</td>
@@ -101,9 +110,12 @@ class TestRedFlaggedRacesScraperRobustness:
         </table>
         <table class="wikitable">
           <tr>
-            <th>Year</th><th>Event</th><th>Lap</th><th>R</th>
-            <th>Winner</th><th>Incident that prompted red flag</th>
-            <th colspan="2">Failed to make the restart</th><th>Ref.</th>
+            <th rowspan="2">Year</th><th rowspan="2">Event</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
+            <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
+            <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
+          </tr>
+          <tr>
+            <th>Drivers</th><th>Reason</th>
           </tr>
           <tr>
             <td>1971</td><td>Brand Hatch</td><td>15</td><td>N</td>
@@ -151,9 +163,12 @@ class TestRedFlaggedRacesScraperRobustness:
         <!-- NO actual section heading -->
         <table class="wikitable">
           <tr>
-            <th>Year</th><th>Grand Prix</th><th>Lap</th><th>R</th>
-            <th>Winner</th><th>Incident that prompted red flag</th>
-            <th colspan="2">Failed to make the restart</th><th>Ref.</th>
+            <th rowspan="2">Year</th><th rowspan="2">Grand Prix</th><th rowspan="2">Lap</th><th rowspan="2">R</th>
+            <th rowspan="2">Winner</th><th rowspan="2">Incident that prompted red flag</th>
+            <th colspan="2">Failed to make the restart</th><th rowspan="2">Ref.</th>
+          </tr>
+          <tr>
+            <th>Drivers</th><th>Reason</th>
           </tr>
           <tr>
             <td>2024</td><td>Monaco</td><td>5</td><td>Y</td>
