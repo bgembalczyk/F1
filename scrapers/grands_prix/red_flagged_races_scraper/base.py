@@ -61,22 +61,53 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
                 logger.debug(f"Failed to find table with section_id={section_id!r}: {e}")
                 continue
         
+        # Check if the page has a TOC entry but no proper section heading
+        # This can help diagnose Wikipedia page structure issues
+        if table is None and self.section_id:
+            toc_ids = [
+                f"toc-{self.section_id}",
+                f"toc-{self.section_id.replace('_', '-')}",
+                f"toc-{self.section_id.replace('-', '_')}",
+            ]
+            for toc_id in toc_ids:
+                if soup.find(id=toc_id):
+                    logger.warning(
+                        f"Found TOC entry '{toc_id}' but no matching section heading. "
+                        f"Wikipedia page structure may be malformed or incomplete."
+                    )
+        
         if table is None:
-            # Extract available section IDs from MediaWiki headlines
-            # This assumes Wikipedia's standard MediaWiki structure
+            # Extract diagnostic information for better error reporting
             available_sections = [
                 span.get('id', 'no-id') 
                 for span in soup.select('.mw-headline')
             ]
-            # Show first 10 sections for readability
             sections_preview = available_sections[:10]
             if len(available_sections) > 10:
                 sections_preview.append(f"... and {len(available_sections) - 10} more")
             
+            # Check what tables are actually present
+            all_tables = soup.find_all('table', class_=self.table_css_class)
+            logger.error(
+                f"Table search failed. Found {len(all_tables)} tables with "
+                f"class='{self.table_css_class}' in the document."
+            )
+            
+            # Try to extract headers from each table for debugging
+            if all_tables:
+                logger.error("Available tables and their headers:")
+                for i, tbl in enumerate(all_tables[:5]):  # Show first 5 tables
+                    try:
+                        headers, _ = MultiLevelHeaderBuilder.build_headers(tbl)
+                        logger.error(f"  Table {i+1}: {headers[:7]}...")  # Show first 7 headers
+                    except Exception as e:
+                        logger.error(f"  Table {i+1}: Could not extract headers - {e}")
+            
             error_msg = (
                 f"Nie znaleziono pasującej tabeli. "
                 f"Próbowano sekcji: {section_ids_to_try}. "
-                f"Dostępne sekcje na stronie: {sections_preview}"
+                f"Dostępne sekcje na stronie: {sections_preview}. "
+                f"Znaleziono {len(all_tables)} tabel z class='{self.table_css_class}'."
             )
             logger.error(error_msg)
             raise RuntimeError(error_msg)
