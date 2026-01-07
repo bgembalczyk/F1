@@ -37,7 +37,10 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         # Try the primary section_id first, then alternatives, then None (whole document)
-        section_ids_to_try = [self.section_id] + self.alternative_section_ids + [None]
+        # Filter out None from the primary section_id to avoid duplication
+        section_ids_to_try = (
+            [self.section_id] if self.section_id is not None else []
+        ) + self.alternative_section_ids + [None]
         
         table = None
         parser = None
@@ -58,7 +61,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
                 logger.debug(f"Failed to find table with section_id={section_id!r}: {e}")
                 continue
         
-        if table is None or parser is None:
+        if table is None:
             available_sections = [
                 span.get('id', 'no-id') 
                 for span in soup.select('.mw-headline')
