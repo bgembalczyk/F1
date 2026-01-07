@@ -138,8 +138,8 @@ class TestRedFlaggedRacesScraperRobustness:
             assert False, "Should have raised RuntimeError"
         except RuntimeError as e:
             error_msg = str(e)
-            # Should mention that 1 table was found
-            assert "Znaleziono 1 tabel" in error_msg or "1 tables" in error_msg
+            # Should mention that 1 table was found (in Polish)
+            assert "Znaleziono 1 tabel" in error_msg
 
     def test_toc_warning_when_section_missing(self, caplog):
         """Test that a warning is logged when TOC exists but section heading doesn't."""
