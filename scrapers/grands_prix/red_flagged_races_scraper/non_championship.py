@@ -54,8 +54,6 @@ class RedFlaggedNonChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
             "R",
             "Winner",
             "Incident that prompted red flag",
-            "Failed to make the restart - Drivers",
-            "Failed to make the restart - Reason",
         ],
         schema=TableSchemaDSL(columns=schema_columns),
         record_factory=record_from_mapping,
