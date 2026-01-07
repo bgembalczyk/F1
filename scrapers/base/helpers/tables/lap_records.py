@@ -2,6 +2,7 @@
 
 from typing import Any, Dict, List
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
