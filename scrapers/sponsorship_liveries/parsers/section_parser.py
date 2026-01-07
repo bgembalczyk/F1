@@ -33,10 +33,12 @@ class SponsorshipSectionParser:
     def __init__(
         self,
         *,
+        url: str,
         include_urls: bool,
         normalize_empty_values: bool,
         splitter: SponsorshipRecordSplitter,
     ):
+        self._url = url
         self._include_urls = include_urls
         self._normalize_empty_values = normalize_empty_values
         self._splitter = splitter
@@ -120,6 +122,7 @@ class SponsorshipSectionParser:
             ),
         ]
         config = ScraperConfig(
+            url=self._url,
             schema=TableSchemaDSL(columns=schema_columns),
             record_factory=record_from_mapping,
         )
