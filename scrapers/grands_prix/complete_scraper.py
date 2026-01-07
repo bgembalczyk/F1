@@ -3,16 +3,19 @@ from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.composite_scraper import (
+    CompositeScraper,
+    CompositeScraperChildren,
+)
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
-from scrapers.base.ABC import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
 
-class F1CompleteGrandPrixScraper(F1Scraper):
+class F1CompleteGrandPrixScraper(CompositeScraper):
     """
     Pobiera listę Grand Prix, a następnie zaciąga tabelę "By year"
     z każdego artykułu na Wikipedii, rozszerzając rekordy listy.
@@ -32,51 +35,43 @@ class F1CompleteGrandPrixScraper(F1Scraper):
 
         super().__init__(options=options)
 
-        self.list_scraper = GrandsPrixListScraper(
+    def build_children(self) -> CompositeScraperChildren:
+        list_scraper = GrandsPrixListScraper(
             options=ScraperOptions(
                 include_urls=True,
                 policy=self.http_policy,
                 source_adapter=self.source_adapter,
             ),
         )
-        self.single_scraper = F1SingleGrandPrixScraper(
+        single_scraper = F1SingleGrandPrixScraper(
             options=ScraperOptions(
                 policy=self.http_policy,
                 source_adapter=self.source_adapter,
             ),
         )
-        self.grands_prix_adapter = IterableSourceAdapter(self.list_scraper.fetch)
+        grands_prix_adapter = IterableSourceAdapter(list_scraper.fetch)
 
-    def fetch(self) -> List[Dict[str, Any]]:
-        grands_prix = self.grands_prix_adapter.get()
-        complete: List[Dict[str, Any]] = []
+        return CompositeScraperChildren(
+            list_scraper=list_scraper,
+            single_scraper=single_scraper,
+            records_adapter=grands_prix_adapter,
+        )
 
-        for grand_prix in grands_prix:
-            if not isinstance(grand_prix, dict):
-                raise TypeError(
-                    "GrandsPrixListScraper musi zwracać dict, "
-                    f"otrzymano: {type(grand_prix).__name__}"
-                )
+    def get_detail_url(self, record: Dict[str, Any]) -> Optional[str]:
+        race_title = record.get("race_title")
+        if isinstance(race_title, dict):
+            return race_title.get("url")
+        return None
 
-            record = grand_prix
-
-            grand_prix_url: Optional[str] = None
-            race_title = record.get("race_title")
-            if isinstance(race_title, dict):
-                grand_prix_url = race_title.get("url")
-
-            by_year: Optional[List[Dict[str, Any]]] = None
-            if grand_prix_url:
-                details_list = self.single_scraper.fetch_by_url(grand_prix_url)
-                if details_list:
-                    by_year = details_list[0].get("by_year")
-
-            full_record = dict(record)
-            full_record["by_year"] = by_year
-            complete.append(full_record)
-
-        self._data = complete
-        return self._data
+    def assemble_record(
+        self,
+        record: Dict[str, Any],
+        details: Optional[Dict[str, Any]],
+    ) -> Dict[str, Any]:
+        full_record = dict(record)
+        by_year = details.get("by_year") if details else None
+        full_record["by_year"] = by_year
+        return full_record
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
         """Metoda wymagana przez bazę – nie używana w tym scraperze."""

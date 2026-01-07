@@ -10,18 +10,70 @@ from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.options import ScraperOptions
+from scrapers.base.table.columns.types.driver import DriverColumn
+from scrapers.base.table.columns.types.driver_list import DriverListColumn
+from scrapers.base.table.columns.types.int import IntColumn
+from scrapers.base.table.columns.types.skip import SkipColumn
+from scrapers.base.table.columns.types.text import TextColumn
+from scrapers.base.table.dsl import column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.failed_to_make_restart import (
     FailedToMakeRestartTransformer,
 )
+from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
 
 logger = logging.getLogger(__name__)
 
 
 class RedFlaggedRacesBaseScraper(F1TableScraper):
+    """
+    Base scraper for red-flagged races tables.
+    
+    Provides common schema columns and fallback section ID logic
+    for scraping red-flagged race data from Wikipedia.
+    
+    Subclasses should define their own CONFIG with specific:
+    - url (typically the same for all red-flagged scrapers)
+    - section_id (primary section to search for)
+    - expected_headers (subset of headers to validate)
+    - schema (can use build_common_red_flag_columns helper)
+    - record_factory
+    """
+    
     # Subclasses can override to provide fallback section IDs
     alternative_section_ids: List[str] = []
+    
+    @staticmethod
+    def build_common_red_flag_columns(race_name_header: str = "Grand Prix"):
+        """
+        Build common column definitions for red-flagged race tables.
+        
+        Args:
+            race_name_header: Header name for the race (e.g., "Grand Prix" or "Event")
+        
+        Returns:
+            List of column definitions common to all red-flagged race tables.
+        """
+        return [
+            column("Year", "season", IntColumn()),
+            column(race_name_header, race_name_header.lower().replace(" ", "_"), None),  # Will be set by caller
+            column("Lap", "lap", IntColumn()),
+            column("R", "restart_status", RestartStatusColumn()),
+            column("Winner", "winner", DriverColumn()),
+            column("Incident that prompted red flag", "incident", TextColumn()),
+            column(
+                "Failed to make the restart - Drivers",
+                "failed_to_make_restart_drivers",
+                DriverListColumn(),
+            ),
+            column(
+                "Failed to make the restart - Reason",
+                "failed_to_make_restart_reason",
+                TextColumn(),
+            ),
+            column("Ref.", "ref", SkipColumn()),
+        ]
     
     def __init__(
         self,

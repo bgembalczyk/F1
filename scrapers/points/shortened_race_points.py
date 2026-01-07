@@ -5,22 +5,22 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.points.constants import SHORTENED_RACE_EXPECTED_HEADERS
-from scrapers.points.schemas import build_shortened_race_points_schema
 from scrapers.base.transformers.shortened_race_points import (
     ShortenedRacePointsTransformer,
 )
+from scrapers.points.base_points_scraper import BasePointsScraper
+from scrapers.points.constants import SHORTENED_RACE_EXPECTED_HEADERS
+from scrapers.points.schemas import build_shortened_race_points_schema
 
 
-class ShortenedRacePointsScraper(F1TableScraper):
+class ShortenedRacePointsScraper(BasePointsScraper):
     """
     Tabela: Shortened race points criteria
     https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems
     """
 
     CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
+        url=BasePointsScraper.BASE_URL,
         section_id="Shortened_races",
         expected_headers=SHORTENED_RACE_EXPECTED_HEADERS,
         schema=build_shortened_race_points_schema(),
