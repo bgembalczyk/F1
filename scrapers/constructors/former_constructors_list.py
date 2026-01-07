@@ -32,6 +32,7 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
     """
 
     schema_columns = [
+        *BaseConstructorListScraper.build_common_metadata_columns(),
         BaseConstructorListScraper.build_licensed_in_column(),
         column(CONSTRUCTOR_SEASONS_HEADER, "seasons", SeasonsColumn()),
         column(CONSTRUCTOR_RACES_ENTERED_HEADER, "races_entered", IntColumn()),
@@ -41,7 +42,6 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
         column(CONSTRUCTOR_POLES_HEADER, "poles", IntColumn()),
         column(CONSTRUCTOR_FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
         column(CONSTRUCTOR_PODIUMS_HEADER, "podiums", IntColumn()),
-        *BaseConstructorListScraper.build_common_metadata_columns(),
     ]
 
     CONFIG = ScraperConfig(
