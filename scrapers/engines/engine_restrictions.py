@@ -97,7 +97,7 @@ class EngineRestrictionsScraper(F1TableScraper):
                     cells.append(cells_for_row[index])
                 else:
                     cells.append(soup.new_tag("td"))
-            record = self.pipeline.parse_cells(headers, cells, row_index=index)
+            record = self.extractor.pipeline.parse_cells(headers, cells, row_index=index)
             if record:
                 records.append(record)
 

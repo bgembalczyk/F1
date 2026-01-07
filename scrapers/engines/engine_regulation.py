@@ -95,7 +95,7 @@ class EngineRegulationScraper(F1TableScraper):
                 headers,
                 pending_rowspans,
             )
-            record = self.pipeline.parse_cells(
+            record = self.extractor.pipeline.parse_cells(
                 headers, expanded_cells, row_index=row_index
             )
             if record:
