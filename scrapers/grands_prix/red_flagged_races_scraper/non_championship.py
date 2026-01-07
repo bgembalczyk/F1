@@ -18,6 +18,12 @@ from scrapers.grands_prix.red_flagged_races_scraper.base import (
 
 
 class RedFlaggedNonChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
+    alternative_section_ids = [
+        "Non-championship",
+        "Non-Championship_races",
+        "Non_championship_races",
+    ]
+    
     schema_columns = [
         column("Year", "season", IntColumn()),
         column("Event", "event", UrlColumn()),

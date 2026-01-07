@@ -17,6 +17,9 @@ from scrapers.base.transformers.failed_to_make_restart import (
 
 
 class RedFlaggedRacesBaseScraper(F1TableScraper):
+    # Subclasses can override to provide fallback section IDs
+    alternative_section_ids: List[str] = []
+    
     def __init__(
         self,
         *,
@@ -30,12 +33,27 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         super().__init__(options=options, config=config)
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        parser = HtmlTableParser(
-            section_id=self.section_id,
-            expected_headers=self.expected_headers,
-            table_css_class=self.table_css_class,
-        )
-        table = parser._find_table(soup)
+        # Try the primary section_id first, then alternatives
+        section_ids_to_try = [self.section_id] + self.alternative_section_ids
+        
+        table = None
+        parser = None
+        for section_id in section_ids_to_try:
+            current_parser = HtmlTableParser(
+                section_id=section_id,
+                expected_headers=self.expected_headers,
+                table_css_class=self.table_css_class,
+            )
+            try:
+                table = current_parser._find_table(soup)
+                parser = current_parser
+                break
+            except RuntimeError:
+                continue
+        
+        if table is None or parser is None:
+            raise RuntimeError(f"Nie znaleziono pasującej tabeli. Próbowano sekcji: {section_ids_to_try}")
+        
         headers, header_rows = MultiLevelHeaderBuilder.build_headers(table)
 
         records: list[dict[str, Any]] = []

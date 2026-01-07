@@ -18,6 +18,12 @@ from scrapers.grands_prix.red_flagged_races_scraper.base import (
 
 
 class RedFlaggedWorldChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
+    alternative_section_ids = [
+        "World_Championship_races",
+        "Championship_races", 
+        "Red_flagged_races",
+    ]
+    
     schema_columns = [
         column("Year", "season", IntColumn()),
         column("Grand Prix", "grand_prix", UrlColumn()),
