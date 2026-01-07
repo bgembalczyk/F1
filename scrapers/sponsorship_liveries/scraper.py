@@ -35,6 +35,7 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
         super().__init__(options=options)
         self._splitter = SponsorshipRecordSplitter()
         self._section_parser = SponsorshipSectionParser(
+            url=self.url,
             include_urls=self.include_urls,
             normalize_empty_values=self.normalize_empty_values,
             splitter=self._splitter,
