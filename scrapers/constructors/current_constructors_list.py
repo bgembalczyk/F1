@@ -1,3 +1,4 @@
+from datetime import datetime
 from pathlib import Path
 
 from models.records.factories import build_constructor_record
@@ -22,14 +23,16 @@ from scrapers.constructors.constants import (
     CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
     CONSTRUCTOR_WCC_HEADER,
     CONSTRUCTOR_WDC_HEADER,
-    CONSTRUCTORS_2025_EXPECTED_HEADERS,
+    CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
 )
 
+CURRENT_YEAR = datetime.now().year
 
-class Constructors2025ListScraper(F1TableScraper):
+
+class CurrentConstructorsListScraper(F1TableScraper):
     """
     Aktualni konstruktorzy – sekcja
-    'Constructors for the 2025 season' z:
+    'Constructors for the current season' z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
     """
 
@@ -59,8 +62,8 @@ class Constructors2025ListScraper(F1TableScraper):
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_constructors",
-        section_id="Constructors_for_the_2025_season",
-        expected_headers=CONSTRUCTORS_2025_EXPECTED_HEADERS,
+        section_id=f"Constructors_for_the_{CURRENT_YEAR}_season",
+        expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
         schema=TableSchemaDSL(columns=schema_columns),
         record_factory=build_constructor_record,
     )
@@ -79,9 +82,9 @@ class Constructors2025ListScraper(F1TableScraper):
 
 if __name__ == "__main__":
     run_and_export(
-        Constructors2025ListScraper,
-        "constructors/f1_constructors_2025.json",
-        "constructors/f1_constructors_2025.csv",
+        CurrentConstructorsListScraper,
+        f"constructors/f1_constructors_{CURRENT_YEAR}.json",
+        f"constructors/f1_constructors_{CURRENT_YEAR}.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
