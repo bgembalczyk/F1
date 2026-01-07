@@ -62,14 +62,21 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
                 continue
         
         if table is None:
+            # Extract available section IDs from MediaWiki headlines
+            # This assumes Wikipedia's standard MediaWiki structure
             available_sections = [
                 span.get('id', 'no-id') 
                 for span in soup.select('.mw-headline')
             ]
+            # Show first 10 sections for readability
+            sections_preview = available_sections[:10]
+            if len(available_sections) > 10:
+                sections_preview.append(f"... and {len(available_sections) - 10} more")
+            
             error_msg = (
                 f"Nie znaleziono pasującej tabeli. "
                 f"Próbowano sekcji: {section_ids_to_try}. "
-                f"Dostępne sekcje na stronie: {available_sections[:10]}"
+                f"Dostępne sekcje na stronie: {sections_preview}"
             )
             logger.error(error_msg)
             raise RuntimeError(error_msg)
