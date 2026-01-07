@@ -4,19 +4,19 @@ from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.records import record_from_mapping
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.constants import SPRINT_QUALIFYING_EXPECTED_HEADERS
 from scrapers.points.schemas import build_sprint_qualifying_schema
 
 
-class SprintQualifyingPointsScraper(F1TableScraper):
+class SprintQualifyingPointsScraper(BasePointsScraper):
     """
     Tabela: Sprint qualifying and the sprints
     https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems
     """
 
     CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
+        url=BasePointsScraper.BASE_URL,
         section_id="Sprint_races",
         expected_headers=SPRINT_QUALIFYING_EXPECTED_HEADERS,
         schema=build_sprint_qualifying_schema(),

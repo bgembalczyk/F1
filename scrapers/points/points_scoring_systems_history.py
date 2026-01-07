@@ -10,10 +10,10 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl import TableSchemaDSL, column
-from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.points_scoring_systems_history import (
     PointsScoringSystemsHistoryTransformer,
 )
+from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.columns.first_place import FirstPlaceColumn
 from scrapers.points.constants import (
     HISTORICAL_POSITIONS,
@@ -26,7 +26,7 @@ from scrapers.points.constants import (
 )
 
 
-class PointsScoringSystemsHistoryScraper(F1TableScraper):
+class PointsScoringSystemsHistoryScraper(BasePointsScraper):
     """
     Tabela: List of Formula One World Championship points scoring systems used throughout history
     https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems
@@ -54,7 +54,7 @@ class PointsScoringSystemsHistoryScraper(F1TableScraper):
     )
 
     CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems",
+        url=BasePointsScraper.BASE_URL,
         section_id="Points_scoring_systems",
         expected_headers=POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
         schema=TableSchemaDSL(columns=schema_columns),
