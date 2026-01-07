@@ -1,18 +1,16 @@
 from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.base.run_config import RunConfig
 
 
-class IndianapolisOnlyEngineManufacturersListScraper(F1ListScraper):
+class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper):
     """
     Lista 'Indianapolis 500 only' dla producentów silników.
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers"
-    section_id = "Indianapolis_500_only"
-
     record_key = "manufacturer"
     url_key = "manufacturer_url"
 
