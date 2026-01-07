@@ -1,3 +1,4 @@
+import logging
 from typing import Any
 from typing import Dict
 from typing import List
@@ -14,6 +15,8 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.failed_to_make_restart import (
     FailedToMakeRestartTransformer,
 )
+
+logger = logging.getLogger(__name__)
 
 
 class RedFlaggedRacesBaseScraper(F1TableScraper):
@@ -38,7 +41,10 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         
         table = None
         parser = None
+        last_error = None
+        
         for section_id in section_ids_to_try:
+            logger.debug(f"Trying to find table with section_id={section_id!r}")
             current_parser = HtmlTableParser(
                 section_id=section_id,
                 expected_headers=self.expected_headers,
@@ -47,12 +53,25 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             try:
                 table = current_parser._find_table(soup)
                 parser = current_parser
+                logger.info(f"Successfully found table with section_id={section_id!r}")
                 break
-            except RuntimeError:
+            except RuntimeError as e:
+                last_error = e
+                logger.debug(f"Failed to find table with section_id={section_id!r}: {e}")
                 continue
         
         if table is None or parser is None:
-            raise RuntimeError(f"Nie znaleziono pasującej tabeli. Próbowano sekcji: {section_ids_to_try}")
+            available_sections = [
+                span.get('id', 'no-id') 
+                for span in soup.select('.mw-headline')
+            ]
+            error_msg = (
+                f"Nie znaleziono pasującej tabeli. "
+                f"Próbowano sekcji: {section_ids_to_try}. "
+                f"Dostępne sekcje na stronie: {available_sections[:10]}"
+            )
+            logger.error(error_msg)
+            raise RuntimeError(error_msg)
         
         headers, header_rows = MultiLevelHeaderBuilder.build_headers(table)
 
