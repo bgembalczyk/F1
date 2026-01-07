@@ -41,7 +41,6 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         
         table = None
         parser = None
-        last_error = None
         
         for section_id in section_ids_to_try:
             logger.debug(f"Trying to find table with section_id={section_id!r}")
@@ -56,7 +55,6 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
                 logger.info(f"Successfully found table with section_id={section_id!r}")
                 break
             except RuntimeError as e:
-                last_error = e
                 logger.debug(f"Failed to find table with section_id={section_id!r}: {e}")
                 continue
         
