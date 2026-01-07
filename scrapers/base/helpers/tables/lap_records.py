@@ -89,7 +89,7 @@ class LapRecordsTableScraper(F1TableScraper):
             seg_cells = [
                 segs[idx] if idx < len(segs) else segs[-1] for segs in per_cell_segments
             ]
-            record = self.pipeline.parse_cells(headers, seg_cells)
+            record = self.extractor.pipeline.parse_cells(headers, seg_cells)
 
             if as_value_objects:
                 if LapRecord is None:
