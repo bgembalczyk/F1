@@ -103,7 +103,7 @@ def parse_configuration(ctx: ColumnContext) -> Dict[str, Any] | None:
     angle = None
     angle_match = ANGLE_RE.search(base_text)
     if angle_match:
-        angle = {"value": parse_number(angle_match.group("value")), "unit": "deg"}
+        angle = {"value": parse_numeric_value(angle_match.group("value")), "unit": "deg"}
         base_text = ANGLE_RE.sub("", base_text).strip()
 
     type_match = CONFIG_TYPE_RE.search(base_text)
