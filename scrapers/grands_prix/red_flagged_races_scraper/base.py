@@ -33,8 +33,8 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         super().__init__(options=options, config=config)
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        # Try the primary section_id first, then alternatives
-        section_ids_to_try = [self.section_id] + self.alternative_section_ids
+        # Try the primary section_id first, then alternatives, then None (whole document)
+        section_ids_to_try = [self.section_id] + self.alternative_section_ids + [None]
         
         table = None
         parser = None

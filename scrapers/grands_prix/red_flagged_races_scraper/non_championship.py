@@ -22,6 +22,7 @@ class RedFlaggedNonChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
         "Non-championship",
         "Non-Championship_races",
         "Non_championship_races",
+        "Non_championship",
     ]
     
     schema_columns = [

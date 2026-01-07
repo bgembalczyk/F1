@@ -20,7 +20,8 @@ from scrapers.grands_prix.red_flagged_races_scraper.base import (
 class RedFlaggedWorldChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
     alternative_section_ids = [
         "World_Championship_races",
-        "Championship_races", 
+        "Championship_races",
+        "World_championship_races",
         "Red_flagged_races",
     ]
     
