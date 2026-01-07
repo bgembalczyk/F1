@@ -12,7 +12,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "None"
         ],
@@ -33,7 +33,7 @@
           "Red",
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "El Charro"
         ],
@@ -176,7 +176,7 @@
         "additional_colours": [
           "White"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Agip",
@@ -213,7 +213,7 @@
           "White",
           "Black"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Marlboro",
@@ -261,7 +261,7 @@
           "Green",
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Benetton Group",
@@ -395,7 +395,7 @@
           "White",
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Alfa Romeo",
@@ -460,7 +460,7 @@
           "White",
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Alfa Romeo",
@@ -588,7 +588,7 @@
           "Red",
           "Black"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Alfa Romeo",
@@ -682,7 +682,7 @@
           "White",
           "Navy Blue"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "AlphaTauri",
@@ -767,7 +767,7 @@
           "White",
           "Navy Blue"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "AlphaTauri",
@@ -1348,14 +1348,14 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Varig",
             "url": "https://en.wikipedia.org/wiki/Varig"
           }
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "grand_prix_scope": {
           "type": "only",
           "grand_prix": [
@@ -1376,9 +1376,9 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "grand_prix_scope": {
           "type": "other"
         }
@@ -1393,42 +1393,7 @@
         "main_colours": [
           "Gold"
         ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "FINA",
-            "url": "https://en.wikipedia.org/wiki/Petrofina"
-          },
-          {
-            "text": "Heuer",
-            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-          },
-          {
-            "text": "Scicon Micro Systems ARCO Graphite"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Long Beach Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1978,
-            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Gold"
-        ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Warsteiner",
@@ -1464,7 +1429,42 @@
         "main_colours": [
           "Gold"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
+        "main_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "FINA",
+            "url": "https://en.wikipedia.org/wiki/Petrofina"
+          },
+          {
+            "text": "Heuer",
+            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
+          },
+          {
+            "text": "Scicon Micro Systems ARCO Graphite"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Long Beach Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1978,
+            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Gold"
+        ],
+        "additional_colours": null,
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -1729,7 +1729,7 @@
         "main_colours": [
           "Various"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Valvoline Bembom Bros. OK Corral Marilena Barclay Pepsi Déca Grand Prix International Leonardo Lederbekleidung Golia MacConnal-Mason Gallery Fine Paintings"
@@ -1838,7 +1838,7 @@
         "main_colours": [
           "Various"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [],
         "additional_major_sponsors": [
           "Allwave Hi-Fi",
@@ -2325,7 +2325,7 @@
           "Red",
           "Green"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           "Alibert",
           {
@@ -2949,9 +2949,9 @@
         "main_colours": [
           "British racing green"
         ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
+        "additional_colours": null,
+        "main_sponsors": null,
+        "additional_major_sponsors": null,
         "notes": null
       },
       {
@@ -3662,7 +3662,7 @@
           "Red",
           "Black"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Audi",
@@ -4645,7 +4645,7 @@
     "team": "BMS Scuderia Italia",
     "liveries": [
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Red"
         ],
@@ -4664,7 +4664,7 @@
         "non-tobacco_alcohol_livery_changes": "None"
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Red"
         ],
@@ -4841,7 +4841,7 @@
           "White",
           "Blue"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Marlboro",
@@ -5179,7 +5179,7 @@
         "main_colours": [
           "White and Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Lucky Strike",
@@ -5209,7 +5209,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Esso Uniflo",
@@ -5243,7 +5243,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "YPF",
@@ -5282,7 +5282,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Bardahl",
@@ -5317,7 +5317,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "YPF",
@@ -5349,7 +5349,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Promax Bardahl",
@@ -5380,7 +5380,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "Ceramica Pagnossin"
         ],
@@ -5407,7 +5407,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "Ceramica Pagnossin"
         ],
@@ -5434,7 +5434,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "Ceramica Pagnossin"
         ],
@@ -5461,7 +5461,7 @@
         "main_colours": [
           "Black"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "Hexagon of Highgate"
         ],
@@ -5488,7 +5488,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Hitachi",
@@ -5527,7 +5527,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -5555,7 +5555,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Hitachi",
@@ -5594,7 +5594,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -5622,7 +5622,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Texaco",
@@ -5661,7 +5661,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -5692,7 +5692,7 @@
         "additional_colours": [
           "Richard Robarts"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Goodyear",
@@ -5716,7 +5716,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": []
+        "additional_colours": null
       },
       {
         "season": [
@@ -5734,7 +5734,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": []
+        "additional_colours": null
       },
       {
         "season": [
@@ -5766,7 +5766,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "drivers": [
           {
             "text": "1975",
@@ -5790,7 +5790,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "White"
         ],
@@ -5817,7 +5817,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": []
+        "additional_colours": null
       },
       {
         "season": [
@@ -5835,7 +5835,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": []
+        "additional_colours": null
       },
       {
         "season": [
@@ -5853,7 +5853,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": []
+        "additional_colours": null
       },
       {
         "season": [
@@ -5871,7 +5871,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Martini & Rossi",
@@ -5901,7 +5901,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Martini & Rossi",
@@ -5925,7 +5925,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Martini & Rossi",
@@ -5949,7 +5949,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Martini & Rossi",
@@ -5973,7 +5973,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Parmalat",
@@ -6007,7 +6007,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Parmalat",
@@ -6041,7 +6041,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Parmalat",
@@ -6075,7 +6075,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Parmalat",
@@ -6109,7 +6109,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Parmalat",
@@ -6143,7 +6143,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Parmalat",
@@ -7670,7 +7670,7 @@
           "Pink",
           "Dark Blue and Light Blue"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Seikima-II",
@@ -7860,7 +7860,7 @@
         "non-tobacco_alcohol_livery_changes": "Lucky Strike logo either blocked out (2000-2001), \"Luckies\" changed to \"Lookies\" (2000), \"Lucky Strike\" was replaced with \"Look Alike\" (2001), \"Run Free\" (2002), bar code and Formula One cars (2003-2004), \"Don't Walk\", \"Look Left\" and \"Look Right\" and a barcode and Formula One cars (2004) or with \"Racing Revolution\" (2005)"
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "White"
         ],
@@ -7888,7 +7888,7 @@
         "non-tobacco_alcohol_livery_changes": "\"Lucky Strike\" was replaced with \" 555 World Racing \""
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Blue",
           "White"
@@ -7924,29 +7924,29 @@
     "team": "British Racing Motors",
     "liveries": [
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Dark Metallic Gray-Green"
         ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
+        "additional_colours": null,
+        "main_sponsors": null,
+        "additional_major_sponsors": null,
         "other_informations_including_non-tobacco_alcohol_race_changes": null
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Black"
         ],
         "additional_colours": [
           "none"
         ],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
+        "main_sponsors": null,
+        "additional_major_sponsors": null,
         "other_informations_including_non-tobacco_alcohol_race_changes": null
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Black"
         ],
@@ -7954,8 +7954,8 @@
           "Orange",
           "Red"
         ],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
+        "main_sponsors": null,
+        "additional_major_sponsors": null,
         "other_informations_including_non-tobacco_alcohol_race_changes": null
       },
       {
@@ -7980,7 +7980,7 @@
         "main_sponsors": [
           "Yardley"
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "other_informations_including_non-tobacco_alcohol_race_changes": null
       },
       {
@@ -8007,7 +8007,7 @@
         "main_sponsors": [
           "Marlboro"
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "other_informations_including_non-tobacco_alcohol_race_changes": null
       },
       {
@@ -8020,11 +8020,11 @@
         "main_colours": [
           "Pale Green"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "Motul"
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "other_informations_including_non-tobacco_alcohol_race_changes": null
       },
       {
@@ -8042,9 +8042,9 @@
           "Blue",
           "Red"
         ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
+        "additional_colours": null,
+        "main_sponsors": null,
+        "additional_major_sponsors": null,
         "other_informations_including_non-tobacco_alcohol_race_changes": null
       },
       {
@@ -8057,11 +8057,11 @@
         "main_colours": [
           "Pale Blue"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "Rotary Watches"
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "other_informations_including_non-tobacco_alcohol_race_changes": null
       }
     ]
@@ -8076,10 +8076,10 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "main_colours": [],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": []
+        "main_colours": null,
+        "additional_colours": null,
+        "main_sponsors": null,
+        "additional_major_sponsors": null
       }
     ]
   },
@@ -8333,7 +8333,7 @@
         "main_colours": [
           "Yellow"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Himont",
@@ -8415,7 +8415,7 @@
         "notes": null
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "White"
         ],
@@ -8423,7 +8423,7 @@
           "Red",
           "Green"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           "Subaru",
           "Agip",
@@ -8432,12 +8432,12 @@
         "notes": "Subaru Coloni racing livery"
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Yellow"
         ],
-        "additional_colours": [],
-        "main_sponsors": [],
+        "additional_colours": null,
+        "main_sponsors": null,
         "additional_major_sponsors": [
           "Agip",
           "Capa",
@@ -8460,7 +8460,7 @@
           "Blue",
           "Gray"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Galp",
@@ -8490,7 +8490,7 @@
         "main_colours": [
           "Green"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Duckhams",
@@ -8514,8 +8514,8 @@
         "main_colours": [
           "Green"
         ],
-        "main_sponsors": [],
-        "additional_major_sponsors": []
+        "main_sponsors": null,
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -8632,6 +8632,80 @@
         "main_colours": [
           "Black"
         ],
+        "main_sponsors": [
+          {
+            "text": "Valvoline John Day Model Cars Norris Industries F&S Properties First National City Travelers Checks"
+          }
+        ],
+        "additional_major_sponsors": [
+          "Elan"
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "South African Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
+            },
+            {
+              "text": "United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
+            },
+            {
+              "text": "United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
+            },
+            {
+              "text": "United States Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
+            },
+            {
+              "text": "Monaco Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
+            },
+            {
+              "text": "Swedish Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
+            },
+            {
+              "text": "German Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
+            },
+            {
+              "text": "British Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Chris Amon",
+            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+          },
+          {
+            "text": "Patrick Nève",
+            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+          },
+          {
+            "text": "Hans Binder",
+            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
+          },
+          {
+            "text": "Jacky Ickx",
+            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
         "main_sponsors": [],
         "additional_major_sponsors": [
           "Elan",
@@ -8691,80 +8765,6 @@
             {
               "text": "Austrian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          {
-            "text": "Patrick Nève",
-            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-          },
-          {
-            "text": "Hans Binder",
-            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
-          },
-          {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "main_sponsors": [
-          {
-            "text": "Valvoline John Day Model Cars Norris Industries F&S Properties First National City Travelers Checks"
-          }
-        ],
-        "additional_major_sponsors": [
-          "Elan"
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "South African Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_South_African_Grand_Prix"
-            },
-            {
-              "text": "United States Grand Prix West",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-            },
-            {
-              "text": "United States Grand Prix West",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-            },
-            {
-              "text": "United States Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix"
-            },
-            {
-              "text": "Monaco Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
-            },
-            {
-              "text": "Swedish Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Swedish_Grand_Prix"
-            },
-            {
-              "text": "German Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_German_Grand_Prix"
-            },
-            {
-              "text": "British Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             }
           ]
         }
@@ -9384,7 +9384,7 @@
             "url": "https://en.wikipedia.org/wiki/Tissot"
           }
         ],
-        "additional_major_sponsors": []
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -9402,7 +9402,7 @@
         "main_colours": [
           "Black White"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           "Benning"
         ]
@@ -9808,11 +9808,11 @@
         "notes": null
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "Eifelland Caravan"
         ],
@@ -10029,9 +10029,9 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
+        "additional_colours": null,
+        "main_sponsors": null,
+        "additional_major_sponsors": null,
         "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
       },
       {
@@ -10045,9 +10045,9 @@
           "Red",
           "Blue"
         ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
+        "additional_colours": null,
+        "main_sponsors": null,
+        "additional_major_sponsors": null,
         "non-tobacco_alcohol_livery_changes": "For the 1964 US GP and Mexico GP , the livery is coloured blue."
       },
       {
@@ -11526,7 +11526,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Marlboro",
@@ -11579,7 +11579,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Marlboro",
@@ -11640,7 +11640,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Marlboro",
@@ -13139,7 +13139,7 @@
         "additional_colours": [
           "Black"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Shell",
@@ -13308,7 +13308,7 @@
         "additional_colours": [
           "Black"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Snapdragon",
@@ -13405,7 +13405,7 @@
         "additional_colours": [
           "Black"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Ray-Ban",
@@ -14206,7 +14206,7 @@
           "Orange",
           "Green"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Kingfisher",
@@ -14261,7 +14261,7 @@
           "Orange",
           "Green"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Kingfisher",
@@ -14847,7 +14847,7 @@
         "non-tobacco_alcohol_livery_changes": null
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Green"
         ],
@@ -14891,7 +14891,7 @@
         "main_colours": [
           "Black"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Baccara H.W. Ward & Co. Ltd."
@@ -14939,7 +14939,7 @@
         "main_colours": [
           "Black"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [],
         "additional_major_sponsors": [
           "Armstrong",
@@ -14978,7 +14978,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           "H.W. Ward & Co. Ltd."
         ],
@@ -15031,7 +15031,7 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Motul",
@@ -15072,7 +15072,7 @@
         "main_colours": [
           "Blue"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Politoys",
@@ -16007,7 +16007,7 @@
         "additional_colours": [
           "Blue and Red"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           "Hesketh Finance"
         ]
@@ -16035,7 +16035,7 @@
         "additional_colours": [
           "Blue and Red"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           "Hesketh Finance"
         ]
@@ -16063,7 +16063,7 @@
         "additional_colours": [
           "Blue and Red"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           "Hesketh Finance"
         ]
@@ -16084,7 +16084,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Polarvagnen",
@@ -16124,7 +16124,7 @@
         "main_colours": [
           "Gold"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Warsteiner",
@@ -16176,7 +16176,7 @@
         "additional_colours": [
           "Blue and Red"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "ATS Leichtmetallräder",
@@ -16318,7 +16318,7 @@
         "main_colours": [
           "Light Blue"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Heyco Werkzeuge",
@@ -16372,7 +16372,7 @@
         "main_colours": [
           "Light Blue"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -16563,7 +16563,7 @@
         "main_colours": [
           "White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Heyco Werkzeuge",
@@ -16684,7 +16684,7 @@
             "url": "https://en.wikipedia.org/wiki/Olympus_Cameras"
           }
         ],
-        "additional_major_sponsors": []
+        "additional_major_sponsors": null
       }
     ]
   },
@@ -16692,7 +16692,7 @@
     "team": "Honda",
     "liveries": [
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Black"
         ],
@@ -16705,10 +16705,10 @@
             "url": "https://en.wikipedia.org/wiki/Honda"
           }
         ],
-        "additional_major_sponsors": []
+        "additional_major_sponsors": null
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "White"
         ],
@@ -16721,7 +16721,7 @@
             "url": "https://en.wikipedia.org/wiki/Honda"
           }
         ],
-        "additional_major_sponsors": []
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -18299,7 +18299,7 @@
         "non_tobacco_alcohol_changess": null
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Green"
         ],
@@ -19228,7 +19228,7 @@
         "non-tobacco_alcohol_livery_changes": "Gitanes text was removed (1991-1993), Gitanes logo with a barcode over name (1994-1995), or \"Gitanes\" was replaced with \"Ligier\" and the Gitanes logo was replaced with a man with the French flag (1995)"
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "White"
         ],
@@ -19358,8 +19358,8 @@
           "White",
           "Black"
         ],
-        "livery_sponsors": [],
-        "additional_major_sponsors": []
+        "livery_sponsors": null,
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -19400,8 +19400,8 @@
           "Black",
           "Yellow"
         ],
-        "livery_sponsors": [],
-        "additional_major_sponsors": []
+        "livery_sponsors": null,
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -19440,7 +19440,7 @@
             ]
           }
         ],
-        "additional_major_sponsors": []
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -20832,7 +20832,7 @@
         "main_colours": [
           "Blue"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Citizen",
@@ -20864,7 +20864,7 @@
           "White",
           "Black"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Pertamina",
@@ -21153,7 +21153,7 @@
         "main_colours": [
           "Black"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Champion",
@@ -21448,7 +21448,7 @@
         "main_colours": [
           "Dark Green"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Champion",
@@ -21476,7 +21476,7 @@
         "main_colours": [
           "Dark Green"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Champion",
@@ -21572,7 +21572,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "drivers": [
           {
             "text": "1975",
@@ -21608,7 +21608,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "drivers": [
           {
             "text": "1975",
@@ -22203,7 +22203,7 @@
             "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
           }
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "grand_prix_scope": {
           "type": "only",
           "grand_prix": [
@@ -22231,7 +22231,7 @@
           "White"
         ],
         "livery_sponsors": [],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "grand_prix_scope": {
           "type": "other"
         }
@@ -22617,7 +22617,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "drivers": [
           {
             "text": "1977",
@@ -22643,7 +22643,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "drivers": [
           {
             "text": "1977",
@@ -22666,7 +22666,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "drivers": [
           {
             "text": "1977",
@@ -23573,12 +23573,12 @@
     "team": "Matra",
     "liveries": [
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Green"
         ],
-        "additional_colours": [],
-        "livery_sponsors": [],
+        "additional_colours": null,
+        "livery_sponsors": null,
         "additional_major_sponsors___notes": "Caltex"
       },
       {
@@ -23591,7 +23591,7 @@
         "main_colours": [
           "Blue"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           "Matra",
           {
@@ -23665,9 +23665,9 @@
           "White",
           "Black"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_principal_sponsors": null,
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": null
       },
       {
@@ -23681,9 +23681,9 @@
           "White",
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_principal_sponsors": null,
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": null
       },
       {
@@ -23702,9 +23702,9 @@
           "Silver",
           "Green"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_principal_sponsors": null,
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": null
       },
       {
@@ -26623,8 +26623,8 @@
         "additional_colours": [
           "White"
         ],
-        "main_sponsors": [],
-        "additional_major_sponsors": [],
+        "main_sponsors": null,
+        "additional_major_sponsors": null,
         "notes": null
       },
       {
@@ -27525,19 +27525,19 @@
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
-        "main_sponsors": [],
+        "additional_colours": null,
+        "main_sponsors": null,
         "additional_major_sponsors": [
           "Fina",
           "Goodyear"
         ]
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Marlboro",
@@ -27550,7 +27550,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Red"
         ],
@@ -27570,7 +27570,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Black"
         ],
@@ -27676,7 +27676,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Orange"
         ],
@@ -29584,9 +29584,9 @@
           "See Brabham",
           "March"
         ],
-        "additional_colours": [],
-        "main_sponsors": [],
-        "additional_major_sponsors": []
+        "additional_colours": null,
+        "main_sponsors": null,
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -33131,7 +33131,7 @@
         "additional_colours": [
           "White"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Liqui Moly",
@@ -34004,7 +34004,7 @@
           "White",
           "Gold"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "CNBC",
@@ -34226,7 +34226,7 @@
           "Black",
           "Green"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Stake",
@@ -34871,7 +34871,7 @@
             ]
           }
         ],
-        "additional_major_sponsors": []
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -35170,7 +35170,7 @@
     "team": "Spirit",
     "liveries": [
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "White"
         ],
@@ -35191,7 +35191,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Blue"
         ],
@@ -35215,7 +35215,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "White"
         ],
@@ -35236,7 +35236,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Red"
         ],
@@ -35257,7 +35257,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "White"
         ],
@@ -35275,7 +35275,7 @@
         ]
       },
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "Blue"
         ],
@@ -35347,7 +35347,7 @@
     "team": "Stewart",
     "liveries": [
       {
-        "season": [],
+        "season": null,
         "main_colours": [
           "White"
         ],
@@ -35441,7 +35441,7 @@
           "White",
           "Red"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "main_sponsors": [
           "None"
         ],
@@ -35539,7 +35539,7 @@
         "main_colours": [
           "Red"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "BP",
@@ -35700,7 +35700,7 @@
         "main_sponsors": [
           "Ceramica Pagnossin"
         ],
-        "additional_major_sponsors": []
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -35908,7 +35908,7 @@
         "main_colours": [
           "Blue"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Duckhams Matchbox"
@@ -35940,7 +35940,7 @@
         "main_colours": [
           "Blue"
         ],
-        "main_sponsors": [],
+        "main_sponsors": null,
         "additional_major_sponsors": [],
         "grand_prix_scope": {
           "type": "other"
@@ -35965,7 +35965,7 @@
         "main_sponsors": [
           "Ceramica Pagnossin"
         ],
-        "additional_major_sponsors": []
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -36086,8 +36086,8 @@
         "main_colours": [
           "White"
         ],
-        "main_sponsors": [],
-        "additional_major_sponsors": []
+        "main_sponsors": null,
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -36222,7 +36222,7 @@
             "url": "https://es.wikipedia.org/wiki/Empresa_Nacional_Calvo_Sotelo"
           }
         ],
-        "additional_major_sponsors": []
+        "additional_major_sponsors": null
       },
       {
         "season": [
@@ -37943,7 +37943,7 @@
             "url": "https://en.wikipedia.org/wiki/Citigroup"
           }
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "notes": null
       },
       {
@@ -37977,7 +37977,7 @@
             "url": "https://en.wikipedia.org/wiki/Citigroup"
           }
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "notes": null
       },
       {
@@ -38014,7 +38014,7 @@
             "url": "https://en.wikipedia.org/wiki/Candy_(company)"
           }
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "notes": null,
         "grand_prix_scope": {
           "type": "range",
@@ -38054,7 +38054,7 @@
           "Blue"
         ],
         "livery_sponsors": [],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "notes": null,
         "grand_prix_scope": {
           "type": "other"
@@ -38090,7 +38090,7 @@
             "url": "https://en.wikipedia.org/wiki/Candy_(company)"
           }
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": null,
         "notes": null
       },
       {
@@ -38241,7 +38241,7 @@
         "main_colours": [
           "Blue"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Coca-Cola",
@@ -39235,7 +39235,7 @@
           "Blue",
           "White"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Calbee",
@@ -39688,7 +39688,7 @@
         "main_colours": [
           "Red and White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Belle-Vue",
@@ -40826,7 +40826,7 @@
         "main_colours": [
           "Blue and White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "Compaq",
@@ -40879,7 +40879,7 @@
         "main_colours": [
           "Blue and White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -40923,7 +40923,7 @@
         "main_colours": [
           "Blue and White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [
           {
             "text": "HP",
@@ -40968,7 +40968,7 @@
         "main_colours": [
           "Blue and White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -41016,7 +41016,7 @@
         "main_colours": [
           "Blue and White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -41052,7 +41052,7 @@
         "main_colours": [
           "Blue and White"
         ],
-        "additional_colours": [],
+        "additional_colours": null,
         "livery_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -41926,7 +41926,7 @@
           "Light Blue",
           "Dark Blue"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           "Sofina",
           {
@@ -41976,7 +41976,7 @@
           "Yellow",
           "Light Blue"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           "Sofina",
           {
@@ -42034,7 +42034,7 @@
           "Red",
           "White"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           "Sofina",
           {
@@ -42102,7 +42102,7 @@
           "Red",
           "Orange"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Acronis",
@@ -42171,7 +42171,7 @@
           "Black",
           "Orange"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": null,
         "additional_major_sponsors": [
           {
             "text": "Dorilton Ventures",

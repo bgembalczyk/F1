@@ -29155,10 +29155,10 @@
                 "label": "Best finish",
                 "value": {
                   "result": "1st",
-                  "season": {
-                    "start": 1952,
-                    "end": 1954
-                  }
+                  "seasons": [
+                    1952,
+                    1954
+                  ]
                 }
               },
               {
