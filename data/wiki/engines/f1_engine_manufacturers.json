@@ -1383,15 +1383,19 @@
       {
         "year": 2025,
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 1127,
-    "races_started": 1123,
-    "wins": 249,
-    "points": 11927.0,
-    "poles": 256,
-    "fastest_laps": 273,
-    "podiums": 843,
+    "races_entered": 1128,
+    "races_started": 1124,
+    "wins": 239,
+    "points": 11752.0,
+    "poles": 244,
+    "fastest_laps": 258,
+    "podiums": 817,
     "wcc": 16,
     "wdc": 15
   },
@@ -1454,7 +1458,7 @@
   {
     "manufacturer": {
       "text": "Ford",
-      "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+      "url": "https://en.wikipedia.org/wiki/Ford_in_Formula_One"
     },
     "manufacturer_status": "former",
     "engines_built_in": [
@@ -1933,13 +1937,13 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 69,
-    "races_started": 69,
-    "wins": 37,
-    "points": 2038.0,
-    "poles": 29,
+    "races_entered": 70,
+    "races_started": 70,
+    "wins": 38,
+    "points": 2063.0,
+    "poles": 30,
     "fastest_laps": 20,
-    "podiums": 63,
+    "podiums": 64,
     "wcc": 1,
     "wdc": 2
   },
@@ -2619,17 +2623,21 @@
       {
         "year": 2025,
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 612,
-    "races_started": 610,
+    "races_entered": 613,
+    "races_started": 611,
     "wins": 238,
-    "points": 16356.5,
+    "points": 16410.5,
     "poles": 248,
     "fastest_laps": 239,
-    "podiums": 658,
+    "podiums": 660,
     "wcc": 12,
-    "wdc": 13
+    "wdc": 14
   },
   {
     "manufacturer": {
@@ -3257,8 +3265,8 @@
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 773,
-    "races_started": 770,
+    "races_entered": 774,
+    "races_started": 771,
     "wins": 169,
     "points": 8228.5,
     "poles": 213,

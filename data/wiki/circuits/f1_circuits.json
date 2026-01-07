@@ -11,7 +11,10 @@
       "text": "Adelaide",
       "url": "https://en.wikipedia.org/wiki/Adelaide"
     },
-    "country": "Australia",
+    "country": {
+      "text": "Australia",
+      "url": "https://en.wikipedia.org/wiki/Australia"
+    },
     "last_length_used_km": 3.78,
     "last_length_used_mi": 2.349,
     "turns": 16,
@@ -81,7 +84,10 @@
       "text": "Casablanca",
       "url": "https://en.wikipedia.org/wiki/Casablanca"
     },
-    "country": "Morocco",
+    "country": {
+      "text": "Morocco",
+      "url": "https://en.wikipedia.org/wiki/Morocco"
+    },
     "last_length_used_km": 7.618,
     "last_length_used_mi": 4.734,
     "turns": 18,
@@ -111,7 +117,10 @@
       "text": "Aintree",
       "url": "https://en.wikipedia.org/wiki/Aintree"
     },
-    "country": "United Kingdom",
+    "country": {
+      "text": "United Kingdom",
+      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+    },
     "last_length_used_km": 4.828,
     "last_length_used_mi": 3.0,
     "turns": 12,
@@ -157,7 +166,10 @@
       "text": "Melbourne",
       "url": "https://en.wikipedia.org/wiki/Melbourne"
     },
-    "country": "Australia",
+    "country": {
+      "text": "Australia",
+      "url": "https://en.wikipedia.org/wiki/Australia"
+    },
     "last_length_used_km": 5.278,
     "last_length_used_mi": 3.28,
     "turns": 16,
@@ -295,7 +307,10 @@
       "text": "Portimão",
       "url": "https://en.wikipedia.org/wiki/Portim%C3%A3o"
     },
-    "country": "Portugal",
+    "country": {
+      "text": "Portugal",
+      "url": "https://en.wikipedia.org/wiki/Portugal"
+    },
     "last_length_used_km": 4.653,
     "last_length_used_mi": 2.891,
     "turns": 15,
@@ -329,7 +344,10 @@
       "text": "Estoril",
       "url": "https://en.wikipedia.org/wiki/Estoril"
     },
-    "country": "Portugal",
+    "country": {
+      "text": "Portugal",
+      "url": "https://en.wikipedia.org/wiki/Portugal"
+    },
     "last_length_used_km": 4.36,
     "last_length_used_mi": 2.709,
     "turns": 13,
@@ -407,7 +425,10 @@
       "text": "Mexico City",
       "url": "https://en.wikipedia.org/wiki/Mexico_City"
     },
-    "country": "Mexico",
+    "country": {
+      "text": "Mexico",
+      "url": "https://en.wikipedia.org/wiki/Mexico"
+    },
     "last_length_used_km": 4.304,
     "last_length_used_mi": 2.674,
     "turns": 17,
@@ -537,7 +558,10 @@
       "text": "Rio de Janeiro",
       "url": "https://en.wikipedia.org/wiki/Rio_de_Janeiro"
     },
-    "country": "Brazil",
+    "country": {
+      "text": "Brazil",
+      "url": "https://en.wikipedia.org/wiki/Brazil"
+    },
     "last_length_used_km": 5.031,
     "last_length_used_mi": 3.126,
     "turns": 11,
@@ -603,7 +627,10 @@
       "text": "Scarperia e San Piero",
       "url": "https://en.wikipedia.org/wiki/Scarperia_e_San_Piero"
     },
-    "country": "Italy",
+    "country": {
+      "text": "Italy",
+      "url": "https://en.wikipedia.org/wiki/Italy"
+    },
     "last_length_used_km": 5.245,
     "last_length_used_mi": 3.259,
     "turns": 15,
@@ -633,7 +660,10 @@
       "text": "Imola",
       "url": "https://en.wikipedia.org/wiki/Imola"
     },
-    "country": "Italy",
+    "country": {
+      "text": "Italy",
+      "url": "https://en.wikipedia.org/wiki/Italy"
+    },
     "last_length_used_km": 4.909,
     "last_length_used_mi": 3.05,
     "turns": 19,
@@ -795,7 +825,10 @@
       "text": "São Paulo",
       "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Paulo"
     },
-    "country": "Brazil",
+    "country": {
+      "text": "Brazil",
+      "url": "https://en.wikipedia.org/wiki/Brazil"
+    },
     "last_length_used_km": 4.309,
     "last_length_used_mi": 2.677,
     "turns": 15,
@@ -993,7 +1026,10 @@
       "text": "Monza",
       "url": "https://en.wikipedia.org/wiki/Monza"
     },
-    "country": "Italy",
+    "country": {
+      "text": "Italy",
+      "url": "https://en.wikipedia.org/wiki/Italy"
+    },
     "last_length_used_km": 5.793,
     "last_length_used_mi": 3.6,
     "turns": 11,
@@ -1319,7 +1355,10 @@
       "text": "Buenos Aires",
       "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
     },
-    "country": "Argentina",
+    "country": {
+      "text": "Argentina",
+      "url": "https://en.wikipedia.org/wiki/Argentina"
+    },
     "last_length_used_km": 4.259,
     "last_length_used_mi": 2.646,
     "turns": 18,
@@ -1425,7 +1464,10 @@
       "text": "Berlin",
       "url": "https://en.wikipedia.org/wiki/Berlin"
     },
-    "country": "Germany",
+    "country": {
+      "text": "Germany",
+      "url": "https://en.wikipedia.org/wiki/Germany"
+    },
     "last_length_used_km": 8.3,
     "last_length_used_mi": 5.157,
     "turns": 4,
@@ -1455,7 +1497,10 @@
       "text": "Sakhir",
       "url": "https://en.wikipedia.org/wiki/Sakhir"
     },
-    "country": "Bahrain",
+    "country": {
+      "text": "Bahrain",
+      "url": "https://en.wikipedia.org/wiki/Bahrain"
+    },
     "last_length_used_km": 5.412,
     "last_length_used_mi": 3.363,
     "turns": 15,
@@ -1569,7 +1614,10 @@
       "text": "Baku",
       "url": "https://en.wikipedia.org/wiki/Baku"
     },
-    "country": "Azerbaijan",
+    "country": {
+      "text": "Azerbaijan",
+      "url": "https://en.wikipedia.org/wiki/Azerbaijan"
+    },
     "last_length_used_km": 6.003,
     "last_length_used_mi": 3.73,
     "turns": 20,
@@ -1635,7 +1683,10 @@
       "text": "West Kingsdown",
       "url": "https://en.wikipedia.org/wiki/West_Kingsdown"
     },
-    "country": "United Kingdom",
+    "country": {
+      "text": "United Kingdom",
+      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+    },
     "last_length_used_km": 4.206,
     "last_length_used_mi": 2.613,
     "turns": 11,
@@ -1721,7 +1772,10 @@
       "text": "Greater Noida",
       "url": "https://en.wikipedia.org/wiki/Greater_Noida"
     },
-    "country": "India",
+    "country": {
+      "text": "India",
+      "url": "https://en.wikipedia.org/wiki/India"
+    },
     "last_length_used_km": 5.141,
     "last_length_used_mi": 3.194,
     "turns": 16,
@@ -1759,7 +1813,10 @@
       "text": "Le Mans",
       "url": "https://en.wikipedia.org/wiki/Le_Mans"
     },
-    "country": "France",
+    "country": {
+      "text": "France",
+      "url": "https://en.wikipedia.org/wiki/France"
+    },
     "last_length_used_km": 4.43,
     "last_length_used_mi": 2.753,
     "turns": 8,
@@ -1789,7 +1846,10 @@
       "text": "Paradise",
       "url": "https://en.wikipedia.org/wiki/Paradise,_Nevada"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 3.65,
     "last_length_used_mi": 2.268,
     "turns": 14,
@@ -1823,7 +1883,10 @@
       "text": "Saint-Genès-Champanelle",
       "url": "https://en.wikipedia.org/wiki/Saint-Gen%C3%A8s-Champanelle"
     },
-    "country": "France",
+    "country": {
+      "text": "France",
+      "url": "https://en.wikipedia.org/wiki/France"
+    },
     "last_length_used_km": 8.055,
     "last_length_used_mi": 5.005,
     "turns": 38,
@@ -1865,7 +1928,10 @@
       "text": "Bern",
       "url": "https://en.wikipedia.org/wiki/Bern"
     },
-    "country": "Switzerland",
+    "country": {
+      "text": "Switzerland",
+      "url": "https://en.wikipedia.org/wiki/Switzerland"
+    },
     "last_length_used_km": 7.208,
     "last_length_used_mi": 4.479,
     "turns": 14,
@@ -1911,7 +1977,10 @@
       "text": "Montmeló",
       "url": "https://en.wikipedia.org/wiki/Montmel%C3%B3"
     },
-    "country": "Spain",
+    "country": {
+      "text": "Spain",
+      "url": "https://en.wikipedia.org/wiki/Spain"
+    },
     "last_length_used_km": 4.657,
     "last_length_used_mi": 2.894,
     "turns": 14,
@@ -2077,7 +2146,10 @@
       "text": "Monte Carlo",
       "url": "https://en.wikipedia.org/wiki/Monte_Carlo"
     },
-    "country": "Monaco",
+    "country": {
+      "text": "Monaco",
+      "url": "https://en.wikipedia.org/wiki/Monaco"
+    },
     "last_length_used_km": 3.337,
     "last_length_used_mi": 2.074,
     "turns": 19,
@@ -2387,7 +2459,10 @@
       "text": "Magny-Cours",
       "url": "https://en.wikipedia.org/wiki/Magny-Cours"
     },
-    "country": "France",
+    "country": {
+      "text": "France",
+      "url": "https://en.wikipedia.org/wiki/France"
+    },
     "last_length_used_km": 4.411,
     "last_length_used_mi": 2.741,
     "turns": 16,
@@ -2485,7 +2560,10 @@
       "text": "Barcelona",
       "url": "https://en.wikipedia.org/wiki/Barcelona"
     },
-    "country": "Spain",
+    "country": {
+      "text": "Spain",
+      "url": "https://en.wikipedia.org/wiki/Spain"
+    },
     "last_length_used_km": 6.316,
     "last_length_used_mi": 3.925,
     "turns": 6,
@@ -2519,7 +2597,10 @@
       "text": "Gueux",
       "url": "https://en.wikipedia.org/wiki/Gueux,_Marne"
     },
-    "country": "France",
+    "country": {
+      "text": "France",
+      "url": "https://en.wikipedia.org/wiki/France"
+    },
     "last_length_used_km": 8.302,
     "last_length_used_mi": 5.159,
     "turns": 6,
@@ -2589,7 +2670,10 @@
       "text": "Stavelot",
       "url": "https://en.wikipedia.org/wiki/Stavelot"
     },
-    "country": "Belgium",
+    "country": {
+      "text": "Belgium",
+      "url": "https://en.wikipedia.org/wiki/Belgium"
+    },
     "last_length_used_km": 7.004,
     "last_length_used_mi": 4.352,
     "turns": 20,
@@ -2847,7 +2931,10 @@
       "text": "Prenois",
       "url": "https://en.wikipedia.org/wiki/Prenois"
     },
-    "country": "France",
+    "country": {
+      "text": "France",
+      "url": "https://en.wikipedia.org/wiki/France"
+    },
     "last_length_used_km": 3.886,
     "last_length_used_mi": 2.415,
     "turns": 12,
@@ -2901,7 +2988,10 @@
       "text": "Montreal",
       "url": "https://en.wikipedia.org/wiki/Montreal"
     },
-    "country": "Canada",
+    "country": {
+      "text": "Canada",
+      "url": "https://en.wikipedia.org/wiki/Canada"
+    },
     "last_length_used_km": 4.361,
     "last_length_used_mi": 2.71,
     "turns": 14,
@@ -3103,7 +3193,10 @@
       "text": "Mont-Tremblant",
       "url": "https://en.wikipedia.org/wiki/Mont-Tremblant,_Quebec"
     },
-    "country": "Canada",
+    "country": {
+      "text": "Canada",
+      "url": "https://en.wikipedia.org/wiki/Canada"
+    },
     "last_length_used_km": 4.265,
     "last_length_used_mi": 2.65,
     "turns": 15,
@@ -3137,7 +3230,10 @@
       "text": "Austin",
       "url": "https://en.wikipedia.org/wiki/Austin,_Texas"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 5.513,
     "last_length_used_mi": 3.426,
     "turns": 20,
@@ -3215,7 +3311,10 @@
       "text": "Le Castellet",
       "url": "https://en.wikipedia.org/wiki/Le_Castellet,_Var"
     },
-    "country": "France",
+    "country": {
+      "text": "France",
+      "url": "https://en.wikipedia.org/wiki/France"
+    },
     "last_length_used_km": 5.842,
     "last_length_used_mi": 3.63,
     "turns": 15,
@@ -3313,7 +3412,10 @@
       "text": "Zandvoort",
       "url": "https://en.wikipedia.org/wiki/Zandvoort"
     },
-    "country": "Netherlands",
+    "country": {
+      "text": "Netherlands",
+      "url": "https://en.wikipedia.org/wiki/Netherlands"
+    },
     "last_length_used_km": 4.259,
     "last_length_used_mi": 2.646,
     "turns": 14,
@@ -3479,7 +3581,10 @@
       "text": "Heusden-Zolder",
       "url": "https://en.wikipedia.org/wiki/Heusden-Zolder"
     },
-    "country": "Belgium",
+    "country": {
+      "text": "Belgium",
+      "url": "https://en.wikipedia.org/wiki/Belgium"
+    },
     "last_length_used_km": 4.262,
     "last_length_used_mi": 2.648,
     "turns": 10,
@@ -3545,7 +3650,10 @@
       "text": "Porto",
       "url": "https://en.wikipedia.org/wiki/Porto"
     },
-    "country": "Portugal",
+    "country": {
+      "text": "Portugal",
+      "url": "https://en.wikipedia.org/wiki/Portugal"
+    },
     "last_length_used_km": 7.775,
     "last_length_used_mi": 4.831,
     "turns": 15,
@@ -3579,7 +3687,10 @@
       "text": "Lisbon",
       "url": "https://en.wikipedia.org/wiki/Lisbon"
     },
-    "country": "Portugal",
+    "country": {
+      "text": "Portugal",
+      "url": "https://en.wikipedia.org/wiki/Portugal"
+    },
     "last_length_used_km": 5.44,
     "last_length_used_mi": 3.38,
     "turns": 9,
@@ -3609,7 +3720,10 @@
       "text": "Jerez de la Frontera",
       "url": "https://en.wikipedia.org/wiki/Jerez_de_la_Frontera"
     },
-    "country": "Spain",
+    "country": {
+      "text": "Spain",
+      "url": "https://en.wikipedia.org/wiki/Spain"
+    },
     "last_length_used_km": 4.428,
     "last_length_used_mi": 2.751,
     "turns": 13,
@@ -3667,7 +3781,10 @@
       "text": "San Sebastián de los Reyes",
       "url": "https://en.wikipedia.org/wiki/San_Sebasti%C3%A1n_de_los_Reyes"
     },
-    "country": "Spain",
+    "country": {
+      "text": "Spain",
+      "url": "https://en.wikipedia.org/wiki/Spain"
+    },
     "last_length_used_km": 3.314,
     "last_length_used_mi": 2.059,
     "turns": 12,
@@ -3729,7 +3846,10 @@
       "text": "Dallas",
       "url": "https://en.wikipedia.org/wiki/Dallas_(Texas)"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 3.901,
     "last_length_used_mi": 2.424,
     "turns": 14,
@@ -3759,7 +3879,10 @@
       "text": "Detroit",
       "url": "https://en.wikipedia.org/wiki/Detroit"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 4.023,
     "last_length_used_mi": 2.5,
     "turns": 20,
@@ -3813,7 +3936,10 @@
       "text": "Castle Donington",
       "url": "https://en.wikipedia.org/wiki/Castle_Donington"
     },
-    "country": "United Kingdom",
+    "country": {
+      "text": "United Kingdom",
+      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+    },
     "last_length_used_km": 4.02,
     "last_length_used_mi": 2.498,
     "turns": 11,
@@ -3843,7 +3969,10 @@
       "text": "Oyama",
       "url": "https://en.wikipedia.org/wiki/Oyama,_Shizuoka"
     },
-    "country": "Japan",
+    "country": {
+      "text": "Japan",
+      "url": "https://en.wikipedia.org/wiki/Japan"
+    },
     "last_length_used_km": 4.563,
     "last_length_used_mi": 2.835,
     "turns": 16,
@@ -3885,7 +4014,10 @@
       "text": "Hockenheim",
       "url": "https://en.wikipedia.org/wiki/Hockenheim"
     },
-    "country": "Germany",
+    "country": {
+      "text": "Germany",
+      "url": "https://en.wikipedia.org/wiki/Germany"
+    },
     "last_length_used_km": 4.574,
     "last_length_used_mi": 2.842,
     "turns": 16,
@@ -4059,7 +4191,10 @@
       "text": "Mogyoród",
       "url": "https://en.wikipedia.org/wiki/Mogyor%C3%B3d"
     },
-    "country": "Hungary",
+    "country": {
+      "text": "Hungary",
+      "url": "https://en.wikipedia.org/wiki/Hungary"
+    },
     "last_length_used_km": 4.381,
     "last_length_used_mi": 2.722,
     "turns": 14,
@@ -4245,7 +4380,10 @@
       "text": "Speedway",
       "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 4.192,
     "last_length_used_mi": 2.605,
     "turns": 13,
@@ -4351,7 +4489,10 @@
       "text": "Istanbul",
       "url": "https://en.wikipedia.org/wiki/Istanbul"
     },
-    "country": "Turkey",
+    "country": {
+      "text": "Turkey",
+      "url": "https://en.wikipedia.org/wiki/Turkey"
+    },
     "last_length_used_km": 5.338,
     "last_length_used_mi": 3.317,
     "turns": 14,
@@ -4413,7 +4554,10 @@
       "text": "Jeddah",
       "url": "https://en.wikipedia.org/wiki/Jeddah"
     },
-    "country": "Saudi Arabia",
+    "country": {
+      "text": "Saudi Arabia",
+      "url": "https://en.wikipedia.org/wiki/Saudi_Arabia"
+    },
     "last_length_used_km": 6.174,
     "last_length_used_mi": 3.836,
     "turns": 27,
@@ -4459,7 +4603,10 @@
       "text": "Yeongam",
       "url": "https://en.wikipedia.org/wiki/Yeongam"
     },
-    "country": "South Korea",
+    "country": {
+      "text": "South Korea",
+      "url": "https://en.wikipedia.org/wiki/South_Korea"
+    },
     "last_length_used_km": 5.615,
     "last_length_used_mi": 3.489,
     "turns": 18,
@@ -4501,7 +4648,10 @@
       "text": "Midrand",
       "url": "https://en.wikipedia.org/wiki/Midrand"
     },
-    "country": "South Africa",
+    "country": {
+      "text": "South Africa",
+      "url": "https://en.wikipedia.org/wiki/South_Africa"
+    },
     "last_length_used_km": 4.261,
     "last_length_used_mi": 2.648,
     "turns": 13,
@@ -4607,7 +4757,10 @@
       "text": "Paradise",
       "url": "https://en.wikipedia.org/wiki/Paradise,_Nevada"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 6.201,
     "last_length_used_mi": 3.853,
     "turns": 17,
@@ -4645,7 +4798,10 @@
       "text": "Long Beach",
       "url": "https://en.wikipedia.org/wiki/Long_Beach,_California"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 3.275,
     "last_length_used_mi": 2.035,
     "turns": 18,
@@ -4703,7 +4859,10 @@
       "text": "Lusail",
       "url": "https://en.wikipedia.org/wiki/Lusail"
     },
-    "country": "Qatar",
+    "country": {
+      "text": "Qatar",
+      "url": "https://en.wikipedia.org/wiki/Qatar"
+    },
     "last_length_used_km": 5.419,
     "last_length_used_mi": 3.367,
     "turns": 16,
@@ -4745,7 +4904,10 @@
       "text": "Barajas",
       "url": "https://en.wikipedia.org/wiki/Barajas_(Madrid)"
     },
-    "country": "Spain",
+    "country": {
+      "text": "Spain",
+      "url": "https://en.wikipedia.org/wiki/Spain"
+    },
     "last_length_used_km": 5.474,
     "last_length_used_mi": 3.401,
     "turns": 22,
@@ -4770,7 +4932,10 @@
       "text": "Marina Bay",
       "url": "https://en.wikipedia.org/wiki/Marina_Bay,_Singapore"
     },
-    "country": "Singapore",
+    "country": {
+      "text": "Singapore",
+      "url": "https://en.wikipedia.org/wiki/Singapore"
+    },
     "last_length_used_km": 4.94,
     "last_length_used_mi": 3.07,
     "turns": 19,
@@ -4860,7 +5025,10 @@
       "text": "Miami Gardens",
       "url": "https://en.wikipedia.org/wiki/Miami_Gardens,_Florida"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 5.412,
     "last_length_used_mi": 3.363,
     "turns": 19,
@@ -4902,7 +5070,10 @@
       "text": "Barcelona",
       "url": "https://en.wikipedia.org/wiki/Barcelona"
     },
-    "country": "Spain",
+    "country": {
+      "text": "Spain",
+      "url": "https://en.wikipedia.org/wiki/Spain"
+    },
     "last_length_used_km": 3.791,
     "last_length_used_mi": 2.356,
     "turns": 18,
@@ -4944,7 +5115,10 @@
       "text": "Bowmanville",
       "url": "https://en.wikipedia.org/wiki/Bowmanville"
     },
-    "country": "Canada",
+    "country": {
+      "text": "Canada",
+      "url": "https://en.wikipedia.org/wiki/Canada"
+    },
     "last_length_used_km": 3.957,
     "last_length_used_mi": 2.459,
     "turns": 10,
@@ -5002,7 +5176,10 @@
       "text": "Nivelles",
       "url": "https://en.wikipedia.org/wiki/Nivelles"
     },
-    "country": "Belgium",
+    "country": {
+      "text": "Belgium",
+      "url": "https://en.wikipedia.org/wiki/Belgium"
+    },
     "last_length_used_km": 3.724,
     "last_length_used_mi": 2.314,
     "turns": 7,
@@ -5036,7 +5213,10 @@
       "text": "Nürburg",
       "url": "https://en.wikipedia.org/wiki/N%C3%BCrburg"
     },
-    "country": "Germany",
+    "country": {
+      "text": "Germany",
+      "url": "https://en.wikipedia.org/wiki/Germany"
+    },
     "last_length_used_km": 5.148,
     "last_length_used_mi": 3.199,
     "turns": 15,
@@ -5238,7 +5418,10 @@
       "text": "Pescara",
       "url": "https://en.wikipedia.org/wiki/Pescara"
     },
-    "country": "Italy",
+    "country": {
+      "text": "Italy",
+      "url": "https://en.wikipedia.org/wiki/Italy"
+    },
     "last_length_used_km": 25.8,
     "last_length_used_mi": 16.031,
     "turns": 24,
@@ -5268,7 +5451,10 @@
       "text": "Phoenix",
       "url": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 3.72,
     "last_length_used_mi": 2.312,
     "turns": 12,
@@ -5306,7 +5492,10 @@
       "text": "East London",
       "url": "https://en.wikipedia.org/wiki/East_London,_Eastern_Cape"
     },
-    "country": "South Africa",
+    "country": {
+      "text": "South Africa",
+      "url": "https://en.wikipedia.org/wiki/South_Africa"
+    },
     "last_length_used_km": 3.92,
     "last_length_used_mi": 2.436,
     "turns": 8,
@@ -5344,7 +5533,10 @@
       "text": "Spielberg",
       "url": "https://en.wikipedia.org/wiki/Spielberg,_Styria"
     },
-    "country": "Austria",
+    "country": {
+      "text": "Austria",
+      "url": "https://en.wikipedia.org/wiki/Austria"
+    },
     "last_length_used_km": 4.318,
     "last_length_used_mi": 2.683,
     "turns": 10,
@@ -5522,7 +5714,10 @@
       "text": "Moreno Valley",
       "url": "https://en.wikipedia.org/wiki/Moreno_Valley,_California"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 5.271,
     "last_length_used_mi": 3.275,
     "turns": 9,
@@ -5552,7 +5747,10 @@
       "text": "Orival",
       "url": "https://en.wikipedia.org/wiki/Orival,_Seine-Maritime"
     },
-    "country": "France",
+    "country": {
+      "text": "France",
+      "url": "https://en.wikipedia.org/wiki/France"
+    },
     "last_length_used_km": 6.542,
     "last_length_used_mi": 4.065,
     "turns": 13,
@@ -5598,7 +5796,10 @@
       "text": "Anderstorp",
       "url": "https://en.wikipedia.org/wiki/Anderstorp"
     },
-    "country": "Sweden",
+    "country": {
+      "text": "Sweden",
+      "url": "https://en.wikipedia.org/wiki/Sweden"
+    },
     "last_length_used_km": 4.031,
     "last_length_used_mi": 2.505,
     "turns": 8,
@@ -5648,7 +5849,10 @@
       "text": "Sebring",
       "url": "https://en.wikipedia.org/wiki/Sebring,_Florida"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 8.356,
     "last_length_used_mi": 5.192,
     "turns": 12,
@@ -5678,7 +5882,10 @@
       "text": "Sepang",
       "url": "https://en.wikipedia.org/wiki/Sepang_District"
     },
-    "country": "Malaysia",
+    "country": {
+      "text": "Malaysia",
+      "url": "https://en.wikipedia.org/wiki/Malaysia"
+    },
     "last_length_used_km": 5.543,
     "last_length_used_mi": 3.444,
     "turns": 15,
@@ -5780,7 +5987,10 @@
       "text": "Shanghai",
       "url": "https://en.wikipedia.org/wiki/Shanghai"
     },
-    "country": "China",
+    "country": {
+      "text": "China",
+      "url": "https://en.wikipedia.org/wiki/China"
+    },
     "last_length_used_km": 5.451,
     "last_length_used_mi": 3.387,
     "turns": 16,
@@ -5878,7 +6088,10 @@
       "text": "Silverstone",
       "url": "https://en.wikipedia.org/wiki/Silverstone"
     },
-    "country": "United Kingdom",
+    "country": {
+      "text": "United Kingdom",
+      "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+    },
     "last_length_used_km": 5.891,
     "last_length_used_mi": 3.66,
     "turns": 18,
@@ -6144,7 +6357,10 @@
       "text": "Sochi",
       "url": "https://en.wikipedia.org/wiki/Sochi"
     },
-    "country": "Russia",
+    "country": {
+      "text": "Russia",
+      "url": "https://en.wikipedia.org/wiki/Russia"
+    },
     "last_length_used_km": 5.848,
     "last_length_used_mi": 3.634,
     "turns": 15,
@@ -6202,7 +6418,10 @@
       "text": "Suzuka",
       "url": "https://en.wikipedia.org/wiki/Suzuka,_Mie"
     },
-    "country": "Japan",
+    "country": {
+      "text": "Japan",
+      "url": "https://en.wikipedia.org/wiki/Japan"
+    },
     "last_length_used_km": 5.807,
     "last_length_used_mi": 3.608,
     "turns": 18,
@@ -6368,7 +6587,10 @@
       "text": "Mimasaka",
       "url": "https://en.wikipedia.org/wiki/Mimasaka,_Okayama"
     },
-    "country": "Japan",
+    "country": {
+      "text": "Japan",
+      "url": "https://en.wikipedia.org/wiki/Japan"
+    },
     "last_length_used_km": 3.703,
     "last_length_used_mi": 2.301,
     "turns": 11,
@@ -6402,7 +6624,10 @@
       "text": "Valencia",
       "url": "https://en.wikipedia.org/wiki/Valencia"
     },
-    "country": "Spain",
+    "country": {
+      "text": "Spain",
+      "url": "https://en.wikipedia.org/wiki/Spain"
+    },
     "last_length_used_km": 5.419,
     "last_length_used_mi": 3.367,
     "turns": 25,
@@ -6448,7 +6673,10 @@
       "text": "Watkins Glen",
       "url": "https://en.wikipedia.org/wiki/Watkins_Glen,_New_York"
     },
-    "country": "United States",
+    "country": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
     "last_length_used_km": 5.43,
     "last_length_used_mi": 3.374,
     "turns": 10,
@@ -6554,7 +6782,10 @@
       "text": "Abu Dhabi",
       "url": "https://en.wikipedia.org/wiki/Abu_Dhabi"
     },
-    "country": "United Arab Emirates",
+    "country": {
+      "text": "United Arab Emirates",
+      "url": "https://en.wikipedia.org/wiki/United_Arab_Emirates"
+    },
     "last_length_used_km": 5.281,
     "last_length_used_mi": 3.281,
     "turns": 16,
@@ -6628,9 +6859,13 @@
       {
         "year": 2024,
         "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
       }
     ],
-    "grands_prix_held": 16
+    "grands_prix_held": 17
   },
   {
     "circuit": {
@@ -6644,7 +6879,10 @@
       "text": "Zeltweg",
       "url": "https://en.wikipedia.org/wiki/Zeltweg"
     },
-    "country": "Austria",
+    "country": {
+      "text": "Austria",
+      "url": "https://en.wikipedia.org/wiki/Austria"
+    },
     "last_length_used_km": 3.186,
     "last_length_used_mi": 1.98,
     "turns": 4,
