@@ -26,6 +26,8 @@ from scrapers.constructors.constants import (
     CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
 )
 
+CURRENT_YEAR = datetime.now().year
+
 
 class CurrentConstructorsListScraper(F1TableScraper):
     """
@@ -60,7 +62,7 @@ class CurrentConstructorsListScraper(F1TableScraper):
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_constructors",
-        section_id=f"Constructors_for_the_{datetime.now().year}_season",
+        section_id=f"Constructors_for_the_{CURRENT_YEAR}_season",
         expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
         schema=TableSchemaDSL(columns=schema_columns),
         record_factory=build_constructor_record,
@@ -79,11 +81,10 @@ class CurrentConstructorsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    current_year = datetime.now().year
     run_and_export(
         CurrentConstructorsListScraper,
-        f"constructors/f1_constructors_{current_year}.json",
-        f"constructors/f1_constructors_{current_year}.csv",
+        f"constructors/f1_constructors_{CURRENT_YEAR}.json",
+        f"constructors/f1_constructors_{CURRENT_YEAR}.csv",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
