@@ -1,0 +1,406 @@
+@startuml Current Class Structure and Hierarchy
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam handwritten false
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+title F1 Wikipedia Scraper - Current Class Structure and Hierarchy
+
+package "Base Scrapers" {
+    abstract class F1Scraper {
+        # url: str
+        # include_urls: bool
+        # source_adapter: SourceAdapter
+        # parser: Parser
+        # exporter: DataExporter
+        # validator: RecordValidator
+        # transformers: List[Transformer]
+        # post_processors: List[PostProcessor]
+        # logger: Logger
+        --
+        + fetch(): List[ExportRecord]
+        + get_data(): List[ExportRecord]
+        + build_result(): ScrapeResult
+        + to_json(path): None
+        + to_csv(path): None
+        # _download(): str
+        # parse(soup): List[RawRecord]
+        # validate_records(records): List[ExportRecord]
+        # _apply_transformers(records): List[ExportRecord]
+        # post_process_records(records): List[ExportRecord]
+    }
+    
+    abstract class F1ListScraper {
+        # section_id: str
+        # record_key: str
+        # url_key: str
+        --
+        # _parse_soup(soup): List[ExportableRecord]
+        # _find_list_root(soup): Tag
+        # parse_item(li): ExportableRecord
+    }
+    
+    abstract class F1TableScraper {
+        # CONFIG: ScraperConfig
+        # section_id: str
+        # expected_headers: List[str]
+        # column_map: Dict[str, str]
+        # columns: Dict[str, BaseColumn]
+        # extractor: TableExtractor
+        # record_factory: Callable
+        --
+        # _parse_soup(soup): List[Any]
+        # parse_row(row): Any
+        # _model_fields(): Set[str]
+    }
+    
+    abstract class CompositeScraper {
+        # list_scraper: F1Scraper
+        # single_scraper: Any
+        # records_adapter: IterableSourceAdapter
+        --
+        + fetch(): List[Dict]
+        + build_children(): CompositeScraperChildren
+        + get_detail_url(record): str
+        + assemble_record(record, details): Dict
+    }
+}
+
+package "Specialized Base Classes" {
+    abstract class IndianapolisOnlyListScraper {
+        # section_id = "Indianapolis_500_only_2"
+    }
+    
+    abstract class BaseEngineTableScraper {
+        # default_column: BaseColumn
+    }
+    
+    abstract class BasePointsScraper {
+        # default_column: BaseColumn
+    }
+}
+
+package "Concrete Scrapers - Circuits" {
+    class CircuitsListScraper {
+        + CONFIG: ScraperConfig
+        + default_validator: CircuitsRecordValidator
+    }
+    
+    class F1SingleCircuitScraper {
+        + fetch_by_url(url): List[Dict]
+    }
+    
+    class F1CompleteCircuitScraper {
+        + build_children(): CompositeScraperChildren
+        + get_detail_url(record): str
+        + assemble_record(record, details): Dict
+    }
+}
+
+package "Concrete Scrapers - Drivers" {
+    class F1DriversListScraper {
+        + CONFIG: ScraperConfig
+        + default_validator: DriversRecordValidator
+    }
+    
+    class FemaleDriversListScraper {
+        + section_id = "Female_drivers"
+    }
+    
+    class F1FatalitiesListScraper {
+        + section_id = "Driver_fatalities"
+    }
+}
+
+package "Concrete Scrapers - Constructors" {
+    class CurrentConstructorsListScraper {
+        + section_id: str
+    }
+    
+    class FormerConstructorsListScraper {
+        + section_id: str
+    }
+    
+    class IndianapolisOnlyConstructorsListScraper
+    
+    class PrivateerTeamsListScraper {
+        + section_id: str
+    }
+}
+
+package "Concrete Scrapers - Engines" {
+    class EngineManufacturersListScraper {
+        + CONFIG: ScraperConfig
+    }
+    
+    class EngineRegulationScraper {
+        + CONFIG: ScraperConfig
+    }
+    
+    class EngineRestrictionsScraper {
+        + CONFIG: ScraperConfig
+    }
+    
+    class IndianapolisOnlyEngineManufacturersListScraper
+}
+
+package "Concrete Scrapers - Grands Prix" {
+    class F1CompleteGrandPrixScraper {
+        + build_children(): CompositeScraperChildren
+    }
+    
+    class RedFlaggedWorldChampionshipRacesScraper {
+        + section_id: str
+    }
+    
+    class RedFlaggedNonChampionshipRacesScraper {
+        + section_id: str
+    }
+}
+
+package "Concrete Scrapers - Other" {
+    class SeasonsListScraper {
+        + CONFIG: ScraperConfig
+    }
+    
+    class CompleteSeasonScraper {
+        + build_children(): CompositeScraperChildren
+    }
+    
+    class PointsScoringSystemsHistoryScraper {
+        + CONFIG: ScraperConfig
+    }
+    
+    class SprintQualifyingPointsScraper {
+        + CONFIG: ScraperConfig
+    }
+    
+    class TyreManufacturersBySeasonScraper {
+        + CONFIG: ScraperConfig
+    }
+    
+    class F1SponsorshipLiveriesScraper {
+        + url: str
+    }
+}
+
+' Inheritance relationships
+F1Scraper <|-- F1ListScraper
+F1Scraper <|-- F1TableScraper
+F1Scraper <|-- CompositeScraper
+
+F1ListScraper <|-- IndianapolisOnlyListScraper
+F1TableScraper <|-- BaseEngineTableScraper
+F1TableScraper <|-- BasePointsScraper
+
+' List scrapers
+F1TableScraper <|-- CircuitsListScraper
+F1TableScraper <|-- F1DriversListScraper
+F1ListScraper <|-- FemaleDriversListScraper
+F1ListScraper <|-- F1FatalitiesListScraper
+
+' Constructors
+F1ListScraper <|-- CurrentConstructorsListScraper
+F1ListScraper <|-- FormerConstructorsListScraper
+IndianapolisOnlyListScraper <|-- IndianapolisOnlyConstructorsListScraper
+F1ListScraper <|-- PrivateerTeamsListScraper
+
+' Engines
+F1TableScraper <|-- EngineManufacturersListScraper
+BaseEngineTableScraper <|-- EngineRegulationScraper
+BaseEngineTableScraper <|-- EngineRestrictionsScraper
+IndianapolisOnlyListScraper <|-- IndianapolisOnlyEngineManufacturersListScraper
+
+' Grands Prix
+CompositeScraper <|-- F1CompleteGrandPrixScraper
+F1ListScraper <|-- RedFlaggedWorldChampionshipRacesScraper
+F1ListScraper <|-- RedFlaggedNonChampionshipRacesScraper
+
+' Composite scrapers
+CompositeScraper <|-- F1CompleteCircuitScraper
+
+' Other scrapers
+F1TableScraper <|-- SeasonsListScraper
+F1Scraper <|-- CompleteSeasonScraper
+BasePointsScraper <|-- PointsScoringSystemsHistoryScraper
+BasePointsScraper <|-- SprintQualifyingPointsScraper
+F1TableScraper <|-- TyreManufacturersBySeasonScraper
+F1Scraper <|-- F1SponsorshipLiveriesScraper
+
+' Single scrapers
+F1Scraper <|-- F1SingleCircuitScraper
+
+package "Column Types" {
+    abstract class BaseColumn {
+        + {abstract} parse(ctx): Any
+        + apply(ctx, record): None
+    }
+    
+    class AutoColumn
+    class TextColumn
+    class IntColumn
+    class FloatColumn
+    class BoolColumn
+    class TimeColumn
+    class DateColumn
+    class UrlColumn
+    class ListColumn
+    class LinksListColumn
+    class DriverListColumn
+    class ConstructorColumn
+    class MultiColumn
+    class FuncColumn
+    class RegexColumn
+    class PositionColumn
+    class RoundsColumn
+    class SeasonsColumn
+    class SkipColumn
+}
+
+BaseColumn <|-- AutoColumn
+BaseColumn <|-- TextColumn
+BaseColumn <|-- IntColumn
+BaseColumn <|-- FloatColumn
+BaseColumn <|-- BoolColumn
+BaseColumn <|-- TimeColumn
+BaseColumn <|-- DateColumn
+BaseColumn <|-- UrlColumn
+BaseColumn <|-- ListColumn
+BaseColumn <|-- LinksListColumn
+BaseColumn <|-- DriverListColumn
+BaseColumn <|-- ConstructorColumn
+BaseColumn <|-- MultiColumn
+BaseColumn <|-- FuncColumn
+BaseColumn <|-- RegexColumn
+BaseColumn <|-- PositionColumn
+BaseColumn <|-- RoundsColumn
+BaseColumn <|-- SeasonsColumn
+BaseColumn <|-- SkipColumn
+
+F1TableScraper "1" --> "many" BaseColumn: uses
+
+package "Infrastructure" {
+    interface HttpClientProtocol {
+        + get(url): HttpResponse
+    }
+    
+    class HttpClient {
+        + get(url, policy): HttpResponse
+    }
+    
+    class UrllibHttpClient {
+        + get(url): HttpResponse
+    }
+    
+    abstract class HttpPolicy {
+        + apply(request): HttpResponse
+    }
+    
+    class RetryPolicy {
+        - max_retries: int
+        - backoff_factor: float
+    }
+    
+    class RateLimiterPolicy {
+        - min_delay: float
+    }
+    
+    class ResponseCachePolicy {
+        - cache_dir: Path
+    }
+    
+    class CacheAdapter {
+        - file_cache: FileCache
+        + get(url): str
+    }
+    
+    class SourceAdapter {
+        + get(url): str
+    }
+}
+
+HttpClientProtocol <|.. HttpClient
+HttpClientProtocol <|.. UrllibHttpClient
+HttpPolicy <|-- RetryPolicy
+HttpPolicy <|-- RateLimiterPolicy
+HttpPolicy <|-- ResponseCachePolicy
+
+F1Scraper --> SourceAdapter: uses
+SourceAdapter --> CacheAdapter: may use
+CacheAdapter --> HttpClient: uses
+HttpClient --> HttpPolicy: applies
+
+package "Models & Data" {
+    class Circuit {
+        + circuit_name: str
+        + location: str
+        + country: str
+        + first_year: int
+        + last_year: int
+        + circuit_length: float
+    }
+    
+    class Driver {
+        + driver: str
+        + nationality: str
+        + seasons_competed: List[SeasonRecord]
+        + race_entries: int
+        + race_wins: int
+    }
+    
+    class Constructor {
+        + constructor_name: str
+        + nationality: str
+        + first_season: int
+        + last_season: int
+    }
+    
+    class Season {
+        + season: int
+        + rounds: List[RoundRecord]
+        + drivers_champion: str
+        + constructors_champion: str
+    }
+    
+    class RecordFactory {
+        + {static} build_circuit_record(data): Circuit
+        + {static} build_driver_record(data): Driver
+        + {static} build_constructor_record(data): Constructor
+        + {static} build_season_record(data): Season
+    }
+    
+    class FieldNormalizer {
+        + {static} normalize_int(value): int
+        + {static} normalize_float(value): float
+        + {static} normalize_link(value): LinkRecord
+        + {static} normalize_seasons(value): List[SeasonRecord]
+    }
+}
+
+RecordFactory --> FieldNormalizer: uses
+F1TableScraper --> RecordFactory: uses
+
+package "Validation" {
+    class RecordValidator {
+        - record_factory: Callable
+        - validation_stats: QualityStats
+        --
+        + validate(record): List[ValidationError]
+        + validate_record_factory(record): List[ValidationError]
+        + record_validation_result(errors): None
+        + write_quality_report(path): Path
+    }
+    
+    class CircuitsRecordValidator
+    class DriversRecordValidator
+    class EngineManufacturerValidator
+}
+
+RecordValidator <|-- CircuitsRecordValidator
+RecordValidator <|-- DriversRecordValidator
+RecordValidator <|-- EngineManufacturerValidator
+
+F1Scraper --> RecordValidator: uses
+
+@enduml
