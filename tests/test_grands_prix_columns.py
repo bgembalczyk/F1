@@ -12,6 +12,7 @@ def _ctx(raw_text: str, *, clean_text: str | None = None) -> ColumnContext:
         clean_text=clean_text or raw_text,
         links=[],
         cell=None,
+        base_url="https://en.wikipedia.org",
         model_fields=None,
     )
 

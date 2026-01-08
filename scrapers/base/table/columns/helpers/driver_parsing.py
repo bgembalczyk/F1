@@ -154,3 +154,38 @@ class DriverParsingHelpers:
             if len(parts) > 1:
                 text = parts[1]
         return text.strip()
+
+
+# Backward compatibility wrappers
+def build_driver_link_lookup(links: list[dict[str, str | None]]) -> dict[str, list[dict[str, str | None]]]:
+    """
+    Backward compatibility wrapper for DriverParsingHelpers.build_link_lookup.
+    
+    Args:
+        links: List of link records with 'text' and 'url' keys
+        
+    Returns:
+        Dictionary mapping lowercase driver names to lists of matching links
+    """
+    return DriverParsingHelpers.build_link_lookup(links)
+
+
+def parse_driver_segment(
+    segment: Tag,
+    link_lookup: dict[str, list[dict[str, str | None]]],
+    base_url: str,
+    **kwargs
+) -> LinkRecord | None:
+    """
+    Backward compatibility wrapper for DriverParsingHelpers.parse_segment.
+    
+    Args:
+        segment: HTML tag containing driver information
+        link_lookup: Pre-built lookup of driver names to links
+        base_url: Base URL for resolving relative links
+        **kwargs: Additional arguments (ignored for compatibility)
+        
+    Returns:
+        LinkRecord with driver name and URL, or None if no valid driver found
+    """
+    return DriverParsingHelpers.parse_segment(segment, link_lookup, base_url)

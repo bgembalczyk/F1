@@ -286,6 +286,7 @@ class TablePipeline:
             clean_text=clean_text,
             links=links,
             cell=cell,
+            base_url=self.base_url,
             skip_sentinel=self.skip_sentinel,
             model_fields=self.model_fields,
             header_link=header_link,

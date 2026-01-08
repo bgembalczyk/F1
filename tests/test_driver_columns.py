@@ -19,6 +19,7 @@ def _ctx(
         clean_text=clean_text or raw_text,
         links=links or [],
         cell=None,
+        base_url="https://en.wikipedia.org",
         model_fields=model_fields,
     )
 

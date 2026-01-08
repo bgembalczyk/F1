@@ -72,6 +72,7 @@ def _ctx(clean_text: str) -> ColumnContext:
         clean_text=clean_text,
         links=[],
         cell=None,
+        base_url="https://en.wikipedia.org",
     )
 
 
