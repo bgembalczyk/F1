@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup, Tag
 
 from models.validation.engine_restriction import EngineRestriction
 from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.range import RangeColumn
@@ -13,8 +12,7 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl import TableSchemaDSL, column
-from scrapers.base.table.parser import HtmlTableParser
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.engine_rpm_limit import EngineRpmLimitColumn
 from scrapers.engines.columns.fuel_flow_rate import FuelFlowRateColumn
 from scrapers.engines.columns.fuel_injection_pressure_limit import (
@@ -23,7 +21,7 @@ from scrapers.engines.columns.fuel_injection_pressure_limit import (
 from scrapers.engines.columns.fuel_limit_per_race import FuelLimitPerRaceColumn
 
 
-class EngineRestrictionsScraper(F1TableScraper):
+class EngineRestrictionsScraper(BaseEngineTableScraper):
     """
     Ograniczenia silnikowe F1:
     https://en.wikipedia.org/wiki/Formula_One_regulations#Engine
@@ -61,12 +59,8 @@ class EngineRestrictionsScraper(F1TableScraper):
     )
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
-        parser = HtmlTableParser(
-            section_id=self.section_id,
-            expected_headers=self.expected_headers,
-            table_css_class=self.table_css_class,
-        )
-        table = parser._find_table(soup)
+        """Parse transposed table where years are columns and metrics are rows."""
+        table = self._find_table(soup)
         header_row = table.find("tr")
         if not header_row:
             raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
@@ -77,6 +71,8 @@ class EngineRestrictionsScraper(F1TableScraper):
 
         year_cells = header_cells[1:]
 
+        # Parse rows to extract labels and cells
+        parser = self._create_parser()
         rows = parser.parse(soup)
         row_labels: list[str] = []
         row_cells: list[list[Tag]] = []
@@ -84,10 +80,12 @@ class EngineRestrictionsScraper(F1TableScraper):
             if not row.cells:
                 continue
             label_cell = row.cells[0]
-            label = clean_wiki_text(label_cell.get_text(" ", strip=True))
+            cleaned_cells = self._clean_cells([label_cell])
+            label = cleaned_cells[0]
             row_labels.append(label)
             row_cells.append(row.cells[1:])
 
+        # Build records by transposing: each year becomes a record
         headers = ["Year", *row_labels]
         records: list[Any] = []
         for index, year_cell in enumerate(year_cells):
@@ -97,7 +95,7 @@ class EngineRestrictionsScraper(F1TableScraper):
                     cells.append(cells_for_row[index])
                 else:
                     cells.append(soup.new_tag("td"))
-            record = self.extractor.pipeline.parse_cells(headers, cells, row_index=index)
+            record = self._parse_record(headers, cells, index)
             if record:
                 records.append(record)
 

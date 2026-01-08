@@ -1,6 +1,7 @@
 from typing import Any, Mapping, cast
 
 from models.mappers.field_aliases import FIELD_ALIASES, apply_field_aliases
+from models.records.base_factory import BaseRecordFactory, FieldNormalizer
 from models.records.car import CarRecord
 from models.records.circuit import CircuitRecord
 from models.records.circuit_complete import CircuitCompleteRecord
@@ -25,84 +26,15 @@ from models.validation.validators import (
 
 WIKI_SEASON_URL = "https://en.wikipedia.org/wiki/{year}_Formula_One_World_Championship"
 
+# Use the refactored normalizer from base_factory
+_normalizer = FieldNormalizer()
+normalize_int = _normalizer.normalize_int
+normalize_float = _normalizer.normalize_float
+normalize_link_value = _normalizer.normalize_link
+normalize_link_list = _normalizer.normalize_link_list
+normalize_seasons = _normalizer.normalize_seasons
+normalize_status = _normalizer.normalize_status
 
-def normalize_int(value: Any, field_name: str) -> int | None:
-    if value is None:
-        return None
-    try:
-        return validate_int(value, field_name)
-    except ValueError:
-        return None
-
-
-def normalize_float(value: Any, field_name: str) -> float | None:
-    if value is None:
-        return None
-    try:
-        return validate_float(value, field_name)
-    except ValueError:
-        return None
-
-
-def normalize_link_value(value: Any, field_name: str) -> LinkRecord | None:
-    if value is None:
-        return None
-    if isinstance(value, str):
-        text = value.strip()
-        if not text:
-            return None
-        return {"text": text, "url": None}
-    if isinstance(value, Mapping):
-        try:
-            normalized = validate_link(dict(value), field_name=field_name)
-        except ValueError:
-            return None
-        if is_empty_link(normalized):
-            return None
-        return normalized
-    return None
-
-
-def normalize_link_list(value: Any, field_name: str) -> list[LinkRecord]:
-    if not value:
-        return []
-    if isinstance(value, list):
-        items = value
-    else:
-        items = [value]
-    normalized_items: list[LinkRecord] = []
-    for item in items:
-        normalized = normalize_link_value(item, field_name)
-        if normalized is not None:
-            normalized_items.append(normalized)
-    return normalized_items
-
-
-def normalize_seasons(value: Any) -> list[SeasonRecord]:
-    if not value:
-        return []
-    try:
-        if isinstance(value, list):
-            seasons = validate_seasons(value)
-        else:
-            normalized = normalize_season_item(value)
-            seasons = [normalized] if normalized else []
-    except ValueError:
-        return []
-
-    for season in seasons:
-        if "url" not in season and "year" in season:
-            season["url"] = WIKI_SEASON_URL.format(year=season["year"])
-    return cast(list[SeasonRecord], seasons)
-
-
-def normalize_status(value: Any, allowed: list[str], field_name: str) -> str | None:
-    if value is None:
-        return None
-    try:
-        return validate_status(value, allowed, field_name)
-    except ValueError:
-        return str(value).strip().lower() or None
 
 
 def _normalize_points(value: Any) -> Any:

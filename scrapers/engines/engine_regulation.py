@@ -1,13 +1,12 @@
 from pathlib import Path
 from typing import Any, List
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from models.validation.engine_regulation import EngineRegulation
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.records import record_from_mapping
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -15,14 +14,13 @@ from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl import TableSchemaDSL, column
-from scrapers.base.table.parser import HtmlTableParser
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.configuration import EngineConfigurationColumn
 from scrapers.engines.columns.nested_text import NestedTextColumn
 from scrapers.engines.columns.nested_unit_list import NestedUnitListColumn
 
 
-class EngineRegulationScraper(F1TableScraper):
+class EngineRegulationScraper(BaseEngineTableScraper):
     """
     Regulacje silników F1 według ery:
     https://en.wikipedia.org/wiki/Formula_One_engines#Engine_regulation_progression_by_era
@@ -66,38 +64,34 @@ class EngineRegulationScraper(F1TableScraper):
     )
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        parser = HtmlTableParser(
-            section_id=self.section_id,
-            expected_headers=self.expected_headers,
-            table_css_class=self.table_css_class,
-        )
-        table = parser._find_table(soup)
+        """Parse multi-level header table with rowspan support."""
+        table = self._find_table(soup)
         headers, header_rows = MultiLevelHeaderBuilder.build_headers(table)
 
         records: list[dict[str, Any]] = []
         pending_rowspans: dict[int, dict[str, object]] = {}
         rows = table.find_all("tr")[header_rows:]
+        parser = self._create_parser()
+        
         for row_index, tr in enumerate(rows):
             cells = tr.find_all(["td", "th"])
-            if not cells or all(not cell.get_text(strip=True) for cell in cells):
-                continue
-
-            cleaned_cells = [
-                clean_wiki_text(cell.get_text(" ", strip=True)) for cell in cells
-            ]
-            if parser._is_footer_row(cells, cleaned_cells, headers):
+            cleaned_cells = self._clean_cells(cells)
+            
+            # Validate row
+            if not self._is_valid_row(cells, cleaned_cells, headers):
                 continue
             if is_repeated_header_row(cleaned_cells, headers):
                 continue
 
+            # Expand cells with rowspan handling
             expanded_cells = parser._expand_row_cells(
                 cells,
                 headers,
                 pending_rowspans,
             )
-            record = self.extractor.pipeline.parse_cells(
-                headers, expanded_cells, row_index=row_index
-            )
+            
+            # Parse record
+            record = self._parse_record(headers, expanded_cells, row_index)
             if record:
                 records.append(record)
 
