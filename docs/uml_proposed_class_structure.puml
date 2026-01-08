@@ -1,0 +1,629 @@
+@startuml Proposed Improved Class Structure and Hierarchy
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam handwritten false
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+title F1 Wikipedia Scraper - Proposed Improved Class Structure and Hierarchy
+
+note as N1
+**Key Improvements:**
+1. **Separation of Concerns**: Extract parsing logic from scrapers
+2. **Strategy Pattern**: Configurable parsing strategies
+3. **Factory Pattern**: Centralized record creation
+4. **Single Responsibility**: Each class has one clear purpose
+5. **Interface Segregation**: Smaller, focused interfaces
+6. **Dependency Inversion**: Depend on abstractions, not implementations
+end note
+
+package "Core Abstractions" {
+    interface IDataSource {
+        + fetch(url: str): str
+    }
+    
+    interface IParser {
+        + parse(html: str): List[Dict]
+    }
+    
+    interface IValidator {
+        + validate(record: Dict): ValidationResult
+    }
+    
+    interface ITransformer {
+        + transform(record: Dict): Dict
+    }
+    
+    interface IExporter {
+        + export(records: List[Dict], path: Path): None
+    }
+    
+    interface IRecordFactory {
+        + create(data: Dict): Record
+    }
+}
+
+package "Scraper Framework - Core" {
+    abstract class BaseScraper {
+        # data_source: IDataSource
+        # parser: IParser
+        # pipeline: ProcessingPipeline
+        # exporter: IExporter
+        # logger: Logger
+        --
+        + fetch(): List[Record]
+        + export(path: Path): None
+        # execute_pipeline(data): List[Record]
+    }
+    
+    class ProcessingPipeline {
+        - stages: List[IPipelineStage]
+        --
+        + add_stage(stage: IPipelineStage): void
+        + execute(data: Any): Any
+    }
+    
+    interface IPipelineStage {
+        + process(data: Any): Any
+    }
+    
+    class ValidationStage {
+        - validator: IValidator
+        - mode: ValidationMode
+        --
+        + process(records): List[Record]
+    }
+    
+    class TransformationStage {
+        - transformers: List[ITransformer]
+        --
+        + process(records): List[Record]
+    }
+    
+    class NormalizationStage {
+        - normalizers: List[IFieldNormalizer]
+        --
+        + process(records): List[Record]
+    }
+}
+
+package "Scraper Types - Specialized" {
+    class ListBasedScraper {
+        - list_parser: ListParser
+        --
+        + fetch(): List[Record]
+    }
+    
+    class TableBasedScraper {
+        - table_parser: TableParser
+        - schema: TableSchema
+        --
+        + fetch(): List[Record]
+    }
+    
+    class CompositeDataScraper {
+        - list_scraper: BaseScraper
+        - detail_scraper: BaseScraper
+        - merger: IRecordMerger
+        --
+        + fetch(): List[Record]
+        # merge_records(list, details): List[Record]
+    }
+    
+    class InfoboxBasedScraper {
+        - infobox_parser: InfoboxParser
+        --
+        + fetch(): List[Record]
+    }
+}
+
+package "Parsing Strategy" {
+    abstract class BaseParser {
+        # extractor: IHtmlExtractor
+        # section_selector: ISectionSelector
+        --
+        + parse(html: str): List[Dict]
+        # extract_content(html): Element
+        # parse_content(element): List[Dict]
+    }
+    
+    class ListParser {
+        - item_parser: IItemParser
+        --
+        + parse(html): List[Dict]
+        # parse_list_items(ul_element): List[Dict]
+    }
+    
+    class TableParser {
+        - schema: TableSchema
+        - column_parsers: Dict[str, IColumnParser]
+        --
+        + parse(html): List[Dict]
+        # parse_table_rows(table): List[Dict]
+        # parse_row(row, schema): Dict
+    }
+    
+    class InfoboxParser {
+        - field_mapping: Dict[str, str]
+        --
+        + parse(html): Dict
+        # parse_infobox_fields(infobox): Dict
+    }
+    
+    interface ISectionSelector {
+        + select(html: str, section_id: str): Element
+    }
+    
+    interface IItemParser {
+        + parse_item(element: Element): Dict
+    }
+    
+    interface IColumnParser {
+        + parse_column(cell: Element, context: ColumnContext): Any
+    }
+}
+
+package "Column Parsing - Improved" {
+    abstract class BaseColumnParser {
+        + {abstract} parse(cell: Element, context: ColumnContext): Any
+        # extract_text(cell): str
+        # extract_links(cell): List[str]
+    }
+    
+    class TextColumnParser {
+        + parse(cell, context): str
+    }
+    
+    class NumericColumnParser {
+        - numeric_type: Type
+        --
+        + parse(cell, context): int | float
+    }
+    
+    class LinkColumnParser {
+        - include_text: bool
+        --
+        + parse(cell, context): LinkRecord
+    }
+    
+    class ListColumnParser {
+        - item_parser: IColumnParser
+        - separator: str
+        --
+        + parse(cell, context): List[Any]
+    }
+    
+    class CompositeColumnParser {
+        - parsers: List[IColumnParser]
+        --
+        + parse(cell, context): Dict
+    }
+    
+    class ColumnParserFactory {
+        + {static} create(column_type: str, config: Dict): IColumnParser
+    }
+}
+
+package "Data Access Layer" {
+    class HttpDataSource {
+        - http_client: IHttpClient
+        - cache: ICache
+        --
+        + fetch(url): str
+    }
+    
+    class CachedDataSource {
+        - inner_source: IDataSource
+        - cache: ICache
+        --
+        + fetch(url): str
+        # get_from_cache(url): str | None
+        # save_to_cache(url, content): void
+    }
+    
+    interface IHttpClient {
+        + get(url: str, options: HttpOptions): HttpResponse
+    }
+    
+    interface ICache {
+        + get(key: str): str | None
+        + set(key: str, value: str): void
+        + has(key: str): bool
+    }
+    
+    class FileCache {
+        - cache_dir: Path
+        --
+        + get(key): str | None
+        + set(key, value): void
+    }
+    
+    class PolicyBasedHttpClient {
+        - policies: List[IHttpPolicy]
+        --
+        + get(url, options): HttpResponse
+        # apply_policies(request): HttpResponse
+    }
+    
+    interface IHttpPolicy {
+        + apply(request: HttpRequest, next: Callable): HttpResponse
+    }
+}
+
+package "Record Management" {
+    abstract class BaseRecordFactory {
+        # normalizer: FieldNormalizer
+        --
+        + create(data: Dict): Record
+        # normalize_fields(data): Dict
+        # validate_required_fields(data): void
+    }
+    
+    class CircuitRecordFactory {
+        + create(data): Circuit
+    }
+    
+    class DriverRecordFactory {
+        + create(data): Driver
+    }
+    
+    class ConstructorRecordFactory {
+        + create(data): Constructor
+    }
+    
+    class SeasonRecordFactory {
+        + create(data): Season
+    }
+    
+    class RecordFactoryRegistry {
+        - factories: Dict[str, IRecordFactory]
+        --
+        + register(type: str, factory: IRecordFactory): void
+        + get(type: str): IRecordFactory
+        + create(type: str, data: Dict): Record
+    }
+}
+
+package "Field Normalization - Improved" {
+    class FieldNormalizer {
+        - strategies: Dict[str, INormalizationStrategy]
+        --
+        + normalize(field: str, value: Any): Any
+        + register_strategy(field: str, strategy: INormalizationStrategy): void
+    }
+    
+    interface INormalizationStrategy {
+        + normalize(value: Any): Any
+    }
+    
+    class IntNormalizationStrategy {
+        + normalize(value): int | None
+    }
+    
+    class FloatNormalizationStrategy {
+        + normalize(value): float | None
+    }
+    
+    class LinkNormalizationStrategy {
+        + normalize(value): LinkRecord | None
+    }
+    
+    class SeasonListNormalizationStrategy {
+        + normalize(value): List[SeasonRecord]
+    }
+    
+    class DateNormalizationStrategy {
+        + normalize(value): NormalizedDate | None
+    }
+}
+
+package "Validation Framework - Improved" {
+    abstract class BaseValidator {
+        # rules: List[IValidationRule]
+        # stats_collector: ValidationStatsCollector
+        --
+        + validate(record: Dict): ValidationResult
+        + add_rule(rule: IValidationRule): void
+        # collect_stats(result: ValidationResult): void
+    }
+    
+    interface IValidationRule {
+        + validate(record: Dict): ValidationIssue | None
+    }
+    
+    class RequiredFieldRule {
+        - field_name: str
+        --
+        + validate(record): ValidationIssue | None
+    }
+    
+    class TypeCheckRule {
+        - field_name: str
+        - expected_type: Type
+        --
+        + validate(record): ValidationIssue | None
+    }
+    
+    class RangeValidationRule {
+        - field_name: str
+        - min_value: Any
+        - max_value: Any
+        --
+        + validate(record): ValidationIssue | None
+    }
+    
+    class CustomValidationRule {
+        - field_name: str
+        - validator_func: Callable
+        --
+        + validate(record): ValidationIssue | None
+    }
+    
+    class ValidationResult {
+        + is_valid: bool
+        + issues: List[ValidationIssue]
+        --
+        + add_issue(issue: ValidationIssue): void
+        + has_errors(): bool
+    }
+    
+    class ValidationStatsCollector {
+        - stats: Dict[str, int]
+        --
+        + record_validation(result: ValidationResult): void
+        + get_stats(): ValidationStats
+        + export_report(path: Path): void
+    }
+}
+
+package "Export System - Improved" {
+    abstract class BaseExporter {
+        # formatter: IDataFormatter
+        # writer: IFileWriter
+        --
+        + export(records: List[Dict], path: Path): void
+        # format_data(records): Any
+        # write_to_file(data, path): void
+    }
+    
+    class JsonExporter {
+        - indent: int
+        - include_metadata: bool
+        --
+        + export(records, path): void
+    }
+    
+    class CsvExporter {
+        - fieldnames: List[str]
+        - include_headers: bool
+        --
+        + export(records, path): void
+    }
+    
+    class MultiFormatExporter {
+        - exporters: List[IExporter]
+        --
+        + export(records, path): void
+    }
+    
+    interface IDataFormatter {
+        + format(records: List[Dict]): Any
+    }
+    
+    interface IFileWriter {
+        + write(data: Any, path: Path): void
+    }
+}
+
+package "Configuration - Improved" {
+    class ScraperConfiguration {
+        + url: str
+        + parser_config: ParserConfig
+        + validation_config: ValidationConfig
+        + export_config: ExportConfig
+        --
+        + {static} from_dict(config: Dict): ScraperConfiguration
+        + to_dict(): Dict
+    }
+    
+    class ParserConfig {
+        + section_id: str
+        + expected_headers: List[str]
+        + column_mapping: Dict[str, str]
+        + schema: TableSchema | None
+    }
+    
+    class ValidationConfig {
+        + mode: ValidationMode
+        + rules: List[Dict]
+        + record_factory: str
+    }
+    
+    class ExportConfig {
+        + formats: List[str]
+        + output_dir: Path
+        + include_metadata: bool
+    }
+    
+    enum ValidationMode {
+        STRICT
+        SOFT
+        DISABLED
+    }
+}
+
+package "Domain Models - Enhanced" {
+    abstract class BaseRecord {
+        + {abstract} to_dict(): Dict
+        + {abstract} validate(): void
+    }
+    
+    class Circuit {
+        + circuit_name: str
+        + location: str
+        + country: str
+        + first_year: int
+        + last_year: int | None
+        + circuit_length: float | None
+        + url: str | None
+        --
+        + to_dict(): Dict
+        + validate(): void
+    }
+    
+    class Driver {
+        + driver: str
+        + nationality: str
+        + seasons_competed: List[SeasonRecord]
+        + race_entries: int
+        + race_starts: int
+        + race_wins: int
+        + url: str | None
+        --
+        + to_dict(): Dict
+        + validate(): void
+        + is_active(): bool
+        + is_world_champion(): bool
+    }
+    
+    class Constructor {
+        + constructor_name: str
+        + nationality: str
+        + first_season: int
+        + last_season: int | None
+        + url: str | None
+        --
+        + to_dict(): Dict
+        + validate(): void
+    }
+}
+
+' Inheritance relationships
+IDataSource <|.. HttpDataSource
+IDataSource <|.. CachedDataSource
+IParser <|.. BaseParser
+BaseParser <|-- ListParser
+BaseParser <|-- TableParser
+BaseParser <|-- InfoboxParser
+IValidator <|.. BaseValidator
+IExporter <|.. BaseExporter
+BaseExporter <|-- JsonExporter
+BaseExporter <|-- CsvExporter
+BaseExporter <|-- MultiFormatExporter
+IRecordFactory <|.. BaseRecordFactory
+BaseRecordFactory <|-- CircuitRecordFactory
+BaseRecordFactory <|-- DriverRecordFactory
+BaseRecordFactory <|-- ConstructorRecordFactory
+BaseRecordFactory <|-- SeasonRecordFactory
+
+BaseScraper <|-- ListBasedScraper
+BaseScraper <|-- TableBasedScraper
+BaseScraper <|-- CompositeDataScraper
+BaseScraper <|-- InfoboxBasedScraper
+
+IPipelineStage <|.. ValidationStage
+IPipelineStage <|.. TransformationStage
+IPipelineStage <|.. NormalizationStage
+
+IColumnParser <|.. BaseColumnParser
+BaseColumnParser <|-- TextColumnParser
+BaseColumnParser <|-- NumericColumnParser
+BaseColumnParser <|-- LinkColumnParser
+BaseColumnParser <|-- ListColumnParser
+BaseColumnParser <|-- CompositeColumnParser
+
+ICache <|.. FileCache
+IHttpClient <|.. PolicyBasedHttpClient
+
+INormalizationStrategy <|.. IntNormalizationStrategy
+INormalizationStrategy <|.. FloatNormalizationStrategy
+INormalizationStrategy <|.. LinkNormalizationStrategy
+INormalizationStrategy <|.. SeasonListNormalizationStrategy
+INormalizationStrategy <|.. DateNormalizationStrategy
+
+IValidationRule <|.. RequiredFieldRule
+IValidationRule <|.. TypeCheckRule
+IValidationRule <|.. RangeValidationRule
+IValidationRule <|.. CustomValidationRule
+
+BaseRecord <|-- Circuit
+BaseRecord <|-- Driver
+BaseRecord <|-- Constructor
+
+' Composition relationships
+BaseScraper "1" *-- "1" IDataSource
+BaseScraper "1" *-- "1" IParser
+BaseScraper "1" *-- "1" ProcessingPipeline
+BaseScraper "1" *-- "1" IExporter
+ProcessingPipeline "1" *-- "many" IPipelineStage
+ValidationStage "1" *-- "1" IValidator
+TransformationStage "1" *-- "many" ITransformer
+NormalizationStage "1" *-- "many" INormalizationStrategy
+
+TableBasedScraper "1" *-- "1" TableParser
+ListBasedScraper "1" *-- "1" ListParser
+InfoboxBasedScraper "1" *-- "1" InfoboxParser
+CompositeDataScraper "1" *-- "2" BaseScraper
+
+TableParser "1" *-- "many" IColumnParser
+ListParser "1" *-- "1" IItemParser
+BaseParser "1" *-- "1" ISectionSelector
+
+HttpDataSource "1" *-- "1" IHttpClient
+HttpDataSource "1" *-- "1" ICache
+CachedDataSource "1" *-- "1" IDataSource
+CachedDataSource "1" *-- "1" ICache
+PolicyBasedHttpClient "1" *-- "many" IHttpPolicy
+
+BaseRecordFactory "1" *-- "1" FieldNormalizer
+FieldNormalizer "1" *-- "many" INormalizationStrategy
+
+BaseValidator "1" *-- "many" IValidationRule
+BaseValidator "1" *-- "1" ValidationStatsCollector
+
+BaseExporter "1" *-- "1" IDataFormatter
+BaseExporter "1" *-- "1" IFileWriter
+
+BaseScraper "1" *-- "1" ScraperConfiguration
+ScraperConfiguration "1" *-- "1" ParserConfig
+ScraperConfiguration "1" *-- "1" ValidationConfig
+ScraperConfiguration "1" *-- "1" ExportConfig
+
+note right of BaseScraper
+**Improvements:**
+- Clear separation of concerns
+- Dependency injection for all dependencies
+- Pipeline pattern for processing stages
+- Strategy pattern for parsing & validation
+end note
+
+note right of ProcessingPipeline
+**Pipeline Pattern:**
+- Flexible stage composition
+- Easy to add/remove stages
+- Each stage is independent
+- Clear data flow
+end note
+
+note right of BaseParser
+**Strategy Pattern:**
+- Interchangeable parsing strategies
+- Easy to extend with new parsers
+- Separation of extraction & parsing
+end note
+
+note right of FieldNormalizer
+**Strategy Pattern:**
+- Type-specific normalization
+- Extensible for new types
+- Reusable across factories
+end note
+
+note right of BaseValidator
+**Composite Pattern:**
+- Composed of validation rules
+- Easy to add/remove rules
+- Stats collection separated
+end note
+
+@enduml
