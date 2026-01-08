@@ -124,47 +124,6 @@ def split_on_external_hyphen(ctx) -> tuple[str, str] | None:
 def build_driver_link_lookup(links: list[dict[str, str | None]]):
     """Build driver link lookup. Delegates to DriverParsingHelpers."""
     return _build_driver_link_lookup(links)
-                    if clean_wiki_text(link.get("text", "")) == left_normalized:
-                        return link
-                return {"text": left_part, "url": None}
-            right_normalized = clean_wiki_text(right_part)
-            for link in links:
-                if clean_wiki_text(link.get("text", "")) == right_normalized:
-                    return link
-            return {"text": right_part, "url": None}
-        return {"text": left_part if index == 0 else right_part, "url": None}
-
-    if links:
-        if len(links) >= 2:
-            return links[index] if index < len(links) else None
-        return links[0]
-
-    if not clean_text:
-        return None
-
-    return {"text": clean_text, "url": None}
-
-
-def split_on_external_hyphen(ctx) -> tuple[str, str] | None:
-    raw_text = clean_wiki_text(ctx.raw_text or "", normalize_dashes=False)
-    match = re.search(r"\s[-–—−]\s", raw_text)
-    if not match:
-        return None
-    left_part = raw_text[: match.start()].strip()
-    right_part = raw_text[match.end() :].strip()
-    if not left_part or not right_part:
-        return None
-    return left_part, right_part
-
-
-def build_driver_link_lookup(links: list[dict[str, str | None]]):
-    lookup: dict[str, list[dict[str, str | None]]] = {}
-    for link in normalize_links(links, strip_marks=True, drop_empty=True):
-        text = link.get("text") or ""
-        if not text:
-            continue
-        lookup.setdefault(text, []).append(link)
-    return lookup
 
 
 def parse_driver_segment(

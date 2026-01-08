@@ -91,6 +91,11 @@ class ConstructorParsingHelpers:
                     clean_text=clean_text,
                     links=line_links,
                     background=ctx.background,
+                    header=getattr(ctx, "header", None),
+                    key=getattr(ctx, "key", None),
+                    skip_sentinel=getattr(ctx, "skip_sentinel", None),
+                    model_fields=getattr(ctx, "model_fields", None),
+                    header_link=getattr(ctx, "header_link", None),
                 )
             )
 

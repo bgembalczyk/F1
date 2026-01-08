@@ -281,7 +281,7 @@ class ResultsParsingHelpers:
     @staticmethod
     def has_year(text: str) -> bool:
         """
-        Check if text contains a 4-digit year.
+        Check if text contains a 4-digit year (1900-2099).
         
         Args:
             text: Text to check
