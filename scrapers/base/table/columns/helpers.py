@@ -1,3 +1,24 @@
+"""Table column parsing helpers.
+
+This module provides backward-compatible access to column parsing helper functions.
+
+REFACTORED (following SRP): The implementation has been reorganized into focused modules:
+- driver_parsing.py: Driver-specific parsing (DriverParsingHelpers class)
+- engine_parsing.py: Engine-specific parsing (EngineParsingHelpers class)
+- constructor_parsing.py: Constructor-specific parsing (ConstructorParsingHelpers class)
+- results_parsing.py: Race results and points parsing (ResultsParsingHelpers class)
+
+This file now primarily re-exports those functions for backward compatibility.
+New code should use the helper classes directly for better organization.
+
+Example:
+    # Old way (still works)
+    from scrapers.base.table.columns.helpers import extract_driver
+    
+    # New way (preferred)
+    from scrapers.base.table.columns.helpers.driver_parsing import DriverParsingHelpers
+    result = DriverParsingHelpers.extract_from_context(ctx, base_url)
+"""
 import re
 from typing import Any
 from typing import Optional
@@ -22,12 +43,49 @@ from scrapers.base.table.columns.constants import MARKS_RE
 from scrapers.base.table.columns.constants import SPLIT_RESULTS_RE
 from scrapers.base.table.columns.context import ColumnContext
 
+# Import refactored helper classes and functions (SRP pattern)
+# These provide the actual implementations; this file re-exports for backward compatibility
+from scrapers.base.table.columns.helpers.driver_parsing import (
+    DriverParsingHelpers,
+    build_driver_link_lookup as _build_driver_link_lookup,
+    extract_rounds_text as _extract_rounds_text,
+    strip_rounds_and_number as _strip_rounds_and_number,
+)
+from scrapers.base.table.columns.helpers.engine_parsing import (
+    EngineParsingHelpers,
+    build_engine_link_lookup as _build_engine_link_lookup,
+    extract_engine_class as _extract_engine_class,
+    is_f2_background as _is_f2_background,
+    extract_displacement as _extract_displacement,
+    extract_type_text as _extract_type_text,
+    parse_engine_type as _parse_engine_type,
+    extract_supercharged as _extract_supercharged,
+    extract_turbocharged as _extract_turbocharged,
+    extract_gas_turbine as _extract_gas_turbine,
+)
+from scrapers.base.table.columns.helpers.constructor_parsing import (
+    ConstructorParsingHelpers,
+    split_constructor_lines as _split_constructor_lines,
+    extract_constructor_part as _extract_constructor_part,
+    split_on_external_hyphen as _split_on_external_hyphen,
+    extract_layout_text as _extract_layout_text,
+)
+from scrapers.base.table.columns.helpers.results_parsing import (
+    ResultsParsingHelpers,
+    parse_points_value as _parse_points_value,
+    parse_results as _parse_results,
+    parse_superscripts as _parse_superscripts,
+    parse_entrant_segment as _parse_entrant_segment,
+    extract_licenses as _extract_licenses,
+    strip_refs as _strip_refs,
+    extract_number as _extract_number,
+    has_year as _has_year,
+)
+
 
 def split_cell_on_br(cell: Tag) -> list[Tag]:
     """Split cell on <br> tags using DOM-based parsing. Kept for backward compatibility."""
     return split_cell_on_br_dom_based(cell)
-
-
 
 
 def split_engine_cell_on_br(cell: Tag) -> list[Tag]:
@@ -41,99 +99,31 @@ def split_entrant_cell_on_br(cell: Tag) -> list[Tag]:
 
 
 def extract_layout_text(clean_text: str, link_text: str) -> Optional[str]:
-    if not clean_text:
-        return None
+    """Extract layout text. Delegates to ConstructorParsingHelpers."""
+    return _extract_layout_text(clean_text, link_text)
 
-    if link_text:
-        lower_clean = clean_text.lower()
-        lower_link = link_text.lower()
-        idx = lower_clean.find(lower_link)
-        if idx != -1:
-            clean_text = (clean_text[:idx] + clean_text[idx + len(link_text) :]).strip()
 
-    clean_text = clean_text.strip(" -–—()")
-    if not clean_text:
-        return None
-
-    if link_text and clean_text.lower() == link_text.lower():
-        return None
-
-    return clean_text
-
+# The following functions delegate to the refactored helper modules.
+# Original complex implementations have been moved to focused helper classes.
 
 def split_constructor_lines(ctx: ColumnContext) -> list[ColumnContext]:
-    if not ctx.cell:
-        return []
-
-    lines: list[list[object]] = [[]]
-    for child in ctx.cell.children:
-        if isinstance(child, Tag) and child.name == "br":
-            lines.append([])
-            continue
-        lines[-1].append(child)
-
-    if not lines:
-        return []
-
-    line_link_counts = []
-    for line in lines:
-        link_count = 0
-        for node in line:
-            if isinstance(node, Tag):
-                if node.name == "a":
-                    link_count += 1
-                else:
-                    link_count += len(node.find_all("a"))
-        line_link_counts.append(link_count)
-
-    line_contexts: list[ColumnContext] = []
-    link_index = 0
-    for line, link_count in zip(lines, line_link_counts):
-        line_links = ctx.links[link_index : link_index + link_count]
-        link_index += link_count
-
-        text_parts = []
-        for node in line:
-            if isinstance(node, Tag):
-                node_text = node.get_text(" ", strip=True)
-            else:
-                node_text = str(node).strip()
-            if node_text:
-                text_parts.append(node_text)
-        line_text = " ".join(text_parts).strip()
-        clean_text = clean_wiki_text(line_text)
-
-        if not clean_text and not line_links:
-            continue
-
-        line_contexts.append(
-            ColumnContext(
-                header=ctx.header,
-                key=ctx.key,
-                raw_text=line_text,
-                clean_text=clean_text,
-                links=line_links,
-                cell=None,
-                skip_sentinel=ctx.skip_sentinel,
-                model_fields=ctx.model_fields,
-                header_link=ctx.header_link,
-            )
-        )
-
-    return line_contexts
+    """Split constructor lines. Delegates to ConstructorParsingHelpers."""
+    return _split_constructor_lines(ctx)
 
 
 def extract_constructor_part(ctx, index: int) -> LinkRecord | None:
-    links = normalize_links(ctx.links, strip_marks=True, drop_empty=True)
-    clean_text = clean_wiki_text(ctx.clean_text or "")
+    """Extract constructor part. Delegates to ConstructorParsingHelpers."""
+    return _extract_constructor_part(ctx, index)
 
-    split_parts = split_on_external_hyphen(ctx)
-    if split_parts:
-        left_part, right_part = split_parts
-        if links:
-            if index == 0:
-                left_normalized = clean_wiki_text(left_part)
-                for link in links:
+
+def split_on_external_hyphen(ctx) -> tuple[str, str] | None:
+    """Split on external hyphen. Delegates to ConstructorParsingHelpers."""
+    return _split_on_external_hyphen(ctx)
+
+
+def build_driver_link_lookup(links: list[dict[str, str | None]]):
+    """Build driver link lookup. Delegates to DriverParsingHelpers."""
+    return _build_driver_link_lookup(links)
                     if clean_wiki_text(link.get("text", "")) == left_normalized:
                         return link
                 return {"text": left_part, "url": None}
