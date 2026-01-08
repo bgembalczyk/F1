@@ -177,24 +177,3 @@ class ConstructorParsingHelpers:
             return None
 
         return clean_text
-
-
-# Backward compatibility functions
-def split_constructor_lines(ctx: ColumnContext) -> list[ColumnContext]:
-    """Split constructor lines. Deprecated: Use ConstructorParsingHelpers.split_lines()"""
-    return ConstructorParsingHelpers.split_lines(ctx)
-
-
-def extract_constructor_part(ctx: ColumnContext, index: int) -> LinkRecord | None:
-    """Extract constructor part. Deprecated: Use ConstructorParsingHelpers.extract_part()"""
-    return ConstructorParsingHelpers.extract_part(ctx, index)
-
-
-def split_on_external_hyphen(ctx: ColumnContext) -> tuple[str, str] | None:
-    """Split on external hyphen. Deprecated: Use ConstructorParsingHelpers.split_on_external_hyphen()"""
-    return ConstructorParsingHelpers.split_on_external_hyphen(ctx)
-
-
-def extract_layout_text(clean_text: str, link_text: str) -> Optional[str]:
-    """Extract layout text. Deprecated: Use ConstructorParsingHelpers.extract_layout_text()"""
-    return ConstructorParsingHelpers.extract_layout_text(clean_text, link_text)

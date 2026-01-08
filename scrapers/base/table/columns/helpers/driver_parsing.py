@@ -154,33 +154,3 @@ class DriverParsingHelpers:
             if len(parts) > 1:
                 text = parts[1]
         return text.strip()
-
-
-# Backward compatibility: Keep original function names
-def build_driver_link_lookup(links: list[dict[str, str | None]]) -> dict[str, list[dict[str, str | None]]]:
-    """Build driver link lookup. Deprecated: Use DriverParsingHelpers.build_link_lookup()"""
-    return DriverParsingHelpers.build_link_lookup(links)
-
-
-def parse_driver_segment(
-    segment: Tag,
-    link_lookup: dict[str, list[dict[str, str | None]]],
-    base_url: str,
-) -> LinkRecord | None:
-    """Parse driver segment. Deprecated: Use DriverParsingHelpers.parse_segment()"""
-    return DriverParsingHelpers.parse_segment(segment, link_lookup, base_url)
-
-
-def extract_driver(ctx: ColumnContext, base_url: str) -> LinkRecord | None:
-    """Extract driver. Deprecated: Use DriverParsingHelpers.extract_from_context()"""
-    return DriverParsingHelpers.extract_from_context(ctx, base_url)
-
-
-def extract_rounds_text(text: str) -> str | None:
-    """Extract rounds text. Deprecated: Use DriverParsingHelpers.extract_rounds_text()"""
-    return DriverParsingHelpers.extract_rounds_text(text)
-
-
-def strip_rounds_and_number(text: str) -> str:
-    """Strip rounds and number. Deprecated: Use DriverParsingHelpers.strip_rounds_and_number()"""
-    return DriverParsingHelpers.strip_rounds_and_number(text)
