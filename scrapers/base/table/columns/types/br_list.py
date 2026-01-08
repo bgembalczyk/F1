@@ -1,9 +1,8 @@
 from typing import Any
 
-
+from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers import split_cell_on_br
 from scrapers.base.table.columns.types.base import BaseColumn
 
 

@@ -1,5 +1,6 @@
 from typing import Any
 
+from scrapers.base.helpers.background import extract_race_result_background
 from scrapers.base.table.columns.context import ColumnContext
 import re
 
@@ -9,7 +10,6 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.text import strip_marks
 from scrapers.base.table.columns.constants import MARKS_RE
 from scrapers.base.table.columns.constants import SPLIT_RESULTS_RE
-from scrapers.base.table.columns.helpers import extract_race_result_background
 from scrapers.base.table.columns.types.base import BaseColumn
 
 

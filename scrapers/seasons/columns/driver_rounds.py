@@ -1,10 +1,9 @@
 from typing import Any
 
-
+from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers import build_driver_link_lookup
-from scrapers.base.table.columns.helpers import parse_driver_segment
-from scrapers.base.table.columns.helpers import split_cell_on_br
+from scrapers.base.table.columns.helpers.driver_parsing import build_driver_link_lookup
+from scrapers.base.table.columns.helpers.driver_parsing import parse_driver_segment
 from scrapers.base.table.columns.types.base import BaseColumn
 
 

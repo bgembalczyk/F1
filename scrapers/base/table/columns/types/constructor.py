@@ -1,5 +1,5 @@
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers import split_constructor_lines
+from scrapers.base.table.columns.helpers.constructor_parsing import split_constructor_lines
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.columns.types.constructor_part import ConstructorPartColumn
 

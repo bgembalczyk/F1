@@ -2,10 +2,9 @@ from typing import Any
 
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers import build_engine_link_lookup
-from scrapers.base.table.columns.helpers import extract_engine_class
-from scrapers.base.table.columns.helpers import parse_engine_segment
-from scrapers.base.table.columns.helpers import split_engine_cell_on_br
+from scrapers.base.table.columns.helpers.engine_parsing import build_engine_link_lookup
+from scrapers.base.table.columns.helpers.engine_parsing import extract_engine_class
+from scrapers.base.table.columns.helpers.engine_parsing import parse_engine_segment
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
