@@ -92,7 +92,7 @@ class ConstructorParsingHelpers:
                     links=line_links,
                     header=getattr(ctx, "header", None),
                     key=getattr(ctx, "key", None),
-                    base_url=getattr(ctx, "base_url", ""),
+                    base_url=ctx.base_url,
                     skip_sentinel=getattr(ctx, "skip_sentinel", None),
                     model_fields=getattr(ctx, "model_fields", None),
                     header_link=getattr(ctx, "header_link", None),

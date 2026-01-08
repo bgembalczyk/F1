@@ -164,7 +164,6 @@ def is_f2_background(background: str) -> bool:
     return value == "ffcccc"
 
 
-
 def build_driver_link_lookup(links: list[dict[str, str | None]]) -> dict[str, list[dict[str, str | None]]]:
     """Build lookup dictionary for driver/entrant links."""
     lookup: dict[str, list[dict[str, str | None]]] = {}
