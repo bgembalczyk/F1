@@ -147,8 +147,14 @@
     "fuel_injection_pressure_limit": null,
     "engine_rpm_limit": {
       "limit": {
-        "min": 18000.0,
-        "max": 20500.0
+        "min": {
+          "value": 18000.0,
+          "unit": null
+        },
+        "max": {
+          "value": 20500.0,
+          "unit": null
+        }
       }
     },
     "power_output": {
@@ -273,8 +279,14 @@
     },
     "engine_rpm_limit": {
       "limit": {
-        "min": 15000.0,
-        "max": 15000.0
+        "min": {
+          "value": 15000.0,
+          "unit": null
+        },
+        "max": {
+          "value": 15000.0,
+          "unit": null
+        }
       }
     },
     "power_output": {

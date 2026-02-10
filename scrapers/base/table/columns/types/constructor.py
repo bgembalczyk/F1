@@ -1,5 +1,5 @@
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.constructor_parsing import split_constructor_lines
+from scrapers.base.table.columns.helpers.constructor_parsing import ConstructorParsingHelpers
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.columns.types.constructor_part import ConstructorPartColumn
 
@@ -8,7 +8,7 @@ class ConstructorColumn(BaseColumn):
     def parse(self, ctx: ColumnContext):
         has_line_break = ctx.cell.find("br") is not None if ctx.cell else False
         if has_line_break:
-            line_contexts = split_constructor_lines(ctx)
+            line_contexts = ConstructorParsingHelpers.split_lines(ctx)
             parsed_lines = []
             for line_ctx in line_contexts:
                 data = self._parse_constructor_data(line_ctx)

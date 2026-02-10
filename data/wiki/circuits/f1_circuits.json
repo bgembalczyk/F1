@@ -300,7 +300,7 @@
       "text": "Algarve International Circuit",
       "url": "https://en.wikipedia.org/wiki/Algarve_International_Circuit"
     },
-    "circuit_status": "former",
+    "circuit_status": "future",
     "type": "Race circuit",
     "direction": "Clockwise",
     "location": {
@@ -653,7 +653,7 @@
       "text": "Autodromo Internazionale Enzo e Dino Ferrari",
       "url": "https://en.wikipedia.org/wiki/Imola_Circuit"
     },
-    "circuit_status": "current",
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "location": {
@@ -4897,7 +4897,7 @@
       "text": "Madring",
       "url": "https://en.wikipedia.org/wiki/Madring"
     },
-    "circuit_status": "future",
+    "circuit_status": "current",
     "type": "Street circuit",
     "direction": "Clockwise",
     "location": {

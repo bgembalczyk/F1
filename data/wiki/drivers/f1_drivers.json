@@ -595,6 +595,32 @@
   },
   {
     "driver": {
+      "text": "Ray Allen",
+      "url": "https://en.wikipedia.org/wiki/Ray_Allen"
+    },
+    "is_active": false,
+    "is_world_champion": false,
+    "nationality": "United Kingdom",
+    "seasons_competed": [
+      {
+        "year": 1972,
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
+      }
+    ],
+    "drivers_championships": {
+      "count": 0,
+      "seasons": []
+    },
+    "race_entries": 1,
+    "race_starts": 0,
+    "pole_positions": 0,
+    "race_wins": 0,
+    "podiums": 0,
+    "fastest_laps": 0,
+    "points": "0"
+  },
+  {
+    "driver": {
       "text": "Philippe Alliot",
       "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
     },
@@ -3917,7 +3943,7 @@
       "text": "Valtteri Bottas",
       "url": "https://en.wikipedia.org/wiki/Valtteri_Bottas"
     },
-    "is_active": false,
+    "is_active": true,
     "is_world_champion": false,
     "nationality": "Finland",
     "seasons_competed": [
@@ -7922,7 +7948,7 @@
       "text": "Jack Doohan",
       "url": "https://en.wikipedia.org/wiki/Jack_Doohan"
     },
-    "is_active": true,
+    "is_active": false,
     "is_world_champion": false,
     "nationality": "Australia",
     "seasons_competed": [
@@ -17268,6 +17294,40 @@
   },
   {
     "driver": {
+      "text": "Arvid Lindblad",
+      "url": "https://en.wikipedia.org/wiki/Arvid_Lindblad"
+    },
+    "is_active": true,
+    "is_world_champion": false,
+    "nationality": "United Kingdom",
+    "seasons_competed": [
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "drivers_championships": {
+      "count": 0,
+      "seasons": []
+    },
+    "race_entries": 0,
+    "race_starts": 0,
+    "pole_positions": 0,
+    "race_wins": 0,
+    "podiums": 0,
+    "fastest_laps": 0,
+    "points": "0"
+  },
+  {
+    "driver": {
       "text": "Andy Linden",
       "url": "https://en.wikipedia.org/wiki/Andy_Linden_(racing_driver)"
     },
@@ -22055,7 +22115,7 @@
       "text": "Sergio Pérez",
       "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez"
     },
-    "is_active": false,
+    "is_active": true,
     "is_world_champion": false,
     "nationality": "Mexico",
     "seasons_competed": [
@@ -23859,6 +23919,32 @@
     },
     "race_entries": 3,
     "race_starts": 1,
+    "pole_positions": 0,
+    "race_wins": 0,
+    "podiums": 0,
+    "fastest_laps": 0,
+    "points": "0"
+  },
+  {
+    "driver": {
+      "text": "Brian Raubenheimer",
+      "url": "https://en.wikipedia.org/wiki/Brian_Raubenheimer"
+    },
+    "is_active": false,
+    "is_world_champion": false,
+    "nationality": "South Africa",
+    "seasons_competed": [
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      }
+    ],
+    "drivers_championships": {
+      "count": 0,
+      "seasons": []
+    },
+    "race_entries": 1,
+    "race_starts": 0,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 0,
@@ -29960,7 +30046,7 @@
       "text": "Yuki Tsunoda",
       "url": "https://en.wikipedia.org/wiki/Yuki_Tsunoda"
     },
-    "is_active": true,
+    "is_active": false,
     "is_world_champion": false,
     "nationality": "Japan",
     "seasons_competed": [

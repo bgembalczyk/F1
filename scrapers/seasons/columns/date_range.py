@@ -4,7 +4,7 @@ from typing import Any
 from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.results_parsing import has_year
+from scrapers.base.table.columns.helpers.results_parsing import ResultsParsingHelpers
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
@@ -45,7 +45,7 @@ class DateRangeColumn(BaseColumn):
             # Extract month and year from end_str
             # Add year if not present in end_str
             full_end = end_str
-            if self.year and not has_year(full_end):
+            if self.year and not ResultsParsingHelpers.has_year(full_end):
                 full_end = f"{full_end} {self.year}"
 
             # Try to extract month name from end_str for start
@@ -57,7 +57,7 @@ class DateRangeColumn(BaseColumn):
             if month_match:
                 month_name = month_match.group(1)
                 start_str = f"{start_str} {month_name}"
-                if self.year and not has_year(start_str):
+                if self.year and not ResultsParsingHelpers.has_year(start_str):
                     start_str = f"{start_str} {self.year}"
 
         # Parse dates
@@ -77,7 +77,7 @@ class DateRangeColumn(BaseColumn):
             return None
 
         # Add year if not present
-        if self.year and not has_year(text):
+        if self.year and not ResultsParsingHelpers.has_year(text):
             text = f"{text} {self.year}"
 
         parsed = parse_date_text(text)

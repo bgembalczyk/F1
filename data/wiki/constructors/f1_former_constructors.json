@@ -30,7 +30,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -79,7 +82,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -164,7 +170,10 @@
     "fastest_laps": 16,
     "podiums": 26,
     "wcc_titles": 0,
-    "wdc_titles": 2
+    "wdc_titles": 2,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -197,7 +206,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -238,7 +250,10 @@
     "fastest_laps": 2,
     "podiums": 2,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -275,7 +290,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -304,7 +322,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -333,7 +354,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -362,7 +386,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -487,7 +514,10 @@
     "fastest_laps": 0,
     "podiums": 8,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -516,7 +546,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -545,7 +578,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -574,7 +610,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -631,7 +670,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -684,7 +726,10 @@
     "fastest_laps": 0,
     "podiums": 15,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -717,7 +762,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -750,7 +798,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -843,7 +894,10 @@
     "fastest_laps": 36,
     "podiums": 102,
     "wcc_titles": 1,
-    "wdc_titles": 2
+    "wdc_titles": 2,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -876,7 +930,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1021,7 +1078,10 @@
     "fastest_laps": 41,
     "podiums": 124,
     "wcc_titles": 2,
-    "wdc_titles": 4
+    "wdc_titles": 4,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1050,7 +1110,10 @@
     "fastest_laps": 4,
     "podiums": 15,
     "wcc_titles": 1,
-    "wdc_titles": 1
+    "wdc_titles": 1,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1167,7 +1230,10 @@
     "fastest_laps": 15,
     "podiums": 61,
     "wcc_titles": 1,
-    "wdc_titles": 1
+    "wdc_titles": 1,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1200,7 +1266,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1229,7 +1298,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1266,7 +1338,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1295,7 +1370,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1340,7 +1418,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1397,7 +1478,10 @@
     "fastest_laps": 0,
     "podiums": 1,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1426,7 +1510,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1527,7 +1614,10 @@
     "fastest_laps": 14,
     "podiums": 58,
     "wcc_titles": 2,
-    "wdc_titles": 2
+    "wdc_titles": 2,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1572,7 +1662,10 @@
     "fastest_laps": 0,
     "podiums": 2,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1613,7 +1706,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1654,7 +1750,10 @@
     "fastest_laps": 2,
     "podiums": 2,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1683,7 +1782,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1720,7 +1822,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1749,7 +1854,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1778,7 +1886,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1843,7 +1954,10 @@
     "fastest_laps": 1,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1880,7 +1994,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1917,7 +2034,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1946,7 +2066,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1975,7 +2098,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2032,7 +2158,10 @@
     "fastest_laps": 0,
     "podiums": 3,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2065,7 +2194,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2134,7 +2266,10 @@
     "fastest_laps": 5,
     "podiums": 6,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2167,7 +2302,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2212,7 +2350,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2241,7 +2382,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2270,7 +2414,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2307,7 +2454,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2352,7 +2502,10 @@
     "fastest_laps": 1,
     "podiums": 2,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2381,7 +2534,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2426,7 +2582,10 @@
     "fastest_laps": 1,
     "podiums": 7,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2455,7 +2614,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2492,7 +2654,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2549,7 +2714,10 @@
     "fastest_laps": 2,
     "podiums": 9,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2594,7 +2762,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2639,7 +2810,10 @@
     "fastest_laps": 0,
     "podiums": 2,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2676,7 +2850,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2761,7 +2938,10 @@
     "fastest_laps": 2,
     "podiums": 19,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2790,7 +2970,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2819,7 +3002,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2852,7 +3038,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2921,7 +3110,10 @@
     "fastest_laps": 7,
     "podiums": 16,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2950,7 +3142,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2983,7 +3178,10 @@
     "fastest_laps": 1,
     "podiums": 1,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3016,7 +3214,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3061,7 +3262,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3090,7 +3294,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3123,7 +3330,10 @@
     "fastest_laps": 0,
     "podiums": 1,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3152,7 +3362,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3261,7 +3474,10 @@
     "fastest_laps": 10,
     "podiums": 50,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3346,7 +3562,10 @@
     "fastest_laps": 0,
     "podiums": 3,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3519,7 +3738,10 @@
     "fastest_laps": 70,
     "podiums": 172,
     "wcc_titles": 7,
-    "wdc_titles": 6
+    "wdc_titles": 6,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3552,7 +3774,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3593,7 +3818,10 @@
     "fastest_laps": 5,
     "podiums": 25,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3626,7 +3854,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3663,7 +3894,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3692,7 +3926,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3773,7 +4010,10 @@
     "fastest_laps": 7,
     "podiums": 21,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3802,7 +4042,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3847,7 +4090,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3916,7 +4162,10 @@
     "fastest_laps": 15,
     "podiums": 37,
     "wcc_titles": 0,
-    "wdc_titles": 2
+    "wdc_titles": 2,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3965,7 +4214,10 @@
     "fastest_laps": 12,
     "podiums": 21,
     "wcc_titles": 1,
-    "wdc_titles": 1
+    "wdc_titles": 1,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3994,7 +4246,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4023,7 +4278,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4056,7 +4314,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4085,7 +4346,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4114,7 +4378,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4223,7 +4490,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4256,7 +4526,10 @@
     "fastest_laps": 0,
     "podiums": 1,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4297,7 +4570,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": null
+    "wdc_titles": null,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4366,7 +4642,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4399,7 +4678,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4436,7 +4718,10 @@
     "fastest_laps": 1,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4477,7 +4762,10 @@
     "fastest_laps": 0,
     "podiums": 3,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4534,7 +4822,10 @@
     "fastest_laps": 0,
     "podiums": 5,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4579,7 +4870,10 @@
     "fastest_laps": 0,
     "podiums": 3,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4616,7 +4910,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4645,7 +4942,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4678,7 +4978,10 @@
     "fastest_laps": 0,
     "podiums": 4,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4707,7 +5010,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4832,7 +5138,10 @@
     "fastest_laps": 33,
     "podiums": 103,
     "wcc_titles": 2,
-    "wdc_titles": 2
+    "wdc_titles": 2,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4861,7 +5170,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4894,7 +5206,154 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
+  },
+  {
+    "constructor": {
+      "text": "Sauber",
+      "url": "https://en.wikipedia.org/wiki/Sauber"
+    },
+    "licensed_in": [
+      {
+        "text": "Switzerland",
+        "url": "https://en.wikipedia.org/wiki/Switzerland"
+      },
+      {
+        "text": "Germany",
+        "url": "https://en.wikipedia.org/wiki/Germany"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      },
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      },
+      {
+        "year": 1995,
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+      },
+      {
+        "year": 1996,
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+      },
+      {
+        "year": 1997,
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+      },
+      {
+        "year": 1998,
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+      },
+      {
+        "year": 1999,
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+      },
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      },
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      },
+      {
+        "year": 2002,
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      },
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      },
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      },
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      },
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      },
+      {
+        "year": 2014,
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+      },
+      {
+        "year": 2015,
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+      },
+      {
+        "year": 2016,
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+      },
+      {
+        "year": 2017,
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+      },
+      {
+        "year": 2018,
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 513,
+    "races_started": 510,
+    "drivers": 34,
+    "total_entries": 998,
+    "wins": 1,
+    "points": 939,
+    "poles": 1,
+    "fastest_laps": 5,
+    "podiums": 27,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4923,7 +5382,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4956,7 +5418,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5017,7 +5482,10 @@
     "fastest_laps": 2,
     "podiums": 7,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5046,7 +5514,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5087,7 +5558,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5120,7 +5594,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5157,7 +5634,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5186,7 +5666,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5215,7 +5698,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5252,7 +5738,10 @@
     "fastest_laps": 0,
     "podiums": 5,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5289,7 +5778,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5350,7 +5842,10 @@
     "fastest_laps": 3,
     "podiums": 2,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5379,7 +5874,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5412,7 +5910,10 @@
     "fastest_laps": 0,
     "podiums": 2,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5441,7 +5942,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5474,7 +5978,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5515,7 +6022,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5544,7 +6054,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5589,7 +6102,10 @@
     "fastest_laps": 2,
     "podiums": 3,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5670,7 +6186,10 @@
     "fastest_laps": 1,
     "podiums": 3,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5727,7 +6246,10 @@
     "fastest_laps": 3,
     "podiums": 13,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5756,7 +6278,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5897,7 +6422,10 @@
     "fastest_laps": 20,
     "podiums": 77,
     "wcc_titles": 1,
-    "wdc_titles": 2
+    "wdc_titles": 2,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5950,7 +6478,10 @@
     "fastest_laps": 6,
     "podiums": 13,
     "wcc_titles": 1,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5979,7 +6510,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6016,7 +6550,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": null,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6053,7 +6590,10 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6090,7 +6630,10 @@
     "fastest_laps": 2,
     "podiums": 13,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6135,6 +6678,9 @@
     "fastest_laps": 0,
     "podiums": 0,
     "wcc_titles": 0,
-    "wdc_titles": 0
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": []
   }
 ]

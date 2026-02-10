@@ -297,6 +297,34 @@
   },
   {
     "manufacturer": {
+      "text": "Audi",
+      "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"
+    },
+    "manufacturer_status": "current",
+    "engines_built_in": [
+      {
+        "text": "Germany",
+        "url": "https://en.wikipedia.org/wiki/Germany"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "points": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": 0,
+    "wdc": 0
+  },
+  {
+    "manufacturer": {
       "text": "ATS",
       "url": "https://en.wikipedia.org/wiki/Automobili_Turismo_e_Sport"
     },
@@ -1692,7 +1720,7 @@
     "poles": 0,
     "fastest_laps": 1,
     "podiums": 2,
-    "wcc": 0,
+    "wcc": null,
     "wdc": 0
   },
   {
@@ -1768,7 +1796,7 @@
       "text": "Honda",
       "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
     },
-    "manufacturer_status": "former",
+    "manufacturer_status": "current",
     "engines_built_in": [
       {
         "text": "Japan",
@@ -1899,6 +1927,10 @@
       {
         "year": 2021,
         "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
     "races_entered": 482,
@@ -1916,7 +1948,7 @@
       "text": "Honda RBPT",
       "url": "https://en.wikipedia.org/wiki/Honda_RBPT"
     },
-    "manufacturer_status": "current",
+    "manufacturer_status": "former",
     "engines_built_in": [
       {
         "text": "Japan",
@@ -3077,10 +3109,38 @@
   },
   {
     "manufacturer": {
+      "text": "Red Bull Ford",
+      "url": "https://en.wikipedia.org/wiki/Red_Bull_Powertrains"
+    },
+    "manufacturer_status": "current",
+    "engines_built_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": null,
+    "races_started": null,
+    "wins": null,
+    "points": null,
+    "poles": null,
+    "fastest_laps": null,
+    "podiums": null,
+    "wcc": 0,
+    "wdc": 0
+  },
+  {
+    "manufacturer": {
       "text": "Renault",
       "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
     },
-    "manufacturer_status": "current",
+    "manufacturer_status": "former",
     "engines_built_in": [
       {
         "text": "France",

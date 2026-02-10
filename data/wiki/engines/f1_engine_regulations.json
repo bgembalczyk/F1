@@ -145,7 +145,7 @@
     "rpm_limit": null,
     "fuel_composition": {
       "alcohol": "Prohibited",
-      "petrol": "Aviation 130 octane"
+      "petrol": "Avgas"
     }
   },
   {
@@ -195,7 +195,7 @@
     "rpm_limit": null,
     "fuel_composition": {
       "alcohol": "Prohibited",
-      "petrol": "Aviation 130 octane"
+      "petrol": "Pump Gas"
     }
   },
   {

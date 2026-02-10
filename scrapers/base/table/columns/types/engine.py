@@ -1,10 +1,8 @@
 from typing import Any
 
-
+from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.engine_parsing import build_engine_link_lookup
-from scrapers.base.table.columns.helpers.engine_parsing import extract_engine_class
-from scrapers.base.table.columns.helpers.engine_parsing import parse_engine_segment
+from scrapers.base.table.columns.helpers.engine_parsing import EngineParsingHelpers
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
@@ -17,13 +15,13 @@ class EngineColumn(BaseColumn):
         if cell is None:
             return None
 
-        segments = split_engine_cell_on_br(cell)
-        link_lookup = build_engine_link_lookup(ctx.links or [])
+        segments = split_cell_on_br(cell)
+        link_lookup = EngineParsingHelpers.build_link_lookup(ctx.links or [])
         engines: list[dict[str, Any]] = []
-        class_value = extract_engine_class(cell)
+        class_value = EngineParsingHelpers.extract_engine_class(cell)
 
         for segment in segments:
-            engine = parse_engine_segment(segment, link_lookup)
+            engine = EngineParsingHelpers.parse_segment(segment, link_lookup)
             if engine:
                 if class_value:
                     engine["class"] = class_value

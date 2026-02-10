@@ -40,7 +40,7 @@
         "fastest_lap": "-"
       },
       {
-        "race_length_completed": "60% - 100%",
+        "race_length_completed": "Between 60% and 100%",
         "1st": "Full",
         "2nd": "Full",
         "3rd": "Full",
@@ -242,7 +242,7 @@
         "fastest_lap": "-"
       },
       {
-        "race_length_completed": "Between two laps and less than 75%",
+        "race_length_completed": "Between two laps and 75%",
         "1st": "Half",
         "2nd": "Half",
         "3rd": "Half",
@@ -288,6 +288,10 @@
       {
         "year": 2025,
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
     "race_length_points": [
@@ -306,7 +310,7 @@
         "fastest_lap": "-"
       },
       {
-        "race_length_completed": "Between two racing laps and less than 25%",
+        "race_length_completed": "Between two full racing laps and 25%",
         "1st": "6",
         "2nd": "4",
         "3rd": "3",
@@ -348,7 +352,7 @@
         "fastest_lap": "1"
       },
       {
-        "race_length_completed": "75% - 100%",
+        "race_length_completed": "Between 75% and 100%",
         "1st": "Full",
         "2nd": "Full",
         "3rd": "Full",

@@ -2,7 +2,8 @@ from typing import Any
 
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers import build_driver_link_lookup, parse_entrant_segment
+from scrapers.base.table.columns.helpers.driver_parsing import DriverParsingHelpers
+from scrapers.base.table.columns.helpers.results_parsing import ResultsParsingHelpers
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
@@ -21,11 +22,11 @@ class EntrantColumn(BaseColumn):
             return []
 
         segments = split_cell_on_br(cell)
-        link_lookup = build_driver_link_lookup(ctx.links or [])
+        link_lookup = DriverParsingHelpers.build_link_lookup(ctx.links or [])
 
         entrants: list[dict[str, Any]] = []
         for segment in segments:
-            parsed = parse_entrant_segment(segment, link_lookup)
+            parsed = ResultsParsingHelpers.parse_entrant_segment(segment, link_lookup)
             if parsed:
                 entrants.append(parsed)
 
