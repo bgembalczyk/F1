@@ -113,6 +113,9 @@ def match_vehicle_prefix(a: Any, b: Any, *, min_len: int = 10) -> bool:
 # Text Parsing
 # ============================================================================
 
+_NON_ALPHANUM_PATTERN = re.compile(r"[^0-9a-zA-Z]+")
+_UNDERSCORE_PATTERN = re.compile(r"_+")
+
 
 def split_delimited_text(
     text: str | None, *, separators: str = r";|,|/", min_parts: int = 1
@@ -154,6 +157,6 @@ def drop_empty_fields(record: ExportRecord) -> ExportRecord:
 
 
 def to_snake_case(value: str) -> str:
-    cleaned = re.sub(r"[^0-9a-zA-Z]+", "_", value)
-    cleaned = re.sub(r"_+", "_", cleaned).strip("_")
+    cleaned = _NON_ALPHANUM_PATTERN.sub("_", value)
+    cleaned = _UNDERSCORE_PATTERN.sub("_", cleaned).strip("_")
     return cleaned.lower()
