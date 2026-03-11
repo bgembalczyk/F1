@@ -17,6 +17,7 @@ from scrapers.base.helpers.background import extract_background
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.url import normalize_url
 
 
 class EngineParsingHelpers:
@@ -101,7 +102,7 @@ class EngineParsingHelpers:
         Returns:
             Dictionary with engine data including name, specifications, etc.
         """
-        links = normalize_links(segment.find_all("a", href=True), base_url)
+        links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
         text = clean_wiki_text(segment.get_text(" ", strip=True))
 
         engine_link = None

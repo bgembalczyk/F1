@@ -190,8 +190,9 @@ class ResultsParsingHelpers:
         """
         from scrapers.base.helpers.links import normalize_links
         from scrapers.base.helpers.text import clean_wiki_text
+        from scrapers.base.helpers.url import normalize_url
 
-        links = normalize_links(segment.find_all("a", href=True), base_url)
+        links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
         text = clean_wiki_text(segment.get_text(" ", strip=True))
 
         entrant_link = None
@@ -224,10 +225,11 @@ class ResultsParsingHelpers:
             List of license records
         """
         from scrapers.base.helpers.links import normalize_links
+        from scrapers.base.helpers.url import normalize_url
 
         licenses: list[dict[str, str]] = []
         for segment in segments:
-            links = normalize_links(segment.find_all("a", href=True), base_url)
+            links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
             if links:
                 licenses.extend(links)
 
