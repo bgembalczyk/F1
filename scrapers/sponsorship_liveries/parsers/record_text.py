@@ -3,9 +3,37 @@ from typing import Any
 
 from scrapers.base.helpers.text import clean_wiki_text
 
+_YEAR_RANGE_RE = re.compile(r"\b(\d{4})\s*[–\-]\s*(\d{4})\b")
+_OPEN_RANGE_RE = re.compile(r"\b(\d{4})\s*[–\-]\s*$")
+# Upper bound for open-ended year ranges (e.g. "2022–").  F1 data will never
+# legitimately contain seasons beyond this year, so any year encountered in
+# a filtered record will be covered by the expanded range.
+_MAX_YEAR = 2099
+
 
 class SponsorshipRecordText:
     _year_re = re.compile(r"\b\d{4}\b")
+
+    @classmethod
+    def _years_from_param_text(cls, text: str) -> set[int]:
+        """Return all years covered by a year-param string, expanding ranges.
+
+        Examples:
+            "2022–2025"  →  {2022, 2023, 2024, 2025}
+            "2022–"      →  {2022, 2023, …, _MAX_YEAR}
+            "2026"       →  {2026}
+        """
+        m = _YEAR_RANGE_RE.search(text)
+        if m:
+            start, end = int(m.group(1)), int(m.group(2))
+            # min/max handles the unlikely case of a reversed range in the source
+            # data (e.g. "2025–2022"), treating it as a valid range rather than
+            # silently dropping years.
+            return set(range(min(start, end), max(start, end) + 1))
+        m = _OPEN_RANGE_RE.search(text.strip())
+        if m:
+            return set(range(int(m.group(1)), _MAX_YEAR + 1))
+        return {int(y) for y in cls._year_re.findall(text)}
 
     @classmethod
     def extract_year_params(cls, params: list[Any]) -> set[int]:
@@ -16,8 +44,7 @@ class SponsorshipRecordText:
                 text = param.get("text")
             if text is None:
                 text = str(param)
-            for match in cls._year_re.findall(text):
-                years.add(int(match))
+            years.update(cls._years_from_param_text(text))
         return years
 
     @staticmethod
