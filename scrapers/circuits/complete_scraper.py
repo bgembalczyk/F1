@@ -8,9 +8,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.composite_scraper import CompositeScraper
 from scrapers.base.composite_scraper import CompositeScraperChildren
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.models.services.circuit_service import CircuitService
@@ -85,11 +83,9 @@ class F1CompleteCircuitScraper(CompositeScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        F1CompleteCircuitScraper,
-        "circuits/f1_circuits_extended.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            debug_dir=Path("../../data/debug"),
-        ),
+    from scrapers.circuits.helpers.export import export_complete_circuits
+
+    export_complete_circuits(
+        output_dir=Path("../../data/wiki/circuits/complete_circuits"),
+        include_urls=True,
     )
