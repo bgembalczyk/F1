@@ -1,3 +1,4 @@
+from scrapers.base.parsers.helpers import extract_visible_text
 from scrapers.base.table.columns.constants import POINTS_WITH_TOTAL_RE
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.results_parsing import ResultsParsingHelpers
@@ -6,7 +7,7 @@ from scrapers.base.table.columns.types.base import BaseColumn
 
 class PointsColumn(BaseColumn):
     def parse(self, ctx: ColumnContext):
-        text = (ctx.clean_text or "").strip()
+        text = extract_visible_text(ctx).strip()
         if not text:
             return None
 
