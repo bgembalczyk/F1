@@ -9,6 +9,31 @@ class SponsorshipRecordText:
 
     _year_range_re = re.compile(r"\b(\d{4})\s*[–\-]\s*(\d{4})\b")
 
+    # Matches abbreviated end-year ranges like "1979–83" or "1977–82".
+    # The end year is 2 digits and must NOT be followed by another digit.
+    _year_range_abbrev_re = re.compile(r"\b(\d{4})\s*[–\-]\s*(\d{2})(?!\d)")
+
+    @classmethod
+    def _expand_year_range(cls, start_year: int, end_year: int) -> set[int]:
+        if start_year <= end_year:
+            return set(range(start_year, end_year + 1))
+        return set()
+
+    @classmethod
+    def _abbrev_end_year(cls, start_year: int, abbrev: int) -> int:
+        """Expand a 2-digit abbreviated end year relative to *start_year*.
+
+        For example: start_year=1979, abbrev=83 → 1983.
+        If the abbreviated value is less than the last two digits of
+        *start_year*, the next century is used (e.g. start=1999, abbrev=03
+        → 2003).
+        """
+        century = (start_year // 100) * 100
+        end_year = century + abbrev
+        if end_year < start_year:
+            end_year += 100
+        return end_year
+
     @classmethod
     def extract_year_params(cls, params: list[Any]) -> set[int]:
         years: set[int] = set()
@@ -18,12 +43,21 @@ class SponsorshipRecordText:
                 text = param.get("text")
             if text is None:
                 text = str(param)
-            # Expand year ranges like "2021–2023" to include all intermediate years.
+            # Expand full year ranges like "2021–2023".
             for range_match in cls._year_range_re.finditer(text):
                 start_year = int(range_match.group(1))
                 end_year = int(range_match.group(2))
-                if start_year <= end_year:
-                    years.update(range(start_year, end_year + 1))
+                years |= cls._expand_year_range(start_year, end_year)
+            # Expand abbreviated end-year ranges like "1979–83".
+            # _year_range_abbrev_re and _year_range_re are mutually exclusive:
+            # the former requires the end token to be exactly 2 digits (not
+            # followed by another digit), so "1979–1983" is only matched by
+            # the full-range pattern above.
+            for range_match in cls._year_range_abbrev_re.finditer(text):
+                start_year = int(range_match.group(1))
+                abbrev = int(range_match.group(2))
+                end_year = cls._abbrev_end_year(start_year, abbrev)
+                years |= cls._expand_year_range(start_year, end_year)
             # Also extract standalone years; set deduplication handles any overlap.
             for match in cls._year_re.findall(text):
                 years.add(int(match))
