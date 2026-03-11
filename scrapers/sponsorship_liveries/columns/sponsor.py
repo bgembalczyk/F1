@@ -8,6 +8,7 @@ from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 
 
 class SponsorColumn(BaseColumn):
@@ -25,16 +26,30 @@ class SponsorColumn(BaseColumn):
         if not text:
             return links
 
-        parts = self._split_parts(text)
-        if not parts:
+        parts_with_sep = self._split_parts_with_sep(text)
+        if not parts_with_sep:
             return links or []
 
         results: list[Any] = []
-        for part in parts:
-            item = self._parse_part(part, links)
-            if item is None:
-                continue
-            results.append(item)
+        slash_group: list[str] = []
+
+        def flush_slash_group() -> None:
+            if not slash_group:
+                return
+            parsed = [self._parse_part(p, links) for p in slash_group]
+            if len(slash_group) > 1:
+                parsed = self._propagate_slash_group_year_params(parsed)
+            for item in parsed:
+                if item is not None:
+                    results.append(item)
+            slash_group.clear()
+
+        for part, sep in parts_with_sep:
+            slash_group.append(part)
+            if sep != "/":
+                flush_slash_group()
+        flush_slash_group()
+
         return results
 
     @staticmethod
@@ -43,6 +58,67 @@ class SponsorColumn(BaseColumn):
         text = re.sub(r"\s+and\s+", ", ", text, flags=re.IGNORECASE)
         text = re.sub(r"^\s*and\s+", "", text, flags=re.IGNORECASE)
         return text
+
+    @staticmethod
+    def _split_parts_with_sep(text: str) -> list[tuple[str, str]]:
+        """Split text into (part, separator_after) tuples.
+
+        separator_after is one of ',', ';', '/' or '' for the last part.
+        """
+        if not text:
+            return []
+        parts: list[tuple[str, str]] = []
+        current: list[str] = []
+        depth = 0
+        for char in text:
+            if char == "(":
+                depth += 1
+            elif char == ")":
+                depth = max(depth - 1, 0)
+            if depth == 0 and char in {",", ";", "/"}:
+                part = "".join(current).strip()
+                if part:
+                    parts.append((part, char))
+                current = []
+                continue
+            current.append(char)
+        part = "".join(current).strip()
+        if part:
+            parts.append((part, ""))
+        return parts
+
+    @staticmethod
+    def _propagate_slash_group_year_params(
+            parsed: list[Any],
+    ) -> list[Any]:
+        """For items split by '/', propagate year params to items that lack them."""
+        year_params: list[Any] = []
+        for item in parsed:
+            if not isinstance(item, dict):
+                continue
+            item_params = item.get("params") or []
+            item_year_params = [
+                p for p in item_params
+                if SponsorshipRecordText.is_year_param(p)
+            ]
+            # Only propagate when all params on this item are year params,
+            # to avoid accidentally propagating Grand Prix scope params.
+            if item_year_params and len(item_year_params) == len(item_params):
+                year_params = item_year_params
+                break
+        if not year_params:
+            return parsed
+        result: list[Any] = []
+        for item in parsed:
+            if item is None:
+                result.append(item)
+            elif isinstance(item, dict) and "params" not in item:
+                result.append({**item, "params": year_params})
+            elif isinstance(item, str):
+                result.append({"text": item, "params": year_params})
+            else:
+                result.append(item)
+        return result
 
     @staticmethod
     def _split_parts(text: str) -> list[str]:
