@@ -8,6 +8,7 @@ from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 
 
 class SponsorColumn(BaseColumn):
@@ -45,7 +46,8 @@ class SponsorColumn(BaseColumn):
         return text
 
     @staticmethod
-    def _split_parts(text: str) -> list[str]:
+    def _split_on_major_separators(text: str) -> list[str]:
+        """Split text on ',' and ';' at depth 0 (not on '/')."""
         if not text:
             return []
         parts: list[str] = []
@@ -56,7 +58,7 @@ class SponsorColumn(BaseColumn):
                 depth += 1
             elif char == ")":
                 depth = max(depth - 1, 0)
-            if depth == 0 and char in {",", ";", "/"}:
+            if depth == 0 and char in {",", ";"}:
                 part = "".join(current).strip()
                 if part:
                     parts.append(part)
@@ -67,6 +69,81 @@ class SponsorColumn(BaseColumn):
         if part:
             parts.append(part)
         return parts
+
+    @staticmethod
+    def _split_slash_with_propagation(group: str) -> list[str]:
+        """Split a '/' group and propagate trailing year params to all sub-items.
+
+        When Wikipedia lists related entities as "Honda / HRC (2026)", the year
+        annotation "(2026)" applies to every item in the '/' group, not only the
+        last one.  This method detects that pattern and rewrites the sub-items so
+        that each carries the shared year annotation before they are processed
+        individually by :meth:`_parse_part`.
+
+        Examples::
+
+            "Honda / HRC (2026)"   →  ["Honda (2026)", "HRC (2026)"]
+            "A / B"                →  ["A", "B"]          (no year to propagate)
+            "A (2021) / B (2025)"  →  ["A (2021)", "B (2025)"]  (each has own)
+        """
+        # Split on "/" at depth 0
+        sub_parts: list[str] = []
+        current: list[str] = []
+        depth = 0
+        for char in group:
+            if char == "(":
+                depth += 1
+            elif char == ")":
+                depth = max(depth - 1, 0)
+            if depth == 0 and char == "/":
+                part = "".join(current).strip()
+                if part:
+                    sub_parts.append(part)
+                current = []
+                continue
+            current.append(char)
+        part = "".join(current).strip()
+        if part:
+            sub_parts.append(part)
+
+        if len(sub_parts) <= 1:
+            return sub_parts
+
+        # Extract year-only params from the LAST sub-part
+        _, last_params = SponsorColumn._extract_params(sub_parts[-1])
+        year_params = [p for p in last_params if SponsorshipRecordText.is_year_param(p)]
+        if not year_params:
+            return sub_parts
+
+        # Build the year annotation suffix, e.g. " (2026)" or " (2022–2025)".
+        # _extract_params returns params as plain strings (list[str]), so
+        # param_text() is used for forward-compatible string extraction.
+        year_suffix = (
+            " (" + ", ".join(SponsorshipRecordText.param_text(p) for p in year_params) + ")"
+        )
+
+        # Propagate to sub-parts that do not already carry year params
+        result: list[str] = []
+        for sub in sub_parts:
+            _, sub_params = SponsorColumn._extract_params(sub)
+            sub_year_params = [
+                p for p in sub_params if SponsorshipRecordText.is_year_param(p)
+            ]
+            if not sub_year_params:
+                result.append(sub + year_suffix)
+            else:
+                result.append(sub)
+        return result
+
+    @staticmethod
+    def _split_parts(text: str) -> list[str]:
+        if not text:
+            return []
+        major_parts = SponsorColumn._split_on_major_separators(text)
+        result: list[str] = []
+        for part in major_parts:
+            result.extend(SponsorColumn._split_slash_with_propagation(part))
+        return result
 
     @staticmethod
     def _parse_part(part: str, links: list[dict[str, Any]]) -> Any | None:
