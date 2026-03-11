@@ -5359,6 +5359,17 @@
           {
             "text": "Syntium",
             "url": "https://en.wikipedia.org/wiki/Petronas"
+          },
+          {
+            "text": "Hansen LTD"
+          },
+          {
+            "text": "Credit Suisse",
+            "url": "https://en.wikipedia.org/wiki/Credit_Suisse"
+          },
+          {
+            "text": "Dell",
+            "url": "https://en.wikipedia.org/wiki/Dell"
           }
         ]
       },
@@ -8235,7 +8246,10 @@
             "text": "555",
             "url": "https://en.wikipedia.org/wiki/State_Express_555"
           },
-          "Sonax",
+          {
+            "text": "Sonax",
+            "url": "https://de.wikipedia.org/wiki/Sonax"
+          },
           "Reynard",
           "Teleglobe",
           "bee-trade.com",
@@ -8464,10 +8478,53 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "main_colours": null,
+        "main_colours": [
+          "White",
+          "Black"
+        ],
         "additional_colours": null,
-        "main_sponsors": null,
-        "additional_major_sponsors": null
+        "main_sponsors": [
+          {
+            "text": "TWG AI",
+            "url": "https://en.wikipedia.org/wiki/TWG_Global"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Claro",
+            "url": "https://en.wikipedia.org/wiki/Claro_Company"
+          },
+          "Core Scientific",
+          "Gainbridge",
+          {
+            "text": "IFS",
+            "url": "https://en.wikipedia.org/wiki/IFS_AB"
+          },
+          {
+            "text": "Jim Beam",
+            "url": "https://en.wikipedia.org/wiki/Jim_Beam"
+          },
+          {
+            "text": "Telcel",
+            "url": "https://en.wikipedia.org/wiki/Telcel"
+          },
+          {
+            "text": "Tenneco",
+            "url": "https://en.wikipedia.org/wiki/Tenneco"
+          },
+          {
+            "text": "Tommy Hilfiger",
+            "url": "https://en.wikipedia.org/wiki/Tommy_Hilfiger_(company)"
+          },
+          {
+            "text": "Pirelli",
+            "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "GM",
+            "url": "https://en.wikipedia.org/wiki/General_Motors"
+          }
+        ]
       }
     ]
   },
@@ -10507,6 +10564,10 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
@@ -10556,6 +10617,10 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
@@ -10604,6 +10669,10 @@
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
@@ -10760,6 +10829,10 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
@@ -10809,6 +10882,10 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
@@ -10857,6 +10934,10 @@
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
+          {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
           {
             "text": "FIAT",
             "url": "https://en.wikipedia.org/wiki/FIAT"
@@ -10911,6 +10992,14 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
@@ -10959,6 +11048,14 @@
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
+          {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
@@ -11009,6 +11106,14 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
@@ -11056,6 +11161,14 @@
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
+          {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
@@ -11109,8 +11222,20 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Longines",
+            "url": "https://en.wikipedia.org/wiki/Longines"
           },
           {
             "text": "Magneti Marelli",
@@ -11157,8 +11282,20 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Longines",
+            "url": "https://en.wikipedia.org/wiki/Longines"
           },
           {
             "text": "Magneti Marelli",
@@ -11205,8 +11342,20 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Longines",
+            "url": "https://en.wikipedia.org/wiki/Longines"
           },
           {
             "text": "Magneti Marelli",
@@ -11253,12 +11402,24 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
             "text": "Marlboro",
             "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+          },
+          {
+            "text": "Longines",
+            "url": "https://en.wikipedia.org/wiki/Longines"
           },
           {
             "text": "Magneti Marelli",
@@ -11305,8 +11466,24 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Marlboro",
+            "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
+          },
+          {
+            "text": "Longines",
+            "url": "https://en.wikipedia.org/wiki/Longines"
           },
           {
             "text": "Magneti Marelli",
@@ -11353,8 +11530,20 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Marlboro",
+            "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
           },
           {
             "text": "Longines",
@@ -11405,8 +11594,20 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Marlboro",
+            "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
           },
           {
             "text": "Magneti Marelli",
@@ -11453,8 +11654,20 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Marlboro",
+            "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
           },
           {
             "text": "Longines",
@@ -11505,8 +11718,20 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Marlboro",
+            "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
           },
           {
             "text": "Longines",
@@ -11557,8 +11782,20 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Marlboro",
+            "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
           },
           {
             "text": "Magneti Marelli",
@@ -11605,8 +11842,20 @@
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Marlboro",
+            "url": "https://en.wikipedia.org/wiki/Marlboro_(cigarette)"
           },
           {
             "text": "Magneti Marelli",
@@ -11652,6 +11901,14 @@
         ],
         "main_sponsors": [],
         "additional_major_sponsors": [
+          {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
@@ -11709,6 +11966,14 @@
           }
         ],
         "additional_major_sponsors": [
+          {
+            "text": "Agip",
+            "url": "https://en.wikipedia.org/wiki/Agip"
+          },
+          {
+            "text": "FIAT",
+            "url": "https://en.wikipedia.org/wiki/FIAT"
+          },
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
@@ -12212,6 +12477,10 @@
           {
             "text": "AMD",
             "url": "https://en.wikipedia.org/wiki/Advanced_Micro_Devices"
+          },
+          {
+            "text": "Olympus",
+            "url": "https://en.wikipedia.org/wiki/Olympus_Corporation"
           },
           {
             "text": "Acer",
@@ -13691,7 +13960,7 @@
           }
         ],
         "main_colours": [
-          "Red"
+          "Dark Red"
         ],
         "additional_colours": [
           "Black"
@@ -14013,11 +14282,12 @@
           }
         ],
         "main_colours": [
-          "Red"
+          "Dark Red"
         ],
         "additional_colours": [
           "White",
-          "Black"
+          "Black",
+          "Blue"
         ],
         "main_sponsors": [
           {
@@ -14126,6 +14396,93 @@
           "Ambipar"
         ],
         "non-tobacco_alcohol_livery_changes": "In countries where alcohol sponsorship is outlawed, the Peroni logo, which appears from 2024 onward, is replaced with alternatives: as of 2025, the replacements are references to their Italian heritage. The HP logo was added to the livery from the 2024 Miami Grand Prix onward. From the 2024 Miami Grand Prix onward, Ferrari races HP collaborative blue liveries. The first marked the 70th anniversary of Ferrari's presence in North America which features two historic shades of blue-Azzurro La Plata and Azzurro Dino. Since 2022, Ferrari has run special liveries for Monza : 2022 celebrating the 100th anniversary of the circuit , 2023 celebrating their victory at the 24 Hours of Le Mans , and 2025 to celebrate Niki Lauda 's championship-winning Ferrari 312T . During the 2022 Monaco Grand Prix , Ferrari ran a cross-promotion with the Pixar movie Lightyear . For the Las Vegas Grand Prix, Ferrari ran a special livery in 2023, and a cross-promotion with the movie Gladiator II in 2024. The film's logo was present on the halo for the latter."
+      },
+      {
+        "season": [
+          {
+            "year": 2026,
+            "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Red"
+        ],
+        "additional_colours": [
+          "Black",
+          "White",
+          "Blue"
+        ],
+        "main_sponsors": [
+          {
+            "text": "HP",
+            "url": "https://en.wikipedia.org/wiki/HP_Inc."
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Ray-Ban",
+            "url": "https://en.wikipedia.org/wiki/Ray-Ban"
+          },
+          {
+            "text": "CEVA Logistics",
+            "url": "https://en.wikipedia.org/wiki/CEVA_Logistics"
+          },
+          "OMR Automotive",
+          {
+            "text": "Pirelli",
+            "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "Peroni Brewery",
+            "url": "https://en.wikipedia.org/wiki/Peroni_Brewery"
+          },
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "Bitdefender",
+            "url": "https://en.wikipedia.org/wiki/Bitdefender"
+          },
+          {
+            "text": "Richard Mille",
+            "url": "https://en.wikipedia.org/wiki/Richard_Mille"
+          },
+          {
+            "text": "Genesys",
+            "url": "https://en.wikipedia.org/wiki/Genesys_(company)"
+          },
+          {
+            "text": "Puma",
+            "url": "https://en.wikipedia.org/wiki/Puma_(brand)"
+          },
+          {
+            "text": "DXC Technology",
+            "url": "https://en.wikipedia.org/wiki/DXC_Technology"
+          },
+          "ZCG",
+          {
+            "text": "IBM",
+            "url": "https://en.wikipedia.org/wiki/IBM"
+          },
+          {
+            "text": "UniCredit",
+            "url": "https://en.wikipedia.org/wiki/UniCredit"
+          },
+          "Vantage",
+          "Ambipar",
+          {
+            "text": "ZYN",
+            "url": "https://en.wikipedia.org/wiki/Zyn"
+          },
+          "Bingx",
+          {
+            "text": "WHOOP",
+            "url": "https://en.wikipedia.org/wiki/WHOOP"
+          },
+          "Espacio"
+        ],
+        "non-tobacco_alcohol_livery_changes": null
       }
     ]
   },
@@ -14951,8 +15308,8 @@
           "Pink"
         ],
         "additional_colours": [
+          "Grey",
           "Black",
-          "Silver",
           "Magenta"
         ],
         "livery_sponsors": [
@@ -15282,7 +15639,56 @@
         "additional_colours": null,
         "livery_sponsors": [
           {
-            "text": "Baccara H.W. Ward & Co. Ltd."
+            "text": "Baccara"
+          }
+        ],
+        "additional_major_sponsors": [
+          "Armstrong",
+          {
+            "text": "Burmah",
+            "url": "https://en.wikipedia.org/wiki/Burmah_Oil"
+          },
+          {
+            "text": "Castrol",
+            "url": "https://en.wikipedia.org/wiki/Castrol"
+          },
+          {
+            "text": "Dunlop",
+            "url": "https://en.wikipedia.org/wiki/Dunlop_Rubber"
+          },
+          {
+            "text": "Girling",
+            "url": "https://en.wikipedia.org/wiki/Lucas_Industries"
+          },
+          {
+            "text": "Lucas Oil",
+            "url": "https://en.wikipedia.org/wiki/Lucas_Oil"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Spanish Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1969,
+            "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "additional_colours": null,
+        "livery_sponsors": [
+          {
+            "text": "H.W. Ward & Co. Ltd."
           }
         ],
         "additional_major_sponsors": [
@@ -15311,8 +15717,8 @@
         "grand_prix_scope": {
           "type": "range",
           "from": {
-            "text": "Spanish Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
+            "text": "German Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
           },
           "to": null
         }
@@ -16116,7 +16522,7 @@
           "SafetyCulture",
           "Play’n GO"
         ],
-        "notes": "Toyota Gazoo Racing 's partnership with Haas began at the 2024 United States Grand Prix . In 2024, the three United States races were also sponsored by Mercari , the Atlus video game Metaphor: ReFantazio was featured on the car at the 2024 Singapore Grand Prix , and Haas raced a special livery for the United States Grand Prix, featuring a stars and stripes design down the sidepods, tub and both rear and front wing endplates. For the 2025 Japanese Grand Prix , Haas launched a special livery paying homage to the cherry blossom season in Japan. The team raced a livery that paid homage to their debut season livery at the 2025 Canadian Grand Prix . Later, at the 2025 United States Grand Prix , Haas made another special livery, celebrating their return to the team's home country with a star-studded livery, their second home livery in a row."
+        "notes": "In 2024, the three United States races were also sponsored by Mercari , the Atlus video game Metaphor: ReFantazio was featured on the car at the Singapore Grand Prix , and Haas raced a special livery for the United States Grand Prix, featuring a stars and stripes design down the sidepods, tub and both rear and front wing endplates."
       },
       {
         "season": [
@@ -16194,13 +16600,9 @@
           },
           {
             "text": "Orion180"
-          },
-          {
-            "text": "Metaphor: ReFantazio",
-            "url": "https://en.wikipedia.org/wiki/Metaphor:_ReFantazio"
           }
         ],
-        "notes": "Toyota Gazoo Racing 's partnership with Haas began at the 2024 United States Grand Prix . In 2024, the three United States races were also sponsored by Mercari , the Atlus video game Metaphor: ReFantazio was featured on the car at the 2024 Singapore Grand Prix , and Haas raced a special livery for the United States Grand Prix, featuring a stars and stripes design down the sidepods, tub and both rear and front wing endplates. For the 2025 Japanese Grand Prix , Haas launched a special livery paying homage to the cherry blossom season in Japan. The team raced a livery that paid homage to their debut season livery at the 2025 Canadian Grand Prix . Later, at the 2025 United States Grand Prix , Haas made another special livery, celebrating their return to the team's home country with a star-studded livery, their second home livery in a row."
+        "notes": "In 2024, the three United States races were also sponsored by Mercari , the Atlus video game Metaphor: ReFantazio was featured on the car at the Singapore Grand Prix , and Haas raced a special livery for the United States Grand Prix, featuring a stars and stripes design down the sidepods, tub and both rear and front wing endplates."
       },
       {
         "season": [
@@ -16235,7 +16637,7 @@
             "text": "Alpinestars",
             "url": "https://en.wikipedia.org/wiki/Alpinestars"
           },
-          "Travismathew",
+          "TravisMathew",
           {
             "text": "MGM Resorts International",
             "url": "https://en.wikipedia.org/wiki/MGM_Resorts_International",
@@ -16267,7 +16669,78 @@
           },
           "Tricorp Workwear"
         ],
-        "notes": "Toyota Gazoo Racing 's partnership with Haas began at the 2024 United States Grand Prix . In 2024, the three United States races were also sponsored by Mercari , the Atlus video game Metaphor: ReFantazio was featured on the car at the 2024 Singapore Grand Prix , and Haas raced a special livery for the United States Grand Prix, featuring a stars and stripes design down the sidepods, tub and both rear and front wing endplates. For the 2025 Japanese Grand Prix , Haas launched a special livery paying homage to the cherry blossom season in Japan. The team raced a livery that paid homage to their debut season livery at the 2025 Canadian Grand Prix . Later, at the 2025 United States Grand Prix , Haas made another special livery, celebrating their return to the team's home country with a star-studded livery, their second home livery in a row."
+        "notes": "For the Japanese Grand Prix , Haas launched a special livery paying homage to the cherry blossom season in Japan. The team raced a livery that paid homage to their debut season livery at the Canadian Grand Prix . Later, at the United States Grand Prix , Haas made another special livery, celebrating their return to the team's home country with a star-studded livery, their second home livery in a row."
+      },
+      {
+        "season": [
+          {
+            "year": 2026,
+            "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "White"
+        ],
+        "additional_colours": [
+          "Red",
+          "Black"
+        ],
+        "livery_sponsors": [
+          {
+            "text": "Haas Automation",
+            "url": "https://en.wikipedia.org/wiki/Haas_Automation"
+          },
+          {
+            "text": "Toyota Gazoo Racing",
+            "url": "https://en.wikipedia.org/wiki/Toyota_Gazoo_Racing"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Pirelli",
+            "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "Alpinestars",
+            "url": "https://en.wikipedia.org/wiki/Alpinestars"
+          },
+          "TravisMathew",
+          {
+            "text": "Castore",
+            "url": "https://en.wikipedia.org/wiki/Castore"
+          },
+          "Play’n GO",
+          {
+            "text": "UChicago Medicine",
+            "url": "https://en.wikipedia.org/wiki/University_of_Chicago_Medical_Center"
+          },
+          "Orion180",
+          {
+            "text": "Mphasis",
+            "url": "https://en.wikipedia.org/wiki/Mphasis"
+          },
+          "Zoomex",
+          {
+            "text": "Infobip",
+            "url": "https://en.wikipedia.org/wiki/Infobip"
+          },
+          "IC",
+          {
+            "text": "CommScope",
+            "url": "https://en.wikipedia.org/wiki/CommScope"
+          },
+          {
+            "text": "Ruckus",
+            "url": "https://en.wikipedia.org/wiki/Ruckus_Networks"
+          },
+          {
+            "text": "Singha",
+            "url": "https://en.wikipedia.org/wiki/Singha"
+          },
+          "Vellamo Water",
+          "Fix Network"
+        ],
+        "notes": null
       }
     ]
   },
@@ -17530,6 +18003,10 @@
           {
             "text": "Du Pont",
             "url": "https://en.wikipedia.org/wiki/DuPont_(1802%E2%80%932017)"
+          },
+          {
+            "text": "Castrol",
+            "url": "https://en.wikipedia.org/wiki/Castrol"
           }
         ],
         "non-tobacco_alcohol_livery_changes": "Beck's was replaced by \"BEST'S\". The team used special livery with black engine covers for 2001 Italian Grand Prix in remembrance of the 11 September 2001 attacks in the United States . The team supported movies Terminator 3: Rise of the Machines at the 2003 British Grand Prix respectively. During the 2004 Monaco Grand Prix , the team promoted the movie Ocean's Twelve with a livery and a diamond worth $300,000 installed on the car's nose. Both cars ultimately retired; Webber's diamond was intact, though Klien's was not."
@@ -17749,7 +18226,25 @@
             "text": "Arisco",
             "url": "https://pt.wikipedia.org/wiki/Arisco"
           },
-          "Visit Ireland"
+          "Visit Ireland",
+          "Osama",
+          "Diavia",
+          "Unipart",
+          "ASR",
+          "Bruno Minelli",
+          "Ricardo",
+          "OMR Automotive",
+          "Fastar",
+          {
+            "text": "Polti",
+            "url": "https://en.wikipedia.org/wiki/Team_Polti"
+          },
+          "Correios",
+          "A Storia",
+          "Tecno Ferrari",
+          "Glass Medic",
+          "Perar",
+          "Delicius"
         ],
         "non-tobacco_alcohol_livery_changes": "At the 1994 French GP, Visit Ireland was replaced with \"Ireland 1 Italy 0\", after Ireland's victory against Italy at the 1994 FIFA World Cup"
       },
@@ -17764,8 +18259,8 @@
           "Aqua Green"
         ],
         "additional_colours": [
-          "Red",
           "White",
+          "Red",
           "Blue"
         ],
         "livery_sponsors": [
@@ -17785,7 +18280,19 @@
           {
             "text": "Polti",
             "url": "https://en.wikipedia.org/wiki/Team_Polti"
-          }
+          },
+          "Diavia",
+          "Unipart",
+          "APE",
+          {
+            "text": "Fujitsu ICL",
+            "url": "https://en.wikipedia.org/wiki/Fujitsu"
+          },
+          "Visit Ireland",
+          "Osama",
+          "ITC Ageco",
+          "Uliveto",
+          "Carrara"
         ],
         "non-tobacco_alcohol_livery_changes": "Kremlyovskaya Vodka logo was removed"
       },
@@ -17884,8 +18391,7 @@
           {
             "text": "Hewlett-Packard",
             "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
-          },
-          "RE"
+          }
         ],
         "non-tobacco_alcohol_livery_changes": "Benson & Hedges logo changed to \"Bitten Hisses\" or to snake-related puns with driver surnames such as \" Fisssssi \" and \" Sssssschuey \" (1997), \"Buzzing Hornets\" (1998 to 2000), \"Bitten Heroes\" (2001), and \"Be On Edge\" (2002 to 2005), Sobranie logo changed to \"Be On Edge\", replaced with the driver's given name or removed completely (2005), \"200\" at the 2001 USA GP (only on Jean Alesi's car for his 200th F1 start), \"Lazarus\" in the first races of 2004 The team used special livery with American flag decals for 2001 Italian Grand Prix and 2001 United States Grand Prix in remembrance of the 11 September 2001 attacks in the United States . At the 2005 Canadian Grand Prix , the slogan \"Bring Back Hockey\" was printed on the airbox as a reaction to the 2004-05 NHL lockout . Sobranie replaced Benson & Hedges at the 2004 and 2005 United States Grands Prix due to U.S. Tobacco Master Settlement Agreement conflicts."
       },
@@ -17902,14 +18408,30 @@
         "additional_colours": [
           "Black"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": [
+          {
+            "text": "Benson & Hedges",
+            "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+          }
+        ],
         "additional_major_sponsors": [
           {
             "text": "Repsol",
             "url": "https://en.wikipedia.org/wiki/Repsol"
           },
           {
+            "text": "MasterCard",
+            "url": "https://en.wikipedia.org/wiki/MasterCard"
+          },
+          {
             "text": "Mugen"
+          },
+          {
+            "text": "G de Z Capital"
+          },
+          {
+            "text": "S.Oliver",
+            "url": "https://en.wikipedia.org/wiki/S.Oliver"
           },
           {
             "text": "RTL"
@@ -17917,7 +18439,10 @@
           {
             "text": "Control Techniques"
           },
-          "RE",
+          {
+            "text": "Hewlett-Packard",
+            "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
+          },
           {
             "text": "NatWest",
             "url": "https://en.wikipedia.org/wiki/NatWest"
@@ -17956,8 +18481,17 @@
         "additional_colours": [
           "Black"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": [
+          {
+            "text": "Benson & Hedges",
+            "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+          }
+        ],
         "additional_major_sponsors": [
+          {
+            "text": "MasterCard",
+            "url": "https://en.wikipedia.org/wiki/MasterCard"
+          },
           {
             "text": "Mugen"
           },
@@ -17976,6 +18510,10 @@
             "text": "Pearl"
           },
           {
+            "text": "Hewlett-Packard",
+            "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
+          },
+          {
             "text": "Intercond"
           },
           {
@@ -17990,7 +18528,6 @@
             "text": "PlayStation",
             "url": "https://en.wikipedia.org/wiki/PlayStation_(console)"
           },
-          "RE",
           {
             "text": "NatWest",
             "url": "https://en.wikipedia.org/wiki/NatWest"
@@ -18015,8 +18552,17 @@
         "additional_colours": [
           "Black"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": [
+          {
+            "text": "Benson & Hedges",
+            "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+          }
+        ],
         "additional_major_sponsors": [
+          {
+            "text": "MasterCard",
+            "url": "https://en.wikipedia.org/wiki/MasterCard"
+          },
           {
             "text": "Deutsche Post",
             "url": "https://en.wikipedia.org/wiki/Deutsche_Post"
@@ -18024,6 +18570,14 @@
           {
             "text": "Honda",
             "url": "https://en.wikipedia.org/wiki/Honda"
+          },
+          {
+            "text": "Pilsner Urquell",
+            "url": "https://en.wikipedia.org/wiki/Pilsner_Urquell"
+          },
+          {
+            "text": "Hewlett-Packard",
+            "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
           },
           {
             "text": "Brother",
@@ -18040,7 +18594,6 @@
             "text": "PlayStation",
             "url": "https://en.wikipedia.org/wiki/PlayStation_(console)"
           },
-          "RE",
           {
             "text": "Imation",
             "url": "https://en.wikipedia.org/wiki/Imation"
@@ -18076,11 +18629,24 @@
         "additional_colours": [
           "Black"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": [
+          {
+            "text": "Benson & Hedges",
+            "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+          }
+        ],
         "additional_major_sponsors": [
           {
             "text": "MasterCard",
             "url": "https://en.wikipedia.org/wiki/MasterCard"
+          },
+          {
+            "text": "Deutsche Post",
+            "url": "https://en.wikipedia.org/wiki/Deutsche_Post"
+          },
+          {
+            "text": "Honda",
+            "url": "https://en.wikipedia.org/wiki/Honda"
           },
           {
             "text": "Pilsner Urquell",
@@ -18093,7 +18659,14 @@
             "text": "Hewlett-Packard",
             "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
           },
-          "RE",
+          {
+            "text": "Brother",
+            "url": "https://en.wikipedia.org/wiki/Brother_Industries"
+          },
+          {
+            "text": "Imation",
+            "url": "https://en.wikipedia.org/wiki/Imation"
+          },
           {
             "text": "Lucent",
             "url": "https://en.wikipedia.org/wiki/Lucent"
@@ -18120,6 +18693,10 @@
         ],
         "livery_sponsors": [
           {
+            "text": "Benson & Hedges",
+            "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+          },
+          {
             "text": "DHL",
             "url": "https://en.wikipedia.org/wiki/DHL"
           }
@@ -18141,7 +18718,10 @@
             "text": "Damovo",
             "url": "https://en.wikipedia.org/wiki/Damovo"
           },
-          "RE",
+          {
+            "text": "Brother",
+            "url": "https://en.wikipedia.org/wiki/Brother_Industries"
+          },
           {
             "text": "Imation",
             "url": "https://en.wikipedia.org/wiki/Imation"
@@ -18162,7 +18742,12 @@
         "additional_colours": [
           "Black"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": [
+          {
+            "text": "Benson & Hedges",
+            "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+          }
+        ],
         "additional_major_sponsors": [
           {
             "text": "CCTV",
@@ -18231,6 +18816,10 @@
           "Black"
         ],
         "livery_sponsors": [
+          {
+            "text": "Benson & Hedges",
+            "url": "https://en.wikipedia.org/wiki/Benson_%26_Hedges"
+          },
           {
             "text": "Sobranie",
             "url": "https://en.wikipedia.org/wiki/Sobranie_(cigarette)"
@@ -18992,6 +19581,10 @@
         ],
         "additional_major_sponsors": [
           {
+            "text": "Talbot",
+            "url": "https://en.wikipedia.org/wiki/Talbot_(automobile)"
+          },
+          {
             "text": "Michelin",
             "url": "https://en.wikipedia.org/wiki/Michelin"
           },
@@ -19141,6 +19734,10 @@
             "url": "https://en.wikipedia.org/wiki/Michelin"
           },
           {
+            "text": "LOTO",
+            "url": "https://en.wikipedia.org/wiki/Fran%C3%A7aise_des_Jeux_(lottery)"
+          },
+          {
             "text": "Ligier",
             "url": "https://en.wikipedia.org/wiki/Ligier"
           },
@@ -19151,6 +19748,10 @@
           {
             "text": "Pirelli",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "Renault",
+            "url": "https://en.wikipedia.org/wiki/Renault"
           }
         ],
         "non-tobacco_alcohol_livery_changes": null
@@ -19184,6 +19785,10 @@
             "url": "https://en.wikipedia.org/wiki/Michelin"
           },
           {
+            "text": "LOTO",
+            "url": "https://en.wikipedia.org/wiki/Fran%C3%A7aise_des_Jeux_(lottery)"
+          },
+          {
             "text": "Ligier",
             "url": "https://en.wikipedia.org/wiki/Ligier"
           },
@@ -19194,6 +19799,10 @@
           {
             "text": "Pirelli",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "Renault",
+            "url": "https://en.wikipedia.org/wiki/Renault"
           }
         ],
         "non-tobacco_alcohol_livery_changes": null
@@ -19223,12 +19832,20 @@
             "url": "https://en.wikipedia.org/wiki/Michelin"
           },
           {
+            "text": "LOTO",
+            "url": "https://en.wikipedia.org/wiki/Fran%C3%A7aise_des_Jeux_(lottery)"
+          },
+          {
             "text": "Ligier",
             "url": "https://en.wikipedia.org/wiki/Ligier"
           },
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Renault",
+            "url": "https://en.wikipedia.org/wiki/Renault"
           }
         ],
         "non-tobacco_alcohol_livery_changes": null
@@ -19258,8 +19875,20 @@
             "url": "https://en.wikipedia.org/wiki/Michelin"
           },
           {
+            "text": "LOTO",
+            "url": "https://en.wikipedia.org/wiki/Fran%C3%A7aise_des_Jeux_(lottery)"
+          },
+          {
             "text": "Ligier",
             "url": "https://en.wikipedia.org/wiki/Ligier"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Renault",
+            "url": "https://en.wikipedia.org/wiki/Renault"
           }
         ],
         "non-tobacco_alcohol_livery_changes": null
@@ -19287,6 +19916,10 @@
           {
             "text": "Michelin",
             "url": "https://en.wikipedia.org/wiki/Michelin"
+          },
+          {
+            "text": "LOTO",
+            "url": "https://en.wikipedia.org/wiki/Fran%C3%A7aise_des_Jeux_(lottery)"
           },
           {
             "text": "Ligier",
@@ -19512,6 +20145,10 @@
           {
             "text": "Giordana",
             "url": "https://en.wikipedia.org/wiki/Giordana"
+          },
+          {
+            "text": "Renault",
+            "url": "https://en.wikipedia.org/wiki/Renault"
           }
         ],
         "non-tobacco_alcohol_livery_changes": "Gitanes text was removed (1991-1993), Gitanes logo with a barcode over name (1994-1995), or \"Gitanes\" was replaced with \"Ligier\" and the Gitanes logo was replaced with a man with the French flag (1995)"
@@ -20688,7 +21325,7 @@
           },
           {
             "text": "Tamiya",
-            "url": "https://en.wikipedia.org/wiki/Corporation"
+            "url": "https://en.wikipedia.org/wiki/Tamiya_Corporation"
           },
           {
             "text": "Tommy Hilfiger",
@@ -21394,7 +22031,12 @@
           },
           "Pastiglie SMOG Tabletter",
           {
-            "text": "Woolmark Eifelland Caravans"
+            "text": "Woolmark",
+            "url": "https://en.wikipedia.org/wiki/Woolmark"
+          },
+          {
+            "text": "Eifelland Caravans",
+            "url": "https://en.wikipedia.org/wiki/Eifelland"
           }
         ],
         "grand_prix_scope": {
@@ -21458,7 +22100,11 @@
             "text": "Girling",
             "url": "https://en.wikipedia.org/wiki/Lucas_Industries#Girling"
           },
-          "Pastiglie SMOG Tabletter"
+          "Pastiglie SMOG Tabletter",
+          {
+            "text": "Woolmark",
+            "url": "https://en.wikipedia.org/wiki/Woolmark"
+          }
         ],
         "grand_prix_scope": {
           "type": "other"
@@ -21582,7 +22228,12 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "Meubles Marcel Arnold Sasol"
+            "text": "Meubles Marcel Arnold",
+            "url": "https://fr.wikipedia.org/wiki/Shell_Arnold_Team"
+          },
+          {
+            "text": "Sasol",
+            "url": "https://en.wikipedia.org/wiki/Sasol"
           }
         ],
         "grand_prix_scope": {
@@ -21617,7 +22268,12 @@
             "url": "https://en.wikipedia.org/wiki/STP_(motor_oil_company)"
           }
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "Meubles Marcel Arnold",
+            "url": "https://fr.wikipedia.org/wiki/Shell_Arnold_Team"
+          }
+        ],
         "grand_prix_scope": {
           "type": "other"
         }
@@ -22698,6 +23354,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "grand_prix_scope": {
@@ -22735,6 +23395,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "grand_prix_scope": {
@@ -22814,6 +23478,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "grand_prix_scope": {
@@ -22893,6 +23561,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "grand_prix_scope": {
@@ -22972,6 +23644,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "grand_prix_scope": {
@@ -24244,7 +24920,16 @@
           "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "Texaco",
+            "url": "https://en.wikipedia.org/wiki/Texaco"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          }
+        ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
       },
       {
@@ -24261,7 +24946,16 @@
           "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "Texaco",
+            "url": "https://en.wikipedia.org/wiki/Texaco"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          }
+        ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
       },
       {
@@ -24278,7 +24972,16 @@
           "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "Texaco",
+            "url": "https://en.wikipedia.org/wiki/Texaco"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          }
+        ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
       },
       {
@@ -24298,6 +25001,14 @@
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
+          {
+            "text": "Texaco",
+            "url": "https://en.wikipedia.org/wiki/Texaco"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
           {
             "text": "Champion",
             "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
@@ -24325,6 +25036,10 @@
           {
             "text": "Texaco",
             "url": "https://en.wikipedia.org/wiki/Texaco"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
             "text": "Champion",
@@ -24407,7 +25122,20 @@
           "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "Unipart",
+            "url": "https://en.wikipedia.org/wiki/Unipart"
+          },
+          {
+            "text": "Michelin",
+            "url": "https://en.wikipedia.org/wiki/Michelin"
+          },
+          {
+            "text": "Hercules",
+            "url": "https://en.wikipedia.org/wiki/Hercules_Aerospace"
+          }
+        ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
       },
       {
@@ -24432,6 +25160,14 @@
           {
             "text": "Unipart",
             "url": "https://en.wikipedia.org/wiki/Unipart"
+          },
+          {
+            "text": "Michelin",
+            "url": "https://en.wikipedia.org/wiki/Michelin"
+          },
+          {
+            "text": "Hercules",
+            "url": "https://en.wikipedia.org/wiki/Hercules_Aerospace"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
@@ -24452,6 +25188,10 @@
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
           {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
             "text": "Shell",
             "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
           },
@@ -24465,6 +25205,10 @@
           {
             "text": "Michelin",
             "url": "https://en.wikipedia.org/wiki/Michelin"
+          },
+          {
+            "text": "Hercules",
+            "url": "https://en.wikipedia.org/wiki/Hercules_Aerospace"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
@@ -24485,8 +25229,27 @@
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
           {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "Saima Avandero"
+          },
+          {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Hercules",
+            "url": "https://en.wikipedia.org/wiki/Hercules_Aerospace"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
@@ -24507,7 +25270,27 @@
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
           {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
             "text": "Saima Avandero"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Hercules",
+            "url": "https://en.wikipedia.org/wiki/Hercules_Aerospace"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
@@ -24527,6 +25310,22 @@
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
+          {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
           {
             "text": "Hercules",
             "url": "https://en.wikipedia.org/wiki/Hercules_Aerospace"
@@ -24550,12 +25349,28 @@
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
           {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
             "text": "Honda",
             "url": "https://en.wikipedia.org/wiki/Honda"
           },
           {
             "text": "Showa",
             "url": "https://en.wikipedia.org/wiki/Showa_Corporation"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
@@ -24576,8 +25391,32 @@
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
           {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "Honda",
+            "url": "https://en.wikipedia.org/wiki/Honda"
+          },
+          {
+            "text": "Showa",
+            "url": "https://en.wikipedia.org/wiki/Showa_Corporation"
+          },
+          {
             "text": "Courtaulds",
             "url": "https://en.wikipedia.org/wiki/Courtaulds"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
@@ -24596,7 +25435,36 @@
           "Red"
         ],
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "Honda",
+            "url": "https://en.wikipedia.org/wiki/Honda"
+          },
+          {
+            "text": "Showa",
+            "url": "https://en.wikipedia.org/wiki/Showa_Corporation"
+          },
+          {
+            "text": "Courtaulds",
+            "url": "https://en.wikipedia.org/wiki/Courtaulds"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          }
+        ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
       },
       {
@@ -24615,8 +25483,32 @@
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
           {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "Honda",
+            "url": "https://en.wikipedia.org/wiki/Honda"
+          },
+          {
             "text": "Showa",
             "url": "https://en.wikipedia.org/wiki/Showa_Corporation"
+          },
+          {
+            "text": "Courtaulds",
+            "url": "https://en.wikipedia.org/wiki/Courtaulds"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
             "text": "Camozzi"
@@ -24640,8 +25532,31 @@
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
           {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
             "text": "Honda",
             "url": "https://en.wikipedia.org/wiki/Honda"
+          },
+          {
+            "text": "Courtaulds",
+            "url": "https://en.wikipedia.org/wiki/Courtaulds"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Camozzi"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
@@ -24662,12 +25577,35 @@
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
           {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
             "text": "Kmart",
             "url": "https://en.wikipedia.org/wiki/Kmart_(United_States)"
           },
           {
+            "text": "Courtaulds",
+            "url": "https://en.wikipedia.org/wiki/Courtaulds"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
             "text": "Ford",
             "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+          },
+          {
+            "text": "Camozzi"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
@@ -24688,12 +25626,31 @@
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
           {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
             "text": "Shell",
             "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
           },
           {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "Courtaulds",
+            "url": "https://en.wikipedia.org/wiki/Courtaulds"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
             "text": "Peugeot",
             "url": "https://en.wikipedia.org/wiki/Peugeot"
+          },
+          {
+            "text": "Camozzi"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
@@ -24714,8 +25671,16 @@
         "livery_principal_sponsors": "Marlboro , Löwenbräu (1978-1979)",
         "additional_major_sponsors": [
           {
+            "text": "TAG Group",
+            "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
+          },
+          {
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
           },
           {
             "text": "Tencel"
@@ -24725,12 +25690,19 @@
             "url": "https://en.wikipedia.org/wiki/Courtaulds"
           },
           {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
             "text": "Mercedes-Benz",
             "url": "https://en.wikipedia.org/wiki/Mercedes-Benz"
           },
           {
             "text": "Loctite",
             "url": "https://en.wikipedia.org/wiki/Loctite"
+          },
+          {
+            "text": "Camozzi"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Marlboro was replaced by a chevron (1974), barcode (1984-1985, 1987-1992) or with the McLaren brand (1986, 1991-1993). At the 1978 United States Grand Prix, 1978 Canadian Grand Prix and 1979 Long Beach Grand Prix, McLaren raced a Löwenbräu livery to promote the brand. At the 1986 Portuguese Grand Prix, Keke Rosberg's car was painted yellow and white rather than red and white to advertise Marlboro Lights."
@@ -24878,6 +25850,10 @@
           },
           "Schuco",
           {
+            "text": "Loctite",
+            "url": "https://en.wikipedia.org/wiki/Loctite"
+          },
+          {
             "text": "Sun Microsystems",
             "url": "https://en.wikipedia.org/wiki/Sun_Microsystems"
           },
@@ -24932,8 +25908,20 @@
           },
           "Schuco",
           {
+            "text": "Loctite",
+            "url": "https://en.wikipedia.org/wiki/Loctite"
+          },
+          {
             "text": "Sun Microsystems",
             "url": "https://en.wikipedia.org/wiki/Sun_Microsystems"
+          },
+          {
+            "text": "Warsteiner",
+            "url": "https://en.wikipedia.org/wiki/Warsteiner"
+          },
+          {
+            "text": "Bridgestone",
+            "url": "https://en.wikipedia.org/wiki/Bridgestone"
           },
           {
             "text": "Fujitsu Siemens",
@@ -24979,8 +25967,20 @@
           },
           "Schuco",
           {
+            "text": "Loctite",
+            "url": "https://en.wikipedia.org/wiki/Loctite"
+          },
+          {
             "text": "Sun Microsystems",
             "url": "https://en.wikipedia.org/wiki/Sun_Microsystems"
+          },
+          {
+            "text": "Warsteiner",
+            "url": "https://en.wikipedia.org/wiki/Warsteiner"
+          },
+          {
+            "text": "Bridgestone",
+            "url": "https://en.wikipedia.org/wiki/Bridgestone"
           },
           {
             "text": "Fujitsu Siemens",
@@ -25030,12 +26030,20 @@
           },
           "Schuco",
           {
+            "text": "Loctite",
+            "url": "https://en.wikipedia.org/wiki/Loctite"
+          },
+          {
             "text": "Sun Microsystems",
             "url": "https://en.wikipedia.org/wiki/Sun_Microsystems"
           },
           {
             "text": "Siemens Mobile",
             "url": "https://en.wikipedia.org/wiki/Siemens_Mobile"
+          },
+          {
+            "text": "Warsteiner",
+            "url": "https://en.wikipedia.org/wiki/Warsteiner"
           },
           {
             "text": "Bridgestone",
@@ -25082,10 +26090,22 @@
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
           },
+          {
+            "text": "SAP",
+            "url": "https://en.wikipedia.org/wiki/SAP_SE"
+          },
           "Schuco",
+          {
+            "text": "Loctite",
+            "url": "https://en.wikipedia.org/wiki/Loctite"
+          },
           {
             "text": "Sun Microsystems",
             "url": "https://en.wikipedia.org/wiki/Sun_Microsystems"
+          },
+          {
+            "text": "Siemens Mobile",
+            "url": "https://en.wikipedia.org/wiki/Siemens_Mobile"
           },
           {
             "text": "Warsteiner",
@@ -25129,6 +26149,10 @@
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
           },
+          {
+            "text": "SAP",
+            "url": "https://en.wikipedia.org/wiki/SAP_SE"
+          },
           "Schuco",
           {
             "text": "Loctite",
@@ -25140,6 +26164,10 @@
           {
             "text": "Sun Microsystems",
             "url": "https://en.wikipedia.org/wiki/Sun_Microsystems"
+          },
+          {
+            "text": "Siemens Mobile",
+            "url": "https://en.wikipedia.org/wiki/Siemens_Mobile"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "\"West\" was removed or replaced with West logo (1997-1999), with driver's first names and \"Team\" (on team members clothing) (1999-2004) or driver's full name and \"Team McLaren\" (on team members clothing) (2005)."
@@ -25182,6 +26210,10 @@
           {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "SAP",
+            "url": "https://en.wikipedia.org/wiki/SAP_SE"
           },
           "Schuco",
           {
@@ -25269,7 +26301,8 @@
           "Chrome"
         ],
         "additional_colours": [
-          "Black and Red"
+          "Black",
+          "Red"
         ],
         "livery_principal_sponsors": null,
         "additional_major_sponsors": [
@@ -25278,8 +26311,8 @@
             "url": "https://en.wikipedia.org/wiki/Mercedes-Benz"
           },
           {
-            "text": "Mobil 1",
-            "url": "https://en.wikipedia.org/wiki/Mobil"
+            "text": "Mobil",
+            "url": "https://en.wikipedia.org/wiki/Mobil_Oil_Corporation"
           },
           {
             "text": "Johnnie Walker",
@@ -25303,7 +26336,7 @@
           },
           {
             "text": "Mobil 1",
-            "url": "https://en.wikipedia.org/wiki/Mobil"
+            "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
           "Schuco",
           {
@@ -25401,8 +26434,28 @@
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
           {
+            "text": "Johnnie Walker",
+            "url": "https://en.wikipedia.org/wiki/Johnnie_Walker"
+          },
+          {
+            "text": "Aigo",
+            "url": "https://en.wikipedia.org/wiki/Aigo"
+          },
+          {
+            "text": "Santander",
+            "url": "https://en.wikipedia.org/wiki/Santander_Group"
+          },
+          {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "Bridgestone",
+            "url": "https://en.wikipedia.org/wiki/Bridgestone"
+          },
+          {
+            "text": "SAP",
+            "url": "https://en.wikipedia.org/wiki/SAP_SE"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "In the 2011 Canadian Grand Prix, because of Vodafone's 45% stake in Verizon Wireless and the lack of other North American business operations, there is a co-branding of Vodafone and Verizon. In the 2012 United States Grand Prix, the Vodafone branding is replaced with Verizon Wireless (then a joint venture of Verizon and Vodafone). Vodafone partners replaced the brand in the 2013 Bahrain and United States Grands Prix. Zain was used in Bahrain whereas Verizon was used in Austin."
@@ -25434,12 +26487,24 @@
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
           {
+            "text": "Johnnie Walker",
+            "url": "https://en.wikipedia.org/wiki/Johnnie_Walker"
+          },
+          {
+            "text": "Aigo",
+            "url": "https://en.wikipedia.org/wiki/Aigo"
+          },
+          {
             "text": "Santander",
             "url": "https://en.wikipedia.org/wiki/Santander_Group"
           },
           {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "Bridgestone",
+            "url": "https://en.wikipedia.org/wiki/Bridgestone"
           },
           {
             "text": "SAP",
@@ -25473,6 +26538,14 @@
           {
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
+          },
+          {
+            "text": "Johnnie Walker",
+            "url": "https://en.wikipedia.org/wiki/Johnnie_Walker"
+          },
+          {
+            "text": "Aigo",
+            "url": "https://en.wikipedia.org/wiki/Aigo"
           },
           {
             "text": "Hugo Boss",
@@ -25566,6 +26639,10 @@
           {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "Pirelli",
+            "url": "https://en.wikipedia.org/wiki/Pirelli"
           },
           {
             "text": "Lucozade",
@@ -26158,7 +27235,7 @@
             "url": "https://en.wikipedia.org/wiki/King_Abdullah_University_of_Science_and_Technology"
           }
         ],
-        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Before being phased out for proper Vuse (previously Vype) and Velo (previously Lyft) branding, A Better Tomorrow was used to advertise British American Tobacco 's aforementioned smokeless product brands. The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors, most commonly Google and BAT, as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix. Commonly, fan-designed liveries will appear at certain Grands Prix, most commonly the Abu Dhabi Grand Prix , all in partnership with BAT."
+        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
       },
       {
         "season": [
@@ -26268,7 +27345,7 @@
             "url": "https://en.wikipedia.org/wiki/PartyCasino"
           }
         ],
-        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Before being phased out for proper Vuse (previously Vype) and Velo (previously Lyft) branding, A Better Tomorrow was used to advertise British American Tobacco 's aforementioned smokeless product brands. The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors, most commonly Google and BAT, as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix. Commonly, fan-designed liveries will appear at certain Grands Prix, most commonly the Abu Dhabi Grand Prix , all in partnership with BAT."
+        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
       },
       {
         "season": [
@@ -26406,7 +27483,7 @@
             "url": "https://en.wikipedia.org/wiki/McLaren_Artura"
           }
         ],
-        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Before being phased out for proper Vuse (previously Vype) and Velo (previously Lyft) branding, A Better Tomorrow was used to advertise British American Tobacco 's aforementioned smokeless product brands. The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors, most commonly Google and BAT, as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix. Commonly, fan-designed liveries will appear at certain Grands Prix, most commonly the Abu Dhabi Grand Prix , all in partnership with BAT."
+        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
       },
       {
         "season": [
@@ -26549,7 +27626,7 @@
             "url": "https://en.wikipedia.org/wiki/VMware"
           }
         ],
-        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Before being phased out for proper Vuse (previously Vype) and Velo (previously Lyft) branding, A Better Tomorrow was used to advertise British American Tobacco 's aforementioned smokeless product brands. The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors, most commonly Google and BAT, as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix. Commonly, fan-designed liveries will appear at certain Grands Prix, most commonly the Abu Dhabi Grand Prix , all in partnership with BAT."
+        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
       },
       {
         "season": [
@@ -26704,7 +27781,7 @@
             "url": "https://en.wikipedia.org/wiki/NTT_Data"
           }
         ],
-        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Before being phased out for proper Vuse (previously Vype) and Velo (previously Lyft) branding, A Better Tomorrow was used to advertise British American Tobacco 's aforementioned smokeless product brands. The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors, most commonly Google and BAT, as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix. Commonly, fan-designed liveries will appear at certain Grands Prix, most commonly the Abu Dhabi Grand Prix , all in partnership with BAT."
+        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
       },
       {
         "season": [
@@ -27166,7 +28243,8 @@
           "Silver"
         ],
         "additional_colours": [
-          "Green and Black"
+          "Green",
+          "Black"
         ],
         "main_sponsors": [
           {
@@ -27207,7 +28285,7 @@
           "Silver"
         ],
         "additional_colours": [
-          "Blue",
+          "Green",
           "Black"
         ],
         "main_sponsors": [
@@ -27249,7 +28327,7 @@
           "Silver"
         ],
         "additional_colours": [
-          "Blue",
+          "Green",
           "Black"
         ],
         "main_sponsors": [
@@ -27302,7 +28380,7 @@
           "Silver"
         ],
         "additional_colours": [
-          "Blue",
+          "Green",
           "Black"
         ],
         "main_sponsors": [
@@ -27355,7 +28433,7 @@
           "Silver"
         ],
         "additional_colours": [
-          "Blue",
+          "Green",
           "Black"
         ],
         "main_sponsors": [
@@ -27404,7 +28482,7 @@
           "Silver"
         ],
         "additional_colours": [
-          "Blue",
+          "Green",
           "Black"
         ],
         "main_sponsors": [
@@ -27465,7 +28543,7 @@
           "Silver"
         ],
         "additional_colours": [
-          "Blue",
+          "Green",
           "Black"
         ],
         "main_sponsors": [
@@ -27572,7 +28650,7 @@
           "Black"
         ],
         "additional_colours": [
-          "Blue",
+          "Green",
           "Red"
         ],
         "main_sponsors": [
@@ -27625,7 +28703,7 @@
           "Black"
         ],
         "additional_colours": [
-          "Blue",
+          "Green",
           "Red"
         ],
         "main_sponsors": [
@@ -27690,7 +28768,7 @@
           "Silver"
         ],
         "additional_colours": [
-          "Blue",
+          "Green",
           "Red"
         ],
         "main_sponsors": [
@@ -27892,11 +28970,108 @@
             "url": "https://en.wikipedia.org/wiki/SAP"
           },
           {
-            "text": "Signify N.V.",
+            "text": "Signify",
             "url": "https://en.wikipedia.org/wiki/Signify_N.V."
+          },
+          {
+            "text": "Adidas",
+            "url": "https://en.wikipedia.org/wiki/Adidas"
           }
         ],
         "notes": "For all Italian rounds ( Emilia Romagna , Monza ), Petronas promotes their Syntium fuels instead. For all races in June, starting with the 2023 Spanish Grand Prix , the Mercedes logo on the nose was changed to a rainbow star. The team raced with a black ring around the roll hoop at the 2022 Italian Grand Prix to mourn the death of Elizabeth II . For the 2024 Singapore Grand Prix , Mercedes ran a special livery celebrating the 50th anniversary of Petronas. For Lewis Hamilton 's final race at Mercedes, the 2024 Abu Dhabi Grand Prix , numerous fans submitted their names to be featured on the car."
+      },
+      {
+        "season": [
+          {
+            "year": 2026,
+            "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Silver",
+          "Black"
+        ],
+        "additional_colours": [
+          "Green"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Petronas",
+            "url": "https://en.wikipedia.org/wiki/Petronas"
+          },
+          "Mercedes-AMG"
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "AMD",
+            "url": "https://en.wikipedia.org/wiki/AMD"
+          },
+          {
+            "text": "Ineos",
+            "url": "https://en.wikipedia.org/wiki/Ineos"
+          },
+          {
+            "text": "Pirelli",
+            "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "IWC Schaffhausen",
+            "url": "https://en.wikipedia.org/wiki/International_Watch_Company"
+          },
+          {
+            "text": "TeamViewer",
+            "url": "https://en.wikipedia.org/wiki/TeamViewer"
+          },
+          {
+            "text": "CrowdStrike",
+            "url": "https://en.wikipedia.org/wiki/CrowdStrike"
+          },
+          {
+            "text": "Akkodis",
+            "url": "https://en.wikipedia.org/wiki/Akkodis"
+          },
+          {
+            "text": "Solera Holdings",
+            "url": "https://en.wikipedia.org/wiki/Solera_Holdings"
+          },
+          {
+            "text": "Qualcomm Snapdragon",
+            "url": "https://en.wikipedia.org/wiki/Qualcomm_Snapdragon"
+          },
+          {
+            "text": "Einhell",
+            "url": "https://en.wikipedia.org/wiki/Einhell"
+          },
+          {
+            "text": "G42",
+            "url": "https://en.wikipedia.org/wiki/G42_(company)"
+          },
+          {
+            "text": "SAP",
+            "url": "https://en.wikipedia.org/wiki/SAP"
+          },
+          {
+            "text": "Signify",
+            "url": "https://en.wikipedia.org/wiki/Signify_N.V."
+          },
+          {
+            "text": "Microsoft",
+            "url": "https://en.wikipedia.org/wiki/Microsoft"
+          },
+          {
+            "text": "Nubank",
+            "url": "https://en.wikipedia.org/wiki/Nubank"
+          },
+          {
+            "text": "Marriott Bonvoy",
+            "url": "https://en.wikipedia.org/wiki/Marriott_International"
+          },
+          {
+            "text": "Adidas",
+            "url": "https://en.wikipedia.org/wiki/Adidas"
+          }
+        ],
+        "notes": null
       }
     ]
   },
@@ -28121,10 +29296,10 @@
           }
         ],
         "main_colours": [
-          "Yellow"
+          "Black"
         ],
         "additional_colours": [
-          "Black"
+          "Yellow"
         ],
         "main_sponsors": [
           {
@@ -28155,10 +29330,10 @@
           }
         ],
         "main_colours": [
-          "Yellow"
+          "Black"
         ],
         "additional_colours": [
-          "Black"
+          "Yellow"
         ],
         "main_sponsors": [
           {
@@ -28192,10 +29367,10 @@
           }
         ],
         "main_colours": [
-          "Yellow"
+          "Black"
         ],
         "additional_colours": [
-          "Black"
+          "Yellow"
         ],
         "main_sponsors": [
           {
@@ -28688,6 +29863,10 @@
         ],
         "main_sponsors": [
           {
+            "text": "Fondmetal",
+            "url": "https://en.wikipedia.org/wiki/Fondmetal"
+          },
+          {
             "text": "Telefónica",
             "url": "https://en.wikipedia.org/wiki/Telef%C3%B3nica"
           }
@@ -28698,10 +29877,6 @@
             "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
           },
           "Roces",
-          {
-            "text": "Fondmetal",
-            "url": "https://en.wikipedia.org/wiki/Fondmetal"
-          },
           {
             "text": "Quilmes",
             "url": "https://en.wikipedia.org/wiki/Cerveza_Quilmes"
@@ -28738,6 +29913,10 @@
         ],
         "main_sponsors": [
           {
+            "text": "Fondmetal",
+            "url": "https://en.wikipedia.org/wiki/Fondmetal"
+          },
+          {
             "text": "Telefónica",
             "url": "https://en.wikipedia.org/wiki/Telef%C3%B3nica"
           }
@@ -28746,10 +29925,6 @@
           "PSN",
           "Doimo",
           "COCIF",
-          {
-            "text": "Fondmetal",
-            "url": "https://en.wikipedia.org/wiki/Fondmetal"
-          },
           "PDP",
           {
             "text": "Musashi",
@@ -29740,10 +30915,18 @@
             "url": "https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_Bic"
           },
           {
+            "text": "Alcatel",
+            "url": "https://en.wikipedia.org/wiki/Alcatel-Lucent"
+          },
+          {
             "text": "Peugeot",
             "url": "https://en.wikipedia.org/wiki/Peugeot"
           },
           "Catia Solutions",
+          {
+            "text": "Canal+",
+            "url": "https://en.wikipedia.org/wiki/Canal%2B_(French_TV_channel)"
+          },
           {
             "text": "Bridgestone",
             "url": "https://en.wikipedia.org/wiki/Bridgestone"
@@ -29789,6 +30972,10 @@
           {
             "text": "Alcatel",
             "url": "https://en.wikipedia.org/wiki/Alcatel-Lucent"
+          },
+          {
+            "text": "Peugeot",
+            "url": "https://en.wikipedia.org/wiki/Peugeot"
           },
           {
             "text": "Sodexho",
@@ -29910,7 +31097,7 @@
           },
           {
             "text": "Česká pojišt'ovna",
-            "url": "https://cs.wikipedia.org/wiki/%C4%8Cesk%C3%A1_poji%C5%A1t%27ovna"
+            "url": "https://cs.wikipedia.org/wiki/Generali_%C4%8Cesk%C3%A1_poji%C5%A1%C5%A5ovna"
           },
           "Catia Solutions",
           {
@@ -30053,16 +31240,16 @@
         ],
         "main_sponsors": [
           {
+            "text": "Red Bull",
+            "url": "https://en.wikipedia.org/wiki/Red_Bull"
+          },
+          {
             "text": "Visa",
             "url": "https://en.wikipedia.org/wiki/Visa_Inc."
           },
           {
             "text": "Cash App",
             "url": "https://en.wikipedia.org/wiki/Cash_App"
-          },
-          {
-            "text": "Red Bull",
-            "url": "https://en.wikipedia.org/wiki/Red_Bull"
           }
         ],
         "additional_major_sponsors": [
@@ -30098,7 +31285,7 @@
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
           }
         ],
-        "special_liveries": "RB raced a special Chameleon Card livery for the 2024 Miami Grand Prix. The livery was also applied on RB's F1 Academy driver Amna Al Qubaisi 's car for the Miami round. For the Singapore Grand Prix, a denim livery designed by sponsor Hugo was utilised. A special livery was used at the 2025 Miami Grand Prix that promoted Red Bull's Summer edition."
+        "special_liveries": "RB raced a special Chameleon Card livery for the 2024 Miami Grand Prix. The livery was also applied on RB's F1 Academy driver Amna Al Qubaisi 's car for the Miami round. For the Singapore Grand Prix, a denim livery designed by sponsor Hugo was utilised."
       },
       {
         "season": [
@@ -30111,12 +31298,16 @@
           "White"
         ],
         "additional_colours": [
+          "Blue",
           "Red",
           "Yellow",
-          "Blue",
           "Black"
         ],
         "main_sponsors": [
+          {
+            "text": "Red Bull",
+            "url": "https://en.wikipedia.org/wiki/Red_Bull"
+          },
           {
             "text": "Visa",
             "url": "https://en.wikipedia.org/wiki/Visa_Inc."
@@ -30124,16 +31315,20 @@
           {
             "text": "Cash App",
             "url": "https://en.wikipedia.org/wiki/Cash_App"
-          },
-          {
-            "text": "Red Bull",
-            "url": "https://en.wikipedia.org/wiki/Red_Bull"
           }
         ],
         "additional_major_sponsors": [
           {
             "text": "Pirelli",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "HRC",
+            "url": "https://en.wikipedia.org/wiki/Honda_Racing_Corporation"
+          },
+          {
+            "text": "Honda",
+            "url": "https://en.wikipedia.org/wiki/Honda"
           },
           {
             "text": "Dynatrace",
@@ -30147,15 +31342,8 @@
             "text": "Student.com",
             "url": "https://en.wikipedia.org/wiki/Student.com"
           },
+          "Yugo",
           "NEFT Vodka",
-          {
-            "text": "HRC",
-            "url": "https://en.wikipedia.org/wiki/Honda_Racing_Corporation"
-          },
-          {
-            "text": "Honda",
-            "url": "https://en.wikipedia.org/wiki/Honda"
-          },
           {
             "text": "Epicor",
             "url": "https://en.wikipedia.org/wiki/Epicor"
@@ -30171,9 +31359,96 @@
           {
             "text": "Hahn Air",
             "url": "https://en.wikipedia.org/wiki/Hahn_Air_Systems_GmbH"
+          },
+          "XMTrading",
+          "RebelDot"
+        ],
+        "special_liveries": "A special livery was used at the 2025 Miami Grand Prix that promoted Red Bull's Summer edition."
+      },
+      {
+        "season": [
+          {
+            "year": 2026,
+            "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "special_liveries": "RB raced a special Chameleon Card livery for the 2024 Miami Grand Prix. The livery was also applied on RB's F1 Academy driver Amna Al Qubaisi 's car for the Miami round. For the Singapore Grand Prix, a denim livery designed by sponsor Hugo was utilised. A special livery was used at the 2025 Miami Grand Prix that promoted Red Bull's Summer edition."
+        "main_colours": [
+          "White"
+        ],
+        "additional_colours": [
+          "Blue",
+          "Red",
+          "Yellow",
+          "Black"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Red Bull",
+            "url": "https://en.wikipedia.org/wiki/Red_Bull"
+          },
+          {
+            "text": "Visa",
+            "url": "https://en.wikipedia.org/wiki/Visa_Inc."
+          },
+          {
+            "text": "Cash App",
+            "url": "https://en.wikipedia.org/wiki/Cash_App"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Pirelli",
+            "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "Ford Racing",
+            "url": "https://en.wikipedia.org/wiki/Ford_Racing"
+          },
+          {
+            "text": "Dynatrace",
+            "url": "https://en.wikipedia.org/wiki/Dynatrace"
+          },
+          {
+            "text": "Tudor Watches",
+            "url": "https://en.wikipedia.org/wiki/Tudor_Watches"
+          },
+          {
+            "text": "Student.com",
+            "url": "https://en.wikipedia.org/wiki/Student.com"
+          },
+          "Yugo",
+          "NEFT Vodka",
+          {
+            "text": "Epicor",
+            "url": "https://en.wikipedia.org/wiki/Epicor"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "Mobil",
+            "url": "https://en.wikipedia.org/wiki/Mobil"
+          },
+          {
+            "text": "Hahn Air",
+            "url": "https://en.wikipedia.org/wiki/Hahn_Air_Systems_GmbH"
+          },
+          {
+            "text": "Octave"
+          },
+          {
+            "text": "Confluent",
+            "url": "https://en.wikipedia.org/wiki/Confluent"
+          },
+          {
+            "text": "Nouryon",
+            "url": "https://en.wikipedia.org/wiki/Nouryon"
+          },
+          "XMTrading",
+          "RebelDot"
+        ],
+        "special_liveries": "A special livery was used at the 2025 Miami Grand Prix that promoted Red Bull's Summer edition."
       }
     ]
   },
@@ -30396,7 +31671,7 @@
           }
         ],
         "main_colours": [
-          "Blue"
+          "Dark Blue"
         ],
         "additional_colours": [
           "Red",
@@ -30429,7 +31704,7 @@
           }
         ],
         "main_colours": [
-          "Blue"
+          "Dark Blue"
         ],
         "additional_colours": [
           "Red",
@@ -30466,7 +31741,7 @@
           }
         ],
         "main_colours": [
-          "Blue"
+          "Dark Blue"
         ],
         "additional_colours": [
           "Red",
@@ -30502,7 +31777,7 @@
           }
         ],
         "main_colours": [
-          "Blue"
+          "Dark Blue"
         ],
         "additional_colours": [
           "Red",
@@ -30531,7 +31806,7 @@
           }
         ],
         "main_colours": [
-          "Blue"
+          "Dark Blue"
         ],
         "additional_colours": [
           "Red",
@@ -30697,7 +31972,7 @@
           }
         ],
         "main_colours": [
-          "Blue",
+          "Dark Blue",
           "Purple"
         ],
         "additional_colours": [
@@ -30770,7 +32045,7 @@
           }
         ],
         "main_colours": [
-          "Blue",
+          "Dark Blue",
           "Purple"
         ],
         "additional_colours": [
@@ -31397,7 +32672,7 @@
             "url": "https://en.wikipedia.org/wiki/Tezos"
           },
           {
-            "text": "Armor All",
+            "text": "ArmorAll",
             "url": "https://en.wikipedia.org/wiki/Armor_All"
           }
         ],
@@ -31504,7 +32779,7 @@
             "url": "https://en.wikipedia.org/wiki/Walmart"
           },
           {
-            "text": "Armor All",
+            "text": "ArmorAll",
             "url": "https://en.wikipedia.org/wiki/Armor_All"
           },
           {
@@ -31556,6 +32831,10 @@
             "url": "https://en.wikipedia.org/wiki/Rauch_(company)"
           },
           {
+            "text": "Claro",
+            "url": "https://en.wikipedia.org/wiki/Claro_(company)"
+          },
+          {
             "text": "Citrix",
             "url": "https://en.wikipedia.org/wiki/Citrix_Systems"
           },
@@ -31574,6 +32853,13 @@
           {
             "text": "Esso",
             "url": "https://en.wikipedia.org/wiki/Esso"
+          },
+          {
+            "text": "Infinitum",
+            "url": "https://en.wikipedia.org/wiki/Telmex"
+          },
+          {
+            "text": "INTERproteccion"
           },
           {
             "text": "Hewlett Packard Enterprise",
@@ -31600,8 +32886,32 @@
             "url": "https://en.wikipedia.org/wiki/Cash_App"
           },
           {
+            "text": "Arctic Wolf",
+            "url": "https://en.wikipedia.org/wiki/Arctic_Wolf_Networks"
+          },
+          {
+            "text": "Walmart",
+            "url": "https://en.wikipedia.org/wiki/Walmart"
+          },
+          {
+            "text": "ArmorAll",
+            "url": "https://en.wikipedia.org/wiki/Armor_All"
+          },
+          {
+            "text": "Bybit",
+            "url": "https://en.wikipedia.org/wiki/Bybit"
+          },
+          {
             "text": "Hard Rock Cafe",
             "url": "https://en.wikipedia.org/wiki/Hard_Rock_Cafe"
+          },
+          {
+            "text": "Zoom",
+            "url": "https://en.wikipedia.org/wiki/Zoom_(software)"
+          },
+          {
+            "text": "Heineken",
+            "url": "https://en.wikipedia.org/wiki/Heineken_N.V."
           },
           {
             "text": "Rokt",
@@ -31699,6 +33009,10 @@
             "url": "https://en.wikipedia.org/wiki/Walmart"
           },
           {
+            "text": "ArmorAll",
+            "url": "https://en.wikipedia.org/wiki/Armor_All"
+          },
+          {
             "text": "Bybit",
             "url": "https://en.wikipedia.org/wiki/Bybit"
           },
@@ -31709,6 +33023,18 @@
           {
             "text": "Zoom",
             "url": "https://en.wikipedia.org/wiki/Zoom_(software)"
+          },
+          {
+            "text": "Heineken",
+            "url": "https://en.wikipedia.org/wiki/Heineken_N.V."
+          },
+          {
+            "text": "Rokt",
+            "url": "https://en.wikipedia.org/wiki/Rokt"
+          },
+          {
+            "text": "Castore",
+            "url": "https://en.wikipedia.org/wiki/Castore"
           },
           {
             "text": "CDW",
@@ -31790,12 +33116,16 @@
             "url": "https://en.wikipedia.org/wiki/Honda"
           },
           {
-            "text": "Armor All",
+            "text": "ArmorAll",
             "url": "https://en.wikipedia.org/wiki/Armor_All"
           },
           {
             "text": "Hard Rock Cafe",
             "url": "https://en.wikipedia.org/wiki/Hard_Rock_Cafe"
+          },
+          {
+            "text": "Heineken",
+            "url": "https://en.wikipedia.org/wiki/Heineken_N.V."
           },
           {
             "text": "Rokt",
@@ -31848,6 +33178,114 @@
           }
         ],
         "special_liveries": "In 2023, the team raced special liveries at all three United States Grands Prix: Miami, Austin and Las Vegas. In 2024, the team intended to enter three different special liveries that would be used for the British, Singapore and United States Grands Prix, but only raced one in Britain; the program was cancelled for the latter two Grands Prix due to weight problems. All of these designs were fan-designed. At the Chinese Grand Prix, the Mobil 1 decals were supplemented with a 50th anniversary decal. A variation of the white Red Bull design first used at the 2021 Turkish Grand Prix was used for the 2025 Japanese Grand Prix , to commemorate their partnership with Honda in what would be their last Japanese Grand Prix together before they moved to Aston Martin ."
+      },
+      {
+        "season": [
+          {
+            "year": 2026,
+            "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Dark Blue"
+        ],
+        "additional_colours": [
+          "Red",
+          "Yellow",
+          "Black"
+        ],
+        "livery_sponsors": [
+          {
+            "text": "Red Bull",
+            "url": "https://en.wikipedia.org/wiki/Red_Bull"
+          },
+          {
+            "text": "Oracle",
+            "url": "https://en.wikipedia.org/wiki/Oracle_Corporation"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Pirelli",
+            "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "Ford Racing",
+            "url": "https://en.wikipedia.org/wiki/Ford_Racing"
+          },
+          {
+            "text": "Siemens",
+            "url": "https://en.wikipedia.org/wiki/Siemens"
+          },
+          {
+            "text": "Mobil 1",
+            "url": "https://en.wikipedia.org/wiki/Mobil_1"
+          },
+          {
+            "text": "Esso",
+            "url": "https://en.wikipedia.org/wiki/Esso"
+          },
+          {
+            "text": "TAG Heuer",
+            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
+          },
+          {
+            "text": "Hard Rock Cafe",
+            "url": "https://en.wikipedia.org/wiki/Hard_Rock_Cafe"
+          },
+          {
+            "text": "Rokt",
+            "url": "https://en.wikipedia.org/wiki/Rokt"
+          },
+          {
+            "text": "Visa",
+            "url": "https://en.wikipedia.org/wiki/Visa_Inc."
+          },
+          {
+            "text": "Pepe Jeans",
+            "url": "https://en.wikipedia.org/wiki/Pepe_Jeans"
+          },
+          {
+            "text": "1Password",
+            "url": "https://en.wikipedia.org/wiki/1Password"
+          },
+          {
+            "text": "AT&T",
+            "url": "https://en.wikipedia.org/wiki/AT%26T"
+          },
+          "Neat",
+          "Ava Trade",
+          "GATE.io",
+          {
+            "text": "Hexagon",
+            "url": "https://en.wikipedia.org/wiki/Hexagon_AB"
+          },
+          {
+            "text": "Carlyle",
+            "url": "https://en.wikipedia.org/wiki/The_Carlyle_Group"
+          },
+          {
+            "text": "Heineken",
+            "url": "https://en.wikipedia.org/wiki/Heineken_N.V."
+          },
+          {
+            "text": "Maui Jim",
+            "url": "https://en.wikipedia.org/wiki/Maui_Jim"
+          },
+          {
+            "text": "ArmorAll",
+            "url": "https://en.wikipedia.org/wiki/Armor_All"
+          },
+          {
+            "text": "Clear",
+            "url": "https://en.wikipedia.org/wiki/Clear_(shampoo)"
+          },
+          {
+            "text": "DAMAC",
+            "url": "https://en.wikipedia.org/wiki/DAMAC_Properties"
+          }
+        ],
+        "special_liveries": null
       }
     ]
   },
@@ -31961,6 +33399,10 @@
             "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
           },
           {
+            "text": "Michelin",
+            "url": "https://en.wikipedia.org/wiki/Michelin"
+          },
+          {
             "text": "Ferodo",
             "url": "https://en.wikipedia.org/wiki/Ferodo"
           },
@@ -32027,6 +33469,10 @@
           {
             "text": "Champion",
             "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+          },
+          {
+            "text": "Michelin",
+            "url": "https://en.wikipedia.org/wiki/Michelin"
           },
           {
             "text": "Ferodo",
@@ -32097,6 +33543,10 @@
             "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
           },
           {
+            "text": "Michelin",
+            "url": "https://en.wikipedia.org/wiki/Michelin"
+          },
+          {
             "text": "Ferodo",
             "url": "https://en.wikipedia.org/wiki/Ferodo"
           },
@@ -32163,6 +33613,10 @@
           {
             "text": "Champion",
             "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+          },
+          {
+            "text": "Michelin",
+            "url": "https://en.wikipedia.org/wiki/Michelin"
           },
           {
             "text": "Ferodo",
@@ -32233,6 +33687,10 @@
             "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
           },
           {
+            "text": "Michelin",
+            "url": "https://en.wikipedia.org/wiki/Michelin"
+          },
+          {
             "text": "Ferodo",
             "url": "https://en.wikipedia.org/wiki/Ferodo"
           },
@@ -32299,6 +33757,10 @@
           {
             "text": "Champion",
             "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+          },
+          {
+            "text": "Michelin",
+            "url": "https://en.wikipedia.org/wiki/Michelin"
           },
           {
             "text": "Ferodo",
@@ -32504,6 +33966,10 @@
             "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
           },
           {
+            "text": "Dassault Systèmes",
+            "url": "https://en.wikipedia.org/wiki/Dassault_Syst%C3%A8mes"
+          },
+          {
             "text": "Hanjin Shipping",
             "url": "https://en.wikipedia.org/wiki/Hanjin_Shipping"
           },
@@ -32551,6 +34017,10 @@
           {
             "text": "Elf Aquitaine",
             "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+          },
+          {
+            "text": "Hanjin Shipping",
+            "url": "https://en.wikipedia.org/wiki/Hanjin_Shipping"
           },
           {
             "text": "Magneti Marelli",
@@ -32602,6 +34072,10 @@
             "url": "https://en.wikipedia.org/wiki/Telef%C3%B3nica"
           },
           {
+            "text": "Hanjin Shipping",
+            "url": "https://en.wikipedia.org/wiki/Hanjin_Shipping"
+          },
+          {
             "text": "i-mode",
             "url": "https://en.wikipedia.org/wiki/I-mode"
           },
@@ -32621,6 +34095,13 @@
           {
             "text": "Symantec",
             "url": "https://en.wikipedia.org/wiki/NortonLifeLock"
+          },
+          {
+            "text": "Puma",
+            "url": "https://en.wikipedia.org/wiki/Puma_(brand)"
+          },
+          {
+            "text": "Guru"
           }
         ],
         "non-tobacco_alcohol_and_other_livery_changes": "\"Mild Seven\" was replaced with \"Blue World\" or \"RenaultSport\" (2002), Mild Seven logo was replaced with \"Blue World\" or replaced with sky blue space (2003), Mild Seven was replaced with drivers full name, Mild Seven logo was replaced by the car's number \"Mild Seven\" was replaced with \"Team Spirit\" (on team members clothing) (2004), Mild Seven changed to \"Team Spirit\" or concept art (2005 to 2006)"
@@ -32651,6 +34132,18 @@
             "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
           },
           {
+            "text": "Telefónica",
+            "url": "https://en.wikipedia.org/wiki/Telef%C3%B3nica"
+          },
+          {
+            "text": "Hanjin Shipping",
+            "url": "https://en.wikipedia.org/wiki/Hanjin_Shipping"
+          },
+          {
+            "text": "i-mode",
+            "url": "https://en.wikipedia.org/wiki/I-mode"
+          },
+          {
             "text": "Magneti Marelli",
             "url": "https://en.wikipedia.org/wiki/Magneti_Marelli"
           },
@@ -32666,6 +34159,13 @@
           {
             "text": "Symantec",
             "url": "https://en.wikipedia.org/wiki/NortonLifeLock"
+          },
+          {
+            "text": "Puma",
+            "url": "https://en.wikipedia.org/wiki/Puma_(brand)"
+          },
+          {
+            "text": "Guru"
           }
         ],
         "non-tobacco_alcohol_and_other_livery_changes": "\"Mild Seven\" was replaced with \"Blue World\" or \"RenaultSport\" (2002), Mild Seven logo was replaced with \"Blue World\" or replaced with sky blue space (2003), Mild Seven was replaced with drivers full name, Mild Seven logo was replaced by the car's number \"Mild Seven\" was replaced with \"Team Spirit\" (on team members clothing) (2004), Mild Seven changed to \"Team Spirit\" or concept art (2005 to 2006)"
@@ -32723,6 +34223,17 @@
           {
             "text": "Symantec",
             "url": "https://en.wikipedia.org/wiki/NortonLifeLock"
+          },
+          {
+            "text": "Puma",
+            "url": "https://en.wikipedia.org/wiki/Puma_(brand)"
+          },
+          {
+            "text": "Guru"
+          },
+          {
+            "text": "Mutua Madrileña",
+            "url": "https://en.wikipedia.org/wiki/Mutua_Madrile%C3%B1a"
           }
         ],
         "non-tobacco_alcohol_and_other_livery_changes": "\"Mild Seven\" was replaced with \"Blue World\" or \"RenaultSport\" (2002), Mild Seven logo was replaced with \"Blue World\" or replaced with sky blue space (2003), Mild Seven was replaced with drivers full name, Mild Seven logo was replaced by the car's number \"Mild Seven\" was replaced with \"Team Spirit\" (on team members clothing) (2004), Mild Seven changed to \"Team Spirit\" or concept art (2005 to 2006)"
@@ -33115,7 +34626,7 @@
             "url": "https://en.wikipedia.org/wiki/Athletic_Propulsion_Labs"
           }
         ],
-        "non-tobacco_alcohol_and_other_livery_changes": null
+        "non-tobacco_alcohol_and_other_livery_changes": "During pre-season testing, the car was coloured in black."
       },
       {
         "season": [
@@ -33192,7 +34703,7 @@
           },
           "Ixell"
         ],
-        "non-tobacco_alcohol_and_other_livery_changes": null
+        "non-tobacco_alcohol_and_other_livery_changes": "At the 2017 Monaco Grand Prix , the car featured the Star Wars 40th anniversary logo; at the 2017 United States Grand Prix , the car featured pink sidepods and pink stripes on the fin to raise awareness of breast cancer."
       },
       {
         "season": [
@@ -33276,7 +34787,7 @@
             "url": "https://en.wikipedia.org/wiki/Siemens"
           }
         ],
-        "non-tobacco_alcohol_and_other_livery_changes": null
+        "non-tobacco_alcohol_and_other_livery_changes": "At the 2018 British Grand Prix , an Incredibles 2 promotion was held with red and yellow stripes being added to the fin."
       },
       {
         "season": [
@@ -33422,7 +34933,7 @@
             "url": "https://en.wikipedia.org/wiki/Tmall"
           }
         ],
-        "non-tobacco_alcohol_and_other_livery_changes": null
+        "non-tobacco_alcohol_and_other_livery_changes": "During pre-season testing, the car was coloured in black."
       }
     ]
   },
@@ -34011,7 +35522,7 @@
         ],
         "main_colours": [
           "White",
-          "Black"
+          "Dark Grey"
         ],
         "additional_colours": [
           "Red"
@@ -34053,7 +35564,7 @@
         ],
         "main_colours": [
           "White",
-          "Black"
+          "Dark Grey"
         ],
         "additional_colours": [
           "Red"
@@ -34110,7 +35621,7 @@
         ],
         "main_colours": [
           "White",
-          "Black"
+          "Dark Grey"
         ],
         "additional_colours": [
           "Red"
@@ -34169,11 +35680,11 @@
         ],
         "main_colours": [
           "Dark Grey",
-          "Silver"
+          "White"
         ],
         "additional_colours": [
           "Red",
-          "White"
+          "Silver"
         ],
         "livery_sponsors": [
           {
@@ -34231,11 +35742,11 @@
         ],
         "main_colours": [
           "Dark Grey",
-          "Silver"
+          "White"
         ],
         "additional_colours": [
           "Red",
-          "White"
+          "Silver"
         ],
         "livery_sponsors": [
           {
@@ -34639,7 +36150,14 @@
             "url": "https://en.wikipedia.org/wiki/Singha"
           },
           "Web Eyewear",
-          "Libertex",
+          {
+            "text": "SenseTime",
+            "url": "https://en.wikipedia.org/wiki/SenseTime"
+          },
+          {
+            "text": "Libertex",
+            "url": "https://en.wikipedia.org/wiki/Libertex"
+          },
           {
             "text": "Mascot Workwear",
             "url": "https://en.wikipedia.org/wiki/MASCOT_Workwear"
@@ -34656,7 +36174,10 @@
             "text": "Claro",
             "url": "https://en.wikipedia.org/wiki/Claro_Company"
           },
-          "Pic Pay",
+          {
+            "text": "Pic Pay",
+            "url": "https://pt.wikipedia.org/wiki/PicPay"
+          },
           "Aleph",
           {
             "text": "GF",
@@ -34785,7 +36306,11 @@
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
-            "text": "Valvoline F&S Properties"
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -34819,6 +36344,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -34847,6 +36376,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -34871,7 +36404,11 @@
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
-            "text": "Valvoline F&S Properties"
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -34905,6 +36442,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -34933,6 +36474,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -34957,7 +36502,11 @@
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
-            "text": "Valvoline F&S Properties"
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -34991,6 +36540,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -35031,6 +36584,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -35055,7 +36612,11 @@
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
-            "text": "Valvoline F&S Properties"
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -35089,6 +36650,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -35117,6 +36682,10 @@
           {
             "text": "Goodyear",
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
@@ -35700,7 +37269,7 @@
           "Orange"
         ],
         "additional_colours": [
-          "Black"
+          "Grey"
         ],
         "main_sponsors": [
           {
@@ -36114,8 +37683,10 @@
           }
         ],
         "additional_major_sponsors": [
+          "Duckhams",
           {
-            "text": "Duckhams Matchbox"
+            "text": "Matchbox",
+            "url": "https://en.wikipedia.org/wiki/Matchbox_(brand)"
           }
         ],
         "grand_prix_scope": {
@@ -36151,7 +37722,9 @@
             "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
           }
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": [
+          "Duckhams"
+        ],
         "grand_prix_scope": {
           "type": "other"
         }
@@ -36180,8 +37753,10 @@
           }
         ],
         "additional_major_sponsors": [
+          "Duckhams",
           {
-            "text": "Duckhams Matchbox"
+            "text": "Matchbox",
+            "url": "https://en.wikipedia.org/wiki/Matchbox_(brand)"
           }
         ],
         "grand_prix_scope": {
@@ -36217,7 +37792,9 @@
             "url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team"
           }
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": [
+          "Duckhams"
+        ],
         "grand_prix_scope": {
           "type": "other"
         }
@@ -36242,8 +37819,10 @@
           "Flame Out"
         ],
         "additional_major_sponsors": [
+          "Duckhams",
           {
-            "text": "Duckhams Matchbox"
+            "text": "Matchbox",
+            "url": "https://en.wikipedia.org/wiki/Matchbox_(brand)"
           }
         ],
         "grand_prix_scope": {
@@ -36275,7 +37854,9 @@
         "main_sponsors": [
           "Flame Out"
         ],
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": [
+          "Duckhams"
+        ],
         "grand_prix_scope": {
           "type": "other"
         }
@@ -36298,8 +37879,10 @@
         ],
         "main_sponsors": null,
         "additional_major_sponsors": [
+          "Duckhams",
           {
-            "text": "Duckhams Matchbox"
+            "text": "Matchbox",
+            "url": "https://en.wikipedia.org/wiki/Matchbox_(brand)"
           }
         ],
         "grand_prix_scope": {
@@ -36329,7 +37912,9 @@
           "Blue"
         ],
         "main_sponsors": null,
-        "additional_major_sponsors": [],
+        "additional_major_sponsors": [
+          "Duckhams"
+        ],
         "grand_prix_scope": {
           "type": "other"
         }
@@ -37147,8 +38732,8 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue"
+          "Blue",
+          "Red"
         ],
         "main_sponsors": [
           {
@@ -37774,42 +39359,230 @@
           {
             "year": 2002,
             "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-          },
-          {
-            "year": 2003,
-            "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-          },
-          {
-            "year": 2004,
-            "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-          },
-          {
-            "year": 2005,
-            "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-          },
-          {
-            "year": 2006,
-            "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-          },
-          {
-            "year": 2007,
-            "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-          },
-          {
-            "year": 2008,
-            "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-          },
-          {
-            "year": 2009,
-            "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
           }
         ],
         "main_colours": [
-          "White"
-        ],
-        "additional_colours": [
+          "White",
           "Red"
         ],
+        "additional_colours": null,
+        "main_sponsors": [
+          {
+            "text": "Panasonic",
+            "url": "https://en.wikipedia.org/wiki/Panasonic"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Denso",
+            "url": "https://en.wikipedia.org/wiki/Denso"
+          },
+          {
+            "text": "Esso",
+            "url": "https://en.wikipedia.org/wiki/Esso"
+          },
+          {
+            "text": "KDDI",
+            "url": "https://en.wikipedia.org/wiki/KDDI"
+          },
+          {
+            "text": "Kärcher",
+            "url": "https://en.wikipedia.org/wiki/K%C3%A4rcher"
+          },
+          {
+            "text": "Wella",
+            "url": "https://en.wikipedia.org/wiki/Wella"
+          },
+          {
+            "text": "Intel",
+            "url": "https://en.wikipedia.org/wiki/Intel"
+          },
+          {
+            "text": "EMC",
+            "url": "https://en.wikipedia.org/wiki/EMC_Corporation"
+          },
+          {
+            "text": "BMC Software",
+            "url": "https://en.wikipedia.org/wiki/BMC_Software"
+          },
+          {
+            "text": "Time Inc.",
+            "url": "https://en.wikipedia.org/wiki/Time_Inc."
+          },
+          {
+            "text": "Magneti Marelli",
+            "url": "https://en.wikipedia.org/wiki/Magneti_Marelli"
+          },
+          {
+            "text": "Avex Group",
+            "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          },
+          {
+            "text": "Ratiopharm",
+            "url": "https://en.wikipedia.org/wiki/Ratiopharm"
+          },
+          {
+            "text": "Travelex",
+            "url": "https://en.wikipedia.org/wiki/Travelex"
+          },
+          {
+            "text": "Dassault Systèmes",
+            "url": "https://en.wikipedia.org/wiki/Dassault_Syst%C3%A8mes"
+          }
+        ],
+        "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
+      },
+      {
+        "season": [
+          {
+            "year": 2003,
+            "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "White",
+          "Red"
+        ],
+        "additional_colours": null,
+        "main_sponsors": [
+          {
+            "text": "Panasonic",
+            "url": "https://en.wikipedia.org/wiki/Panasonic"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Denso",
+            "url": "https://en.wikipedia.org/wiki/Denso"
+          },
+          {
+            "text": "Esso",
+            "url": "https://en.wikipedia.org/wiki/Esso"
+          },
+          {
+            "text": "KDDI",
+            "url": "https://en.wikipedia.org/wiki/KDDI"
+          },
+          {
+            "text": "Kärcher",
+            "url": "https://en.wikipedia.org/wiki/K%C3%A4rcher"
+          },
+          {
+            "text": "Wella",
+            "url": "https://en.wikipedia.org/wiki/Wella"
+          },
+          {
+            "text": "Intel",
+            "url": "https://en.wikipedia.org/wiki/Intel"
+          },
+          {
+            "text": "EMC",
+            "url": "https://en.wikipedia.org/wiki/EMC_Corporation"
+          },
+          {
+            "text": "BMC Software",
+            "url": "https://en.wikipedia.org/wiki/BMC_Software"
+          },
+          {
+            "text": "Time Inc.",
+            "url": "https://en.wikipedia.org/wiki/Time_Inc."
+          },
+          {
+            "text": "Magneti Marelli",
+            "url": "https://en.wikipedia.org/wiki/Magneti_Marelli"
+          },
+          {
+            "text": "Avex Group",
+            "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          },
+          {
+            "text": "Ebbon-Dacs"
+          }
+        ],
+        "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
+      },
+      {
+        "season": [
+          {
+            "year": 2004,
+            "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "White",
+          "Red"
+        ],
+        "additional_colours": null,
+        "main_sponsors": [
+          {
+            "text": "Panasonic",
+            "url": "https://en.wikipedia.org/wiki/Panasonic"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Denso",
+            "url": "https://en.wikipedia.org/wiki/Denso"
+          },
+          {
+            "text": "Esso",
+            "url": "https://en.wikipedia.org/wiki/Esso"
+          },
+          {
+            "text": "KDDI",
+            "url": "https://en.wikipedia.org/wiki/KDDI"
+          },
+          {
+            "text": "Kärcher",
+            "url": "https://en.wikipedia.org/wiki/K%C3%A4rcher"
+          },
+          {
+            "text": "Wella",
+            "url": "https://en.wikipedia.org/wiki/Wella"
+          },
+          {
+            "text": "Intel",
+            "url": "https://en.wikipedia.org/wiki/Intel"
+          },
+          {
+            "text": "EMC",
+            "url": "https://en.wikipedia.org/wiki/EMC_Corporation"
+          },
+          {
+            "text": "BMC Software",
+            "url": "https://en.wikipedia.org/wiki/BMC_Software"
+          },
+          {
+            "text": "Time Inc.",
+            "url": "https://en.wikipedia.org/wiki/Time_Inc."
+          },
+          {
+            "text": "Magneti Marelli",
+            "url": "https://en.wikipedia.org/wiki/Magneti_Marelli"
+          },
+          {
+            "text": "Avex Group",
+            "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          },
+          {
+            "text": "Star Sports",
+            "url": "https://en.wikipedia.org/wiki/Star_Sports_(China)"
+          }
+        ],
+        "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
+      },
+      {
+        "season": [
+          {
+            "year": 2005,
+            "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "White",
+          "Red"
+        ],
+        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Panasonic",
@@ -37861,7 +39634,283 @@
             "text": "Avex Group",
             "url": "https://en.wikipedia.org/wiki/Avex_Group"
           }
-        ]
+        ],
+        "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
+      },
+      {
+        "season": [
+          {
+            "year": 2006,
+            "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "White",
+          "Red"
+        ],
+        "additional_colours": null,
+        "main_sponsors": [
+          {
+            "text": "Panasonic",
+            "url": "https://en.wikipedia.org/wiki/Panasonic"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Denso",
+            "url": "https://en.wikipedia.org/wiki/Denso"
+          },
+          {
+            "text": "Esso",
+            "url": "https://en.wikipedia.org/wiki/Esso"
+          },
+          {
+            "text": "KDDI",
+            "url": "https://en.wikipedia.org/wiki/KDDI"
+          },
+          {
+            "text": "Kärcher",
+            "url": "https://en.wikipedia.org/wiki/K%C3%A4rcher"
+          },
+          {
+            "text": "Wella",
+            "url": "https://en.wikipedia.org/wiki/Wella"
+          },
+          {
+            "text": "Intel",
+            "url": "https://en.wikipedia.org/wiki/Intel"
+          },
+          {
+            "text": "EMC",
+            "url": "https://en.wikipedia.org/wiki/EMC_Corporation"
+          },
+          {
+            "text": "BMC Software",
+            "url": "https://en.wikipedia.org/wiki/BMC_Software"
+          },
+          {
+            "text": "Time Inc.",
+            "url": "https://en.wikipedia.org/wiki/Time_Inc."
+          },
+          {
+            "text": "Magneti Marelli",
+            "url": "https://en.wikipedia.org/wiki/Magneti_Marelli"
+          },
+          {
+            "text": "Avex Group",
+            "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          }
+        ],
+        "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
+      },
+      {
+        "season": [
+          {
+            "year": 2007,
+            "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "White",
+          "Red"
+        ],
+        "additional_colours": null,
+        "main_sponsors": [
+          {
+            "text": "Panasonic",
+            "url": "https://en.wikipedia.org/wiki/Panasonic"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Denso",
+            "url": "https://en.wikipedia.org/wiki/Denso"
+          },
+          {
+            "text": "Esso",
+            "url": "https://en.wikipedia.org/wiki/Esso"
+          },
+          {
+            "text": "KDDI",
+            "url": "https://en.wikipedia.org/wiki/KDDI"
+          },
+          {
+            "text": "Kärcher",
+            "url": "https://en.wikipedia.org/wiki/K%C3%A4rcher"
+          },
+          {
+            "text": "Wella",
+            "url": "https://en.wikipedia.org/wiki/Wella"
+          },
+          {
+            "text": "Intel",
+            "url": "https://en.wikipedia.org/wiki/Intel"
+          },
+          {
+            "text": "EMC",
+            "url": "https://en.wikipedia.org/wiki/EMC_Corporation"
+          },
+          {
+            "text": "BMC Software",
+            "url": "https://en.wikipedia.org/wiki/BMC_Software"
+          },
+          {
+            "text": "Time Inc.",
+            "url": "https://en.wikipedia.org/wiki/Time_Inc."
+          },
+          {
+            "text": "Magneti Marelli",
+            "url": "https://en.wikipedia.org/wiki/Magneti_Marelli"
+          },
+          {
+            "text": "Avex Group",
+            "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          },
+          {
+            "text": "Kingfisher Airlines",
+            "url": "https://en.wikipedia.org/wiki/Kingfisher_Airlines"
+          }
+        ],
+        "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
+      },
+      {
+        "season": [
+          {
+            "year": 2008,
+            "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "White",
+          "Red"
+        ],
+        "additional_colours": null,
+        "main_sponsors": [
+          {
+            "text": "Panasonic",
+            "url": "https://en.wikipedia.org/wiki/Panasonic"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Denso",
+            "url": "https://en.wikipedia.org/wiki/Denso"
+          },
+          {
+            "text": "Esso",
+            "url": "https://en.wikipedia.org/wiki/Esso"
+          },
+          {
+            "text": "KDDI",
+            "url": "https://en.wikipedia.org/wiki/KDDI"
+          },
+          {
+            "text": "Kärcher",
+            "url": "https://en.wikipedia.org/wiki/K%C3%A4rcher"
+          },
+          {
+            "text": "Wella",
+            "url": "https://en.wikipedia.org/wiki/Wella"
+          },
+          {
+            "text": "Intel",
+            "url": "https://en.wikipedia.org/wiki/Intel"
+          },
+          {
+            "text": "EMC",
+            "url": "https://en.wikipedia.org/wiki/EMC_Corporation"
+          },
+          {
+            "text": "BMC Software",
+            "url": "https://en.wikipedia.org/wiki/BMC_Software"
+          },
+          {
+            "text": "Time Inc.",
+            "url": "https://en.wikipedia.org/wiki/Time_Inc."
+          },
+          {
+            "text": "Magneti Marelli",
+            "url": "https://en.wikipedia.org/wiki/Magneti_Marelli"
+          },
+          {
+            "text": "Avex Group",
+            "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          }
+        ],
+        "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
+      },
+      {
+        "season": [
+          {
+            "year": 2009,
+            "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "White",
+          "Red"
+        ],
+        "additional_colours": null,
+        "main_sponsors": [
+          {
+            "text": "Panasonic",
+            "url": "https://en.wikipedia.org/wiki/Panasonic"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Denso",
+            "url": "https://en.wikipedia.org/wiki/Denso"
+          },
+          {
+            "text": "Esso",
+            "url": "https://en.wikipedia.org/wiki/Esso"
+          },
+          {
+            "text": "KDDI",
+            "url": "https://en.wikipedia.org/wiki/KDDI"
+          },
+          {
+            "text": "Kärcher",
+            "url": "https://en.wikipedia.org/wiki/K%C3%A4rcher"
+          },
+          {
+            "text": "Wella",
+            "url": "https://en.wikipedia.org/wiki/Wella"
+          },
+          {
+            "text": "Intel",
+            "url": "https://en.wikipedia.org/wiki/Intel"
+          },
+          {
+            "text": "EMC",
+            "url": "https://en.wikipedia.org/wiki/EMC_Corporation"
+          },
+          {
+            "text": "BMC Software",
+            "url": "https://en.wikipedia.org/wiki/BMC_Software"
+          },
+          {
+            "text": "Time Inc.",
+            "url": "https://en.wikipedia.org/wiki/Time_Inc."
+          },
+          {
+            "text": "Magneti Marelli",
+            "url": "https://en.wikipedia.org/wiki/Magneti_Marelli"
+          },
+          {
+            "text": "Avex Group",
+            "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          },
+          {
+            "text": "World Food Programme by ALJ"
+          },
+          {
+            "text": "Würth",
+            "url": "https://en.wikipedia.org/wiki/W%C3%BCrth"
+          }
+        ],
+        "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
       }
     ]
   },
@@ -38706,7 +40755,12 @@
           "White",
           "Blue"
         ],
-        "livery_sponsors": [],
+        "livery_sponsors": [
+          {
+            "text": "Candy",
+            "url": "https://en.wikipedia.org/wiki/Candy_(company)"
+          }
+        ],
         "additional_major_sponsors": [
           {
             "text": "Valvoline",
@@ -38855,7 +40909,7 @@
         ],
         "livery_sponsors": [
           {
-            "text": "Candy Denim Musk"
+            "text": "Denim Musk"
           }
         ],
         "additional_major_sponsors": [
@@ -39002,7 +41056,14 @@
             "text": "Old Milwaukee",
             "url": "https://en.wikipedia.org/wiki/Old_Milwaukee"
           },
-          "Shell De'Longhi",
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "De'Longhi",
+            "url": "https://en.wikipedia.org/wiki/De%27Longhi"
+          },
           {
             "text": "Yardley Gold",
             "url": "https://en.wikipedia.org/wiki/Yardley_of_London"
@@ -39045,7 +41106,14 @@
             "text": "Old Milwaukee",
             "url": "https://en.wikipedia.org/wiki/Old_Milwaukee"
           },
-          "Shell De'Longhi",
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "De'Longhi",
+            "url": "https://en.wikipedia.org/wiki/De%27Longhi"
+          },
           {
             "text": "Yardley Gold",
             "url": "https://en.wikipedia.org/wiki/Yardley_of_London"
@@ -39092,7 +41160,14 @@
             "text": "Old Milwaukee",
             "url": "https://en.wikipedia.org/wiki/Old_Milwaukee"
           },
-          "Shell De'Longhi",
+          {
+            "text": "Shell",
+            "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
+          },
+          {
+            "text": "De'Longhi",
+            "url": "https://en.wikipedia.org/wiki/De%27Longhi"
+          },
           {
             "text": "Yardley Gold",
             "url": "https://en.wikipedia.org/wiki/Yardley_of_London"
@@ -40560,6 +42635,10 @@
             "url": "https://en.wikipedia.org/wiki/Imperial_Chemical_Industries"
           },
           "Tactel",
+          {
+            "text": "Honda",
+            "url": "https://en.wikipedia.org/wiki/Honda"
+          },
           "Denim",
           {
             "text": "Goodyear",
@@ -40572,6 +42651,10 @@
           {
             "text": "Saudia",
             "url": "https://en.wikipedia.org/wiki/Saudia"
+          },
+          {
+            "text": "Mobil 1",
+            "url": "https://en.wikipedia.org/wiki/Mobil_1"
           }
         ],
         "non-tobacco_alcohol_livery_changes": "Barclay replaced by driver's surname in races not allowing alcohol or tobacco sponsors"
@@ -40617,6 +42700,10 @@
           {
             "text": "Saudia",
             "url": "https://en.wikipedia.org/wiki/Saudia"
+          },
+          {
+            "text": "Mobil 1",
+            "url": "https://en.wikipedia.org/wiki/Mobil_1"
           }
         ],
         "non-tobacco_alcohol_livery_changes": "Barclay replaced by driver's surname in races not allowing alcohol or tobacco sponsors"
@@ -41029,6 +43116,10 @@
             "url": "https://en.wikipedia.org/wiki/Renault"
           },
           {
+            "text": "Sanyo",
+            "url": "https://en.wikipedia.org/wiki/Sanyo"
+          },
+          {
             "text": "Black Tower"
           },
           {
@@ -41217,6 +43308,10 @@
         "additional_colours": null,
         "livery_sponsors": [
           {
+            "text": "BMW",
+            "url": "https://en.wikipedia.org/wiki/BMW"
+          },
+          {
             "text": "Compaq",
             "url": "https://en.wikipedia.org/wiki/Compaq"
           }
@@ -41225,10 +43320,6 @@
           {
             "text": "Castrol",
             "url": "https://en.wikipedia.org/wiki/Castrol"
-          },
-          {
-            "text": "BMW",
-            "url": "https://en.wikipedia.org/wiki/BMW"
           },
           {
             "text": "Thomson Reuters",
@@ -41268,7 +43359,12 @@
           "Blue and White"
         ],
         "additional_colours": null,
-        "livery_sponsors": [],
+        "livery_sponsors": [
+          {
+            "text": "BMW",
+            "url": "https://en.wikipedia.org/wiki/BMW"
+          }
+        ],
         "additional_major_sponsors": [
           {
             "text": "Castrol",
@@ -41277,10 +43373,6 @@
           {
             "text": "Allianz",
             "url": "https://en.wikipedia.org/wiki/Allianz"
-          },
-          {
-            "text": "BMW",
-            "url": "https://en.wikipedia.org/wiki/BMW"
           },
           {
             "text": "Thomson Reuters",
@@ -41314,6 +43406,10 @@
         "additional_colours": null,
         "livery_sponsors": [
           {
+            "text": "BMW",
+            "url": "https://en.wikipedia.org/wiki/BMW"
+          },
+          {
             "text": "HP",
             "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
           }
@@ -41322,10 +43418,6 @@
           {
             "text": "Castrol",
             "url": "https://en.wikipedia.org/wiki/Castrol"
-          },
-          {
-            "text": "BMW",
-            "url": "https://en.wikipedia.org/wiki/BMW"
           },
           {
             "text": "FedEx",
@@ -41357,7 +43449,12 @@
           "Blue and White"
         ],
         "additional_colours": null,
-        "livery_sponsors": [],
+        "livery_sponsors": [
+          {
+            "text": "BMW",
+            "url": "https://en.wikipedia.org/wiki/BMW"
+          }
+        ],
         "additional_major_sponsors": [
           {
             "text": "Castrol",
@@ -41366,10 +43463,6 @@
           {
             "text": "Budweiser",
             "url": "https://en.wikipedia.org/wiki/Budweiser"
-          },
-          {
-            "text": "BMW",
-            "url": "https://en.wikipedia.org/wiki/BMW"
           },
           {
             "text": "Thomson Reuters",
@@ -41405,15 +43498,16 @@
           "Blue and White"
         ],
         "additional_colours": null,
-        "livery_sponsors": [],
+        "livery_sponsors": [
+          {
+            "text": "BMW",
+            "url": "https://en.wikipedia.org/wiki/BMW"
+          }
+        ],
         "additional_major_sponsors": [
           {
             "text": "Castrol",
             "url": "https://en.wikipedia.org/wiki/Castrol"
-          },
-          {
-            "text": "BMW",
-            "url": "https://en.wikipedia.org/wiki/BMW"
           },
           {
             "text": "Thomson Reuters",
@@ -41441,15 +43535,16 @@
           "Blue and White"
         ],
         "additional_colours": null,
-        "livery_sponsors": [],
+        "livery_sponsors": [
+          {
+            "text": "BMW",
+            "url": "https://en.wikipedia.org/wiki/BMW"
+          }
+        ],
         "additional_major_sponsors": [
           {
             "text": "Castrol",
             "url": "https://en.wikipedia.org/wiki/Castrol"
-          },
-          {
-            "text": "BMW",
-            "url": "https://en.wikipedia.org/wiki/BMW"
           },
           {
             "text": "RBS",
@@ -41662,6 +43757,10 @@
         ],
         "livery_sponsors": [
           {
+            "text": "AT&T",
+            "url": "https://en.wikipedia.org/wiki/AT%26T"
+          },
+          {
             "text": "RBS",
             "url": "https://en.wikipedia.org/wiki/The_Royal_Bank_of_Scotland"
           },
@@ -41671,10 +43770,6 @@
           }
         ],
         "additional_major_sponsors": [
-          {
-            "text": "AT&T",
-            "url": "https://en.wikipedia.org/wiki/AT%26T"
-          },
           {
             "text": "Allianz",
             "url": "https://en.wikipedia.org/wiki/Allianz"
@@ -41713,6 +43808,10 @@
         ],
         "livery_sponsors": [
           {
+            "text": "AT&T",
+            "url": "https://en.wikipedia.org/wiki/AT%26T"
+          },
+          {
             "text": "RBS",
             "url": "https://en.wikipedia.org/wiki/The_Royal_Bank_of_Scotland"
           },
@@ -41723,15 +43822,11 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "AT&T",
-            "url": "https://en.wikipedia.org/wiki/AT%26T"
-          },
-          {
             "text": "Allianz",
             "url": "https://en.wikipedia.org/wiki/Allianz"
           },
           {
-            "text": "Randstad NV",
+            "text": "Randstad",
             "url": "https://en.wikipedia.org/wiki/Randstad_NV"
           },
           {
@@ -41786,7 +43881,7 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "Randstad NV",
+            "text": "Randstad",
             "url": "https://en.wikipedia.org/wiki/Randstad_NV"
           },
           "Venezuela Tourism",
@@ -41833,7 +43928,7 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "Randstad NV",
+            "text": "Randstad",
             "url": "https://en.wikipedia.org/wiki/Randstad_NV"
           },
           {
@@ -41893,7 +43988,7 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "Randstad NV",
+            "text": "Randstad",
             "url": "https://en.wikipedia.org/wiki/Randstad_NV"
           },
           {
@@ -41938,8 +44033,9 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue"
+          "Dark Blue",
+          "Light Blue",
+          "Red"
         ],
         "livery_sponsors": [
           {
@@ -41949,7 +44045,7 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "Randstad NV",
+            "text": "Randstad",
             "url": "https://en.wikipedia.org/wiki/Randstad_NV"
           },
           {
@@ -42006,8 +44102,9 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue"
+          "Dark Blue",
+          "Light Blue",
+          "Red"
         ],
         "livery_sponsors": [
           {
@@ -42017,7 +44114,7 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "Randstad NV",
+            "text": "Randstad",
             "url": "https://en.wikipedia.org/wiki/Randstad_NV"
           },
           {
@@ -42082,8 +44179,9 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue"
+          "Dark Blue",
+          "Light Blue",
+          "Red"
         ],
         "livery_sponsors": [
           {
@@ -42093,7 +44191,7 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "Randstad NV",
+            "text": "Randstad",
             "url": "https://en.wikipedia.org/wiki/Randstad_NV"
           },
           {
@@ -42151,8 +44249,9 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue"
+          "Dark Blue",
+          "Light Blue",
+          "Red"
         ],
         "livery_sponsors": [
           {
@@ -42162,7 +44261,7 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "Randstad NV",
+            "text": "Randstad",
             "url": "https://en.wikipedia.org/wiki/Randstad_NV"
           },
           {
@@ -42208,8 +44307,9 @@
           "White"
         ],
         "additional_colours": [
-          "Red",
-          "Blue"
+          "Dark Blue",
+          "Light Blue",
+          "Red"
         ],
         "livery_sponsors": [
           {
@@ -42419,6 +44519,7 @@
         ],
         "additional_colours": [
           "Light Blue",
+          "Black",
           "Red",
           "White"
         ],
@@ -42557,7 +44658,8 @@
         ],
         "additional_colours": [
           "Black",
-          "Orange"
+          "Orange",
+          "White"
         ],
         "livery_sponsors": null,
         "additional_major_sponsors": [
@@ -42607,6 +44709,10 @@
           },
           "Keeper Security",
           {
+            "text": "Globant",
+            "url": "https://en.wikipedia.org/wiki/Globant"
+          },
+          {
             "text": "Mercado Libre",
             "url": "https://en.wikipedia.org/wiki/Mercado_Libre"
           }
@@ -42626,7 +44732,8 @@
         ],
         "additional_colours": [
           "Black",
-          "Orange"
+          "Orange",
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -42695,9 +44802,104 @@
             "text": "Zoox",
             "url": "https://en.wikipedia.org/wiki/Zoox_(company)"
           },
-          "NMC2"
+          "NMC²"
         ],
         "non-tobacco_alcohol_livery_changes": "A special Atlassian Rovo livery was raced for the Las Vegas Grand Prix ."
+      },
+      {
+        "season": [
+          {
+            "year": 2026,
+            "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Dark Blue"
+        ],
+        "additional_colours": [
+          "Light Blue",
+          "White",
+          "Black",
+          "Orange"
+        ],
+        "livery_sponsors": [
+          {
+            "text": "Atlassian",
+            "url": "https://en.wikipedia.org/wiki/Atlassian"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Pirelli",
+            "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "Barclays",
+            "url": "https://en.wikipedia.org/wiki/Barclays"
+          },
+          {
+            "text": "Duracell",
+            "url": "https://en.wikipedia.org/wiki/Duracell"
+          },
+          {
+            "text": "Gulf Oil",
+            "url": "https://en.wikipedia.org/wiki/Gulf_Oil"
+          },
+          {
+            "text": "Stephens Inc.",
+            "url": "https://en.wikipedia.org/wiki/Stephens_Inc."
+          },
+          {
+            "text": "Kraken",
+            "url": "https://en.wikipedia.org/wiki/Kraken_(company)"
+          },
+          {
+            "text": "VAST Data",
+            "url": "https://en.wikipedia.org/wiki/VAST_Data"
+          },
+          {
+            "text": "Komatsu",
+            "url": "https://en.wikipedia.org/wiki/Komatsu_Limited"
+          },
+          "Keeper Security",
+          {
+            "text": "Brillio",
+            "url": "https://en.wikipedia.org/wiki/Brillio"
+          },
+          {
+            "text": "Betway",
+            "url": "https://en.wikipedia.org/wiki/Betway"
+          },
+          "Jackpot City",
+          "Airia",
+          "NMC²",
+          {
+            "text": "Wilkinson Sword",
+            "url": "https://en.wikipedia.org/wiki/Wilkinson_Sword"
+          },
+          {
+            "text": "Claude",
+            "url": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+          },
+          {
+            "text": "New Era",
+            "url": "https://en.wikipedia.org/wiki/New_Era_Cap_Company"
+          },
+          {
+            "text": "BNY",
+            "url": "https://en.wikipedia.org/wiki/BNY"
+          },
+          {
+            "text": "Nuveen",
+            "url": "https://en.wikipedia.org/wiki/Nuveen"
+          },
+          {
+            "text": "Estrella Galicia",
+            "url": "https://en.wikipedia.org/wiki/Estrella_Galicia"
+          },
+          "Spinal Injuries Association"
+        ],
+        "non-tobacco_alcohol_livery_changes": null
       }
     ]
   },
@@ -42854,6 +45056,10 @@
             "url": "https://en.wikipedia.org/wiki/Royal_Dutch_Shell"
           },
           {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
             "text": "Koni",
             "url": "https://en.wikipedia.org/wiki/ITT_Corporation"
           },
@@ -42898,6 +45104,10 @@
           }
         ],
         "additional_major_sponsors": [
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
           {
             "text": "Koni",
             "url": "https://en.wikipedia.org/wiki/ITT_Corporation"
@@ -42963,6 +45173,10 @@
           {
             "text": "Fondmetal",
             "url": "https://en.wikipedia.org/wiki/Fondmetal"
+          },
+          {
+            "text": "Castrol",
+            "url": "https://en.wikipedia.org/wiki/Castrol"
           },
           {
             "text": "BBS",
