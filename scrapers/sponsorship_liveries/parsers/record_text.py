@@ -7,6 +7,8 @@ from scrapers.base.helpers.text import clean_wiki_text
 class SponsorshipRecordText:
     _year_re = re.compile(r"\b\d{4}\b")
 
+    _year_range_re = re.compile(r"\b(\d{4})\s*[–\-]\s*(\d{4})\b")
+
     @classmethod
     def extract_year_params(cls, params: list[Any]) -> set[int]:
         years: set[int] = set()
@@ -16,6 +18,13 @@ class SponsorshipRecordText:
                 text = param.get("text")
             if text is None:
                 text = str(param)
+            # Expand year ranges like "2021–2023" to include all intermediate years.
+            for range_match in cls._year_range_re.finditer(text):
+                start_year = int(range_match.group(1))
+                end_year = int(range_match.group(2))
+                if start_year <= end_year:
+                    years.update(range(start_year, end_year + 1))
+            # Also extract standalone years; set deduplication handles any overlap.
             for match in cls._year_re.findall(text):
                 years.add(int(match))
         return years
