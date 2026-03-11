@@ -190,7 +190,7 @@ class BestFinishParser:
                         if any(
                                 s.get("text") == next_text
                                 for s in season_links
-                                if s != season_link,
+                                if s != season_link
                         ):
                             found_next_season = True
                             break
@@ -204,7 +204,7 @@ class BestFinishParser:
                             if any(
                                     s.get("text") == a_text
                                     for s in season_links
-                                    if s != season_link,
+                                    if s != season_link
                             ):
                                 found_next_season = True
                                 break

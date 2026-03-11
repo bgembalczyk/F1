@@ -59,7 +59,7 @@ def test_build_transformers_adds_default_normalizer() -> None:
 
     assert any(
         isinstance(transformer, NormalizeLinksTransformer)
-        for transformer in transformers,
+        for transformer in transformers
     )
 
 

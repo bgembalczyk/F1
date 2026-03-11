@@ -104,7 +104,7 @@ class SeasonEntriesParser:
 
             if len(numbers_list) == 1 or all(
                     isinstance(number, str) and not number.strip()
-                    for number in numbers_list[1:],
+                    for number in numbers_list[1:]
             ):
                 record["no"] = [primary_number for _ in range(len(drivers))]
 
