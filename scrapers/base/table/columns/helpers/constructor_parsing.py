@@ -119,6 +119,10 @@ class ConstructorParsingHelpers:
             return None
 
         if index >= len(ctx.links):
+            # When a single link is present, it represents both chassis and engine constructor.
+            # Return index 0 (chassis) also as index 1 (engine) so both fields are populated.
+            if index == 1 and len(ctx.links) == 1:
+                return ctx.links[0]
             return None
 
         return ctx.links[index]
