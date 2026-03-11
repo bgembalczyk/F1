@@ -61,7 +61,7 @@ class FemaleDriversListScraper(F1TableScraper):
         resolved_options = options or ScraperOptions()
         if not any(
                 isinstance(post_processor, EntriesStartsPointsPostProcessor)
-                for post_processor in resolved_options.post_processors or [],
+                for post_processor in resolved_options.post_processors or []
         ):
             resolved_options.post_processors.append(EntriesStartsPointsPostProcessor())
         super().__init__(options=resolved_options, config=config)
