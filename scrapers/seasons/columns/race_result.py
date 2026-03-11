@@ -49,7 +49,7 @@ class RaceResultColumn(BaseColumn):
         sprint_position, pole_position, fastest_lap, footnotes = (
             self._parse_superscripts(ctx)
         )
-        background = self._map_background(extract_race_result_background(ctx))
+        background = self._map_background(extract_race_result_background(ctx.cell))
 
         results = self._parse_results(text)
         if not results and background is None:

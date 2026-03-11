@@ -13,6 +13,7 @@ from bs4 import Tag
 
 from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
+from scrapers.base.helpers.url import normalize_url
 from scrapers.base.table.columns.context import ColumnContext
 
 
@@ -65,7 +66,7 @@ class DriverParsingHelpers:
         Returns:
             LinkRecord with driver name and URL, or None if no valid driver found
         """
-        links = normalize_links(segment.find_all("a", href=True), base_url)
+        links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
         if not links:
             return None
 
