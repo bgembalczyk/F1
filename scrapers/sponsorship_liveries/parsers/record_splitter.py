@@ -1,6 +1,7 @@
 from typing import Any
 from typing import Dict
 from typing import List
+from typing import Tuple
 
 from scrapers.sponsorship_liveries.parsers.colour_scope import (
     ColourScopeHandler,
@@ -137,17 +138,42 @@ class SponsorshipRecordSplitter:
     def _split_record_by_grand_prix(
             self, record: Dict[str, Any],
     ) -> List[Dict[str, Any]]:
-        scoped_items: dict[str, list[tuple[dict[str, Any], Any]]] = {}
-        base_sponsors: dict[str, list[Any]] = {}
-        scoped_colours: dict[str, list[tuple[dict[str, Any], str, bool]]] = {}
-        base_colours: dict[str, list[Any]] = {}
+        base_sponsors, scoped_items = self._separate_sponsors(record)
+        base_colours, scoped_colours = self._separate_colours(record)
+
+        if not scoped_items and not scoped_colours:
+            return [record]
+
+        scope_map = self._build_scope_map(scoped_items, scoped_colours)
+        split_records = self._build_split_records(
+            record, scope_map, base_sponsors, base_colours,
+        )
+        split_records.append(
+            self._build_other_record(record, base_sponsors, base_colours),
+        )
+        return split_records
+
+    def _separate_sponsors(
+            self, record: Dict[str, Any],
+    ) -> Tuple[Dict[str, List[Any]], Dict[str, List[Any]]]:
+        """Partition sponsor lists into base (no GP scope) and scoped (with GP scope) items.
+
+        Args:
+            record: The full sponsorship record dict
+
+        Returns:
+            Tuple of (base_sponsors, scoped_items) where each value is a dict
+            mapping sponsor key to the corresponding item list.
+        """
+        base_sponsors: Dict[str, List[Any]] = {}
+        scoped_items: Dict[str, List[Tuple[Dict[str, Any], Any]]] = {}
 
         for key in self._sponsor_keys:
             sponsors = record.get(key)
             if not isinstance(sponsors, list):
                 continue
-            base_list: list[Any] = []
-            scoped_list: list[tuple[dict[str, Any], Any]] = []
+            base_list: List[Any] = []
+            scoped_list: List[Tuple[Dict[str, Any], Any]] = []
             for item in sponsors:
                 if isinstance(item, dict) and item.get("params"):
                     params = item.get("params") or []
@@ -166,12 +192,29 @@ class SponsorshipRecordSplitter:
             if scoped_list:
                 scoped_items[key] = scoped_list
 
+        return base_sponsors, scoped_items
+
+    def _separate_colours(
+            self, record: Dict[str, Any],
+    ) -> Tuple[Dict[str, List[Any]], Dict[str, List[Any]]]:
+        """Partition colour lists into base (no GP scope) and scoped (with GP scope) items.
+
+        Args:
+            record: The full sponsorship record dict
+
+        Returns:
+            Tuple of (base_colours, scoped_colours) where each value is a dict
+            mapping colour key to the corresponding item list.
+        """
+        base_colours: Dict[str, List[Any]] = {}
+        scoped_colours: Dict[str, List[Tuple[Dict[str, Any], str, bool]]] = {}
+
         for key in self._colour_keys:
             colours = record.get(key)
             if not isinstance(colours, list):
                 continue
-            base_list: list[Any] = []
-            scoped_list: list[tuple[dict[str, Any], str, bool]] = []
+            base_list: List[Any] = []
+            scoped_list: List[Tuple[Dict[str, Any], str, bool]] = []
             for item in colours:
                 if not isinstance(item, str):
                     base_list.append(item)
@@ -191,10 +234,24 @@ class SponsorshipRecordSplitter:
             if scoped_list:
                 scoped_colours[key] = scoped_list
 
-        if not scoped_items and not scoped_colours:
-            return [record]
+        return base_colours, scoped_colours
 
-        scope_map: dict[tuple[Any, ...], dict[str, Any]] = {}
+    @staticmethod
+    def _build_scope_map(
+            scoped_items: Dict[str, list],
+            scoped_colours: Dict[str, list],
+    ) -> Dict[Tuple, Dict[str, Any]]:
+        """Aggregate scoped sponsor and colour items into a keyed scope map.
+
+        Args:
+            scoped_items: Mapping of sponsor key to list of (scope, item) tuples
+            scoped_colours: Mapping of colour key to list of (scope, colour, replace) tuples
+
+        Returns:
+            Dict mapping scope_key tuple to a dict with 'scope' and 'items' entries.
+        """
+        scope_map: Dict[Tuple[Any, ...], Dict[str, Any]] = {}
+
         for key, scoped_list in scoped_items.items():
             for scope, item in scoped_list:
                 scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
@@ -213,7 +270,28 @@ class SponsorshipRecordSplitter:
                     {"colour": colour, "replace": replace},
                 )
 
-        split_records: list[Dict[str, Any]] = []
+        return scope_map
+
+    def _build_split_records(
+            self,
+            record: Dict[str, Any],
+            scope_map: Dict[Tuple, Dict[str, Any]],
+            base_sponsors: Dict[str, List[Any]],
+            base_colours: Dict[str, List[Any]],
+    ) -> List[Dict[str, Any]]:
+        """Create one record per GP scope, merging base items with scope-specific ones.
+
+        Args:
+            record: The original full record
+            scope_map: Aggregated scope data from :meth:`_build_scope_map`
+            base_sponsors: Base (non-scoped) sponsor lists per key
+            base_colours: Base (non-scoped) colour lists per key
+
+        Returns:
+            List of new record dicts, one per scope entry.
+        """
+        split_records: List[Dict[str, Any]] = []
+
         for scope_entry in scope_map.values():
             new_record = {**record, "grand_prix_scope": scope_entry["scope"]}
             for key in self._sponsor_keys:
@@ -236,14 +314,29 @@ class SponsorshipRecordSplitter:
                     new_record[key] = base_colours[key]
             split_records.append(new_record)
 
+        return split_records
+
+    def _build_other_record(
+            self,
+            record: Dict[str, Any],
+            base_sponsors: Dict[str, List[Any]],
+            base_colours: Dict[str, List[Any]],
+    ) -> Dict[str, Any]:
+        """Build the catch-all "other" record containing only base items.
+
+        Args:
+            record: The original full record
+            base_sponsors: Base (non-scoped) sponsor lists per key
+            base_colours: Base (non-scoped) colour lists per key
+
+        Returns:
+            New record dict with grand_prix_scope set to {"type": "other"}.
+        """
         other_record = {**record, "grand_prix_scope": {"type": "other"}}
         for key in self._sponsor_keys:
-            if key not in base_sponsors:
-                continue
-            other_record[key] = base_sponsors[key]
+            if key in base_sponsors:
+                other_record[key] = base_sponsors[key]
         for key in self._colour_keys:
-            if key not in base_colours:
-                continue
-            other_record[key] = base_colours[key]
-        split_records.append(other_record)
-        return split_records
+            if key in base_colours:
+                other_record[key] = base_colours[key]
+        return other_record

@@ -2,6 +2,8 @@ import logging
 from typing import Any
 from typing import Dict
 from typing import List
+from typing import Optional
+from typing import Tuple
 
 from bs4 import BeautifulSoup
 
@@ -87,14 +89,35 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         super().__init__(options=options, config=config)
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        # Try the primary section_id first, then alternatives, then None (whole document)
-        # Filter out None from the primary section_id to avoid duplication
+        table, parser = self._find_table_with_fallbacks(soup)
+
+        if table is None:
+            self._log_toc_diagnostics(soup)
+            error_msg = self._build_table_not_found_error(soup)
+            logger.error(error_msg)
+            raise RuntimeError(error_msg)
+
+        headers, header_rows = MultiLevelHeaderBuilder.build_headers(table)
+        return self._parse_table_rows(table, parser, headers, header_rows)
+
+    def _find_table_with_fallbacks(
+            self, soup: BeautifulSoup,
+    ) -> Tuple[Optional[Any], Optional[HtmlTableParser]]:
+        """Try each candidate section ID in order and return the first matching table.
+
+        Tries the primary section_id, then alternative_section_ids, then None
+        (whole document). Returns a (table, parser) pair; both elements are None
+        when no table is found.
+
+        Args:
+            soup: Parsed HTML document
+
+        Returns:
+            Tuple of (table Tag or None, HtmlTableParser or None).
+        """
         section_ids_to_try = (
                                  [self.section_id] if self.section_id is not None else []
                              ) + self.alternative_section_ids + [None]
-
-        table = None
-        parser = None
 
         for section_id in section_ids_to_try:
             logger.debug(f"Trying to find table with section_id={section_id!r}")
@@ -105,66 +128,100 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             )
             try:
                 table = current_parser._find_table(soup)
-                parser = current_parser
                 logger.info(f"Successfully found table with section_id={section_id!r}")
-                break
+                return table, current_parser
             except RuntimeError as e:
-                logger.debug(f"Failed to find table with section_id={section_id!r}: {e}")
-                continue
+                logger.debug(
+                    f"Failed to find table with section_id={section_id!r}: {e}",
+                )
 
-        # Check if the page has a TOC entry but no proper section heading
-        # This can help diagnose Wikipedia page structure issues
-        if table is None and self.section_id:
-            toc_ids = [
-                f"toc-{self.section_id}",
-                f"toc-{self.section_id.replace('_', '-')}",
-                f"toc-{self.section_id.replace('-', '_')}",
-            ]
-            for toc_id in toc_ids:
-                if soup.find(id=toc_id):
-                    logger.warning(
-                        f"Found TOC entry '{toc_id}' but no matching section heading. "
-                        f"Wikipedia page structure may be malformed or incomplete.",
-                    )
+        return None, None
 
-        if table is None:
-            # Extract diagnostic information for better error reporting
-            available_sections = [
-                span.get('id', 'no-id')
-                for span in soup.select('.mw-headline')
-            ]
-            sections_preview = available_sections[:10]
-            if len(available_sections) > 10:
-                sections_preview.append(f"... and {len(available_sections) - 10} more")
+    def _log_toc_diagnostics(self, soup: BeautifulSoup) -> None:
+        """Emit a warning when the primary section exists in the TOC but has no heading.
 
-            # Check what tables are actually present
-            all_tables = soup.find_all('table', class_=self.table_css_class)
-            logger.error(
-                f"Table search failed. Found {len(all_tables)} tables with "
-                f"class='{self.table_css_class}' in the document.",
-            )
+        Args:
+            soup: Parsed HTML document
+        """
+        if not self.section_id:
+            return
 
-            # Try to extract headers from each table for debugging
-            if all_tables:
-                logger.error("Available tables and their headers:")
-                for i, tbl in enumerate(all_tables[:5]):  # Show first 5 tables
-                    try:
-                        headers, _ = MultiLevelHeaderBuilder.build_headers(tbl)
-                        logger.error(f"  Table {i + 1}: {headers[:7]}...")  # Show first 7 headers
-                    except Exception as e:
-                        logger.error(f"  Table {i + 1}: Could not extract headers - {e}")
+        toc_ids = [
+            f"toc-{self.section_id}",
+            f"toc-{self.section_id.replace('_', '-')}",
+            f"toc-{self.section_id.replace('-', '_')}",
+        ]
+        for toc_id in toc_ids:
+            if soup.find(id=toc_id):
+                logger.warning(
+                    f"Found TOC entry '{toc_id}' but no matching section heading. "
+                    f"Wikipedia page structure may be malformed or incomplete.",
+                )
 
-            error_msg = (
-                f"Nie znaleziono pasującej tabeli. "
-                f"Próbowano sekcji: {section_ids_to_try}. "
-                f"Dostępne sekcje na stronie: {sections_preview}. "
-                f"Znaleziono {len(all_tables)} tabel z class='{self.table_css_class}'."
-            )
-            logger.error(error_msg)
-            raise RuntimeError(error_msg)
+    def _build_table_not_found_error(self, soup: BeautifulSoup) -> str:
+        """Build a descriptive error message when no matching table was found.
 
-        headers, header_rows = MultiLevelHeaderBuilder.build_headers(table)
+        Includes the section IDs that were tried, available page sections, and
+        table counts so callers can diagnose Wikipedia page structure issues.
 
+        Args:
+            soup: Parsed HTML document
+
+        Returns:
+            Human-readable error string (also logged at ERROR level).
+        """
+        section_ids_to_try = (
+                                 [self.section_id] if self.section_id is not None else []
+                             ) + self.alternative_section_ids + [None]
+
+        available_sections = [
+            span.get('id', 'no-id')
+            for span in soup.select('.mw-headline')
+        ]
+        sections_preview = available_sections[:10]
+        if len(available_sections) > 10:
+            sections_preview.append(f"... and {len(available_sections) - 10} more")
+
+        all_tables = soup.find_all('table', class_=self.table_css_class)
+        logger.error(
+            f"Table search failed. Found {len(all_tables)} tables with "
+            f"class='{self.table_css_class}' in the document.",
+        )
+
+        if all_tables:
+            logger.error("Available tables and their headers:")
+            for i, tbl in enumerate(all_tables[:5]):
+                try:
+                    headers, _ = MultiLevelHeaderBuilder.build_headers(tbl)
+                    logger.error(f"  Table {i + 1}: {headers[:7]}...")
+                except Exception as e:
+                    logger.error(f"  Table {i + 1}: Could not extract headers - {e}")
+
+        return (
+            f"Nie znaleziono pasującej tabeli. "
+            f"Próbowano sekcji: {section_ids_to_try}. "
+            f"Dostępne sekcje na stronie: {sections_preview}. "
+            f"Znaleziono {len(all_tables)} tabel z class='{self.table_css_class}'."
+        )
+
+    def _parse_table_rows(
+            self,
+            table,
+            parser: HtmlTableParser,
+            headers: List[str],
+            header_rows: int,
+    ) -> List[Dict[str, Any]]:
+        """Parse data rows from the located table.
+
+        Args:
+            table: BeautifulSoup Tag for the <table> element
+            parser: Configured HtmlTableParser used to locate the table
+            headers: List of column header strings
+            header_rows: Number of leading rows that are header rows (to skip)
+
+        Returns:
+            List of parsed record dicts.
+        """
         records: list[dict[str, Any]] = []
         pending_rowspans: dict[int, dict[str, object]] = {}
         rows = table.find_all("tr")[header_rows:]

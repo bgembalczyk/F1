@@ -55,7 +55,7 @@ class RaceResultColumn(BaseColumn):
         if not results and background is None:
             return None
         if background is None and all(
-                result.get("position") is None for result in results,
+                result.get("position") is None for result in results
         ):
             return None
 

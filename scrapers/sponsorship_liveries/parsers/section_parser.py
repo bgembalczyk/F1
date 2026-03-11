@@ -179,7 +179,7 @@ class SponsorshipSectionParser:
     def _section_has_table(cls, heading: Tag, headline: Tag) -> bool:
         return any(
             element.name == "table" and "wikitable" in (element.get("class") or [])
-            for element in cls._iter_section_elements(heading, headline),
+            for element in cls._iter_section_elements(heading, headline)
         )
 
     @classmethod

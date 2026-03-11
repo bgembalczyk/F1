@@ -3,6 +3,7 @@
 from typing import Any
 from typing import Dict
 from typing import List
+from typing import Optional
 
 from bs4 import Tag
 
@@ -30,90 +31,29 @@ class LicenceParser:
         -> [{licence: {...}, years: {start: None, end: 2019}}, {licence: {...}, years: {start: 2020, end: None}}]
         """
         try:
-            # Extract all links from the cell first, filtering out image/file links
-            all_links = self._link_extractor.extract_links(cell)
-            # Filter out links to files (images, etc.) - they typically contain "File:" in URL
-            licence_links = [
-                link
-                for link in all_links
-                if not (link.get("url", "").lower().find("/file:") >= 0)
-            ]
-
+            licence_links = self._extract_licence_links(cell)
             if not licence_links:
                 return []
 
-            # Find all <span> tags with year information (font-size styling)
             year_spans = cell.find_all("span", style=lambda x: x and "font-size" in x)
 
             licences = []
-
-            # Strategy: For each licence link, find the nearest year span that comes after it
             for licence_link in licence_links:
-                licence_entry = {
+                licence_entry: Dict[str, Any] = {
                     "licence": licence_link,
                     "years": {"start": None, "end": None},
                 }
 
-                # Find the actual <a> tag for this licence in the cell
-                licence_text = licence_link.get("text", "")
-                licence_url = licence_link.get("url", "")
-
-                licence_tag = None
-                for a_tag in cell.find_all("a"):
-                    if clean_infobox_text(a_tag.get_text(strip=True)) == licence_text:
-                        # Verify URL matches if present
-                        # licence_url is a full URL, a_href is relative
-                        a_href = a_tag.get("href", "") or ""
-                        if not licence_url or a_href in licence_url:
-                            # Make sure this is not a file/image link
-                            if "/file:" not in a_href.lower():
-                                licence_tag = a_tag
-                                break
-
-                # Look for the next year span after this licence tag
+                licence_tag = self._find_licence_tag(cell, licence_link)
                 if licence_tag and year_spans:
-                    # Cache all <a> tags once to avoid repeated find_all calls
-                    all_a_tags = cell.find_all("a")
-
-                    # Build a map of licence text -> tag for efficient lookup
-                    licence_tag_map = {}
-                    for other_link in licence_links:
-                        if other_link == licence_link:
-                            continue
-                        other_text = other_link.get("text", "")
-                        if other_text and other_text not in licence_tag_map:
-                            for a_tag in all_a_tags:
-                                if (
-                                        clean_infobox_text(a_tag.get_text(strip=True))
-                                        == other_text
-                                ):
-                                    a_href = a_tag.get("href", "") or ""
-                                    if "/file:" not in a_href.lower():
-                                        licence_tag_map[other_text] = a_tag
-                                        break
-
-                    # Find which year span comes after this licence tag
-                    for year_span in year_spans:
-                        # Check if this span comes after the licence tag in the document order
-                        if self._is_element_before(licence_tag, year_span):
-                            # This span is after the licence tag
-                            # Check if there's another licence link between them
-                            has_licence_between = False
-                            for other_tag in licence_tag_map.values():
-                                # Check if this other licence is between current licence and year span
-                                if self._is_element_before(
-                                        licence_tag, other_tag,
-                                ) and self._is_element_before(other_tag, year_span):
-                                    has_licence_between = True
-                                    break
-
-                            if not has_licence_between:
-                                # This year span belongs to this licence
-                                year_text = year_span.get_text(strip=True)
-                                licence_entry["years"] = YearParser.parse_licence_years(
-                                    year_text,
-                                )
-                                break
+                    licence_tag_map = self._build_licence_tag_map(
+                        cell, licence_links, licence_link,
+                    )
+                    years = self._find_year_for_licence(
+                        licence_tag, year_spans, licence_tag_map,
+                    )
+                    if years is not None:
+                        licence_entry["years"] = years
 
                 licences.append(licence_entry)
 
@@ -124,6 +64,114 @@ class LicenceParser:
                 f"Nie udało się sparsować licencji wyścigowej: {text!r}.",
                 cause=exc,
             ) from exc
+
+    def _extract_licence_links(self, cell: Tag) -> List[Dict[str, Any]]:
+        """Extract and return all licence links from the cell, excluding file/image links.
+
+        Args:
+            cell: BeautifulSoup Tag representing the cell
+
+        Returns:
+            List of link dicts for non-file links.
+        """
+        all_links = self._link_extractor.extract_links(cell)
+        return [
+            link
+            for link in all_links
+            if "/file:" not in link.get("url", "").lower()
+        ]
+
+    def _find_licence_tag(self, cell: Tag, licence_link: Dict[str, Any]) -> Optional[Tag]:
+        """Find the <a> DOM element corresponding to the given licence link dict.
+
+        Args:
+            cell: BeautifulSoup Tag representing the cell
+            licence_link: Link dict with 'text' and 'url' keys
+
+        Returns:
+            Matching <a> Tag or None if not found.
+        """
+        licence_text = licence_link.get("text", "")
+        licence_url = licence_link.get("url", "")
+
+        for a_tag in cell.find_all("a"):
+            if clean_infobox_text(a_tag.get_text(strip=True)) != licence_text:
+                continue
+            a_href = a_tag.get("href", "") or ""
+            if licence_url and a_href not in licence_url:
+                continue
+            if "/file:" not in a_href.lower():
+                return a_tag
+
+        return None
+
+    def _build_licence_tag_map(
+            self,
+            cell: Tag,
+            licence_links: List[Dict[str, Any]],
+            current_link: Dict[str, Any],
+    ) -> Dict[str, Tag]:
+        """Build a text-to-tag mapping for all licence links except the current one.
+
+        Args:
+            cell: BeautifulSoup Tag representing the cell
+            licence_links: All licence link dicts for this cell
+            current_link: The link being processed (excluded from the map)
+
+        Returns:
+            Dict mapping licence text to its <a> Tag.
+        """
+        all_a_tags = cell.find_all("a")
+        licence_tag_map: Dict[str, Tag] = {}
+
+        for other_link in licence_links:
+            if other_link == current_link:
+                continue
+            other_text = other_link.get("text", "")
+            if not other_text or other_text in licence_tag_map:
+                continue
+            for a_tag in all_a_tags:
+                if clean_infobox_text(a_tag.get_text(strip=True)) == other_text:
+                    a_href = a_tag.get("href", "") or ""
+                    if "/file:" not in a_href.lower():
+                        licence_tag_map[other_text] = a_tag
+                        break
+
+        return licence_tag_map
+
+    def _find_year_for_licence(
+            self,
+            licence_tag: Tag,
+            year_spans: List[Tag],
+            licence_tag_map: Dict[str, Tag],
+    ) -> Optional[Dict[str, Any]]:
+        """Find and parse the year span that immediately follows the given licence tag.
+
+        A year span is considered to belong to *licence_tag* when it comes after
+        that tag in document order AND no other licence tag appears between them.
+
+        Args:
+            licence_tag: The <a> Tag for the current licence
+            year_spans: All year-bearing <span> elements found in the cell
+            licence_tag_map: Mapping of other licence texts to their <a> Tags
+
+        Returns:
+            Parsed year dict or None if no matching span is found.
+        """
+        for year_span in year_spans:
+            if not self._is_element_before(licence_tag, year_span):
+                continue
+
+            has_licence_between = any(
+                self._is_element_before(licence_tag, other_tag)
+                and self._is_element_before(other_tag, year_span)
+                for other_tag in licence_tag_map.values()
+            )
+            if not has_licence_between:
+                year_text = year_span.get_text(strip=True)
+                return YearParser.parse_licence_years(year_text)
+
+        return None
 
     @staticmethod
     def _is_element_before(elem1: Tag, elem2: Tag) -> bool:

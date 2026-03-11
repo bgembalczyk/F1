@@ -1402,5 +1402,19 @@
         "url": "https://en.wikipedia.org/wiki/Pirelli"
       }
     ]
+  },
+  {
+    "seasons": [
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+      }
+    ],
+    "manufacturers": [
+      {
+        "text": "Pirelli",
+        "url": "https://en.wikipedia.org/wiki/Pirelli"
+      }
+    ]
   }
 ]
