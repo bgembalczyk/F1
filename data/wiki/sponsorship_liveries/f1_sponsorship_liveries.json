@@ -3073,7 +3073,9 @@
           "British racing green"
         ],
         "additional_colours": [
-          "Magenta"
+          "Magenta",
+          "Lime green",
+          "Black"
         ],
         "main_sponsors": [
           {
@@ -3091,6 +3093,12 @@
             "url": "https://en.wikipedia.org/wiki/BWT_AG"
           },
           {
+            "text": "Aqua Mondo"
+          },
+          {
+            "text": "Ravenol"
+          },
+          {
             "text": "Peroni Brewery",
             "url": "https://en.wikipedia.org/wiki/Peroni_Brewery"
           },
@@ -3126,15 +3134,19 @@
             "text": "Crypto.com",
             "url": "https://en.wikipedia.org/wiki/Crypto.com"
           },
-          "Epos",
-          "Aqua Mondo",
-          "Ravenol",
+          {
+            "text": "Epos"
+          },
           {
             "text": "TikTok",
             "url": "https://en.wikipedia.org/wiki/TikTok"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
           }
         ],
-        "notes": null
+        "notes": "For the 2025 Chinese Grand Prix , the team featured a dedication to Eddie Jordan , who died ahead of the Grand Prix weekend. Jordan was the founder of the team's original descent, Jordan Grand Prix ."
       },
       {
         "season": [
@@ -3152,6 +3164,10 @@
         ],
         "main_sponsors": [
           {
+            "text": "Aston Martin",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin"
+          },
+          {
             "text": "Aramco",
             "url": "https://en.wikipedia.org/wiki/Aramco"
           },
@@ -3161,9 +3177,6 @@
           }
         ],
         "additional_major_sponsors": [
-          {
-            "text": "Aston Martin, Vantage, Vanquish, Valhalla)"
-          },
           {
             "text": "Peroni Brewery",
             "url": "https://en.wikipedia.org/wiki/Peroni_Brewery"
@@ -3200,7 +3213,9 @@
             "text": "Crypto.com",
             "url": "https://en.wikipedia.org/wiki/Crypto.com"
           },
-          "Epos",
+          {
+            "text": "Epos"
+          },
           {
             "text": "Juniper Networks",
             "url": "https://en.wikipedia.org/wiki/Juniper_Networks"
@@ -3240,6 +3255,10 @@
         ],
         "main_sponsors": [
           {
+            "text": "Aston Martin",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin"
+          },
+          {
             "text": "Aramco",
             "url": "https://en.wikipedia.org/wiki/Aramco"
           },
@@ -3250,7 +3269,8 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "Aston Martin, Vantage, Vanquish, Valhalla)"
+            "text": "Aston Martin DBX707",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin_DBX"
           },
           {
             "text": "Peroni Brewery",
@@ -3280,7 +3300,9 @@
             "text": "Crypto.com",
             "url": "https://en.wikipedia.org/wiki/Crypto.com"
           },
-          "Epos",
+          {
+            "text": "Epos"
+          },
           {
             "text": "Juniper Networks",
             "url": "https://en.wikipedia.org/wiki/Juniper_Networks"
@@ -3352,13 +3374,26 @@
         ],
         "main_sponsors": [
           {
+            "text": "Aston Martin",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin"
+          },
+          {
             "text": "Aramco",
             "url": "https://en.wikipedia.org/wiki/Aramco"
           }
         ],
         "additional_major_sponsors": [
           {
-            "text": "Aston Martin, Vantage, Vanquish, Valhalla)"
+            "text": "Aston Martin DBX707",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin_DBX"
+          },
+          {
+            "text": "Aston Martin Vantage",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin_Vantage_(2018)#2024_facelift"
+          },
+          {
+            "text": "Aston Martin Vanquish",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin_Vanquish#Third_generation_(2024–)"
           },
           {
             "text": "Pirelli",
@@ -3380,7 +3415,9 @@
             "text": "Bombardier",
             "url": "https://en.wikipedia.org/wiki/Bombardier_Inc."
           },
-          "Epos",
+          {
+            "text": "Epos"
+          },
           {
             "text": "Juniper Networks",
             "url": "https://en.wikipedia.org/wiki/Juniper_Networks"
@@ -3451,13 +3488,18 @@
         ],
         "main_sponsors": [
           {
+            "text": "Aston Martin",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin"
+          },
+          {
             "text": "Aramco",
             "url": "https://en.wikipedia.org/wiki/Aramco"
           }
         ],
         "additional_major_sponsors": [
           {
-            "text": "Aston Martin, Vantage, Vanquish, Valhalla)"
+            "text": "Aston Martin Valhalla",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin_Valhalla"
           },
           {
             "text": "Pirelli",
@@ -3479,7 +3521,9 @@
             "text": "Bombardier",
             "url": "https://en.wikipedia.org/wiki/Bombardier_Inc."
           },
-          "Epos",
+          {
+            "text": "Epos"
+          },
           {
             "text": "Juniper Networks",
             "url": "https://en.wikipedia.org/wiki/Juniper_Networks"
@@ -3505,31 +3549,12 @@
             "url": "https://en.wikipedia.org/wiki/Girard-Perregaux"
           },
           {
-            "text": "NexGen Energy"
-          },
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          },
-          {
             "text": "Regent Seven Seas Cruises",
             "url": "https://en.wikipedia.org/wiki/Regent_Seven_Seas_Cruises"
           },
           {
-            "text": "Financial Times",
-            "url": "https://en.wikipedia.org/wiki/Financial_Times"
-          },
-          {
-            "text": "Cognizant",
-            "url": "https://en.wikipedia.org/wiki/Cognizant"
-          },
-          {
-            "text": "MA'ADEN",
-            "url": "https://en.wikipedia.org/wiki/Maaden_(company)"
-          },
-          {
-            "text": "Glenfiddich",
-            "url": "https://en.wikipedia.org/wiki/Glenfiddich_distillery"
+            "text": "Arm",
+            "url": "https://en.wikipedia.org/wiki/Arm_(software)"
           },
           {
             "text": "Circle8"
@@ -3562,12 +3587,162 @@
             "url": "https://en.wikipedia.org/wiki/Puma_(brand)"
           },
           {
-            "text": "Core Weave",
+            "text": "CoreWeave",
             "url": "https://en.wikipedia.org/wiki/CoreWeave"
           },
           {
             "text": "Santan Cup",
             "url": "https://en.wikipedia.org/wiki/Dave_(rapper)"
+          }
+        ],
+        "notes": "For the 2025 Chinese Grand Prix , the team featured a dedication to Eddie Jordan , who died ahead of the Grand Prix weekend. Jordan was the founder of the team's original descent, Jordan Grand Prix ."
+      },
+      {
+        "season": [
+          {
+            "year": 2026,
+            "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "British racing green"
+        ],
+        "additional_colours": [
+          "Lime green",
+          "Black"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Aston Martin",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin"
+          },
+          {
+            "text": "Aramco",
+            "url": "https://en.wikipedia.org/wiki/Aramco"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Aston Martin Valhalla",
+            "url": "https://en.wikipedia.org/wiki/Aston_Martin_Valhalla"
+          },
+          {
+            "text": "Pirelli",
+            "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "JCB",
+            "url": "https://en.wikipedia.org/wiki/JCB_(heavy_equipment_manufacturer)"
+          },
+          {
+            "text": "NetApp",
+            "url": "https://en.wikipedia.org/wiki/NetApp"
+          },
+          {
+            "text": "TikTok",
+            "url": "https://en.wikipedia.org/wiki/TikTok"
+          },
+          {
+            "text": "Hugo Boss",
+            "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
+          },
+          {
+            "text": "NexGen Energy"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Financial Times",
+            "url": "https://en.wikipedia.org/wiki/Financial_Times"
+          },
+          {
+            "text": "Cognizant",
+            "url": "https://en.wikipedia.org/wiki/Cognizant"
+          },
+          {
+            "text": "MA'ADEN",
+            "url": "https://en.wikipedia.org/wiki/Maaden_(company)"
+          },
+          {
+            "text": "Glenfiddich",
+            "url": "https://en.wikipedia.org/wiki/Glenfiddich_distillery"
+          },
+          {
+            "text": "Arm",
+            "url": "https://en.wikipedia.org/wiki/Arm_(software)"
+          },
+          {
+            "text": "Circle8"
+          },
+          {
+            "text": "Pepperstone",
+            "url": "https://en.wikipedia.org/wiki/Pepperstone"
+          },
+          {
+            "text": "ServiceNow",
+            "url": "https://en.wikipedia.org/wiki/ServiceNow"
+          },
+          {
+            "text": "Elemis"
+          },
+          {
+            "text": "Atlas Air",
+            "url": "https://en.wikipedia.org/wiki/Atlas_Air"
+          },
+          {
+            "text": "Coinbase",
+            "url": "https://en.wikipedia.org/wiki/Coinbase"
+          },
+          {
+            "text": "Xerox",
+            "url": "https://en.wikipedia.org/wiki/Xerox"
+          },
+          {
+            "text": "Puma",
+            "url": "https://en.wikipedia.org/wiki/Puma_(brand)"
+          },
+          {
+            "text": "CoreWeave",
+            "url": "https://en.wikipedia.org/wiki/CoreWeave"
+          },
+          {
+            "text": "Public"
+          },
+          {
+            "text": "Krown"
+          },
+          {
+            "text": "CoinPayments"
+          },
+          {
+            "text": "Celsius",
+            "url": "https://en.wikipedia.org/wiki/Celsius_Holdings"
+          },
+          {
+            "text": "Breitling",
+            "url": "https://en.wikipedia.org/wiki/Breitling_SA"
+          },
+          {
+            "text": "Cognition",
+            "url": "https://en.wikipedia.org/wiki/Cognition_AI"
+          },
+          {
+            "text": "UKG",
+            "url": "https://en.wikipedia.org/wiki/UKG"
+          },
+          {
+            "text": "Eight Sleep",
+            "url": "https://en.wikipedia.org/wiki/Eight_Sleep"
+          },
+          {
+            "text": "Honda",
+            "url": "https://en.wikipedia.org/wiki/Honda"
+          },
+          {
+            "text": "HRC",
+            "url": "https://en.wikipedia.org/wiki/Honda_Racing_Corporation"
           }
         ],
         "notes": "For the 2025 Chinese Grand Prix , the team featured a dedication to Eddie Jordan , who died ahead of the Grand Prix weekend. Jordan was the founder of the team's original descent, Jordan Grand Prix ."
