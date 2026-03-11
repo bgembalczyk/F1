@@ -243,32 +243,94 @@ class SponsorshipRecordSplitter:
     ) -> Dict[Tuple, Dict[str, Any]]:
         """Aggregate scoped sponsor and colour items into a keyed scope map.
 
+        ``only`` scopes are expanded to one entry per individual Grand Prix so
+        that sponsors whose scopes *overlap* (e.g. A covers {SA, US-W} and B
+        covers {US-W, US}) are combined into a single record for the shared GP
+        (US-W → A + B) rather than two separate records.  GPs that end up with
+        an identical item-set are merged back into a multi-GP ``only`` scope.
+
+        Non-``only`` scopes (range, etc.) are handled with the original
+        single-entry behaviour.
+
         Args:
             scoped_items: Mapping of sponsor key to list of (scope, item) tuples
             scoped_colours: Mapping of colour key to list of (scope, colour, replace) tuples
 
         Returns:
-            Dict mapping scope_key tuple to a dict with 'scope' and 'items' entries.
+            Dict mapping a stable items-key tuple to a dict with 'scope' and
+            'items' entries, where 'items' maps sponsor/colour keys to lists of
+            scoped items.
         """
-        scope_map: Dict[Tuple[Any, ...], Dict[str, Any]] = {}
+        # gp_key  →  {field_key: [items]}   (individual GP or non-"only" scope key)
+        gp_item_map: Dict[Tuple[Any, ...], Dict[str, List[Any]]] = {}
+        # gp_key  →  single-GP scope entry used when re-building the final scope
+        gp_scope_for_key: Dict[Tuple[Any, ...], Dict[str, Any]] = {}
+
+        def _add(gp_key: Tuple[Any, ...], gp_scope: Dict[str, Any],
+                 field_key: str, item: Any) -> None:
+            gp_scope_for_key[gp_key] = gp_scope
+            gp_item_map.setdefault(gp_key, {}).setdefault(field_key, []).append(item)
 
         for key, scoped_list in scoped_items.items():
             for scope, item in scoped_list:
-                scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
-                scope_entry = scope_map.setdefault(
-                    scope_key, {"scope": scope, "items": {}},
-                )
-                scope_entry["items"].setdefault(key, []).append(item)
+                if scope.get("type") == "only":
+                    for gp_entry in scope.get("grand_prix") or []:
+                        gp_key = (gp_entry.get("text"), gp_entry.get("url"))
+                        _add(gp_key, {"type": "only", "grand_prix": [gp_entry]},
+                             key, item)
+                else:
+                    scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
+                    _add(scope_key, scope, key, item)
 
         for key, scoped_list in scoped_colours.items():
             for scope, colour, replace in scoped_list:
-                scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
-                scope_entry = scope_map.setdefault(
-                    scope_key, {"scope": scope, "items": {}},
-                )
-                scope_entry["items"].setdefault(key, []).append(
-                    {"colour": colour, "replace": replace},
-                )
+                colour_entry = {"colour": colour, "replace": replace}
+                if scope.get("type") == "only":
+                    for gp_entry in scope.get("grand_prix") or []:
+                        gp_key = (gp_entry.get("text"), gp_entry.get("url"))
+                        _add(gp_key, {"type": "only", "grand_prix": [gp_entry]},
+                             key, colour_entry)
+                else:
+                    scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
+                    _add(scope_key, scope, key, colour_entry)
+
+        if not gp_item_map:
+            return {}
+
+        def _items_key(d: Dict[str, List[Any]]) -> Tuple[Any, ...]:
+            """Produce a stable, hashable fingerprint of an items-dict."""
+            parts: List[Any] = []
+            for k in sorted(d.keys()):
+                for item in d[k]:
+                    if isinstance(item, dict):
+                        parts.append(
+                            (k, tuple(sorted((ki, str(vi)) for ki, vi in item.items()))),
+                        )
+                    else:
+                        parts.append((k, str(item)))
+            return tuple(parts)
+
+        # Group individual-GP keys by the set of items they carry.
+        group_to_gps: Dict[Tuple[Any, ...], List[Tuple[Any, ...]]] = {}
+        for gp_key, items_dict in gp_item_map.items():
+            ik = _items_key(items_dict)
+            group_to_gps.setdefault(ik, []).append(gp_key)
+
+        scope_map: Dict[Tuple[Any, ...], Dict[str, Any]] = {}
+        for ik, gp_keys in group_to_gps.items():
+            items_dict = gp_item_map[gp_keys[0]]
+            all_only = all(
+                gp_scope_for_key.get(gk, {}).get("type") == "only"
+                for gk in gp_keys
+            )
+            if all_only:
+                gp_entries: List[Dict[str, Any]] = []
+                for gk in gp_keys:
+                    gp_entries.extend(gp_scope_for_key[gk].get("grand_prix", []))
+                merged_scope: Dict[str, Any] = {"type": "only", "grand_prix": gp_entries}
+            else:
+                merged_scope = gp_scope_for_key[gp_keys[0]]
+            scope_map[ik] = {"scope": merged_scope, "items": items_dict}
 
         return scope_map
 
