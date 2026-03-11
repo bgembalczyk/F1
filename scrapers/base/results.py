@@ -8,7 +8,6 @@ from typing import Optional
 from typing import Sequence
 from typing import TYPE_CHECKING
 
-from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
 from scrapers.base.normalization import NormalizationRule
 from scrapers.base.normalization import RecordNormalizer
 from validation.records import ExportRecord
@@ -112,6 +111,8 @@ class ScrapeResult:
             normalize_keys: bool = False,
             normalization_rules: Sequence[NormalizationRule] | None = None,
     ):
+        from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
+
         normalized = self._with_normalized_data(
             normalize_keys=normalize_keys,
             normalization_rules=normalization_rules,

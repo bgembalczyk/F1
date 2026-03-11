@@ -1,4 +1,7 @@
+from bs4 import BeautifulSoup
+
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
 from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
@@ -21,6 +24,20 @@ def _ctx(
         cell=None,
         base_url="https://en.wikipedia.org",
         model_fields=model_fields,
+    )
+
+
+def _ctx_with_cell(html: str) -> ColumnContext:
+    cell = BeautifulSoup(f"<td>{html}</td>", "html.parser").find("td")
+    raw_text = cell.get_text(" ", strip=True)
+    return ColumnContext(
+        header="Points",
+        key="points",
+        raw_text=raw_text,
+        clean_text=raw_text,
+        links=[],
+        cell=cell,
+        base_url="https://en.wikipedia.org",
     )
 
 
@@ -66,3 +83,21 @@ def test_fatality_event_column_parse() -> None:
 
     assert parsed["event"] == "1958 French Grand Prix"
     assert parsed["championship"] is False
+
+
+def test_points_column_hidden_span_zero() -> None:
+    column = PointsColumn()
+    parsed = column.parse(_ctx_with_cell('<span style="display:none">4</span>0'))
+    assert parsed == 0.0
+
+
+def test_points_column_hidden_span_fraction() -> None:
+    column = PointsColumn()
+    parsed = column.parse(_ctx_with_cell('<span style="display:none">5</span>0.5'))
+    assert parsed == 0.5
+
+
+def test_points_column_hidden_span_dash() -> None:
+    column = PointsColumn()
+    parsed = column.parse(_ctx_with_cell('<span style="display:none">2</span>–'))
+    assert parsed is None
