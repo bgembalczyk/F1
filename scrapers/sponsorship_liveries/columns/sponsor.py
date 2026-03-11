@@ -1,11 +1,13 @@
 import re
 from typing import Any
 
+from bs4 import BeautifulSoup
 from bs4 import NavigableString
 from bs4 import Tag
 
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.url import normalize_url
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
@@ -16,19 +18,63 @@ class SponsorColumn(BaseColumn):
         if not ctx.clean_text and not ctx.links:
             return []
 
+        if ctx.cell is not None and ctx.cell.find("br"):
+            return self._parse_br_cell(ctx)
+
         if ctx.cell is not None and ctx.cell.find("p", recursive=False):
             text = clean_wiki_text(self._get_text_with_paragraph_breaks(ctx.cell))
         else:
             text = clean_wiki_text(ctx.clean_text or "")
-        text = self._normalize_text(text)
+
         links = normalize_links(ctx.links or [])
+        return self._parse_text_with_links(text, links)
+
+    def _parse_br_cell(self, ctx: ColumnContext) -> list[Any]:
+        """Process a sponsor cell whose entries are separated by <br> elements.
+
+        Each <br>-delimited segment is parsed independently.  A trailing
+        grand-prix-scope parenthetical at the end of a segment is propagated
+        to every item within that segment so that, e.g.,
+        "Alpquell, Elan, Raiffeisen (Austrian GP only)" correctly scopes all
+        three sponsors to the Austrian GP.
+        """
+        results: list[Any] = []
+        for seg_nodes in self._split_cell_by_br(ctx.cell):
+            seg_html = "".join(str(node) for node in seg_nodes)
+            seg_soup = BeautifulSoup(seg_html, "html.parser")
+            raw_text = seg_soup.get_text(" ", strip=True)
+            seg_text = clean_wiki_text(raw_text)
+            seg_links = normalize_links(
+                seg_soup,
+                full_url=lambda href: normalize_url(ctx.base_url, href),
+                drop_empty_text=True,
+            )
+            seg_items = self._parse_text_with_links(seg_text, seg_links)
+            seg_items = self._propagate_segment_scope(seg_items)
+            results.extend(seg_items)
+        return results
+
+    def _parse_text_with_links(self, text: str, links: list[dict[str, Any]]) -> list[Any]:
+        """Core parsing: split *text* into sponsor entries using *links* for URL lookup.
+
+        Slashes that are part of a link text (e.g. "RE/MAX") are protected
+        before splitting so they are not treated as list separators.
+        """
+        text = self._normalize_text(clean_wiki_text(text))
+        links = normalize_links(links)
 
         if not text:
             return links
 
+        text, slash_replacements = self._protect_link_slashes(text, links)
         parts_with_sep = self._split_parts_with_sep(text)
         if not parts_with_sep:
             return links or []
+
+        parts_with_sep = [
+            (self._restore_link_slashes(p, slash_replacements), s)
+            for p, s in parts_with_sep
+        ]
 
         results: list[Any] = []
         slash_group: list[str] = []
@@ -51,6 +97,93 @@ class SponsorColumn(BaseColumn):
         flush_slash_group()
 
         return results
+
+    @staticmethod
+    def _split_cell_by_br(cell: Tag) -> list[list[Any]]:
+        """Split the direct children of *cell* at every <br> element.
+
+        Returns a list of segments, where each segment is the list of child
+        nodes (Tags and NavigableStrings) between two consecutive <br> tags.
+        """
+        segments: list[list[Any]] = []
+        current: list[Any] = []
+        for child in cell.children:
+            if isinstance(child, Tag) and child.name == "br":
+                if current:
+                    segments.append(current)
+                current = []
+            else:
+                current.append(child)
+        if current:
+            segments.append(current)
+        return segments
+
+    @staticmethod
+    def _propagate_segment_scope(items: list[Any]) -> list[Any]:
+        """Propagate a trailing grand-prix-scope from the last item to all others.
+
+        When a <br> segment contains multiple comma-separated sponsors followed
+        by a single shared grand-prix parenthetical (e.g.
+        "Alpquell, Elan, Raiffeisen (Austrian GP only)"), only the last item
+        gets the scope after regular parsing.  This method copies those scope
+        params onto every item that does not yet have any params.
+        """
+        if not items:
+            return items
+
+        last = items[-1]
+        trailing_scope_params = None
+        if isinstance(last, dict) and last.get("params"):
+            from scrapers.sponsorship_liveries.parsers.grand_prix_scope import (
+                GrandPrixScopeParser,
+            )
+            if GrandPrixScopeParser.parse_grand_prix_scope(last["params"]):
+                trailing_scope_params = last["params"]
+
+        if trailing_scope_params is None:
+            return items
+
+        result: list[Any] = []
+        for item in items:
+            if isinstance(item, dict) and "params" in item:
+                result.append(item)
+            elif isinstance(item, dict):
+                result.append({**item, "params": trailing_scope_params})
+            elif isinstance(item, str):
+                result.append({"text": item, "params": trailing_scope_params})
+            else:
+                result.append(item)
+        return result
+
+    @staticmethod
+    def _protect_link_slashes(
+            text: str, links: list[dict[str, Any]],
+    ) -> tuple[str, list[tuple[str, str]]]:
+        """Replace '/' inside known link texts with a placeholder.
+
+        This prevents ``_split_parts_with_sep`` from treating a slash that is
+        part of a linked name (e.g. "RE/MAX") as a list separator.
+
+        Returns the modified *text* and the list of ``(placeholder, original)``
+        pairs needed to restore the originals afterwards.
+        """
+        replacements: list[tuple[str, str]] = []
+        for link in links:
+            link_text = clean_wiki_text(link.get("text") or "")
+            if "/" in link_text and link_text in text:
+                placeholder = f"\x00{len(replacements)}\x00"
+                replacements.append((placeholder, link_text))
+                text = text.replace(link_text, placeholder)
+        return text, replacements
+
+    @staticmethod
+    def _restore_link_slashes(
+            text: str, replacements: list[tuple[str, str]],
+    ) -> str:
+        """Undo the placeholder substitutions made by :meth:`_protect_link_slashes`."""
+        for placeholder, original in replacements:
+            text = text.replace(placeholder, original)
+        return text
 
     @staticmethod
     def _normalize_text(text: str) -> str:

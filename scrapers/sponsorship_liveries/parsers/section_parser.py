@@ -9,7 +9,6 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.list import ListColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl import TableSchemaDSL
@@ -17,6 +16,7 @@ from scrapers.base.table.dsl import column
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
 from scrapers.sponsorship_liveries.parsers.record_splitter import (
     SponsorshipRecordSplitter,
@@ -46,11 +46,11 @@ class SponsorshipSectionParser:
 
     def _build_pipeline(self) -> TablePipeline:
         schema_columns = [
-            column("Year", "season", SeasonsColumn()),
-            column("Years", "season", SeasonsColumn()),
-            column("Season", "season", SeasonsColumn()),
-            column("Seasons", "season", SeasonsColumn()),
-            column("Year(s)", "season", SeasonsColumn()),
+            column("Year", "season", SponsorshipSeasonsColumn()),
+            column("Years", "season", SponsorshipSeasonsColumn()),
+            column("Season", "season", SponsorshipSeasonsColumn()),
+            column("Seasons", "season", SponsorshipSeasonsColumn()),
+            column("Year(s)", "season", SponsorshipSeasonsColumn()),
             column("Driver(s)", "drivers", DriverListColumn()),
             column("Main colour(s)", normalize_header("Main colour(s)"), ListColumn()),
             column(
@@ -152,7 +152,89 @@ class SponsorshipSectionParser:
             )
             if record:
                 records.extend(self._splitter.split_record_by_season(record))
-        return records
+        return self._split_broader_records_by_scope(records)
+
+    @staticmethod
+    def _split_broader_records_by_scope(
+            records: List[Dict[str, Any]],
+    ) -> List[Dict[str, Any]]:
+        """Split season ranges that overlap with GP-scoped entries derived from season cells.
+
+        When a season cell contains a grand-prix parenthetical such as
+        ``2004–2005 (only Chinese GP)``, :class:`~scrapers.sponsorship_liveries.columns.seasons.SponsorshipSeasonsColumn`
+        marks the resulting record with ``_season_scoped_gp = True``.
+
+        Any other record whose season range *overlaps* with such a scoped record
+        (and does not itself carry a ``driver`` field) is split into:
+
+        * the years *not* covered by the scoped record → no ``grand_prix_scope``
+        * the years *shared* with the scoped record → ``grand_prix_scope: {type: "other"}``
+
+        The ``_season_scoped_gp`` marker is removed from all records before
+        returning.
+        """
+        season_scoped = [r for r in records if r.get("_season_scoped_gp")]
+        if not season_scoped:
+            return records
+
+        def _years(record: Dict[str, Any]) -> set:
+            return {
+                s["year"]
+                for s in (record.get("season") or [])
+                if isinstance(s, dict) and "year" in s
+            }
+
+        result: List[Dict[str, Any]] = []
+        for record in records:
+            if record.get("_season_scoped_gp"):
+                result.append(
+                    {k: v for k, v in record.items() if k != "_season_scoped_gp"},
+                )
+                continue
+
+            # Driver-specific records are independent – do not split them.
+            if record.get("driver"):
+                result.append(record)
+                continue
+
+            record_years = _years(record)
+            if not record_years:
+                result.append(record)
+                continue
+
+            overlapping = [s for s in season_scoped if _years(s) & record_years]
+            if not overlapping:
+                result.append(record)
+                continue
+
+            scoped_years: set = set()
+            for s in overlapping:
+                scoped_years |= _years(s)
+
+            non_scoped_years = record_years - scoped_years
+            overlap_years = record_years & scoped_years
+
+            if non_scoped_years:
+                non_scoped_seasons = [
+                    s for s in record["season"]
+                    if isinstance(s, dict) and s.get("year") in non_scoped_years
+                ]
+                result.append({**record, "season": non_scoped_seasons})
+
+            if overlap_years:
+                overlap_seasons = [
+                    s for s in record["season"]
+                    if isinstance(s, dict) and s.get("year") in overlap_years
+                ]
+                result.append(
+                    {
+                        **record,
+                        "season": overlap_seasons,
+                        "grand_prix_scope": {"type": "other"},
+                    },
+                )
+
+        return result
 
     @staticmethod
     def _team_name_from_heading(heading: Tag, headline: Tag) -> str:
