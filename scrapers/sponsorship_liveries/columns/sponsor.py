@@ -1,6 +1,9 @@
 import re
 from typing import Any
 
+from bs4 import NavigableString
+from bs4 import Tag
+
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
@@ -12,7 +15,10 @@ class SponsorColumn(BaseColumn):
         if not ctx.clean_text and not ctx.links:
             return []
 
-        text = clean_wiki_text(ctx.clean_text or "")
+        if ctx.cell is not None and ctx.cell.find("p", recursive=False):
+            text = clean_wiki_text(self._get_text_with_paragraph_breaks(ctx.cell))
+        else:
+            text = clean_wiki_text(ctx.clean_text or "")
         text = self._normalize_text(text)
         links = normalize_links(ctx.links or [])
 
@@ -153,3 +159,31 @@ class SponsorColumn(BaseColumn):
                     best = link
                     best_len = len(link_text)
         return best
+
+    @staticmethod
+    def _get_text_with_paragraph_breaks(cell: Tag) -> str:
+        """Extract text from a cell, treating direct <p> children as comma-separated entries."""
+        parts: list[str] = []
+        current: list[str] = []
+        for child in cell.children:
+            if getattr(child, "name", None) == "p":
+                pre_text = " ".join(current).strip()
+                if pre_text:
+                    parts.append(pre_text)
+                current = []
+                assert isinstance(child, Tag)
+                p_text = child.get_text(" ", strip=True)
+                if p_text:
+                    parts.append(p_text)
+            elif isinstance(child, Tag):
+                t = child.get_text(" ", strip=True)
+                if t:
+                    current.append(t)
+            elif isinstance(child, NavigableString):
+                t = str(child).strip()
+                if t:
+                    current.append(t)
+        remaining = " ".join(current).strip()
+        if remaining:
+            parts.append(remaining)
+        return ", ".join(parts)
