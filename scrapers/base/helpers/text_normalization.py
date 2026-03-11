@@ -122,13 +122,48 @@ def split_delimited_text(
 ) -> list[str]:
     """Split text by common delimiters and trim whitespace.
 
+    Splitting respects parenthesis depth: delimiters inside parentheses are
+    not treated as separators.  For example ``"White, Red (1982, 1984)"``
+    yields ``["White", "Red (1982, 1984)"]``.
+
     Returns an empty list for falsy input or when the number of non-empty parts is
     below ``min_parts``.
     """
     if not text:
         return []
 
-    parts = [p.strip() for p in re.split(separators, text) if p.strip()]
+    sep_re = re.compile(separators)
+    parts: list[str] = []
+    current: list[str] = []
+    depth = 0
+    i = 0
+    while i < len(text):
+        char = text[i]
+        if char == "(":
+            depth += 1
+            current.append(char)
+            i += 1
+        elif char == ")":
+            depth = max(depth - 1, 0)
+            current.append(char)
+            i += 1
+        elif depth == 0:
+            m = sep_re.match(text, i)
+            if m:
+                part = "".join(current).strip()
+                if part:
+                    parts.append(part)
+                current = []
+                i = m.end()
+            else:
+                current.append(char)
+                i += 1
+        else:
+            current.append(char)
+            i += 1
+    part = "".join(current).strip()
+    if part:
+        parts.append(part)
     return parts if len(parts) >= min_parts else []
 
 
