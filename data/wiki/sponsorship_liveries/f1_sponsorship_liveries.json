@@ -1512,7 +1512,8 @@
           {
             "text": "Heuer",
             "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-          }
+          },
+          "Scicon Micro Systems"
         ],
         "grand_prix_scope": {
           "type": "range",
@@ -1544,8 +1545,10 @@
             "text": "Heuer",
             "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
           },
+          "Scicon Micro Systems",
           {
-            "text": "Scicon Micro Systems ARCO Graphite"
+            "text": "ARCO Graphite",
+            "url": "https://en.wikipedia.org/wiki/ARCO"
           }
         ],
         "grand_prix_scope": {
@@ -1578,7 +1581,8 @@
           {
             "text": "Heuer",
             "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-          }
+          },
+          "Scicon Micro Systems"
         ],
         "grand_prix_scope": {
           "type": "other"
@@ -2766,10 +2770,10 @@
           }
         ],
         "main_colours": [
-          "Blue"
+          "White"
         ],
         "additional_colours": [
-          "White"
+          "Blue"
         ],
         "main_sponsors": [
           "Danka",
