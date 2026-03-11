@@ -21,7 +21,7 @@ class EngineColumn(BaseColumn):
         class_value = EngineParsingHelpers.extract_engine_class(cell)
 
         for segment in segments:
-            engine = EngineParsingHelpers.parse_segment(segment, link_lookup)
+            engine = EngineParsingHelpers.parse_segment(segment, link_lookup, ctx.base_url)
             if engine:
                 if class_value:
                     engine["class"] = class_value
