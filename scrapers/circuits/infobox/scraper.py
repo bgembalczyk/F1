@@ -1,23 +1,24 @@
-from typing import Any, Dict, Optional
+from typing import Any
+from typing import Dict
+from typing import Optional
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
+from scrapers.base.ABC import F1Scraper
+from scrapers.base.errors import ScraperParseError
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
-from scrapers.base.infobox.scraper import (
-    WikipediaInfoboxScraper,
-    parse_infobox_from_soup,
-)
+from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.infobox.scraper import parse_infobox_from_soup
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
 from scrapers.base.types import ExportableRecord
-from scrapers.base.errors import ScraperParseError
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
+from scrapers.circuits.infobox.schema import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.circuits.infobox.services.additional_info import (
     CircuitAdditionalInfoParser,
 )
-from scrapers.circuits.infobox.schema import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser
@@ -32,9 +33,9 @@ class F1CircuitInfoboxScraper(F1Scraper):
     """Parser infoboksów torów F1 z heurystykami pod typowe pola."""
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
     ) -> None:
         options = init_scraper_options(options)
 
@@ -122,13 +123,13 @@ class F1CircuitInfoboxScraper(F1Scraper):
                     {
                         "url": url,
                         "title": title,
-                    }
+                    },
                 )
 
             soup = full_soup
             if fragment:
                 section = self.section_extractor.extract_section_by_id(
-                    full_soup, fragment
+                    full_soup, fragment,
                 )
                 if section is not None:
                     soup = section
@@ -157,7 +158,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         żeby nie mieszać danych z pełnotabelarycznymi statystykami.
         """
         truncated_soup = self._truncate_infobox_after_full_data(
-            soup
+            soup,
         )  # TODO: co to robi?
 
         self.infobox_scraper.run_id = getattr(self, "_run_id", None)
@@ -199,7 +200,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
                 has_full_on_tr = "infobox-full-data" in row_classes
                 has_full_in_cell = (
-                    row.find(["td", "th"], class_="infobox-full-data") is not None
+                        row.find(["td", "th"], class_="infobox-full-data") is not None
                 )
 
                 if has_full_on_tr or has_full_in_cell:

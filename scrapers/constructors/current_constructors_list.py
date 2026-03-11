@@ -3,23 +3,21 @@ from pathlib import Path
 
 from models.records.factories import build_constructor_record
 from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
-from scrapers.constructors.constants import (
-    CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
-    CONSTRUCTOR_BASED_IN_HEADER,
-    CONSTRUCTOR_DRIVERS_HEADER,
-    CONSTRUCTOR_ENGINE_HEADER,
-    CONSTRUCTOR_LICENSED_IN_HEADER,
-    CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
-)
+from scrapers.constructors.constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_BASED_IN_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
+from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
 
 CURRENT_YEAR = datetime.now().year
 

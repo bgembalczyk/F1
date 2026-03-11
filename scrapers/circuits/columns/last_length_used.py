@@ -16,5 +16,5 @@ class LastLengthUsedColumn(MultiColumn):
                     cast=float,
                     normalize_number=True,
                 ),
-            }
+            },
         )

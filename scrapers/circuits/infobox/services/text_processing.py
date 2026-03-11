@@ -1,5 +1,6 @@
 import re
-from typing import Any, Optional
+from typing import Any
+from typing import Optional
 
 from scrapers.base.helpers.text import choose_richer_entity
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
@@ -113,7 +114,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
         if not url:
             return False
         return url.startswith("https://en.wikipedia.org/") or url.startswith(
-            "http://en.wikipedia.org/"
+            "http://en.wikipedia.org/",
         )
 
     def _choose_richer_entity(self, a: Any, b: Any) -> Any:

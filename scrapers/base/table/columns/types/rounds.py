@@ -1,6 +1,6 @@
+from models.services.rounds_service import RoundsService
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from models.services.rounds_service import RoundsService
 
 
 class RoundsColumn(BaseColumn):
@@ -9,5 +9,5 @@ class RoundsColumn(BaseColumn):
 
     def parse(self, ctx: ColumnContext):
         return RoundsService.parse_rounds(
-            ctx.clean_text, total_rounds=self.total_rounds
+            ctx.clean_text, total_rounds=self.total_rounds,
         )

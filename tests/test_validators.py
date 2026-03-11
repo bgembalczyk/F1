@@ -1,15 +1,18 @@
 import pytest
 
-from models.validation.core import validate_float, validate_int, validate_status
+from models.validation.core import validate_float
+from models.validation.core import validate_int
+from models.validation.core import validate_status
 from models.validation.validators import validate_seasons
-from models.value_objects.link_utils import validate_link
 from models.value_objects import SeasonRef
-from validation.records import RecordValidator, ValidationIssue
+from models.value_objects.link_utils import validate_link
+from validation.records import RecordValidator
+from validation.records import ValidationIssue
 
 
 def test_validate_link_accepts_link_dict():
     link = validate_link(
-        {"text": "Site", "url": "https://example.com"}, field_name="link"
+        {"text": "Site", "url": "https://example.com"}, field_name="link",
     )
 
     assert link == {"text": "Site", "url": "https://example.com"}
@@ -38,7 +41,7 @@ def test_validate_seasons_filters_empty_and_coerces():
             {"year": 2020, "url": "https://example.com"},
             {"year": None},
             SeasonRef(year=2021),
-        ]
+        ],
     )
 
     assert seasons == [

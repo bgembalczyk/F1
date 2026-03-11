@@ -3,7 +3,8 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
 from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
 from scrapers.circuits.constants import CIRCUIT_COUNTRY_HEADER
@@ -41,5 +42,5 @@ def build_circuits_schema() -> TableSchemaDSL:
                 "grands_prix_held",
                 IntColumn(),
             ),
-        ]
+        ],
     )

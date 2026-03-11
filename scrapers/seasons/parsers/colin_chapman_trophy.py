@@ -4,18 +4,19 @@ from typing import List
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
-from scrapers.base.records import record_from_mapping
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.seasons.columns.colin_chapman_race_result import (
     ColinChapmanRaceResultColumn,
 )
-from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.parsers.standings import SeasonStandingsParser
+from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.standings_scraper import F1StandingsScraper
 
 
@@ -24,7 +25,7 @@ class ColinChapmanTrophyParser:
         self._table_parser = table_parser
 
     def parse(
-        self, soup: BeautifulSoup, season_year: int | None = None
+            self, soup: BeautifulSoup, season_year: int | None = None,
     ) -> List[Dict[str, Any]]:
         """
         Parses the Colin Chapman Trophy table.

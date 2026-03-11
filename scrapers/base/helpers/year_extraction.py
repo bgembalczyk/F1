@@ -45,9 +45,9 @@ class YearExtractor:
 
     @staticmethod
     def build_year_to_url_map(
-        links: List[Dict[str, Any]],
-        url_key: str = "url",
-        text_key: str = "text",
+            links: List[Dict[str, Any]],
+            url_key: str = "url",
+            text_key: str = "text",
     ) -> Dict[int, str | None]:
         """Build a mapping from year to URL from a list of links.
 
@@ -99,8 +99,8 @@ class YearExtractor:
 
     @staticmethod
     def interpolate_urls(
-        years_set: Set[int],
-        year_to_url: Dict[int, str | None]
+            years_set: Set[int],
+            year_to_url: Dict[int, str | None],
     ) -> Dict[int, str | None]:
         """Interpolate missing URLs using detected pattern.
 

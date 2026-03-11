@@ -8,7 +8,7 @@ from typing import Any
 class SeasonService:
     @staticmethod
     def parse_seasons(
-        text: str, *, current_year: int | None = None
+            text: str, *, current_year: int | None = None,
     ) -> list[dict[str, Any]]:
         """
         Zamienia tekst w stylu:

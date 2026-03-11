@@ -2,11 +2,12 @@ import re
 import sys
 import types
 
+from scrapers.base.helpers.value_objects import NormalizedDate
+from scrapers.base.helpers.value_objects import NormalizedTime
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.date import DateColumn
 from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
 from scrapers.base.table.columns.types.time import TimeColumn
-from scrapers.base.helpers.value_objects import NormalizedDate, NormalizedTime
 
 bs4_stub = types.ModuleType("bs4")
 

@@ -1,15 +1,17 @@
 import re
-from typing import Optional, Dict, Any, List
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
 
 from models.records.link import LinkRecord
 from models.services.helpers import prune_empty
 from scrapers.base.errors import DomainParseError
-from scrapers.base.helpers.parsing import parse_int_from_text, parse_number_with_unit
+from scrapers.base.helpers.parsing import parse_int_from_text
+from scrapers.base.helpers.parsing import parse_number_with_unit
+from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.base.helpers.text_normalization import split_delimited_text
 from scrapers.base.helpers.time import parse_date_text
-from scrapers.base.helpers.text_normalization import (
-    clean_infobox_text,
-    split_delimited_text,
-)
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 
 
@@ -44,7 +46,7 @@ class InfoboxTextUtils:
             ) from exc
 
     def parse_length(
-        self, row: Optional[Dict[str, Any]], *, unit: str
+            self, row: Optional[Dict[str, Any]], *, unit: str,
     ) -> Optional[float]:
         if not row:
             return None
@@ -97,8 +99,8 @@ class InfoboxTextUtils:
 
     @staticmethod
     def _find_link(
-        text: Optional[str],
-        links: List[LinkRecord],
+            text: Optional[str],
+            links: List[LinkRecord],
     ) -> Optional[LinkRecord]:
         if not text:
             return None
@@ -110,9 +112,9 @@ class InfoboxTextUtils:
         return None
 
     def _with_link(
-        self,
-        text: Optional[str],
-        links: Optional[List[LinkRecord]],
+            self,
+            text: Optional[str],
+            links: Optional[List[LinkRecord]],
     ) -> Optional[Dict[str, Any]]:
         if text is None:
             return None

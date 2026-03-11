@@ -1,8 +1,9 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.parsing import parse_int_from_text, parse_float_from_text
 from scrapers.base.helpers.html_utils import find_section_elements
+from scrapers.base.helpers.parsing import parse_float_from_text
+from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.helpers.wiki import is_reference_link
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 
@@ -122,7 +123,7 @@ def test_split_url_fragment_returns_base_and_fragment():
     mixin = WikipediaSectionByIdMixin()
 
     base_url, fragment = mixin.split_url_fragment(
-        "https://en.wikipedia.org/wiki/Foo#Bar_Baz"
+        "https://en.wikipedia.org/wiki/Foo#Bar_Baz",
     )
 
     assert base_url == "https://en.wikipedia.org/wiki/Foo"

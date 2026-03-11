@@ -2,13 +2,13 @@ from pathlib import Path
 from typing import Type
 from uuid import uuid4
 
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.helpers.paremeters import supports_param
 from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 from scrapers.base.results import ScrapeResult
 from scrapers.base.run_config import RunConfig
-from scrapers.base.ABC import F1Scraper
 
 
 class ScraperRunner:
@@ -19,10 +19,10 @@ class ScraperRunner:
         self._supports_urls = supports_urls
 
     def run_and_export(
-        self,
-        scraper_cls: Type[F1Scraper],
-        json_rel: str | Path,
-        csv_rel: str | Path | None = None,
+            self,
+            scraper_cls: Type[F1Scraper],
+            json_rel: str | Path,
+            csv_rel: str | Path | None = None,
     ) -> None:
         run_id = uuid4().hex
         run_logger = get_logger(scraper_cls.__name__)

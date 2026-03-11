@@ -1,18 +1,22 @@
-from typing import Any, Dict, List
+from typing import Any
+from typing import Dict
+from typing import List
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
-from scrapers.base.ABC import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.engine import EngineColumn
+from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.position import PositionColumn
@@ -21,24 +25,23 @@ from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
-from scrapers.base.table.parser import HtmlTableParser
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
 from scrapers.drivers.columns.round import RoundColumn
 from scrapers.drivers.columns.series import SeriesColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
 from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
-from scrapers.base.table.columns.types.constructor import ConstructorColumn
 
 
 class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
     _UNKNOWN_TOKEN = "unknown"
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -83,7 +86,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
 
         for section_title in sections:
             section_soup = self.extract_section_by_id(
-                soup, section_title.replace(" ", "_")
+                soup, section_title.replace(" ", "_"),
             )
             if section_soup is None:
                 continue
@@ -166,7 +169,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
                 column("Position", "position", self._unknown(PositionColumn())),
                 column("Team", "team", self._unknown(EntrantColumn())),
                 column("Car", "car", self._unknown(UrlColumn())),
-            ]
+            ],
         )
         pipeline = self._build_pipeline(schema=schema)
         return self._parse_table(table, pipeline)
@@ -185,15 +188,15 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
                 column("F/Lap", "fastest_laps", self._unknown(IntColumn())),
                 column("Podiums", "podiums", self._unknown(IntColumn())),
                 column("Points", "points", self._unknown(PointsOrTextColumn())),
-            ]
+            ],
         )
         pipeline = self._build_pipeline(schema=schema)
         return self._parse_table(table, pipeline)
 
     def _parse_complete_results(
-        self,
-        table: Tag,
-        headers: List[str],
+            self,
+            table: Tag,
+            headers: List[str],
     ) -> List[Dict[str, Any]]:
         column_map = {
             "Year": "year",
@@ -270,23 +273,23 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         for header in headers:
             if header.isdigit():
                 schema_columns.append(
-                    column(header, header, self._unknown(RoundColumn()))
+                    column(header, header, self._unknown(RoundColumn())),
                 )
 
         pipeline = self._build_pipeline(schema=TableSchemaDSL(columns=schema_columns))
         return self._parse_table(table, pipeline)
 
     def _parse_table(
-        self,
-        table: Tag,
-        pipeline: TablePipeline,
+            self,
+            table: Tag,
+            pipeline: TablePipeline,
     ) -> List[Dict[str, Any]]:
         return TableParsingHelper.parse_table_with_pipeline(table, pipeline)
 
     def _build_pipeline(
-        self,
-        *,
-        schema: TableSchemaDSL,
+            self,
+            *,
+            schema: TableSchemaDSL,
     ) -> TablePipeline:
         config = ScraperConfig(
             url=self.url,

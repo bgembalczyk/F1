@@ -27,7 +27,7 @@ class EngineRegulation(ValidatedModel):
         self.seasons = normalize_season_list(self.seasons)
         self.operating_principle = normalize_text(self.operating_principle)
         self.maximum_displacement = self._normalize_displacement(
-            self.maximum_displacement
+            self.maximum_displacement,
         )
         self.configuration = self._normalize_configuration(self.configuration)
         self.rpm_limit = normalize_unit_value(self.rpm_limit, "rpm_limit")
@@ -44,7 +44,7 @@ class EngineRegulation(ValidatedModel):
         if "naturally_aspirated" in result:
             naturally_aspirated = result.get("naturally_aspirated")
             if isinstance(naturally_aspirated, dict) and (
-                "min" in naturally_aspirated or "max" in naturally_aspirated
+                    "min" in naturally_aspirated or "max" in naturally_aspirated
             ):
                 result["naturally_aspirated"] = {
                     "min": normalize_unit_value(
@@ -82,13 +82,13 @@ class EngineRegulation(ValidatedModel):
         result["text"] = normalize_text(result.get("text"))
         if "angle" in result:
             result["angle"] = normalize_unit_value(
-                result.get("angle"), "configuration.angle"
+                result.get("angle"), "configuration.angle",
             )
         if "type" in result:
             result["type"] = normalize_text(result.get("type"))
         if "max_cylinders" in result:
             result["max_cylinders"] = validate_int(
-                result.get("max_cylinders"), "configuration.max_cylinders"
+                result.get("max_cylinders"), "configuration.max_cylinders",
             )
         extras = result.get("extras")
         if extras is None:
@@ -105,7 +105,7 @@ class EngineRegulation(ValidatedModel):
 
     @staticmethod
     def _normalize_fuel_composition(
-        value: Dict[str, Any] | None,
+            value: Dict[str, Any] | None,
     ) -> Dict[str, Any] | None:
         if value is None:
             return None

@@ -1,15 +1,15 @@
-from typing import Any
 import re
+from typing import Any
 from typing import Dict
 from typing import List
 
 from scrapers.base.constants import UNIT_RE
-from scrapers.base.parsers.unit_value import UnitValue
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.parsers.helpers import normalize_unit
 from scrapers.base.parsers.helpers import parse_number
 from scrapers.base.parsers.helpers import parse_unit_list
+from scrapers.base.parsers.unit_value import UnitValue
+from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.types.base import BaseColumn
 
 
 class NestedUnitListColumn(BaseColumn):
@@ -26,7 +26,7 @@ class NestedUnitListColumn(BaseColumn):
         for match in UNIT_RE.finditer(text):
             value = parse_number(match.group("value"))
             unit = normalize_unit(match.group("unit"))
-            suffix = text[match.end() : match.end() + 12].lower()
+            suffix = text[match.end(): match.end() + 12].lower()
             if "min" in suffix:
                 min_value = {"value": value, "unit": unit}
             elif max_value is None:

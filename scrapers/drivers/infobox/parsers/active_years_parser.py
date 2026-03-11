@@ -1,6 +1,5 @@
 """Helper class for parsing active years from infobox cells."""
 
-import re
 from typing import Any
 from typing import Dict
 from typing import List
@@ -10,7 +9,6 @@ from bs4 import Tag
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.year_extraction import YearExtractor
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
-from scrapers.drivers.infobox.parsers.year_parser import YearParser
 
 
 class ActiveYearsParser:

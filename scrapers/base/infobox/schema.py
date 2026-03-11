@@ -1,5 +1,9 @@
 from dataclasses import dataclass
-from typing import Any, Callable, Dict, Iterable, Sequence
+from typing import Any
+from typing import Callable
+from typing import Dict
+from typing import Iterable
+from typing import Sequence
 
 from scrapers.base.helpers.text_normalization import to_snake_case
 from scrapers.base.logging import get_logger
@@ -18,12 +22,12 @@ class InfoboxSchema:
     """Schema mapująca etykiety infoboksa na spójne klucze."""
 
     def __init__(
-        self,
-        *,
-        fields: Iterable[InfoboxSchemaField],
-        name: str | None = None,
-        required_keys: Iterable[str] | None = None,
-        normalize_unknown: bool = True,
+            self,
+            *,
+            fields: Iterable[InfoboxSchemaField],
+            name: str | None = None,
+            required_keys: Iterable[str] | None = None,
+            normalize_unknown: bool = True,
     ) -> None:
         self.name = name or "infobox"
         self.normalize_unknown = normalize_unknown
@@ -61,11 +65,11 @@ class InfoboxSchema:
         return normalized or None
 
     def normalize_rows(
-        self,
-        rows: Dict[str, Any],
-        *,
-        logger=None,
-        context: str | None = None,
+            self,
+            rows: Dict[str, Any],
+            *,
+            logger=None,
+            context: str | None = None,
     ) -> Dict[str, Any]:
         normalized_rows: Dict[str, Any] = {}
         for label, row in rows.items():
@@ -86,11 +90,11 @@ class InfoboxSchema:
         return normalized_rows
 
     def log_missing(
-        self,
-        present_keys: Iterable[str],
-        *,
-        logger=None,
-        context: str | None = None,
+            self,
+            present_keys: Iterable[str],
+            *,
+            logger=None,
+            context: str | None = None,
     ) -> None:
         if logger is None:
             return

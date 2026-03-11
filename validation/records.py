@@ -1,8 +1,12 @@
-from abc import ABC, abstractmethod
 import json
+from abc import ABC
+from abc import abstractmethod
 from pathlib import Path
-from typing import Any, Callable, Mapping, Sequence
+from typing import Any
+from typing import Callable
 from typing import Dict
+from typing import Mapping
+from typing import Sequence
 from typing import TypeAlias
 
 from validation.issue import ValidationIssue
@@ -23,7 +27,7 @@ class RecordValidator(ABC):
         raise NotImplementedError
 
     def set_record_factory(
-        self, record_factory: Callable[..., Any] | type | None
+            self, record_factory: Callable[..., Any] | type | None,
     ) -> None:
         self.record_factory = record_factory
 
@@ -41,12 +45,12 @@ class RecordValidator(ABC):
         for error in errors:
             if error.code in {"missing", "null"} and error.field:
                 self._stats.missing[error.field] = (
-                    self._stats.missing.get(error.field, 0) + 1
+                        self._stats.missing.get(error.field, 0) + 1
                 )
                 continue
             if error.code == "type" and error.field:
                 self._stats.types[error.field] = (
-                    self._stats.types.get(error.field, 0) + 1
+                        self._stats.types.get(error.field, 0) + 1
                 )
 
     @staticmethod
@@ -150,7 +154,7 @@ class RecordValidator(ABC):
 
     @classmethod
     def validate_schema(
-        cls, record: Mapping[str, Any], schema: RecordSchema | Mapping[str, Any]
+            cls, record: Mapping[str, Any], schema: RecordSchema | Mapping[str, Any],
     ) -> list[ValidationIssue]:
         normalized = cls._coerce_schema(schema)
         errors: list[ValidationIssue] = []
@@ -163,7 +167,7 @@ class RecordValidator(ABC):
                     key,
                     expected_types,
                     allow_none=key in allow_none,
-                )
+                ),
             )
         for key, nested_schema in normalized.nested.items():
             if key not in record:
@@ -178,7 +182,7 @@ class RecordValidator(ABC):
 
     @classmethod
     def _validate_nested_value(
-        cls, key: str, value: Any, nested_schema: NestedSchema
+            cls, key: str, value: Any, nested_schema: NestedSchema,
     ) -> list[ValidationIssue]:
         errors: list[ValidationIssue] = []
         if nested_schema.is_list:
@@ -188,20 +192,20 @@ class RecordValidator(ABC):
                         key,
                         "list",
                         type(value).__name__,
-                    )
+                    ),
                 )
                 return errors
             for index, item in enumerate(value):
                 if not isinstance(item, Mapping):
                     errors.append(
-                        ValidationIssue.custom(f"{key}[{index}] must be a mapping")
+                        ValidationIssue.custom(f"{key}[{index}] must be a mapping"),
                     )
                     continue
                 errors.extend(
                     cls.prefix_errors(
                         cls._validate_nested_schema(item, nested_schema.schema),
                         f"{key}[{index}]",
-                    )
+                    ),
                 )
             return errors
         if not isinstance(value, Mapping):
@@ -210,16 +214,16 @@ class RecordValidator(ABC):
             cls.prefix_errors(
                 cls._validate_nested_schema(value, nested_schema.schema),
                 key,
-            )
+            ),
         )
         return errors
 
     @classmethod
     def _validate_nested_schema(
-        cls,
-        record: Mapping[str, Any],
-        nested_schema: RecordSchema
-        | Callable[[Mapping[str, Any]], Sequence[ValidationIssue | str]],
+            cls,
+            record: Mapping[str, Any],
+            nested_schema: RecordSchema
+                           | Callable[[Mapping[str, Any]], Sequence[ValidationIssue | str]],
     ) -> list[ValidationIssue]:
         if isinstance(nested_schema, RecordSchema):
             return cls.validate_schema(record, nested_schema)
@@ -227,7 +231,7 @@ class RecordValidator(ABC):
 
     @staticmethod
     def prefix_errors(
-        errors: Sequence[ValidationIssue], prefix: str
+            errors: Sequence[ValidationIssue], prefix: str,
     ) -> list[ValidationIssue]:
         prefixed: list[ValidationIssue] = []
         for error in errors:
@@ -250,17 +254,17 @@ class RecordValidator(ABC):
 class BaseDomainRecordValidator(RecordValidator):
     @staticmethod
     def require_keys(
-        record: Mapping[str, Any], keys: Sequence[str]
+            record: Mapping[str, Any], keys: Sequence[str],
     ) -> list[ValidationIssue]:
         return [ValidationIssue.missing(key) for key in keys if key not in record]
 
     @staticmethod
     def require_type(
-        record: Mapping[str, Any],
-        key: str,
-        expected_types: type | tuple[type, ...],
-        *,
-        allow_none: bool = False,
+            record: Mapping[str, Any],
+            key: str,
+            expected_types: type | tuple[type, ...],
+            *,
+            allow_none: bool = False,
     ) -> list[ValidationIssue]:
         if key not in record:
             return [ValidationIssue.missing(key)]
@@ -291,12 +295,12 @@ class BaseDomainRecordValidator(RecordValidator):
         text = value.get("text")
         if not isinstance(text, str) or not text.strip():
             errors.append(
-                ValidationIssue.custom(f"{field_name}.text must be a non-empty string")
+                ValidationIssue.custom(f"{field_name}.text must be a non-empty string"),
             )
         url = value.get("url")
         if url is not None and not isinstance(url, str):
             errors.append(
-                ValidationIssue.custom(f"{field_name}.url must be a string or None")
+                ValidationIssue.custom(f"{field_name}.url must be a string or None"),
             )
         return errors
 
@@ -308,7 +312,7 @@ class BaseDomainRecordValidator(RecordValidator):
         for index, item in enumerate(value):
             if not isinstance(item, dict):
                 errors.append(
-                    ValidationIssue.custom(f"{field_name}[{index}] must be a link dict")
+                    ValidationIssue.custom(f"{field_name}[{index}] must be a link dict"),
                 )
                 continue
             errors.extend(cls.require_link_dict(item, f"{field_name}[{index}]"))

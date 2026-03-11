@@ -2,19 +2,19 @@ from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
 )
 from scrapers.base.cache_adapter import CacheBackend
-from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.options import HttpPolicy
+from scrapers.base.source_adapter import SourceAdapter
 
 
 class HtmlFetcher(SourceAdapter):
     """Warstwa pobierania HTML z opcjonalnym cache."""
 
     def __init__(
-        self,
-        *,
-        policy: HttpPolicy,
-        http_client: HttpClientProtocol,
-        cache_adapter: CacheBackend | None = None,
+            self,
+            *,
+            policy: HttpPolicy,
+            http_client: HttpClientProtocol,
+            cache_adapter: CacheBackend | None = None,
     ) -> None:
         self.policy = policy
         self.http_client = http_client

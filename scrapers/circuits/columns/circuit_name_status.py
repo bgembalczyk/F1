@@ -12,5 +12,5 @@ class CircuitNameStatusColumn(MultiColumn):
                     {"*": "current", "†": "future"},
                     default="former",
                 ),
-            }
+            },
         )

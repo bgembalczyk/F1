@@ -42,7 +42,7 @@ class InfoboxCellParser:
     """
 
     def __init__(
-        self, *, include_urls: bool, link_extractor: InfoboxLinkExtractor
+            self, *, include_urls: bool, link_extractor: InfoboxLinkExtractor,
     ) -> None:
         self._include_urls = include_urls
         self._link_extractor = link_extractor

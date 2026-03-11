@@ -1,7 +1,9 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from dataclasses import field
 from typing import TYPE_CHECKING
 
-from scrapers.base.options import HttpPolicy, default_http_policy
+from scrapers.base.options import HttpPolicy
+from scrapers.base.options import default_http_policy
 
 if TYPE_CHECKING:
     from scrapers.base.export.exporters import DataExporter

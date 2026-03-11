@@ -1,12 +1,13 @@
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.composite_scraper import (
-    CompositeScraper,
-    CompositeScraperChildren,
-)
+from scrapers.base.composite_scraper import CompositeScraper
+from scrapers.base.composite_scraper import CompositeScraperChildren
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.drivers.list_scraper import F1DriversListScraper
@@ -17,9 +18,9 @@ class CompleteDriverScraper(CompositeScraper):
     url = F1DriversListScraper.CONFIG.url
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
     ) -> None:
         options = options or ScraperOptions()
 
@@ -34,13 +35,13 @@ class CompleteDriverScraper(CompositeScraper):
                 include_urls=True,
                 policy=self.http_policy,
                 source_adapter=self.source_adapter,
-            )
+            ),
         )
         single_scraper = SingleDriverScraper(
             options=ScraperOptions(
                 policy=self.http_policy,
                 source_adapter=self.source_adapter,
-            )
+            ),
         )
         drivers_adapter = IterableSourceAdapter(list_scraper.fetch)
 

@@ -51,12 +51,12 @@ class CircuitService:
 
         # proste pola z wierzchu
         for key in (
-            "circuit_status",
-            "type",
-            "direction",
-            "grands_prix",
-            "seasons",
-            "grands_prix_held",
+                "circuit_status",
+                "type",
+                "direction",
+                "grands_prix",
+                "seasons",
+                "grands_prix_held",
         ):
             if key in raw:
                 out[key] = raw[key]

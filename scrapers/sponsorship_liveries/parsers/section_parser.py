@@ -12,8 +12,9 @@ from scrapers.base.table.columns.types.list import ListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.base.table.headers import normalize_header
-from scrapers.base.table.dsl import TableSchemaDSL, column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
@@ -31,12 +32,12 @@ class SponsorshipSectionParser:
     }
 
     def __init__(
-        self,
-        *,
-        url: str,
-        include_urls: bool,
-        normalize_empty_values: bool,
-        splitter: SponsorshipRecordSplitter,
+            self,
+            *,
+            url: str,
+            include_urls: bool,
+            normalize_empty_values: bool,
+            splitter: SponsorshipRecordSplitter,
     ):
         self._url = url
         self._include_urls = include_urls
@@ -91,7 +92,7 @@ class SponsorshipSectionParser:
             column(
                 "Other Informations (including non-tobacco/alcohol race changes)",
                 normalize_header(
-                    "Other Informations (including non-tobacco/alcohol race changes)"
+                    "Other Informations (including non-tobacco/alcohol race changes)",
                 ),
                 TextColumn(),
             ),
@@ -133,11 +134,11 @@ class SponsorshipSectionParser:
         )
 
     def parse_section_table(
-        self,
-        soup: BeautifulSoup,
-        *,
-        section_id: str,
-        team: str,
+            self,
+            soup: BeautifulSoup,
+            *,
+            section_id: str,
+            team: str,
     ) -> List[Dict[str, Any]]:
         pipeline = self._build_pipeline()
         parser = HtmlTableParser(table_css_class=pipeline.table_css_class)
@@ -164,7 +165,7 @@ class SponsorshipSectionParser:
 
     @staticmethod
     def _is_section_start(
-        element: Tag, *, current_heading: Tag, current_headline: Tag
+            element: Tag, *, current_heading: Tag, current_headline: Tag,
     ) -> bool:
         if element is current_heading or element is current_headline:
             return False
@@ -178,7 +179,7 @@ class SponsorshipSectionParser:
     def _section_has_table(cls, heading: Tag, headline: Tag) -> bool:
         return any(
             element.name == "table" and "wikitable" in (element.get("class") or [])
-            for element in cls._iter_section_elements(heading, headline)
+            for element in cls._iter_section_elements(heading, headline),
         )
 
     @classmethod
@@ -188,9 +189,9 @@ class SponsorshipSectionParser:
             if not isinstance(element, Tag):
                 continue
             if cls._is_section_start(
-                element,
-                current_heading=heading,
-                current_headline=headline,
+                    element,
+                    current_heading=heading,
+                    current_headline=headline,
             ):
                 break
             elements.append(element)
@@ -206,7 +207,7 @@ class SponsorshipSectionParser:
 
         for element in self._iter_section_elements(heading, headline):
             if element.name != "table" or "wikitable" not in (
-                element.get("class") or []
+                    element.get("class") or []
             ):
                 continue
             header_row = element.find("tr")
@@ -259,7 +260,7 @@ class SponsorshipSectionParser:
                             section_id=section_id,
                             team=team,
                         ),
-                    }
+                    },
                 )
             except RuntimeError:
                 continue

@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from models.services.circuits.circuit_service import CircuitService
+
 from models.services.driver_service import DriverService
 from models.services.helpers import parse_int_values
 from models.services.helpers import parse_year_range
@@ -9,7 +10,8 @@ from models.services.helpers import split_delimited_text
 from models.services.season_service import SeasonService
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.options import ScraperOptions
-from scrapers.base.runner import RunConfig, run_and_export
+from scrapers.base.runner import RunConfig
+from scrapers.base.runner import run_and_export
 
 
 def test_season_service_parses_years_and_ranges() -> None:

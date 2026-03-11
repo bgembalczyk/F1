@@ -1,5 +1,7 @@
 import re
-from typing import Any, Dict, List
+from typing import Any
+from typing import Dict
+from typing import List
 
 from bs4 import Tag
 
@@ -99,7 +101,7 @@ class InfoboxLinkExtractor:
                 url_from = url_to.replace(str(end), str(start))
 
             results.append(
-                {"from": start, "to": end, "url_from": url_from, "url_to": url_to}
+                {"from": start, "to": end, "url_from": url_from, "url_to": url_to},
             )
 
         # Then, find individual years not part of ranges
@@ -166,10 +168,10 @@ class InfoboxLinkExtractor:
             # Extract years in document order from list items
             result = []
             year_to_url = YearExtractor.build_year_to_url_map(links)
-            
+
             for li in li_elements:
                 li_text = clean_infobox_text(li.get_text(" ", strip=True)) or ""
-                
+
                 # Check if this list item contains a range
                 if re.search(r"\b\d{4}\s*[-–]\s*\d{2,4}\b", li_text):
                     # Extract and expand the range
@@ -185,7 +187,7 @@ class InfoboxLinkExtractor:
                     if year_match:
                         year = int(year_match.group(1))
                         result.append({"year": year, "url": year_to_url.get(year)})
-            
+
             if result:  # Only return if we found years in list items
                 return result
 

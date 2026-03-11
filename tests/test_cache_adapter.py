@@ -1,8 +1,6 @@
-from scrapers.base.cache_adapter import (
-    CacheAdapter,
-    FileCacheBackend,
-    MemoryCache,
-)
+from scrapers.base.cache_adapter import CacheAdapter
+from scrapers.base.cache_adapter import FileCacheBackend
+from scrapers.base.cache_adapter import MemoryCache
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import HttpPolicy
 from scrapers.base.source_adapter import SourceAdapter

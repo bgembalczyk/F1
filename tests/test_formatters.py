@@ -1,13 +1,13 @@
-import json
-
 import importlib.util
+import json
 
 import pytest
 
 from scrapers.base.format.csv_formatter import CsvFormatter
 from scrapers.base.format.json_formatter import JsonFormatter
 from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
-from scrapers.base.helpers.value_objects import NormalizedDate, NormalizedTime
+from scrapers.base.helpers.value_objects import NormalizedDate
+from scrapers.base.helpers.value_objects import NormalizedTime
 from scrapers.base.results import ScrapeResult
 
 

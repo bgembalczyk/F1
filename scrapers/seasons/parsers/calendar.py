@@ -6,7 +6,8 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
@@ -17,7 +18,7 @@ class SeasonCalendarParser:
         self._table_parser = table_parser
 
     def parse(
-        self, soup: BeautifulSoup, season_year: int | None
+            self, soup: BeautifulSoup, season_year: int | None,
     ) -> List[Dict[str, Any]]:
         schema_columns = [
             column("Round", "round", IntColumn()),

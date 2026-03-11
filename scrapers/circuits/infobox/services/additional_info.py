@@ -1,10 +1,11 @@
-from typing import Any, Dict, List, Optional
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.text_normalization import (
-    clean_infobox_text,
-    split_delimited_text,
-)
+from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.base.helpers.text_normalization import split_delimited_text
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 
 
@@ -12,7 +13,7 @@ class CircuitAdditionalInfoParser(CircuitEntityParser):
     """Zbieranie dodatkowych pól (additional_info)."""
 
     def collect_additional_info(
-        self, rows: Dict[str, Dict[str, Any]], used_keys: set[str]
+            self, rows: Dict[str, Dict[str, Any]], used_keys: set[str],
     ) -> Optional[Dict[str, Any]]:
         additional: Dict[str, Any] = {}
 

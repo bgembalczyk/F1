@@ -1,7 +1,8 @@
 from pathlib import Path
 from typing import Any
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
 from scrapers.base.helpers.runner import run_and_export
@@ -11,7 +12,8 @@ from scrapers.base.table.columns.types.range import RangeColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.engine_rpm_limit import EngineRpmLimitColumn
 from scrapers.engines.columns.fuel_flow_rate import FuelFlowRateColumn

@@ -1,6 +1,9 @@
 import re
 from datetime import datetime
-from typing import Dict, Any, Optional, List
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
@@ -12,7 +15,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
     """Parsowanie wydarzeń historycznych (Opened, Built, Broke ground, Former names...)."""
 
     def _parse_former_names(
-        self, row: Optional[Dict[str, Any]]
+            self, row: Optional[Dict[str, Any]],
     ) -> Optional[List[Dict[str, Any]]]:
         """
         Parsuje 'Former names' do listy dictów.
@@ -53,7 +56,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
                 {
                     "name": name_raw,
                     "periods": periods,
-                }
+                },
             )
 
         return results or None
@@ -78,10 +81,10 @@ class CircuitHistoryParser(InfoboxTextUtils):
                 start_raw, end_raw = seg, ""
 
             start = self._normalize_period_endpoint(
-                start_raw, is_start=True, now_year=now_year
+                start_raw, is_start=True, now_year=now_year,
             )
             end = self._normalize_period_endpoint(
-                end_raw, is_start=False, now_year=now_year
+                end_raw, is_start=False, now_year=now_year,
             )
 
             if start is None and end is None:
@@ -100,7 +103,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
 
     @staticmethod
     def _normalize_period_endpoint(
-        raw: str, *, is_start: bool, now_year: int
+            raw: str, *, is_start: bool, now_year: int,
     ) -> Optional[str]:
         """
         Normalizuje pojedynczy kraniec zakresu (from/to) do stringa.
@@ -145,7 +148,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
         return None
 
     def parse_history(
-        self, rows: Dict[str, Dict[str, Any]]
+            self, rows: Dict[str, Dict[str, Any]],
     ) -> Optional[Dict[str, Any]]:
         events: List[Dict[str, Any]] = []
 
@@ -160,7 +163,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
                 {
                     "event": "opened" if idx == 0 else "reopened",
                     "date": date,
-                }
+                },
             )
 
         closed_dates = self._parse_dates(rows.get("closed")) or {}

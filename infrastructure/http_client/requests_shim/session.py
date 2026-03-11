@@ -14,10 +14,10 @@ class Session:
         self.headers: Dict[str, str] = {}
 
     def get(
-        self,
-        url: str,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+            self,
+            url: str,
+            headers: Optional[Dict[str, str]] = None,
+            timeout: Optional[int] = None,
     ) -> Response:
         merged_headers = dict(self.headers)
         if headers:
@@ -27,9 +27,9 @@ class Session:
 
         try:
             with urllib.request.urlopen(
-                request,
-                timeout=timeout,
-                context=SSL_CONTEXT,
+                    request,
+                    timeout=timeout,
+                    context=SSL_CONTEXT,
             ) as resp:
                 body = resp.read()
                 status_code = resp.getcode() or 0

@@ -10,10 +10,10 @@ class RecordPostProcessor(Protocol):
 
 
 def apply_post_processors(
-    post_processors: Sequence[RecordPostProcessor],
-    records: list[ExportRecord],
-    *,
-    logger=None,
+        post_processors: Sequence[RecordPostProcessor],
+        records: list[ExportRecord],
+        *,
+        logger=None,
 ) -> list[ExportRecord]:
     resolved_logger = logger or get_logger("PostProcessorsPipeline")
     processed = list(records)

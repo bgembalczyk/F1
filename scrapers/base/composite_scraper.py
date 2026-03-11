@@ -1,5 +1,8 @@
 from dataclasses import dataclass
-from typing import Any, Dict, List, Optional
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
 
 from scrapers.base.ABC import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
@@ -28,9 +31,9 @@ class CompositeScraper(F1Scraper):
         return None
 
     def assemble_record(
-        self,
-        record: Dict[str, Any],
-        details: Optional[Dict[str, Any]],
+            self,
+            record: Dict[str, Any],
+            details: Optional[Dict[str, Any]],
     ) -> Dict[str, Any]:
         full_record = dict(record)
         full_record["details"] = details
@@ -44,7 +47,7 @@ class CompositeScraper(F1Scraper):
             if not isinstance(record, dict):
                 raise TypeError(
                     f"{self.list_scraper.__class__.__name__} musi zwracać dict, "
-                    f"otrzymano: {type(record).__name__}"
+                    f"otrzymano: {type(record).__name__}",
                 )
 
             detail_url = self.get_detail_url(record)

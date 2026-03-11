@@ -6,11 +6,11 @@ from scrapers.drivers.columns.fatality_event import FatalityEventColumn
 
 
 def _ctx(
-    raw_text: str,
-    *,
-    clean_text: str | None = None,
-    links: list[dict] | None = None,
-    model_fields: set[str] | None = None,
+        raw_text: str,
+        *,
+        clean_text: str | None = None,
+        links: list[dict] | None = None,
+        model_fields: set[str] | None = None,
 ) -> ColumnContext:
     return ColumnContext(
         header="Header",

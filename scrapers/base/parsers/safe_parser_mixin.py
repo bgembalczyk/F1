@@ -1,8 +1,10 @@
 """Base class for parsers with safe error handling."""
 
-from typing import Any, Callable, Optional, TypeVar
+from typing import Any
+from typing import Callable
+from typing import Optional
+from typing import TypeVar
 
-from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
 
 _T = TypeVar("_T")
@@ -18,10 +20,10 @@ class SafeParserMixin:
     """
 
     def _safe_parse(
-        self,
-        fn: Callable[..., _T],
-        *args: Any,
-        **kwargs: Any,
+            self,
+            fn: Callable[..., _T],
+            *args: Any,
+            **kwargs: Any,
     ) -> Optional[_T]:
         """
         Safely executes a parsing function, handling errors gracefully.

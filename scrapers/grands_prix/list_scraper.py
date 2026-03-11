@@ -1,18 +1,17 @@
 from pathlib import Path
 
-from scrapers.base.helpers.config_factory import (
-    ScraperCommonConfig,
-    build_table_config,
-)
+from models.records.factories import build_grands_prix_record
+from scrapers.base.helpers.config_factory import ScraperCommonConfig
+from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
-from models.records.factories import build_grands_prix_record
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
 from scrapers.grands_prix.validator import GrandsPrixRecordValidator
@@ -48,10 +47,10 @@ class GrandsPrixListScraper(F1TableScraper):
     )
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            config: ScraperConfig | None = None,
     ) -> None:
         options = build_table_config(
             options,

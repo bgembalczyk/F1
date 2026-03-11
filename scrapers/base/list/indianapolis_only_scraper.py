@@ -15,5 +15,5 @@ class IndianapolisOnlyListScraper(F1ListScraper):
     - record_key: The field name for the entity (e.g., "constructor", "manufacturer")
     - url_key: The field name for the entity URL (e.g., "constructor_url", "manufacturer_url")
     """
-    
+
     section_id = "Indianapolis_500_only"

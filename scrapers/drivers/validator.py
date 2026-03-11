@@ -1,4 +1,6 @@
-from validation.records import BaseDomainRecordValidator, ExportRecord, ValidationIssue
+from validation.records import BaseDomainRecordValidator
+from validation.records import ExportRecord
+from validation.records import ValidationIssue
 
 
 class DriversRecordValidator(BaseDomainRecordValidator):
@@ -15,7 +17,7 @@ class DriversRecordValidator(BaseDomainRecordValidator):
                     "is_active",
                     "is_world_champion",
                 ],
-            )
+            ),
         )
         errors.extend(self.require_type(record, "driver", dict))
         errors.extend(self.require_type(record, "nationality", str))

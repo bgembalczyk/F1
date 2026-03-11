@@ -1,17 +1,17 @@
 import sys
-from pathlib import Path
 import types
+from pathlib import Path
+
 import pytest
-from scrapers.base.errors import (
-    ScraperNetworkError,
-    ScraperNotFoundError,
-    ScraperParseError,
-)
+
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.errors import ScraperNetworkError
+from scrapers.base.errors import ScraperNotFoundError
+from scrapers.base.errors import ScraperParseError
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
 from scrapers.circuits.infobox.services.additional_info import (
     CircuitAdditionalInfoParser,
 )
@@ -25,13 +25,13 @@ from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
 if "bs4" not in sys.modules:
     bs4_stub = types.ModuleType("bs4")
+
 
     class _StubTag:
         def find_all(self, *_, **__):
@@ -49,9 +49,11 @@ if "bs4" not in sys.modules:
         def get_text(self, *_, **__):
             return ""
 
+
     class _StubBeautifulSoup(_StubTag):
         def __init__(self, html: str, *_):
             self.html = html
+
 
     bs4_stub.Tag = _StubTag
     bs4_stub.BeautifulSoup = _StubBeautifulSoup
@@ -60,12 +62,15 @@ if "bs4" not in sys.modules:
 if "requests" not in sys.modules:
     requests_stub = types.ModuleType("requests")
 
+
     class _RequestException(Exception):
         pass
+
 
     class _Session:
         def get(self, *_args, **_kwargs):
             raise _RequestException("requests stub")
+
 
     requests_stub.RequestException = _RequestException
     requests_stub.Session = _Session
@@ -74,8 +79,10 @@ if "requests" not in sys.modules:
 if "certifi" not in sys.modules:
     certifi_stub = types.ModuleType("certifi")
 
+
     def _where():
         return ""
+
 
     certifi_stub.where = _where
     sys.modules["certifi"] = certifi_stub
@@ -83,9 +90,11 @@ if "certifi" not in sys.modules:
 if "pandas" not in sys.modules:
     pandas_stub = types.ModuleType("pandas")
 
+
     class _StubDataFrame:
         def __init__(self, *_args, **_kwargs):
             pass
+
 
     pandas_stub.DataFrame = _StubDataFrame
     sys.modules["pandas"] = pandas_stub
@@ -93,7 +102,7 @@ if "pandas" not in sys.modules:
 
 class DummyFetcher:
     def __init__(
-        self, *, html: str | None = None, exc: Exception | None = None
+            self, *, html: str | None = None, exc: Exception | None = None,
     ) -> None:
         self.html = html
         self.exc = exc
@@ -143,7 +152,7 @@ class DummySingleCircuitScraper(F1SingleCircuitScraper):
 
 def test_fetch_maps_network_errors_to_domain_exception():
     scraper = DummyScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(exc=RuntimeError("offline")))
+        options=ScraperOptions(fetcher=DummyFetcher(exc=RuntimeError("offline"))),
     )
 
     with pytest.raises(ScraperNetworkError):
@@ -152,7 +161,7 @@ def test_fetch_maps_network_errors_to_domain_exception():
 
 def test_fetch_maps_parse_errors_to_domain_exception():
     scraper = DummyParseScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
     )
 
     with pytest.raises(ScraperParseError):
@@ -161,7 +170,7 @@ def test_fetch_maps_parse_errors_to_domain_exception():
 
 def test_list_scraper_skips_missing_list_with_log():
     scraper = DummyListScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
     )
 
     assert scraper.fetch() == []
@@ -169,7 +178,7 @@ def test_list_scraper_skips_missing_list_with_log():
 
 def test_single_circuit_scraper_wraps_network_errors():
     scraper = F1SingleCircuitScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(exc=RuntimeError("offline")))
+        options=ScraperOptions(fetcher=DummyFetcher(exc=RuntimeError("offline"))),
     )
 
     with pytest.raises(ScraperNetworkError):
@@ -178,7 +187,7 @@ def test_single_circuit_scraper_wraps_network_errors():
 
 def test_single_circuit_scraper_soft_skips_not_found():
     scraper = DummySingleCircuitScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
     )
 
     assert scraper.fetch_by_url("https://example.com/wiki/Test") == []
@@ -199,7 +208,7 @@ def test_single_grand_prix_scraper_soft_skips_missing_section(monkeypatch):
         lambda _soup: True,
     )
     scraper = F1SingleGrandPrixScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
     )
 
     result = scraper.fetch_by_url("https://example.com/wiki/Test")

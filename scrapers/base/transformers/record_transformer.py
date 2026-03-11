@@ -1,15 +1,18 @@
-from abc import ABC, abstractmethod
-from typing import Any, List
+from abc import ABC
+from abc import abstractmethod
+from typing import Any
+from typing import List
 
-from scrapers.base.normalization import EmptyValuePolicy, normalize_record_values
+from scrapers.base.normalization import EmptyValuePolicy
+from scrapers.base.normalization import normalize_record_values
 from validation.records import ExportRecord
 
 
 class RecordTransformer(ABC):
     def __init__(
-        self,
-        *,
-        empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
+            self,
+            *,
+            empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
     ) -> None:
         self.empty_value_policy = empty_value_policy
 

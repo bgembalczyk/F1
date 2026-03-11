@@ -1,9 +1,8 @@
-from typing import Any, Dict
+from typing import Any
+from typing import Dict
 
-from scrapers.base.helpers.date_parsing import (
-    parse_date_with_category_marker,
-    parse_formula_category,
-)
+from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
+from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.drivers.constants import MARK_F2_CATEGORY

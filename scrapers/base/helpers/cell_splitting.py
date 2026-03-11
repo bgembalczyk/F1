@@ -21,10 +21,10 @@ def split_cell_on_br(cell: Tag, *, replace_link_breaks: bool = False) -> List[Ta
         A list of Tag elements, one for each segment.
     """
     html = cell.decode_contents()
-    
+
     if replace_link_breaks:
         html = _replace_link_breaks(html)
-    
+
     parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
 
     segments: List[Tag] = []
@@ -108,7 +108,7 @@ def split_cell_on_br_with_children(cell: Tag) -> List[Tag]:
     if not parts:
         html = cell.decode_contents()
         parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
-    
+
     segments: List[Tag] = []
     soup = cell.soup or BeautifulSoup("", "html.parser")
 

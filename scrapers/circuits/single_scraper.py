@@ -1,13 +1,16 @@
-from typing import Any, Dict, List, Optional
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
@@ -27,9 +30,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
     """
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
     ) -> None:
         # Ten scraper zawsze potrzebuje URL-i (lap records, encje itd.)
         options = init_scraper_options(options, include_urls=True)
@@ -47,9 +50,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         self._section_fragment: Optional[str] = None
 
     def _select_section(
-        self,
-        soup: BeautifulSoup,
-        fragment: Optional[str],
+            self,
+            soup: BeautifulSoup,
+            fragment: Optional[str],
     ) -> BeautifulSoup:
         if not fragment:
             return soup
@@ -120,7 +123,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
 
             base_layout = detect_layout_name(table, headers)
             all_records.extend(
-                collect_lap_records(table, headers, base_layout, lap_scraper)
+                collect_lap_records(table, headers, base_layout, lap_scraper),
             )
 
         layouts: Dict[str, List[Dict[str, Any]]] = {}

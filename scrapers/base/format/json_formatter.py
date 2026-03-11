@@ -8,20 +8,20 @@ from scrapers.base.results import ScrapeResult
 
 class JsonFormatter:
     def format(
-        self,
-        result: ScrapeResult,
-        *,
-        indent: int = 2,
-        include_metadata: bool = False,
+            self,
+            result: ScrapeResult,
+            *,
+            indent: int = 2,
+            include_metadata: bool = False,
     ) -> str:
         payload = self._json_payload(result, include_metadata=include_metadata)
         return json.dumps(payload, ensure_ascii=False, indent=indent)
 
     @staticmethod
     def _json_payload(
-        result: ScrapeResult,
-        *,
-        include_metadata: bool = False,
+            result: ScrapeResult,
+            *,
+            include_metadata: bool = False,
     ) -> Any:
         data = extract_data(result)
         if include_metadata:

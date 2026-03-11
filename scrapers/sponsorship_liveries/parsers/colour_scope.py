@@ -47,7 +47,7 @@ class ColourScopeHandler:
             if year_params & years:
                 if re.search(r"grand prix", item, flags=re.IGNORECASE):
                     filtered.append(
-                        SponsorshipRecordText.strip_years_keep_context(item)
+                        SponsorshipRecordText.strip_years_keep_context(item),
                     )
                 else:
                     filtered.append(SponsorshipRecordText.strip_year_suffix(item))
@@ -82,7 +82,7 @@ class ColourScopeHandler:
                     continue
                 if re.search(r"grand prix", item, flags=re.IGNORECASE):
                     filtered.append(
-                        SponsorshipRecordText.strip_years_keep_context(item)
+                        SponsorshipRecordText.strip_years_keep_context(item),
                     )
                 else:
                     filtered.append(SponsorshipRecordText.strip_year_suffix(item))
@@ -90,7 +90,7 @@ class ColourScopeHandler:
 
     @staticmethod
     def colour_grand_prix_scope(
-        colour: str,
+            colour: str,
     ) -> tuple[dict[str, Any] | None, str]:
         match = re.search(r"\(([^)]*grand prix[^)]*)\)", colour, flags=re.IGNORECASE)
         cleaned_colour = SponsorshipRecordText.strip_year_suffix(colour)
@@ -101,7 +101,7 @@ class ColourScopeHandler:
         scope_text = re.sub(r"\b\d{3}0s\b", "", scope_text)
         scope_text = clean_wiki_text(scope_text)
         if not scope_text or not re.search(
-            r"grand prix", scope_text, flags=re.IGNORECASE
+                r"grand prix", scope_text, flags=re.IGNORECASE,
         ):
             return None, cleaned_colour
         names = GrandPrixScopeParser.parse_grand_prix_names(scope_text)
@@ -127,7 +127,7 @@ class ColourScopeHandler:
 
     @staticmethod
     def record_has_year_specific_colours(
-        record: Dict[str, Any], colour_keys: set[str]
+            record: Dict[str, Any], colour_keys: set[str],
     ) -> bool:
         for key in colour_keys:
             colours = record.get(key)
@@ -135,7 +135,7 @@ class ColourScopeHandler:
                 continue
             for item in colours:
                 if isinstance(
-                    item, str
+                        item, str,
                 ) and SponsorshipRecordText.extract_years_from_text(item):
                     return True
         return False

@@ -8,7 +8,8 @@ from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 
@@ -18,7 +19,7 @@ class SeasonRegionalChampionshipParser:
         self._table_parser = table_parser
 
     def parse(
-        self, soup: BeautifulSoup, *, section_ids: list[str], season_year: int | None
+            self, soup: BeautifulSoup, *, section_ids: list[str], season_year: int | None,
     ) -> List[Dict[str, Any]]:
         return self._table_parser.parse_table(
             soup,
@@ -39,6 +40,6 @@ class SeasonRegionalChampionshipParser:
                     column("Winning driver", "winning_driver", DriverColumn()),
                     column("Constructor", "constructor", ConstructorColumn()),
                     column("Report", "report", UrlColumn()),
-                ]
+                ],
             ),
         )

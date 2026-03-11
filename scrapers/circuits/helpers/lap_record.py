@@ -9,8 +9,8 @@ from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
-from scrapers.circuits.helpers.logger import logger
 from scrapers.circuits.helpers.layout import layout_from_spanning_header
+from scrapers.circuits.helpers.logger import logger
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
 
 
@@ -79,23 +79,23 @@ def select_details_paren(text: str) -> list[str]:
 
 
 def is_lap_record_table(
-    headers: list[str],
-    lap_scraper: LapRecordsTableScraper,
+        headers: list[str],
+        lap_scraper: LapRecordsTableScraper,
 ) -> bool:
     if lap_scraper.headers_match(headers):
         return True
 
     header_set = set(headers)
     return "Time" in header_set and (
-        "Driver" in header_set or "Driver/Rider" in header_set
+            "Driver" in header_set or "Driver/Rider" in header_set
     )
 
 
 def collect_lap_records(
-    table: Tag,
-    headers: list[str],
-    base_layout: Optional[str],
-    lap_scraper: LapRecordsTableScraper,
+        table: Tag,
+        headers: list[str],
+        base_layout: Optional[str],
+        lap_scraper: LapRecordsTableScraper,
 ) -> list[dict[str, Any]]:
     all_records: list[dict[str, Any]] = []
     current_layout = base_layout

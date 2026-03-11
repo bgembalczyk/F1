@@ -54,18 +54,16 @@ class LapRecordsTableScraper(F1TableScraper):
         """
         raise NotImplementedError(
             "LapRecordsTableScraper nie jest używany bezpośrednio – "
-            "korzystaj z parse_row()/parse_multi_row() na konkretnych tabelach."
+            "korzystaj z parse_row()/parse_multi_row() na konkretnych tabelach.",
         )
 
-
-
     def parse_multi_row(
-        self,
-        row: Tag,
-        cells: List[Tag],
-        headers: List[str],
-        *,
-        as_value_objects: bool = False,
+            self,
+            row: Tag,
+            cells: List[Tag],
+            headers: List[str],
+            *,
+            as_value_objects: bool = False,
     ) -> List[Any]:
         """
         Z jednego <tr> zwraca 1..N rekordów.
@@ -94,7 +92,7 @@ class LapRecordsTableScraper(F1TableScraper):
             if as_value_objects:
                 if LapRecord is None:
                     raise RuntimeError(
-                        "as_value_objects=True, ale LapRecord nie jest dostępny w projekcie."
+                        "as_value_objects=True, ale LapRecord nie jest dostępny w projekcie.",
                     )
                 out_records.append(LapRecord.from_dict(record))
             else:

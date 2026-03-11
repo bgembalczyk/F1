@@ -84,8 +84,8 @@ class LicenceParser:
                         if other_text and other_text not in licence_tag_map:
                             for a_tag in all_a_tags:
                                 if (
-                                    clean_infobox_text(a_tag.get_text(strip=True))
-                                    == other_text
+                                        clean_infobox_text(a_tag.get_text(strip=True))
+                                        == other_text
                                 ):
                                     a_href = a_tag.get("href", "") or ""
                                     if "/file:" not in a_href.lower():
@@ -102,7 +102,7 @@ class LicenceParser:
                             for other_tag in licence_tag_map.values():
                                 # Check if this other licence is between current licence and year span
                                 if self._is_element_before(
-                                    licence_tag, other_tag
+                                        licence_tag, other_tag,
                                 ) and self._is_element_before(other_tag, year_span):
                                     has_licence_between = True
                                     break
@@ -111,7 +111,7 @@ class LicenceParser:
                                 # This year span belongs to this licence
                                 year_text = year_span.get_text(strip=True)
                                 licence_entry["years"] = YearParser.parse_licence_years(
-                                    year_text
+                                    year_text,
                                 )
                                 break
 

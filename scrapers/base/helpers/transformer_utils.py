@@ -6,10 +6,10 @@ from scrapers.base.transformers import RecordFactoryTransformer, apply_transform
 
 
 def apply_transformers_with_factory(
-    transformers: List[Any],
-    record: Dict[str, Any],
-    record_factory: Optional[Any],
-    logger: Optional[Any] = None,
+        transformers: List[Any],
+        record: Dict[str, Any],
+        record_factory: Optional[Any],
+        logger: Optional[Any] = None,
 ) -> Any:
     """
     Applies transformers to a record, optionally including a record factory transformer.
@@ -29,7 +29,7 @@ def apply_transformers_with_factory(
             RecordFactoryTransformer(
                 record_factory,
                 fallback_on_error=True,
-            )
+            ),
         )
     if not transformers_list:
         return record

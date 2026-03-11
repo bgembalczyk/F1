@@ -30,10 +30,10 @@ class EngineRestriction(ValidatedModel):
         self.fuel_limit_per_race = self._normalize_fuel_limit(self.fuel_limit_per_race)
         self.fuel_flow_rate = self._normalize_flow_rate(self.fuel_flow_rate)
         self.fuel_injection_pressure_limit = self._normalize_limit(
-            self.fuel_injection_pressure_limit, "fuel_injection_pressure_limit"
+            self.fuel_injection_pressure_limit, "fuel_injection_pressure_limit",
         )
         self.engine_rpm_limit = self._normalize_limit(
-            self.engine_rpm_limit, "engine_rpm_limit", range_key="limit"
+            self.engine_rpm_limit, "engine_rpm_limit", range_key="limit",
         )
         self.power_output = normalize_range_value(self.power_output, "power_output")
 
@@ -46,11 +46,11 @@ class EngineRestriction(ValidatedModel):
         result: Dict[str, Any] = dict(value)
         if "range_kg" in result:
             result["range_kg"] = normalize_range_value(
-                result.get("range_kg"), "fuel_limit_per_race.range_kg"
+                result.get("range_kg"), "fuel_limit_per_race.range_kg",
             )
         if "range_l" in result:
             result["range_l"] = normalize_range_value(
-                result.get("range_l"), "fuel_limit_per_race.range_l"
+                result.get("range_l"), "fuel_limit_per_race.range_l",
             )
         return result
 
@@ -63,20 +63,20 @@ class EngineRestriction(ValidatedModel):
         result: Dict[str, Any] = dict(value)
         if "rate" in result:
             result["rate"] = normalize_unit_value(
-                result.get("rate"), "fuel_flow_rate.rate"
+                result.get("rate"), "fuel_flow_rate.rate",
             )
         if "applies_above_rpm" in result:
             result["applies_above_rpm"] = normalize_unit_value(
-                result.get("applies_above_rpm"), "fuel_flow_rate.applies_above_rpm"
+                result.get("applies_above_rpm"), "fuel_flow_rate.applies_above_rpm",
             )
         return result
 
     @staticmethod
     def _normalize_limit(
-        value: Dict[str, Any] | None,
-        field_name: str,
-        *,
-        range_key: str | None = None,
+            value: Dict[str, Any] | None,
+            field_name: str,
+            *,
+            range_key: str | None = None,
     ) -> Dict[str, Any] | None:
         if value is None:
             return None

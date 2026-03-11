@@ -25,10 +25,10 @@ class WikipediaCachePolicy(ResponseCache):
 
     @classmethod
     def with_file_cache(
-        cls,
-        *,
-        cache_dir: Path | str | None = None,
-        ttl_days: int = 30,
+            cls,
+            *,
+            cache_dir: Path | str | None = None,
+            ttl_days: int = 30,
     ) -> "WikipediaCachePolicy":
         if cache_dir is None:
             cache_dir = Path(__file__).resolve().parents[3] / "data" / "wiki_cache"

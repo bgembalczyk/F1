@@ -45,10 +45,10 @@ class GrandPrixScopeParser:
             )
             if range_match:
                 start_text = SponsorshipRecordText.clean_grand_prix_text(
-                    range_match.group(1)
+                    range_match.group(1),
                 )
                 end_text = SponsorshipRecordText.clean_grand_prix_text(
-                    range_match.group(2)
+                    range_match.group(2),
                 )
                 range_scope = {
                     "type": "range",

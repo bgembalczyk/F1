@@ -2,26 +2,24 @@ from pathlib import Path
 
 from models.records.factories import build_constructor_record
 from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
-from scrapers.constructors.constants import (
-    CONSTRUCTOR_FASTEST_LAPS_HEADER,
-    CONSTRUCTOR_PODIUMS_HEADER,
-    CONSTRUCTOR_POINTS_HEADER,
-    CONSTRUCTOR_POLES_HEADER,
-    CONSTRUCTOR_RACES_ENTERED_HEADER,
-    CONSTRUCTOR_RACES_STARTED_HEADER,
-    CONSTRUCTOR_SEASONS_HEADER,
-    CONSTRUCTOR_WINS_HEADER,
-    FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
-)
+from scrapers.constructors.constants import CONSTRUCTOR_FASTEST_LAPS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_PODIUMS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_POINTS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_POLES_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_RACES_ENTERED_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_RACES_STARTED_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_SEASONS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WINS_HEADER
+from scrapers.constructors.constants import FORMER_CONSTRUCTORS_EXPECTED_HEADERS
 
 
 class FormerConstructorsListScraper(BaseConstructorListScraper):

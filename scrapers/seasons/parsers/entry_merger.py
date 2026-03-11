@@ -34,9 +34,9 @@ class EntryMerger:
         return merged_records
 
     def _merge_entry_groups(
-        self,
-        records: List[Dict[str, Any]],
-        keys: List[str],
+            self,
+            records: List[Dict[str, Any]],
+            keys: List[str],
     ) -> Dict[str, Any]:
         if not keys:
             merged: Dict[str, Any] = {}
@@ -67,9 +67,9 @@ class EntryMerger:
         return {key: items}
 
     def _group_records_by_key(
-        self,
-        records: List[Dict[str, Any]],
-        key: str,
+            self,
+            records: List[Dict[str, Any]],
+            key: str,
     ) -> Dict[str, Dict[str, Any]]:
         """Group records by the given key.
 
@@ -92,7 +92,7 @@ class EntryMerger:
         return groups
 
     def _merge_entry_drivers(
-        self, records: List[Dict[str, Any]]
+            self, records: List[Dict[str, Any]],
     ) -> list[dict[str, Any]]:
         drivers: list[dict[str, Any]] = []
         for record in records:
@@ -147,7 +147,7 @@ class EntryMerger:
             rounds_by_index = (
                 rounds_value
                 if isinstance(rounds_value, list)
-                and len(rounds_value) == len(race_drivers)
+                   and len(rounds_value) == len(race_drivers)
                 else None
             )
             rounds_all = (

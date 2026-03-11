@@ -1,9 +1,8 @@
 import re
 from collections import defaultdict
+from pathlib import Path
 from typing import Any
 from typing import Dict
-
-from pathlib import Path
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.parsers.helpers import extract_driver_text
@@ -27,9 +26,9 @@ def surname_initial(record: Dict[str, Any]) -> str:
 
 
 def export_complete_drivers(
-    *,
-    output_dir: Path,
-    include_urls: bool = True,
+        *,
+        output_dir: Path,
+        include_urls: bool = True,
 ) -> None:
     options = init_scraper_options(None, include_urls=include_urls)
     scraper = CompleteDriverScraper(options=options)

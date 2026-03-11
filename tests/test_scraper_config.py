@@ -1,8 +1,11 @@
 import pytest
 
 from infrastructure.http_client.caching import WikipediaCachePolicy
-from scrapers.base.options import HttpPolicy, default_http_policy
-from scrapers.config import ScraperConfig, default_config, default_scraper_config
+from scrapers.base.options import HttpPolicy
+from scrapers.base.options import default_http_policy
+from scrapers.config import ScraperConfig
+from scrapers.config import default_config
+from scrapers.config import default_scraper_config
 
 
 def test_http_policy_rejects_invalid_values():

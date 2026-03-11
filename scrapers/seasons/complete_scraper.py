@@ -1,11 +1,13 @@
-from typing import Any, Dict, List
+from pathlib import Path
+from typing import Any
+from typing import Dict
+from typing import List
 
 from bs4 import BeautifulSoup
-from pathlib import Path
 
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
@@ -44,7 +46,7 @@ class CompleteSeasonScraper(F1Scraper):
                 {
                     "season": season_info,
                     "tables": data[0] if data else {},
-                }
+                },
             )
 
         return results

@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Any, List
+from typing import Any
 
 from bs4 import BeautifulSoup
 
@@ -13,7 +13,8 @@ from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.configuration import EngineConfigurationColumn
 from scrapers.engines.columns.nested_text import NestedTextColumn
@@ -72,11 +73,11 @@ class EngineRegulationScraper(BaseEngineTableScraper):
         pending_rowspans: dict[int, dict[str, object]] = {}
         rows = table.find_all("tr")[header_rows:]
         parser = self._create_parser()
-        
+
         for row_index, tr in enumerate(rows):
             cells = tr.find_all(["td", "th"])
             cleaned_cells = self._clean_cells(cells)
-            
+
             # Validate row
             if not self._is_valid_row(cells, cleaned_cells, headers):
                 continue
@@ -89,7 +90,7 @@ class EngineRegulationScraper(BaseEngineTableScraper):
                 headers,
                 pending_rowspans,
             )
-            
+
             # Parse record
             record = self._parse_record(headers, expanded_cells, row_index)
             if record:

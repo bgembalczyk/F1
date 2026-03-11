@@ -7,7 +7,8 @@ from bs4 import BeautifulSoup
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.time_range import TimeRangeColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.columns.date_range import DateRangeColumn
@@ -19,7 +20,7 @@ class TestingVenuesParser:
         self._table_parser = table_parser
 
     def parse(
-        self, soup: BeautifulSoup, season_year: int | None
+            self, soup: BeautifulSoup, season_year: int | None,
     ) -> List[Dict[str, Any]]:
         # This table only exists in 2011 and 2009
         if season_year not in {2009, 2011}:
@@ -31,7 +32,7 @@ class TestingVenuesParser:
             return self._parse_2009(soup, season_year)
 
     def _parse_2011(
-        self, soup: BeautifulSoup, season_year: int | None
+            self, soup: BeautifulSoup, season_year: int | None,
     ) -> List[Dict[str, Any]]:
         """
         Parses the testing table for 2011.
@@ -72,7 +73,7 @@ class TestingVenuesParser:
         return records
 
     def _parse_2009(
-        self, soup: BeautifulSoup, season_year: int | None
+            self, soup: BeautifulSoup, season_year: int | None,
     ) -> List[Dict[str, Any]]:
         """
         Parses the testing table for 2009.

@@ -5,10 +5,10 @@ from scrapers.base.helpers.text import strip_marks as strip_wiki_marks
 
 
 def normalize_auto_value(
-    value: Any,
-    *,
-    strip_marks: bool = False,
-    drop_empty: bool = True,
+        value: Any,
+        *,
+        strip_marks: bool = False,
+        drop_empty: bool = True,
 ) -> Any:
     if isinstance(value, dict):
         cleaned = dict(value)

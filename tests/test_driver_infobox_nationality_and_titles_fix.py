@@ -3,8 +3,8 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 from scrapers.base.options import ScraperOptions
+from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 
 
 @pytest.fixture
@@ -55,11 +55,11 @@ def test_nationality_with_link(scraper):
             break
 
     assert nationality_row is not None, "Nationality row not found"
-    
+
     value = nationality_row["value"]
     assert isinstance(value, list), "Nationality value should be a list"
     assert len(value) == 1, "Should have exactly one nationality"
-    
+
     nationality_item = value[0]
     assert isinstance(nationality_item, dict), "Nationality item should be a dict with text and url"
     assert "text" in nationality_item, "Nationality dict should have 'text' field"
@@ -86,7 +86,7 @@ def test_nationality_without_link(scraper):
 
     assert len(result) == 1
     assert "career" in result[0]
-    
+
     # Find the "Nationality" row
     nationality_row = None
     for row in result[0]["career"][0]["rows"]:
@@ -148,7 +148,7 @@ def test_championship_titles_document_order(scraper):
 
     assert len(result) == 1
     assert "championship_titles" in result[0]
-    
+
     titles = result[0]["championship_titles"]
     assert len(titles) == 3, "Should have exactly 3 championship titles"
 
@@ -191,13 +191,13 @@ def test_championship_titles_sorted_for_non_list(scraper):
 
     assert len(result) == 1
     assert "championship_titles" in result[0]
-    
+
     titles = result[0]["championship_titles"]
     assert len(titles) == 1
-    
+
     champ = titles[0]
     assert champ["title"]["text"] == "Japanese Formula Two"
-    
+
     # Years should be expanded and sorted: 1981, 1982, 1984, 1985, 1986
     years = champ["years"]
     year_values = [y["year"] for y in years if "year" in y]

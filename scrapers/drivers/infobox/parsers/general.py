@@ -20,12 +20,12 @@ class InfoboxGeneralParser:
     )
 
     def __init__(
-        self,
-        *,
-        include_urls: bool,
-        link_extractor: InfoboxLinkExtractor,
-        schema: InfoboxSchema,
-        logger=None,
+            self,
+            *,
+            include_urls: bool,
+            link_extractor: InfoboxLinkExtractor,
+            schema: InfoboxSchema,
+            logger=None,
     ) -> None:
         self._include_urls = include_urls
         self._link_extractor = link_extractor
@@ -91,7 +91,7 @@ class InfoboxGeneralParser:
     def _extract_iso_date_from_hidden_span(self, cell: Tag) -> str | None:
         """Extract ISO date from hidden span elements."""
         hidden_spans = cell.find_all(
-            "span", style=lambda x: x and "display:none" in x
+            "span", style=lambda x: x and "display:none" in x,
         )
         for span in hidden_spans:
             span_text = span.get_text(strip=True)
@@ -180,7 +180,7 @@ class InfoboxGeneralParser:
                     place_text = match.group(1).strip()
                 # Also include following parts as place
                 if i + 1 < len(parts):
-                    remaining = " ".join(parts[i + 1 :])
+                    remaining = " ".join(parts[i + 1:])
                     place_text = (place_text + " " + remaining).strip()
                 break
 

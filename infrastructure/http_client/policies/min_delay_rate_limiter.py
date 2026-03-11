@@ -11,11 +11,11 @@ class MinDelayRateLimiter(RateLimiter):
     """Minimalny odstęp + jitter między requestami."""
 
     def __init__(
-        self,
-        *,
-        min_delay_seconds: float = 1.5,
-        jitter_seconds: float = 0.7,
-        should_limit: Callable[[str], bool] | None = None,
+            self,
+            *,
+            min_delay_seconds: float = 1.5,
+            jitter_seconds: float = 0.7,
+            should_limit: Callable[[str], bool] | None = None,
     ) -> None:
         self.min_delay_seconds = max(0.0, float(min_delay_seconds))
         self.jitter_seconds = max(0.0, float(jitter_seconds))

@@ -1,8 +1,7 @@
 import re
+from pathlib import Path
 from typing import Any
 from typing import Dict
-
-from pathlib import Path
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.results import ScrapeResult
@@ -22,9 +21,9 @@ def season_filename(season_info: Dict[str, Any]) -> str:
 
 
 def export_complete_seasons(
-    *,
-    output_dir: Path,
-    include_urls: bool = True,
+        *,
+        output_dir: Path,
+        include_urls: bool = True,
 ) -> None:
     options = init_scraper_options(None, include_urls=include_urls)
     scraper = CompleteSeasonScraper(options=options)

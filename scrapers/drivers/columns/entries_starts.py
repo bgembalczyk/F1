@@ -1,8 +1,9 @@
-from typing import Any, Dict
+from typing import Any
+from typing import Dict
 
+from scrapers.base.parsers.helpers import parse_entries_starts
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.parsers.helpers import parse_entries_starts
 
 
 class EntriesStartsColumn(BaseColumn):

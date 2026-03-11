@@ -1,20 +1,18 @@
-from models.records.factories import (
-    build_constructor_record,
-    build_driver_record,
-    build_fatality_record,
-    build_grands_prix_record,
-    build_season_record,
-    build_season_summary_record,
-    build_special_driver_record,
-)
+from models.records.factories import build_constructor_record
+from models.records.factories import build_driver_record
+from models.records.factories import build_fatality_record
+from models.records.factories import build_grands_prix_record
+from models.records.factories import build_season_record
+from models.records.factories import build_season_summary_record
+from models.records.factories import build_special_driver_record
 
 
 def test_build_season_record_adds_url() -> None:
     record = build_season_record({"year": "2021"})
     assert record["year"] == 2021
     assert (
-        record["url"]
-        == "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+            record["url"]
+            == "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
     )
 
 
@@ -27,7 +25,7 @@ def test_build_driver_record_normalizes_championships_and_seasons() -> None:
             "is_world_champion": False,
             "seasons_competed": [{"year": "2003"}],
             "drivers_championships": {"count": "2", "seasons": [{"year": 2005}]},
-        }
+        },
     )
     assert record["driver"]["text"] == "Test Driver"
     assert record["driver"]["url"] is None
@@ -45,7 +43,7 @@ def test_build_constructor_record_normalizes_links_and_numbers() -> None:
             "seasons": [{"year": 2000}],
             "antecedent_teams": [],
             "wcc_titles": "3",
-        }
+        },
     )
     assert record["constructor"]["text"] == "Test Team"
     assert record["seasons"][0]["url"].endswith("2000_Formula_One_World_Championship")
@@ -61,7 +59,7 @@ def test_build_special_driver_record_normalizes_points_and_entries() -> None:
             "entries": "5",
             "starts": "3",
             "points": {"championship_points": "1.5", "total_points": "2"},
-        }
+        },
     )
     assert record["entries"] == 5
     assert record["starts"] == 3
@@ -77,7 +75,7 @@ def test_build_grands_prix_record_normalizes_seasons_and_totals() -> None:
             "years_held": [{"year": "1950"}],
             "country": [{"text": "Country", "url": "https://example.com/country"}],
             "total": "24",
-        }
+        },
     )
     assert record["years_held"][0]["year"] == 1950
     assert record["total"] == 24
@@ -100,7 +98,7 @@ def test_build_fatality_record_normalizes_event_and_car() -> None:
                 "formula_category": " F1 ",
             },
             "session": "Race",
-        }
+        },
     )
     assert record["age"] == 30
     assert record["event"]["championship"] is False
@@ -120,7 +118,7 @@ def test_build_season_summary_record_normalizes_links() -> None:
                 {"text": "Team", "url": "https://example.com/team"}
             ],
             "winners": "9",
-        }
+        },
     )
     assert record["races"] == 17
     assert record["countries"] == 10

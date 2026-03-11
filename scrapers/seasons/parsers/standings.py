@@ -14,7 +14,7 @@ class SeasonStandingsParser:
         self._table_parser = table_parser
 
     def parse_drivers(
-        self, soup: BeautifulSoup, season_year: int | None = None
+            self, soup: BeautifulSoup, season_year: int | None = None,
     ) -> List[Dict[str, Any]]:
         records = self._parse_standings_table(
             soup,
@@ -45,14 +45,14 @@ class SeasonStandingsParser:
         return self.merge_duplicate_constructors(records)
 
     def _parse_standings_table(
-        self,
-        soup: BeautifulSoup,
-        *,
-        section_ids: list[str],
-        subject_header: str,
-        subject_key: str,
-        subject_column: Any,
-        season_year: int | None = None,
+            self,
+            soup: BeautifulSoup,
+            *,
+            section_ids: list[str],
+            subject_header: str,
+            subject_key: str,
+            subject_column: Any,
+            season_year: int | None = None,
     ) -> List[Dict[str, Any]]:
         return self._table_parser.parse_standings_table(
             soup,
@@ -65,9 +65,9 @@ class SeasonStandingsParser:
 
     @staticmethod
     def _apply_ineligible_section(
-        records: List[Dict[str, Any]],
-        *,
-        subject_key: str,
+            records: List[Dict[str, Any]],
+            *,
+            subject_key: str,
     ) -> List[Dict[str, Any]]:
         filtered: List[Dict[str, Any]] = []
         ineligible = False
@@ -107,7 +107,7 @@ class SeasonStandingsParser:
 
     @staticmethod
     def merge_duplicate_constructors(
-        records: List[Dict[str, Any]],
+            records: List[Dict[str, Any]],
     ) -> List[Dict[str, Any]]:
         """
         Merge duplicate constructor standings entries that represent the same
@@ -138,13 +138,13 @@ class SeasonStandingsParser:
                 # Check if the next record should be merged
                 should_merge = (
                     # Same position
-                    current.get("pos") == next_record.get("pos")
-                    # Same points
-                    and current.get("points") == next_record.get("points")
-                    # Same constructor
-                    and SeasonStandingsParser._same_constructor(
-                        current.get("constructor"), next_record.get("constructor")
-                    )
+                        current.get("pos") == next_record.get("pos")
+                        # Same points
+                        and current.get("points") == next_record.get("points")
+                        # Same constructor
+                        and SeasonStandingsParser._same_constructor(
+                    current.get("constructor"), next_record.get("constructor"),
+                )
                 )
 
                 if should_merge:
@@ -156,7 +156,7 @@ class SeasonStandingsParser:
             # Merge all collected entries
             if len(entries_to_merge) > 1:
                 merged_entry = SeasonStandingsParser._merge_multiple_entries(
-                    entries_to_merge
+                    entries_to_merge,
                 )
                 merged.append(merged_entry)
             else:
@@ -170,7 +170,7 @@ class SeasonStandingsParser:
 
     @staticmethod
     def _same_constructor(
-        constructor1: Dict[str, Any] | None, constructor2: Dict[str, Any] | None
+            constructor1: Dict[str, Any] | None, constructor2: Dict[str, Any] | None,
     ) -> bool:
         """Check if two constructor objects represent the same constructor."""
         if constructor1 is None or constructor2 is None:
@@ -182,7 +182,7 @@ class SeasonStandingsParser:
         engine2 = constructor2.get("engine_constructor", {})
 
         return chassis1.get("text") == chassis2.get("text") and engine1.get(
-            "text"
+            "text",
         ) == engine2.get("text")
 
     @staticmethod
@@ -230,22 +230,22 @@ class SeasonStandingsParser:
                         new_results = value.get("results", [])
                         # Ensure both are lists before merging
                         if isinstance(existing_results, list) and isinstance(
-                            new_results, list
+                                new_results, list,
                         ):
                             merged[key]["results"] = existing_results + new_results
 
                         # Remove round-level attributes that should only be on results
                         SeasonStandingsParser._remove_round_level_attributes(
-                            merged[key]
+                            merged[key],
                         )
 
                         # Preserve other round attributes (like round info, sprint_position, etc.)
                         for round_key, round_value in value.items():
                             if round_key not in (
-                                "results",
-                                "background",
-                                "pole_position",
-                                "fastest_lap",
+                                    "results",
+                                    "background",
+                                    "pole_position",
+                                    "fastest_lap",
                             ):
                                 if round_key not in merged[key]:
                                     merged[key][round_key] = round_value

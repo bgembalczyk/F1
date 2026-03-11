@@ -11,8 +11,8 @@ class ScraperCommonConfig:
 
 
 def apply_common_config(
-    options: ScraperOptions,
-    config: ScraperCommonConfig,
+        options: ScraperOptions,
+        config: ScraperCommonConfig,
 ) -> ScraperOptions:
     options.include_urls = config.include_urls
     options.normalize_empty_values = config.normalize_empty_values
@@ -21,9 +21,9 @@ def apply_common_config(
 
 
 def build_table_config(
-    options: ScraperOptions | None = None,
-    *,
-    config: ScraperCommonConfig | None = None,
+        options: ScraperOptions | None = None,
+        *,
+        config: ScraperCommonConfig | None = None,
 ) -> ScraperOptions:
     resolved = options or ScraperOptions()
     resolved_config = config or ScraperCommonConfig()
@@ -31,9 +31,9 @@ def build_table_config(
 
 
 def build_list_config(
-    options: ScraperOptions | None = None,
-    *,
-    config: ScraperCommonConfig | None = None,
+        options: ScraperOptions | None = None,
+        *,
+        config: ScraperCommonConfig | None = None,
 ) -> ScraperOptions:
     resolved = options or ScraperOptions()
     resolved_config = config or ScraperCommonConfig()

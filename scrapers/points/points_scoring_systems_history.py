@@ -9,21 +9,20 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.base.transformers.points_scoring_systems_history import (
     PointsScoringSystemsHistoryTransformer,
 )
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.columns.first_place import FirstPlaceColumn
-from scrapers.points.constants import (
-    HISTORICAL_POSITIONS,
-    POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER,
-    POINTS_DRIVERS_CHAMPIONSHIP_HEADER,
-    POINTS_FASTEST_LAP_HEADER,
-    POINTS_NOTES_HEADER,
-    POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
-    POINTS_SEASONS_HEADER,
-)
+from scrapers.points.constants import HISTORICAL_POSITIONS
+from scrapers.points.constants import POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER
+from scrapers.points.constants import POINTS_DRIVERS_CHAMPIONSHIP_HEADER
+from scrapers.points.constants import POINTS_FASTEST_LAP_HEADER
+from scrapers.points.constants import POINTS_NOTES_HEADER
+from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
+from scrapers.points.constants import POINTS_SEASONS_HEADER
 
 
 class PointsScoringSystemsHistoryScraper(BasePointsScraper):
@@ -50,7 +49,7 @@ class PointsScoringSystemsHistoryScraper(BasePointsScraper):
                 AutoColumn(),
             ),
             column(POINTS_NOTES_HEADER, "notes", SkipColumn()),
-        ]
+        ],
     )
 
     CONFIG = ScraperConfig(
@@ -62,10 +61,10 @@ class PointsScoringSystemsHistoryScraper(BasePointsScraper):
     )
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            config: ScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
         options.transformers = list(options.transformers or []) + [

@@ -18,11 +18,11 @@ def empty_link_record(*, drop_empty: bool) -> LinkRecord | None:
 
 
 def normalize_single_link(
-    link: LinkRecord | None,
-    *,
-    strip_marks_text: bool = True,
-    drop_empty: bool = True,
-    strip_lang_suffix: bool = True,
+        link: LinkRecord | None,
+        *,
+        strip_marks_text: bool = True,
+        drop_empty: bool = True,
+        strip_lang_suffix: bool = True,
 ) -> LinkRecord | None:
     if not link:
         return empty_link_record(drop_empty=drop_empty)
@@ -48,14 +48,14 @@ def normalize_single_link(
 
 
 def normalize_links(
-    links: Iterable[LinkRecord] | LinkRecord | Tag | str | None,
-    *,
-    full_url: Callable[[str], str | None] | None = None,
-    allow_local_anchors: bool = True,
-    strip_marks: bool = True,
-    drop_empty: bool = True,
-    drop_empty_text: bool = False,
-    strip_lang_suffix: bool = True,
+        links: Iterable[LinkRecord] | LinkRecord | Tag | str | None,
+        *,
+        full_url: Callable[[str], str | None] | None = None,
+        allow_local_anchors: bool = True,
+        strip_marks: bool = True,
+        drop_empty: bool = True,
+        drop_empty_text: bool = False,
+        strip_lang_suffix: bool = True,
 ) -> list[LinkRecord]:
     if isinstance(links, Tag) or isinstance(links, str):
         if isinstance(links, Tag):

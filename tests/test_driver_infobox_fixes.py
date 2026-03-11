@@ -10,7 +10,7 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 @pytest.fixture
 def link_extractor():
     return InfoboxLinkExtractor(
-        include_urls=True, wikipedia_base="https://en.wikipedia.org"
+        include_urls=True, wikipedia_base="https://en.wikipedia.org",
     )
 
 
@@ -33,14 +33,14 @@ class TestBestFinishWithClass:
         assert len(result["seasons"]) == 1
         assert result["seasons"][0]["text"] == "2014"
         assert (
-            result["seasons"][0]["url"]
-            == "https://en.wikipedia.org/wiki/2014_FIA_World_Endurance_Championship"
+                result["seasons"][0]["url"]
+                == "https://en.wikipedia.org/wiki/2014_FIA_World_Endurance_Championship"
         )
         assert "class" in result["seasons"][0]
         assert result["seasons"][0]["class"]["text"] == "LMP1"
         assert (
-            result["seasons"][0]["class"]["url"]
-            == "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
+                result["seasons"][0]["class"]["url"]
+                == "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
         )
 
     def test_multiple_seasons_with_single_class(self, cell_parser):
@@ -59,8 +59,8 @@ class TestBestFinishWithClass:
             assert "class" in result["seasons"][i]
             assert result["seasons"][i]["class"]["text"] == "LMP2"
             assert (
-                result["seasons"][i]["class"]["url"]
-                == "https://en.wikipedia.org/wiki/LMP2"
+                    result["seasons"][i]["class"]["url"]
+                    == "https://en.wikipedia.org/wiki/LMP2"
             )
 
     def test_multiple_seasons_each_with_different_class(self, cell_parser):
@@ -109,14 +109,14 @@ class TestBestFinishWithClass:
         assert len(result["seasons"]) == 1
         assert result["seasons"][0]["text"] == "2013"
         assert (
-            result["seasons"][0]["url"]
-            == "https://en.wikipedia.org/wiki/2013_24_Hours_of_Le_Mans"
+                result["seasons"][0]["url"]
+                == "https://en.wikipedia.org/wiki/2013_24_Hours_of_Le_Mans"
         )
         # Should NOT have class field because "2013" is a year, not a class
         assert "class" not in result["seasons"][0]
 
     def test_best_finish_with_year_range_in_small_not_treated_as_class(
-        self, cell_parser
+            self, cell_parser,
     ):
         """Test that year range in small tag is not treated as class."""
         html = """<td class="infobox-data">1st <small>(<a href="/wiki/2014_Le_Mans" title="2014 Le Mans">2014</a>, <a href="/wiki/2015_Le_Mans" title="2015 Le Mans">2015</a>)</small></td>"""

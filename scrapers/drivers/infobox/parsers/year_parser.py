@@ -26,7 +26,7 @@ class YearParser:
 
             # Check for "present" keyword
             has_present = (
-                re.search(r"\bpresent\b", normalized, re.IGNORECASE) is not None
+                    re.search(r"\bpresent\b", normalized, re.IGNORECASE) is not None
             )
 
             # Extract all 4-digit years and 2-digit years

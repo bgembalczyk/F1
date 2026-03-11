@@ -3,7 +3,8 @@ from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
-
+# Complete scrapers
+from scrapers.circuits.complete_scraper import F1CompleteCircuitScraper
 # List scrapers
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.current_constructors_list import CurrentConstructorsListScraper
@@ -14,35 +15,31 @@ from scrapers.constructors.indianapolis_only_constructors_list import (
     IndianapolisOnlyConstructorsListScraper,
 )
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
-from scrapers.drivers.list_scraper import F1DriversListScraper
-from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
 from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
+from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
+from scrapers.drivers.helpers.export import export_complete_drivers
+from scrapers.drivers.list_scraper import F1DriversListScraper
+from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
+from scrapers.engines.engine_regulation import EngineRegulationScraper
+from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
-from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
-from scrapers.engines.engine_regulation import EngineRegulationScraper
-from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
-from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
-    RedFlaggedWorldChampionshipRacesScraper,
-)
+from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixScraper
 from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
     RedFlaggedNonChampionshipRacesScraper,
 )
-from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
-from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
+from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
+    RedFlaggedWorldChampionshipRacesScraper,
+)
 from scrapers.points.points_scoring_systems_history import (
     PointsScoringSystemsHistoryScraper,
 )
+from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
+from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
+from scrapers.seasons.helpers import export_complete_seasons
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
-
-# Complete scrapers
-from scrapers.circuits.complete_scraper import F1CompleteCircuitScraper
-from scrapers.drivers.helpers.export import export_complete_drivers
-from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixScraper
-from scrapers.seasons.helpers import export_complete_seasons
-
 
 # Ścieżki wyjściowe względem katalogu repo (ten plik jest w root)
 BASE_WIKI_DIR = Path("data/wiki").resolve()

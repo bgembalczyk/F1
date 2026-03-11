@@ -22,11 +22,11 @@ class BoolColumn(BaseColumn):
     """
 
     def __init__(
-        self,
-        predicate: Callable[[ColumnContext], bool],
-        *,
-        default: bool = False,
-        log_errors: bool = False,
+            self,
+            predicate: Callable[[ColumnContext], bool],
+            *,
+            default: bool = False,
+            log_errors: bool = False,
     ) -> None:
         super().__init__()
         self.predicate = predicate

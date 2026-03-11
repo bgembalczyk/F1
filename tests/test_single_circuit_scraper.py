@@ -2,11 +2,9 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
-from scrapers.circuits.single_scraper import (
-    F1SingleCircuitScraper,
-    detect_layout_name,
-    is_lap_record_table,
-)
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.circuits.single_scraper import detect_layout_name
+from scrapers.circuits.single_scraper import is_lap_record_table
 
 
 def test_is_circuit_like_article_true_when_category_matches() -> None:

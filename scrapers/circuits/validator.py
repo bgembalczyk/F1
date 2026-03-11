@@ -1,4 +1,6 @@
-from validation.records import BaseDomainRecordValidator, ExportRecord, ValidationIssue
+from validation.records import BaseDomainRecordValidator
+from validation.records import ExportRecord
+from validation.records import ValidationIssue
 
 
 class CircuitsRecordValidator(BaseDomainRecordValidator):
@@ -8,7 +10,7 @@ class CircuitsRecordValidator(BaseDomainRecordValidator):
             self.require_keys(
                 record,
                 ["circuit", "circuit_status", "country", "seasons"],
-            )
+            ),
         )
         errors.extend(self.require_type(record, "circuit", dict))
         errors.extend(self.require_type(record, "circuit_status", str))

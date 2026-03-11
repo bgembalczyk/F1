@@ -17,16 +17,16 @@ class SpecialDriverRecord(TypedDict, total=False):
 def validate_special_driver_record(record: dict[str, Any]) -> list[ValidationIssue]:
     errors: list[ValidationIssue] = []
     errors.extend(
-        BaseDomainRecordValidator.require_keys(record, ["driver", "seasons", "teams"])
+        BaseDomainRecordValidator.require_keys(record, ["driver", "seasons", "teams"]),
     )
     errors.extend(BaseDomainRecordValidator.require_type(record, "driver", dict))
     errors.extend(BaseDomainRecordValidator.require_type(record, "seasons", list))
     errors.extend(BaseDomainRecordValidator.require_type(record, "teams", list))
     errors.extend(
-        BaseDomainRecordValidator.require_type(record, "entries", int, allow_none=True)
+        BaseDomainRecordValidator.require_type(record, "entries", int, allow_none=True),
     )
     errors.extend(
-        BaseDomainRecordValidator.require_type(record, "starts", int, allow_none=True)
+        BaseDomainRecordValidator.require_type(record, "starts", int, allow_none=True),
     )
 
     driver = record.get("driver")

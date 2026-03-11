@@ -1,8 +1,9 @@
 import importlib
 import sys
 from pathlib import Path
-from scrapers.base.naming import NAMING_CONVENTIONS, SCRAPER_CONSTANT_PREFIXES
 
+from scrapers.base.naming import NAMING_CONVENTIONS
+from scrapers.base.naming import SCRAPER_CONSTANT_PREFIXES
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:

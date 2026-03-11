@@ -1,14 +1,17 @@
-from typing import Any, Dict, List
+from typing import Any
+from typing import Dict
+from typing import List
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
-from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.debug_dumps import write_infobox_dump
+from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
+from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
-from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.drivers.infobox.parsers.career import InfoboxCareerParser
 from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
 from scrapers.drivers.infobox.parsers.general import InfoboxGeneralParser
@@ -22,11 +25,11 @@ class DriverInfoboxScraper:
     _IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        run_id: str | None = None,
-        url: str | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            run_id: str | None = None,
+            url: str | None = None,
     ) -> None:
         options = options or ScraperOptions()
         self.include_urls = options.include_urls
@@ -96,11 +99,11 @@ class DriverInfoboxScraper:
 
     def _apply_transformers(self, record: Dict[str, Any]) -> Any:
         return apply_transformers_with_factory(
-            self.transformers, record, self.record_factory, self.logger
+            self.transformers, record, self.record_factory, self.logger,
         )
 
     def _parse_infobox_with_sections(
-        self, table: Tag, sections: List[Dict[str, Any]]
+            self, table: Tag, sections: List[Dict[str, Any]],
     ) -> Dict[str, Any]:
         general_section = sections[0] if sections else {"rows": []}
 
@@ -127,31 +130,31 @@ class DriverInfoboxScraper:
                     if "full_data_cell" in row:
                         full_data_cell = row["full_data_cell"]
                         full_data_text = (
-                            clean_infobox_text(full_data_cell.get_text(" ", strip=True))
-                            or ""
+                                clean_infobox_text(full_data_cell.get_text(" ", strip=True))
+                                or ""
                         )
 
                         # Check if this contains "Major victories"
                         if "major victories" in full_data_text.lower():
                             # Parse major victories from this cell
                             major_vics = self._titles_parser.parse_major_victories_from_full_data(
-                                full_data_cell
+                                full_data_cell,
                             )
                             parsed["major_victories"].extend(major_vics)
                 continue
             if title == "Major victories":
                 parsed["major_victories"] = self._titles_parser.parse_titles(
-                    section["rows"]
+                    section["rows"],
                 )
                 continue
             if title.endswith("career"):
                 parsed["career"].append(
-                    self._career_parser.parse_section(title, section)
+                    self._career_parser.parse_section(title, section),
                 )
                 continue
             if title == "Previous series":
                 parsed["previous_series"] = self._titles_parser.parse_previous_series(
-                    section["rows"]
+                    section["rows"],
                 )
                 continue
 

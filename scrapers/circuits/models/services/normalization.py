@@ -7,7 +7,7 @@ from scrapers.base.helpers.text_normalization import add_unique_name
 
 
 def extract_circuit_names(
-    raw: dict[str, Any], infobox: dict[str, Any], normalized: dict[str, Any]
+        raw: dict[str, Any], infobox: dict[str, Any], normalized: dict[str, Any],
 ) -> dict[str, Any]:
     """Ekstrakcja nazwy i poprzednich nazw toru."""
     circuit = raw.get("circuit") or {}
@@ -36,7 +36,7 @@ def extract_circuit_names(
 
 
 def extract_circuit_url(
-    raw: dict[str, Any], details: dict[str, Any] | None
+        raw: dict[str, Any], details: dict[str, Any] | None,
 ) -> str | None:
     """Zwraca circuit[url], ale None jeśli details == None."""
     if details is None:
@@ -46,10 +46,10 @@ def extract_circuit_url(
 
 
 def add_place(
-    text: str | None,
-    url: str | None,
-    places: list[dict[str, Any]],
-    seen_places: set[str],
+        text: str | None,
+        url: str | None,
+        places: list[dict[str, Any]],
+        seen_places: set[str],
 ) -> None:
     """
     Dodaje miejsce do listy, jeśli nie jest duplikatem.
@@ -87,7 +87,7 @@ def loc_sort_key(item: tuple[str, Any]) -> int:
 
 
 def extract_circuit_location(
-    raw: dict[str, Any], normalized: dict[str, Any]
+        raw: dict[str, Any], normalized: dict[str, Any],
 ) -> dict[str, Any]:
     """
     Buduje location = { places, coordinates }.
@@ -109,7 +109,7 @@ def extract_circuit_location(
                     add_place(place, None, places, seen_places)
         elif "text" in location_raw:
             add_place(
-                location_raw.get("text"), location_raw.get("url"), places, seen_places
+                location_raw.get("text"), location_raw.get("url"), places, seen_places,
             )
         elif "name" in location_raw:
             add_place(location_raw.get("name"), None, places, seen_places)
@@ -227,8 +227,8 @@ def parse_table_layout_info(table_layout: str) -> tuple[float | None, str | None
 
 
 def find_layout_for_table(
-    table: dict[str, Any],
-    layouts: list[dict[str, Any]],
+        table: dict[str, Any],
+        layouts: list[dict[str, Any]],
 ) -> dict[str, Any] | None:
     """
     Próbuje znaleźć layout pasujący do tabeli.
@@ -270,8 +270,8 @@ def find_layout_for_table(
 
 
 def merge_tables_into_layouts(
-    tables: list[dict[str, Any]],
-    layouts: list[dict[str, Any]],
+        tables: list[dict[str, Any]],
+        layouts: list[dict[str, Any]],
 ) -> None:
     """
     Łączy dane z tables (lap_records) do odpowiednich layoutów.

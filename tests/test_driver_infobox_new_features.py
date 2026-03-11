@@ -12,7 +12,7 @@ from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 @pytest.fixture
 def link_extractor():
     return InfoboxLinkExtractor(
-        include_urls=True, wikipedia_base="https://en.wikipedia.org"
+        include_urls=True, wikipedia_base="https://en.wikipedia.org",
     )
 
 
@@ -24,7 +24,7 @@ def cell_parser(link_extractor):
 @pytest.fixture
 def general_parser(link_extractor):
     return InfoboxGeneralParser(
-        include_urls=True, link_extractor=link_extractor, schema=None, logger=None
+        include_urls=True, link_extractor=link_extractor, schema=None, logger=None,
     )
 
 

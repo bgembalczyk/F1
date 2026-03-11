@@ -2,17 +2,15 @@ from pathlib import Path
 
 from models.records.factories import build_circuit_record
 from models.validation.circuit import Circuit
-from scrapers.base.helpers.config_factory import (
-    ScraperCommonConfig,
-    build_table_config,
-)
+from scrapers.base.helpers.config_factory import ScraperCommonConfig
+from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.circuits.schemas import build_circuits_schema
 from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
+from scrapers.circuits.schemas import build_circuits_schema
 from scrapers.circuits.validator import CircuitsRecordValidator
 
 
@@ -35,10 +33,10 @@ class CircuitsListScraper(F1TableScraper):
     )
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            config: ScraperConfig | None = None,
     ) -> None:
         options = build_table_config(
             options,

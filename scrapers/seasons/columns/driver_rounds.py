@@ -3,7 +3,6 @@ from typing import Any
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.driver_parsing import DriverParsingHelpers
-from scrapers.base.table.columns.helpers.driver_parsing import DriverParsingHelpers
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
@@ -22,7 +21,7 @@ class DriversWithRoundsColumn(BaseColumn):
         drivers: list[dict[str, Any]] = []
         for segment in segments:
             parsed = DriverParsingHelpers.parse_segment(
-                segment, link_lookup, total_rounds=self.total_rounds
+                segment, link_lookup, total_rounds=self.total_rounds,
             )
             if parsed:
                 drivers.append(parsed)

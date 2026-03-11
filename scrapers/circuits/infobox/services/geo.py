@@ -1,5 +1,8 @@
 import re
-from typing import Optional, Dict, Any, List
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
 
 from models.records.link import LinkRecord
 from models.services.helpers import split_delimited_text
@@ -55,7 +58,7 @@ class CircuitGeoParser(InfoboxTextUtils):
                         "text": link_text,
                         "url": link.get("url"),
                     },
-                }
+                },
             )
             cursor = idx + len(link_text)
 
@@ -84,7 +87,7 @@ class CircuitGeoParser(InfoboxTextUtils):
         return result or None
 
     def parse_coordinates(
-        self, row: Optional[Dict[str, Any]]
+            self, row: Optional[Dict[str, Any]],
     ) -> Optional[Dict[str, Any]]:
         if not row:
             return None

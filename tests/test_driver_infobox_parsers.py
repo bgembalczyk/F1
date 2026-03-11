@@ -13,7 +13,7 @@ from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
 @pytest.fixture
 def link_extractor():
     return InfoboxLinkExtractor(
-        include_urls=True, wikipedia_base="https://en.wikipedia.org"
+        include_urls=True, wikipedia_base="https://en.wikipedia.org",
     )
 
 
@@ -228,8 +228,8 @@ def test_year_range_in_single_link_not_expanded(link_extractor):
     assert len(result) == 1
     assert result[0]["text"] == "2018-2019"
     assert (
-        result[0]["url"]
-        == "https://en.wikipedia.org/wiki/2018%E2%80%9319_MRF_Challenge_Formula_2000_Championship"
+            result[0]["url"]
+            == "https://en.wikipedia.org/wiki/2018%E2%80%9319_MRF_Challenge_Formula_2000_Championship"
     )
 
     # Should NOT have "year" field (which would indicate expansion)
@@ -477,8 +477,8 @@ def test_died_with_deathplace_div(general_parser):
     # First element should be the link
     assert result["place"][0]["text"] == "Albuquerque, New Mexico"
     assert (
-        result["place"][0]["url"]
-        == "https://en.wikipedia.org/wiki/Albuquerque,_New_Mexico"
+            result["place"][0]["url"]
+            == "https://en.wikipedia.org/wiki/Albuquerque,_New_Mexico"
     )
 
 
@@ -496,27 +496,27 @@ def test_best_finish_with_multiple_classes(cell_parser):
     # First season with LMP1 class
     assert result["seasons"][0]["text"] == "2019-20"
     assert (
-        result["seasons"][0]["url"]
-        == "https://en.wikipedia.org/wiki/2019%E2%80%9320_FIA_World_Endurance_Championship"
+            result["seasons"][0]["url"]
+            == "https://en.wikipedia.org/wiki/2019%E2%80%9320_FIA_World_Endurance_Championship"
     )
     assert "class" in result["seasons"][0]
     assert result["seasons"][0]["class"]["text"] == "LMP1"
     assert (
-        result["seasons"][0]["class"]["url"]
-        == "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
+            result["seasons"][0]["class"]["url"]
+            == "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
     )
 
     # Second season with LMH class
     assert result["seasons"][1]["text"] == "2021"
     assert (
-        result["seasons"][1]["url"]
-        == "https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship"
+            result["seasons"][1]["url"]
+            == "https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship"
     )
     assert "class" in result["seasons"][1]
     assert result["seasons"][1]["class"]["text"] == "LMH"
     assert (
-        result["seasons"][1]["class"]["url"]
-        == "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+            result["seasons"][1]["class"]["url"]
+            == "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
     )
 
 
@@ -541,16 +541,16 @@ def test_previous_series_with_year_urls(link_extractor, titles_parser):
     assert len(result) == 1
     assert result[0]["title"]["text"] == "Asian Formula Renault"
     assert (
-        result[0]["title"]["url"]
-        == "https://en.wikipedia.org/wiki/Asian_Formula_Renault_Challenge"
+            result[0]["title"]["url"]
+            == "https://en.wikipedia.org/wiki/Asian_Formula_Renault_Challenge"
     )
 
     # Year should have URL from header
     assert len(result[0]["years"]) == 1
     assert result[0]["years"][0]["year"] == 2004
     assert (
-        result[0]["years"][0]["url"]
-        == "https://en.wikipedia.org/wiki/2004_Formula_Renault_seasons#2004_Asian_Formula_Renault_Challenge_season"
+            result[0]["years"][0]["url"]
+            == "https://en.wikipedia.org/wiki/2004_Formula_Renault_seasons#2004_Asian_Formula_Renault_Challenge_season"
     )
 
 
@@ -566,6 +566,6 @@ def test_racing_licence_with_images(cell_parser):
     assert len(result) >= 1
     assert result[0]["licence"]["text"] == "FIA Platinum"
     assert (
-        result[0]["licence"]["url"]
-        == "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+            result[0]["licence"]["url"]
+            == "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
     )

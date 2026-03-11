@@ -23,6 +23,6 @@ def validate_grands_prix_record(record: dict[str, Any]) -> list[ValidationIssue]
     """
     # Import here to avoid circular dependency
     from scrapers.grands_prix.validator import GrandsPrixRecordValidator
-    
+
     validator = GrandsPrixRecordValidator()
     return validator.validate(record)

@@ -1,5 +1,9 @@
 import re
-from typing import Any, Dict, List, Optional, Union
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
+from typing import Union
 
 from models.records.link import LinkRecord
 from scrapers.base.helpers.text_normalization import clean_infobox_text
@@ -19,7 +23,7 @@ class CircuitEntityParser(CircuitTextProcessing):
         return [part for part in parts if part]
 
     def _build_entity_from_links(
-        self, parts: list[str], links: list[LinkRecord]
+            self, parts: list[str], links: list[LinkRecord],
     ) -> Union[List[Dict[str, Any]], Dict[str, Any], str, None]:
         if len(links) > 1:
             out: List[Dict[str, Any]] = []
@@ -61,8 +65,8 @@ class CircuitEntityParser(CircuitTextProcessing):
         return parts[0] if parts else None
 
     def parse_linked_entity(
-        self,
-        row: Optional[Dict[str, Any]],
+            self,
+            row: Optional[Dict[str, Any]],
     ) -> Optional[Union[Dict[str, Any], str, List[Dict[str, Any]]]]:
         if not row:
             return None

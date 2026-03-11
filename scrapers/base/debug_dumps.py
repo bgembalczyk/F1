@@ -1,6 +1,7 @@
 import json
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime
+from datetime import timezone
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
@@ -16,11 +17,11 @@ class TablePipelineDebugContext:
 
 
 def write_infobox_dump(
-    debug_dir: Path,
-    *,
-    html: str,
-    url: str | None,
-    run_id: str | None = None,
+        debug_dir: Path,
+        *,
+        html: str,
+        url: str | None,
+        run_id: str | None = None,
 ) -> Path:
     debug_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -32,11 +33,11 @@ def write_infobox_dump(
 
 
 def write_table_pipeline_dump(
-    debug_dir: Path,
-    *,
-    context: TablePipelineDebugContext,
-    cell_html: str | None,
-    error: Exception | None = None,
+        debug_dir: Path,
+        *,
+        context: TablePipelineDebugContext,
+        cell_html: str | None,
+        error: Exception | None = None,
 ) -> Path:
     debug_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")

@@ -30,11 +30,11 @@ class DomainParseError(ScraperError):
     """Błąd parsowania danych domenowych (niekrytyczny)."""
 
     def __init__(
-        self,
-        message: str,
-        *,
-        url: Optional[str] = None,
-        cause: Optional[Exception] = None,
+            self,
+            message: str,
+            *,
+            url: Optional[str] = None,
+            cause: Optional[Exception] = None,
     ) -> None:
         self.message = message
         self.url = url

@@ -28,11 +28,11 @@ class BaseHttpClient(ABC):
     }
 
     def __init__(
-        self,
-        *,
-        session: Any,
-        config: HttpClientConfig,
-        request_exception_cls: type[Exception],
+            self,
+            *,
+            session: Any,
+            config: HttpClientConfig,
+            request_exception_cls: type[Exception],
     ) -> None:
         """
         Inicjalizacja klienta HTTP.
@@ -86,12 +86,12 @@ class BaseHttpClient(ABC):
             time.sleep(delay)
 
     def _request_with_retries(
-        self,
-        url: str,
-        *,
-        headers: Optional[Dict[str, str]],
-        timeout: Optional[int],
-        request_func: Callable[..., Any],
+            self,
+            url: str,
+            *,
+            headers: Optional[Dict[str, str]],
+            timeout: Optional[int],
+            request_func: Callable[..., Any],
     ):
         attempts = self.retry_policy.max_retries + 1
 
@@ -111,21 +111,21 @@ class BaseHttpClient(ABC):
                 )
             except self.request_exception_cls as exc:
                 if (
-                    attempt >= self.retry_policy.max_retries
-                    or not self.retry_policy.should_retry(
-                        response=None,
-                        exception=exc,
-                        attempt=attempt,
-                    )
+                        attempt >= self.retry_policy.max_retries
+                        or not self.retry_policy.should_retry(
+                    response=None,
+                    exception=exc,
+                    attempt=attempt,
+                )
                 ):
                     raise
                 self._backoff_sleep(attempt)
                 continue
 
             if self.retry_policy.should_retry(
-                response=response,
-                exception=None,
-                attempt=attempt,
+                    response=response,
+                    exception=None,
+                    attempt=attempt,
             ):
                 if attempt >= self.retry_policy.max_retries:
                     response.raise_for_status()
@@ -139,21 +139,21 @@ class BaseHttpClient(ABC):
 
     @abstractmethod
     def get(
-        self,
-        url: str,
-        *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+            self,
+            url: str,
+            *,
+            headers: Optional[Dict[str, str]] = None,
+            timeout: Optional[int] = None,
     ) -> HttpResponseProtocol:
         """Pobiera URL i zwraca response."""
         ...
 
     def get_text(
-        self,
-        url: str,
-        *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+            self,
+            url: str,
+            *,
+            headers: Optional[Dict[str, str]] = None,
+            timeout: Optional[int] = None,
     ) -> str:
         """
         Zwraca response.text z obsługą cache.
@@ -174,11 +174,11 @@ class BaseHttpClient(ABC):
         return text
 
     def get_json(
-        self,
-        url: str,
-        *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+            self,
+            url: str,
+            *,
+            headers: Optional[Dict[str, str]] = None,
+            timeout: Optional[int] = None,
     ) -> Any:
         """
         Parsuje JSON z odpowiedzi.

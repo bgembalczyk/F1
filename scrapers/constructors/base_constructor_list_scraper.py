@@ -4,15 +4,14 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.dsl import column
-from scrapers.base.table.presets import BASE_STATS_COLUMNS, BASE_STATS_MAP
+from scrapers.base.table.presets import BASE_STATS_COLUMNS
+from scrapers.base.table.presets import BASE_STATS_MAP
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.constructors.constants import (
-    CONSTRUCTOR_DRIVERS_HEADER,
-    CONSTRUCTOR_NAME_HEADER,
-    CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
-    CONSTRUCTOR_WCC_HEADER,
-    CONSTRUCTOR_WDC_HEADER,
-)
+from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
 
 
 class BaseConstructorListScraper(F1TableScraper):
@@ -29,7 +28,7 @@ class BaseConstructorListScraper(F1TableScraper):
     - schema (can use build_common_stats_columns helper)
     - record_factory
     """
-    
+
     @staticmethod
     def build_common_stats_columns():
         """
@@ -46,7 +45,7 @@ class BaseConstructorListScraper(F1TableScraper):
             )
             for header, key in BASE_STATS_MAP.items()
         ]
-    
+
     @staticmethod
     def build_common_metadata_columns():
         """
@@ -62,7 +61,7 @@ class BaseConstructorListScraper(F1TableScraper):
             column(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
             column(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
         ]
-    
+
     @staticmethod
     def build_licensed_in_column():
         """Build the licensed_in column definition."""
@@ -70,10 +69,10 @@ class BaseConstructorListScraper(F1TableScraper):
         return column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", LinksListColumn())
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config=None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            config=None,
     ) -> None:
         options = options or ScraperOptions()
         options.normalize_empty_values = False

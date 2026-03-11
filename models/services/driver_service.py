@@ -16,7 +16,7 @@ class DriverService:
         match = re.match(r"(\d+)", lines[0])
         if match:
             count = int(match.group(1))
-            tail = lines[0][match.end() :].strip()
+            tail = lines[0][match.end():].strip()
             parts: list[str] = []
             if tail:
                 parts.append(tail)

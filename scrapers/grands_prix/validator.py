@@ -1,4 +1,6 @@
-from validation.records import BaseDomainRecordValidator, ExportRecord, ValidationIssue
+from validation.records import BaseDomainRecordValidator
+from validation.records import ExportRecord
+from validation.records import ValidationIssue
 
 
 class GrandsPrixRecordValidator(BaseDomainRecordValidator):
@@ -8,7 +10,7 @@ class GrandsPrixRecordValidator(BaseDomainRecordValidator):
             self.require_keys(
                 record,
                 ["race_title", "race_status", "years_held", "country", "total"],
-            )
+            ),
         )
         errors.extend(self.require_type(record, "race_title", dict))
         errors.extend(self.require_type(record, "race_status", str))

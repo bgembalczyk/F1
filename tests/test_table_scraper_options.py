@@ -1,8 +1,6 @@
-from scrapers.base.helpers.config_factory import (
-    ScraperCommonConfig,
-    build_list_config,
-    build_table_config,
-)
+from scrapers.base.helpers.config_factory import ScraperCommonConfig
+from scrapers.base.helpers.config_factory import build_list_config
+from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
@@ -33,7 +31,7 @@ def test_table_scraper_with_options():
 def test_table_scraper_with_include_urls_option():
     config = ScraperConfig(url="https://example.com")
     options = ScraperOptions(
-        include_urls=False, source_adapter=DummySourceAdapter("<html></html>")
+        include_urls=False, source_adapter=DummySourceAdapter("<html></html>"),
     )
 
     scraper = DummyTableScraper(options=options, config=config)
@@ -47,7 +45,7 @@ def test_build_table_config_applies_common_settings():
             include_urls=False,
             normalize_empty_values=False,
             validation_mode="hard",
-        )
+        ),
     )
 
     assert options.include_urls is False

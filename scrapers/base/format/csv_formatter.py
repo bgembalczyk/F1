@@ -11,17 +11,17 @@ from scrapers.base.results import ScrapeResult
 class CsvFormatter:
     @staticmethod
     def format(
-        result: ScrapeResult,
-        *,
-        fieldnames: Optional[Sequence[str]] = None,
-        include_metadata: bool = False,
+            result: ScrapeResult,
+            *,
+            fieldnames: Optional[Sequence[str]] = None,
+            include_metadata: bool = False,
     ) -> str:
         data = extract_data(result)
         output = io.StringIO()
         if include_metadata:
             metadata = ExportMetadata.from_result(result)
             output.write(
-                f"# meta: {json.dumps(metadata.to_dict(), ensure_ascii=False)}\n"
+                f"# meta: {json.dumps(metadata.to_dict(), ensure_ascii=False)}\n",
             )
         if not data:
             return output.getvalue()

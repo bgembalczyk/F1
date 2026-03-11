@@ -10,7 +10,8 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
 from scrapers.grands_prix.red_flagged_races_scraper.base import (
     RedFlaggedRacesBaseScraper,
@@ -23,7 +24,7 @@ class RedFlaggedNonChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
         "Non-Championship_races",
         "Non_championship_races",
     ]
-    
+
     schema_columns = [
         column("Year", "season", IntColumn()),
         column("Event", "event", UrlColumn()),

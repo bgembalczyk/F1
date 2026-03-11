@@ -6,8 +6,8 @@ from scrapers.base.helpers.text import clean_wiki_text
 
 
 def layout_from_spanning_header(
-    cells: list[Tag],
-    headers: list[str],
+        cells: list[Tag],
+        headers: list[str],
 ) -> Optional[str]:
     if len(cells) != 1 or cells[0].name != "th":
         return None

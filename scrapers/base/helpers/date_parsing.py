@@ -7,7 +7,7 @@ from scrapers.base.table.columns.context import ColumnContext
 
 
 def parse_date_with_category_marker(
-    ctx: ColumnContext, category_marker: str
+        ctx: ColumnContext, category_marker: str,
 ) -> Optional[str]:
     """
     Parse a date from ColumnContext, removing category markers (e.g., F2 marker).

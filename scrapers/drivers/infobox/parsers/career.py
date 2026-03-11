@@ -67,7 +67,7 @@ class InfoboxCareerParser:
                     {
                         "label": label,
                         "value": value,
-                    }
+                    },
                 )
             elif "full_data_cell" in row:
                 # Check if this is a collapsible career statistics table
@@ -75,7 +75,7 @@ class InfoboxCareerParser:
                     # Parse as a career section
                     collapsible_table = row["collapsible_table"]
                     career_stats = self._cell_parser.parse_collapsible_career_table(
-                        collapsible_table
+                        collapsible_table,
                     )
                     if career_stats:
                         rows.append({"collapsible_career": career_stats})
@@ -83,8 +83,8 @@ class InfoboxCareerParser:
                     rows.append(
                         {
                             "full_data": self._cell_parser.parse_full_data(
-                                row["full_data_cell"]
+                                row["full_data_cell"],
                             )
-                        }
+                        },
                     )
         return {"title": title, "rows": rows}

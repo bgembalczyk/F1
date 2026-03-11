@@ -1,6 +1,5 @@
 from typing import Any, Mapping
 
-
 FIELD_ALIASES: dict[str, dict[str, str]] = {
     "constructor": {
         "wcc": "wcc_titles",
@@ -15,10 +14,10 @@ FIELD_ALIASES: dict[str, dict[str, str]] = {
 
 
 def apply_field_aliases(
-    record: Mapping[str, Any],
-    aliases: Mapping[str, str],
-    *,
-    record_name: str,
+        record: Mapping[str, Any],
+        aliases: Mapping[str, str],
+        *,
+        record_name: str,
 ) -> dict[str, Any]:
     normalized = dict(record)
     conflicts: list[tuple[str, str]] = []
@@ -33,7 +32,7 @@ def apply_field_aliases(
 
     if conflicts:
         conflict_details = ", ".join(
-            f"{alias}->{target}" for alias, target in conflicts
+            f"{alias}->{target}" for alias, target in conflicts,
         )
         raise ValueError(f"Konflikt aliasów dla {record_name}: {conflict_details}")
 

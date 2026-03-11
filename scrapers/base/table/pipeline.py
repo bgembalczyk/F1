@@ -1,25 +1,24 @@
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import Any
+from typing import Mapping
+from typing import Sequence
 from urllib.parse import urlsplit
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from models.records.link import LinkRecord
+from scrapers.base.debug_dumps import TablePipelineDebugContext
+from scrapers.base.debug_dumps import write_table_pipeline_dump
+from scrapers.base.errors import ScraperParseError
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.url import normalize_url
-from scrapers.base.errors import ScraperParseError
-from scrapers.base.debug_dumps import (
-    TablePipelineDebugContext,
-    write_table_pipeline_dump,
-)
 from scrapers.base.logging import get_logger
-from scrapers.base.normalization import (
-    EmptyValuePolicy,
-    normalize_empty,
-    normalize_record_values,
-)
+from scrapers.base.normalization import EmptyValuePolicy
+from scrapers.base.normalization import normalize_empty
+from scrapers.base.normalization import normalize_record_values
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -39,14 +38,14 @@ class TablePipeline:
     """
 
     def __init__(
-        self,
-        *,
-        config: ScraperConfig,
-        include_urls: bool,
-        normalize_empty_values: bool = True,
-        model_fields: set[str] | None = None,
-        run_id: str | None = None,
-        debug_dir: str | Path | None = None,
+            self,
+            *,
+            config: ScraperConfig,
+            include_urls: bool,
+            normalize_empty_values: bool = True,
+            model_fields: set[str] | None = None,
+            run_id: str | None = None,
+            debug_dir: str | Path | None = None,
     ) -> None:
         self.config = config
         self.include_urls = include_urls
@@ -128,10 +127,10 @@ class TablePipeline:
         return records
 
     def parse_row(
-        self,
-        row: Mapping[str, Tag],
-        *,
-        row_index: int | None = None,
+            self,
+            row: Mapping[str, Tag],
+            *,
+            row_index: int | None = None,
     ) -> Any:
         record: dict[str, Any] = {}
 
@@ -145,12 +144,12 @@ class TablePipeline:
         return self._finalize_record(record)
 
     def parse_cells(
-        self,
-        headers: Sequence[str],
-        cells: Sequence[Tag],
-        *,
-        row_index: int | None = None,
-        header_cells: Sequence[Tag] | None = None,
+            self,
+            headers: Sequence[str],
+            cells: Sequence[Tag],
+            *,
+            row_index: int | None = None,
+            header_cells: Sequence[Tag] | None = None,
     ) -> Any:
         record: dict[str, Any] = {}
         for index, (header, cell) in enumerate(zip(headers, cells)):
@@ -192,12 +191,12 @@ class TablePipeline:
         return cell.decode_contents()
 
     def _dump_parse_context(
-        self,
-        *,
-        header: str,
-        row_index: int | None,
-        cell_html: str | None,
-        error: Exception,
+            self,
+            *,
+            header: str,
+            row_index: int | None,
+            cell_html: str | None,
+            error: Exception,
     ) -> None:
         if self.debug_dir is None:
             return
@@ -217,7 +216,7 @@ class TablePipeline:
         self.logger.warning("Saved table pipeline debug dump: %s", dump_path)
 
     def _normalize_cell(
-        self, header: str, cell: Tag
+            self, header: str, cell: Tag,
     ) -> tuple[str, str | None, str | None]:
         key = self.column_map.get(header, normalize_header(header))
         raw_text = cell.get_text(" ", strip=True)
@@ -231,9 +230,9 @@ class TablePipeline:
             policy=self.empty_value_policy,
         )
         if (
-            self.empty_value_policy is EmptyValuePolicy.NORMALIZE
-            and normalized_clean is None
-            and clean_text == ""
+                self.empty_value_policy is EmptyValuePolicy.NORMALIZE
+                and normalized_clean is None
+                and clean_text == ""
         ):
             self._normalized_empty_cells += 1
         return key, normalized_raw_text, normalized_clean
@@ -251,13 +250,13 @@ class TablePipeline:
         return self.columns.get(key) or self.columns.get(header) or self.default_column
 
     def _apply_cell(
-        self,
-        record: dict[str, Any],
-        header: str,
-        cell: Tag,
-        *,
-        row_index: int | None = None,
-        header_cell: Tag | None = None,
+            self,
+            record: dict[str, Any],
+            header: str,
+            cell: Tag,
+            *,
+            row_index: int | None = None,
+            header_cell: Tag | None = None,
     ) -> None:
         cell_html = self._cell_html(cell)
         key, raw_text, clean_text = self._normalize_cell(header, cell)

@@ -66,7 +66,7 @@ class MultiLevelHeaderBuilder:
                         try:
                             sub_cell = next(second_iter)
                             sub_text = clean_wiki_text(
-                                sub_cell.get_text(" ", strip=True)
+                                sub_cell.get_text(" ", strip=True),
                             )
                         except StopIteration:
                             sub_text = None

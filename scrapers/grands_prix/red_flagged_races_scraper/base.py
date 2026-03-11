@@ -4,7 +4,6 @@ from typing import Dict
 from typing import List
 
 from bs4 import BeautifulSoup
-from bs4 import Tag
 
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
@@ -40,10 +39,10 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
     - schema (can use build_common_red_flag_columns helper)
     - record_factory
     """
-    
+
     # Subclasses can override to provide fallback section IDs
     alternative_section_ids: List[str] = []
-    
+
     @staticmethod
     def build_common_red_flag_columns(race_name_header: str = "Grand Prix"):
         """
@@ -74,12 +73,12 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             ),
             column("Ref.", "ref", SkipColumn()),
         ]
-    
+
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config=None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            config=None,
     ) -> None:
         options = options or ScraperOptions()
         options.transformers = list(options.transformers or []) + [
@@ -91,12 +90,12 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         # Try the primary section_id first, then alternatives, then None (whole document)
         # Filter out None from the primary section_id to avoid duplication
         section_ids_to_try = (
-            [self.section_id] if self.section_id is not None else []
-        ) + self.alternative_section_ids + [None]
-        
+                                 [self.section_id] if self.section_id is not None else []
+                             ) + self.alternative_section_ids + [None]
+
         table = None
         parser = None
-        
+
         for section_id in section_ids_to_try:
             logger.debug(f"Trying to find table with section_id={section_id!r}")
             current_parser = HtmlTableParser(
@@ -112,7 +111,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             except RuntimeError as e:
                 logger.debug(f"Failed to find table with section_id={section_id!r}: {e}")
                 continue
-        
+
         # Check if the page has a TOC entry but no proper section heading
         # This can help diagnose Wikipedia page structure issues
         if table is None and self.section_id:
@@ -125,36 +124,36 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
                 if soup.find(id=toc_id):
                     logger.warning(
                         f"Found TOC entry '{toc_id}' but no matching section heading. "
-                        f"Wikipedia page structure may be malformed or incomplete."
+                        f"Wikipedia page structure may be malformed or incomplete.",
                     )
-        
+
         if table is None:
             # Extract diagnostic information for better error reporting
             available_sections = [
-                span.get('id', 'no-id') 
+                span.get('id', 'no-id')
                 for span in soup.select('.mw-headline')
             ]
             sections_preview = available_sections[:10]
             if len(available_sections) > 10:
                 sections_preview.append(f"... and {len(available_sections) - 10} more")
-            
+
             # Check what tables are actually present
             all_tables = soup.find_all('table', class_=self.table_css_class)
             logger.error(
                 f"Table search failed. Found {len(all_tables)} tables with "
-                f"class='{self.table_css_class}' in the document."
+                f"class='{self.table_css_class}' in the document.",
             )
-            
+
             # Try to extract headers from each table for debugging
             if all_tables:
                 logger.error("Available tables and their headers:")
                 for i, tbl in enumerate(all_tables[:5]):  # Show first 5 tables
                     try:
                         headers, _ = MultiLevelHeaderBuilder.build_headers(tbl)
-                        logger.error(f"  Table {i+1}: {headers[:7]}...")  # Show first 7 headers
+                        logger.error(f"  Table {i + 1}: {headers[:7]}...")  # Show first 7 headers
                     except Exception as e:
-                        logger.error(f"  Table {i+1}: Could not extract headers - {e}")
-            
+                        logger.error(f"  Table {i + 1}: Could not extract headers - {e}")
+
             error_msg = (
                 f"Nie znaleziono pasującej tabeli. "
                 f"Próbowano sekcji: {section_ids_to_try}. "
@@ -163,7 +162,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             )
             logger.error(error_msg)
             raise RuntimeError(error_msg)
-        
+
         headers, header_rows = MultiLevelHeaderBuilder.build_headers(table)
 
         records: list[dict[str, Any]] = []
@@ -188,7 +187,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
                 pending_rowspans,
             )
             record = self.extractor.pipeline.parse_cells(
-                headers, expanded_cells, row_index=row_index
+                headers, expanded_cells, row_index=row_index,
             )
             if record:
                 records.append(record)

@@ -70,7 +70,7 @@ class ConstructorParsingHelpers:
         line_contexts: list[ColumnContext] = []
         link_index = 0
         for line, link_count in zip(lines, line_link_counts):
-            line_links = ctx.links[link_index : link_index + link_count]
+            line_links = ctx.links[link_index: link_index + link_count]
             link_index += link_count
 
             text_parts = []
@@ -83,7 +83,7 @@ class ConstructorParsingHelpers:
                     text_parts.append(node_text)
 
             clean_text = clean_wiki_text(" ".join(text_parts))
-            
+
             line_contexts.append(
                 ColumnContext(
                     cell=None,
@@ -96,7 +96,7 @@ class ConstructorParsingHelpers:
                     skip_sentinel=getattr(ctx, "skip_sentinel", None),
                     model_fields=getattr(ctx, "model_fields", None),
                     header_link=getattr(ctx, "header_link", None),
-                )
+                ),
             )
 
         return line_contexts
@@ -117,10 +117,10 @@ class ConstructorParsingHelpers:
         """
         if not ctx.links:
             return None
-        
+
         if index >= len(ctx.links):
             return None
-        
+
         return ctx.links[index]
 
     @staticmethod
@@ -137,14 +137,14 @@ class ConstructorParsingHelpers:
             Tuple of (before_hyphen, after_hyphen), or None if no external hyphen
         """
         text = ctx.clean_text or ctx.raw_text or ""
-        
+
         # Look for patterns like " - " or " – " (various dash types)
         for separator in [" - ", " – ", " — "]:
             if separator in text:
                 parts = text.split(separator, 1)
                 if len(parts) == 2:
                     return parts[0].strip(), parts[1].strip()
-        
+
         return None
 
     @staticmethod
@@ -167,7 +167,7 @@ class ConstructorParsingHelpers:
             lower_link = link_text.lower()
             idx = lower_clean.find(lower_link)
             if idx != -1:
-                clean_text = (clean_text[:idx] + clean_text[idx + len(link_text) :]).strip()
+                clean_text = (clean_text[:idx] + clean_text[idx + len(link_text):]).strip()
 
         clean_text = clean_text.strip(" -–—()")
         if not clean_text:

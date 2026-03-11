@@ -13,8 +13,8 @@ class TableParsingHelper:
 
     @staticmethod
     def parse_table_with_pipeline(
-        table: Tag,
-        pipeline: TablePipeline,
+            table: Tag,
+            pipeline: TablePipeline,
     ) -> List[Dict[str, Any]]:
         """Parse a table using the provided pipeline.
 

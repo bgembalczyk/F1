@@ -13,7 +13,7 @@ class DataContract(MutableMapping[str, Any]):
         kwargs = {key: value for key, value in record.items() if key in field_names}
         instance = cls(**kwargs)  # type: ignore[arg-type]
         instance._extra.update(
-            {key: value for key, value in record.items() if key not in field_names}
+            {key: value for key, value in record.items() if key not in field_names},
         )
         return instance
 

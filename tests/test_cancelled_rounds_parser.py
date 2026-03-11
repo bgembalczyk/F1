@@ -13,13 +13,13 @@ def parser():
     """Create a CancelledRoundsParser instance for testing."""
     options = ScraperOptions()
     table_parser = SeasonTableParser(
-        options=options, include_urls=True, url="https://example.com/test"
+        options=options, include_urls=True, url="https://example.com/test",
     )
     return CancelledRoundsParser(table_parser)
 
 
 def test_cancelled_rounds_returns_second_table_when_two_tables_in_section(
-    parser,
+        parser,
 ) -> None:
     """When there are 2 tables in the section, cancelled_rounds should be the second one."""
     html = """
@@ -110,7 +110,7 @@ def test_cancelled_rounds_returns_empty_when_one_table_matches_calendar(parser) 
 
 
 def test_cancelled_rounds_returns_table_when_one_table_differs_from_calendar(
-    parser,
+        parser,
 ) -> None:
     """When there's 1 table and it differs from calendar, return it."""
     html = """

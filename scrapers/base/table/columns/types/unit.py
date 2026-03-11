@@ -1,5 +1,6 @@
 import re
-from typing import Callable, Any
+from typing import Any
+from typing import Callable
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -13,11 +14,11 @@ class UnitColumn(BaseColumn):
     """
 
     def __init__(
-        self,
-        unit: str | None = None,
-        *,
-        value_type: type = float,
-        normalize_unit: Callable[[str], str] | None = None,
+            self,
+            unit: str | None = None,
+            *,
+            value_type: type = float,
+            normalize_unit: Callable[[str], str] | None = None,
     ) -> None:
         self.unit = unit
         self.value_type = value_type

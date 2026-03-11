@@ -1,29 +1,32 @@
 from abc import ABC
 from pathlib import Path
-from typing import Callable, List, Optional, Sequence, TypeVar
+from typing import Callable
+from typing import List
+from typing import Optional
+from typing import Sequence
+from typing import TypeVar
 from uuid import uuid4
 
 from bs4 import BeautifulSoup
 
 from infrastructure.http_client.policies.http import HttpPolicy
-from scrapers.base.export.exporters import DataExporter
-from scrapers.base.normalization import RecordNormalizer
-from scrapers.base.options import ScraperOptions
-from scrapers.base.records import NormalizedRecord, RawRecord
-from scrapers.base.results import ScrapeResult
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.errors import ScraperError
+from scrapers.base.errors import ScraperNetworkError
+from scrapers.base.errors import ScraperParseError
+from scrapers.base.errors import ScraperValidationError
+from scrapers.base.export.exporters import DataExporter
 from scrapers.base.helpers.http import resolve_http_policy
 from scrapers.base.helpers.source_adapter import build_source_adapter
 from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.post_processors import apply_post_processors
 from scrapers.base.helpers.url import normalize_url
-from scrapers.base.errors import (
-    ScraperError,
-    ScraperNetworkError,
-    ScraperParseError,
-    ScraperValidationError,
-)
 from scrapers.base.logging import get_logger
+from scrapers.base.normalization import RecordNormalizer
+from scrapers.base.options import ScraperOptions
+from scrapers.base.post_processors import apply_post_processors
+from scrapers.base.records import NormalizedRecord
+from scrapers.base.records import RawRecord
+from scrapers.base.results import ScrapeResult
 from scrapers.base.transformers.helpers import apply_transformers
 from validation.records import ExportRecord
 from validation.records import RecordValidator
@@ -81,14 +84,14 @@ class F1Scraper(ABC):
         self._quality_report_enabled = options.quality_report
 
         self.validator: RecordValidator | None = options.validator or getattr(
-            self, "default_validator", None
+            self, "default_validator", None,
         )
         if self.validator is not None:
             self.validator.set_record_factory(options.record_factory)
         self.validation_mode = options.validation_mode
         if self.validation_mode not in {"soft", "hard"}:
             raise ValueError(
-                "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
+                "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)",
             )
 
         self._data: Optional[List[ExportRecord]] = None
@@ -185,11 +188,11 @@ class F1Scraper(ABC):
     # ---------- Eksport (delegowany) ----------
 
     def to_json(
-        self,
-        path: str | Path,
-        *,
-        indent: int = 2,
-        include_metadata: bool = False,
+            self,
+            path: str | Path,
+            *,
+            indent: int = 2,
+            include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
         result.to_json(
@@ -200,12 +203,12 @@ class F1Scraper(ABC):
         )
 
     def to_csv(
-        self,
-        path: str | Path,
-        *,
-        fieldnames: Optional[Sequence[str]] = None,
-        fieldnames_strategy: str = "union",
-        include_metadata: bool = False,
+            self,
+            path: str | Path,
+            *,
+            fieldnames: Optional[Sequence[str]] = None,
+            fieldnames_strategy: str = "union",
+            include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
         result.to_csv(
@@ -232,7 +235,7 @@ class F1Scraper(ABC):
     def _parse_soup(self, soup: BeautifulSoup) -> List[RawRecord]:
         """Parsowanie BS4 -> lista rekordów surowych."""
         raise NotImplementedError(
-            f"{self.__class__.__name__} must implement _parse_soup() or override parse()."
+            f"{self.__class__.__name__} must implement _parse_soup() or override parse().",
         )
 
     def parse(self, soup: BeautifulSoup) -> List[RawRecord]:
@@ -279,7 +282,7 @@ class F1Scraper(ABC):
                 )
                 label = record_factory_label or "record_factory"
                 messages.extend(
-                    [f"{label}: {error.message}" for error in record_factory_errors]
+                    [f"{label}: {error.message}" for error in record_factory_errors],
                 )
             self.validator.record_validation_result(errors_for_tracking)
             if not errors_for_tracking:
@@ -324,9 +327,9 @@ class F1Scraper(ABC):
 
     def _write_quality_report(self) -> None:
         if (
-            not self._quality_report_enabled
-            or self.debug_dir is None
-            or self.validator is None
+                not self._quality_report_enabled
+                or self.debug_dir is None
+                or self.validator is None
         ):
             return
         report_path = self.validator.write_quality_report(self.debug_dir)
@@ -358,10 +361,10 @@ class F1Scraper(ABC):
     # Używane poza fetch(), np. w mixinach/infobox.
 
     def run_with_error_handling(
-        self,
-        fetch_fn: Callable[[], str],
-        parse_fn: Callable[[BeautifulSoup], T],
-        url: str,
+            self,
+            fetch_fn: Callable[[], str],
+            parse_fn: Callable[[BeautifulSoup], T],
+            url: str,
     ) -> Optional[T]:
         try:
             html = fetch_fn()

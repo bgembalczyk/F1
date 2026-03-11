@@ -4,13 +4,14 @@ from typing import List
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
-from scrapers.base.records import record_from_mapping
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.seasons.columns.jim_clark_race_result import JimClarkRaceResultColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.standings_scraper import F1StandingsScraper
@@ -21,7 +22,7 @@ class JimClarkTrophyParser:
         self._table_parser = table_parser
 
     def parse(
-        self, soup: BeautifulSoup, season_year: int | None = None
+            self, soup: BeautifulSoup, season_year: int | None = None,
     ) -> List[Dict[str, Any]]:
         """
         Parses the Jim Clark Trophy table.

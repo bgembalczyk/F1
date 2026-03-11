@@ -228,8 +228,8 @@ def normalize_time_value(rec: dict[str, Any]) -> None:
     t = rec.get("time")
 
     if not (
-        isinstance(t, dict)
-        or (NormalizedTime is not None and isinstance(t, NormalizedTime))
+            isinstance(t, dict)
+            or (NormalizedTime is not None and isinstance(t, NormalizedTime))
     ):
         return
 

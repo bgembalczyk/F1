@@ -3,8 +3,8 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 from scrapers.base.options import ScraperOptions
+from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 
 
 @pytest.fixture

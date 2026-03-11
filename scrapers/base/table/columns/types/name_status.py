@@ -31,9 +31,9 @@ class NameStatusColumn(MultiColumn, ABC):
     """
 
     def __init__(
-        self, 
-        entity_key: str, 
-        status_extractors: dict[str, Callable[[ColumnContext], bool]]
+            self,
+            entity_key: str,
+            status_extractors: dict[str, Callable[[ColumnContext], bool]],
     ) -> None:
         """
         Initialize name+status column.
@@ -45,7 +45,7 @@ class NameStatusColumn(MultiColumn, ABC):
         columns = {entity_key: UrlColumn()}
         for status_key, extractor in status_extractors.items():
             columns[status_key] = BoolColumn(extractor)
-        
+
         super().__init__(columns)
         self.entity_key = entity_key
         self.status_extractors = status_extractors
@@ -64,6 +64,8 @@ def create_suffix_checker(*markers: str) -> Callable[[ColumnContext], bool]:
     Returns:
         Function that returns True if context raw_text ends with any marker
     """
+
     def checker(ctx: ColumnContext) -> bool:
         return (ctx.raw_text or "").strip().endswith(markers)
+
     return checker

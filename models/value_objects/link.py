@@ -14,7 +14,7 @@ class Link(ValueObject):
 
     def __post_init__(self) -> None:
         normalized = validate_link(
-            {"text": self.text, "url": self.url}, field_name="link"
+            {"text": self.text, "url": self.url}, field_name="link",
         )
         self.text = normalized["text"]
         self.url = normalized["url"]

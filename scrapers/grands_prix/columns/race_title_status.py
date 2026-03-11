@@ -12,5 +12,5 @@ class RaceTitleStatusColumn(MultiColumn):
                     {"*": "active"},
                     default="past",
                 ),
-            }
+            },
         )

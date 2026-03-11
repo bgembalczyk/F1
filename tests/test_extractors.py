@@ -1,14 +1,14 @@
 import logging
-from pathlib import Path
 import sys
+from pathlib import Path
 
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.extractors import InfoboxExtractor, TableExtractor
+from scrapers.base.extractors import InfoboxExtractor
+from scrapers.base.extractors import TableExtractor
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
-
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -18,7 +18,7 @@ pytest.importorskip("bs4")
 
 
 def test_table_extractor_extracts_records_and_logs(
-    caplog: pytest.LogCaptureFixture,
+        caplog: pytest.LogCaptureFixture,
 ) -> None:
     html = """
     <table class="wikitable">
@@ -46,7 +46,7 @@ def test_table_extractor_extracts_records_and_logs(
 
 
 def test_infobox_extractor_extracts_rows_and_logs(
-    caplog: pytest.LogCaptureFixture,
+        caplog: pytest.LogCaptureFixture,
 ) -> None:
     html = """
     <table class="infobox">

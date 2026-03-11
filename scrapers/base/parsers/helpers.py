@@ -1,5 +1,9 @@
 import re
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
+from typing import Tuple
 
 from bs4 import BeautifulSoup
 
@@ -8,7 +12,6 @@ from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.parsers.unit_value import UnitValue
 from scrapers.base.table.columns.context import ColumnContext
-
 
 EntriesStarts = Tuple[Optional[int], Optional[int]]
 NumericValue = float | None
@@ -73,7 +76,7 @@ def parse_unit_list(text: str) -> List[UnitValue]:
             {
                 "value": parse_number(match.group("value")),
                 "unit": normalize_unit(match.group("unit")),
-            }
+            },
         )
     return values
 

@@ -1,5 +1,6 @@
 from dataclasses import dataclass
-from typing import Optional, Set
+from typing import Optional
+from typing import Set
 
 from bs4 import Tag
 

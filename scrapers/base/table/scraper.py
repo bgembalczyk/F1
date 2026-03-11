@@ -1,15 +1,18 @@
 from abc import ABC
-from dataclasses import fields, is_dataclass
-from typing import Any, List, Optional
+from dataclasses import fields
+from dataclasses import is_dataclass
+from typing import Any
+from typing import List
+from typing import Optional
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.options import ScraperOptions
 from scrapers.base.ABC import F1Scraper
+from scrapers.base.extractors.table import TableExtractor
+from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.table.row import TableRow
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
@@ -35,10 +38,10 @@ class F1TableScraper(F1Scraper, ABC):
     default_column: BaseColumn = AutoColumn()
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            config: ScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
 

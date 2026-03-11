@@ -1,28 +1,30 @@
 from dataclasses import dataclass
 from dataclasses import replace
 from pathlib import Path
-from typing import Any, Callable, Mapping, Optional, cast
+from typing import Any
+from typing import Callable
+from typing import Mapping
+from typing import Optional
+from typing import cast
 
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.policies.defaults import (
-    DEFAULT_HTTP_BACKOFF_SECONDS,
-)
 from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
 )
+from infrastructure.http_client.policies.defaults import (
+    DEFAULT_HTTP_BACKOFF_SECONDS,
+)
 from infrastructure.http_client.policies.http import HttpPolicy
+from scrapers.base.cache_adapter import CacheAdapter
+from scrapers.base.cache_adapter import CacheBackend
+from scrapers.base.cache_adapter import FileCacheBackend
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.helpers.http import default_http_policy
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.parsers.soup import SoupParser
+from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.source_adapter import SourceAdapter
-from scrapers.base.cache_adapter import (
-    CacheAdapter,
-    CacheBackend,
-    FileCacheBackend,
-)
 from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.records import RecordValidator
 
@@ -142,9 +144,9 @@ class ScraperOptions:
         return self.fetcher
 
     def with_source_adapter(
-        self,
-        *,
-        policy: HttpPolicy | None = None,
+            self,
+            *,
+            policy: HttpPolicy | None = None,
     ) -> SourceAdapter:
         from scrapers.base.html_fetcher import HtmlFetcher
 

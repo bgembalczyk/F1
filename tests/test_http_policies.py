@@ -1,6 +1,6 @@
 from scrapers.base.options import ScraperOptions
-from scrapers.base.runner import ScraperRunner
 from scrapers.base.run_config import RunConfig
+from scrapers.base.runner import ScraperRunner
 
 
 def test_scraper_options_overrides_http_policy() -> None:

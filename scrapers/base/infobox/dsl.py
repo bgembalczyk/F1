@@ -1,7 +1,10 @@
 from dataclasses import dataclass
-from typing import Any, Iterable, Mapping
+from typing import Any
+from typing import Iterable
+from typing import Mapping
 
-from scrapers.base.infobox.schema import InfoboxSchema, InfoboxSchemaField
+from scrapers.base.infobox.schema import InfoboxSchema
+from scrapers.base.infobox.schema import InfoboxSchemaField
 
 
 @dataclass(frozen=True)
@@ -19,10 +22,10 @@ class InfoboxFieldSpec:
 
 
 def field(
-    key: str,
-    labels: Iterable[str],
-    *,
-    parser: str | None = None,
+        key: str,
+        labels: Iterable[str],
+        *,
+        parser: str | None = None,
 ) -> InfoboxFieldSpec:
     return InfoboxFieldSpec(key=key, labels=labels, parser=parser)
 

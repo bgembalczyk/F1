@@ -1,10 +1,8 @@
 from pathlib import Path
 
 from models.records.factories import build_driver_record
-from scrapers.base.helpers.config_factory import (
-    ScraperCommonConfig,
-    build_table_config,
-)
+from scrapers.base.helpers.config_factory import ScraperCommonConfig
+from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
@@ -12,26 +10,25 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
-from scrapers.drivers.constants import (
-    DRIVER_CHAMPIONSHIPS_HEADER,
-    DRIVER_FASTEST_LAPS_HEADER,
-    DRIVER_NATIONALITY_HEADER,
-    DRIVER_PODIUMS_HEADER,
-    DRIVER_POLE_POSITIONS_HEADER,
-    DRIVER_POINTS_HEADER,
-    DRIVER_RACE_ENTRIES_HEADER,
-    DRIVER_RACE_STARTS_HEADER,
-    DRIVER_RACE_WINS_HEADER,
-    DRIVER_SEASONS_COMPETED_HEADER,
-    DRIVER_NAME_HEADER,
-    DRIVERS_LIST_HEADERS,
-)
 from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
 )
+from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
+from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
+from scrapers.drivers.constants import DRIVER_CHAMPIONSHIPS_HEADER
+from scrapers.drivers.constants import DRIVER_FASTEST_LAPS_HEADER
+from scrapers.drivers.constants import DRIVER_NAME_HEADER
+from scrapers.drivers.constants import DRIVER_NATIONALITY_HEADER
+from scrapers.drivers.constants import DRIVER_PODIUMS_HEADER
+from scrapers.drivers.constants import DRIVER_POINTS_HEADER
+from scrapers.drivers.constants import DRIVER_POLE_POSITIONS_HEADER
+from scrapers.drivers.constants import DRIVER_RACE_ENTRIES_HEADER
+from scrapers.drivers.constants import DRIVER_RACE_STARTS_HEADER
+from scrapers.drivers.constants import DRIVER_RACE_WINS_HEADER
+from scrapers.drivers.constants import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.drivers.validator import DriversRecordValidator
 
 
@@ -73,16 +70,16 @@ class F1DriversListScraper(F1TableScraper):
                 column(DRIVER_PODIUMS_HEADER, "podiums", IntColumn()),
                 column(DRIVER_FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
                 column(DRIVER_POINTS_HEADER, "points", TextColumn()),
-            ]
+            ],
         ),
         record_factory=build_driver_record,
     )
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            config: ScraperConfig | None = None,
     ) -> None:
         options = build_table_config(
             options,

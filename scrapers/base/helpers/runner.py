@@ -7,12 +7,12 @@ from scrapers.base.runner import ScraperRunner
 
 
 def run_and_export(
-    scraper_cls: Type[F1Scraper],
-    json_rel: str | Path,
-    csv_rel: str | Path | None = None,
-    *,
-    run_config: RunConfig,
-    supports_urls: bool = True,
+        scraper_cls: Type[F1Scraper],
+        json_rel: str | Path,
+        csv_rel: str | Path | None = None,
+        *,
+        run_config: RunConfig,
+        supports_urls: bool = True,
 ) -> None:
     """
     Uruchamia scraper, a następnie zapisuje dane do JSON oraz CSV.

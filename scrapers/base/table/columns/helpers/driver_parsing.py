@@ -8,13 +8,11 @@ Follows SOLID principles:
 - High Cohesion: All functions work together for driver parsing
 - Information Expert: Driver parsing logic grouped with driver data
 """
-from typing import Optional
 
 from bs4 import Tag
 
 from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
-from scrapers.base.helpers.text import clean_wiki_text, strip_marks
 from scrapers.base.table.columns.context import ColumnContext
 
 
@@ -52,9 +50,9 @@ class DriverParsingHelpers:
 
     @staticmethod
     def parse_segment(
-        segment: Tag,
-        link_lookup: dict[str, list[dict[str, str | None]]],
-        base_url: str,
+            segment: Tag,
+            link_lookup: dict[str, list[dict[str, str | None]]],
+            base_url: str,
     ) -> LinkRecord | None:
         """
         Parse a driver segment (usually separated by <br>) into a LinkRecord.
@@ -84,8 +82,8 @@ class DriverParsingHelpers:
 
     @staticmethod
     def extract_from_context(
-        ctx: ColumnContext,
-        base_url: str,
+            ctx: ColumnContext,
+            base_url: str,
     ) -> LinkRecord | None:
         """
         Extract driver information from column context.
@@ -154,7 +152,6 @@ class DriverParsingHelpers:
             if len(parts) > 1:
                 text = parts[1]
         return text.strip()
-
 
 # # Backward compatibility wrappers
 # def build_driver_link_lookup(links: list[dict[str, str | None]]) -> dict[str, list[dict[str, str | None]]]:

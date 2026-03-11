@@ -1,20 +1,23 @@
 import importlib.util
 import logging
 import sys
-from pathlib import Path
 import types
-from typing import Any, Dict, List
+from pathlib import Path
+from typing import Any
+from typing import Dict
+from typing import List
+
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.options import ScraperOptions
 from scrapers.base.ABC import F1Scraper
+from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -23,12 +26,15 @@ if str(PROJECT_ROOT) not in sys.path:
 if importlib.util.find_spec("requests") is None:
     requests_stub = types.ModuleType("requests")
 
+
     class _RequestException(Exception):
         pass
+
 
     class _Session:
         def get(self, *_args, **_kwargs):
             raise _RequestException("requests stub")
+
 
     requests_stub.RequestException = _RequestException
     requests_stub.Session = _Session
@@ -37,8 +43,10 @@ if importlib.util.find_spec("requests") is None:
 if importlib.util.find_spec("certifi") is None:
     certifi_stub = types.ModuleType("certifi")
 
+
     def _where():
         return ""
+
 
     certifi_stub.where = _where
     sys.modules["certifi"] = certifi_stub
@@ -46,9 +54,11 @@ if importlib.util.find_spec("certifi") is None:
 if importlib.util.find_spec("pandas") is None:
     pandas_stub = types.ModuleType("pandas")
 
+
     class _StubDataFrame:
         def __init__(self, *_args, **_kwargs):
             pass
+
 
     pandas_stub.DataFrame = _StubDataFrame
     sys.modules["pandas"] = pandas_stub
@@ -56,11 +66,11 @@ if importlib.util.find_spec("pandas") is None:
 if importlib.util.find_spec("bs4") is None:
     pytest.skip("bs4 is required for scraper contract tests", allow_module_level=True)
 
-
 try:
     import scrapers.base.infobox.circuits.scraper  # noqa: F401
 except Exception:
     infobox_stub = types.ModuleType("scrapers.base.infobox.circuits.scraper")
+
 
     class _StubF1CircuitInfoboxScraper:
         def __init__(self, *_, **__):
@@ -68,6 +78,7 @@ except Exception:
 
         def parse(self, soup):
             return {}
+
 
     infobox_stub.F1CircuitInfoboxScraper = _StubF1CircuitInfoboxScraper
     sys.modules["scrapers.base.infobox.circuits.scraper"] = infobox_stub
@@ -150,7 +161,7 @@ def test_privateer_scraper_contract_builds_consistent_result() -> None:
 
     fetcher = StubFetcher(html)
     scraper = PrivateerTeamsListScraper(
-        options=ScraperOptions(fetcher=fetcher, include_urls=True)
+        options=ScraperOptions(fetcher=fetcher, include_urls=True),
     )
 
     data = scraper.get_data()
@@ -227,7 +238,7 @@ def test_scraper_propagates_parsing_errors() -> None:
     """
 
     scraper = PrivateerTeamsListScraper(
-        options=ScraperOptions(fetcher=StubFetcher(html))
+        options=ScraperOptions(fetcher=StubFetcher(html)),
     )
 
     with pytest.raises(RuntimeError, match="Nie znaleziono sekcji"):
@@ -249,7 +260,7 @@ def test_list_scraper_returns_dict_records() -> None:
     """
 
     scraper = PrivateerTeamsListScraper(
-        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True)
+        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True),
     )
     data = scraper.get_data()
 
@@ -281,7 +292,7 @@ def test_table_scraper_returns_dict_records() -> None:
     """
 
     scraper = CircuitsListScraper(
-        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True)
+        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True),
     )
     data = scraper.get_data()
 
@@ -291,7 +302,7 @@ def test_table_scraper_returns_dict_records() -> None:
 
 def test_scraper_sets_logger_adapter() -> None:
     scraper = PrivateerTeamsListScraper(
-        options=ScraperOptions(fetcher=StubFetcher("<html></html>"))
+        options=ScraperOptions(fetcher=StubFetcher("<html></html>")),
     )
 
     assert scraper.logger is not None
@@ -314,7 +325,7 @@ def test_scraper_config_rejects_invalid_column_map() -> None:
 
 def test_scraper_config_rejects_invalid_columns() -> None:
     with pytest.raises(
-        ValueError, match="columns must map str keys to BaseColumn values"
+            ValueError, match="columns must map str keys to BaseColumn values",
     ):
         ScraperConfig(
             url="https://example.com",
@@ -334,7 +345,7 @@ def test_table_scraper_validates_config_in_init() -> None:
     object.__setattr__(config, "default_column", AutoColumn())
 
     with pytest.raises(
-        ValueError, match="columns must map str keys to BaseColumn values"
+            ValueError, match="columns must map str keys to BaseColumn values",
     ):
         DummyTableScraper(
             options=ScraperOptions(fetcher=StubFetcher("<html></html>")),
@@ -344,7 +355,7 @@ def test_table_scraper_validates_config_in_init() -> None:
 
 def test_f1scraper_fetch_always_returns_list() -> None:
     scraper = DummyScraper(
-        options=ScraperOptions(source_adapter=DummySourceAdapter("<html></html>"))
+        options=ScraperOptions(source_adapter=DummySourceAdapter("<html></html>")),
     )
 
     result = scraper.fetch()
@@ -355,7 +366,7 @@ def test_f1scraper_fetch_always_returns_list() -> None:
 
 def test_single_scraper_returns_single_item_list() -> None:
     scraper = DummySingleCircuitScraper(
-        is_circuit=True, details={"infobox": {"name": "Test"}, "tables": []}
+        is_circuit=True, details={"infobox": {"name": "Test"}, "tables": []},
     )
 
     result = scraper.fetch_by_url("https://example.com/wiki/Test")

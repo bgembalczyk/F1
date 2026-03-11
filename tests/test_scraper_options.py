@@ -1,6 +1,7 @@
 import pytest
 
-from scrapers.base.options import ScraperOptions, HttpPolicy
+from scrapers.base.options import HttpPolicy
+from scrapers.base.options import ScraperOptions
 
 
 def test_scraper_options_uses_default_policy_when_none_provided():

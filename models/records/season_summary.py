@@ -21,23 +21,23 @@ def validate_season_summary_record(record: dict[str, Any]) -> list[ValidationIss
         BaseDomainRecordValidator.require_keys(
             record,
             ["season", "races", "countries", "drivers_champion_team"],
-        )
+        ),
     )
     errors.extend(BaseDomainRecordValidator.require_type(record, "season", dict))
     errors.extend(
-        BaseDomainRecordValidator.require_type(record, "races", int, allow_none=True)
+        BaseDomainRecordValidator.require_type(record, "races", int, allow_none=True),
     )
     errors.extend(
         BaseDomainRecordValidator.require_type(
-            record, "countries", int, allow_none=True
-        )
+            record, "countries", int, allow_none=True,
+        ),
     )
     errors.extend(
         BaseDomainRecordValidator.require_type(
             record,
             "drivers_champion_team",
             list,
-        )
+        ),
     )
     errors.extend(
         BaseDomainRecordValidator.require_type(
@@ -45,10 +45,10 @@ def validate_season_summary_record(record: dict[str, Any]) -> list[ValidationIss
             "constructors_champion",
             list,
             allow_none=True,
-        )
+        ),
     )
     errors.extend(
-        BaseDomainRecordValidator.require_type(record, "winners", int, allow_none=True)
+        BaseDomainRecordValidator.require_type(record, "winners", int, allow_none=True),
     )
 
     season = record.get("season")
@@ -59,8 +59,8 @@ def validate_season_summary_record(record: dict[str, Any]) -> list[ValidationIss
     if isinstance(drivers, list):
         errors.extend(
             BaseDomainRecordValidator.require_link_list(
-                drivers, "drivers_champion_team"
-            )
+                drivers, "drivers_champion_team",
+            ),
         )
 
     constructors = record.get("constructors_champion")
@@ -69,7 +69,7 @@ def validate_season_summary_record(record: dict[str, Any]) -> list[ValidationIss
             BaseDomainRecordValidator.require_link_list(
                 constructors,
                 "constructors_champion",
-            )
+            ),
         )
 
     first = record.get("first")

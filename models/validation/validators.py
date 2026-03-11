@@ -10,7 +10,7 @@ from models.value_objects.season_ref import SeasonRef
 
 
 def validate_link(
-    link: Dict[str, Any] | Link | None, *, field_name: str
+        link: Dict[str, Any] | Link | None, *, field_name: str,
 ) -> Dict[str, Any]:
     """
     Normalizuje link do postaci dict: {"text": str, "url": Optional[str]}.
@@ -31,14 +31,14 @@ def validate_link(
 
 
 def validate_links(
-    links: Iterable[Dict[str, Any] | Link] | None, *, field_name: str
+        links: Iterable[Dict[str, Any] | Link] | None, *, field_name: str,
 ) -> list[Dict[str, Any]]:
     validated = (validate_link(link, field_name=field_name) for link in links or [])
     return filter_nonempty(validated, key=is_empty_link)
 
 
 def normalize_season_item(
-    item: Dict[str, Any] | SeasonRef | None,
+        item: Dict[str, Any] | SeasonRef | None,
 ) -> Dict[str, Any] | None:
     """
     Normalizuje jeden element sezonu.
@@ -89,7 +89,7 @@ def normalize_season_item(
 
 
 def validate_seasons(
-    seasons: Iterable[Dict[str, Any] | SeasonRef] | None,
+        seasons: Iterable[Dict[str, Any] | SeasonRef] | None,
 ) -> list[Dict[str, Any]]:
     """
     Normalizuje sezony do listy dictów.
@@ -104,9 +104,9 @@ def validate_seasons(
 
 
 def model_to_dict(
-    model: Any,
-    *,
-    logger: logging.Logger | logging.LoggerAdapter | None = None,
+        model: Any,
+        *,
+        logger: logging.Logger | logging.LoggerAdapter | None = None,
 ) -> Dict[str, Any]:
     result = to_dict_any(model, logger=logger)
     if not isinstance(result, dict):
@@ -115,7 +115,7 @@ def model_to_dict(
 
 
 def normalize_link_list(
-    items: list[Link | Dict[str, Any]] | None,
+        items: list[Link | Dict[str, Any]] | None,
 ) -> list[Link]:
     """
     Normalizuje listę Link | dict -> list[Link], filtrując puste linki.
@@ -132,7 +132,7 @@ def normalize_link_list(
 
 
 def normalize_season_list(
-    items: list[SeasonRef | Dict[str, Any]] | None,
+        items: list[SeasonRef | Dict[str, Any]] | None,
 ) -> list[SeasonRef]:
     """
     Normalizuje listę SeasonRef | dict -> list[SeasonRef], filtrując None.

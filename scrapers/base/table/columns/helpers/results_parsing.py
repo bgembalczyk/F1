@@ -9,13 +9,14 @@ Follows SOLID principles:
 - Information Expert: Results parsing logic grouped with results data
 """
 import re
-from typing import Any, Optional
+from typing import Any
 
 from bs4 import Tag
 
 from scrapers.base.helpers.background import extract_background
 from scrapers.base.helpers.parsing import parse_float_from_text
-from scrapers.base.table.columns.constants import FRACTION_RE, SPLIT_RESULTS_RE
+from scrapers.base.table.columns.constants import FRACTION_RE
+from scrapers.base.table.columns.constants import SPLIT_RESULTS_RE
 from scrapers.base.table.columns.context import ColumnContext
 
 
@@ -49,29 +50,29 @@ class ResultsParsingHelpers:
         """
         if not text:
             return None
-        
+
         text = text.strip()
-        
+
         # Try simple float first
         simple_value = parse_float_from_text(text)
         if simple_value is not None:
             return simple_value
-        
+
         # Try fraction pattern (e.g., "1/2" or "1 1/2")
         match = FRACTION_RE.match(text)
         if match:
             whole = match.group("whole")
             numerator = match.group("numerator")
             denominator = match.group("denominator")
-            
+
             value = 0.0
             if whole:
                 value += float(whole)
             if numerator and denominator:
                 value += float(numerator) / float(denominator)
-            
+
             return value
-        
+
         return None
 
     @staticmethod
@@ -93,18 +94,18 @@ class ResultsParsingHelpers:
         """
         if not text:
             return []
-        
+
         # Split on common separators
         parts = SPLIT_RESULTS_RE.split(text)
         results: list[dict[str, Any]] = []
-        
+
         for part in parts:
             part = part.strip()
             if not part:
                 continue
-            
+
             result: dict[str, Any] = {}
-            
+
             # Try to extract position
             pos_match = re.match(r"(\d+)(?:st|nd|rd|th)?", part, re.IGNORECASE)
             if pos_match:
@@ -125,10 +126,10 @@ class ResultsParsingHelpers:
                     result["status"] = "not_classified"
                 else:
                     result["status"] = part.lower()
-            
+
             if result:
                 results.append(result)
-        
+
         return results
 
     @staticmethod
@@ -148,33 +149,33 @@ class ResultsParsingHelpers:
         """
         if not ctx.cell:
             return None, False, False
-        
+
         sups = ctx.cell.find_all("sup")
-        
+
         reference_number = None
         has_dagger = False
         has_asterisk = False
-        
+
         for sup in sups:
             text = sup.get_text(strip=True)
-            
+
             # Try to parse as number
             if text.isdigit():
                 reference_number = int(text)
-            
+
             # Check for special markers
             if "†" in text or "‡" in text:
                 has_dagger = True
             if "*" in text:
                 has_asterisk = True
-        
+
         return reference_number, has_dagger, has_asterisk
 
     @staticmethod
     def parse_entrant_segment(
-        segment: Tag,
-        link_lookup: dict[str, list[dict]],
-        base_url: str,
+            segment: Tag,
+            link_lookup: dict[str, list[dict]],
+            base_url: str,
     ) -> dict[str, Any]:
         """
         Parse entrant/team segment from table cell.
@@ -189,7 +190,7 @@ class ResultsParsingHelpers:
         """
         from scrapers.base.helpers.links import normalize_links
         from scrapers.base.helpers.text import clean_wiki_text
-        
+
         links = normalize_links(segment.find_all("a", href=True), base_url)
         text = clean_wiki_text(segment.get_text(" ", strip=True))
 
@@ -209,8 +210,8 @@ class ResultsParsingHelpers:
 
     @staticmethod
     def extract_licenses(
-        segments: list[Tag],
-        base_url: str,
+            segments: list[Tag],
+            base_url: str,
     ) -> list[dict[str, str]]:
         """
         Extract license information from segments.
@@ -223,13 +224,13 @@ class ResultsParsingHelpers:
             List of license records
         """
         from scrapers.base.helpers.links import normalize_links
-        
+
         licenses: list[dict[str, str]] = []
         for segment in segments:
             links = normalize_links(segment.find_all("a", href=True), base_url)
             if links:
                 licenses.extend(links)
-        
+
         return licenses
 
     @staticmethod
@@ -256,11 +257,11 @@ class ResultsParsingHelpers:
         """
         if not text:
             return None
-        
+
         match = re.search(r"\d+", text)
         if match:
             return int(match.group())
-        
+
         return None
 
     @staticmethod

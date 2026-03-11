@@ -6,7 +6,6 @@ from validation.records import NestedSchema
 from validation.records import RecordSchema
 from validation.records import BaseDomainRecordValidator, ValidationIssue
 
-
 DRIVERS_CHAMPIONSHIPS_SCHEMA = RecordSchema(
     required=("count", "seasons"),
     types={"count": int, "seasons": list},
@@ -20,8 +19,8 @@ class DriversChampionshipsRecord(TypedDict):
 
 
 def validate_drivers_championships_record(
-    record: dict[str, Any],
+        record: dict[str, Any],
 ) -> list[ValidationIssue]:
     return BaseDomainRecordValidator.validate_schema(
-        record, DRIVERS_CHAMPIONSHIPS_SCHEMA
+        record, DRIVERS_CHAMPIONSHIPS_SCHEMA,
     )

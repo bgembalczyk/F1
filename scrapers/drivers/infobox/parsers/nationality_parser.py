@@ -58,14 +58,14 @@ class NationalityParser:
                 # Parse this part
                 part_soup = BeautifulSoup(part_html, "html.parser")
                 part_text = (
-                    clean_infobox_text(part_soup.get_text(" ", strip=True)) or ""
+                        clean_infobox_text(part_soup.get_text(" ", strip=True)) or ""
                 )
 
                 # Extract nationality name (before any year information)
                 # Pattern: "Nationality_name (year)" or "Nationality_name (year, year-year)"
                 # Remove year information to get nationality name
                 nationality_name = re.sub(
-                    r"\s*\([^)]*\d{4}[^)]*\)", "", part_text
+                    r"\s*\([^)]*\d{4}[^)]*\)", "", part_text,
                 ).strip()
 
                 # Extract all year patterns from this part
@@ -81,7 +81,7 @@ class NationalityParser:
                     # Extract individual years and ranges
                     # Find ranges first
                     for range_match in re.finditer(
-                        r"(\d{4})\s*[-–]\s*(\d{4})", year_pattern
+                            r"(\d{4})\s*[-–]\s*(\d{4})", year_pattern,
                     ):
                         start = int(range_match.group(1))
                         end = int(range_match.group(2))
@@ -97,7 +97,7 @@ class NationalityParser:
 
                 if nationality_name and years:
                     nationalities.append(
-                        {"nationality": nationality_name, "years": sorted(years)}
+                        {"nationality": nationality_name, "years": sorted(years)},
                     )
                 elif nationality_name:
                     # Nationality without specific years
@@ -108,7 +108,7 @@ class NationalityParser:
             # Simple case: extract nationality names with links if available
             # First, try to extract links from the cell
             links = self._link_extractor.extract_links(cell)
-            
+
             # Filter out flag image links (keep only nationality text links)
             nationality_links = []
             for link in links:
@@ -116,15 +116,17 @@ class NationalityParser:
                 # Skip empty links and links that are just reference markers
                 if link_text and not re.match(r"^\[\d+\]$", link_text):
                     nationality_links.append(link)
-            
+
             if nationality_links:
                 # If we have links, use them
                 nationalities = []
                 for link in nationality_links:
-                    nationalities.append({
-                        "text": link.get("text", ""),
-                        "url": link.get("url")
-                    })
+                    nationalities.append(
+                        {
+                            "text": link.get("text", ""),
+                            "url": link.get("url")
+                        },
+                    )
                 return nationalities
             else:
                 # No links found, fall back to text parsing

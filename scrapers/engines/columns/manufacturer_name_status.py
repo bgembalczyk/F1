@@ -12,5 +12,5 @@ class EngineManufacturerNameStatusColumn(MultiColumn):
                     {"~": "current"},
                     default="former",
                 ),
-            }
+            },
         )

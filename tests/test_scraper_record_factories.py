@@ -1,15 +1,15 @@
 from __future__ import annotations
 
 import importlib.util
-from pathlib import Path
 import sys
 import types
+from pathlib import Path
 
 import pytest
+
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.drivers.list_scraper import F1DriversListScraper
-
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -18,12 +18,15 @@ if str(PROJECT_ROOT) not in sys.path:
 if importlib.util.find_spec("requests") is None:
     requests_stub = types.ModuleType("requests")
 
+
     class _RequestException(Exception):
         pass
+
 
     class _Session:
         def get(self, *_args, **_kwargs):
             raise _RequestException("requests stub")
+
 
     requests_stub.RequestException = _RequestException
     requests_stub.Session = _Session
@@ -32,8 +35,10 @@ if importlib.util.find_spec("requests") is None:
 if importlib.util.find_spec("certifi") is None:
     certifi_stub = types.ModuleType("certifi")
 
+
     def _where():
         return ""
+
 
     certifi_stub.where = _where
     sys.modules["certifi"] = certifi_stub
@@ -41,9 +46,11 @@ if importlib.util.find_spec("certifi") is None:
 if importlib.util.find_spec("pandas") is None:
     pandas_stub = types.ModuleType("pandas")
 
+
     class _StubDataFrame:
         def __init__(self, *_args, **_kwargs):
             pass
+
 
     pandas_stub.DataFrame = _StubDataFrame
     sys.modules["pandas"] = pandas_stub
@@ -86,7 +93,7 @@ def test_circuits_list_record_factory_defaults_lists() -> None:
     </html>
     """
     scraper = CircuitsListScraper(
-        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True)
+        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True),
     )
 
     data = scraper.get_data()
@@ -130,7 +137,7 @@ def test_drivers_list_record_factory_populates_championships() -> None:
     </html>
     """
     scraper = F1DriversListScraper(
-        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True)
+        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True),
     )
 
     data = scraper.get_data()

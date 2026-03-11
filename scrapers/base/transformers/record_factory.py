@@ -1,18 +1,21 @@
-from typing import Any, Callable, Dict, List
+from typing import Any
+from typing import Callable
+from typing import Dict
+from typing import List
 
-from scrapers.base.normalization import EmptyValuePolicy
 from scrapers.base.logging import get_logger
+from scrapers.base.normalization import EmptyValuePolicy
 from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.records import ExportRecord
 
 
 class RecordFactoryTransformer(RecordTransformer):
     def __init__(
-        self,
-        record_factory: Callable[[Dict[str, Any]], Any] | type,
-        *,
-        fallback_on_error: bool = False,
-        empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
+            self,
+            record_factory: Callable[[Dict[str, Any]], Any] | type,
+            *,
+            fallback_on_error: bool = False,
+            empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
     ) -> None:
         super().__init__(empty_value_policy=empty_value_policy)
         self.record_factory = record_factory

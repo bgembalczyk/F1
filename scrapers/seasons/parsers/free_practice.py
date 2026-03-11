@@ -1,4 +1,6 @@
-from typing import Any, Dict, List
+from typing import Any
+from typing import Dict
+from typing import List
 
 from bs4 import BeautifulSoup
 
@@ -7,7 +9,8 @@ from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.table.columns.types.br_list import BrListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 
@@ -29,7 +32,7 @@ class SeasonFreePracticeParser:
                     column("Driver name", "drivers", DriverListColumn()),
                     column("Driver", "drivers", DriverListColumn()),
                     column("Rounds", "rounds", BrListColumn()),
-                ]
+                ],
             ),
         )
         records = self._filter_source_footer_records(records)
@@ -46,7 +49,7 @@ class SeasonFreePracticeParser:
                     column("Driver name", "drivers", DriverListColumn()),
                     column("Driver", "drivers", DriverListColumn()),
                     column("Rounds", "rounds", BrListColumn()),
-                ]
+                ],
             ),
         )
         records = self._filter_source_footer_records(records)
@@ -70,13 +73,13 @@ class SeasonFreePracticeParser:
                         "practice_drivers",
                         DriversWithRoundsColumn(),
                     ),
-                ]
+                ],
             ),
         )
         return self._filter_source_footer_records(records)
 
     def _filter_source_footer_records(
-        self, records: List[Dict[str, Any]]
+            self, records: List[Dict[str, Any]],
     ) -> List[Dict[str, Any]]:
         return [
             record for record in records if not self._is_source_footer_record(record)
@@ -140,7 +143,7 @@ class SeasonFreePracticeParser:
 
     @staticmethod
     def _normalize_free_practice_records(
-        records: List[Dict[str, Any]],
+            records: List[Dict[str, Any]],
     ) -> List[Dict[str, Any]]:
         normalized: List[Dict[str, Any]] = []
         for record in records:

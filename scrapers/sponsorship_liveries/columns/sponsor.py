@@ -102,7 +102,7 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _parse_params(
-        params: list[str], links: list[dict[str, Any]]
+            params: list[str], links: list[dict[str, Any]],
     ) -> list[str | dict[str, Any]]:
         if not params:
             return []
@@ -127,7 +127,7 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _find_matching_link(
-        base_text: str, links: list[dict[str, Any]]
+            base_text: str, links: list[dict[str, Any]],
     ) -> dict[str, Any] | None:
         if not base_text:
             return None
@@ -144,8 +144,8 @@ class SponsorColumn(BaseColumn):
                     best = link
                     best_len = len(link_text)
                 continue
-            if target.startswith(link_lower) and target[len(link_lower) :].strip(
-                " -–—"
+            if target.startswith(link_lower) and target[len(link_lower):].strip(
+                    " -–—",
             ):
                 continue
             if target.startswith(link_lower):

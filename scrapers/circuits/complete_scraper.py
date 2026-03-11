@@ -1,13 +1,13 @@
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any
+from typing import Dict
 from typing import List
+from typing import Optional
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.composite_scraper import (
-    CompositeScraper,
-    CompositeScraperChildren,
-)
+from scrapers.base.composite_scraper import CompositeScraper
+from scrapers.base.composite_scraper import CompositeScraperChildren
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
@@ -30,9 +30,9 @@ class F1CompleteCircuitScraper(CompositeScraper):
     url = CircuitsListScraper.CONFIG.url
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
     ) -> None:
         options = options or ScraperOptions()
         # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
@@ -71,9 +71,9 @@ class F1CompleteCircuitScraper(CompositeScraper):
         return None
 
     def assemble_record(
-        self,
-        record: Dict[str, Any],
-        details: Optional[Dict[str, Any]],
+            self,
+            record: Dict[str, Any],
+            details: Optional[Dict[str, Any]],
     ) -> Dict[str, Any]:
         full_record = dict(record)
         full_record["details"] = details

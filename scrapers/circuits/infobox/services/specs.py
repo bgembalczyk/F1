@@ -1,5 +1,8 @@
 import re
-from typing import Optional, Dict, Any, List
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
@@ -17,17 +20,17 @@ class CircuitSpecsParser(InfoboxTextUtils):
         detected_materials: List[str] = []
 
         if (
-            "tarmac" in surface_lower
-            or "asphalt" in surface_lower
-            or "asphalt concrete" in surface_lower
+                "tarmac" in surface_lower
+                or "asphalt" in surface_lower
+                or "asphalt concrete" in surface_lower
         ):
             detected_materials.append("Asphalt")
         if "concrete" in surface_lower and "asphalt" not in surface_lower:
             detected_materials.append("Concrete")
         if (
-            "cobblestone" in surface_lower
-            or "cobbles" in surface_lower
-            or "cobbl" in surface_lower
+                "cobblestone" in surface_lower
+                or "cobbles" in surface_lower
+                or "cobbl" in surface_lower
         ):
             detected_materials.append("Cobblestones")
         if "brick" in surface_lower:
@@ -118,7 +121,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
         return result or None
 
     def _parse_construction_cost(
-        self, row: Optional[Dict[str, Any]]
+            self, row: Optional[Dict[str, Any]],
     ) -> Optional[Dict[str, Any]]:
         """Construction cost: amount + currency (+ opcjonalna skala)."""
         if not row:
@@ -155,7 +158,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
                 ) from exc
 
         scale_match = re.search(
-            r"\b(million|billion|thousand|mln|bn|k)\b", text_clean, flags=re.IGNORECASE
+            r"\b(million|billion|thousand|mln|bn|k)\b", text_clean, flags=re.IGNORECASE,
         )
         scale = scale_match.group(1).lower() if scale_match else None
 

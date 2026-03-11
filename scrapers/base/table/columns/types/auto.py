@@ -1,6 +1,6 @@
 # scrapers/base/table/columns/types/auto.py
-from typing import Any
 import re
+from typing import Any
 
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
@@ -20,11 +20,11 @@ class AutoColumn(BaseColumn):
     """
 
     def __init__(
-        self,
-        *,
-        strip_lang_suffix: bool = True,
-        strip_refs: bool = True,
-        normalize_dashes: bool = True,
+            self,
+            *,
+            strip_lang_suffix: bool = True,
+            strip_refs: bool = True,
+            normalize_dashes: bool = True,
     ) -> None:
         self.strip_lang_suffix = strip_lang_suffix
         self.strip_refs = strip_refs

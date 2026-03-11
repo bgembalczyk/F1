@@ -33,7 +33,7 @@ class InfoboxSectionCollector:
                         "label": clean_infobox_text(label.get_text(" ", strip=True)),
                         "label_cell": label,
                         "value_cell": value,
-                    }
+                    },
                 )
                 continue
 
@@ -44,7 +44,7 @@ class InfoboxSectionCollector:
                 if nested_table:
                     # Parse collapsible career statistics table
                     current["rows"].append(
-                        {"full_data_cell": full_data, "collapsible_table": nested_table}
+                        {"full_data_cell": full_data, "collapsible_table": nested_table},
                     )
                 else:
                     current["rows"].append({"full_data_cell": full_data})

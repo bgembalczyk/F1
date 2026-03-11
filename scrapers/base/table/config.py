@@ -1,10 +1,16 @@
-from dataclasses import dataclass, field
-from typing import Any, Callable, Mapping, Optional, Sequence
+from dataclasses import dataclass
+from dataclasses import field
+from typing import Any
+from typing import Callable
+from typing import Mapping
+from typing import Optional
+from typing import Sequence
 
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.dsl import TableSchemaDSL
-from scrapers.base.table.schema import TableSchema, TableSchemaBuilder
+from scrapers.base.table.schema import TableSchema
+from scrapers.base.table.schema import TableSchemaBuilder
 
 
 @dataclass(frozen=True)
@@ -43,7 +49,7 @@ class ScraperConfig:
         for key, value in self.column_map.items():
             if not isinstance(key, str) or not isinstance(value, str):
                 raise ValueError(
-                    "ScraperConfig.column_map must map str keys to str values."
+                    "ScraperConfig.column_map must map str keys to str values.",
                 )
 
         if not isinstance(self.columns, Mapping):
@@ -54,7 +60,7 @@ class ScraperConfig:
                 raise ValueError("ScraperConfig.columns must use str keys.")
             if not isinstance(value, BaseColumn):
                 raise ValueError(
-                    "ScraperConfig.columns must map str keys to BaseColumn values."
+                    "ScraperConfig.columns must map str keys to BaseColumn values.",
                 )
 
         if self.record_factory is not None and not callable(self.record_factory):

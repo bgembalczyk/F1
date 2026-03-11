@@ -39,10 +39,10 @@ class SponsorshipRecordSplitter:
             return self._split_record_by_grand_prix(record)
 
         if not SponsorScopeHandler.record_has_year_specific_sponsors(
-            record, self._sponsor_keys
+                record, self._sponsor_keys,
         ):
             if ColourScopeHandler.record_has_year_specific_colours(
-                record, self._colour_keys
+                    record, self._colour_keys,
             ):
                 return self._split_record_by_colour_scopes(record, seasons)
             return self._split_record_by_grand_prix(record)
@@ -62,18 +62,18 @@ class SponsorshipRecordSplitter:
             for key in self._sponsor_keys:
                 if key in record:
                     new_record[key] = SponsorScopeHandler.filter_sponsors_for_year(
-                        record[key], year
+                        record[key], year,
                     )
             for key in self._colour_keys:
                 if key in record:
                     new_record[key] = ColourScopeHandler.filter_colours_for_year(
-                        record[key], year
+                        record[key], year,
                     )
             split_records.extend(self._split_record_by_grand_prix(new_record))
         return split_records
 
     def _split_record_by_colour_scopes(
-        self, record: Dict[str, Any], seasons: list[Any]
+            self, record: Dict[str, Any], seasons: list[Any],
     ) -> List[Dict[str, Any]]:
         season_entries = [
             season
@@ -109,7 +109,7 @@ class SponsorshipRecordSplitter:
             for key in self._colour_keys:
                 if key in record:
                     base_record[key] = ColourScopeHandler.remove_year_specific_colours(
-                        record[key]
+                        record[key],
                     )
             split_records.extend(self._split_record_by_grand_prix(base_record))
 
@@ -128,14 +128,14 @@ class SponsorshipRecordSplitter:
             for key in self._colour_keys:
                 if key in record:
                     scoped_record[key] = ColourScopeHandler.filter_colours_for_years(
-                        record[key], years
+                        record[key], years,
                     )
             split_records.extend(self._split_record_by_grand_prix(scoped_record))
 
         return split_records
 
     def _split_record_by_grand_prix(
-        self, record: Dict[str, Any]
+            self, record: Dict[str, Any],
     ) -> List[Dict[str, Any]]:
         scoped_items: dict[str, list[tuple[dict[str, Any], Any]]] = {}
         base_sponsors: dict[str, list[Any]] = {}
@@ -183,7 +183,7 @@ class SponsorshipRecordSplitter:
                             scope,
                             cleaned,
                             ColourScopeHandler.colour_is_replacement(record, cleaned),
-                        )
+                        ),
                     )
                 else:
                     base_list.append(item)
@@ -199,7 +199,7 @@ class SponsorshipRecordSplitter:
             for scope, item in scoped_list:
                 scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
                 scope_entry = scope_map.setdefault(
-                    scope_key, {"scope": scope, "items": {}}
+                    scope_key, {"scope": scope, "items": {}},
                 )
                 scope_entry["items"].setdefault(key, []).append(item)
 
@@ -207,10 +207,10 @@ class SponsorshipRecordSplitter:
             for scope, colour, replace in scoped_list:
                 scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
                 scope_entry = scope_map.setdefault(
-                    scope_key, {"scope": scope, "items": {}}
+                    scope_key, {"scope": scope, "items": {}},
                 )
                 scope_entry["items"].setdefault(key, []).append(
-                    {"colour": colour, "replace": replace}
+                    {"colour": colour, "replace": replace},
                 )
 
         split_records: list[Dict[str, Any]] = []

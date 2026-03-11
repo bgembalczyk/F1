@@ -1,6 +1,8 @@
 from pathlib import Path
 from time import time
-from typing import Any, Optional, Protocol
+from typing import Any
+from typing import Optional
+from typing import Protocol
 
 from infrastructure.http_client.caching.file import FileCache
 from scrapers.base.source_adapter import SourceAdapter
@@ -56,10 +58,10 @@ class CacheAdapter(SourceAdapter):
     """Cache'ujący adapter źródła oparty o interfejs cache."""
 
     def __init__(
-        self,
-        *,
-        source_adapter: SourceAdapter,
-        cache_adapter: CacheBackend,
+            self,
+            *,
+            source_adapter: SourceAdapter,
+            cache_adapter: CacheBackend,
     ) -> None:
         self._source_adapter = source_adapter
         self._cache = cache_adapter

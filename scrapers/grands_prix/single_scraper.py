@@ -1,21 +1,26 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Dict, List
+from typing import Any
+from typing import Dict
+from typing import List
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
+from scrapers.base.ABC import F1Scraper
+from scrapers.base.errors import DomainParseError
+from scrapers.base.errors import ScraperError
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
-from scrapers.base.ABC import F1Scraper
-from scrapers.base.errors import DomainParseError, ScraperError
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
@@ -41,9 +46,9 @@ class F1SingleGrandPrixScraper(F1Scraper):
     _UNKNOWN_CHAMPIONSHIP = "unknown"
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -65,7 +70,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
                 column("Constructor", "constructor", ConstructorSplitColumn()),
                 column("Report", "report", AutoColumn()),
                 column("Location", "location", LocationColumn()),
-            ]
+            ],
         )
         config = ScraperConfig(
             url=self.url,
@@ -81,10 +86,10 @@ class F1SingleGrandPrixScraper(F1Scraper):
         )
 
     def _parse_section_table(
-        self,
-        soup: BeautifulSoup,
-        *,
-        section_id: str,
+            self,
+            soup: BeautifulSoup,
+            *,
+            section_id: str,
     ) -> List[Dict[str, Any]]:
         pipeline = self._build_pipeline(section_id)
         parser = HtmlTableParser(
@@ -170,7 +175,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
 
     @staticmethod
     def _is_cancellation_context(
-        report_text: str | None, layout_text: str | None
+            report_text: str | None, layout_text: str | None,
     ) -> bool:
         if report_text and report_text.lower().startswith("not held"):
             return True
@@ -178,7 +183,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
             return False
         layout_lower = layout_text.lower()
         return layout_lower.startswith("not held due to") or layout_lower.startswith(
-            "cancelled due to"
+            "cancelled due to",
         )
 
     @staticmethod

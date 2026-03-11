@@ -15,7 +15,7 @@ class DriverContract(DataContract):
     nationality: str | None = None
     seasons_competed: list[SeasonRecord] = field(default_factory=list)
     drivers_championships: DriversChampionshipsRecord | str | None = field(
-        default_factory=lambda: {"count": 0, "seasons": []}
+        default_factory=lambda: {"count": 0, "seasons": []},
     )
     race_entries: int | None = None
     race_starts: int | None = None

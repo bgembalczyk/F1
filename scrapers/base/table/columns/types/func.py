@@ -1,8 +1,9 @@
-from typing import Callable, Any
+from typing import Any
+from typing import Callable
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.constants import SKIP_SENTINEL
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.base.table.constants import SKIP_SENTINEL
 
 
 class FuncColumn(BaseColumn):

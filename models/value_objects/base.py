@@ -12,8 +12,8 @@ class ValueObject:
 
     @classmethod
     def from_dict(
-        cls: type[TValueObject],
-        data: Mapping[str, Any] | TValueObject | None,
+            cls: type[TValueObject],
+            data: Mapping[str, Any] | TValueObject | None,
     ) -> TValueObject | None:
         if data is None:
             return None

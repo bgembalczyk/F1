@@ -18,12 +18,12 @@ T = TypeVar("T")
 
 
 def parse_number(
-    text: str | None,
-    *,
-    pattern: str,
-    cast: Callable[[str], T],
-    group: int | str = 0,
-    normalizers: Iterable[Callable[[str], str]] | None = None,
+        text: str | None,
+        *,
+        pattern: str,
+        cast: Callable[[str], T],
+        group: int | str = 0,
+        normalizers: Iterable[Callable[[str], str]] | None = None,
 ) -> T | None:
     """Generic helper for extracting numbers with regex and casting."""
     if not text:
@@ -133,7 +133,7 @@ def parse_numeric_range(text: str) -> dict[str, Any] | None:
 
 
 def parse_unit_value(
-    text: str, unit: str, *, output_unit: str | None = None
+        text: str, unit: str, *, output_unit: str | None = None,
 ) -> dict[str, Any] | None:
     match = re.search(
         rf"([-+]?\d[\d,]*(?:\.\d+)?)\s*{re.escape(unit)}\b",
@@ -149,7 +149,7 @@ def parse_unit_value(
 
 
 def parse_range_with_unit(
-    text: str, unit: str, *, output_unit: str | None = None
+        text: str, unit: str, *, output_unit: str | None = None,
 ) -> dict[str, Any] | None:
     match = re.search(
         rf"(?P<min>[-+]?\d[\d,]*(?:\.\d+)?)\s*[–-]\s*(?P<max>[-+]?\d[\d,]*(?:\.\d+)?)\s*{re.escape(unit)}\b",

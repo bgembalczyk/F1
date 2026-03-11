@@ -1,4 +1,5 @@
-from typing import Dict, Any
+from typing import Any
+from typing import Dict
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn

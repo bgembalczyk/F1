@@ -1,7 +1,9 @@
 import logging
-from typing import Optional, Sequence
+from typing import Optional
+from typing import Sequence
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.tables.header import is_repeated_header_row
@@ -19,15 +21,15 @@ class HtmlTableParser:
     """
 
     def __init__(
-        self,
-        *,
-        section_id: Optional[str] = None,
-        fragment: Optional[str] = None,
-        expected_headers: Sequence[str] | None = None,
-        table_css_class: str = "wikitable",
-        strip_lang_suffix: bool = True,
-        strip_refs: bool = True,
-        normalize_dashes: bool = True,
+            self,
+            *,
+            section_id: Optional[str] = None,
+            fragment: Optional[str] = None,
+            expected_headers: Sequence[str] | None = None,
+            table_css_class: str = "wikitable",
+            strip_lang_suffix: bool = True,
+            strip_refs: bool = True,
+            normalize_dashes: bool = True,
     ) -> None:
         self.section_id = section_id
         self.fragment = fragment
@@ -79,7 +81,7 @@ class HtmlTableParser:
                     cells=expanded_cells,
                     raw_tr=tr,
                     header_cells=header_cells,
-                )
+                ),
             )
 
         return records
@@ -87,7 +89,7 @@ class HtmlTableParser:
     def _find_table(self, soup: BeautifulSoup) -> Tag:
         section_id = self.section_id or self._normalize_fragment(self.fragment)
         candidate_tables = find_section_elements(
-            soup, section_id, ["table"], class_=self.table_css_class
+            soup, section_id, ["table"], class_=self.table_css_class,
         )
 
         for table in candidate_tables:
@@ -118,9 +120,9 @@ class HtmlTableParser:
 
     @staticmethod
     def _is_footer_row(
-        cells: Sequence[Tag],
-        cleaned_cells: Sequence[str],
-        headers: Sequence[str],
+            cells: Sequence[Tag],
+            cleaned_cells: Sequence[str],
+            headers: Sequence[str],
     ) -> bool:
         if not cleaned_cells:
             return False
@@ -138,16 +140,16 @@ class HtmlTableParser:
 
     @staticmethod
     def _expand_row_cells(
-        cells: Sequence[Tag],
-        headers: Sequence[str],
-        pending_rowspans: dict[int, dict[str, object]],
+            cells: Sequence[Tag],
+            headers: Sequence[str],
+            pending_rowspans: dict[int, dict[str, object]],
     ) -> list[Tag]:
         expanded: list[Tag] = []
         col_index = 0
 
         for cell in cells:
             col_index = HtmlTableParser._consume_pending(
-                expanded, col_index, headers, pending_rowspans
+                expanded, col_index, headers, pending_rowspans,
             )
             if col_index >= len(headers):
                 break
@@ -180,10 +182,10 @@ class HtmlTableParser:
 
     @staticmethod
     def _consume_pending(
-        expanded: list[Tag],
-        col_index: int,
-        headers: Sequence[str],
-        pending_rowspans: dict[int, dict[str, object]],
+            expanded: list[Tag],
+            col_index: int,
+            headers: Sequence[str],
+            pending_rowspans: dict[int, dict[str, object]],
     ) -> int:
         """Konsumuje oczekujące rowspany dla kolumny. Zwraca zaktualizowany col_index."""
         while col_index < len(headers) and col_index in pending_rowspans:

@@ -10,7 +10,8 @@ from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.seasons.parsers.table import SeasonTableParser
 
 
@@ -45,6 +46,6 @@ class SeasonResultsParser:
                     column("Constructor", "winning_constructor", ConstructorColumn()),
                     column("Report", "report", UrlColumn()),
                     column("Tyre", "tyre", TyreColumn()),
-                ]
+                ],
             ),
         )

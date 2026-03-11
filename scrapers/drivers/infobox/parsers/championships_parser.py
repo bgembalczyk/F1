@@ -3,7 +3,6 @@
 import re
 from typing import Any
 from typing import Dict
-from typing import List
 
 from bs4 import Tag
 
@@ -89,7 +88,7 @@ class ChampionshipsParser:
             small_tag = cell.find("small")
             if small_tag:
                 small_text = (
-                    clean_infobox_text(small_tag.get_text(" ", strip=True)) or ""
+                        clean_infobox_text(small_tag.get_text(" ", strip=True)) or ""
                 )
                 for year_match in re.finditer(r"\b(\d{4})\b", small_text):
                     year = int(year_match.group(1))

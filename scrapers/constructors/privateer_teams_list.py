@@ -1,14 +1,16 @@
-from pathlib import Path
-from typing import Dict, Any, Optional
 import re
+from pathlib import Path
+from typing import Any
+from typing import Dict
+from typing import Optional
 
 from bs4 import Tag
 
 from infrastructure.http_client.policies.http import HttpPolicy
 from models.services.season_service import SeasonService
-from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.http import build_http_policy
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig

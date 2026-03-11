@@ -52,7 +52,7 @@ def normalize_text(obj: Any) -> str:
 
 
 def add_unique_name(
-    names_set: set[str], name_list: list[str], value: str | None
+        names_set: set[str], name_list: list[str], value: str | None,
 ) -> None:
     """Dodaje nazwę do listy nazw, unikając duplikatów."""
     if not value:
@@ -86,7 +86,7 @@ def match_driver_loose(a: Any, b: Any, *, min_len: int = 4) -> bool:
     if len(da) < min_len or len(db) < min_len:
         return False
     return (
-        da == db or da.startswith(db) or db.startswith(da) or (da in db) or (db in da)
+            da == db or da.startswith(db) or db.startswith(da) or (da in db) or (db in da)
     )
 
 
@@ -118,7 +118,7 @@ _UNDERSCORE_PATTERN = re.compile(r"_+")
 
 
 def split_delimited_text(
-    text: str | None, *, separators: str = r";|,|/", min_parts: int = 1
+        text: str | None, *, separators: str = r";|,|/", min_parts: int = 1,
 ) -> list[str]:
     """Split text by common delimiters and trim whitespace.
 

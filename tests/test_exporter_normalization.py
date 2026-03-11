@@ -57,5 +57,5 @@ def test_exporter_json_matches_for_list_and_result(tmp_path) -> None:
     result.to_json(output_result)
 
     assert output_list.read_text(encoding="utf-8") == output_result.read_text(
-        encoding="utf-8"
+        encoding="utf-8",
     )

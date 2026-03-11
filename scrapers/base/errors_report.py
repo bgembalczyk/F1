@@ -1,6 +1,8 @@
 import json
-from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
+from dataclasses import asdict
+from dataclasses import dataclass
+from datetime import datetime
+from datetime import timezone
 from pathlib import Path
 
 
@@ -17,10 +19,10 @@ class ErrorReport:
 
     @classmethod
     def from_exception(
-        cls,
-        error: Exception,
-        *,
-        run_id: str | None = None,
+            cls,
+            error: Exception,
+            *,
+            run_id: str | None = None,
     ) -> "ErrorReport":
         timestamp = datetime.now(timezone.utc).isoformat()
         url = getattr(error, "url", None)

@@ -17,14 +17,14 @@ def validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
         for index, item in enumerate(event):
             if not isinstance(item, dict):
                 errors.append(
-                    ValidationIssue.custom(f"event[{index}] must be a mapping")
+                    ValidationIssue.custom(f"event[{index}] must be a mapping"),
                 )
                 continue
             errors.extend(
                 BaseDomainRecordValidator.prefix_errors(
                     BaseDomainRecordValidator.validate_schema(item, LINK_SCHEMA),
                     f"event[{index}]",
-                )
+                ),
             )
         return errors
     if event is not None and not isinstance(event, str):

@@ -1,20 +1,19 @@
-from typing import Any, Dict
-from bs4 import BeautifulSoup
-
 import logging
+from typing import Any
+from typing import Dict
+
+from bs4 import BeautifulSoup
 
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
+from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
+from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.infobox.helpers import parse_infobox_from_soup
-from scrapers.base.options import ScraperOptions
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
+from scrapers.base.infobox.helpers import parse_infobox_from_soup
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
-from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
-from scrapers.base.transformers.helpers import apply_transformers
-from scrapers.base.transformers.record_factory import RecordFactoryTransformer
+from scrapers.base.options import ScraperOptions
 
 
 class WikipediaInfoboxScraper:
@@ -27,13 +26,13 @@ class WikipediaInfoboxScraper:
     """
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        fetcher: HtmlFetcher | None = None,
-        parser: InfoboxHtmlParser | None = None,
-        mapper: InfoboxFieldMapper | None = None,
-        run_id: str | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            fetcher: HtmlFetcher | None = None,
+            parser: InfoboxHtmlParser | None = None,
+            mapper: InfoboxFieldMapper | None = None,
+            run_id: str | None = None,
     ) -> None:
         options = options or ScraperOptions()
         if fetcher is not None:
@@ -112,7 +111,7 @@ class WikipediaInfoboxScraper:
 
     def _apply_transformers(self, record: Dict[str, Any]) -> Any:
         return apply_transformers_with_factory(
-            self.transformers, record, self.record_factory, self.logger
+            self.transformers, record, self.record_factory, self.logger,
         )
 
     # ------------------------------

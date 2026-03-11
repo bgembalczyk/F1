@@ -1,11 +1,12 @@
 from abc import ABC
 from typing import Optional
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
+from scrapers.base.ABC import F1Scraper
 from scrapers.base.errors import ScraperNotFoundError
 from scrapers.base.helpers.html_utils import find_section_elements
-from scrapers.base.ABC import F1Scraper
 from scrapers.base.types import ExportableRecord
 
 
@@ -52,7 +53,7 @@ class F1ListScraper(F1Scraper, ABC):
 
         if not self.record_key:
             raise NotImplementedError(
-                "record_key nie jest zdefiniowany; zaimplementuj parse_item"
+                "record_key nie jest zdefiniowany; zaimplementuj parse_item",
             )
 
         a = li.find("a")

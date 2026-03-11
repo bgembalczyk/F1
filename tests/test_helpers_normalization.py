@@ -1,18 +1,15 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.text import (
-    clean_wiki_text,
-    extract_links_from_cell,
-    strip_marks,
-)
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.normalize import normalize_auto_value
-from scrapers.base.helpers.text_normalization import (
-    is_language_link,
-    split_delimited_text,
-)
-from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
+from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.text import extract_links_from_cell
+from scrapers.base.helpers.text import strip_marks
+from scrapers.base.helpers.text_normalization import is_language_link
+from scrapers.base.helpers.text_normalization import split_delimited_text
+from scrapers.base.helpers.time import parse_time_seconds_from_text
+from scrapers.base.helpers.time import parse_time_text
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.helpers.value_objects import NormalizedTime
 
@@ -43,16 +40,16 @@ def test_clean_wiki_text_normalize_dashes_compacts_spaces():
 
 def test_clean_wiki_text_strip_lang_suffix_ignores_word_endings():
     assert (
-        clean_wiki_text("David Salvador (es)", strip_lang_suffix=True)
-        == "David Salvador"
+            clean_wiki_text("David Salvador (es)", strip_lang_suffix=True)
+            == "David Salvador"
     )
     assert (
-        clean_wiki_text("Yamaha YZF-R9 ( de )", strip_lang_suffix=True)
-        == "Yamaha YZF-R9"
+            clean_wiki_text("Yamaha YZF-R9 ( de )", strip_lang_suffix=True)
+            == "Yamaha YZF-R9"
     )
     assert (
-        clean_wiki_text("Silverstone circuit", strip_lang_suffix=True)
-        == "Silverstone circuit"
+            clean_wiki_text("Silverstone circuit", strip_lang_suffix=True)
+            == "Silverstone circuit"
     )
 
 
@@ -228,7 +225,7 @@ def test_parse_time_seconds_from_text_handles_various_inputs():
     assert parse_time_seconds_from_text("1:16.0357") == pytest.approx(76.0357)
     assert parse_time_seconds_from_text({"text": "1:02.500"}) == pytest.approx(62.5)
     assert parse_time_seconds_from_text(
-        NormalizedTime(text="0:59.9", seconds=None)
+        NormalizedTime(text="0:59.9", seconds=None),
     ) == pytest.approx(59.9)
     assert parse_time_seconds_from_text("no time") is None
 
@@ -244,8 +241,8 @@ def test_normalize_url_builds_and_validates() -> None:
 
     assert normalize_url(base, "/wiki/Bar") == "https://en.wikipedia.org/wiki/Bar"
     assert (
-        normalize_url(base, "//en.wikipedia.org/wiki/Baz")
-        == "https://en.wikipedia.org/wiki/Baz"
+            normalize_url(base, "//en.wikipedia.org/wiki/Baz")
+            == "https://en.wikipedia.org/wiki/Baz"
     )
     assert normalize_url(base, "https://example.com/path") == "https://example.com/path"
     assert normalize_url(base, "mailto:test@example.com") is None

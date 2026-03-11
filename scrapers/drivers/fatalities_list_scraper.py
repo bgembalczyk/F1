@@ -2,10 +2,8 @@ from pathlib import Path
 from typing import Any
 
 from models.records.factories import build_fatality_record
-from scrapers.base.helpers.date_parsing import (
-    parse_date_with_category_marker,
-    parse_formula_category,
-)
+from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
+from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
@@ -17,25 +15,24 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 from scrapers.drivers.columns.fatality_event import FatalityEventColumn
-from scrapers.drivers.constants import (
-    FATALITIES_HEADERS,
-    FATALITIES_AGE_HEADER,
-    FATALITIES_CAR_HEADER,
-    FATALITIES_CIRCUIT_HEADER,
-    FATALITIES_DATE_HEADER,
-    FATALITIES_DRIVER_HEADER,
-    FATALITIES_EVENT_HEADER,
-    FATALITIES_REF_HEADER,
-    FATALITIES_SESSION_HEADER,
-    FATALITIES_SECTION_ID,
-    MARK_F2_CATEGORY,
-    MARK_NON_CHAMPIONSHIP_EVENT,
-)
+from scrapers.drivers.constants import FATALITIES_AGE_HEADER
+from scrapers.drivers.constants import FATALITIES_CAR_HEADER
+from scrapers.drivers.constants import FATALITIES_CIRCUIT_HEADER
+from scrapers.drivers.constants import FATALITIES_DATE_HEADER
+from scrapers.drivers.constants import FATALITIES_DRIVER_HEADER
+from scrapers.drivers.constants import FATALITIES_EVENT_HEADER
+from scrapers.drivers.constants import FATALITIES_HEADERS
+from scrapers.drivers.constants import FATALITIES_REF_HEADER
+from scrapers.drivers.constants import FATALITIES_SECTION_ID
+from scrapers.drivers.constants import FATALITIES_SESSION_HEADER
+from scrapers.drivers.constants import MARK_F2_CATEGORY
+from scrapers.drivers.constants import MARK_NON_CHAMPIONSHIP_EVENT
 
 
 class F1FatalitiesListScraper(F1TableScraper):
@@ -62,16 +59,16 @@ class F1FatalitiesListScraper(F1TableScraper):
                 column(FATALITIES_CAR_HEADER, "car", UrlColumn()),
                 column(FATALITIES_SESSION_HEADER, "session", TextColumn()),
                 column(FATALITIES_REF_HEADER, "ref", SkipColumn()),
-            ]
+            ],
         ),
         record_factory=build_fatality_record,
     )
 
     def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            config: ScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
         options.transformers = list(options.transformers or []) + [

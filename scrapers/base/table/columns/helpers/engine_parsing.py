@@ -9,7 +9,6 @@ Follows SOLID principles:
 - Information Expert: Engine parsing logic grouped with engine data
 """
 import re
-from typing import Optional
 
 from bs4 import Tag
 
@@ -87,9 +86,9 @@ class EngineParsingHelpers:
 
     @staticmethod
     def parse_segment(
-        segment: Tag,
-        link_lookup: dict[str, list[LinkRecord]],
-        base_url: str,
+            segment: Tag,
+            link_lookup: dict[str, list[LinkRecord]],
+            base_url: str,
     ) -> dict[str, object]:
         """
         Parse an engine segment into structured data.
@@ -166,14 +165,14 @@ class EngineParsingHelpers:
         """
         if not text:
             return None
-        
+
         # Remove displacement notation
         cleaned = re.sub(r"\d+\.?\d*\s*(?:L|l|litre|litres|cc|cm³)", "", text)
         cleaned = cleaned.strip(" -–—()")
-        
+
         if not cleaned:
             return None
-        
+
         return cleaned
 
     @staticmethod
@@ -189,7 +188,7 @@ class EngineParsingHelpers:
         """
         if not type_text:
             return None, None
-        
+
         # Look for patterns like V8, I4, Inline-6, Straight-4, etc.
         match = re.search(r"([VI]|Inline|Straight|Flat)[-\s]*(\d+)", type_text, re.IGNORECASE)
         if match:
@@ -198,7 +197,7 @@ class EngineParsingHelpers:
                 config = "I"
             cylinders = int(match.group(2))
             return f"{config}{cylinders}", cylinders
-        
+
         return type_text, None
 
     @staticmethod

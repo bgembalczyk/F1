@@ -1,4 +1,8 @@
-from typing import Optional, Dict, Any, List, Callable
+from typing import Any
+from typing import Callable
+from typing import Dict
+from typing import List
+from typing import Optional
 
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.parsers.safe_parser_mixin import SafeParserMixin
@@ -22,17 +26,17 @@ class CircuitEntitiesParser(SafeParserMixin):
     """Łączy parsowanie linkowanych encji, lap recordów i buduje normalized/layouts."""
 
     def __init__(
-        self,
-        *,
-        text_utils: InfoboxTextUtils,
-        geo_parser: CircuitGeoParser,
-        history_parser: CircuitHistoryParser,
-        specs_parser: CircuitSpecsParser,
-        lap_record_parser: CircuitLapRecordParser,
-        entity_parser: CircuitEntityParser,
-        additional_info_parser: CircuitAdditionalInfoParser,
-        error_handler: ErrorHandler,
-        url_provider: Callable[[], Optional[str]] | None = None,
+            self,
+            *,
+            text_utils: InfoboxTextUtils,
+            geo_parser: CircuitGeoParser,
+            history_parser: CircuitHistoryParser,
+            specs_parser: CircuitSpecsParser,
+            lap_record_parser: CircuitLapRecordParser,
+            entity_parser: CircuitEntityParser,
+            additional_info_parser: CircuitAdditionalInfoParser,
+            error_handler: ErrorHandler,
+            url_provider: Callable[[], Optional[str]] | None = None,
     ) -> None:
         self.text_utils = text_utils
         self.geo_parser = geo_parser
@@ -45,37 +49,37 @@ class CircuitEntitiesParser(SafeParserMixin):
         self._url_provider = url_provider
 
     def _build_normalized_data(
-        self, raw: Dict[str, Any], rows: Dict[str, Dict[str, Any]]
+            self, raw: Dict[str, Any], rows: Dict[str, Dict[str, Any]],
     ) -> Dict[str, Any]:
         """Buduje znormalizowane dane z surowych wierszy."""
         normalized: Dict[str, Any] = {
             "name": raw.get("title"),
             "location": self._safe_parse(
-                self.geo_parser.parse_location, rows.get("location")
+                self.geo_parser.parse_location, rows.get("location"),
             ),
             "coordinates": self._safe_parse(
-                self.geo_parser.parse_coordinates, rows.get("coordinates")
+                self.geo_parser.parse_coordinates, rows.get("coordinates"),
             ),
             "specs": {
                 "fia_grade": self._safe_parse(
-                    self.text_utils.parse_int, rows.get("fia_grade")
+                    self.text_utils.parse_int, rows.get("fia_grade"),
                 ),
                 "length_km": self._safe_parse(
-                    self.text_utils.parse_length, rows.get("length"), unit="km"
+                    self.text_utils.parse_length, rows.get("length"), unit="km",
                 ),
                 "length_mi": self._safe_parse(
-                    self.text_utils.parse_length, rows.get("length"), unit="mi"
+                    self.text_utils.parse_length, rows.get("length"), unit="mi",
                 ),
                 "turns": self._safe_parse(self.text_utils.parse_int, rows.get("turns")),
             },
             "history": self._safe_parse(self.history_parser.parse_history, rows),
             "architect": self._safe_parse(
-                self.entity_parser.parse_linked_entity, rows.get("architect")
+                self.entity_parser.parse_linked_entity, rows.get("architect"),
             ),
         }
 
         extra_fields = self.additional_info_parser.collect_additional_info(
-            rows, used_keys
+            rows, used_keys,
         )
         if extra_fields:
             normalized["additional_info"] = extra_fields
@@ -83,7 +87,7 @@ class CircuitEntitiesParser(SafeParserMixin):
         return self.text_utils.prune_nulls(normalized)
 
     def _create_default_layout(
-        self, normalized: Dict[str, Any], rows: Dict[str, Dict[str, Any]]
+            self, normalized: Dict[str, Any], rows: Dict[str, Dict[str, Any]],
     ) -> Optional[Dict[str, Any]]:
         """Tworzy domyślny layout jeśli nie ma layoutów z tabeli."""
         default_layout: Dict[str, Any] = {
@@ -93,19 +97,19 @@ class CircuitEntitiesParser(SafeParserMixin):
             "length_mi": normalized.get("specs", {}).get("length_mi"),
             "turns": normalized.get("specs", {}).get("turns"),
             "race_lap_record": self._safe_parse(
-                self.lap_record_parser.parse_lap_record, rows.get("race_lap_record")
+                self.lap_record_parser.parse_lap_record, rows.get("race_lap_record"),
             ),
             "surface": self._safe_parse(
-                self.specs_parser.parse_surface, rows.get("surface")
+                self.specs_parser.parse_surface, rows.get("surface"),
             ),
             "banking": self._safe_parse(
-                self.specs_parser.parse_banking, rows.get("banking")
+                self.specs_parser.parse_banking, rows.get("banking"),
             ),
         }
         return self.text_utils.prune_nulls(default_layout)
 
     def _merge_base_lap_record_into_layout(
-        self, lay: Dict[str, Any], base_record: Dict[str, Any]
+            self, lay: Dict[str, Any], base_record: Dict[str, Any],
     ) -> bool:
         """
         Próbuje scalić base_record do layoutu jeśli są kompatybilne.
@@ -124,7 +128,7 @@ class CircuitEntitiesParser(SafeParserMixin):
         return False
 
     def _process_base_lap_record(
-        self, layouts: List[Dict[str, Any]], base_record: Dict[str, Any]
+            self, layouts: List[Dict[str, Any]], base_record: Dict[str, Any],
     ) -> None:
         """Przetwarza base lap record - próbuje scalić z istniejącym layoutem lub dodaje nowy."""
         matched = False
@@ -144,15 +148,15 @@ class CircuitEntitiesParser(SafeParserMixin):
                             "layout": None,
                             "years": None,
                             "race_lap_record": base_record,
-                        }
-                    )
+                        },
+                    ),
                 )
 
     def _prepare_layouts(
-        self,
-        layout_records: Optional[List[Dict[str, Any]]],
-        normalized: Dict[str, Any],
-        rows: Dict[str, Dict[str, Any]],
+            self,
+            layout_records: Optional[List[Dict[str, Any]]],
+            normalized: Dict[str, Any],
+            rows: Dict[str, Dict[str, Any]],
     ) -> List[Dict[str, Any]]:
         """Przygotowuje listę layoutów, dodając domyślny jeśli brak."""
         layouts = layout_records or []
@@ -164,7 +168,7 @@ class CircuitEntitiesParser(SafeParserMixin):
 
         if layouts:
             base_record = self._safe_parse(
-                self.lap_record_parser.parse_lap_record, rows.get("race_lap_record")
+                self.lap_record_parser.parse_lap_record, rows.get("race_lap_record"),
             )
             if base_record:
                 self._process_base_lap_record(layouts, base_record)
@@ -180,7 +184,7 @@ class CircuitEntitiesParser(SafeParserMixin):
         return result
 
     def _merge_normalized_into_result(
-        self, result: Dict[str, Any], normalized: Dict[str, Any]
+            self, result: Dict[str, Any], normalized: Dict[str, Any],
     ) -> None:
         """Scala znormalizowane dane do wyniku."""
         existing_norm = result.get("normalized")
@@ -191,9 +195,9 @@ class CircuitEntitiesParser(SafeParserMixin):
             result["normalized"] = normalized
 
     def with_normalized(
-        self,
-        raw: Dict[str, Any],
-        layout_records: Optional[List[Dict[str, Any]]],
+            self,
+            raw: Dict[str, Any],
+            layout_records: Optional[List[Dict[str, Any]]],
     ) -> Dict[str, Any]:
         """Buduje kompletny wynik z znormalizowanymi danymi i layoutami."""
         rows: Dict[str, Dict[str, Any]] = raw.get("rows", {}) if raw else {}

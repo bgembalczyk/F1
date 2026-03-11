@@ -154,12 +154,12 @@ class FieldNormalizer:
         for season in seasons:
             if "url" not in season and "year" in season:
                 season["url"] = WIKI_SEASON_URL.format(year=season["year"])
-        
+
         return cast(list[SeasonRecord], seasons)
 
     @staticmethod
     def normalize_status(
-        value: Any, allowed: list[str], field_name: str
+            value: Any, allowed: list[str], field_name: str,
     ) -> str | None:
         """
         Normalize a value to a status string from allowed values.
@@ -231,7 +231,7 @@ class BaseRecordFactory:
         self.normalizer = normalizer or FieldNormalizer()
 
     def apply_aliases(
-        self, record: Mapping[str, Any], aliases: dict[str, str], record_name: str
+            self, record: Mapping[str, Any], aliases: dict[str, str], record_name: str,
     ) -> dict[str, Any]:
         """
         Apply field aliases to record.
@@ -258,10 +258,10 @@ class BaseRecordFactory:
             payload.setdefault(key, default_value)
 
     def normalize_field(
-        self,
-        payload: dict[str, Any],
-        field_name: str,
-        normalizer: Callable[[Any, str], Any],
+            self,
+            payload: dict[str, Any],
+            field_name: str,
+            normalizer: Callable[[Any, str], Any],
     ) -> None:
         """
         Normalize a single field in payload using provided normalizer.
@@ -275,9 +275,9 @@ class BaseRecordFactory:
             payload[field_name] = normalizer(payload[field_name], field_name)
 
     def normalize_fields(
-        self,
-        payload: dict[str, Any],
-        field_specs: dict[str, Callable[[Any, str], Any]],
+            self,
+            payload: dict[str, Any],
+            field_specs: dict[str, Callable[[Any, str], Any]],
     ) -> None:
         """
         Normalize multiple fields in payload.

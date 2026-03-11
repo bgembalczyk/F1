@@ -1,6 +1,5 @@
 from typing import Any, Optional, TypedDict
 
-
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from models.records.season import SEASON_SCHEMA

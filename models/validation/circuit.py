@@ -43,10 +43,10 @@ class Circuit(ValidatedModel):
             "circuit_status",
         )
         self.last_length_used_km = validate_float(
-            self.last_length_used_km, "last_length_used_km"
+            self.last_length_used_km, "last_length_used_km",
         )
         self.last_length_used_mi = validate_float(
-            self.last_length_used_mi, "last_length_used_mi"
+            self.last_length_used_mi, "last_length_used_mi",
         )
         self.turns = validate_int(self.turns, "turns")
         self.grands_prix_held = validate_int(self.grands_prix_held, "grands_prix_held")

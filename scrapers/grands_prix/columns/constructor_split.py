@@ -8,5 +8,5 @@ class ConstructorSplitColumn(MultiColumn):
             {
                 "chassis_constructor": ConstructorPartColumn(0),
                 "engine_constructor": ConstructorPartColumn(1),
-            }
+            },
         )

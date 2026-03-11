@@ -1,7 +1,12 @@
 # scrapers/base/wiki_sections.py
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
+from typing import Tuple
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 
 class WikipediaSectionByIdMixin:
@@ -89,8 +94,8 @@ class WikipediaSectionByIdMixin:
         if isinstance(parent, Tag):
             classes = parent.get("class") or []
             if (
-                "mw-heading" in classes
-                and parent.find(header.name, recursive=False) is header
+                    "mw-heading" in classes
+                    and parent.find(header.name, recursive=False) is header
             ):
                 return parent
         return header
@@ -106,7 +111,7 @@ class WikipediaSectionByIdMixin:
 
     @staticmethod
     def _collect_section_siblings(
-        heading_block: Tag, header_level: Optional[int]
+            heading_block: Tag, header_level: Optional[int],
     ) -> List[Any]:
         """Zbiera wszystkie elementy rodzeństwa do następnego nagłówka tego samego poziomu."""
         collected: List[Any] = [heading_block]
@@ -119,7 +124,7 @@ class WikipediaSectionByIdMixin:
 
                 if same_level_header_tag is not None and header_level is not None:
                     sib_level = WikipediaSectionByIdMixin._get_header_level(
-                        same_level_header_tag
+                        same_level_header_tag,
                     )
                     if sib_level == header_level:
                         break
@@ -130,8 +135,8 @@ class WikipediaSectionByIdMixin:
 
     @staticmethod
     def extract_section_by_id(
-        soup: BeautifulSoup,
-        fragment: str,
+            soup: BeautifulSoup,
+            fragment: str,
     ) -> Optional[BeautifulSoup]:
         """
         Wycina sekcję artykułu Wikipedii na podstawie fragmentu URL.
@@ -161,7 +166,7 @@ class WikipediaSectionByIdMixin:
 
         # Zbierz wszystkie elementy sekcji
         collected = WikipediaSectionByIdMixin._collect_section_siblings(
-            heading_block, header_level
+            heading_block, header_level,
         )
 
         # Zbuduj HTML sekcji

@@ -14,10 +14,10 @@ class HttpClient(BaseHttpClient):
     """Klient HTTP (requests) ze współdzieloną sesją, retry, rate-limit i cache."""
 
     def __init__(
-        self,
-        *,
-        session: Optional[requests.Session] = None,
-        config: HttpClientConfig | None = None,
+            self,
+            *,
+            session: Optional[requests.Session] = None,
+            config: HttpClientConfig | None = None,
     ) -> None:
         """
         Inicjalizacja klienta HTTP opartego na requests.
@@ -33,11 +33,11 @@ class HttpClient(BaseHttpClient):
         )
 
     def get(
-        self,
-        url: str,
-        *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+            self,
+            url: str,
+            *,
+            headers: Optional[Dict[str, str]] = None,
+            timeout: Optional[int] = None,
     ) -> HttpResponseProtocol:
         """Wykonuje żądanie GET."""
         return self._request_with_retries(

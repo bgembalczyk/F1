@@ -24,7 +24,7 @@ class TableParser:
         self._link_extractor = link_extractor
 
     def parse_full_data(
-        self, cell: Tag, include_urls: bool
+            self, cell: Tag, include_urls: bool,
     ) -> Dict[str, Any]:
         """Parse full data including nested tables and structured information.
         
@@ -109,8 +109,8 @@ class TableParser:
         expected_wins_podiums_poles = ["wins", "podiums", "poles"]
         expected_wins_topten_poles = ["wins", "top tens", "poles"]
         return (
-            normalized == expected_wins_podiums_poles
-            or normalized == expected_wins_topten_poles
+                normalized == expected_wins_podiums_poles
+                or normalized == expected_wins_topten_poles
         )
 
     @staticmethod

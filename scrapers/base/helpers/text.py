@@ -99,11 +99,11 @@ _strip_lang_suffix_func = strip_lang_suffix
 
 
 def clean_wiki_text(
-    text: str | Tag,
-    *,
-    strip_lang_suffix: bool = True,
-    strip_refs: bool = True,
-    normalize_dashes: bool = True,
+        text: str | Tag,
+        *,
+        strip_lang_suffix: bool = True,
+        strip_refs: bool = True,
+        normalize_dashes: bool = True,
 ) -> str:
     """Normalizuje whitespace oraz opcjonalnie usuwa przypisy i markery językowe."""
     t = coerce_text(text).replace("\xa0", " ").replace("&nbsp;", " ")
@@ -133,10 +133,10 @@ def strip_marks(text: str | Tag) -> str:
 
 
 def extract_links_from_cell(
-    cell: str | Tag,
-    *,
-    full_url: Callable[[str], str | None] | None = None,
-    allow_local_anchors: bool = True,
+        cell: str | Tag,
+        *,
+        full_url: Callable[[str], str | None] | None = None,
+        allow_local_anchors: bool = True,
 ) -> list[LinkRecord]:
     """
     Zwraca listę linków {text, url} z komórki,

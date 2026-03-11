@@ -31,13 +31,13 @@ def _convert_to_dsl(obj: Any) -> dict[str, Any]:
         return InfoboxSchemaDSL.from_schema(obj).to_dict()
     raise TypeError(
         "Unsupported target. Provide a ScraperConfig, InfoboxSchema, "
-        "or a class/module exposing CONFIG."
+        "or a class/module exposing CONFIG.",
     )
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Convert scraper configs or infobox schemas to DSL JSON."
+        description="Convert scraper configs or infobox schemas to DSL JSON.",
     )
     parser.add_argument(
         "target",

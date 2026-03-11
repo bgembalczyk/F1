@@ -1,20 +1,22 @@
-from typing import Any, Dict, List
+from typing import Any
+from typing import Dict
+from typing import List
 
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.scraper import F1TableScraper
 
 
 class F1StandingsScraper(F1TableScraper):
     def __init__(
-        self,
-        *,
-        options: ScraperOptions,
-        config: ScraperConfig,
-        position_key: str = "pos",
+            self,
+            *,
+            options: ScraperOptions,
+            config: ScraperConfig,
+            position_key: str = "pos",
     ) -> None:
         self.position_key = position_key
         super().__init__(options=options, config=config)

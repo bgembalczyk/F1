@@ -14,6 +14,6 @@ class BasePointsScraper(F1TableScraper):
     - schema
     - record_factory
     """
-    
+
     # All points scoring scrapers use the same Wikipedia page
     BASE_URL = "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems"

@@ -1,5 +1,12 @@
-from abc import ABC, abstractmethod
-from typing import Any, Callable, Generic, Iterable, List, Mapping, TypeVar
+from abc import ABC
+from abc import abstractmethod
+from typing import Any
+from typing import Callable
+from typing import Generic
+from typing import Iterable
+from typing import List
+from typing import Mapping
+from typing import TypeVar
 
 T = TypeVar("T")
 

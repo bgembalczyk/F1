@@ -1,18 +1,15 @@
-from dataclasses import dataclass
 import logging
-from pathlib import Path
 import sys
+from dataclasses import dataclass
+from pathlib import Path
 
 import pytest
 
-
 from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.transformers import (
-    NormalizeLinksTransformer,
-    RecordFactoryTransformer,
-    RecordTransformer,
-    TransformersPipeline,
-)
+from scrapers.base.transformers import NormalizeLinksTransformer
+from scrapers.base.transformers import RecordFactoryTransformer
+from scrapers.base.transformers import RecordTransformer
+from scrapers.base.transformers import TransformersPipeline
 from validation.records import ExportRecord
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -21,7 +18,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 
 def test_transformers_pipeline_applies_in_order_and_logs(
-    caplog: pytest.LogCaptureFixture,
+        caplog: pytest.LogCaptureFixture,
 ) -> None:
     class AddFlagTransformer(RecordTransformer):
         def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
@@ -62,7 +59,7 @@ def test_build_transformers_adds_default_normalizer() -> None:
 
     assert any(
         isinstance(transformer, NormalizeLinksTransformer)
-        for transformer in transformers
+        for transformer in transformers,
     )
 
 
@@ -75,7 +72,7 @@ def test_normalize_links_transformer_normalizes_link_values() -> None:
                 "driver": {"text": " Lewis ", "url": "https://example.com/lewis"},
                 "seasons": [2020, 2021],
             }
-        ]
+        ],
     )
 
     assert records == [
