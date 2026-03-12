@@ -34,8 +34,11 @@ class SponsorshipSeasonsColumn(BaseColumn):
 
     * ``car`` – when Gemini returns ``car_model`` entries.
 
-    The full Gemini classification is also stored under ``paren_classification``
-    in the record.  When no *classifier* is provided, parenthetical content is
+    * ``engine`` – when Gemini returns ``engine_constructor`` entries.
+
+    Classified values are validated against the original cell text before use;
+    any value not found in the cell text is treated as a model hallucination and
+    discarded.  When no *classifier* is provided, parenthetical content is
     ignored entirely.
     """
 
@@ -84,9 +87,19 @@ class SponsorshipSeasonsColumn(BaseColumn):
             year_text=year_text,
             headers=self._table_headers,
         )
-        record["paren_classification"] = classification
 
-        gp_names: List[str] = classification.get("grand_prix") or []
+        # Filter out hallucinations: only keep values that actually appear in
+        # the original cell text.  "GP" is expanded to "Grand Prix" in the
+        # normalised text so that a Gemini response of "Chinese Grand Prix"
+        # still matches a cell that says "Chinese GP".
+        normalised_text = re.sub(r"\bGP\b", "Grand Prix", text, flags=re.IGNORECASE).lower()
+
+        def _filter_present(values: List[str]) -> List[str]:
+            return [v for v in values if v.lower() in normalised_text]
+
+        # Categories are applied in priority order and are mutually exclusive:
+        # grand_prix_scope > driver > car > engine.
+        gp_names: List[str] = _filter_present(classification.get("grand_prix") or [])
         if gp_names:
             gp_links = [lnk for lnk in non_year_links if self._is_gp_link(lnk)]
             if gp_links:
@@ -104,7 +117,7 @@ class SponsorshipSeasonsColumn(BaseColumn):
 
         other_links = [lnk for lnk in non_year_links if not self._is_gp_link(lnk)]
 
-        driver_names: List[str] = classification.get("driver") or []
+        driver_names: List[str] = _filter_present(classification.get("driver") or [])
         if driver_names:
             if other_links:
                 record["driver"] = [
@@ -117,7 +130,7 @@ class SponsorshipSeasonsColumn(BaseColumn):
                 record["driver"] = [{"text": name} for name in driver_names]
             return
 
-        car_names: List[str] = classification.get("car_model") or []
+        car_names: List[str] = _filter_present(classification.get("car_model") or [])
         if car_names:
             if other_links:
                 record["car"] = [
@@ -128,6 +141,21 @@ class SponsorshipSeasonsColumn(BaseColumn):
                 ]
             else:
                 record["car"] = [{"text": name} for name in car_names]
+            return
+
+        engine_names: List[str] = _filter_present(
+            classification.get("engine_constructor") or [],
+        )
+        if engine_names:
+            if other_links:
+                record["engine"] = [
+                    {"text": lnk["text"], "url": lnk["url"]}
+                    if lnk.get("url")
+                    else {"text": lnk["text"]}
+                    for lnk in other_links
+                ]
+            else:
+                record["engine"] = [{"text": name} for name in engine_names]
 
     # ------------------------------------------------------------------
     # helpers
