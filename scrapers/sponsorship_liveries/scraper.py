@@ -71,10 +71,10 @@ if __name__ == "__main__":
     try:
         _gemini_client = GeminiClient.from_key_file()
         _classifier: Optional[ParenClassifier] = ParenClassifier(_gemini_client)
-        print("[main] Gemini ParenClassifier załadowany – adnotacje w nawiasach będą klasyfikowane.")
+        print("[scraper] Gemini ParenClassifier załadowany – adnotacje w nawiasach będą klasyfikowane.")
     except FileNotFoundError as _e:
         _classifier = None
-        print(f"[main] Brak klucza Gemini API ({_e}), klasyfikacja Gemini wyłączona.")
+        print("[scraper] Brak klucza Gemini API ({_e}), klasyfikacja Gemini wyłączona.")
 
     run_and_export(
         F1SponsorshipLiveriesScraper,
@@ -82,6 +82,6 @@ if __name__ == "__main__":
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
-            scraper_kwargs={"classifier": _classifier} if _classifier is not None else {},
+            scraper_kwargs={"classifier": _classifier},
         ),
     )
