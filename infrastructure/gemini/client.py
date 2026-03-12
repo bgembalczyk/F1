@@ -107,8 +107,15 @@ class GeminiClient:
             headers={"Content-Type": "application/json"},
             method="POST",
         )
+
+        print(f"[GeminiClient] >>> Zapytanie do API (model={self._model}):")
+        print(prompt)
+
         with urllib.request.urlopen(req, timeout=30) as resp:  # noqa: S310
             raw = resp.read().decode("utf-8")
+
+        print("[GeminiClient] <<< Odpowiedź surowa od API:")
+        print(raw)
 
         api_response = json.loads(raw)
         text = (
