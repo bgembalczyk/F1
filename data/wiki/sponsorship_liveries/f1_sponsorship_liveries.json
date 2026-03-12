@@ -22924,9 +22924,10 @@
             "text": "Total",
             "url": "https://en.wikipedia.org/wiki/TotalEnergies"
           },
-          "Rexona",
-          "Sure",
-          "Degree",
+          {
+            "text": "Rexona/Sure/Degree",
+            "url": "https://en.wikipedia.org/wiki/Rexona"
+          },
           {
             "text": "Clear",
             "url": "https://en.wikipedia.org/wiki/Clear_(shampoo)"
@@ -23082,9 +23083,10 @@
             "text": "Saxo Bank",
             "url": "https://en.wikipedia.org/wiki/Saxo_Bank"
           },
-          "Rexona",
-          "Sure",
-          "Degree",
+          {
+            "text": "Rexona/Sure/Degree",
+            "url": "https://en.wikipedia.org/wiki/Rexona"
+          },
           {
             "text": "Clear",
             "url": "https://en.wikipedia.org/wiki/Clear_(shampoo)"
