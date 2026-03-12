@@ -10,7 +10,6 @@ from bs4 import Tag
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.list import ListColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl import TableSchemaDSL
@@ -18,6 +17,7 @@ from scrapers.base.table.dsl import column
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
 from scrapers.sponsorship_liveries.parsers.record_splitter import (
@@ -71,11 +71,11 @@ class SponsorshipSectionParser:
             column("Seasons", "season", _seasons_col()),
             column("Year(s)", "season", _seasons_col()),
             column("Driver(s)", "drivers", DriverListColumn()),
-            column("Main colour(s)", normalize_header("Main colour(s)"), ListColumn()),
+            column("Main colour(s)", normalize_header("Main colour(s)"), ColourListColumn()),
             column(
                 "Additional colour(s)",
                 normalize_header("Additional colour(s)"),
-                ListColumn(),
+                ColourListColumn(),
             ),
             column(
                 "Additional major sponsor(s)",

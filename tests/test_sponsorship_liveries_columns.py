@@ -565,3 +565,146 @@ def test_split_or_colours_multiple_items_with_and() -> None:
     """Each colour entry is split independently."""
     result = ColourScopeHandler.split_or_colours(["Red", "Green and Black"])
     assert result == ["Red", "Green", "Black"]
+
+
+# ── New fixes ─────────────────────────────────────────────────────────────────
+
+
+# Fix: split_or_colours must not split inside parentheses (depth-aware)
+
+def test_split_or_colours_no_split_inside_parens() -> None:
+    """'and' inside parentheses is not treated as a colour separator."""
+    result = ColourScopeHandler.split_or_colours(
+        ["Blue (1964 United States and Mexican Grands Prix)"],
+    )
+    assert result == ["Blue (1964 United States and Mexican Grands Prix)"]
+
+
+def test_split_or_colours_splits_outside_parens_only() -> None:
+    """'and' at depth 0 still splits, even when parens are present elsewhere."""
+    result = ColourScopeHandler.split_or_colours(
+        ["Red and Blue (Monaco Grand Prix)"],
+    )
+    assert result == ["Red", "Blue (Monaco Grand Prix)"]
+
+
+def test_colour_grand_prix_scope_cleans_colour_name() -> None:
+    """colour_grand_prix_scope strips the GP annotation from the cleaned colour."""
+    scope, cleaned = ColourScopeHandler.colour_grand_prix_scope(
+        "Blue (United States and Mexican Grands Prix)",
+    )
+    assert scope is not None
+    assert cleaned == "Blue"
+
+
+def test_colour_grand_prix_scope_handles_grands_prix_plural() -> None:
+    """colour_grand_prix_scope handles plural 'Grands Prix' correctly."""
+    scope, cleaned = ColourScopeHandler.colour_grand_prix_scope(
+        "Blue (1964 United States and Mexican Grands Prix)",
+    )
+    assert scope is not None
+    assert scope["type"] == "only"
+    gp_names = [e["text"] for e in scope["grand_prix"]]
+    assert "United States Grand Prix" in gp_names
+    assert "Mexican Grand Prix" in gp_names
+    assert cleaned == "Blue"
+
+
+# Fix: ColourListColumn – <br> as separator
+
+def test_colour_list_column_br_as_separator() -> None:
+    """<br> inside a colour cell is treated as a value separator."""
+    from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
+    col = ColourListColumn()
+    cell = BeautifulSoup("<td>White<br>Dark Blue and White</td>", "html.parser").find("td")
+    ctx = ColumnContext(
+        header="Main colour(s)",
+        key="main_colours",
+        raw_text="White Dark Blue and White",
+        clean_text="White Dark Blue and White",
+        links=[],
+        cell=cell,
+        base_url="https://en.wikipedia.org",
+    )
+    result = col.parse(ctx)
+    # <br> splits into "White" and "Dark Blue and White" segments;
+    # the "and" split happens later via split_or_colours
+    assert "White" in result
+    assert "Dark Blue and White" in result
+    assert result.index("White") < result.index("Dark Blue and White")
+
+
+# Fix: ColourListColumn – <p> as separator
+
+def test_colour_list_column_p_as_separator() -> None:
+    """<p> boundary inside a colour cell is treated as a value separator."""
+    from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
+    col = ColourListColumn()
+    cell = BeautifulSoup(
+        "<td>Black and Green\n<p>White and Blue\n</p></td>", "html.parser",
+    ).find("td")
+    ctx = ColumnContext(
+        header="Main colour(s)",
+        key="main_colours",
+        raw_text="Black and Green White and Blue",
+        clean_text="Black and Green White and Blue",
+        links=[],
+        cell=cell,
+        base_url="https://en.wikipedia.org",
+    )
+    result = col.parse(ctx)
+    assert "Black and Green" in result
+    assert "White and Blue" in result
+
+
+# Fix: ColourListColumn – skip parenthetical-only <p>
+
+def test_colour_list_column_skips_parenthetical_p() -> None:
+    """A <p> that consists entirely of parenthetical text is ignored."""
+    from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
+    col = ColourListColumn()
+    html = (
+        "<td>White and Yellow\n"
+        "<p>(Image of a woman holding a box of Rizla+. cigarette papers)\n</p>"
+        "</td>"
+    )
+    cell = BeautifulSoup(html, "html.parser").find("td")
+    ctx = ColumnContext(
+        header="Additional colour(s)",
+        key="additional_colours",
+        raw_text="White and Yellow (Image of a woman holding a box of Rizla+. cigarette papers)",
+        clean_text="White and Yellow (Image of a woman holding a box of Rizla+. cigarette papers)",
+        links=[],
+        cell=cell,
+        base_url="https://en.wikipedia.org",
+    )
+    result = col.parse(ctx)
+    # The parenthetical image description should not appear in the colours
+    assert result == ["White and Yellow"]
+    assert not any("Image" in c for c in result)
+
+
+# Fix: SeasonService – "YYYY to YYYY" range support
+
+def test_season_service_to_range() -> None:
+    """'1997 to 1999' is parsed as a full year range."""
+    from models.services.season_service import SeasonService
+    result = SeasonService.parse_seasons("1997 to 1999")
+    years = [e["year"] for e in result]
+    assert years == [1997, 1998, 1999]
+
+
+def test_season_service_to_range_mixed_with_comma() -> None:
+    """'1997 to 1999, 2001' is parsed correctly."""
+    from models.services.season_service import SeasonService
+    result = SeasonService.parse_seasons("1997 to 1999, 2001")
+    years = [e["year"] for e in result]
+    assert years == [1997, 1998, 1999, 2001]
+
+
+def test_season_service_to_range_case_insensitive() -> None:
+    """'1997 TO 1999' (uppercase) is also parsed correctly."""
+    from models.services.season_service import SeasonService
+    result = SeasonService.parse_seasons("1997 TO 1999")
+    years = [e["year"] for e in result]
+    assert years == [1997, 1998, 1999]

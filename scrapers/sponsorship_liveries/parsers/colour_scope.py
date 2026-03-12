@@ -21,15 +21,58 @@ class ColourScopeHandler:
             if not isinstance(item, str):
                 expanded.append(item)
                 continue
-            if re.search(r"\s+(?:or|and)\s+", item, flags=re.IGNORECASE):
-                parts = [
-                    clean_wiki_text(part)
-                    for part in re.split(r"\s+(?:or|and)\s+", item, flags=re.IGNORECASE)
-                ]
-                expanded.extend([part for part in parts if part])
-                continue
-            expanded.append(item)
+            parts = ColourScopeHandler._depth_aware_split_on_and_or(item)
+            if len(parts) > 1:
+                expanded.extend([clean_wiki_text(p) for p in parts if clean_wiki_text(p)])
+            else:
+                expanded.append(item)
         return expanded
+
+    @staticmethod
+    def _depth_aware_split_on_and_or(text: str) -> list[str]:
+        """Split *text* on ' and ' / ' or ' only at parenthesis depth 0.
+
+        Separators that appear inside parentheses are not treated as split
+        points, so e.g. ``"Blue (1964 United States and Mexican Grands Prix)"``
+        is returned as a single item rather than being broken at the inner
+        'and'.
+        """
+        parts: list[str] = []
+        current: list[str] = []
+        depth = 0
+        i = 0
+        text_lower = text.lower()
+        while i < len(text):
+            ch = text[i]
+            if ch == "(":
+                depth += 1
+                current.append(ch)
+                i += 1
+            elif ch == ")":
+                depth = max(0, depth - 1)
+                current.append(ch)
+                i += 1
+            elif depth == 0:
+                matched = False
+                for kw in (" and ", " or "):
+                    if text_lower[i: i + len(kw)] == kw:
+                        part = "".join(current).strip()
+                        if part:
+                            parts.append(part)
+                        current = []
+                        i += len(kw)
+                        matched = True
+                        break
+                if not matched:
+                    current.append(ch)
+                    i += 1
+            else:
+                current.append(ch)
+                i += 1
+        part = "".join(current).strip()
+        if part:
+            parts.append(part)
+        return parts
 
     @staticmethod
     def filter_colours_for_years(colours: Any, years: set[int]) -> Any:
@@ -92,7 +135,7 @@ class ColourScopeHandler:
     def colour_grand_prix_scope(
             colour: str,
     ) -> tuple[dict[str, Any] | None, str]:
-        match = re.search(r"\(([^)]*grand prix[^)]*)\)", colour, flags=re.IGNORECASE)
+        match = re.search(r"\(([^)]*grands?\s+prix[^)]*)\)", colour, flags=re.IGNORECASE)
         cleaned_colour = SponsorshipRecordText.strip_year_suffix(colour)
         if not match:
             return None, cleaned_colour
@@ -101,7 +144,7 @@ class ColourScopeHandler:
         scope_text = re.sub(r"\b\d{3}0s\b", "", scope_text)
         scope_text = clean_wiki_text(scope_text)
         if not scope_text or not re.search(
-                r"grand prix", scope_text, flags=re.IGNORECASE,
+                r"grands?\s+prix", scope_text, flags=re.IGNORECASE,
         ):
             return None, cleaned_colour
         names = GrandPrixScopeParser.parse_grand_prix_names(scope_text)
@@ -109,6 +152,16 @@ class ColourScopeHandler:
             "type": "only",
             "grand_prix": [{"text": name} for name in names],
         }
+        # Strip the grand-prix parenthetical from the colour name so the
+        # returned colour is clean (e.g. "Blue" not "Blue (United States and
+        # Mexican Grands Prix)").
+        stripped = re.sub(
+            r"\s*\([^)]*grands?\s+prix[^)]*\)\s*",
+            "",
+            cleaned_colour,
+            flags=re.IGNORECASE,
+        ).strip()
+        cleaned_colour = stripped or cleaned_colour
         return scope, cleaned_colour
 
     @staticmethod

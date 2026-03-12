@@ -48,11 +48,22 @@ class SeasonService:
                     start, end = end, start
                 years = range(start, end + 1)
             else:
-                # pojedynczy rok: 1973
-                m_year = re.fullmatch(r"\d{4}", part)
-                if not m_year:
-                    continue
-                years = [int(part)]
+                # zakres z "to": 1997 to 1999
+                m_range_to = re.fullmatch(
+                    r"(\d{4})\s+to\s+(\d{4})", part, re.IGNORECASE,
+                )
+                if m_range_to:
+                    start = int(m_range_to.group(1))
+                    end = int(m_range_to.group(2))
+                    if end < start:
+                        start, end = end, start
+                    years = range(start, end + 1)
+                else:
+                    # pojedynczy rok: 1973
+                    m_year = re.fullmatch(r"\d{4}", part)
+                    if not m_year:
+                        continue
+                    years = [int(part)]
 
             for y in years:
                 if y in seen:

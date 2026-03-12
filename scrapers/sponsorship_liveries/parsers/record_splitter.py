@@ -22,6 +22,7 @@ class SponsorshipRecordSplitter:
         "main_sponsors",
         "additional_major_sponsors",
         "livery_sponsors",
+        "livery_principal_sponsors",
     }
     _colour_keys = {
         "main_colours",
