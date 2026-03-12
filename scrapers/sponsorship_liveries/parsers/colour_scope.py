@@ -21,10 +21,10 @@ class ColourScopeHandler:
             if not isinstance(item, str):
                 expanded.append(item)
                 continue
-            if re.search(r"\s+or\s+", item, flags=re.IGNORECASE):
+            if re.search(r"\s+(?:or|and)\s+", item, flags=re.IGNORECASE):
                 parts = [
                     clean_wiki_text(part)
-                    for part in re.split(r"\s+or\s+", item, flags=re.IGNORECASE)
+                    for part in re.split(r"\s+(?:or|and)\s+", item, flags=re.IGNORECASE)
                 ]
                 expanded.extend([part for part in parts if part])
                 continue
