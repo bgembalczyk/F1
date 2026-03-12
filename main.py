@@ -156,14 +156,6 @@ def run_complete_scrapers() -> None:
         debug_dir=BASE_DEBUG_DIR,
     )
 
-    print("[complete] running  F1CompleteCircuitScraper")
-    run_and_export(
-        F1CompleteCircuitScraper,
-        "circuits/f1_circuits_extended.json",
-        run_config=run_config,
-    )
-    print("[complete] finished F1CompleteCircuitScraper")
-
     print("[complete] running  F1CompleteGrandPrixScraper")
     run_and_export(
         F1CompleteGrandPrixScraper,
@@ -173,11 +165,13 @@ def run_complete_scrapers() -> None:
     print("[complete] finished F1CompleteGrandPrixScraper")
 
     # tory, kierowcy i sezony mają własne helpery eksportu do wielu plików
+    print("[complete] running  F1CompleteCircuitScraper")
     export_complete_circuits(
         output_dir=BASE_WIKI_DIR / "circuits/complete_circuits",
         include_urls=True,
     )
-    # kierowcy i sezony mają własne helpery eksportu do wielu plików
+    print("[complete] finished F1CompleteCircuitScraper")
+
     print("[complete] running  CompleteDriverScraper")
     export_complete_drivers(
         output_dir=BASE_WIKI_DIR / "drivers/complete_drivers",
