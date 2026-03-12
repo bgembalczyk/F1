@@ -65,11 +65,23 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
 
 
 if __name__ == "__main__":
+    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+    from infrastructure.gemini.client import GeminiClient
+
+    try:
+        _gemini_client = GeminiClient.from_key_file()
+        _classifier: Optional[ParenClassifier] = ParenClassifier(_gemini_client)
+        print("[main] Gemini ParenClassifier załadowany – adnotacje w nawiasach będą klasyfikowane.")
+    except FileNotFoundError as _e:
+        _classifier = None
+        print(f"[main] Brak klucza Gemini API ({_e}), klasyfikacja Gemini wyłączona.")
+
     run_and_export(
         F1SponsorshipLiveriesScraper,
         "sponsorship_liveries/f1_sponsorship_liveries.json",
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
+            scraper_kwargs={"classifier": _classifier} if _classifier is not None else {},
         ),
     )

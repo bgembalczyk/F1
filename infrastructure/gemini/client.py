@@ -84,6 +84,7 @@ class GeminiClient:
         """
         cached = self._cache.get(prompt)
         if cached is not None:
+            print(f"[GeminiClient] Cache hit (model={self._model}), pomijam wywołanie API.")
             return cached
 
         result = self._call_api(prompt, response_mime_type=response_mime_type)
