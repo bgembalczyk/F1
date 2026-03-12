@@ -28,11 +28,6 @@ logger = logging.getLogger(__name__)
 
 _PROMPT_TEMPLATE = """Analizujesz tabelę Wikipedii o historycznych malowaniach sponsorów w Formule 1.
 
-Zespół F1: {team_name}
-Nagłówki kolumn tabeli: {headers}
-
-W kolumnie "Year" (rok) przy wpisie roku {year_text!r} pojawia się adnotacja w nawiasie: {paren_content!r}
-
 Określ, czego dotyczy ta adnotacja. Odpowiedz wyłącznie w formacie JSON z następującymi kluczami \
 (każdy zawiera listę elementów lub pustą listę []):
 - "driver": lista kierowców F1, których dotyczy adnotacja (imię i nazwisko)
@@ -43,7 +38,17 @@ Określ, czego dotyczy ta adnotacja. Odpowiedz wyłącznie w formacie JSON z nas
 Przykład odpowiedzi:
 {{"driver": [], "car_model": ["Dallara F188"], "engine_constructor": [], "grand_prix": []}}
 
-Odpowiedz tylko poprawnym JSON, bez dodatkowego tekstu."""
+Odpowiedz tylko poprawnym JSON, bez dodatkowego tekstu.
+
+Nie uzupełniaj za pomocą własnej wiedzy; odpowiedz tylko na podstawie poniższych informacji, 
+jeśli danej informacji nie da się wywnioskować tylko i wyłącznie z tych danych, pozostaw odpowiednią kategorię pustą.
+
+Zespół F1: {team_name}
+
+W kolumnie "Year" (rok) przy wpisie roku {year_text!r} pojawia się adnotacja w nawiasie: {paren_content!r}
+
+"""
+
 
 
 class ParenClassifier:
@@ -89,7 +94,7 @@ class ParenClassifier:
         -------
         dict
             Słownik z kluczami: ``driver``, ``car_model``,
-            ``engine_constructor``, ``grand_prix``, ``time_period``, ``other``.
+            ``engine_constructor``, ``grand_prix``.
             Każda wartość to lista łańcuchów lub pusta lista.
         """
         prompt = self._build_prompt(
@@ -136,8 +141,6 @@ class ParenClassifier:
             "car_model": [],
             "engine_constructor": [],
             "grand_prix": [],
-            "time_period": [],
-            "other": [],
         }
 
     @classmethod
@@ -145,7 +148,7 @@ class ParenClassifier:
         """Upewnia się, że wynik ma właściwy kształt."""
         if not isinstance(raw, dict):
             return cls._empty_result()
-        keys = ("driver", "car_model", "engine_constructor", "grand_prix", "time_period", "other")
+        keys = ("driver", "car_model", "engine_constructor", "grand_prix")
         result = {}
         for key in keys:
             value = raw.get(key, [])
