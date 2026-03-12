@@ -119,8 +119,16 @@ def test_mixed_explicit_and_implicit_separators() -> None:
 
 
 def test_season_column_car_keyword_sets_car_field() -> None:
-    """When parenthetical contains 'car', linked item is stored under 'car'."""
-    col = SponsorshipSeasonsColumn()
+    """When Gemini classifies parenthetical as car_model, linked item is stored under 'car'."""
+    classification = {
+        "driver": [],
+        "car_model": ["Matra MS9"],
+        "engine_constructor": [],
+        "grand_prix": [],
+        "time_period": [],
+        "other": [],
+    }
+    col = SponsorshipSeasonsColumn(team_name="Matra", classifier=_make_classifier(classification))
     record: dict = {}
     col.apply(
         _ctx(
@@ -142,8 +150,16 @@ def test_season_column_car_keyword_sets_car_field() -> None:
 
 
 def test_season_column_no_car_keyword_sets_driver_field() -> None:
-    """Without 'car' keyword, linked item is stored under 'driver' as before."""
-    col = SponsorshipSeasonsColumn()
+    """When Gemini classifies parenthetical as driver, linked item is stored under 'driver'."""
+    classification = {
+        "driver": ["James Hunt"],
+        "car_model": [],
+        "engine_constructor": [],
+        "grand_prix": [],
+        "time_period": [],
+        "other": [],
+    }
+    col = SponsorshipSeasonsColumn(team_name="McLaren", classifier=_make_classifier(classification))
     record: dict = {}
     col.apply(
         _ctx(
@@ -162,6 +178,94 @@ def test_season_column_no_car_keyword_sets_driver_field() -> None:
     assert record["driver"] == [
         {"text": "James Hunt", "url": "https://en.wikipedia.org/wiki/James_Hunt"},
     ]
+
+
+def test_season_column_no_classifier_skips_paren_fields() -> None:
+    """Without a classifier, parenthetical content is ignored (no car/driver/grand_prix_scope)."""
+    col = SponsorshipSeasonsColumn()
+    record: dict = {}
+    col.apply(
+        _ctx(
+            "1968 (Matra MS9 car)",
+            links=[{"text": "Matra MS9", "url": "https://en.wikipedia.org/wiki/Matra_MS9"}],
+        ),
+        record,
+    )
+    assert "car" not in record
+    assert "driver" not in record
+    assert "grand_prix_scope" not in record
+    assert "paren_classification" not in record
+
+
+def test_season_column_gemini_sets_grand_prix_scope() -> None:
+    """When Gemini classifies parenthetical as grand_prix, grand_prix_scope is set with link URL."""
+    classification = {
+        "driver": [],
+        "car_model": [],
+        "engine_constructor": [],
+        "grand_prix": ["Chinese Grand Prix"],
+        "time_period": [],
+        "other": [],
+    }
+    col = SponsorshipSeasonsColumn(team_name="Ferrari", classifier=_make_classifier(classification))
+    record: dict = {}
+    col.apply(
+        _ctx(
+            "2004 (only Chinese GP)",
+            links=[
+                {
+                    "text": "Chinese Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix",
+                },
+            ],
+        ),
+        record,
+    )
+    assert record.get("_season_scoped_gp") is True
+    assert record["grand_prix_scope"]["type"] == "only"
+    assert record["grand_prix_scope"]["grand_prix"] == [
+        {"text": "Chinese Grand Prix", "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"},
+    ]
+    assert "driver" not in record
+    assert "car" not in record
+
+
+def test_season_column_gemini_grand_prix_fallback_to_text_when_no_links() -> None:
+    """When Gemini returns grand_prix names but no matching links exist, text-only entries are used."""
+    classification = {
+        "driver": [],
+        "car_model": [],
+        "engine_constructor": [],
+        "grand_prix": ["Monaco Grand Prix"],
+        "time_period": [],
+        "other": [],
+    }
+    col = SponsorshipSeasonsColumn(team_name="Ferrari", classifier=_make_classifier(classification))
+    record: dict = {}
+    col.apply(_ctx("2004 (only Monaco GP)"), record)
+
+    assert record.get("_season_scoped_gp") is True
+    assert record["grand_prix_scope"]["grand_prix"] == [{"text": "Monaco Grand Prix"}]
+
+
+def test_season_column_gemini_empty_classification_sets_no_extra_fields() -> None:
+    """When Gemini returns no meaningful classifications, no extra fields are set on the record."""
+    classification = {
+        "driver": [],
+        "car_model": [],
+        "engine_constructor": [],
+        "grand_prix": [],
+        "time_period": [],
+        "other": ["never raced"],
+    }
+    col = SponsorshipSeasonsColumn(team_name="Coloni", classifier=_make_classifier(classification))
+    record: dict = {}
+    col.apply(_ctx("1990 (never raced)"), record)
+
+    assert "paren_classification" in record
+    assert "driver" not in record
+    assert "car" not in record
+    assert "grand_prix_scope" not in record
 
 
 # ── Fix 4: McLaren – comma inside link text not treated as separator ───────────

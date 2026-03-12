@@ -19,21 +19,24 @@ class SponsorshipSeasonsColumn(BaseColumn):
 
     Extends the standard ``SeasonsColumn`` behaviour by also parsing extra
     information that Wikipedia sometimes encodes inside a parenthetical
-    directly in the year cell:
+    directly in the year cell.
 
-    * ``(only <GP>)``   → sets ``grand_prix_scope`` on the record and marks
-      the record with ``_season_scoped_gp = True`` so that the post-processing
-      step in :class:`~scrapers.sponsorship_liveries.parsers.section_parser.SponsorshipSectionParser`
-      can split any broader overlapping season entry.
+    When *team_name* and *classifier* are provided, the parenthetical content
+    is sent **exclusively** to the Gemini API for semantic classification.
+    The structured result drives the following fields on the record:
 
-    * ``(<Driver>'s car)`` → sets ``driver`` on the record with the linked
-      driver info.  These entries are independent of the GP-scope mechanism.
+    * ``grand_prix_scope`` / ``_season_scoped_gp`` – when Gemini returns
+      ``grand_prix`` entries.  The ``_season_scoped_gp`` marker is used by
+      :class:`~scrapers.sponsorship_liveries.parsers.section_parser.SponsorshipSectionParser`
+      to split any broader overlapping season entry.
 
-    When *team_name* and *classifier* are provided, any parenthetical that is
-    not fully handled by the heuristic logic above is additionally sent to
-    Gemini API for semantic classification.  The structured result is stored
-    under ``paren_classification`` in the record so that downstream code can
-    use it for more precise scope assignments.
+    * ``driver`` – when Gemini returns ``driver`` entries.
+
+    * ``car`` – when Gemini returns ``car_model`` entries.
+
+    The full Gemini classification is also stored under ``paren_classification``
+    in the record.  When no *classifier* is provided, parenthetical content is
+    ignored entirely.
     """
 
     # Year-only link text – e.g. "2004" or "2005"
@@ -65,49 +68,66 @@ class SponsorshipSeasonsColumn(BaseColumn):
         if not paren_content:
             return
 
+        # Analizowanie zawartości nawiasów odbywa się wyłącznie przez Gemini API.
+        if self._classifier is None:
+            return
+
         links = normalize_links(ctx.links or [])
         non_year_links = [
             lnk for lnk in links
             if not self._YEAR_RE.match((lnk.get("text") or "").strip())
         ]
 
-        has_only = bool(re.search(r"\bonly\b", paren_content, re.IGNORECASE))
-        has_gp = bool(
-            re.search(r"grand prix|\bGP\b", paren_content, re.IGNORECASE),
+        classification = self._classifier.classify(
+            paren_content=paren_content,
+            team_name=self._team_name or "",
+            year_text=year_text,
+            headers=self._table_headers,
         )
+        record["paren_classification"] = classification
 
-        gp_links = [lnk for lnk in non_year_links if self._is_gp_link(lnk)]
-        driver_links = [lnk for lnk in non_year_links if not self._is_gp_link(lnk)]
+        gp_names: List[str] = classification.get("grand_prix") or []
+        if gp_names:
+            gp_links = [lnk for lnk in non_year_links if self._is_gp_link(lnk)]
+            if gp_links:
+                gp_entries = [
+                    {"text": self._expand_gp_name(lnk), "url": lnk["url"]}
+                    if lnk.get("url")
+                    else {"text": self._expand_gp_name(lnk)}
+                    for lnk in gp_links
+                ]
+            else:
+                gp_entries = [{"text": name} for name in gp_names]
+            record["grand_prix_scope"] = {"type": "only", "grand_prix": gp_entries}
+            record["_season_scoped_gp"] = True
+            return
 
-        if (has_only or has_gp) and gp_links:
-            gp_entries = [
-                {"text": self._expand_gp_name(lnk), "url": lnk["url"]}
-                if lnk.get("url")
-                else {"text": self._expand_gp_name(lnk)}
-                for lnk in gp_links
-            ]
-            if gp_entries:
-                record["grand_prix_scope"] = {"type": "only", "grand_prix": gp_entries}
-                record["_season_scoped_gp"] = True
-        elif driver_links and not has_only and not has_gp:
-            has_car = bool(re.search(r"\bcar\b", paren_content, re.IGNORECASE))
-            field = "car" if has_car else "driver"
-            record[field] = [
-                {"text": lnk["text"], "url": lnk["url"]}
-                if lnk.get("url")
-                else {"text": lnk["text"]}
-                for lnk in driver_links
-            ]
+        other_links = [lnk for lnk in non_year_links if not self._is_gp_link(lnk)]
 
-        # Gemini-based semantic classification (when classifier is configured).
-        if self._classifier is not None:
-            classification = self._classifier.classify(
-                paren_content=paren_content,
-                team_name=self._team_name or "",
-                year_text=year_text,
-                headers=self._table_headers,
-            )
-            record["paren_classification"] = classification
+        driver_names: List[str] = classification.get("driver") or []
+        if driver_names:
+            if other_links:
+                record["driver"] = [
+                    {"text": lnk["text"], "url": lnk["url"]}
+                    if lnk.get("url")
+                    else {"text": lnk["text"]}
+                    for lnk in other_links
+                ]
+            else:
+                record["driver"] = [{"text": name} for name in driver_names]
+            return
+
+        car_names: List[str] = classification.get("car_model") or []
+        if car_names:
+            if other_links:
+                record["car"] = [
+                    {"text": lnk["text"], "url": lnk["url"]}
+                    if lnk.get("url")
+                    else {"text": lnk["text"]}
+                    for lnk in other_links
+                ]
+            else:
+                record["car"] = [{"text": name} for name in car_names]
 
     # ------------------------------------------------------------------
     # helpers
