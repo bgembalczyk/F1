@@ -1,7 +1,7 @@
 """Klient Gemini API z obsługą cache.
 
 Klucz API powinien znajdować się w pliku ``config/gemini_api_key.txt``
-(względem katalogu repo).  Plik ten jest wykluczony z repozytorium przez
+(względem katalogu repo). Plik ten jest wykluczony z repozytorium przez
 ``.gitignore``.
 
 Przykład użycia::
@@ -11,40 +11,49 @@ Przykład użycia::
     result = client.query(prompt)
 """
 
+from __future__ import annotations
+
 import json
-import urllib.request
+import ssl
 import urllib.error
+import urllib.request
 from pathlib import Path
 from typing import Any
 from typing import Dict
 from typing import Optional
 
+import certifi
+
 from infrastructure.gemini.cache import GeminiCache
 
 
-_DEFAULT_MODEL = "gemini-2.0-flash"
+_DEFAULT_MODEL = "gemini-2.5-flash"
 _API_URL_TEMPLATE = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     "{model}:generateContent?key={api_key}"
 )
-_DEFAULT_KEY_FILE = Path(__file__).resolve().parents[3] / "config" / "gemini_api_key.txt"
+_DEFAULT_KEY_FILE = Path(__file__).resolve().parents[4] / "config" / "gemini_api_key.txt"
+_DEFAULT_TIMEOUT = 30
 
 
 class GeminiClient:
     """Prosty klient REST API Gemini z opcjonalnym cache."""
 
     def __init__(
-            self,
-            api_key: str,
-            *,
-            model: str = _DEFAULT_MODEL,
-            cache: Optional[GeminiCache] = None,
+        self,
+        api_key: str,
+        *,
+        model: str = _DEFAULT_MODEL,
+        cache: Optional[GeminiCache] = None,
+        timeout: int = _DEFAULT_TIMEOUT,
     ) -> None:
         if not api_key:
             raise ValueError("Gemini API key nie może być pusty.")
         self._api_key = api_key
         self._model = model
         self._cache = cache if cache is not None else GeminiCache()
+        self._timeout = timeout
+        self._ssl_context = self._build_ssl_context()
 
     # ------------------------------------------------------------------
     # factory
@@ -52,11 +61,12 @@ class GeminiClient:
 
     @classmethod
     def from_key_file(
-            cls,
-            key_file: Path | str | None = None,
-            *,
-            model: str = _DEFAULT_MODEL,
-            cache: Optional[GeminiCache] = None,
+        cls,
+        key_file: Path | str | None = None,
+        *,
+        model: str = _DEFAULT_MODEL,
+        cache: Optional[GeminiCache] = None,
+        timeout: int = _DEFAULT_TIMEOUT,
     ) -> "GeminiClient":
         """Tworzy klienta wczytując klucz API z pliku.
 
@@ -70,13 +80,18 @@ class GeminiClient:
                 "Utwórz plik i wpisz do niego swój klucz API (tylko klucz, bez spacji)."
             )
         api_key = path.read_text(encoding="utf-8").strip()
-        return cls(api_key, model=model, cache=cache)
+        return cls(api_key, model=model, cache=cache, timeout=timeout)
 
     # ------------------------------------------------------------------
     # public API
     # ------------------------------------------------------------------
 
-    def query(self, prompt: str, *, response_mime_type: str = "application/json") -> Dict[str, Any]:
+    def query(
+        self,
+        prompt: str,
+        *,
+        response_mime_type: str = "application/json",
+    ) -> Dict[str, Any]:
         """Wysyła zapytanie do Gemini i zwraca odpowiedź jako słownik.
 
         Jeśli dokładnie to samo pytanie było już zadane i odpowiedź
@@ -95,6 +110,11 @@ class GeminiClient:
     # internal
     # ------------------------------------------------------------------
 
+    @staticmethod
+    def _build_ssl_context() -> ssl.SSLContext:
+        """Buduje kontekst SSL oparty o certyfikaty certifi."""
+        return ssl.create_default_context(cafile=certifi.where())
+
     def _call_api(self, prompt: str, *, response_mime_type: str) -> Dict[str, Any]:
         url = _API_URL_TEMPLATE.format(model=self._model, api_key=self._api_key)
         body = {
@@ -112,18 +132,55 @@ class GeminiClient:
         print(f"[GeminiClient] >>> Zapytanie do API (model={self._model}):")
         print(prompt)
 
-        with urllib.request.urlopen(req, timeout=30) as resp:  # noqa: S310
-            raw = resp.read().decode("utf-8")
+        try:
+            with urllib.request.urlopen(  # noqa: S310
+                req,
+                timeout=self._timeout,
+                context=self._ssl_context,
+            ) as resp:
+                raw = resp.read().decode("utf-8")
+        except urllib.error.HTTPError as exc:
+            error_body = exc.read().decode("utf-8", errors="replace")
+            raise RuntimeError(
+                f"Gemini API zwróciło HTTP {exc.code}: {exc.reason}\n"
+                f"Response body:\n{error_body}"
+            ) from exc
+        except urllib.error.URLError as exc:
+            raise RuntimeError(
+                "Nie udało się połączyć z Gemini API. "
+                "Sprawdź połączenie sieciowe, SSL/certyfikaty oraz poprawność endpointu.\n"
+                f"Szczegóły: {exc}"
+            ) from exc
 
         print("[GeminiClient] <<< Odpowiedź surowa od API:")
         print(raw)
 
-        api_response = json.loads(raw)
+        try:
+            api_response = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            raise RuntimeError(
+                f"Gemini API zwróciło niepoprawny JSON:\n{raw}"
+            ) from exc
+
         text = (
             api_response
             .get("candidates", [{}])[0]
             .get("content", {})
             .get("parts", [{}])[0]
-            .get("text", "{}")
+            .get("text")
         )
-        return json.loads(text)
+
+        if text is None:
+            raise RuntimeError(
+                "Gemini API nie zwróciło pola candidates[0].content.parts[0].text.\n"
+                f"Pełna odpowiedź:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}"
+            )
+
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError as exc:
+            raise RuntimeError(
+                "Gemini zwróciło tekst, który nie jest poprawnym JSON-em.\n"
+                f"Text:\n{text}\n\n"
+                f"Pełna odpowiedź API:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}"
+            ) from exc
