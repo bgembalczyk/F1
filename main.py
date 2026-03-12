@@ -3,9 +3,8 @@ from pathlib import Path
 
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
-# Complete scrapers
-from scrapers.circuits.complete_scraper import F1CompleteCircuitScraper
 # List scrapers
+from scrapers.circuits.helpers.export import export_complete_circuits
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.current_constructors_list import CurrentConstructorsListScraper
 from scrapers.constructors.former_constructors_list import (
@@ -150,7 +149,7 @@ def run_list_scrapers() -> None:
 
 
 def run_complete_scrapers() -> None:
-    # te dwa używają standardowego eksportu do pojedynczych plików
+    # grand prix używa standardowego eksportu do pojedynczego pliku
     run_config = RunConfig(
         output_dir=BASE_WIKI_DIR,
         include_urls=True,
@@ -173,6 +172,11 @@ def run_complete_scrapers() -> None:
     )
     print("[complete] finished F1CompleteGrandPrixScraper")
 
+    # tory, kierowcy i sezony mają własne helpery eksportu do wielu plików
+    export_complete_circuits(
+        output_dir=BASE_WIKI_DIR / "circuits/complete_circuits",
+        include_urls=True,
+    )
     # kierowcy i sezony mają własne helpery eksportu do wielu plików
     print("[complete] running  CompleteDriverScraper")
     export_complete_drivers(
