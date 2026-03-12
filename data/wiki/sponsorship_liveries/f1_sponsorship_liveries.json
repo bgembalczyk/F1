@@ -11137,6 +11137,10 @@
             "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
           },
           {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
             "text": "Rainbow Jeanswear"
           }
         ],
@@ -11184,7 +11188,11 @@
             "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
           },
           {
-            "text": "Hi-Line Car Stripes Elf Valvoline"
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Hi-Line Car Stripes"
           }
         ],
         "grand_prix_scope": {
@@ -11192,7 +11200,51 @@
           "grand_prix": [
             {
               "text": "British Grand Prix"
-            },
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1979,
+            "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Derek Daly",
+            "url": "https://en.wikipedia.org/wiki/Derek_Daly"
+          },
+          {
+            "text": "Patrick Gaillard",
+            "url": "https://en.wikipedia.org/wiki/Patrick_Gaillard"
+          },
+          {
+            "text": "Marc Surer",
+            "url": "https://en.wikipedia.org/wiki/Marc_Surer"
+          }
+        ],
+        "main_colours": [
+          "Black Red"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Theodore Racing Hong Kong",
+            "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Elf",
+            "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
             {
               "text": "Austrian Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1979_Austrian_Grand_Prix"
@@ -11232,6 +11284,10 @@
           {
             "text": "Theodore Racing Hong Kong",
             "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
         "grand_prix_scope": {
@@ -21418,6 +21474,10 @@
           {
             "text": "Ligier",
             "url": "https://en.wikipedia.org/wiki/Ligier"
+          },
+          {
+            "text": "Elf Aquitaine",
+            "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
           }
         ],
         "additional_major_sponsors": [
@@ -21464,7 +21524,11 @@
             "url": "https://en.wikipedia.org/wiki/Ligier"
           },
           {
-            "text": "Loto Elf Aquitaine"
+            "text": "Loto"
+          },
+          {
+            "text": "Elf Aquitaine",
+            "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
           }
         ],
         "additional_major_sponsors": [
@@ -21517,6 +21581,10 @@
           },
           {
             "text": "Les Pages Jaunes"
+          },
+          {
+            "text": "Elf Aquitaine",
+            "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
           }
         ],
         "additional_major_sponsors": [
@@ -21563,7 +21631,11 @@
             "url": "https://en.wikipedia.org/wiki/Ligier"
           },
           {
-            "text": "Loto Elf Aquitaine"
+            "text": "Loto"
+          },
+          {
+            "text": "Elf Aquitaine",
+            "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
           }
         ],
         "additional_major_sponsors": [
@@ -21609,7 +21681,11 @@
             "url": "https://en.wikipedia.org/wiki/Ligier"
           },
           {
-            "text": "Loto Elf Aquitaine"
+            "text": "Loto"
+          },
+          {
+            "text": "Elf Aquitaine",
+            "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
           }
         ],
         "additional_major_sponsors": [
@@ -22162,7 +22238,8 @@
             "url": "https://en.wikipedia.org/wiki/Renault"
           },
           {
-            "text": "Elf Goodyear Olympus"
+            "text": "Elf",
+            "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
           }
         ],
         "non-tobacco_alcohol_livery_changes": "\"John Player Special\" and the \"JPS\" was replaced with Laurels designs"
@@ -22193,7 +22270,16 @@
             "url": "https://en.wikipedia.org/wiki/Tissot"
           },
           {
-            "text": "Elf Goodyear Olympus"
+            "text": "Renault",
+            "url": "https://en.wikipedia.org/wiki/Renault"
+          },
+          {
+            "text": "Elf",
+            "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           }
         ],
         "non-tobacco_alcohol_livery_changes": "\"John Player Special\" and the \"JPS\" was replaced with Laurels designs"
@@ -22224,7 +22310,20 @@
             "url": "https://en.wikipedia.org/wiki/Tissot"
           },
           {
-            "text": "Elf Goodyear Olympus"
+            "text": "Renault",
+            "url": "https://en.wikipedia.org/wiki/Renault"
+          },
+          {
+            "text": "Elf",
+            "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Olympus",
+            "url": "https://en.wikipedia.org/wiki/Olympus_Corporation"
           }
         ],
         "non-tobacco_alcohol_livery_changes": "\"John Player Special\" and the \"JPS\" was replaced with Laurels designs"
@@ -22259,7 +22358,12 @@
             "url": "https://en.wikipedia.org/wiki/Renault"
           },
           {
-            "text": "Elf Goodyear Olympus"
+            "text": "Elf",
+            "url": "https://en.wikipedia.org/wiki/Elf_Aquitaine"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
             "text": "DeLonghi",
@@ -22994,9 +23098,10 @@
             "text": "Total",
             "url": "https://en.wikipedia.org/wiki/TotalEnergies"
           },
-          "Rexona",
-          "Sure",
-          "Degree",
+          {
+            "text": "Rexona/Sure/Degree",
+            "url": "https://en.wikipedia.org/wiki/Rexona"
+          },
           {
             "text": "Clear",
             "url": "https://en.wikipedia.org/wiki/Clear_(shampoo)"
@@ -24689,50 +24794,6 @@
         "main_colours": [
           "White"
         ],
-        "livery_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "Champion",
-            "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
-          },
-          {
-            "text": "Goodyear",
-            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-          },
-          {
-            "text": "Valvoline Monaco Fine Arts Gallery Macconal-Mason Gallery Fine Paintings"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Monaco Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
-            },
-            {
-              "text": "British Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Hans-Joachim Stuck",
-            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
-          }
-        ],
-        "main_colours": [
-          "White"
-        ],
         "livery_sponsors": [
           {
             "text": "Theodore Racing Hong Kong",
@@ -24759,6 +24820,94 @@
             {
               "text": "United States Grand Prix West",
               "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Hans-Joachim Stuck",
+            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+          }
+        ],
+        "main_colours": [
+          "White"
+        ],
+        "livery_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "Champion",
+            "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Monaco Fine Arts Gallery"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Monaco Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Hans-Joachim Stuck",
+            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+          }
+        ],
+        "main_colours": [
+          "White"
+        ],
+        "livery_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "Champion",
+            "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Macconal-Mason Gallery Fine Paintings"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "British Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
             }
           ]
         }
@@ -24827,7 +24976,11 @@
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
-            "text": "Valvoline Monaco Fine Arts Gallery Macconal-Mason Gallery Fine Paintings"
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Monaco Fine Arts Gallery"
           }
         ],
         "grand_prix_scope": {
@@ -24836,7 +24989,49 @@
             {
               "text": "Monaco Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
-            },
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Hans-Joachim Stuck",
+            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+          }
+        ],
+        "main_colours": [
+          "White"
+        ],
+        "livery_sponsors": [
+          "John Day Model Cars"
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Champion",
+            "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Macconal-Mason Gallery Fine Paintings"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
             {
               "text": "British Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
@@ -24910,7 +25105,11 @@
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
-            "text": "Valvoline Monaco Fine Arts Gallery Macconal-Mason Gallery Fine Paintings"
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Monaco Fine Arts Gallery"
           }
         ],
         "grand_prix_scope": {
@@ -24919,7 +25118,49 @@
             {
               "text": "Monaco Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
-            },
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Hans-Joachim Stuck",
+            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+          }
+        ],
+        "main_colours": [
+          "White"
+        ],
+        "livery_sponsors": [
+          "Orange"
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Champion",
+            "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Macconal-Mason Gallery Fine Paintings"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
             {
               "text": "British Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
@@ -24993,7 +25234,11 @@
             "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
           },
           {
-            "text": "Valvoline Monaco Fine Arts Gallery Macconal-Mason Gallery Fine Paintings"
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Monaco Fine Arts Gallery"
           }
         ],
         "grand_prix_scope": {
@@ -25002,7 +25247,49 @@
             {
               "text": "Monaco Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_Monaco_Grand_Prix"
-            },
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Hans-Joachim Stuck",
+            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+          }
+        ],
+        "main_colours": [
+          "Arturo Merzario"
+        ],
+        "livery_sponsors": [
+          "White"
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Champion",
+            "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "Macconal-Mason Gallery Fine Paintings"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
             {
               "text": "British Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
@@ -26225,7 +26512,18 @@
     "team": "Matra",
     "liveries": [
       {
-        "season": null,
+        "season": [
+          {
+            "year": 1968,
+            "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+          }
+        ],
+        "car": [
+          {
+            "text": "Matra MS9",
+            "url": "https://en.wikipedia.org/wiki/Matra_MS9"
+          }
+        ],
         "main_colours": [
           "Green"
         ],
@@ -27370,9 +27668,9 @@
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
-          "CA",
           {
-            "text": "Inc."
+            "text": "CA, Inc.",
+            "url": "https://en.wikipedia.org/wiki/CA,_Inc."
           },
           {
             "text": "Hugo Boss",
@@ -27431,7 +27729,10 @@
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
-          "CA",
+          {
+            "text": "CA, Inc.",
+            "url": "https://en.wikipedia.org/wiki/CA,_Inc."
+          },
           {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
@@ -27489,7 +27790,10 @@
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
-          "CA",
+          {
+            "text": "CA, Inc.",
+            "url": "https://en.wikipedia.org/wiki/CA,_Inc."
+          },
           {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
@@ -27548,7 +27852,10 @@
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
-          "CA",
+          {
+            "text": "CA, Inc.",
+            "url": "https://en.wikipedia.org/wiki/CA,_Inc."
+          },
           {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
@@ -27607,7 +27914,10 @@
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
-          "CA",
+          {
+            "text": "CA, Inc.",
+            "url": "https://en.wikipedia.org/wiki/CA,_Inc."
+          },
           {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
@@ -27670,9 +27980,9 @@
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
-          "CA",
           {
-            "text": "Inc."
+            "text": "CA, Inc.",
+            "url": "https://en.wikipedia.org/wiki/CA,_Inc."
           },
           {
             "text": "Hugo Boss",
@@ -27732,7 +28042,6 @@
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
-          "CA",
           {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
@@ -27794,7 +28103,6 @@
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
-          "CA",
           {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
@@ -27853,7 +28161,6 @@
             "text": "Mobil 1",
             "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
-          "CA",
           {
             "text": "Hugo Boss",
             "url": "https://en.wikipedia.org/wiki/Hugo_Boss"
@@ -29519,7 +29826,7 @@
             "url": "https://en.wikipedia.org/wiki/Allwyn_Entertainment"
           }
         ],
-        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Before being phased out for proper Vuse (previously Vype) and Velo (previously Lyft) branding, A Better Tomorrow was used to advertise British American Tobacco 's aforementioned smokeless product brands. The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors, most commonly Google and BAT, as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix. Commonly, fan-designed liveries will appear at certain Grands Prix, most commonly the Abu Dhabi Grand Prix , all in partnership with BAT."
+        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
       },
       {
         "season": [
@@ -29663,7 +29970,141 @@
             "url": "https://en.wikipedia.org/wiki/Iron_Mountain_(company)"
           }
         ],
-        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "Before being phased out for proper Vuse (previously Vype) and Velo (previously Lyft) branding, A Better Tomorrow was used to advertise British American Tobacco 's aforementioned smokeless product brands. The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors, most commonly Google and BAT, as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix. Commonly, fan-designed liveries will appear at certain Grands Prix, most commonly the Abu Dhabi Grand Prix , all in partnership with BAT."
+        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
+      },
+      {
+        "season": [
+          {
+            "year": 2026,
+            "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Orange",
+          "Black"
+        ],
+        "additional_colours": [
+          "Dark blue",
+          "Dark green"
+        ],
+        "livery_principal_sponsors": "OKX , Google Chrome (2024-2025), Google Gemini (2025-2026), Mastercard",
+        "additional_major_sponsors": [
+          {
+            "text": "A Better Tomorrow",
+            "url": "https://en.wikipedia.org/wiki/British_American_Tobacco#Formula_One"
+          },
+          {
+            "text": "Pirelli",
+            "url": "https://en.wikipedia.org/wiki/Pirelli"
+          },
+          {
+            "text": "Cisco",
+            "url": "https://en.wikipedia.org/wiki/Cisco"
+          },
+          {
+            "text": "Cisco Webex",
+            "url": "https://en.wikipedia.org/wiki/Cisco_Webex"
+          },
+          {
+            "text": "DP World",
+            "url": "https://en.wikipedia.org/wiki/DP_World"
+          },
+          {
+            "text": "Richard Mille",
+            "url": "https://en.wikipedia.org/wiki/Richard_Mille"
+          },
+          {
+            "text": "Hilton",
+            "url": "https://en.wikipedia.org/wiki/Hilton_Worldwide"
+          },
+          {
+            "text": "Dell Technologies",
+            "url": "https://en.wikipedia.org/wiki/Dell_Technologies"
+          },
+          {
+            "text": "DeWalt",
+            "url": "https://en.wikipedia.org/wiki/DeWalt"
+          },
+          {
+            "text": "FxPro",
+            "url": "https://en.wikipedia.org/wiki/FxPro"
+          },
+          {
+            "text": "Jack Daniel's",
+            "url": "https://en.wikipedia.org/wiki/Jack_Daniel%27s"
+          },
+          {
+            "text": "Arrow Electronics",
+            "url": "https://en.wikipedia.org/wiki/Arrow_Electronics"
+          },
+          {
+            "text": "Workday",
+            "url": "https://en.wikipedia.org/wiki/Workday,_Inc."
+          },
+          {
+            "text": "Dropbox",
+            "url": "https://en.wikipedia.org/wiki/Dropbox"
+          },
+          {
+            "text": "Airwallex",
+            "url": "https://en.wikipedia.org/wiki/Airwallex"
+          },
+          {
+            "text": "Ecolab",
+            "url": "https://en.wikipedia.org/wiki/Ecolab"
+          },
+          {
+            "text": "Allwyn",
+            "url": "https://en.wikipedia.org/wiki/Allwyn_Entertainment"
+          },
+          {
+            "text": "Avenga",
+            "url": "https://en.wikipedia.org/wiki/Avenga"
+          },
+          {
+            "text": "Okta",
+            "url": "https://en.wikipedia.org/wiki/Okta,_Inc."
+          },
+          {
+            "text": "Greene Tweed"
+          },
+          {
+            "text": "Freshworks",
+            "url": "https://en.wikipedia.org/wiki/Freshworks"
+          },
+          {
+            "text": "Groq",
+            "url": "https://en.wikipedia.org/wiki/Groq"
+          },
+          {
+            "text": "Iron Mountain",
+            "url": "https://en.wikipedia.org/wiki/Iron_Mountain_(company)"
+          },
+          {
+            "text": "Rubrik",
+            "url": "https://en.wikipedia.org/wiki/Rubrik"
+          },
+          {
+            "text": "Deloitte",
+            "url": "https://en.wikipedia.org/wiki/Deloitte"
+          },
+          {
+            "text": "ONEflight International"
+          },
+          {
+            "text": "Hedera",
+            "url": "https://en.wikipedia.org/wiki/Hedera_(distributed_ledger)"
+          },
+          {
+            "text": "Puma",
+            "url": "https://en.wikipedia.org/wiki/Puma_(brand)"
+          },
+          {
+            "text": "Etihad",
+            "url": "https://en.wikipedia.org/wiki/Etihad_Airways"
+          }
+        ],
+        "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
       }
     ]
   },
@@ -30926,7 +31367,18 @@
         ]
       },
       {
-        "season": null,
+        "season": [
+          {
+            "year": 2006,
+            "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+          }
+        ],
+        "driver": [
+          {
+            "text": "Spyker",
+            "url": "https://en.wikipedia.org/wiki/Spyker_Cars"
+          }
+        ],
         "main_colours": [
           "Orange"
         ],
@@ -38815,7 +39267,12 @@
     "team": "Spirit",
     "liveries": [
       {
-        "season": null,
+        "season": [
+          {
+            "year": 1983,
+            "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+          }
+        ],
         "main_colours": [
           "White"
         ],
@@ -38836,7 +39293,12 @@
         ]
       },
       {
-        "season": null,
+        "season": [
+          {
+            "year": 1983,
+            "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+          }
+        ],
         "main_colours": [
           "Blue"
         ],
@@ -38860,7 +39322,12 @@
         ]
       },
       {
-        "season": null,
+        "season": [
+          {
+            "year": 1984,
+            "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+          }
+        ],
         "main_colours": [
           "White"
         ],
@@ -38881,7 +39348,12 @@
         ]
       },
       {
-        "season": null,
+        "season": [
+          {
+            "year": 1984,
+            "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+          }
+        ],
         "main_colours": [
           "Red"
         ],
@@ -38902,7 +39374,12 @@
         ]
       },
       {
-        "season": null,
+        "season": [
+          {
+            "year": 1985,
+            "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+          }
+        ],
         "main_colours": [
           "White"
         ],
@@ -38920,7 +39397,12 @@
         ]
       },
       {
-        "season": null,
+        "season": [
+          {
+            "year": 1985,
+            "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+          }
+        ],
         "main_colours": [
           "Blue"
         ],
@@ -40144,8 +40626,10 @@
           "Garage Italiya"
         ],
         "additional_major_sponsors": [
-          "Stanley Electric Co",
-          "Ltd."
+          {
+            "text": "Stanley Electric Co, Ltd.",
+            "url": "https://en.wikipedia.org/wiki/Stanley_Electric"
+          }
         ]
       },
       {
@@ -41204,6 +41688,14 @@
             "url": "https://en.wikipedia.org/wiki/Avex_Group"
           },
           {
+            "text": "Travelex",
+            "url": "https://en.wikipedia.org/wiki/Travelex"
+          },
+          {
+            "text": "Dassault Systèmes",
+            "url": "https://en.wikipedia.org/wiki/Dassault_Syst%C3%A8mes"
+          },
+          {
             "text": "Ebbon-Dacs"
           }
         ],
@@ -41271,6 +41763,13 @@
           {
             "text": "Avex Group",
             "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          },
+          {
+            "text": "Dassault Systèmes",
+            "url": "https://en.wikipedia.org/wiki/Dassault_Syst%C3%A8mes"
+          },
+          {
+            "text": "Ebbon-Dacs"
           },
           {
             "text": "Star Sports",
@@ -41341,6 +41840,13 @@
           {
             "text": "Avex Group",
             "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          },
+          {
+            "text": "Dassault Systèmes",
+            "url": "https://en.wikipedia.org/wiki/Dassault_Syst%C3%A8mes"
+          },
+          {
+            "text": "Ebbon-Dacs"
           }
         ],
         "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
@@ -41407,6 +41913,13 @@
           {
             "text": "Avex Group",
             "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          },
+          {
+            "text": "Dassault Systèmes",
+            "url": "https://en.wikipedia.org/wiki/Dassault_Syst%C3%A8mes"
+          },
+          {
+            "text": "Ebbon-Dacs"
           }
         ],
         "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
@@ -41473,6 +41986,9 @@
           {
             "text": "Avex Group",
             "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          },
+          {
+            "text": "Ebbon-Dacs"
           },
           {
             "text": "Kingfisher Airlines",
@@ -41543,6 +42059,9 @@
           {
             "text": "Avex Group",
             "url": "https://en.wikipedia.org/wiki/Avex_Group"
+          },
+          {
+            "text": "Ebbon-Dacs"
           }
         ],
         "special_liveries": "The team supported movies The Dark Knight at the 2008 British Grand Prix respectively."
@@ -42257,7 +42776,7 @@
         ],
         "livery_sponsors": [
           {
-            "text": "Imola Cermica Simac PastaMatic"
+            "text": "Imola Cermica"
           }
         ],
         "additional_major_sponsors": [
@@ -42274,6 +42793,49 @@
             "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
           },
           "to": null
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1981,
+            "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Eddie Cheever",
+            "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
+          }
+        ],
+        "main_colours": [
+          "White",
+          "Blue"
+        ],
+        "livery_sponsors": [
+          {
+            "text": "Simac PastaMatic"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "notes": null,
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Canadian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
+            },
+            {
+              "text": "Caesars Palace Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
+            }
+          ]
         }
       },
       {
@@ -42323,7 +42885,7 @@
         ],
         "livery_sponsors": [
           {
-            "text": "Imola Cermica Simac PastaMatic"
+            "text": "Imola Cermica"
           }
         ],
         "additional_major_sponsors": [
@@ -45082,6 +45644,10 @@
           {
             "text": "BMW",
             "url": "https://en.wikipedia.org/wiki/BMW"
+          },
+          {
+            "text": "Compaq",
+            "url": "https://en.wikipedia.org/wiki/Compaq"
           }
         ],
         "additional_major_sponsors": [
@@ -45098,12 +45664,20 @@
             "url": "https://en.wikipedia.org/wiki/Thomson_Reuters"
           },
           {
+            "text": "Veltins",
+            "url": "https://en.wikipedia.org/wiki/Veltins"
+          },
+          {
             "text": "Hamleys",
             "url": "https://en.wikipedia.org/wiki/Hamleys"
           },
           {
             "text": "Petrobras",
             "url": "https://en.wikipedia.org/wiki/Petrobras"
+          },
+          {
+            "text": "Nortel Networks",
+            "url": "https://en.wikipedia.org/wiki/Nortel_Networks"
           },
           {
             "text": "Worldcom",
@@ -45129,6 +45703,10 @@
             "url": "https://en.wikipedia.org/wiki/BMW"
           },
           {
+            "text": "Compaq",
+            "url": "https://en.wikipedia.org/wiki/Compaq"
+          },
+          {
             "text": "HP",
             "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
           }
@@ -45139,6 +45717,10 @@
             "url": "https://en.wikipedia.org/wiki/Castrol"
           },
           {
+            "text": "Allianz",
+            "url": "https://en.wikipedia.org/wiki/Allianz"
+          },
+          {
             "text": "FedEx",
             "url": "https://en.wikipedia.org/wiki/FedEx"
           },
@@ -45147,12 +45729,20 @@
             "url": "https://en.wikipedia.org/wiki/Thomson_Reuters"
           },
           {
+            "text": "Veltins",
+            "url": "https://en.wikipedia.org/wiki/Veltins"
+          },
+          {
             "text": "Hamleys",
             "url": "https://en.wikipedia.org/wiki/Hamleys"
           },
           {
             "text": "Petrobras",
             "url": "https://en.wikipedia.org/wiki/Petrobras"
+          },
+          {
+            "text": "Worldcom",
+            "url": "https://en.wikipedia.org/wiki/Worldcom"
           }
         ],
         "non-tobacco_alcohol_livery_changes": "In races in Germany, because of trademark issues, \"Anheuser-Busch\" was placed below \"Bud\". For non-alcohol races, Sea World Adventure Parks (from Anheuser-Busch's Busch Entertainment theme parks) replaced Budweiser"
@@ -45172,6 +45762,10 @@
           {
             "text": "BMW",
             "url": "https://en.wikipedia.org/wiki/BMW"
+          },
+          {
+            "text": "HP",
+            "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
           }
         ],
         "additional_major_sponsors": [
@@ -45180,8 +45774,16 @@
             "url": "https://en.wikipedia.org/wiki/Castrol"
           },
           {
+            "text": "Allianz",
+            "url": "https://en.wikipedia.org/wiki/Allianz"
+          },
+          {
             "text": "Budweiser",
             "url": "https://en.wikipedia.org/wiki/Budweiser"
+          },
+          {
+            "text": "FedEx",
+            "url": "https://en.wikipedia.org/wiki/FedEx"
           },
           {
             "text": "Thomson Reuters",
@@ -45221,6 +45823,10 @@
           {
             "text": "BMW",
             "url": "https://en.wikipedia.org/wiki/BMW"
+          },
+          {
+            "text": "HP",
+            "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
           }
         ],
         "additional_major_sponsors": [
@@ -45229,8 +45835,24 @@
             "url": "https://en.wikipedia.org/wiki/Castrol"
           },
           {
+            "text": "Allianz",
+            "url": "https://en.wikipedia.org/wiki/Allianz"
+          },
+          {
+            "text": "Budweiser",
+            "url": "https://en.wikipedia.org/wiki/Budweiser"
+          },
+          {
+            "text": "FedEx",
+            "url": "https://en.wikipedia.org/wiki/FedEx"
+          },
+          {
             "text": "Thomson Reuters",
             "url": "https://en.wikipedia.org/wiki/Thomson_Reuters"
+          },
+          {
+            "text": "Niquitin",
+            "url": "https://en.wikipedia.org/wiki/Niquitin"
           },
           {
             "text": "Hamleys",
@@ -45239,6 +45861,10 @@
           {
             "text": "Petrobras",
             "url": "https://en.wikipedia.org/wiki/Petrobras"
+          },
+          {
+            "text": "Oris",
+            "url": "https://en.wikipedia.org/wiki/Oris_(company)"
           }
         ],
         "non-tobacco_alcohol_livery_changes": "In races in Germany, because of trademark issues, \"Anheuser-Busch\" was placed below \"Bud\". For non-alcohol races, Sea World Adventure Parks (from Anheuser-Busch's Busch Entertainment theme parks) replaced Budweiser"
@@ -45258,12 +45884,28 @@
           {
             "text": "BMW",
             "url": "https://en.wikipedia.org/wiki/BMW"
+          },
+          {
+            "text": "HP",
+            "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
           }
         ],
         "additional_major_sponsors": [
           {
             "text": "Castrol",
             "url": "https://en.wikipedia.org/wiki/Castrol"
+          },
+          {
+            "text": "Allianz",
+            "url": "https://en.wikipedia.org/wiki/Allianz"
+          },
+          {
+            "text": "Budweiser",
+            "url": "https://en.wikipedia.org/wiki/Budweiser"
+          },
+          {
+            "text": "FedEx",
+            "url": "https://en.wikipedia.org/wiki/FedEx"
           },
           {
             "text": "RBS",
@@ -45280,6 +45922,10 @@
           {
             "text": "Petrobras",
             "url": "https://en.wikipedia.org/wiki/Petrobras"
+          },
+          {
+            "text": "Oris",
+            "url": "https://en.wikipedia.org/wiki/Oris_(company)"
           }
         ],
         "non-tobacco_alcohol_livery_changes": "In races in Germany, because of trademark issues, \"Anheuser-Busch\" was placed below \"Bud\". For non-alcohol races, Sea World Adventure Parks (from Anheuser-Busch's Busch Entertainment theme parks) replaced Budweiser"
