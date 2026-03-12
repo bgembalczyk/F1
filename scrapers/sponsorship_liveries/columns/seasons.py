@@ -1,11 +1,17 @@
 import re
+from typing import TYPE_CHECKING
 from typing import Any
 from typing import Dict
+from typing import List
+from typing import Optional
 
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 from models.services.season_service import SeasonService
+
+if TYPE_CHECKING:
+    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
 
 class SponsorshipSeasonsColumn(BaseColumn):
@@ -13,19 +19,42 @@ class SponsorshipSeasonsColumn(BaseColumn):
 
     Extends the standard ``SeasonsColumn`` behaviour by also parsing extra
     information that Wikipedia sometimes encodes inside a parenthetical
-    directly in the year cell:
+    directly in the year cell.
 
-    * ``(only <GP>)``   → sets ``grand_prix_scope`` on the record and marks
-      the record with ``_season_scoped_gp = True`` so that the post-processing
-      step in :class:`~scrapers.sponsorship_liveries.parsers.section_parser.SponsorshipSectionParser`
-      can split any broader overlapping season entry.
+    When *team_name* and *classifier* are provided, the parenthetical content
+    is sent **exclusively** to the Gemini API for semantic classification.
+    The structured result drives the following fields on the record:
 
-    * ``(<Driver>'s car)`` → sets ``driver`` on the record with the linked
-      driver info.  These entries are independent of the GP-scope mechanism.
+    * ``grand_prix_scope`` / ``_season_scoped_gp`` – when Gemini returns
+      ``grand_prix`` entries.  The ``_season_scoped_gp`` marker is used by
+      :class:`~scrapers.sponsorship_liveries.parsers.section_parser.SponsorshipSectionParser`
+      to split any broader overlapping season entry.
+
+    * ``driver`` – when Gemini returns ``driver`` entries.
+
+    * ``car`` – when Gemini returns ``car_model`` entries.
+
+    * ``engine`` – when Gemini returns ``engine_constructor`` entries.
+
+    Classified values are validated against the original cell text before use;
+    any value not found in the cell text is treated as a model hallucination and
+    discarded.  When no *classifier* is provided, parenthetical content is
+    ignored entirely.
     """
 
     # Year-only link text – e.g. "2004" or "2005"
     _YEAR_RE = re.compile(r"^\d{4}$")
+
+    def __init__(
+            self,
+            *,
+            team_name: Optional[str] = None,
+            classifier: Optional["ParenClassifier"] = None,
+            table_headers: Optional[List[str]] = None,
+    ) -> None:
+        self._team_name = team_name
+        self._classifier = classifier
+        self._table_headers = table_headers or []
 
     def parse(self, ctx: ColumnContext) -> Any:
         return SeasonService.parse_seasons(self._year_only_text(ctx.clean_text or ""))
@@ -42,37 +71,91 @@ class SponsorshipSeasonsColumn(BaseColumn):
         if not paren_content:
             return
 
+        # Analizowanie zawartości nawiasów odbywa się wyłącznie przez Gemini API.
+        if self._classifier is None:
+            return
+
         links = normalize_links(ctx.links or [])
         non_year_links = [
             lnk for lnk in links
             if not self._YEAR_RE.match((lnk.get("text") or "").strip())
         ]
 
-        has_only = bool(re.search(r"\bonly\b", paren_content, re.IGNORECASE))
-        has_gp = bool(
-            re.search(r"grand prix|\bGP\b", paren_content, re.IGNORECASE),
+        classification = self._classifier.classify(
+            paren_content=paren_content,
+            team_name=self._team_name or "",
+            year_text=year_text,
+            headers=self._table_headers,
         )
 
-        gp_links = [lnk for lnk in non_year_links if self._is_gp_link(lnk)]
-        driver_links = [lnk for lnk in non_year_links if not self._is_gp_link(lnk)]
+        # Filter out hallucinations: only keep values that actually appear in
+        # the original cell text.  "GP" is expanded to "Grand Prix" in the
+        # normalised text so that a Gemini response of "Chinese Grand Prix"
+        # still matches a cell that says "Chinese GP".
+        normalised_text = re.sub(r"\bGP\b", "Grand Prix", text, flags=re.IGNORECASE).lower()
 
-        if (has_only or has_gp) and gp_links:
-            gp_entries = [
-                {"text": self._expand_gp_name(lnk), "url": lnk["url"]}
-                if lnk.get("url")
-                else {"text": self._expand_gp_name(lnk)}
-                for lnk in gp_links
-            ]
-            if gp_entries:
-                record["grand_prix_scope"] = {"type": "only", "grand_prix": gp_entries}
-                record["_season_scoped_gp"] = True
-        elif driver_links and not has_only and not has_gp:
-            record["driver"] = [
-                {"text": lnk["text"], "url": lnk["url"]}
-                if lnk.get("url")
-                else {"text": lnk["text"]}
-                for lnk in driver_links
-            ]
+        def _filter_present(values: List[str]) -> List[str]:
+            return [v for v in values if v.lower() in normalised_text]
+
+        # Categories are applied in priority order and are mutually exclusive:
+        # grand_prix_scope > driver > car > engine.
+        gp_names: List[str] = _filter_present(classification.get("grand_prix") or [])
+        if gp_names:
+            gp_links = [lnk for lnk in non_year_links if self._is_gp_link(lnk)]
+            if gp_links:
+                gp_entries = [
+                    {"text": self._expand_gp_name(lnk), "url": lnk["url"]}
+                    if lnk.get("url")
+                    else {"text": self._expand_gp_name(lnk)}
+                    for lnk in gp_links
+                ]
+            else:
+                gp_entries = [{"text": name} for name in gp_names]
+            record["grand_prix_scope"] = {"type": "only", "grand_prix": gp_entries}
+            record["_season_scoped_gp"] = True
+            return
+
+        other_links = [lnk for lnk in non_year_links if not self._is_gp_link(lnk)]
+
+        driver_names: List[str] = _filter_present(classification.get("driver") or [])
+        if driver_names:
+            if other_links:
+                record["driver"] = [
+                    {"text": lnk["text"], "url": lnk["url"]}
+                    if lnk.get("url")
+                    else {"text": lnk["text"]}
+                    for lnk in other_links
+                ]
+            else:
+                record["driver"] = [{"text": name} for name in driver_names]
+            return
+
+        car_names: List[str] = _filter_present(classification.get("car_model") or [])
+        if car_names:
+            if other_links:
+                record["car"] = [
+                    {"text": lnk["text"], "url": lnk["url"]}
+                    if lnk.get("url")
+                    else {"text": lnk["text"]}
+                    for lnk in other_links
+                ]
+            else:
+                record["car"] = [{"text": name} for name in car_names]
+            return
+
+        engine_names: List[str] = _filter_present(
+            classification.get("engine_constructor") or [],
+        )
+        if engine_names:
+            if other_links:
+                record["engine"] = [
+                    {"text": lnk["text"], "url": lnk["url"]}
+                    if lnk.get("url")
+                    else {"text": lnk["text"]}
+                    for lnk in other_links
+                ]
+            else:
+                record["engine"] = [{"text": name} for name in engine_names]
 
     # ------------------------------------------------------------------
     # helpers

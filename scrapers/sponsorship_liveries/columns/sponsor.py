@@ -159,10 +159,11 @@ class SponsorColumn(BaseColumn):
     def _protect_link_slashes(
             text: str, links: list[dict[str, Any]],
     ) -> tuple[str, list[tuple[str, str]]]:
-        """Replace '/' inside known link texts with a placeholder.
+        """Replace '/' and ',' inside known link texts with a placeholder.
 
-        This prevents ``_split_parts_with_sep`` from treating a slash that is
-        part of a linked name (e.g. "RE/MAX") as a list separator.
+        This prevents ``_split_parts_with_sep`` from treating a slash or comma
+        that is part of a linked name (e.g. "RE/MAX", "CA, Inc.") as a list
+        separator.
 
         Returns the modified *text* and the list of ``(placeholder, original)``
         pairs needed to restore the originals afterwards.
@@ -170,7 +171,7 @@ class SponsorColumn(BaseColumn):
         replacements: list[tuple[str, str]] = []
         for link in links:
             link_text = clean_wiki_text(link.get("text") or "")
-            if "/" in link_text and link_text in text:
+            if ("/" in link_text or "," in link_text) and link_text in text:
                 placeholder = f"\x00{len(replacements)}\x00"
                 replacements.append((placeholder, link_text))
                 text = text.replace(link_text, placeholder)
@@ -197,23 +198,41 @@ class SponsorColumn(BaseColumn):
         """Split text into (part, separator_after) tuples.
 
         separator_after is one of ',', ';', '/' or '' for the last part.
+
+        In addition to the explicit separators, an implicit split is emitted
+        after a closing ')' at depth 0 when the next non-whitespace character
+        starts a new token.  This handles Wikipedia entries where consecutive
+        sponsors each carry their own parenthetical (e.g. year range or Grand
+        Prix scope) but are not separated by a comma or semicolon:
+        ``Elf (1983–1986) Goodyear (1984–1986) Olympus (1985)``
         """
         if not text:
             return []
         parts: list[tuple[str, str]] = []
         current: list[str] = []
         depth = 0
+        after_close_paren = False
         for char in text:
             if char == "(":
                 depth += 1
+                after_close_paren = False
             elif char == ")":
                 depth = max(depth - 1, 0)
+                if depth == 0:
+                    after_close_paren = True
             if depth == 0 and char in {",", ";", "/"}:
                 part = "".join(current).strip()
                 if part:
                     parts.append((part, char))
                 current = []
+                after_close_paren = False
                 continue
+            if depth == 0 and after_close_paren and not char.isspace() and char != ")":
+                part = "".join(current).strip()
+                if part:
+                    parts.append((part, " "))
+                current = []
+                after_close_paren = False
             current.append(char)
         part = "".join(current).strip()
         if part:

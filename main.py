@@ -38,6 +38,8 @@ from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
 from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
 from scrapers.seasons.helpers import export_complete_seasons
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
+from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+from infrastructure.gemini.client import GeminiClient
 from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
 
 # Ścieżki wyjściowe względem katalogu repo (ten plik jest w root)
@@ -112,11 +114,6 @@ def run_list_scrapers() -> None:
             None,
         ),
         (
-            F1SponsorshipLiveriesScraper,
-            "sponsorship_liveries/f1_sponsorship_liveries.json",
-            None,
-        ),
-        (
             TyreManufacturersBySeasonScraper,
             "tyres/f1_tyre_manufacturers_by_season.json",
             None,
@@ -124,7 +121,31 @@ def run_list_scrapers() -> None:
     ]
 
     for scraper_cls, json_rel, csv_rel in jobs:
+        print(f"[list] running  {scraper_cls.__name__}")
         run_and_export(scraper_cls, json_rel, csv_rel, run_config=run_config)
+        print(f"[list] finished {scraper_cls.__name__}")
+
+    # F1SponsorshipLiveriesScraper uses a Gemini-backed ParenClassifier that must be
+    # passed explicitly.  We try to load the key file; if it is absent we fall back
+    # gracefully (no classification, no crash).
+    try:
+        _gemini_client = GeminiClient.from_key_file()
+        _classifier: ParenClassifier | None = ParenClassifier(_gemini_client)
+        print("[main] Gemini ParenClassifier załadowany – adnotacje w nawiasach będą klasyfikowane.")
+    except FileNotFoundError as _e:
+        _classifier = None
+        print(f"[main] Brak klucza Gemini API ({_e}), klasyfikacja Gemini wyłączona.")
+
+    run_and_export(
+        F1SponsorshipLiveriesScraper,
+        "sponsorship_liveries/f1_sponsorship_liveries.json",
+        run_config=RunConfig(
+            output_dir=BASE_WIKI_DIR,
+            include_urls=True,
+            debug_dir=BASE_DEBUG_DIR,
+            scraper_kwargs={"classifier": _classifier},
+        ),
+    )
 
 
 def run_complete_scrapers() -> None:
@@ -134,25 +155,42 @@ def run_complete_scrapers() -> None:
         include_urls=True,
         debug_dir=BASE_DEBUG_DIR,
     )
+
+    print("[complete] running  F1CompleteCircuitScraper")
+    run_and_export(
+        F1CompleteCircuitScraper,
+        "circuits/f1_circuits_extended.json",
+        run_config=run_config,
+    )
+    print("[complete] finished F1CompleteCircuitScraper")
+
+    print("[complete] running  F1CompleteGrandPrixScraper")
     run_and_export(
         F1CompleteGrandPrixScraper,
         "grands_prix/f1_grands_prix_extended.json",
         run_config=run_config,
     )
+    print("[complete] finished F1CompleteGrandPrixScraper")
 
     # tory, kierowcy i sezony mają własne helpery eksportu do wielu plików
     export_complete_circuits(
         output_dir=BASE_WIKI_DIR / "circuits/complete_circuits",
         include_urls=True,
     )
+    # kierowcy i sezony mają własne helpery eksportu do wielu plików
+    print("[complete] running  CompleteDriverScraper")
     export_complete_drivers(
         output_dir=BASE_WIKI_DIR / "drivers/complete_drivers",
         include_urls=True,
     )
+    print("[complete] finished CompleteDriverScraper")
+
+    print("[complete] running  CompleteSeasonScraper")
     export_complete_seasons(
         output_dir=BASE_WIKI_DIR / "seasons/complete_seasons",
         include_urls=True,
     )
+    print("[complete] finished CompleteSeasonScraper")
 
 
 def main() -> None:

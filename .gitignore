@@ -1,5 +1,7 @@
 .idea
 data/wiki_cache
+data/gemini_cache
+config/gemini_api_key.txt
 __pycache__/
 *.pyc
 *.pyo
