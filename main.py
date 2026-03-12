@@ -125,7 +125,9 @@ def run_list_scrapers() -> None:
     ]
 
     for scraper_cls, json_rel, csv_rel in jobs:
+        print(f"[list] running  {scraper_cls.__name__}")
         run_and_export(scraper_cls, json_rel, csv_rel, run_config=run_config)
+        print(f"[list] finished {scraper_cls.__name__}")
 
 
 def run_complete_scrapers() -> None:
@@ -135,26 +137,37 @@ def run_complete_scrapers() -> None:
         include_urls=True,
         debug_dir=BASE_DEBUG_DIR,
     )
+
+    print("[complete] running  F1CompleteCircuitScraper")
     run_and_export(
         F1CompleteCircuitScraper,
         "circuits/f1_circuits_extended.json",
         run_config=run_config,
     )
+    print("[complete] finished F1CompleteCircuitScraper")
+
+    print("[complete] running  F1CompleteGrandPrixScraper")
     run_and_export(
         F1CompleteGrandPrixScraper,
         "grands_prix/f1_grands_prix_extended.json",
         run_config=run_config,
     )
+    print("[complete] finished F1CompleteGrandPrixScraper")
 
     # kierowcy i sezony mają własne helpery eksportu do wielu plików
+    print("[complete] running  CompleteDriverScraper")
     export_complete_drivers(
         output_dir=BASE_WIKI_DIR / "drivers/complete_drivers",
         include_urls=True,
     )
+    print("[complete] finished CompleteDriverScraper")
+
+    print("[complete] running  CompleteSeasonScraper")
     export_complete_seasons(
         output_dir=BASE_WIKI_DIR / "seasons/complete_seasons",
         include_urls=True,
     )
+    print("[complete] finished CompleteSeasonScraper")
 
 
 def main() -> None:

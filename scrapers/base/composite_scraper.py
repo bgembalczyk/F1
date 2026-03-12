@@ -4,6 +4,8 @@ from typing import Dict
 from typing import List
 from typing import Optional
 
+from tqdm import tqdm
+
 from scrapers.base.ABC import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 
@@ -43,7 +45,8 @@ class CompositeScraper(F1Scraper):
         records = self.records_adapter.get()
         complete: List[Dict[str, Any]] = []
 
-        for record in records:
+        scraper_name = self.__class__.__name__
+        for record in tqdm(records, desc=scraper_name, unit="item"):
             if not isinstance(record, dict):
                 raise TypeError(
                     f"{self.list_scraper.__class__.__name__} musi zwracać dict, "

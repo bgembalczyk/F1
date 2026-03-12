@@ -4,6 +4,7 @@ from typing import Dict
 from typing import List
 
 from bs4 import BeautifulSoup
+from tqdm import tqdm
 
 from scrapers.base.ABC import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
@@ -28,7 +29,7 @@ class CompleteSeasonScraper(F1Scraper):
         results: List[Dict[str, Any]] = []
         season_scraper = SingleSeasonScraper(options=self._options)
 
-        for season in seasons:
+        for season in tqdm(seasons, desc="CompleteSeasonScraper", unit="season"):
             season_info = season.get("season")
             if not isinstance(season_info, dict):
                 continue
