@@ -1,11 +1,17 @@
 import re
+from typing import TYPE_CHECKING
 from typing import Any
 from typing import Dict
+from typing import List
+from typing import Optional
 
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 from models.services.season_service import SeasonService
+
+if TYPE_CHECKING:
+    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
 
 class SponsorshipSeasonsColumn(BaseColumn):
@@ -22,10 +28,27 @@ class SponsorshipSeasonsColumn(BaseColumn):
 
     * ``(<Driver>'s car)`` → sets ``driver`` on the record with the linked
       driver info.  These entries are independent of the GP-scope mechanism.
+
+    When *team_name* and *classifier* are provided, any parenthetical that is
+    not fully handled by the heuristic logic above is additionally sent to
+    Gemini API for semantic classification.  The structured result is stored
+    under ``paren_classification`` in the record so that downstream code can
+    use it for more precise scope assignments.
     """
 
     # Year-only link text – e.g. "2004" or "2005"
     _YEAR_RE = re.compile(r"^\d{4}$")
+
+    def __init__(
+            self,
+            *,
+            team_name: Optional[str] = None,
+            classifier: Optional["ParenClassifier"] = None,
+            table_headers: Optional[List[str]] = None,
+    ) -> None:
+        self._team_name = team_name
+        self._classifier = classifier
+        self._table_headers = table_headers or []
 
     def parse(self, ctx: ColumnContext) -> Any:
         return SeasonService.parse_seasons(self._year_only_text(ctx.clean_text or ""))
@@ -75,6 +98,16 @@ class SponsorshipSeasonsColumn(BaseColumn):
                 else {"text": lnk["text"]}
                 for lnk in driver_links
             ]
+
+        # Gemini-based semantic classification (when classifier is configured).
+        if self._classifier is not None:
+            classification = self._classifier.classify(
+                paren_content=paren_content,
+                team_name=self._team_name or "",
+                year_text=year_text,
+                headers=self._table_headers,
+            )
+            record["paren_classification"] = classification
 
     # ------------------------------------------------------------------
     # helpers

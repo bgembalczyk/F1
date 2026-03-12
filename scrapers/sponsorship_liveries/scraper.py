@@ -2,6 +2,8 @@ from pathlib import Path
 from typing import Any
 from typing import Dict
 from typing import List
+from typing import Optional
+from typing import TYPE_CHECKING
 
 from bs4 import BeautifulSoup
 
@@ -17,6 +19,9 @@ from scrapers.sponsorship_liveries.parsers.section_parser import (
     SponsorshipSectionParser,
 )
 
+if TYPE_CHECKING:
+    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+
 
 class F1SponsorshipLiveriesScraper(F1Scraper):
     """
@@ -25,11 +30,23 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
 
     Każda sekcja to jeden zespół, a w sekcji znajduje się tabela z kolumnami
     (opcjonalnymi) dotyczącymi sezonu i zmian malowania.
+
+    Parameters
+    ----------
+    classifier:
+        Opcjonalny klasyfikator Gemini do semantycznej analizy nawiasowych
+        adnotacji w kolumnie roku.  Jeśli nie zostanie podany, klasyfikacja
+        nie jest wykonywana.
     """
 
     url = "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries"
 
-    def __init__(self, *, options: ScraperOptions | None = None) -> None:
+    def __init__(
+            self,
+            *,
+            options: ScraperOptions | None = None,
+            classifier: Optional["ParenClassifier"] = None,
+    ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
@@ -40,6 +57,7 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
             include_urls=self.include_urls,
             normalize_empty_values=self.normalize_empty_values,
             splitter=self._splitter,
+            classifier=classifier,
         )
 
     def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
