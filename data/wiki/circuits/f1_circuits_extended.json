@@ -13020,8 +13020,7 @@
               "url": "https://en.wikipedia.org/wiki/1999_Supersport_World_Championship"
             },
             "driver": {
-              "text": "Christian Kellner",
-              "url": "https://en.wikipedia.org/wiki/Christian_Kellner"
+              "text": "Christian Kellner"
             },
             "vehicle": {
               "text": "Yamaha YZF-R6",
@@ -46252,8 +46251,7 @@
               "url": "https://en.wikipedia.org/wiki/Supersport_World_Championship"
             },
             "driver": {
-              "text": "Christian Kellner",
-              "url": "https://en.wikipedia.org/wiki/Christian_Kellner"
+              "text": "Christian Kellner"
             },
             "vehicle": {
               "text": "Yamaha YZF-R6",
@@ -46858,20 +46856,6 @@
           ],
           "text": "Asphalt"
         }
-      },
-      {
-        "race_lap_records": [
-          {
-            "time": 133.3,
-            "driver": {
-              "text": "Bob McIntyre",
-              "url": "https://en.wikipedia.org/wiki/Bob_McIntyre_(motorcyclist)"
-            },
-            "vehicle": {
-              "text": "Gilera Saturno"
-            }
-          }
-        ]
       }
     ]
   },
@@ -54351,20 +54335,6 @@
             "series": {
               "text": "125cc",
               "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
-            }
-          }
-        ]
-      },
-      {
-        "race_lap_records": [
-          {
-            "time": 225.0,
-            "driver": {
-              "text": "Enrico Lorenzetti",
-              "url": "https://en.wikipedia.org/wiki/Enrico_Lorenzetti"
-            },
-            "vehicle": {
-              "text": "Moto Guzzi 500 Bicilindrica"
             }
           }
         ]
@@ -62597,13 +62567,7 @@
       ],
       "former_names": [
         {
-          "name": "Riverside International Motor Raceway",
-          "periods": [
-            {
-              "from": "1957",
-              "to": "1960"
-            }
-          ]
+          "name": "Riverside International Motor Raceway (early years)"
         }
       ]
     },
@@ -62631,7 +62595,7 @@
           "url": "https://en.wikipedia.org/wiki/Moreno_Valley,_California"
         },
         {
-          "text": "California 60 and Day Street 22255 Eucalyptus Ave"
+          "text": "22255 Eucalyptus Avenue"
         },
         {
           "text": "Moreno Valley, California",
@@ -63035,26 +62999,6 @@
             "series": {
               "text": "Can-Am",
               "url": "https://en.wikipedia.org/wiki/Can-Am"
-            }
-          },
-          {
-            "event": {
-              "text": "1960 United States Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1960_United_States_Grand_Prix"
-            },
-            "driver": {
-              "text": "Jack Brabham",
-              "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-            },
-            "vehicle": {
-              "text": "Cooper T53",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T53"
-            },
-            "time": 116.3,
-            "year": "1960",
-            "series": {
-              "text": "Formula One",
-              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -77567,8 +77511,7 @@
               "url": "https://en.wikipedia.org/wiki/Renault_Clio_Cup"
             },
             "driver": {
-              "text": "Stanislav Novikov",
-              "url": "https://en.wikipedia.org/wiki/Stanislav_Novikov"
+              "text": "Stanislav Novikov"
             },
             "vehicle": {
               "text": "Renault Clio R.S. V",
