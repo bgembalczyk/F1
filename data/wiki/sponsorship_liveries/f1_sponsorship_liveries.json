@@ -1498,43 +1498,6 @@
           "Gold"
         ],
         "additional_colours": null,
-        "main_sponsors": [
-          {
-            "text": "Warsteiner",
-            "url": "https://en.wikipedia.org/wiki/Warsteiner"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "FINA",
-            "url": "https://en.wikipedia.org/wiki/Petrofina"
-          },
-          {
-            "text": "Heuer",
-            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-          },
-          "Scicon Micro Systems"
-        ],
-        "grand_prix_scope": {
-          "type": "range",
-          "from": {
-            "text": "South African Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/1978_South_African_Grand_Prix"
-          },
-          "to": null
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1978,
-            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Gold"
-        ],
-        "additional_colours": null,
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -1559,6 +1522,43 @@
               "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
             }
           ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1978,
+            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Gold"
+        ],
+        "additional_colours": null,
+        "main_sponsors": [
+          {
+            "text": "Warsteiner",
+            "url": "https://en.wikipedia.org/wiki/Warsteiner"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "FINA",
+            "url": "https://en.wikipedia.org/wiki/Petrofina"
+          },
+          {
+            "text": "Heuer",
+            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
+          },
+          "Scicon Micro Systems"
+        ],
+        "grand_prix_scope": {
+          "type": "range",
+          "from": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/1978_South_African_Grand_Prix"
+          },
+          "to": null
         }
       },
       {
@@ -28806,13 +28806,11 @@
           },
           {
             "text": "Mobil",
-            "url": "https://en.wikipedia.org/wiki/Mobil",
-            "params": [
-              {
-                "text": "Mobil 1",
-                "url": "https://en.wikipedia.org/wiki/Mobil_1"
-              }
-            ]
+            "url": "https://en.wikipedia.org/wiki/Mobil"
+          },
+          {
+            "text": "Mobil 1",
+            "url": "https://en.wikipedia.org/wiki/Mobil_1"
           },
           {
             "text": "Pirelli",
@@ -28840,13 +28838,11 @@
           },
           {
             "text": "Exxon",
-            "url": "https://en.wikipedia.org/wiki/ExxonMobil",
-            "params": [
-              {
-                "text": "Esso",
-                "url": "https://en.wikipedia.org/wiki/Esso"
-              }
-            ]
+            "url": "https://en.wikipedia.org/wiki/ExxonMobil"
+          },
+          {
+            "text": "Esso",
+            "url": "https://en.wikipedia.org/wiki/Esso"
           },
           {
             "text": "Richard Mille",
@@ -29234,11 +29230,7 @@
             "text": "Gulf Oil",
             "url": "https://en.wikipedia.org/wiki/Gulf_Oil"
           },
-          "Miory Steel",
-          {
-            "text": "PartyCasino",
-            "url": "https://en.wikipedia.org/wiki/PartyCasino"
-          }
+          "Miory Steel"
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
       },
@@ -29802,10 +29794,6 @@
             "url": "https://en.wikipedia.org/wiki/Airwallex"
           },
           {
-            "text": "eBay",
-            "url": "https://en.wikipedia.org/wiki/EBay"
-          },
-          {
             "text": "Monster Energy",
             "url": "https://en.wikipedia.org/wiki/Monster_Energy"
           },
@@ -29820,10 +29808,6 @@
           {
             "text": "Optimum Nutrition",
             "url": "https://en.wikipedia.org/wiki/Glanbia#Nutritional_foods"
-          },
-          {
-            "text": "Allwyn",
-            "url": "https://en.wikipedia.org/wiki/Allwyn_Entertainment"
           }
         ],
         "non-tobacco_alcohol_livery_changes_location-specific_livery_changes_2011-present": "A Better Tomorrow is used to advertise British American Tobacco 's smokeless product brands Vuse (previously Vype) and Velo (previously Lyft). The advertising space is either sold by BAT or replaced with BAT-affiliated partners in countries where BAT do not sell Vuse or Velo, or in countries that ban tobacco-related advertising. In races held in the United States, a warning for the tobacco products' contents is displayed above it. In countries where cryptocurrency-related advertising is banned, OKX is replaced by existing sponsors. Since 2021, McLaren has raced special liveries in collaboration with their sponsors as well as to commemorate significant milestones and events. The first special livery raced was the Gulf livery for the 2021 Monaco Grand Prix."
@@ -29902,10 +29886,8 @@
             "url": "https://en.wikipedia.org/wiki/FAI_rent-a-jet"
           },
           {
-            "text": "Estrella Galicia",
-            "url": "https://en.wikipedia.org/wiki/Estrella_Galicia"
+            "text": "HaloITSM"
           },
-          "HaloITSM",
           {
             "text": "Workday",
             "url": "https://en.wikipedia.org/wiki/Workday,_Inc."
@@ -38169,10 +38151,6 @@
         ],
         "additional_major_sponsors": [
           {
-            "text": "Sauber",
-            "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-          },
-          {
             "text": "Pirelli",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
           },
@@ -38276,10 +38254,6 @@
           }
         ],
         "additional_major_sponsors": [
-          {
-            "text": "Sauber",
-            "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
-          },
           {
             "text": "Pirelli",
             "url": "https://en.wikipedia.org/wiki/Pirelli"
@@ -42920,6 +42894,48 @@
         "main_colours": [
           "Blue"
         ],
+        "livery_sponsors": [
+          {
+            "text": "Simac PastaMatic"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "notes": null,
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Canadian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
+            },
+            {
+              "text": "Caesars Palace Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1981_Caesars_Palace_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1981,
+            "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Michele Alboreto",
+            "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
+          }
+        ],
+        "main_colours": [
+          "Blue"
+        ],
         "livery_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -43095,53 +43111,6 @@
             "url": "https://en.wikipedia.org/wiki/Valvoline"
           },
           {
-            "text": "7-Eleven",
-            "url": "https://en.wikipedia.org/wiki/7-Eleven"
-          }
-        ],
-        "notes": null,
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Caesars Palace Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1982,
-            "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Michele Alboreto",
-            "url": "https://en.wikipedia.org/wiki/Michele_Alboreto"
-          },
-          {
-            "text": "Slim Borgudd",
-            "url": "https://en.wikipedia.org/wiki/Slim_Borgudd"
-          },
-          {
-            "text": "Brian Henton",
-            "url": "https://en.wikipedia.org/wiki/Brian_Henton"
-          }
-        ],
-        "main_colours": [
-          "White",
-          "Blue"
-        ],
-        "livery_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          },
-          {
             "text": "Simac"
           }
         ],
@@ -43190,28 +43159,16 @@
           {
             "text": "Valvoline",
             "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "7-Eleven",
+            "url": "https://en.wikipedia.org/wiki/7-Eleven"
           }
         ],
         "notes": null,
         "grand_prix_scope": {
           "type": "only",
           "grand_prix": [
-            {
-              "text": "San Marino Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-            },
-            {
-              "text": "Belgian Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-            },
-            {
-              "text": "Monaco Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-            },
-            {
-              "text": "Italian Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-            },
             {
               "text": "Caesars Palace Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
