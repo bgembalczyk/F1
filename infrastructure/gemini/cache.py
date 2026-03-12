@@ -13,7 +13,9 @@ _ONE_YEAR_SECONDS = 365 * 24 * 60 * 60
 class GeminiCache:
     """Cache JSON odpowiedzi Gemini oparty o pliki z TTL.
 
-    Klucz cache to dokładna treść pytania (hash SHA-256).
+    Klucz cache to para (model, pytanie) — hash SHA-256 z ciągu
+    ``"{model}:{question}"``.  Wynik jest zwracany z cache tylko wtedy,
+    gdy zgadzają się oba składniki klucza.
     Domyślnie odpowiedzi są ważne przez rok.
 
     Lokalizacja domyślna (poza repo): ``data/gemini_cache``
@@ -37,9 +39,13 @@ class GeminiCache:
     # public API
     # ------------------------------------------------------------------
 
-    def get(self, question: str) -> Optional[Dict[str, Any]]:
-        """Zwraca zbuforowaną odpowiedź lub ``None`` gdy brak/przestarzała."""
-        path = self._cache_path(question)
+    def get(self, question: str, model: str) -> Optional[Dict[str, Any]]:
+        """Zwraca zbuforowaną odpowiedź lub ``None`` gdy brak/przestarzała.
+
+        Wynik z cache jest zwracany tylko jeśli zgadza się zarówno *question*
+        jak i *model*.
+        """
+        path = self._cache_path(question, model)
         if not self._is_fresh(path):
             return None
         try:
@@ -47,17 +53,18 @@ class GeminiCache:
         except (json.JSONDecodeError, OSError):
             return None
 
-    def set(self, question: str, response: Dict[str, Any]) -> None:
+    def set(self, question: str, model: str, response: Dict[str, Any]) -> None:
         """Zapisuje odpowiedź do cache."""
-        path = self._cache_path(question)
+        path = self._cache_path(question, model)
         path.write_text(json.dumps(response, ensure_ascii=False), encoding="utf-8")
 
     # ------------------------------------------------------------------
     # helpers
     # ------------------------------------------------------------------
 
-    def _cache_path(self, question: str) -> Path:
-        digest = sha256(question.encode("utf-8")).hexdigest()
+    def _cache_path(self, question: str, model: str) -> Path:
+        key = f"{model}:{question}"
+        digest = sha256(key.encode("utf-8")).hexdigest()
         return self.cache_dir / f"{digest}.json"
 
     def _is_fresh(self, path: Path) -> bool:
