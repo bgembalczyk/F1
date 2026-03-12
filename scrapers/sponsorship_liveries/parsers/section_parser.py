@@ -1,6 +1,8 @@
 from typing import Any
 from typing import Dict
 from typing import List
+from typing import Optional
+from typing import TYPE_CHECKING
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -22,6 +24,9 @@ from scrapers.sponsorship_liveries.parsers.record_splitter import (
     SponsorshipRecordSplitter,
 )
 
+if TYPE_CHECKING:
+    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+
 
 class SponsorshipSectionParser:
     _season_headers = {
@@ -38,19 +43,33 @@ class SponsorshipSectionParser:
             include_urls: bool,
             normalize_empty_values: bool,
             splitter: SponsorshipRecordSplitter,
+            classifier: Optional["ParenClassifier"] = None,
     ):
         self._url = url
         self._include_urls = include_urls
         self._normalize_empty_values = normalize_empty_values
         self._splitter = splitter
+        self._classifier = classifier
 
-    def _build_pipeline(self) -> TablePipeline:
+    def _build_pipeline(
+            self,
+            *,
+            team_name: Optional[str] = None,
+            table_headers: Optional[List[str]] = None,
+    ) -> TablePipeline:
+        def _seasons_col() -> SponsorshipSeasonsColumn:
+            return SponsorshipSeasonsColumn(
+                team_name=team_name,
+                classifier=self._classifier,
+                table_headers=table_headers,
+            )
+
         schema_columns = [
-            column("Year", "season", SponsorshipSeasonsColumn()),
-            column("Years", "season", SponsorshipSeasonsColumn()),
-            column("Season", "season", SponsorshipSeasonsColumn()),
-            column("Seasons", "season", SponsorshipSeasonsColumn()),
-            column("Year(s)", "season", SponsorshipSeasonsColumn()),
+            column("Year", "season", _seasons_col()),
+            column("Years", "season", _seasons_col()),
+            column("Season", "season", _seasons_col()),
+            column("Seasons", "season", _seasons_col()),
+            column("Year(s)", "season", _seasons_col()),
             column("Driver(s)", "drivers", DriverListColumn()),
             column("Main colour(s)", normalize_header("Main colour(s)"), ListColumn()),
             column(
@@ -146,11 +165,16 @@ class SponsorshipSectionParser:
             section_id: str,
             team: str,
     ) -> List[Dict[str, Any]]:
-        pipeline = self._build_pipeline()
-        parser = HtmlTableParser(table_css_class=pipeline.table_css_class)
+        parser = HtmlTableParser(table_css_class="wikitable")
         table = self._find_section_table(soup, section_id=section_id)
+        rows = parser.parse_table(table)
+        table_headers = list(rows[0].headers) if rows else []
+        pipeline = self._build_pipeline(
+            team_name=team,
+            table_headers=table_headers,
+        )
         records: List[Dict[str, Any]] = []
-        for row_index, row in enumerate(parser.parse_table(table)):
+        for row_index, row in enumerate(rows):
             record = pipeline.parse_cells(
                 row.headers,
                 row.cells,
