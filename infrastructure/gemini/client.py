@@ -13,8 +13,11 @@ Przykład użycia::
 
 import json
 import ssl
+import threading
+import time
 import urllib.error
 import urllib.request
+from collections import deque
 from pathlib import Path
 from typing import Any
 from typing import Dict
@@ -25,7 +28,12 @@ import certifi
 from infrastructure.gemini.cache import GeminiCache
 
 
-_DEFAULT_MODEL = "gemini-3.1-flash-lite"
+_DEFAULT_MODEL = "gemini-2.5-flash-lite"
+
+# Limity RPM (requests per minute) per model zgodnie z bezpłatnym tierem Gemini.
+_DEFAULT_RPM_LIMITS: Dict[str, int] = {
+    "gemini-2.5-flash-lite": 9,
+}
 _API_URL_TEMPLATE = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     "{model}:generateContent?key={api_key}"
@@ -44,6 +52,7 @@ class GeminiClient:
         model: str = _DEFAULT_MODEL,
         cache: Optional[GeminiCache] = None,
         timeout: int = _DEFAULT_TIMEOUT,
+        requests_per_minute: Optional[int] = None,
     ) -> None:
         if not api_key:
             raise ValueError("Gemini API key nie może być pusty.")
@@ -52,6 +61,16 @@ class GeminiClient:
         self._cache = cache if cache is not None else GeminiCache()
         self._timeout = timeout
         self._ssl_context = self._build_ssl_context()
+
+        # Rate limiter — sliding window (okno 60 s).
+        # Jeśli requests_per_minute nie podano, szukamy domyślnego limitu dla modelu,
+        # a jeśli model nie jest znany — wyłączamy limit (None).
+        if requests_per_minute is not None:
+            self._rpm_limit: Optional[int] = requests_per_minute
+        else:
+            self._rpm_limit = _DEFAULT_RPM_LIMITS.get(model)
+        self._request_timestamps: deque[float] = deque()
+        self._rate_lock = threading.Lock()
 
     # ------------------------------------------------------------------
     # factory
@@ -65,6 +84,7 @@ class GeminiClient:
         model: str = _DEFAULT_MODEL,
         cache: Optional[GeminiCache] = None,
         timeout: int = _DEFAULT_TIMEOUT,
+        requests_per_minute: Optional[int] = None,
     ) -> "GeminiClient":
         """Tworzy klienta wczytując klucz API z pliku.
 
@@ -78,7 +98,7 @@ class GeminiClient:
                 "Utwórz plik i wpisz do niego swój klucz API (tylko klucz, bez spacji)."
             )
         api_key = path.read_text(encoding="utf-8").strip()
-        return cls(api_key, model=model, cache=cache, timeout=timeout)
+        return cls(api_key, model=model, cache=cache, timeout=timeout, requests_per_minute=requests_per_minute)
 
     # ------------------------------------------------------------------
     # public API
@@ -113,7 +133,33 @@ class GeminiClient:
         """Buduje kontekst SSL oparty o certyfikaty certifi."""
         return ssl.create_default_context(cafile=certifi.where())
 
+    def _throttle(self) -> None:
+        """Blokuje wątek, jeśli przekroczono limit RPM (sliding window 60 s)."""
+        if self._rpm_limit is None:
+            return
+        window = 60.0
+        with self._rate_lock:
+            while True:
+                now = time.monotonic()
+                # Usuń znaczniki starsze niż 60 s.
+                while self._request_timestamps and now - self._request_timestamps[0] >= window:
+                    self._request_timestamps.popleft()
+                if len(self._request_timestamps) < self._rpm_limit:
+                    self._request_timestamps.append(now)
+                    return
+                # Czekamy do momentu, gdy najstarszy request „wypadnie" z okna.
+                sleep_for = window - (now - self._request_timestamps[0])
+                print(
+                    f"[GeminiClient] Limit RPM ({self._rpm_limit}/min) osiągnięty — "
+                    f"czekam {sleep_for:.1f} s."
+                )
+                # Zwalniamy blokadę na czas oczekiwania, żeby nie blokować innych wątków.
+                self._rate_lock.release()
+                time.sleep(sleep_for)
+                self._rate_lock.acquire()
+
     def _call_api(self, prompt: str, *, response_mime_type: str) -> Dict[str, Any]:
+        self._throttle()
         url = _API_URL_TEMPLATE.format(model=self._model, api_key=self._api_key)
         body = {
             "contents": [{"parts": [{"text": prompt}]}],

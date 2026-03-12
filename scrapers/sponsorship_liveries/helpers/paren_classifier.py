@@ -39,11 +39,9 @@ Określ, czego dotyczy ta adnotacja. Odpowiedz wyłącznie w formacie JSON z nas
 - "car_model": lista modeli bolidów/samochodów wyścigowych
 - "engine_constructor": lista konstruktorów/dostawców silników
 - "grand_prix": lista konkretnych wyścigów Grand Prix (pełna nazwa, np. "Monaco Grand Prix")
-- "time_period": lista opisów okresu czasowego w sezonie (np. "later races", "first half of season")
-- "other": lista innych informacji nie pasujących do powyższych kategorii (np. "never raced")
 
 Przykład odpowiedzi:
-{{"driver": [], "car_model": ["Dallara F188"], "engine_constructor": [], "grand_prix": [], "time_period": [], "other": []}}
+{{"driver": [], "car_model": ["Dallara F188"], "engine_constructor": [], "grand_prix": []}}
 
 Odpowiedz tylko poprawnym JSON, bez dodatkowego tekstu."""
 

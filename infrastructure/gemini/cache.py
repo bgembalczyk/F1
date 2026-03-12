@@ -28,7 +28,7 @@ class GeminiCache:
     ) -> None:
         if cache_dir is None:
             # Domyślna ścieżka: <repo_root>/data/gemini_cache
-            cache_dir = Path(__file__).resolve().parents[3] / "data" / "gemini_cache"
+            cache_dir = Path(__file__).resolve().parents[2] / "data" / "gemini_cache"
         self.cache_dir = Path(cache_dir)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.ttl_seconds = max(0, int(ttl_seconds))
