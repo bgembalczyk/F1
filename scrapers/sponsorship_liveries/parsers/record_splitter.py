@@ -36,6 +36,22 @@ class SponsorshipRecordSplitter:
                     **record,
                     key: ColourScopeHandler.split_or_colours(record[key]),
                 }
+        # After split_or_colours, possessive colour groups (e.g. "Green and
+        # White (Pescarolo's car)") are kept intact.  Expand them into
+        # driver-specific sub-records before any further splitting so that
+        # each driver gets their own record with clean colour lists.
+        if self._record_has_possessive_colours(record):
+            driver_records = self._split_record_by_driver_colours(record)
+            result: List[Dict[str, Any]] = []
+            for dr in driver_records:
+                result.extend(self._split_record_by_season_and_gp(dr))
+            return result
+        return self._split_record_by_season_and_gp(record)
+
+    def _split_record_by_season_and_gp(
+            self, record: Dict[str, Any],
+    ) -> List[Dict[str, Any]]:
+        """Continue splitting a record once colour processing is complete."""
         seasons = record.get("season")
         if not isinstance(seasons, list) or len(seasons) <= 1:
             return self._split_record_by_grand_prix(record)
@@ -73,6 +89,64 @@ class SponsorshipRecordSplitter:
                     )
             split_records.extend(self._split_record_by_grand_prix(new_record))
         return split_records
+
+    def _record_has_possessive_colours(self, record: Dict[str, Any]) -> bool:
+        """Return True when any colour field contains at least one possessive driver group."""
+        for key in self._colour_keys:
+            if ColourScopeHandler.has_possessive_colour_groups(record.get(key)):
+                return True
+        return False
+
+    def _split_record_by_driver_colours(
+            self, record: Dict[str, Any],
+    ) -> List[Dict[str, Any]]:
+        """Split *record* into one record per driver found in possessive colour groups.
+
+        For each colour key that contains possessive groups (e.g.
+        ``["Green and White (Pescarolo's car)", "White and Red (Beltoise's car)"]``):
+
+        * the individual colours for each driver are extracted (``"Green and
+          White"`` → ``["Green", "White"]``);
+        * non-possessive items in the same field are shared across all driver
+          records;
+        * colour keys that contain no possessive groups are copied unchanged.
+
+        Each resulting record gains a ``"driver"`` field with a single entry
+        ``[{"text": driver_name}]``.
+        """
+        # driver_name → {colour_key: [colours specific to that driver]}
+        driver_colour_map: Dict[str, Dict[str, List[Any]]] = {}
+        # colour_key → [items that are NOT possessive groups (shared)]
+        common_by_key: Dict[str, List[Any]] = {}
+
+        for key in self._colour_keys:
+            colours = record.get(key)
+            if not isinstance(colours, list):
+                continue
+            groups = ColourScopeHandler.extract_possessive_colour_groups(colours)
+            common_by_key[key] = []
+            for driver_name, colour_list in groups:
+                if driver_name is None:
+                    common_by_key[key].extend(colour_list)
+                else:
+                    driver_colour_map.setdefault(driver_name, {}).setdefault(
+                        key, [],
+                    ).extend(colour_list)
+
+        if not driver_colour_map:
+            return [record]
+
+        result: List[Dict[str, Any]] = []
+        for driver_name, colour_map in driver_colour_map.items():
+            new_record: Dict[str, Any] = {**record, "driver": [{"text": driver_name}]}
+            for key in self._colour_keys:
+                if key not in record:
+                    continue
+                specific = colour_map.get(key, [])
+                common = common_by_key.get(key, [])
+                new_record[key] = specific + common
+            result.append(new_record)
+        return result
 
     def _split_record_by_colour_scopes(
             self, record: Dict[str, Any], seasons: list[Any],

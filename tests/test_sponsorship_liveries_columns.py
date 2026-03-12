@@ -788,3 +788,106 @@ def test_livery_principal_sponsors_year_filter() -> None:
 
     texts_2026 = [s.get("text") for s in by_year[2026]["livery_principal_sponsors"]]
     assert texts_2026 == ["OKX", "Google Gemini", "Mastercard"]
+
+
+# ── Possessive 's → driver record splitting ───────────────────────────────────
+
+
+def test_has_possessive_colour_groups_true() -> None:
+    """has_possessive_colour_groups detects a possessive group."""
+    assert ColourScopeHandler.has_possessive_colour_groups(
+        ["Green and White (Pescarolo's car)"],
+    )
+
+
+def test_has_possessive_colour_groups_false_plain() -> None:
+    """has_possessive_colour_groups returns False for plain colour names."""
+    assert not ColourScopeHandler.has_possessive_colour_groups(["Green", "White"])
+
+
+def test_has_possessive_colour_groups_false_year() -> None:
+    """has_possessive_colour_groups returns False when paren contains only a year."""
+    assert not ColourScopeHandler.has_possessive_colour_groups(["Green (1965)"])
+
+
+def test_extract_possessive_colour_groups_two_drivers() -> None:
+    """extract_possessive_colour_groups correctly extracts driver names and colours."""
+    groups = ColourScopeHandler.extract_possessive_colour_groups(
+        ["Green and White (Pescarolo's car)", "White and Red (Beltoise's car)"],
+    )
+    assert groups == [
+        ("Pescarolo", ["Green", "White"]),
+        ("Beltoise", ["White", "Red"]),
+    ]
+
+
+def test_extract_possessive_colour_groups_mixed() -> None:
+    """Non-possessive items are returned with driver_name=None."""
+    groups = ColourScopeHandler.extract_possessive_colour_groups(
+        ["Blue", "Green and White (Pescarolo's car)"],
+    )
+    assert groups == [
+        (None, ["Blue"]),
+        ("Pescarolo", ["Green", "White"]),
+    ]
+
+
+def test_split_record_by_season_matra_case() -> None:
+    """Full Matra integration: possessive groups produce two driver records."""
+    from scrapers.base.helpers.text_normalization import split_delimited_text
+    from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
+
+    text = "Green and White (Pescarolo's car), White and Red (Beltoise's car)"
+    colour_list = split_delimited_text(text)
+
+    record = {
+        "season": [
+            {"year": 1970, "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"},
+            {"year": 1971, "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"},
+            {"year": 1972, "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"},
+        ],
+        "main_colours": ["Blue"],
+        "additional_colours": colour_list,
+        "livery_sponsors": ["Matra-Simca"],
+    }
+
+    splitter = SponsorshipRecordSplitter()
+    result = splitter.split_record_by_season(record)
+
+    assert len(result) == 2
+
+    by_driver = {r["driver"][0]["text"]: r for r in result}
+
+    pescarolo = by_driver["Pescarolo"]
+    assert pescarolo["main_colours"] == ["Blue"]
+    assert pescarolo["additional_colours"] == ["Green", "White"]
+    assert len(pescarolo["season"]) == 3
+
+    beltoise = by_driver["Beltoise"]
+    assert beltoise["main_colours"] == ["Blue"]
+    assert beltoise["additional_colours"] == ["White", "Red"]
+    assert len(beltoise["season"]) == 3
+
+
+def test_split_record_by_season_possessive_with_common_colours() -> None:
+    """Common (non-possessive) colours are shared across all driver records."""
+    from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
+
+    record = {
+        "season": [{"year": 1970}],
+        "main_colours": ["Blue"],
+        "additional_colours": [
+            "Yellow",
+            "Green and White (Pescarolo's car)",
+            "White and Red (Beltoise's car)",
+        ],
+    }
+
+    splitter = SponsorshipRecordSplitter()
+    result = splitter.split_record_by_season(record)
+
+    assert len(result) == 2
+    by_driver = {r["driver"][0]["text"]: r for r in result}
+    # Each driver gets their colours + the shared "Yellow"
+    assert by_driver["Pescarolo"]["additional_colours"] == ["Green", "White", "Yellow"]
+    assert by_driver["Beltoise"]["additional_colours"] == ["White", "Red", "Yellow"]

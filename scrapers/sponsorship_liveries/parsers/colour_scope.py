@@ -14,6 +14,9 @@ from scrapers.sponsorship_liveries.parsers.record_text import (
 class ColourScopeHandler:
     _POSSESSIVE_PAREN_RE = re.compile(r"\([^)]*'s[^)]*\)\s*$")
 
+    # Captures (base_colours_text, driver_name) from e.g. "Green and White (Pescarolo's car)"
+    _POSSESSIVE_COLOUR_RE = re.compile(r"^(.*?)\s*\(([^)']*)'s[^)]*\)\s*$")
+
     @staticmethod
     def split_or_colours(colours: Any) -> Any:
         if not isinstance(colours, list):
@@ -203,3 +206,55 @@ class ColourScopeHandler:
                 ) and SponsorshipRecordText.extract_years_from_text(item):
                     return True
         return False
+
+    @classmethod
+    def has_possessive_colour_groups(cls, colours: Any) -> bool:
+        """Return True if any item in *colours* is a possessive driver colour group.
+
+        A possessive group looks like ``"Green and White (Pescarolo's car)"``:
+        the trailing parenthetical contains a name followed by ``'s``.
+        """
+        if not isinstance(colours, list):
+            return False
+        return any(
+            isinstance(item, str) and cls._POSSESSIVE_COLOUR_RE.match(item)
+            for item in colours
+        )
+
+    @classmethod
+    def extract_possessive_colour_groups(
+            cls, colours: Any,
+    ) -> list[tuple[str | None, list[str]]]:
+        """Parse *colours*, splitting possessive driver groups from plain items.
+
+        Returns a list of ``(driver_name, [colour_strings])`` tuples where
+        *driver_name* is ``None`` for non-possessive items.
+
+        Example::
+
+            ["Blue", "Green and White (Pescarolo's car)", "White and Red (Beltoise's car)"]
+            →
+            [(None, ["Blue"]),
+             ("Pescarolo", ["Green", "White"]),
+             ("Beltoise",  ["White", "Red"])]
+        """
+        if not isinstance(colours, list):
+            return []
+        result: list[tuple[str | None, list[str]]] = []
+        for item in colours:
+            if not isinstance(item, str):
+                result.append((None, [item]))
+                continue
+            m = cls._POSSESSIVE_COLOUR_RE.match(item)
+            if m:
+                driver_name = clean_wiki_text(m.group(2).strip())
+                colour_text = m.group(1).strip()
+                colour_parts = [
+                    clean_wiki_text(c)
+                    for c in re.split(r"\s+and\s+", colour_text, flags=re.IGNORECASE)
+                    if clean_wiki_text(c)
+                ]
+                result.append((driver_name, colour_parts))
+            else:
+                result.append((None, [item]))
+        return result
