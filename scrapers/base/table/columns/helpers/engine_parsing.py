@@ -19,6 +19,12 @@ from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.url import normalize_url
 
+# Pattern that matches a displacement value followed by an explicit unit (e.g. "1.5 L",
+# "1.5 L8" where L starts the type, "3000cc") or a bare decimal (e.g. "3.0 V8").
+_DISPLACEMENT_RE = re.compile(
+    r"\b\d+\.?\d*\s*(?:L|l|litre|litres|cc|cm³)|\b\d+\.\d+\b"
+)
+
 
 class EngineParsingHelpers:
     """
@@ -93,140 +99,161 @@ class EngineParsingHelpers:
     ) -> dict[str, object]:
         """
         Parse an engine segment into structured data.
-        
+
         Args:
             segment: HTML tag containing engine information
             link_lookup: Pre-built lookup of engine names to links
             base_url: Base URL for resolving relative links
-            
+
         Returns:
-            Dictionary with engine data including name, specifications, etc.
+            Dictionary with engine data including model, displacement_l, type,
+            layout, cylinders and optional supercharged/turbocharged flags.
         """
         links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
         text = clean_wiki_text(segment.get_text(" ", strip=True))
 
-        engine_link = None
-        if links:
-            engine_text = links[0].get("text", "")
-            if engine_text:
-                key = engine_text.strip().lower()
-                matched = link_lookup.get(key, [links[0]])
-                if matched:
-                    engine_link = matched[0]
+        first_link = links[0] if links else None
+        first_link_text = (first_link.get("text") or "") if first_link else ""
 
-        displacement = EngineParsingHelpers.extract_displacement(text)
-        type_text = EngineParsingHelpers.extract_type_text(text, displacement)
-        engine_type, cylinders = EngineParsingHelpers.parse_engine_type(type_text)
+        type_link: LinkRecord | None = None
+        supercharged = False
+        turbocharged = False
 
-        return {
-            "engine": engine_link,
-            "displacement": displacement,
-            "type": engine_type,
-            "cylinders": cylinders,
-            "supercharged": EngineParsingHelpers.extract_supercharged(text),
-            "turbocharged": EngineParsingHelpers.extract_turbocharged(text),
-            "gas_turbine": EngineParsingHelpers.extract_gas_turbine(text),
-        }
+        for link in links[1:]:
+            link_text = link.get("text") or ""
+            url = (link.get("url") or "").lower()
+
+            if re.match(r"^[A-Za-z]\d+$", link_text) and type_link is None:
+                type_link = link
+
+            if "supercharger" in url:
+                supercharged = True
+
+            if "turbocharger" in url or "turbo" in url:
+                turbocharged = True
+
+        displacement_l = EngineParsingHelpers.extract_displacement(text)
+
+        type_str = (type_link.get("text") or None) if type_link else None
+        layout, cylinders = EngineParsingHelpers.parse_layout_and_cylinders(type_str)
+
+        model_text = EngineParsingHelpers.extract_model_text(text, first_link_text, displacement_l)
+        model: dict[str, object] | None = None
+        if model_text or first_link:
+            model = {
+                "text": model_text,
+                "url": first_link.get("url") if first_link else None,
+            }
+
+        result: dict[str, object] = {}
+        if model is not None:
+            result["model"] = model
+        if displacement_l is not None:
+            result["displacement_l"] = displacement_l
+        if type_str is not None:
+            result["type"] = type_str
+        if layout is not None:
+            result["layout"] = layout
+        if cylinders is not None:
+            result["cylinders"] = cylinders
+        if supercharged:
+            result["supercharged"] = True
+        if turbocharged:
+            result["turbocharged"] = True
+
+        return result
 
     @staticmethod
     def extract_displacement(text: str) -> float | None:
         """
-        Extract engine displacement in litres from text (e.g., "3.0L" -> 3.0).
-        
+        Extract engine displacement in litres from text.
+
+        Handles formats like "1.5 L8" (displacement before type link),
+        "3.0 V8", "3.0 L V8" (explicit litre unit), "3000cc".
+
         Args:
             text: Text potentially containing displacement information
-            
+
         Returns:
             Displacement in litres, or None if not found
         """
         if not text:
             return None
-        # Look for patterns like "3.0L", "1.5 L", "3000cc"
+        # First try: number followed by litre unit or start of type indicator (e.g. "1.5 L8")
         match = re.search(r"(\d+\.?\d*)\s*(?:L|l|litre|litres|cc|cm³)", text)
         if match:
             value = parse_float_from_text(match.group(1))
-            # Convert cc to litres if needed
             if "cc" in text.lower() or "cm" in text.lower():
-                if value and value > 100:  # Likely in cc
+                if value and value > 100:
                     value = value / 1000
             return value
-        return None
-
-    @staticmethod
-    def extract_type_text(text: str, displacement: float | None) -> str | None:
-        """
-        Extract engine type description text, excluding displacement.
-        
-        Args:
-            text: Full engine description text
-            displacement: Extracted displacement value (to remove from type)
-            
-        Returns:
-            Engine type text, or None
-        """
-        if not text:
-            return None
-
-        # Remove displacement notation
-        cleaned = re.sub(r"\d+\.?\d*\s*(?:L|l|litre|litres|cc|cm³)", "", text)
-        cleaned = cleaned.strip(" -–—()")
-
-        if not cleaned:
-            return None
-
-        return cleaned
-
-    @staticmethod
-    def parse_engine_type(type_text: str | None) -> tuple[str | None, int | None]:
-        """
-        Parse engine type and cylinder count from type text.
-        
-        Args:
-            type_text: Engine type description (e.g., "V8", "Inline-4")
-            
-        Returns:
-            Tuple of (engine_type, cylinder_count)
-        """
-        if not type_text:
-            return None, None
-
-        # Look for patterns like V8, I4, Inline-6, Straight-4, etc.
-        match = re.search(r"([VI]|Inline|Straight|Flat)[-\s]*(\d+)", type_text, re.IGNORECASE)
+        # Fallback: bare decimal number (e.g. "3.0 V8")
+        match = re.search(r"\b(\d+\.\d+)\b", text)
         if match:
-            config = match.group(1).upper()
-            if config in {"INLINE", "STRAIGHT"}:
-                config = "I"
-            cylinders = int(match.group(2))
-            return f"{config}{cylinders}", cylinders
+            return parse_float_from_text(match.group(1))
+        return None
+    @staticmethod
+    def extract_model_text(
+            text: str,
+            first_link_text: str,
+            displacement_l: float | None,
+    ) -> str:
+        """
+        Extract the full model text by combining the first link text with any
+        model number/suffix that appears before the displacement value.
 
-        return type_text, None
+        For example:
+        - text="Alfa Romeo 158 1.5 L8 s", first_link_text="Alfa Romeo" -> "Alfa Romeo 158"
+        - text="Ford Cosworth DFV 3.0 V8", first_link_text="Ford Cosworth DFV" -> "Ford Cosworth DFV"
+
+        Args:
+            text: Full cleaned text of the engine segment
+            first_link_text: Text of the first (manufacturer) link
+            displacement_l: Extracted displacement value (used to locate suffix boundary)
+
+        Returns:
+            Combined model text string
+        """
+        if not first_link_text:
+            if displacement_l is not None and text:
+                match = _DISPLACEMENT_RE.search(text)
+                if match:
+                    return text[: match.start()].strip() or text
+            return text
+
+        pos = text.find(first_link_text)
+        if pos < 0:
+            return first_link_text
+
+        after_link = text[pos + len(first_link_text):]
+        if not after_link.strip():
+            return first_link_text
+
+        # Find where displacement begins in the text after the first link
+        disp_match = _DISPLACEMENT_RE.search(after_link)
+        if disp_match:
+            model_suffix = after_link[: disp_match.start()].strip()
+        else:
+            model_suffix = after_link.strip()
+
+        if model_suffix:
+            return first_link_text + " " + model_suffix
+        return first_link_text
 
     @staticmethod
-    def extract_supercharged(text: str) -> bool | None:
-        """Check if engine is supercharged."""
-        if not text:
-            return None
-        text_lower = text.lower()
-        if "supercharged" in text_lower or "supercharger" in text_lower:
-            return True
-        return None
+    def parse_layout_and_cylinders(type_str: str | None) -> tuple[str | None, int | None]:
+        """
+        Parse engine layout letter and cylinder count from a type string like "V8" or "L6".
 
-    @staticmethod
-    def extract_turbocharged(text: str) -> bool | None:
-        """Check if engine is turbocharged."""
-        if not text:
-            return None
-        text_lower = text.lower()
-        if "turbo" in text_lower:
-            return True
-        return None
+        Args:
+            type_str: Engine type string (e.g., "V8", "L8", "F4")
 
-    @staticmethod
-    def extract_gas_turbine(text: str) -> bool | None:
-        """Check if engine is a gas turbine."""
-        if not text:
-            return None
-        text_lower = text.lower()
-        if "gas turbine" in text_lower or "jet engine" in text_lower:
-            return True
-        return None
+        Returns:
+            Tuple of (layout_letter, cylinder_count) or (None, None) if not parseable
+        """
+        if not type_str:
+            return None, None
+        match = re.match(r"^([A-Za-z])(\d+)$", type_str)
+        if match:
+            return match.group(1).upper(), int(match.group(2))
+        return None, None

@@ -179,14 +179,14 @@ class ResultsParsingHelpers:
     ) -> dict[str, Any]:
         """
         Parse entrant/team segment from table cell.
-        
+
         Args:
             segment: HTML tag containing entrant information
             link_lookup: Pre-built lookup of entrant names to links
             base_url: Base URL for resolving relative links
-            
+
         Returns:
-            Dictionary with entrant data
+            Dictionary with entrant data including name and title_sponsors list
         """
         from scrapers.base.helpers.links import normalize_links
         from scrapers.base.helpers.text import clean_wiki_text
@@ -195,18 +195,12 @@ class ResultsParsingHelpers:
         links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
         text = clean_wiki_text(segment.get_text(" ", strip=True))
 
-        entrant_link = None
-        if links:
-            entrant_text = links[0].get("text", "")
-            if entrant_text:
-                key = entrant_text.strip().lower()
-                matched = link_lookup.get(key, [links[0]])
-                if matched:
-                    entrant_link = matched[0]
+        # Filter out empty-text links (e.g., flag image links)
+        title_sponsors = [link for link in links if link.get("text")]
 
         return {
-            "entrant": entrant_link,
-            "text": text,
+            "name": text,
+            "title_sponsors": title_sponsors,
         }
 
     @staticmethod
