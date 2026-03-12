@@ -8165,10 +8165,12 @@
           }
         ],
         "main_colours": [
-          "White Dark Blue"
+          "White",
+          "Dark Blue"
         ],
         "additional_colours": [
-          "Dark Blue White"
+          "Dark Blue",
+          "White"
         ],
         "main_sponsors": [
           {
@@ -8214,10 +8216,12 @@
           }
         ],
         "main_colours": [
-          "White Dark Blue"
+          "White",
+          "Dark Blue"
         ],
         "additional_colours": [
-          "Dark Blue White"
+          "Dark Blue",
+          "White"
         ],
         "main_sponsors": [
           {
@@ -8263,10 +8267,12 @@
           }
         ],
         "main_colours": [
-          "White Dark Blue"
+          "White",
+          "Dark Blue"
         ],
         "additional_colours": [
-          "Dark Blue White"
+          "Dark Blue",
+          "White"
         ],
         "main_sponsors": [
           {
@@ -11058,7 +11064,8 @@
           }
         ],
         "main_colours": [
-          "Black White"
+          "Black",
+          "White"
         ],
         "main_sponsors": [
           {
@@ -11082,7 +11089,8 @@
           }
         ],
         "main_colours": [
-          "Black White"
+          "Black",
+          "White"
         ],
         "main_sponsors": null,
         "additional_major_sponsors": [
@@ -11141,7 +11149,8 @@
           }
         ],
         "main_colours": [
-          "Black Red"
+          "Black",
+          "Red"
         ],
         "main_sponsors": [
           {
@@ -11192,7 +11201,8 @@
           }
         ],
         "main_colours": [
-          "Black Red"
+          "Black",
+          "Red"
         ],
         "main_sponsors": [
           {
@@ -11238,7 +11248,8 @@
           }
         ],
         "main_colours": [
-          "Black Red"
+          "Black",
+          "Red"
         ],
         "main_sponsors": [
           {
@@ -11290,7 +11301,8 @@
           }
         ],
         "main_colours": [
-          "Black Red"
+          "Black",
+          "Red"
         ],
         "main_sponsors": [
           {
@@ -11558,7 +11570,9 @@
           }
         ],
         "main_colours": [
-          "White Dark Blue and White"
+          "White",
+          "Dark Blue",
+          "White"
         ],
         "main_sponsors": [
           {
@@ -18652,7 +18666,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White (Image of a woman holding a box of Rizla+. cigarette papers)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18686,7 +18700,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White (Image of a woman holding a box of Rizla+. cigarette papers)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18722,7 +18736,7 @@
           "Blue"
         ],
         "additional_colours": [
-          "White (Image of a woman holding a box of Rizla+. cigarette papers)"
+          "White"
         ],
         "livery_sponsors": [
           {
@@ -18758,7 +18772,8 @@
           "Blue"
         ],
         "additional_colours": [
-          "White and Yellow (Image of a woman holding a box of Rizla+. cigarette papers)"
+          "White",
+          "Yellow"
         ],
         "livery_sponsors": [
           {
@@ -25611,7 +25626,10 @@
           }
         ],
         "main_colours": [
-          "Black and Green White and Blue"
+          "Black",
+          "Green",
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [
           {
@@ -25675,7 +25693,10 @@
           }
         ],
         "main_colours": [
-          "Black and Green White and Blue"
+          "Black",
+          "Green",
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [
           {
@@ -25738,7 +25759,10 @@
           }
         ],
         "main_colours": [
-          "Black and Green White and Blue"
+          "Black",
+          "Green",
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [
           {
@@ -25792,7 +25816,10 @@
           }
         ],
         "main_colours": [
-          "Black and Green White and Blue"
+          "Black",
+          "Green",
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [
           {
@@ -25856,7 +25883,10 @@
           }
         ],
         "main_colours": [
-          "Black and Green White and Blue"
+          "Black",
+          "Green",
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [
           {
@@ -25919,7 +25949,10 @@
           }
         ],
         "main_colours": [
-          "Black and Green White and Blue"
+          "Black",
+          "Green",
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [
           {
@@ -25973,7 +26006,10 @@
           }
         ],
         "main_colours": [
-          "Black and Green White and Blue"
+          "Black",
+          "Green",
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [
           {
@@ -26037,7 +26073,10 @@
           }
         ],
         "main_colours": [
-          "Black and Green White and Blue"
+          "Black",
+          "Green",
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [
           {
@@ -26100,7 +26139,10 @@
           }
         ],
         "main_colours": [
-          "Black and Green White and Blue"
+          "Black",
+          "Green",
+          "White",
+          "Blue"
         ],
         "livery_sponsors": [
           {
@@ -39509,7 +39551,106 @@
     "team": "Stewart",
     "liveries": [
       {
-        "season": null,
+        "season": [
+          {
+            "year": 1997,
+            "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "White"
+        ],
+        "additional_colours": [
+          "Blue",
+          "Yellow-Green tartan"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Ford",
+            "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Texaco",
+            "url": "https://en.wikipedia.org/wiki/Texaco"
+          },
+          {
+            "text": "Lear",
+            "url": "https://en.wikipedia.org/wiki/Lear_Corporation"
+          },
+          {
+            "text": "Visit Malaysia",
+            "url": "https://en.wikipedia.org/wiki/Visit_Malaysia"
+          },
+          {
+            "text": "MCI WorldCom",
+            "url": "https://en.wikipedia.org/wiki/MCI_WorldCom"
+          },
+          {
+            "text": "HP",
+            "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
+          },
+          {
+            "text": "Visteon",
+            "url": "https://en.wikipedia.org/wiki/Visteon"
+          }
+        ]
+      },
+      {
+        "season": [
+          {
+            "year": 1998,
+            "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "White"
+        ],
+        "additional_colours": [
+          "Blue",
+          "Yellow-Green tartan"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Ford",
+            "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Texaco",
+            "url": "https://en.wikipedia.org/wiki/Texaco"
+          },
+          {
+            "text": "Lear",
+            "url": "https://en.wikipedia.org/wiki/Lear_Corporation"
+          },
+          {
+            "text": "Visit Malaysia",
+            "url": "https://en.wikipedia.org/wiki/Visit_Malaysia"
+          },
+          {
+            "text": "MCI WorldCom",
+            "url": "https://en.wikipedia.org/wiki/MCI_WorldCom"
+          },
+          {
+            "text": "HP",
+            "url": "https://en.wikipedia.org/wiki/Hewlett-Packard"
+          },
+          {
+            "text": "Visteon",
+            "url": "https://en.wikipedia.org/wiki/Visteon"
+          }
+        ]
+      },
+      {
+        "season": [
+          {
+            "year": 1999,
+            "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+          }
+        ],
         "main_colours": [
           "White"
         ],
@@ -39524,10 +39665,7 @@
           },
           {
             "text": "HSBC",
-            "url": "https://en.wikipedia.org/wiki/HSBC",
-            "params": [
-              "1999"
-            ]
+            "url": "https://en.wikipedia.org/wiki/HSBC"
           }
         ],
         "additional_major_sponsors": [
