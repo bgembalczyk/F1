@@ -32,7 +32,7 @@ _API_URL_TEMPLATE = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     "{model}:generateContent?key={api_key}"
 )
-_DEFAULT_KEY_FILE = Path(__file__).resolve().parents[4] / "config" / "gemini_api_key.txt"
+_DEFAULT_KEY_FILE = Path(__file__).resolve().parents[2] / "config" / "gemini_api_key.txt"
 _DEFAULT_TIMEOUT = 30
 
 
