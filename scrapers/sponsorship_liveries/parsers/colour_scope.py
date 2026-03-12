@@ -12,6 +12,8 @@ from scrapers.sponsorship_liveries.parsers.record_text import (
 
 
 class ColourScopeHandler:
+    _POSSESSIVE_PAREN_RE = re.compile(r"\([^)]*'s[^)]*\)\s*$")
+
     @staticmethod
     def split_or_colours(colours: Any) -> Any:
         if not isinstance(colours, list):
@@ -36,6 +38,13 @@ class ColourScopeHandler:
         points, so e.g. ``"Blue (1964 United States and Mexican Grands Prix)"``
         is returned as a single item rather than being broken at the inner
         'and'.
+
+        When the last split part ends with a possessive parenthetical (one
+        that contains ``'s`` inside the closing parenthesis), the annotation
+        describes the whole "and"-joined colour group, not just the final
+        colour.  In that case the split is suppressed and the original text
+        is returned as a single item, e.g.
+        ``"Green and White (Pescarolo's car)"`` → ``["Green and White (Pescarolo's car)"]``.
         """
         parts: list[str] = []
         current: list[str] = []
@@ -72,6 +81,8 @@ class ColourScopeHandler:
         part = "".join(current).strip()
         if part:
             parts.append(part)
+        if len(parts) > 1 and ColourScopeHandler._POSSESSIVE_PAREN_RE.search(parts[-1]):
+            return [text]
         return parts
 
     @staticmethod
