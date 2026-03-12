@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
+from scrapers.sponsorship_liveries.parsers.colour_scope import ColourScopeHandler
 
 
 def _ctx(
@@ -318,3 +319,48 @@ def test_gemini_classifier_exception_does_not_propagate() -> None:
         "other": [],
     }
 
+# ── Fix 5: McLaren – "Livery principal sponsor(s)" maps to main_sponsors ──────
+
+
+def test_livery_principal_sponsor_column_maps_to_main_sponsors() -> None:
+    """Column 'Livery principal sponsor(s)' is mapped to the main_sponsors key."""
+    from scrapers.sponsorship_liveries.parsers.section_parser import SponsorshipSectionParser
+    from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
+
+    splitter = SponsorshipRecordSplitter()
+    parser = SponsorshipSectionParser(
+        url="https://en.wikipedia.org",
+        include_urls=False,
+        normalize_empty_values=True,
+        splitter=splitter,
+    )
+    pipeline = parser._build_pipeline()
+    assert "Livery principal sponsor(s)" in pipeline.column_map
+    assert pipeline.column_map["Livery principal sponsor(s)"] == "main_sponsors"
+
+
+# ── Fix 6: Colours – "and" splits colours the same as "or" ───────────────────
+
+
+def test_split_or_colours_splits_on_and() -> None:
+    """'Green and Black' is split into two separate colour entries."""
+    result = ColourScopeHandler.split_or_colours(["Green and Black"])
+    assert result == ["Green", "Black"]
+
+
+def test_split_or_colours_splits_on_or() -> None:
+    """'Green or Black' continues to be split into two separate colour entries."""
+    result = ColourScopeHandler.split_or_colours(["Green or Black"])
+    assert result == ["Green", "Black"]
+
+
+def test_split_or_colours_no_split_for_plain_colour() -> None:
+    """Colours without 'and'/'or' are left unchanged."""
+    result = ColourScopeHandler.split_or_colours(["Red", "Blue"])
+    assert result == ["Red", "Blue"]
+
+
+def test_split_or_colours_multiple_items_with_and() -> None:
+    """Each colour entry is split independently."""
+    result = ColourScopeHandler.split_or_colours(["Red", "Green and Black"])
+    assert result == ["Red", "Green", "Black"]
