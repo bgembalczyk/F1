@@ -92,10 +92,9 @@ class SponsorshipSectionParser:
                 normalize_header("Main sponsor(s)"),
                 SponsorColumn(),
             ),
-            # McLaren uses "Livery principal sponsor(s)" which is equivalent to "Main sponsor(s)"
             column(
                 "Livery principal sponsor(s)",
-                "main_sponsors",
+                "livery_principal_sponsors",
                 SponsorColumn(),
             ),
             column("Notes", normalize_header("Notes"), TextColumn()),

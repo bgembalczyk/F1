@@ -520,11 +520,11 @@ def test_gemini_classifier_exception_does_not_propagate() -> None:
     assert "engine" not in record
     assert "grand_prix_scope" not in record
 
-# ── Fix 5: McLaren – "Livery principal sponsor(s)" maps to main_sponsors ──────
+# ── Fix 5: McLaren – "Livery principal sponsor(s)" maps to livery_principal_sponsors ──
 
 
-def test_livery_principal_sponsor_column_maps_to_main_sponsors() -> None:
-    """Column 'Livery principal sponsor(s)' is mapped to the main_sponsors key."""
+def test_livery_principal_sponsor_column_maps_to_livery_principal_sponsors() -> None:
+    """Column 'Livery principal sponsor(s)' is mapped to the livery_principal_sponsors key."""
     from scrapers.sponsorship_liveries.parsers.section_parser import SponsorshipSectionParser
     from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
 
@@ -537,7 +537,7 @@ def test_livery_principal_sponsor_column_maps_to_main_sponsors() -> None:
     )
     pipeline = parser._build_pipeline()
     assert "Livery principal sponsor(s)" in pipeline.column_map
-    assert pipeline.column_map["Livery principal sponsor(s)"] == "main_sponsors"
+    assert pipeline.column_map["Livery principal sponsor(s)"] == "livery_principal_sponsors"
 
 
 # ── Fix 6: Colours – "and" splits colours the same as "or" ───────────────────
@@ -708,3 +708,186 @@ def test_season_service_to_range_case_insensitive() -> None:
     result = SeasonService.parse_seasons("1997 TO 1999")
     years = [e["year"] for e in result]
     assert years == [1997, 1998, 1999]
+
+
+# ── Fix: Possessive 's grouping – "and"-joined colour groups ─────────────────
+
+
+def test_possessive_group_not_split_on_and() -> None:
+    """'Green and White (Pescarolo's car)' must NOT be split into two colours."""
+    result = ColourScopeHandler.split_or_colours(["Green and White (Pescarolo's car)"])
+    assert result == ["Green and White (Pescarolo's car)"]
+
+
+def test_possessive_group_two_drivers() -> None:
+    """Full Matra case: two colour groups with possessive annotations."""
+    from scrapers.base.helpers.text_normalization import split_delimited_text
+    text = "Green and White (Pescarolo's car), White and Red (Beltoise's car)"
+    parts = split_delimited_text(text)
+    result = ColourScopeHandler.split_or_colours(parts)
+    assert result == [
+        "Green and White (Pescarolo's car)",
+        "White and Red (Beltoise's car)",
+    ]
+
+
+def test_possessive_group_single_colour_not_affected() -> None:
+    """A single colour with possessive paren keeps its paren and is not split."""
+    result = ColourScopeHandler.split_or_colours(["Red (Beltoise's car)"])
+    assert result == ["Red (Beltoise's car)"]
+
+
+def test_non_possessive_paren_still_splits() -> None:
+    """'Green and White (1965)' WITHOUT possessive 's still splits into two colours."""
+    result = ColourScopeHandler.split_or_colours(["Green and White (1965)"])
+    assert "Green" in result and "White (1965)" in result
+
+
+# ── Fix: livery_principal_sponsors year-range filtering ──────────────────────
+
+
+def test_livery_principal_sponsors_year_filter() -> None:
+    """livery_principal_sponsors is correctly filtered per expanded season year."""
+    from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
+
+    sponsors = [
+        {"text": "OKX", "url": "https://en.wikipedia.org/wiki/OKX"},
+        {
+            "text": "Google Chrome",
+            "url": "https://en.wikipedia.org/wiki/Google_Chrome",
+            "params": ["2024-2025"],
+        },
+        {
+            "text": "Google Gemini",
+            "url": "https://en.wikipedia.org/wiki/Gemini_(chatbot)",
+            "params": ["2025-2026"],
+        },
+        {"text": "Mastercard", "url": "https://en.wikipedia.org/wiki/Mastercard"},
+    ]
+    record = {
+        "season": [
+            {"year": 2024, "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"},
+            {"year": 2025, "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"},
+            {"year": 2026, "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"},
+        ],
+        "main_colours": ["Orange", "Black"],
+        "livery_principal_sponsors": sponsors,
+    }
+    splitter = SponsorshipRecordSplitter()
+    result = splitter.split_record_by_season(record)
+
+    assert len(result) == 3
+
+    by_year = {r["season"][0]["year"]: r for r in result}
+
+    texts_2024 = [s.get("text") for s in by_year[2024]["livery_principal_sponsors"]]
+    assert texts_2024 == ["OKX", "Google Chrome", "Mastercard"]
+
+    texts_2025 = [s.get("text") for s in by_year[2025]["livery_principal_sponsors"]]
+    assert texts_2025 == ["OKX", "Google Chrome", "Google Gemini", "Mastercard"]
+
+    texts_2026 = [s.get("text") for s in by_year[2026]["livery_principal_sponsors"]]
+    assert texts_2026 == ["OKX", "Google Gemini", "Mastercard"]
+
+
+# ── Possessive 's → driver record splitting ───────────────────────────────────
+
+
+def test_has_possessive_colour_groups_true() -> None:
+    """has_possessive_colour_groups detects a possessive group."""
+    assert ColourScopeHandler.has_possessive_colour_groups(
+        ["Green and White (Pescarolo's car)"],
+    )
+
+
+def test_has_possessive_colour_groups_false_plain() -> None:
+    """has_possessive_colour_groups returns False for plain colour names."""
+    assert not ColourScopeHandler.has_possessive_colour_groups(["Green", "White"])
+
+
+def test_has_possessive_colour_groups_false_year() -> None:
+    """has_possessive_colour_groups returns False when paren contains only a year."""
+    assert not ColourScopeHandler.has_possessive_colour_groups(["Green (1965)"])
+
+
+def test_extract_possessive_colour_groups_two_drivers() -> None:
+    """extract_possessive_colour_groups correctly extracts driver names and colours."""
+    groups = ColourScopeHandler.extract_possessive_colour_groups(
+        ["Green and White (Pescarolo's car)", "White and Red (Beltoise's car)"],
+    )
+    assert groups == [
+        ("Pescarolo", ["Green", "White"]),
+        ("Beltoise", ["White", "Red"]),
+    ]
+
+
+def test_extract_possessive_colour_groups_mixed() -> None:
+    """Non-possessive items are returned with driver_name=None."""
+    groups = ColourScopeHandler.extract_possessive_colour_groups(
+        ["Blue", "Green and White (Pescarolo's car)"],
+    )
+    assert groups == [
+        (None, ["Blue"]),
+        ("Pescarolo", ["Green", "White"]),
+    ]
+
+
+def test_split_record_by_season_matra_case() -> None:
+    """Full Matra integration: possessive groups produce two driver records."""
+    from scrapers.base.helpers.text_normalization import split_delimited_text
+    from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
+
+    text = "Green and White (Pescarolo's car), White and Red (Beltoise's car)"
+    colour_list = split_delimited_text(text)
+
+    record = {
+        "season": [
+            {"year": 1970, "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"},
+            {"year": 1971, "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"},
+            {"year": 1972, "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"},
+        ],
+        "main_colours": ["Blue"],
+        "additional_colours": colour_list,
+        "livery_sponsors": ["Matra-Simca"],
+    }
+
+    splitter = SponsorshipRecordSplitter()
+    result = splitter.split_record_by_season(record)
+
+    assert len(result) == 2
+
+    by_driver = {r["driver"][0]["text"]: r for r in result}
+
+    pescarolo = by_driver["Pescarolo"]
+    assert pescarolo["main_colours"] == ["Blue"]
+    assert pescarolo["additional_colours"] == ["Green", "White"]
+    assert len(pescarolo["season"]) == 3
+
+    beltoise = by_driver["Beltoise"]
+    assert beltoise["main_colours"] == ["Blue"]
+    assert beltoise["additional_colours"] == ["White", "Red"]
+    assert len(beltoise["season"]) == 3
+
+
+def test_split_record_by_season_possessive_with_common_colours() -> None:
+    """Common (non-possessive) colours are shared across all driver records."""
+    from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
+
+    record = {
+        "season": [{"year": 1970}],
+        "main_colours": ["Blue"],
+        "additional_colours": [
+            "Yellow",
+            "Green and White (Pescarolo's car)",
+            "White and Red (Beltoise's car)",
+        ],
+    }
+
+    splitter = SponsorshipRecordSplitter()
+    result = splitter.split_record_by_season(record)
+
+    assert len(result) == 2
+    by_driver = {r["driver"][0]["text"]: r for r in result}
+    # Each driver gets their colours + the shared "Yellow"
+    assert by_driver["Pescarolo"]["additional_colours"] == ["Green", "White", "Yellow"]
+    assert by_driver["Beltoise"]["additional_colours"] == ["White", "Red", "Yellow"]
