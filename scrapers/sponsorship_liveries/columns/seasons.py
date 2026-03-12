@@ -67,7 +67,9 @@ class SponsorshipSeasonsColumn(BaseColumn):
                 record["grand_prix_scope"] = {"type": "only", "grand_prix": gp_entries}
                 record["_season_scoped_gp"] = True
         elif driver_links and not has_only and not has_gp:
-            record["driver"] = [
+            has_car = bool(re.search(r"\bcar\b", paren_content, re.IGNORECASE))
+            field = "car" if has_car else "driver"
+            record[field] = [
                 {"text": lnk["text"], "url": lnk["url"]}
                 if lnk.get("url")
                 else {"text": lnk["text"]}
