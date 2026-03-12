@@ -25,6 +25,13 @@ _DISPLACEMENT_RE = re.compile(
     r"\b\d+\.?\d*\s*(?:L|l|litre|litres|cc|cm³)|\b\d+\.\d+\b"
 )
 
+# Exact engine type code (e.g. "V8", "L4", "F4").
+_EXACT_TYPE_RE = re.compile(r"^[A-Za-z]\d+$")
+
+# Engine type embedded at end of text after a displacement number
+# (e.g. "Climax FPF 2.0 L4" → "L4", "620 3.0 V8" → "V8").
+_AFTER_DISPLACEMENT_TYPE_RE = re.compile(r"\b\d+\.?\d*\s+([A-Za-z]\d+)\s*$")
+
 
 class EngineParsingHelpers:
     """
@@ -89,7 +96,7 @@ class EngineParsingHelpers:
             return False
         bg_lower = background.lower().replace(" ", "")
         # Common F2 background colors in Wikipedia tables
-        return bg_lower in {"#efefef", "#f0f0f0", "#e0e0e0", "lightgrey", "lightgray"}
+        return bg_lower in {"#efefef", "#f0f0f0", "#e0e0e0", "#ffcccc", "lightgrey", "lightgray"}
 
     @staticmethod
     def parse_segment(
@@ -107,7 +114,7 @@ class EngineParsingHelpers:
 
         Returns:
             Dictionary with engine data including model, displacement_l, type,
-            layout, cylinders and optional supercharged/turbocharged flags.
+            layout, cylinders and optional supercharged/turbocharged/gas_turbine flags.
         """
         links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
         text = clean_wiki_text(segment.get_text(" ", strip=True))
@@ -115,29 +122,62 @@ class EngineParsingHelpers:
         first_link = links[0] if links else None
         first_link_text = (first_link.get("text") or "") if first_link else ""
 
-        type_link: LinkRecord | None = None
+        type_str: str | None = None
         supercharged = False
         turbocharged = False
+        gas_turbine = False
+        # Tokens from separate links that carry special meaning and must not
+        # appear in the model-name suffix (e.g. engine type codes, "s", "tbn").
+        special_tokens: set[str] = set()
+
+        # Check if the first link is itself an engine type code (e.g. "L4").
+        # In that case the plain text that precedes it is the model name.
+        first_link_is_type = first_link_text and _EXACT_TYPE_RE.match(first_link_text)
+        if first_link_is_type:
+            type_str = first_link_text
+            special_tokens.add(first_link_text)
+            first_link = None
+            first_link_text = ""
+        else:
+            # Engine type may be embedded inside the first link text after the
+            # displacement value (e.g. "Climax FPF 2.0 L4" → "L4").
+            if first_link_text:
+                m = _AFTER_DISPLACEMENT_TYPE_RE.search(first_link_text)
+                if m:
+                    type_str = m.group(1)
 
         for link in links[1:]:
             link_text = link.get("text") or ""
             url = (link.get("url") or "").lower()
 
-            if re.match(r"^[A-Za-z]\d+$", link_text) and type_link is None:
-                type_link = link
+            if type_str is None:
+                if _EXACT_TYPE_RE.match(link_text):
+                    type_str = link_text
+                    special_tokens.add(link_text)
+                else:
+                    m = _AFTER_DISPLACEMENT_TYPE_RE.search(link_text)
+                    if m:
+                        type_str = m.group(1)
 
             if "supercharger" in url:
                 supercharged = True
+                special_tokens.add(link_text)
 
             if "turbocharger" in url or "turbo" in url:
                 turbocharged = True
+                special_tokens.add(link_text)
+
+            if "gas_turbine" in url:
+                gas_turbine = True
+                special_tokens.add(link_text)
 
         displacement_l = EngineParsingHelpers.extract_displacement(text)
 
-        type_str = (type_link.get("text") or None) if type_link else None
         layout, cylinders = EngineParsingHelpers.parse_layout_and_cylinders(type_str)
 
-        model_text = EngineParsingHelpers.extract_model_text(text, first_link_text, displacement_l)
+        model_text = EngineParsingHelpers.extract_model_text(
+            text, first_link_text, displacement_l, special_tokens
+        )
         model: dict[str, object] | None = None
         if model_text or first_link:
             model = {
@@ -160,6 +200,8 @@ class EngineParsingHelpers:
             result["supercharged"] = True
         if turbocharged:
             result["turbocharged"] = True
+        if gas_turbine:
+            result["gas_turbine"] = True
 
         return result
 
@@ -197,6 +239,7 @@ class EngineParsingHelpers:
             text: str,
             first_link_text: str,
             displacement_l: float | None,
+            special_tokens: set[str] | None = None,
     ) -> str:
         """
         Extract the full model text by combining the first link text with any
@@ -205,11 +248,14 @@ class EngineParsingHelpers:
         For example:
         - text="Alfa Romeo 158 1.5 L8 s", first_link_text="Alfa Romeo" -> "Alfa Romeo 158"
         - text="Ford Cosworth DFV 3.0 V8", first_link_text="Ford Cosworth DFV" -> "Ford Cosworth DFV"
+        - text="Climax FPF 2.0 L4", first_link_text="Climax FPF 2.0 L4" -> "Climax FPF"
 
         Args:
             text: Full cleaned text of the engine segment
             first_link_text: Text of the first (manufacturer) link
             displacement_l: Extracted displacement value (used to locate suffix boundary)
+            special_tokens: Link texts with special meaning (type codes, "s", "tbn", etc.)
+                that should not appear in the model name suffix.
 
         Returns:
             Combined model text string
@@ -227,6 +273,12 @@ class EngineParsingHelpers:
 
         after_link = text[pos + len(first_link_text):]
         if not after_link.strip():
+            # The entire segment text is (or is contained within) the first link text.
+            # Strip any trailing displacement and engine-type tokens that were included
+            # in the link text (e.g. "Climax FPF 2.0 L4" → "Climax FPF").
+            disp_match = _DISPLACEMENT_RE.search(first_link_text)
+            if disp_match:
+                return first_link_text[: disp_match.start()].strip() or first_link_text
             return first_link_text
 
         # Find where displacement begins in the text after the first link
@@ -235,6 +287,17 @@ class EngineParsingHelpers:
             model_suffix = after_link[: disp_match.start()].strip()
         else:
             model_suffix = after_link.strip()
+            # Strip trailing tokens that belong to the engine specification
+            # (e.g. "tbn" for gas turbine) rather than the model name.
+            if special_tokens and model_suffix:
+                lower_tokens = {t.lower() for t in special_tokens}
+                words = model_suffix.split()
+                clean_words = []
+                for word in words:
+                    if word.lower() in lower_tokens:
+                        break
+                    clean_words.append(word)
+                model_suffix = " ".join(clean_words).strip()
 
         if model_suffix:
             return first_link_text + " " + model_suffix
