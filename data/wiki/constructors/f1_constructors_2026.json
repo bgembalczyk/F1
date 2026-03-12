@@ -46,12 +46,12 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 114,
-    "races_started": 114,
+    "races_entered": 115,
+    "races_started": 115,
     "drivers": 5,
-    "total_entries": 228,
+    "total_entries": 230,
     "wins": 1,
-    "points": 535,
+    "points": 536,
     "poles": 0,
     "fastest_laps": 1,
     "podiums": 6,
@@ -131,10 +131,10 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 120,
-    "races_started": 119,
+    "races_entered": 121,
+    "races_started": 120,
     "drivers": 7,
-    "total_entries": 239,
+    "total_entries": 241,
     "wins": 0,
     "points": 597,
     "poles": 0,
@@ -171,7 +171,7 @@
   },
   {
     "constructor": {
-      "text": "Atlassian Williams",
+      "text": "Williams",
       "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
     },
     "engine": [
@@ -388,10 +388,10 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 851,
-    "races_started": 850,
+    "races_entered": 852,
+    "races_started": 851,
     "drivers": 49,
-    "total_entries": 1619,
+    "total_entries": 1621,
     "wins": 114,
     "points": 3774,
     "poles": 128,
@@ -436,12 +436,12 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 0,
-    "races_started": 0,
-    "drivers": 0,
-    "total_entries": 0,
+    "races_entered": 1,
+    "races_started": 1,
+    "drivers": 2,
+    "total_entries": 2,
     "wins": 0,
-    "points": 0,
+    "points": 2,
     "poles": 0,
     "fastest_laps": 0,
     "podiums": 0,
@@ -497,10 +497,10 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 0,
-    "races_started": 0,
-    "drivers": 0,
-    "total_entries": 0,
+    "races_entered": 1,
+    "races_started": 1,
+    "drivers": 2,
+    "total_entries": 2,
     "wins": 0,
     "points": 0,
     "poles": 0,
@@ -841,15 +841,15 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 1124,
-    "races_started": 1122,
+    "races_entered": 1125,
+    "races_started": 1123,
     "drivers": 83,
-    "total_entries": 2374,
+    "total_entries": 2376,
     "wins": 248,
-    "points": 10722,
+    "points": 10749,
     "poles": 254,
     "fastest_laps": 265,
-    "podiums": 836,
+    "podiums": 837,
     "wcc_titles": 16,
     "wdc_titles": 15,
     "antecedent_teams": []
@@ -929,12 +929,12 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 214,
-    "races_started": 214,
+    "races_entered": 215,
+    "races_started": 215,
     "drivers": 9,
-    "total_entries": 428,
+    "total_entries": 430,
     "wins": 0,
-    "points": 386,
+    "points": 392,
     "poles": 1,
     "fastest_laps": 3,
     "podiums": 0,
@@ -1209,12 +1209,12 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 998,
-    "races_started": 994,
+    "races_entered": 999,
+    "races_started": 995,
     "drivers": 52,
-    "total_entries": 2065,
+    "total_entries": 2067,
     "wins": 203,
-    "points": 7790,
+    "points": 7800,
     "poles": 177,
     "fastest_laps": 183,
     "podiums": 558,
@@ -1321,15 +1321,15 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 341,
-    "races_started": 341,
+    "races_entered": 342,
+    "races_started": 342,
     "drivers": 13,
-    "total_entries": 694,
-    "wins": 131,
-    "points": 8159,
-    "poles": 143,
+    "total_entries": 696,
+    "wins": 132,
+    "points": 8202,
+    "poles": 144,
     "fastest_laps": 115,
-    "podiums": 310,
+    "podiums": 312,
     "wcc_titles": 8,
     "wdc_titles": 9,
     "antecedent_teams": [
@@ -1390,12 +1390,12 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 48,
-    "races_started": 48,
-    "drivers": 4,
-    "total_entries": 96,
+    "races_entered": 49,
+    "races_started": 49,
+    "drivers": 5,
+    "total_entries": 98,
     "wins": 0,
-    "points": 138,
+    "points": 142,
     "poles": 0,
     "fastest_laps": 1,
     "podiums": 1,
@@ -1527,14 +1527,14 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 418,
-    "races_started": 417,
-    "drivers": 13,
-    "total_entries": 836,
+    "races_entered": 419,
+    "races_started": 418,
+    "drivers": 14,
+    "total_entries": 838,
     "wins": 130,
-    "points": 8288,
+    "points": 8296,
     "poles": 111,
-    "fastest_laps": 102,
+    "fastest_laps": 103,
     "podiums": 297,
     "wcc_titles": 6,
     "wdc_titles": 8,

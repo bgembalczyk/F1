@@ -225,7 +225,7 @@
         "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
       }
     ],
-    "operating_principle": "Piston, Rotary & Turbine",
+    "operating_principle": "Piston, Rotary, and Turbine",
     "maximum_displacement": {
       "naturally_aspirated": [
         {
@@ -292,7 +292,7 @@
         "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
       }
     ],
-    "operating_principle": "Piston, Rotary & Turbine",
+    "operating_principle": "Piston, Rotary, and Turbine",
     "maximum_displacement": {
       "naturally_aspirated": [
         {
@@ -987,8 +987,8 @@
     },
     "rpm_limit": null,
     "fuel_composition": {
-      "alcohol": "TBA",
-      "petrol": "TBA"
+      "alcohol": "100% synthetic hydrocarbon fuel",
+      "petrol": "100% synthetic hydrocarbon fuel"
     }
   }
 ]

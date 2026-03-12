@@ -313,13 +313,13 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": null,
-    "races_started": null,
-    "wins": null,
-    "points": null,
-    "poles": null,
-    "fastest_laps": null,
-    "podiums": null,
+    "races_entered": 1,
+    "races_started": 1,
+    "wins": 0,
+    "points": 2.0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
     "wcc": 0,
     "wdc": 0
   },
@@ -1417,13 +1417,13 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 1128,
-    "races_started": 1124,
-    "wins": 239,
-    "points": 11752.0,
-    "poles": 244,
-    "fastest_laps": 258,
-    "podiums": 817,
+    "races_entered": 1129,
+    "races_started": 1125,
+    "wins": 249,
+    "points": 11984.0,
+    "poles": 256,
+    "fastest_laps": 274,
+    "podiums": 844,
     "wcc": 16,
     "wdc": 15
   },
@@ -1933,8 +1933,8 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 482,
-    "races_started": 481,
+    "races_entered": 483,
+    "races_started": 482,
     "wins": 89,
     "points": 3409.0,
     "poles": 90,
@@ -2661,13 +2661,13 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": 613,
-    "races_started": 611,
-    "wins": 238,
-    "points": 16410.5,
-    "poles": 248,
+    "races_entered": 614,
+    "races_started": 612,
+    "wins": 239,
+    "points": 16464.5,
+    "poles": 249,
     "fastest_laps": 239,
-    "podiums": 660,
+    "podiums": 662,
     "wcc": 12,
     "wdc": 14
   },
@@ -3125,13 +3125,13 @@
         "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
-    "races_entered": null,
-    "races_started": null,
-    "wins": null,
-    "points": null,
-    "poles": null,
-    "fastest_laps": null,
-    "podiums": null,
+    "races_entered": 1,
+    "races_started": 1,
+    "wins": 0,
+    "points": 12.0,
+    "poles": 0,
+    "fastest_laps": 1,
+    "podiums": 0,
     "wcc": 0,
     "wdc": 0
   },
