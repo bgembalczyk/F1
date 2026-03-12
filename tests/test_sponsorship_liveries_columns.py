@@ -262,9 +262,10 @@ def test_season_column_gemini_empty_classification_sets_no_extra_fields() -> Non
     record: dict = {}
     col.apply(_ctx("1990 (never raced)"), record)
 
-    assert "paren_classification" in record
+    assert "paren_classification" not in record
     assert "driver" not in record
     assert "car" not in record
+    assert "engine" not in record
     assert "grand_prix_scope" not in record
 
 
@@ -334,7 +335,7 @@ def test_gemini_classifier_called_for_paren() -> None:
 
 
 def test_gemini_classification_stored_in_record() -> None:
-    """The Gemini classification result is stored under 'paren_classification'."""
+    """When Gemini classifies as car_model the 'car' field is set on the record."""
     classification = {
         "driver": [],
         "car_model": ["Dallara F188"],
@@ -350,8 +351,8 @@ def test_gemini_classification_stored_in_record() -> None:
     record: dict = {}
     col.apply(_ctx("1988 (Dallara F188)"), record)
 
-    assert "paren_classification" in record
-    assert record["paren_classification"]["car_model"] == ["Dallara F188"]
+    assert "paren_classification" not in record
+    assert record["car"] == [{"text": "Dallara F188"}]
 
 
 def test_no_gemini_call_without_paren() -> None:
@@ -398,6 +399,105 @@ def test_gemini_table_headers_forwarded() -> None:
     assert call_kwargs["headers"] == headers
 
 
+def test_season_column_engine_constructor_sets_engine_field() -> None:
+    """When Gemini classifies as engine_constructor, the 'engine' field is set."""
+    classification = {
+        "driver": [],
+        "car_model": [],
+        "engine_constructor": ["Subaru"],
+        "grand_prix": [],
+        "time_period": [],
+        "other": [],
+    }
+    col = SponsorshipSeasonsColumn(
+        team_name="Coloni",
+        classifier=_make_classifier(classification),
+    )
+    record: dict = {}
+    col.apply(
+        _ctx(
+            "1990 (with Subaru power)",
+            links=[
+                {"text": "1990", "url": "https://en.wikipedia.org/wiki/1990_Formula_One_season"},
+                {"text": "Subaru", "url": "https://en.wikipedia.org/wiki/Subaru"},
+            ],
+        ),
+        record,
+    )
+    assert "engine" in record
+    assert "car" not in record
+    assert "driver" not in record
+    assert record["engine"] == [
+        {"text": "Subaru", "url": "https://en.wikipedia.org/wiki/Subaru"},
+    ]
+
+
+def test_season_column_engine_constructor_text_only_fallback() -> None:
+    """When engine_constructor is classified but no links present, text-only entry is used."""
+    classification = {
+        "driver": [],
+        "car_model": [],
+        "engine_constructor": ["Subaru"],
+        "grand_prix": [],
+        "time_period": [],
+        "other": [],
+    }
+    col = SponsorshipSeasonsColumn(
+        team_name="Coloni",
+        classifier=_make_classifier(classification),
+    )
+    record: dict = {}
+    col.apply(_ctx("1990 (with Subaru power)"), record)
+
+    assert record["engine"] == [{"text": "Subaru"}]
+
+
+def test_hallucination_values_not_in_cell_text_are_ignored() -> None:
+    """Classified values not present in the original cell text are treated as hallucinations."""
+    classification = {
+        "driver": [],
+        "car_model": ["Coloni C3B"],
+        "engine_constructor": ["Ford"],
+        "grand_prix": [],
+        "time_period": [],
+        "other": [],
+    }
+    col = SponsorshipSeasonsColumn(
+        team_name="Coloni",
+        classifier=_make_classifier(classification),
+    )
+    record: dict = {}
+    # Neither "Coloni C3B" nor "Ford" appear in the cell text.
+    col.apply(_ctx("1990 (without Subaru power)"), record)
+
+    assert "car" not in record
+    assert "engine" not in record
+    assert "driver" not in record
+    assert "grand_prix_scope" not in record
+
+
+def test_hallucination_only_matching_values_kept() -> None:
+    """Only classified values that appear in the cell text survive the hallucination filter."""
+    classification = {
+        "driver": [],
+        "car_model": [],
+        "engine_constructor": ["Subaru", "Ford"],
+        "grand_prix": [],
+        "time_period": [],
+        "other": [],
+    }
+    col = SponsorshipSeasonsColumn(
+        team_name="Coloni",
+        classifier=_make_classifier(classification),
+    )
+    record: dict = {}
+    # "Subaru" is in the cell text but "Ford" is not.
+    col.apply(_ctx("1990 (with Subaru power)"), record)
+
+    assert "engine" in record
+    assert record["engine"] == [{"text": "Subaru"}]
+
+
 def test_gemini_classifier_exception_does_not_propagate() -> None:
     """If classifier.classify() raises, the column still sets the season field."""
     from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
@@ -413,15 +513,12 @@ def test_gemini_classifier_exception_does_not_propagate() -> None:
 
     # Season should still be parsed correctly.
     assert "key" in record
-    # paren_classification should contain empty result (graceful fallback).
-    assert record.get("paren_classification") == {
-        "driver": [],
-        "car_model": [],
-        "engine_constructor": [],
-        "grand_prix": [],
-        "time_period": [],
-        "other": [],
-    }
+    # No extra fields from the failed classification.
+    assert "paren_classification" not in record
+    assert "driver" not in record
+    assert "car" not in record
+    assert "engine" not in record
+    assert "grand_prix_scope" not in record
 
 # ── Fix 5: McLaren – "Livery principal sponsor(s)" maps to main_sponsors ──────
 
