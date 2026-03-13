@@ -1,6 +1,6 @@
 import re
 
-FRACTION_RE = re.compile(r"(?:(\d+)\s+)?(\d+)\s*[\/⁄]\s*(\d+)")
+FRACTION_RE = re.compile(r"(?:(?P<whole>\d+)\s+)?(?P<numerator>\d+)\s*[\/⁄]\s*(?P<denominator>\d+)")
 POINTS_WITH_TOTAL_RE = re.compile(r"^(.*?)\(([^)]+)\)")
 MARKS_RE = re.compile(r"[†‡✝✚*~^]")
 SPLIT_RESULTS_RE = re.compile(r"\s*/\s*")

@@ -22,7 +22,7 @@ def extract_visible_text(ctx: ColumnContext) -> str:
         return clean_wiki_text((ctx.clean_text or ctx.raw_text or "").strip())
 
     soup = BeautifulSoup(str(ctx.cell), "html.parser")
-    for hidden in soup.select('[style*="display:none"]'):
+    for hidden in soup.select('[style*="display:none"], .sr-only'):
         hidden.decompose()
     return clean_wiki_text(soup.get_text(" ", strip=True))
 
