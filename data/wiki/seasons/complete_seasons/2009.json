@@ -953,8 +953,8 @@
           },
           "dates": {
             "start": {
-              "text": "16 February 2009 2009",
-              "iso": null
+              "text": "16 February 2009",
+              "iso": "2009-02-16"
             },
             "end": {
               "text": "19 February 2009",
@@ -977,8 +977,8 @@
           },
           "dates": {
             "start": {
-              "text": "9 March 2009 2009",
-              "iso": null
+              "text": "9 March 2009",
+              "iso": "2009-03-09"
             },
             "end": {
               "text": "12 March 2009",
@@ -1001,8 +1001,8 @@
           },
           "dates": {
             "start": {
-              "text": "1 December 2009 2009",
-              "iso": null
+              "text": "1 December 2009",
+              "iso": "2009-12-01"
             },
             "end": {
               "text": "3 December 2009",
