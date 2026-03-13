@@ -203,147 +203,39 @@ class EngineParsingHelpers:
         links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
         text = clean_wiki_text(segment.get_text(" ", strip=True))
 
+        modifier_only = EngineParsingHelpers._try_modifier_only_segment(links)
+        if modifier_only is not None:
+            return modifier_only
+
         first_link = links[0] if links else None
         first_link_text = (first_link.get("text") or "") if first_link else ""
 
-        type_str: str | None = None
-        supercharged = False
-        turbocharged = False
-        gas_turbine = False
-        fuel_type: str | None = None
-        # Tokens from separate links that carry special meaning and must not
-        # appear in the model-name suffix (e.g. engine type codes, "s", "tbn").
         special_tokens: set[str] = set()
+        type_str, first_link, first_link_text = EngineParsingHelpers._resolve_first_link_type(
+            first_link, first_link_text, special_tokens,
+        )
 
-        # Detect modifier-only segments (e.g. a cell that contains only a
-        # "(Diesel)" note after a <br>).  When ALL links in the segment point
-        # to recognised modifier URLs the segment should be merged with the
-        # preceding engine entry rather than creating a new one.
-        all_link_urls = [(link.get("url") or "").lower() for link in links]
-        if links and all(
-            any(mod in url for mod in _MODIFIER_ONLY_URLS)
-            for url in all_link_urls
-        ):
-            for link in links:
-                url = (link.get("url") or "").lower()
-                for url_key, ftype in _FUEL_TYPE_URLS.items():
-                    if url_key in url:
-                        fuel_type = ftype
-                if "supercharger" in url or "supercharged" in url:
-                    supercharged = True
-                if "turbocharger" in url or "turbocharging" in url:
-                    turbocharged = True
-                if "gas_turbine" in url:
-                    gas_turbine = True
-            result: dict[str, object] = {}
-            if fuel_type is not None:
-                result["fuel_type"] = fuel_type
-            if supercharged:
-                result["supercharged"] = True
-            if turbocharged:
-                result["turbocharged"] = True
-            if gas_turbine:
-                result["gas_turbine"] = True
-            return result
-
-        # Check if the first link is itself an engine type code (e.g. "L4").
-        # In that case the plain text that precedes it is the model name.
-        first_link_is_type = first_link_text and _EXACT_TYPE_RE.match(first_link_text)
-        if first_link_is_type:
-            type_str = first_link_text
-            special_tokens.add(first_link_text)
-            first_link = None
-            first_link_text = ""
-        else:
-            # Engine type may be embedded inside the first link text after the
-            # displacement value (e.g. "Climax FPF 2.0 L4" → "L4").
-            if first_link_text:
-                m = _AFTER_DISPLACEMENT_TYPE_RE.search(first_link_text)
-                if m:
-                    type_str = m.group(1)
-
-        for link in links[1:]:
-            link_text = link.get("text") or ""
-            url = (link.get("url") or "").lower()
-
-            if type_str is None:
-                if _EXACT_TYPE_RE.match(link_text):
-                    type_str = link_text
-                    special_tokens.add(link_text)
-                else:
-                    # Handle type code with modifier suffix (e.g. "L4t" → L4, turbocharged).
-                    m_mod = _TYPE_WITH_MODIFIER_RE.match(link_text)
-                    if m_mod:
-                        type_str = m_mod.group(1)
-                        modifier = m_mod.group(2).lower()
-                        if modifier == "t":
-                            turbocharged = True
-                        elif modifier == "s":
-                            supercharged = True
-                        special_tokens.add(link_text)
-                    else:
-                        # Handle verbose type names (e.g. "Straight-4" → "L4").
-                        verbose_key = link_text.lower()
-                        if verbose_key in _VERBOSE_TYPE_MAP:
-                            type_str = _VERBOSE_TYPE_MAP[verbose_key]
-                            special_tokens.add(link_text)
-                        else:
-                            m = _AFTER_DISPLACEMENT_TYPE_RE.search(link_text)
-                            if m:
-                                type_str = m.group(1)
-
-            if "supercharger" in url:
-                supercharged = True
-                special_tokens.add(link_text)
-
-            if "turbocharger" in url or "turbo" in url:
-                turbocharged = True
-                special_tokens.add(link_text)
-
-            if "gas_turbine" in url:
-                gas_turbine = True
-                special_tokens.add(link_text)
-
-            if fuel_type is None:
-                for url_key, ftype in _FUEL_TYPE_URLS.items():
-                    if url_key in url:
-                        fuel_type = ftype
-                        special_tokens.add(link_text)
-                        break
+        type_str, supercharged, turbocharged, gas_turbine, fuel_type = (
+            EngineParsingHelpers._process_secondary_links(
+                links[1:], type_str, special_tokens,
+            )
+        )
 
         displacement_l = EngineParsingHelpers.extract_displacement(text)
 
-        # Fallback: scan the full segment text for an engine type code that was
-        # not captured via any link (e.g. "V12" as plain text after displacement).
-        # The regex requires at least one digit after the layout letter, so a bare
-        # displacement unit "L" is never matched as a type code.
-        if type_str is None:
-            m_plain = _PLAIN_TEXT_TYPE_RE.search(text)
-            if m_plain:
-                candidate = m_plain.group(1)
-                type_str = candidate
-                # Check for modifier suffix in the candidate itself.
-                m_mod2 = _TYPE_WITH_MODIFIER_RE.match(candidate)
-                if m_mod2:
-                    type_str = m_mod2.group(1)
-                    modifier2 = m_mod2.group(2).lower()
-                    if modifier2 == "t":
-                        turbocharged = True
-                    elif modifier2 == "s":
-                        supercharged = True
+        type_str, turbocharged, supercharged = EngineParsingHelpers._fallback_type_from_text(
+            text, type_str, turbocharged, supercharged,
+        )
 
-        # Detect "Turbo" as a standalone keyword in plain text.
         if not turbocharged and re.search(r"\bturbo\b", text, re.IGNORECASE):
             turbocharged = True
-
-        # Detect diesel fuel type from plain text (e.g. "Turbo V12 (Diesel)").
         if fuel_type is None and re.search(r"\bdiesel\b", text, re.IGNORECASE):
             fuel_type = "diesel"
 
         layout, cylinders = EngineParsingHelpers.parse_layout_and_cylinders(type_str)
 
         model_text = EngineParsingHelpers.extract_model_text(
-            text, first_link_text, displacement_l, special_tokens
+            text, first_link_text, displacement_l, special_tokens,
         )
         model: dict[str, object] | None = None
         if model_text or first_link:
@@ -352,6 +244,210 @@ class EngineParsingHelpers:
                 "url": first_link.get("url") if first_link else None,
             }
 
+        return EngineParsingHelpers._build_engine_result(
+            model, displacement_l, type_str, layout, cylinders,
+            supercharged, turbocharged, gas_turbine, fuel_type,
+        )
+
+    # ------------------------------------------------------------------
+    # private helpers for parse_segment
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _try_modifier_only_segment(
+            links: list[LinkRecord],
+    ) -> dict[str, object] | None:
+        """Return a modifier-only dict when all links point to modifier URLs, else None.
+
+        A segment whose every link resolves to a known modifier URL (diesel,
+        supercharger, turbocharger, gas turbine) carries no engine model; it
+        should be merged into the preceding engine entry.
+        """
+        if not links:
+            return None
+        all_link_urls = [(link.get("url") or "").lower() for link in links]
+        if not all(
+            any(mod in url for mod in _MODIFIER_ONLY_URLS)
+            for url in all_link_urls
+        ):
+            return None
+
+        fuel_type: str | None = None
+        supercharged = False
+        turbocharged = False
+        gas_turbine = False
+        for link in links:
+            url = (link.get("url") or "").lower()
+            for url_key, ftype in _FUEL_TYPE_URLS.items():
+                if url_key in url:
+                    fuel_type = ftype
+            if "supercharger" in url or "supercharged" in url:
+                supercharged = True
+            if "turbocharger" in url or "turbocharging" in url:
+                turbocharged = True
+            if "gas_turbine" in url:
+                gas_turbine = True
+
+        result: dict[str, object] = {}
+        if fuel_type is not None:
+            result["fuel_type"] = fuel_type
+        if supercharged:
+            result["supercharged"] = True
+        if turbocharged:
+            result["turbocharged"] = True
+        if gas_turbine:
+            result["gas_turbine"] = True
+        return result
+
+    @staticmethod
+    def _resolve_first_link_type(
+            first_link: LinkRecord | None,
+            first_link_text: str,
+            special_tokens: set[str],
+    ) -> tuple[str | None, LinkRecord | None, str]:
+        """Determine the engine type from the first link, if it encodes one.
+
+        Returns ``(type_str, first_link, first_link_text)`` — the latter two
+        are set to ``(None, "")`` when the first link *is* the type token so
+        that it is not used as the model URL.
+        """
+        if first_link_text and _EXACT_TYPE_RE.match(first_link_text):
+            special_tokens.add(first_link_text)
+            return first_link_text, None, ""
+
+        type_str: str | None = None
+        if first_link_text:
+            m = _AFTER_DISPLACEMENT_TYPE_RE.search(first_link_text)
+            if m:
+                type_str = m.group(1)
+        return type_str, first_link, first_link_text
+
+    @staticmethod
+    def _process_secondary_links(
+            links: list[LinkRecord],
+            type_str: str | None,
+            special_tokens: set[str],
+    ) -> tuple[str | None, bool, bool, bool, str | None]:
+        """Extract engine type and modifier flags from non-first links.
+
+        Returns ``(type_str, supercharged, turbocharged, gas_turbine, fuel_type)``.
+        """
+        supercharged = False
+        turbocharged = False
+        gas_turbine = False
+        fuel_type: str | None = None
+
+        for link in links:
+            link_text = link.get("text") or ""
+            url = (link.get("url") or "").lower()
+
+            if type_str is None:
+                type_str = EngineParsingHelpers._extract_type_from_link(
+                    link_text, special_tokens,
+                )
+                if type_str is None:
+                    m = _AFTER_DISPLACEMENT_TYPE_RE.search(link_text)
+                    if m:
+                        type_str = m.group(1)
+
+            if type_str is not None:
+                m_mod = _TYPE_WITH_MODIFIER_RE.match(type_str)
+                if m_mod:
+                    modifier = m_mod.group(2).lower()
+                    if modifier == "t":
+                        turbocharged = True
+                    elif modifier == "s":
+                        supercharged = True
+                    type_str = m_mod.group(1)
+
+            if "supercharger" in url:
+                supercharged = True
+                special_tokens.add(link_text)
+            if "turbocharger" in url or "turbo" in url:
+                turbocharged = True
+                special_tokens.add(link_text)
+            if "gas_turbine" in url:
+                gas_turbine = True
+                special_tokens.add(link_text)
+            if fuel_type is None:
+                for url_key, ftype in _FUEL_TYPE_URLS.items():
+                    if url_key in url:
+                        fuel_type = ftype
+                        special_tokens.add(link_text)
+                        break
+
+        return type_str, supercharged, turbocharged, gas_turbine, fuel_type
+
+    @staticmethod
+    def _extract_type_from_link(
+            link_text: str,
+            special_tokens: set[str],
+    ) -> str | None:
+        """Return the engine type code represented by *link_text*, or ``None``.
+
+        Handles exact codes (e.g. ``"V8"``), codes with a modifier suffix
+        (e.g. ``"L4t"``), and verbose names (e.g. ``"Straight-4"``).
+        Side-effects: adds *link_text* to *special_tokens* when a type is found.
+        """
+        if _EXACT_TYPE_RE.match(link_text):
+            special_tokens.add(link_text)
+            return link_text
+
+        m_mod = _TYPE_WITH_MODIFIER_RE.match(link_text)
+        if m_mod:
+            special_tokens.add(link_text)
+            return link_text  # modifier stripping happens in caller
+
+        verbose_key = link_text.lower()
+        if verbose_key in _VERBOSE_TYPE_MAP:
+            special_tokens.add(link_text)
+            return _VERBOSE_TYPE_MAP[verbose_key]
+
+        return None
+
+    @staticmethod
+    def _fallback_type_from_text(
+            text: str,
+            type_str: str | None,
+            turbocharged: bool,
+            supercharged: bool,
+    ) -> tuple[str | None, bool, bool]:
+        """Scan plain segment text for a type code when no link provided one.
+
+        Returns ``(type_str, turbocharged, supercharged)``.
+        """
+        if type_str is not None:
+            return type_str, turbocharged, supercharged
+
+        m_plain = _PLAIN_TEXT_TYPE_RE.search(text)
+        if not m_plain:
+            return None, turbocharged, supercharged
+
+        candidate = m_plain.group(1)
+        m_mod = _TYPE_WITH_MODIFIER_RE.match(candidate)
+        if m_mod:
+            modifier = m_mod.group(2).lower()
+            if modifier == "t":
+                turbocharged = True
+            elif modifier == "s":
+                supercharged = True
+            return m_mod.group(1), turbocharged, supercharged
+
+        return candidate, turbocharged, supercharged
+
+    @staticmethod
+    def _build_engine_result(
+            model: dict[str, object] | None,
+            displacement_l: float | None,
+            type_str: str | None,
+            layout: str | None,
+            cylinders: int | None,
+            supercharged: bool,
+            turbocharged: bool,
+            gas_turbine: bool,
+            fuel_type: str | None,
+    ) -> dict[str, object]:
+        """Assemble the final engine result dict, omitting absent/False fields."""
         result: dict[str, object] = {}
         if model is not None:
             result["model"] = model
@@ -371,7 +467,6 @@ class EngineParsingHelpers:
             result["gas_turbine"] = True
         if fuel_type is not None:
             result["fuel_type"] = fuel_type
-
         return result
 
     @staticmethod

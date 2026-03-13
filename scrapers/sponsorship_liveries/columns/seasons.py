@@ -100,62 +100,77 @@ class SponsorshipSeasonsColumn(BaseColumn):
         # Categories are applied in priority order and are mutually exclusive:
         # grand_prix_scope > driver > car > engine.
         gp_names: List[str] = _filter_present(classification.get("grand_prix") or [])
-        if gp_names:
-            gp_links = [lnk for lnk in non_year_links if self._is_gp_link(lnk)]
-            if gp_links:
-                gp_entries = [
-                    {"text": self._expand_gp_name(lnk), "url": lnk["url"]}
-                    if lnk.get("url")
-                    else {"text": self._expand_gp_name(lnk)}
-                    for lnk in gp_links
-                ]
-            else:
-                gp_entries = [{"text": name} for name in gp_names]
-            record["grand_prix_scope"] = {"type": "only", "grand_prix": gp_entries}
-            record["_season_scoped_gp"] = True
+        if self._apply_gp_scope(record, gp_names, non_year_links):
             return
 
         other_links = [lnk for lnk in non_year_links if not self._is_gp_link(lnk)]
 
         driver_names: List[str] = _filter_present(classification.get("driver") or [])
-        if driver_names:
-            if other_links:
-                record["driver"] = [
-                    {"text": lnk["text"], "url": lnk["url"]}
-                    if lnk.get("url")
-                    else {"text": lnk["text"]}
-                    for lnk in other_links
-                ]
-            else:
-                record["driver"] = [{"text": name} for name in driver_names]
+        if self._apply_classified_field(record, "driver", driver_names, other_links):
             return
 
         car_names: List[str] = _filter_present(classification.get("car_model") or [])
-        if car_names:
-            if other_links:
-                record["car"] = [
-                    {"text": lnk["text"], "url": lnk["url"]}
-                    if lnk.get("url")
-                    else {"text": lnk["text"]}
-                    for lnk in other_links
-                ]
-            else:
-                record["car"] = [{"text": name} for name in car_names]
+        if self._apply_classified_field(record, "car", car_names, other_links):
             return
 
         engine_names: List[str] = _filter_present(
             classification.get("engine_constructor") or [],
         )
-        if engine_names:
-            if other_links:
-                record["engine"] = [
-                    {"text": lnk["text"], "url": lnk["url"]}
-                    if lnk.get("url")
-                    else {"text": lnk["text"]}
-                    for lnk in other_links
-                ]
-            else:
-                record["engine"] = [{"text": name} for name in engine_names]
+        self._apply_classified_field(record, "engine", engine_names, other_links)
+
+    # ------------------------------------------------------------------
+    # helpers for apply()
+    # ------------------------------------------------------------------
+
+    def _apply_gp_scope(
+            self,
+            record: Dict[str, Any],
+            gp_names: List[str],
+            non_year_links: List[Dict[str, Any]],
+    ) -> bool:
+        """Apply grand-prix scope to *record* if *gp_names* is non-empty.
+
+        Returns ``True`` when the scope was applied (caller should stop).
+        """
+        if not gp_names:
+            return False
+        gp_links = [lnk for lnk in non_year_links if self._is_gp_link(lnk)]
+        if gp_links:
+            gp_entries = [
+                {"text": self._expand_gp_name(lnk), "url": lnk["url"]}
+                if lnk.get("url")
+                else {"text": self._expand_gp_name(lnk)}
+                for lnk in gp_links
+            ]
+        else:
+            gp_entries = [{"text": name} for name in gp_names]
+        record["grand_prix_scope"] = {"type": "only", "grand_prix": gp_entries}
+        record["_season_scoped_gp"] = True
+        return True
+
+    @staticmethod
+    def _apply_classified_field(
+            record: Dict[str, Any],
+            field: str,
+            names: List[str],
+            links: List[Dict[str, Any]],
+    ) -> bool:
+        """Write *field* to *record* from *names* (or *links* when available).
+
+        Returns ``True`` when the field was applied (caller should stop).
+        """
+        if not names:
+            return False
+        if links:
+            record[field] = [
+                {"text": lnk["text"], "url": lnk["url"]}
+                if lnk.get("url")
+                else {"text": lnk["text"]}
+                for lnk in links
+            ]
+        else:
+            record[field] = [{"text": name} for name in names]
+        return True
 
     # ------------------------------------------------------------------
     # helpers
