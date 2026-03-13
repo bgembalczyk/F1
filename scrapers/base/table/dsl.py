@@ -6,6 +6,7 @@ from typing import Iterable
 from typing import Mapping
 
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.base.table.dsl_serialization import column_ref_payload
 from scrapers.base.table.schema import TableSchema
 
 
@@ -98,43 +99,10 @@ class TableSchemaDSL:
                 {
                     "header": spec.header,
                     "key": spec.key,
-                    "column": self._column_ref_payload(spec),
+                    "column": column_ref_payload(spec),
                 }
                 for spec in self.columns
             ]
-        }
-
-    @staticmethod
-    def _serialize_value(value: Any) -> Any:
-        if value is None or isinstance(value, (str, int, float, bool)):
-            return value
-        if isinstance(value, dict):
-            return {
-                key: TableSchemaDSL._serialize_value(val) for key, val in value.items()
-            }
-        if isinstance(value, (list, tuple)):
-            return [TableSchemaDSL._serialize_value(item) for item in value]
-        if isinstance(value, type):
-            return f"{value.__module__}.{value.__name__}"
-        if callable(value):
-            return getattr(value, "__qualname__", repr(value))
-        return repr(value)
-
-    @staticmethod
-    def _column_ref_payload(spec: ColumnSpec) -> dict[str, Any]:
-        if isinstance(spec.column, BaseColumn):
-            ref = ColumnRef.from_instance(spec.column)
-            kwargs = {
-                key: TableSchemaDSL._serialize_value(value)
-                for key, value in dict(ref.kwargs).items()
-            }
-            return {"class_path": ref.class_path, "kwargs": kwargs}
-        return {
-            "class_path": spec.column.class_path,
-            "kwargs": {
-                key: TableSchemaDSL._serialize_value(value)
-                for key, value in dict(spec.column.kwargs).items()
-            },
         }
 
     @classmethod

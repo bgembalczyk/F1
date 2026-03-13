@@ -64,19 +64,59 @@ class SponsorshipSectionParser:
                 table_headers=table_headers,
             )
 
-        schema_columns = [
-            column("Year", "season", _seasons_col()),
-            column("Years", "season", _seasons_col()),
-            column("Season", "season", _seasons_col()),
-            column("Seasons", "season", _seasons_col()),
-            column("Year(s)", "season", _seasons_col()),
-            column("Driver(s)", "drivers", DriverListColumn()),
+        schema_columns = (
+            self._season_column_specs(_seasons_col)
+            + self._driver_column_specs()
+            + self._colour_column_specs()
+            + self._sponsor_column_specs()
+            + self._text_column_specs()
+        )
+        config = ScraperConfig(
+            url=self._url,
+            schema=TableSchemaDSL(columns=schema_columns),
+            record_factory=record_from_mapping,
+        )
+        return TablePipeline(
+            config=config,
+            include_urls=self._include_urls,
+            normalize_empty_values=self._normalize_empty_values,
+        )
+
+    # ------------------------------------------------------------------
+    # column-spec helpers for _build_pipeline
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _season_column_specs(
+            seasons_col_factory: Any,
+    ) -> List[Any]:
+        """Return column specs for the season/year header variants."""
+        return [
+            column("Year", "season", seasons_col_factory()),
+            column("Years", "season", seasons_col_factory()),
+            column("Season", "season", seasons_col_factory()),
+            column("Seasons", "season", seasons_col_factory()),
+            column("Year(s)", "season", seasons_col_factory()),
+        ]
+
+    @staticmethod
+    def _driver_column_specs() -> List[Any]:
+        return [column("Driver(s)", "drivers", DriverListColumn())]
+
+    @staticmethod
+    def _colour_column_specs() -> List[Any]:
+        return [
             column("Main colour(s)", normalize_header("Main colour(s)"), ColourListColumn()),
             column(
                 "Additional colour(s)",
                 normalize_header("Additional colour(s)"),
                 ColourListColumn(),
             ),
+        ]
+
+    @staticmethod
+    def _sponsor_column_specs() -> List[Any]:
+        return [
             column(
                 "Additional major sponsor(s)",
                 normalize_header("Additional major sponsor(s)"),
@@ -97,6 +137,11 @@ class SponsorshipSectionParser:
                 "livery_principal_sponsors",
                 SponsorColumn(),
             ),
+        ]
+
+    @staticmethod
+    def _text_column_specs() -> List[Any]:
+        return [
             column("Notes", normalize_header("Notes"), TextColumn()),
             column(
                 "Non-tobacco liveries",
@@ -146,16 +191,6 @@ class SponsorshipSectionParser:
                 TextColumn(),
             ),
         ]
-        config = ScraperConfig(
-            url=self._url,
-            schema=TableSchemaDSL(columns=schema_columns),
-            record_factory=record_from_mapping,
-        )
-        return TablePipeline(
-            config=config,
-            include_urls=self._include_urls,
-            normalize_empty_values=self._normalize_empty_values,
-        )
 
     def parse_section_table(
             self,
