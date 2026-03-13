@@ -41,6 +41,7 @@ class ResultsParsingHelpers:
         - "12.5" -> 12.5
         - "1/2" -> 0.5
         - "1 1/2" -> 1.5
+        - "57 1⁄7" -> 57.142857...
         
         Args:
             text: Text containing points value
@@ -53,12 +54,8 @@ class ResultsParsingHelpers:
 
         text = text.strip()
 
-        # Try simple float first
-        simple_value = parse_float_from_text(text)
-        if simple_value is not None:
-            return simple_value
-
-        # Try fraction pattern (e.g., "1/2" or "1 1/2")
+        # Try fraction pattern first (e.g., "1/2", "1 1/2", "57 1⁄7")
+        # Must be tried before simple float to avoid returning only the integer part
         match = FRACTION_RE.match(text)
         if match:
             whole = match.group("whole")
@@ -73,7 +70,8 @@ class ResultsParsingHelpers:
 
             return value
 
-        return None
+        # Fall back to simple float (e.g., "25", "12.5")
+        return parse_float_from_text(text)
 
     @staticmethod
     def parse_results(text: str) -> list[dict[str, Any]]:

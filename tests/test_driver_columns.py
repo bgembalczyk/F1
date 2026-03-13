@@ -101,3 +101,23 @@ def test_points_column_hidden_span_dash() -> None:
     column = PointsColumn()
     parsed = column.parse(_ctx_with_cell('<span style="display:none">2</span>–'))
     assert parsed is None
+
+
+def test_points_column_frac_span_mixed_number() -> None:
+    """Total points expressed as a mixed number using Wikipedia frac template."""
+    column = PointsColumn()
+    html = (
+        '<b>42 (<style data-mw-deduplicate="TemplateStyles:r1154941027">'
+        '.mw-parser-output .frac{white-space:nowrap}'
+        '</style>'
+        '<span class="frac">57'
+        '<span class="sr-only">+</span>'
+        '<span class="num">1</span>\u2044'
+        '<span class="den">7</span>'
+        '</span>)</b>'
+    )
+    parsed = column.parse(_ctx_with_cell(html))
+    assert isinstance(parsed, dict)
+    assert parsed["championship_points"] == 42.0
+    assert abs(parsed["total_points"] - (57 + 1 / 7)) < 1e-9
+
