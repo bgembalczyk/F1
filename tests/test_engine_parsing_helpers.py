@@ -32,6 +32,22 @@ def _parse_column(html: str) -> dict:
     return EngineColumn().parse(ctx)
 
 
+def _parse_any(html: str) -> dict:
+    """Parse engine data via EngineColumn from any cell tag (<td> or <th>)."""
+    cell = BeautifulSoup(html, "html.parser").find()
+    ctx = ColumnContext(
+        header="",
+        key="",
+        raw_text="",
+        clean_text="",
+        links=[],
+        cell=cell,
+        base_url=BASE_URL,
+        model_fields=None,
+    )
+    return EngineColumn().parse(ctx)
+
+
 # ---------------------------------------------------------------------------
 # is_f2_background
 # ---------------------------------------------------------------------------
@@ -227,3 +243,213 @@ class TestRegression:
         assert result["model"]["text"] == "Ford Cosworth DFV"
         assert result["displacement_l"] == 3.0
         assert result["type"] == "V8"
+
+
+# ---------------------------------------------------------------------------
+# CSS shorthand hex colour for F2 detection (#fcc → #ffcccc)
+# ---------------------------------------------------------------------------
+
+class TestIsF2BackgroundShorthand:
+    def test_fcc_shorthand_is_f2(self) -> None:
+        assert EngineParsingHelpers.is_f2_background("#fcc") is True
+
+    def test_fcc_uppercase_is_f2(self) -> None:
+        assert EngineParsingHelpers.is_f2_background("#FCC") is True
+
+    def test_fcc_column_class_from_column(self) -> None:
+        html = (
+            '<td style="background:#fcc;">'
+            '<a href="/wiki/Cosworth_FVA">Ford Cosworth FVA</a> 1.6 '
+            '<a href="/wiki/Straight-4">L4</a>'
+            '</td>'
+        )
+        result = _parse_column(html)
+        assert result["class"] == "F2"
+        assert result["type"] == "L4"
+
+
+# ---------------------------------------------------------------------------
+# Type code with modifier suffix (L4t → L4 + turbocharged)
+# ---------------------------------------------------------------------------
+
+class TestTypeWithModifierSuffix:
+    def test_bmw_l4t_type(self) -> None:
+        html = (
+            '<td rowspan="2">'
+            '<a href="/wiki/BMW_M12">BMW M12</a>/13 1.5 '
+            '<a href="/wiki/Inline-four_engine">L4t</a>'
+            '</td>'
+        )
+        result = _parse_segment(html)
+        assert result["type"] == "L4"
+        assert result["layout"] == "L"
+        assert result["cylinders"] == 4
+
+    def test_bmw_l4t_turbocharged(self) -> None:
+        html = (
+            '<td rowspan="2">'
+            '<a href="/wiki/BMW_M12">BMW M12</a>/13 1.5 '
+            '<a href="/wiki/Inline-four_engine">L4t</a>'
+            '</td>'
+        )
+        result = _parse_segment(html)
+        assert result.get("turbocharged") is True
+
+
+# ---------------------------------------------------------------------------
+# Verbose engine type names as separate link text (Straight-4, Flat-4)
+# ---------------------------------------------------------------------------
+
+class TestVerboseEngineTypeNames:
+    def test_straight4_link_sets_type(self) -> None:
+        html = (
+            '<th>'
+            '<a href="/wiki/Coventry_Climax">Climax</a> '
+            '<a href="/wiki/Straight-4">Straight-4</a>'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["type"] == "L4"
+        assert result["layout"] == "L"
+        assert result["cylinders"] == 4
+
+    def test_straight4_link_removes_from_model(self) -> None:
+        html = (
+            '<th>'
+            '<a href="/wiki/Coventry_Climax">Climax</a> '
+            '<a href="/wiki/Straight-4">Straight-4</a>'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["model"]["text"] == "Climax"
+
+    def test_flat4_link_sets_type(self) -> None:
+        html = (
+            '<th>'
+            '<a href="/wiki/Porsche_in_motorsport">Porsche</a> '
+            '<a href="/wiki/Flat-4">Flat-4</a>'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["type"] == "F4"
+        assert result["layout"] == "F"
+        assert result["cylinders"] == 4
+
+    def test_flat4_link_removes_from_model(self) -> None:
+        html = (
+            '<th>'
+            '<a href="/wiki/Porsche_in_motorsport">Porsche</a> '
+            '<a href="/wiki/Flat-4">Flat-4</a>'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["model"]["text"] == "Porsche"
+
+    def test_alta_straight4(self) -> None:
+        html = (
+            '<th>'
+            '<a href="/wiki/Alta_Car_and_Engineering_Company">Alta</a> '
+            '<a href="/wiki/Straight-4">Straight-4</a>'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["model"]["text"] == "Alta"
+        assert result["type"] == "L4"
+
+    def test_hart_straight4(self) -> None:
+        html = (
+            '<th nowrap="">'
+            '<a href="/wiki/Brian_Hart_Ltd.">Hart</a> '
+            '<a href="/wiki/Straight-4">Straight-4</a>'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["model"]["text"] == "Hart"
+        assert result["type"] == "L4"
+
+
+# ---------------------------------------------------------------------------
+# Engine type from plain text (V8, V12 after displacement, no separate link)
+# ---------------------------------------------------------------------------
+
+class TestEngineTypeFromPlainText:
+    def test_jaguar_v12_in_plain_text(self) -> None:
+        html = (
+            '<th nowrap="">'
+            '<a href="/wiki/Jaguar_V12_engine">Jaguar</a> 7.4L V12'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["type"] == "V12"
+        assert result["layout"] == "V"
+        assert result["cylinders"] == 12
+        assert result["displacement_l"] == 7.4
+
+    def test_gibson_v8_in_plain_text(self) -> None:
+        html = (
+            '<th rowspan="2" nowrap="">'
+            '<a href="/wiki/Gibson_Technology">Gibson</a> GK428 4.2 L V8'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["type"] == "V8"
+        assert result["layout"] == "V"
+        assert result["cylinders"] == 8
+
+    def test_lotus_judd_v8(self) -> None:
+        html = (
+            '<th nowrap="">'
+            '<a href="/wiki/Lotus_Cars">Lotus</a> '
+            '(<a href="/wiki/Judd_(engine)">Judd</a>) 3.6\xa0L V8'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["type"] == "V8"
+        assert result["layout"] == "V"
+        assert result["cylinders"] == 8
+        assert result["model"]["text"] == "Lotus ( Judd )"
+
+
+# ---------------------------------------------------------------------------
+# Diesel fuel type detection
+# ---------------------------------------------------------------------------
+
+class TestDieselFuelType:
+    def test_audi_tdi_diesel_fuel_type(self) -> None:
+        html = (
+            '<th nowrap="">'
+            '<a href="/wiki/Audi">Audi</a> '
+            '<a href="/wiki/Turbo_Direct_Injection">TDI</a> '
+            '5.5\xa0L Turbo V12 '
+            '(<a href="/wiki/Diesel_engine">Diesel</a>)'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["fuel_type"] == "diesel"
+        assert result.get("turbocharged") is True
+        assert result["type"] == "V12"
+
+    def test_audi_br_diesel_is_not_array(self) -> None:
+        html = (
+            '<th nowrap="">'
+            '<a href="/wiki/Audi">Audi</a> 5.5L Turbo V12'
+            '<br>'
+            '(<a href="/wiki/Diesel_engine">Diesel</a>)'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert not isinstance(result, list), "Should not create array for (Diesel) note"
+
+    def test_audi_br_diesel_fuel_type(self) -> None:
+        html = (
+            '<th nowrap="">'
+            '<a href="/wiki/Audi">Audi</a> 5.5L Turbo V12'
+            '<br>'
+            '(<a href="/wiki/Diesel_engine">Diesel</a>)'
+            '</th>'
+        )
+        result = _parse_any(html)
+        assert result["fuel_type"] == "diesel"
+        assert result.get("turbocharged") is True
+        assert result["type"] == "V12"
+        assert result["model"]["text"] == "Audi"
