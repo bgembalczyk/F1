@@ -3072,6 +3072,35 @@
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1950_Penya_Rhin_Grand_Prix"
           }
+        },
+        {
+          "race_name": "Grand Prix of Chile",
+          "circuit": {
+            "text": "Pedro de Valdivia Norte",
+            "url": "https://en.wikipedia.org/wiki/Santiago_de_Chile"
+          },
+          "date": {
+            "text": "17 December 1950",
+            "iso": "1950-12-17"
+          },
+          "winning_driver": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1950_Chilean_Grand_Prix"
+          }
         }
       ],
       "scoring_system": [

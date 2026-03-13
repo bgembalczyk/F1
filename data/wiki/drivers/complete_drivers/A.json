@@ -440,8 +440,8 @@
                   "text": "Porsche",
                   "url": "https://en.wikipedia.org/wiki/Porsche_in_motorsport"
                 },
-                "type": "Flat4",
-                "layout": "FLAT",
+                "type": "F4",
+                "layout": "F",
                 "cylinders": 4
               },
               "1": {
@@ -5930,7 +5930,7 @@
               },
               "engine": {
                 "model": {
-                  "text": "Toyota R",
+                  "text": "Toyota RV10",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 3.5,
@@ -14869,7 +14869,7 @@
               },
               {
                 "label": "Starts",
-                "value": 21
+                "value": 22
               },
               {
                 "label": "Championships",
@@ -14884,7 +14884,7 @@
               },
               {
                 "label": "Podiums",
-                "value": 7
+                "value": 8
               },
               {
                 "label": "Poles",
@@ -16697,6 +16697,34 @@
               "season": 2025,
               "series": {
                 "series": {
+                  "text": "24 Hours of Le Mans-Hypercar",
+                  "url": "https://en.wikipedia.org/wiki/2025_24_Hours_of_Le_Mans"
+                },
+                "class": "Hypercar"
+              },
+              "team": [
+                {
+                  "name": "Cadillac Whelen",
+                  "title_sponsors": [
+                    {
+                      "text": "Cadillac Whelen",
+                      "url": "https://en.wikipedia.org/wiki/Action_Express_Racing"
+                    }
+                  ]
+                }
+              ],
+              "races": 1,
+              "wins": 0,
+              "poles": 0,
+              "fastest_laps": 0,
+              "podiums": 0,
+              "points": 0.0,
+              "position": "DNF"
+            },
+            {
+              "season": 2025,
+              "series": {
+                "series": {
                   "text": "Deutsche Tourenwagen Masters",
                   "url": "https://en.wikipedia.org/wiki/2025_Deutsche_Tourenwagen_Masters"
                 }
@@ -16719,6 +16747,34 @@
               "podiums": 4,
               "points": 162.0,
               "position": "8th"
+            },
+            {
+              "season": 2026,
+              "series": {
+                "series": {
+                  "text": "IMSA SportsCar Championship-GTP",
+                  "url": "https://en.wikipedia.org/wiki/2026_IMSA_SportsCar_Championship"
+                },
+                "class": "GTP"
+              },
+              "team": [
+                {
+                  "name": "Cadillac Whelen",
+                  "title_sponsors": [
+                    {
+                      "text": "Cadillac Whelen",
+                      "url": "https://en.wikipedia.org/wiki/Action_Express_Racing"
+                    }
+                  ]
+                }
+              ],
+              "races": 1,
+              "wins": 0,
+              "poles": 0,
+              "fastest_laps": 0,
+              "podiums": 1,
+              "points": 340.0,
+              "position": "2nd*"
             }
           ],
           "section": "Racing record",
@@ -18123,7 +18179,7 @@
             {
               "year": {
                 "text": "2014",
-                "url": "https://en.wikipedia.org/wiki/2014_Pro_Mazda_Championship_season"
+                "url": "https://en.wikipedia.org/wiki/2014_Pro_Mazda_Championship"
               },
               "team": [
                 {
@@ -19084,7 +19140,7 @@
             {
               "year": {
                 "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Formula_V8_3.5_Championship"
+                "url": "https://en.wikipedia.org/wiki/2016_Formula_V8_3.5_Series"
               },
               "team": [
                 {
@@ -22275,7 +22331,8 @@
             "8",
             "9",
             "Rank",
-            "Points"
+            "Points",
+            "Ref"
           ],
           "rows": [
             {
@@ -22703,6 +22760,148 @@
               },
               "rank": 2,
               "points": 2720.0
+            },
+            {
+              "year": {
+                "text": "2026",
+                "url": "https://en.wikipedia.org/wiki/2026_IMSA_SportsCar_Championship"
+              },
+              "entrant": [
+                {
+                  "name": "Cadillac Whelen",
+                  "title_sponsors": [
+                    {
+                      "text": "Cadillac Whelen",
+                      "url": "https://en.wikipedia.org/wiki/Action_Express_Racing"
+                    }
+                  ]
+                }
+              ],
+              "class": "GTP",
+              "car": {
+                "text": "Cadillac V-Series.R",
+                "url": "https://en.wikipedia.org/wiki/Cadillac_V-Series.R"
+              },
+              "engine": {
+                "model": {
+                  "text": "Cadillac LMC55R",
+                  "url": "https://en.wikipedia.org/wiki/Cadillac"
+                },
+                "displacement_l": 5.5,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "1": {
+                "round": {
+                  "text": "DAY",
+                  "url": "https://en.wikipedia.org/wiki/2026_24_Hours_of_Daytona"
+                },
+                "code": "DAY",
+                "result": 2,
+                "background": "#DFDFDF",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "2": {
+                "round": {
+                  "text": "SEB",
+                  "url": "https://en.wikipedia.org/wiki/2026_12_Hours_of_Sebring"
+                },
+                "code": "SEB",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "3": {
+                "round": {
+                  "text": "LBH",
+                  "url": null
+                },
+                "code": "LBH",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "4": {
+                "round": {
+                  "text": "LGA",
+                  "url": null
+                },
+                "code": "LGA",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "5": {
+                "round": {
+                  "text": "DET",
+                  "url": null
+                },
+                "code": "DET",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "6": {
+                "round": {
+                  "text": "WGL",
+                  "url": null
+                },
+                "code": "WGL",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "7": {
+                "round": {
+                  "text": "ELK",
+                  "url": null
+                },
+                "code": "ELK",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "8": {
+                "round": {
+                  "text": "IMS",
+                  "url": null
+                },
+                "code": "IMS",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "9": {
+                "round": {
+                  "text": "PET",
+                  "url": null
+                },
+                "code": "PET",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "rank": 2,
+              "points": 340.0
             }
           ],
           "section": "Racing record",
@@ -26918,25 +27117,18 @@
                   "url": "https://en.wikipedia.org/wiki/Audi_R10_TDI"
                 }
               ],
-              "engine": [
-                {
-                  "model": {
-                    "text": "Audi",
-                    "url": "https://en.wikipedia.org/wiki/Audi"
-                  },
-                  "displacement_l": 5.5,
-                  "type": "V12",
-                  "layout": "V",
-                  "cylinders": 12,
-                  "turbocharged": true
+              "engine": {
+                "model": {
+                  "text": "Audi",
+                  "url": "https://en.wikipedia.org/wiki/Audi"
                 },
-                {
-                  "model": {
-                    "text": "( Diesel )",
-                    "url": "https://en.wikipedia.org/wiki/Diesel_engine"
-                  }
-                }
-              ],
+                "displacement_l": 5.5,
+                "type": "V12",
+                "layout": "V",
+                "cylinders": 12,
+                "turbocharged": true,
+                "fuel_type": "diesel"
+              },
               "1": {
                 "round": {
                   "text": "SEB",
@@ -27222,14 +27414,15 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Audi TDI ( Diesel )",
+                  "text": "Audi TDI",
                   "url": "https://en.wikipedia.org/wiki/Audi"
                 },
                 "displacement_l": 5.5,
                 "type": "V12",
                 "layout": "V",
                 "cylinders": 12,
-                "turbocharged": true
+                "turbocharged": true,
+                "fuel_type": "diesel"
               },
               "1": {
                 "round": {
@@ -27510,14 +27703,18 @@
       {
         "year": 2025,
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
     "drivers_championships": {
       "count": 0,
       "seasons": []
     },
-    "race_entries": 130,
-    "race_starts": 128,
+    "race_entries": 131,
+    "race_starts": 129,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 2,
@@ -27604,8 +27801,8 @@
               {
                 "label": "Entries",
                 "value": {
-                  "entries": 130,
-                  "starts": 128
+                  "entries": 131,
+                  "starts": 129
                 }
               },
               {
@@ -27648,8 +27845,8 @@
                 "label": "Last entry",
                 "value": [
                   {
-                    "text": "2025 Abu Dhabi Grand Prix",
-                    "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
+                    "text": "2026 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
                   }
                 ]
               },
@@ -27964,8 +28161,8 @@
               "season": 2010,
               "series": {
                 "series": {
-                  "text": "KF3",
-                  "url": "https://en.wikipedia.org/wiki/KF3"
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
                 },
                 "class": "KF3"
               },
@@ -28732,6 +28929,33 @@
               "podiums": 0,
               "points": 73.0,
               "position": "8th"
+            },
+            {
+              "season": 2026,
+              "series": {
+                "series": {
+                  "text": "Formula One",
+                  "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+                }
+              },
+              "team": [
+                {
+                  "name": "Atlassian Williams F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Atlassian Williams F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                    }
+                  ]
+                }
+              ],
+              "races": 1,
+              "wins": 0,
+              "poles": 0,
+              "fastest_laps": 0,
+              "podiums": 0,
+              "points": 0.0,
+              "position": "12th*"
             }
           ],
           "section": "Racing record",
@@ -33360,6 +33584,333 @@
               },
               "wdc": 8,
               "points": 73.0
+            },
+            {
+              "year": {
+                "text": "2026",
+                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+              },
+              "entrant": [
+                {
+                  "name": "Atlassian Williams F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Atlassian Williams F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                    }
+                  ]
+                }
+              ],
+              "chassis": [
+                {
+                  "text": "Williams",
+                  "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                },
+                {
+                  "text": "FW48",
+                  "url": "https://en.wikipedia.org/wiki/Williams_FW48"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Mercedes-AMG F1 M17",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+                },
+                "type": "V6",
+                "layout": "V",
+                "cylinders": 6,
+                "turbocharged": true
+              },
+              "1": {
+                "round": {
+                  "text": "AUS",
+                  "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
+                },
+                "code": "AUS",
+                "result": 12,
+                "background": "#CFCFFF",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "2": {
+                "round": {
+                  "text": "CHN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix"
+                },
+                "code": "CHN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "3": {
+                "round": {
+                  "text": "JPN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Japanese_Grand_Prix"
+                },
+                "code": "JPN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "4": {
+                "round": {
+                  "text": "BHR",
+                  "url": "https://en.wikipedia.org/wiki/2026_Bahrain_Grand_Prix"
+                },
+                "code": "BHR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "5": {
+                "round": {
+                  "text": "SAU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Saudi_Arabian_Grand_Prix"
+                },
+                "code": "SAU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "6": {
+                "round": {
+                  "text": "MIA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Miami_Grand_Prix"
+                },
+                "code": "MIA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "7": {
+                "round": {
+                  "text": "CAN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Canadian_Grand_Prix"
+                },
+                "code": "CAN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "8": {
+                "round": {
+                  "text": "MON",
+                  "url": "https://en.wikipedia.org/wiki/2026_Monaco_Grand_Prix"
+                },
+                "code": "MON",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "9": {
+                "round": {
+                  "text": "BCN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Barcelona-Catalunya_Grand_Prix"
+                },
+                "code": "BCN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "10": {
+                "round": {
+                  "text": "AUT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Austrian_Grand_Prix"
+                },
+                "code": "AUT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "11": {
+                "round": {
+                  "text": "GBR",
+                  "url": "https://en.wikipedia.org/wiki/2026_British_Grand_Prix"
+                },
+                "code": "GBR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "12": {
+                "round": {
+                  "text": "BEL",
+                  "url": "https://en.wikipedia.org/wiki/2026_Belgian_Grand_Prix"
+                },
+                "code": "BEL",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "13": {
+                "round": {
+                  "text": "HUN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Hungarian_Grand_Prix"
+                },
+                "code": "HUN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "14": {
+                "round": {
+                  "text": "NED",
+                  "url": "https://en.wikipedia.org/wiki/2026_Dutch_Grand_Prix"
+                },
+                "code": "NED",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "15": {
+                "round": {
+                  "text": "ITA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Italian_Grand_Prix"
+                },
+                "code": "ITA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "16": {
+                "round": {
+                  "text": "ESP",
+                  "url": "https://en.wikipedia.org/wiki/2026_Spanish_Grand_Prix"
+                },
+                "code": "ESP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "17": {
+                "round": {
+                  "text": "AZE",
+                  "url": "https://en.wikipedia.org/wiki/2026_Azerbaijan_Grand_Prix"
+                },
+                "code": "AZE",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "18": {
+                "round": {
+                  "text": "SIN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Singapore_Grand_Prix"
+                },
+                "code": "SIN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "19": {
+                "round": {
+                  "text": "USA",
+                  "url": "https://en.wikipedia.org/wiki/2026_United_States_Grand_Prix"
+                },
+                "code": "USA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "20": {
+                "round": {
+                  "text": "MXC",
+                  "url": "https://en.wikipedia.org/wiki/2026_Mexico_City_Grand_Prix"
+                },
+                "code": "MXC",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "21": {
+                "round": {
+                  "text": "SAP",
+                  "url": "https://en.wikipedia.org/wiki/2026_S%C3%A3o_Paulo_Grand_Prix"
+                },
+                "code": "SAP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "22": {
+                "round": {
+                  "text": "LVG",
+                  "url": "https://en.wikipedia.org/wiki/2026_Las_Vegas_Grand_Prix"
+                },
+                "code": "LVG",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "23": {
+                "round": {
+                  "text": "QAT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Qatar_Grand_Prix"
+                },
+                "code": "QAT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "24": {
+                "round": {
+                  "text": "ABU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix"
+                },
+                "code": "ABU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "wdc": 12,
+              "points": 0.0
             }
           ],
           "section": "Racing record",
@@ -44831,6 +45382,44 @@
   },
   {
     "driver": {
+      "text": "Ray Allen",
+      "url": "https://en.wikipedia.org/wiki/Ray_Allen"
+    },
+    "is_active": false,
+    "is_world_champion": false,
+    "nationality": "United Kingdom",
+    "seasons_competed": [
+      {
+        "year": 1972,
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
+      }
+    ],
+    "drivers_championships": {
+      "count": 0,
+      "seasons": []
+    },
+    "race_entries": 1,
+    "race_starts": 0,
+    "pole_positions": 0,
+    "race_wins": 0,
+    "podiums": 0,
+    "fastest_laps": 0,
+    "points": "0",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Ray_Allen",
+      "infobox": {
+        "title": "Ray Allen",
+        "general": {},
+        "championship_titles": [],
+        "major_victories": [],
+        "career": [],
+        "previous_series": []
+      },
+      "career_results": null
+    }
+  },
+  {
+    "driver": {
       "text": "Philippe Alliot",
       "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
     },
@@ -50986,6 +51575,10 @@
       {
         "year": 2025,
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
     "drivers_championships": {
@@ -51001,8 +51594,8 @@
         }
       ]
     },
-    "race_entries": 428,
-    "race_starts": 425,
+    "race_entries": 429,
+    "race_starts": 426,
     "pole_positions": 22,
     "race_wins": 32,
     "podiums": 106,
@@ -51096,8 +51689,8 @@
               {
                 "label": "Entries",
                 "value": {
-                  "entries": 428,
-                  "starts": 425
+                  "entries": 429,
+                  "starts": 426
                 }
               },
               {
@@ -51167,8 +51760,8 @@
                 "label": "Last entry",
                 "value": [
                   {
-                    "text": "2025 Abu Dhabi Grand Prix",
-                    "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
+                    "text": "2026 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
                   }
                 ]
               },

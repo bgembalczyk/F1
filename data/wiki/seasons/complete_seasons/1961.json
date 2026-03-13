@@ -3764,6 +3764,15 @@
             "results": [
               {
                 "position": "DSQ",
+                "shared_drive": true,
+                "points_eligible": false,
+                "notes": [
+                  "shared_drive_no_points"
+                ],
+                "background": "Disqualified"
+              },
+              {
+                "position": "Ret",
                 "background": "Disqualified"
               }
             ]
@@ -6216,6 +6225,11 @@
             "results": [
               {
                 "position": "DSQ",
+                "shared_drive": true,
+                "points_eligible": false,
+                "notes": [
+                  "shared_drive_no_points"
+                ],
                 "background": "Disqualified"
               }
             ]
