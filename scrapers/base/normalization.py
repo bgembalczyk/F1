@@ -21,7 +21,7 @@ class RecordNormalizer:
         normalization_rules: Sequence[NormalizationRule] | None = None,
     ) -> None:
         self._empty_value_policy = empty_value_policy or EmptyValuePolicy.from_flag(
-            normalize_empty_values,
+            normalize_empty_values=normalize_empty_values,
         )
         self._normalize_empty_values = (
             self._empty_value_policy is EmptyValuePolicy.NORMALIZE
