@@ -10,25 +10,24 @@ def normalize_auto_value(
     strip_marks: bool = False,
     drop_empty: bool = True,
 ) -> Any:
+    result: Any = value
+
     if isinstance(value, dict):
         cleaned = dict(value)
         if strip_marks:
             cleaned["text"] = strip_wiki_marks(cleaned.get("text")) or ""
+        result = cleaned
         if drop_empty and not (cleaned.get("text") or "").strip():
-            return None
-        return cleaned
-    if isinstance(value, list):
+            result = None
+    elif isinstance(value, list):
         normalized = normalize_links(
             value,
             strip_marks=strip_marks,
             drop_empty=drop_empty,
         )
-        if drop_empty and not normalized:
-            return None
-        return normalized
-    if isinstance(value, str):
+        result = None if drop_empty and not normalized else normalized
+    elif isinstance(value, str):
         cleaned = strip_wiki_marks(value) if strip_marks else value
-        if drop_empty and not cleaned.strip():
-            return None
-        return cleaned
-    return value
+        result = None if drop_empty and not cleaned.strip() else cleaned
+
+    return result

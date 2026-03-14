@@ -10,12 +10,14 @@ def split_cell_on_br(cell: Tag, *, replace_link_breaks: bool = False) -> list[Ta
     """
     Splits a cell into segments on <br> tags. If no <br> tags are found, returns [cell].
 
-    Each segment is a new artificial <span> tag to allow independent counting of text and links
+    Each segment is a new artificial <span> tag
+    to allow independent counting of text and links
     without modifying the original DOM tree.
 
     Args:
         cell: The HTML table cell to split.
-        replace_link_breaks: If True, replaces <br> tags inside <a> tags with spaces before splitting.
+        replace_link_breaks: If True, replaces <br> tags inside <a> tags
+            with spaces before splitting.
 
     Returns:
         A list of Tag elements, one for each segment.
@@ -46,7 +48,8 @@ def split_cell_on_br_dom_based(cell: Tag) -> list[Tag]:
     """
     Splits a cell on <br> tags using DOM-based parsing.
 
-    This variant iterates through the cell's contents and groups them by <br> separators.
+    This variant iterates through the cell's contents
+    and groups them by <br> separators.
     It's useful when you need to preserve the exact structure of the original content.
 
     Args:

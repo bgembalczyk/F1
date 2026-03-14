@@ -57,7 +57,10 @@ def parse_numeric_value(value: str | None) -> float | None:
 
 
 def parse_int_from_text(text: str) -> int | None:
-    """Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234)."""
+    """Wyciąga pierwszą sensowną liczbę całkowitą z tekstu.
+
+    Ignoruje przecinki, np. 1,234.
+    """
     return parse_number(
         text,
         pattern=r"[-+]?\d[\d,]*",
@@ -67,7 +70,10 @@ def parse_int_from_text(text: str) -> int | None:
 
 
 def parse_float_from_text(text: str) -> float | None:
-    """Wyciąga pierwszą sensowną liczbę zmiennoprzecinkową z tekstu (ignoruje przecinki 1,234.5)."""
+    """Wyciąga pierwszą sensowną liczbę zmiennoprzecinkową z tekstu.
+
+    Ignoruje przecinki, np. 1,234.5.
+    """
     return parse_number(
         text,
         pattern=r"[-+]?\d[\d,]*\.?\d*",
@@ -162,7 +168,10 @@ def parse_range_with_unit(
     output_unit: str | None = None,
 ) -> dict[str, Any] | None:
     match = re.search(
-        rf"(?P<min>[-+]?\d[\d,]*(?:\.\d+)?)\s*[–-]\s*(?P<max>[-+]?\d[\d,]*(?:\.\d+)?)\s*{re.escape(unit)}\b",
+        (
+            rf"(?P<min>[-+]?\d[\d,]*(?:\.\d+)?)\s*[-\u2013]\s*"
+            rf"(?P<max>[-+]?\d[\d,]*(?:\.\d+)?)\s*{re.escape(unit)}\b"
+        ),
         text,
         flags=re.IGNORECASE,
     )

@@ -43,7 +43,7 @@ LANG_CODES = {
 
 TIME_SECONDS_RE = re.compile(r"^\s*(?:(\d+):)?(\d+(?:\.\d+)?)\s*$")
 TIME_KEY_RE = re.compile(r"(?:(\d+):)?(\d+(?:\.\d+)?)")
-DATE_RANGE_SPLIT = re.compile(r"\s*[–-]\s*")
+DATE_RANGE_SPLIT = re.compile(r"\s*[-\u2013]\s*")
 DATE_FORMATS = [
     "%d %B %Y",  # 7 June 2019
     "%d %b %Y",  # 7 Jun 2019
