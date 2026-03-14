@@ -1,10 +1,13 @@
 import urllib.error
 import urllib.request
+from urllib.parse import urlsplit
 
 from infrastructure.http_client.requests_shim.constants import SSL_CONTEXT
 from infrastructure.http_client.requests_shim.request_exception import RequestException
 from infrastructure.http_client.requests_shim.response import Response
 from infrastructure.http_client.requests_shim.timeout import Timeout
+
+ALLOWED_URL_SCHEMES = {"http", "https"}
 
 
 class Session:
@@ -21,10 +24,15 @@ class Session:
         if headers:
             merged_headers.update(headers)
 
-        request = urllib.request.Request(url, headers=merged_headers)
+        parsed_url = urlsplit(url)
+        if parsed_url.scheme not in ALLOWED_URL_SCHEMES:
+            msg = f"Unsupported URL scheme: {parsed_url.scheme!r}"
+            raise RequestException(msg)
+
+        request = urllib.request.Request(url, headers=merged_headers)  # noqa: S310
 
         try:
-            with urllib.request.urlopen(
+            with urllib.request.urlopen(  # noqa: S310
                 request,
                 timeout=timeout,
                 context=SSL_CONTEXT,
