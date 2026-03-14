@@ -1,7 +1,4 @@
-"""Domain-level record validator with concrete field-checking helpers.
-
-Extracted from validation/records.py to keep each module focused.
-"""
+"""Domain-level record validator with concrete field-checking helpers."""
 
 from typing import Any
 

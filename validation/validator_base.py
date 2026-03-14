@@ -1,7 +1,4 @@
-"""Abstract base class for record validators.
-
-Extracted from validation/records.py to keep each module focused.
-"""
+"""Abstract base class for record validators."""
 
 import json
 from abc import ABC

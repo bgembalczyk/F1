@@ -7,7 +7,6 @@ from scrapers.base.helpers.text_normalization import normalize_record_keys
 from scrapers.base.logging import get_logger
 from scrapers.base.normalization_utils import EmptyValuePolicy
 from scrapers.base.normalization_utils import NormalizationRule
-from scrapers.base.normalization_utils import normalize_empty
 from scrapers.base.normalization_utils import normalize_record_values
 from validation.validator_base import ExportRecord
 
