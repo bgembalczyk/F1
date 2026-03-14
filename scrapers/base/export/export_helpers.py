@@ -5,9 +5,8 @@ from validation.validator_base import ExportRecord
 
 
 def extract_data(result: ScrapeResult) -> list[Any]:
-    # Lekka lokalna stubs — import typu w czasie wykonania, żeby uniknąć cyklicznych importów
-    from scrapers.base.results import ScrapeResult
-
+    # Lekka lokalna stubs - import typu w czasie wykonania,
+    # żeby uniknąć cyklicznych importów
     if isinstance(result, ScrapeResult):
         return list(result.data)
     msg = "Expected ScrapeResult."
