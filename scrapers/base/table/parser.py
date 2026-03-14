@@ -289,7 +289,8 @@ class HtmlTableParser:
 
         if len(rows) < HEADER_ROWS_WITH_SUBHEADERS:
             headers, header_cells = self._drop_blank_headers(
-                first_headers, list(first_cells)
+                first_headers,
+                list(first_cells),
             )
             return headers, header_cells, 1
 
@@ -297,7 +298,8 @@ class HtmlTableParser:
         second_cells = second_row.find_all(["th", "td"])
         if not self._has_multirow_header(first_cells, second_cells):
             headers, header_cells = self._drop_blank_headers(
-                first_headers, list(first_cells)
+                first_headers,
+                list(first_cells),
             )
             return headers, header_cells, 1
 
@@ -326,7 +328,7 @@ class HtmlTableParser:
         """
         filtered_headers: list[str] = []
         filtered_cells: list[Tag] = []
-        for header, cell in zip(headers, cells):
+        for header, cell in zip(headers, cells, strict=False):
             if header.strip():
                 filtered_headers.append(header)
                 filtered_cells.append(cell)

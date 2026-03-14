@@ -10,7 +10,7 @@ from typing import Any
 from scrapers.base.infobox.dsl import InfoboxSchemaDSL
 from scrapers.base.infobox.schema import InfoboxSchema
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 
 
 def _load_target(target: str) -> Any:

@@ -32,8 +32,8 @@ class TableSchemaDSL:
             column_instance = spec.build_column()
             signature = ColumnRef.from_instance(column_instance)
             if spec.key in key_signatures and key_signatures[spec.key] != (
-                    signature.class_path,
-                    dict(signature.kwargs),
+                signature.class_path,
+                dict(signature.kwargs),
             ):
                 duplicate_keys.add(spec.key)
             else:

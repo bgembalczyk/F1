@@ -50,11 +50,11 @@ def test_html_table_parser_skips_blank_header_separators() -> None:
     assert "" not in rows[0].headers, "Blank separator header should be dropped"
     assert len(rows[0].headers) == EXPECTED_STANDINGS_COLUMNS
     cell_texts = [c.get_text(strip=True) for c in rows[0].cells]
-    header_map = dict(zip(rows[0].headers, cell_texts))
+    header_map = dict(zip(rows[0].headers, cell_texts, strict=False))
     assert header_map["GBR"] == "1", f"GBR should map to 1, got {header_map['GBR']!r}"
-    assert header_map["Points"] == "67", (
-        f"Points should map to 67, got {header_map['Points']!r}"
-    )
+    assert (
+        header_map["Points"] == "67"
+    ), f"Points should map to 67, got {header_map['Points']!r}"
 
 
 def test_html_table_parser_skips_repeated_header_rows() -> None:

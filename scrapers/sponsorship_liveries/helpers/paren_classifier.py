@@ -47,8 +47,8 @@ Odpowiedz tylko poprawnym JSON, bez dodatkowego tekstu.
 Nie uzupełniaj za pomocą własnej wiedzy; odpowiedz tylko na podstawie
 poniższych informacji. Jeśli danej informacji nie da się wywnioskować
 wyłącznie z tych danych, pozostaw odpowiednią kategorię pustą.
-Jeśli treść ewidentnie sugeruje przeczenie, to znaczy, 
-że nie dotyczy tego o czym wspomina, więc nie należy tego wpisywać do kategorii. 
+Jeśli treść ewidentnie sugeruje przeczenie, to znaczy,
+że nie dotyczy tego o czym wspomina, więc nie należy tego wpisywać do kategorii.
 
 Zespół F1: {team_name}
 

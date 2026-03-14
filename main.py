@@ -13,6 +13,7 @@ from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
 )
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
+from scrapers.constructors.helpers.export import export_complete_constructors
 from scrapers.constructors.indianapolis_only_constructors_list import (
     IndianapolisOnlyConstructorsListScraper,
 )
@@ -28,7 +29,6 @@ from scrapers.engines.helpers.export import export_complete_engine_manufacturers
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
-from scrapers.constructors.helpers.export import export_complete_constructors
 from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixScraper
 from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
     RedFlaggedNonChampionshipRacesScraper,

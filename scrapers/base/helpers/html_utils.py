@@ -63,10 +63,16 @@ def find_section_tables(
         raise RuntimeError(msg)
 
     # Determine this section's heading level so we can stop at the next peer section.
-    section_heading = heading if heading.name in _HEADING_TAGS else heading.find_parent(_HEADING_TAGS)
+    section_heading = (
+        heading if heading.name in _HEADING_TAGS else heading.find_parent(_HEADING_TAGS)
+    )
     if section_heading is None:
         # No enclosing h-tag found — return all following tables without level-based stopping.
-        return [t for t in heading.find_all_next("table") if class_ in (t.get("class") or [])]
+        return [
+            t
+            for t in heading.find_all_next("table")
+            if class_ in (t.get("class") or [])
+        ]
 
     current_level = int(section_heading.name[1])
 

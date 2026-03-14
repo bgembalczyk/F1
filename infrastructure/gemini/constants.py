@@ -8,9 +8,7 @@ API_URL_TEMPLATE = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     "{model}:generateContent?key={api_key}"
 )
-DEFAULT_KEY_FILE = (
-    Path(__file__).resolve().parents[2] / "config" / "gemini_api_key.txt"
-)
+DEFAULT_KEY_FILE = Path(__file__).resolve().parents[2] / "config" / "gemini_api_key.txt"
 DEFAULT_TIMEOUT = 30
 
 # Domyślna lista modeli używana przez from_key_file() gdy models nie zostanie podane.

@@ -145,7 +145,7 @@ class EngineTextHelpers:
         if pos < 0:
             return first_link_text
 
-        after_link = text[pos + len(first_link_text):]
+        after_link = text[pos + len(first_link_text) :]
         if not after_link.strip():
             return EngineTextHelpers._trim_text_before_displacement(first_link_text)
 

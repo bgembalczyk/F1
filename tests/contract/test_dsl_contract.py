@@ -2,7 +2,7 @@ from scrapers.base.infobox.dsl import InfoboxSchemaDSL
 from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 
 
 def test_table_schema_dsl_reads_schema_and_maps_columns() -> None:

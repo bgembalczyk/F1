@@ -52,12 +52,12 @@ class GeminiClient:
     """
 
     def __init__(
-            self,
-            api_key: str,
-            *,
-            models: list[ModelConfig],
-            cache: GeminiCache | None = None,
-            timeout: int = DEFAULT_TIMEOUT,
+        self,
+        api_key: str,
+        *,
+        models: list[ModelConfig],
+        cache: GeminiCache | None = None,
+        timeout: int = DEFAULT_TIMEOUT,
     ) -> None:
         if not api_key:
             msg = "Gemini API key nie może być pusty."
@@ -78,12 +78,12 @@ class GeminiClient:
 
     @classmethod
     def from_key_file(
-            cls,
-            key_file: Path | str | None = None,
-            *,
-            models: list[ModelConfig] | None = None,
-            cache: GeminiCache | None = None,
-            timeout: int = DEFAULT_TIMEOUT,
+        cls,
+        key_file: Path | str | None = None,
+        *,
+        models: list[ModelConfig] | None = None,
+        cache: GeminiCache | None = None,
+        timeout: int = DEFAULT_TIMEOUT,
     ) -> "GeminiClient":
         """Tworzy klienta wczytując klucz API z pliku.
 
@@ -115,10 +115,10 @@ class GeminiClient:
     # ------------------------------------------------------------------
 
     def query(
-            self,
-            prompt: str,
-            *,
-            response_mime_type: str = "application/json",
+        self,
+        prompt: str,
+        *,
+        response_mime_type: str = "application/json",
     ) -> dict[str, Any]:
         """Wysyła zapytanie do Gemini i zwraca odpowiedź jako słownik.
 
@@ -187,11 +187,11 @@ class GeminiClient:
         return None
 
     def _call_api(
-            self,
-            prompt: str,
-            *,
-            model: str,
-            response_mime_type: str,
+        self,
+        prompt: str,
+        *,
+        model: str,
+        response_mime_type: str,
     ) -> dict[str, Any]:
         url = API_URL_TEMPLATE.format(model=model, api_key=self._api_key)
         parsed_url = urllib.parse.urlparse(url)
@@ -221,9 +221,9 @@ class GeminiClient:
                 raise RuntimeError(msg)
 
             with urllib.request.urlopen(  # noqa: S310
-                    req,
-                    timeout=self._timeout,
-                    context=self._ssl_context,
+                req,
+                timeout=self._timeout,
+                context=self._ssl_context,
             ) as resp:
                 raw = resp.read().decode("utf-8")
         except urllib.error.HTTPError as exc:

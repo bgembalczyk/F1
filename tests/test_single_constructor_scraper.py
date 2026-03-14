@@ -222,4 +222,3 @@ def test_get_constructor_url(record: dict[str, Any], expected: str | None) -> No
 )
 def test_constructor_name_initial(record: dict[str, Any], expected: str) -> None:
     assert constructor_name_initial(record) == expected
-

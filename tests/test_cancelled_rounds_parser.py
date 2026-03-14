@@ -223,7 +223,6 @@ def test_cancelled_rounds_returns_empty_when_two_tables_and_second_matches_calen
     assert result == []
 
 
-
 def test_cancelled_rounds_returns_empty_when_no_table_found(parser) -> None:
     """When no table is found in any section, return empty list."""
     html = """

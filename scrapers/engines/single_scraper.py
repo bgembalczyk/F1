@@ -52,7 +52,10 @@ class SingleEngineManufacturerScraper(F1Scraper):
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         parser = InfoboxHtmlParser()
         infoboxes: list[dict[str, Any]] = []
-        for table in soup.find_all("table", class_=InfoboxHtmlParser._has_infobox_class):  # noqa: SLF001
+        for table in soup.find_all(
+            "table",
+            class_=InfoboxHtmlParser._has_infobox_class,
+        ):
             parsed = parser._parse_infobox(table)  # noqa: SLF001
             if parsed:
                 infoboxes.append(parsed)
