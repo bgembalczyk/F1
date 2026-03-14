@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.dsl import TableSchemaDSL
 from scrapers.base.table.dsl import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.parsers.table import SeasonTableParser

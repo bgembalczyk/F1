@@ -1,14 +1,6 @@
 from bs4 import BeautifulSoup
 
-CIRCUIT_KEYWORDS = [
-    "circuit",
-    "race track",
-    "racetrack",
-    "speedway",
-    "raceway",
-    "motor racing",
-    "motorsport venue",
-]
+from scrapers.circuits.helpers.constants import CIRCUIT_KEYWORDS
 
 
 def is_circuit_like_article(soup: BeautifulSoup) -> bool:

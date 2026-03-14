@@ -3,20 +3,10 @@ from typing import Any
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.circuits.infobox.services.constants import MATERIAL_PATTERNS
+from scrapers.circuits.infobox.services.constants import MIN_CAPACITY_VALUES_FOR_SEATING
 from scrapers.circuits.infobox.services.constants import symbol_map
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
-
-MATERIAL_PATTERNS = {
-    "Asphalt": ("tarmac", "asphalt", "asphalt concrete"),
-    "Concrete": ("concrete",),
-    "Cobblestones": ("cobblestone", "cobbles", "cobbl"),
-    "Brick": ("brick",),
-    "Wood": ("wood",),
-    "Dirt": ("dirt",),
-    "Steel": ("steel",),
-    "Graywacke": ("graywacke",),
-}
-MIN_CAPACITY_VALUES_FOR_SEATING = 2
 
 
 class CircuitSpecsParser(InfoboxTextUtils):

@@ -8,7 +8,7 @@ import pytest
 from infrastructure.gemini.cache import GeminiCache
 from infrastructure.gemini.client import GeminiClient
 from infrastructure.gemini.client import ModelConfig
-from infrastructure.gemini.client import _ModelState
+from infrastructure.gemini.client import ModelState
 
 # ---------------------------------------------------------------------------
 # ModelConfig / _ModelState unit tests
@@ -16,13 +16,13 @@ from infrastructure.gemini.client import _ModelState
 
 
 def test_model_state_available_initially() -> None:
-    state = _ModelState(ModelConfig("m", requests_per_minute=5, requests_per_day=100))
+    state = ModelState(ModelConfig("m", requests_per_minute=5, requests_per_day=100))
 
     assert state.is_available(time.monotonic())
 
 
 def test_model_state_rpm_exhausted() -> None:
-    state = _ModelState(ModelConfig("m", requests_per_minute=2, requests_per_day=100))
+    state = ModelState(ModelConfig("m", requests_per_minute=2, requests_per_day=100))
 
     now = time.monotonic()
     state.record_request(now)
@@ -31,7 +31,7 @@ def test_model_state_rpm_exhausted() -> None:
 
 
 def test_model_state_rpd_exhausted() -> None:
-    state = _ModelState(ModelConfig("m", requests_per_minute=100, requests_per_day=2))
+    state = ModelState(ModelConfig("m", requests_per_minute=100, requests_per_day=2))
 
     now = time.monotonic()
     state.record_request(now)
@@ -41,7 +41,7 @@ def test_model_state_rpd_exhausted() -> None:
 
 def test_model_state_rpm_window_expires() -> None:
     """After 60 s, RPM slots free up (sliding window)."""
-    state = _ModelState(ModelConfig("m", requests_per_minute=1, requests_per_day=100))
+    state = ModelState(ModelConfig("m", requests_per_minute=1, requests_per_day=100))
 
     past = time.monotonic() - 61.0  # 61 s ago
     state._rpm_timestamps.append(past)  # noqa: SLF001
@@ -50,7 +50,7 @@ def test_model_state_rpm_window_expires() -> None:
 
 def test_model_state_rpd_window_expires() -> None:
     """After 24 h, RPD slots free up (sliding window)."""
-    state = _ModelState(ModelConfig("m", requests_per_minute=100, requests_per_day=1))
+    state = ModelState(ModelConfig("m", requests_per_minute=100, requests_per_day=1))
 
     past = time.monotonic() - 86401.0  # just over 24 h ago
     state._rpd_timestamps.append(past)  # noqa: SLF001

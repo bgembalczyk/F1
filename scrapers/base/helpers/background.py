@@ -30,7 +30,3 @@ def extract_background(cell: Tag) -> str | None:
         return str(bgcolor).strip()
 
     return None
-
-
-# Alias for backward compatibility
-extract_race_result_background = extract_background

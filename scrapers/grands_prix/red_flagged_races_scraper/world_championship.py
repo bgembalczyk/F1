@@ -10,8 +10,8 @@ from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL
 from scrapers.base.table.dsl import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
 from scrapers.grands_prix.red_flagged_races_scraper.base import (
     RedFlaggedRacesBaseScraper,

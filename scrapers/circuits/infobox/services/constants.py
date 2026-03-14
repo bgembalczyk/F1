@@ -57,3 +57,18 @@ IGNORED_TOP_LEVEL_KEYS: set[str] = {
     "major_events",
     "address",
 }
+
+MATERIAL_PATTERNS = {
+    "Asphalt": ("tarmac", "asphalt", "asphalt concrete"),
+    "Concrete": ("concrete",),
+    "Cobblestones": ("cobblestone", "cobbles", "cobbl"),
+    "Brick": ("brick",),
+    "Wood": ("wood",),
+    "Dirt": ("dirt",),
+    "Steel": ("steel",),
+    "Graywacke": ("graywacke",),
+}
+
+MIN_CAPACITY_VALUES_FOR_SEATING = 2
+
+MIN_COORD_PARTS = 2

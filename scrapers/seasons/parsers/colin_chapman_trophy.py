@@ -8,8 +8,8 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL
 from scrapers.base.table.dsl import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.colin_chapman_race_result import (
     ColinChapmanRaceResultColumn,
 )

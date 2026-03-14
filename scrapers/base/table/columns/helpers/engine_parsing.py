@@ -20,109 +20,16 @@ from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.url import normalize_url
-
-# Pattern that matches a displacement value followed by an explicit unit (e.g. "1.5 L",
-# "1.5 L8" where L starts the type, "3000cc") or a bare decimal (e.g. "3.0 V8").
-_DISPLACEMENT_RE = re.compile(
-    r"\b\d+\.?\d*\s*(?:L|l|litre|litres|cc|cm³)|\b\d+\.\d+\b",
-)
-
-# Exact engine type code (e.g. "V8", "L4", "F4").
-_EXACT_TYPE_RE = re.compile(r"^[A-Za-z]\d+$")
-
-# Engine type code with a single-character modifier suffix:
-#   't' suffix → turbocharged  (e.g. "L4t")
-#   's' suffix → supercharged  (e.g. "L4s")
-_TYPE_WITH_MODIFIER_RE = re.compile(r"^([A-Za-z]\d+)([ts])$", re.IGNORECASE)
-
-# Engine type embedded at end of text after a displacement number
-# (e.g. "Climax FPF 2.0 L4" → "L4", "620 3.0 V8" → "V8").
-_AFTER_DISPLACEMENT_TYPE_RE = re.compile(r"\b\d+\.?\d*\s+([A-Za-z]\d+)\s*$")
-
-# Engine type code appearing anywhere in plain text
-# (e.g. "V12", "V8", "L4" after displacement).
-# Restricted to known layout letters and 1-2 digit cylinder counts
-# to avoid false positives.
-_PLAIN_TEXT_TYPE_RE = re.compile(r"\b([VLFHR]\d{1,2}[ts]?)\b")
-
-# Mapping from verbose/human-readable engine type names
-# (as they appear in Wikipedia link text)
-# to canonical type codes.
-_VERBOSE_TYPE_MAP: dict[str, str] = {
-    "straight-4": "L4",
-    "inline-four": "L4",
-    "inline-four engine": "L4",
-    "straight-4 engine": "L4",
-    "flat-4": "F4",
-    "horizontally opposed 4": "F4",
-    "straight-6": "L6",
-    "inline-six": "L6",
-    "inline-six engine": "L6",
-    "straight-6 engine": "L6",
-    "flat-6": "F6",
-    "straight-8": "L8",
-    "inline-eight": "L8",
-    "straight-8 engine": "L8",
-    "flat-8": "F8",
-    "v6": "V6",
-    "v6 engine": "V6",
-    "v8": "V8",
-    "v8 engine": "V8",
-    "v10": "V10",
-    "v10 engine": "V10",
-    "v12": "V12",
-    "v12 engine": "V12",
-    "v16": "V16",
-    "flat-12": "F12",
-    "flat-16": "F16",
-    "h16": "H16",
-}
-
-# URL fragments that indicate a fuel-type modifier (not a standalone engine model).
-_FUEL_TYPE_URLS: dict[str, str] = {
-    "diesel_engine": "diesel",
-    "diesel fuel": "diesel",
-}
-
-# URL fragments that indicate the link describes only a modifier
-# (fuel type or induction), not an engine model.
-# When a segment contains only such a link it should be treated as
-# a modifier to the preceding engine rather than a new engine entry.
-_MODIFIER_ONLY_URLS: frozenset[str] = frozenset(
-    {
-        "diesel_engine",
-        "supercharger",
-        "supercharged",
-        "turbocharger",
-        "turbocharging",
-        "gas_turbine",
-    },
-)
-
-# Compiled pattern for detecting a 3-digit CSS hex colour (after lower-casing).
-_CSS_3DIGIT_HEX_RE = re.compile(r"^#[0-9a-f]{3}$")
-_CC_TO_L_THRESHOLD = 100
-
-
-def _expand_hex_shorthand(color: str) -> str:
-    """Expand a CSS 3-digit hex colour to its 6-digit equivalent.
-
-    Examples::
-
-        "#fcc" → "#ffcccc"
-        "#abc" → "#aabbcc"
-        "#ffcccc" → "#ffcccc"  (unchanged)
-
-    Args:
-        color: Lower-cased, space-stripped colour string.
-
-    Returns:
-        6-digit hex colour string, or the original string if it was not a
-        3-digit shorthand.
-    """
-    if _CSS_3DIGIT_HEX_RE.match(color):
-        return "#" + "".join(c * 2 for c in color[1:])
-    return color
+from scrapers.base.table.columns.helpers.constants import AFTER_DISPLACEMENT_TYPE_RE
+from scrapers.base.table.columns.helpers.constants import CC_TO_L_THRESHOLD
+from scrapers.base.table.columns.helpers.constants import DISPLACEMENT_RE
+from scrapers.base.table.columns.helpers.constants import EXACT_TYPE_RE
+from scrapers.base.table.columns.helpers.constants import FUEL_TYPE_URLS
+from scrapers.base.table.columns.helpers.constants import MODIFIER_ONLY_URLS
+from scrapers.base.table.columns.helpers.constants import PLAIN_TEXT_TYPE_RE
+from scrapers.base.table.columns.helpers.constants import TYPE_WITH_MODIFIER_RE
+from scrapers.base.table.columns.helpers.constants import VERBOSE_TYPE_MAP
+from scrapers.base.table.columns.helpers.hex_expanding import expand_hex_shorthand
 
 
 class EngineParsingHelpers:
@@ -187,7 +94,7 @@ class EngineParsingHelpers:
         if not background:
             return False
         bg_lower = background.lower().replace(" ", "")
-        bg_lower = _expand_hex_shorthand(bg_lower)
+        bg_lower = expand_hex_shorthand(bg_lower)
         # Common F2 background colors in Wikipedia tables
         return bg_lower in {
             "#efefef",
@@ -305,7 +212,7 @@ class EngineParsingHelpers:
 
         for link in links:
             url = (link.get("url") or "").lower()
-            for url_key, ftype in _FUEL_TYPE_URLS.items():
+            for url_key, ftype in FUEL_TYPE_URLS.items():
                 if url_key in url:
                     fuel_type = ftype
             supercharged = (
@@ -332,7 +239,7 @@ class EngineParsingHelpers:
             return None
         all_link_urls = [(link.get("url") or "").lower() for link in links]
         if not all(
-            any(mod in url for mod in _MODIFIER_ONLY_URLS) for url in all_link_urls
+                any(mod in url for mod in MODIFIER_ONLY_URLS) for url in all_link_urls
         ):
             return None
 
@@ -363,13 +270,13 @@ class EngineParsingHelpers:
         are set to ``(None, "")`` when the first link *is* the type token so
         that it is not used as the model URL.
         """
-        if first_link_text and _EXACT_TYPE_RE.match(first_link_text):
+        if first_link_text and EXACT_TYPE_RE.match(first_link_text):
             special_tokens.add(first_link_text)
             return first_link_text, None, ""
 
         type_str: str | None = None
         if first_link_text:
-            m = _AFTER_DISPLACEMENT_TYPE_RE.search(first_link_text)
+            m = AFTER_DISPLACEMENT_TYPE_RE.search(first_link_text)
             if m:
                 type_str = m.group(1)
         return type_str, first_link, first_link_text
@@ -391,7 +298,7 @@ class EngineParsingHelpers:
         if extracted_type is not None:
             return extracted_type
 
-        m_type = _AFTER_DISPLACEMENT_TYPE_RE.search(link_text)
+        m_type = AFTER_DISPLACEMENT_TYPE_RE.search(link_text)
         if m_type:
             return m_type.group(1)
         return None
@@ -407,7 +314,7 @@ class EngineParsingHelpers:
         if type_str is None:
             return None, supercharged, turbocharged
 
-        m_mod = _TYPE_WITH_MODIFIER_RE.match(type_str)
+        m_mod = TYPE_WITH_MODIFIER_RE.match(type_str)
         if not m_mod:
             return type_str, supercharged, turbocharged
 
@@ -440,7 +347,7 @@ class EngineParsingHelpers:
             gas_turbine = True
             special_tokens.add(link_text)
         if fuel_type is None:
-            for url_key, ftype in _FUEL_TYPE_URLS.items():
+            for url_key, ftype in FUEL_TYPE_URLS.items():
                 if url_key in url:
                     fuel_type = ftype
                     special_tokens.add(link_text)
@@ -503,19 +410,19 @@ class EngineParsingHelpers:
         (e.g. ``"L4t"``), and verbose names (e.g. ``"Straight-4"``).
         Side-effects: adds *link_text* to *special_tokens* when a type is found.
         """
-        if _EXACT_TYPE_RE.match(link_text):
+        if EXACT_TYPE_RE.match(link_text):
             special_tokens.add(link_text)
             return link_text
 
-        m_mod = _TYPE_WITH_MODIFIER_RE.match(link_text)
+        m_mod = TYPE_WITH_MODIFIER_RE.match(link_text)
         if m_mod:
             special_tokens.add(link_text)
             return link_text  # modifier stripping happens in caller
 
         verbose_key = link_text.lower()
-        if verbose_key in _VERBOSE_TYPE_MAP:
+        if verbose_key in VERBOSE_TYPE_MAP:
             special_tokens.add(link_text)
-            return _VERBOSE_TYPE_MAP[verbose_key]
+            return VERBOSE_TYPE_MAP[verbose_key]
 
         return None
 
@@ -534,12 +441,12 @@ class EngineParsingHelpers:
         if type_str is not None:
             return type_str, turbocharged, supercharged
 
-        m_plain = _PLAIN_TEXT_TYPE_RE.search(text)
+        m_plain = PLAIN_TEXT_TYPE_RE.search(text)
         if not m_plain:
             return None, turbocharged, supercharged
 
         candidate = m_plain.group(1)
-        m_mod = _TYPE_WITH_MODIFIER_RE.match(candidate)
+        m_mod = TYPE_WITH_MODIFIER_RE.match(candidate)
         if m_mod:
             modifier = m_mod.group(2).lower()
             if modifier == "t":
@@ -607,7 +514,7 @@ class EngineParsingHelpers:
         if match:
             value = parse_float_from_text(match.group(1))
             if "cc" in text.lower() or "cm" in text.lower():
-                if value and value > _CC_TO_L_THRESHOLD:
+                if value and value > CC_TO_L_THRESHOLD:
                     value = value / 1000
             return value
         # Fallback: bare decimal number (e.g. "3.0 V8")
@@ -619,7 +526,7 @@ class EngineParsingHelpers:
     @staticmethod
     def _trim_text_before_displacement(text: str) -> str:
         """Return text prefix that appears before displacement tokens."""
-        disp_match = _DISPLACEMENT_RE.search(text)
+        disp_match = DISPLACEMENT_RE.search(text)
         if not disp_match:
             return text
         return text[: disp_match.start()].strip() or text
@@ -647,7 +554,7 @@ class EngineParsingHelpers:
         special_tokens: set[str] | None,
     ) -> str:
         """Extract model suffix from text following first link text."""
-        disp_match = _DISPLACEMENT_RE.search(after_link)
+        disp_match = DISPLACEMENT_RE.search(after_link)
         if disp_match:
             return after_link[: disp_match.start()].strip()
 

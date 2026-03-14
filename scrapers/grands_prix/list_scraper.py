@@ -10,8 +10,8 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL
 from scrapers.base.table.dsl import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
 from scrapers.grands_prix.validator import GrandsPrixRecordValidator

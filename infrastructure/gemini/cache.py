@@ -4,7 +4,7 @@ from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
-_ONE_YEAR_SECONDS = 365 * 24 * 60 * 60
+from infrastructure.gemini.constants import ONE_YEAR_SECONDS
 
 
 class GeminiCache:
@@ -23,7 +23,7 @@ class GeminiCache:
         self,
         *,
         cache_dir: Path | str | None = None,
-        ttl_seconds: int = _ONE_YEAR_SECONDS,
+        ttl_seconds: int = ONE_YEAR_SECONDS,
     ) -> None:
         if cache_dir is None:
             # Domyślna ścieżka: <repo_root>/data/gemini_cache

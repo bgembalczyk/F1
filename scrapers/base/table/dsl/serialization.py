@@ -1,6 +1,6 @@
 """Serialization helpers for TableSchemaDSL.
 
-Extracted from scrapers/base/table/dsl.py to keep that module focused on the
+Extracted from scrapers/base/table/table_schema.py to keep that module focused on the
 core build logic.
 """
 

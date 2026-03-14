@@ -3,7 +3,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.background import extract_race_result_background
+from scrapers.base.helpers.background import extract_background
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.text import strip_marks
 from scrapers.base.table.columns.constants import MARKS_RE
@@ -57,7 +57,7 @@ class RaceResultColumn(BaseColumn):
         sprint_position, pole_position, fastest_lap, footnotes = (
             self._parse_superscripts(ctx)
         )
-        background = self._map_background(extract_race_result_background(ctx.cell))
+        background = self._map_background(extract_background(ctx.cell))
         results = self._parse_results(text)
 
         if self._should_skip_payload(results, background):

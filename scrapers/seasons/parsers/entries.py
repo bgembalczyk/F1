@@ -9,8 +9,8 @@ from scrapers.base.table.columns.types.engine import EngineColumn
 from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
-from scrapers.base.table.dsl import TableSchemaDSL
 from scrapers.base.table.dsl import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
 from scrapers.seasons.parsers.entry_merger import EntryMerger
 from scrapers.seasons.parsers.table import SeasonTableParser

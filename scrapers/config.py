@@ -5,7 +5,7 @@ from scrapers.base.export.exporters import DataExporter
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import default_http_policy
-from scrapers.base.parsers import SoupParser
+from scrapers.base.parsers.soup import SoupParser
 
 
 @dataclass(frozen=True)

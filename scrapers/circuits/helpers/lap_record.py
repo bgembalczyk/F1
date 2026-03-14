@@ -8,6 +8,13 @@ from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
+from scrapers.circuits.helpers.constants import DETAILS_MIN_SCORE_WITHOUT_COMMA
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_BONUS_2
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_BONUS_3
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_BONUS_4
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_COUNT_FEW
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_COUNT_MANY
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_COUNT_MEDIUM
 from scrapers.circuits.helpers.layout import layout_from_spanning_header
 from scrapers.circuits.helpers.logger import logger
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
@@ -35,15 +42,6 @@ def is_speed_paren(s: str) -> bool:
     """Sprawdza czy tekst zawiera jednostki prędkości (km/h, mph)."""
     s_low = s.lower()
     return ("km/h" in s_low) or ("mph" in s_low)
-
-
-DETAILS_PARTS_COUNT_MANY = 4
-DETAILS_PARTS_COUNT_MEDIUM = 3
-DETAILS_PARTS_COUNT_FEW = 2
-DETAILS_PARTS_BONUS_4 = 5
-DETAILS_PARTS_BONUS_3 = 2
-DETAILS_PARTS_BONUS_2 = 1
-DETAILS_MIN_SCORE_WITHOUT_COMMA = 3
 
 
 def score_details_candidate(s: str) -> int:
@@ -87,23 +85,23 @@ def select_details_paren(text: str) -> list[str]:
 
 
 def is_lap_record_table(
-    headers: list[str],
-    lap_scraper: LapRecordsTableScraper,
+        headers: list[str],
+        lap_scraper: LapRecordsTableScraper,
 ) -> bool:
     if lap_scraper.headers_match(headers):
         return True
 
     header_set = set(headers)
     return "Time" in header_set and (
-        "Driver" in header_set or "Driver/Rider" in header_set
+            "Driver" in header_set or "Driver/Rider" in header_set
     )
 
 
 def collect_lap_records(
-    table: Tag,
-    headers: list[str],
-    base_layout: str | None,
-    lap_scraper: LapRecordsTableScraper,
+        table: Tag,
+        headers: list[str],
+        base_layout: str | None,
+        lap_scraper: LapRecordsTableScraper,
 ) -> list[dict[str, Any]]:
     all_records: list[dict[str, Any]] = []
     current_layout = base_layout

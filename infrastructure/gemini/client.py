@@ -25,139 +25,18 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from collections import deque
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 import certifi
 
 from infrastructure.gemini.cache import GeminiCache
-
-
-@dataclass
-class ModelConfig:
-    """Konfiguracja pojedynczego modelu Gemini z limitami zapytań.
-
-    Parameters
-    ----------
-    model:
-        Nazwa modelu, np. ``"gemini-2.5-flash-lite"``.
-    requests_per_minute:
-        Maksymalna liczba zapytań na minutę (RPM).
-    requests_per_day:
-        Maksymalna liczba zapytań na dobę (RPD).
-    """
-
-    model: str
-    requests_per_minute: int
-    requests_per_day: int
-
-
-_API_URL_TEMPLATE = (
-    "https://generativelanguage.googleapis.com/v1beta/models/"
-    "{model}:generateContent?key={api_key}"
-)
-_DEFAULT_KEY_FILE = (
-    Path(__file__).resolve().parents[2] / "config" / "gemini_api_key.txt"
-)
-_DEFAULT_TIMEOUT = 30
-
-# Domyślna lista modeli używana przez from_key_file() gdy models nie zostanie podane.
-_DEFAULT_MODELS: list[ModelConfig] = [
-    ModelConfig(
-        model="gemini-3-flash-preview",
-        requests_per_minute=5,
-        requests_per_day=20,
-    ),
-    ModelConfig(
-        model="gemini-2.5-flash",
-        requests_per_minute=5,
-        requests_per_day=20,
-    ),
-    ModelConfig(
-        model="gemini-3.1-flash-lite-preview",
-        requests_per_minute=15,
-        requests_per_day=500,
-    ),
-    ModelConfig(
-        model="gemini-2.5-flash-lite",
-        requests_per_minute=10,
-        requests_per_day=20,
-    ),
-    ModelConfig(
-        model="gemini-2.5-flash-lite-preview-09-2025",
-        requests_per_minute=10,
-        requests_per_day=20,
-    ),
-    ModelConfig(
-        model="gemma-3-27b-it",
-        requests_per_minute=30,
-        requests_per_day=14400,
-    ),
-    ModelConfig(
-        model="gemma-3-12b-it",
-        requests_per_minute=30,
-        requests_per_day=14400,
-    ),
-    ModelConfig(
-        model="gemma-3-4b-it",
-        requests_per_minute=30,
-        requests_per_day=14400,
-    ),
-    ModelConfig(
-        model="gemma-3-2b-it",
-        requests_per_minute=30,
-        requests_per_day=14400,
-    ),
-    ModelConfig(
-        model="gemma-3-1b-it",
-        requests_per_minute=30,
-        requests_per_day=14400,
-    ),
-]
-
-
-class _ModelState:
-    """Wewnętrzny stan rate-limitera dla jednego modelu (sliding window)."""
-
-    _RPM_WINDOW = 60.0  # okno dla RPM w sekundach
-    _RPD_WINDOW = 86400.0  # okno dla RPD w sekundach (24 h)
-
-    def __init__(self, config: ModelConfig) -> None:
-        self.config = config
-        self._rpm_timestamps: deque[float] = deque()
-        self._rpd_timestamps: deque[float] = deque()
-
-    @property
-    def model(self) -> str:
-        return self.config.model
-
-    def is_available(self, now: float) -> bool:
-        """Sprawdza, czy model nie przekroczył żadnego z limitów."""
-        self._purge_rpm(now)
-        self._purge_rpd(now)
-        return (
-            len(self._rpm_timestamps) < self.config.requests_per_minute
-            and len(self._rpd_timestamps) < self.config.requests_per_day
-        )
-
-    def record_request(self, now: float) -> None:
-        """Rejestruje znacznik czasu nowego zapytania."""
-        self._rpm_timestamps.append(now)
-        self._rpd_timestamps.append(now)
-
-    def _purge_rpm(self, now: float) -> None:
-        while (
-            self._rpm_timestamps and now - self._rpm_timestamps[0] >= self._RPM_WINDOW
-        ):
-            self._rpm_timestamps.popleft()
-
-    def _purge_rpd(self, now: float) -> None:
-        while (
-            self._rpd_timestamps and now - self._rpd_timestamps[0] >= self._RPD_WINDOW
-        ):
-            self._rpd_timestamps.popleft()
+from infrastructure.gemini.constants import API_URL_TEMPLATE
+from infrastructure.gemini.constants import DEFAULT_KEY_FILE
+from infrastructure.gemini.constants import DEFAULT_MODELS
+from infrastructure.gemini.constants import DEFAULT_TIMEOUT
+from infrastructure.gemini.model_config import ModelConfig
+from infrastructure.gemini.model_state import ModelState
 
 
 class GeminiClient:
@@ -173,12 +52,12 @@ class GeminiClient:
     """
 
     def __init__(
-        self,
-        api_key: str,
-        *,
-        models: list[ModelConfig],
-        cache: GeminiCache | None = None,
-        timeout: int = _DEFAULT_TIMEOUT,
+            self,
+            api_key: str,
+            *,
+            models: list[ModelConfig],
+            cache: GeminiCache | None = None,
+            timeout: int = DEFAULT_TIMEOUT,
     ) -> None:
         if not api_key:
             msg = "Gemini API key nie może być pusty."
@@ -187,7 +66,7 @@ class GeminiClient:
             msg = "Lista modeli nie może być pusta."
             raise ValueError(msg)
         self._api_key = api_key
-        self._model_states = [_ModelState(m) for m in models]
+        self._model_states = [ModelState(m) for m in models]
         self._cache = cache if cache is not None else GeminiCache()
         self._timeout = timeout
         self._ssl_context = self._build_ssl_context()
@@ -199,12 +78,12 @@ class GeminiClient:
 
     @classmethod
     def from_key_file(
-        cls,
-        key_file: Path | str | None = None,
-        *,
-        models: list[ModelConfig] | None = None,
-        cache: GeminiCache | None = None,
-        timeout: int = _DEFAULT_TIMEOUT,
+            cls,
+            key_file: Path | str | None = None,
+            *,
+            models: list[ModelConfig] | None = None,
+            cache: GeminiCache | None = None,
+            timeout: int = DEFAULT_TIMEOUT,
     ) -> "GeminiClient":
         """Tworzy klienta wczytując klucz API z pliku.
 
@@ -214,7 +93,7 @@ class GeminiClient:
         Jeśli *models* nie zostanie podane, używana jest domyślna lista
         :data:`_DEFAULT_MODELS`.
         """
-        path = Path(key_file) if key_file else _DEFAULT_KEY_FILE
+        path = Path(key_file) if key_file else DEFAULT_KEY_FILE
         if not path.exists():
             msg = (
                 f"Plik z kluczem Gemini API nie istnieje: {path}\n"
@@ -226,7 +105,7 @@ class GeminiClient:
         api_key = path.read_text(encoding="utf-8").strip()
         return cls(
             api_key,
-            models=models if models is not None else list(_DEFAULT_MODELS),
+            models=models if models is not None else list(DEFAULT_MODELS),
             cache=cache,
             timeout=timeout,
         )
@@ -236,10 +115,10 @@ class GeminiClient:
     # ------------------------------------------------------------------
 
     def query(
-        self,
-        prompt: str,
-        *,
-        response_mime_type: str = "application/json",
+            self,
+            prompt: str,
+            *,
+            response_mime_type: str = "application/json",
     ) -> dict[str, Any]:
         """Wysyła zapytanie do Gemini i zwraca odpowiedź jako słownik.
 
@@ -308,13 +187,13 @@ class GeminiClient:
         return None
 
     def _call_api(
-        self,
-        prompt: str,
-        *,
-        model: str,
-        response_mime_type: str,
+            self,
+            prompt: str,
+            *,
+            model: str,
+            response_mime_type: str,
     ) -> dict[str, Any]:
-        url = _API_URL_TEMPLATE.format(model=model, api_key=self._api_key)
+        url = API_URL_TEMPLATE.format(model=model, api_key=self._api_key)
         parsed_url = urllib.parse.urlparse(url)
         if parsed_url.scheme != "https":
             msg = "Gemini API endpoint musi używać schematu https."
@@ -342,9 +221,9 @@ class GeminiClient:
                 raise RuntimeError(msg)
 
             with urllib.request.urlopen(  # noqa: S310
-                req,
-                timeout=self._timeout,
-                context=self._ssl_context,
+                    req,
+                    timeout=self._timeout,
+                    context=self._ssl_context,
             ) as resp:
                 raw = resp.read().decode("utf-8")
         except urllib.error.HTTPError as exc:

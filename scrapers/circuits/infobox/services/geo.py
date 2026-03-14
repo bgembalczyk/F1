@@ -6,12 +6,11 @@ from models.services.helpers import split_delimited_text
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.constants import LOCATION_STOPWORDS
+from scrapers.circuits.infobox.services.constants import MIN_COORD_PARTS
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 if TYPE_CHECKING:
     from models.records.link import LinkRecord
-
-MIN_COORD_PARTS = 2
 
 
 class CircuitGeoParser(InfoboxTextUtils):

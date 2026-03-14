@@ -2,8 +2,8 @@
 
 from typing import Any
 
-from scrapers.base.transformers import RecordFactoryTransformer
-from scrapers.base.transformers import apply_transformers
+from scrapers.base.transformers.helpers import apply_transformers
+from scrapers.base.transformers.record_factory import RecordFactoryTransformer
 
 
 def apply_transformers_with_factory(
