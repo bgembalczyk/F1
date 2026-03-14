@@ -54,7 +54,9 @@ class TablePipeline:
         self.model_fields = model_fields
         self.run_id = run_id
         self.normalize_empty_values = normalize_empty_values
-        self.empty_value_policy = EmptyValuePolicy.from_flag(normalize_empty_values)
+        self.empty_value_policy = EmptyValuePolicy.from_flag(
+            normalize_empty_values=normalize_empty_values,
+        )
 
         self.section_id = config.section_id
         self.expected_headers = config.expected_headers
