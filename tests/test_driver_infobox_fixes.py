@@ -7,7 +7,7 @@ from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
-@pytest.fixture
+@pytest.fixture()
 def link_extractor():
     return InfoboxLinkExtractor(
         include_urls=True,
@@ -15,7 +15,7 @@ def link_extractor():
     )
 
 
-@pytest.fixture
+@pytest.fixture()
 def cell_parser(link_extractor):
     return InfoboxCellParser(include_urls=True, link_extractor=link_extractor)
 

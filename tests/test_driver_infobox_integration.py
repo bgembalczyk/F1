@@ -7,7 +7,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 
 
-@pytest.fixture
+@pytest.fixture()
 def scraper():
     """Create a DriverInfoboxScraper instance."""
     options = ScraperOptions(include_urls=True)

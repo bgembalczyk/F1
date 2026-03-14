@@ -5,13 +5,13 @@ from http.server import BaseHTTPRequestHandler
 from http.server import ThreadingHTTPServer
 
 import pytest
-from infrastructure.http_client.default_retry import DefaultRetryPolicy
 
-from infrastructure.http_client.caching import FileCache
-from infrastructure.http_client.caching import WikipediaCachePolicy
-from infrastructure.http_client.clients import HttpClient
-from infrastructure.http_client.clients import UrllibHttpClient
+from infrastructure.http_client.caching.file import FileCache
+from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
+from infrastructure.http_client.clients.http import HttpClient
+from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
+from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
 
