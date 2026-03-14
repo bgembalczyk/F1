@@ -22,9 +22,9 @@ class PrivateerTeamsListScraper(F1ListScraper):
         [flagi kraju] <a>NAZWA ZESPOŁU</a> (lata aktywności)
 
     Flagi ignorujemy całkowicie, zapisujemy:
-        - team       – tekst linka z nazwą zespołu,
-        - team_url   – pełny URL do strony zespołu (opcjonalnie),
-        - seasons    – lista słowników {"year": YYYY, "url": "..."}.
+        - team       - tekst linka z nazwą zespołu,
+        - team_url   - pełny URL do strony zespołu (opcjonalnie),
+        - seasons    - lista słowników {"year": YYYY, "url": "..."}.
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_constructors"
@@ -60,7 +60,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
 
         # 4) wyciągamy tekst z nawiasu i zamieniamy na seasons
         full_text = li.get_text(" ", strip=True)
-        # np. "BMS Scuderia Italia (1988–1993)"
+        # np. "BMS Scuderia Italia (1988-1993)"
         m = re.search(r"\((.+?)\)", full_text)
         if m:
             seasons_raw = clean_wiki_text(m.group(1))

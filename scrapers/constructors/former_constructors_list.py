@@ -24,7 +24,7 @@ from scrapers.constructors.constants import FORMER_CONSTRUCTORS_EXPECTED_HEADERS
 
 class FormerConstructorsListScraper(BaseConstructorListScraper):
     """
-    Byli konstruktorzy – sekcja 'Former constructors'
+    Byli konstruktorzy - sekcja 'Former constructors'
     z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
     """
