@@ -58,6 +58,7 @@ class SeasonEntriesParser:
                     column("Power Unit", "power_unit", EngineColumn()),
                     column("Power unit", "power_unit", EngineColumn()),
                     column("Race drivers", "race_drivers", DriversWithRoundsColumn()),
+                    column("Race drivers", "race_drivers", DriverListColumn()),
                     column("Race driver(s)", "race_drivers", DriversWithRoundsColumn()),
                     column("No.", "no", BrListColumn()),
                     column("Driver name", "drivers", DriverListColumn()),
