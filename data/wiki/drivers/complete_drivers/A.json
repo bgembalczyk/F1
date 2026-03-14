@@ -52095,7 +52095,10 @@
             {
               "season": 1995,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "100 Junior"
               },
               "position": "19th"
@@ -52138,7 +52141,10 @@
             {
               "season": 1996,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "100 Junior"
               },
               "position": "15th"
@@ -52146,7 +52152,10 @@
             {
               "season": 1997,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "ICA"
               },
               "position": "4th"
@@ -52154,7 +52163,10 @@
             {
               "season": 1998,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "Formula A"
               },
               "position": "7th"
@@ -52184,7 +52196,10 @@
             {
               "season": 1999,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "Formula A"
               },
               "position": "5th"
@@ -53231,6 +53246,33 @@
               "podiums": 0,
               "points": 56.0,
               "position": "10th"
+            },
+            {
+              "season": 2026,
+              "series": {
+                "series": {
+                  "text": "Formula One",
+                  "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+                }
+              },
+              "team": [
+                {
+                  "name": "Aston Martin Aramco F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Aston Martin Aramco F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Aston_Martin_Aramco_F1_Team"
+                    }
+                  ]
+                }
+              ],
+              "races": 1,
+              "wins": 0,
+              "poles": 0,
+              "flaps": "0",
+              "podiums": 0,
+              "points": 0.0,
+              "position": "20th*"
             }
           ],
           "section": "Racing record",
@@ -60073,6 +60115,334 @@
               },
               "wdc": 10,
               "points": 56.0
+            },
+            {
+              "year": {
+                "text": "2026",
+                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+              },
+              "entrant": [
+                {
+                  "name": "Aston Martin Aramco F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Aston Martin Aramco F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Aston_Martin_Aramco_F1_Team"
+                    }
+                  ]
+                }
+              ],
+              "chassis": [
+                {
+                  "text": "Aston Martin",
+                  "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
+                },
+                {
+                  "text": "AMR26",
+                  "url": "https://en.wikipedia.org/wiki/Aston_Martin_AMR26"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Honda RA626H",
+                  "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+                },
+                "displacement_l": 1.6,
+                "type": "V6",
+                "layout": "V",
+                "cylinders": 6,
+                "turbocharged": true
+              },
+              "1": {
+                "round": {
+                  "text": "AUS",
+                  "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
+                },
+                "code": "AUS",
+                "result": "Ret",
+                "background": "#EFCFFF",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "2": {
+                "round": {
+                  "text": "CHN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix"
+                },
+                "code": "CHN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "3": {
+                "round": {
+                  "text": "JPN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Japanese_Grand_Prix"
+                },
+                "code": "JPN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "4": {
+                "round": {
+                  "text": "BHR",
+                  "url": "https://en.wikipedia.org/wiki/2026_Bahrain_Grand_Prix"
+                },
+                "code": "BHR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "5": {
+                "round": {
+                  "text": "SAU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Saudi_Arabian_Grand_Prix"
+                },
+                "code": "SAU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "6": {
+                "round": {
+                  "text": "MIA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Miami_Grand_Prix"
+                },
+                "code": "MIA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "7": {
+                "round": {
+                  "text": "CAN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Canadian_Grand_Prix"
+                },
+                "code": "CAN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "8": {
+                "round": {
+                  "text": "MON",
+                  "url": "https://en.wikipedia.org/wiki/2026_Monaco_Grand_Prix"
+                },
+                "code": "MON",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "9": {
+                "round": {
+                  "text": "BCN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Barcelona-Catalunya_Grand_Prix"
+                },
+                "code": "BCN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "10": {
+                "round": {
+                  "text": "AUT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Austrian_Grand_Prix"
+                },
+                "code": "AUT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "11": {
+                "round": {
+                  "text": "GBR",
+                  "url": "https://en.wikipedia.org/wiki/2026_British_Grand_Prix"
+                },
+                "code": "GBR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "12": {
+                "round": {
+                  "text": "BEL",
+                  "url": "https://en.wikipedia.org/wiki/2026_Belgian_Grand_Prix"
+                },
+                "code": "BEL",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "13": {
+                "round": {
+                  "text": "HUN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Hungarian_Grand_Prix"
+                },
+                "code": "HUN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "14": {
+                "round": {
+                  "text": "NED",
+                  "url": "https://en.wikipedia.org/wiki/2026_Dutch_Grand_Prix"
+                },
+                "code": "NED",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "15": {
+                "round": {
+                  "text": "ITA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Italian_Grand_Prix"
+                },
+                "code": "ITA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "16": {
+                "round": {
+                  "text": "ESP",
+                  "url": "https://en.wikipedia.org/wiki/2026_Spanish_Grand_Prix"
+                },
+                "code": "ESP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "17": {
+                "round": {
+                  "text": "AZE",
+                  "url": "https://en.wikipedia.org/wiki/2026_Azerbaijan_Grand_Prix"
+                },
+                "code": "AZE",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "18": {
+                "round": {
+                  "text": "SIN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Singapore_Grand_Prix"
+                },
+                "code": "SIN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "19": {
+                "round": {
+                  "text": "USA",
+                  "url": "https://en.wikipedia.org/wiki/2026_United_States_Grand_Prix"
+                },
+                "code": "USA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "20": {
+                "round": {
+                  "text": "MXC",
+                  "url": "https://en.wikipedia.org/wiki/2026_Mexico_City_Grand_Prix"
+                },
+                "code": "MXC",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "21": {
+                "round": {
+                  "text": "SAP",
+                  "url": "https://en.wikipedia.org/wiki/2026_S%C3%A3o_Paulo_Grand_Prix"
+                },
+                "code": "SAP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "22": {
+                "round": {
+                  "text": "LVG",
+                  "url": "https://en.wikipedia.org/wiki/2026_Las_Vegas_Grand_Prix"
+                },
+                "code": "LVG",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "23": {
+                "round": {
+                  "text": "QAT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Qatar_Grand_Prix"
+                },
+                "code": "QAT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "24": {
+                "round": {
+                  "text": "ABU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix"
+                },
+                "code": "ABU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "wdc": 20,
+              "points": 0.0
             }
           ],
           "section": "Racing record",
@@ -92166,19 +92536,23 @@
       {
         "year": 2025,
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
     "drivers_championships": {
       "count": 0,
       "seasons": []
     },
-    "race_entries": 24,
-    "race_starts": 24,
+    "race_entries": 25,
+    "race_starts": 25,
     "pole_positions": 0,
     "race_wins": 0,
-    "podiums": 3,
+    "podiums": 4,
     "fastest_laps": 3,
-    "points": "150",
+    "points": "168",
     "details": {
       "url": "https://en.wikipedia.org/wiki/Kimi_Antonelli",
       "infobox": {
@@ -92296,8 +92670,8 @@
               {
                 "label": "Entries",
                 "value": {
-                  "entries": 24,
-                  "starts": 24
+                  "entries": 25,
+                  "starts": 25
                 }
               },
               {
@@ -92313,11 +92687,11 @@
               },
               {
                 "label": "Podiums",
-                "value": 3
+                "value": 4
               },
               {
                 "label": "Career points",
-                "value": 150.0
+                "value": 168.0
               },
               {
                 "label": "Pole positions",
@@ -92340,8 +92714,8 @@
                 "label": "Last entry",
                 "value": [
                   {
-                    "text": "2025 Abu Dhabi Grand Prix",
-                    "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
+                    "text": "2026 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
                   }
                 ]
               },
@@ -92490,7 +92864,7 @@
             {
               "season": 2014,
               "series": {
-                "series": "Academy Champion Kart International Final",
+                "series": "ACK International Final",
                 "class": "Baby Academy"
               },
               "team": [
@@ -92595,7 +92969,10 @@
             {
               "season": 2016,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "60 Mini"
               },
               "team": [
@@ -93281,7 +93658,7 @@
               "series": {
                 "series": {
                   "text": "OK",
-                  "url": "https://en.wikipedia.org/wiki/KF2"
+                  "url": "https://en.wikipedia.org/wiki/Original_Kart"
                 },
                 "class": "OK"
               },
@@ -93600,7 +93977,7 @@
               ],
               "class": {
                 "text": "OK",
-                "url": "https://en.wikipedia.org/wiki/KF2"
+                "url": "https://en.wikipedia.org/wiki/Original_Kart"
               },
               "circuit": {
                 "text": "Portimão",
@@ -93766,7 +94143,7 @@
               ],
               "class": {
                 "text": "OK",
-                "url": "https://en.wikipedia.org/wiki/KF2"
+                "url": "https://en.wikipedia.org/wiki/Original_Kart"
               },
               "1": {
                 "round": null,
@@ -93837,7 +94214,7 @@
               ],
               "class": {
                 "text": "OK",
-                "url": "https://en.wikipedia.org/wiki/KF2"
+                "url": "https://en.wikipedia.org/wiki/Original_Kart"
               },
               "1": {
                 "round": {
@@ -94352,6 +94729,33 @@
               "podiums": 3,
               "points": 150.0,
               "position": "7th"
+            },
+            {
+              "season": 2026,
+              "series": {
+                "series": {
+                  "text": "Formula One",
+                  "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+                }
+              },
+              "team": [
+                {
+                  "name": "Mercedes-AMG Petronas F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Mercedes-AMG Petronas F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_Petronas_F1_Team"
+                    }
+                  ]
+                }
+              ],
+              "races": 1,
+              "wins": 0,
+              "poles": 0,
+              "fastest_laps": 0,
+              "podiums": 1,
+              "points": 18.0,
+              "position": "2nd*"
             }
           ],
           "section": "Racing record",
@@ -97344,6 +97748,334 @@
               },
               "wdc": 7,
               "points": 150.0
+            },
+            {
+              "year": {
+                "text": "2026",
+                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+              },
+              "entrant": [
+                {
+                  "name": "Mercedes-AMG Petronas F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Mercedes-AMG Petronas F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_Petronas_F1_Team"
+                    }
+                  ]
+                }
+              ],
+              "chassis": [
+                {
+                  "text": "Mercedes-AMG",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+                },
+                {
+                  "text": "F1 W17",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes_W17"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Mercedes-AMG M17 E Performance",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+                },
+                "displacement_l": 1.6,
+                "type": "V6",
+                "layout": "V",
+                "cylinders": 6,
+                "turbocharged": true
+              },
+              "1": {
+                "round": {
+                  "text": "AUS",
+                  "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
+                },
+                "code": "AUS",
+                "result": 2,
+                "background": "#DFDFDF",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "2": {
+                "round": {
+                  "text": "CHN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix"
+                },
+                "code": "CHN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "3": {
+                "round": {
+                  "text": "JPN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Japanese_Grand_Prix"
+                },
+                "code": "JPN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "4": {
+                "round": {
+                  "text": "BHR",
+                  "url": "https://en.wikipedia.org/wiki/2026_Bahrain_Grand_Prix"
+                },
+                "code": "BHR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "5": {
+                "round": {
+                  "text": "SAU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Saudi_Arabian_Grand_Prix"
+                },
+                "code": "SAU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "6": {
+                "round": {
+                  "text": "MIA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Miami_Grand_Prix"
+                },
+                "code": "MIA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "7": {
+                "round": {
+                  "text": "CAN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Canadian_Grand_Prix"
+                },
+                "code": "CAN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "8": {
+                "round": {
+                  "text": "MON",
+                  "url": "https://en.wikipedia.org/wiki/2026_Monaco_Grand_Prix"
+                },
+                "code": "MON",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "9": {
+                "round": {
+                  "text": "BCN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Barcelona-Catalunya_Grand_Prix"
+                },
+                "code": "BCN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "10": {
+                "round": {
+                  "text": "AUT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Austrian_Grand_Prix"
+                },
+                "code": "AUT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "11": {
+                "round": {
+                  "text": "GBR",
+                  "url": "https://en.wikipedia.org/wiki/2026_British_Grand_Prix"
+                },
+                "code": "GBR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "12": {
+                "round": {
+                  "text": "BEL",
+                  "url": "https://en.wikipedia.org/wiki/2026_Belgian_Grand_Prix"
+                },
+                "code": "BEL",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "13": {
+                "round": {
+                  "text": "HUN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Hungarian_Grand_Prix"
+                },
+                "code": "HUN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "14": {
+                "round": {
+                  "text": "NED",
+                  "url": "https://en.wikipedia.org/wiki/2026_Dutch_Grand_Prix"
+                },
+                "code": "NED",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "15": {
+                "round": {
+                  "text": "ITA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Italian_Grand_Prix"
+                },
+                "code": "ITA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "16": {
+                "round": {
+                  "text": "ESP",
+                  "url": "https://en.wikipedia.org/wiki/2026_Spanish_Grand_Prix"
+                },
+                "code": "ESP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "17": {
+                "round": {
+                  "text": "AZE",
+                  "url": "https://en.wikipedia.org/wiki/2026_Azerbaijan_Grand_Prix"
+                },
+                "code": "AZE",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "18": {
+                "round": {
+                  "text": "SIN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Singapore_Grand_Prix"
+                },
+                "code": "SIN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "19": {
+                "round": {
+                  "text": "USA",
+                  "url": "https://en.wikipedia.org/wiki/2026_United_States_Grand_Prix"
+                },
+                "code": "USA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "20": {
+                "round": {
+                  "text": "MXC",
+                  "url": "https://en.wikipedia.org/wiki/2026_Mexico_City_Grand_Prix"
+                },
+                "code": "MXC",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "21": {
+                "round": {
+                  "text": "SAP",
+                  "url": "https://en.wikipedia.org/wiki/2026_S%C3%A3o_Paulo_Grand_Prix"
+                },
+                "code": "SAP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "22": {
+                "round": {
+                  "text": "LVG",
+                  "url": "https://en.wikipedia.org/wiki/2026_Las_Vegas_Grand_Prix"
+                },
+                "code": "LVG",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "23": {
+                "round": {
+                  "text": "QAT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Qatar_Grand_Prix"
+                },
+                "code": "QAT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "24": {
+                "round": {
+                  "text": "ABU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix"
+                },
+                "code": "ABU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "wdc": 2,
+              "points": 18.0
             }
           ],
           "section": "Racing record",
@@ -116500,7 +117232,14 @@
           },
           "died": {
             "date": "2021-08-25",
-            "place": null
+            "place": [
+              {
+                "text": "Leamington Spa",
+                "url": "https://en.wikipedia.org/wiki/Leamington_Spa"
+              },
+              "Warwickshire",
+              "England"
+            ]
           }
         },
         "championship_titles": [],

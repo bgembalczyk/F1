@@ -3133,6 +3133,35 @@
           }
         },
         {
+          "race_name": "Irish Shell-BP Trophy",
+          "circuit": {
+            "text": "Phoenix Park",
+            "url": "https://en.wikipedia.org/wiki/Phoenix_Park#Phoenix_Park_Motor_Races"
+          },
+          "date": {
+            "text": "22 July 1961",
+            "iso": "1961-07-22"
+          },
+          "winning_driver": {
+            "text": "Gerry Ashmore",
+            "url": "https://en.wikipedia.org/wiki/Gerry_Ashmore"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Lotus",
+              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+            },
+            "engine_constructor": {
+              "text": "Climax",
+              "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": null
+          }
+        },
+        {
           "race_name": "Solitude Grand Prix",
           "circuit": {
             "text": "Solitudering",
