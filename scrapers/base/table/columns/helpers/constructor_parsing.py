@@ -10,6 +10,7 @@ Follows SOLID principles:
 - Information Expert: Constructor parsing logic grouped with constructor data
 """
 
+from bs4 import NavigableString
 from bs4 import Tag
 
 from models.records.link import LinkRecord
@@ -17,6 +18,9 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 
 ENGINE_CONSTRUCTOR_INDEX = 1
+
+# Dash variants that separate chassis from engine constructor in a cell.
+_HYPHEN_CHARS: frozenset[str] = frozenset({"-", "\u2013", "\u2014", "\u2212"})
 
 
 class ConstructorParsingHelpers:
@@ -163,6 +167,53 @@ class ConstructorParsingHelpers:
         if " - " in text:
             parts = text.split(" - ", 1)
             return parts[0].strip(), parts[1].strip()
+
+        return None
+
+    @staticmethod
+    def find_hyphen_split_index(ctx: ColumnContext) -> int | None:
+        """
+        Detect if a hyphen separator between links divides a multi-link chassis
+        from the engine constructor.
+
+        Iterates over the direct children of the cell looking for a hyphen
+        NavigableString that appears after two or more ``<a>`` elements.  When
+        found, returns the number of direct ``<a>`` children with non-empty text
+        that precede the hyphen (i.e. the index at which ``ctx.links`` should be
+        split: pre-hyphen links are the chassis, post-hyphen links the engine).
+
+        Returns ``None`` when:
+        - there is no cell,
+        - no hyphen is found between links, or
+        - one or fewer ``<a>`` elements precede the hyphen (the standard
+          two-link case, which the existing ``ConstructorPartColumn``
+          already handles correctly).
+
+        Args:
+            ctx: Column context containing the cell to inspect.
+
+        Returns:
+            Number of chassis links (split index into ``ctx.links``), or None.
+        """
+        if not ctx.cell:
+            return None
+
+        non_empty_a_before = 0
+        hyphen_found = False
+
+        for child in ctx.cell.children:
+            if isinstance(child, Tag):
+                if child.name == "a":
+                    if hyphen_found:
+                        # At least one link exists after the hyphen; commit split.
+                        return non_empty_a_before if non_empty_a_before > 1 else None
+                    link_text = child.get_text(strip=True)
+                    if link_text:
+                        non_empty_a_before += 1
+            elif isinstance(child, NavigableString):
+                stripped = str(child).strip()
+                if stripped in _HYPHEN_CHARS and non_empty_a_before > 1:
+                    hyphen_found = True
 
         return None
 

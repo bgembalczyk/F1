@@ -191,6 +191,8 @@ class SeasonStandingsParser:
 
     @staticmethod
     def _merge_round_value(existing: Any, incoming: Any) -> Any:
+        if incoming is None:
+            return existing
         if not (
             isinstance(existing, dict)
             and isinstance(incoming, dict)
