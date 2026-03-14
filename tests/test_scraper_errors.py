@@ -59,15 +59,15 @@ if "bs4" not in sys.modules:
 if "requests" not in sys.modules:
     requests_stub = types.ModuleType("requests")
 
-    class _RequestException(Exception):
+    class _RequestError(Exception):
         pass
 
     class _Session:
         def get(self, *_args, **_kwargs):
             msg = "requests stub"
-            raise _RequestException(msg)
+            raise _RequestError(msg)
 
-    requests_stub.RequestException = _RequestException
+    requests_stub.RequestException = _RequestError
     requests_stub.Session = _Session
     sys.modules["requests"] = requests_stub
 
@@ -101,27 +101,27 @@ class DummyFetcher:
         self.html = html
         self.exc = exc
 
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
         if self.exc:
             raise self.exc
         assert self.html is not None
         return self.html
 
-    def get(self, url: str) -> str:
-        return self.get_text(url)
+    def get(self, _url: str) -> str:
+        return self.get_text(_url)
 
 
 class DummyScraper(F1Scraper):
     url = "https://example.com"
 
-    def _parse_soup(self, soup):
+    def _parse_soup(self, _soup):
         return []
 
 
 class DummyParseScraper(F1Scraper):
     url = "https://example.com"
 
-    def _parse_soup(self, soup):
+    def _parse_soup(self, _soup):
         msg = "boom"
         raise ValueError(msg)
 
@@ -133,16 +133,16 @@ class DummyListScraper(F1ListScraper):
 
 
 class DummyInfoboxParser:
-    def parse(self, soup):
+    def parse(self, _soup):
         msg = "Brak infoboksu"
         raise ScraperNotFoundError(msg)
 
 
 class DummySingleCircuitScraper(F1SingleCircuitScraper):
-    def _is_circuit_like_article(self, soup) -> bool:
+    def _is_circuit_like_article(self, _soup) -> bool:
         return True
 
-    def _parse_details(self, soup):
+    def _parse_details(self, _soup):
         msg = "Brak danych"
         raise ScraperNotFoundError(msg)
 

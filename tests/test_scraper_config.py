@@ -7,6 +7,8 @@ from scrapers.config import ScraperConfig
 from scrapers.config import default_config
 from scrapers.config import default_scraper_config
 
+DEFAULT_TIMEOUT = 10
+
 
 def test_http_policy_rejects_invalid_values():
     with pytest.raises(ValueError, match="timeout must be greater than 0"):
@@ -21,7 +23,7 @@ def test_default_http_policy_builds_wikipedia_cache():
 
     assert isinstance(policy, HttpPolicy)
     assert isinstance(policy.cache, WikipediaCachePolicy)
-    assert policy.timeout == 10
+    assert policy.timeout == DEFAULT_TIMEOUT
 
 
 def test_default_scraper_config_includes_http_policy():

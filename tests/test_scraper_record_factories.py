@@ -18,15 +18,15 @@ if str(PROJECT_ROOT) not in sys.path:
 if importlib.util.find_spec("requests") is None:
     requests_stub = types.ModuleType("requests")
 
-    class _RequestException(Exception):
+    class _RequestError(Exception):
         pass
 
     class _Session:
         def get(self, *_args, **_kwargs):
             msg = "requests stub"
-            raise _RequestException(msg)
+            raise _RequestError(msg)
 
-    requests_stub.RequestException = _RequestException
+    requests_stub.RequestException = _RequestError
     requests_stub.Session = _Session
     sys.modules["requests"] = requests_stub
 
@@ -57,11 +57,11 @@ class StubFetcher:
     def __init__(self, html: str) -> None:
         self.html = html
 
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
         return self.html
 
-    def get(self, url: str) -> str:
-        return self.get_text(url)
+    def get(self, _url: str) -> str:
+        return self.get_text(_url)
 
 
 def test_circuits_list_record_factory_defaults_lists() -> None:
@@ -123,8 +123,8 @@ def test_drivers_list_record_factory_populates_championships() -> None:
           <tr>
             <td><a href="/wiki/Test_Driver">Test Driver~</a></td>
             <td>Exampleland</td>
-            <td>2005–2006</td>
-            <td>2<br/>2005–2006</td>
+            <td>2005-2006</td>
+            <td>2<br/>2005-2006</td>
           </tr>
         </table>
       </body>
