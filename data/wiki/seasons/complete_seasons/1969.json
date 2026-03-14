@@ -2734,14 +2734,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 2,
-                "background": "Second place"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -2749,8 +2741,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -2761,8 +2753,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -2785,8 +2777,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -2797,11 +2789,12 @@
             },
             "results": [
               {
-                "position": 63,
-                "pole_position": true
+                "position": 4,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 63.0
         },
         {
           "pos": 2,
@@ -2881,16 +2874,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 1,
-                "background": "Winner",
-                "pole_position": true,
-                "fastest_lap": true
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -2898,8 +2881,10 @@
             },
             "results": [
               {
-                "position": 10,
-                "background": "Other classified position"
+                "position": 1,
+                "background": "Winner",
+                "pole_position": true,
+                "fastest_lap": true
               }
             ]
           },
@@ -2910,10 +2895,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
-                "pole_position": true,
-                "fastest_lap": true
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
           },
@@ -2924,8 +2907,10 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner",
+                "pole_position": true,
+                "fastest_lap": true
               }
             ]
           },
@@ -2936,9 +2921,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
-                "fastest_lap": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -2949,11 +2933,13 @@
             },
             "results": [
               {
-                "position": 37,
-                "pole_position": true
+                "position": 2,
+                "background": "Second place",
+                "fastest_lap": true
               }
             ]
-          }
+          },
+          "points": 37.0
         },
         {
           "pos": 3,
@@ -3033,14 +3019,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 3,
-                "background": "Third place"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3048,8 +3026,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -3060,7 +3038,7 @@
             },
             "results": [
               {
-                "position": 5,
+                "position": 4,
                 "background": "Other points position"
               }
             ]
@@ -3072,7 +3050,8 @@
             },
             "results": [
               {
-                "position": "DNS"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -3094,11 +3073,11 @@
             },
             "results": [
               {
-                "position": 26,
-                "pole_position": true
+                "position": "DNS"
               }
             ]
-          }
+          },
+          "points": 26.0
         },
         {
           "pos": 4,
@@ -3171,14 +3150,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3186,9 +3157,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3199,8 +3169,9 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": 2,
+                "background": "Second place",
+                "pole_position": true
               }
             ]
           },
@@ -3211,10 +3182,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
-                "pole_position": true,
-                "fastest_lap": true
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -3225,8 +3194,10 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner",
+                "pole_position": true,
+                "fastest_lap": true
               }
             ]
           },
@@ -3237,11 +3208,12 @@
             },
             "results": [
               {
-                "position": 22,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 22.0
         },
         {
           "pos": 5,
@@ -3321,14 +3293,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 12,
-                "background": "Other points position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3336,9 +3300,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
-                "fastest_lap": true
+                "position": 12,
+                "background": "Other points position"
               }
             ]
           },
@@ -3349,8 +3312,9 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": 3,
+                "background": "Third place",
+                "fastest_lap": true
               }
             ]
           },
@@ -3361,8 +3325,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3373,8 +3337,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3385,11 +3349,12 @@
             },
             "results": [
               {
-                "position": 21,
-                "pole_position": true
+                "position": 5,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 21.0
         },
         {
           "pos": 6,
@@ -3469,14 +3434,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3484,8 +3441,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3496,8 +3453,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3520,8 +3477,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3532,11 +3489,12 @@
             },
             "results": [
               {
-                "position": 20,
-                "pole_position": true
+                "position": 1,
+                "background": "Winner"
               }
             ]
-          }
+          },
+          "points": 20.0
         },
         {
           "pos": 7,
@@ -3616,14 +3574,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 4,
-                "background": "Other points position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3631,8 +3581,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3643,8 +3593,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3660,19 +3610,20 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
+          "usa": {
             "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
             "results": [
               {
-                "position": 19,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "mex": null,
+          "points": 19.0
         },
         {
           "pos": 8,
@@ -3741,14 +3692,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3756,8 +3699,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3768,8 +3711,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -3780,8 +3723,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3792,8 +3735,8 @@
             },
             "results": [
               {
-                "position": 10,
-                "background": "Other classified position"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -3804,11 +3747,12 @@
             },
             "results": [
               {
-                "position": 16,
-                "pole_position": true
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 16.0
         },
         {
           "pos": 9,
@@ -3888,14 +3832,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 11,
-                "background": "Other points position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3903,8 +3839,8 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": 11,
+                "background": "Other points position"
               }
             ]
           },
@@ -3915,8 +3851,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3951,11 +3887,12 @@
             },
             "results": [
               {
-                "position": 15,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 15.0
         },
         {
           "pos": 10,
@@ -4014,19 +3951,7 @@
           },
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "ger": null,
           "ita": {
             "round": {
               "text": "ITA",
@@ -4034,9 +3959,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
-                "fastest_lap": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4047,8 +3971,9 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": 2,
+                "background": "Second place",
+                "fastest_lap": true
               }
             ]
           },
@@ -4059,9 +3984,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
-                "pole_position": true
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -4072,11 +3996,13 @@
             },
             "results": [
               {
-                "position": 14,
+                "position": 3,
+                "background": "Third place",
                 "pole_position": true
               }
             ]
-          }
+          },
+          "points": 14.0
         },
         {
           "pos": 11,
@@ -4145,14 +4071,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "DNS",
-                "background": "Did not start"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4160,8 +4078,8 @@
             },
             "results": [
               {
-                "position": "NC",
-                "background": "Not classified, finished"
+                "position": "DNS",
+                "background": "Did not start"
               }
             ]
           },
@@ -4172,8 +4090,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -4184,8 +4102,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4196,8 +4114,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -4208,11 +4126,12 @@
             },
             "results": [
               {
-                "position": 6,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 6.0
         },
         {
           "pos": 12,
@@ -4292,23 +4211,12 @@
               }
             ]
           },
-          "": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 4.0
         },
         {
           "pos": 13,
@@ -4333,7 +4241,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": 6,
@@ -4351,22 +4263,11 @@
               "1"
             ]
           },
-          "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 3.0
         },
         {
           "pos": 14,
@@ -4424,7 +4325,11 @@
               }
             ]
           },
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -4432,22 +4337,11 @@
               }
             ]
           },
-          "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 3.0
         },
         {
           "pos": 15,
@@ -4505,19 +4399,7 @@
               }
             ]
           },
-          "": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "background": "Other points position"
-              }
-            ]
-          },
+          "ger": null,
           "ita": {
             "round": {
               "text": "ITA",
@@ -4525,8 +4407,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -4537,8 +4419,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4549,8 +4431,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -4561,11 +4443,12 @@
             },
             "results": [
               {
-                "position": 3,
-                "pole_position": true
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 3.0
         },
         {
           "pos": 16,
@@ -4612,19 +4495,7 @@
             ]
           },
           "gbr": null,
-          "": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "ger": null,
           "ita": {
             "round": {
               "text": "ITA",
@@ -4644,8 +4515,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4656,8 +4527,8 @@
             },
             "results": [
               {
-                "position": 11,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -4668,11 +4539,12 @@
             },
             "results": [
               {
-                "position": 1,
-                "pole_position": true
+                "position": 11,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 1.0
         },
         {
           "pos": 17,
@@ -4741,14 +4613,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4792,8 +4656,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4804,11 +4668,12 @@
             },
             "results": [
               {
-                "position": 1,
-                "pole_position": true
+                "position": 6,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 1.0
         },
         {
           "pos": 18,
@@ -4822,7 +4687,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -4840,19 +4709,7 @@
               "1"
             ]
           },
-          "ger": null,
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "background": "Other points position"
-              }
-            ]
-          },
+          "ita": null,
           "can": {
             "round": {
               "text": "CAN",
@@ -4860,8 +4717,8 @@
             },
             "results": [
               {
-                "position": "NC",
-                "background": "Not classified, finished"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -4872,8 +4729,8 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -4884,11 +4741,12 @@
             },
             "results": [
               {
-                "position": 1,
-                "pole_position": true
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 1.0
         },
         {
           "pos": null,
@@ -4913,23 +4771,12 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -4943,20 +4790,8 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7,
-                "background": "Other classified position"
-              }
-            ]
-          },
+          "ita": null,
           "can": {
             "round": {
               "text": "CAN",
@@ -4964,8 +4799,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4976,8 +4811,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4988,11 +4823,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5028,19 +4864,7 @@
               }
             ]
           },
-          "": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "ger": null,
           "ita": {
             "round": {
               "text": "ITA",
@@ -5053,11 +4877,10 @@
               }
             ]
           },
-          "can": null,
-          "usa": {
+          "can": {
             "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -5066,6 +4889,7 @@
               }
             ]
           },
+          "usa": null,
           "mex": {
             "round": {
               "text": "MEX",
@@ -5073,11 +4897,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5091,12 +4916,12 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
-          "ita": {
+          "ita": null,
+          "can": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -5105,20 +4930,9 @@
               }
             ]
           },
-          "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5143,7 +4957,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -5151,12 +4969,12 @@
               }
             ]
           },
-          "ger": null,
           "ita": null,
-          "can": {
+          "can": null,
+          "usa": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -5165,19 +4983,8 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5202,7 +5009,11 @@
               }
             ]
           },
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -5210,22 +5021,11 @@
               }
             ]
           },
-          "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5239,21 +5039,9 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "ita": null,
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "can": null,
           "usa": {
             "round": {
               "text": "USA",
@@ -5273,11 +5061,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5302,23 +5091,12 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5343,23 +5121,12 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5384,23 +5151,12 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5425,23 +5181,12 @@
               }
             ]
           },
-          "": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5455,12 +5200,12 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
-          "ita": {
+          "ita": null,
+          "can": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -5469,20 +5214,9 @@
               }
             ]
           },
-          "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5496,12 +5230,12 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
-          "ita": {
+          "ita": null,
+          "can": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -5510,20 +5244,9 @@
               }
             ]
           },
-          "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5537,11 +5260,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -5550,21 +5273,10 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -5632,13 +5344,6 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
-              }
-            ]
-          },
-          "": {
             "results": [
               {
                 "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
@@ -5714,11 +5419,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -5727,7 +5432,6 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
           "mex": null,
@@ -5745,11 +5449,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -5758,7 +5462,6 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
           "mex": null,
@@ -5776,11 +5479,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -5789,7 +5492,6 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
           "mex": null,
@@ -5807,11 +5509,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -5820,7 +5522,6 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
           "mex": null,
@@ -5838,11 +5539,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -5851,7 +5552,6 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
           "mex": null,
@@ -5869,11 +5569,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -5882,7 +5582,6 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
           "mex": null,
@@ -5900,11 +5599,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -5913,7 +5612,6 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
           "mex": null,
@@ -5931,11 +5629,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -5944,7 +5642,6 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
           "mex": null,
@@ -5962,11 +5659,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -5975,7 +5672,6 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
           "mex": null,
@@ -5993,11 +5689,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -6006,140 +5702,9 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
           "mex": null,
-          "points": null
-        },
-        {
-          "pos": null,
-          "driver": {
-            "text": "Driver",
-            "url": null
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "RSA"
-              }
-            ]
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ESP"
-              }
-            ]
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "MON"
-              }
-            ]
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "NED"
-              }
-            ]
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "FRA"
-              }
-            ]
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "GBR"
-              }
-            ]
-          },
-          "": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "GER"
-              }
-            ]
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ITA"
-              }
-            ]
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "CAN"
-              }
-            ]
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "USA"
-              }
-            ]
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "MEX"
-              }
-            ]
-          },
           "points": null
         }
       ],

@@ -3835,14 +3835,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 1,
-                "background": "Winner"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3850,8 +3842,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -3862,8 +3854,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -3874,8 +3866,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3898,11 +3890,12 @@
             },
             "results": [
               {
-                "position": 51,
-                "pole_position": true
+                "position": 3,
+                "background": "Third place"
               }
             ]
-          }
+          },
+          "points": 51.0
         },
         {
           "pos": 2,
@@ -3984,14 +3977,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 2,
-                "background": "Second place"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3999,8 +3984,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -4011,8 +3996,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -4023,9 +4008,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "points_counted": false,
-                "background": "Other points position"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -4036,8 +4020,9 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": 5,
+                "points_counted": false,
+                "background": "Other points position"
               }
             ]
           },
@@ -4048,10 +4033,14 @@
             },
             "results": [
               {
-                "position": "46 (48)",
-                "pole_position": true
+                "position": 2,
+                "background": "Second place"
               }
             ]
+          },
+          "points": {
+            "championship_points": 46.0,
+            "total_points": 48.0
           }
         },
         {
@@ -4136,15 +4125,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired",
-                "pole_position": true
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4154,8 +4134,7 @@
               {
                 "position": "Ret",
                 "background": "Not classified, retired",
-                "pole_position": true,
-                "fastest_lap": true
+                "pole_position": true
               }
             ]
           },
@@ -4166,8 +4145,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
+                "position": "Ret",
+                "background": "Not classified, retired",
                 "pole_position": true,
                 "fastest_lap": true
               }
@@ -4180,8 +4159,10 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner"
+                "position": 3,
+                "background": "Third place",
+                "pole_position": true,
+                "fastest_lap": true
               }
             ]
           },
@@ -4193,9 +4174,7 @@
             "results": [
               {
                 "position": 1,
-                "background": "Winner",
-                "pole_position": true,
-                "fastest_lap": true
+                "background": "Winner"
               }
             ]
           },
@@ -4206,11 +4185,14 @@
             },
             "results": [
               {
-                "position": 41,
-                "pole_position": true
+                "position": 1,
+                "background": "Winner",
+                "pole_position": true,
+                "fastest_lap": true
               }
             ]
-          }
+          },
+          "points": 41.0
         },
         {
           "pos": 4,
@@ -4279,7 +4261,11 @@
               }
             ]
           },
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": 4,
@@ -4287,19 +4273,7 @@
               }
             ]
           },
-          "ger": null,
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "background": "Winner"
-              }
-            ]
-          },
+          "can": null,
           "ita": {
             "round": {
               "text": "ITA",
@@ -4307,8 +4281,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -4319,8 +4293,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4331,11 +4305,12 @@
             },
             "results": [
               {
-                "position": 20,
-                "pole_position": true
+                "position": 4,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 20.0
         },
         {
           "pos": 5,
@@ -4404,14 +4379,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 3,
-                "background": "Third place"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4419,8 +4386,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -4431,8 +4398,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -4443,8 +4410,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4455,8 +4422,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4467,11 +4434,12 @@
             },
             "results": [
               {
-                "position": 20,
-                "pole_position": true
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 20.0
         },
         {
           "pos": 6,
@@ -4551,7 +4519,11 @@
               }
             ]
           },
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": 11,
@@ -4559,13 +4531,13 @@
               }
             ]
           },
-          "ger": null,
           "can": null,
           "ita": null,
-          "usa": {
+          "usa": null,
+          "mex": {
             "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
             },
             "results": [
               {
@@ -4574,18 +4546,7 @@
               }
             ]
           },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 15,
-                "pole_position": true
-              }
-            ]
-          }
+          "points": 15.0
         },
         {
           "pos": 7,
@@ -4668,14 +4629,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4683,8 +4636,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4695,8 +4648,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -4707,10 +4660,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
-                "pole_position": true,
-                "fastest_lap": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4721,8 +4672,10 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 2,
+                "background": "Second place",
+                "pole_position": true,
+                "fastest_lap": true
               }
             ]
           },
@@ -4733,11 +4686,12 @@
             },
             "results": [
               {
-                "position": 15,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 15.0
         },
         {
           "pos": 8,
@@ -4818,15 +4772,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired",
-                "fastest_lap": true
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4834,8 +4779,9 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "fastest_lap": true
               }
             ]
           },
@@ -4846,8 +4792,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -4882,11 +4828,12 @@
             },
             "results": [
               {
-                "position": 13,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 13.0
         },
         {
           "pos": 9,
@@ -4966,14 +4913,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5029,11 +4968,12 @@
             },
             "results": [
               {
-                "position": 10,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 10.0
         },
         {
           "pos": 10,
@@ -5113,14 +5053,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5128,8 +5060,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5152,8 +5084,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -5164,8 +5096,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5176,11 +5108,12 @@
             },
             "results": [
               {
-                "position": 9,
-                "pole_position": true
+                "position": 5,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 9.0
         },
         {
           "pos": 11,
@@ -5205,23 +5138,12 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 6.0
         },
         {
           "pos": 12,
@@ -5301,14 +5223,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5316,8 +5230,8 @@
             },
             "results": [
               {
-                "position": "DNS",
-                "background": "Did not start"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5328,8 +5242,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": "DNS",
+                "background": "Did not start"
               }
             ]
           },
@@ -5340,8 +5254,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5352,8 +5266,8 @@
             },
             "results": [
               {
-                "position": 12,
-                "background": "Other classified position"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -5364,11 +5278,12 @@
             },
             "results": [
               {
-                "position": 6,
-                "pole_position": true
+                "position": 12,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 6.0
         },
         {
           "pos": 13,
@@ -5448,14 +5363,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5475,8 +5382,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5487,24 +5394,25 @@
             },
             "results": [
               {
+                "position": 4,
+                "background": "Other points position"
+              }
+            ]
+          },
+          "usa": {
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "Ret",
                 "background": "Not classified, retired"
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 6.0
         },
         {
           "pos": 14,
@@ -5562,14 +5470,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5577,8 +5477,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5589,8 +5489,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5625,11 +5525,12 @@
             },
             "results": [
               {
-                "position": 3,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 3.0
         },
         {
           "pos": 15,
@@ -5676,14 +5577,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 6,
-                "background": "Other points position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5691,8 +5584,8 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -5703,8 +5596,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5715,8 +5608,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5727,8 +5620,8 @@
             },
             "results": [
               {
-                "position": 10,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -5739,11 +5632,12 @@
             },
             "results": [
               {
-                "position": 3,
-                "pole_position": true
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 3.0
         },
         {
           "pos": 16,
@@ -5801,14 +5695,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 9,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5816,8 +5702,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5864,11 +5750,12 @@
             },
             "results": [
               {
-                "position": 2,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 2.0
         },
         {
           "pos": 17,
@@ -5948,23 +5835,12 @@
               }
             ]
           },
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 2.0
         },
         {
           "pos": 18,
@@ -6000,23 +5876,12 @@
           },
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 2.0
         },
         {
           "pos": 19,
@@ -6063,7 +5928,11 @@
               }
             ]
           },
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": 8,
@@ -6071,19 +5940,7 @@
               }
             ]
           },
-          "ger": null,
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "can": null,
           "ita": {
             "round": {
               "text": "ITA",
@@ -6103,8 +5960,8 @@
             },
             "results": [
               {
-                "position": 11,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -6115,11 +5972,12 @@
             },
             "results": [
               {
-                "position": 1,
-                "pole_position": true
+                "position": 11,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 1.0
         },
         {
           "pos": 20,
@@ -6155,12 +6013,12 @@
           },
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
-          "can": {
+          "can": null,
+          "ita": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -6169,20 +6027,9 @@
               }
             ]
           },
-          "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 1.0
         },
         {
           "pos": 21,
@@ -6196,7 +6043,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -6214,11 +6065,11 @@
               "1"
             ]
           },
-          "ger": null,
-          "can": {
+          "can": null,
+          "ita": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -6227,10 +6078,10 @@
               }
             ]
           },
-          "ita": {
+          "usa": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -6239,19 +6090,8 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 1.0
         },
         {
           "pos": null,
@@ -6276,21 +6116,9 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 7,
-                "background": "Other classified position"
-              }
-            ]
-          },
+          "ita": null,
           "usa": {
             "round": {
               "text": "USA",
@@ -6310,11 +6138,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6339,7 +6168,11 @@
               }
             ]
           },
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": 10,
@@ -6357,10 +6190,10 @@
               "1"
             ]
           },
-          "ger": {
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -6369,21 +6202,10 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6397,14 +6219,14 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
-          "usa": {
+          "usa": null,
+          "mex": {
             "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
             },
             "results": [
               {
@@ -6413,18 +6235,7 @@
               }
             ]
           },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6449,7 +6260,11 @@
               }
             ]
           },
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": 7,
@@ -6467,22 +6282,11 @@
               "1"
             ]
           },
-          "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6496,11 +6300,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -6509,21 +6313,10 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6537,11 +6330,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -6550,12 +6343,12 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
-          "usa": {
+          "usa": null,
+          "mex": {
             "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
             },
             "results": [
               {
@@ -6564,18 +6357,7 @@
               }
             ]
           },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6600,23 +6382,12 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6641,23 +6412,12 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6671,11 +6431,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -6684,21 +6444,10 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6745,23 +6494,12 @@
               }
             ]
           },
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6775,21 +6513,9 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "ita": null,
           "usa": {
             "round": {
               "text": "USA",
@@ -6809,11 +6535,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6838,23 +6565,12 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6882,23 +6598,12 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6923,23 +6628,12 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6964,23 +6658,12 @@
               }
             ]
           },
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6994,7 +6677,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -7002,22 +6689,11 @@
               }
             ]
           },
-          "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7031,12 +6707,12 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
-          "can": {
+          "can": null,
+          "ita": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -7045,20 +6721,9 @@
               }
             ]
           },
-          "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7072,11 +6737,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -7085,21 +6750,10 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7113,11 +6767,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -7126,21 +6780,10 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7165,23 +6808,12 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "can": null,
           "ita": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7249,13 +6881,6 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
-              }
-            ]
-          },
-          "": {
             "results": [
               {
                 "position": "Drivers ineligible for Formula One points, because they drove with Formula Two cars"
@@ -7331,11 +6956,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -7344,7 +6969,6 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
           "mex": null,
@@ -7362,11 +6986,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -7375,7 +6999,6 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
           "mex": null,
@@ -7393,11 +7016,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -7406,7 +7029,6 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
           "mex": null,
@@ -7424,11 +7046,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -7437,7 +7059,6 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
           "mex": null,
@@ -7455,11 +7076,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -7468,7 +7089,6 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
           "mex": null,
@@ -7486,11 +7106,11 @@
           "bel": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "can": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -7499,140 +7119,9 @@
               }
             ]
           },
-          "can": null,
           "ita": null,
           "usa": null,
           "mex": null,
-          "points": null
-        },
-        {
-          "pos": null,
-          "driver": {
-            "text": "Driver",
-            "url": null
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "RSA"
-              }
-            ]
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "MON"
-              }
-            ]
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "NED"
-              }
-            ]
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "BEL"
-              }
-            ]
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "FRA"
-              }
-            ]
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "GBR"
-              }
-            ]
-          },
-          "": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "GER"
-              }
-            ]
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "CAN"
-              }
-            ]
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ITA"
-              }
-            ]
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "USA"
-              }
-            ]
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "MEX"
-              }
-            ]
-          },
           "points": null
         }
       ],

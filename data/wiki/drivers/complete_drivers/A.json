@@ -775,7 +775,12 @@
                 "url": "https://en.wikipedia.org/wiki/Aston_Clinton_Hillclimb"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Austin 7 \"Einsitzer\"",
                 "url": "https://en.wikipedia.org/wiki/Austin_7"
@@ -788,7 +793,12 @@
                 "url": null
               },
               "position": null,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "1934 Wolseley Hornet Special AXK 777",
                 "url": "https://en.wikipedia.org/wiki/Wolseley_Motors"
@@ -801,7 +811,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 2.0 s/c",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -814,7 +829,12 @@
                 "url": "https://en.wikipedia.org/wiki/Lewes_Speed_Trials"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta S",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -827,7 +847,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta S",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -840,7 +865,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta S",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -853,7 +883,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 12/50",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -866,7 +901,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 2.0 s/c",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -879,7 +919,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 12/50",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -892,7 +937,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 2.0 s/c",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -905,7 +955,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 12/50",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -954,7 +1009,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta S",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -967,7 +1027,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -980,7 +1045,12 @@
                 "url": "https://en.wikipedia.org/wiki/Bo%27ness_Hill_Climb"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Bugatti Type 59",
                 "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51#Type_59"
@@ -993,7 +1063,12 @@
                 "url": "https://en.wikipedia.org/wiki/British_Hill_Climb_Championship"
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Bugatti Type 59",
                 "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51#Type_59"
@@ -1006,7 +1081,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "ERA A-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -1019,7 +1099,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Cisitalia-Fiat D46",
                 "url": "https://en.wikipedia.org/wiki/Cisitalia"
@@ -1032,7 +1117,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Bugatti Type 59",
                 "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51#Type_59"
@@ -1045,7 +1135,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Bugatti Type 59",
                 "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51#Type_59"
@@ -1058,7 +1153,12 @@
                 "url": "https://en.wikipedia.org/wiki/Swedish_Winter_Grand_Prix"
               },
               "position": 3,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "ERA A-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -1071,7 +1171,12 @@
                 "url": null
               },
               "position": 3,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "ERA A-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -1084,7 +1189,12 @@
                 "url": null
               },
               "position": 3,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Bugatti Type 59",
                 "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51#Type_59"
@@ -1097,7 +1207,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Maserati 6CM",
                 "url": "https://en.wikipedia.org/wiki/Maserati_6CM"
@@ -2084,7 +2199,12 @@
           "rows": [
             {
               "year": "1948",
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "co_drivers": [
                 {
                   "text": "John Heath",
@@ -15329,7 +15449,12 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "WTP Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "12th"
             },
             {
@@ -15338,7 +15463,12 @@
                 "series": "Bayford Kart Club Summer Sprint Championship",
                 "class": "Honda Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "3rd"
             },
             {
@@ -15350,7 +15480,12 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "4th"
             },
             {
@@ -15359,7 +15494,12 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "Rotax Mini Max"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "14th"
             },
             {
@@ -15396,7 +15536,12 @@
                 "series": "Super One Series ABkC Championship",
                 "class": "MiniMax"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "13th"
             },
             {
@@ -15405,7 +15550,12 @@
                 "series": "Shenington Kart Club",
                 "class": "Rotax Mini Max"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "9th"
             },
             {
@@ -15414,7 +15564,12 @@
                 "series": "Rotax Max Euro Challenge",
                 "class": "Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "2nd"
             },
             {
@@ -15426,7 +15581,12 @@
                 },
                 "class": "Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "16th"
             },
             {
@@ -15438,7 +15598,12 @@
                 },
                 "class": "Rotax Mini Max"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "3rd"
             },
             {
@@ -15447,7 +15612,12 @@
                 "series": "Trent Valley Kart Club",
                 "class": "Senior Rotax"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "24th"
             },
             {
@@ -15456,7 +15626,12 @@
                 "series": "Trent Valley Kart Club",
                 "class": "Junior Rotax"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "46th"
             },
             {
@@ -15465,7 +15640,12 @@
                 "series": "Shenington Kart Club",
                 "class": "Rotax Mini Max"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "6th"
             },
             {
@@ -15474,7 +15654,12 @@
                 "series": "BNL Karting Series",
                 "class": "Rotax Max Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "2nd"
             },
             {
@@ -15483,7 +15668,12 @@
                 "series": "Rotax Max Euro Challenge",
                 "class": "Senior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "35th"
             }
           ],
@@ -24385,7 +24575,7 @@
               "races": 1,
               "poles": 0,
               "wins": 0,
-              "points": 5.0,
+              "points": 0.5,
               "position": "87th"
             }
           ],
@@ -27729,10 +27919,9 @@
             "date": "1996-03-23",
             "place": [
               {
-                "text": "Westminster",
-                "url": "https://en.wikipedia.org/wiki/City_of_Westminster"
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
               },
-              "London",
               "England"
             ]
           },
@@ -27985,7 +28174,12 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "Comer Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -27997,7 +28191,12 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "17th"
             },
             {
@@ -28009,7 +28208,12 @@
                 },
                 "class": "Honda Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -28018,7 +28222,12 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "Comer Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "6th"
             },
             {
@@ -28027,7 +28236,12 @@
                 "series": "British Open Championship",
                 "class": "Honda Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "3rd"
             },
             {
@@ -28039,7 +28253,12 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "2nd"
             },
             {
@@ -28048,7 +28267,12 @@
                 "series": "MSA British Championship",
                 "class": "Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "4th"
             },
             {
@@ -28060,7 +28284,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -28072,7 +28301,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "2nd"
             },
             {
@@ -28084,7 +28318,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "3rd"
             },
             {
@@ -28096,7 +28335,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -28108,7 +28352,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -28120,7 +28369,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -45920,7 +46174,12 @@
                   "url": "https://en.wikipedia.org/wiki/French_Formula_Three_Championship"
                 }
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -67713,7 +67972,7 @@
                   "text": "Tecno",
                   "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
                 },
-                "PA123B"
+                "PA123-006"
               ],
               "engine": {
                 "model": {
@@ -82991,7 +83250,12 @@
                     "url": "https://en.wikipedia.org/wiki/1993_Italian_Grand_Prix"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "title": "British Formula One Championship career",
+            "rows": [
               {
                 "full_data": {
                   "text": null,
@@ -92849,7 +93113,12 @@
                 "series": "Italian Cup Central Zone",
                 "class": "60 Baby"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "14th"
             },
             {
@@ -92858,7 +93127,12 @@
                 "series": "Academy Champion Kart",
                 "class": "Baby Academy"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": null
             },
             {
@@ -93123,7 +93397,12 @@
                 "series": "South Garda Winter Cup",
                 "class": "60 Mini"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "19th"
             },
             {
@@ -93166,7 +93445,12 @@
                 "series": "ROK Cup Italy Nord Region",
                 "class": "Mini ROK"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "116th"
             },
             {
@@ -93175,7 +93459,12 @@
                 "series": "ROK Cup Italy",
                 "class": "Mini ROK"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "8th"
             },
             {
@@ -93603,7 +93892,12 @@
                 },
                 "class": "KA100 Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "2nd"
             },
             {
@@ -93615,7 +93909,12 @@
                 },
                 "class": "X30 Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "36th"
             },
             {
@@ -93624,7 +93923,12 @@
                 "series": "SKUSA Winter Series",
                 "class": "KA100 Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -93633,7 +93937,12 @@
                 "series": "SKUSA Winter Series",
                 "class": "X30 Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -109765,7 +110074,12 @@
                 "url": "https://en.wikipedia.org/wiki/Aerautodromo_di_Modena#Modena_Grand_Prix"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Maserati A6GCS",
                 "url": "https://en.wikipedia.org/wiki/Maserati_A6"
@@ -109778,7 +110092,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Cisitalia-Fiat D46",
                 "url": "https://en.wikipedia.org/wiki/Cisitalia"
@@ -109791,7 +110110,12 @@
                 "url": "https://en.wikipedia.org/wiki/1948_San_Remo_Grand_Prix"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -109804,7 +110128,12 @@
                 "url": "https://en.wikipedia.org/wiki/Coppa_Acerbo"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Maserati A6GCS",
                 "url": "https://en.wikipedia.org/wiki/Maserati_A6"
@@ -109817,7 +110146,12 @@
                 "url": "https://en.wikipedia.org/wiki/1948_British_Grand_Prix"
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -109830,7 +110164,12 @@
                 "url": "https://en.wikipedia.org/wiki/1948_French_Grand_Prix"
               },
               "position": 3,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alfa Romeo 158",
                 "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
@@ -109889,7 +110228,12 @@
                 "url": "https://en.wikipedia.org/wiki/1949_Swiss_Grand_Prix"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -109948,7 +110292,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -109961,7 +110310,12 @@
                 "url": "https://en.wikipedia.org/wiki/1949_Italian_Grand_Prix"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -110411,7 +110765,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Lancia Aurelia",
                 "url": "https://en.wikipedia.org/wiki/Lancia_Aurelia"
@@ -110424,7 +110783,12 @@
                 "url": "https://en.wikipedia.org/wiki/1951_San_Remo_Grand_Prix"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Ferrari 375",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_375_F1"
@@ -114991,8 +115355,7 @@
                 "url": "https://en.wikipedia.org/wiki/Danbury,_Essex"
               },
               "Essex",
-              "England",
-              "UK"
+              "England"
             ]
           }
         },
@@ -117370,12 +117733,8 @@
             "date": "1900-03-29",
             "place": [
               {
-                "text": "Hopton",
+                "text": "Hopton, Staffordshire",
                 "url": "https://en.wikipedia.org/wiki/Hopton,_Staffordshire"
-              },
-              {
-                "text": "Staffordshire",
-                "url": "https://en.wikipedia.org/wiki/Staffordshire"
               },
               "England",
               "UK"
@@ -117385,12 +117744,8 @@
             "date": "1974-03-04",
             "place": [
               {
-                "text": "Lingfield",
+                "text": "Lingfield, Surrey",
                 "url": "https://en.wikipedia.org/wiki/Lingfield,_Surrey"
-              },
-              {
-                "text": "Surrey",
-                "url": "https://en.wikipedia.org/wiki/Surrey"
               },
               "England",
               "UK"

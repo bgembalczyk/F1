@@ -21,7 +21,7 @@ class EntrantColumn(BaseColumn):
         if cell is None:
             return []
 
-        segments = split_cell_on_br(cell)
+        segments = split_cell_on_br(cell, replace_link_breaks=True)
         link_lookup = DriverParsingHelpers.build_link_lookup(ctx.links or [])
 
         entrants: list[dict[str, Any]] = []

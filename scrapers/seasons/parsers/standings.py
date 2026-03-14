@@ -191,6 +191,8 @@ class SeasonStandingsParser:
 
     @staticmethod
     def _merge_round_value(existing: Any, incoming: Any) -> Any:
+        if incoming is None:
+            return existing
         if not (
             isinstance(existing, dict)
             and isinstance(incoming, dict)
@@ -202,10 +204,12 @@ class SeasonStandingsParser:
                 return cleaned
             return incoming
 
-        existing_results = existing.get("results", [])
-        new_results = incoming.get("results", [])
-        if isinstance(existing_results, list) and isinstance(new_results, list):
-            existing["results"] = existing_results + new_results
+        existing_results = existing.get("results")
+        new_results = incoming.get("results")
+        existing_list = SeasonStandingsParser._as_results_list(existing_results)
+        new_list = SeasonStandingsParser._as_results_list(new_results)
+        if existing_list or new_list:
+            existing["results"] = existing_list + new_list
 
         for round_key, round_value in incoming.items():
             if round_key in {"results", *ROUND_LEVEL_RESULT_ATTRIBUTES}:
@@ -215,6 +219,15 @@ class SeasonStandingsParser:
 
         SeasonStandingsParser._remove_round_level_attributes(existing)
         return existing
+
+    @staticmethod
+    def _as_results_list(results: Any) -> list[Any]:
+        """Normalize results to a list, handling both list and dict formats."""
+        if isinstance(results, list):
+            return results
+        if results is not None:
+            return [results]
+        return []
 
     @staticmethod
     def _cleanup_round_attributes(merged: dict[str, Any]) -> None:

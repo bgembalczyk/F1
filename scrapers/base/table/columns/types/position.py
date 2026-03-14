@@ -12,4 +12,7 @@ class PositionColumn(BaseColumn):
             return None
         if text == "=":
             return self.TIED
-        return parse_int_from_text(text)
+        parsed = parse_int_from_text(text)
+        if parsed is not None:
+            return parsed
+        return text

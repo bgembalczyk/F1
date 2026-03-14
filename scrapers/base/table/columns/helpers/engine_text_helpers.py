@@ -18,6 +18,9 @@ from scrapers.base.table.columns.helpers.constants import DISPLACEMENT_RE
 from scrapers.base.table.columns.helpers.constants import PLAIN_TEXT_TYPE_RE
 from scrapers.base.table.columns.helpers.constants import TYPE_WITH_MODIFIER_RE
 
+# F1 and F2 designate Formula racing classes, not Flat-1 / Flat-2 engine layouts.
+_FORMULA_CLASS_TYPE_CODES: frozenset[str] = frozenset({"F1", "F2"})
+
 
 class EngineTextHelpers:
     """
@@ -174,6 +177,8 @@ class EngineTextHelpers:
             return None, turbocharged, supercharged
 
         candidate = m_plain.group(1)
+        if candidate.upper() in _FORMULA_CLASS_TYPE_CODES:
+            return None, turbocharged, supercharged
         m_mod = TYPE_WITH_MODIFIER_RE.match(candidate)
         if m_mod:
             modifier = m_mod.group(2).lower()

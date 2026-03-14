@@ -288,12 +288,18 @@ class HtmlTableParser:
         first_headers = self._clean_cells(first_cells)
 
         if len(rows) < HEADER_ROWS_WITH_SUBHEADERS:
-            return first_headers, first_cells, 1
+            headers, header_cells = self._drop_blank_headers(
+                first_headers, list(first_cells)
+            )
+            return headers, header_cells, 1
 
         second_row = rows[1]
         second_cells = second_row.find_all(["th", "td"])
         if not self._has_multirow_header(first_cells, second_cells):
-            return first_headers, first_cells, 1
+            headers, header_cells = self._drop_blank_headers(
+                first_headers, list(first_cells)
+            )
+            return headers, header_cells, 1
 
         second_headers = self._clean_cells(second_cells)
         combined, combined_cells = self._combine_header_rows(
@@ -302,4 +308,26 @@ class HtmlTableParser:
             second_cells,
             second_headers,
         )
-        return combined, combined_cells, HEADER_ROWS_WITH_SUBHEADERS
+        headers, header_cells = self._drop_blank_headers(combined, combined_cells)
+        return headers, header_cells, HEADER_ROWS_WITH_SUBHEADERS
+
+    @staticmethod
+    def _drop_blank_headers(
+        headers: Sequence[str],
+        cells: list[Tag],
+    ) -> tuple[list[str], list[Tag]]:
+        """Remove header/cell pairs where the header text is blank or whitespace-only.
+
+        Wikipedia standings tables sometimes contain empty <th> cells as visual
+        separators between groups of race columns.  These cells have no
+        corresponding data cell in body rows, so keeping them shifts every
+        subsequent column by one position.  Dropping them restores correct
+        alignment.
+        """
+        filtered_headers: list[str] = []
+        filtered_cells: list[Tag] = []
+        for header, cell in zip(headers, cells):
+            if header.strip():
+                filtered_headers.append(header)
+                filtered_cells.append(cell)
+        return filtered_headers, filtered_cells

@@ -2126,20 +2126,12 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "1"
-                ],
-                "background": "Not classified, retired",
-                "pole_position": true
-              }
-            ],
-            "sprint_position": 1,
-            "footnotes": [
-              "1"
-            ]
+            "results": {
+              "position": "Ret",
+              "background": "Not classified, retired",
+              "pole_position": true,
+              "sprint_position": 1
+            }
           },
           "hun": {
             "round": {
@@ -2186,20 +2178,12 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "2"
-                ],
-                "background": "Not classified, retired",
-                "pole_position": true
-              }
-            ],
-            "sprint_position": 2,
-            "footnotes": [
-              "2"
-            ]
+            "results": {
+              "position": "Ret",
+              "background": "Not classified, retired",
+              "pole_position": true,
+              "sprint_position": 2
+            }
           },
           "rus": {
             "round": {
@@ -2255,19 +2239,11 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 2,
-                "footnotes": [
-                  "2"
-                ],
-                "background": "Second place"
-              }
-            ],
-            "sprint_position": 2,
-            "footnotes": [
-              "2"
-            ]
+            "results": {
+              "position": 2,
+              "background": "Second place",
+              "sprint_position": 2
+            }
           },
           "qat": {
             "round": {
@@ -2434,19 +2410,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "2"
-                ],
-                "background": "Winner"
-              }
-            ],
-            "sprint_position": 2,
-            "footnotes": [
-              "2"
-            ]
+            "results": {
+              "position": 1,
+              "background": "Winner",
+              "sprint_position": 2
+            }
           },
           "hun": {
             "round": {
@@ -2724,19 +2692,11 @@
               "text": "GBR",
               "url": "https://en.wikipedia.org/wiki/2021_British_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "3"
-                ],
-                "background": "Third place"
-              }
-            ],
-            "sprint_position": 3,
-            "footnotes": [
-              "3"
-            ]
+            "results": {
+              "position": 3,
+              "background": "Third place",
+              "sprint_position": 3
+            }
           },
           "hun": {
             "round": {
@@ -2781,19 +2741,11 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "1"
-                ],
-                "background": "Third place"
-              }
-            ],
-            "sprint_position": 1,
-            "footnotes": [
-              "1"
-            ]
+            "results": {
+              "position": 3,
+              "background": "Third place",
+              "sprint_position": 1
+            }
           },
           "rus": {
             "round": {
@@ -2852,20 +2804,12 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "1"
-                ],
-                "background": "Third place",
-                "pole_position": true
-              }
-            ],
-            "sprint_position": 1,
-            "footnotes": [
-              "1"
-            ]
+            "results": {
+              "position": 3,
+              "background": "Third place",
+              "pole_position": true,
+              "sprint_position": 1
+            }
           },
           "qat": {
             "round": {
@@ -3413,19 +3357,11 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2021_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "3"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 3,
-            "footnotes": [
-              "3"
-            ]
+            "results": {
+              "position": 6,
+              "background": "Other points position",
+              "sprint_position": 3
+            }
           },
           "qat": {
             "round": {
@@ -4186,20 +4122,12 @@
               "text": "ITA",
               "url": "https://en.wikipedia.org/wiki/2021_Italian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "3"
-                ],
-                "background": "Winner",
-                "fastest_lap": true
-              }
-            ],
-            "sprint_position": 3,
-            "footnotes": [
-              "3"
-            ]
+            "results": {
+              "position": 1,
+              "background": "Winner",
+              "fastest_lap": true,
+              "sprint_position": 3
+            }
           },
           "rus": {
             "round": {
