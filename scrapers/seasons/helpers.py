@@ -42,10 +42,3 @@ def export_complete_seasons(
             source_url=getattr(scraper, "url", None),
         )
         result.to_json(json_path, exporter=scraper.exporter)
-
-    combined_path = output_dir.parent / "f1_complete_seasons.json"
-    combined_result = ScrapeResult(
-        data=data,
-        source_url=getattr(scraper, "url", None),
-    )
-    combined_result.to_json(combined_path, exporter=scraper.exporter)
