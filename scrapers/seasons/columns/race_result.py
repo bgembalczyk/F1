@@ -84,7 +84,7 @@ class RaceResultColumn(BaseColumn):
             return (ctx.clean_text or "").strip()
         fragment = BeautifulSoup(str(cell), "html.parser")
         for span in fragment.find_all("span", style=True):
-            style = span.get("style", "").replace(" ", "")
+            style = "".join(span.get("style", "").split())
             if "position:absolute" in style:
                 span.decompose()
         for sup in fragment.find_all("sup"):
@@ -192,7 +192,11 @@ class RaceResultColumn(BaseColumn):
         sprint_position: int | None,
     ) -> None:
         """For a single-result race with a sprint position, merge sprint_position
-        into the result dict and convert results from a list to a dict."""
+        into the result dict and convert results from a list to a dict.
+
+        This is a no-op when sprint_position is None or when results contains
+        multiple entries (e.g., shared drives), as those cases retain the list format.
+        """
         if sprint_position is None:
             return
         results = payload.get("results")
