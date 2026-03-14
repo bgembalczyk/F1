@@ -67972,7 +67972,7 @@
                   "text": "Tecno",
                   "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
                 },
-                "PA123B"
+                "PA123-006"
               ],
               "engine": {
                 "model": {
@@ -83250,7 +83250,12 @@
                     "url": "https://en.wikipedia.org/wiki/1993_Italian_Grand_Prix"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "title": "British Formula One Championship career",
+            "rows": [
               {
                 "full_data": {
                   "text": null,
