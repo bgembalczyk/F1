@@ -10,12 +10,12 @@ class DummySourceAdapter:
     def __init__(self, html: str) -> None:
         self.html = html
 
-    def get(self, source: str | None = None, **_kwargs: object) -> str:
+    def get(self, _source: str | None = None, **_kwargs: object) -> str:
         return self.html
 
 
 class DummyTableScraper(F1TableScraper):
-    def _parse_soup(self, soup):
+    def _parse_soup(self, _soup):
         return []
 
 

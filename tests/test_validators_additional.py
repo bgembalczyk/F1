@@ -16,6 +16,9 @@ from validation.domain_validator import BaseDomainRecordValidator
 from validation.issue import ValidationIssue
 from validation.validator_base import RecordValidator
 
+VALID_FLOAT_STRING = "3.5"
+EXPECTED_FLOAT_VALUE = 3.5
+
 
 def test_validate_int_allows_none_and_rejects_invalid_values():
     assert validate_int(None, "value") is None
@@ -28,7 +31,7 @@ def test_validate_int_allows_none_and_rejects_invalid_values():
 
 
 def test_validate_float_coerces_and_rejects_negative_values():
-    assert validate_float("3.5", "value") == 3.5
+    assert validate_float(VALID_FLOAT_STRING, "value") == EXPECTED_FLOAT_VALUE
 
     with pytest.raises(ValueError, match="nie może być ujemne"):
         validate_float(-1.0, "value")
@@ -137,7 +140,7 @@ def test_base_domain_validator_link_helpers_report_invalid_entries():
 
 def test_quality_report_tracks_structured_issues():
     class DummyValidator(RecordValidator):
-        def validate(self, record):  # type: ignore[override]
+        def validate(self, _record):  # type: ignore[override]
             return []
 
     validator = DummyValidator()

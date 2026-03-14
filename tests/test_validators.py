@@ -9,6 +9,9 @@ from models.value_objects.season_ref import SeasonRef
 from validation.issue import ValidationIssue
 from validation.validator_base import RecordValidator
 
+VALID_FLOAT_STRING = "3.5"
+EXPECTED_FLOAT_VALUE = 3.5
+
 
 def test_validate_link_accepts_link_dict():
     link = validate_link(
@@ -70,12 +73,12 @@ def test_validate_int_rejects_negative_values():
 
 
 def test_validate_float_accepts_numeric_strings():
-    assert validate_float("3.5", "value") == 3.5
+    assert validate_float(VALID_FLOAT_STRING, "value") == EXPECTED_FLOAT_VALUE
 
 
 def test_quality_report_counts_null_fields():
     class DummyValidator(RecordValidator):
-        def validate(self, record):  # type: ignore[override]
+        def validate(self, _record):  # type: ignore[override]
             return []
 
     validator = DummyValidator()
