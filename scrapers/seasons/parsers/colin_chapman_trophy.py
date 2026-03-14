@@ -32,7 +32,9 @@ class ColinChapmanTrophyParser:
 
         Table is identical to World Constructors' Championship standings,
         with one exception:
-        - Mark * at race result means: "was not eligible for points, as the team had officially entered only one car for the entire championship"
+        - Mark * at race result means: "was not eligible for points, "
+        "as the team had officially entered only one car for the "
+        "entire championship"
         """
 
         schema_columns = [
@@ -57,7 +59,7 @@ class ColinChapmanTrophyParser:
             record_factory=record_from_mapping,
         )
 
-        scraper = F1StandingsScraper(options=self._table_parser._options, config=config)
+        scraper = F1StandingsScraper(options=self._table_parser.options, config=config)
 
         try:
             records = scraper.parse(soup)

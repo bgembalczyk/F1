@@ -8,7 +8,8 @@ class ColinChapmanRaceResultColumn(RaceResultColumn):
     Race result column for Colin Chapman Trophy.
 
     In this trophy, * mark at a race result means:
-    "was not eligible for points, as the team had officially entered only one car for the entire championship"
+    "was not eligible for points, as the team had officially entered "
+    "only one car for the entire championship"
     """
 
     def _apply_result_notes(

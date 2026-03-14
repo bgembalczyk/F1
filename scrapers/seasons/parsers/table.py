@@ -28,6 +28,14 @@ class SeasonTableParser:
         self._include_urls = include_urls
         self.url = url
 
+    @property
+    def options(self) -> ScraperOptions:
+        return self._options
+
+    @property
+    def include_urls(self) -> bool:
+        return self._include_urls
+
     def update_url(self, url: str) -> None:
         self.url = url
 

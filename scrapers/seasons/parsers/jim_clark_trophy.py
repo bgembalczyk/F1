@@ -29,7 +29,8 @@ class JimClarkTrophyParser:
 
         Table is identical to World Drivers' Championship standings,
         with one exception:
-        - Mark * at race result means: "competed in insufficient events to be eligible for points"
+        - Mark * at race result means: "competed in insufficient events "
+        "to be eligible for points"
         """
 
         schema_columns = [
@@ -52,7 +53,7 @@ class JimClarkTrophyParser:
             record_factory=record_from_mapping,
         )
 
-        scraper = F1StandingsScraper(options=self._table_parser._options, config=config)
+        scraper = F1StandingsScraper(options=self._table_parser.options, config=config)
 
         try:
             return scraper.parse(soup)

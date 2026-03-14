@@ -10,13 +10,13 @@ from scrapers.base.table.columns.types.base import BaseColumn
 
 class DateRangeColumn(BaseColumn):
     """
-    Parses date ranges from formats like "15–17 March" or "March 15–17".
+    Parses date ranges from formats like "15-17 March" or "March 15-17".
 
     Returns dict: {"start": NormalizedDate, "end": NormalizedDate}
     """
 
     # Pattern for range separators
-    _SEPARATOR_PATTERN = re.compile(r"\s*[–—-]\s*")
+    _SEPARATOR_PATTERN = re.compile(r"\s*[-—]\s*")
 
     def __init__(self, *, year: int | None = None) -> None:
         self.year = year
@@ -40,7 +40,7 @@ class DateRangeColumn(BaseColumn):
         start_str = start_str.strip()
         end_str = end_str.strip()
 
-        # If start is just a number (day), extract month/year from end and prepend to start
+        # If start is just a day number, infer month/year from end
         if start_str.isdigit():
             # Extract month and year from end_str
             # Add year if not present in end_str
@@ -50,7 +50,13 @@ class DateRangeColumn(BaseColumn):
 
             # Try to extract month name from end_str for start
             month_match = re.search(
-                r"\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\b",
+                (
+                    r"\b("
+                    r"January|February|March|April|May|June|July|August|"
+                    r"September|October|November|December|Jan|Feb|Mar|Apr|"
+                    r"May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec"
+                    r")\b"
+                ),
                 end_str,
                 re.IGNORECASE,
             )

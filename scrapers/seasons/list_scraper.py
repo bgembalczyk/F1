@@ -32,7 +32,7 @@ class SeasonsListScraper(F1TableScraper):
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_seasons",
-        # jeśli id sekcji się kiedyś zmieni – poprawiasz tylko to
+        # jeśli id sekcji się kiedyś zmieni - poprawiasz tylko to
         section_id="Seasons",
         # nagłówki, które MUSZĄ wystąpić w tabeli
         expected_headers=[
