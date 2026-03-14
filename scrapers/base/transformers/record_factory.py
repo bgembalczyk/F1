@@ -25,18 +25,26 @@ class RecordFactoryTransformer(RecordTransformer):
             return self.record_factory(**record)
         return self.record_factory(record)
 
+    def _apply_factory_with_fallback(self, record: ExportRecord) -> ExportRecord | Any:
+        try:
+            normalized = self.normalize_record(record)
+            return self._apply_factory(normalized)
+        except Exception:  # noqa: BLE001
+            self.logger.warning(
+                "record_factory failed, falling back to raw record",
+                exc_info=True,
+            )
+            return record
+
     def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
         transformed: list[ExportRecord] = []
-        for record in records:
-            try:
+        if not self.fallback_on_error:
+            for record in records:
                 normalized = self.normalize_record(record)
                 transformed.append(self._apply_factory(normalized))
-            except Exception:
-                if not self.fallback_on_error:
-                    raise
-                self.logger.warning(
-                    "record_factory failed, falling back to raw record",
-                    exc_info=True,
-                )
-                transformed.append(record)
+            return transformed
+
+        transformed.extend(
+            self._apply_factory_with_fallback(record) for record in records
+        )
         return transformed
