@@ -24,15 +24,15 @@ if str(PROJECT_ROOT) not in sys.path:
 if importlib.util.find_spec("requests") is None:
     requests_stub = types.ModuleType("requests")
 
-    class _RequestException(Exception):
+    class _RequestError(Exception):
         pass
 
     class _Session:
         def get(self, *_args, **_kwargs):
             msg = "requests stub"
-            raise _RequestException(msg)
+            raise _RequestError(msg)
 
-    requests_stub.RequestException = _RequestException
+    requests_stub.RequestException = _RequestError
     requests_stub.Session = _Session
     sys.modules["requests"] = requests_stub
 
@@ -60,14 +60,14 @@ if importlib.util.find_spec("bs4") is None:
 
 try:
     import scrapers.base.infobox.circuits.scraper  # noqa: F401
-except Exception:
+except ImportError:
     infobox_stub = types.ModuleType("scrapers.base.infobox.circuits.scraper")
 
     class _StubF1CircuitInfoboxScraper:
         def __init__(self, *_, **__):
             pass
 
-        def parse(self, soup):
+        def parse(self, _soup):
             return {}
 
     infobox_stub.F1CircuitInfoboxScraper = _StubF1CircuitInfoboxScraper
@@ -79,16 +79,16 @@ class StubFetcher:
         self.html = html
         self.calls = 0
 
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
         self.calls += 1
         return self.html
 
-    def get(self, url: str) -> str:
-        return self.get_text(url)
+    def get(self, _url: str) -> str:
+        return self.get_text(_url)
 
 
 class DummyTableScraper(F1TableScraper):
-    def _parse_soup(self, soup):
+    def _parse_soup(self, _soup):
         return []
 
 
@@ -96,14 +96,14 @@ class DummySourceAdapter:
     def __init__(self, html: str) -> None:
         self.html = html
 
-    def get(self, url: str) -> str:
+    def get(self, _url: str) -> str:
         return self.html
 
 
 class DummyScraper(F1Scraper):
     url = "https://example.com"
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
         return [{"id": 1}]
 
 
@@ -111,11 +111,11 @@ class DummyFetcher:
     def __init__(self, html: str) -> None:
         self.html = html
 
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
         return self.html
 
-    def get(self, url: str) -> str:
-        return self.get_text(url)
+    def get(self, _url: str) -> str:
+        return self.get_text(_url)
 
 
 class DummySingleCircuitScraper(F1SingleCircuitScraper):
@@ -124,10 +124,10 @@ class DummySingleCircuitScraper(F1SingleCircuitScraper):
         self._is_circuit = is_circuit
         self._details = details
 
-    def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
+    def _is_circuit_like_article(self, _soup: BeautifulSoup) -> bool:
         return self._is_circuit
 
-    def _parse_details(self, soup: BeautifulSoup) -> dict[str, Any]:
+    def _parse_details(self, _soup: BeautifulSoup) -> dict[str, Any]:
         return self._details or {}
 
 
@@ -139,10 +139,10 @@ def test_privateer_scraper_contract_builds_consistent_result() -> None:
         <ul>
           <li>
             <span class="flagicon">flag</span>
-            <a href="/wiki/BMS_Scuderia_Italia">BMS Scuderia Italia</a> (1988–1993)
+            <a href="/wiki/BMS_Scuderia_Italia">BMS Scuderia Italia</a> (1988-1993)
           </li>
           <li>
-            <a href="/wiki/Tyrrell_Racing">Tyrrell</a> (1970, 1973–1974)
+            <a href="/wiki/Tyrrell_Racing">Tyrrell</a> (1970, 1973-1974)
           </li>
         </ul>
       </body>
