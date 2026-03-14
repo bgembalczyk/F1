@@ -9371,11 +9371,11 @@
             "results": [
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               },
               {
                 "position": 3,
-                "background": "Third place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9387,11 +9387,11 @@
             "results": [
               {
                 "position": 1,
-                "background": "Winner"
+                "background": "Other classified position"
               },
               {
                 "position": 2,
-                "background": "Second place",
+                "background": "Other classified position",
                 "fastest_lap": true
               }
             ]
@@ -9404,11 +9404,11 @@
             "results": [
               {
                 "position": 5,
-                "background": "Other points position"
+                "background": "Other classified position"
               },
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9420,11 +9420,11 @@
             "results": [
               {
                 "position": 3,
-                "background": "Third place"
+                "background": "Other classified position"
               },
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9436,13 +9436,13 @@
             "results": [
               {
                 "position": 1,
-                "background": "Winner",
+                "background": "Other classified position",
                 "pole_position": true,
                 "fastest_lap": true
               },
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9454,12 +9454,12 @@
             "results": [
               {
                 "position": 7,
-                "background": "Other points position",
+                "background": "Other classified position",
                 "fastest_lap": true
               },
               {
                 "position": 1,
-                "background": "Winner",
+                "background": "Other classified position",
                 "pole_position": true
               }
             ]
@@ -9472,11 +9472,11 @@
             "results": [
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               },
               {
                 "position": 1,
-                "background": "Winner",
+                "background": "Other classified position",
                 "pole_position": true
               }
             ]
@@ -9489,11 +9489,11 @@
             "results": [
               {
                 "position": 7,
-                "background": "Other points position"
+                "background": "Other classified position"
               },
               {
                 "position": 3,
-                "background": "Third place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9505,11 +9505,11 @@
             "results": [
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               },
               {
                 "position": 3,
-                "background": "Third place",
+                "background": "Other classified position",
                 "pole_position": true
               }
             ]
@@ -9522,7 +9522,7 @@
             "results": [
               {
                 "position": 1,
-                "background": "Winner"
+                "background": "Other classified position"
               },
               {
                 "position": 9,
@@ -9555,11 +9555,11 @@
             "results": [
               {
                 "position": 3,
-                "background": "Third place"
+                "background": "Other classified position"
               },
               {
                 "position": 5,
-                "background": "Other points position"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9571,13 +9571,13 @@
             "results": [
               {
                 "position": 1,
-                "background": "Winner",
+                "background": "Other classified position",
                 "pole_position": true,
                 "fastest_lap": true
               },
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9648,10 +9648,7 @@
               }
             ]
           },
-          "points": {
-            "championship_points": 0.0,
-            "total_points": 166.0
-          }
+          "points": 0.0
         }
       ],
       "jim_clark_trophy": null,

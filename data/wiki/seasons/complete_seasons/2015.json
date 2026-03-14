@@ -37,17 +37,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Sebastian Vettel",
-                "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
-              },
+              "text": "Sebastian Vettel",
+              "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel",
               "no": 5
             },
             {
-              "driver": {
-                "text": "Kimi Räikkönen",
-                "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
-              },
+              "text": "Kimi Räikkönen",
+              "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen",
               "no": 7
             }
           ]
@@ -92,17 +88,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Sergio Pérez",
-                "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez"
-              },
+              "text": "Sergio Pérez",
+              "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez",
               "no": 11
             },
             {
-              "driver": {
-                "text": "Nico Hülkenberg",
-                "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
-              },
+              "text": "Nico Hülkenberg",
+              "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg",
               "no": 27
             }
           ]
@@ -138,17 +130,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Romain Grosjean",
-                "url": "https://en.wikipedia.org/wiki/Romain_Grosjean"
-              },
+              "text": "Romain Grosjean",
+              "url": "https://en.wikipedia.org/wiki/Romain_Grosjean",
               "no": 8
             },
             {
-              "driver": {
-                "text": "Pastor Maldonado",
-                "url": "https://en.wikipedia.org/wiki/Pastor_Maldonado"
-              },
+              "text": "Pastor Maldonado",
+              "url": "https://en.wikipedia.org/wiki/Pastor_Maldonado",
               "no": 13
             }
           ]
@@ -184,17 +172,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Will Stevens",
-                "url": "https://en.wikipedia.org/wiki/Will_Stevens"
-              },
+              "text": "Will Stevens",
+              "url": "https://en.wikipedia.org/wiki/Will_Stevens",
               "no": 28
             },
             {
-              "driver": {
-                "text": "Roberto Merhi",
-                "url": "https://en.wikipedia.org/wiki/Roberto_Merhi"
-              },
+              "text": "Roberto Merhi",
+              "url": "https://en.wikipedia.org/wiki/Roberto_Merhi",
               "no": 98,
               "rounds": [
                 1,
@@ -214,10 +198,8 @@
               ]
             },
             {
-              "driver": {
-                "text": "Alexander Rossi",
-                "url": "https://en.wikipedia.org/wiki/Alexander_Rossi"
-              },
+              "text": "Alexander Rossi",
+              "url": "https://en.wikipedia.org/wiki/Alexander_Rossi",
               "no": 53,
               "rounds": [
                 13,
@@ -260,20 +242,16 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Kevin Magnussen",
-                "url": "https://en.wikipedia.org/wiki/Kevin_Magnussen"
-              },
+              "text": "Kevin Magnussen",
+              "url": "https://en.wikipedia.org/wiki/Kevin_Magnussen",
               "no": 20,
               "rounds": [
                 1
               ]
             },
             {
-              "driver": {
-                "text": "Fernando Alonso",
-                "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
-              },
+              "text": "Fernando Alonso",
+              "url": "https://en.wikipedia.org/wiki/Fernando_Alonso",
               "no": 14,
               "rounds": [
                 2,
@@ -297,10 +275,8 @@
               ]
             },
             {
-              "driver": {
-                "text": "Jenson Button",
-                "url": "https://en.wikipedia.org/wiki/Jenson_Button"
-              },
+              "text": "Jenson Button",
+              "url": "https://en.wikipedia.org/wiki/Jenson_Button",
               "no": 22
             }
           ]
@@ -341,17 +317,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Nico Rosberg",
-                "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
-              },
+              "text": "Nico Rosberg",
+              "url": "https://en.wikipedia.org/wiki/Nico_Rosberg",
               "no": 6
             },
             {
-              "driver": {
-                "text": "Lewis Hamilton",
-                "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
-              },
+              "text": "Lewis Hamilton",
+              "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
               "no": 44
             }
           ]
@@ -392,17 +364,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Daniel Ricciardo",
-                "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
-              },
+              "text": "Daniel Ricciardo",
+              "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo",
               "no": 3
             },
             {
-              "driver": {
-                "text": "Daniil Kvyat",
-                "url": "https://en.wikipedia.org/wiki/Daniil_Kvyat"
-              },
+              "text": "Daniil Kvyat",
+              "url": "https://en.wikipedia.org/wiki/Daniil_Kvyat",
               "no": 26
             }
           ]
@@ -438,17 +406,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Marcus Ericsson",
-                "url": "https://en.wikipedia.org/wiki/Marcus_Ericsson"
-              },
+              "text": "Marcus Ericsson",
+              "url": "https://en.wikipedia.org/wiki/Marcus_Ericsson",
               "no": 9
             },
             {
-              "driver": {
-                "text": "Felipe Nasr",
-                "url": "https://en.wikipedia.org/wiki/Felipe_Nasr"
-              },
+              "text": "Felipe Nasr",
+              "url": "https://en.wikipedia.org/wiki/Felipe_Nasr",
               "no": 12
             }
           ]
@@ -484,17 +448,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Max Verstappen",
-                "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
-              },
+              "text": "Max Verstappen",
+              "url": "https://en.wikipedia.org/wiki/Max_Verstappen",
               "no": 33
             },
             {
-              "driver": {
-                "text": "Carlos Sainz Jr.",
-                "url": "https://en.wikipedia.org/wiki/Carlos_Sainz_Jr."
-              },
+              "text": "Carlos Sainz Jr.",
+              "url": "https://en.wikipedia.org/wiki/Carlos_Sainz_Jr.",
               "no": 55
             }
           ]
@@ -535,17 +495,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Felipe Massa",
-                "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
-              },
+              "text": "Felipe Massa",
+              "url": "https://en.wikipedia.org/wiki/Felipe_Massa",
               "no": 19
             },
             {
-              "driver": {
-                "text": "Valtteri Bottas",
-                "url": "https://en.wikipedia.org/wiki/Valtteri_Bottas"
-              },
+              "text": "Valtteri Bottas",
+              "url": "https://en.wikipedia.org/wiki/Valtteri_Bottas",
               "no": 77
             }
           ]
