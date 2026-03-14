@@ -3160,16 +3160,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 2,
-                "background": "Second place",
-                "pole_position": true,
-                "fastest_lap": true
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -3177,9 +3167,10 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
-                "pole_position": true
+                "position": 2,
+                "background": "Second place",
+                "pole_position": true,
+                "fastest_lap": true
               }
             ]
           },
@@ -3190,8 +3181,9 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": 1,
+                "background": "Winner",
+                "pole_position": true
               }
             ]
           },
@@ -3202,9 +3194,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
-                "pole_position": true
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3215,8 +3206,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position",
+                "position": 3,
+                "background": "Third place",
                 "pole_position": true
               }
             ]
@@ -3230,8 +3221,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
+                "position": 6,
+                "background": "Other points position",
                 "pole_position": true
               }
             ]
@@ -3243,8 +3234,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
+                "position": 3,
+                "background": "Third place",
                 "pole_position": true
               }
             ]
@@ -3256,11 +3247,13 @@
             },
             "results": [
               {
-                "position": "64.5",
+                "position": 1,
+                "background": "Winner",
                 "pole_position": true
               }
             ]
-          }
+          },
+          "points": 64.5
         },
         {
           "pos": 2,
@@ -3354,14 +3347,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -3369,8 +3354,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3381,8 +3366,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3393,8 +3378,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -3405,8 +3390,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3419,8 +3404,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3432,8 +3417,7 @@
             "results": [
               {
                 "position": 2,
-                "background": "Second place",
-                "fastest_lap": true
+                "background": "Second place"
               }
             ]
           },
@@ -3444,11 +3428,13 @@
             },
             "results": [
               {
-                "position": 45,
-                "pole_position": true
+                "position": 2,
+                "background": "Second place",
+                "fastest_lap": true
               }
             ]
-          }
+          },
+          "points": 45.0
         },
         {
           "pos": 3,
@@ -3542,14 +3528,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 4,
-                "background": "Other points position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -3557,8 +3535,8 @@
             },
             "results": [
               {
-                "position": 14,
-                "background": "Other classified position"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3569,8 +3547,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 14,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3581,8 +3559,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3593,8 +3571,8 @@
             },
             "results": [
               {
-                "position": 14,
-                "background": "Other classified position"
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -3607,8 +3585,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": 14,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3619,8 +3597,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3631,11 +3609,12 @@
             },
             "results": [
               {
-                "position": 37,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 37.0
         },
         {
           "pos": 4,
@@ -3730,14 +3709,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 1,
-                "background": "Winner"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -3745,8 +3716,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -3757,8 +3728,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -3769,8 +3740,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3781,8 +3752,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3795,8 +3766,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -3807,7 +3778,7 @@
             },
             "results": [
               {
-                "position": 4,
+                "position": 5,
                 "background": "Other points position"
               }
             ]
@@ -3819,11 +3790,12 @@
             },
             "results": [
               {
-                "position": 33,
-                "pole_position": true
+                "position": 4,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 33.0
         },
         {
           "pos": 5,
@@ -3918,14 +3890,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 3,
-                "background": "Third place"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -3933,8 +3897,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -3945,9 +3909,8 @@
             },
             "results": [
               {
-                "position": 13,
-                "background": "Other classified position",
-                "fastest_lap": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3958,8 +3921,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired",
+                "position": 13,
+                "background": "Other classified position",
                 "fastest_lap": true
               }
             ]
@@ -3971,8 +3934,9 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "fastest_lap": true
               }
             ]
           },
@@ -3985,9 +3949,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
-                "fastest_lap": true
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3998,8 +3961,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner",
+                "fastest_lap": true
               }
             ]
           },
@@ -4010,11 +3974,12 @@
             },
             "results": [
               {
-                "position": 25,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 25.0
         },
         {
           "pos": 6,
@@ -4110,14 +4075,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 5,
-                "background": "Other points position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -4125,8 +4082,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -4137,8 +4094,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4149,8 +4106,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -4199,11 +4156,12 @@
             },
             "results": [
               {
-                "position": 24,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 24.0
         },
         {
           "pos": 7,
@@ -4297,14 +4255,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 16,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -4312,7 +4262,7 @@
             },
             "results": [
               {
-                "position": 9,
+                "position": 16,
                 "background": "Other classified position"
               }
             ]
@@ -4324,8 +4274,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4336,8 +4286,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -4348,8 +4298,8 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4374,8 +4324,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4386,11 +4336,12 @@
             },
             "results": [
               {
-                "position": 20,
-                "pole_position": true
+                "position": 6,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 20.0
         },
         {
           "pos": 8,
@@ -4484,14 +4435,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -4499,9 +4442,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
-                "fastest_lap": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4512,8 +4454,9 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": 3,
+                "background": "Third place",
+                "fastest_lap": true
               }
             ]
           },
@@ -4524,8 +4467,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4536,8 +4479,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4550,8 +4493,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -4562,8 +4505,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4574,11 +4517,12 @@
             },
             "results": [
               {
-                "position": 20,
-                "pole_position": true
+                "position": 3,
+                "background": "Third place"
               }
             ]
-          }
+          },
+          "points": 20.0
         },
         {
           "pos": 9,
@@ -4673,14 +4617,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 9,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -4688,8 +4624,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4700,8 +4636,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -4724,7 +4660,7 @@
             },
             "results": [
               {
-                "position": 11,
+                "position": 9,
                 "background": "Other classified position"
               }
             ]
@@ -4738,7 +4674,7 @@
             },
             "results": [
               {
-                "position": 7,
+                "position": 11,
                 "background": "Other classified position"
               }
             ]
@@ -4750,8 +4686,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4762,11 +4698,12 @@
             },
             "results": [
               {
-                "position": 12,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 12.0
         },
         {
           "pos": 10,
@@ -4860,14 +4797,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 6,
-                "background": "Other points position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -4875,8 +4804,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -4888,8 +4817,7 @@
             "results": [
               {
                 "position": "Ret",
-                "background": "Not classified, retired",
-                "pole_position": true
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4900,8 +4828,9 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "pole_position": true
               }
             ]
           },
@@ -4912,8 +4841,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -4926,8 +4855,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -4938,8 +4867,8 @@
             },
             "results": [
               {
-                "position": "NC",
-                "background": "Not classified, finished"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -4950,11 +4879,12 @@
             },
             "results": [
               {
-                "position": 8,
-                "pole_position": true
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
-          }
+          },
+          "points": 8.0
         },
         {
           "pos": 11,
@@ -5049,14 +4979,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -5076,8 +4998,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5088,8 +5010,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -5100,9 +5022,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
-                "fastest_lap": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5115,8 +5036,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner",
+                "fastest_lap": true
               }
             ]
           },
@@ -5127,8 +5049,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5139,11 +5061,12 @@
             },
             "results": [
               {
-                "position": "6.5",
-                "pole_position": true
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 6.5
         },
         {
           "pos": 12,
@@ -5213,14 +5136,6 @@
             ]
           },
           "swe": null,
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -5228,8 +5143,8 @@
             },
             "results": [
               {
-                "position": 11,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5240,8 +5155,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 11,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5252,8 +5167,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5264,8 +5179,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -5290,8 +5205,8 @@
             },
             "results": [
               {
-                "position": "DNS",
-                "background": "Did not start"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5302,11 +5217,12 @@
             },
             "results": [
               {
-                "position": 6,
-                "pole_position": true
+                "position": "DNS",
+                "background": "Did not start"
               }
             ]
-          }
+          },
+          "points": 6.0
         },
         {
           "pos": 13,
@@ -5400,14 +5316,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 15,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -5415,7 +5323,7 @@
             },
             "results": [
               {
-                "position": 10,
+                "position": 15,
                 "background": "Other classified position"
               }
             ]
@@ -5427,8 +5335,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5451,8 +5359,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5465,8 +5373,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -5477,8 +5385,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5489,11 +5397,12 @@
             },
             "results": [
               {
-                "position": 6,
-                "pole_position": true
+                "position": 5,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 6.0
         },
         {
           "pos": 14,
@@ -5577,19 +5486,7 @@
               }
             ]
           },
-          "": null,
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 5,
-                "background": "Other points position"
-              }
-            ]
-          },
+          "ned": null,
           "fra": {
             "round": {
               "text": "FRA",
@@ -5597,8 +5494,8 @@
             },
             "results": [
               {
-                "position": 12,
-                "background": "Other classified position"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -5609,7 +5506,7 @@
             },
             "results": [
               {
-                "position": 10,
+                "position": 12,
                 "background": "Other classified position"
               }
             ]
@@ -5621,8 +5518,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5659,11 +5556,12 @@
             },
             "results": [
               {
-                "position": 5,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 5.0
         },
         {
           "pos": 15,
@@ -5757,14 +5655,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 8,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -5772,8 +5662,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5784,8 +5674,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5796,8 +5686,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -5808,25 +5698,28 @@
             },
             "results": [
               {
+                "position": "Ret",
+                "background": "Not classified, retired"
+              }
+            ]
+          },
+          "aut": {
+            "round": {
+              "text": "AUT",
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
+            },
+            "results": [
+              {
                 "position": "DNS",
                 "background": "Did not start"
               }
             ]
           },
-          "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 4.0
         },
         {
           "pos": 16,
@@ -5920,14 +5813,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -5940,23 +5825,24 @@
               }
             ]
           },
-          "fra": null,
+          "fra": {
+            "round": {
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
+            },
+            "results": [
+              {
+                "position": "Ret",
+                "background": "Not classified, retired"
+              }
+            ]
+          },
           "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 3.0
         },
         {
           "pos": 17,
@@ -6017,14 +5903,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 13,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -6032,7 +5910,7 @@
             },
             "results": [
               {
-                "position": 16,
+                "position": 13,
                 "background": "Other classified position"
               }
             ]
@@ -6044,7 +5922,7 @@
             },
             "results": [
               {
-                "position": 10,
+                "position": 16,
                 "background": "Other classified position"
               }
             ]
@@ -6056,26 +5934,27 @@
             },
             "results": [
               {
+                "position": 10,
+                "background": "Other classified position"
+              }
+            ]
+          },
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": 5,
                 "background": "Other points position"
               }
             ]
           },
-          "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 2.0
         },
         {
           "pos": 18,
@@ -6172,14 +6051,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -6187,8 +6058,8 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -6199,7 +6070,7 @@
             },
             "results": [
               {
-                "position": 14,
+                "position": 8,
                 "background": "Other classified position"
               }
             ]
@@ -6211,8 +6082,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 14,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6261,11 +6132,12 @@
             },
             "results": [
               {
-                "position": "1.5",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 1.5
         },
         {
           "pos": 19,
@@ -6315,14 +6187,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 7,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -6342,7 +6206,7 @@
             },
             "results": [
               {
-                "position": 15,
+                "position": 7,
                 "background": "Other classified position"
               }
             ]
@@ -6354,8 +6218,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 15,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6366,8 +6230,8 @@
             },
             "results": [
               {
-                "position": 15,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -6380,8 +6244,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 15,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6404,11 +6268,12 @@
             },
             "results": [
               {
-                "position": 1,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 1.0
         },
         {
           "pos": 20,
@@ -6423,7 +6288,11 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": {
+          "ned": {
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
+            },
             "results": [
               {
                 "position": 10,
@@ -6431,10 +6300,10 @@
               }
             ]
           },
-          "ned": {
+          "fra": {
             "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
             "results": [
               {
@@ -6443,11 +6312,11 @@
               }
             ]
           },
-          "fra": null,
-          "gbr": {
+          "gbr": null,
+          "ger": {
             "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
             "results": [
               {
@@ -6456,21 +6325,10 @@
               }
             ]
           },
-          "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 1.0
         },
         {
           "pos": 21,
@@ -6542,14 +6400,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 14,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -6557,7 +6407,7 @@
             },
             "results": [
               {
-                "position": 18,
+                "position": 14,
                 "background": "Other classified position"
               }
             ]
@@ -6569,8 +6419,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 18,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6581,8 +6431,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -6593,7 +6443,7 @@
             },
             "results": [
               {
-                "position": 17,
+                "position": 7,
                 "background": "Other classified position"
               }
             ]
@@ -6607,8 +6457,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 17,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6619,8 +6469,8 @@
             },
             "results": [
               {
-                "position": "DNS",
-                "background": "Did not start"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -6631,11 +6481,12 @@
             },
             "results": [
               {
-                "position": "0.5",
-                "pole_position": true
+                "position": "DNS",
+                "background": "Did not start"
               }
             ]
-          }
+          },
+          "points": 0.5
         },
         {
           "pos": null,
@@ -6696,22 +6547,10 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 16,
-                "background": "Other classified position"
-              }
-            ]
-          },
+          "ger": null,
           "aut": {
             "round": {
               "text": "AUT",
@@ -6721,24 +6560,25 @@
             },
             "results": [
               {
+                "position": 16,
+                "background": "Other classified position"
+              }
+            ]
+          },
+          "ita": {
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "Ret",
                 "background": "Not classified, retired"
               }
             ]
           },
-          "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6832,14 +6672,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -6847,8 +6679,8 @@
             },
             "results": [
               {
-                "position": 13,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -6859,7 +6691,7 @@
             },
             "results": [
               {
-                "position": 11,
+                "position": 13,
                 "background": "Other classified position"
               }
             ]
@@ -6871,8 +6703,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 11,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6883,16 +6715,30 @@
             },
             "results": [
               {
+                "position": "Ret",
+                "background": "Not classified, retired"
+              }
+            ]
+          },
+          "aut": {
+            "round": {
+              "text": "AUT",
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
+            },
+            "results": [
+              {
                 "position": 10,
                 "background": "Other classified position"
               }
             ]
           },
-          "aut": null,
-          "ita": {
+          "ita": null,
+          "usa": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -6901,18 +6747,7 @@
               }
             ]
           },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6927,21 +6762,9 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 8,
-                "background": "Other classified position"
-              }
-            ]
-          },
+          "gbr": null,
           "ger": {
             "round": {
               "text": "GER",
@@ -6949,8 +6772,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6963,24 +6786,25 @@
             },
             "results": [
               {
+                "position": "Ret",
+                "background": "Not classified, retired"
+              }
+            ]
+          },
+          "ita": {
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": 9,
                 "background": "Other classified position"
               }
             ]
           },
-          "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6995,20 +6819,8 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "fra": null,
           "gbr": {
             "round": {
               "text": "GBR",
@@ -7054,8 +6866,8 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -7066,11 +6878,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7142,7 +6955,11 @@
               }
             ]
           },
-          "": {
+          "ned": {
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -7150,10 +6967,10 @@
               }
             ]
           },
-          "ned": {
+          "fra": {
             "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
             "results": [
               {
@@ -7162,20 +6979,8 @@
               }
             ]
           },
-          "fra": null,
           "gbr": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "ger": null,
           "aut": {
             "round": {
               "text": "AUT",
@@ -7190,19 +6995,20 @@
               }
             ]
           },
-          "ita": null,
-          "usa": {
+          "ita": {
             "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7296,14 +7102,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 11,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ned": {
             "round": {
               "text": "NED",
@@ -7311,8 +7109,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 11,
+                "background": "Other classified position"
               }
             ]
           },
@@ -7323,8 +7121,8 @@
             },
             "results": [
               {
-                "position": 19,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -7335,8 +7133,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 19,
+                "background": "Other classified position"
               }
             ]
           },
@@ -7347,16 +7145,30 @@
             },
             "results": [
               {
+                "position": "Ret",
+                "background": "Not classified, retired"
+              }
+            ]
+          },
+          "aut": {
+            "round": {
+              "text": "AUT",
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
+            },
+            "results": [
+              {
                 "position": "DNS",
                 "background": "Did not start"
               }
             ]
           },
-          "aut": null,
-          "ita": {
+          "ita": null,
+          "usa": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -7365,18 +7177,7 @@
               }
             ]
           },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7435,25 +7236,14 @@
           },
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7468,22 +7258,10 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 13,
-                "background": "Other classified position"
-              }
-            ]
-          },
+          "ger": null,
           "aut": {
             "round": {
               "text": "AUT",
@@ -7493,7 +7271,7 @@
             },
             "results": [
               {
-                "position": 10,
+                "position": 13,
                 "background": "Other classified position"
               }
             ]
@@ -7505,8 +7283,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
           },
@@ -7517,11 +7295,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7558,25 +7337,14 @@
               }
             ]
           },
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7659,17 +7427,15 @@
             ]
           },
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut": {
+          "aut": null,
+          "ita": {
             "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -7678,19 +7444,8 @@
               }
             ]
           },
-          "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7716,25 +7471,14 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7749,22 +7493,10 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 12,
-                "background": "Other classified position"
-              }
-            ]
-          },
+          "ger": null,
           "aut": {
             "round": {
               "text": "AUT",
@@ -7779,19 +7511,20 @@
               }
             ]
           },
-          "ita": null,
-          "usa": {
+          "ita": {
             "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": 12,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7828,47 +7561,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 12,
-                "background": "Other classified position"
-              }
-            ]
-          },
-          "ned": null,
-          "fra": null,
-          "gbr": null,
-          "ger": null,
-          "aut": null,
-          "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
-        },
-        {
-          "pos": null,
-          "driver": {
-            "text": "Jean-Pierre Jabouille",
-            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jabouille"
-          },
-          "arg": null,
-          "bra": null,
-          "rsa": null,
-          "esp": null,
-          "mon": null,
-          "bel": null,
-          "swe": null,
-          "": null,
           "ned": {
             "round": {
               "text": "NED",
@@ -7886,18 +7578,41 @@
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
+          "usa": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Jean-Pierre Jabouille",
+            "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jabouille"
+          },
+          "arg": null,
+          "bra": null,
+          "rsa": null,
+          "esp": null,
+          "mon": null,
+          "bel": null,
+          "swe": null,
+          "ned": null,
+          "fra": {
             "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": 12,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "gbr": null,
+          "ger": null,
+          "aut": null,
+          "ita": null,
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7912,12 +7627,12 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
-          "fra": {
+          "fra": null,
+          "gbr": {
             "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
             "results": [
               {
@@ -7926,14 +7641,12 @@
               }
             ]
           },
-          "gbr": null,
           "ger": null,
-          "aut": {
+          "aut": null,
+          "ita": {
             "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -7942,19 +7655,8 @@
               }
             ]
           },
-          "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7980,25 +7682,14 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8024,25 +7715,14 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8068,25 +7748,14 @@
               }
             ]
           },
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8101,17 +7770,15 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
-          "aut": {
+          "aut": null,
+          "ita": {
             "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -8120,19 +7787,8 @@
               }
             ]
           },
-          "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8147,12 +7803,12 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
-          "fra": {
+          "fra": null,
+          "gbr": {
             "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
             "results": [
               {
@@ -8161,11 +7817,13 @@
               }
             ]
           },
-          "gbr": null,
-          "ger": {
+          "ger": null,
+          "aut": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
+              "text": "AUT",
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
             "results": [
               {
@@ -8174,11 +7832,11 @@
               }
             ]
           },
-          "aut": null,
-          "ita": {
+          "ita": null,
+          "usa": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -8187,18 +7845,7 @@
               }
             ]
           },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8213,12 +7860,12 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
-          "fra": {
+          "fra": null,
+          "gbr": {
             "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
             "results": [
               {
@@ -8227,22 +7874,11 @@
               }
             ]
           },
-          "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8257,12 +7893,12 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
-          "fra": {
+          "fra": null,
+          "gbr": {
             "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
             "results": [
               {
@@ -8271,22 +7907,11 @@
               }
             ]
           },
-          "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8325,12 +7950,12 @@
           },
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
-          "fra": {
+          "fra": null,
+          "gbr": {
             "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
             "results": [
               {
@@ -8339,19 +7964,7 @@
               }
             ]
           },
-          "gbr": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "NC",
-                "background": "Not classified, finished"
-              }
-            ]
-          },
+          "ger": null,
           "aut": {
             "round": {
               "text": "AUT",
@@ -8361,8 +7974,8 @@
             },
             "results": [
               {
-                "position": "DNQ",
-                "background": "Did not qualify"
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -8373,8 +7986,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
             ]
           },
@@ -8385,11 +7998,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8428,11 +8042,11 @@
             ]
           },
           "swe": null,
-          "": null,
-          "ned": {
+          "ned": null,
+          "fra": {
             "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
+              "text": "FRA",
+              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
             },
             "results": [
               {
@@ -8441,23 +8055,12 @@
               }
             ]
           },
-          "fra": null,
           "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8494,25 +8097,14 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8538,25 +8130,14 @@
               }
             ]
           },
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8571,13 +8152,13 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
-          "gbr": {
+          "gbr": null,
+          "ger": {
             "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
             },
             "results": [
               {
@@ -8586,21 +8167,10 @@
               }
             ]
           },
-          "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8615,14 +8185,16 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
-          "ger": {
+          "ger": null,
+          "aut": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
+              "text": "AUT",
+              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
+              "note": "half_points",
+              "points_multiplier": 0.5
             },
             "results": [
               {
@@ -8631,20 +8203,9 @@
               }
             ]
           },
-          "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8659,16 +8220,16 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
           "gbr": null,
           "ger": null,
           "aut": null,
-          "ita": {
+          "ita": null,
+          "usa": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1975_Italian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -8677,18 +8238,7 @@
               }
             ]
           },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8703,7 +8253,11 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": {
+          "ned": {
+            "round": {
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
+            },
             "results": [
               {
                 "position": "DNS",
@@ -8711,11 +8265,11 @@
               }
             ]
           },
-          "ned": null,
-          "fra": {
+          "fra": null,
+          "gbr": {
             "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
             },
             "results": [
               {
@@ -8724,22 +8278,11 @@
               }
             ]
           },
-          "gbr": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -8754,21 +8297,9 @@
           "mon": null,
           "bel": null,
           "swe": null,
-          "": null,
           "ned": null,
           "fra": null,
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNQ",
-                "background": "Did not qualify"
-              }
-            ]
-          },
+          "gbr": null,
           "ger": {
             "round": {
               "text": "GER",
@@ -8792,169 +8323,6 @@
               {
                 "position": "DNQ",
                 "background": "Did not qualify"
-              }
-            ]
-          },
-          "ita": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
-        },
-        {
-          "pos": null,
-          "driver": {
-            "text": "Driver",
-            "url": null
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1975_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ARG"
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1975_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "BRA"
-              }
-            ]
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1975_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "RSA"
-              }
-            ]
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": "ESP"
-              }
-            ]
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1975_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "MON"
-              }
-            ]
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1975_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "BEL"
-              }
-            ]
-          },
-          "swe": {
-            "round": {
-              "text": "SWE",
-              "url": "https://en.wikipedia.org/wiki/1975_Swedish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "SWE"
-              }
-            ]
-          },
-          "": {
-            "results": [
-              {
-                "position": "NED"
-              }
-            ]
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1975_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "FRA"
-              }
-            ]
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1975_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "GBR"
-              }
-            ]
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "GER"
-              }
-            ]
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1975_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "AUT"
-              }
-            ]
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix",
-              "note": "half_points",
-              "points_multiplier": 0.5
-            },
-            "results": [
-              {
-                "position": "ITA"
               }
             ]
           },
@@ -8965,21 +8333,13 @@
             },
             "results": [
               {
-                "position": "USA"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
             ]
           },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1975_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Pts"
-              }
-            ]
-          }
+          "usa": null,
+          "points": 0.0
         }
       ],
       "constructors_standings": null,

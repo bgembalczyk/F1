@@ -465,7 +465,10 @@
             }
           },
           "chassis": [
-            "TBA"
+            {
+              "text": "F1 W17",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_W17"
+            }
           ],
           "power_unit": null,
           "race_drivers": [

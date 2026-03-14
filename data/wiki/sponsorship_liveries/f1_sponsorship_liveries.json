@@ -1498,43 +1498,6 @@
           "Gold"
         ],
         "additional_colours": null,
-        "main_sponsors": [
-          {
-            "text": "Warsteiner",
-            "url": "https://en.wikipedia.org/wiki/Warsteiner"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "FINA",
-            "url": "https://en.wikipedia.org/wiki/Petrofina"
-          },
-          {
-            "text": "Heuer",
-            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-          },
-          "Scicon Micro Systems"
-        ],
-        "grand_prix_scope": {
-          "type": "range",
-          "from": {
-            "text": "South African Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/1978_South_African_Grand_Prix"
-          },
-          "to": null
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1978,
-            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Gold"
-        ],
-        "additional_colours": null,
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -1559,6 +1522,43 @@
               "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
             }
           ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1978,
+            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Gold"
+        ],
+        "additional_colours": null,
+        "main_sponsors": [
+          {
+            "text": "Warsteiner",
+            "url": "https://en.wikipedia.org/wiki/Warsteiner"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "FINA",
+            "url": "https://en.wikipedia.org/wiki/Petrofina"
+          },
+          {
+            "text": "Heuer",
+            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
+          },
+          "Scicon Micro Systems"
+        ],
+        "grand_prix_scope": {
+          "type": "range",
+          "from": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/1978_South_African_Grand_Prix"
+          },
+          "to": null
         }
       },
       {
@@ -9661,6 +9661,112 @@
           {
             "text": "Valvoline",
             "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Texaco",
+            "url": "https://en.wikipedia.org/wiki/Texaco"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "French Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Chris Amon",
+            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+          },
+          {
+            "text": "Patrick Nève",
+            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+          },
+          {
+            "text": "Hans Binder",
+            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
+          },
+          {
+            "text": "Jacky Ickx",
+            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Alpquell Natürliches Mineralwasser"
+          },
+          {
+            "text": "Elan"
+          },
+          {
+            "text": "Raiffeisen",
+            "url": "https://en.wikipedia.org/wiki/Raiffeisen_Bank_International"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Austrian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Chris Amon",
+            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+          },
+          {
+            "text": "Patrick Nève",
+            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+          },
+          {
+            "text": "Hans Binder",
+            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
+          },
+          {
+            "text": "Jacky Ickx",
+            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           },
           {
             "text": "John Day Model Cars"
@@ -9877,112 +9983,6 @@
             {
               "text": "British Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          {
-            "text": "Patrick Nève",
-            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-          },
-          {
-            "text": "Hans Binder",
-            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
-          },
-          {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "main_sponsors": [
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "Texaco",
-            "url": "https://en.wikipedia.org/wiki/Texaco"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "French Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          {
-            "text": "Patrick Nève",
-            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-          },
-          {
-            "text": "Hans Binder",
-            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
-          },
-          {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "main_sponsors": [
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "Alpquell Natürliches Mineralwasser"
-          },
-          {
-            "text": "Elan"
-          },
-          {
-            "text": "Raiffeisen",
-            "url": "https://en.wikipedia.org/wiki/Raiffeisen_Bank_International"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Austrian Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             }
           ]
         }
