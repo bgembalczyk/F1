@@ -14,6 +14,11 @@ from scrapers.circuits.models.services.lap_record_utils import (
     normalize_lap_record_entity,
 )
 
+MIN_DETAILS_FOR_DRIVER = 1
+MIN_DETAILS_FOR_CAR = 2
+MIN_DETAILS_FOR_YEAR = 3
+MIN_DETAILS_FOR_SERIES = 4
+
 
 class CircuitLapRecordParser(CircuitTextProcessing):
     """Logika parsowania, porównywania i scalania lap record'ów."""
@@ -82,10 +87,10 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         if time is not None:
             record["time"] = time
 
-        driver_text = details[0] if len(details) >= 1 else None
-        car_text = details[1] if len(details) >= 2 else None
-        year_text = details[2] if len(details) >= 3 else None
-        series_text = details[3] if len(details) >= 4 else None
+        driver_text = details[0] if len(details) >= MIN_DETAILS_FOR_DRIVER else None
+        car_text = details[1] if len(details) >= MIN_DETAILS_FOR_CAR else None
+        year_text = details[2] if len(details) >= MIN_DETAILS_FOR_YEAR else None
+        series_text = details[3] if len(details) >= MIN_DETAILS_FOR_SERIES else None
 
         record.update(
             {

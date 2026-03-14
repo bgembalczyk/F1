@@ -101,12 +101,13 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
     def scrape_url(self, url: str) -> ExportableRecord:
         """
-        Główne API – pobiera i parsuje infobox z podanego URL.
+        Główne API - pobiera i parsuje infobox z podanego URL.
         Obsługuje #fragment (sekcje), przycina infoboksy po infobox-full-data itd.
 
         Merge:
         - serwisy z main,
-        - osłona błędów w stylu nowego F1Scraper (network/parse + soft-skip jeśli _handle_scraper_error).
+        - osłona błędów w stylu nowego F1Scraper
+          (network/parse + soft-skip jeśli _handle_scraper_error).
         """
         self.url = url
         base_url, fragment = self.section_extractor.split_url_fragment(url)

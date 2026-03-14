@@ -17,7 +17,7 @@ from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
 
 class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
     """
-    Scraper pojedynczego toru – pobiera infobox i wszystkie tabele z artykułu Wikipedii.
+    Scraper pojedynczego toru - pobiera infobox i wszystkie tabele z artykułu Wikipedii.
 
     Dodatkowe heurystyki:
     - jeżeli artykuł nie ma kategorii typu '... circuit / racetrack / speedway ...'

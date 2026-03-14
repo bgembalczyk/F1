@@ -37,6 +37,15 @@ def is_speed_paren(s: str) -> bool:
     return ("km/h" in s_low) or ("mph" in s_low)
 
 
+DETAILS_PARTS_COUNT_MANY = 4
+DETAILS_PARTS_COUNT_MEDIUM = 3
+DETAILS_PARTS_COUNT_FEW = 2
+DETAILS_PARTS_BONUS_4 = 5
+DETAILS_PARTS_BONUS_3 = 2
+DETAILS_PARTS_BONUS_2 = 1
+DETAILS_MIN_SCORE_WITHOUT_COMMA = 3
+
+
 def score_details_candidate(s: str) -> int:
     """Ocenia czy dany tekst jest dobrym kandydatem na szczegóły lap record'u."""
     if not s:
@@ -47,19 +56,19 @@ def score_details_candidate(s: str) -> int:
     parts = split_delimited_text(s, pattern=r",")
     score = 0
 
-    if len(parts) >= 4:
-        score += 5
-    elif len(parts) == 3:
-        score += 2
-    elif len(parts) == 2:
-        score += 1
+    if len(parts) >= DETAILS_PARTS_COUNT_MANY:
+        score += DETAILS_PARTS_BONUS_4
+    elif len(parts) == DETAILS_PARTS_COUNT_MEDIUM:
+        score += DETAILS_PARTS_BONUS_3
+    elif len(parts) == DETAILS_PARTS_COUNT_FEW:
+        score += DETAILS_PARTS_BONUS_2
     else:
         score -= 2
 
     if any(re.fullmatch(r"\d{4}", p) for p in parts):
         score += 5
 
-    if "," not in s and score < 3:
+    if "," not in s and score < DETAILS_MIN_SCORE_WITHOUT_COMMA:
         score -= 3
 
     return score

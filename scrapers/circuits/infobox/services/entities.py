@@ -148,7 +148,8 @@ class CircuitEntitiesParser(SafeParserMixin):
         layouts: list[dict[str, Any]],
         base_record: dict[str, Any],
     ) -> None:
-        """Przetwarza base lap record - próbuje scalić z istniejącym layoutem lub dodaje nowy."""
+        """Przetwarza base lap record - próbuje scalić z istniejącym
+        layoutem lub dodaje nowy."""
         matched = False
 
         for lay in layouts:
