@@ -14,7 +14,8 @@ class IndianapolisOnlyListScraper(F1ListScraper):
     Subclasses should set:
     - url: The Wikipedia URL to scrape from
     - record_key: The field name for the entity (e.g., "constructor", "manufacturer")
-    - url_key: The field name for the entity URL (e.g., "constructor_url", "manufacturer_url")
+    - url_key: The field name for the entity URL
+      (e.g., "constructor_url", "manufacturer_url")
     """
 
     section_id = "Indianapolis_500_only"

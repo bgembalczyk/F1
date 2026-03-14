@@ -14,6 +14,15 @@ from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 
+RecoverableError = (
+    AttributeError,
+    KeyError,
+    LookupError,
+    OSError,
+    RuntimeError,
+    TypeError,
+    ValueError,
+)
 
 class WikipediaInfoboxScraper:
     """
@@ -65,33 +74,21 @@ class WikipediaInfoboxScraper:
         try:
             self.url = url
             html = self._fetch(url)
-        except Exception as exc:
-            error = (
-                exc
-                if isinstance(exc, ScraperError)
-                else handler.wrap_network(exc, url=url)
-            )
-            if handler.handle(error):
-                return {}
-            if error is exc:
-                raise
-            raise error from exc
+        except ScraperError as error:
+            return self._handle_scrape_error(error, handler=handler)
+        except RecoverableError as exc:
+            error = handler.wrap_network(exc, url=url)
+            return self._handle_scrape_error(error, handler=handler, cause=exc)
 
         try:
             soup = BeautifulSoup(html, "html.parser")
             raw = parse_infobox_from_soup(self, soup)
             return self._apply_transformers(raw)
-        except Exception as exc:
-            error = (
-                exc
-                if isinstance(exc, ScraperError)
-                else handler.wrap_parse(exc, url=url)
-            )
-            if handler.handle(error):
-                return {}
-            if error is exc:
-                raise
-            raise error from exc
+        except ScraperError as error:
+            return self._handle_scrape_error(error, handler=handler)
+        except RecoverableError as exc:
+            error = handler.wrap_parse(exc, url=url)
+            return self._handle_scrape_error(error, handler=handler, cause=exc)
 
     def apply_record_factory(self, record: dict[str, Any]) -> Any:
         if self.record_factory is None:
@@ -100,13 +97,27 @@ class WikipediaInfoboxScraper:
             if isinstance(self.record_factory, type):
                 return self.record_factory(**record)
             return self.record_factory(record)
-        except Exception:
+        except (AttributeError, KeyError, TypeError, ValueError):
             self.logger.warning(
                 "Infobox record_factory failed. Falling back to raw record: %s",
                 record,
                 exc_info=True,
             )
             return record
+
+
+    def _handle_scrape_error(
+        self,
+        error: ScraperError,
+        *,
+        handler: ErrorHandler,
+        cause: BaseException | None = None,
+    ) -> dict[str, Any]:
+        if handler.handle(error):
+            return {}
+        if cause is not None:
+            raise error from cause
+        raise error
 
     def _apply_transformers(self, record: dict[str, Any]) -> Any:
         return apply_transformers_with_factory(

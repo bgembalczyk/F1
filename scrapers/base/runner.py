@@ -53,10 +53,21 @@ class ScraperRunner:
         Tworzy instancję scrapera w sposób kompatybilny z różnymi konstruktorami:
 
         - jeśli scraper wspiera `options`, przekazujemy options
-        - jeśli nie wspiera `options`, ale wspiera `include_urls`, to przekazujemy include_urls
+        - jeśli nie wspiera `options`, ale wspiera `include_urls`,
+          to przekazujemy include_urls
         - jeśli supports_urls=False -> nie próbujemy ustawiać include_urls w ogóle
         """
         kwargs = dict(self._run_config.scraper_kwargs)
+        options = self._build_options(run_id)
+
+        if supports_param(scraper_cls, "options"):
+            self._inject_options_kwargs(kwargs, scraper_cls, options, run_id)
+            return scraper_cls(**kwargs)
+
+        self._inject_legacy_kwargs(kwargs, scraper_cls, run_id)
+        return scraper_cls(**kwargs)
+
+    def _build_options(self, run_id: str) -> ScraperOptions:
         options = self._run_config.options or ScraperOptions()
         options.run_id = run_id
         if self._run_config.debug_dir is not None:
@@ -75,19 +86,28 @@ class ScraperRunner:
             options.http_backoff_seconds = self._run_config.http_backoff_seconds
         options.quality_report = self._run_config.quality_report
         options.error_report = self._run_config.error_report
+        return options
 
-        if supports_param(scraper_cls, "options"):
-            if self._supports_urls and hasattr(options, "include_urls"):
-                options.include_urls = self._run_config.include_urls
-            kwargs.setdefault("options", options)
-            if supports_param(scraper_cls, "run_id"):
-                kwargs.setdefault("run_id", run_id)
-            return scraper_cls(**kwargs)
-
+    def _inject_options_kwargs(
+        self,
+        kwargs: dict[str, object],
+        scraper_cls: type[F1Scraper],
+        options: ScraperOptions,
+        run_id: str,
+    ) -> None:
+        if self._supports_urls and hasattr(options, "include_urls"):
+            options.include_urls = self._run_config.include_urls
+        kwargs.setdefault("options", options)
         if supports_param(scraper_cls, "run_id"):
             kwargs.setdefault("run_id", run_id)
 
+    def _inject_legacy_kwargs(
+        self,
+        kwargs: dict[str, object],
+        scraper_cls: type[F1Scraper],
+        run_id: str,
+    ) -> None:
+        if supports_param(scraper_cls, "run_id"):
+            kwargs.setdefault("run_id", run_id)
         if self._supports_urls and supports_param(scraper_cls, "include_urls"):
             kwargs.setdefault("include_urls", self._run_config.include_urls)
-
-        return scraper_cls(**kwargs)

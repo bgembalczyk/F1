@@ -25,9 +25,9 @@ class WikipediaSectionByIdMixin:
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         """
         Zwraca listę z pojedynczym dict (lub pustą listę) z kluczami:
-        - url     – oryginalny URL (z ewentualnym fragmentem),
-        - infobox – wynik F1CircuitInfoboxScraper.parse,
-        - tables  – lista zparsowanych wikitabel.
+        - url     - oryginalny URL (z ewentualnym fragmentem),
+        - infobox - wynik F1CircuitInfoboxScraper.parse,
+        - tables  - lista zparsowanych wikitabel.
 
         Jeżeli artykuł nie wygląda na tor/tor wyścigowy (brak odpowiednich kategorii),
         zwraca pustą listę (nie dokładamy szczegółów).
@@ -98,7 +98,10 @@ class WikipediaSectionByIdMixin:
 
     @staticmethod
     def _extract_same_level_header(sibling: Tag) -> Tag | None:
-        """Wyciąga nagłówek z elementu rodzeństwa (może być bezpośredni lub w mw-heading)."""
+        """Wyciąga nagłówek z elementu rodzeństwa.
+
+        Może być bezpośredni lub znajdować się w ``mw-heading``.
+        """
         if sibling.name in ("h1", "h2", "h3", "h4", "h5", "h6"):
             return sibling
         if "mw-heading" in (sibling.get("class") or []):
@@ -110,7 +113,10 @@ class WikipediaSectionByIdMixin:
         heading_block: Tag,
         header_level: int | None,
     ) -> list[Any]:
-        """Zbiera wszystkie elementy rodzeństwa do następnego nagłówka tego samego poziomu."""
+        """Zbiera elementy rodzeństwa do następnego nagłówka
+
+        tego samego poziomu.
+        """
         collected: list[Any] = [heading_block]
 
         for sib in heading_block.next_siblings:
@@ -139,7 +145,7 @@ class WikipediaSectionByIdMixin:
         Wycina sekcję artykułu Wikipedii na podstawie fragmentu URL.
 
         1) Próbuje znaleźć element o id=fragment (oraz warianty z _ / spacjami).
-        2) Jeśli się nie uda – szuka nagłówka po tekście (np. "Bugatti Circuit").
+        2) Jeśli się nie uda - szuka nagłówka po tekście (np. "Bugatti Circuit").
         3) Sekcję definiuje jako:
            [blok nagłówka] + wszystkie rodzeństwa aż do kolejnego nagłówka
            TEGO SAMEGO poziomu (hN).

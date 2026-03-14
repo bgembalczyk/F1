@@ -14,11 +14,11 @@ class F1ListScraper(F1Scraper, ABC):
     Scraper dla list (ul/ol) w konkretnej sekcji.
 
     Konfiguracja:
-    - section_id  – id elementu <span id="..."> w nagłówku sekcji
-    - record_key  – klucz w słowniku rekordu; jeżeli jest ustawiony, bazowa
+    - section_id  - id elementu <span id="..."> w nagłówku sekcji
+    - record_key  - klucz w słowniku rekordu; jeżeli jest ustawiony, bazowa
       implementacja ``parse_item`` zwraca prosty słownik z nazwą elementu i
       (opcjonalnym) URL-em,
-    - url_key     – klucz pod którym zapisywany jest pełny URL linku.
+    - url_key     - klucz pod którym zapisywany jest pełny URL linku.
     """
 
     section_id: str | None = None
