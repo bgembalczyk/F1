@@ -7,6 +7,13 @@ from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 from scrapers.drivers.columns.fatality_event import FatalityEventColumn
 
+EXPECTED_ENTRIES = 12
+EXPECTED_STARTS = 10
+EXPECTED_FRACTIONAL_POINTS = 0.5
+EXPECTED_CHAMPIONSHIP_POINTS = 42.0
+POINTS_TOLERANCE = 1e-9
+
+
 
 def _ctx(
     raw_text: str,
@@ -65,8 +72,8 @@ def test_entries_starts_column_apply() -> None:
     record: dict[str, object] = {}
     column.apply(_ctx("12 (10)"), record)
 
-    assert record["entries"] == 12
-    assert record["starts"] == 10
+    assert record["entries"] == EXPECTED_ENTRIES
+    assert record["starts"] == EXPECTED_STARTS
 
 
 def test_fatality_date_column_parse() -> None:
@@ -94,12 +101,12 @@ def test_points_column_hidden_span_zero() -> None:
 def test_points_column_hidden_span_fraction() -> None:
     column = PointsColumn()
     parsed = column.parse(_ctx_with_cell('<span style="display:none">5</span>0.5'))
-    assert parsed == 0.5
+    assert parsed == EXPECTED_FRACTIONAL_POINTS
 
 
 def test_points_column_hidden_span_dash() -> None:
     column = PointsColumn()
-    parsed = column.parse(_ctx_with_cell('<span style="display:none">2</span>–'))
+    parsed = column.parse(_ctx_with_cell('<span style="display:none">2</span>-'))
     assert parsed is None
 
 
@@ -118,5 +125,5 @@ def test_points_column_frac_span_mixed_number() -> None:
     )
     parsed = column.parse(_ctx_with_cell(html))
     assert isinstance(parsed, dict)
-    assert parsed["championship_points"] == 42.0
-    assert abs(parsed["total_points"] - (57 + 1 / 7)) < 1e-9
+    assert parsed["championship_points"] == EXPECTED_CHAMPIONSHIP_POINTS
+    assert abs(parsed["total_points"] - (57 + 1 / 7)) < POINTS_TOLERANCE
