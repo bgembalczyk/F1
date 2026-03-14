@@ -12,7 +12,9 @@ def test_table_schema_dsl_reads_schema_and_maps_columns() -> None:
                 "header": "Season",
                 "key": "season",
                 "column": {
-                    "class_path": "scrapers.base.table.columns.types.seasons.SeasonsColumn",
+                    "class_path": (
+                        "scrapers.base.table.columns.types.seasons.SeasonsColumn"
+                    ),
                     "kwargs": {},
                 },
             },

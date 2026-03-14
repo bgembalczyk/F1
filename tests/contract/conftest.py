@@ -12,15 +12,15 @@ if str(PROJECT_ROOT) not in sys.path:
 if importlib.util.find_spec("requests") is None:
     requests_stub = types.ModuleType("requests")
 
-    class _RequestException(Exception):
+    class _RequestError(Exception):
         pass
 
     class _Session:
         def get(self, *_args, **_kwargs):
             msg = "requests stub"
-            raise _RequestException(msg)
+            raise _RequestError(msg)
 
-    requests_stub.RequestException = _RequestException
+    requests_stub.RequestException = _RequestError
     requests_stub.Session = _Session
     sys.modules["requests"] = requests_stub
 
@@ -58,7 +58,7 @@ if importlib.util.find_spec("bs4") is None:
     sys.modules["bs4"] = bs4_stub
 
 
-@pytest.fixture()
+@pytest.fixture
 def minimal_fetch_html() -> str:
     fixture_path = Path(__file__).parent / "fixtures" / "minimal_fetch.html"
     return fixture_path.read_text(encoding="utf-8")
