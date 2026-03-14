@@ -5,6 +5,8 @@ from datetime import timezone
 
 from scrapers.base.results import ScrapeResult
 
+EXPECTED_TWO_RECORDS = 2
+
 
 def _read_header(path):
     with path.open(newline="", encoding="utf-8") as handle:
@@ -33,7 +35,7 @@ def test_to_csv_union_fieldnames_preserves_order(tmp_path):
     result.to_csv(output, include_metadata=True)
 
     metadata = _read_metadata(output)
-    assert metadata["records_count"] == 2
+    assert metadata["records_count"] == EXPECTED_TWO_RECORDS
     assert _read_header(output) == ["b", "a", "c"]
 
 
@@ -45,7 +47,7 @@ def test_to_csv_first_row_fieldnames_preserves_order(tmp_path):
     result.to_csv(output, fieldnames_strategy="first_row", include_metadata=True)
 
     metadata = _read_metadata(output)
-    assert metadata["records_count"] == 2
+    assert metadata["records_count"] == EXPECTED_TWO_RECORDS
     assert _read_header(output) == ["b", "a"]
 
 
@@ -79,7 +81,7 @@ def test_to_json_excludes_metadata_by_default(tmp_path):
     payload = json.loads(output.read_text(encoding="utf-8"))
     # By default, should return just the data array without meta wrapper
     assert isinstance(payload, list)
-    assert len(payload) == 2
+    assert len(payload) == EXPECTED_TWO_RECORDS
     assert payload[0]["driver"] == "Lewis"
     assert payload[1]["driver"] == "Max"
 

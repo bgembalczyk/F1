@@ -1,5 +1,6 @@
-"""Tests for GeminiClient – multi-model fallback, RPM/RPD limits, cache integration."""
+"""Tests for GeminiClient - multi-model fallback, RPM/RPD limits, cache integration."""
 
+import time
 from unittest.mock import MagicMock
 
 import pytest
@@ -16,14 +17,12 @@ from infrastructure.gemini.client import _ModelState
 
 def test_model_state_available_initially() -> None:
     state = _ModelState(ModelConfig("m", requests_per_minute=5, requests_per_day=100))
-    import time
 
     assert state.is_available(time.monotonic())
 
 
 def test_model_state_rpm_exhausted() -> None:
     state = _ModelState(ModelConfig("m", requests_per_minute=2, requests_per_day=100))
-    import time
 
     now = time.monotonic()
     state.record_request(now)
@@ -33,7 +32,6 @@ def test_model_state_rpm_exhausted() -> None:
 
 def test_model_state_rpd_exhausted() -> None:
     state = _ModelState(ModelConfig("m", requests_per_minute=100, requests_per_day=2))
-    import time
 
     now = time.monotonic()
     state.record_request(now)
@@ -44,20 +42,18 @@ def test_model_state_rpd_exhausted() -> None:
 def test_model_state_rpm_window_expires() -> None:
     """After 60 s, RPM slots free up (sliding window)."""
     state = _ModelState(ModelConfig("m", requests_per_minute=1, requests_per_day=100))
-    import time
 
     past = time.monotonic() - 61.0  # 61 s ago
-    state._rpm_timestamps.append(past)
+    state._rpm_timestamps.append(past)  # noqa: SLF001
     assert state.is_available(time.monotonic())
 
 
 def test_model_state_rpd_window_expires() -> None:
     """After 24 h, RPD slots free up (sliding window)."""
     state = _ModelState(ModelConfig("m", requests_per_minute=100, requests_per_day=1))
-    import time
 
     past = time.monotonic() - 86401.0  # just over 24 h ago
-    state._rpd_timestamps.append(past)
+    state._rpd_timestamps.append(past)  # noqa: SLF001
     assert state.is_available(time.monotonic())
 
 
@@ -77,7 +73,7 @@ def test_empty_models_list_raises() -> None:
 
 
 # ---------------------------------------------------------------------------
-# GeminiClient.query – cache hit
+# GeminiClient.query - cache hit
 # ---------------------------------------------------------------------------
 
 
@@ -87,17 +83,17 @@ def _make_client_with_mock_api(
     models: list | None = None,
     cache: GeminiCache | None = None,
 ) -> tuple[GeminiClient, MagicMock]:
-    """Helper: create GeminiClient with a mocked _call_api returning *responses* in order."""
+    """Helper creating GeminiClient with mocked _call_api side effects."""
     if models is None:
         models = [ModelConfig("model-a", requests_per_minute=10, requests_per_day=500)]
     client = GeminiClient(
         api_key="test-key",
         models=models,
-        cache=cache or GeminiCache(cache_dir="/tmp/gemini_test_cache_no_persist"),
+        cache=cache or GeminiCache(cache_dir="gemini_test_cache_no_persist"),
     )
     # Replace _call_api with a side-effect iterator
     mock = MagicMock(side_effect=responses)
-    client._call_api = mock
+    client._call_api = mock  # noqa: SLF001
     return client, mock
 
 
@@ -126,7 +122,7 @@ def test_query_stores_result_in_cache(tmp_path) -> None:
 
 
 # ---------------------------------------------------------------------------
-# GeminiClient.query – model fallback on error
+# GeminiClient.query - model fallback on error
 # ---------------------------------------------------------------------------
 
 
@@ -141,14 +137,14 @@ def test_query_falls_back_to_next_model_on_error(tmp_path) -> None:
 
     call_log: list[str] = []
 
-    def fake_call_api(prompt, *, model, response_mime_type):
+    def fake_call_api(_prompt, *, model, _response_mime_type):
         call_log.append(model)
         if model == "model-a":
             msg = "API error from model-a"
             raise RuntimeError(msg)
         return {"result": "ok"}
 
-    client._call_api = fake_call_api
+    client._call_api = fake_call_api  # noqa: SLF001
     result = client.query("prompt")
 
     assert result == {"result": "ok"}
@@ -163,20 +159,19 @@ def test_query_raises_when_all_models_exhausted(tmp_path) -> None:
         ModelConfig("model-b", requests_per_minute=10, requests_per_day=500),
     ]
     client = GeminiClient(api_key="key", models=models, cache=cache)
-    client._call_api = MagicMock(side_effect=RuntimeError("always fails"))
+    client._call_api = MagicMock(side_effect=RuntimeError("always fails"))  # noqa: SLF001
 
     with pytest.raises(RuntimeError, match="wyczerpane"):
         client.query("prompt")
 
 
 # ---------------------------------------------------------------------------
-# GeminiClient.query – RPM/RPD fallback
+# GeminiClient.query - RPM/RPD fallback
 # ---------------------------------------------------------------------------
 
 
 def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
     """When model-a is at RPM limit, the query uses model-b."""
-    import time
 
     cache = GeminiCache(cache_dir=tmp_path / "c")
     models = [
@@ -186,15 +181,15 @@ def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
     client = GeminiClient(api_key="key", models=models, cache=cache)
     # Saturate model-a RPM
     now = time.monotonic()
-    client._model_states[0]._rpm_timestamps.append(now)
+    client._model_states[0]._rpm_timestamps.append(now)  # noqa: SLF001
 
     call_log: list[str] = []
 
-    def fake_call_api(prompt, *, model, response_mime_type):
+    def fake_call_api(_prompt, *, model, _response_mime_type):
         call_log.append(model)
         return {"ok": True}
 
-    client._call_api = fake_call_api
+    client._call_api = fake_call_api  # noqa: SLF001
     result = client.query("p")
 
     assert result == {"ok": True}
@@ -204,7 +199,6 @@ def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
 
 def test_query_raises_when_all_models_at_rpm_limit(tmp_path) -> None:
     """RuntimeError when every model has hit its RPM limit and no fallback remains."""
-    import time
 
     cache = GeminiCache(cache_dir=tmp_path / "c")
     models = [
@@ -212,7 +206,7 @@ def test_query_raises_when_all_models_at_rpm_limit(tmp_path) -> None:
     ]
     client = GeminiClient(api_key="key", models=models, cache=cache)
     now = time.monotonic()
-    client._model_states[0]._rpm_timestamps.append(now)
+    client._model_states[0]._rpm_timestamps.append(now)  # noqa: SLF001
 
     with pytest.raises(RuntimeError, match="wyczerpane"):
         client.query("prompt")
@@ -225,15 +219,15 @@ def test_query_raises_when_all_models_at_rpm_limit(tmp_path) -> None:
 
 def test_from_key_file_raises_for_missing_file() -> None:
     with pytest.raises(FileNotFoundError):
-        GeminiClient.from_key_file("/tmp/nonexistent_gemini_key_xyz.txt")
+        GeminiClient.from_key_file("nonexistent_gemini_key_xyz.txt")
 
 
 def test_from_key_file_uses_default_models(tmp_path) -> None:
     key_file = tmp_path / "key.txt"
     key_file.write_text("my-api-key", encoding="utf-8")
     client = GeminiClient.from_key_file(key_file)
-    assert len(client._model_states) > 0
-    assert client._model_states[0].model == "gemini-2.5-flash-lite"
+    assert len(client._model_states) > 0  # noqa: SLF001
+    assert client._model_states[0].model == "gemini-2.5-flash-lite"  # noqa: SLF001
 
 
 def test_from_key_file_accepts_custom_models(tmp_path) -> None:
@@ -241,4 +235,4 @@ def test_from_key_file_accepts_custom_models(tmp_path) -> None:
     key_file.write_text("my-api-key", encoding="utf-8")
     custom = [ModelConfig("custom-model", requests_per_minute=5, requests_per_day=100)]
     client = GeminiClient.from_key_file(key_file, models=custom)
-    assert client._model_states[0].model == "custom-model"
+    assert client._model_states[0].model == "custom-model"  # noqa: SLF001
