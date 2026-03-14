@@ -14,8 +14,8 @@ from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.time import TimeColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL
-from scrapers.base.table.dsl import column
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.scraper import F1TableScraper
 

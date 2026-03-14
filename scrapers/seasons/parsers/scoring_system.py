@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.dsl import column
+from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.parsers.table import SeasonTableParser
 

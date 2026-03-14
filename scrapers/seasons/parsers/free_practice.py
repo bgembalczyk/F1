@@ -7,7 +7,7 @@ from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.table.columns.types.br_list import BrListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.dsl import column
+from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
 from scrapers.seasons.parsers.table import SeasonTableParser

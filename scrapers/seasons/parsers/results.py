@@ -8,7 +8,7 @@ from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.dsl import column
+from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.parsers.table import SeasonTableParser
 
