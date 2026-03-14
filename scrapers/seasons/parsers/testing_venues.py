@@ -28,8 +28,8 @@ class TestingVenuesParser:
 
         if season_year == 2011:
             return self._parse_2011(soup, season_year)
-        else:  # 2009
-            return self._parse_2009(soup, season_year)
+        # 2009
+        return self._parse_2009(soup, season_year)
 
     def _parse_2011(
         self,

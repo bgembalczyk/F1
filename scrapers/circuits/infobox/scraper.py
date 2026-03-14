@@ -137,7 +137,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
             return records[0] if records else {}
 
         result = self.run_with_error_handling(
-            lambda: self._download(),
+            self._download,
             _parse_full,
             base_url,
         )
@@ -218,7 +218,8 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
     def _download(self) -> str:
         if not self.url:
-            raise ScraperParseError("URL must be set before downloading")
+            msg = "URL must be set before downloading"
+            raise ScraperParseError(msg)
         return self.fetcher.get_text(self.url, timeout=self.timeout)
 
     # ------------------------------

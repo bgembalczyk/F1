@@ -29,7 +29,8 @@ if importlib.util.find_spec("requests") is None:
 
     class _Session:
         def get(self, *_args, **_kwargs):
-            raise _RequestException("requests stub")
+            msg = "requests stub"
+            raise _RequestException(msg)
 
     requests_stub.RequestException = _RequestException
     requests_stub.Session = _Session

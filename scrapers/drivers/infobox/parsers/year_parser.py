@@ -55,8 +55,9 @@ class YearParser:
 
             return {"start": start, "end": end}
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować zakresu lat: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować zakresu lat: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
 

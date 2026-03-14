@@ -96,12 +96,10 @@ class CircuitService:
                 lay["race_lap_records"] = merge_race_lap_records(records)
 
         # Clean url=None w całym wyjściu
-        out = prune_empty(
+        return prune_empty(
             out,
             drop_empty_lists=True,
             drop_none=False,
             drop_empty_dicts=False,
             drop_url_none=True,
         )
-
-        return out

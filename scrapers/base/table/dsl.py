@@ -25,7 +25,8 @@ class ColumnRef:
             instance = column_cls(**dict(self.kwargs))
             if isinstance(instance, BaseColumn):
                 return instance
-        raise TypeError(f"{self.class_path} is not a BaseColumn factory or subclass.")
+        msg = f"{self.class_path} is not a BaseColumn factory or subclass."
+        raise TypeError(msg)
 
     @classmethod
     def from_instance(cls, column: BaseColumn) -> "ColumnRef":
@@ -67,9 +68,11 @@ class TableSchemaDSL:
 
         for spec in self.columns:
             if not spec.header.strip():
-                raise ValueError("TableSchemaDSL column header must be non-empty.")
+                msg = "TableSchemaDSL column header must be non-empty."
+                raise ValueError(msg)
             if not spec.key.strip():
-                raise ValueError("TableSchemaDSL column key must be non-empty.")
+                msg = "TableSchemaDSL column key must be non-empty."
+                raise ValueError(msg)
             column_map[spec.header] = spec.key
             column_instance = spec.build_column()
             signature = ColumnRef.from_instance(column_instance)

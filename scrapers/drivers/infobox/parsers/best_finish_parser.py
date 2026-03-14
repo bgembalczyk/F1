@@ -61,8 +61,9 @@ class BestFinishParser:
 
             return result
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować najlepszego wyniku: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować najlepszego wyniku: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
 
@@ -71,13 +72,11 @@ class BestFinishParser:
         if " in " in text:
             result_text, _ = text.split(" in ", 1)
             return result_text.strip() or None
-        else:
-            # Extract result without parentheses content
-            result_match = re.match(r"^([^(]+)", text)
-            if result_match:
-                return result_match.group(1).strip() or None
-            else:
-                return text.strip() or None
+        # Extract result without parentheses content
+        result_match = re.match(r"^([^(]+)", text)
+        if result_match:
+            return result_match.group(1).strip() or None
+        return text.strip() or None
 
     def _parse_seasons_with_classes(
         self,
@@ -93,8 +92,7 @@ class BestFinishParser:
                 season_links,
                 small_tags[0],
             )
-        else:
-            return self._parse_class_per_season(cell, season_links)
+        return self._parse_class_per_season(cell, season_links)
 
     def _parse_single_class_for_all_seasons(
         self,

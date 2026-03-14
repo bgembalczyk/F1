@@ -109,7 +109,7 @@ class EntryMerger:
         keys: list[str] = []
         seen: set[str] = set()
         for record in records:
-            for key in record.keys():
+            for key in record:
                 if key in cls._DRIVER_FIELDS or key in seen:
                     continue
                 seen.add(key)

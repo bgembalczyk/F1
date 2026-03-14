@@ -180,8 +180,7 @@ class TablePipeline:
                     for key, value in payload.items()
                     if key in self.model_fields
                 }
-            instance = self.record_factory(**payload)
-            return instance
+            return self.record_factory(**payload)
         return self.record_factory(normalized_record)
 
     @staticmethod
@@ -312,8 +311,9 @@ class TablePipeline:
                 raw_text,
             )
             row_label = row_index if row_index is not None else "unknown"
+            msg = f"Failed parsing column {header} in row {row_label}"
             raise ScraperParseError(
-                f"Failed parsing column {header} in row {row_label}",
+                msg,
                 url=self.base_url,
                 cause=exc,
             ) from exc

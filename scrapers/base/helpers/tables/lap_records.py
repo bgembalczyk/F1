@@ -53,9 +53,12 @@ class LapRecordsTableScraper(F1TableScraper):
         F1SingleCircuitScraper sami podajemy konkretne tabele i nagłówki
         i wołamy parse_row().
         """
-        raise NotImplementedError(
+        msg = (
             "LapRecordsTableScraper nie jest używany bezpośrednio – "
-            "korzystaj z parse_row()/parse_multi_row() na konkretnych tabelach.",
+            "korzystaj z parse_row()/parse_multi_row() na konkretnych tabelach."
+        )
+        raise NotImplementedError(
+            msg,
         )
 
     def parse_multi_row(
@@ -92,8 +95,9 @@ class LapRecordsTableScraper(F1TableScraper):
 
             if as_value_objects:
                 if LapRecord is None:
+                    msg = "as_value_objects=True, ale LapRecord nie jest dostępny w projekcie."
                     raise RuntimeError(
-                        "as_value_objects=True, ale LapRecord nie jest dostępny w projekcie.",
+                        msg,
                     )
                 out_records.append(LapRecord.from_dict(record))
             else:

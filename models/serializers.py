@@ -2,10 +2,12 @@ import logging
 from collections.abc import Mapping
 from dataclasses import asdict
 from dataclasses import is_dataclass
+from typing import TYPE_CHECKING
 from typing import Any
 from typing import cast
 
-from models.records.link import LinkRecord
+if TYPE_CHECKING:
+    from models.records.link import LinkRecord
 
 Primitive = str | int | float | bool | None
 
@@ -30,7 +32,7 @@ def to_dict_any(
             and set(value.keys()).issubset({"text", "url"})
         ):
             return cast(
-                LinkRecord,
+                "LinkRecord",
                 {"text": value.get("text") or "", "url": value.get("url")},
             )
         return {k: to_dict_any(v, logger=logger) for k, v in value.items()}

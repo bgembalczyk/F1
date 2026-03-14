@@ -42,7 +42,8 @@ def to_dict(value: Any) -> dict[str, Any]:
         return normalize_value(value.dict())
     if is_dataclass(value):
         return normalize_value(asdict(value))
-    raise TypeError(f"Nieobsługiwany typ modelu: {type(value)!r}")
+    msg = f"Nieobsługiwany typ modelu: {type(value)!r}"
+    raise TypeError(msg)
 
 
 def to_circuit_record_dict(

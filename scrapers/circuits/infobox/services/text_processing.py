@@ -61,8 +61,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
         """
         s = (s or "").replace("\xa0", " ").strip()
         s = self._LANG_PAREN_ANYWHERE_RE.sub("", s)
-        s = re.sub(r"\s+", " ", s).strip()
-        return s
+        return re.sub(r"\s+", " ", s).strip()
 
     def _strip_lang_marker_tail_only(self, s: str) -> str:
         """
@@ -72,8 +71,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
         """
         s = (s or "").replace("\xa0", " ").strip()
         s = self._LANG_PAREN_TAIL_RE.sub("", s).strip()
-        s = re.sub(r"\s+", " ", s).strip()
-        return s
+        return re.sub(r"\s+", " ", s).strip()
 
     def _norm_text_for_key(self, x: Any) -> str:
         if isinstance(x, dict):
@@ -112,9 +110,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
     def _is_en_wiki(url: str | None) -> bool:
         if not url:
             return False
-        return url.startswith("https://en.wikipedia.org/") or url.startswith(
-            "http://en.wikipedia.org/",
-        )
+        return url.startswith(("https://en.wikipedia.org/", "http://en.wikipedia.org/"))
 
     def _choose_richer_entity(self, a: Any, b: Any) -> Any:
         return choose_richer_entity(a, b)

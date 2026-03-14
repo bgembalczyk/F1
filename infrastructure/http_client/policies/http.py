@@ -13,6 +13,8 @@ class HttpPolicy:
 
     def __post_init__(self) -> None:
         if self.timeout <= 0:
-            raise ValueError("timeout must be greater than 0")
+            msg = "timeout must be greater than 0"
+            raise ValueError(msg)
         if self.retries < 0:
-            raise ValueError("retries must be >= 0")
+            msg = "retries must be >= 0"
+            raise ValueError(msg)

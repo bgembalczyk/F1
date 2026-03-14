@@ -83,7 +83,7 @@ class NationalityParser:
             elif nationality_name:
                 nationalities.append({"nationality": nationality_name, "years": []})
 
-        return nationalities if nationalities else []
+        return nationalities or []
 
     @staticmethod
     def _extract_years_from_text(text: str) -> list[int]:

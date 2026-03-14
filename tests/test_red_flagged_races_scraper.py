@@ -20,13 +20,6 @@ from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
     RedFlaggedWorldChampionshipRacesScraper,
 )
 
-try:
-    import pytest
-
-    PYTEST_AVAILABLE = True
-except ImportError:
-    PYTEST_AVAILABLE = False
-
 
 class TestRedFlaggedRacesScraperRobustness:
     """Test that the scraper handles various HTML structures gracefully."""
@@ -148,7 +141,8 @@ class TestRedFlaggedRacesScraperRobustness:
 
         try:
             scraper._parse_soup(soup)
-            assert False, "Should have raised RuntimeError"
+            msg = "Should have raised RuntimeError"
+            raise AssertionError(msg)
         except RuntimeError as e:
             error_msg = str(e)
             # Should mention that 1 table was found (in Polish)

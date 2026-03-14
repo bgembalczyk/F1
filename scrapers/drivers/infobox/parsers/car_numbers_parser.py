@@ -47,8 +47,9 @@ class CarNumbersParser:
             try:
                 number = int(match.group("number"))
             except (TypeError, ValueError) as exc:
+                msg = f"Nie udało się sparsować numeru samochodu: {raw_text!r}."
                 raise DomainParseError(
-                    f"Nie udało się sparsować numeru samochodu: {raw_text!r}.",
+                    msg,
                     cause=exc,
                 ) from exc
             if number >= 1900 and not prefix:

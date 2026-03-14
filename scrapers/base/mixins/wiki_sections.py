@@ -17,7 +17,7 @@ class WikipediaSectionByIdMixin:
 
     @staticmethod
     def split_url_fragment(url: str) -> tuple[str, str | None]:
-        base_url, fragment = (url.split("#", 1) + [None])[:2]
+        base_url, fragment = ([*url.split("#", 1), None])[:2]
         if fragment is not None:
             fragment = fragment.lstrip("#").strip() or None
         return base_url, fragment
@@ -101,7 +101,7 @@ class WikipediaSectionByIdMixin:
         """Wyciąga nagłówek z elementu rodzeństwa (może być bezpośredni lub w mw-heading)."""
         if sibling.name in ("h1", "h2", "h3", "h4", "h5", "h6"):
             return sibling
-        elif "mw-heading" in (sibling.get("class") or []):
+        if "mw-heading" in (sibling.get("class") or []):
             return sibling.find(["h1", "h2", "h3", "h4", "h5", "h6"], recursive=False)
         return None
 
@@ -172,5 +172,4 @@ class WikipediaSectionByIdMixin:
         if not html.strip():
             return None
 
-        section_soup = BeautifulSoup(html, "html.parser")
-        return section_soup
+        return BeautifulSoup(html, "html.parser")

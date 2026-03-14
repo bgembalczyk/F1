@@ -39,7 +39,7 @@ def test_local_anchor_with_text_respects_allow_local_anchors():
 
 
 @pytest.mark.parametrize(
-    "allow_local_anchors, expected",
+    ("allow_local_anchors", "expected"),
     [
         (True, False),
         (False, True),
@@ -58,7 +58,7 @@ def test_regular_link_is_not_reference():
 
 
 @pytest.mark.parametrize(
-    "text, expected",
+    ("text", "expected"),
     [
         ("Population 1,234 people", 1234),
         ("+42 points", 42),
@@ -71,7 +71,7 @@ def test_parse_int_from_text(text, expected):
 
 
 @pytest.mark.parametrize(
-    "text, expected",
+    ("text", "expected"),
     [
         ("Lap time +3.5s", 3.5),
         ("1,234.5 meters", 1234.5),

@@ -32,8 +32,9 @@ class NumericParser:
         try:
             return int(match.group(0))
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować liczby całkowitej: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować liczby całkowitej: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
 
@@ -57,8 +58,9 @@ class NumericParser:
         try:
             return float(match.group(0))
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować liczby zmiennoprzecinkowej: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować liczby zmiennoprzecinkowej: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
 
@@ -81,8 +83,9 @@ class NumericParser:
         try:
             values = parse_int_values(text)
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować wpisów/startów: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować wpisów/startów: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
         entries = values[0] if values else None

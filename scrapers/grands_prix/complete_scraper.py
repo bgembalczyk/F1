@@ -73,7 +73,8 @@ class F1CompleteGrandPrixScraper(CompositeScraper):
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         """Metoda wymagana przez bazę – nie używana w tym scraperze."""
-        raise NotImplementedError("Use fetch() bezpośrednio dla pełnego scrapingu")
+        msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
+        raise NotImplementedError(msg)
 
 
 if __name__ == "__main__":

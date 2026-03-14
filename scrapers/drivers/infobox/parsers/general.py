@@ -75,7 +75,7 @@ class InfoboxGeneralParser:
 
         if bday_span:
             return clean_infobox_text(bday_span.get_text(strip=True)) or ""
-        elif dday_span:
+        if dday_span:
             return clean_infobox_text(dday_span.get_text(strip=True)) or ""
 
         # Try to find hidden span with ISO date format (style="display:none")
@@ -123,8 +123,7 @@ class InfoboxGeneralParser:
         place_span = cell.find(class_="birthplace") or cell.find(class_="deathplace")
         if place_span:
             return self._extract_place_from_span(place_span)
-        else:
-            return self._extract_place_from_text(cell)
+        return self._extract_place_from_text(cell)
 
     def _extract_place_from_span(self, place_span: Tag) -> list[str | LinkRecord]:
         """Extract place from birthplace/deathplace span element."""
@@ -154,12 +153,10 @@ class InfoboxGeneralParser:
                     ]
                     place.extend(remaining_parts)
                 return place
-            else:
-                # No links, just split by comma
-                return [p.strip() for p in place_text.split(",") if p.strip()]
-        else:
-            # No URL extraction, just split by comma
+            # No links, just split by comma
             return [p.strip() for p in place_text.split(",") if p.strip()]
+        # No URL extraction, just split by comma
+        return [p.strip() for p in place_text.split(",") if p.strip()]
 
     def _extract_place_from_text(self, cell: Tag) -> list[str | LinkRecord]:
         """Fallback method to extract place from cell text."""
@@ -204,18 +201,18 @@ class InfoboxGeneralParser:
         try:
             parsed_date = parse_date_text(date_text or "")
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować daty miejsca: {date_text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować daty miejsca: {date_text!r}.",
+                msg,
                 cause=exc,
             ) from exc
 
         iso = parsed_date.iso
         if isinstance(iso, list):
             return iso[0] if iso else None
-        elif isinstance(iso, str):
+        if isinstance(iso, str):
             return iso
-        else:
-            return parsed_date.raw or date_text or None
+        return parsed_date.raw or date_text or None
 
     def _parse_relations(self, cell: Tag) -> list[dict[str, Any]]:
         links = self._link_extractor.extract_links(cell)

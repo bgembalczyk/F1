@@ -38,7 +38,7 @@ class InfoboxSchema:
                 if key:
                     self._label_map[key] = field
         self.required_keys = (
-            {key for key in required_keys}
+            set(required_keys)
             if required_keys is not None
             else {field.key for field in self.fields}
         )

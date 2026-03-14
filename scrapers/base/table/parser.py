@@ -103,7 +103,8 @@ class HtmlTableParser:
             if self._headers_match(headers):
                 return table
 
-        raise RuntimeError("Nie znaleziono pasującej tabeli.")
+        msg = "Nie znaleziono pasującej tabeli."
+        raise RuntimeError(msg)
 
     def _headers_match(self, headers: Sequence[str]) -> bool:
         if not self.expected_headers:
@@ -170,7 +171,7 @@ class HtmlTableParser:
             except ValueError:
                 rowspan_value = 1
 
-            for offset in range(colspan_value):
+            for _offset in range(colspan_value):
                 if col_index >= len(headers):
                     break
                 expanded.append(cell)
@@ -212,12 +213,14 @@ class HtmlTableParser:
     def _extract_headers(self, table: Tag) -> tuple[list[str], list[Tag], int]:
         rows = table.find_all("tr")
         if not rows:
-            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
+            msg = "Nie znaleziono wiersza nagłówkowego w tabeli."
+            raise RuntimeError(msg)
 
         first_row = rows[0]
         first_cells = first_row.find_all(["th", "td"])
         if not first_cells:
-            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
+            msg = "Nie znaleziono wiersza nagłówkowego w tabeli."
+            raise RuntimeError(msg)
 
         first_headers = [
             clean_wiki_text(

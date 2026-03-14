@@ -97,7 +97,7 @@ class ScraperOptions:
                 cache=policy.cache,
             )
             self.http_client = cast(
-                HttpClientProtocol,
+                "HttpClientProtocol",
                 UrllibHttpClient(
                     config=client_config,
                 ),

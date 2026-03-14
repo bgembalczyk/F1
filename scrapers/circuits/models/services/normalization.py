@@ -1,5 +1,6 @@
 """Funkcje pomocnicze do normalizacji danych torów."""
 
+import contextlib
 import re
 from typing import Any
 
@@ -217,18 +218,13 @@ def parse_table_layout_info(table_layout: str) -> tuple[float | None, str | None
     # Wyciągnij float przed 'km'
     m = re.search(r"([\d.]+)\s*km", table_layout, re.IGNORECASE)
     if m:
-        try:
+        with contextlib.suppress(ValueError):
             length_km = float(m.group(1))
-        except ValueError:
-            pass
 
     # Szukaj direction (clockwise/anticlockwise/anti-clockwise)
     s = table_layout.lower()
     if "clockwise" in s:
-        if "anti" in s:
-            direction = "anti-clockwise"
-        else:
-            direction = "clockwise"
+        direction = "anti-clockwise" if "anti" in s else "clockwise"
 
     return length_km, direction
 

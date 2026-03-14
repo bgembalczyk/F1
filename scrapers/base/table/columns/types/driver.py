@@ -1,9 +1,12 @@
+from typing import TYPE_CHECKING
 from typing import Any
 
-from models.records.link import LinkRecord
 from scrapers.base.helpers.text import strip_marks
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
+
+if TYPE_CHECKING:
+    from models.records.link import LinkRecord
 
 
 class DriverColumn(BaseColumn):

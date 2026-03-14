@@ -390,9 +390,7 @@ class TestVerboseEngineTypeNames:
 class TestEngineTypeFromPlainText:
     def test_jaguar_v12_in_plain_text(self) -> None:
         html = (
-            '<th nowrap="">'
-            '<a href="/wiki/Jaguar_V12_engine">Jaguar</a> 7.4L V12'
-            "</th>"
+            '<th nowrap=""><a href="/wiki/Jaguar_V12_engine">Jaguar</a> 7.4L V12</th>'
         )
         result = _parse_any(html)
         assert result["type"] == "V12"

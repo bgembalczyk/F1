@@ -5,13 +5,13 @@ from http.server import BaseHTTPRequestHandler
 from http.server import ThreadingHTTPServer
 
 import pytest
+from infrastructure.http_client.default_retry import DefaultRetryPolicy
 
 from infrastructure.http_client.caching import FileCache
 from infrastructure.http_client.caching import WikipediaCachePolicy
 from infrastructure.http_client.clients import HttpClient
 from infrastructure.http_client.clients import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.default_retry import DefaultRetryPolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
 
@@ -21,7 +21,7 @@ class _StubHandler(BaseHTTPRequestHandler):
     delay_seconds = 0.0
     last_header = ""
 
-    def do_GET(self):  # noqa: N802 - zgodnie z BaseHTTPRequestHandler
+    def do_GET(self):
         if self.path == "/flaky":
             type(self).retry_count += 1
             if type(self).retry_count < 2:
@@ -110,7 +110,7 @@ CLIENT_FACTORIES: list[tuple[str, Callable[..., object]]] = [
 ]
 
 
-@pytest.mark.parametrize("name, factory", CLIENT_FACTORIES)
+@pytest.mark.parametrize(("name", "factory"), CLIENT_FACTORIES)
 def test_retries_on_server_errors(name, factory, http_server):
     base_url, handler = http_server
     handler.retry_count = 0
@@ -122,7 +122,7 @@ def test_retries_on_server_errors(name, factory, http_server):
     assert handler.retry_count == 2
 
 
-@pytest.mark.parametrize("name, factory", CLIENT_FACTORIES)
+@pytest.mark.parametrize(("name", "factory"), CLIENT_FACTORIES)
 def test_custom_headers_are_forwarded(name, factory, http_server):
     base_url, handler = http_server
     handler.last_header = ""
@@ -134,7 +134,7 @@ def test_custom_headers_are_forwarded(name, factory, http_server):
     assert handler.last_header == "demo"
 
 
-@pytest.mark.parametrize("name, factory", CLIENT_FACTORIES)
+@pytest.mark.parametrize(("name", "factory"), CLIENT_FACTORIES)
 def test_timeouts_are_respected(name, factory, http_server):
     base_url, handler = http_server
     handler.delay_seconds = 0.2
@@ -145,7 +145,7 @@ def test_timeouts_are_respected(name, factory, http_server):
         client.get(f"{base_url}/slow")
 
 
-@pytest.mark.parametrize("name, factory", CLIENT_FACTORIES)
+@pytest.mark.parametrize(("name", "factory"), CLIENT_FACTORIES)
 def test_get_text_contract(name, factory, http_server):
     base_url, _handler = http_server
 
@@ -156,7 +156,7 @@ def test_get_text_contract(name, factory, http_server):
     assert isinstance(payload, str)
 
 
-@pytest.mark.parametrize("name, factory", CLIENT_FACTORIES)
+@pytest.mark.parametrize(("name", "factory"), CLIENT_FACTORIES)
 def test_get_json_contract(name, factory, http_server):
     base_url, _handler = http_server
 

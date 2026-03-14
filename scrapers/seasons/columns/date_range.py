@@ -52,7 +52,7 @@ class DateRangeColumn(BaseColumn):
             month_match = re.search(
                 r"\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\b",
                 end_str,
-                re.I,
+                re.IGNORECASE,
             )
             if month_match:
                 month_name = month_match.group(1)

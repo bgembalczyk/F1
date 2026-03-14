@@ -10,13 +10,14 @@ def extract_data(result: ScrapeResult) -> list[Any]:
 
     if isinstance(result, ScrapeResult):
         return list(result.data)
-    raise TypeError("Expected ScrapeResult.")
+    msg = "Expected ScrapeResult."
+    raise TypeError(msg)
 
 
 def fieldnames_from_union(data: list[ExportRecord]) -> list[str]:
     keys: list[str] = []
     for row in data:
-        for key in row.keys():
+        for key in row:
             if key not in keys:
                 keys.append(key)
     return keys

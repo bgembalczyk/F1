@@ -188,7 +188,7 @@ class ColourScopeHandler:
             rf"livery\s+is\s+colou?red\s+{re.escape(colour_lower)}",
             flags=re.IGNORECASE,
         )
-        for key, value in record.items():
+        for value in record.values():
             if not isinstance(value, str):
                 continue
             if pattern.search(value):

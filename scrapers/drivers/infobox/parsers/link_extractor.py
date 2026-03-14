@@ -117,9 +117,7 @@ class InfoboxLinkExtractor:
         if not re.fullmatch(r"\d{4}(?:[-–]\d{4})?", text):
             return False
         url = (link.get("url") or "").lower()
-        if "season" in url or "_season" in url:
-            return False
-        return True
+        return not ("season" in url or "_season" in url)
 
     def extract_year_list_with_links(self, cell: Tag) -> list[dict[str, Any]]:
         """Extract years as a list of individual years with links.

@@ -71,7 +71,8 @@ class F1FatalitiesListScraper(F1TableScraper):
         config: ScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
-        options.transformers = list(options.transformers or []) + [
+        options.transformers = [
+            *list(options.transformers or []),
             FatalitiesCarTransformer(),
         ]
         super().__init__(options=options, config=config)

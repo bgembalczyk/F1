@@ -385,7 +385,7 @@ def _stage_a_partition_by_record_key(
     leftovers: list[dict[str, Any]] = []
 
     for rec in records:
-        k = build_lap_record_key(rec, year_extractor=lambda r: extract_year(r))
+        k = build_lap_record_key(rec, year_extractor=extract_year)
         if k is None:
             leftovers.append(rec)
         else:

@@ -23,7 +23,8 @@ def validate_status(value: Any, allowed: Iterable[str], field_name: str) -> str:
             allowed_normalized.append(normalized)
     if status_normalized not in allowed_set:
         allowed_display = ", ".join(allowed_normalized)
+        msg = f"Pole {field_name} musi mieć jedną z wartości: {allowed_display}"
         raise ValueError(
-            f"Pole {field_name} musi mieć jedną z wartości: {allowed_display}",
+            msg,
         )
     return status_normalized

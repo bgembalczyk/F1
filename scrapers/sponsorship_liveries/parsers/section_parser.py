@@ -353,10 +353,12 @@ class SponsorshipSectionParser:
     def _find_section_table(self, soup: BeautifulSoup, *, section_id: str) -> Tag:
         headline = soup.find(id=section_id)
         if not isinstance(headline, Tag):
-            raise RuntimeError(f"Nie znaleziono sekcji o id={section_id!r}")
+            msg = f"Nie znaleziono sekcji o id={section_id!r}"
+            raise RuntimeError(msg)
         heading = headline.parent
         if not isinstance(heading, Tag):
-            raise RuntimeError(f"Nie znaleziono nagłówka sekcji {section_id!r}")
+            msg = f"Nie znaleziono nagłówka sekcji {section_id!r}"
+            raise RuntimeError(msg)
 
         for element in self._iter_section_elements(heading, headline):
             if element.name != "table" or "wikitable" not in (
@@ -374,7 +376,8 @@ class SponsorshipSectionParser:
             if any(h in self._season_headers for h in headers):
                 return element
 
-        raise RuntimeError(f"Nie znaleziono tabeli w sekcji {section_id!r}")
+        msg = f"Nie znaleziono tabeli w sekcji {section_id!r}"
+        raise RuntimeError(msg)
 
     def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         records: list[dict[str, Any]] = []

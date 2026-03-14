@@ -5,6 +5,7 @@ import time
 from abc import ABC
 from abc import abstractmethod
 from collections.abc import Callable
+from typing import TYPE_CHECKING
 from typing import Any
 from typing import cast
 
@@ -17,9 +18,11 @@ from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from infrastructure.http_client.policies.min_delay_rate_limiter import (
     MinDelayRateLimiter,
 )
-from infrastructure.http_client.policies.rate_limiter import RateLimiter
-from infrastructure.http_client.policies.response_cache import ResponseCache
-from infrastructure.http_client.policies.retry import RetryPolicy
+
+if TYPE_CHECKING:
+    from infrastructure.http_client.policies.rate_limiter import RateLimiter
+    from infrastructure.http_client.policies.response_cache import ResponseCache
+    from infrastructure.http_client.policies.retry import RetryPolicy
 
 
 class BaseHttpClient(ABC):
@@ -136,9 +139,10 @@ class BaseHttpClient(ABC):
                 continue
 
             response.raise_for_status()
-            return cast(Any, response)
+            return cast("Any", response)
 
-        assert False, "Unreachable code"
+        msg = "Unreachable code"
+        raise AssertionError(msg)
 
     @abstractmethod
     def get(

@@ -91,9 +91,12 @@ class ScrapeResult:
                 elif fieldnames_strategy == "first_row":
                     fieldnames = fieldnames_from_first_row(data)
                 else:
-                    raise ValueError(
+                    msg = (
                         "Nieznana strategia fieldnames: "
-                        f"{fieldnames_strategy!r}. Dostępne: 'union', 'first_row'.",
+                        f"{fieldnames_strategy!r}. Dostępne: 'union', 'first_row'."
+                    )
+                    raise ValueError(
+                        msg,
                     )
 
         exporter = self._resolve_exporter(exporter)

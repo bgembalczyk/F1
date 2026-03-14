@@ -117,8 +117,8 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         sanitizer = self._strip_lang_marker_tail_only
         return build_lap_record_key(
             rec,
-            year_extractor=lambda r: extract_year(r),
-            vehicle_getter=lambda r: self._get_vehicle_field(r),
+            year_extractor=extract_year,
+            vehicle_getter=self._get_vehicle_field,
             driver_normalizer=lambda value: normalize_lap_record_entity(
                 value,
                 sanitizer=sanitizer,

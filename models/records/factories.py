@@ -48,7 +48,7 @@ def _normalize_points(value: Any) -> Any:
 
 def build_link_record(record: Mapping[str, Any]) -> LinkRecord:
     normalized = normalize_link_value(record, "link") or {"text": "", "url": None}
-    return cast(LinkRecord, normalized)
+    return cast("LinkRecord", normalized)
 
 
 def build_season_record(record: Mapping[str, Any]) -> SeasonRecord:
@@ -60,7 +60,7 @@ def build_season_record(record: Mapping[str, Any]) -> SeasonRecord:
     payload["url"] = url
     if payload.get("year") is not None and not payload.get("url"):
         payload["url"] = WIKI_SEASON_URL.format(year=payload["year"])
-    return cast(SeasonRecord, payload)
+    return cast("SeasonRecord", payload)
 
 
 def build_drivers_championships_record(
@@ -73,7 +73,7 @@ def build_drivers_championships_record(
     )
     payload["count"] = payload["count"] or 0
     payload["seasons"] = normalize_seasons(payload.get("seasons"))
-    return cast(DriversChampionshipsRecord, payload)
+    return cast("DriversChampionshipsRecord", payload)
 
 
 def build_driver_record(record: Mapping[str, Any]) -> DriverRecord:
@@ -102,7 +102,7 @@ def build_driver_record(record: Mapping[str, Any]) -> DriverRecord:
     payload["fastest_laps"] = normalize_int(payload.get("fastest_laps"), "fastest_laps")
     payload.setdefault("drivers_championships", {"count": 0, "seasons": []})
     payload.setdefault("seasons_competed", [])
-    return cast(DriverRecord, payload)
+    return cast("DriverRecord", payload)
 
 
 def build_special_driver_record(record: Mapping[str, Any]) -> SpecialDriverRecord:
@@ -115,7 +115,7 @@ def build_special_driver_record(record: Mapping[str, Any]) -> SpecialDriverRecor
     payload["points"] = _normalize_points(payload.get("points"))
     payload.setdefault("seasons", [])
     payload.setdefault("teams", [])
-    return cast(SpecialDriverRecord, payload)
+    return cast("SpecialDriverRecord", payload)
 
 
 def build_constructor_record(record: Mapping[str, Any]) -> ConstructorRecord:
@@ -166,7 +166,7 @@ def build_constructor_record(record: Mapping[str, Any]) -> ConstructorRecord:
     payload.setdefault("based_in", [])
     payload.setdefault("seasons", [])
     payload.setdefault("antecedent_teams", [])
-    return cast(ConstructorRecord, payload)
+    return cast("ConstructorRecord", payload)
 
 
 def build_circuit_record(record: Mapping[str, Any]) -> CircuitRecord:
@@ -202,7 +202,7 @@ def build_circuit_record(record: Mapping[str, Any]) -> CircuitRecord:
         payload["country"] = country.strip() or None
     payload.setdefault("grands_prix", [])
     payload.setdefault("seasons", [])
-    return cast(CircuitRecord, payload)
+    return cast("CircuitRecord", payload)
 
 
 def build_event_record(record: Mapping[str, Any]) -> EventRecord:
@@ -210,14 +210,14 @@ def build_event_record(record: Mapping[str, Any]) -> EventRecord:
     event = payload.get("event")
     if isinstance(event, list):
         payload["event"] = normalize_link_list(event, "event")
-    elif isinstance(event, Mapping) or isinstance(event, str):
+    elif isinstance(event, (Mapping, str)):
         payload["event"] = normalize_link_value(event, "event") or (
             event.strip() if isinstance(event, str) else None
         )
     else:
         payload["event"] = None
     payload["championship"] = bool(payload.get("championship"))
-    return cast(EventRecord, payload)
+    return cast("EventRecord", payload)
 
 
 def build_car_record(record: Mapping[str, Any]) -> CarRecord:
@@ -234,7 +234,7 @@ def build_car_record(record: Mapping[str, Any]) -> CarRecord:
         payload["formula_category"] = formula_category
     else:
         payload.pop("formula_category", None)
-    return cast(CarRecord, payload)
+    return cast("CarRecord", payload)
 
 
 def build_fatality_record(record: Mapping[str, Any]) -> FatalityRecord:
@@ -255,7 +255,7 @@ def build_fatality_record(record: Mapping[str, Any]) -> FatalityRecord:
         payload["car"] = normalize_link_value(car, "car") if car else None
     session = payload.get("session")
     payload["session"] = session.strip() if isinstance(session, str) else None
-    return cast(FatalityRecord, payload)
+    return cast("FatalityRecord", payload)
 
 
 def build_season_summary_record(record: Mapping[str, Any]) -> SeasonSummaryRecord:
@@ -276,7 +276,7 @@ def build_season_summary_record(record: Mapping[str, Any]) -> SeasonSummaryRecor
     payload["winners"] = normalize_int(payload.get("winners"), "winners")
     payload.setdefault("drivers_champion_team", [])
     payload.setdefault("constructors_champion", [])
-    return cast(SeasonSummaryRecord, payload)
+    return cast("SeasonSummaryRecord", payload)
 
 
 def build_grands_prix_record(record: Mapping[str, Any]) -> GrandsPrixRecord:
@@ -295,14 +295,14 @@ def build_grands_prix_record(record: Mapping[str, Any]) -> GrandsPrixRecord:
     payload["total"] = normalize_int(payload.get("total"), "total")
     payload.setdefault("years_held", [])
     payload.setdefault("country", [])
-    return cast(GrandsPrixRecord, payload)
+    return cast("GrandsPrixRecord", payload)
 
 
 def build_circuit_details_record(record: Mapping[str, Any]) -> CircuitDetailsRecord:
     payload = dict(record)
     payload.setdefault("infobox", {})
     payload.setdefault("tables", [])
-    return cast(CircuitDetailsRecord, payload)
+    return cast("CircuitDetailsRecord", payload)
 
 
 def build_circuit_complete_record(record: Mapping[str, Any]) -> CircuitCompleteRecord:
@@ -320,4 +320,4 @@ def build_circuit_complete_record(record: Mapping[str, Any]) -> CircuitCompleteR
     payload.setdefault("layouts", [])
     payload.setdefault("grands_prix", [])
     payload.setdefault("seasons", [])
-    return cast(CircuitCompleteRecord, payload)
+    return cast("CircuitCompleteRecord", payload)

@@ -41,7 +41,8 @@ class MultiLevelHeaderBuilder:
                     break
 
         if not header_rows:
-            raise RuntimeError("Nie znaleziono nagłówków tabeli.")
+            msg = "Nie znaleziono nagłówków tabeli."
+            raise RuntimeError(msg)
 
         first_row_cells = header_rows[0].find_all(["th", "td"])
         second_row_cells: list[Tag] = []

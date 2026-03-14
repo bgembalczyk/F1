@@ -21,7 +21,12 @@ class RoundsService:
         if "all" in lower:
             return expand_all(total_rounds)
 
-        normalized = re.sub(r"\b(rounds?|races?)\b", "", normalized, flags=re.I)
+        normalized = re.sub(
+            r"\b(rounds?|races?)\b",
+            "",
+            normalized,
+            flags=re.IGNORECASE,
+        )
         parts = [p.strip() for p in re.split(r"[;,]", normalized) if p.strip()]
 
         values: list[int] = []
