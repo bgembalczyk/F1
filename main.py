@@ -27,6 +27,7 @@ from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
+from scrapers.constructors.helpers.export import export_complete_constructors
 from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixScraper
 from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
     RedFlaggedNonChampionshipRacesScraper,
@@ -194,6 +195,13 @@ def run_complete_scrapers() -> None:
         include_urls=True,
     )
     print("[complete] finished CompleteSeasonScraper")
+
+    print("[complete] running  CompleteConstructorsScraper")
+    export_complete_constructors(
+        output_dir=BASE_WIKI_DIR / "constructors/complete_constructors",
+        include_urls=True,
+    )
+    print("[complete] finished CompleteConstructorsScraper")
 
 
 def main() -> None:
