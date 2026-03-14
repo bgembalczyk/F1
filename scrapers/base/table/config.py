@@ -50,7 +50,7 @@ class ScraperConfig:
         for key, value in self.column_map.items():
             if not isinstance(key, str) or not isinstance(value, str):
                 msg = "ScraperConfig.column_map must map str keys to str values."
-                raise ValueError(
+                raise TypeError(
                     msg,
                 )
 
@@ -61,10 +61,10 @@ class ScraperConfig:
         for key, value in self.columns.items():
             if not isinstance(key, str):
                 msg = "ScraperConfig.columns must use str keys."
-                raise ValueError(msg)
+                raise TypeError(msg)
             if not isinstance(value, BaseColumn):
                 msg = "ScraperConfig.columns must map str keys to BaseColumn values."
-                raise ValueError(
+                raise TypeError(
                     msg,
                 )
 

@@ -18,7 +18,7 @@ class TableSchemaBuilder:
     def map(self, header: str, key: str, column: BaseColumn) -> "TableSchemaBuilder":
         if not isinstance(header, str) or not header.strip():
             msg = "TableSchemaBuilder.map header must be a non-empty string."
-            raise ValueError(
+            raise TypeError(
                 msg,
             )
         if not isinstance(key, str) or not key.strip():
@@ -26,7 +26,7 @@ class TableSchemaBuilder:
             raise ValueError(msg)
         if not isinstance(column, BaseColumn):
             msg = "TableSchemaBuilder.map column must be a BaseColumn instance."
-            raise ValueError(
+            raise TypeError(
                 msg,
             )
         self._column_map[header] = key
