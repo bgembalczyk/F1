@@ -1,3 +1,5 @@
+import re
+
 # Pattern that matches a displacement value followed by an explicit unit (e.g. "1.5 L",
 # "1.5 L8" where L starts the type, "3000cc") or a bare decimal (e.g. "3.0 V8").
 DISPLACEMENT_RE = re.compile(
