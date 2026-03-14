@@ -47,8 +47,8 @@ class DriverService:
 
         Przykładowe wejście (raw, po bazowym parsowaniu typu "text"):
         - "0"
-        - "2\n2005–2006"
-        - "7\n1994–1995, 2000–2004"
+        - "2\n2005-2006"
+        - "7\n1994-1995, 2000-2004"
         """
         text = str(raw) if raw is not None else ""
         text = text.replace("\r\n", "\n").replace("\r", "\n").strip()
