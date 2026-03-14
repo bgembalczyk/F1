@@ -12,9 +12,11 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.runner import RunConfig
 from scrapers.circuits.models.services.circuit_service import CircuitService
 
+CHAMPIONSHIP_SEASON_COUNT = 2
+EXPECTED_LAP_TIME = 80.0
 
 def test_season_service_parses_years_and_ranges() -> None:
-    seasons = SeasonService.parse_seasons("1973, 1975–1976, 1984", current_year=2024)
+    seasons = SeasonService.parse_seasons("1973, 1975-1976, 1984", current_year=2024)
     years = [season["year"] for season in seasons]
 
     assert years == [1973, 1975, 1976, 1984]
@@ -28,17 +30,17 @@ def test_season_service_parses_onwards_range() -> None:
 
 
 def test_driver_service_parses_championships() -> None:
-    result = DriverService.parse_championships("2\n2005–2006")
+    result = DriverService.parse_championships("2\n2005-2006")
 
-    assert result["count"] == 2
+    assert result["count"] == CHAMPIONSHIP_SEASON_COUNT
     assert [season["year"] for season in result["seasons"]] == [2005, 2006]
 
 
 def test_driver_service_parses_championships_variants() -> None:
     cases = [
         ("0", 0, []),
-        ("2\n2005–2006", 2, [2005, 2006]),
-        ("7\n1994–1995, 2000–2004", 7, [1994, 1995, 2000, 2001, 2002, 2003, 2004]),
+        ("2\n2005-2006", CHAMPIONSHIP_SEASON_COUNT, [2005, 2006]),
+        ("7\n1994-1995, 2000-2004", 7, [1994, 1995, 2000, 2001, 2002, 2003, 2004]),
     ]
 
     for raw, expected_count, expected_years in cases:
@@ -118,7 +120,7 @@ def test_circuit_service_normalizes_record_and_merges_laps() -> None:
     assert len(layouts) == 1
     records = layouts[0]["race_lap_records"]
     assert len(records) == 1
-    assert records[0]["time"] == 80.0
+    assert records[0]["time"] == EXPECTED_LAP_TIME
 
 
 def test_run_and_export_uses_run_config(tmp_path: Path) -> None:
@@ -175,7 +177,7 @@ def test_parse_int_values_handles_missing_and_multiple_numbers() -> None:
 
 
 def test_parse_year_range_handles_present_and_short_end_year() -> None:
-    assert parse_year_range("2001–03") == {"start": 2001, "end": 2003}
-    assert parse_year_range("2005–present") == {"start": 2005, "end": None}
+    assert parse_year_range("2001-03") == {"start": 2001, "end": 2003}
+    assert parse_year_range("2005-present") == {"start": 2005, "end": None}
     assert parse_year_range("1999") == {"start": 1999, "end": 1999}
     assert parse_year_range("unknown") == {"start": None, "end": None}

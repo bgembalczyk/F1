@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.parser import HtmlTableParser
 
+EXPECTED_TABLE_COUNT = 2
+
 
 def test_html_table_parser_skips_repeated_header_rows() -> None:
     html = """
@@ -136,7 +138,7 @@ def test_html_table_parser_expands_rowspans() -> None:
 
     rows = parser.parse(soup)
 
-    assert len(rows) == 2
+    assert len(rows) == EXPECTED_TABLE_COUNT
     assert [cell.get_text(strip=True) for cell in rows[1].cells] == [
         "1954",
         "Buenos Aires",
