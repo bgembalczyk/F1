@@ -1,6 +1,5 @@
 import logging
 from typing import Any
-from typing import Dict
 
 from bs4 import BeautifulSoup
 
@@ -26,13 +25,13 @@ class WikipediaInfoboxScraper:
     """
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            fetcher: HtmlFetcher | None = None,
-            parser: InfoboxHtmlParser | None = None,
-            mapper: InfoboxFieldMapper | None = None,
-            run_id: str | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        fetcher: HtmlFetcher | None = None,
+        parser: InfoboxHtmlParser | None = None,
+        mapper: InfoboxFieldMapper | None = None,
+        run_id: str | None = None,
     ) -> None:
         options = options or ScraperOptions()
         if fetcher is not None:
@@ -54,7 +53,7 @@ class WikipediaInfoboxScraper:
     # Public API
     # ------------------------------
 
-    def scrape(self, url: str) -> Dict[str, Any]:
+    def scrape(self, url: str) -> dict[str, Any]:
         """Pobiera i parsuje infobox z dowolnego artykułu Wikipedii."""
         handler = ErrorHandler(
             logger=logging.getLogger(__name__),
@@ -94,7 +93,7 @@ class WikipediaInfoboxScraper:
                 raise
             raise error from exc
 
-    def apply_record_factory(self, record: Dict[str, Any]) -> Any:
+    def apply_record_factory(self, record: dict[str, Any]) -> Any:
         if self.record_factory is None:
             return record
         try:
@@ -109,9 +108,12 @@ class WikipediaInfoboxScraper:
             )
             return record
 
-    def _apply_transformers(self, record: Dict[str, Any]) -> Any:
+    def _apply_transformers(self, record: dict[str, Any]) -> Any:
         return apply_transformers_with_factory(
-            self.transformers, record, self.record_factory, self.logger,
+            self.transformers,
+            record,
+            self.record_factory,
+            self.logger,
         )
 
     # ------------------------------

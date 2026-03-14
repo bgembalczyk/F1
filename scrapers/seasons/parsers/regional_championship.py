@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
@@ -19,8 +17,12 @@ class SeasonRegionalChampionshipParser:
         self._table_parser = table_parser
 
     def parse(
-            self, soup: BeautifulSoup, *, section_ids: list[str], season_year: int | None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_ids: list[str],
+        season_year: int | None,
+    ) -> list[dict[str, Any]]:
         return self._table_parser.parse_table(
             soup,
             section_ids=section_ids,

@@ -1,10 +1,9 @@
+from collections.abc import Callable
+from collections.abc import Mapping
 from dataclasses import dataclass
 from dataclasses import replace
 from pathlib import Path
 from typing import Any
-from typing import Callable
-from typing import Mapping
-from typing import Optional
 from typing import cast
 
 from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
@@ -12,9 +11,7 @@ from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
 )
-from infrastructure.http_client.policies.defaults import (
-    DEFAULT_HTTP_BACKOFF_SECONDS,
-)
+from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_BACKOFF_SECONDS
 from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.cache_adapter import CacheAdapter
 from scrapers.base.cache_adapter import CacheBackend
@@ -26,7 +23,7 @@ from scrapers.base.parsers.soup import SoupParser
 from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.transformers.record_transformer import RecordTransformer
-from validation.records import RecordValidator
+from validation.validator_base import RecordValidator
 
 
 @dataclass(slots=True)
@@ -36,12 +33,12 @@ class ScraperOptions:
     """
 
     include_urls: bool = True
-    exporter: Optional[DataExporter] = None
+    exporter: DataExporter | None = None
     fetcher: HtmlFetcher | None = None
     source_adapter: SourceAdapter | None = None
     parser: SoupParser | None = None
     policy: HttpPolicy | None = None
-    http_client: Optional[HttpClientProtocol] = None
+    http_client: HttpClientProtocol | None = None
     validator: RecordValidator | None = None
     validation_mode: str = "soft"
     debug_dir: Path | None = None
@@ -144,9 +141,9 @@ class ScraperOptions:
         return self.fetcher
 
     def with_source_adapter(
-            self,
-            *,
-            policy: HttpPolicy | None = None,
+        self,
+        *,
+        policy: HttpPolicy | None = None,
     ) -> SourceAdapter:
         from scrapers.base.html_fetcher import HtmlFetcher
 

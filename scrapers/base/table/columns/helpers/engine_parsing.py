@@ -8,6 +8,7 @@ Follows SOLID principles:
 - High Cohesion: All functions work together for engine parsing
 - Information Expert: Engine parsing logic grouped with engine data
 """
+
 import re
 
 from bs4 import Tag
@@ -22,7 +23,7 @@ from scrapers.base.helpers.url import normalize_url
 # Pattern that matches a displacement value followed by an explicit unit (e.g. "1.5 L",
 # "1.5 L8" where L starts the type, "3000cc") or a bare decimal (e.g. "3.0 V8").
 _DISPLACEMENT_RE = re.compile(
-    r"\b\d+\.?\d*\s*(?:L|l|litre|litres|cc|cm³)|\b\d+\.\d+\b"
+    r"\b\d+\.?\d*\s*(?:L|l|litre|litres|cc|cm³)|\b\d+\.\d+\b",
 )
 
 # Exact engine type code (e.g. "V8", "L4", "F4").
@@ -82,17 +83,19 @@ _FUEL_TYPE_URLS: dict[str, str] = {
 # URL fragments that indicate the link describes only a modifier (fuel type or induction),
 # not an engine model.  When a segment contains only such a link it should be treated as
 # a modifier to the preceding engine rather than a new engine entry.
-_MODIFIER_ONLY_URLS: frozenset[str] = frozenset({
-    "diesel_engine",
-    "supercharger",
-    "supercharged",
-    "turbocharger",
-    "turbocharging",
-    "gas_turbine",
-})
+_MODIFIER_ONLY_URLS: frozenset[str] = frozenset(
+    {
+        "diesel_engine",
+        "supercharger",
+        "supercharged",
+        "turbocharger",
+        "turbocharging",
+        "gas_turbine",
+    },
+)
 
 # Compiled pattern for detecting a 3-digit CSS hex colour (after lower-casing).
-_CSS_3DIGIT_HEX_RE = re.compile(r'^#[0-9a-f]{3}$')
+_CSS_3DIGIT_HEX_RE = re.compile(r"^#[0-9a-f]{3}$")
 
 
 def _expand_hex_shorthand(color: str) -> str:
@@ -112,14 +115,14 @@ def _expand_hex_shorthand(color: str) -> str:
         3-digit shorthand.
     """
     if _CSS_3DIGIT_HEX_RE.match(color):
-        return '#' + ''.join(c * 2 for c in color[1:])
+        return "#" + "".join(c * 2 for c in color[1:])
     return color
 
 
 class EngineParsingHelpers:
     """
     Helper class for parsing engine information from table cells.
-    
+
     Provides methods for:
     - Building engine link lookups
     - Parsing engine segments with specifications
@@ -130,10 +133,10 @@ class EngineParsingHelpers:
     def build_link_lookup(links: list[LinkRecord]) -> dict[str, list[LinkRecord]]:
         """
         Build lookup dictionary mapping engine names to their link records.
-        
+
         Args:
             links: List of link records for engines
-            
+
         Returns:
             Dictionary mapping lowercase engine names to lists of matching links
         """
@@ -152,10 +155,10 @@ class EngineParsingHelpers:
     def extract_engine_class(cell: Tag) -> str | None:
         """
         Extract engine class from cell background color (e.g., F2 engines).
-        
+
         Args:
             cell: HTML table cell element
-            
+
         Returns:
             Engine class identifier (e.g., "F2") or None
         """
@@ -168,10 +171,10 @@ class EngineParsingHelpers:
     def is_f2_background(background: str) -> bool:
         """
         Check if background color indicates Formula 2 engine.
-        
+
         Args:
             background: Background color string
-            
+
         Returns:
             True if background indicates F2, False otherwise
         """
@@ -180,13 +183,20 @@ class EngineParsingHelpers:
         bg_lower = background.lower().replace(" ", "")
         bg_lower = _expand_hex_shorthand(bg_lower)
         # Common F2 background colors in Wikipedia tables
-        return bg_lower in {"#efefef", "#f0f0f0", "#e0e0e0", "#ffcccc", "lightgrey", "lightgray"}
+        return bg_lower in {
+            "#efefef",
+            "#f0f0f0",
+            "#e0e0e0",
+            "#ffcccc",
+            "lightgrey",
+            "lightgray",
+        }
 
     @staticmethod
     def parse_segment(
-            segment: Tag,
-            link_lookup: dict[str, list[LinkRecord]],
-            base_url: str,
+        segment: Tag,
+        link_lookup: dict[str, list[LinkRecord]],
+        base_url: str,
     ) -> dict[str, object]:
         """
         Parse an engine segment into structured data.
@@ -200,7 +210,10 @@ class EngineParsingHelpers:
             Dictionary with engine data including model, displacement_l, type,
             layout, cylinders and optional supercharged/turbocharged/gas_turbine flags.
         """
-        links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
+        links = normalize_links(
+            segment,
+            full_url=lambda href: normalize_url(base_url, href),
+        )
         text = clean_wiki_text(segment.get_text(" ", strip=True))
 
         modifier_only = EngineParsingHelpers._try_modifier_only_segment(links)
@@ -211,20 +224,31 @@ class EngineParsingHelpers:
         first_link_text = (first_link.get("text") or "") if first_link else ""
 
         special_tokens: set[str] = set()
-        type_str, first_link, first_link_text = EngineParsingHelpers._resolve_first_link_type(
-            first_link, first_link_text, special_tokens,
+        type_str, first_link, first_link_text = (
+            EngineParsingHelpers._resolve_first_link_type(
+                first_link,
+                first_link_text,
+                special_tokens,
+            )
         )
 
         type_str, supercharged, turbocharged, gas_turbine, fuel_type = (
             EngineParsingHelpers._process_secondary_links(
-                links[1:], type_str, special_tokens,
+                links[1:],
+                type_str,
+                special_tokens,
             )
         )
 
         displacement_l = EngineParsingHelpers.extract_displacement(text)
 
-        type_str, turbocharged, supercharged = EngineParsingHelpers._fallback_type_from_text(
-            text, type_str, turbocharged, supercharged,
+        type_str, turbocharged, supercharged = (
+            EngineParsingHelpers._fallback_type_from_text(
+                text,
+                type_str,
+                turbocharged,
+                supercharged,
+            )
         )
 
         if not turbocharged and re.search(r"\bturbo\b", text, re.IGNORECASE):
@@ -235,7 +259,10 @@ class EngineParsingHelpers:
         layout, cylinders = EngineParsingHelpers.parse_layout_and_cylinders(type_str)
 
         model_text = EngineParsingHelpers.extract_model_text(
-            text, first_link_text, displacement_l, special_tokens,
+            text,
+            first_link_text,
+            displacement_l,
+            special_tokens,
         )
         model: dict[str, object] | None = None
         if model_text or first_link:
@@ -245,8 +272,15 @@ class EngineParsingHelpers:
             }
 
         return EngineParsingHelpers._build_engine_result(
-            model, displacement_l, type_str, layout, cylinders,
-            supercharged, turbocharged, gas_turbine, fuel_type,
+            model,
+            displacement_l,
+            type_str,
+            layout,
+            cylinders,
+            supercharged,
+            turbocharged,
+            gas_turbine,
+            fuel_type,
         )
 
     # ------------------------------------------------------------------
@@ -255,7 +289,7 @@ class EngineParsingHelpers:
 
     @staticmethod
     def _try_modifier_only_segment(
-            links: list[LinkRecord],
+        links: list[LinkRecord],
     ) -> dict[str, object] | None:
         """Return a modifier-only dict when all links point to modifier URLs, else None.
 
@@ -267,8 +301,7 @@ class EngineParsingHelpers:
             return None
         all_link_urls = [(link.get("url") or "").lower() for link in links]
         if not all(
-            any(mod in url for mod in _MODIFIER_ONLY_URLS)
-            for url in all_link_urls
+            any(mod in url for mod in _MODIFIER_ONLY_URLS) for url in all_link_urls
         ):
             return None
 
@@ -301,9 +334,9 @@ class EngineParsingHelpers:
 
     @staticmethod
     def _resolve_first_link_type(
-            first_link: LinkRecord | None,
-            first_link_text: str,
-            special_tokens: set[str],
+        first_link: LinkRecord | None,
+        first_link_text: str,
+        special_tokens: set[str],
     ) -> tuple[str | None, LinkRecord | None, str]:
         """Determine the engine type from the first link, if it encodes one.
 
@@ -324,9 +357,9 @@ class EngineParsingHelpers:
 
     @staticmethod
     def _process_secondary_links(
-            links: list[LinkRecord],
-            type_str: str | None,
-            special_tokens: set[str],
+        links: list[LinkRecord],
+        type_str: str | None,
+        special_tokens: set[str],
     ) -> tuple[str | None, bool, bool, bool, str | None]:
         """Extract engine type and modifier flags from non-first links.
 
@@ -343,7 +376,8 @@ class EngineParsingHelpers:
 
             if type_str is None:
                 type_str = EngineParsingHelpers._extract_type_from_link(
-                    link_text, special_tokens,
+                    link_text,
+                    special_tokens,
                 )
                 if type_str is None:
                     m = _AFTER_DISPLACEMENT_TYPE_RE.search(link_text)
@@ -380,8 +414,8 @@ class EngineParsingHelpers:
 
     @staticmethod
     def _extract_type_from_link(
-            link_text: str,
-            special_tokens: set[str],
+        link_text: str,
+        special_tokens: set[str],
     ) -> str | None:
         """Return the engine type code represented by *link_text*, or ``None``.
 
@@ -407,10 +441,10 @@ class EngineParsingHelpers:
 
     @staticmethod
     def _fallback_type_from_text(
-            text: str,
-            type_str: str | None,
-            turbocharged: bool,
-            supercharged: bool,
+        text: str,
+        type_str: str | None,
+        turbocharged: bool,
+        supercharged: bool,
     ) -> tuple[str | None, bool, bool]:
         """Scan plain segment text for a type code when no link provided one.
 
@@ -437,15 +471,15 @@ class EngineParsingHelpers:
 
     @staticmethod
     def _build_engine_result(
-            model: dict[str, object] | None,
-            displacement_l: float | None,
-            type_str: str | None,
-            layout: str | None,
-            cylinders: int | None,
-            supercharged: bool,
-            turbocharged: bool,
-            gas_turbine: bool,
-            fuel_type: str | None,
+        model: dict[str, object] | None,
+        displacement_l: float | None,
+        type_str: str | None,
+        layout: str | None,
+        cylinders: int | None,
+        supercharged: bool,
+        turbocharged: bool,
+        gas_turbine: bool,
+        fuel_type: str | None,
     ) -> dict[str, object]:
         """Assemble the final engine result dict, omitting absent/False fields."""
         result: dict[str, object] = {}
@@ -498,12 +532,13 @@ class EngineParsingHelpers:
         if match:
             return parse_float_from_text(match.group(1))
         return None
+
     @staticmethod
     def extract_model_text(
-            text: str,
-            first_link_text: str,
-            displacement_l: float | None,
-            special_tokens: set[str] | None = None,
+        text: str,
+        first_link_text: str,
+        displacement_l: float | None,
+        special_tokens: set[str] | None = None,
     ) -> str:
         """
         Extract the full model text by combining the first link text with any
@@ -535,7 +570,7 @@ class EngineParsingHelpers:
         if pos < 0:
             return first_link_text
 
-        after_link = text[pos + len(first_link_text):]
+        after_link = text[pos + len(first_link_text) :]
         if not after_link.strip():
             # The entire segment text is (or is contained within) the first link text.
             # Strip any trailing displacement and engine-type tokens that were included
@@ -568,7 +603,9 @@ class EngineParsingHelpers:
         return first_link_text
 
     @staticmethod
-    def parse_layout_and_cylinders(type_str: str | None) -> tuple[str | None, int | None]:
+    def parse_layout_and_cylinders(
+        type_str: str | None,
+    ) -> tuple[str | None, int | None]:
         """
         Parse engine layout letter and cylinder count from a type string like "V8" or "L6".
 

@@ -1,7 +1,5 @@
 import re
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
@@ -13,9 +11,7 @@ from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.colin_chapman_trophy import ColinChapmanTrophyParser
 from scrapers.seasons.parsers.entries import SeasonEntriesParser
 from scrapers.seasons.parsers.entry_merger import EntryMerger
-from scrapers.seasons.parsers.free_practice import (
-    SeasonFreePracticeParser,
-)
+from scrapers.seasons.parsers.free_practice import SeasonFreePracticeParser
 from scrapers.seasons.parsers.jim_clark_trophy import JimClarkTrophyParser
 from scrapers.seasons.parsers.non_championship import SeasonNonChampionshipParser
 from scrapers.seasons.parsers.regional_championship import (
@@ -30,10 +26,10 @@ from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
 
 class SingleSeasonScraper(F1Scraper):
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            season_year: int | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        season_year: int | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -49,7 +45,8 @@ class SingleSeasonScraper(F1Scraper):
             url=self.url,
         )
         self._entries_parser = SeasonEntriesParser(
-            self._table_parser, self._entry_merger,
+            self._table_parser,
+            self._entry_merger,
         )
         self._free_practice_parser = SeasonFreePracticeParser(self._table_parser)
         self._calendar_parser = SeasonCalendarParser(self._table_parser)
@@ -64,8 +61,11 @@ class SingleSeasonScraper(F1Scraper):
         self._regional_parser = SeasonRegionalChampionshipParser(self._table_parser)
 
     def fetch_by_url(
-            self, url: str, *, season_year: int | None = None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        url: str,
+        *,
+        season_year: int | None = None,
+    ) -> list[dict[str, Any]]:
         self.url = url
         self._table_parser.update_url(url)
         if season_year is not None:
@@ -74,7 +74,7 @@ class SingleSeasonScraper(F1Scraper):
             self.season_year = self._extract_year_from_url(url)
         return super().fetch()
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         # Parse calendar first, as cancelled_rounds may need it for comparison
         calendar_data = self._calendar_parser.parse(soup, self.season_year)
 
@@ -84,27 +84,34 @@ class SingleSeasonScraper(F1Scraper):
                 "free_practice_drivers": self._free_practice_parser.parse(soup),
                 "calendar": calendar_data,
                 "cancelled_rounds": self._cancelled_rounds_parser.parse(
-                    soup, self.season_year, calendar_data,
+                    soup,
+                    self.season_year,
+                    calendar_data,
                 ),
                 "testing_venues_and_dates": self._testing_venues_parser.parse(
-                    soup, self.season_year,
+                    soup,
+                    self.season_year,
                 ),
                 "results": self._results_parser.parse(soup),
                 "non_championship_races": self._non_championship_parser.parse(
-                    soup, self.season_year,
+                    soup,
+                    self.season_year,
                 ),
                 "scoring_system": self._scoring_system_parser.parse(soup),
                 "drivers_standings": self._standings_parser.parse_drivers(
-                    soup, self.season_year,
+                    soup,
+                    self.season_year,
                 ),
                 "constructors_standings": self._standings_parser.parse_constructors(
                     soup,
                 ),
                 "jim_clark_trophy": self._jim_clark_trophy_parser.parse(
-                    soup, self.season_year,
+                    soup,
+                    self.season_year,
                 ),
                 "colin_chapman_trophy": self._colin_chapman_trophy_parser.parse(
-                    soup, self.season_year,
+                    soup,
+                    self.season_year,
                 ),
                 "south_african_formula_one_championship": self._regional_parser.parse(
                     soup,
@@ -116,7 +123,7 @@ class SingleSeasonScraper(F1Scraper):
                     section_ids=["British_Formula_One_Championship"],
                     season_year=self.season_year,
                 ),
-            }
+            },
         ]
 
     @staticmethod

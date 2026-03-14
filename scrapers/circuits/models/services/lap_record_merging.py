@@ -62,10 +62,10 @@ def normalize_lap_record(record: dict[str, Any]) -> dict[str, Any]:
     record.pop("car", None)
 
     series_value = (
-            record.get("series")
-            or record.get("category")
-            or record.get("class")
-            or record.get("class_")
+        record.get("series")
+        or record.get("category")
+        or record.get("class")
+        or record.get("class_")
     )
     series = normalize_entity_value(series_value)
     if series is not None:
@@ -191,8 +191,8 @@ def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
             iso_cur = best_date.iso or ""
         else:
             iso_cur = (
-                          best_date.get("iso") if isinstance(best_date, dict) else ""
-                      ) or ""
+                best_date.get("iso") if isinstance(best_date, dict) else ""
+            ) or ""
 
         if isinstance(d, NormalizedDate):
             iso_new = d.iso or ""
@@ -207,10 +207,10 @@ def select_best_date_year(records: list[dict[str, Any]]) -> tuple[Any, Any]:
 def series_candidate(record: dict[str, Any]) -> dict[str, Any] | None:
     """Extrahuje kandydata serii/kategorii z rekordu."""
     field_value = (
-            record.get("series")
-            or record.get("category")
-            or record.get("class")
-            or record.get("class_")
+        record.get("series")
+        or record.get("category")
+        or record.get("class")
+        or record.get("class_")
     )
     if field_value is None:
         return None
@@ -375,7 +375,7 @@ def merge_record_group(records: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def _stage_a_partition_by_record_key(
-        records: list[dict[str, Any]],
+    records: list[dict[str, Any]],
 ) -> tuple[dict[tuple, list[dict[str, Any]]], list[dict[str, Any]]]:
     """
     Etap A: Partycjonowanie rekordów po record_key (driver+vehicle+year+time).
@@ -395,7 +395,8 @@ def _stage_a_partition_by_record_key(
 
 
 def _stage_b_merge_by_core_key(
-        merged_main: list[dict[str, Any]], leftovers: list[dict[str, Any]],
+    merged_main: list[dict[str, Any]],
+    leftovers: list[dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """
     Etap B: Merge po core_key (driver+vehicle+year) – łączy rekordy nawet bez time.
@@ -425,7 +426,8 @@ def _stage_b_merge_by_core_key(
             for idx in cand_ids:
                 tgt_t = parse_lap_record_time_from_record(merged_main[idx])
                 if tgt_t is not None and round(float(tgt_t), 6) == round(
-                        float(rec_t), 6,
+                    float(rec_t),
+                    6,
                 ):
                     chosen_idx = idx
                     break
@@ -439,7 +441,8 @@ def _stage_b_merge_by_core_key(
 
 
 def _stage_c_merge_by_driver_time(
-        merged_main: list[dict[str, Any]], still_left: list[dict[str, Any]],
+    merged_main: list[dict[str, Any]],
+    still_left: list[dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """
     Etap C: Merge po (driver+time) z prefixem vehicle – dla uciętych vehicle.
@@ -482,7 +485,8 @@ def _stage_c_merge_by_driver_time(
 
 
 def _stage_d_fallback_merge_by_time_and_driver(
-        merged_main: list[dict[str, Any]], final_left: list[dict[str, Any]],
+    merged_main: list[dict[str, Any]],
+    final_left: list[dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """
     Etap D: Fallback merge po (time) z walidacją driver + subset – ostatnia szansa.
@@ -512,7 +516,8 @@ def _stage_d_fallback_merge_by_time_and_driver(
             target = merged_main[idx]
 
             if match_driver_loose(
-                    rec.get("driver"), target.get("driver"),
+                rec.get("driver"),
+                target.get("driver"),
             ) and is_record_subset(rec, target):
                 merged_main[idx] = merge_two_records(target, rec)
                 matched = True
@@ -546,7 +551,8 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
 
     # Etap D: Fallback merge po (time) z walidacją
     merged_main, last_left = _stage_d_fallback_merge_by_time_and_driver(
-        merged_main, final_left,
+        merged_main,
+        final_left,
     )
 
     return merged_main + last_left

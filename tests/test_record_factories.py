@@ -11,8 +11,8 @@ def test_build_season_record_adds_url() -> None:
     record = build_season_record({"year": "2021"})
     assert record["year"] == 2021
     assert (
-            record["url"]
-            == "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+        record["url"]
+        == "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
     )
 
 
@@ -112,10 +112,10 @@ def test_build_season_summary_record_normalizes_links() -> None:
             "races": "17",
             "countries": "10",
             "drivers_champion_team": [
-                {"text": "Driver", "url": "https://example.com/driver"}
+                {"text": "Driver", "url": "https://example.com/driver"},
             ],
             "constructors_champion": [
-                {"text": "Team", "url": "https://example.com/team"}
+                {"text": "Team", "url": "https://example.com/team"},
             ],
             "winners": "9",
         },

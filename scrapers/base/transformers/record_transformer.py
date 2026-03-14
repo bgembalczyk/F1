@@ -1,18 +1,17 @@
 from abc import ABC
 from abc import abstractmethod
 from typing import Any
-from typing import List
 
 from scrapers.base.normalization import EmptyValuePolicy
 from scrapers.base.normalization import normalize_record_values
-from validation.records import ExportRecord
+from validation.validator_base import ExportRecord
 
 
 class RecordTransformer(ABC):
     def __init__(
-            self,
-            *,
-            empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
+        self,
+        *,
+        empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
     ) -> None:
         self.empty_value_policy = empty_value_policy
 
@@ -26,5 +25,5 @@ class RecordTransformer(ABC):
         return normalized
 
     @abstractmethod
-    def transform(self, records: List[ExportRecord]) -> List[ExportRecord]:
+    def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
         raise NotImplementedError

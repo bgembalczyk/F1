@@ -1,16 +1,14 @@
+from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
-from typing import List
-from typing import Optional
-from typing import Sequence
 from typing import TYPE_CHECKING
 
 from scrapers.base.normalization import NormalizationRule
 from scrapers.base.normalization import RecordNormalizer
-from validation.records import ExportRecord
+from validation.validator_base import ExportRecord
 
 if TYPE_CHECKING:
     from scrapers.base.export.exporters import DataExporter
@@ -18,15 +16,15 @@ if TYPE_CHECKING:
 
 @dataclass(frozen=True)
 class ScrapeResult:
-    data: List[ExportRecord]
-    source_url: Optional[str]
+    data: list[ExportRecord]
+    source_url: str | None
     timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
 
     def _with_normalized_data(
-            self,
-            *,
-            normalize_keys: bool,
-            normalization_rules: Sequence[NormalizationRule] | None,
+        self,
+        *,
+        normalize_keys: bool,
+        normalization_rules: Sequence[NormalizationRule] | None,
     ) -> "ScrapeResult":
         normalizer = RecordNormalizer(
             normalize_keys=normalize_keys,
@@ -44,14 +42,14 @@ class ScrapeResult:
         )
 
     def to_json(
-            self,
-            path: str | Path,
-            *,
-            exporter: "DataExporter | None" = None,
-            indent: int = 2,
-            normalize_keys: bool = False,
-            normalization_rules: Sequence[NormalizationRule] | None = None,
-            include_metadata: bool = False,
+        self,
+        path: str | Path,
+        *,
+        exporter: "DataExporter | None" = None,
+        indent: int = 2,
+        normalize_keys: bool = False,
+        normalization_rules: Sequence[NormalizationRule] | None = None,
+        include_metadata: bool = False,
     ) -> None:
         normalized = self._with_normalized_data(
             normalize_keys=normalize_keys,
@@ -66,20 +64,18 @@ class ScrapeResult:
         )
 
     def to_csv(
-            self,
-            path: str | Path,
-            *,
-            exporter: "DataExporter | None" = None,
-            fieldnames: Sequence[str] | None = None,
-            fieldnames_strategy: str = "union",
-            normalize_keys: bool = False,
-            normalization_rules: Sequence[NormalizationRule] | None = None,
-            include_metadata: bool = False,
+        self,
+        path: str | Path,
+        *,
+        exporter: "DataExporter | None" = None,
+        fieldnames: Sequence[str] | None = None,
+        fieldnames_strategy: str = "union",
+        normalize_keys: bool = False,
+        normalization_rules: Sequence[NormalizationRule] | None = None,
+        include_metadata: bool = False,
     ) -> None:
-        from scrapers.base.export.export_helpers import (
-            fieldnames_from_first_row,
-            fieldnames_from_union,
-        )
+        from scrapers.base.export.export_helpers import fieldnames_from_first_row
+        from scrapers.base.export.export_helpers import fieldnames_from_union
         from scrapers.base.format.formatter_helpers import extract_data
 
         normalized = self._with_normalized_data(
@@ -102,14 +98,17 @@ class ScrapeResult:
 
         exporter = self._resolve_exporter(exporter)
         exporter.to_csv(
-            normalized, path, fieldnames=fieldnames, include_metadata=include_metadata,
+            normalized,
+            path,
+            fieldnames=fieldnames,
+            include_metadata=include_metadata,
         )
 
     def to_dataframe(
-            self,
-            *,
-            normalize_keys: bool = False,
-            normalization_rules: Sequence[NormalizationRule] | None = None,
+        self,
+        *,
+        normalize_keys: bool = False,
+        normalization_rules: Sequence[NormalizationRule] | None = None,
     ):
         from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
 

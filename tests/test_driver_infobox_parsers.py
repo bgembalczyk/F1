@@ -10,19 +10,20 @@ from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
 
 
-@pytest.fixture
+@pytest.fixture()
 def link_extractor():
     return InfoboxLinkExtractor(
-        include_urls=True, wikipedia_base="https://en.wikipedia.org",
+        include_urls=True,
+        wikipedia_base="https://en.wikipedia.org",
     )
 
 
-@pytest.fixture
+@pytest.fixture()
 def cell_parser(link_extractor):
     return InfoboxCellParser(include_urls=True, link_extractor=link_extractor)
 
 
-@pytest.fixture
+@pytest.fixture()
 def general_parser(link_extractor):
     return InfoboxGeneralParser(
         include_urls=True,
@@ -32,7 +33,7 @@ def general_parser(link_extractor):
     )
 
 
-@pytest.fixture
+@pytest.fixture()
 def titles_parser(link_extractor):
     return InfoboxTitlesParser(link_extractor)
 
@@ -80,8 +81,8 @@ def test_best_finish_multiple_seasons(cell_parser):
     """Test that best finish extracts multiple seasons as a list."""
     html = """
     <td class="infobox-data">
-        6th (<a href="/wiki/2021_IndyCar_Series" title="2021 IndyCar Series">2021</a>, 
-        <a href="/wiki/2022_IndyCar_Series" title="2022 IndyCar Series">2022</a>, 
+        6th (<a href="/wiki/2021_IndyCar_Series" title="2021 IndyCar Series">2021</a>,
+        <a href="/wiki/2022_IndyCar_Series" title="2022 IndyCar Series">2022</a>,
         <a href="/wiki/2023_IndyCar_Series" title="2023 IndyCar Series">2023</a>)
     </td>
     """
@@ -100,8 +101,8 @@ def test_race_event_parsing(cell_parser):
     """Test that race events are parsed as a list of links."""
     html = """
     <td class="infobox-data">
-        <a href="/wiki/2019_IndyCar_Series" title="2019 IndyCar Series">2019</a> 
-        <a href="/wiki/2019_Firestone_Grand_Prix_of_St._Petersburg" title="2019 Firestone Grand Prix of St. Petersburg">Grand Prix of St. Petersburg</a> 
+        <a href="/wiki/2019_IndyCar_Series" title="2019 IndyCar Series">2019</a>
+        <a href="/wiki/2019_Firestone_Grand_Prix_of_St._Petersburg" title="2019 Firestone Grand Prix of St. Petersburg">Grand Prix of St. Petersburg</a>
         (<a href="/wiki/Grand_Prix_of_St._Petersburg" title="Grand Prix of St. Petersburg">St. Petersburg</a>)
     </td>
     """
@@ -155,8 +156,8 @@ def test_class_wins_parsing(cell_parser):
     html = """
     <td class="infobox-data">
         6 <small>
-            (<a href="/wiki/1969_24_Hours_of_Le_Mans" title="1969 24 Hours of Le Mans">1969</a>, 
-            <a href="/wiki/1975_24_Hours_of_Le_Mans" title="1975 24 Hours of Le Mans">1975</a>, 
+            (<a href="/wiki/1969_24_Hours_of_Le_Mans" title="1969 24 Hours of Le Mans">1969</a>,
+            <a href="/wiki/1975_24_Hours_of_Le_Mans" title="1975 24 Hours of Le Mans">1975</a>,
             <a href="/wiki/1976_24_Hours_of_Le_Mans" title="1976 24 Hours of Le Mans">1976</a>)
         </small>
     </td>
@@ -218,7 +219,7 @@ def test_year_range_in_single_link_not_expanded(link_extractor):
     not a range of years to expand.
     """
     html = """
-    <li><a href="/wiki/2018%E2%80%9319_MRF_Challenge_Formula_2000_Championship" 
+    <li><a href="/wiki/2018%E2%80%9319_MRF_Challenge_Formula_2000_Championship"
            title="2018–19 MRF Challenge Formula 2000 Championship">2018–2019</a></li>
     """
     cell = BeautifulSoup(html, "html.parser")
@@ -228,8 +229,8 @@ def test_year_range_in_single_link_not_expanded(link_extractor):
     assert len(result) == 1
     assert result[0]["text"] == "2018-2019"
     assert (
-            result[0]["url"]
-            == "https://en.wikipedia.org/wiki/2018%E2%80%9319_MRF_Challenge_Formula_2000_Championship"
+        result[0]["url"]
+        == "https://en.wikipedia.org/wiki/2018%E2%80%9319_MRF_Challenge_Formula_2000_Championship"
     )
 
     # Should NOT have "year" field (which would indicate expansion)
@@ -270,7 +271,7 @@ def test_championships_simple_links(cell_parser):
     """Test that championships treats parentheses content as simple list of links."""
     html = """
     <td class="infobox-data">
-        1 (<a href="/wiki/2021%E2%80%9322_Formula_E_World_Championship" 
+        1 (<a href="/wiki/2021%E2%80%9322_Formula_E_World_Championship"
              title="2021–22 Formula E World Championship">2021–22</a>)
     </td>
     """
@@ -336,9 +337,9 @@ def test_racing_licence_with_years(cell_parser):
     """Test racing licence parsing with year ranges."""
     html = """
     <td class="infobox-data">
-        <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a> 
+        <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a>
         <span style="font-size: 85%;">(until 2019)</span><br>
-        <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a> 
+        <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a>
         <span style="font-size: 85%;">(2020–)</span>
     </td>
     """
@@ -407,9 +408,9 @@ def test_parse_racing_licence_with_beautiful_soup(cell_parser):
     """
     html = """
     <td class="infobox-data">
-        <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a> 
+        <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a>
         <span style="font-size: 85%;">(until 2019)</span><br>
-        <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a> 
+        <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a>
         <span style="font-size: 85%;">(2020–)</span>
     </td>
     """
@@ -477,8 +478,8 @@ def test_died_with_deathplace_div(general_parser):
     # First element should be the link
     assert result["place"][0]["text"] == "Albuquerque, New Mexico"
     assert (
-            result["place"][0]["url"]
-            == "https://en.wikipedia.org/wiki/Albuquerque,_New_Mexico"
+        result["place"][0]["url"]
+        == "https://en.wikipedia.org/wiki/Albuquerque,_New_Mexico"
     )
 
 
@@ -496,27 +497,27 @@ def test_best_finish_with_multiple_classes(cell_parser):
     # First season with LMP1 class
     assert result["seasons"][0]["text"] == "2019-20"
     assert (
-            result["seasons"][0]["url"]
-            == "https://en.wikipedia.org/wiki/2019%E2%80%9320_FIA_World_Endurance_Championship"
+        result["seasons"][0]["url"]
+        == "https://en.wikipedia.org/wiki/2019%E2%80%9320_FIA_World_Endurance_Championship"
     )
     assert "class" in result["seasons"][0]
     assert result["seasons"][0]["class"]["text"] == "LMP1"
     assert (
-            result["seasons"][0]["class"]["url"]
-            == "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
+        result["seasons"][0]["class"]["url"]
+        == "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
     )
 
     # Second season with LMH class
     assert result["seasons"][1]["text"] == "2021"
     assert (
-            result["seasons"][1]["url"]
-            == "https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship"
+        result["seasons"][1]["url"]
+        == "https://en.wikipedia.org/wiki/2021_FIA_World_Endurance_Championship"
     )
     assert "class" in result["seasons"][1]
     assert result["seasons"][1]["class"]["text"] == "LMH"
     assert (
-            result["seasons"][1]["class"]["url"]
-            == "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+        result["seasons"][1]["class"]["url"]
+        == "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
     )
 
 
@@ -541,16 +542,16 @@ def test_previous_series_with_year_urls(link_extractor, titles_parser):
     assert len(result) == 1
     assert result[0]["title"]["text"] == "Asian Formula Renault"
     assert (
-            result[0]["title"]["url"]
-            == "https://en.wikipedia.org/wiki/Asian_Formula_Renault_Challenge"
+        result[0]["title"]["url"]
+        == "https://en.wikipedia.org/wiki/Asian_Formula_Renault_Challenge"
     )
 
     # Year should have URL from header
     assert len(result[0]["years"]) == 1
     assert result[0]["years"][0]["year"] == 2004
     assert (
-            result[0]["years"][0]["url"]
-            == "https://en.wikipedia.org/wiki/2004_Formula_Renault_seasons#2004_Asian_Formula_Renault_Challenge_season"
+        result[0]["years"][0]["url"]
+        == "https://en.wikipedia.org/wiki/2004_Formula_Renault_seasons#2004_Asian_Formula_Renault_Challenge_season"
     )
 
 
@@ -566,6 +567,6 @@ def test_racing_licence_with_images(cell_parser):
     assert len(result) >= 1
     assert result[0]["licence"]["text"] == "FIA Platinum"
     assert (
-            result[0]["licence"]["url"]
-            == "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
+        result[0]["licence"]["url"]
+        == "https://en.wikipedia.org/wiki/FIA_Platinum_Categorisation"
     )

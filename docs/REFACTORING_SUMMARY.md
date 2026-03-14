@@ -46,7 +46,7 @@ class IndianapolisOnlyListScraper(F1ListScraper):
 
 **Solution:** Created `BaseConstructorListScraper` with helper methods:
 - `build_common_stats_columns()` - Common statistics columns
-- `build_common_metadata_columns()` - Common metadata columns  
+- `build_common_metadata_columns()` - Common metadata columns
 - `build_licensed_in_column()` - Licensed in column definition
 
 **Benefits:**

@@ -1,7 +1,5 @@
 import re
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import Tag
 
@@ -17,7 +15,7 @@ class InfoboxLinkExtractor:
         self._include_urls = include_urls
         self._wikipedia_base = wikipedia_base
 
-    def extract_links(self, cell: Tag) -> List[LinkRecord]:
+    def extract_links(self, cell: Tag) -> list[LinkRecord]:
         if not self._include_urls:
             return []
         links = normalize_links(
@@ -33,7 +31,7 @@ class InfoboxLinkExtractor:
         links = self.extract_links(cell)
         return links[0] if links else None
 
-    def extract_title_links(self, cell: Tag) -> List[LinkRecord]:
+    def extract_title_links(self, cell: Tag) -> list[LinkRecord]:
         links = self.extract_links(cell)
         if links:
             return links
@@ -41,7 +39,7 @@ class InfoboxLinkExtractor:
         parts = [part.strip() for part in text.split("\n") if part.strip()]
         return [{"text": part, "url": None} for part in parts]
 
-    def extract_year_links(self, cell: Tag) -> List[LinkRecord]:
+    def extract_year_links(self, cell: Tag) -> list[LinkRecord]:
         links = [link for link in self.extract_links(cell) if self.is_year_link(link)]
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         years = re.findall(r"\b\d{4}(?:[-–]\d{4})?\b", text)
@@ -50,7 +48,7 @@ class InfoboxLinkExtractor:
             return links
 
         link_lookup = {link.get("text"): link for link in links if link.get("text")}
-        results: List[LinkRecord] = []
+        results: list[LinkRecord] = []
         for year in years:
             link = link_lookup.get(year)
             if link:
@@ -59,7 +57,7 @@ class InfoboxLinkExtractor:
                 results.append({"text": year, "url": None})
         return results
 
-    def extract_year_range_links(self, cell: Tag) -> List[Dict[str, Any]]:
+    def extract_year_range_links(self, cell: Tag) -> list[dict[str, Any]]:
         """Extract year ranges with separate from/to links.
 
         Handles cases like:
@@ -73,7 +71,7 @@ class InfoboxLinkExtractor:
         # Build year -> url mapping
         year_to_url = YearExtractor.build_year_to_url_map(links)
 
-        results: List[Dict[str, Any]] = []
+        results: list[dict[str, Any]] = []
 
         # Track which years have been processed as part of ranges
         processed_years = set()
@@ -123,7 +121,7 @@ class InfoboxLinkExtractor:
             return False
         return True
 
-    def extract_year_list_with_links(self, cell: Tag) -> List[Dict[str, Any]]:
+    def extract_year_list_with_links(self, cell: Tag) -> list[dict[str, Any]]:
         """Extract years as a list of individual years with links.
 
         Similar to parse_active_years, but returns list in format:
@@ -177,7 +175,10 @@ class InfoboxLinkExtractor:
                     # Extract and expand the range
                     years_in_li = YearExtractor.extract_years_from_text(li_text)
                     # Interpolate URLs for the range if possible
-                    li_year_to_url = YearExtractor.interpolate_urls(years_in_li, year_to_url)
+                    li_year_to_url = YearExtractor.interpolate_urls(
+                        years_in_li,
+                        year_to_url,
+                    )
                     # Add years in sorted order (within this range)
                     for year in sorted(years_in_li):
                         result.append({"year": year, "url": li_year_to_url.get(year)})
@@ -209,7 +210,7 @@ class InfoboxLinkExtractor:
         return result
 
     @staticmethod
-    def find_link_by_text(text: str, links: List[LinkRecord]) -> LinkRecord | None:
+    def find_link_by_text(text: str, links: list[LinkRecord]) -> LinkRecord | None:
         wanted = text.strip().lower()
         for link in links:
             link_text = (link.get("text") or "").strip().lower()

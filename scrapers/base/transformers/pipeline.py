@@ -1,22 +1,21 @@
-from typing import List
-from typing import Sequence
+from collections.abc import Sequence
 
 from scrapers.base.logging import get_logger
 from scrapers.base.transformers.record_transformer import RecordTransformer
-from validation.records import ExportRecord
+from validation.validator_base import ExportRecord
 
 
 class TransformersPipeline:
     def __init__(
-            self,
-            transformers: Sequence[RecordTransformer],
-            *,
-            logger=None,
+        self,
+        transformers: Sequence[RecordTransformer],
+        *,
+        logger=None,
     ) -> None:
         self.transformers = list(transformers)
         self.logger = logger or get_logger(self.__class__.__name__)
 
-    def apply(self, records: List[ExportRecord]) -> List[ExportRecord]:
+    def apply(self, records: list[ExportRecord]) -> list[ExportRecord]:
         transformed = list(records)
         for transformer in self.transformers:
             before_count = len(transformed)

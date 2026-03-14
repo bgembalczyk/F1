@@ -2,8 +2,11 @@
 
 import json
 import time
-from abc import ABC, abstractmethod
-from typing import Any, Callable, Dict, Optional, cast
+from abc import ABC
+from abc import abstractmethod
+from collections.abc import Callable
+from typing import Any
+from typing import cast
 
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.config import HttpClientConfig
@@ -22,17 +25,17 @@ from infrastructure.http_client.policies.retry import RetryPolicy
 class BaseHttpClient(ABC):
     """Wspólna klasa bazowa dla klientów HTTP."""
 
-    DEFAULT_HEADERS: Dict[str, str] = {
+    DEFAULT_HEADERS: dict[str, str] = {
         "User-Agent": "F1Scrapers/1.0 contact: bartosz.gembalczyk.stud@pw.edu.pl ",
         "Accept-Language": "en-US,en;q=0.9",
     }
 
     def __init__(
-            self,
-            *,
-            session: Any,
-            config: HttpClientConfig,
-            request_exception_cls: type[Exception],
+        self,
+        *,
+        session: Any,
+        config: HttpClientConfig,
+        request_exception_cls: type[Exception],
     ) -> None:
         """
         Inicjalizacja klienta HTTP.
@@ -86,12 +89,12 @@ class BaseHttpClient(ABC):
             time.sleep(delay)
 
     def _request_with_retries(
-            self,
-            url: str,
-            *,
-            headers: Optional[Dict[str, str]],
-            timeout: Optional[int],
-            request_func: Callable[..., Any],
+        self,
+        url: str,
+        *,
+        headers: dict[str, str] | None,
+        timeout: int | None,
+        request_func: Callable[..., Any],
     ):
         attempts = self.retry_policy.max_retries + 1
 
@@ -111,21 +114,21 @@ class BaseHttpClient(ABC):
                 )
             except self.request_exception_cls as exc:
                 if (
-                        attempt >= self.retry_policy.max_retries
-                        or not self.retry_policy.should_retry(
-                    response=None,
-                    exception=exc,
-                    attempt=attempt,
-                )
+                    attempt >= self.retry_policy.max_retries
+                    or not self.retry_policy.should_retry(
+                        response=None,
+                        exception=exc,
+                        attempt=attempt,
+                    )
                 ):
                     raise
                 self._backoff_sleep(attempt)
                 continue
 
             if self.retry_policy.should_retry(
-                    response=response,
-                    exception=None,
-                    attempt=attempt,
+                response=response,
+                exception=None,
+                attempt=attempt,
             ):
                 if attempt >= self.retry_policy.max_retries:
                     response.raise_for_status()
@@ -139,21 +142,21 @@ class BaseHttpClient(ABC):
 
     @abstractmethod
     def get(
-            self,
-            url: str,
-            *,
-            headers: Optional[Dict[str, str]] = None,
-            timeout: Optional[int] = None,
+        self,
+        url: str,
+        *,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> HttpResponseProtocol:
         """Pobiera URL i zwraca response."""
         ...
 
     def get_text(
-            self,
-            url: str,
-            *,
-            headers: Optional[Dict[str, str]] = None,
-            timeout: Optional[int] = None,
+        self,
+        url: str,
+        *,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> str:
         """
         Zwraca response.text z obsługą cache.
@@ -174,11 +177,11 @@ class BaseHttpClient(ABC):
         return text
 
     def get_json(
-            self,
-            url: str,
-            *,
-            headers: Optional[Dict[str, str]] = None,
-            timeout: Optional[int] = None,
+        self,
+        url: str,
+        *,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> Any:
         """
         Parsuje JSON z odpowiedzi.

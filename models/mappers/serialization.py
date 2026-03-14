@@ -1,5 +1,7 @@
-from dataclasses import asdict, is_dataclass
-from typing import Any, Mapping
+from collections.abc import Mapping
+from dataclasses import asdict
+from dataclasses import is_dataclass
+from typing import Any
 
 from models.records.circuit_base import CircuitBaseRecord
 from models.records.circuit_complete import CircuitCompleteRecord
@@ -44,21 +46,21 @@ def to_dict(value: Any) -> dict[str, Any]:
 
 
 def to_circuit_record_dict(
-        value: CircuitBaseRecord
-               | CircuitCompleteRecord
-               | CircuitDetailsRecord
-               | Mapping[str, Any],
+    value: CircuitBaseRecord
+    | CircuitCompleteRecord
+    | CircuitDetailsRecord
+    | Mapping[str, Any],
 ) -> dict[str, Any]:
     return to_dict(value)
 
 
 def to_circuit_record_dict_list(
-        values: list[
-            CircuitBaseRecord
-            | CircuitCompleteRecord
-            | CircuitDetailsRecord
-            | Mapping[str, Any]
-            ],
+    values: list[
+        CircuitBaseRecord
+        | CircuitCompleteRecord
+        | CircuitDetailsRecord
+        | Mapping[str, Any]
+    ],
 ) -> list[dict[str, Any]]:
     return [to_circuit_record_dict(value) for value in values]
 

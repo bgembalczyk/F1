@@ -10,11 +10,11 @@ class HtmlFetcher(SourceAdapter):
     """Warstwa pobierania HTML z opcjonalnym cache."""
 
     def __init__(
-            self,
-            *,
-            policy: HttpPolicy,
-            http_client: HttpClientProtocol,
-            cache_adapter: CacheBackend | None = None,
+        self,
+        *,
+        policy: HttpPolicy,
+        http_client: HttpClientProtocol,
+        cache_adapter: CacheBackend | None = None,
     ) -> None:
         self.policy = policy
         self.http_client = http_client

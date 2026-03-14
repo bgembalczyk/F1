@@ -1,7 +1,6 @@
 """Helper class for parsing year-related information from infobox cells."""
 
 import re
-from typing import Dict
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
@@ -12,7 +11,7 @@ class YearParser:
     """Handles parsing of years and year ranges."""
 
     @staticmethod
-    def parse_year_range(text: str) -> Dict[str, int | None]:
+    def parse_year_range(text: str) -> dict[str, int | None]:
         """Parse year range from text.
 
         Handles cases like:
@@ -26,7 +25,7 @@ class YearParser:
 
             # Check for "present" keyword
             has_present = (
-                    re.search(r"\bpresent\b", normalized, re.IGNORECASE) is not None
+                re.search(r"\bpresent\b", normalized, re.IGNORECASE) is not None
             )
 
             # Extract all 4-digit years and 2-digit years
@@ -62,7 +61,7 @@ class YearParser:
             ) from exc
 
     @staticmethod
-    def detect_url_pattern(year_to_link: Dict[int, str | None]) -> str | None:
+    def detect_url_pattern(year_to_link: dict[int, str | None]) -> str | None:
         """Detect a predictable URL pattern from available year links.
 
         Returns a pattern string with {year} placeholder if pattern is predictable.
@@ -70,7 +69,7 @@ class YearParser:
         return YearExtractor.detect_url_pattern(year_to_link)
 
     @staticmethod
-    def parse_licence_years(year_text: str) -> Dict[str, int | None]:
+    def parse_licence_years(year_text: str) -> dict[str, int | None]:
         """Parse year information from licence year text.
 
         Handles formats like:
@@ -78,7 +77,7 @@ class YearParser:
         - "(2020–)" -> {start: 2020, end: None}
         - "(2015-2018)" -> {start: 2015, end: 2018}
         """
-        years: Dict[str, int | None] = {"start": None, "end": None}
+        years: dict[str, int | None] = {"start": None, "end": None}
 
         # Remove parentheses if present
         year_text = year_text.strip("()")

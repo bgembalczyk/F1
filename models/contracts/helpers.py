@@ -1,5 +1,5 @@
+from collections.abc import Mapping
 from typing import Any
-from typing import Mapping
 
 from models.contracts.base import DataContract
 from models.contracts.circuit import CircuitContract
@@ -15,10 +15,10 @@ def is_points_record(record: Mapping[str, Any]) -> bool:
 
 
 def map_record_to_contract(
-        record: Mapping[str, Any],
+    record: Mapping[str, Any],
 ) -> DataContract | Mapping[str, Any]:
     if "driver" in record and (
-            "is_active" in record or "drivers_championships" in record
+        "is_active" in record or "drivers_championships" in record
     ):
         return DriverContract.from_record(record)
     if "circuit" in record and "circuit_status" in record:

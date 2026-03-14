@@ -1,14 +1,9 @@
 import re
 from typing import Any
-from typing import Dict
 
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.sponsorship_liveries.parsers.grand_prix_scope import (
-    GrandPrixScopeParser,
-)
-from scrapers.sponsorship_liveries.parsers.record_text import (
-    SponsorshipRecordText,
-)
+from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
+from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 
 
 class ColourScopeHandler:
@@ -28,7 +23,9 @@ class ColourScopeHandler:
                 continue
             parts = ColourScopeHandler._depth_aware_split_on_and_or(item)
             if len(parts) > 1:
-                expanded.extend([clean_wiki_text(p) for p in parts if clean_wiki_text(p)])
+                expanded.extend(
+                    [clean_wiki_text(p) for p in parts if clean_wiki_text(p)],
+                )
             else:
                 expanded.append(item)
         return expanded
@@ -67,7 +64,7 @@ class ColourScopeHandler:
             elif depth == 0:
                 matched = False
                 for kw in (" and ", " or "):
-                    if text_lower[i: i + len(kw)] == kw:
+                    if text_lower[i : i + len(kw)] == kw:
                         part = "".join(current).strip()
                         if part:
                             parts.append(part)
@@ -147,9 +144,13 @@ class ColourScopeHandler:
 
     @staticmethod
     def colour_grand_prix_scope(
-            colour: str,
+        colour: str,
     ) -> tuple[dict[str, Any] | None, str]:
-        match = re.search(r"\(([^)]*grands?\s+prix[^)]*)\)", colour, flags=re.IGNORECASE)
+        match = re.search(
+            r"\(([^)]*grands?\s+prix[^)]*)\)",
+            colour,
+            flags=re.IGNORECASE,
+        )
         cleaned_colour = SponsorshipRecordText.strip_year_suffix(colour)
         if not match:
             return None, cleaned_colour
@@ -158,7 +159,9 @@ class ColourScopeHandler:
         scope_text = re.sub(r"\b\d{3}0s\b", "", scope_text)
         scope_text = clean_wiki_text(scope_text)
         if not scope_text or not re.search(
-                r"grands?\s+prix", scope_text, flags=re.IGNORECASE,
+            r"grands?\s+prix",
+            scope_text,
+            flags=re.IGNORECASE,
         ):
             return None, cleaned_colour
         names = GrandPrixScopeParser.parse_grand_prix_names(scope_text)
@@ -179,7 +182,7 @@ class ColourScopeHandler:
         return scope, cleaned_colour
 
     @staticmethod
-    def colour_is_replacement(record: Dict[str, Any], colour: str) -> bool:
+    def colour_is_replacement(record: dict[str, Any], colour: str) -> bool:
         colour_lower = colour.lower()
         pattern = re.compile(
             rf"livery\s+is\s+colou?red\s+{re.escape(colour_lower)}",
@@ -194,7 +197,8 @@ class ColourScopeHandler:
 
     @staticmethod
     def record_has_year_specific_colours(
-            record: Dict[str, Any], colour_keys: set[str],
+        record: dict[str, Any],
+        colour_keys: set[str],
     ) -> bool:
         for key in colour_keys:
             colours = record.get(key)
@@ -202,7 +206,8 @@ class ColourScopeHandler:
                 continue
             for item in colours:
                 if isinstance(
-                        item, str,
+                    item,
+                    str,
                 ) and SponsorshipRecordText.extract_years_from_text(item):
                     return True
         return False
@@ -223,7 +228,8 @@ class ColourScopeHandler:
 
     @classmethod
     def extract_possessive_colour_groups(
-            cls, colours: Any,
+        cls,
+        colours: Any,
     ) -> list[tuple[str | None, list[str]]]:
         """Parse *colours*, splitting possessive driver groups from plain items.
 

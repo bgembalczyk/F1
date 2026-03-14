@@ -1,9 +1,5 @@
 import logging
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
-from typing import Tuple
 
 from bs4 import BeautifulSoup
 
@@ -30,10 +26,10 @@ logger = logging.getLogger(__name__)
 class RedFlaggedRacesBaseScraper(F1TableScraper):
     """
     Base scraper for red-flagged races tables.
-    
+
     Provides common schema columns and fallback section ID logic
     for scraping red-flagged race data from Wikipedia.
-    
+
     Subclasses should define their own CONFIG with specific:
     - url (typically the same for all red-flagged scrapers)
     - section_id (primary section to search for)
@@ -43,22 +39,26 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
     """
 
     # Subclasses can override to provide fallback section IDs
-    alternative_section_ids: List[str] = []
+    alternative_section_ids: list[str] = []
 
     @staticmethod
     def build_common_red_flag_columns(race_name_header: str = "Grand Prix"):
         """
         Build common column definitions for red-flagged race tables.
-        
+
         Args:
             race_name_header: Header name for the race (e.g., "Grand Prix" or "Event")
-        
+
         Returns:
             List of column definitions common to all red-flagged race tables.
         """
         return [
             column("Year", "season", IntColumn()),
-            column(race_name_header, race_name_header.lower().replace(" ", "_"), None),  # Will be set by caller
+            column(
+                race_name_header,
+                race_name_header.lower().replace(" ", "_"),
+                None,
+            ),  # Will be set by caller
             column("Lap", "lap", IntColumn()),
             column("R", "restart_status", RestartStatusColumn()),
             column("Winner", "winner", DriverColumn()),
@@ -77,10 +77,10 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         ]
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            config=None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config=None,
     ) -> None:
         options = options or ScraperOptions()
         options.transformers = list(options.transformers or []) + [
@@ -88,7 +88,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         ]
         super().__init__(options=options, config=config)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         table, parser = self._find_table_with_fallbacks(soup)
 
         if table is None:
@@ -101,8 +101,9 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         return self._parse_table_rows(table, parser, headers, header_rows)
 
     def _find_table_with_fallbacks(
-            self, soup: BeautifulSoup,
-    ) -> Tuple[Optional[Any], Optional[HtmlTableParser]]:
+        self,
+        soup: BeautifulSoup,
+    ) -> tuple[Any | None, HtmlTableParser | None]:
         """Try each candidate section ID in order and return the first matching table.
 
         Tries the primary section_id, then alternative_section_ids, then None
@@ -116,8 +117,10 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             Tuple of (table Tag or None, HtmlTableParser or None).
         """
         section_ids_to_try = (
-                                 [self.section_id] if self.section_id is not None else []
-                             ) + self.alternative_section_ids + [None]
+            ([self.section_id] if self.section_id is not None else [])
+            + self.alternative_section_ids
+            + [None]
+        )
 
         for section_id in section_ids_to_try:
             logger.debug(f"Trying to find table with section_id={section_id!r}")
@@ -171,18 +174,19 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             Human-readable error string (also logged at ERROR level).
         """
         section_ids_to_try = (
-                                 [self.section_id] if self.section_id is not None else []
-                             ) + self.alternative_section_ids + [None]
+            ([self.section_id] if self.section_id is not None else [])
+            + self.alternative_section_ids
+            + [None]
+        )
 
         available_sections = [
-            span.get('id', 'no-id')
-            for span in soup.select('.mw-headline')
+            span.get("id", "no-id") for span in soup.select(".mw-headline")
         ]
         sections_preview = available_sections[:10]
         if len(available_sections) > 10:
             sections_preview.append(f"... and {len(available_sections) - 10} more")
 
-        all_tables = soup.find_all('table', class_=self.table_css_class)
+        all_tables = soup.find_all("table", class_=self.table_css_class)
         logger.error(
             f"Table search failed. Found {len(all_tables)} tables with "
             f"class='{self.table_css_class}' in the document.",
@@ -205,12 +209,12 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         )
 
     def _parse_table_rows(
-            self,
-            table,
-            parser: HtmlTableParser,
-            headers: List[str],
-            header_rows: int,
-    ) -> List[Dict[str, Any]]:
+        self,
+        table,
+        parser: HtmlTableParser,
+        headers: list[str],
+        header_rows: int,
+    ) -> list[dict[str, Any]]:
         """Parse data rows from the located table.
 
         Args:
@@ -244,7 +248,9 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
                 pending_rowspans,
             )
             record = self.extractor.pipeline.parse_cells(
-                headers, expanded_cells, row_index=row_index,
+                headers,
+                expanded_cells,
+                row_index=row_index,
             )
             if record:
                 records.append(record)

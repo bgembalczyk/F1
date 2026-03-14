@@ -1,9 +1,9 @@
 import importlib
+from collections.abc import Iterable
+from collections.abc import Mapping
 from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
-from typing import Iterable
-from typing import Mapping
 
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.dsl_serialization import column_ref_payload
@@ -47,9 +47,9 @@ class ColumnSpec:
 
 
 def column(
-        header: str,
-        key: str,
-        column_instance: BaseColumn | ColumnRef,
+    header: str,
+    key: str,
+    column_instance: BaseColumn | ColumnRef,
 ) -> ColumnSpec:
     return ColumnSpec(header=header, key=key, column=column_instance)
 
@@ -74,8 +74,8 @@ class TableSchemaDSL:
             column_instance = spec.build_column()
             signature = ColumnRef.from_instance(column_instance)
             if spec.key in key_signatures and key_signatures[spec.key] != (
-                    signature.class_path,
-                    dict(signature.kwargs),
+                signature.class_path,
+                dict(signature.kwargs),
             ):
                 duplicate_keys.add(spec.key)
             else:
@@ -102,7 +102,7 @@ class TableSchemaDSL:
                     "column": column_ref_payload(spec),
                 }
                 for spec in self.columns
-            ]
+            ],
         }
 
     @classmethod

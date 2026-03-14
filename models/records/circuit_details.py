@@ -1,8 +1,10 @@
 from typing import Any
 
-from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, ValidationIssue
-from models.records.circuit_base import CIRCUIT_BASE_SCHEMA, CircuitBaseRecord
+from models.records.circuit_base import CIRCUIT_BASE_SCHEMA
+from models.records.circuit_base import CircuitBaseRecord
+from validation.domain_validator import BaseDomainRecordValidator
+from validation.issue import ValidationIssue
+from validation.schemas import RecordSchema
 
 
 class CircuitDetailsRecord(CircuitBaseRecord):

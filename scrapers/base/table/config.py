@@ -1,10 +1,9 @@
+from collections.abc import Callable
+from collections.abc import Mapping
+from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
-from typing import Callable
-from typing import Mapping
-from typing import Optional
-from typing import Sequence
 
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -16,7 +15,7 @@ from scrapers.base.table.schema import TableSchemaBuilder
 @dataclass(frozen=True)
 class ScraperConfig:
     url: str
-    section_id: Optional[str] = None
+    section_id: str | None = None
     expected_headers: Sequence[str] | None = None
     column_map: Mapping[str, str] = field(default_factory=dict)
     columns: Mapping[str, BaseColumn] = field(default_factory=dict)

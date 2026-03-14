@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from models.services.rounds_service import RoundsService
 from scrapers.base.helpers.parsing import parse_int_from_text
@@ -9,13 +7,13 @@ from scrapers.base.helpers.parsing import parse_int_from_text
 class EntryMerger:
     _DRIVER_FIELDS = {"race_drivers", "driver", "drivers", "rounds", "races", "no"}
 
-    def merge_entries(self, records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    def merge_entries(self, records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if not records:
             return records
 
         keys = self._entry_group_keys(records)
         if not keys:
-            merged: Dict[str, Any] = {}
+            merged: dict[str, Any] = {}
             drivers = self._merge_entry_drivers(records)
             if drivers:
                 merged["race_drivers"] = drivers
@@ -34,12 +32,12 @@ class EntryMerger:
         return merged_records
 
     def _merge_entry_groups(
-            self,
-            records: List[Dict[str, Any]],
-            keys: List[str],
-    ) -> Dict[str, Any]:
+        self,
+        records: list[dict[str, Any]],
+        keys: list[str],
+    ) -> dict[str, Any]:
         if not keys:
-            merged: Dict[str, Any] = {}
+            merged: dict[str, Any] = {}
             drivers = self._merge_entry_drivers(records)
             if drivers:
                 merged["race_drivers"] = drivers
@@ -67,10 +65,10 @@ class EntryMerger:
         return {key: items}
 
     def _group_records_by_key(
-            self,
-            records: List[Dict[str, Any]],
-            key: str,
-    ) -> Dict[str, Dict[str, Any]]:
+        self,
+        records: list[dict[str, Any]],
+        key: str,
+    ) -> dict[str, dict[str, Any]]:
         """Group records by the given key.
 
         Args:
@@ -80,7 +78,7 @@ class EntryMerger:
         Returns:
             Dictionary mapping group_key to {"value": value, "records": [records]}
         """
-        groups: Dict[str, Dict[str, Any]] = {}
+        groups: dict[str, dict[str, Any]] = {}
         for record in records:
             value = record.get(key)
             group_key = self._entry_group_key(value)
@@ -92,7 +90,8 @@ class EntryMerger:
         return groups
 
     def _merge_entry_drivers(
-            self, records: List[Dict[str, Any]],
+        self,
+        records: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
         drivers: list[dict[str, Any]] = []
         for record in records:
@@ -100,13 +99,13 @@ class EntryMerger:
         return drivers
 
     @staticmethod
-    def _strip_empty_entry_fields(record: Dict[str, Any]) -> None:
+    def _strip_empty_entry_fields(record: dict[str, Any]) -> None:
         for key in ("chassis", "engine", "tyre"):
             if record.get(key) is None:
                 record.pop(key, None)
 
     @classmethod
-    def _entry_group_keys(cls, records: List[Dict[str, Any]]) -> List[str]:
+    def _entry_group_keys(cls, records: list[dict[str, Any]]) -> list[str]:
         keys: list[str] = []
         seen: set[str] = set()
         for record in records:
@@ -122,7 +121,7 @@ class EntryMerger:
         return repr(value)
 
     @staticmethod
-    def _entry_merge_key(record: Dict[str, Any]) -> tuple[tuple[str, str], ...]:
+    def _entry_merge_key(record: dict[str, Any]) -> tuple[tuple[str, str], ...]:
         items: list[tuple[str, str]] = []
         for key, value in record.items():
             if key in {"race_drivers", "driver", "drivers", "rounds", "races", "no"}:
@@ -131,13 +130,13 @@ class EntryMerger:
         return tuple(sorted(items))
 
     @staticmethod
-    def _strip_entry_driver_fields(record: Dict[str, Any]) -> Dict[str, Any]:
+    def _strip_entry_driver_fields(record: dict[str, Any]) -> dict[str, Any]:
         cleaned = dict(record)
         for key in ("race_drivers", "driver", "drivers", "rounds", "races", "no"):
             cleaned.pop(key, None)
         return cleaned
 
-    def _extract_entry_drivers(self, record: Dict[str, Any]) -> list[dict[str, Any]]:
+    def _extract_entry_drivers(self, record: dict[str, Any]) -> list[dict[str, Any]]:
         drivers: list[dict[str, Any]] = []
 
         race_drivers = record.get("race_drivers")
@@ -147,7 +146,7 @@ class EntryMerger:
             rounds_by_index = (
                 rounds_value
                 if isinstance(rounds_value, list)
-                   and len(rounds_value) == len(race_drivers)
+                and len(rounds_value) == len(race_drivers)
                 else None
             )
             rounds_all = (
@@ -185,7 +184,7 @@ class EntryMerger:
         numbers_by_index = numbers if len(numbers) == len(driver_items) else []
 
         if isinstance(rounds_value, list) and len(rounds_value) == len(driver_items):
-            for driver, rounds_item in zip(driver_items, rounds_value):
+            for driver, rounds_item in zip(driver_items, rounds_value, strict=False):
                 entry: dict[str, Any] = {"driver": driver}
                 rounds = self._normalize_rounds(rounds_item)
                 if rounds:

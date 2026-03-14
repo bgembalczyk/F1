@@ -9,11 +9,11 @@ from scrapers.drivers.columns.fatality_event import FatalityEventColumn
 
 
 def _ctx(
-        raw_text: str,
-        *,
-        clean_text: str | None = None,
-        links: list[dict] | None = None,
-        model_fields: set[str] | None = None,
+    raw_text: str,
+    *,
+    clean_text: str | None = None,
+    links: list[dict] | None = None,
+    model_fields: set[str] | None = None,
 ) -> ColumnContext:
     return ColumnContext(
         header="Header",
@@ -108,16 +108,15 @@ def test_points_column_frac_span_mixed_number() -> None:
     column = PointsColumn()
     html = (
         '<b>42 (<style data-mw-deduplicate="TemplateStyles:r1154941027">'
-        '.mw-parser-output .frac{white-space:nowrap}'
-        '</style>'
+        ".mw-parser-output .frac{white-space:nowrap}"
+        "</style>"
         '<span class="frac">57'
         '<span class="sr-only">+</span>'
         '<span class="num">1</span>\u2044'
         '<span class="den">7</span>'
-        '</span>)</b>'
+        "</span>)</b>"
     )
     parsed = column.parse(_ctx_with_cell(html))
     assert isinstance(parsed, dict)
     assert parsed["championship_points"] == 42.0
     assert abs(parsed["total_points"] - (57 + 1 / 7)) < 1e-9
-

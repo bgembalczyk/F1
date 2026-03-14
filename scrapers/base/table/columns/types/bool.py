@@ -1,5 +1,5 @@
 import logging
-from typing import Callable
+from collections.abc import Callable
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -22,11 +22,11 @@ class BoolColumn(BaseColumn):
     """
 
     def __init__(
-            self,
-            predicate: Callable[[ColumnContext], bool],
-            *,
-            default: bool = False,
-            log_errors: bool = False,
+        self,
+        predicate: Callable[[ColumnContext], bool],
+        *,
+        default: bool = False,
+        log_errors: bool = False,
     ) -> None:
         super().__init__()
         self.predicate = predicate

@@ -1,8 +1,5 @@
 from pathlib import Path
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from bs4 import BeautifulSoup
 
@@ -27,9 +24,9 @@ class F1CompleteGrandPrixScraper(CompositeScraper):
     url = GrandsPrixListScraper.CONFIG.url
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
     ) -> None:
         options = options or ScraperOptions()
         options.include_urls = True
@@ -58,23 +55,23 @@ class F1CompleteGrandPrixScraper(CompositeScraper):
             records_adapter=grands_prix_adapter,
         )
 
-    def get_detail_url(self, record: Dict[str, Any]) -> Optional[str]:
+    def get_detail_url(self, record: dict[str, Any]) -> str | None:
         race_title = record.get("race_title")
         if isinstance(race_title, dict):
             return race_title.get("url")
         return None
 
     def assemble_record(
-            self,
-            record: Dict[str, Any],
-            details: Optional[Dict[str, Any]],
-    ) -> Dict[str, Any]:
+        self,
+        record: dict[str, Any],
+        details: dict[str, Any] | None,
+    ) -> dict[str, Any]:
         full_record = dict(record)
         by_year = details.get("by_year") if details else None
         full_record["by_year"] = by_year
         return full_record
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         """Metoda wymagana przez bazę – nie używana w tym scraperze."""
         raise NotImplementedError("Use fetch() bezpośrednio dla pełnego scrapingu")
 

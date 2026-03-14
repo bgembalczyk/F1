@@ -1,7 +1,5 @@
 import re
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -14,8 +12,8 @@ class InfoboxTitlesParser:
     def __init__(self, link_extractor: InfoboxLinkExtractor) -> None:
         self._link_extractor = link_extractor
 
-    def parse_titles(self, rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        titles: List[Dict[str, Any]] = []
+    def parse_titles(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        titles: list[dict[str, Any]] = []
         for row in rows:
             label_cell = row.get("label_cell")
             value_cell = row.get("value_cell")
@@ -27,12 +25,12 @@ class InfoboxTitlesParser:
             year_data = self._link_extractor.extract_year_list_with_links(label_cell)
 
             if (
-                    title_links
-                    and year_data
-                    and len(title_links) == len(year_data)
-                    and len(title_links) > 1
+                title_links
+                and year_data
+                and len(title_links) == len(year_data)
+                and len(title_links) > 1
             ):
-                for title_link, year_item in zip(title_links, year_data):
+                for title_link, year_item in zip(title_links, year_data, strict=False):
                     titles.append({"title": title_link, "years": [year_item]})
                 continue
 
@@ -52,8 +50,8 @@ class InfoboxTitlesParser:
 
         return titles
 
-    def parse_previous_series(self, rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        items: List[Dict[str, Any]] = []
+    def parse_previous_series(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        items: list[dict[str, Any]] = []
         for row in rows:
             label_cell = row.get("label_cell")
             value_cell = row.get("value_cell")
@@ -72,7 +70,11 @@ class InfoboxTitlesParser:
 
             # If we have the same number of groups, pair them up
             if len(series_groups) == len(year_groups) and len(series_groups) > 1:
-                for series_html, year_html in zip(series_groups, year_groups):
+                for series_html, year_html in zip(
+                    series_groups,
+                    year_groups,
+                    strict=False,
+                ):
                     series_soup = BeautifulSoup(series_html, "html.parser")
                     year_soup = BeautifulSoup(year_html, "html.parser")
                     series_links = self._link_extractor.extract_title_links(series_soup)
@@ -117,7 +119,7 @@ class InfoboxTitlesParser:
         return items
 
     @staticmethod
-    def _split_by_list_items(tag: Tag) -> List[str]:
+    def _split_by_list_items(tag: Tag) -> list[str]:
         """Split HTML content by <li> list items."""
         # Find all <li> elements
         li_elements = tag.find_all("li", recursive=True)
@@ -127,7 +129,7 @@ class InfoboxTitlesParser:
         return [str(li) for li in li_elements if str(li).strip()]
 
     @staticmethod
-    def _split_by_br(tag: Tag) -> List[str]:
+    def _split_by_br(tag: Tag) -> list[str]:
         """Split HTML content by <br> tags."""
 
         html = str(tag)
@@ -136,7 +138,7 @@ class InfoboxTitlesParser:
         # Filter out empty parts
         return [p.strip() for p in parts if p.strip()]
 
-    def parse_major_victories_from_full_data(self, cell: Tag) -> List[Dict[str, Any]]:
+    def parse_major_victories_from_full_data(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse major victories from a full_data cell.
 
         Handles HTML like:
@@ -144,7 +146,7 @@ class InfoboxTitlesParser:
         <a href="/wiki/24_Hours_of_Le_Mans" title="24 Hours of Le Mans">24 Hours of Le Mans</a>
         (<a href="/wiki/1934_24_Hours_of_Le_Mans" title="1934 24 Hours of Le Mans">1934</a>)
         """
-        victories: List[Dict[str, Any]] = []
+        victories: list[dict[str, Any]] = []
 
         # Get text and check if it contains "Major victories"
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""

@@ -1,6 +1,9 @@
 import logging
-from dataclasses import asdict, is_dataclass
-from typing import Any, Mapping, cast
+from collections.abc import Mapping
+from dataclasses import asdict
+from dataclasses import is_dataclass
+from typing import Any
+from typing import cast
 
 from models.records.link import LinkRecord
 
@@ -8,9 +11,9 @@ Primitive = str | int | float | bool | None
 
 
 def to_dict_any(
-        value: Any,
-        *,
-        logger: logging.Logger | logging.LoggerAdapter | None = None,
+    value: Any,
+    *,
+    logger: logging.Logger | logging.LoggerAdapter | None = None,
 ) -> dict[str, Any] | list[Any] | Primitive:
     if hasattr(value, "to_dict") and callable(value.to_dict):
         return to_dict_any(value.to_dict(), logger=logger)
@@ -22,9 +25,9 @@ def to_dict_any(
         return to_dict_any(asdict(value), logger=logger)
     if isinstance(value, Mapping):
         if (
-                "text" in value
-                and "url" in value
-                and set(value.keys()).issubset({"text", "url"})
+            "text" in value
+            and "url" in value
+            and set(value.keys()).issubset({"text", "url"})
         ):
             return cast(
                 LinkRecord,

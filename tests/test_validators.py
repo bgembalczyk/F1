@@ -4,15 +4,16 @@ from models.validation.core import validate_float
 from models.validation.core import validate_int
 from models.validation.core import validate_status
 from models.validation.validators import validate_seasons
-from models.value_objects import SeasonRef
 from models.value_objects.link_utils import validate_link
-from validation.records import RecordValidator
-from validation.records import ValidationIssue
+from models.value_objects.season_ref import SeasonRef
+from validation.issue import ValidationIssue
+from validation.validator_base import RecordValidator
 
 
 def test_validate_link_accepts_link_dict():
     link = validate_link(
-        {"text": "Site", "url": "https://example.com"}, field_name="link",
+        {"text": "Site", "url": "https://example.com"},
+        field_name="link",
     )
 
     assert link == {"text": "Site", "url": "https://example.com"}

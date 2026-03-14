@@ -1,8 +1,9 @@
-from typing import Any, TypedDict
+from typing import Any
+from typing import TypedDict
 
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
-from validation.records import ValidationIssue
+from validation.issue import ValidationIssue
 
 
 class GrandsPrixRecord(TypedDict, total=False):
@@ -17,7 +18,7 @@ class GrandsPrixRecord(TypedDict, total=False):
 def validate_grands_prix_record(record: dict[str, Any]) -> list[ValidationIssue]:
     """
     Validates a grands prix record.
-    
+
     This function is a convenience wrapper that delegates to GrandsPrixRecordValidator.
     It's kept for backward compatibility but new code should use the validator directly.
     """

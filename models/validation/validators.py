@@ -1,5 +1,6 @@
 import logging
-from typing import Any, Dict, Iterable
+from collections.abc import Iterable
+from typing import Any
 
 from models.serializers import to_dict_any
 from models.validation.core import validate_int
@@ -10,8 +11,10 @@ from models.value_objects.season_ref import SeasonRef
 
 
 def validate_link(
-        link: Dict[str, Any] | Link | None, *, field_name: str,
-) -> Dict[str, Any]:
+    link: dict[str, Any] | Link | None,
+    *,
+    field_name: str,
+) -> dict[str, Any]:
     """
     Normalizuje link do postaci dict: {"text": str, "url": Optional[str]}.
 
@@ -31,15 +34,17 @@ def validate_link(
 
 
 def validate_links(
-        links: Iterable[Dict[str, Any] | Link] | None, *, field_name: str,
-) -> list[Dict[str, Any]]:
+    links: Iterable[dict[str, Any] | Link] | None,
+    *,
+    field_name: str,
+) -> list[dict[str, Any]]:
     validated = (validate_link(link, field_name=field_name) for link in links or [])
     return filter_nonempty(validated, key=is_empty_link)
 
 
 def normalize_season_item(
-        item: Dict[str, Any] | SeasonRef | None,
-) -> Dict[str, Any] | None:
+    item: dict[str, Any] | SeasonRef | None,
+) -> dict[str, Any] | None:
     """
     Normalizuje jeden element sezonu.
 
@@ -77,7 +82,7 @@ def normalize_season_item(
     if year_int is None:
         return None
 
-    validated: Dict[str, Any] = {"year": year_int}
+    validated: dict[str, Any] = {"year": year_int}
 
     url = item.get("url")
     if url:
@@ -89,8 +94,8 @@ def normalize_season_item(
 
 
 def validate_seasons(
-        seasons: Iterable[Dict[str, Any] | SeasonRef] | None,
-) -> list[Dict[str, Any]]:
+    seasons: Iterable[dict[str, Any] | SeasonRef] | None,
+) -> list[dict[str, Any]]:
     """
     Normalizuje sezony do listy dictów.
 
@@ -104,10 +109,10 @@ def validate_seasons(
 
 
 def model_to_dict(
-        model: Any,
-        *,
-        logger: logging.Logger | logging.LoggerAdapter | None = None,
-) -> Dict[str, Any]:
+    model: Any,
+    *,
+    logger: logging.Logger | logging.LoggerAdapter | None = None,
+) -> dict[str, Any]:
     result = to_dict_any(model, logger=logger)
     if not isinstance(result, dict):
         raise TypeError("Nieobsługiwany typ modelu")
@@ -115,7 +120,7 @@ def model_to_dict(
 
 
 def normalize_link_list(
-        items: list[Link | Dict[str, Any]] | None,
+    items: list[Link | dict[str, Any]] | None,
 ) -> list[Link]:
     """
     Normalizuje listę Link | dict -> list[Link], filtrując puste linki.
@@ -132,7 +137,7 @@ def normalize_link_list(
 
 
 def normalize_season_list(
-        items: list[SeasonRef | Dict[str, Any]] | None,
+    items: list[SeasonRef | dict[str, Any]] | None,
 ) -> list[SeasonRef]:
     """
     Normalizuje listę SeasonRef | dict -> list[SeasonRef], filtrując None.
@@ -149,7 +154,7 @@ def normalize_season_list(
     return filter_nonempty(normalized)
 
 
-def is_empty_link(value: Link | Dict[str, Any] | None) -> bool:
+def is_empty_link(value: Link | dict[str, Any] | None) -> bool:
     if value is None:
         return True
     if isinstance(value, Link):

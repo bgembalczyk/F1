@@ -18,7 +18,7 @@ pytest.importorskip("bs4")
 
 
 def test_table_extractor_extracts_records_and_logs(
-        caplog: pytest.LogCaptureFixture,
+    caplog: pytest.LogCaptureFixture,
 ) -> None:
     html = """
     <table class="wikitable">
@@ -46,7 +46,7 @@ def test_table_extractor_extracts_records_and_logs(
 
 
 def test_infobox_extractor_extracts_rows_and_logs(
-        caplog: pytest.LogCaptureFixture,
+    caplog: pytest.LogCaptureFixture,
 ) -> None:
     html = """
     <table class="infobox">

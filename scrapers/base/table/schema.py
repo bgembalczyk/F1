@@ -1,5 +1,5 @@
+from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Mapping
 
 from scrapers.base.table.columns.types.base import BaseColumn
 

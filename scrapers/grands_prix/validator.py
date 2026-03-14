@@ -1,6 +1,6 @@
-from validation.records import BaseDomainRecordValidator
-from validation.records import ExportRecord
-from validation.records import ValidationIssue
+from validation.domain_validator import BaseDomainRecordValidator
+from validation.issue import ValidationIssue
+from validation.validator_base import ExportRecord
 
 
 class GrandsPrixRecordValidator(BaseDomainRecordValidator):

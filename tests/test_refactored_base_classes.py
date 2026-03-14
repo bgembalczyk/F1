@@ -1,14 +1,15 @@
 """Test refactored base classes to ensure they maintain functionality."""
+
 from scrapers.base.composite_scraper import CompositeScraper
 from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.circuits.complete_scraper import F1CompleteCircuitScraper
-from scrapers.constructors.base_constructor_list_scraper import BaseConstructorListScraper
+from scrapers.constructors.base_constructor_list_scraper import (
+    BaseConstructorListScraper,
+)
 from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
 )
-from scrapers.constructors.former_constructors_list import (
-    FormerConstructorsListScraper,
-)
+from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.constructors.indianapolis_only_constructors_list import (
     IndianapolisOnlyConstructorsListScraper,
 )
@@ -31,13 +32,15 @@ class TestIndianapolisOnlyScrapers:
     def test_constructors_inherits_from_base(self):
         """Verify IndianapolisOnlyConstructorsListScraper inherits from base."""
         assert issubclass(
-            IndianapolisOnlyConstructorsListScraper, IndianapolisOnlyListScraper,
+            IndianapolisOnlyConstructorsListScraper,
+            IndianapolisOnlyListScraper,
         )
 
     def test_engine_manufacturers_inherits_from_base(self):
         """Verify IndianapolisOnlyEngineManufacturersListScraper inherits from base."""
         assert issubclass(
-            IndianapolisOnlyEngineManufacturersListScraper, IndianapolisOnlyListScraper,
+            IndianapolisOnlyEngineManufacturersListScraper,
+            IndianapolisOnlyListScraper,
         )
 
     def test_section_id_is_set(self):
@@ -47,14 +50,20 @@ class TestIndianapolisOnlyScrapers:
     def test_constructors_has_correct_config(self):
         """Verify constructors scraper has correct configuration."""
         scraper = IndianapolisOnlyConstructorsListScraper()
-        assert scraper.url == "https://en.wikipedia.org/wiki/List_of_Formula_One_constructors"
+        assert (
+            scraper.url
+            == "https://en.wikipedia.org/wiki/List_of_Formula_One_constructors"
+        )
         assert scraper.record_key == "constructor"
         assert scraper.url_key == "constructor_url"
 
     def test_engine_manufacturers_has_correct_config(self):
         """Verify engine manufacturers scraper has correct configuration."""
         scraper = IndianapolisOnlyEngineManufacturersListScraper()
-        assert scraper.url == "https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers"
+        assert (
+            scraper.url
+            == "https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers"
+        )
         assert scraper.record_key == "manufacturer"
         assert scraper.url_key == "manufacturer_url"
 
@@ -126,7 +135,7 @@ class TestPointsScrapers:
     def test_base_url_is_set(self):
         """Verify BASE_URL is properly set in base class."""
         expected_url = "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems"
-        assert BasePointsScraper.BASE_URL == expected_url
+        assert expected_url == BasePointsScraper.BASE_URL
 
     def test_scrapers_use_base_url(self):
         """Verify all points scrapers use the BASE_URL."""

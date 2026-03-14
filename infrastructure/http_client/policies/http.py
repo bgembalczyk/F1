@@ -1,10 +1,7 @@
 from dataclasses import dataclass
 
-from infrastructure.http_client.policies.defaults import (
-    DEFAULT_HTTP_RETRIES,
-    DEFAULT_HTTP_TIMEOUT,
-)
-
+from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_RETRIES
+from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_TIMEOUT
 from infrastructure.http_client.policies.response_cache import ResponseCache
 
 

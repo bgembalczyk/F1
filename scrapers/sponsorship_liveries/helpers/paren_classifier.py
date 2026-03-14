@@ -17,12 +17,8 @@ Każda kategoria to lista łańcuchów (lub pusta lista, jeśli nie dotyczy).
 
 import logging
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from infrastructure.gemini.client import GeminiClient
-
 
 logger = logging.getLogger(__name__)
 
@@ -40,7 +36,7 @@ Przykład odpowiedzi:
 
 Odpowiedz tylko poprawnym JSON, bez dodatkowego tekstu.
 
-Nie uzupełniaj za pomocą własnej wiedzy; odpowiedz tylko na podstawie poniższych informacji, 
+Nie uzupełniaj za pomocą własnej wiedzy; odpowiedz tylko na podstawie poniższych informacji,
 jeśli danej informacji nie da się wywnioskować tylko i wyłącznie z tych danych, pozostaw odpowiednią kategorię pustą.
 
 Zespół F1: {team_name}
@@ -48,7 +44,6 @@ Zespół F1: {team_name}
 W kolumnie "Year" (rok) przy wpisie roku {year_text!r} pojawia się adnotacja w nawiasie: {paren_content!r}
 
 """
-
 
 
 class ParenClassifier:
@@ -70,13 +65,13 @@ class ParenClassifier:
     # ------------------------------------------------------------------
 
     def classify(
-            self,
-            *,
-            paren_content: str,
-            team_name: str,
-            year_text: str,
-            headers: Optional[List[str]] = None,
-    ) -> Dict[str, List[str]]:
+        self,
+        *,
+        paren_content: str,
+        team_name: str,
+        year_text: str,
+        headers: list[str] | None = None,
+    ) -> dict[str, list[str]]:
         """Klasyfikuje adnotację nawiasową i zwraca strukturę kategorii.
 
         Parameters
@@ -120,11 +115,11 @@ class ParenClassifier:
 
     @staticmethod
     def _build_prompt(
-            *,
-            paren_content: str,
-            team_name: str,
-            year_text: str,
-            headers: List[str],
+        *,
+        paren_content: str,
+        team_name: str,
+        year_text: str,
+        headers: list[str],
     ) -> str:
         headers_str = ", ".join(headers) if headers else "(brak)"
         return _PROMPT_TEMPLATE.format(
@@ -135,7 +130,7 @@ class ParenClassifier:
         )
 
     @staticmethod
-    def _empty_result() -> Dict[str, List[str]]:
+    def _empty_result() -> dict[str, list[str]]:
         return {
             "driver": [],
             "car_model": [],
@@ -144,7 +139,7 @@ class ParenClassifier:
         }
 
     @classmethod
-    def _normalize_result(cls, raw: Any) -> Dict[str, List[str]]:
+    def _normalize_result(cls, raw: Any) -> dict[str, list[str]]:
         """Upewnia się, że wynik ma właściwy kształt."""
         if not isinstance(raw, dict):
             return cls._empty_result()

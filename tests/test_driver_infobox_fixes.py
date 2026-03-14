@@ -7,14 +7,15 @@ from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
-@pytest.fixture
+@pytest.fixture()
 def link_extractor():
     return InfoboxLinkExtractor(
-        include_urls=True, wikipedia_base="https://en.wikipedia.org",
+        include_urls=True,
+        wikipedia_base="https://en.wikipedia.org",
     )
 
 
-@pytest.fixture
+@pytest.fixture()
 def cell_parser(link_extractor):
     return InfoboxCellParser(include_urls=True, link_extractor=link_extractor)
 
@@ -33,14 +34,14 @@ class TestBestFinishWithClass:
         assert len(result["seasons"]) == 1
         assert result["seasons"][0]["text"] == "2014"
         assert (
-                result["seasons"][0]["url"]
-                == "https://en.wikipedia.org/wiki/2014_FIA_World_Endurance_Championship"
+            result["seasons"][0]["url"]
+            == "https://en.wikipedia.org/wiki/2014_FIA_World_Endurance_Championship"
         )
         assert "class" in result["seasons"][0]
         assert result["seasons"][0]["class"]["text"] == "LMP1"
         assert (
-                result["seasons"][0]["class"]["url"]
-                == "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
+            result["seasons"][0]["class"]["url"]
+            == "https://en.wikipedia.org/wiki/Le_Mans_Prototype"
         )
 
     def test_multiple_seasons_with_single_class(self, cell_parser):
@@ -59,8 +60,8 @@ class TestBestFinishWithClass:
             assert "class" in result["seasons"][i]
             assert result["seasons"][i]["class"]["text"] == "LMP2"
             assert (
-                    result["seasons"][i]["class"]["url"]
-                    == "https://en.wikipedia.org/wiki/LMP2"
+                result["seasons"][i]["class"]["url"]
+                == "https://en.wikipedia.org/wiki/LMP2"
             )
 
     def test_multiple_seasons_each_with_different_class(self, cell_parser):
@@ -109,14 +110,15 @@ class TestBestFinishWithClass:
         assert len(result["seasons"]) == 1
         assert result["seasons"][0]["text"] == "2013"
         assert (
-                result["seasons"][0]["url"]
-                == "https://en.wikipedia.org/wiki/2013_24_Hours_of_Le_Mans"
+            result["seasons"][0]["url"]
+            == "https://en.wikipedia.org/wiki/2013_24_Hours_of_Le_Mans"
         )
         # Should NOT have class field because "2013" is a year, not a class
         assert "class" not in result["seasons"][0]
 
     def test_best_finish_with_year_range_in_small_not_treated_as_class(
-            self, cell_parser,
+        self,
+        cell_parser,
     ):
         """Test that year range in small tag is not treated as class."""
         html = """<td class="infobox-data">1st <small>(<a href="/wiki/2014_Le_Mans" title="2014 Le Mans">2014</a>, <a href="/wiki/2015_Le_Mans" title="2015 Le Mans">2015</a>)</small></td>"""
@@ -137,7 +139,7 @@ class TestRacingLicenceWithYears:
     def test_licence_with_until_year(self, cell_parser):
         """Test licence with 'until YYYY' format."""
         html = """<td class="infobox-data">
-            <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a> 
+            <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a>
             <span style="font-size: 85%;">(until 2019)</span>
         </td>"""
 
@@ -152,7 +154,7 @@ class TestRacingLicenceWithYears:
     def test_licence_with_start_year_dash(self, cell_parser):
         """Test licence with 'YYYY–' format (open-ended)."""
         html = """<td class="infobox-data">
-            <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a> 
+            <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a>
             <span style="font-size: 85%;">(2020–)</span>
         </td>"""
 
@@ -167,11 +169,11 @@ class TestRacingLicenceWithYears:
     def test_multiple_licences_with_years(self, cell_parser):
         """Test multiple licences with different year ranges."""
         html = """<td class="infobox-data">
-            <span typeof="mw:File"><a href="/wiki/File:FIA_Gold_Driver.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/e/e0/FIA_Gold_Driver.png/20px-FIA_Gold_Driver.png" decoding="async" width="12" height="12" class="mw-file-element"></a></span> 
-            <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a> 
+            <span typeof="mw:File"><a href="/wiki/File:FIA_Gold_Driver.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/e/e0/FIA_Gold_Driver.png/20px-FIA_Gold_Driver.png" decoding="async" width="12" height="12" class="mw-file-element"></a></span>
+            <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a>
             <span style="font-size: 85%;">(until 2019)</span><br>
-            <span typeof="mw:File"><a href="/wiki/File:FIA_Platinum_Driver.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/1/17/FIA_Platinum_Driver.png/20px-FIA_Platinum_Driver.png" decoding="async" width="12" height="12" class="mw-file-element"></a></span> 
-            <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a> 
+            <span typeof="mw:File"><a href="/wiki/File:FIA_Platinum_Driver.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/1/17/FIA_Platinum_Driver.png/20px-FIA_Platinum_Driver.png" decoding="async" width="12" height="12" class="mw-file-element"></a></span>
+            <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a>
             <span style="font-size: 85%;">(2020–)</span>
         </td>"""
 
@@ -193,7 +195,7 @@ class TestRacingLicenceWithYears:
     def test_licence_with_full_year_range(self, cell_parser):
         """Test licence with full year range 'YYYY-YYYY'."""
         html = """<td class="infobox-data">
-            <a href="/wiki/FIA_Silver_Categorisation" title="FIA Silver Categorisation">FIA Silver</a> 
+            <a href="/wiki/FIA_Silver_Categorisation" title="FIA Silver Categorisation">FIA Silver</a>
             <span style="font-size: 85%;">(2015-2018)</span>
         </td>"""
 
@@ -253,7 +255,7 @@ text here <span><small>(<a href="/wiki/LMP1" title="LMP1">LMP1</a>)</small></spa
     def test_best_finish_with_multiple_seasons_and_text_nodes(self, cell_parser):
         """Test best finish with multiple seasons and text nodes between elements."""
         html = """<td class="infobox-data">1st in <a href="/wiki/2019_WEC" title="2019 WEC">2019</a>
-some text <span><small>(<a href="/wiki/LMP1" title="LMP1">LMP1</a>)</small></span>, <a href="/wiki/2021_WEC" title="2021 WEC">2021</a> 
+some text <span><small>(<a href="/wiki/LMP1" title="LMP1">LMP1</a>)</small></span>, <a href="/wiki/2021_WEC" title="2021 WEC">2021</a>
 more text <span><small>(<a href="/wiki/LMH" title="LMH">LMH</a>)</small></span></td>"""
 
         cell = BeautifulSoup(html, "html.parser").find("td")

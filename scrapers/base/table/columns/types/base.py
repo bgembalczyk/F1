@@ -1,7 +1,6 @@
 from abc import ABC
 from abc import abstractmethod
 from typing import Any
-from typing import Dict
 
 from scrapers.base.table.columns.context import ColumnContext
 
@@ -23,7 +22,7 @@ class BaseColumn(ABC):
         """
         raise NotImplementedError
 
-    def apply(self, ctx: ColumnContext, record: Dict[str, Any]) -> None:
+    def apply(self, ctx: ColumnContext, record: dict[str, Any]) -> None:
         value = self.parse(ctx)
         if value is ctx.skip_sentinel:
             return

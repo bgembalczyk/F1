@@ -1,8 +1,10 @@
-from typing import Any, TypedDict
+from typing import Any
+from typing import TypedDict
 
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
-from validation.records import BaseDomainRecordValidator, ValidationIssue
+from validation.domain_validator import BaseDomainRecordValidator
+from validation.issue import ValidationIssue
 
 
 class SpecialDriverRecord(TypedDict, total=False):

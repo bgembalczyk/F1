@@ -1,8 +1,5 @@
 from pathlib import Path
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from bs4 import BeautifulSoup
 
@@ -28,9 +25,9 @@ class F1CompleteCircuitScraper(CompositeScraper):
     url = CircuitsListScraper.CONFIG.url
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
     ) -> None:
         options = options or ScraperOptions()
         # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
@@ -62,22 +59,22 @@ class F1CompleteCircuitScraper(CompositeScraper):
             records_adapter=circuits_adapter,
         )
 
-    def get_detail_url(self, record: Dict[str, Any]) -> Optional[str]:
+    def get_detail_url(self, record: dict[str, Any]) -> str | None:
         circuit_data = record.get("circuit")
         if isinstance(circuit_data, dict):
             return circuit_data.get("url")
         return None
 
     def assemble_record(
-            self,
-            record: Dict[str, Any],
-            details: Optional[Dict[str, Any]],
-    ) -> Dict[str, Any]:
+        self,
+        record: dict[str, Any],
+        details: dict[str, Any] | None,
+    ) -> dict[str, Any]:
         full_record = dict(record)
         full_record["details"] = details
         return CircuitService.normalize_record(full_record)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         """Metoda wymagana przez bazę – nie używana w tym scraperze."""
         raise NotImplementedError("Use fetch() bezpośrednio dla pełnego scrapingu")
 

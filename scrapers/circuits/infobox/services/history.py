@@ -1,9 +1,6 @@
 import re
 from datetime import datetime
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
@@ -15,8 +12,9 @@ class CircuitHistoryParser(InfoboxTextUtils):
     """Parsowanie wydarzeń historycznych (Opened, Built, Broke ground, Former names...)."""
 
     def _parse_former_names(
-            self, row: Optional[Dict[str, Any]],
-    ) -> Optional[List[Dict[str, Any]]]:
+        self,
+        row: dict[str, Any] | None,
+    ) -> list[dict[str, Any]] | None:
         """
         Parsuje 'Former names' do listy dictów.
         """
@@ -28,7 +26,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
         if not text:
             return None
 
-        results: List[Dict[str, Any]] = []
+        results: list[dict[str, Any]] = []
 
         pattern = re.compile(
             r"(?P<name>.+?)\s*\((?P<periods>[^)]*?\d[^)]*?)\)",
@@ -61,12 +59,12 @@ class CircuitHistoryParser(InfoboxTextUtils):
 
         return results or None
 
-    def _parse_periods_string(self, periods_raw: str) -> List[Dict[str, str]]:
+    def _parse_periods_string(self, periods_raw: str) -> list[dict[str, str]]:
         """
         Normalizuje zakresy lat do listy dictów.
         """
         now_year = datetime.now().year
-        periods: List[Dict[str, str]] = []
+        periods: list[dict[str, str]] = []
 
         segments = [seg.strip() for seg in periods_raw.split(",") if seg.strip()]
         if not segments:
@@ -81,16 +79,20 @@ class CircuitHistoryParser(InfoboxTextUtils):
                 start_raw, end_raw = seg, ""
 
             start = self._normalize_period_endpoint(
-                start_raw, is_start=True, now_year=now_year,
+                start_raw,
+                is_start=True,
+                now_year=now_year,
             )
             end = self._normalize_period_endpoint(
-                end_raw, is_start=False, now_year=now_year,
+                end_raw,
+                is_start=False,
+                now_year=now_year,
             )
 
             if start is None and end is None:
                 continue
 
-            period: Dict[str, str] = {}
+            period: dict[str, str] = {}
             if start is not None:
                 period["from"] = start
             if end is not None:
@@ -103,8 +105,11 @@ class CircuitHistoryParser(InfoboxTextUtils):
 
     @staticmethod
     def _normalize_period_endpoint(
-            raw: str, *, is_start: bool, now_year: int,
-    ) -> Optional[str]:
+        raw: str,
+        *,
+        is_start: bool,
+        now_year: int,
+    ) -> str | None:
         """
         Normalizuje pojedynczy kraniec zakresu (from/to) do stringa.
         """
@@ -148,11 +153,12 @@ class CircuitHistoryParser(InfoboxTextUtils):
         return None
 
     def parse_history(
-            self, rows: Dict[str, Dict[str, Any]],
-    ) -> Optional[Dict[str, Any]]:
-        events: List[Dict[str, Any]] = []
+        self,
+        rows: dict[str, dict[str, Any]],
+    ) -> dict[str, Any] | None:
+        events: list[dict[str, Any]] = []
 
-        def _dates_to_list(d: Dict[str, Any]) -> List[str]:
+        def _dates_to_list(d: dict[str, Any]) -> list[str]:
             if not d:
                 return []
             return d.get("iso_dates") or d.get("years") or []
@@ -180,7 +186,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
 
         events = sorted(events, key=lambda e: e.get("date") or "")
 
-        history: Dict[str, Any] = {
+        history: dict[str, Any] = {
             "events": events or None,
             "former_names": self._parse_former_names(rows.get("former_names")),
         }

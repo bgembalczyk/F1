@@ -2,14 +2,15 @@
 
 Extracted from validation/records.py to keep each module focused.
 """
+
 import json
 from abc import ABC
 from abc import abstractmethod
+from collections.abc import Callable
+from collections.abc import Mapping
+from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
-from typing import Callable
-from typing import Mapping
-from typing import Sequence
 from typing import TypeAlias
 
 from validation.issue import ValidationIssue
@@ -30,7 +31,8 @@ class RecordValidator(ABC):
         raise NotImplementedError
 
     def set_record_factory(
-            self, record_factory: Callable[..., Any] | type | None,
+        self,
+        record_factory: Callable[..., Any] | type | None,
     ) -> None:
         self.record_factory = record_factory
 
@@ -48,12 +50,12 @@ class RecordValidator(ABC):
         for error in errors:
             if error.code in {"missing", "null"} and error.field:
                 self._stats.missing[error.field] = (
-                        self._stats.missing.get(error.field, 0) + 1
+                    self._stats.missing.get(error.field, 0) + 1
                 )
                 continue
             if error.code == "type" and error.field:
                 self._stats.types[error.field] = (
-                        self._stats.types.get(error.field, 0) + 1
+                    self._stats.types.get(error.field, 0) + 1
                 )
 
     @staticmethod
@@ -123,7 +125,7 @@ class RecordValidator(ABC):
                     ValidationIssue.custom(
                         f"model_validate failed: {exc}",
                         code="record_factory",
-                    )
+                    ),
                 ]
             return []
 
@@ -136,7 +138,7 @@ class RecordValidator(ABC):
                     ValidationIssue.custom(
                         f"validate_record failed: {exc}",
                         code="record_factory",
-                    )
+                    ),
                 ]
             if not errors:
                 return []
@@ -151,13 +153,15 @@ class RecordValidator(ABC):
                     ValidationIssue.custom(
                         f"validate failed: {exc}",
                         code="record_factory",
-                    )
+                    ),
                 ]
         return []
 
     @classmethod
     def validate_schema(
-            cls, record: Mapping[str, Any], schema: RecordSchema | Mapping[str, Any],
+        cls,
+        record: Mapping[str, Any],
+        schema: RecordSchema | Mapping[str, Any],
     ) -> list[ValidationIssue]:
         normalized = cls._coerce_schema(schema)
         errors: list[ValidationIssue] = []
@@ -185,7 +189,10 @@ class RecordValidator(ABC):
 
     @classmethod
     def _validate_nested_value(
-            cls, key: str, value: Any, nested_schema: NestedSchema,
+        cls,
+        key: str,
+        value: Any,
+        nested_schema: NestedSchema,
     ) -> list[ValidationIssue]:
         errors: list[ValidationIssue] = []
         if nested_schema.is_list:
@@ -223,10 +230,10 @@ class RecordValidator(ABC):
 
     @classmethod
     def _validate_nested_schema(
-            cls,
-            record: Mapping[str, Any],
-            nested_schema: RecordSchema
-                           | Callable[[Mapping[str, Any]], Sequence[ValidationIssue | str]],
+        cls,
+        record: Mapping[str, Any],
+        nested_schema: RecordSchema
+        | Callable[[Mapping[str, Any]], Sequence[ValidationIssue | str]],
     ) -> list[ValidationIssue]:
         if isinstance(nested_schema, RecordSchema):
             return cls.validate_schema(record, nested_schema)
@@ -234,7 +241,8 @@ class RecordValidator(ABC):
 
     @staticmethod
     def prefix_errors(
-            errors: Sequence[ValidationIssue], prefix: str,
+        errors: Sequence[ValidationIssue],
+        prefix: str,
     ) -> list[ValidationIssue]:
         prefixed: list[ValidationIssue] = []
         for error in errors:
@@ -243,17 +251,18 @@ class RecordValidator(ABC):
 
     @staticmethod
     def require_keys(
-            record: Mapping[str, Any], keys: Sequence[str],
+        record: Mapping[str, Any],
+        keys: Sequence[str],
     ) -> list[ValidationIssue]:
         return [ValidationIssue.missing(key) for key in keys if key not in record]
 
     @staticmethod
     def require_type(
-            record: Mapping[str, Any],
-            key: str,
-            expected_types: type | tuple[type, ...],
-            *,
-            allow_none: bool = False,
+        record: Mapping[str, Any],
+        key: str,
+        expected_types: type | tuple[type, ...],
+        *,
+        allow_none: bool = False,
     ) -> list[ValidationIssue]:
         if key not in record:
             return [ValidationIssue.missing(key)]
@@ -272,7 +281,7 @@ class RecordValidator(ABC):
                     key,
                     expected_names,
                     type(value).__name__,
-                )
+                ),
             ]
         return []
 

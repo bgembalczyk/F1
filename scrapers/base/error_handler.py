@@ -1,6 +1,5 @@
 import logging
 from pathlib import Path
-from typing import Optional
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperNetworkError
@@ -13,12 +12,12 @@ class ErrorHandler:
     """Wspólna obsługa błędów scraperów (wrap + soft-skip)."""
 
     def __init__(
-            self,
-            *,
-            logger: Optional[logging.Logger | logging.LoggerAdapter] = None,
-            debug_dir: Path | None = None,
-            error_report_enabled: bool = False,
-            run_id: str | None = None,
+        self,
+        *,
+        logger: logging.Logger | logging.LoggerAdapter | None = None,
+        debug_dir: Path | None = None,
+        error_report_enabled: bool = False,
+        run_id: str | None = None,
     ) -> None:
         self._logger = logger or logging.getLogger(__name__)
         self._debug_dir = Path(debug_dir) if debug_dir else None
@@ -30,7 +29,9 @@ class ErrorHandler:
 
     @staticmethod
     def wrap_network(
-            exc: Exception, *, url: Optional[str] = None,
+        exc: Exception,
+        *,
+        url: str | None = None,
     ) -> ScraperNetworkError:
         return ScraperNetworkError(
             "Błąd sieci podczas pobierania danych.",
@@ -39,7 +40,7 @@ class ErrorHandler:
         )
 
     @staticmethod
-    def wrap_parse(exc: Exception, *, url: Optional[str] = None) -> ScraperParseError:
+    def wrap_parse(exc: Exception, *, url: str | None = None) -> ScraperParseError:
         return ScraperParseError(
             "Błąd parsowania danych.",
             url=url,

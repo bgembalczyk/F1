@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
@@ -17,7 +15,7 @@ class InfoboxHtmlParser:
     def __init__(self, wikipedia_base: str | None = None) -> None:
         self.wikipedia_base = wikipedia_base or self.WIKIPEDIA_BASE
 
-    def parse(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def parse(self, soup: BeautifulSoup) -> dict[str, Any]:
         infobox = self.find_infobox(soup)
         if infobox is None:
             return {"title": None, "rows": {}}
@@ -50,8 +48,8 @@ class InfoboxHtmlParser:
         """
         return soup.find("table", class_=InfoboxHtmlParser._has_infobox_class)
 
-    def _parse_infobox(self, table) -> Dict[str, Any]:
-        data: Dict[str, Any] = {"title": None, "rows": {}}
+    def _parse_infobox(self, table) -> dict[str, Any]:
+        data: dict[str, Any] = {"title": None, "rows": {}}
 
         # Tytuł (często <caption>)
         caption = table.find("caption")
@@ -81,7 +79,7 @@ class InfoboxHtmlParser:
 
         return data
 
-    def extract_links(self, td) -> List[LinkRecord]:
+    def extract_links(self, td) -> list[LinkRecord]:
         """
         Wyciąga wszystkie linki z komórki, pomijając linki do przypisów.
         """

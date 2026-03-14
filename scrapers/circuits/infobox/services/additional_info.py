@@ -1,7 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from models.records.link import LinkRecord
 from scrapers.base.helpers.text_normalization import clean_infobox_text
@@ -13,9 +10,11 @@ class CircuitAdditionalInfoParser(CircuitEntityParser):
     """Zbieranie dodatkowych pól (additional_info)."""
 
     def collect_additional_info(
-            self, rows: Dict[str, Dict[str, Any]], used_keys: set[str],
-    ) -> Optional[Dict[str, Any]]:
-        additional: Dict[str, Any] = {}
+        self,
+        rows: dict[str, dict[str, Any]],
+        used_keys: set[str],
+    ) -> dict[str, Any] | None:
+        additional: dict[str, Any] = {}
 
         for key, row in rows.items():
             if key in used_keys:
@@ -25,12 +24,12 @@ class CircuitAdditionalInfoParser(CircuitEntityParser):
             if not text:
                 continue
 
-            info: Dict[str, Any] = {"text": text}
-            links: List[LinkRecord] = row.get("links") or []
+            info: dict[str, Any] = {"text": text}
+            links: list[LinkRecord] = row.get("links") or []
 
             parts = split_delimited_text(text)
             if len(parts) > 1:
-                values: List[Any] = []
+                values: list[Any] = []
                 for part in parts:
                     link = self._find_link(part, links)
                     if link and link.get("url"):

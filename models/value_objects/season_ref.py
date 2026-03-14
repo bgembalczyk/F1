@@ -1,7 +1,6 @@
+from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
-from typing import Mapping
-from typing import Optional
 
 from models.validation.utils import coerce_number
 from models.validation.utils import is_valid_url
@@ -11,7 +10,7 @@ from models.value_objects.base import ValueObject
 @dataclass
 class SeasonRef(ValueObject):
     year: int
-    url: Optional[str] = None
+    url: str | None = None
 
     def __post_init__(self) -> None:
         self.year = coerce_number(self.year, int, "year")

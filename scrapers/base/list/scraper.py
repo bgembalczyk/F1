@@ -1,5 +1,4 @@
 from abc import ABC
-from typing import Optional
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -22,8 +21,8 @@ class F1ListScraper(F1Scraper, ABC):
     - url_key     – klucz pod którym zapisywany jest pełny URL linku.
     """
 
-    section_id: Optional[str] = None
-    record_key: Optional[str] = None
+    section_id: str | None = None
+    record_key: str | None = None
     url_key: str = "url"
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[ExportableRecord]:
@@ -48,7 +47,7 @@ class F1ListScraper(F1Scraper, ABC):
 
         raise ScraperNotFoundError("Nie znaleziono żadnej listy.")
 
-    def parse_item(self, li: Tag) -> Optional[ExportableRecord]:
+    def parse_item(self, li: Tag) -> ExportableRecord | None:
         """Zamienia pojedynczy <li> na słownik."""
 
         if not self.record_key:

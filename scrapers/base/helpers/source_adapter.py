@@ -5,9 +5,9 @@ from scrapers.base.source_adapter import SourceAdapter
 
 
 def build_source_adapter(
-        options: ScraperOptions,
-        *,
-        policy: HttpPolicy | None = None,
+    options: ScraperOptions,
+    *,
+    policy: HttpPolicy | None = None,
 ) -> SourceAdapter:
     """Utwórz adapter źródła na podstawie ScraperOptions."""
     resolved_policy = resolve_http_policy(options, policy=policy)

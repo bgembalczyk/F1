@@ -1,6 +1,5 @@
-from typing import Any
-from typing import Dict
 from typing import TYPE_CHECKING
+from typing import Any
 
 from bs4 import BeautifulSoup
 
@@ -12,9 +11,9 @@ if TYPE_CHECKING:
 
 
 def parse_infobox_from_soup(
-        infobox_scraper: "WikipediaInfoboxScraper",
-        soup: BeautifulSoup,
-) -> Dict[str, Any]:
+    infobox_scraper: "WikipediaInfoboxScraper",
+    soup: BeautifulSoup,
+) -> dict[str, Any]:
     extractor = InfoboxExtractor(
         parser=infobox_scraper.parser,
         mapper=infobox_scraper.mapper,

@@ -55,13 +55,13 @@ class RaceResultColumn(BaseColumn):
         if not results and background is None:
             return None
         if background is None and all(
-                result.get("position") is None for result in results
+            result.get("position") is None for result in results
         ):
             return None
 
         payload: dict[str, Any] = {}
         if ctx.header_link and (
-                ctx.header_link.get("url") or ctx.header_link.get("text")
+            ctx.header_link.get("url") or ctx.header_link.get("text")
         ):
             round_link = dict(ctx.header_link)
             if not round_link.get("text"):
@@ -86,9 +86,9 @@ class RaceResultColumn(BaseColumn):
                     # Special case: NC with blue background means "Not classified, finished"
                     position = result.get("position")
                     if (
-                            isinstance(position, str)
-                            and position.upper() == "NC"
-                            and background == "Other classified position"
+                        isinstance(position, str)
+                        and position.upper() == "NC"
+                        and background == "Other classified position"
                     ):
                         result["background"] = "Not classified, finished"
                     else:
@@ -161,17 +161,19 @@ class RaceResultColumn(BaseColumn):
             notes.append(note)
 
     def _apply_result_notes(
-            self, result: dict[str, Any], background: str | None,
+        self,
+        result: dict[str, Any],
+        background: str | None,
     ) -> None:
         marks = result.get("marks") or []
         position = result.get("position")
 
         if (
-                self._season_year is not None
-                and self._season_year >= self._CLASSIFIED_DNF_START_YEAR
-                and self._CLASSIFIED_DNF_MARK in marks
-                and background in self._CLASSIFIED_DNF_BACKGROUNDS
-                and isinstance(position, int)
+            self._season_year is not None
+            and self._season_year >= self._CLASSIFIED_DNF_START_YEAR
+            and self._CLASSIFIED_DNF_MARK in marks
+            and background in self._CLASSIFIED_DNF_BACKGROUNDS
+            and isinstance(position, int)
         ):
             self._append_note(result, self._CLASSIFIED_DNF_NOTE)
 
@@ -186,25 +188,25 @@ class RaceResultColumn(BaseColumn):
             self._append_note(result, "no_points_awarded")
 
         if (
-                self._season_year is not None
-                and 1960 <= self._season_year <= 1964
-                and "†" in marks
+            self._season_year is not None
+            and 1960 <= self._season_year <= 1964
+            and "†" in marks
         ):
             result["shared_drive"] = True
             result["points_eligible"] = False
             self._append_note(result, "shared_drive_no_points")
         elif (
-                self._season_year is not None
-                and 1950 <= self._season_year <= 1957
-                and "†" in marks
+            self._season_year is not None
+            and 1950 <= self._season_year <= 1957
+            and "†" in marks
         ):
             result["shared_drive"] = True
             result["points_shared"] = True
 
         if (
-                self._season_year is not None
-                and self._season_year >= 1965
-                and isinstance(position, str)
+            self._season_year is not None
+            and self._season_year >= 1965
+            and isinstance(position, str)
         ):
             status = position.lower()
             if status == "dns" and "†" in marks:
@@ -213,15 +215,17 @@ class RaceResultColumn(BaseColumn):
                 self._append_note(result, "fatal_accident_during_race")
 
         if (
-                self._season_year in self._F2_INELIGIBLE_YEARS
-                and result.get("footnotes")
-                and "1" in result["footnotes"]
+            self._season_year in self._F2_INELIGIBLE_YEARS
+            and result.get("footnotes")
+            and "1" in result["footnotes"]
         ):
             result["points_eligible"] = False
             self._append_note(result, "ineligible_f2")
 
     def _round_note(
-            self, ctx: ColumnContext, round_link: dict[str, Any],
+        self,
+        ctx: ColumnContext,
+        round_link: dict[str, Any],
     ) -> dict[str, Any] | None:
         marks = MARKS_RE.findall(ctx.header)
         if not marks:
@@ -231,9 +235,9 @@ class RaceResultColumn(BaseColumn):
         if header_text == "500" or "Indianapolis_500" in round_url:
             return None
         if (
-                self._season_year == 2014
-                and "Abu_Dhabi_Grand_Prix" in round_url
-                and "‡" in marks
+            self._season_year == 2014
+            and "Abu_Dhabi_Grand_Prix" in round_url
+            and "‡" in marks
         ):
             return {"note": self._DOUBLE_POINTS_NOTE, "points_multiplier": 2.0}
         if any(mark in {"*", "†", "‡"} for mark in marks):
@@ -241,7 +245,8 @@ class RaceResultColumn(BaseColumn):
         return None
 
     def _parse_superscripts(
-            self, ctx: ColumnContext,
+        self,
+        ctx: ColumnContext,
     ) -> tuple[int | None, bool, bool, list[str]]:
         cell = ctx.cell
         if cell is None:

@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import Type
 from uuid import uuid4
 
 from scrapers.base.ABC import F1Scraper
@@ -19,10 +18,10 @@ class ScraperRunner:
         self._supports_urls = supports_urls
 
     def run_and_export(
-            self,
-            scraper_cls: Type[F1Scraper],
-            json_rel: str | Path,
-            csv_rel: str | Path | None = None,
+        self,
+        scraper_cls: type[F1Scraper],
+        json_rel: str | Path,
+        csv_rel: str | Path | None = None,
     ) -> None:
         run_id = uuid4().hex
         run_logger = get_logger(scraper_cls.__name__)
@@ -49,7 +48,7 @@ class ScraperRunner:
             result.to_csv(csv_path, exporter=scraper.exporter)
         run_logger.info("Scrape run %s finished", run_id)
 
-    def _make_scraper(self, scraper_cls: Type[F1Scraper], *, run_id: str) -> F1Scraper:
+    def _make_scraper(self, scraper_cls: type[F1Scraper], *, run_id: str) -> F1Scraper:
         """
         Tworzy instancję scrapera w sposób kompatybilny z różnymi konstruktorami:
 

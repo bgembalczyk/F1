@@ -2,7 +2,6 @@
 
 import re
 from typing import Any
-from typing import Dict
 
 from bs4 import Tag
 
@@ -17,25 +16,25 @@ class ChampionshipsParser:
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):
         """Initialize the championships parser.
-        
+
         Args:
             link_extractor: Link extractor for extracting URLs from cells
         """
         self._link_extractor = link_extractor
 
-    def parse_championships(self, cell: Tag) -> Dict[str, Any]:
+    def parse_championships(self, cell: Tag) -> dict[str, Any]:
         """Parse championships count with links.
 
         Handles cases like:
         - "1 (2014)" -> {count: 1, championships: [{text: "2014", url: ...}]}
         - "2 (2015, 2016)" -> {count: 2, championships: [{text: "2015", url: ...}, {text: "2016", url: ...}]}
-        
+
         Args:
             cell: BeautifulSoup Tag representing the cell
-            
+
         Returns:
             Dictionary with 'count' and 'championships' keys
-            
+
         Raises:
             DomainParseError: If parsing fails
         """
@@ -55,18 +54,18 @@ class ChampionshipsParser:
                 cause=exc,
             ) from exc
 
-    def parse_class_wins(self, cell: Tag) -> Dict[str, Any]:
+    def parse_class_wins(self, cell: Tag) -> dict[str, Any]:
         """Parse class wins count with year and link information.
 
         Similar to championships, handles cases like:
         - "6 (1969, 1975, 1976)" -> {count: 6, wins: [{year: 1969, url: ...}, ...]}
-        
+
         Args:
             cell: BeautifulSoup Tag representing the cell
-            
+
         Returns:
             Dictionary with 'count' and 'wins' keys
-            
+
         Raises:
             DomainParseError: If parsing fails
         """
@@ -88,7 +87,7 @@ class ChampionshipsParser:
             small_tag = cell.find("small")
             if small_tag:
                 small_text = (
-                        clean_infobox_text(small_tag.get_text(" ", strip=True)) or ""
+                    clean_infobox_text(small_tag.get_text(" ", strip=True)) or ""
                 )
                 for year_match in re.finditer(r"\b(\d{4})\b", small_text):
                     year = int(year_match.group(1))

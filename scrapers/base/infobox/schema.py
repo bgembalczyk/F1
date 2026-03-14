@@ -1,9 +1,8 @@
+from collections.abc import Callable
+from collections.abc import Iterable
+from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Any
-from typing import Callable
-from typing import Dict
-from typing import Iterable
-from typing import Sequence
 
 from scrapers.base.helpers.text_normalization import to_snake_case
 from scrapers.base.logging import get_logger
@@ -22,17 +21,17 @@ class InfoboxSchema:
     """Schema mapująca etykiety infoboksa na spójne klucze."""
 
     def __init__(
-            self,
-            *,
-            fields: Iterable[InfoboxSchemaField],
-            name: str | None = None,
-            required_keys: Iterable[str] | None = None,
-            normalize_unknown: bool = True,
+        self,
+        *,
+        fields: Iterable[InfoboxSchemaField],
+        name: str | None = None,
+        required_keys: Iterable[str] | None = None,
+        normalize_unknown: bool = True,
     ) -> None:
         self.name = name or "infobox"
         self.normalize_unknown = normalize_unknown
         self.fields = list(fields)
-        self._label_map: Dict[str, InfoboxSchemaField] = {}
+        self._label_map: dict[str, InfoboxSchemaField] = {}
         for field in self.fields:
             for label in field.labels:
                 key = self._normalize_label(label)
@@ -65,13 +64,13 @@ class InfoboxSchema:
         return normalized or None
 
     def normalize_rows(
-            self,
-            rows: Dict[str, Any],
-            *,
-            logger=None,
-            context: str | None = None,
-    ) -> Dict[str, Any]:
-        normalized_rows: Dict[str, Any] = {}
+        self,
+        rows: dict[str, Any],
+        *,
+        logger=None,
+        context: str | None = None,
+    ) -> dict[str, Any]:
+        normalized_rows: dict[str, Any] = {}
         for label, row in rows.items():
             key = self.normalize_label(label)
             if not key:
@@ -90,11 +89,11 @@ class InfoboxSchema:
         return normalized_rows
 
     def log_missing(
-            self,
-            present_keys: Iterable[str],
-            *,
-            logger=None,
-            context: str | None = None,
+        self,
+        present_keys: Iterable[str],
+        *,
+        logger=None,
+        context: str | None = None,
     ) -> None:
         if logger is None:
             return

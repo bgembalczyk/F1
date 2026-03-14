@@ -12,13 +12,13 @@ from scrapers.base.table.row import TableRow
 
 class TableExtractor:
     def __init__(
-            self,
-            *,
-            config: ScraperConfig,
-            include_urls: bool,
-            normalize_empty_values: bool = True,
-            model_fields: set[str] | None = None,
-            debug_dir: str | Path | None = None,
+        self,
+        *,
+        config: ScraperConfig,
+        include_urls: bool,
+        normalize_empty_values: bool = True,
+        model_fields: set[str] | None = None,
+        debug_dir: str | Path | None = None,
     ) -> None:
         raw_config = replace(config, record_factory=None)
         self.pipeline = TablePipeline(

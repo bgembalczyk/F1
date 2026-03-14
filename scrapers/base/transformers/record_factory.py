@@ -1,21 +1,19 @@
+from collections.abc import Callable
 from typing import Any
-from typing import Callable
-from typing import Dict
-from typing import List
 
 from scrapers.base.logging import get_logger
 from scrapers.base.normalization import EmptyValuePolicy
 from scrapers.base.transformers.record_transformer import RecordTransformer
-from validation.records import ExportRecord
+from validation.validator_base import ExportRecord
 
 
 class RecordFactoryTransformer(RecordTransformer):
     def __init__(
-            self,
-            record_factory: Callable[[Dict[str, Any]], Any] | type,
-            *,
-            fallback_on_error: bool = False,
-            empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
+        self,
+        record_factory: Callable[[dict[str, Any]], Any] | type,
+        *,
+        fallback_on_error: bool = False,
+        empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
     ) -> None:
         super().__init__(empty_value_policy=empty_value_policy)
         self.record_factory = record_factory
@@ -27,8 +25,8 @@ class RecordFactoryTransformer(RecordTransformer):
             return self.record_factory(**record)
         return self.record_factory(record)
 
-    def transform(self, records: List[ExportRecord]) -> List[ExportRecord]:
-        transformed: List[ExportRecord] = []
+    def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
+        transformed: list[ExportRecord] = []
         for record in records:
             try:
                 normalized = self.normalize_record(record)

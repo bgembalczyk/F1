@@ -1,11 +1,11 @@
 from typing import Any
-from typing import Optional
 from typing import TypedDict
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
-from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, ValidationIssue
+from validation.domain_validator import BaseDomainRecordValidator
+from validation.issue import ValidationIssue
+from validation.schemas import RecordSchema
 
 
 def validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
@@ -29,13 +29,13 @@ def validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:
         return errors
     if event is not None and not isinstance(event, str):
         return [
-            ValidationIssue.custom("event must be a string, link, or list of links")
+            ValidationIssue.custom("event must be a string, link, or list of links"),
         ]
     return []
 
 
 class EventRecord(TypedDict, total=False):
-    event: Optional[str | LinkRecord | list[LinkRecord]]
+    event: str | LinkRecord | list[LinkRecord] | None
     championship: bool
 
 

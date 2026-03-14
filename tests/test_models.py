@@ -18,7 +18,6 @@ from scrapers.base.table.scraper import F1TableScraper
 if "bs4" not in sys.modules:
     bs4_stub = types.ModuleType("bs4")
 
-
     class _StubTag:
         def __init__(self, attrs=None, text: str = ""):
             self.attrs = attrs or {}
@@ -39,7 +38,6 @@ if "bs4" not in sys.modules:
         @property
         def contents(self):
             return [self.text]
-
 
     class _StubBeautifulSoup:
         def __init__(self, html: str, *_):
@@ -65,7 +63,6 @@ if "bs4" not in sys.modules:
                 attrs["class"] = class_match.group(1).split()
 
             return _StubTag(attrs, text_match.group(1) if text_match else "")
-
 
     bs4_stub.Tag = _StubTag
     bs4_stub.BeautifulSoup = _StubBeautifulSoup
@@ -128,7 +125,8 @@ def test_validated_model_calls_validate():
 
 def test_scraper_config_validates_on_init():
     with pytest.raises(
-            ValueError, match="ScraperConfig.url must be a non-empty string.",
+        ValueError,
+        match="ScraperConfig.url must be a non-empty string.",
     ):
         ScraperConfig(url="")
 

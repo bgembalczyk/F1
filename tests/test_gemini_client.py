@@ -1,12 +1,13 @@
 """Tests for GeminiClient – multi-model fallback, RPM/RPD limits, cache integration."""
-from collections import deque
-from unittest.mock import MagicMock, patch
+
+from unittest.mock import MagicMock
 
 import pytest
 
 from infrastructure.gemini.cache import GeminiCache
-from infrastructure.gemini.client import GeminiClient, ModelConfig, _ModelState
-
+from infrastructure.gemini.client import GeminiClient
+from infrastructure.gemini.client import ModelConfig
+from infrastructure.gemini.client import _ModelState
 
 # ---------------------------------------------------------------------------
 # ModelConfig / _ModelState unit tests
@@ -16,12 +17,14 @@ from infrastructure.gemini.client import GeminiClient, ModelConfig, _ModelState
 def test_model_state_available_initially() -> None:
     state = _ModelState(ModelConfig("m", requests_per_minute=5, requests_per_day=100))
     import time
+
     assert state.is_available(time.monotonic())
 
 
 def test_model_state_rpm_exhausted() -> None:
     state = _ModelState(ModelConfig("m", requests_per_minute=2, requests_per_day=100))
     import time
+
     now = time.monotonic()
     state.record_request(now)
     state.record_request(now)
@@ -31,6 +34,7 @@ def test_model_state_rpm_exhausted() -> None:
 def test_model_state_rpd_exhausted() -> None:
     state = _ModelState(ModelConfig("m", requests_per_minute=100, requests_per_day=2))
     import time
+
     now = time.monotonic()
     state.record_request(now)
     state.record_request(now)
@@ -41,6 +45,7 @@ def test_model_state_rpm_window_expires() -> None:
     """After 60 s, RPM slots free up (sliding window)."""
     state = _ModelState(ModelConfig("m", requests_per_minute=1, requests_per_day=100))
     import time
+
     past = time.monotonic() - 61.0  # 61 s ago
     state._rpm_timestamps.append(past)
     assert state.is_available(time.monotonic())
@@ -50,6 +55,7 @@ def test_model_state_rpd_window_expires() -> None:
     """After 24 h, RPD slots free up (sliding window)."""
     state = _ModelState(ModelConfig("m", requests_per_minute=100, requests_per_day=1))
     import time
+
     past = time.monotonic() - 86401.0  # just over 24 h ago
     state._rpd_timestamps.append(past)
     assert state.is_available(time.monotonic())
@@ -170,6 +176,7 @@ def test_query_raises_when_all_models_exhausted(tmp_path) -> None:
 def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
     """When model-a is at RPM limit, the query uses model-b."""
     import time
+
     cache = GeminiCache(cache_dir=tmp_path / "c")
     models = [
         ModelConfig("model-a", requests_per_minute=1, requests_per_day=500),
@@ -197,6 +204,7 @@ def test_query_skips_rpm_exhausted_model(tmp_path) -> None:
 def test_query_raises_when_all_models_at_rpm_limit(tmp_path) -> None:
     """RuntimeError when every model has hit its RPM limit and no fallback remains."""
     import time
+
     cache = GeminiCache(cache_dir=tmp_path / "c")
     models = [
         ModelConfig("model-a", requests_per_minute=1, requests_per_day=500),

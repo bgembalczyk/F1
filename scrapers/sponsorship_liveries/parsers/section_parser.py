@@ -1,8 +1,6 @@
-from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 from typing import TYPE_CHECKING
+from typing import Any
+from typing import Optional
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -37,13 +35,13 @@ class SponsorshipSectionParser:
     }
 
     def __init__(
-            self,
-            *,
-            url: str,
-            include_urls: bool,
-            normalize_empty_values: bool,
-            splitter: SponsorshipRecordSplitter,
-            classifier: Optional["ParenClassifier"] = None,
+        self,
+        *,
+        url: str,
+        include_urls: bool,
+        normalize_empty_values: bool,
+        splitter: SponsorshipRecordSplitter,
+        classifier: Optional["ParenClassifier"] = None,
     ):
         self._url = url
         self._include_urls = include_urls
@@ -52,10 +50,10 @@ class SponsorshipSectionParser:
         self._classifier = classifier
 
     def _build_pipeline(
-            self,
-            *,
-            team_name: Optional[str] = None,
-            table_headers: Optional[List[str]] = None,
+        self,
+        *,
+        team_name: str | None = None,
+        table_headers: list[str] | None = None,
     ) -> TablePipeline:
         def _seasons_col() -> SponsorshipSeasonsColumn:
             return SponsorshipSeasonsColumn(
@@ -88,8 +86,8 @@ class SponsorshipSectionParser:
 
     @staticmethod
     def _season_column_specs(
-            seasons_col_factory: Any,
-    ) -> List[Any]:
+        seasons_col_factory: Any,
+    ) -> list[Any]:
         """Return column specs for the season/year header variants."""
         return [
             column("Year", "season", seasons_col_factory()),
@@ -100,13 +98,17 @@ class SponsorshipSectionParser:
         ]
 
     @staticmethod
-    def _driver_column_specs() -> List[Any]:
+    def _driver_column_specs() -> list[Any]:
         return [column("Driver(s)", "drivers", DriverListColumn())]
 
     @staticmethod
-    def _colour_column_specs() -> List[Any]:
+    def _colour_column_specs() -> list[Any]:
         return [
-            column("Main colour(s)", normalize_header("Main colour(s)"), ColourListColumn()),
+            column(
+                "Main colour(s)",
+                normalize_header("Main colour(s)"),
+                ColourListColumn(),
+            ),
             column(
                 "Additional colour(s)",
                 normalize_header("Additional colour(s)"),
@@ -115,7 +117,7 @@ class SponsorshipSectionParser:
         ]
 
     @staticmethod
-    def _sponsor_column_specs() -> List[Any]:
+    def _sponsor_column_specs() -> list[Any]:
         return [
             column(
                 "Additional major sponsor(s)",
@@ -140,7 +142,7 @@ class SponsorshipSectionParser:
         ]
 
     @staticmethod
-    def _text_column_specs() -> List[Any]:
+    def _text_column_specs() -> list[Any]:
         return [
             column("Notes", normalize_header("Notes"), TextColumn()),
             column(
@@ -193,12 +195,12 @@ class SponsorshipSectionParser:
         ]
 
     def parse_section_table(
-            self,
-            soup: BeautifulSoup,
-            *,
-            section_id: str,
-            team: str,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_id: str,
+        team: str,
+    ) -> list[dict[str, Any]]:
         parser = HtmlTableParser(table_css_class="wikitable")
         table = self._find_section_table(soup, section_id=section_id)
         rows = parser.parse_table(table)
@@ -207,7 +209,7 @@ class SponsorshipSectionParser:
             team_name=team,
             table_headers=table_headers,
         )
-        records: List[Dict[str, Any]] = []
+        records: list[dict[str, Any]] = []
         for row_index, row in enumerate(rows):
             record = pipeline.parse_cells(
                 row.headers,
@@ -220,8 +222,8 @@ class SponsorshipSectionParser:
 
     @staticmethod
     def _split_broader_records_by_scope(
-            records: List[Dict[str, Any]],
-    ) -> List[Dict[str, Any]]:
+        records: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
         """Split season ranges that overlap with GP-scoped entries derived from season cells.
 
         When a season cell contains a grand-prix parenthetical such as
@@ -241,14 +243,14 @@ class SponsorshipSectionParser:
         if not season_scoped:
             return records
 
-        def _years(record: Dict[str, Any]) -> set:
+        def _years(record: dict[str, Any]) -> set:
             return {
                 s["year"]
                 for s in (record.get("season") or [])
                 if isinstance(s, dict) and "year" in s
             }
 
-        result: List[Dict[str, Any]] = []
+        result: list[dict[str, Any]] = []
         for record in records:
             if record.get("_season_scoped_gp"):
                 result.append(
@@ -280,14 +282,16 @@ class SponsorshipSectionParser:
 
             if non_scoped_years:
                 non_scoped_seasons = [
-                    s for s in record["season"]
+                    s
+                    for s in record["season"]
                     if isinstance(s, dict) and s.get("year") in non_scoped_years
                 ]
                 result.append({**record, "season": non_scoped_seasons})
 
             if overlap_years:
                 overlap_seasons = [
-                    s for s in record["season"]
+                    s
+                    for s in record["season"]
                     if isinstance(s, dict) and s.get("year") in overlap_years
                 ]
                 result.append(
@@ -311,7 +315,10 @@ class SponsorshipSectionParser:
 
     @staticmethod
     def _is_section_start(
-            element: Tag, *, current_heading: Tag, current_headline: Tag,
+        element: Tag,
+        *,
+        current_heading: Tag,
+        current_headline: Tag,
     ) -> bool:
         if element is current_heading or element is current_headline:
             return False
@@ -329,15 +336,15 @@ class SponsorshipSectionParser:
         )
 
     @classmethod
-    def _iter_section_elements(cls, heading: Tag, headline: Tag) -> List[Tag]:
-        elements: List[Tag] = []
+    def _iter_section_elements(cls, heading: Tag, headline: Tag) -> list[Tag]:
+        elements: list[Tag] = []
         for element in heading.next_elements:
             if not isinstance(element, Tag):
                 continue
             if cls._is_section_start(
-                    element,
-                    current_heading=heading,
-                    current_headline=headline,
+                element,
+                current_heading=heading,
+                current_headline=headline,
             ):
                 break
             elements.append(element)
@@ -353,7 +360,7 @@ class SponsorshipSectionParser:
 
         for element in self._iter_section_elements(heading, headline):
             if element.name != "table" or "wikitable" not in (
-                    element.get("class") or []
+                element.get("class") or []
             ):
                 continue
             header_row = element.find("tr")
@@ -369,8 +376,8 @@ class SponsorshipSectionParser:
 
         raise RuntimeError(f"Nie znaleziono tabeli w sekcji {section_id!r}")
 
-    def parse_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        records: List[Dict[str, Any]] = []
+    def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        records: list[dict[str, Any]] = []
         headings = []
         for headline in soup.select(".mw-headline"):
             heading = headline.parent

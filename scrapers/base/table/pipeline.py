@@ -1,7 +1,7 @@
+from collections.abc import Mapping
+from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
-from typing import Mapping
-from typing import Sequence
 from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup
@@ -38,14 +38,14 @@ class TablePipeline:
     """
 
     def __init__(
-            self,
-            *,
-            config: ScraperConfig,
-            include_urls: bool,
-            normalize_empty_values: bool = True,
-            model_fields: set[str] | None = None,
-            run_id: str | None = None,
-            debug_dir: str | Path | None = None,
+        self,
+        *,
+        config: ScraperConfig,
+        include_urls: bool,
+        normalize_empty_values: bool = True,
+        model_fields: set[str] | None = None,
+        run_id: str | None = None,
+        debug_dir: str | Path | None = None,
     ) -> None:
         self.config = config
         self.include_urls = include_urls
@@ -127,10 +127,10 @@ class TablePipeline:
         return records
 
     def parse_row(
-            self,
-            row: Mapping[str, Tag],
-            *,
-            row_index: int | None = None,
+        self,
+        row: Mapping[str, Tag],
+        *,
+        row_index: int | None = None,
     ) -> Any:
         record: dict[str, Any] = {}
 
@@ -144,15 +144,15 @@ class TablePipeline:
         return self._finalize_record(record)
 
     def parse_cells(
-            self,
-            headers: Sequence[str],
-            cells: Sequence[Tag],
-            *,
-            row_index: int | None = None,
-            header_cells: Sequence[Tag] | None = None,
+        self,
+        headers: Sequence[str],
+        cells: Sequence[Tag],
+        *,
+        row_index: int | None = None,
+        header_cells: Sequence[Tag] | None = None,
     ) -> Any:
         record: dict[str, Any] = {}
-        for index, (header, cell) in enumerate(zip(headers, cells)):
+        for index, (header, cell) in enumerate(zip(headers, cells, strict=False)):
             header_cell = None
             if header_cells and index < len(header_cells):
                 header_cell = header_cells[index]
@@ -191,12 +191,12 @@ class TablePipeline:
         return cell.decode_contents()
 
     def _dump_parse_context(
-            self,
-            *,
-            header: str,
-            row_index: int | None,
-            cell_html: str | None,
-            error: Exception,
+        self,
+        *,
+        header: str,
+        row_index: int | None,
+        cell_html: str | None,
+        error: Exception,
     ) -> None:
         if self.debug_dir is None:
             return
@@ -216,7 +216,9 @@ class TablePipeline:
         self.logger.warning("Saved table pipeline debug dump: %s", dump_path)
 
     def _normalize_cell(
-            self, header: str, cell: Tag,
+        self,
+        header: str,
+        cell: Tag,
     ) -> tuple[str, str | None, str | None]:
         key = self.column_map.get(header, normalize_header(header))
         raw_text = cell.get_text(" ", strip=True)
@@ -230,9 +232,9 @@ class TablePipeline:
             policy=self.empty_value_policy,
         )
         if (
-                self.empty_value_policy is EmptyValuePolicy.NORMALIZE
-                and normalized_clean is None
-                and clean_text == ""
+            self.empty_value_policy is EmptyValuePolicy.NORMALIZE
+            and normalized_clean is None
+            and clean_text == ""
         ):
             self._normalized_empty_cells += 1
         return key, normalized_raw_text, normalized_clean
@@ -250,13 +252,13 @@ class TablePipeline:
         return self.columns.get(key) or self.columns.get(header) or self.default_column
 
     def _apply_cell(
-            self,
-            record: dict[str, Any],
-            header: str,
-            cell: Tag,
-            *,
-            row_index: int | None = None,
-            header_cell: Tag | None = None,
+        self,
+        record: dict[str, Any],
+        header: str,
+        cell: Tag,
+        *,
+        row_index: int | None = None,
+        header_cell: Tag | None = None,
     ) -> None:
         cell_html = self._cell_html(cell)
         key, raw_text, clean_text = self._normalize_cell(header, cell)

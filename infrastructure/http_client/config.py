@@ -2,13 +2,10 @@
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Optional
 
-from infrastructure.http_client.policies.defaults import (
-    DEFAULT_HTTP_BACKOFF_SECONDS,
-    DEFAULT_HTTP_RETRIES,
-    DEFAULT_HTTP_TIMEOUT,
-)
+from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_BACKOFF_SECONDS
+from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_RETRIES
+from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_TIMEOUT
 from infrastructure.http_client.policies.rate_limiter import RateLimiter
 from infrastructure.http_client.policies.response_cache import ResponseCache
 from infrastructure.http_client.policies.retry import RetryPolicy
@@ -28,4 +25,4 @@ class HttpClientConfig:
     cache: ResponseCache | None = None
     cache_dir: Path | str | None = None
     cache_ttl_days: int = 30
-    headers: Optional[Dict[str, str]] = None
+    headers: dict[str, str] | None = None

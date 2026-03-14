@@ -1,5 +1,7 @@
-from dataclasses import dataclass, field
-from typing import Any, Mapping
+from collections.abc import Mapping
+from dataclasses import dataclass
+from dataclasses import field
+from typing import Any
 
 from models.contracts.base import DataContract
 from models.records.driver_championships import DriversChampionshipsRecord

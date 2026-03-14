@@ -1,9 +1,7 @@
 from pathlib import Path
-from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 from typing import TYPE_CHECKING
+from typing import Any
+from typing import Optional
 
 from bs4 import BeautifulSoup
 
@@ -42,10 +40,10 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
     url = "https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries"
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            classifier: Optional["ParenClassifier"] = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        classifier: Optional["ParenClassifier"] = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -60,18 +58,20 @@ class F1SponsorshipLiveriesScraper(F1Scraper):
             classifier=classifier,
         )
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._section_parser.parse_sections(soup)
 
 
 if __name__ == "__main__":
-    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
     from infrastructure.gemini.client import GeminiClient
+    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
     try:
         _gemini_client = GeminiClient.from_key_file()
-        _classifier: Optional[ParenClassifier] = ParenClassifier(_gemini_client)
-        print("[scraper] Gemini ParenClassifier załadowany – adnotacje w nawiasach będą klasyfikowane.")
+        _classifier: ParenClassifier | None = ParenClassifier(_gemini_client)
+        print(
+            "[scraper] Gemini ParenClassifier załadowany – adnotacje w nawiasach będą klasyfikowane.",
+        )
     except FileNotFoundError as _e:
         _classifier = None
         print("[scraper] Brak klucza Gemini API ({_e}), klasyfikacja Gemini wyłączona.")

@@ -10,11 +10,11 @@ from models.validation.validators import normalize_season_list
 from models.validation.validators import validate_link
 from models.validation.validators import validate_links
 from models.validation.validators import validate_seasons
-from models.value_objects import Link
-from models.value_objects import SeasonRef
-from validation.records import BaseDomainRecordValidator
-from validation.records import RecordValidator
-from validation.records import ValidationIssue
+from models.value_objects.link import Link
+from models.value_objects.season_ref import SeasonRef
+from validation.domain_validator import BaseDomainRecordValidator
+from validation.issue import ValidationIssue
+from validation.validator_base import RecordValidator
 
 
 def test_validate_int_allows_none_and_rejects_invalid_values():
@@ -105,7 +105,8 @@ def test_base_domain_validator_checks_required_and_type_rules():
     record = {"name": "Example", "count": "invalid"}
 
     errors = BaseDomainRecordValidator.require_keys(
-        record, ["name", "count", "missing"],
+        record,
+        ["name", "count", "missing"],
     )
 
     messages = [error.message for error in errors]

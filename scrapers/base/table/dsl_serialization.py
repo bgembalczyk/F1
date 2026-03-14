@@ -3,6 +3,7 @@
 Extracted from scrapers/base/table/dsl.py to keep that module focused on the
 core build logic.
 """
+
 from typing import Any
 
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -28,7 +29,7 @@ def column_ref_payload(spec: Any) -> dict[str, Any]:
 
     *spec* is a ``ColumnSpec`` (imported lazily to avoid circular imports).
     """
-    from scrapers.base.table.dsl import ColumnRef  # noqa: PLC0415
+    from scrapers.base.table.dsl import ColumnRef
 
     if isinstance(spec.column, BaseColumn):
         ref = ColumnRef.from_instance(spec.column)

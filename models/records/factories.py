@@ -1,7 +1,10 @@
-from typing import Any, Mapping, cast
+from collections.abc import Mapping
+from typing import Any
+from typing import cast
 
-from models.mappers.field_aliases import FIELD_ALIASES, apply_field_aliases
-from models.records.base_factory import BaseRecordFactory, FieldNormalizer
+from models.mappers.field_aliases import FIELD_ALIASES
+from models.mappers.field_aliases import apply_field_aliases
+from models.records.base_factory import FieldNormalizer
 from models.records.car import CarRecord
 from models.records.circuit import CircuitRecord
 from models.records.circuit_complete import CircuitCompleteRecord
@@ -16,13 +19,6 @@ from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 from models.records.season_summary import SeasonSummaryRecord
 from models.records.special_driver import SpecialDriverRecord
-from models.validation.core import validate_float, validate_int, validate_status
-from models.validation.validators import (
-    is_empty_link,
-    normalize_season_item,
-    validate_link,
-    validate_seasons,
-)
 
 WIKI_SEASON_URL = "https://en.wikipedia.org/wiki/{year}_Formula_One_World_Championship"
 
@@ -68,11 +64,12 @@ def build_season_record(record: Mapping[str, Any]) -> SeasonRecord:
 
 
 def build_drivers_championships_record(
-        record: Mapping[str, Any],
+    record: Mapping[str, Any],
 ) -> DriversChampionshipsRecord:
     payload = dict(record)
     payload["count"] = normalize_int(
-        payload.get("count"), "drivers_championships.count",
+        payload.get("count"),
+        "drivers_championships.count",
     )
     payload["count"] = payload["count"] or 0
     payload["seasons"] = normalize_seasons(payload.get("seasons"))
@@ -97,7 +94,8 @@ def build_driver_record(record: Mapping[str, Any]) -> DriverRecord:
     payload["race_entries"] = normalize_int(payload.get("race_entries"), "race_entries")
     payload["race_starts"] = normalize_int(payload.get("race_starts"), "race_starts")
     payload["pole_positions"] = normalize_int(
-        payload.get("pole_positions"), "pole_positions",
+        payload.get("pole_positions"),
+        "pole_positions",
     )
     payload["race_wins"] = normalize_int(payload.get("race_wins"), "race_wins")
     payload["podiums"] = normalize_int(payload.get("podiums"), "podiums")
@@ -122,16 +120,20 @@ def build_special_driver_record(record: Mapping[str, Any]) -> SpecialDriverRecor
 
 def build_constructor_record(record: Mapping[str, Any]) -> ConstructorRecord:
     payload = apply_field_aliases(
-        record, FIELD_ALIASES["constructor"], record_name="constructor",
+        record,
+        FIELD_ALIASES["constructor"],
+        record_name="constructor",
     )
     payload["constructor"] = normalize_link_value(
-        payload.get("constructor"), "constructor",
+        payload.get("constructor"),
+        "constructor",
     )
     payload["engine"] = normalize_link_list(payload.get("engine"), "engine")
     payload["based_in"] = normalize_link_list(payload.get("based_in"), "based_in")
     payload["seasons"] = normalize_seasons(payload.get("seasons"))
     payload["antecedent_teams"] = normalize_link_list(
-        payload.get("antecedent_teams"), "antecedent_teams",
+        payload.get("antecedent_teams"),
+        "antecedent_teams",
     )
     licensed_in = payload.get("licensed_in")
     if isinstance(licensed_in, list):
@@ -141,14 +143,17 @@ def build_constructor_record(record: Mapping[str, Any]) -> ConstructorRecord:
     elif isinstance(licensed_in, str):
         payload["licensed_in"] = licensed_in.strip() or None
     payload["races_entered"] = normalize_int(
-        payload.get("races_entered"), "races_entered",
+        payload.get("races_entered"),
+        "races_entered",
     )
     payload["races_started"] = normalize_int(
-        payload.get("races_started"), "races_started",
+        payload.get("races_started"),
+        "races_started",
     )
     payload["drivers"] = normalize_int(payload.get("drivers"), "drivers")
     payload["total_entries"] = normalize_int(
-        payload.get("total_entries"), "total_entries",
+        payload.get("total_entries"),
+        "total_entries",
     )
     payload["wins"] = normalize_int(payload.get("wins"), "wins")
     payload["points"] = normalize_int(payload.get("points"), "points")
@@ -173,18 +178,22 @@ def build_circuit_record(record: Mapping[str, Any]) -> CircuitRecord:
         "circuit_status",
     )
     payload["last_length_used_km"] = normalize_float(
-        payload.get("last_length_used_km"), "last_length_used_km",
+        payload.get("last_length_used_km"),
+        "last_length_used_km",
     )
     payload["last_length_used_mi"] = normalize_float(
-        payload.get("last_length_used_mi"), "last_length_used_mi",
+        payload.get("last_length_used_mi"),
+        "last_length_used_mi",
     )
     payload["turns"] = normalize_int(payload.get("turns"), "turns")
     payload["grands_prix"] = normalize_link_list(
-        payload.get("grands_prix"), "grands_prix",
+        payload.get("grands_prix"),
+        "grands_prix",
     )
     payload["seasons"] = normalize_seasons(payload.get("seasons"))
     payload["grands_prix_held"] = normalize_int(
-        payload.get("grands_prix_held"), "grands_prix_held",
+        payload.get("grands_prix_held"),
+        "grands_prix_held",
     )
     country = payload.get("country")
     if isinstance(country, Mapping):
@@ -273,7 +282,8 @@ def build_season_summary_record(record: Mapping[str, Any]) -> SeasonSummaryRecor
 def build_grands_prix_record(record: Mapping[str, Any]) -> GrandsPrixRecord:
     payload = dict(record)
     payload["race_title"] = normalize_link_value(
-        payload.get("race_title"), "race_title",
+        payload.get("race_title"),
+        "race_title",
     )
     race_status = payload.get("race_status")
     payload["race_status"] = (
@@ -298,11 +308,13 @@ def build_circuit_details_record(record: Mapping[str, Any]) -> CircuitDetailsRec
 def build_circuit_complete_record(record: Mapping[str, Any]) -> CircuitCompleteRecord:
     payload = dict(record)
     payload["grands_prix"] = normalize_link_list(
-        payload.get("grands_prix"), "grands_prix",
+        payload.get("grands_prix"),
+        "grands_prix",
     )
     payload["seasons"] = normalize_seasons(payload.get("seasons"))
     payload["grands_prix_held"] = normalize_int(
-        payload.get("grands_prix_held"), "grands_prix_held",
+        payload.get("grands_prix_held"),
+        "grands_prix_held",
     )
     payload.setdefault("history", [])
     payload.setdefault("layouts", [])

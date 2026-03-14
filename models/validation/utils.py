@@ -8,11 +8,11 @@ def is_valid_url(url: str) -> bool:
 
 
 def coerce_number(
-        value: Any,
-        type_: type,
-        field_name: str,
-        *,
-        allow_none: bool = False,
+    value: Any,
+    type_: type,
+    field_name: str,
+    *,
+    allow_none: bool = False,
 ):
     if value is None:
         if allow_none:

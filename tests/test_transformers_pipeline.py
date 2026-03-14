@@ -6,11 +6,11 @@ from pathlib import Path
 import pytest
 
 from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.transformers import NormalizeLinksTransformer
 from scrapers.base.transformers import RecordFactoryTransformer
 from scrapers.base.transformers import RecordTransformer
-from scrapers.base.transformers import TransformersPipeline
-from validation.records import ExportRecord
+from scrapers.base.transformers.normalize_links import NormalizeLinksTransformer
+from scrapers.base.transformers.pipeline import TransformersPipeline
+from validation.validator_base import ExportRecord
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -18,7 +18,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 
 def test_transformers_pipeline_applies_in_order_and_logs(
-        caplog: pytest.LogCaptureFixture,
+    caplog: pytest.LogCaptureFixture,
 ) -> None:
     class AddFlagTransformer(RecordTransformer):
         def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
@@ -71,7 +71,7 @@ def test_normalize_links_transformer_normalizes_link_values() -> None:
             {
                 "driver": {"text": " Lewis ", "url": "https://example.com/lewis"},
                 "seasons": [2020, 2021],
-            }
+            },
         ],
     )
 
@@ -79,5 +79,5 @@ def test_normalize_links_transformer_normalizes_link_values() -> None:
         {
             "driver": {"text": "Lewis", "url": "https://example.com/lewis"},
             "seasons": [2020, 2021],
-        }
+        },
     ]

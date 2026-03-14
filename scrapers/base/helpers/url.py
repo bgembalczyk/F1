@@ -1,6 +1,8 @@
 """URL normalization helpers shared across scrapers."""
 
-from urllib.parse import urljoin, urlsplit, urlunsplit
+from urllib.parse import urljoin
+from urllib.parse import urlsplit
+from urllib.parse import urlunsplit
 
 from models.validation.utils import is_valid_url
 

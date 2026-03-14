@@ -2,8 +2,6 @@ from __future__ import annotations
 
 import re
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -46,9 +44,9 @@ class F1SingleGrandPrixScraper(F1Scraper):
     _UNKNOWN_CHAMPIONSHIP = "unknown"
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -58,7 +56,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
         self.policy = self.http_policy
         self.url: str = ""
 
-    def fetch_by_url(self, url: str) -> List[Dict[str, Any]]:
+    def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
         return super().fetch()
 
@@ -86,11 +84,11 @@ class F1SingleGrandPrixScraper(F1Scraper):
         )
 
     def _parse_section_table(
-            self,
-            soup: BeautifulSoup,
-            *,
-            section_id: str,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_id: str,
+    ) -> list[dict[str, Any]]:
         pipeline = self._build_pipeline(section_id)
         parser = HtmlTableParser(
             section_id=pipeline.section_id,
@@ -98,7 +96,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
             expected_headers=pipeline.expected_headers,
             table_css_class=pipeline.table_css_class,
         )
-        records: List[Dict[str, Any]] = []
+        records: list[dict[str, Any]] = []
         for row_index, row in enumerate(parser.parse(soup)):
             record = pipeline.parse_cells(
                 row.headers,
@@ -145,7 +143,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
             return "".join(ch * 2 for ch in normalized)
         return normalized
 
-    def _is_not_held_record(self, record: Dict[str, Any]) -> bool:
+    def _is_not_held_record(self, record: dict[str, Any]) -> bool:
         report_text = self._get_text(record.get("report"))
         location = record.get("location")
         layout_text = location.get("layout") if isinstance(location, dict) else None
@@ -175,7 +173,8 @@ class F1SingleGrandPrixScraper(F1Scraper):
 
     @staticmethod
     def _is_cancellation_context(
-            report_text: str | None, layout_text: str | None,
+        report_text: str | None,
+        layout_text: str | None,
     ) -> bool:
         if report_text and report_text.lower().startswith("not held"):
             return True
@@ -217,7 +216,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
             return first_text
         return None
 
-    def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         if not is_grand_prix_article(soup):
             return []
 
@@ -235,7 +234,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
                             soup,
                             section_id=section_id,
                         ),
-                    }
+                    },
                 ]
             except Exception as exc:
                 if isinstance(exc, RuntimeError):
@@ -260,5 +259,5 @@ class F1SingleGrandPrixScraper(F1Scraper):
             {
                 "url": self.url,
                 "by_year": [],
-            }
+            },
         ]

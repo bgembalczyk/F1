@@ -1,6 +1,3 @@
-from typing import Dict
-from typing import Optional
-
 from infrastructure.http_client.clients.base import BaseHttpClient
 from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces.http_response_protocol import (
@@ -14,10 +11,10 @@ class UrllibHttpClient(BaseHttpClient):
     """Klient HTTP oparty o urllib (requests_shim), zgodny z HttpClientProtocol."""
 
     def __init__(
-            self,
-            *,
-            session: Optional[Session] = None,
-            config: HttpClientConfig | None = None,
+        self,
+        *,
+        session: Session | None = None,
+        config: HttpClientConfig | None = None,
     ) -> None:
         """
         Inicjalizacja klienta HTTP opartego na urllib.
@@ -33,11 +30,11 @@ class UrllibHttpClient(BaseHttpClient):
         )
 
     def get(
-            self,
-            url: str,
-            *,
-            headers: Optional[Dict[str, str]] = None,
-            timeout: Optional[int] = None,
+        self,
+        url: str,
+        *,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> HttpResponseProtocol:
         """Wykonuje żądanie GET."""
         return self._request_with_retries(

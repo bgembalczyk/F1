@@ -1,9 +1,7 @@
 from abc import ABC
+from collections.abc import Callable
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Callable
-from typing import List
-from typing import Optional
-from typing import Sequence
 from typing import TypeVar
 from uuid import uuid4
 
@@ -28,8 +26,8 @@ from scrapers.base.records import NormalizedRecord
 from scrapers.base.records import RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.transformers.helpers import apply_transformers
-from validation.records import ExportRecord
-from validation.records import RecordValidator
+from validation.validator_base import ExportRecord
+from validation.validator_base import RecordValidator
 
 T = TypeVar("T")
 
@@ -84,7 +82,9 @@ class F1Scraper(ABC):
         self._quality_report_enabled = options.quality_report
 
         self.validator: RecordValidator | None = options.validator or getattr(
-            self, "default_validator", None,
+            self,
+            "default_validator",
+            None,
         )
         if self.validator is not None:
             self.validator.set_record_factory(options.record_factory)
@@ -94,11 +94,11 @@ class F1Scraper(ABC):
                 "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)",
             )
 
-        self._data: Optional[List[ExportRecord]] = None
+        self._data: list[ExportRecord] | None = None
 
     # ---------- API wysokiego poziomu ----------
 
-    def fetch(self) -> List[ExportRecord]:
+    def fetch(self) -> list[ExportRecord]:
         """
         Pobierz HTML i sparsuj do listy rekordów eksportowych.
 
@@ -172,13 +172,13 @@ class F1Scraper(ABC):
         self.logger.debug("Scrape run %s finished", run_id)
         return self._data
 
-    def get_data(self) -> List[ExportRecord]:
+    def get_data(self) -> list[ExportRecord]:
         """Zwróć dane – jeśli jeszcze nie ma, uruchom fetch()."""
         if self._data is None:
             return self.fetch()
         return self._data
 
-    def build_result(self, data: Optional[List[ExportRecord]] = None) -> ScrapeResult:
+    def build_result(self, data: list[ExportRecord] | None = None) -> ScrapeResult:
         """Utwórz ScrapeResult z metadanymi."""
         return ScrapeResult(
             data=data if data is not None else self.get_data(),
@@ -188,11 +188,11 @@ class F1Scraper(ABC):
     # ---------- Eksport (delegowany) ----------
 
     def to_json(
-            self,
-            path: str | Path,
-            *,
-            indent: int = 2,
-            include_metadata: bool = False,
+        self,
+        path: str | Path,
+        *,
+        indent: int = 2,
+        include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
         result.to_json(
@@ -203,12 +203,12 @@ class F1Scraper(ABC):
         )
 
     def to_csv(
-            self,
-            path: str | Path,
-            *,
-            fieldnames: Optional[Sequence[str]] = None,
-            fieldnames_strategy: str = "union",
-            include_metadata: bool = False,
+        self,
+        path: str | Path,
+        *,
+        fieldnames: Sequence[str] | None = None,
+        fieldnames_strategy: str = "union",
+        include_metadata: bool = False,
     ) -> None:
         result = self.build_result()
         result.to_csv(
@@ -232,13 +232,13 @@ class F1Scraper(ABC):
     def fetch_html(self, url: str) -> str:
         return self.source_adapter.get(url)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[RawRecord]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[RawRecord]:
         """Parsowanie BS4 -> lista rekordów surowych."""
         raise NotImplementedError(
             f"{self.__class__.__name__} must implement _parse_soup() or override parse().",
         )
 
-    def parse(self, soup: BeautifulSoup) -> List[RawRecord]:
+    def parse(self, soup: BeautifulSoup) -> list[RawRecord]:
         if self.parser is None:
             return self._parse_soup(soup)
         return self.parser.parse(soup)
@@ -246,10 +246,10 @@ class F1Scraper(ABC):
     # ---------- Hooki: normalize/export ----------
 
     @staticmethod
-    def to_export_records(records: List[NormalizedRecord]) -> List[ExportRecord]:
+    def to_export_records(records: list[NormalizedRecord]) -> list[ExportRecord]:
         return records
 
-    def post_process_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
+    def post_process_records(self, records: list[ExportRecord]) -> list[ExportRecord]:
         processed = apply_post_processors(
             self.post_processors,
             records,
@@ -262,12 +262,12 @@ class F1Scraper(ABC):
         )
         return processed
 
-    def validate_records(self, records: List[ExportRecord]) -> List[ExportRecord]:
+    def validate_records(self, records: list[ExportRecord]) -> list[ExportRecord]:
         if self.validator is None:
             return records
 
         self.validator.reset_stats()
-        valid_records: List[ExportRecord] = []
+        valid_records: list[ExportRecord] = []
         for index, record in enumerate(records):
             errors = self.validator.validate(record)
             record_factory_errors = self.validator.validate_record_factory(record)
@@ -327,15 +327,15 @@ class F1Scraper(ABC):
 
     def _write_quality_report(self) -> None:
         if (
-                not self._quality_report_enabled
-                or self.debug_dir is None
-                or self.validator is None
+            not self._quality_report_enabled
+            or self.debug_dir is None
+            or self.validator is None
         ):
             return
         report_path = self.validator.write_quality_report(self.debug_dir)
         self.logger.info("Saved quality report: %s", report_path)
 
-    def _apply_transformers(self, records: List[ExportRecord]) -> List[ExportRecord]:
+    def _apply_transformers(self, records: list[ExportRecord]) -> list[ExportRecord]:
         return apply_transformers(self.transformers, records, logger=self.logger)
 
     # ---------- Pomocnicze ----------
@@ -361,11 +361,11 @@ class F1Scraper(ABC):
     # Używane poza fetch(), np. w mixinach/infobox.
 
     def run_with_error_handling(
-            self,
-            fetch_fn: Callable[[], str],
-            parse_fn: Callable[[BeautifulSoup], T],
-            url: str,
-    ) -> Optional[T]:
+        self,
+        fetch_fn: Callable[[], str],
+        parse_fn: Callable[[BeautifulSoup], T],
+        url: str,
+    ) -> T | None:
         try:
             html = fetch_fn()
         except Exception as exc:

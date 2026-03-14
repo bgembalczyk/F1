@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any
 
 from bs4 import BeautifulSoup
 
@@ -11,14 +11,14 @@ from scrapers.base.logging import get_logger
 
 class InfoboxExtractor:
     def __init__(
-            self,
-            *,
-            parser: InfoboxHtmlParser | None = None,
-            mapper: InfoboxFieldMapper | None = None,
-            logger=None,
-            debug_dir: str | Path | None = None,
-            run_id: str | None = None,
-            url: str | None = None,
+        self,
+        *,
+        parser: InfoboxHtmlParser | None = None,
+        mapper: InfoboxFieldMapper | None = None,
+        logger=None,
+        debug_dir: str | Path | None = None,
+        run_id: str | None = None,
+        url: str | None = None,
     ) -> None:
         self.logger = logger or get_logger(self.__class__.__name__)
         self.parser = parser or InfoboxHtmlParser()
@@ -27,7 +27,7 @@ class InfoboxExtractor:
         self.run_id = run_id
         self.url = url
 
-    def extract(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def extract(self, soup: BeautifulSoup) -> dict[str, Any]:
         self.logger.debug("InfoboxExtractor start (run_id=%s)", self.run_id)
         try:
             raw = self.parser.parse(soup)

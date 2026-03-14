@@ -24,10 +24,6 @@ from collections import deque
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
-from typing import Set
 
 import certifi
 
@@ -57,11 +53,13 @@ _API_URL_TEMPLATE = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     "{model}:generateContent?key={api_key}"
 )
-_DEFAULT_KEY_FILE = Path(__file__).resolve().parents[2] / "config" / "gemini_api_key.txt"
+_DEFAULT_KEY_FILE = (
+    Path(__file__).resolve().parents[2] / "config" / "gemini_api_key.txt"
+)
 _DEFAULT_TIMEOUT = 30
 
 # Domyślna lista modeli używana przez from_key_file() gdy models nie zostanie podane.
-_DEFAULT_MODELS: List[ModelConfig] = [
+_DEFAULT_MODELS: list[ModelConfig] = [
     ModelConfig(
         model="gemini-3.1-flash-lite-preview",
         requests_per_minute=15,
@@ -118,8 +116,8 @@ _DEFAULT_MODELS: List[ModelConfig] = [
 class _ModelState:
     """Wewnętrzny stan rate-limitera dla jednego modelu (sliding window)."""
 
-    _RPM_WINDOW = 60.0      # okno dla RPM w sekundach
-    _RPD_WINDOW = 86400.0   # okno dla RPD w sekundach (24 h)
+    _RPM_WINDOW = 60.0  # okno dla RPM w sekundach
+    _RPD_WINDOW = 86400.0  # okno dla RPD w sekundach (24 h)
 
     def __init__(self, config: ModelConfig) -> None:
         self.config = config
@@ -145,11 +143,15 @@ class _ModelState:
         self._rpd_timestamps.append(now)
 
     def _purge_rpm(self, now: float) -> None:
-        while self._rpm_timestamps and now - self._rpm_timestamps[0] >= self._RPM_WINDOW:
+        while (
+            self._rpm_timestamps and now - self._rpm_timestamps[0] >= self._RPM_WINDOW
+        ):
             self._rpm_timestamps.popleft()
 
     def _purge_rpd(self, now: float) -> None:
-        while self._rpd_timestamps and now - self._rpd_timestamps[0] >= self._RPD_WINDOW:
+        while (
+            self._rpd_timestamps and now - self._rpd_timestamps[0] >= self._RPD_WINDOW
+        ):
             self._rpd_timestamps.popleft()
 
 
@@ -169,8 +171,8 @@ class GeminiClient:
         self,
         api_key: str,
         *,
-        models: List[ModelConfig],
-        cache: Optional[GeminiCache] = None,
+        models: list[ModelConfig],
+        cache: GeminiCache | None = None,
         timeout: int = _DEFAULT_TIMEOUT,
     ) -> None:
         if not api_key:
@@ -193,8 +195,8 @@ class GeminiClient:
         cls,
         key_file: Path | str | None = None,
         *,
-        models: Optional[List[ModelConfig]] = None,
-        cache: Optional[GeminiCache] = None,
+        models: list[ModelConfig] | None = None,
+        cache: GeminiCache | None = None,
         timeout: int = _DEFAULT_TIMEOUT,
     ) -> "GeminiClient":
         """Tworzy klienta wczytując klucz API z pliku.
@@ -209,7 +211,7 @@ class GeminiClient:
         if not path.exists():
             raise FileNotFoundError(
                 f"Plik z kluczem Gemini API nie istnieje: {path}\n"
-                "Utwórz plik i wpisz do niego swój klucz API (tylko klucz, bez spacji)."
+                "Utwórz plik i wpisz do niego swój klucz API (tylko klucz, bez spacji).",
             )
         api_key = path.read_text(encoding="utf-8").strip()
         return cls(
@@ -228,7 +230,7 @@ class GeminiClient:
         prompt: str,
         *,
         response_mime_type: str = "application/json",
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """Wysyła zapytanie do Gemini i zwraca odpowiedź jako słownik.
 
         Korzysta z hierarchii modeli:
@@ -239,7 +241,7 @@ class GeminiClient:
         Wynik z cache jest zwracany tylko jeśli pasuje zarówno *prompt*,
         jak i aktualnie wybrany model.
         """
-        error_models: Set[str] = set()
+        error_models: set[str] = set()
 
         while True:
             model = self._pick_model(exclude=error_models)
@@ -247,16 +249,22 @@ class GeminiClient:
                 raise RuntimeError(
                     "Wszystkie dostępne modele Gemini są wyczerpane lub osiągnęły limit.\n"
                     f"Modele z błędem API: {error_models or '(brak)'}\n"
-                    f"Dostępne modele: {[s.model for s in self._model_states]}"
+                    f"Dostępne modele: {[s.model for s in self._model_states]}",
                 )
 
             cached = self._cache.get(prompt, model)
             if cached is not None:
-                print(f"[GeminiClient] Cache hit (model={model}), pomijam wywołanie API.")
+                print(
+                    f"[GeminiClient] Cache hit (model={model}), pomijam wywołanie API.",
+                )
                 return cached
 
             try:
-                result = self._call_api(prompt, model=model, response_mime_type=response_mime_type)
+                result = self._call_api(
+                    prompt,
+                    model=model,
+                    response_mime_type=response_mime_type,
+                )
             except RuntimeError:
                 error_models.add(model)
                 continue
@@ -268,7 +276,7 @@ class GeminiClient:
     # internal
     # ------------------------------------------------------------------
 
-    def _pick_model(self, exclude: Set[str]) -> Optional[str]:
+    def _pick_model(self, exclude: set[str]) -> str | None:
         """Zwraca nazwę pierwszego dostępnego modelu (nie przekroczył RPM/RPD
         i nie jest w *exclude*), lub ``None`` gdy żaden model nie jest
         dostępny.
@@ -285,7 +293,13 @@ class GeminiClient:
                     return state.model
         return None
 
-    def _call_api(self, prompt: str, *, model: str, response_mime_type: str) -> Dict[str, Any]:
+    def _call_api(
+        self,
+        prompt: str,
+        *,
+        model: str,
+        response_mime_type: str,
+    ) -> dict[str, Any]:
         url = _API_URL_TEMPLATE.format(model=model, api_key=self._api_key)
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
@@ -313,13 +327,13 @@ class GeminiClient:
             error_body = exc.read().decode("utf-8", errors="replace")
             raise RuntimeError(
                 f"Gemini API zwróciło HTTP {exc.code}: {exc.reason}\n"
-                f"Response body:\n{error_body}"
+                f"Response body:\n{error_body}",
             ) from exc
         except urllib.error.URLError as exc:
             raise RuntimeError(
                 "Nie udało się połączyć z Gemini API. "
                 "Sprawdź połączenie sieciowe, SSL/certyfikaty oraz poprawność endpointu.\n"
-                f"Szczegóły: {exc}"
+                f"Szczegóły: {exc}",
             ) from exc
 
         print("[GeminiClient] <<< Odpowiedź surowa od API:")
@@ -329,12 +343,11 @@ class GeminiClient:
             api_response = json.loads(raw)
         except json.JSONDecodeError as exc:
             raise RuntimeError(
-                f"Gemini API zwróciło niepoprawny JSON:\n{raw}"
+                f"Gemini API zwróciło niepoprawny JSON:\n{raw}",
             ) from exc
 
         text = (
-            api_response
-            .get("candidates", [{}])[0]
+            api_response.get("candidates", [{}])[0]
             .get("content", {})
             .get("parts", [{}])[0]
             .get("text")
@@ -343,7 +356,7 @@ class GeminiClient:
         if text is None:
             raise RuntimeError(
                 "Gemini API nie zwróciło pola candidates[0].content.parts[0].text.\n"
-                f"Pełna odpowiedź:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}"
+                f"Pełna odpowiedź:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}",
             )
 
         try:
@@ -352,7 +365,7 @@ class GeminiClient:
             raise RuntimeError(
                 "Gemini zwróciło tekst, który nie jest poprawnym JSON-em.\n"
                 f"Text:\n{text}\n\n"
-                f"Pełna odpowiedź API:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}"
+                f"Pełna odpowiedź API:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}",
             ) from exc
 
     @staticmethod

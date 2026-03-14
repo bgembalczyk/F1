@@ -1,8 +1,6 @@
 """Helper class for parsing active years from infobox cells."""
 
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import Tag
 
@@ -16,22 +14,22 @@ class ActiveYearsParser:
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):
         """Initialize the active years parser.
-        
+
         Args:
             link_extractor: Link extractor for extracting URLs from cells
         """
         self._link_extractor = link_extractor
 
-    def parse_active_years(self, cell: Tag) -> List[Dict[str, Any]]:
+    def parse_active_years(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse active years as a list of individual seasons with links.
 
         Handles cases like:
         - Individual years: 2002, 2005, 2007, 2008
         - Ranges: 2007-2008 (interpolates missing links)
-        
+
         Args:
             cell: BeautifulSoup Tag representing the cell
-            
+
         Returns:
             List of dictionaries with 'year' and 'url' keys
         """

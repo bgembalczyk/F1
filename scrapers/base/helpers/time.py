@@ -2,7 +2,8 @@
 
 import re
 from datetime import datetime
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import ROUND_HALF_UP
+from decimal import Decimal
 from typing import Any
 
 from models.value_objects.time_types import DateValue
@@ -228,8 +229,8 @@ def normalize_time_value(rec: dict[str, Any]) -> None:
     t = rec.get("time")
 
     if not (
-            isinstance(t, dict)
-            or (NormalizedTime is not None and isinstance(t, NormalizedTime))
+        isinstance(t, dict)
+        or (NormalizedTime is not None and isinstance(t, NormalizedTime))
     ):
         return
 

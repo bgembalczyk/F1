@@ -20,11 +20,11 @@ class AutoColumn(BaseColumn):
     """
 
     def __init__(
-            self,
-            *,
-            strip_lang_suffix: bool = True,
-            strip_refs: bool = True,
-            normalize_dashes: bool = True,
+        self,
+        *,
+        strip_lang_suffix: bool = True,
+        strip_refs: bool = True,
+        normalize_dashes: bool = True,
     ) -> None:
         self.strip_lang_suffix = strip_lang_suffix
         self.strip_refs = strip_refs

@@ -7,7 +7,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 
 
-@pytest.fixture
+@pytest.fixture()
 def scraper():
     """Create a DriverInfoboxScraper instance."""
     options = ScraperOptions(include_urls=True)
@@ -125,8 +125,8 @@ def test_major_victories_from_championship_section(scraper):
     html = """
     <table class="infobox vcard">
         <tr><th colspan="2" class="infobox-header" style="background-color: gainsboro;">Championship titles</th></tr>
-        <tr><td colspan="2" class="infobox-full-data"><b>Major victories</b> <br> 
-        <a href="/wiki/24_Hours_of_Le_Mans" title="24 Hours of Le Mans">24 Hours of Le Mans</a> 
+        <tr><td colspan="2" class="infobox-full-data"><b>Major victories</b> <br>
+        <a href="/wiki/24_Hours_of_Le_Mans" title="24 Hours of Le Mans">24 Hours of Le Mans</a>
         (<a href="/wiki/1934_24_Hours_of_Le_Mans" title="1934 24 Hours of Le Mans">1934</a>)</td></tr>
     </table>
     """

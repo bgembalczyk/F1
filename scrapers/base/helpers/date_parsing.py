@@ -1,14 +1,13 @@
 """Utilities for parsing date fields with formula category markers."""
 
-from typing import Optional
-
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.table.columns.context import ColumnContext
 
 
 def parse_date_with_category_marker(
-        ctx: ColumnContext, category_marker: str,
-) -> Optional[str]:
+    ctx: ColumnContext,
+    category_marker: str,
+) -> str | None:
     """
     Parse a date from ColumnContext, removing category markers (e.g., F2 marker).
 
@@ -29,7 +28,7 @@ def parse_date_with_category_marker(
     return iso
 
 
-def parse_formula_category(ctx: ColumnContext, category_marker: str) -> Optional[str]:
+def parse_formula_category(ctx: ColumnContext, category_marker: str) -> str | None:
     """
     Parse the formula category from ColumnContext based on presence of category marker.
 

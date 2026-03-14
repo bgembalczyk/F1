@@ -2,7 +2,7 @@ from collections.abc import Sequence
 from typing import Protocol
 
 from scrapers.base.logging import get_logger
-from validation.records import ExportRecord
+from validation.validator_base import ExportRecord
 
 
 class RecordPostProcessor(Protocol):
@@ -10,10 +10,10 @@ class RecordPostProcessor(Protocol):
 
 
 def apply_post_processors(
-        post_processors: Sequence[RecordPostProcessor],
-        records: list[ExportRecord],
-        *,
-        logger=None,
+    post_processors: Sequence[RecordPostProcessor],
+    records: list[ExportRecord],
+    *,
+    logger=None,
 ) -> list[ExportRecord]:
     resolved_logger = logger or get_logger("PostProcessorsPipeline")
     processed = list(records)

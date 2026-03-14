@@ -1,8 +1,5 @@
 from dataclasses import dataclass
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from tqdm import tqdm
 
@@ -14,7 +11,7 @@ from scrapers.base.source_adapter import IterableSourceAdapter
 class CompositeScraperChildren:
     list_scraper: F1Scraper
     single_scraper: Any
-    records_adapter: IterableSourceAdapter[Dict[str, Any]]
+    records_adapter: IterableSourceAdapter[dict[str, Any]]
 
 
 class CompositeScraper(F1Scraper):
@@ -29,21 +26,21 @@ class CompositeScraper(F1Scraper):
     def build_children(self) -> CompositeScraperChildren:
         raise NotImplementedError("CompositeScraper requires build_children().")
 
-    def get_detail_url(self, record: Dict[str, Any]) -> Optional[str]:
+    def get_detail_url(self, record: dict[str, Any]) -> str | None:
         return None
 
     def assemble_record(
-            self,
-            record: Dict[str, Any],
-            details: Optional[Dict[str, Any]],
-    ) -> Dict[str, Any]:
+        self,
+        record: dict[str, Any],
+        details: dict[str, Any] | None,
+    ) -> dict[str, Any]:
         full_record = dict(record)
         full_record["details"] = details
         return full_record
 
-    def fetch(self) -> List[Dict[str, Any]]:
+    def fetch(self) -> list[dict[str, Any]]:
         records = self.records_adapter.get()
-        complete: List[Dict[str, Any]] = []
+        complete: list[dict[str, Any]] = []
 
         scraper_name = self.__class__.__name__
         for record in tqdm(records, desc=scraper_name, unit="item"):
@@ -54,7 +51,7 @@ class CompositeScraper(F1Scraper):
                 )
 
             detail_url = self.get_detail_url(record)
-            details: Optional[Dict[str, Any]] = None
+            details: dict[str, Any] | None = None
 
             if detail_url:
                 try:

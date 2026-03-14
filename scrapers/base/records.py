@@ -1,11 +1,10 @@
+from collections.abc import Mapping
 from typing import Any
-from typing import Dict
-from typing import Mapping
 from typing import TypeAlias
 
-RawRecord: TypeAlias = Dict[str, Any]
-NormalizedRecord: TypeAlias = Dict[str, Any]
+RawRecord: TypeAlias = dict[str, Any]
+NormalizedRecord: TypeAlias = dict[str, Any]
 
 
-def record_from_mapping(record: Mapping[str, Any]) -> Dict[str, Any]:
+def record_from_mapping(record: Mapping[str, Any]) -> dict[str, Any]:
     return dict(record)

@@ -2,7 +2,6 @@ import json
 from pathlib import Path
 
 from models.services.circuits.circuit_service import CircuitService
-
 from models.services.driver_service import DriverService
 from models.services.helpers import parse_int_values
 from models.services.helpers import parse_year_range
@@ -64,7 +63,7 @@ def test_circuit_service_normalizes_record_and_merges_laps() -> None:
                         "city": {
                             "text": "Newcity",
                             "link": {"url": "https://newcity.example.com"},
-                        }
+                        },
                     },
                     "coordinates": {"lat": 1.0, "lon": 2.0},
                     "specs": {"fia_grade": "1"},
@@ -84,7 +83,7 @@ def test_circuit_service_normalizes_record_and_merges_laps() -> None:
                             "time": "1:20.000",
                             "year": 2000,
                         },
-                    }
+                    },
                 ],
             },
             "tables": [
@@ -96,9 +95,9 @@ def test_circuit_service_normalizes_record_and_merges_laps() -> None:
                             "vehicle": "Car A",
                             "time": 80.0,
                             "year": 2000,
-                        }
+                        },
                     ],
-                }
+                },
             ],
         },
         "grands_prix": [{"text": "Test GP", "url": "https://gp.example.com"}],
@@ -135,7 +134,7 @@ def test_run_and_export_uses_run_config(tmp_path: Path) -> None:
                     "name": "test",
                     "marker": self.marker,
                     "url": "https://example.com" if self.options.include_urls else None,
-                }
+                },
             ]
 
     run_config = RunConfig(

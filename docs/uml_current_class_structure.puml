@@ -30,7 +30,7 @@ package "Base Scrapers" {
         # _apply_transformers(records): List[ExportRecord]
         # post_process_records(records): List[ExportRecord]
     }
-    
+
     abstract class F1ListScraper {
         # section_id: str
         # record_key: str
@@ -40,7 +40,7 @@ package "Base Scrapers" {
         # _find_list_root(soup): Tag
         # parse_item(li): ExportableRecord
     }
-    
+
     abstract class F1TableScraper {
         # CONFIG: ScraperConfig
         # section_id: str
@@ -54,7 +54,7 @@ package "Base Scrapers" {
         # parse_row(row): Any
         # _model_fields(): Set[str]
     }
-    
+
     abstract class CompositeScraper {
         # list_scraper: F1Scraper
         # single_scraper: Any
@@ -71,11 +71,11 @@ package "Specialized Base Classes" {
     abstract class IndianapolisOnlyListScraper {
         # section_id = "Indianapolis_500_only_2"
     }
-    
+
     abstract class BaseEngineTableScraper {
         # default_column: BaseColumn
     }
-    
+
     abstract class BasePointsScraper {
         # default_column: BaseColumn
     }
@@ -86,11 +86,11 @@ package "Concrete Scrapers - Circuits" {
         + CONFIG: ScraperConfig
         + default_validator: CircuitsRecordValidator
     }
-    
+
     class F1SingleCircuitScraper {
         + fetch_by_url(url): List[Dict]
     }
-    
+
     class F1CompleteCircuitScraper {
         + build_children(): CompositeScraperChildren
         + get_detail_url(record): str
@@ -103,11 +103,11 @@ package "Concrete Scrapers - Drivers" {
         + CONFIG: ScraperConfig
         + default_validator: DriversRecordValidator
     }
-    
+
     class FemaleDriversListScraper {
         + section_id = "Female_drivers"
     }
-    
+
     class F1FatalitiesListScraper {
         + section_id = "Driver_fatalities"
     }
@@ -117,13 +117,13 @@ package "Concrete Scrapers - Constructors" {
     class CurrentConstructorsListScraper {
         + section_id: str
     }
-    
+
     class FormerConstructorsListScraper {
         + section_id: str
     }
-    
+
     class IndianapolisOnlyConstructorsListScraper
-    
+
     class PrivateerTeamsListScraper {
         + section_id: str
     }
@@ -133,15 +133,15 @@ package "Concrete Scrapers - Engines" {
     class EngineManufacturersListScraper {
         + CONFIG: ScraperConfig
     }
-    
+
     class EngineRegulationScraper {
         + CONFIG: ScraperConfig
     }
-    
+
     class EngineRestrictionsScraper {
         + CONFIG: ScraperConfig
     }
-    
+
     class IndianapolisOnlyEngineManufacturersListScraper
 }
 
@@ -149,11 +149,11 @@ package "Concrete Scrapers - Grands Prix" {
     class F1CompleteGrandPrixScraper {
         + build_children(): CompositeScraperChildren
     }
-    
+
     class RedFlaggedWorldChampionshipRacesScraper {
         + section_id: str
     }
-    
+
     class RedFlaggedNonChampionshipRacesScraper {
         + section_id: str
     }
@@ -163,23 +163,23 @@ package "Concrete Scrapers - Other" {
     class SeasonsListScraper {
         + CONFIG: ScraperConfig
     }
-    
+
     class CompleteSeasonScraper {
         + build_children(): CompositeScraperChildren
     }
-    
+
     class PointsScoringSystemsHistoryScraper {
         + CONFIG: ScraperConfig
     }
-    
+
     class SprintQualifyingPointsScraper {
         + CONFIG: ScraperConfig
     }
-    
+
     class TyreManufacturersBySeasonScraper {
         + CONFIG: ScraperConfig
     }
-    
+
     class F1SponsorshipLiveriesScraper {
         + url: str
     }
@@ -236,7 +236,7 @@ package "Column Types" {
         + {abstract} parse(ctx): Any
         + apply(ctx, record): None
     }
-    
+
     class AutoColumn
     class TextColumn
     class IntColumn
@@ -284,37 +284,37 @@ package "Infrastructure" {
     interface HttpClientProtocol {
         + get(url): HttpResponse
     }
-    
+
     class HttpClient {
         + get(url, policy): HttpResponse
     }
-    
+
     class UrllibHttpClient {
         + get(url): HttpResponse
     }
-    
+
     abstract class HttpPolicy {
         + apply(request): HttpResponse
     }
-    
+
     class RetryPolicy {
         - max_retries: int
         - backoff_factor: float
     }
-    
+
     class RateLimiterPolicy {
         - min_delay: float
     }
-    
+
     class ResponseCachePolicy {
         - cache_dir: Path
     }
-    
+
     class CacheAdapter {
         - file_cache: FileCache
         + get(url): str
     }
-    
+
     class SourceAdapter {
         + get(url): str
     }
@@ -340,7 +340,7 @@ package "Models & Data" {
         + last_year: int
         + circuit_length: float
     }
-    
+
     class Driver {
         + driver: str
         + nationality: str
@@ -348,28 +348,28 @@ package "Models & Data" {
         + race_entries: int
         + race_wins: int
     }
-    
+
     class Constructor {
         + constructor_name: str
         + nationality: str
         + first_season: int
         + last_season: int
     }
-    
+
     class Season {
         + season: int
         + rounds: List[RoundRecord]
         + drivers_champion: str
         + constructors_champion: str
     }
-    
+
     class RecordFactory {
         + {static} build_circuit_record(data): Circuit
         + {static} build_driver_record(data): Driver
         + {static} build_constructor_record(data): Constructor
         + {static} build_season_record(data): Season
     }
-    
+
     class FieldNormalizer {
         + {static} normalize_int(value): int
         + {static} normalize_float(value): float
@@ -391,7 +391,7 @@ package "Validation" {
         + record_validation_result(errors): None
         + write_quality_report(path): Path
     }
-    
+
     class CircuitsRecordValidator
     class DriversRecordValidator
     class EngineManufacturerValidator

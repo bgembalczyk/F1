@@ -1,8 +1,6 @@
 import re
 from pathlib import Path
 from typing import Any
-from typing import Dict
-from typing import Optional
 
 from bs4 import Tag
 
@@ -40,7 +38,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
             cache=base_policy.cache,
         )
 
-    def parse_item(self, li: Tag) -> Optional[Dict[str, Any]]:
+    def parse_item(self, li: Tag) -> dict[str, Any] | None:
         # 1) wywalamy wszystkie flagi, żeby nie przeszkadzały w szukaniu linka zespołu
         for span in li.find_all("span", class_="flagicon"):
             span.decompose()
@@ -54,7 +52,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
         if not team_name:
             return None
 
-        record: Dict[str, Any] = {"team": team_name}
+        record: dict[str, Any] = {"team": team_name}
 
         # 3) URL zespołu (opcjonalnie)
         if self.include_urls and team_a.has_attr("href"):

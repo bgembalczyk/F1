@@ -12,7 +12,9 @@ class JimClarkRaceResultColumn(RaceResultColumn):
     """
 
     def _apply_result_notes(
-            self, result: dict[str, Any], background: str | None,
+        self,
+        result: dict[str, Any],
+        background: str | None,
     ) -> None:
         # First apply the standard notes (except for * mark handling)
         super()._apply_result_notes(result, background)

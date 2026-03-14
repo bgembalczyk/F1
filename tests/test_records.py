@@ -1,19 +1,19 @@
 from models.mappers.field_aliases import FIELD_ALIASES
 from models.mappers.field_aliases import apply_field_aliases
 from models.mappers.serialization import to_circuit_record_dict
-from models.records import CircuitBaseRecord
-from models.records import CircuitCompleteRecord
-from models.records import CircuitDetailsRecord
-from models.records import CircuitRecord
-from models.records import DriverRecord
-from models.records import DriversChampionshipsRecord
-from models.records import LinkRecord
-from models.records import SeasonRecord
+from models.records.circuit import CircuitRecord
+from models.records.circuit_base import CircuitBaseRecord
+from models.records.circuit_complete import CircuitCompleteRecord
 from models.records.circuit_complete import validate_circuit_complete_record
+from models.records.circuit_details import CircuitDetailsRecord
 from models.records.circuit_details import validate_circuit_details_record
 from models.records.driver import DRIVER_SCHEMA
+from models.records.driver import DriverRecord
+from models.records.driver_championships import DriversChampionshipsRecord
+from models.records.link import LinkRecord
 from models.records.season import SEASON_SCHEMA
-from validation.records import RecordValidator
+from models.records.season import SeasonRecord
+from validation.validator_base import RecordValidator
 
 
 def test_link_and_season_records_have_expected_keys() -> None:
@@ -123,7 +123,7 @@ def test_validate_schema_handles_nested_records() -> None:
     messages = [error.message for error in errors]
     assert "driver.text must be a non-empty string" in messages
     assert (
-            "Invalid type for seasons_competed[0].year: expected int, got str" in messages
+        "Invalid type for seasons_competed[0].year: expected int, got str" in messages
     )
 
 

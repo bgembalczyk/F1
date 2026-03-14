@@ -1,4 +1,5 @@
 """Base scraper for constructor list pages."""
+
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -17,10 +18,10 @@ from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
 class BaseConstructorListScraper(F1TableScraper):
     """
     Base class for constructor list scrapers.
-    
+
     Provides common column definitions for scraping constructor data from Wikipedia,
     following DRY principles by centralizing shared schema definitions.
-    
+
     Subclasses should define their own CONFIG with specific:
     - url
     - section_id
@@ -33,7 +34,7 @@ class BaseConstructorListScraper(F1TableScraper):
     def build_common_stats_columns():
         """
         Build common statistics columns used across constructor list tables.
-        
+
         Returns list of column definitions for standard statistics fields
         like seasons, races, wins, points, etc.
         """
@@ -50,7 +51,7 @@ class BaseConstructorListScraper(F1TableScraper):
     def build_common_metadata_columns():
         """
         Build common metadata columns used across constructor list tables.
-        
+
         Returns list of column definitions for metadata fields like
         constructor name, drivers count, total entries, and championship titles.
         """
@@ -66,13 +67,14 @@ class BaseConstructorListScraper(F1TableScraper):
     def build_licensed_in_column():
         """Build the licensed_in column definition."""
         from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
+
         return column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", LinksListColumn())
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            config=None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config=None,
     ) -> None:
         options = options or ScraperOptions()
         options.normalize_empty_values = False

@@ -1,6 +1,6 @@
 import re
+from collections.abc import Iterable
 from typing import Any
-from typing import Iterable
 
 from models.value_objects.normalized_date import NormalizedDate
 from models.value_objects.time_types import DateValue
@@ -88,12 +88,12 @@ def normalize_date_value(rec: dict[str, Any]) -> None:
 
 
 def prune_empty(
-        obj: Any,
-        *,
-        drop_empty_lists: bool = True,
-        drop_none: bool = True,
-        drop_empty_dicts: bool = True,
-        drop_url_none: bool = False,
+    obj: Any,
+    *,
+    drop_empty_lists: bool = True,
+    drop_none: bool = True,
+    drop_empty_dicts: bool = True,
+    drop_url_none: bool = False,
 ) -> Any:
     if isinstance(obj, dict):
         cleaned: dict[str, Any] = {}
@@ -108,10 +108,10 @@ def prune_empty(
                 drop_url_none=drop_url_none,
             )
             if should_skip(
-                    pruned,
-                    drop_none=drop_none,
-                    drop_empty_lists=drop_empty_lists,
-                    drop_empty_dicts=drop_empty_dicts,
+                pruned,
+                drop_none=drop_none,
+                drop_empty_lists=drop_empty_lists,
+                drop_empty_dicts=drop_empty_dicts,
             ):
                 continue
             cleaned[key] = pruned
@@ -128,10 +128,10 @@ def prune_empty(
                 drop_url_none=drop_url_none,
             )
             if should_skip(
-                    pruned,
-                    drop_none=drop_none,
-                    drop_empty_lists=drop_empty_lists,
-                    drop_empty_dicts=drop_empty_dicts,
+                pruned,
+                drop_none=drop_none,
+                drop_empty_lists=drop_empty_lists,
+                drop_empty_dicts=drop_empty_dicts,
             ):
                 continue
             cleaned_list.append(pruned)
@@ -141,11 +141,11 @@ def prune_empty(
 
 
 def should_skip(
-        value: Any,
-        *,
-        drop_none: bool = True,
-        drop_empty_lists: bool = True,
-        drop_empty_dicts: bool = True,
+    value: Any,
+    *,
+    drop_none: bool = True,
+    drop_empty_lists: bool = True,
+    drop_empty_dicts: bool = True,
 ) -> bool:
     """
     Sprawdza, czy wartość powinna zostać pominięta w pruning'u.

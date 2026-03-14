@@ -2,8 +2,6 @@
 
 import re
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import Tag
 
@@ -17,21 +15,23 @@ class TableParser:
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):
         """Initialize the table parser.
-        
+
         Args:
             link_extractor: Link extractor for extracting URLs from cells
         """
         self._link_extractor = link_extractor
 
     def parse_full_data(
-            self, cell: Tag, include_urls: bool,
-    ) -> Dict[str, Any]:
+        self,
+        cell: Tag,
+        include_urls: bool,
+    ) -> dict[str, Any]:
         """Parse full data including nested tables and structured information.
-        
+
         Args:
             cell: BeautifulSoup Tag representing the cell
             include_urls: Whether to include URL information
-            
+
         Returns:
             Dictionary with parsed data which may include text, links, and table information
         """
@@ -47,7 +47,7 @@ class TableParser:
                 return stats
             else:
                 # For other tables, include full metadata
-                payload: Dict[str, Any] = {"text": text}
+                payload: dict[str, Any] = {"text": text}
                 if include_urls:
                     payload["links"] = self._link_extractor.extract_links(cell)
                 payload["table"] = table_data
@@ -61,18 +61,18 @@ class TableParser:
                 return {"races_run": int(races_run_match.group(1))}
 
         # Default: return text and links
-        payload: Dict[str, Any] = {"text": text}
+        payload: dict[str, Any] = {"text": text}
         if include_urls:
             payload["links"] = self._link_extractor.extract_links(cell)
         return payload
 
     @staticmethod
-    def parse_nested_table(table: Tag) -> Dict[str, Any]:
+    def parse_nested_table(table: Tag) -> dict[str, Any]:
         """Parse a nested HTML table into structured data.
-        
+
         Args:
             table: BeautifulSoup Tag representing the table
-            
+
         Returns:
             Dictionary with 'headers' and 'rows' keys
         """
@@ -81,7 +81,7 @@ class TableParser:
             return {"headers": [], "rows": []}
         header_cells = rows[0].find_all(["th", "td"])
         headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
-        data_rows: List[List[str]] = []
+        data_rows: list[list[str]] = []
         for row in rows[1:]:
             cells = [
                 clean_wiki_text(c.get_text(" ", strip=True))
@@ -92,12 +92,12 @@ class TableParser:
         return {"headers": headers, "rows": data_rows}
 
     @staticmethod
-    def _is_stats_table(table_data: Dict[str, Any]) -> bool:
+    def _is_stats_table(table_data: dict[str, Any]) -> bool:
         """Check if table is a Wins/Podiums/Poles or Wins/Top tens/Poles stats table.
-        
+
         Args:
             table_data: Dictionary with parsed table data
-            
+
         Returns:
             True if this is a recognized stats table format
         """
@@ -109,24 +109,24 @@ class TableParser:
         expected_wins_podiums_poles = ["wins", "podiums", "poles"]
         expected_wins_topten_poles = ["wins", "top tens", "poles"]
         return (
-                normalized == expected_wins_podiums_poles
-                or normalized == expected_wins_topten_poles
+            normalized == expected_wins_podiums_poles
+            or normalized == expected_wins_topten_poles
         )
 
     @staticmethod
-    def _extract_stats_from_table(table_data: Dict[str, Any]) -> Dict[str, int | None]:
+    def _extract_stats_from_table(table_data: dict[str, Any]) -> dict[str, int | None]:
         """Extract Wins, Podiums/Top tens, Poles from stats table.
-        
+
         Args:
             table_data: Dictionary with parsed table data
-            
+
         Returns:
             Dictionary with wins, podiums, top_tens, and poles statistics
         """
         headers = table_data.get("headers", [])
         normalized = [h.lower().strip() for h in headers]
 
-        stats: Dict[str, int | None] = {
+        stats: dict[str, int | None] = {
             "wins": None,
             "podiums": None,
             "top_tens": None,

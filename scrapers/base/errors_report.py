@@ -19,10 +19,10 @@ class ErrorReport:
 
     @classmethod
     def from_exception(
-            cls,
-            error: Exception,
-            *,
-            run_id: str | None = None,
+        cls,
+        error: Exception,
+        *,
+        run_id: str | None = None,
     ) -> "ErrorReport":
         timestamp = datetime.now(timezone.utc).isoformat()
         url = getattr(error, "url", None)

@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -25,11 +23,11 @@ class DriverInfoboxScraper:
     _IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            run_id: str | None = None,
-            url: str | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        run_id: str | None = None,
+        url: str | None = None,
     ) -> None:
         options = options or ScraperOptions()
         self.include_urls = options.include_urls
@@ -58,7 +56,7 @@ class DriverInfoboxScraper:
         self._career_parser = InfoboxCareerParser(self._cell_parser)
         self._section_collector = InfoboxSectionCollector()
 
-    def parse(self, soup: BeautifulSoup) -> List[Any]:
+    def parse(self, soup: BeautifulSoup) -> list[Any]:
         self.logger.debug("Infobox parse start (run_id=%s)", self.run_id)
         table = InfoboxHtmlParser.find_infobox(soup)
         if table is None:
@@ -97,14 +95,19 @@ class DriverInfoboxScraper:
         )
         return [self._apply_transformers(parsed)]
 
-    def _apply_transformers(self, record: Dict[str, Any]) -> Any:
+    def _apply_transformers(self, record: dict[str, Any]) -> Any:
         return apply_transformers_with_factory(
-            self.transformers, record, self.record_factory, self.logger,
+            self.transformers,
+            record,
+            self.record_factory,
+            self.logger,
         )
 
     def _parse_infobox_with_sections(
-            self, table: Tag, sections: List[Dict[str, Any]],
-    ) -> Dict[str, Any]:
+        self,
+        table: Tag,
+        sections: list[dict[str, Any]],
+    ) -> dict[str, Any]:
         general_section = sections[0] if sections else {"rows": []}
 
         parsed = {
@@ -130,8 +133,8 @@ class DriverInfoboxScraper:
                     if "full_data_cell" in row:
                         full_data_cell = row["full_data_cell"]
                         full_data_text = (
-                                clean_infobox_text(full_data_cell.get_text(" ", strip=True))
-                                or ""
+                            clean_infobox_text(full_data_cell.get_text(" ", strip=True))
+                            or ""
                         )
 
                         # Check if this contains "Major victories"

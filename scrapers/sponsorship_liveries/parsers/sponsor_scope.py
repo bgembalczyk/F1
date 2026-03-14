@@ -1,12 +1,7 @@
 from typing import Any
-from typing import Dict
 
-from scrapers.sponsorship_liveries.parsers.grand_prix_scope import (
-    GrandPrixScopeParser,
-)
-from scrapers.sponsorship_liveries.parsers.record_text import (
-    SponsorshipRecordText,
-)
+from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
+from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 
 
 class SponsorScopeHandler:
@@ -19,7 +14,7 @@ class SponsorScopeHandler:
             if isinstance(item, dict):
                 params = item.get("params") or []
                 if not GrandPrixScopeParser.params_contain_only_years_or_grand_prix(
-                        params,
+                    params,
                 ):
                     cleaned_item = {k: v for k, v in item.items() if k != "params"}
                     filtered.append(cleaned_item)
@@ -42,7 +37,8 @@ class SponsorScopeHandler:
 
     @staticmethod
     def record_has_year_specific_sponsors(
-            record: Dict[str, Any], sponsor_keys: set[str],
+        record: dict[str, Any],
+        sponsor_keys: set[str],
     ) -> bool:
         for key in sponsor_keys:
             sponsors = record.get(key)
@@ -53,7 +49,7 @@ class SponsorScopeHandler:
                     continue
                 params = item.get("params") or []
                 if not GrandPrixScopeParser.params_contain_only_years_or_grand_prix(
-                        params,
+                    params,
                 ):
                     continue
                 if SponsorshipRecordText.extract_year_params(params):

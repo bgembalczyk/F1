@@ -2,7 +2,6 @@
 
 import re
 from typing import Any
-from typing import Dict
 
 from bs4 import Tag
 
@@ -14,23 +13,23 @@ class FinishedSeasonParser:
     """Handles parsing of 'Finished last season' field."""
 
     @staticmethod
-    def parse_finished_last_season(cell: Tag) -> Dict[str, Any]:
+    def parse_finished_last_season(cell: Tag) -> dict[str, Any]:
         """Parse 'Finished last season' field.
 
         Example: "14th (62 pts)" -> {position: "14th", points: 62}
-        
+
         Args:
             cell: BeautifulSoup Tag representing the cell
-            
+
         Returns:
             Dictionary with 'position' and 'points' keys
-            
+
         Raises:
             DomainParseError: If parsing fails
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         try:
-            result: Dict[str, Any] = {"position": None, "points": None}
+            result: dict[str, Any] = {"position": None, "points": None}
 
             # Extract position (before parentheses)
             pos_match = re.match(r"^([^(]+)", text)

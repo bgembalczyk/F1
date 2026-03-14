@@ -1,14 +1,12 @@
 import re
 from typing import TYPE_CHECKING
 from typing import Any
-from typing import Dict
-from typing import List
 from typing import Optional
 
+from models.services.season_service import SeasonService
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from models.services.season_service import SeasonService
 
 if TYPE_CHECKING:
     from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
@@ -46,11 +44,11 @@ class SponsorshipSeasonsColumn(BaseColumn):
     _YEAR_RE = re.compile(r"^\d{4}$")
 
     def __init__(
-            self,
-            *,
-            team_name: Optional[str] = None,
-            classifier: Optional["ParenClassifier"] = None,
-            table_headers: Optional[List[str]] = None,
+        self,
+        *,
+        team_name: str | None = None,
+        classifier: Optional["ParenClassifier"] = None,
+        table_headers: list[str] | None = None,
     ) -> None:
         self._team_name = team_name
         self._classifier = classifier
@@ -59,7 +57,7 @@ class SponsorshipSeasonsColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> Any:
         return SeasonService.parse_seasons(self._year_only_text(ctx.clean_text or ""))
 
-    def apply(self, ctx: ColumnContext, record: Dict[str, Any]) -> None:
+    def apply(self, ctx: ColumnContext, record: dict[str, Any]) -> None:
         text = ctx.clean_text or ""
         year_text = self._year_only_text(text)
         record[ctx.key] = SeasonService.parse_seasons(year_text)
@@ -77,7 +75,8 @@ class SponsorshipSeasonsColumn(BaseColumn):
 
         links = normalize_links(ctx.links or [])
         non_year_links = [
-            lnk for lnk in links
+            lnk
+            for lnk in links
             if not self._YEAR_RE.match((lnk.get("text") or "").strip())
         ]
 
@@ -92,28 +91,33 @@ class SponsorshipSeasonsColumn(BaseColumn):
         # the original cell text.  "GP" is expanded to "Grand Prix" in the
         # normalised text so that a Gemini response of "Chinese Grand Prix"
         # still matches a cell that says "Chinese GP".
-        normalised_text = re.sub(r"\bGP\b", "Grand Prix", text, flags=re.IGNORECASE).lower()
+        normalised_text = re.sub(
+            r"\bGP\b",
+            "Grand Prix",
+            text,
+            flags=re.IGNORECASE,
+        ).lower()
 
-        def _filter_present(values: List[str]) -> List[str]:
+        def _filter_present(values: list[str]) -> list[str]:
             return [v for v in values if v.lower() in normalised_text]
 
         # Categories are applied in priority order and are mutually exclusive:
         # grand_prix_scope > driver > car > engine.
-        gp_names: List[str] = _filter_present(classification.get("grand_prix") or [])
+        gp_names: list[str] = _filter_present(classification.get("grand_prix") or [])
         if self._apply_gp_scope(record, gp_names, non_year_links):
             return
 
         other_links = [lnk for lnk in non_year_links if not self._is_gp_link(lnk)]
 
-        driver_names: List[str] = _filter_present(classification.get("driver") or [])
+        driver_names: list[str] = _filter_present(classification.get("driver") or [])
         if self._apply_classified_field(record, "driver", driver_names, other_links):
             return
 
-        car_names: List[str] = _filter_present(classification.get("car_model") or [])
+        car_names: list[str] = _filter_present(classification.get("car_model") or [])
         if self._apply_classified_field(record, "car", car_names, other_links):
             return
 
-        engine_names: List[str] = _filter_present(
+        engine_names: list[str] = _filter_present(
             classification.get("engine_constructor") or [],
         )
         self._apply_classified_field(record, "engine", engine_names, other_links)
@@ -123,10 +127,10 @@ class SponsorshipSeasonsColumn(BaseColumn):
     # ------------------------------------------------------------------
 
     def _apply_gp_scope(
-            self,
-            record: Dict[str, Any],
-            gp_names: List[str],
-            non_year_links: List[Dict[str, Any]],
+        self,
+        record: dict[str, Any],
+        gp_names: list[str],
+        non_year_links: list[dict[str, Any]],
     ) -> bool:
         """Apply grand-prix scope to *record* if *gp_names* is non-empty.
 
@@ -150,10 +154,10 @@ class SponsorshipSeasonsColumn(BaseColumn):
 
     @staticmethod
     def _apply_classified_field(
-            record: Dict[str, Any],
-            field: str,
-            names: List[str],
-            links: List[Dict[str, Any]],
+        record: dict[str, Any],
+        field: str,
+        names: list[str],
+        links: list[dict[str, Any]],
     ) -> bool:
         """Write *field* to *record* from *names* (or *links* when available).
 
@@ -182,7 +186,7 @@ class SponsorshipSeasonsColumn(BaseColumn):
         return re.sub(r"\s*\([^)]*\)\s*$", "", text).strip()
 
     @staticmethod
-    def _is_gp_link(link: Dict[str, Any]) -> bool:
+    def _is_gp_link(link: dict[str, Any]) -> bool:
         text = link.get("text") or ""
         url = link.get("url") or ""
         return bool(re.search(r"grand prix|\bGP\b", text, re.IGNORECASE)) or bool(
@@ -190,11 +194,13 @@ class SponsorshipSeasonsColumn(BaseColumn):
         )
 
     @staticmethod
-    def _expand_gp_name(link: Dict[str, Any]) -> str:
+    def _expand_gp_name(link: dict[str, Any]) -> str:
         """Expand abbreviated GP text: 'Chinese GP' → 'Chinese Grand Prix'."""
         text = link.get("text") or ""
         if re.search(r"\bGP\b", text) and not re.search(
-                r"grand prix", text, re.IGNORECASE,
+            r"grand prix",
+            text,
+            re.IGNORECASE,
         ):
             text = re.sub(r"\bGP\b", "Grand Prix", text).strip()
         return text
