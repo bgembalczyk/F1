@@ -5,7 +5,7 @@ from typing import Optional
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.ABC import F1Scraper
+from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions

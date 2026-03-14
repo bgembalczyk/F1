@@ -1,4 +1,4 @@
-from scrapers.base.ABC import F1Scraper
+from scrapers.base.abc import F1Scraper
 from scrapers.base.options import ScraperOptions
 
 

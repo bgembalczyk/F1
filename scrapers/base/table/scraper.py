@@ -5,7 +5,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.ABC import F1Scraper
+from scrapers.base.abc import F1Scraper
 from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn

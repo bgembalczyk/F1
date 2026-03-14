@@ -58,7 +58,8 @@ class F1Scraper(ABC):
             options.policy = self.http_policy
 
         # Preferuj gotowy source_adapter w options.
-        # HtmlFetcher jest config-driven, więc jeśli go nie ma — tworzymy go "domyślnie".
+        # HtmlFetcher jest config-driven, więc jeśli go nie ma,
+        # tworzymy go "domyślnie".
         self.source_adapter = build_source_adapter(options, policy=self.http_policy)
         self.fetcher = options.fetcher
 
@@ -177,7 +178,7 @@ class F1Scraper(ABC):
         return self._data
 
     def get_data(self) -> list[ExportRecord]:
-        """Zwróć dane – jeśli jeszcze nie ma, uruchom fetch()."""
+        """Zwróć dane - jeśli jeszcze nie ma, uruchom fetch()."""
         if self._data is None:
             return self.fetch()
         return self._data
@@ -236,9 +237,12 @@ class F1Scraper(ABC):
     def fetch_html(self, url: str) -> str:
         return self.source_adapter.get(url)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[RawRecord]:
+    def _parse_soup(self, _soup: BeautifulSoup) -> list[RawRecord]:
         """Parsowanie BS4 -> lista rekordów surowych."""
-        msg = f"{self.__class__.__name__} must implement _parse_soup() or override parse()."
+        msg = (
+            f"{self.__class__.__name__} must implement _parse_soup() "
+            "or override parse()."
+        )
         raise NotImplementedError(
             msg,
         )

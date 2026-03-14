@@ -4,7 +4,7 @@ import re
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.ABC import F1Scraper
+from scrapers.base.abc import F1Scraper
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperError
 from scrapers.base.helpers.http import init_scraper_options
