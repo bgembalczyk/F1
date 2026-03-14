@@ -46,8 +46,7 @@ class ActiveYearsParser:
         year_to_link = YearExtractor.interpolate_urls(years_set, year_to_link)
 
         # Build result list
-        result = []
-        for year in sorted(years_set):
-            result.append({"year": year, "url": year_to_link.get(year)})
-
-        return result
+        return [
+            {"year": year, "url": year_to_link.get(year)}
+            for year in sorted(years_set)
+        ]

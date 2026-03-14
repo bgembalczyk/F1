@@ -12,7 +12,12 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 class TeamsParser:
     """Handles parsing of teams information."""
 
-    def __init__(self, link_extractor: InfoboxLinkExtractor, include_urls: bool):
+    def __init__(
+        self,
+        link_extractor: InfoboxLinkExtractor,
+        *,
+        include_urls: bool,
+    ):
         """Initialize the teams parser.
 
         Args:

@@ -27,13 +27,13 @@ class NationalityParser:
         Handles cases like:
         - "American or Italian" -> ["American", "Italian"]
         - "British" with link -> [{"text": "British", "url": "..."}]
-        - "Federation of Rhodesia and Nyasaland (1963)" with year ranges -> structured data with years
+        - "Federation of Rhodesia and Nyasaland (1963)" -> structured data
 
         Args:
             cell: BeautifulSoup Tag representing the cell
 
         Returns:
-            List of nationality strings OR list of dictionaries with text/url or nationality/years
+            List of strings or dictionaries with text/url or nationality/years
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
 
@@ -90,7 +90,7 @@ class NationalityParser:
         """Extract all years (including ranges) from parenthesised patterns in text.
 
         Args:
-            text: Text possibly containing patterns like "(1963)" or "(1965, 1967-1968)".
+            text: Text with patterns like "(1963)" or "(1965, 1967-1968)".
 
         Returns:
             Deduplicated list of integer years found in the text.
@@ -99,7 +99,7 @@ class NationalityParser:
         year_patterns = re.findall(r"\(([^)]*\d{4}[^)]*)\)", text)
 
         for year_pattern in year_patterns:
-            for range_match in re.finditer(r"(\d{4})\s*[-–]\s*(\d{4})", year_pattern):
+            for range_match in re.finditer(r"(\d{4})\s*[--]\s*(\d{4})", year_pattern):
                 start = int(range_match.group(1))
                 end = int(range_match.group(2))
                 for year in range(start, end + 1):
@@ -169,9 +169,9 @@ class NationalityParser:
         parts = re.split(r"\s+or\s+", text, flags=re.IGNORECASE)
         nationalities = []
 
-        for part in parts:
-            part = re.sub(r"\[\d+\]", "", part).strip()
-            if part:
-                nationalities.append(part)
+        for raw_part in parts:
+            cleaned_part = re.sub(r"\[\d+\]", "", raw_part).strip()
+            if cleaned_part:
+                nationalities.append(cleaned_part)
 
         return nationalities if len(nationalities) > 1 else (nationalities or [])

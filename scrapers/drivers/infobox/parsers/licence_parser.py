@@ -24,8 +24,8 @@ class LicenceParser:
     def parse_racing_licence(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse 'Racing licence' field.
 
-        Example: "FIA Gold (until 2019)" and "FIA Platinum (2020–)"
-        -> [{licence: {...}, years: {start: None, end: 2019}}, {licence: {...}, years: {start: 2020, end: None}}]
+        Example: "FIA Gold (until 2019)" and "FIA Platinum (2020-)"
+        -> [{licence: {...}, years: {...}}, {licence: {...}, years: {...}}]
         """
         try:
             licence_links = self._extract_licence_links(cell)
@@ -58,7 +58,7 @@ class LicenceParser:
 
                 licences.append(licence_entry)
 
-            return licences
+            return licences  # noqa: TRY300
         except (TypeError, ValueError) as exc:
             text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
             msg = f"Nie udało się sparsować licencji wyścigowej: {text!r}."
@@ -68,7 +68,7 @@ class LicenceParser:
             ) from exc
 
     def _extract_licence_links(self, cell: Tag) -> list[dict[str, Any]]:
-        """Extract and return all licence links from the cell, excluding file/image links.
+        """Extract and return licence links, excluding file/image links.
 
         Args:
             cell: BeautifulSoup Tag representing the cell

@@ -11,6 +11,9 @@ from scrapers.base.helpers.year_extraction import YearExtractor
 
 
 class InfoboxLinkExtractor:
+    MIN_LINKS_FOR_RANGE = 2
+    TWO_DIGIT_YEAR_SUFFIX = 2
+
     def __init__(self, *, include_urls: bool, wikipedia_base: str) -> None:
         self._include_urls = include_urls
         self._wikipedia_base = wikipedia_base
@@ -42,7 +45,7 @@ class InfoboxLinkExtractor:
     def extract_year_links(self, cell: Tag) -> list[LinkRecord]:
         links = [link for link in self.extract_links(cell) if self.is_year_link(link)]
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        years = re.findall(r"\b\d{4}(?:[-–]\d{4})?\b", text)
+        years = re.findall(r"\b\d{4}(?:[--]\d{4})?\b", text)
 
         if not years:
             return links
@@ -62,8 +65,8 @@ class InfoboxLinkExtractor:
 
         Handles cases like:
         - Single year: 2014 -> {year: 2014, url: ...}
-        - Range with both links: 2008–2010 -> {from: 2008, to: 2010, url_from: ..., url_to: ...}
-        - Range with one link: 2008–2009 -> interpolates missing link if pattern is detected
+        - Range with both links: 2008-2010 -> {from: 2008, to: 2010, ...}
+        - Range with one link: 2008-2009 -> interpolates missing link
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         links = [link for link in self.extract_links(cell) if self.is_year_link(link)]
@@ -77,10 +80,10 @@ class InfoboxLinkExtractor:
         processed_years = set()
 
         # First, find ranges (year-year pattern)
-        for match in re.finditer(r"\b(\d{4})\s*[-–]\s*(\d{2,4})\b", text):
+        for match in re.finditer(r"\b(\d{4})\s*[--]\s*(\d{2,4})\b", text):
             start = int(match.group(1))
             end_text = match.group(2)
-            if len(end_text) == 2:
+            if len(end_text) == self.TWO_DIGIT_YEAR_SUFFIX:
                 end = (start // 100) * 100 + int(end_text)
             else:
                 end = int(end_text)
@@ -114,12 +117,12 @@ class InfoboxLinkExtractor:
     @staticmethod
     def is_year_link(link: LinkRecord) -> bool:
         text = link.get("text") or ""
-        if not re.fullmatch(r"\d{4}(?:[-–]\d{4})?", text):
+        if not re.fullmatch(r"\d{4}(?:[--]\d{4})?", text):
             return False
         url = (link.get("url") or "").lower()
         return not ("season" in url or "_season" in url)
 
-    def extract_year_list_with_links(self, cell: Tag) -> list[dict[str, Any]]:
+    def extract_year_list_with_links(self, cell: Tag) -> list[dict[str, Any]]:  # noqa: C901
         """Extract years as a list of individual years with links.
 
         Similar to parse_active_years, but returns list in format:
@@ -130,10 +133,10 @@ class InfoboxLinkExtractor:
         - Individual years: 2002, 2005, 2007
         - Ranges: 2007-2008 (expands and interpolates missing links)
         - Single link with range: <a>2018-2019</a> (keeps as-is, doesn't expand)
-        - List items: preserves document order (e.g., <li>2022</li><li>2009</li><li>2007</li>)
+        - List items: preserves document order (e.g., 2022, 2009, 2007)
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        # Don't filter by is_year_link here - we want ALL year links including those with "season" in URL
+        # Keep all year links, including those with "season" in URL
         all_links = self.extract_links(cell)
 
         # Filter to only links whose text is a year or year range
@@ -141,7 +144,7 @@ class InfoboxLinkExtractor:
         for link in all_links:
             link_text = link.get("text", "")
             # Check if text is a year (4 digits) or year range (YYYY-YYYY or YYYY-YY)
-            if re.fullmatch(r"\d{4}(?:\s*[-–]\s*\d{2,4})?", link_text.strip()):
+            if re.fullmatch(r"\d{4}(?:\s*[--]\s*\d{2,4})?", link_text.strip()):
                 links.append(link)
 
         # Check if any link contains a range pattern as its full text
@@ -149,8 +152,8 @@ class InfoboxLinkExtractor:
         range_links = []
         for link in links:
             link_text = link.get("text", "")
-            # Check if the link text is a range like "2018-2019" or "2018–2019"
-            if re.fullmatch(r"\d{4}\s*[-–]\s*\d{2,4}", link_text):
+            # Check if the link text is a range like "2018-2019" or "2018-2019"
+            if re.fullmatch(r"\d{4}\s*[--]\s*\d{2,4}", link_text):
                 # This is a single link representing a season range, keep it as-is
                 range_links.append(link)
 
@@ -169,7 +172,7 @@ class InfoboxLinkExtractor:
                 li_text = clean_infobox_text(li.get_text(" ", strip=True)) or ""
 
                 # Check if this list item contains a range
-                if re.search(r"\b\d{4}\s*[-–]\s*\d{2,4}\b", li_text):
+                if re.search(r"\b\d{4}\s*[--]\s*\d{2,4}\b", li_text):
                     # Extract and expand the range
                     years_in_li = YearExtractor.extract_years_from_text(li_text)
                     # Interpolate URLs for the range if possible
@@ -178,14 +181,16 @@ class InfoboxLinkExtractor:
                         year_to_url,
                     )
                     # Add years in sorted order (within this range)
-                    for year in sorted(years_in_li):
-                        result.append({"year": year, "url": li_year_to_url.get(year)})
+                    result.extend(
+                        {"year": year, "url": li_year_to_url.get(year)}
+                        for year in sorted(years_in_li)
+                    )
                 else:
                     # Single year in this list item
                     year_match = re.search(r"\b(\d{4})\b", li_text)
                     if year_match:
                         year = int(year_match.group(1))
-                        result.append({"year": year, "url": year_to_url.get(year)})
+                        result.extend([{"year": year, "url": year_to_url.get(year)}])
 
             if result:  # Only return if we found years in list items
                 return result

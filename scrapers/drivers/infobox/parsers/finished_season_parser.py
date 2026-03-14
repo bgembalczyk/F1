@@ -47,7 +47,7 @@ class FinishedSeasonParser:
                     # Fall back to float
                     result["points"] = float(points_str)
 
-            return result
+            return result  # noqa: TRY300
         except (TypeError, ValueError) as exc:
             msg = f"Nie udało się sparsować ostatniego sezonu: {text!r}."
             raise DomainParseError(

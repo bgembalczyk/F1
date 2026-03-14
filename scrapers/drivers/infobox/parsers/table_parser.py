@@ -12,6 +12,8 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
 class TableParser:
+    EXPECTED_STATS_COLUMNS = 3
+
     """Handles parsing of nested tables and extraction of statistics."""
 
     def __init__(self, link_extractor: InfoboxLinkExtractor):
@@ -25,6 +27,7 @@ class TableParser:
     def parse_full_data(
         self,
         cell: Tag,
+        *,
         include_urls: bool,
     ) -> dict[str, Any]:
         """Parse full data including nested tables and structured information.
@@ -34,7 +37,7 @@ class TableParser:
             include_urls: Whether to include URL information
 
         Returns:
-            Dictionary with parsed data which may include text, links, and table information
+            Dictionary with parsed data (text, links, and optional table info)
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True))
 
@@ -101,7 +104,7 @@ class TableParser:
             True if this is a recognized stats table format
         """
         headers = table_data.get("headers", [])
-        if len(headers) != 3:
+        if len(headers) != TableParser.EXPECTED_STATS_COLUMNS:
             return False
         # Normalize headers for comparison
         normalized = [h.lower().strip() for h in headers]
@@ -129,7 +132,7 @@ class TableParser:
             "poles": None,
         }
         rows = table_data.get("rows", [])
-        if rows and len(rows[0]) >= 3:
+        if rows and len(rows[0]) >= TableParser.EXPECTED_STATS_COLUMNS:
             # First row contains the values
             # Determine if we have podiums or top tens based on header
             has_podiums = "podiums" in normalized

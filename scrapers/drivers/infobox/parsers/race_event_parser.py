@@ -47,7 +47,7 @@ class RaceEventParser:
             if text:
                 return [{"text": text, "url": None}]
 
-            return []
+            return []  # noqa: TRY300
         except (TypeError, ValueError) as exc:
             text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
             msg = f"Nie udało się sparsować wydarzenia wyścigowego: {text!r}."
