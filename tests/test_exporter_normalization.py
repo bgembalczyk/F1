@@ -20,7 +20,7 @@ def test_exporter_normalizes_keys_and_drops_empty_fields(tmp_path) -> None:
         {"driver_name": "Lewis", "wins": 103},
     ]
     assert {frozenset(item.keys()) for item in normalized} == {
-        frozenset(["driver_name", "wins"])
+        frozenset(["driver_name", "wins"]),
     }
 
 

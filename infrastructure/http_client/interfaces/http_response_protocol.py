@@ -1,4 +1,4 @@
-from typing import Mapping
+from collections.abc import Mapping
 from typing import Protocol
 from typing import runtime_checkable
 

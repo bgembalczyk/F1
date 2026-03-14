@@ -9,5 +9,5 @@ class Response:
         self.text = body.decode("utf-8", errors="replace")
 
     def raise_for_status(self) -> None:
-        if 400 <= self.status_code:
+        if self.status_code >= 400:
             raise HTTPError(self.url, self.status_code, self.text, self.headers)

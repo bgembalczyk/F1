@@ -1,12 +1,11 @@
 """Utilities for extracting background color from HTML table cells."""
 
 import re
-from typing import Optional
 
 from bs4 import Tag
 
 
-def extract_background(cell: Tag) -> Optional[str]:
+def extract_background(cell: Tag) -> str | None:
     """
     Extracts the background color from a table cell.
 

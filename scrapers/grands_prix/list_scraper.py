@@ -47,10 +47,10 @@ class GrandsPrixListScraper(F1TableScraper):
     )
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            config: ScraperConfig | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
     ) -> None:
         options = build_table_config(
             options,

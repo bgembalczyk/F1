@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
@@ -20,14 +18,18 @@ from scrapers.seasons.parsers.table import SeasonTableParser
 
 class SeasonEntriesParser:
     def __init__(
-            self, table_parser: SeasonTableParser, entry_merger: EntryMerger,
+        self,
+        table_parser: SeasonTableParser,
+        entry_merger: EntryMerger,
     ) -> None:
         self._table_parser = table_parser
         self._entry_merger = entry_merger
 
     def parse(
-            self, soup: BeautifulSoup, season_year: int | None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None,
+    ) -> list[dict[str, Any]]:
         engine_config = self._global_engine_config(season_year)
         engine_column = EngineColumn(global_config=engine_config)
         records = self._table_parser.parse_table(
@@ -67,7 +69,7 @@ class SeasonEntriesParser:
 
     @staticmethod
     def _global_engine_config(
-            season_year: int | None,
+        season_year: int | None,
     ) -> dict[str, Any] | None:
         if season_year == 2008:
             return {"displacement_l": 2.4, "layout": "V", "cylinders": 8}
@@ -77,8 +79,8 @@ class SeasonEntriesParser:
 
     @staticmethod
     def _normalize_pre_2007_entry_numbers(
-            records: List[Dict[str, Any]],
-    ) -> List[Dict[str, Any]]:
+        records: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
         for record in records:
             numbers = record.get("no")
             if numbers is None:
@@ -103,8 +105,8 @@ class SeasonEntriesParser:
                 continue
 
             if len(numbers_list) == 1 or all(
-                    isinstance(number, str) and not number.strip()
-                    for number in numbers_list[1:]
+                isinstance(number, str) and not number.strip()
+                for number in numbers_list[1:]
             ):
                 record["no"] = [primary_number for _ in range(len(drivers))]
 

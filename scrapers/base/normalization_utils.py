@@ -3,10 +3,11 @@
 Extracted from scrapers/base/normalization.py to separate free functions from
 the ``RecordNormalizer`` class, following the Single Responsibility Principle.
 """
+
+from collections.abc import Callable
+from collections.abc import Mapping
 from enum import Enum
 from typing import Any
-from typing import Callable
-from typing import Mapping
 from typing import TypeAlias
 
 from validation.validator_base import ExportRecord
@@ -24,9 +25,9 @@ class EmptyValuePolicy(Enum):
 
 
 def normalize_empty(
-        value: Any,
-        *,
-        policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
+    value: Any,
+    *,
+    policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
 ) -> Any:
     if policy is EmptyValuePolicy.KEEP:
         return value
@@ -38,9 +39,9 @@ def normalize_empty(
 
 
 def normalize_record_values(
-        record: Mapping[str, Any],
-        *,
-        policy: EmptyValuePolicy,
+    record: Mapping[str, Any],
+    *,
+    policy: EmptyValuePolicy,
 ) -> tuple[ExportRecord, int]:
     if policy is EmptyValuePolicy.KEEP:
         return dict(record), 0
@@ -49,8 +50,8 @@ def normalize_record_values(
     for key, value in record.items():
         cleaned = normalize_empty(value, policy=policy)
         if cleaned is None and (
-                (isinstance(value, str) and value.strip() == "")
-                or (isinstance(value, (list, dict)) and not value)
+            (isinstance(value, str) and value.strip() == "")
+            or (isinstance(value, (list, dict)) and not value)
         ):
             normalized_empty_fields += 1
         normalized[key] = cleaned

@@ -1,11 +1,9 @@
-from typing import List
-
 from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.records import ExportRecord
 
 
 class FailedToMakeRestartTransformer(RecordTransformer):
-    def transform(self, records: List[ExportRecord]) -> List[ExportRecord]:
+    def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
         for row in records:
             drivers = row.pop("failed_to_make_restart_drivers", None)
             reason = row.pop("failed_to_make_restart_reason", None)

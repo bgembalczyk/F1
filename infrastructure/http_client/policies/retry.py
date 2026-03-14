@@ -13,11 +13,11 @@ class RetryPolicy(ABC):
 
     @abstractmethod
     def should_retry(
-            self,
-            *,
-            response: Any | None,
-            exception: Exception | None,
-            attempt: int,
+        self,
+        *,
+        response: Any | None,
+        exception: Exception | None,
+        attempt: int,
     ) -> bool:
         """Czy ponawiać próbę?"""
 

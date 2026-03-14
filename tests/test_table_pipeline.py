@@ -36,7 +36,7 @@ def test_table_pipeline_parses_rows_and_filters_repeated_headers():
         {
             "driver": "Max Verstappen",
             "time": "1:20.000",
-        }
+        },
     ]
 
 

@@ -8,7 +8,7 @@ from scrapers.drivers.constants import MARK_WORLD_CHAMPION
 class DriverNameStatusColumn(NameStatusColumn):
     """
     Column for driver name with active and world champion status markers.
-    
+
     Extracts:
     - driver: Driver name with URL
     - is_active: True if name ends with † or ~

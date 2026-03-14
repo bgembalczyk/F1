@@ -24,7 +24,7 @@ def test_table_schema_dsl_reads_schema_and_maps_columns() -> None:
                     "kwargs": {},
                 },
             },
-        ]
+        ],
     }
 
     schema = TableSchemaDSL.from_dict(data).build()
@@ -53,7 +53,7 @@ def test_table_schema_dsl_handles_header_specific_columns() -> None:
                     "kwargs": {},
                 },
             },
-        ]
+        ],
     }
 
     schema = TableSchemaDSL.from_dict(data).build()
@@ -73,7 +73,7 @@ def test_infobox_schema_dsl_reads_schema() -> None:
                 "key": "born",
                 "labels": ["Born"],
                 "parser": "date_place",
-            }
+            },
         ],
     }
 

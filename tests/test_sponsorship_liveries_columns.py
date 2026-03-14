@@ -1,4 +1,5 @@
 """Tests for sponsorship liveries column fixes."""
+
 from unittest.mock import MagicMock
 
 from bs4 import BeautifulSoup
@@ -10,10 +11,10 @@ from scrapers.sponsorship_liveries.parsers.colour_scope import ColourScopeHandle
 
 
 def _ctx(
-        raw_text: str,
-        *,
-        clean_text: str | None = None,
-        links: list[dict] | None = None,
+    raw_text: str,
+    *,
+    clean_text: str | None = None,
+    links: list[dict] | None = None,
 ) -> ColumnContext:
     return ColumnContext(
         header="Header",
@@ -26,11 +27,20 @@ def _ctx(
     )
 
 
-def _ctx_with_cell(html: str, *, base_url: str = "https://en.wikipedia.org") -> ColumnContext:
+def _ctx_with_cell(
+    html: str,
+    *,
+    base_url: str = "https://en.wikipedia.org",
+) -> ColumnContext:
     from scrapers.base.helpers.links import normalize_links
+
     cell = BeautifulSoup(f"<td>{html}</td>", "html.parser").find("td")
     raw_text = cell.get_text(" ", strip=True)
-    links = normalize_links(cell, full_url=lambda href: base_url + href, drop_empty_text=True)
+    links = normalize_links(
+        cell,
+        full_url=lambda href: base_url + href,
+        drop_empty_text=True,
+    )
     return ColumnContext(
         header="Sponsor",
         key="sponsor",
@@ -49,7 +59,8 @@ def test_split_after_paren_no_separator_year_scope() -> None:
     """Lotus case: 'Elf (1983–1986) Goodyear (1984–1986) Olympus (1985)' splits into 3."""
     col = SponsorColumn()
     result = col._parse_text_with_links(
-        "Elf (1983\u20131986) Goodyear (1984\u20131986) Olympus (1985)", [],
+        "Elf (1983\u20131986) Goodyear (1984\u20131986) Olympus (1985)",
+        [],
     )
     assert len(result) == 3
     texts = [r if isinstance(r, str) else r.get("text") for r in result]
@@ -62,7 +73,8 @@ def test_split_after_paren_preserves_year_params() -> None:
     """Year params are preserved on each split item."""
     col = SponsorColumn()
     result = col._parse_text_with_links(
-        "Elf (1983\u20131986) Goodyear (1984\u20131986)", [],
+        "Elf (1983\u20131986) Goodyear (1984\u20131986)",
+        [],
     )
     assert len(result) == 2
     elf = result[0]
@@ -93,8 +105,12 @@ def test_split_after_paren_with_trailing_explicit_separator() -> None:
     col = SponsorColumn()
     result = col._parse_text_with_links("Courage (1981); Champion (1983)", [])
     assert len(result) == 2
-    assert (result[0] if isinstance(result[0], str) else result[0].get("text")) == "Courage"
-    assert (result[1] if isinstance(result[1], str) else result[1].get("text")) == "Champion"
+    assert (
+        result[0] if isinstance(result[0], str) else result[0].get("text")
+    ) == "Courage"
+    assert (
+        result[1] if isinstance(result[1], str) else result[1].get("text")
+    ) == "Champion"
 
 
 def test_no_split_without_paren() -> None:
@@ -108,7 +124,8 @@ def test_mixed_explicit_and_implicit_separators() -> None:
     """Mix of explicit separators and implicit paren splits."""
     col = SponsorColumn()
     result = col._parse_text_with_links(
-        "Renault (1983\u20131986); Elf (1983\u20131986) Goodyear (1984\u20131986)", [],
+        "Renault (1983\u20131986); Elf (1983\u20131986) Goodyear (1984\u20131986)",
+        [],
     )
     assert len(result) == 3
     texts = [r if isinstance(r, str) else r.get("text") for r in result]
@@ -128,7 +145,10 @@ def test_season_column_car_keyword_sets_car_field() -> None:
         "time_period": [],
         "other": [],
     }
-    col = SponsorshipSeasonsColumn(team_name="Matra", classifier=_make_classifier(classification))
+    col = SponsorshipSeasonsColumn(
+        team_name="Matra",
+        classifier=_make_classifier(classification),
+    )
     record: dict = {}
     col.apply(
         _ctx(
@@ -159,7 +179,10 @@ def test_season_column_no_car_keyword_sets_driver_field() -> None:
         "time_period": [],
         "other": [],
     }
-    col = SponsorshipSeasonsColumn(team_name="McLaren", classifier=_make_classifier(classification))
+    col = SponsorshipSeasonsColumn(
+        team_name="McLaren",
+        classifier=_make_classifier(classification),
+    )
     record: dict = {}
     col.apply(
         _ctx(
@@ -187,7 +210,9 @@ def test_season_column_no_classifier_skips_paren_fields() -> None:
     col.apply(
         _ctx(
             "1968 (Matra MS9 car)",
-            links=[{"text": "Matra MS9", "url": "https://en.wikipedia.org/wiki/Matra_MS9"}],
+            links=[
+                {"text": "Matra MS9", "url": "https://en.wikipedia.org/wiki/Matra_MS9"},
+            ],
         ),
         record,
     )
@@ -207,7 +232,10 @@ def test_season_column_gemini_sets_grand_prix_scope() -> None:
         "time_period": [],
         "other": [],
     }
-    col = SponsorshipSeasonsColumn(team_name="Ferrari", classifier=_make_classifier(classification))
+    col = SponsorshipSeasonsColumn(
+        team_name="Ferrari",
+        classifier=_make_classifier(classification),
+    )
     record: dict = {}
     col.apply(
         _ctx(
@@ -224,7 +252,10 @@ def test_season_column_gemini_sets_grand_prix_scope() -> None:
     assert record.get("_season_scoped_gp") is True
     assert record["grand_prix_scope"]["type"] == "only"
     assert record["grand_prix_scope"]["grand_prix"] == [
-        {"text": "Chinese Grand Prix", "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix"},
+        {
+            "text": "Chinese Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/Chinese_Grand_Prix",
+        },
     ]
     assert "driver" not in record
     assert "car" not in record
@@ -240,7 +271,10 @@ def test_season_column_gemini_grand_prix_fallback_to_text_when_no_links() -> Non
         "time_period": [],
         "other": [],
     }
-    col = SponsorshipSeasonsColumn(team_name="Ferrari", classifier=_make_classifier(classification))
+    col = SponsorshipSeasonsColumn(
+        team_name="Ferrari",
+        classifier=_make_classifier(classification),
+    )
     record: dict = {}
     col.apply(_ctx("2004 (only Monaco GP)"), record)
 
@@ -258,7 +292,10 @@ def test_season_column_gemini_empty_classification_sets_no_extra_fields() -> Non
         "time_period": [],
         "other": ["never raced"],
     }
-    col = SponsorshipSeasonsColumn(team_name="Coloni", classifier=_make_classifier(classification))
+    col = SponsorshipSeasonsColumn(
+        team_name="Coloni",
+        classifier=_make_classifier(classification),
+    )
     record: dict = {}
     col.apply(_ctx("1990 (never raced)"), record)
 
@@ -418,7 +455,10 @@ def test_season_column_engine_constructor_sets_engine_field() -> None:
         _ctx(
             "1990 (with Subaru power)",
             links=[
-                {"text": "1990", "url": "https://en.wikipedia.org/wiki/1990_Formula_One_season"},
+                {
+                    "text": "1990",
+                    "url": "https://en.wikipedia.org/wiki/1990_Formula_One_season",
+                },
                 {"text": "Subaru", "url": "https://en.wikipedia.org/wiki/Subaru"},
             ],
         ),
@@ -500,8 +540,8 @@ def test_hallucination_only_matching_values_kept() -> None:
 
 def test_gemini_classifier_exception_does_not_propagate() -> None:
     """If classifier.classify() raises, the column still sets the season field."""
-    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
     from infrastructure.gemini.client import GeminiClient
+    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
     mock_client = MagicMock(spec=GeminiClient)
     mock_client.query.side_effect = RuntimeError("network error")
@@ -520,13 +560,18 @@ def test_gemini_classifier_exception_does_not_propagate() -> None:
     assert "engine" not in record
     assert "grand_prix_scope" not in record
 
+
 # ── Fix 5: McLaren – "Livery principal sponsor(s)" maps to livery_principal_sponsors ──
 
 
 def test_livery_principal_sponsor_column_maps_to_livery_principal_sponsors() -> None:
     """Column 'Livery principal sponsor(s)' is mapped to the livery_principal_sponsors key."""
-    from scrapers.sponsorship_liveries.parsers.section_parser import SponsorshipSectionParser
-    from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
+    from scrapers.sponsorship_liveries.parsers.record_splitter import (
+        SponsorshipRecordSplitter,
+    )
+    from scrapers.sponsorship_liveries.parsers.section_parser import (
+        SponsorshipSectionParser,
+    )
 
     splitter = SponsorshipRecordSplitter()
     parser = SponsorshipSectionParser(
@@ -537,7 +582,10 @@ def test_livery_principal_sponsor_column_maps_to_livery_principal_sponsors() -> 
     )
     pipeline = parser._build_pipeline()
     assert "Livery principal sponsor(s)" in pipeline.column_map
-    assert pipeline.column_map["Livery principal sponsor(s)"] == "livery_principal_sponsors"
+    assert (
+        pipeline.column_map["Livery principal sponsor(s)"]
+        == "livery_principal_sponsors"
+    )
 
 
 # ── Fix 6: Colours – "and" splits colours the same as "or" ───────────────────
@@ -571,6 +619,7 @@ def test_split_or_colours_multiple_items_with_and() -> None:
 
 
 # Fix: split_or_colours must not split inside parentheses (depth-aware)
+
 
 def test_split_or_colours_no_split_inside_parens() -> None:
     """'and' inside parentheses is not treated as a colour separator."""
@@ -612,11 +661,15 @@ def test_colour_grand_prix_scope_handles_grands_prix_plural() -> None:
 
 # Fix: ColourListColumn – <br> as separator
 
+
 def test_colour_list_column_br_as_separator() -> None:
     """<br> inside a colour cell is treated as a value separator."""
     from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
+
     col = ColourListColumn()
-    cell = BeautifulSoup("<td>White<br>Dark Blue and White</td>", "html.parser").find("td")
+    cell = BeautifulSoup("<td>White<br>Dark Blue and White</td>", "html.parser").find(
+        "td",
+    )
     ctx = ColumnContext(
         header="Main colour(s)",
         key="main_colours",
@@ -636,12 +689,15 @@ def test_colour_list_column_br_as_separator() -> None:
 
 # Fix: ColourListColumn – <p> as separator
 
+
 def test_colour_list_column_p_as_separator() -> None:
     """<p> boundary inside a colour cell is treated as a value separator."""
     from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
+
     col = ColourListColumn()
     cell = BeautifulSoup(
-        "<td>Black and Green\n<p>White and Blue\n</p></td>", "html.parser",
+        "<td>Black and Green\n<p>White and Blue\n</p></td>",
+        "html.parser",
     ).find("td")
     ctx = ColumnContext(
         header="Main colour(s)",
@@ -659,9 +715,11 @@ def test_colour_list_column_p_as_separator() -> None:
 
 # Fix: ColourListColumn – skip parenthetical-only <p>
 
+
 def test_colour_list_column_skips_parenthetical_p() -> None:
     """A <p> that consists entirely of parenthetical text is ignored."""
     from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
+
     col = ColourListColumn()
     html = (
         "<td>White and Yellow\n"
@@ -686,9 +744,11 @@ def test_colour_list_column_skips_parenthetical_p() -> None:
 
 # Fix: SeasonService – "YYYY to YYYY" range support
 
+
 def test_season_service_to_range() -> None:
     """'1997 to 1999' is parsed as a full year range."""
     from models.services.season_service import SeasonService
+
     result = SeasonService.parse_seasons("1997 to 1999")
     years = [e["year"] for e in result]
     assert years == [1997, 1998, 1999]
@@ -697,6 +757,7 @@ def test_season_service_to_range() -> None:
 def test_season_service_to_range_mixed_with_comma() -> None:
     """'1997 to 1999, 2001' is parsed correctly."""
     from models.services.season_service import SeasonService
+
     result = SeasonService.parse_seasons("1997 to 1999, 2001")
     years = [e["year"] for e in result]
     assert years == [1997, 1998, 1999, 2001]
@@ -705,6 +766,7 @@ def test_season_service_to_range_mixed_with_comma() -> None:
 def test_season_service_to_range_case_insensitive() -> None:
     """'1997 TO 1999' (uppercase) is also parsed correctly."""
     from models.services.season_service import SeasonService
+
     result = SeasonService.parse_seasons("1997 TO 1999")
     years = [e["year"] for e in result]
     assert years == [1997, 1998, 1999]
@@ -722,6 +784,7 @@ def test_possessive_group_not_split_on_and() -> None:
 def test_possessive_group_two_drivers() -> None:
     """Full Matra case: two colour groups with possessive annotations."""
     from scrapers.base.helpers.text_normalization import split_delimited_text
+
     text = "Green and White (Pescarolo's car), White and Red (Beltoise's car)"
     parts = split_delimited_text(text)
     result = ColourScopeHandler.split_or_colours(parts)
@@ -748,7 +811,9 @@ def test_non_possessive_paren_still_splits() -> None:
 
 def test_livery_principal_sponsors_year_filter() -> None:
     """livery_principal_sponsors is correctly filtered per expanded season year."""
-    from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
+    from scrapers.sponsorship_liveries.parsers.record_splitter import (
+        SponsorshipRecordSplitter,
+    )
 
     sponsors = [
         {"text": "OKX", "url": "https://en.wikipedia.org/wiki/OKX"},
@@ -766,9 +831,18 @@ def test_livery_principal_sponsors_year_filter() -> None:
     ]
     record = {
         "season": [
-            {"year": 2024, "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"},
-            {"year": 2025, "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"},
-            {"year": 2026, "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"},
+            {
+                "year": 2024,
+                "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+            },
+            {
+                "year": 2025,
+                "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+            },
+            {
+                "year": 2026,
+                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
+            },
         ],
         "main_colours": ["Orange", "Black"],
         "livery_principal_sponsors": sponsors,
@@ -835,16 +909,27 @@ def test_extract_possessive_colour_groups_mixed() -> None:
 def test_split_record_by_season_matra_case() -> None:
     """Full Matra integration: possessive groups produce two driver records."""
     from scrapers.base.helpers.text_normalization import split_delimited_text
-    from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
+    from scrapers.sponsorship_liveries.parsers.record_splitter import (
+        SponsorshipRecordSplitter,
+    )
 
     text = "Green and White (Pescarolo's car), White and Red (Beltoise's car)"
     colour_list = split_delimited_text(text)
 
     record = {
         "season": [
-            {"year": 1970, "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"},
-            {"year": 1971, "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"},
-            {"year": 1972, "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"},
+            {
+                "year": 1970,
+                "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship",
+            },
+            {
+                "year": 1971,
+                "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship",
+            },
+            {
+                "year": 1972,
+                "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship",
+            },
         ],
         "main_colours": ["Blue"],
         "additional_colours": colour_list,
@@ -871,7 +956,9 @@ def test_split_record_by_season_matra_case() -> None:
 
 def test_split_record_by_season_possessive_with_common_colours() -> None:
     """Common (non-possessive) colours are shared across all driver records."""
-    from scrapers.sponsorship_liveries.parsers.record_splitter import SponsorshipRecordSplitter
+    from scrapers.sponsorship_liveries.parsers.record_splitter import (
+        SponsorshipRecordSplitter,
+    )
 
     record = {
         "season": [{"year": 1970}],

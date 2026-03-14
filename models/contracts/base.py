@@ -1,5 +1,10 @@
-from dataclasses import dataclass, field, fields
-from typing import Any, Iterator, Mapping, MutableMapping
+from collections.abc import Iterator
+from collections.abc import Mapping
+from collections.abc import MutableMapping
+from dataclasses import dataclass
+from dataclasses import field
+from dataclasses import fields
+from typing import Any
 
 
 @dataclass(slots=True)

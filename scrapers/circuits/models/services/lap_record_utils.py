@@ -1,10 +1,10 @@
 """Wspólne narzędzia do obsługi rekordów lap record."""
 
 import re
+from collections.abc import Callable
+from collections.abc import Iterable
+from collections.abc import Mapping
 from typing import Any
-from typing import Callable
-from typing import Iterable
-from typing import Mapping
 
 from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.text import choose_richer_entity
@@ -58,7 +58,9 @@ def extract_year(rec: dict[str, Any]) -> str | None:
 
 
 def normalize_lap_record_entity(
-        value: Any, *, sanitizer: Callable[[str], str] | None = None,
+    value: Any,
+    *,
+    sanitizer: Callable[[str], str] | None = None,
 ) -> str:
     """Normalizuje tekst encji (driver/vehicle) z opcjonalnym czyszczeniem."""
     text = normalize_text(value)
@@ -102,7 +104,8 @@ def has_meaningful_value(candidate: Any) -> bool:
 
 
 def select_best_field_with_url(
-        records: Iterable[Mapping[str, Any]], *field_names: str,
+    records: Iterable[Mapping[str, Any]],
+    *field_names: str,
 ) -> Any:
     """Wybiera najlepszą wartość pola (preferuje bogatszą encję)."""
     best = None
@@ -121,15 +124,15 @@ def select_best_field_with_url(
 
 
 def build_lap_record_key(
-        rec: Mapping[str, Any],
-        *,
-        year_extractor: Callable[[Mapping[str, Any]], str | None] | None = None,
-        vehicle_getter: Callable[[Mapping[str, Any]], Any] | None = None,
-        time_extractor: Callable[[Mapping[str, Any]], float | None] | None = None,
-        driver_normalizer: Callable[[Any], str] | None = None,
-        vehicle_normalizer: Callable[[Any], str] | None = None,
-        time_key_factory: Callable[[float], Any] | None = None,
-        key_order: tuple[str, ...] = ("driver", "vehicle", "year", "time"),
+    rec: Mapping[str, Any],
+    *,
+    year_extractor: Callable[[Mapping[str, Any]], str | None] | None = None,
+    vehicle_getter: Callable[[Mapping[str, Any]], Any] | None = None,
+    time_extractor: Callable[[Mapping[str, Any]], float | None] | None = None,
+    driver_normalizer: Callable[[Any], str] | None = None,
+    vehicle_normalizer: Callable[[Any], str] | None = None,
+    time_key_factory: Callable[[float], Any] | None = None,
+    key_order: tuple[str, ...] = ("driver", "vehicle", "year", "time"),
 ) -> tuple | None:
     """Buduje klucz rekordu lap record z parametryzacją źródeł danych."""
     driver_value = rec.get("driver")

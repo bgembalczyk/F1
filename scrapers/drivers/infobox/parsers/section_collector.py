@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import Tag
 
@@ -9,8 +7,8 @@ from scrapers.base.helpers.text_normalization import clean_infobox_text
 
 class InfoboxSectionCollector:
     @staticmethod
-    def collect(table: Tag) -> List[Dict[str, Any]]:
-        sections: List[Dict[str, Any]] = [{"title": None, "rows": []}]
+    def collect(table: Tag) -> list[dict[str, Any]]:
+        sections: list[dict[str, Any]] = [{"title": None, "rows": []}]
         current = sections[0]
 
         for tr in table.find_all("tr"):
@@ -44,7 +42,10 @@ class InfoboxSectionCollector:
                 if nested_table:
                     # Parse collapsible career statistics table
                     current["rows"].append(
-                        {"full_data_cell": full_data, "collapsible_table": nested_table},
+                        {
+                            "full_data_cell": full_data,
+                            "collapsible_table": nested_table,
+                        },
                     )
                 else:
                     current["rows"].append({"full_data_cell": full_data})

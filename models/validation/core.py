@@ -1,13 +1,14 @@
-from typing import Any, Iterable, Optional
+from collections.abc import Iterable
+from typing import Any
 
 from models.validation.utils import coerce_number
 
 
-def validate_int(value: Any, field_name: str) -> Optional[int]:
+def validate_int(value: Any, field_name: str) -> int | None:
     return coerce_number(value, int, field_name, allow_none=True)
 
 
-def validate_float(value: Any, field_name: str) -> Optional[float]:
+def validate_float(value: Any, field_name: str) -> float | None:
     return coerce_number(value, float, field_name, allow_none=True)
 
 

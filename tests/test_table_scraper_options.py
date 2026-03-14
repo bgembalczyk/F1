@@ -31,7 +31,8 @@ def test_table_scraper_with_options():
 def test_table_scraper_with_include_urls_option():
     config = ScraperConfig(url="https://example.com")
     options = ScraperOptions(
-        include_urls=False, source_adapter=DummySourceAdapter("<html></html>"),
+        include_urls=False,
+        source_adapter=DummySourceAdapter("<html></html>"),
     )
 
     scraper = DummyTableScraper(options=options, config=config)

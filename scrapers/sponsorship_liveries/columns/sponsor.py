@@ -54,7 +54,11 @@ class SponsorColumn(BaseColumn):
             results.extend(seg_items)
         return results
 
-    def _parse_text_with_links(self, text: str, links: list[dict[str, Any]]) -> list[Any]:
+    def _parse_text_with_links(
+        self,
+        text: str,
+        links: list[dict[str, Any]],
+    ) -> list[Any]:
         """Core parsing: split *text* into sponsor entries using *links* for URL lookup.
 
         Slashes that are part of a link text (e.g. "RE/MAX") are protected
@@ -137,6 +141,7 @@ class SponsorColumn(BaseColumn):
             from scrapers.sponsorship_liveries.parsers.grand_prix_scope import (
                 GrandPrixScopeParser,
             )
+
             if GrandPrixScopeParser.parse_grand_prix_scope(last["params"]):
                 trailing_scope_params = last["params"]
 
@@ -157,7 +162,8 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _protect_link_slashes(
-            text: str, links: list[dict[str, Any]],
+        text: str,
+        links: list[dict[str, Any]],
     ) -> tuple[str, list[tuple[str, str]]]:
         """Replace '/' and ',' inside known link texts with a placeholder.
 
@@ -179,7 +185,8 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _restore_link_slashes(
-            text: str, replacements: list[tuple[str, str]],
+        text: str,
+        replacements: list[tuple[str, str]],
     ) -> str:
         """Undo the placeholder substitutions made by :meth:`_protect_link_slashes`."""
         for placeholder, original in replacements:
@@ -241,7 +248,7 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _propagate_slash_group_year_params(
-            parsed: list[Any],
+        parsed: list[Any],
     ) -> list[Any]:
         """For items split by '/', propagate year params to items that lack them."""
         year_params: list[Any] = []
@@ -250,8 +257,7 @@ class SponsorColumn(BaseColumn):
                 continue
             item_params = item.get("params") or []
             item_year_params = [
-                p for p in item_params
-                if SponsorshipRecordText.is_year_param(p)
+                p for p in item_params if SponsorshipRecordText.is_year_param(p)
             ]
             # Only propagate when all params on this item are year params,
             # to avoid accidentally propagating Grand Prix scope params.
@@ -336,7 +342,8 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _parse_params(
-            params: list[str], links: list[dict[str, Any]],
+        params: list[str],
+        links: list[dict[str, Any]],
     ) -> list[str | dict[str, Any]]:
         if not params:
             return []
@@ -361,7 +368,8 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _find_matching_link(
-            base_text: str, links: list[dict[str, Any]],
+        base_text: str,
+        links: list[dict[str, Any]],
     ) -> dict[str, Any] | None:
         if not base_text:
             return None
@@ -378,8 +386,8 @@ class SponsorColumn(BaseColumn):
                     best = link
                     best_len = len(link_text)
                 continue
-            if target.startswith(link_lower) and target[len(link_lower):].strip(
-                    " -–—",
+            if target.startswith(link_lower) and target[len(link_lower) :].strip(
+                " -–—",
             ):
                 continue
             if target.startswith(link_lower):

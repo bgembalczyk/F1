@@ -8,18 +8,23 @@ Follows SOLID principles:
 - DRY: Centralizes common normalization logic
 - Open/Closed: Extensible through inheritance
 """
-from typing import Any, Callable, Mapping, TypeVar, cast
+
+from collections.abc import Callable
+from collections.abc import Mapping
+from typing import Any
+from typing import TypeVar
+from typing import cast
 
 from models.mappers.field_aliases import apply_field_aliases
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
-from models.validation.core import validate_float, validate_int, validate_status
-from models.validation.validators import (
-    is_empty_link,
-    normalize_season_item,
-    validate_link,
-    validate_seasons,
-)
+from models.validation.core import validate_float
+from models.validation.core import validate_int
+from models.validation.core import validate_status
+from models.validation.validators import is_empty_link
+from models.validation.validators import normalize_season_item
+from models.validation.validators import validate_link
+from models.validation.validators import validate_seasons
 
 T = TypeVar("T")
 
@@ -27,10 +32,10 @@ T = TypeVar("T")
 class FieldNormalizer:
     """
     Service class for normalizing record fields.
-    
+
     Provides reusable normalization methods following the Strategy pattern.
     Each method handles a specific field type (int, float, link, etc.).
-    
+
     This is a Pure Fabrication (GRASP) - a service object that doesn't
     represent a domain concept but provides cohesive functionality.
     """
@@ -39,11 +44,11 @@ class FieldNormalizer:
     def normalize_int(value: Any, field_name: str) -> int | None:
         """
         Normalize a value to integer, returning None on failure.
-        
+
         Args:
             value: Value to normalize
             field_name: Name of field (for error context)
-            
+
         Returns:
             Normalized integer or None
         """
@@ -58,11 +63,11 @@ class FieldNormalizer:
     def normalize_float(value: Any, field_name: str) -> float | None:
         """
         Normalize a value to float, returning None on failure.
-        
+
         Args:
             value: Value to normalize
             field_name: Name of field (for error context)
-            
+
         Returns:
             Normalized float or None
         """
@@ -77,11 +82,11 @@ class FieldNormalizer:
     def normalize_link(value: Any, field_name: str) -> LinkRecord | None:
         """
         Normalize a value to LinkRecord.
-        
+
         Args:
             value: String or mapping containing link data
             field_name: Name of field (for error context)
-            
+
         Returns:
             Normalized LinkRecord or None
         """
@@ -106,11 +111,11 @@ class FieldNormalizer:
     def normalize_link_list(value: Any, field_name: str) -> list[LinkRecord]:
         """
         Normalize a value to list of LinkRecords.
-        
+
         Args:
             value: Single item or list of link data
             field_name: Name of field (for error context)
-            
+
         Returns:
             List of normalized LinkRecords
         """
@@ -131,10 +136,10 @@ class FieldNormalizer:
     def normalize_seasons(value: Any) -> list[SeasonRecord]:
         """
         Normalize a value to list of SeasonRecords.
-        
+
         Args:
             value: Single season or list of seasons
-            
+
         Returns:
             List of normalized SeasonRecords with URLs
         """
@@ -151,6 +156,7 @@ class FieldNormalizer:
 
         # Add URLs for seasons that don't have them
         from models.records.factories import WIKI_SEASON_URL
+
         for season in seasons:
             if "url" not in season and "year" in season:
                 season["url"] = WIKI_SEASON_URL.format(year=season["year"])
@@ -159,16 +165,18 @@ class FieldNormalizer:
 
     @staticmethod
     def normalize_status(
-            value: Any, allowed: list[str], field_name: str,
+        value: Any,
+        allowed: list[str],
+        field_name: str,
     ) -> str | None:
         """
         Normalize a value to a status string from allowed values.
-        
+
         Args:
             value: Value to normalize
             allowed: List of allowed status values
             field_name: Name of field (for error context)
-            
+
         Returns:
             Normalized status or None
         """
@@ -183,10 +191,10 @@ class FieldNormalizer:
     def normalize_string(value: Any) -> str | None:
         """
         Normalize a value to a string.
-        
+
         Args:
             value: Value to normalize
-            
+
         Returns:
             Trimmed string or None if empty
         """
@@ -200,10 +208,10 @@ class FieldNormalizer:
     def normalize_bool(value: Any) -> bool:
         """
         Normalize a value to boolean.
-        
+
         Args:
             value: Value to normalize
-            
+
         Returns:
             Boolean value
         """
@@ -213,10 +221,10 @@ class FieldNormalizer:
 class BaseRecordFactory:
     """
     Base class for record factories providing common normalization utilities.
-    
+
     Subclasses can use the provided normalization methods and hooks to build
     specific record types while avoiding code duplication.
-    
+
     Follows the Template Method pattern - provides skeleton of algorithm
     with hooks for customization.
     """
@@ -224,23 +232,26 @@ class BaseRecordFactory:
     def __init__(self, normalizer: FieldNormalizer | None = None):
         """
         Initialize factory with optional custom normalizer.
-        
+
         Args:
             normalizer: Custom field normalizer, or uses default
         """
         self.normalizer = normalizer or FieldNormalizer()
 
     def apply_aliases(
-            self, record: Mapping[str, Any], aliases: dict[str, str], record_name: str,
+        self,
+        record: Mapping[str, Any],
+        aliases: dict[str, str],
+        record_name: str,
     ) -> dict[str, Any]:
         """
         Apply field aliases to record.
-        
+
         Args:
             record: Input record
             aliases: Mapping of alias names to canonical names
             record_name: Name of record type (for error messages)
-            
+
         Returns:
             Record with aliases applied
         """
@@ -249,7 +260,7 @@ class BaseRecordFactory:
     def set_defaults(self, payload: dict[str, Any], defaults: dict[str, Any]) -> None:
         """
         Set default values for fields not present in payload.
-        
+
         Args:
             payload: Record to update (modified in-place)
             defaults: Mapping of field names to default values
@@ -258,14 +269,14 @@ class BaseRecordFactory:
             payload.setdefault(key, default_value)
 
     def normalize_field(
-            self,
-            payload: dict[str, Any],
-            field_name: str,
-            normalizer: Callable[[Any, str], Any],
+        self,
+        payload: dict[str, Any],
+        field_name: str,
+        normalizer: Callable[[Any, str], Any],
     ) -> None:
         """
         Normalize a single field in payload using provided normalizer.
-        
+
         Args:
             payload: Record to update (modified in-place)
             field_name: Name of field to normalize
@@ -275,13 +286,13 @@ class BaseRecordFactory:
             payload[field_name] = normalizer(payload[field_name], field_name)
 
     def normalize_fields(
-            self,
-            payload: dict[str, Any],
-            field_specs: dict[str, Callable[[Any, str], Any]],
+        self,
+        payload: dict[str, Any],
+        field_specs: dict[str, Callable[[Any, str], Any]],
     ) -> None:
         """
         Normalize multiple fields in payload.
-        
+
         Args:
             payload: Record to update (modified in-place)
             field_specs: Mapping of field names to normalizer functions

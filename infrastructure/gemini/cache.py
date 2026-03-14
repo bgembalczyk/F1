@@ -3,9 +3,6 @@ import time
 from hashlib import sha256
 from pathlib import Path
 from typing import Any
-from typing import Dict
-from typing import Optional
-
 
 _ONE_YEAR_SECONDS = 365 * 24 * 60 * 60
 
@@ -23,10 +20,10 @@ class GeminiCache:
     """
 
     def __init__(
-            self,
-            *,
-            cache_dir: Path | str | None = None,
-            ttl_seconds: int = _ONE_YEAR_SECONDS,
+        self,
+        *,
+        cache_dir: Path | str | None = None,
+        ttl_seconds: int = _ONE_YEAR_SECONDS,
     ) -> None:
         if cache_dir is None:
             # Domyślna ścieżka: <repo_root>/data/gemini_cache
@@ -39,7 +36,7 @@ class GeminiCache:
     # public API
     # ------------------------------------------------------------------
 
-    def get(self, question: str, model: str) -> Optional[Dict[str, Any]]:
+    def get(self, question: str, model: str) -> dict[str, Any] | None:
         """Zwraca zbuforowaną odpowiedź lub ``None`` gdy brak/przestarzała.
 
         Wynik z cache jest zwracany tylko jeśli zgadza się zarówno *question*
@@ -53,7 +50,7 @@ class GeminiCache:
         except (json.JSONDecodeError, OSError):
             return None
 
-    def set(self, question: str, model: str, response: Dict[str, Any]) -> None:
+    def set(self, question: str, model: str, response: dict[str, Any]) -> None:
         """Zapisuje odpowiedź do cache."""
         path = self._cache_path(question, model)
         path.write_text(json.dumps(response, ensure_ascii=False), encoding="utf-8")

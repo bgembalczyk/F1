@@ -1,7 +1,6 @@
 """Helper class for parsing teams information from infobox cells."""
 
 from typing import Any
-from typing import List
 
 from bs4 import Tag
 
@@ -15,7 +14,7 @@ class TeamsParser:
 
     def __init__(self, link_extractor: InfoboxLinkExtractor, include_urls: bool):
         """Initialize the teams parser.
-        
+
         Args:
             link_extractor: Link extractor for extracting URLs from cells
             include_urls: Whether to include URL information
@@ -23,14 +22,14 @@ class TeamsParser:
         self._link_extractor = link_extractor
         self._include_urls = include_urls
 
-    def parse_teams(self, cell: Tag) -> List[Any]:
+    def parse_teams(self, cell: Tag) -> list[Any]:
         """Parse teams field.
-        
+
         If URLs are included, returns links; otherwise returns text split by commas.
-        
+
         Args:
             cell: BeautifulSoup Tag representing the cell
-            
+
         Returns:
             List of team links (if include_urls is True) or list of team names
         """

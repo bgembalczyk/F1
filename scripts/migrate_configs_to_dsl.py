@@ -20,7 +20,7 @@ def _load_target(target: str) -> Any:
     module = importlib.import_module(module_path)
     obj = getattr(module, attr)
     if hasattr(obj, "CONFIG"):
-        return getattr(obj, "CONFIG")
+        return obj.CONFIG
     return obj
 
 

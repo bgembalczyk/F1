@@ -1,6 +1,6 @@
+import re
 from dataclasses import dataclass
 from datetime import datetime
-import re
 from typing import Any
 
 
@@ -8,7 +8,9 @@ from typing import Any
 class SeasonService:
     @staticmethod
     def parse_seasons(
-            text: str, *, current_year: int | None = None,
+        text: str,
+        *,
+        current_year: int | None = None,
     ) -> list[dict[str, Any]]:
         """
         Zamienia tekst w stylu:
@@ -50,7 +52,9 @@ class SeasonService:
             else:
                 # zakres z "to": 1997 to 1999
                 m_range_to = re.fullmatch(
-                    r"(\d{4})\s+to\s+(\d{4})", part, re.IGNORECASE,
+                    r"(\d{4})\s+to\s+(\d{4})",
+                    part,
+                    re.IGNORECASE,
                 )
                 if m_range_to:
                     start = int(m_range_to.group(1))

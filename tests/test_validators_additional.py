@@ -105,7 +105,8 @@ def test_base_domain_validator_checks_required_and_type_rules():
     record = {"name": "Example", "count": "invalid"}
 
     errors = BaseDomainRecordValidator.require_keys(
-        record, ["name", "count", "missing"],
+        record,
+        ["name", "count", "missing"],
     )
 
     messages = [error.message for error in errors]

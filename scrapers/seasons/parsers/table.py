@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
@@ -20,11 +18,11 @@ from scrapers.seasons.standings_scraper import F1StandingsScraper
 
 class SeasonTableParser:
     def __init__(
-            self,
-            *,
-            options: ScraperOptions,
-            include_urls: bool,
-            url: str,
+        self,
+        *,
+        options: ScraperOptions,
+        include_urls: bool,
+        url: str,
     ) -> None:
         self._options = options
         self._include_urls = include_urls
@@ -34,15 +32,15 @@ class SeasonTableParser:
         self.url = url
 
     def parse_standings_table(
-            self,
-            soup: BeautifulSoup,
-            *,
-            section_ids: list[str],
-            subject_header: str,
-            subject_key: str,
-            subject_column: Any,
-            season_year: int | None = None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_ids: list[str],
+        subject_header: str,
+        subject_key: str,
+        subject_column: Any,
+        season_year: int | None = None,
+    ) -> list[dict[str, Any]]:
         schema_columns = [
             column("Pos.", "pos", PositionColumn()),
             column("Pos", "pos", PositionColumn()),
@@ -74,14 +72,14 @@ class SeasonTableParser:
         return []
 
     def parse_table(
-            self,
-            soup: BeautifulSoup,
-            *,
-            section_ids: list[str],
-            expected_headers: list[str],
-            schema: TableSchemaDSL,
-            default_column: Any | None = None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_ids: list[str],
+        expected_headers: list[str],
+        schema: TableSchemaDSL,
+        default_column: Any | None = None,
+    ) -> list[dict[str, Any]]:
         for section_id in section_ids:
             config = ScraperConfig(
                 url=self.url,
@@ -103,7 +101,7 @@ class SeasonTableParser:
                 table_css_class=pipeline.table_css_class,
             )
             try:
-                records: List[Dict[str, Any]] = []
+                records: list[dict[str, Any]] = []
                 for row_index, row in enumerate(parser.parse(soup)):
                     record = pipeline.parse_cells(
                         row.headers,

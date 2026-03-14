@@ -1,12 +1,12 @@
 """Utilities for splitting HTML table cells on <br> tags."""
 
 import re
-from typing import List
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 
-def split_cell_on_br(cell: Tag, *, replace_link_breaks: bool = False) -> List[Tag]:
+def split_cell_on_br(cell: Tag, *, replace_link_breaks: bool = False) -> list[Tag]:
     """
     Splits a cell into segments on <br> tags. If no <br> tags are found, returns [cell].
 
@@ -27,7 +27,7 @@ def split_cell_on_br(cell: Tag, *, replace_link_breaks: bool = False) -> List[Ta
 
     parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
 
-    segments: List[Tag] = []
+    segments: list[Tag] = []
     soup = cell.soup or BeautifulSoup("", "html.parser")
 
     for part in parts:
@@ -42,7 +42,7 @@ def split_cell_on_br(cell: Tag, *, replace_link_breaks: bool = False) -> List[Ta
     return segments or [cell]
 
 
-def split_cell_on_br_dom_based(cell: Tag) -> List[Tag]:
+def split_cell_on_br_dom_based(cell: Tag) -> list[Tag]:
     """
     Splits a cell on <br> tags using DOM-based parsing.
 
@@ -57,7 +57,7 @@ def split_cell_on_br_dom_based(cell: Tag) -> List[Tag]:
     """
     html = cell.decode_contents()
     frag_soup = BeautifulSoup(html, "html.parser")
-    segments: List[List[Tag]] = [[]]
+    segments: list[list[Tag]] = [[]]
 
     for node in list(frag_soup.contents):
         if isinstance(node, Tag) and node.name == "br":
@@ -66,7 +66,7 @@ def split_cell_on_br_dom_based(cell: Tag) -> List[Tag]:
             continue
         segments[-1].append(node)
 
-    wrapped: List[Tag] = []
+    wrapped: list[Tag] = []
     for segment in segments:
         if not segment:
             continue
@@ -78,7 +78,7 @@ def split_cell_on_br_dom_based(cell: Tag) -> List[Tag]:
     return wrapped or [cell]
 
 
-def split_cell_on_br_with_children(cell: Tag) -> List[Tag]:
+def split_cell_on_br_with_children(cell: Tag) -> list[Tag]:
     """
     Splits a cell on <br> tags by iterating through direct children.
 
@@ -91,8 +91,8 @@ def split_cell_on_br_with_children(cell: Tag) -> List[Tag]:
     Returns:
         A list of Tag elements, one for each segment.
     """
-    parts: List[str] = []
-    current: List[str] = []
+    parts: list[str] = []
+    current: list[str] = []
 
     for child in list(cell.contents):
         if isinstance(child, Tag) and child.name and child.name.lower() == "br":
@@ -109,7 +109,7 @@ def split_cell_on_br_with_children(cell: Tag) -> List[Tag]:
         html = cell.decode_contents()
         parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
 
-    segments: List[Tag] = []
+    segments: list[Tag] = []
     soup = cell.soup or BeautifulSoup("", "html.parser")
 
     for part in parts:

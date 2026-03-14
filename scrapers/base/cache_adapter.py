@@ -1,7 +1,6 @@
 from pathlib import Path
 from time import time
 from typing import Any
-from typing import Optional
 from typing import Protocol
 
 from infrastructure.http_client.caching.file import FileCache
@@ -11,7 +10,7 @@ from scrapers.base.source_adapter import SourceAdapter
 class CacheBackend(Protocol):
     """Interfejs cache dla HTML (get/set)."""
 
-    def get(self, key: str) -> Optional[str]:
+    def get(self, key: str) -> str | None:
         """Zwraca tekst z cache lub None."""
 
     def set(self, key: str, text: str) -> None:
@@ -25,7 +24,7 @@ class MemoryCache(CacheBackend):
         self._ttl_seconds = max(0, int(ttl_seconds))
         self._store: dict[str, tuple[str, float]] = {}
 
-    def get(self, key: str) -> Optional[str]:
+    def get(self, key: str) -> str | None:
         entry = self._store.get(key)
         if entry is None:
             return None
@@ -47,7 +46,7 @@ class FileCacheBackend(CacheBackend):
     def __init__(self, *, cache_dir: Path | str, ttl_seconds: int = 0) -> None:
         self._cache = FileCache(cache_dir=cache_dir, ttl_seconds=ttl_seconds)
 
-    def get(self, key: str) -> Optional[str]:
+    def get(self, key: str) -> str | None:
         return self._cache.get(key)
 
     def set(self, key: str, text: str) -> None:
@@ -58,10 +57,10 @@ class CacheAdapter(SourceAdapter):
     """Cache'ujący adapter źródła oparty o interfejs cache."""
 
     def __init__(
-            self,
-            *,
-            source_adapter: SourceAdapter,
-            cache_adapter: CacheBackend,
+        self,
+        *,
+        source_adapter: SourceAdapter,
+        cache_adapter: CacheBackend,
     ) -> None:
         self._source_adapter = source_adapter
         self._cache = cache_adapter

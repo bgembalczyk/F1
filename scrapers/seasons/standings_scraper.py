@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
@@ -12,16 +10,16 @@ from scrapers.base.table.scraper import F1TableScraper
 
 class F1StandingsScraper(F1TableScraper):
     def __init__(
-            self,
-            *,
-            options: ScraperOptions,
-            config: ScraperConfig,
-            position_key: str = "pos",
+        self,
+        *,
+        options: ScraperOptions,
+        config: ScraperConfig,
+        position_key: str = "pos",
     ) -> None:
         self.position_key = position_key
         super().__init__(options=options, config=config)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         rows = super()._parse_soup(soup)
         previous_position = None
         for row in rows:

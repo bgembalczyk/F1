@@ -40,16 +40,16 @@ def test_clean_wiki_text_normalize_dashes_compacts_spaces():
 
 def test_clean_wiki_text_strip_lang_suffix_ignores_word_endings():
     assert (
-            clean_wiki_text("David Salvador (es)", strip_lang_suffix=True)
-            == "David Salvador"
+        clean_wiki_text("David Salvador (es)", strip_lang_suffix=True)
+        == "David Salvador"
     )
     assert (
-            clean_wiki_text("Yamaha YZF-R9 ( de )", strip_lang_suffix=True)
-            == "Yamaha YZF-R9"
+        clean_wiki_text("Yamaha YZF-R9 ( de )", strip_lang_suffix=True)
+        == "Yamaha YZF-R9"
     )
     assert (
-            clean_wiki_text("Silverstone circuit", strip_lang_suffix=True)
-            == "Silverstone circuit"
+        clean_wiki_text("Silverstone circuit", strip_lang_suffix=True)
+        == "Silverstone circuit"
     )
 
 
@@ -241,8 +241,8 @@ def test_normalize_url_builds_and_validates() -> None:
 
     assert normalize_url(base, "/wiki/Bar") == "https://en.wikipedia.org/wiki/Bar"
     assert (
-            normalize_url(base, "//en.wikipedia.org/wiki/Baz")
-            == "https://en.wikipedia.org/wiki/Baz"
+        normalize_url(base, "//en.wikipedia.org/wiki/Baz")
+        == "https://en.wikipedia.org/wiki/Baz"
     )
     assert normalize_url(base, "https://example.com/path") == "https://example.com/path"
     assert normalize_url(base, "mailto:test@example.com") is None

@@ -2,9 +2,6 @@
 
 import re
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Union
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -18,23 +15,23 @@ class NationalityParser:
 
     def __init__(self, link_extractor: InfoboxLinkExtractor) -> None:
         """Initialize the nationality parser.
-        
+
         Args:
             link_extractor: Link extractor instance for extracting URLs
         """
         self._link_extractor = link_extractor
 
-    def parse_nationality(self, cell: Tag) -> Union[List[str], List[Dict[str, Any]]]:
+    def parse_nationality(self, cell: Tag) -> list[str] | list[dict[str, Any]]:
         """Parse nationality field.
 
         Handles cases like:
         - "American or Italian" -> ["American", "Italian"]
         - "British" with link -> [{"text": "British", "url": "..."}]
         - "Federation of Rhodesia and Nyasaland (1963)" with year ranges -> structured data with years
-        
+
         Args:
             cell: BeautifulSoup Tag representing the cell
-            
+
         Returns:
             List of nationality strings OR list of dictionaries with text/url or nationality/years
         """
@@ -47,7 +44,7 @@ class NationalityParser:
             return self._parse_nationality_with_years(cell)
         return self._parse_nationality_simple(cell, text)
 
-    def _parse_nationality_with_years(self, cell: Tag) -> List[Dict[str, Any]]:
+    def _parse_nationality_with_years(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse structured nationality entries that include year information.
 
         Splits the cell HTML on <br> tags and extracts one nationality entry
@@ -72,7 +69,9 @@ class NationalityParser:
             part_text = clean_infobox_text(part_soup.get_text(" ", strip=True)) or ""
 
             nationality_name = re.sub(
-                r"\s*\([^)]*\d{4}[^)]*\)", "", part_text,
+                r"\s*\([^)]*\d{4}[^)]*\)",
+                "",
+                part_text,
             ).strip()
 
             years = self._extract_years_from_text(part_text)
@@ -87,7 +86,7 @@ class NationalityParser:
         return nationalities if nationalities else []
 
     @staticmethod
-    def _extract_years_from_text(text: str) -> List[int]:
+    def _extract_years_from_text(text: str) -> list[int]:
         """Extract all years (including ranges) from parenthesised patterns in text.
 
         Args:
@@ -96,7 +95,7 @@ class NationalityParser:
         Returns:
             Deduplicated list of integer years found in the text.
         """
-        years: List[int] = []
+        years: list[int] = []
         year_patterns = re.findall(r"\(([^)]*\d{4}[^)]*)\)", text)
 
         for year_pattern in year_patterns:
@@ -115,8 +114,10 @@ class NationalityParser:
         return years
 
     def _parse_nationality_simple(
-            self, cell: Tag, text: str,
-    ) -> Union[List[str], List[Dict[str, Any]]]:
+        self,
+        cell: Tag,
+        text: str,
+    ) -> list[str] | list[dict[str, Any]]:
         """Parse nationality when no year information is present.
 
         Tries link-based extraction first; falls back to plain-text splitting.
@@ -138,7 +139,7 @@ class NationalityParser:
 
         return self._parse_nationality_from_text(text)
 
-    def _extract_nationality_links(self, cell: Tag) -> List[Dict[str, Any]]:
+    def _extract_nationality_links(self, cell: Tag) -> list[dict[str, Any]]:
         """Extract non-empty, non-reference links from the cell.
 
         Args:
@@ -156,7 +157,7 @@ class NationalityParser:
         ]
 
     @staticmethod
-    def _parse_nationality_from_text(text: str) -> List[str]:
+    def _parse_nationality_from_text(text: str) -> list[str]:
         """Split plain text on "or" to obtain individual nationality names.
 
         Args:

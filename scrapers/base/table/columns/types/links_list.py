@@ -1,6 +1,6 @@
+from collections.abc import Iterable
+from collections.abc import Iterator
 from typing import Any
-from typing import Iterable
-from typing import Iterator
 
 from bs4 import NavigableString
 from bs4 import Tag
@@ -37,10 +37,10 @@ class LinksListColumn(BaseColumn):
             yield chunk
 
     def _iter_cell_tokens(
-            self,
-            cell: Tag,
-            *,
-            link_iter: Iterator[dict[str, Any]],
+        self,
+        cell: Tag,
+        *,
+        link_iter: Iterator[dict[str, Any]],
     ) -> Iterable[str | dict[str, Any] | object]:
         for child in cell.children:
             if isinstance(child, NavigableString):

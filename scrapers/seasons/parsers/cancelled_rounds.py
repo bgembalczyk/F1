@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -24,19 +22,23 @@ class CancelledRoundsParser:
         self._table_parser = table_parser
 
     def parse(
-            self,
-            soup: BeautifulSoup,
-            season_year: int | None,
-            calendar_data: List[Dict[str, Any]] | None = None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None,
+        calendar_data: list[dict[str, Any]] | None = None,
+    ) -> list[dict[str, Any]]:
         schema_columns = [
             column("Grand Prix", "grand_prix", UrlColumn()),
             column("Circuit", "circuit", CalendarCircuitColumn()),
             column(
-                "Scheduled date", "scheduled_date", SeasonDateColumn(year=season_year),
+                "Scheduled date",
+                "scheduled_date",
+                SeasonDateColumn(year=season_year),
             ),
             column(
-                "Original date", "scheduled_date", SeasonDateColumn(year=season_year),
+                "Original date",
+                "scheduled_date",
+                SeasonDateColumn(year=season_year),
             ),
             column("Date", "scheduled_date", SeasonDateColumn(year=season_year)),
         ]
@@ -61,13 +63,13 @@ class CancelledRoundsParser:
         return []
 
     def _parse_section(
-            self,
-            soup: BeautifulSoup,
-            section_id: str,
-            expected_headers: List[str],
-            schema: TableSchemaDSL,
-            calendar_data: List[Dict[str, Any]] | None,
-    ) -> List[Dict[str, Any]] | None:
+        self,
+        soup: BeautifulSoup,
+        section_id: str,
+        expected_headers: list[str],
+        schema: TableSchemaDSL,
+        calendar_data: list[dict[str, Any]] | None,
+    ) -> list[dict[str, Any]] | None:
         """
         Parse tables in a section with special logic for cancelled_rounds:
         - If 2 tables found: return the second one
@@ -77,7 +79,9 @@ class CancelledRoundsParser:
         """
         # Find all matching tables in the section
         matching_tables = self._find_all_matching_tables(
-            soup, section_id, expected_headers,
+            soup,
+            section_id,
+            expected_headers,
         )
 
         if not matching_tables:
@@ -102,12 +106,18 @@ class CancelledRoundsParser:
         return records
 
     def _find_all_matching_tables(
-            self, soup: BeautifulSoup, section_id: str, expected_headers: List[str],
-    ) -> List[Tag]:
+        self,
+        soup: BeautifulSoup,
+        section_id: str,
+        expected_headers: list[str],
+    ) -> list[Tag]:
         """Find all tables in a section that match the expected headers."""
         try:
             candidate_tables = find_section_elements(
-                soup, section_id, ["table"], class_="wikitable",
+                soup,
+                section_id,
+                ["table"],
+                class_="wikitable",
             )
         except RuntimeError:
             return []
@@ -129,8 +139,11 @@ class CancelledRoundsParser:
         return matching_tables
 
     def _parse_table_with_schema(
-            self, table: Tag, schema: TableSchemaDSL, section_id: str,
-    ) -> List[Dict[str, Any]]:
+        self,
+        table: Tag,
+        schema: TableSchemaDSL,
+        section_id: str,
+    ) -> list[dict[str, Any]]:
         """Parse a single table using the schema."""
         config = ScraperConfig(
             url=self._table_parser.url,
@@ -148,7 +161,9 @@ class CancelledRoundsParser:
         return TableParsingHelper.parse_table_with_pipeline(table, pipeline)
 
     def _is_same_as_calendar(
-            self, cancelled_data: List[Dict[str, Any]], calendar_data: List[Dict[str, Any]],
+        self,
+        cancelled_data: list[dict[str, Any]],
+        calendar_data: list[dict[str, Any]],
     ) -> bool:
         """
         Check if cancelled_rounds data is the same as calendar data.
@@ -158,7 +173,7 @@ class CancelledRoundsParser:
             return False
 
         # Extract comparable fields (grand_prix and circuit)
-        def extract_key_fields(data: List[Dict[str, Any]]) -> List[tuple]:
+        def extract_key_fields(data: list[dict[str, Any]]) -> list[tuple]:
             result = []
             for item in data:
                 gp = item.get("grand_prix", {})

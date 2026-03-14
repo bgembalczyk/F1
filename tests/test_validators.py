@@ -12,7 +12,8 @@ from validation.records import ValidationIssue
 
 def test_validate_link_accepts_link_dict():
     link = validate_link(
-        {"text": "Site", "url": "https://example.com"}, field_name="link",
+        {"text": "Site", "url": "https://example.com"},
+        field_name="link",
     )
 
     assert link == {"text": "Site", "url": "https://example.com"}

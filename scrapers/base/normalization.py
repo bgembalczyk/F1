@@ -1,5 +1,5 @@
+from collections.abc import Sequence
 from typing import Any
-from typing import Sequence
 
 from models.contracts.helpers import map_record_to_contract
 from scrapers.base.helpers.text_normalization import drop_empty_fields
@@ -24,18 +24,18 @@ __all__ = [
 
 class RecordNormalizer:
     def __init__(
-            self,
-            *,
-            normalize_keys: bool = False,
-            normalize_empty_values: bool = False,
-            empty_value_policy: EmptyValuePolicy | None = None,
-            normalization_rules: Sequence[NormalizationRule] | None = None,
+        self,
+        *,
+        normalize_keys: bool = False,
+        normalize_empty_values: bool = False,
+        empty_value_policy: EmptyValuePolicy | None = None,
+        normalization_rules: Sequence[NormalizationRule] | None = None,
     ) -> None:
         self._empty_value_policy = empty_value_policy or EmptyValuePolicy.from_flag(
             normalize_empty_values,
         )
         self._normalize_empty_values = (
-                self._empty_value_policy is EmptyValuePolicy.NORMALIZE
+            self._empty_value_policy is EmptyValuePolicy.NORMALIZE
         )
         self._rules = self._build_normalization_rules(
             normalize_keys=normalize_keys,
@@ -81,9 +81,9 @@ class RecordNormalizer:
 
     @staticmethod
     def _build_normalization_rules(
-            *,
-            normalize_keys: bool,
-            normalization_rules: Sequence[NormalizationRule] | None,
+        *,
+        normalize_keys: bool,
+        normalization_rules: Sequence[NormalizationRule] | None,
     ) -> list[NormalizationRule]:
         rules: list[NormalizationRule] = []
         if normalize_keys:

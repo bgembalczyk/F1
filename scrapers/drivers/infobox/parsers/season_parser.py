@@ -2,8 +2,6 @@
 
 import re
 from typing import Any
-from typing import Dict
-from typing import List
 
 from models.records.link import LinkRecord
 
@@ -27,7 +25,9 @@ class SeasonParser:
         return True
 
     def is_valid_class_info(
-            self, class_info: Dict[str, Any], season_links: List[Dict[str, Any]],
+        self,
+        class_info: dict[str, Any],
+        season_links: list[dict[str, Any]],
     ) -> bool:
         """Check if class_info is valid (not season data and not a duplicate).
 
@@ -51,8 +51,8 @@ class SeasonParser:
         # Check if class duplicates any season
         for season_link in season_links:
             if (
-                    season_link.get("text") == class_text
-                    or season_link.get("url") == class_url
+                season_link.get("text") == class_text
+                or season_link.get("url") == class_url
             ):
                 return False
 

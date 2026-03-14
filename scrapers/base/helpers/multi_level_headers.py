@@ -1,7 +1,5 @@
 """Shared utility for building multi-level table headers."""
 
-from typing import List, Tuple
-
 from bs4 import Tag
 
 from scrapers.base.helpers.text import clean_wiki_text
@@ -11,7 +9,7 @@ class MultiLevelHeaderBuilder:
     """Helper for building headers from multi-row table headers with colspan support."""
 
     @staticmethod
-    def build_headers(table: Tag) -> Tuple[List[str], int]:
+    def build_headers(table: Tag) -> tuple[list[str], int]:
         """Build headers from multi-row table headers.
 
         Handles tables with colspan in the first row and sub-headers in the second row.
@@ -25,7 +23,7 @@ class MultiLevelHeaderBuilder:
         Raises:
             RuntimeError: If no header rows found
         """
-        header_rows: List[Tag] = []
+        header_rows: list[Tag] = []
         # First try to find headers in thead
         thead = table.find("thead")
         if thead:
@@ -46,12 +44,12 @@ class MultiLevelHeaderBuilder:
             raise RuntimeError("Nie znaleziono nagłówków tabeli.")
 
         first_row_cells = header_rows[0].find_all(["th", "td"])
-        second_row_cells: List[Tag] = []
+        second_row_cells: list[Tag] = []
         if len(header_rows) > 1:
             second_row_cells = header_rows[1].find_all(["th", "td"])
 
         second_iter = iter(second_row_cells)
-        headers: List[str] = []
+        headers: list[str] = []
         for cell in first_row_cells:
             text = clean_wiki_text(cell.get_text(" ", strip=True))
             try:

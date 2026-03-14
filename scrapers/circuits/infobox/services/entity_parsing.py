@@ -1,9 +1,5 @@
 import re
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
-from typing import Union
 
 from models.records.link import LinkRecord
 from scrapers.base.helpers.text_normalization import clean_infobox_text
@@ -23,10 +19,12 @@ class CircuitEntityParser(CircuitTextProcessing):
         return [part for part in parts if part]
 
     def _build_entity_from_links(
-            self, parts: list[str], links: list[LinkRecord],
-    ) -> Union[List[Dict[str, Any]], Dict[str, Any], str, None]:
+        self,
+        parts: list[str],
+        links: list[LinkRecord],
+    ) -> list[dict[str, Any]] | dict[str, Any] | str | None:
         if len(links) > 1:
-            out: List[Dict[str, Any]] = []
+            out: list[dict[str, Any]] = []
             for link in links:
                 item = clean_link_record(link)
                 if item:
@@ -42,7 +40,7 @@ class CircuitEntityParser(CircuitTextProcessing):
             return parts[0] if parts else None
 
         if len(parts) > 1:
-            entities: List[Dict[str, Any]] = []
+            entities: list[dict[str, Any]] = []
             for part in parts:
                 matched_link = self._find_link(part, links)
                 if matched_link:
@@ -65,9 +63,9 @@ class CircuitEntityParser(CircuitTextProcessing):
         return parts[0] if parts else None
 
     def parse_linked_entity(
-            self,
-            row: Optional[Dict[str, Any]],
-    ) -> Optional[Union[Dict[str, Any], str, List[Dict[str, Any]]]]:
+        self,
+        row: dict[str, Any] | None,
+    ) -> dict[str, Any] | str | list[dict[str, Any]] | None:
         if not row:
             return None
 
@@ -80,7 +78,7 @@ class CircuitEntityParser(CircuitTextProcessing):
         return self._build_entity_from_links(parts, links)
 
     @staticmethod
-    def _parse_website(self, row: Optional[Dict[str, Any]]) -> Optional[str]:
+    def _parse_website(self, row: dict[str, Any] | None) -> str | None:
         if not row:
             return None
         text = (clean_infobox_text(row.get("text")) or "").strip()

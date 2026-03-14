@@ -1,8 +1,5 @@
 from pathlib import Path
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from bs4 import BeautifulSoup
 
@@ -18,9 +15,9 @@ class CompleteDriverScraper(CompositeScraper):
     url = F1DriversListScraper.CONFIG.url
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
     ) -> None:
         options = options or ScraperOptions()
 
@@ -51,13 +48,13 @@ class CompleteDriverScraper(CompositeScraper):
             records_adapter=drivers_adapter,
         )
 
-    def get_detail_url(self, record: Dict[str, Any]) -> Optional[str]:
+    def get_detail_url(self, record: dict[str, Any]) -> str | None:
         driver_link = record.get("driver")
         if isinstance(driver_link, dict):
             return driver_link.get("url")
         return None
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         raise NotImplementedError("Use fetch() bezpośrednio dla pełnego scrapingu")
 
 

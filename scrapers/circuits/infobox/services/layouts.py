@@ -1,9 +1,6 @@
 import re
+from collections.abc import Callable
 from typing import Any
-from typing import Callable
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from bs4 import BeautifulSoup
 
@@ -18,17 +15,18 @@ from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 class CircuitLayoutsParser(SafeParserMixin):
     """Logika parsowania sekcji layoutów z infoboksa toru."""
+
     """Logika parsowania sekcji layoutów z infoboksa toru."""
 
     def __init__(
-            self,
-            *,
-            infobox_scraper: WikipediaInfoboxScraper,
-            text_utils: InfoboxTextUtils,
-            lap_record_parser: CircuitLapRecordParser,
-            specs_parser: CircuitSpecsParser,
-            error_handler: ErrorHandler,
-            url_provider: Callable[[], Optional[str]] | None = None,
+        self,
+        *,
+        infobox_scraper: WikipediaInfoboxScraper,
+        text_utils: InfoboxTextUtils,
+        lap_record_parser: CircuitLapRecordParser,
+        specs_parser: CircuitSpecsParser,
+        error_handler: ErrorHandler,
+        url_provider: Callable[[], str | None] | None = None,
     ) -> None:
         self.infobox_scraper = infobox_scraper
         self.text_utils = text_utils
@@ -38,13 +36,13 @@ class CircuitLayoutsParser(SafeParserMixin):
         self.error_handler = error_handler
         self._url_provider = url_provider
 
-    def parse_layout_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def parse_layout_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         table = self.infobox_scraper.parser.find_infobox(soup)
         if table is None:
             return []
 
-        layouts: List[Dict[str, Any]] = []
-        current: Optional[Dict[str, Any]] = None
+        layouts: list[dict[str, Any]] = []
+        current: dict[str, Any] | None = None
 
         for tr in table.find_all("tr"):
             if tr.find_parent("table") is not table:
@@ -83,30 +81,37 @@ class CircuitLayoutsParser(SafeParserMixin):
 
             if label == "length":
                 current["length_km"] = self._safe_parse(
-                    self.text_utils.parse_length, cell_row, unit="km",
+                    self.text_utils.parse_length,
+                    cell_row,
+                    unit="km",
                 )
                 current["length_mi"] = self._safe_parse(
-                    self.text_utils.parse_length, cell_row, unit="mi",
+                    self.text_utils.parse_length,
+                    cell_row,
+                    unit="mi",
                 )
             elif label == "turns":
                 current["turns"] = self._safe_parse(self.text_utils.parse_int, cell_row)
             elif label == "race_lap_record":
                 current["race_lap_record"] = self._safe_parse(
-                    self.lap_record_parser.parse_lap_record, cell_row,
+                    self.lap_record_parser.parse_lap_record,
+                    cell_row,
                 )
             elif label == "surface":
                 current["surface"] = self._safe_parse(
-                    self.specs_parser.parse_surface, cell_row,
+                    self.specs_parser.parse_surface,
+                    cell_row,
                 )
             elif label == "banking":
                 current["banking"] = self._safe_parse(
-                    self.specs_parser.parse_banking, cell_row,
+                    self.specs_parser.parse_banking,
+                    cell_row,
                 )
 
         return layouts
 
     @staticmethod
-    def _parse_layout_header(text: str) -> tuple[str, Optional[str]]:
+    def _parse_layout_header(text: str) -> tuple[str, str | None]:
         match = re.match(r"^(.*?)(?:\((.*?)\))?$", text)
         if not match:
             return text, None

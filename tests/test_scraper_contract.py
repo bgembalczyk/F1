@@ -4,8 +4,6 @@ import sys
 import types
 from pathlib import Path
 from typing import Any
-from typing import Dict
-from typing import List
 
 import pytest
 from bs4 import BeautifulSoup
@@ -26,15 +24,12 @@ if str(PROJECT_ROOT) not in sys.path:
 if importlib.util.find_spec("requests") is None:
     requests_stub = types.ModuleType("requests")
 
-
     class _RequestException(Exception):
         pass
-
 
     class _Session:
         def get(self, *_args, **_kwargs):
             raise _RequestException("requests stub")
-
 
     requests_stub.RequestException = _RequestException
     requests_stub.Session = _Session
@@ -43,10 +38,8 @@ if importlib.util.find_spec("requests") is None:
 if importlib.util.find_spec("certifi") is None:
     certifi_stub = types.ModuleType("certifi")
 
-
     def _where():
         return ""
-
 
     certifi_stub.where = _where
     sys.modules["certifi"] = certifi_stub
@@ -54,11 +47,9 @@ if importlib.util.find_spec("certifi") is None:
 if importlib.util.find_spec("pandas") is None:
     pandas_stub = types.ModuleType("pandas")
 
-
     class _StubDataFrame:
         def __init__(self, *_args, **_kwargs):
             pass
-
 
     pandas_stub.DataFrame = _StubDataFrame
     sys.modules["pandas"] = pandas_stub
@@ -71,14 +62,12 @@ try:
 except Exception:
     infobox_stub = types.ModuleType("scrapers.base.infobox.circuits.scraper")
 
-
     class _StubF1CircuitInfoboxScraper:
         def __init__(self, *_, **__):
             pass
 
         def parse(self, soup):
             return {}
-
 
     infobox_stub.F1CircuitInfoboxScraper = _StubF1CircuitInfoboxScraper
     sys.modules["scrapers.base.infobox.circuits.scraper"] = infobox_stub
@@ -113,7 +102,7 @@ class DummySourceAdapter:
 class DummyScraper(F1Scraper):
     url = "https://example.com"
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return [{"id": 1}]
 
 
@@ -129,7 +118,7 @@ class DummyFetcher:
 
 
 class DummySingleCircuitScraper(F1SingleCircuitScraper):
-    def __init__(self, *, is_circuit: bool, details: Dict[str, Any] | None) -> None:
+    def __init__(self, *, is_circuit: bool, details: dict[str, Any] | None) -> None:
         super().__init__(options=ScraperOptions(fetcher=DummyFetcher("")))
         self._is_circuit = is_circuit
         self._details = details
@@ -137,7 +126,7 @@ class DummySingleCircuitScraper(F1SingleCircuitScraper):
     def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
         return self._is_circuit
 
-    def _parse_details(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _parse_details(self, soup: BeautifulSoup) -> dict[str, Any]:
         return self._details or {}
 
 
@@ -325,7 +314,8 @@ def test_scraper_config_rejects_invalid_column_map() -> None:
 
 def test_scraper_config_rejects_invalid_columns() -> None:
     with pytest.raises(
-            ValueError, match="columns must map str keys to BaseColumn values",
+        ValueError,
+        match="columns must map str keys to BaseColumn values",
     ):
         ScraperConfig(
             url="https://example.com",
@@ -345,7 +335,8 @@ def test_table_scraper_validates_config_in_init() -> None:
     object.__setattr__(config, "default_column", AutoColumn())
 
     with pytest.raises(
-            ValueError, match="columns must map str keys to BaseColumn values",
+        ValueError,
+        match="columns must map str keys to BaseColumn values",
     ):
         DummyTableScraper(
             options=ScraperOptions(fetcher=StubFetcher("<html></html>")),
@@ -366,7 +357,8 @@ def test_f1scraper_fetch_always_returns_list() -> None:
 
 def test_single_scraper_returns_single_item_list() -> None:
     scraper = DummySingleCircuitScraper(
-        is_circuit=True, details={"infobox": {"name": "Test"}, "tables": []},
+        is_circuit=True,
+        details={"infobox": {"name": "Test"}, "tables": []},
     )
 
     result = scraper.fetch_by_url("https://example.com/wiki/Test")

@@ -1,5 +1,4 @@
 from typing import Any
-from typing import Dict
 
 from scrapers.base.infobox.schema import InfoboxSchema
 
@@ -8,17 +7,17 @@ class InfoboxFieldMapper:
     """Mapuje surowe pola infoboxa do docelowego formatu."""
 
     def __init__(
-            self,
-            *,
-            schema: InfoboxSchema | None = None,
-            logger=None,
-            context: str | None = None,
+        self,
+        *,
+        schema: InfoboxSchema | None = None,
+        logger=None,
+        context: str | None = None,
     ) -> None:
         self._schema = schema
         self._logger = logger
         self._context = context
 
-    def map(self, raw: Dict[str, Any] | None) -> Dict[str, Any]:
+    def map(self, raw: dict[str, Any] | None) -> dict[str, Any]:
         if not raw:
             return {"title": None, "rows": {}}
 

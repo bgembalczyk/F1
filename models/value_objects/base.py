@@ -1,5 +1,8 @@
-from dataclasses import asdict, is_dataclass
-from typing import Any, Mapping, TypeVar
+from collections.abc import Mapping
+from dataclasses import asdict
+from dataclasses import is_dataclass
+from typing import Any
+from typing import TypeVar
 
 TValueObject = TypeVar("TValueObject", bound="ValueObject")
 
@@ -12,8 +15,8 @@ class ValueObject:
 
     @classmethod
     def from_dict(
-            cls: type[TValueObject],
-            data: Mapping[str, Any] | TValueObject | None,
+        cls: type[TValueObject],
+        data: Mapping[str, Any] | TValueObject | None,
     ) -> TValueObject | None:
         if data is None:
             return None

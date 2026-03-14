@@ -1,7 +1,6 @@
 """Helper class for parsing collapsible career tables from infobox cells."""
 
 from typing import Any
-from typing import Dict
 
 from bs4 import Tag
 
@@ -13,14 +12,14 @@ class CollapsibleTableParser:
 
     def __init__(self, cell_parser_delegate):
         """Initialize the collapsible table parser.
-        
+
         Args:
             cell_parser_delegate: Delegate that provides methods for parsing cell values
                                  (parse_active_years, parse_teams, parse_int_cell, etc.)
         """
         self._delegate = cell_parser_delegate
 
-    def parse_collapsible_career_table(self, table: Tag) -> Dict[str, Any] | None:
+    def parse_collapsible_career_table(self, table: Tag) -> dict[str, Any] | None:
         """Parse collapsible career statistics table (e.g., motorcycle racing).
 
         Example structure:
@@ -30,10 +29,10 @@ class CollapsibleTableParser:
           <tr><th>Starts</th><td>129</td></tr>
           ...
         </table>
-        
+
         Args:
             table: BeautifulSoup Tag representing the collapsible table
-            
+
         Returns:
             Dictionary with 'title' and 'rows' keys, or None if table is empty
         """

@@ -13,11 +13,11 @@ from bs4 import BeautifulSoup
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
-    RedFlaggedWorldChampionshipRacesScraper,
-)
 from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
     RedFlaggedNonChampionshipRacesScraper,
+)
+from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
+    RedFlaggedWorldChampionshipRacesScraper,
 )
 
 try:
@@ -33,7 +33,7 @@ class TestRedFlaggedRacesScraperRobustness:
 
     def test_with_proper_section_headings(self):
         """Test scraper works with proper Wikipedia section structure."""
-        html = '''
+        html = """
         <html><body>
         <h2><span class="mw-headline" id="Red-flagged_races">Red-flagged races</span></h2>
         <table class="wikitable">
@@ -52,17 +52,17 @@ class TestRedFlaggedRacesScraperRobustness:
           </tr>
         </table>
         </body></html>
-        '''
-        soup = BeautifulSoup(html, 'html.parser')
+        """
+        soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedWorldChampionshipRacesScraper()
         records = scraper._parse_soup(soup)
 
         assert len(records) == 1
-        assert records[0]['season'] == 2024
+        assert records[0]["season"] == 2024
 
     def test_with_missing_section_headings(self):
         """Test scraper works even when section headings are missing (uses whole document fallback)."""
-        html = '''
+        html = """
         <html><body>
         <!-- NO proper h2 heading, just a div -->
         <div>Red-flagged races</div>
@@ -82,17 +82,17 @@ class TestRedFlaggedRacesScraperRobustness:
           </tr>
         </table>
         </body></html>
-        '''
-        soup = BeautifulSoup(html, 'html.parser')
+        """
+        soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedWorldChampionshipRacesScraper()
         records = scraper._parse_soup(soup)
 
         assert len(records) == 1
-        assert records[0]['season'] == 2024
+        assert records[0]["season"] == 2024
 
     def test_non_championship_scraper_differentiates_tables(self):
         """Test that non-championship scraper finds the correct table based on headers."""
-        html = '''
+        html = """
         <html><body>
         <!-- Two tables, first is championship, second is non-championship -->
         <table class="wikitable">
@@ -124,26 +124,26 @@ class TestRedFlaggedRacesScraperRobustness:
           </tr>
         </table>
         </body></html>
-        '''
-        soup = BeautifulSoup(html, 'html.parser')
+        """
+        soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedNonChampionshipRacesScraper()
         records = scraper._parse_soup(soup)
 
         # Should find the non-championship table (with "Event" column)
         assert len(records) == 1
-        assert records[0]['season'] == 1971
+        assert records[0]["season"] == 1971
 
     def test_error_message_with_no_matching_table(self):
         """Test that error message includes diagnostic information."""
-        html = '''
+        html = """
         <html><body>
         <table class="wikitable">
           <tr><th>Wrong</th><th>Headers</th></tr>
           <tr><td>1</td><td>2</td></tr>
         </table>
         </body></html>
-        '''
-        soup = BeautifulSoup(html, 'html.parser')
+        """
+        soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedWorldChampionshipRacesScraper()
 
         try:
@@ -156,7 +156,7 @@ class TestRedFlaggedRacesScraperRobustness:
 
     def test_toc_warning_when_section_missing(self, caplog):
         """Test that a warning is logged when TOC exists but section heading doesn't."""
-        html = '''
+        html = """
         <html><body>
         <div id="toc-Red-flagged_races">
           <a href="#Red-flagged_races">Red-flagged races</a>
@@ -177,11 +177,12 @@ class TestRedFlaggedRacesScraperRobustness:
           </tr>
         </table>
         </body></html>
-        '''
-        soup = BeautifulSoup(html, 'html.parser')
+        """
+        soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedWorldChampionshipRacesScraper()
 
         import logging
+
         logging.basicConfig(level=logging.WARNING)
         records = scraper._parse_soup(soup)
 
@@ -190,7 +191,7 @@ class TestRedFlaggedRacesScraperRobustness:
         # Note: caplog verification would require pytest, which may not be run in this context
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Run tests manually for verification
     test = TestRedFlaggedRacesScraperRobustness()
 

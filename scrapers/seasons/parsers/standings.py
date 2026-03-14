@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
@@ -14,8 +12,10 @@ class SeasonStandingsParser:
         self._table_parser = table_parser
 
     def parse_drivers(
-            self, soup: BeautifulSoup, season_year: int | None = None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None = None,
+    ) -> list[dict[str, Any]]:
         records = self._parse_standings_table(
             soup,
             section_ids=[
@@ -31,7 +31,7 @@ class SeasonStandingsParser:
         self._apply_fastest_lap_sharing(records)
         return records
 
-    def parse_constructors(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def parse_constructors(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         records = self._parse_standings_table(
             soup,
             section_ids=[
@@ -45,15 +45,15 @@ class SeasonStandingsParser:
         return self.merge_duplicate_constructors(records)
 
     def _parse_standings_table(
-            self,
-            soup: BeautifulSoup,
-            *,
-            section_ids: list[str],
-            subject_header: str,
-            subject_key: str,
-            subject_column: Any,
-            season_year: int | None = None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_ids: list[str],
+        subject_header: str,
+        subject_key: str,
+        subject_column: Any,
+        season_year: int | None = None,
+    ) -> list[dict[str, Any]]:
         return self._table_parser.parse_standings_table(
             soup,
             section_ids=section_ids,
@@ -65,11 +65,11 @@ class SeasonStandingsParser:
 
     @staticmethod
     def _apply_ineligible_section(
-            records: List[Dict[str, Any]],
-            *,
-            subject_key: str,
-    ) -> List[Dict[str, Any]]:
-        filtered: List[Dict[str, Any]] = []
+        records: list[dict[str, Any]],
+        *,
+        subject_key: str,
+    ) -> list[dict[str, Any]]:
+        filtered: list[dict[str, Any]] = []
         ineligible = False
         for record in records:
             subject = record.get(subject_key)
@@ -87,7 +87,7 @@ class SeasonStandingsParser:
         return filtered
 
     @staticmethod
-    def _apply_fastest_lap_sharing(records: List[Dict[str, Any]]) -> None:
+    def _apply_fastest_lap_sharing(records: list[dict[str, Any]]) -> None:
         fastest_lap_counts: dict[str, int] = {}
         for record in records:
             for key, value in record.items():
@@ -107,8 +107,8 @@ class SeasonStandingsParser:
 
     @staticmethod
     def merge_duplicate_constructors(
-            records: List[Dict[str, Any]],
-    ) -> List[Dict[str, Any]]:
+        records: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
         """
         Merge duplicate constructor standings entries that represent the same
         constructor but have separate race results (one per driver/car number).
@@ -122,7 +122,7 @@ class SeasonStandingsParser:
         belong to which driver within a merged constructor entry. Each round in the
         merged entry will have multiple results (one per driver).
         """
-        merged: List[Dict[str, Any]] = []
+        merged: list[dict[str, Any]] = []
         i = 0
 
         while i < len(records):
@@ -138,13 +138,14 @@ class SeasonStandingsParser:
                 # Check if the next record should be merged
                 should_merge = (
                     # Same position
-                        current.get("pos") == next_record.get("pos")
-                        # Same points
-                        and current.get("points") == next_record.get("points")
-                        # Same constructor
-                        and SeasonStandingsParser._same_constructor(
-                    current.get("constructor"), next_record.get("constructor"),
-                )
+                    current.get("pos") == next_record.get("pos")
+                    # Same points
+                    and current.get("points") == next_record.get("points")
+                    # Same constructor
+                    and SeasonStandingsParser._same_constructor(
+                        current.get("constructor"),
+                        next_record.get("constructor"),
+                    )
                 )
 
                 if should_merge:
@@ -170,7 +171,8 @@ class SeasonStandingsParser:
 
     @staticmethod
     def _same_constructor(
-            constructor1: Dict[str, Any] | None, constructor2: Dict[str, Any] | None,
+        constructor1: dict[str, Any] | None,
+        constructor2: dict[str, Any] | None,
     ) -> bool:
         """Check if two constructor objects represent the same constructor."""
         if constructor1 is None or constructor2 is None:
@@ -196,7 +198,7 @@ class SeasonStandingsParser:
         round_data.pop("fastest_lap", None)
 
     @staticmethod
-    def _merge_multiple_entries(entries: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def _merge_multiple_entries(entries: list[dict[str, Any]]) -> dict[str, Any]:
         """
         Merge multiple constructor standings entries by combining their race results.
 
@@ -230,7 +232,8 @@ class SeasonStandingsParser:
                         new_results = value.get("results", [])
                         # Ensure both are lists before merging
                         if isinstance(existing_results, list) and isinstance(
-                                new_results, list,
+                            new_results,
+                            list,
                         ):
                             merged[key]["results"] = existing_results + new_results
 
@@ -242,10 +245,10 @@ class SeasonStandingsParser:
                         # Preserve other round attributes (like round info, sprint_position, etc.)
                         for round_key, round_value in value.items():
                             if round_key not in (
-                                    "results",
-                                    "background",
-                                    "pole_position",
-                                    "fastest_lap",
+                                "results",
+                                "background",
+                                "pole_position",
+                                "fastest_lap",
                             ):
                                 if round_key not in merged[key]:
                                     merged[key][round_key] = round_value

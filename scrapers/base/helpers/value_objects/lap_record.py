@@ -1,8 +1,8 @@
+from collections.abc import Iterable
+from collections.abc import Mapping
 from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
-from typing import Iterable
-from typing import Mapping
 
 from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
@@ -35,11 +35,12 @@ class LapRecord:
     def to_dict(self) -> dict[str, Any]:
         result: dict[str, Any] = {}
         for key, value in self.data.items():
-            if isinstance(value, NormalizedTime):
-                result[key] = value.to_dict()
-            elif isinstance(value, NormalizedDate):
-                result[key] = value.to_dict()
-            elif hasattr(value, "to_dict") and callable(value.to_dict):
+            if (
+                isinstance(value, NormalizedTime)
+                or isinstance(value, NormalizedDate)
+                or hasattr(value, "to_dict")
+                and callable(value.to_dict)
+            ):
                 result[key] = value.to_dict()
             else:
                 result[key] = value

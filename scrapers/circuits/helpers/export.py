@@ -2,14 +2,13 @@ import re
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
-from typing import Dict
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.results import ScrapeResult
 from scrapers.circuits.complete_scraper import F1CompleteCircuitScraper
 
 
-def circuit_name_initial(record: Dict[str, Any]) -> str:
+def circuit_name_initial(record: dict[str, Any]) -> str:
     name_data = record.get("name") or {}
     name_list = name_data.get("list") or []
     if not name_list:
@@ -26,9 +25,9 @@ def circuit_name_initial(record: Dict[str, Any]) -> str:
 
 
 def export_complete_circuits(
-        *,
-        output_dir: Path,
-        include_urls: bool = True,
+    *,
+    output_dir: Path,
+    include_urls: bool = True,
 ) -> None:
     options = init_scraper_options(None, include_urls=include_urls)
     scraper = F1CompleteCircuitScraper(options=options)
@@ -37,7 +36,7 @@ def export_complete_circuits(
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    grouped: dict[str, list[Dict[str, Any]]] = defaultdict(list)
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for record in data:
         grouped[circuit_name_initial(record)].append(record)
 

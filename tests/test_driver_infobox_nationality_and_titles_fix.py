@@ -7,7 +7,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 
 
-@pytest.fixture
+@pytest.fixture()
 def scraper():
     """Create a scraper instance with URL extraction enabled."""
     options = ScraperOptions(include_urls=True)
@@ -16,7 +16,7 @@ def scraper():
 
 def test_nationality_with_link(scraper):
     """Test nationality parsing with link extraction.
-    
+
     This test verifies that when nationality has a link in the HTML,
     the parser extracts it as a dict with text and url fields.
     """
@@ -28,14 +28,14 @@ def test_nationality_with_link(scraper):
             <span class="flagicon">
                 <span class="mw-image-border" typeof="mw:File">
                     <a href="/wiki/United_Kingdom" title="United Kingdom">
-                        <img alt="United Kingdom" src="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/40px-Flag_of_the_United_Kingdom.svg.png" 
-                             decoding="async" width="23" height="12" class="mw-file-element" 
-                             srcset="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/60px-Flag_of_the_United_Kingdom.svg.png 2x" 
+                        <img alt="United Kingdom" src="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/40px-Flag_of_the_United_Kingdom.svg.png"
+                             decoding="async" width="23" height="12" class="mw-file-element"
+                             srcset="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/60px-Flag_of_the_United_Kingdom.svg.png 2x"
                              data-file-width="1200" data-file-height="600">
                     </a>
                 </span>
-            </span> 
-            <a href="/wiki/Formula_One_drivers_from_the_United_Kingdom" 
+            </span>
+            <a href="/wiki/Formula_One_drivers_from_the_United_Kingdom"
                title="Formula One drivers from the United Kingdom">British</a>
         </td></tr>
     </table>
@@ -61,7 +61,10 @@ def test_nationality_with_link(scraper):
     assert len(value) == 1, "Should have exactly one nationality"
 
     nationality_item = value[0]
-    assert isinstance(nationality_item, dict), "Nationality item should be a dict with text and url"
+    assert isinstance(
+        nationality_item,
+        dict,
+    ), "Nationality item should be a dict with text and url"
     assert "text" in nationality_item, "Nationality dict should have 'text' field"
     assert "url" in nationality_item, "Nationality dict should have 'url' field"
     assert nationality_item["text"] == "British"
@@ -70,7 +73,7 @@ def test_nationality_with_link(scraper):
 
 def test_nationality_without_link(scraper):
     """Test nationality parsing when there's no link (plain text).
-    
+
     This test verifies backward compatibility - when there's no link,
     the parser should still work and return plain text strings.
     """
@@ -101,13 +104,13 @@ def test_nationality_without_link(scraper):
 
 def test_championship_titles_document_order(scraper):
     """Test championship titles preserve document order from list items.
-    
+
     This test verifies that when years and titles are in <li> list items,
     the parser preserves their document order instead of sorting them.
-    
+
     The HTML has years in order: 2022, 2009, 2007
     And titles in order: Indianapolis 500, Japanese F3, Formula BMW UK
-    
+
     Expected pairing:
     - Indianapolis 500 → 2022
     - Japanese F3 → 2009
@@ -122,10 +125,10 @@ def test_championship_titles_document_order(scraper):
                 <div class="plainlist">
                     <ul>
                         <li><a href="/wiki/2022_Indianapolis_500" title="2022 Indianapolis 500">2022</a></li>
-                        <li><a href="/wiki/2009_All-Japan_Formula_Three_Championship" 
-                               class="mw-redirect" 
+                        <li><a href="/wiki/2009_All-Japan_Formula_Three_Championship"
+                               class="mw-redirect"
                                title="2009 All-Japan Formula Three Championship">2009</a></li>
-                        <li><a href="/wiki/2007_Formula_BMW_UK_season" 
+                        <li><a href="/wiki/2007_Formula_BMW_UK_season"
                                title="2007 Formula BMW UK season">2007</a></li>
                     </ul>
                 </div>
@@ -161,14 +164,17 @@ def test_championship_titles_document_order(scraper):
     assert titles[1]["years"][0]["year"] == 2009
     assert "2009_All-Japan_Formula_Three_Championship" in titles[1]["years"][0]["url"]
 
-    assert titles[2]["title"]["text"] in ["Formula BMW", "Formula BMW UK"]  # Link text may vary
+    assert titles[2]["title"]["text"] in [
+        "Formula BMW",
+        "Formula BMW UK",
+    ]  # Link text may vary
     assert titles[2]["years"][0]["year"] == 2007
     assert "2007_Formula_BMW_UK_season" in titles[2]["years"][0]["url"]
 
 
 def test_championship_titles_sorted_for_non_list(scraper):
     """Test that championship titles are still sorted when not in list items.
-    
+
     This test verifies backward compatibility - when years are in plain text
     (not in list items), they should still be sorted as before.
     """
@@ -201,4 +207,10 @@ def test_championship_titles_sorted_for_non_list(scraper):
     # Years should be expanded and sorted: 1981, 1982, 1984, 1985, 1986
     years = champ["years"]
     year_values = [y["year"] for y in years if "year" in y]
-    assert year_values == [1981, 1982, 1984, 1985, 1986], "Years should be sorted when not in list items"
+    assert year_values == [
+        1981,
+        1982,
+        1984,
+        1985,
+        1986,
+    ], "Years should be sorted when not in list items"

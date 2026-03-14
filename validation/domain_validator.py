@@ -2,8 +2,8 @@
 
 Extracted from validation/records.py to keep each module focused.
 """
+
 from typing import Any
-from typing import Sequence
 
 from validation.issue import ValidationIssue
 from validation.validator_base import RecordValidator
@@ -35,7 +35,9 @@ class BaseDomainRecordValidator(RecordValidator):
         for index, item in enumerate(value):
             if not isinstance(item, dict):
                 errors.append(
-                    ValidationIssue.custom(f"{field_name}[{index}] must be a link dict"),
+                    ValidationIssue.custom(
+                        f"{field_name}[{index}] must be a link dict",
+                    ),
                 )
                 continue
             errors.extend(cls.require_link_dict(item, f"{field_name}[{index}]"))

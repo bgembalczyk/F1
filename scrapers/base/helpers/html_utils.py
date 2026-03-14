@@ -1,17 +1,19 @@
 """HTML helper utilities used by scrapers."""
 
-from typing import Any, Iterable
+from collections.abc import Iterable
+from typing import Any
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from scrapers.base.helpers.text import clean_wiki_text
 
 
 def find_section_elements(
-        soup: BeautifulSoup,
-        section_id: str | None,
-        target_tags: Iterable[str],
-        **kwargs: Any,
+    soup: BeautifulSoup,
+    section_id: str | None,
+    target_tags: Iterable[str],
+    **kwargs: Any,
 ) -> list[Tag]:
     """Find elements after a section heading or across the whole document.
 

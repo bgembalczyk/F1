@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Optional
 
 
 @dataclass
@@ -7,8 +6,8 @@ class ScraperError(Exception):
     """Bazowy wyjątek domenowy dla scraperów."""
 
     message: str
-    url: Optional[str] = None
-    cause: Optional[Exception] = None
+    url: str | None = None
+    cause: Exception | None = None
     critical: bool = True
 
     def __str__(self) -> str:
@@ -30,11 +29,11 @@ class DomainParseError(ScraperError):
     """Błąd parsowania danych domenowych (niekrytyczny)."""
 
     def __init__(
-            self,
-            message: str,
-            *,
-            url: Optional[str] = None,
-            cause: Optional[Exception] = None,
+        self,
+        message: str,
+        *,
+        url: str | None = None,
+        cause: Exception | None = None,
     ) -> None:
         self.message = message
         self.url = url
@@ -50,7 +49,7 @@ class ScraperValidationError(ScraperError):
 class ScraperNotFoundError(ScraperError):
     """Brak wymaganych elementów strony (niekrytyczny)."""
 
-    def __init__(self, message: str, *, url: Optional[str] = None) -> None:
+    def __init__(self, message: str, *, url: str | None = None) -> None:
         self.message = message
         self.url = url
         self.cause = None

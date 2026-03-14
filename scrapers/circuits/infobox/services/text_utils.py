@@ -1,8 +1,5 @@
 import re
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from models.records.link import LinkRecord
 from models.services.helpers import prune_empty
@@ -26,14 +23,14 @@ class InfoboxTextUtils:
     # Proste listy / liczby / długości
     # ------------------------------
 
-    def _split_simple_list(self, row: Optional[Dict[str, Any]]) -> Optional[List[str]]:
+    def _split_simple_list(self, row: dict[str, Any] | None) -> list[str] | None:
         if not row:
             return None
         text = clean_infobox_text(row.get("text")) or ""
         parts = split_delimited_text(text)
         return parts or None
 
-    def parse_int(self, row: Optional[Dict[str, Any]]) -> Optional[int]:
+    def parse_int(self, row: dict[str, Any] | None) -> int | None:
         if not row:
             return None
         text = clean_infobox_text(row.get("text")) or ""
@@ -46,8 +43,11 @@ class InfoboxTextUtils:
             ) from exc
 
     def parse_length(
-            self, row: Optional[Dict[str, Any]], *, unit: str,
-    ) -> Optional[float]:
+        self,
+        row: dict[str, Any] | None,
+        *,
+        unit: str,
+    ) -> float | None:
         if not row:
             return None
         text = clean_infobox_text(row.get("text")) or ""
@@ -59,7 +59,7 @@ class InfoboxTextUtils:
                 cause=exc,
             ) from exc
 
-    def _parse_dates(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    def _parse_dates(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
         """Parsyje daty typu YYYY-MM-DD, YYYY-MM, YYYY i zwraca też listę lat."""
         if not row:
             return None
@@ -99,9 +99,9 @@ class InfoboxTextUtils:
 
     @staticmethod
     def _find_link(
-            text: Optional[str],
-            links: List[LinkRecord],
-    ) -> Optional[LinkRecord]:
+        text: str | None,
+        links: list[LinkRecord],
+    ) -> LinkRecord | None:
         if not text:
             return None
         wanted = text.strip().lower()
@@ -112,15 +112,15 @@ class InfoboxTextUtils:
         return None
 
     def _with_link(
-            self,
-            text: Optional[str],
-            links: Optional[List[LinkRecord]],
-    ) -> Optional[Dict[str, Any]]:
+        self,
+        text: str | None,
+        links: list[LinkRecord] | None,
+    ) -> dict[str, Any] | None:
         if text is None:
             return None
         link = self._find_link(text, links or [])
 
-        url: Optional[str] = None
+        url: str | None = None
         if link:
             candidate = link.get("url")
             # ignorujemy redlinki Wikipedii

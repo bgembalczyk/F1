@@ -1,15 +1,16 @@
 """Utilities for applying record transformers."""
 
-from typing import Any, Dict, List, Optional
+from typing import Any
 
-from scrapers.base.transformers import RecordFactoryTransformer, apply_transformers
+from scrapers.base.transformers import RecordFactoryTransformer
+from scrapers.base.transformers import apply_transformers
 
 
 def apply_transformers_with_factory(
-        transformers: List[Any],
-        record: Dict[str, Any],
-        record_factory: Optional[Any],
-        logger: Optional[Any] = None,
+    transformers: list[Any],
+    record: dict[str, Any],
+    record_factory: Any | None,
+    logger: Any | None = None,
 ) -> Any:
     """
     Applies transformers to a record, optionally including a record factory transformer.

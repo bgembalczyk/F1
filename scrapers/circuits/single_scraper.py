@@ -1,7 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from bs4 import BeautifulSoup
 
@@ -30,9 +27,9 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
     """
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
     ) -> None:
         # Ten scraper zawsze potrzebuje URL-i (lap records, encje itd.)
         options = init_scraper_options(options, include_urls=True)
@@ -46,13 +43,13 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         self.policy = self.http_policy
         self.url: str = ""
         self.debug_dir = options.debug_dir
-        self._original_url: Optional[str] = None
-        self._section_fragment: Optional[str] = None
+        self._original_url: str | None = None
+        self._section_fragment: str | None = None
 
     def _select_section(
-            self,
-            soup: BeautifulSoup,
-            fragment: Optional[str],
+        self,
+        soup: BeautifulSoup,
+        fragment: str | None,
     ) -> BeautifulSoup:
         if not fragment:
             return soup
@@ -60,13 +57,13 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         section = self.extract_section_by_id(soup, fragment)
         return section or soup
 
-    def _parse_details(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _parse_details(self, soup: BeautifulSoup) -> dict[str, Any]:
         return {
             "infobox": self._scrape_infobox(soup),
             "tables": self._scrape_tables(soup),
         }
 
-    def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         if not is_circuit_like_article(soup):
             return []
 
@@ -83,10 +80,10 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             {
                 "url": self._original_url or self.url,
                 **parsed,
-            }
+            },
         ]
 
-    def _scrape_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
         infobox_scraper = F1CircuitInfoboxScraper(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -98,7 +95,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         records = infobox_scraper.parse(soup)
         return records[0] if records else {}
 
-    def _scrape_tables(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         lap_scraper = LapRecordsTableScraper(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -108,7 +105,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
             ),
         )
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie
-        all_records: List[Dict[str, Any]] = []
+        all_records: list[dict[str, Any]] = []
 
         for table in soup.find_all("table", class_="wikitable"):
             header_row = table.find("tr")
@@ -126,7 +123,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
                 collect_lap_records(table, headers, base_layout, lap_scraper),
             )
 
-        layouts: Dict[str, List[Dict[str, Any]]] = {}
+        layouts: dict[str, list[dict[str, Any]]] = {}
         for rec in all_records:
             layout_name = rec.get("layout")
             if not layout_name:

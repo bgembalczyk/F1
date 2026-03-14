@@ -5,13 +5,13 @@ from scrapers.base.transformers.record_transformer import RecordTransformer
 
 
 def build_transformers(
-        transformers: Sequence[RecordTransformer] | None = None,
-        *,
-        include_defaults: bool = True,
+    transformers: Sequence[RecordTransformer] | None = None,
+    *,
+    include_defaults: bool = True,
 ) -> list[RecordTransformer]:
     resolved = list(transformers or [])
     if include_defaults and not any(
-            isinstance(transformer, NormalizeLinksTransformer) for transformer in resolved
+        isinstance(transformer, NormalizeLinksTransformer) for transformer in resolved
     ):
         resolved.insert(0, NormalizeLinksTransformer())
     return resolved

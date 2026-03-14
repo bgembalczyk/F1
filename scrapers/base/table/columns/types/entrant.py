@@ -26,7 +26,11 @@ class EntrantColumn(BaseColumn):
 
         entrants: list[dict[str, Any]] = []
         for segment in segments:
-            parsed = ResultsParsingHelpers.parse_entrant_segment(segment, link_lookup, ctx.base_url)
+            parsed = ResultsParsingHelpers.parse_entrant_segment(
+                segment,
+                link_lookup,
+                ctx.base_url,
+            )
             if parsed:
                 entrants.append(parsed)
 

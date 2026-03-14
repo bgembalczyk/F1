@@ -1,4 +1,5 @@
-from typing import Any, Mapping
+from collections.abc import Mapping
+from typing import Any
 
 FIELD_ALIASES: dict[str, dict[str, str]] = {
     "constructor": {
@@ -14,10 +15,10 @@ FIELD_ALIASES: dict[str, dict[str, str]] = {
 
 
 def apply_field_aliases(
-        record: Mapping[str, Any],
-        aliases: Mapping[str, str],
-        *,
-        record_name: str,
+    record: Mapping[str, Any],
+    aliases: Mapping[str, str],
+    *,
+    record_name: str,
 ) -> dict[str, Any]:
     normalized = dict(record)
     conflicts: list[tuple[str, str]] = []

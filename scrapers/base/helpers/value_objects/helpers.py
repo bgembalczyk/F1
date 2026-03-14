@@ -1,6 +1,6 @@
-from typing import Any
-from typing import Mapping
+from collections.abc import Mapping
 from typing import TYPE_CHECKING
+from typing import Any
 
 if TYPE_CHECKING:
     from scrapers.base.helpers.value_objects.lap_record import LapRecord

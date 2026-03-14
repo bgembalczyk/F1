@@ -1,15 +1,17 @@
 from datetime import datetime
 from pathlib import Path
 
+from infrastructure.gemini.client import GeminiClient
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
+
 # List scrapers
 from scrapers.circuits.helpers.export import export_complete_circuits
 from scrapers.circuits.list_scraper import CircuitsListScraper
-from scrapers.constructors.current_constructors_list import CurrentConstructorsListScraper
-from scrapers.constructors.former_constructors_list import (
-    FormerConstructorsListScraper,
+from scrapers.constructors.current_constructors_list import (
+    CurrentConstructorsListScraper,
 )
+from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.constructors.indianapolis_only_constructors_list import (
     IndianapolisOnlyConstructorsListScraper,
 )
@@ -37,9 +39,8 @@ from scrapers.points.points_scoring_systems_history import (
 from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
 from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
 from scrapers.seasons.helpers import export_complete_seasons
-from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
-from infrastructure.gemini.client import GeminiClient
+from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
 
 # Ścieżki wyjściowe względem katalogu repo (ten plik jest w root)
@@ -102,7 +103,11 @@ def run_list_scrapers() -> None:
             "grands_prix/f1_red_flagged_non_championship_races.json",
             None,
         ),
-        (SprintQualifyingPointsScraper, "points/points_scoring_systems_sprint.json", None),
+        (
+            SprintQualifyingPointsScraper,
+            "points/points_scoring_systems_sprint.json",
+            None,
+        ),
         (
             ShortenedRacePointsScraper,
             "points/points_scoring_systems_shortened.json",
@@ -131,7 +136,9 @@ def run_list_scrapers() -> None:
     try:
         _gemini_client = GeminiClient.from_key_file()
         _classifier: ParenClassifier | None = ParenClassifier(_gemini_client)
-        print("[main] Gemini ParenClassifier załadowany – adnotacje w nawiasach będą klasyfikowane.")
+        print(
+            "[main] Gemini ParenClassifier załadowany – adnotacje w nawiasach będą klasyfikowane.",
+        )
     except FileNotFoundError as _e:
         _classifier = None
         print(f"[main] Brak klucza Gemini API ({_e}), klasyfikacja Gemini wyłączona.")

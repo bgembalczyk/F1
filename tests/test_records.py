@@ -123,7 +123,7 @@ def test_validate_schema_handles_nested_records() -> None:
     messages = [error.message for error in errors]
     assert "driver.text must be a non-empty string" in messages
     assert (
-            "Invalid type for seasons_competed[0].year: expected int, got str" in messages
+        "Invalid type for seasons_competed[0].year: expected int, got str" in messages
     )
 
 

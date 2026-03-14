@@ -1,5 +1,4 @@
 from typing import Any
-from typing import List
 
 from models.records.driver_championships import DriversChampionshipsRecord
 from models.services.driver_service import DriverService
@@ -20,7 +19,7 @@ class DriversChampionshipsTransformer(RecordTransformer):
         """
         return DriverService.parse_championships(raw)  # type: ignore[return-value]
 
-    def transform(self, records: List[ExportRecord]) -> List[ExportRecord]:
+    def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
         for row in records:
             champs_raw = row.get("drivers_championships")
             row["drivers_championships"] = self._parse_drivers_championships(champs_raw)

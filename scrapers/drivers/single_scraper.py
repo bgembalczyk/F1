@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -39,9 +37,9 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
     _UNKNOWN_TOKEN = "unknown"
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -51,20 +49,20 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         self.url: str = ""
         self.debug_dir = options.debug_dir
 
-    def fetch_by_url(self, url: str) -> List[Dict[str, Any]]:
+    def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
         return super().fetch()
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return [
             {
                 "url": self.url,
                 "infobox": self._scrape_infobox(soup),
                 "career_results": self._parse_results_sections(soup),
-            }
+            },
         ]
 
-    def _scrape_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
         infobox_scraper = DriverInfoboxScraper(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -76,17 +74,18 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         records = infobox_scraper.parse(soup)
         return records[0] if records else {}
 
-    def _parse_results_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_results_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         sections = [
             "Career results",
             "Karting record",
             "Racing record",
         ]
-        records: List[Dict[str, Any]] = []
+        records: list[dict[str, Any]] = []
 
         for section_title in sections:
             section_soup = self.extract_section_by_id(
-                soup, section_title.replace(" ", "_"),
+                soup,
+                section_title.replace(" ", "_"),
             )
             if section_soup is None:
                 continue
@@ -100,14 +99,14 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
 
         return records
 
-    def _table_context(self, table: Tag, section_title: str) -> Dict[str, Any]:
+    def _table_context(self, table: Tag, section_title: str) -> dict[str, Any]:
         return {
             "section": section_title,
             "heading_path": self._heading_context(table),
         }
 
-    def _heading_context(self, table: Tag) -> List[str]:
-        headings: List[str] = []
+    def _heading_context(self, table: Tag) -> list[str]:
+        headings: list[str] = []
         node = table
         while node is not None:
             node = node.previous_sibling
@@ -132,7 +131,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         headings.reverse()
         return headings
 
-    def _parse_results_table(self, table: Tag) -> Dict[str, Any] | None:
+    def _parse_results_table(self, table: Tag) -> dict[str, Any] | None:
         headers = self._extract_headers(table)
         if not headers:
             return None
@@ -161,7 +160,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
 
         return None
 
-    def _parse_career_highlights(self, table: Tag) -> List[Dict[str, Any]]:
+    def _parse_career_highlights(self, table: Tag) -> list[dict[str, Any]]:
         schema = TableSchemaDSL(
             columns=[
                 column("Season", "season", self._unknown(IntColumn())),
@@ -174,7 +173,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         pipeline = self._build_pipeline(schema=schema)
         return self._parse_table(table, pipeline)
 
-    def _parse_career_summary(self, table: Tag) -> List[Dict[str, Any]]:
+    def _parse_career_summary(self, table: Tag) -> list[dict[str, Any]]:
         schema = TableSchemaDSL(
             columns=[
                 column("Season", "season", self._unknown(IntColumn())),
@@ -194,10 +193,10 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         return self._parse_table(table, pipeline)
 
     def _parse_complete_results(
-            self,
-            table: Tag,
-            headers: List[str],
-    ) -> List[Dict[str, Any]]:
+        self,
+        table: Tag,
+        headers: list[str],
+    ) -> list[dict[str, Any]]:
         column_map = {
             "Year": "year",
             "Team": "team",
@@ -235,7 +234,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
             "QH": "qh",
             "F": "f",
         }
-        columns: Dict[str, Any] = {
+        columns: dict[str, Any] = {
             "year": self._unknown(AutoColumn()),
             "team": self._unknown(EntrantColumn()),
             "co_drivers": self._unknown(DriverListColumn()),
@@ -280,16 +279,16 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         return self._parse_table(table, pipeline)
 
     def _parse_table(
-            self,
-            table: Tag,
-            pipeline: TablePipeline,
-    ) -> List[Dict[str, Any]]:
+        self,
+        table: Tag,
+        pipeline: TablePipeline,
+    ) -> list[dict[str, Any]]:
         return TableParsingHelper.parse_table_with_pipeline(table, pipeline)
 
     def _build_pipeline(
-            self,
-            *,
-            schema: TableSchemaDSL,
+        self,
+        *,
+        schema: TableSchemaDSL,
     ) -> TablePipeline:
         config = ScraperConfig(
             url=self.url,
@@ -306,7 +305,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
             debug_dir=self.debug_dir,
         )
 
-    def _extract_headers(self, table: Tag) -> List[str]:
+    def _extract_headers(self, table: Tag) -> list[str]:
         header_row = table.find("tr")
         if not header_row:
             return []

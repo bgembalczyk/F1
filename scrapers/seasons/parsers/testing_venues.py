@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
@@ -20,8 +18,10 @@ class TestingVenuesParser:
         self._table_parser = table_parser
 
     def parse(
-            self, soup: BeautifulSoup, season_year: int | None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None,
+    ) -> list[dict[str, Any]]:
         # This table only exists in 2011 and 2009
         if season_year not in {2009, 2011}:
             return []
@@ -32,8 +32,10 @@ class TestingVenuesParser:
             return self._parse_2009(soup, season_year)
 
     def _parse_2011(
-            self, soup: BeautifulSoup, season_year: int | None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None,
+    ) -> list[dict[str, Any]]:
         """
         Parses the testing table for 2011.
 
@@ -73,8 +75,10 @@ class TestingVenuesParser:
         return records
 
     def _parse_2009(
-            self, soup: BeautifulSoup, season_year: int | None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None,
+    ) -> list[dict[str, Any]]:
         """
         Parses the testing table for 2009.
         """

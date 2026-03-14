@@ -1,11 +1,15 @@
 from typing import Any
 
-from models.records.circuit_base import CIRCUIT_BASE_SCHEMA, CircuitBaseRecord
-from models.records.link import LINK_SCHEMA, LinkRecord
-from models.records.season import SEASON_SCHEMA, SeasonRecord
+from models.records.circuit_base import CIRCUIT_BASE_SCHEMA
+from models.records.circuit_base import CircuitBaseRecord
+from models.records.link import LINK_SCHEMA
+from models.records.link import LinkRecord
+from models.records.season import SEASON_SCHEMA
+from models.records.season import SeasonRecord
+from validation.records import BaseDomainRecordValidator
 from validation.records import NestedSchema
 from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, ValidationIssue
+from validation.records import ValidationIssue
 
 
 class CircuitCompleteRecord(CircuitBaseRecord, total=False):

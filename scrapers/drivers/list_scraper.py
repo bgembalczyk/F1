@@ -17,7 +17,6 @@ from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
 )
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
-from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
 from scrapers.drivers.constants import DRIVER_CHAMPIONSHIPS_HEADER
 from scrapers.drivers.constants import DRIVER_FASTEST_LAPS_HEADER
 from scrapers.drivers.constants import DRIVER_NAME_HEADER
@@ -29,6 +28,7 @@ from scrapers.drivers.constants import DRIVER_RACE_ENTRIES_HEADER
 from scrapers.drivers.constants import DRIVER_RACE_STARTS_HEADER
 from scrapers.drivers.constants import DRIVER_RACE_WINS_HEADER
 from scrapers.drivers.constants import DRIVER_SEASONS_COMPETED_HEADER
+from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
 from scrapers.drivers.validator import DriversRecordValidator
 
 
@@ -76,10 +76,10 @@ class F1DriversListScraper(F1TableScraper):
     )
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            config: ScraperConfig | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
     ) -> None:
         options = build_table_config(
             options,

@@ -21,7 +21,9 @@ class DriversWithRoundsColumn(BaseColumn):
         drivers: list[dict[str, Any]] = []
         for segment in segments:
             parsed = DriverParsingHelpers.parse_segment(
-                segment, link_lookup, ctx.base_url,
+                segment,
+                link_lookup,
+                ctx.base_url,
             )
             if parsed:
                 drivers.append(parsed)

@@ -1,9 +1,6 @@
 """Helper class for parsing racing licence information."""
 
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
 
 from bs4 import Tag
 
@@ -24,7 +21,7 @@ class LicenceParser:
         """
         self._link_extractor = link_extractor
 
-    def parse_racing_licence(self, cell: Tag) -> List[Dict[str, Any]]:
+    def parse_racing_licence(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse 'Racing licence' field.
 
         Example: "FIA Gold (until 2019)" and "FIA Platinum (2020–)"
@@ -39,7 +36,7 @@ class LicenceParser:
 
             licences = []
             for licence_link in licence_links:
-                licence_entry: Dict[str, Any] = {
+                licence_entry: dict[str, Any] = {
                     "licence": licence_link,
                     "years": {"start": None, "end": None},
                 }
@@ -47,10 +44,14 @@ class LicenceParser:
                 licence_tag = self._find_licence_tag(cell, licence_link)
                 if licence_tag and year_spans:
                     licence_tag_map = self._build_licence_tag_map(
-                        cell, licence_links, licence_link,
+                        cell,
+                        licence_links,
+                        licence_link,
                     )
                     years = self._find_year_for_licence(
-                        licence_tag, year_spans, licence_tag_map,
+                        licence_tag,
+                        year_spans,
+                        licence_tag_map,
                     )
                     if years is not None:
                         licence_entry["years"] = years
@@ -65,7 +66,7 @@ class LicenceParser:
                 cause=exc,
             ) from exc
 
-    def _extract_licence_links(self, cell: Tag) -> List[Dict[str, Any]]:
+    def _extract_licence_links(self, cell: Tag) -> list[dict[str, Any]]:
         """Extract and return all licence links from the cell, excluding file/image links.
 
         Args:
@@ -76,12 +77,10 @@ class LicenceParser:
         """
         all_links = self._link_extractor.extract_links(cell)
         return [
-            link
-            for link in all_links
-            if "/file:" not in link.get("url", "").lower()
+            link for link in all_links if "/file:" not in link.get("url", "").lower()
         ]
 
-    def _find_licence_tag(self, cell: Tag, licence_link: Dict[str, Any]) -> Optional[Tag]:
+    def _find_licence_tag(self, cell: Tag, licence_link: dict[str, Any]) -> Tag | None:
         """Find the <a> DOM element corresponding to the given licence link dict.
 
         Args:
@@ -106,11 +105,11 @@ class LicenceParser:
         return None
 
     def _build_licence_tag_map(
-            self,
-            cell: Tag,
-            licence_links: List[Dict[str, Any]],
-            current_link: Dict[str, Any],
-    ) -> Dict[str, Tag]:
+        self,
+        cell: Tag,
+        licence_links: list[dict[str, Any]],
+        current_link: dict[str, Any],
+    ) -> dict[str, Tag]:
         """Build a text-to-tag mapping for all licence links except the current one.
 
         Args:
@@ -122,7 +121,7 @@ class LicenceParser:
             Dict mapping licence text to its <a> Tag.
         """
         all_a_tags = cell.find_all("a")
-        licence_tag_map: Dict[str, Tag] = {}
+        licence_tag_map: dict[str, Tag] = {}
 
         for other_link in licence_links:
             if other_link == current_link:
@@ -140,11 +139,11 @@ class LicenceParser:
         return licence_tag_map
 
     def _find_year_for_licence(
-            self,
-            licence_tag: Tag,
-            year_spans: List[Tag],
-            licence_tag_map: Dict[str, Tag],
-    ) -> Optional[Dict[str, Any]]:
+        self,
+        licence_tag: Tag,
+        year_spans: list[Tag],
+        licence_tag_map: dict[str, Tag],
+    ) -> dict[str, Any] | None:
         """Find and parse the year span that immediately follows the given licence tag.
 
         A year span is considered to belong to *licence_tag* when it comes after

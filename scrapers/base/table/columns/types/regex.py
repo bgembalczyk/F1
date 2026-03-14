@@ -1,6 +1,6 @@
 import re
+from collections.abc import Callable
 from typing import Any
-from typing import Callable
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -20,14 +20,14 @@ class RegexColumn(BaseColumn):
     """
 
     def __init__(
-            self,
-            pattern: str,
-            *,
-            group: int = 1,
-            cast: Callable[[str], Any] | None = None,
-            default: Any = None,
-            normalize_number: bool = False,
-            flags: int = re.IGNORECASE,
+        self,
+        pattern: str,
+        *,
+        group: int = 1,
+        cast: Callable[[str], Any] | None = None,
+        default: Any = None,
+        normalize_number: bool = False,
+        flags: int = re.IGNORECASE,
     ) -> None:
         self._re = re.compile(pattern, flags=flags)
         self.group = group

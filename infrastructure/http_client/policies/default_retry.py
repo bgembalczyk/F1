@@ -18,11 +18,11 @@ class DefaultRetryPolicy(RetryPolicy):
         return self._max_retries
 
     def should_retry(
-            self,
-            *,
-            response: Any | None,
-            exception: Exception | None,
-            attempt: int,
+        self,
+        *,
+        response: Any | None,
+        exception: Exception | None,
+        attempt: int,
     ) -> bool:
         if exception is not None:
             return True
@@ -37,9 +37,9 @@ class DefaultRetryPolicy(RetryPolicy):
         if status == 403:
             body_text = (getattr(response, "text", "") or "").lower()
             if (
-                    "too many requests" in body_text
-                    or "robot policy" in body_text
-                    or "please respect our robot policy" in body_text
+                "too many requests" in body_text
+                or "robot policy" in body_text
+                or "please respect our robot policy" in body_text
             ):
                 return True
 
@@ -47,5 +47,5 @@ class DefaultRetryPolicy(RetryPolicy):
 
     def backoff_seconds(self, attempt: int) -> float:
         # Exponential backoff + jitter
-        base = self._backoff_seconds * (2 ** attempt)
+        base = self._backoff_seconds * (2**attempt)
         return base + random.random()

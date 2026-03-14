@@ -1,17 +1,17 @@
 import threading
 import time
+from collections.abc import Callable
 from http.server import BaseHTTPRequestHandler
 from http.server import ThreadingHTTPServer
-from typing import Callable
 
 import pytest
-from infrastructure.http_client.default_retry import DefaultRetryPolicy
 
 from infrastructure.http_client.caching import FileCache
 from infrastructure.http_client.caching import WikipediaCachePolicy
 from infrastructure.http_client.clients import HttpClient
 from infrastructure.http_client.clients import UrllibHttpClient
 from infrastructure.http_client.config import HttpClientConfig
+from infrastructure.http_client.default_retry import DefaultRetryPolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import ScraperOptions
 
@@ -94,13 +94,17 @@ CLIENT_FACTORIES: list[tuple[str, Callable[..., object]]] = [
     (
         "requests",
         lambda **kwargs: _client_with_config(
-            HttpClient, backoff_seconds=0.01, **kwargs,
+            HttpClient,
+            backoff_seconds=0.01,
+            **kwargs,
         ),
     ),
     (
         "urllib",
         lambda **kwargs: _client_with_config(
-            UrllibHttpClient, backoff_seconds=0.01, **kwargs,
+            UrllibHttpClient,
+            backoff_seconds=0.01,
+            **kwargs,
         ),
     ),
 ]
@@ -184,21 +188,21 @@ def test_default_retry_policy_for_statuses():
             self.text = text
 
     assert (
-            policy.should_retry(response=_Response(429), exception=None, attempt=0) is True
+        policy.should_retry(response=_Response(429), exception=None, attempt=0) is True
     )
     assert (
-            policy.should_retry(response=_Response(500), exception=None, attempt=0) is True
+        policy.should_retry(response=_Response(500), exception=None, attempt=0) is True
     )
     assert (
-            policy.should_retry(response=_Response(404), exception=None, attempt=0) is False
+        policy.should_retry(response=_Response(404), exception=None, attempt=0) is False
     )
     assert (
-            policy.should_retry(
-                response=_Response(403, text="Please respect our robot policy"),
-                exception=None,
-                attempt=0,
-            )
-            is True
+        policy.should_retry(
+            response=_Response(403, text="Please respect our robot policy"),
+            exception=None,
+            attempt=0,
+        )
+        is True
     )
 
 

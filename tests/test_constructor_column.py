@@ -18,7 +18,10 @@ def _ctx_with_links(links: list[dict]) -> ColumnContext:
 def test_constructor_column_single_link_duplicates_engine() -> None:
     """When only one constructor link is present, engine_constructor should equal chassis_constructor."""
     column = ConstructorColumn()
-    link = {"text": "Mercedes", "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"}
+    link = {
+        "text": "Mercedes",
+        "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+    }
     result = column.parse(_ctx_with_links([link]))
 
     assert result["chassis_constructor"] == link
@@ -29,7 +32,10 @@ def test_constructor_column_two_links_distinct() -> None:
     """When two constructor links are present, chassis and engine should be different."""
     column = ConstructorColumn()
     chassis_link = {"text": "McLaren", "url": "https://en.wikipedia.org/wiki/McLaren"}
-    engine_link = {"text": "Honda", "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"}
+    engine_link = {
+        "text": "Honda",
+        "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One",
+    }
     result = column.parse(_ctx_with_links([chassis_link, engine_link]))
 
     assert result["chassis_constructor"] == chassis_link

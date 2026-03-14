@@ -1,7 +1,9 @@
-from typing import Any, TypedDict
+from typing import Any
+from typing import TypedDict
 
 from models.records.link import LinkRecord
-from validation.records import BaseDomainRecordValidator, ValidationIssue
+from validation.records import BaseDomainRecordValidator
+from validation.records import ValidationIssue
 
 
 class SeasonSummaryRecord(TypedDict, total=False):
@@ -29,7 +31,10 @@ def validate_season_summary_record(record: dict[str, Any]) -> list[ValidationIss
     )
     errors.extend(
         BaseDomainRecordValidator.require_type(
-            record, "countries", int, allow_none=True,
+            record,
+            "countries",
+            int,
+            allow_none=True,
         ),
     )
     errors.extend(
@@ -59,7 +64,8 @@ def validate_season_summary_record(record: dict[str, Any]) -> list[ValidationIss
     if isinstance(drivers, list):
         errors.extend(
             BaseDomainRecordValidator.require_link_list(
-                drivers, "drivers_champion_team",
+                drivers,
+                "drivers_champion_team",
             ),
         )
 

@@ -1,33 +1,35 @@
-from typing import Any, Optional, TypedDict
+from typing import Any
+from typing import TypedDict
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
+from validation.records import BaseDomainRecordValidator
 from validation.records import NestedSchema
 from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, ValidationIssue
+from validation.records import ValidationIssue
 
 
 class ConstructorRecord(TypedDict, total=False):
     constructor: LinkRecord
     engine: list[LinkRecord]
-    licensed_in: Optional[str | LinkRecord | list[LinkRecord]]
+    licensed_in: str | LinkRecord | list[LinkRecord] | None
     based_in: list[LinkRecord]
     team: str
-    team_url: Optional[str]
+    team_url: str | None
     seasons: list[SeasonRecord]
-    races_entered: Optional[int]
-    races_started: Optional[int]
-    drivers: Optional[int]
-    total_entries: Optional[int]
-    wins: Optional[int]
-    points: Optional[int]
-    poles: Optional[int]
-    fastest_laps: Optional[int]
-    podiums: Optional[int]
-    wcc_titles: Optional[int]
-    wdc_titles: Optional[int]
+    races_entered: int | None
+    races_started: int | None
+    drivers: int | None
+    total_entries: int | None
+    wins: int | None
+    points: int | None
+    poles: int | None
+    fastest_laps: int | None
+    podiums: int | None
+    wcc_titles: int | None
+    wdc_titles: int | None
     antecedent_teams: list[LinkRecord]
 
 

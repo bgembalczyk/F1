@@ -9,5 +9,6 @@ class RoundsColumn(BaseColumn):
 
     def parse(self, ctx: ColumnContext):
         return RoundsService.parse_rounds(
-            ctx.clean_text, total_rounds=self.total_rounds,
+            ctx.clean_text,
+            total_rounds=self.total_rounds,
         )

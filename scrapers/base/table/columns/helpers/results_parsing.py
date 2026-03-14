@@ -8,6 +8,7 @@ Follows SOLID principles:
 - High Cohesion: All functions work together for results parsing
 - Information Expert: Results parsing logic grouped with results data
 """
+
 import re
 from typing import Any
 
@@ -23,7 +24,7 @@ from scrapers.base.table.columns.context import ColumnContext
 class ResultsParsingHelpers:
     """
     Helper class for parsing race results and points information.
-    
+
     Provides methods for:
     - Parsing points values
     - Parsing race results with positions
@@ -35,17 +36,17 @@ class ResultsParsingHelpers:
     def parse_points_value(text: str) -> float | None:
         """
         Parse points value from text, handling fractions.
-        
+
         Supports formats like:
         - "25" -> 25.0
         - "12.5" -> 12.5
         - "1/2" -> 0.5
         - "1 1/2" -> 1.5
         - "57 1⁄7" -> 57.142857...
-        
+
         Args:
             text: Text containing points value
-            
+
         Returns:
             Parsed points as float, or None if invalid
         """
@@ -77,16 +78,16 @@ class ResultsParsingHelpers:
     def parse_results(text: str) -> list[dict[str, Any]]:
         """
         Parse race results from text containing positions and status.
-        
+
         Handles formats like:
         - "1st" -> [{"position": 1, "status": "finished"}]
         - "Ret" -> [{"status": "retired"}]
         - "DNS" -> [{"status": "did_not_start"}]
         - "1st/Ret" -> [{"position": 1}, {"status": "retired"}]
-        
+
         Args:
             text: Text containing race result information
-            
+
         Returns:
             List of result dictionaries
         """
@@ -134,14 +135,14 @@ class ResultsParsingHelpers:
     def parse_superscripts(ctx: ColumnContext) -> tuple[int | None, bool, bool]:
         """
         Parse superscript markers from cell.
-        
+
         Common superscripts in F1 tables:
         - Numbers: Indicate notes/references
         - † or *: Special markers for status
-        
+
         Args:
             ctx: Column context with cell
-            
+
         Returns:
             Tuple of (reference_number, has_dagger, has_asterisk)
         """
@@ -171,9 +172,9 @@ class ResultsParsingHelpers:
 
     @staticmethod
     def parse_entrant_segment(
-            segment: Tag,
-            link_lookup: dict[str, list[dict]],
-            base_url: str,
+        segment: Tag,
+        link_lookup: dict[str, list[dict]],
+        base_url: str,
     ) -> dict[str, Any]:
         """
         Parse entrant/team segment from table cell.
@@ -190,7 +191,10 @@ class ResultsParsingHelpers:
         from scrapers.base.helpers.text import clean_wiki_text
         from scrapers.base.helpers.url import normalize_url
 
-        links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
+        links = normalize_links(
+            segment,
+            full_url=lambda href: normalize_url(base_url, href),
+        )
         text = clean_wiki_text(segment.get_text(" ", strip=True))
 
         # Filter out empty-text links (e.g., flag image links)
@@ -203,16 +207,16 @@ class ResultsParsingHelpers:
 
     @staticmethod
     def extract_licenses(
-            segments: list[Tag],
-            base_url: str,
+        segments: list[Tag],
+        base_url: str,
     ) -> list[dict[str, str]]:
         """
         Extract license information from segments.
-        
+
         Args:
             segments: List of HTML tags containing license info
             base_url: Base URL for resolving relative links
-            
+
         Returns:
             List of license records
         """
@@ -221,7 +225,10 @@ class ResultsParsingHelpers:
 
         licenses: list[dict[str, str]] = []
         for segment in segments:
-            links = normalize_links(segment, full_url=lambda href: normalize_url(base_url, href))
+            links = normalize_links(
+                segment,
+                full_url=lambda href: normalize_url(base_url, href),
+            )
             if links:
                 licenses.extend(links)
 
@@ -231,7 +238,7 @@ class ResultsParsingHelpers:
     def strip_refs(segment: Tag) -> None:
         """
         Remove reference markers from segment in-place.
-        
+
         Args:
             segment: HTML tag to clean
         """
@@ -242,10 +249,10 @@ class ResultsParsingHelpers:
     def extract_number(text: str) -> int | None:
         """
         Extract first number from text.
-        
+
         Args:
             text: Text potentially containing a number
-            
+
         Returns:
             First number found, or None
         """
@@ -262,12 +269,12 @@ class ResultsParsingHelpers:
     def extract_race_result_background(cell: Tag) -> str | None:
         """
         Extract background color from race result cell.
-        
+
         This is an alias for extract_background for semantic clarity.
-        
+
         Args:
             cell: HTML table cell
-            
+
         Returns:
             Background color string, or None
         """
@@ -277,10 +284,10 @@ class ResultsParsingHelpers:
     def has_year(text: str) -> bool:
         """
         Check if text contains a 4-digit year (1900-2099).
-        
+
         Args:
             text: Text to check
-            
+
         Returns:
             True if contains a year pattern (1900-2099)
         """

@@ -1,9 +1,9 @@
-from typing import Any, Dict, List
+from typing import Any
 
 from models.validation.core import validate_float
 
 
-def normalize_unit_value(value: Any, field_name: str) -> Dict[str, Any] | None:
+def normalize_unit_value(value: Any, field_name: str) -> dict[str, Any] | None:
     if value is None:
         return None
     if isinstance(value, dict):
@@ -21,12 +21,12 @@ def normalize_unit_value(value: Any, field_name: str) -> Dict[str, Any] | None:
     raise ValueError(f"Pole {field_name} musi być słownikiem lub liczbą")
 
 
-def normalize_unit_list(value: Any, field_name: str) -> List[Dict[str, Any]]:
+def normalize_unit_list(value: Any, field_name: str) -> list[dict[str, Any]]:
     if value is None:
         return []
     if not isinstance(value, list):
         raise ValueError(f"Pole {field_name} musi być listą")
-    normalized: List[Dict[str, Any]] = []
+    normalized: list[dict[str, Any]] = []
     for index, item in enumerate(value):
         normalized_item = normalize_unit_value(item, f"{field_name}[{index}]")
         if normalized_item is not None:
@@ -34,7 +34,7 @@ def normalize_unit_list(value: Any, field_name: str) -> List[Dict[str, Any]]:
     return normalized
 
 
-def normalize_range_value(value: Any, field_name: str) -> Dict[str, Any] | None:
+def normalize_range_value(value: Any, field_name: str) -> dict[str, Any] | None:
     if value is None:
         return None
     if not isinstance(value, dict):

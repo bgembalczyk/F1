@@ -1,6 +1,6 @@
+from collections.abc import Callable
+from collections.abc import Mapping
 from typing import Any
-from typing import Callable
-from typing import Mapping
 
 from scrapers.base.helpers.parsing import parse_float_from_text
 from scrapers.base.helpers.parsing import parse_int_from_text

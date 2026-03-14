@@ -21,7 +21,11 @@ class EngineColumn(BaseColumn):
         class_value = EngineParsingHelpers.extract_engine_class(cell)
 
         for segment in segments:
-            engine = EngineParsingHelpers.parse_segment(segment, link_lookup, ctx.base_url)
+            engine = EngineParsingHelpers.parse_segment(
+                segment,
+                link_lookup,
+                ctx.base_url,
+            )
             if not engine:
                 continue
             # If this segment has no model and no displacement it carries only

@@ -10,7 +10,7 @@ from scrapers.base.options import ScraperOptions
 @dataclass(frozen=True)
 class RunConfig:
     include_urls: bool = True
-    output_dir: str | Path = Path(".")
+    output_dir: str | Path = Path()
     debug_dir: str | Path | None = None
     cache_dir: str | Path | None = None
     cache_ttl: int | None = None

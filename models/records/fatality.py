@@ -1,4 +1,5 @@
-from typing import Any, Optional, TypedDict
+from typing import Any
+from typing import TypedDict
 
 from models.records.car import CAR_SCHEMA
 from models.records.car import CarRecord
@@ -6,19 +7,20 @@ from models.records.event import EVENT_SCHEMA
 from models.records.event import EventRecord
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
+from validation.records import BaseDomainRecordValidator
 from validation.records import NestedSchema
 from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, ValidationIssue
+from validation.records import ValidationIssue
 
 
 class FatalityRecord(TypedDict, total=False):
     driver: LinkRecord
-    date: Optional[str]
-    age: Optional[int]
-    event: Optional[EventRecord]
-    circuit: Optional[LinkRecord]
-    car: Optional[CarRecord]
-    session: Optional[str]
+    date: str | None
+    age: int | None
+    event: EventRecord | None
+    circuit: LinkRecord | None
+    car: CarRecord | None
+    session: str | None
 
 
 FATALITY_SCHEMA = RecordSchema(

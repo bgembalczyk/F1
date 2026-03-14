@@ -8,7 +8,6 @@ Follows SOLID principles:
 - High Cohesion: All functions work together for constructor parsing
 - Information Expert: Constructor parsing logic grouped with constructor data
 """
-from typing import Optional
 
 from bs4 import Tag
 
@@ -20,7 +19,7 @@ from scrapers.base.table.columns.context import ColumnContext
 class ConstructorParsingHelpers:
     """
     Helper class for parsing constructor information from table cells.
-    
+
     Provides methods for:
     - Splitting constructor cells by line breaks
     - Extracting constructor parts from multi-line cells
@@ -31,13 +30,13 @@ class ConstructorParsingHelpers:
     def split_lines(ctx: ColumnContext) -> list[ColumnContext]:
         """
         Split constructor cell into multiple contexts, one per line.
-        
+
         Handles cells with multiple constructors separated by <br> tags.
         Distributes links across the split contexts.
-        
+
         Args:
             ctx: Column context with potentially multi-line cell
-            
+
         Returns:
             List of contexts, one per constructor line
         """
@@ -69,8 +68,8 @@ class ConstructorParsingHelpers:
         # Create contexts for each line with proper link distribution
         line_contexts: list[ColumnContext] = []
         link_index = 0
-        for line, link_count in zip(lines, line_link_counts):
-            line_links = ctx.links[link_index: link_index + link_count]
+        for line, link_count in zip(lines, line_link_counts, strict=False):
+            line_links = ctx.links[link_index : link_index + link_count]
             link_index += link_count
 
             text_parts = []
@@ -105,13 +104,13 @@ class ConstructorParsingHelpers:
     def extract_part(ctx: ColumnContext, index: int) -> LinkRecord | None:
         """
         Extract specific constructor part by index from context.
-        
+
         For cells with multiple constructors, extracts the nth one.
-        
+
         Args:
             ctx: Column context
             index: Zero-based index of constructor to extract
-            
+
         Returns:
             LinkRecord for the constructor, or None if index out of range
         """
@@ -131,12 +130,12 @@ class ConstructorParsingHelpers:
     def split_on_external_hyphen(ctx: ColumnContext) -> tuple[str, str] | None:
         """
         Split text on external hyphen (not part of links).
-        
+
         Used for entries like "Constructor - Details" where hyphen is outside links.
-        
+
         Args:
             ctx: Column context with text to split
-            
+
         Returns:
             Tuple of (before_hyphen, after_hyphen), or None if no external hyphen
         """
@@ -152,14 +151,14 @@ class ConstructorParsingHelpers:
         return None
 
     @staticmethod
-    def extract_layout_text(clean_text: str, link_text: str) -> Optional[str]:
+    def extract_layout_text(clean_text: str, link_text: str) -> str | None:
         """
         Extract layout/configuration text, excluding link text.
-        
+
         Args:
             clean_text: Full cleaned text from cell
             link_text: Text that appears in a link (to be removed)
-            
+
         Returns:
             Layout text with link text removed, or None if empty
         """
@@ -171,7 +170,9 @@ class ConstructorParsingHelpers:
             lower_link = link_text.lower()
             idx = lower_clean.find(lower_link)
             if idx != -1:
-                clean_text = (clean_text[:idx] + clean_text[idx + len(link_text):]).strip()
+                clean_text = (
+                    clean_text[:idx] + clean_text[idx + len(link_text) :]
+                ).strip()
 
         clean_text = clean_text.strip(" -–—()")
         if not clean_text:

@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
@@ -25,8 +23,10 @@ class ColinChapmanTrophyParser:
         self._table_parser = table_parser
 
     def parse(
-            self, soup: BeautifulSoup, season_year: int | None = None,
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None = None,
+    ) -> list[dict[str, Any]]:
         """
         Parses the Colin Chapman Trophy table.
 

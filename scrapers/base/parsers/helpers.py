@@ -1,9 +1,5 @@
 import re
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
-from typing import Tuple
 
 from bs4 import BeautifulSoup
 
@@ -13,7 +9,7 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.parsers.unit_value import UnitValue
 from scrapers.base.table.columns.context import ColumnContext
 
-EntriesStarts = Tuple[Optional[int], Optional[int]]
+EntriesStarts = tuple[int | None, int | None]
 NumericValue = float | None
 
 
@@ -67,10 +63,10 @@ def normalize_unit(unit: str) -> str:
     return unit.strip()
 
 
-def parse_unit_list(text: str) -> List[UnitValue]:
+def parse_unit_list(text: str) -> list[UnitValue]:
     if not text:
         return []
-    values: List[UnitValue] = []
+    values: list[UnitValue] = []
     for match in UNIT_RE.finditer(text):
         values.append(
             {
@@ -81,7 +77,7 @@ def parse_unit_list(text: str) -> List[UnitValue]:
     return values
 
 
-def extract_driver_text(record: Dict[str, Any]) -> Optional[str]:
+def extract_driver_text(record: dict[str, Any]) -> str | None:
     driver = record.get("driver")
     if isinstance(driver, dict):
         text = driver.get("text")

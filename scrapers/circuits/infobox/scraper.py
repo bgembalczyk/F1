@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import Optional
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -33,9 +31,9 @@ class F1CircuitInfoboxScraper(F1Scraper):
     """Parser infoboksów torów F1 z heurystykami pod typowe pola."""
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
     ) -> None:
         options = init_scraper_options(options)
 
@@ -129,7 +127,8 @@ class F1CircuitInfoboxScraper(F1Scraper):
             soup = full_soup
             if fragment:
                 section = self.section_extractor.extract_section_by_id(
-                    full_soup, fragment,
+                    full_soup,
+                    fragment,
                 )
                 if section is not None:
                     soup = section
@@ -149,7 +148,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
             return [self._parse_infobox(soup)]
         return self.parser.parse(soup)
 
-    def _parse_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _parse_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
         """
         Zwraca znormalizowany infobox + layouts (bez surowego `rows`).
 
@@ -192,7 +191,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         for table in soup.find_all("table", class_=_has_infobox_class):
             rows: list[Tag] = table.find_all("tr")
 
-            cut_index: Optional[int] = None
+            cut_index: int | None = None
             for idx, row in enumerate(rows):
                 row_classes = row.get("class") or []
                 if isinstance(row_classes, str):
@@ -200,7 +199,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
 
                 has_full_on_tr = "infobox-full-data" in row_classes
                 has_full_in_cell = (
-                        row.find(["td", "th"], class_="infobox-full-data") is not None
+                    row.find(["td", "th"], class_="infobox-full-data") is not None
                 )
 
                 if has_full_on_tr or has_full_in_cell:

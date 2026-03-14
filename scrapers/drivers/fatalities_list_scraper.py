@@ -65,10 +65,10 @@ class F1FatalitiesListScraper(F1TableScraper):
     )
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            config: ScraperConfig | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
         options.transformers = list(options.transformers or []) + [

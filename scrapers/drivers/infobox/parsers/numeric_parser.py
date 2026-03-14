@@ -1,7 +1,6 @@
 """Helper class for parsing numeric values from infobox cells."""
 
 import re
-from typing import Dict
 
 from bs4 import Tag
 
@@ -16,13 +15,13 @@ class NumericParser:
     @staticmethod
     def parse_int_cell(cell: Tag) -> int | None:
         """Parse an integer value from a cell.
-        
+
         Args:
             cell: BeautifulSoup Tag representing the cell
-            
+
         Returns:
             Parsed integer or None if not found
-            
+
         Raises:
             DomainParseError: If parsing fails
         """
@@ -41,13 +40,13 @@ class NumericParser:
     @staticmethod
     def parse_float_cell(cell: Tag) -> float | None:
         """Parse a float value from a cell.
-        
+
         Args:
             cell: BeautifulSoup Tag representing the cell
-            
+
         Returns:
             Parsed float or None if not found
-            
+
         Raises:
             DomainParseError: If parsing fails
         """
@@ -64,17 +63,17 @@ class NumericParser:
             ) from exc
 
     @staticmethod
-    def parse_entries(cell: Tag) -> Dict[str, int | None]:
+    def parse_entries(cell: Tag) -> dict[str, int | None]:
         """Parse entries/starts field.
-        
+
         Extracts two numeric values: entries and starts.
-        
+
         Args:
             cell: BeautifulSoup Tag representing the cell
-            
+
         Returns:
             Dictionary with 'entries' and 'starts' keys
-            
+
         Raises:
             DomainParseError: If parsing fails
         """

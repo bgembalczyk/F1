@@ -1,7 +1,5 @@
 import re
 from typing import Any
-from typing import Dict
-from typing import List
 
 from scrapers.base.constants import UNIT_RE
 from scrapers.base.parsers.helpers import normalize_unit
@@ -16,7 +14,7 @@ class NestedUnitListColumn(BaseColumn):
     def __init__(self, subkey: str) -> None:
         self.subkey = subkey
 
-    def _parse_min_max(self, text: str) -> Dict[str, UnitValue] | List[UnitValue]:
+    def _parse_min_max(self, text: str) -> dict[str, UnitValue] | list[UnitValue]:
         values = parse_unit_list(text)
         if not values:
             return []
@@ -26,7 +24,7 @@ class NestedUnitListColumn(BaseColumn):
         for match in UNIT_RE.finditer(text):
             value = parse_number(match.group("value"))
             unit = normalize_unit(match.group("unit"))
-            suffix = text[match.end(): match.end() + 12].lower()
+            suffix = text[match.end() : match.end() + 12].lower()
             if "min" in suffix:
                 min_value = {"value": value, "unit": unit}
             elif max_value is None:
@@ -48,7 +46,7 @@ class NestedUnitListColumn(BaseColumn):
             return self._parse_min_max(text)
         return parse_unit_list(text)
 
-    def apply(self, ctx: ColumnContext, record: Dict[str, Any]) -> None:
+    def apply(self, ctx: ColumnContext, record: dict[str, Any]) -> None:
         if ctx.model_fields is not None and ctx.key not in ctx.model_fields:
             return
         value = self.parse(ctx)

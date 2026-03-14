@@ -1,6 +1,6 @@
 """Helper table scraper for lap record tables."""
 
-from typing import Any, Dict, List
+from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -14,7 +14,8 @@ from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.time import TimeColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl import column
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.scraper import F1TableScraper
 
@@ -46,7 +47,7 @@ class LapRecordsTableScraper(F1TableScraper):
         record_factory=record_from_mapping,
     )
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         """
         LapRecordsTableScraper nie jest używany bezpośrednio – w
         F1SingleCircuitScraper sami podajemy konkretne tabele i nagłówki
@@ -58,13 +59,13 @@ class LapRecordsTableScraper(F1TableScraper):
         )
 
     def parse_multi_row(
-            self,
-            row: Tag,
-            cells: List[Tag],
-            headers: List[str],
-            *,
-            as_value_objects: bool = False,
-    ) -> List[Any]:
+        self,
+        row: Tag,
+        cells: list[Tag],
+        headers: list[str],
+        *,
+        as_value_objects: bool = False,
+    ) -> list[Any]:
         """
         Z jednego <tr> zwraca 1..N rekordów.
 
@@ -73,7 +74,7 @@ class LapRecordsTableScraper(F1TableScraper):
         """
         _ = row  # API zgodne z innymi helperami; tu nie jest potrzebne
 
-        per_cell_segments: List[List[Tag]] = []
+        per_cell_segments: list[list[Tag]] = []
         max_segments = 1
 
         for cell in cells:
@@ -81,7 +82,7 @@ class LapRecordsTableScraper(F1TableScraper):
             per_cell_segments.append(segs)
             max_segments = max(max_segments, len(segs))
 
-        out_records: List[Any] = []
+        out_records: list[Any] = []
 
         for idx in range(max_segments):
             seg_cells = [

@@ -147,7 +147,7 @@ def test_circuit_layouts_parser_basic() -> None:
             "race_lap_record": None,
             "surface": None,
             "banking": None,
-        }
+        },
     ]
 
 
@@ -211,7 +211,7 @@ def test_circuit_entities_parser_default_layout() -> None:
                     {
                         "text": "Jane Designer",
                         "url": "https://en.wikipedia.org/wiki/Jane_Designer",
-                    }
+                    },
                 ],
             },
             "nickname": {"text": "The Test"},
@@ -241,7 +241,7 @@ def test_entity_parser_multiple_links_language_marker() -> None:
     }
     result = parser.parse_linked_entity(row)
     assert result == [
-        {"text": "Example", "url": "https://en.wikipedia.org/wiki/Example"}
+        {"text": "Example", "url": "https://en.wikipedia.org/wiki/Example"},
     ]
 
 
@@ -270,7 +270,7 @@ def test_entity_parser_redlink_url_none() -> None:
                     "https://en.wikipedia.org/w/index.php?title=Red_Page"
                     "&action=edit&redlink=1"
                 ),
-            }
+            },
         ],
     }
     result = parser.parse_linked_entity(row)

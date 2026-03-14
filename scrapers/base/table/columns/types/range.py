@@ -14,12 +14,12 @@ class RangeColumn(BaseColumn):
     """
 
     def __init__(
-            self,
-            lower_column: BaseColumn,
-            upper_column: BaseColumn,
-            *,
-            separator_pattern: str = r"\s*(?:–|-|—|−)\s*",
-            shared_suffix: str | None = None,
+        self,
+        lower_column: BaseColumn,
+        upper_column: BaseColumn,
+        *,
+        separator_pattern: str = r"\s*(?:–|-|—|−)\s*",
+        shared_suffix: str | None = None,
     ) -> None:
         self.lower_column = lower_column
         self.upper_column = upper_column

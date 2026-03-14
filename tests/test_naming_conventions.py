@@ -18,9 +18,10 @@ def test_scraper_constants_follow_prefix_and_suffix_conventions():
             if not name.isupper():
                 continue
             if name.endswith(suffixes):
-                assert name.startswith(prefixes), (
-                    f"{module_path}.{name} must start with one of {prefixes}"
-                )
-                assert isinstance(value, str), (
-                    f"{module_path}.{name} should be a string value"
-                )
+                assert name.startswith(
+                    prefixes,
+                ), f"{module_path}.{name} must start with one of {prefixes}"
+                assert isinstance(
+                    value,
+                    str,
+                ), f"{module_path}.{name} should be a string value"

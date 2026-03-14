@@ -1,6 +1,5 @@
 import re
 from typing import Any
-from typing import Optional
 
 from scrapers.base.helpers.text import choose_richer_entity
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
@@ -17,7 +16,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
     _LANG_PAREN_TAIL_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)?\s*$", flags=re.IGNORECASE)
 
     @staticmethod
-    def _entity_text(val: Any) -> Optional[str]:
+    def _entity_text(val: Any) -> str | None:
         if isinstance(val, dict):
             s = (val.get("text") or "").strip()
             return s or None
@@ -27,13 +26,13 @@ class CircuitTextProcessing(InfoboxTextUtils):
         return s or None
 
     @staticmethod
-    def _entity_url(val: Any) -> Optional[str]:
+    def _entity_url(val: Any) -> str | None:
         if isinstance(val, dict):
             return val.get("url") or None
         return None
 
     @staticmethod
-    def _norm_time(t: Any) -> Optional[str]:
+    def _norm_time(t: Any) -> str | None:
         """
         Normalizuje time do stringa (dla prezentacji).
         Uwaga: do porównań/scalania używamy _time_to_seconds.
@@ -82,7 +81,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
         return self._strip_lang_marker_tail_only(str(x or "")).strip().lower()
 
     @staticmethod
-    def _extract_outer_parens(text: str) -> Optional[str]:
+    def _extract_outer_parens(text: str) -> str | None:
         """
         Zwraca zawartość pierwszego zewnętrznego nawiasu (...) z uwzględnieniem
         zagnieżdżeń w środku.
@@ -94,7 +93,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
             return None
 
         depth = 0
-        inner_start: Optional[int] = None
+        inner_start: int | None = None
 
         for i in range(start, len(text)):
             ch = text[i]
@@ -110,7 +109,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
         return None
 
     @staticmethod
-    def _is_en_wiki(url: Optional[str]) -> bool:
+    def _is_en_wiki(url: str | None) -> bool:
         if not url:
             return False
         return url.startswith("https://en.wikipedia.org/") or url.startswith(

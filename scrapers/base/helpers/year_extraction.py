@@ -1,14 +1,14 @@
 """Utility for extracting years and year ranges from text."""
 
 import re
-from typing import Any, Dict, List, Set
+from typing import Any
 
 
 class YearExtractor:
     """Handles extraction of years and year ranges from text."""
 
     @staticmethod
-    def extract_years_from_text(text: str) -> Set[int]:
+    def extract_years_from_text(text: str) -> set[int]:
         """Extract all years from text, expanding ranges.
 
         Handles cases like:
@@ -22,7 +22,7 @@ class YearExtractor:
         Returns:
             Set of years found in the text
         """
-        years_set: Set[int] = set()
+        years_set: set[int] = set()
 
         # Find ranges like "2007-2008" or "2007–2008"
         for match in re.finditer(r"\b(\d{4})\s*[-–]\s*(\d{2,4})\b", text):
@@ -45,10 +45,10 @@ class YearExtractor:
 
     @staticmethod
     def build_year_to_url_map(
-            links: List[Dict[str, Any]],
-            url_key: str = "url",
-            text_key: str = "text",
-    ) -> Dict[int, str | None]:
+        links: list[dict[str, Any]],
+        url_key: str = "url",
+        text_key: str = "text",
+    ) -> dict[int, str | None]:
         """Build a mapping from year to URL from a list of links.
 
         Args:
@@ -59,7 +59,7 @@ class YearExtractor:
         Returns:
             Dictionary mapping year to URL
         """
-        year_to_url: Dict[int, str | None] = {}
+        year_to_url: dict[int, str | None] = {}
         for link in links:
             link_text = link.get(text_key, "")
             year_match = re.search(r"\b(\d{4})\b", link_text)
@@ -69,7 +69,7 @@ class YearExtractor:
         return year_to_url
 
     @staticmethod
-    def detect_url_pattern(year_to_url: Dict[int, str | None]) -> str | None:
+    def detect_url_pattern(year_to_url: dict[int, str | None]) -> str | None:
         """Detect a predictable URL pattern from available year links.
 
         Returns a pattern string with {year} placeholder if pattern is predictable.
@@ -99,9 +99,9 @@ class YearExtractor:
 
     @staticmethod
     def interpolate_urls(
-            years_set: Set[int],
-            year_to_url: Dict[int, str | None],
-    ) -> Dict[int, str | None]:
+        years_set: set[int],
+        year_to_url: dict[int, str | None],
+    ) -> dict[int, str | None]:
         """Interpolate missing URLs using detected pattern.
 
         Args:

@@ -1,11 +1,9 @@
-from typing import List
-
 from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.records import ExportRecord
 
 
 class FatalitiesCarTransformer(RecordTransformer):
-    def transform(self, records: List[ExportRecord]) -> List[ExportRecord]:
+    def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
         for row in records:
             formula_category = row.pop("formula_category", None)
             if not formula_category:

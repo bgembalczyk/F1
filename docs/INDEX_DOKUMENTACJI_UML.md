@@ -34,8 +34,8 @@
 ## 📊 Szczegóły Diagramów
 
 ### 1. Diagram Przepływu Procesu (Current Process Flow)
-**Plik**: `uml_current_process_flow.puml`  
-**Rozmiar**: 167 linii, 4.7KB  
+**Plik**: `uml_current_process_flow.puml`
+**Rozmiar**: 167 linii, 4.7KB
 **Pokazuje**:
 - Jak dane przepływają przez system od początku do końca
 - Interakcje między komponentami
@@ -51,8 +51,8 @@
 ---
 
 ### 2. Struktura i Hierarchia Klas - Obecny Stan (Current Class Structure)
-**Plik**: `uml_current_class_structure.puml`  
-**Rozmiar**: 406 linii, 11KB  
+**Plik**: `uml_current_class_structure.puml`
+**Rozmiar**: 406 linii, 11KB
 **Pokazuje**:
 - Hierarchię bazowych scraperów (F1Scraper → F1ListScraper/F1TableScraper/CompositeScraper)
 - 30+ konkretnych implementacji scraperów
@@ -73,8 +73,8 @@
 ---
 
 ### 3. Proponowana Struktura - Ulepszona (Proposed Class Structure)
-**Plik**: `uml_proposed_class_structure.puml`  
-**Rozmiar**: 629 linii, 16KB  
+**Plik**: `uml_proposed_class_structure.puml`
+**Rozmiar**: 629 linii, 16KB
 **Pokazuje**:
 - Architekturę zgodną z zasadami SOLID
 - Interfejsy dla wszystkich głównych komponentów
@@ -95,7 +95,7 @@
 ## 📚 Dokumentacja
 
 ### README po Angielsku
-**Plik**: `UML_DIAGRAMS_README.md`  
+**Plik**: `UML_DIAGRAMS_README.md`
 **Rozmiar**: 282 linie, 9.8KB
 
 **Zawiera**:
@@ -109,7 +109,7 @@
 ---
 
 ### README po Polsku
-**Plik**: `UML_DIAGRAMS_README_PL.md`  
+**Plik**: `UML_DIAGRAMS_README_PL.md`
 **Rozmiar**: 227 linii, 7.9KB
 
 **Zawiera**:
@@ -121,7 +121,7 @@
 ---
 
 ### Podsumowanie Analizy
-**Plik**: `ANALIZA_STRUKTURY_PODSUMOWANIE.md`  
+**Plik**: `ANALIZA_STRUKTURY_PODSUMOWANIE.md`
 **Rozmiar**: 275 linii, 8.0KB
 
 **Zawiera**:
@@ -254,9 +254,9 @@ Nowe klasy bazowe, migracja scraperów, usunięcie starych klas
 
 ## 👤 Informacje
 
-**Analiza wykonana**: 2026-01-08  
-**Narzędzie**: GitHub Copilot  
-**Format diagramów**: PlantUML  
+**Analiza wykonana**: 2026-01-08
+**Narzędzie**: GitHub Copilot
+**Format diagramów**: PlantUML
 **Języki dokumentacji**: English, Polski
 
 ---

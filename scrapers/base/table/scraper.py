@@ -2,8 +2,6 @@ from abc import ABC
 from dataclasses import fields
 from dataclasses import is_dataclass
 from typing import Any
-from typing import List
-from typing import Optional
 
 from bs4 import BeautifulSoup
 
@@ -38,10 +36,10 @@ class F1TableScraper(F1Scraper, ABC):
     default_column: BaseColumn = AutoColumn()
 
     def __init__(
-            self,
-            *,
-            options: ScraperOptions | None = None,
-            config: ScraperConfig | None = None,
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        config: ScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
 
@@ -71,14 +69,14 @@ class F1TableScraper(F1Scraper, ABC):
         if self.validator is not None and self.validator.record_factory is None:
             self.validator.set_record_factory(self.record_factory)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Any]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
         """
         Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
         """
         self.extractor.set_run_id(getattr(self, "_run_id", None))
         return self.extractor.extract(soup)
 
-    def parse_row(self, row: TableRow) -> Optional[Any]:
+    def parse_row(self, row: TableRow) -> Any | None:
         """
         Dla każdej komórki:
         - ustala nagłówek i klucz,
@@ -109,7 +107,7 @@ class F1TableScraper(F1Scraper, ABC):
 
         return None
 
-    def _apply_transformers(self, records: List[Any]) -> List[Any]:
+    def _apply_transformers(self, records: list[Any]) -> list[Any]:
         transformers = list(self.transformers)
         if self.record_factory is not None:
             transformers.append(RecordFactoryTransformer(self.record_factory))

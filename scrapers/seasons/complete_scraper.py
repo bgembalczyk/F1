@@ -1,7 +1,5 @@
 from pathlib import Path
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 from tqdm import tqdm
@@ -22,11 +20,11 @@ class CompleteSeasonScraper(F1Scraper):
         self.url = SeasonsListScraper.CONFIG.url
         self._options = options
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         list_scraper = SeasonsListScraper(options=self._options)
         seasons = list_scraper.parse(soup)
 
-        results: List[Dict[str, Any]] = []
+        results: list[dict[str, Any]] = []
         season_scraper = SingleSeasonScraper(options=self._options)
 
         for season in tqdm(seasons, desc="CompleteSeasonScraper", unit="season"):

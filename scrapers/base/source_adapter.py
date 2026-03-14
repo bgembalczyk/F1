@@ -1,11 +1,10 @@
 from abc import ABC
 from abc import abstractmethod
+from collections.abc import Callable
+from collections.abc import Iterable
+from collections.abc import Mapping
 from typing import Any
-from typing import Callable
 from typing import Generic
-from typing import Iterable
-from typing import List
-from typing import Mapping
 from typing import TypeVar
 
 T = TypeVar("T")
@@ -32,7 +31,7 @@ class IterableSourceAdapter(Generic[T]):
     def __init__(self, iterable: Iterable[T] | Callable[[], Iterable[T]]) -> None:
         self._iterable = iterable
 
-    def get(self) -> List[T]:
+    def get(self) -> list[T]:
         if callable(self._iterable):
             return list(self._iterable())
         return list(self._iterable)

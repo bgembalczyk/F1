@@ -18,7 +18,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 
 def test_transformers_pipeline_applies_in_order_and_logs(
-        caplog: pytest.LogCaptureFixture,
+    caplog: pytest.LogCaptureFixture,
 ) -> None:
     class AddFlagTransformer(RecordTransformer):
         def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
@@ -71,7 +71,7 @@ def test_normalize_links_transformer_normalizes_link_values() -> None:
             {
                 "driver": {"text": " Lewis ", "url": "https://example.com/lewis"},
                 "seasons": [2020, 2021],
-            }
+            },
         ],
     )
 
@@ -79,5 +79,5 @@ def test_normalize_links_transformer_normalizes_link_values() -> None:
         {
             "driver": {"text": "Lewis", "url": "https://example.com/lewis"},
             "seasons": [2020, 2021],
-        }
+        },
     ]

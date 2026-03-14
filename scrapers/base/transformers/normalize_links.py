@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from typing import Any
-from typing import Iterable
 
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.links import normalize_single_link
@@ -27,12 +27,12 @@ def is_link_list(value: Iterable[Any]) -> bool:
 
 class NormalizeLinksTransformer(RecordTransformer):
     def __init__(
-            self,
-            *,
-            drop_empty: bool = True,
-            strip_marks: bool = True,
-            strip_lang_suffix: bool = True,
-            empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
+        self,
+        *,
+        drop_empty: bool = True,
+        strip_marks: bool = True,
+        strip_lang_suffix: bool = True,
+        empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
     ) -> None:
         super().__init__(empty_value_policy=empty_value_policy)
         self.drop_empty = drop_empty

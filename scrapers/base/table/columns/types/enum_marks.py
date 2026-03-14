@@ -1,5 +1,4 @@
 from typing import Any
-from typing import Dict
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -13,7 +12,7 @@ class EnumMarksColumn(BaseColumn):
     default: wartość gdy żaden znak nie pasuje
     """
 
-    def __init__(self, mapping: Dict[str, Any], default: Any = None) -> None:
+    def __init__(self, mapping: dict[str, Any], default: Any = None) -> None:
         self.mapping = dict(mapping)
         self.default = default
 

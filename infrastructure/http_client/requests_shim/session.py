@@ -1,23 +1,21 @@
-import urllib.request
 import urllib.error
-from typing import Dict
-from typing import Optional
+import urllib.request
 
+from infrastructure.http_client.requests_shim.constants import SSL_CONTEXT
 from infrastructure.http_client.requests_shim.request_exception import RequestException
 from infrastructure.http_client.requests_shim.response import Response
-from infrastructure.http_client.requests_shim.constants import SSL_CONTEXT
 from infrastructure.http_client.requests_shim.timeout import Timeout
 
 
 class Session:
     def __init__(self) -> None:
-        self.headers: Dict[str, str] = {}
+        self.headers: dict[str, str] = {}
 
     def get(
-            self,
-            url: str,
-            headers: Optional[Dict[str, str]] = None,
-            timeout: Optional[int] = None,
+        self,
+        url: str,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> Response:
         merged_headers = dict(self.headers)
         if headers:
@@ -27,9 +25,9 @@ class Session:
 
         try:
             with urllib.request.urlopen(
-                    request,
-                    timeout=timeout,
-                    context=SSL_CONTEXT,
+                request,
+                timeout=timeout,
+                context=SSL_CONTEXT,
             ) as resp:
                 body = resp.read()
                 status_code = resp.getcode() or 0

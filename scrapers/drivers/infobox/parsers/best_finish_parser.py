@@ -2,8 +2,6 @@
 
 import re
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import Tag
 
@@ -25,14 +23,14 @@ class BestFinishParser:
         self._link_extractor = link_extractor
         self._season_parser = SeasonParser()
 
-    def parse_best_finish(self, cell: Tag) -> Dict[str, Any]:
+    def parse_best_finish(self, cell: Tag) -> dict[str, Any]:
         """Parse best finish field.
 
         Extracts result position and associated seasons with optional class information.
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         try:
-            result: Dict[str, Any] = {"result": None, "seasons": None}
+            result: dict[str, Any] = {"result": None, "seasons": None}
 
             # Extract result position
             result["result"] = self._extract_result_position(text)
@@ -47,7 +45,9 @@ class BestFinishParser:
                 small_tags = cell.find_all("small")
                 if small_tags:
                     result["seasons"] = self._parse_seasons_with_classes(
-                        cell, season_links, small_tags,
+                        cell,
+                        season_links,
+                        small_tags,
                     )
                 else:
                     # No small tags, just return seasons
@@ -80,21 +80,27 @@ class BestFinishParser:
                 return text.strip() or None
 
     def _parse_seasons_with_classes(
-            self, cell: Tag, season_links: List[Dict[str, Any]], small_tags: List[Tag],
-    ) -> List[Dict[str, Any]]:
+        self,
+        cell: Tag,
+        season_links: list[dict[str, Any]],
+        small_tags: list[Tag],
+    ) -> list[dict[str, Any]]:
         """Parse seasons with class information from small tags."""
         num_small_tags = len(small_tags)
 
         if num_small_tags == 1:
             return self._parse_single_class_for_all_seasons(
-                season_links, small_tags[0],
+                season_links,
+                small_tags[0],
             )
         else:
             return self._parse_class_per_season(cell, season_links)
 
     def _parse_single_class_for_all_seasons(
-            self, season_links: List[Dict[str, Any]], small_tag: Tag,
-    ) -> List[Dict[str, Any]]:
+        self,
+        season_links: list[dict[str, Any]],
+        small_tag: Tag,
+    ) -> list[dict[str, Any]]:
         """Parse case where a single class applies to all seasons."""
         class_links = self._link_extractor.extract_links(small_tag)
         class_info = class_links[0] if class_links else None
@@ -116,8 +122,10 @@ class BestFinishParser:
         return season_data
 
     def _parse_class_per_season(
-            self, cell: Tag, season_links: List[Dict[str, Any]],
-    ) -> List[Dict[str, Any]]:
+        self,
+        cell: Tag,
+        season_links: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
         """Parse case where each season may have its own class."""
         season_data = []
 
@@ -133,7 +141,9 @@ class BestFinishParser:
             # Look for next <small> tag after this season tag
             if season_tag:
                 class_info = self._find_class_for_season(
-                    season_tag, season_link, season_links,
+                    season_tag,
+                    season_link,
+                    season_links,
                 )
                 if class_info:
                     season_entry["class"] = class_info
@@ -143,7 +153,9 @@ class BestFinishParser:
         return season_data
 
     def _find_season_tag(
-            self, cell: Tag, season_link: Dict[str, Any],
+        self,
+        cell: Tag,
+        season_link: dict[str, Any],
     ) -> Tag | None:
         """Find the <a> tag for a season link in the cell."""
         season_text = season_link.get("text", "")
@@ -162,11 +174,11 @@ class BestFinishParser:
         return None
 
     def _find_class_for_season(
-            self,
-            season_tag: Tag,
-            season_link: Dict[str, Any],
-            season_links: List[Dict[str, Any]],
-    ) -> Dict[str, Any] | None:
+        self,
+        season_tag: Tag,
+        season_link: dict[str, Any],
+        season_links: list[dict[str, Any]],
+    ) -> dict[str, Any] | None:
         """Find class information for a specific season."""
         season_text = season_link.get("text", "")
         season_url = season_link.get("url", "")
@@ -188,9 +200,9 @@ class BestFinishParser:
                     if next_elem.name == "a":
                         next_text = clean_infobox_text(next_elem.get_text(strip=True))
                         if any(
-                                s.get("text") == next_text
-                                for s in season_links
-                                if s != season_link
+                            s.get("text") == next_text
+                            for s in season_links
+                            if s != season_link
                         ):
                             found_next_season = True
                             break
@@ -202,9 +214,9 @@ class BestFinishParser:
                         for a_tag in next_elem.find_all("a"):
                             a_text = clean_infobox_text(a_tag.get_text(strip=True))
                             if any(
-                                    s.get("text") == a_text
-                                    for s in season_links
-                                    if s != season_link
+                                s.get("text") == a_text
+                                for s in season_links
+                                if s != season_link
                             ):
                                 found_next_season = True
                                 break
@@ -231,7 +243,7 @@ class BestFinishParser:
 
         return None
 
-    def _extract_seasons_from_text(self, text: str) -> List[int] | None:
+    def _extract_seasons_from_text(self, text: str) -> list[int] | None:
         """Extract seasons from text when no links are available."""
         # Pattern 1: "1st in 1957" -> extract years after "in"
         # Pattern 2: "1st in 1952, 1954" -> extract comma-separated years

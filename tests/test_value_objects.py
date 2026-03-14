@@ -23,9 +23,9 @@ def test_value_object_override_from_dict_for_season_ref():
     assert SeasonRef.from_dict(
         {"year": 2024, "url": "https://example.com"},
     ).to_dict() == {
-               "year": 2024,
-               "url": "https://example.com",
-           }
+        "year": 2024,
+        "url": "https://example.com",
+    }
     assert SeasonRef.from_dict({"url": "https://example.com"}) is None
 
 

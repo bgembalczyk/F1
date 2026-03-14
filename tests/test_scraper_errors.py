@@ -32,7 +32,6 @@ if str(PROJECT_ROOT) not in sys.path:
 if "bs4" not in sys.modules:
     bs4_stub = types.ModuleType("bs4")
 
-
     class _StubTag:
         def find_all(self, *_, **__):
             return []
@@ -49,11 +48,9 @@ if "bs4" not in sys.modules:
         def get_text(self, *_, **__):
             return ""
 
-
     class _StubBeautifulSoup(_StubTag):
         def __init__(self, html: str, *_):
             self.html = html
-
 
     bs4_stub.Tag = _StubTag
     bs4_stub.BeautifulSoup = _StubBeautifulSoup
@@ -62,15 +59,12 @@ if "bs4" not in sys.modules:
 if "requests" not in sys.modules:
     requests_stub = types.ModuleType("requests")
 
-
     class _RequestException(Exception):
         pass
-
 
     class _Session:
         def get(self, *_args, **_kwargs):
             raise _RequestException("requests stub")
-
 
     requests_stub.RequestException = _RequestException
     requests_stub.Session = _Session
@@ -79,10 +73,8 @@ if "requests" not in sys.modules:
 if "certifi" not in sys.modules:
     certifi_stub = types.ModuleType("certifi")
 
-
     def _where():
         return ""
-
 
     certifi_stub.where = _where
     sys.modules["certifi"] = certifi_stub
@@ -90,11 +82,9 @@ if "certifi" not in sys.modules:
 if "pandas" not in sys.modules:
     pandas_stub = types.ModuleType("pandas")
 
-
     class _StubDataFrame:
         def __init__(self, *_args, **_kwargs):
             pass
-
 
     pandas_stub.DataFrame = _StubDataFrame
     sys.modules["pandas"] = pandas_stub
@@ -102,7 +92,10 @@ if "pandas" not in sys.modules:
 
 class DummyFetcher:
     def __init__(
-            self, *, html: str | None = None, exc: Exception | None = None,
+        self,
+        *,
+        html: str | None = None,
+        exc: Exception | None = None,
     ) -> None:
         self.html = html
         self.exc = exc

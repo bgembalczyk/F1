@@ -1,6 +1,5 @@
 import logging
-from typing import Optional
-from typing import Sequence
+from collections.abc import Sequence
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -21,15 +20,15 @@ class HtmlTableParser:
     """
 
     def __init__(
-            self,
-            *,
-            section_id: Optional[str] = None,
-            fragment: Optional[str] = None,
-            expected_headers: Sequence[str] | None = None,
-            table_css_class: str = "wikitable",
-            strip_lang_suffix: bool = True,
-            strip_refs: bool = True,
-            normalize_dashes: bool = True,
+        self,
+        *,
+        section_id: str | None = None,
+        fragment: str | None = None,
+        expected_headers: Sequence[str] | None = None,
+        table_css_class: str = "wikitable",
+        strip_lang_suffix: bool = True,
+        strip_refs: bool = True,
+        normalize_dashes: bool = True,
     ) -> None:
         self.section_id = section_id
         self.fragment = fragment
@@ -89,7 +88,10 @@ class HtmlTableParser:
     def _find_table(self, soup: BeautifulSoup) -> Tag:
         section_id = self.section_id or self._normalize_fragment(self.fragment)
         candidate_tables = find_section_elements(
-            soup, section_id, ["table"], class_=self.table_css_class,
+            soup,
+            section_id,
+            ["table"],
+            class_=self.table_css_class,
         )
 
         for table in candidate_tables:
@@ -112,7 +114,7 @@ class HtmlTableParser:
         return all(h in header_set for h in expected)
 
     @staticmethod
-    def _normalize_fragment(fragment: Optional[str]) -> Optional[str]:
+    def _normalize_fragment(fragment: str | None) -> str | None:
         if not fragment:
             return None
         normalized = fragment.lstrip("#").strip()
@@ -120,9 +122,9 @@ class HtmlTableParser:
 
     @staticmethod
     def _is_footer_row(
-            cells: Sequence[Tag],
-            cleaned_cells: Sequence[str],
-            headers: Sequence[str],
+        cells: Sequence[Tag],
+        cleaned_cells: Sequence[str],
+        headers: Sequence[str],
     ) -> bool:
         if not cleaned_cells:
             return False
@@ -140,16 +142,19 @@ class HtmlTableParser:
 
     @staticmethod
     def _expand_row_cells(
-            cells: Sequence[Tag],
-            headers: Sequence[str],
-            pending_rowspans: dict[int, dict[str, object]],
+        cells: Sequence[Tag],
+        headers: Sequence[str],
+        pending_rowspans: dict[int, dict[str, object]],
     ) -> list[Tag]:
         expanded: list[Tag] = []
         col_index = 0
 
         for cell in cells:
             col_index = HtmlTableParser._consume_pending(
-                expanded, col_index, headers, pending_rowspans,
+                expanded,
+                col_index,
+                headers,
+                pending_rowspans,
             )
             if col_index >= len(headers):
                 break
@@ -182,10 +187,10 @@ class HtmlTableParser:
 
     @staticmethod
     def _consume_pending(
-            expanded: list[Tag],
-            col_index: int,
-            headers: Sequence[str],
-            pending_rowspans: dict[int, dict[str, object]],
+        expanded: list[Tag],
+        col_index: int,
+        headers: Sequence[str],
+        pending_rowspans: dict[int, dict[str, object]],
     ) -> int:
         """Konsumuje oczekujące rowspany dla kolumny. Zwraca zaktualizowany col_index."""
         while col_index < len(headers) and col_index in pending_rowspans:
@@ -248,7 +253,7 @@ class HtmlTableParser:
         combined: list[str] = []
         combined_cells: list[Tag] = []
         second_index = 0
-        for cell, header in zip(first_cells, first_headers):
+        for cell, header in zip(first_cells, first_headers, strict=False):
             try:
                 colspan_value = int(cell.get("colspan") or 1)
             except ValueError:

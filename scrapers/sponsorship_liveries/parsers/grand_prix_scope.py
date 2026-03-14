@@ -2,9 +2,7 @@ import re
 from typing import Any
 
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.sponsorship_liveries.parsers.record_text import (
-    SponsorshipRecordText,
-)
+from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 
 
 class GrandPrixScopeParser:
@@ -88,7 +86,7 @@ class GrandPrixScopeParser:
             return [f"{part.strip()} Grand Prix" for part in parts if part.strip()]
         matches = re.findall(r"[^,;]+?Grand Prix", text, flags=re.IGNORECASE)
         return [clean_wiki_text(match) for match in matches if match.strip()] or [
-            clean_wiki_text(text)
+            clean_wiki_text(text),
         ]
 
     @staticmethod

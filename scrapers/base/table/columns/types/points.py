@@ -16,7 +16,9 @@ class PointsColumn(BaseColumn):
             main_text = match.group(1).strip()
             total_text = match.group(2).strip()
             return {
-                "championship_points": ResultsParsingHelpers.parse_points_value(main_text),
+                "championship_points": ResultsParsingHelpers.parse_points_value(
+                    main_text,
+                ),
                 "total_points": ResultsParsingHelpers.parse_points_value(total_text),
             }
 
