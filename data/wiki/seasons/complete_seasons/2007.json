@@ -42,17 +42,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Fernando Alonso",
-                "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
-              },
+              "text": "Fernando Alonso",
+              "url": "https://en.wikipedia.org/wiki/Fernando_Alonso",
               "no": 1
             },
             {
-              "driver": {
-                "text": "Lewis Hamilton",
-                "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
-              },
+              "text": "Lewis Hamilton",
+              "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
               "no": 2
             }
           ]
@@ -93,17 +89,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Giancarlo Fisichella",
-                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-              },
+              "text": "Giancarlo Fisichella",
+              "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella",
               "no": 3
             },
             {
-              "driver": {
-                "text": "Heikki Kovalainen",
-                "url": "https://en.wikipedia.org/wiki/Heikki_Kovalainen"
-              },
+              "text": "Heikki Kovalainen",
+              "url": "https://en.wikipedia.org/wiki/Heikki_Kovalainen",
               "no": 4
             }
           ]
@@ -144,17 +136,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Felipe Massa",
-                "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
-              },
+              "text": "Felipe Massa",
+              "url": "https://en.wikipedia.org/wiki/Felipe_Massa",
               "no": 5
             },
             {
-              "driver": {
-                "text": "Kimi Räikkönen",
-                "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
-              },
+              "text": "Kimi Räikkönen",
+              "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen",
               "no": 6
             }
           ]
@@ -190,17 +178,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Jenson Button",
-                "url": "https://en.wikipedia.org/wiki/Jenson_Button"
-              },
+              "text": "Jenson Button",
+              "url": "https://en.wikipedia.org/wiki/Jenson_Button",
               "no": 7
             },
             {
-              "driver": {
-                "text": "Rubens Barrichello",
-                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-              },
+              "text": "Rubens Barrichello",
+              "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello",
               "no": 8
             }
           ]
@@ -236,17 +220,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Nick Heidfeld",
-                "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
-              },
+              "text": "Nick Heidfeld",
+              "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld",
               "no": 9
             },
             {
-              "driver": {
-                "text": "Robert Kubica",
-                "url": "https://en.wikipedia.org/wiki/Robert_Kubica"
-              },
+              "text": "Robert Kubica",
+              "url": "https://en.wikipedia.org/wiki/Robert_Kubica",
               "no": 10,
               "rounds": [
                 1,
@@ -268,10 +248,8 @@
               ]
             },
             {
-              "driver": {
-                "text": "Sebastian Vettel",
-                "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
-              },
+              "text": "Sebastian Vettel",
+              "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel",
               "no": 10,
               "rounds": [
                 7
@@ -315,17 +293,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Ralf Schumacher",
-                "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-              },
+              "text": "Ralf Schumacher",
+              "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher",
               "no": 11
             },
             {
-              "driver": {
-                "text": "Jarno Trulli",
-                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-              },
+              "text": "Jarno Trulli",
+              "url": "https://en.wikipedia.org/wiki/Jarno_Trulli",
               "no": 12
             }
           ]
@@ -361,17 +335,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "David Coulthard",
-                "url": "https://en.wikipedia.org/wiki/David_Coulthard"
-              },
+              "text": "David Coulthard",
+              "url": "https://en.wikipedia.org/wiki/David_Coulthard",
               "no": 14
             },
             {
-              "driver": {
-                "text": "Mark Webber",
-                "url": "https://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)"
-              },
+              "text": "Mark Webber",
+              "url": "https://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)",
               "no": 15
             }
           ]
@@ -412,17 +382,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Nico Rosberg",
-                "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
-              },
+              "text": "Nico Rosberg",
+              "url": "https://en.wikipedia.org/wiki/Nico_Rosberg",
               "no": 16
             },
             {
-              "driver": {
-                "text": "Alexander Wurz",
-                "url": "https://en.wikipedia.org/wiki/Alexander_Wurz"
-              },
+              "text": "Alexander Wurz",
+              "url": "https://en.wikipedia.org/wiki/Alexander_Wurz",
               "no": 17,
               "rounds": [
                 1,
@@ -444,10 +410,8 @@
               ]
             },
             {
-              "driver": {
-                "text": "Kazuki Nakajima",
-                "url": "https://en.wikipedia.org/wiki/Kazuki_Nakajima"
-              },
+              "text": "Kazuki Nakajima",
+              "url": "https://en.wikipedia.org/wiki/Kazuki_Nakajima",
               "no": 17,
               "rounds": [
                 17
@@ -486,17 +450,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Vitantonio Liuzzi",
-                "url": "https://en.wikipedia.org/wiki/Vitantonio_Liuzzi"
-              },
+              "text": "Vitantonio Liuzzi",
+              "url": "https://en.wikipedia.org/wiki/Vitantonio_Liuzzi",
               "no": 18
             },
             {
-              "driver": {
-                "text": "Scott Speed",
-                "url": "https://en.wikipedia.org/wiki/Scott_Speed"
-              },
+              "text": "Scott Speed",
+              "url": "https://en.wikipedia.org/wiki/Scott_Speed",
               "no": 19,
               "rounds": [
                 1,
@@ -512,10 +472,8 @@
               ]
             },
             {
-              "driver": {
-                "text": "Sebastian Vettel",
-                "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
-              },
+              "text": "Sebastian Vettel",
+              "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel",
               "no": 19,
               "rounds": [
                 11,
@@ -573,17 +531,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Adrian Sutil",
-                "url": "https://en.wikipedia.org/wiki/Adrian_Sutil"
-              },
+              "text": "Adrian Sutil",
+              "url": "https://en.wikipedia.org/wiki/Adrian_Sutil",
               "no": 20
             },
             {
-              "driver": {
-                "text": "Christijan Albers",
-                "url": "https://en.wikipedia.org/wiki/Christijan_Albers"
-              },
+              "text": "Christijan Albers",
+              "url": "https://en.wikipedia.org/wiki/Christijan_Albers",
               "no": 21,
               "rounds": [
                 1,
@@ -598,20 +552,16 @@
               ]
             },
             {
-              "driver": {
-                "text": "Markus Winkelhock",
-                "url": "https://en.wikipedia.org/wiki/Markus_Winkelhock"
-              },
+              "text": "Markus Winkelhock",
+              "url": "https://en.wikipedia.org/wiki/Markus_Winkelhock",
               "no": 21,
               "rounds": [
                 10
               ]
             },
             {
-              "driver": {
-                "text": "Sakon Yamamoto",
-                "url": "https://en.wikipedia.org/wiki/Sakon_Yamamoto"
-              },
+              "text": "Sakon Yamamoto",
+              "url": "https://en.wikipedia.org/wiki/Sakon_Yamamoto",
               "no": 21,
               "rounds": [
                 11,
@@ -656,17 +606,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Takuma Sato",
-                "url": "https://en.wikipedia.org/wiki/Takuma_Sato"
-              },
+              "text": "Takuma Sato",
+              "url": "https://en.wikipedia.org/wiki/Takuma_Sato",
               "no": 22
             },
             {
-              "driver": {
-                "text": "Anthony Davidson",
-                "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
-              },
+              "text": "Anthony Davidson",
+              "url": "https://en.wikipedia.org/wiki/Anthony_Davidson",
               "no": 23
             }
           ]
@@ -9425,11 +9371,11 @@
             "results": [
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               },
               {
                 "position": 3,
-                "background": "Third place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9441,11 +9387,11 @@
             "results": [
               {
                 "position": 1,
-                "background": "Winner"
+                "background": "Other classified position"
               },
               {
                 "position": 2,
-                "background": "Second place",
+                "background": "Other classified position",
                 "fastest_lap": true
               }
             ]
@@ -9458,11 +9404,11 @@
             "results": [
               {
                 "position": 5,
-                "background": "Other points position"
+                "background": "Other classified position"
               },
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9474,11 +9420,11 @@
             "results": [
               {
                 "position": 3,
-                "background": "Third place"
+                "background": "Other classified position"
               },
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9490,13 +9436,13 @@
             "results": [
               {
                 "position": 1,
-                "background": "Winner",
+                "background": "Other classified position",
                 "pole_position": true,
                 "fastest_lap": true
               },
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9508,12 +9454,12 @@
             "results": [
               {
                 "position": 7,
-                "background": "Other points position",
+                "background": "Other classified position",
                 "fastest_lap": true
               },
               {
                 "position": 1,
-                "background": "Winner",
+                "background": "Other classified position",
                 "pole_position": true
               }
             ]
@@ -9526,11 +9472,11 @@
             "results": [
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               },
               {
                 "position": 1,
-                "background": "Winner",
+                "background": "Other classified position",
                 "pole_position": true
               }
             ]
@@ -9543,11 +9489,11 @@
             "results": [
               {
                 "position": 7,
-                "background": "Other points position"
+                "background": "Other classified position"
               },
               {
                 "position": 3,
-                "background": "Third place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9559,11 +9505,11 @@
             "results": [
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               },
               {
                 "position": 3,
-                "background": "Third place",
+                "background": "Other classified position",
                 "pole_position": true
               }
             ]
@@ -9576,7 +9522,7 @@
             "results": [
               {
                 "position": 1,
-                "background": "Winner"
+                "background": "Other classified position"
               },
               {
                 "position": 9,
@@ -9609,11 +9555,11 @@
             "results": [
               {
                 "position": 3,
-                "background": "Third place"
+                "background": "Other classified position"
               },
               {
                 "position": 5,
-                "background": "Other points position"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9625,13 +9571,13 @@
             "results": [
               {
                 "position": 1,
-                "background": "Winner",
+                "background": "Other classified position",
                 "pole_position": true,
                 "fastest_lap": true
               },
               {
                 "position": 2,
-                "background": "Second place"
+                "background": "Other classified position"
               }
             ]
           },
@@ -9702,10 +9648,7 @@
               }
             ]
           },
-          "points": {
-            "championship_points": 0.0,
-            "total_points": 166.0
-          }
+          "points": 0.0
         }
       ],
       "jim_clark_trophy": null,
