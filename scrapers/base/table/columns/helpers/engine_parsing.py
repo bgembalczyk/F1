@@ -1,6 +1,7 @@
 """Engine-specific parsing helpers.
 
-This module contains helper functions for parsing engine-related data from Wikipedia tables.
+This module contains helper functions for parsing engine-related data
+from Wikipedia tables.
 Extracted from scrapers/base/table/columns/helpers.py to follow SRP.
 
 Follows SOLID principles:
@@ -38,11 +39,14 @@ _TYPE_WITH_MODIFIER_RE = re.compile(r"^([A-Za-z]\d+)([ts])$", re.IGNORECASE)
 # (e.g. "Climax FPF 2.0 L4" → "L4", "620 3.0 V8" → "V8").
 _AFTER_DISPLACEMENT_TYPE_RE = re.compile(r"\b\d+\.?\d*\s+([A-Za-z]\d+)\s*$")
 
-# Engine type code appearing anywhere in plain text (e.g. "V12", "V8", "L4" after displacement).
-# Restricted to known layout letters and 1–2 digit cylinder counts to avoid false positives.
+# Engine type code appearing anywhere in plain text
+# (e.g. "V12", "V8", "L4" after displacement).
+# Restricted to known layout letters and 1-2 digit cylinder counts
+# to avoid false positives.
 _PLAIN_TEXT_TYPE_RE = re.compile(r"\b([VLFHR]\d{1,2}[ts]?)\b")
 
-# Mapping from verbose/human-readable engine type names (as they appear in Wikipedia link text)
+# Mapping from verbose/human-readable engine type names
+# (as they appear in Wikipedia link text)
 # to canonical type codes.
 _VERBOSE_TYPE_MAP: dict[str, str] = {
     "straight-4": "L4",
@@ -80,8 +84,9 @@ _FUEL_TYPE_URLS: dict[str, str] = {
     "diesel fuel": "diesel",
 }
 
-# URL fragments that indicate the link describes only a modifier (fuel type or induction),
-# not an engine model.  When a segment contains only such a link it should be treated as
+# URL fragments that indicate the link describes only a modifier
+# (fuel type or induction), not an engine model.
+# When a segment contains only such a link it should be treated as
 # a modifier to the preceding engine rather than a new engine entry.
 _MODIFIER_ONLY_URLS: frozenset[str] = frozenset(
     {
@@ -96,6 +101,7 @@ _MODIFIER_ONLY_URLS: frozenset[str] = frozenset(
 
 # Compiled pattern for detecting a 3-digit CSS hex colour (after lower-casing).
 _CSS_3DIGIT_HEX_RE = re.compile(r"^#[0-9a-f]{3}$")
+_CC_TO_L_THRESHOLD = 100
 
 
 def _expand_hex_shorthand(color: str) -> str:
@@ -195,7 +201,7 @@ class EngineParsingHelpers:
     @staticmethod
     def parse_segment(
         segment: Tag,
-        link_lookup: dict[str, list[LinkRecord]],
+        _link_lookup: dict[str, list[LinkRecord]],
         base_url: str,
     ) -> dict[str, object]:
         """
@@ -246,8 +252,8 @@ class EngineParsingHelpers:
             EngineParsingHelpers._fallback_type_from_text(
                 text,
                 type_str,
-                turbocharged,
-                supercharged,
+                turbocharged=turbocharged,
+                supercharged=supercharged,
             )
         )
 
@@ -277,15 +283,40 @@ class EngineParsingHelpers:
             type_str,
             layout,
             cylinders,
-            supercharged,
-            turbocharged,
-            gas_turbine,
-            fuel_type,
+            supercharged=supercharged,
+            turbocharged=turbocharged,
+            gas_turbine=gas_turbine,
+            fuel_type=fuel_type,
         )
 
     # ------------------------------------------------------------------
     # private helpers for parse_segment
     # ------------------------------------------------------------------
+
+    @staticmethod
+    def _extract_modifier_flags(
+        links: list[LinkRecord],
+    ) -> tuple[str | None, bool, bool, bool]:
+        """Extract fuel/induction modifier flags from links."""
+        fuel_type: str | None = None
+        supercharged = False
+        turbocharged = False
+        gas_turbine = False
+
+        for link in links:
+            url = (link.get("url") or "").lower()
+            for url_key, ftype in _FUEL_TYPE_URLS.items():
+                if url_key in url:
+                    fuel_type = ftype
+            supercharged = (
+                supercharged or "supercharger" in url or "supercharged" in url
+            )
+            turbocharged = (
+                turbocharged or "turbocharger" in url or "turbocharging" in url
+            )
+            gas_turbine = gas_turbine or "gas_turbine" in url
+
+        return fuel_type, supercharged, turbocharged, gas_turbine
 
     @staticmethod
     def _try_modifier_only_segment(
@@ -305,21 +336,9 @@ class EngineParsingHelpers:
         ):
             return None
 
-        fuel_type: str | None = None
-        supercharged = False
-        turbocharged = False
-        gas_turbine = False
-        for link in links:
-            url = (link.get("url") or "").lower()
-            for url_key, ftype in _FUEL_TYPE_URLS.items():
-                if url_key in url:
-                    fuel_type = ftype
-            if "supercharger" in url or "supercharged" in url:
-                supercharged = True
-            if "turbocharger" in url or "turbocharging" in url:
-                turbocharged = True
-            if "gas_turbine" in url:
-                gas_turbine = True
+        fuel_type, supercharged, turbocharged, gas_turbine = (
+            EngineParsingHelpers._extract_modifier_flags(links)
+        )
 
         result: dict[str, object] = {}
         if fuel_type is not None:
@@ -356,6 +375,79 @@ class EngineParsingHelpers:
         return type_str, first_link, first_link_text
 
     @staticmethod
+    def _update_type_from_link_text(
+        link_text: str,
+        type_str: str | None,
+        special_tokens: set[str],
+    ) -> str | None:
+        """Update type string from link text if no type has been resolved yet."""
+        if type_str is not None:
+            return type_str
+
+        extracted_type = EngineParsingHelpers._extract_type_from_link(
+            link_text,
+            special_tokens,
+        )
+        if extracted_type is not None:
+            return extracted_type
+
+        m_type = _AFTER_DISPLACEMENT_TYPE_RE.search(link_text)
+        if m_type:
+            return m_type.group(1)
+        return None
+
+    @staticmethod
+    def _strip_type_modifier(
+        type_str: str | None,
+        *,
+        supercharged: bool,
+        turbocharged: bool,
+    ) -> tuple[str | None, bool, bool]:
+        """Strip trailing type modifiers (e.g. L4t -> L4) and set flags."""
+        if type_str is None:
+            return None, supercharged, turbocharged
+
+        m_mod = _TYPE_WITH_MODIFIER_RE.match(type_str)
+        if not m_mod:
+            return type_str, supercharged, turbocharged
+
+        modifier = m_mod.group(2).lower()
+        if modifier == "t":
+            turbocharged = True
+        elif modifier == "s":
+            supercharged = True
+        return m_mod.group(1), supercharged, turbocharged
+
+    @staticmethod
+    def _update_modifiers_from_url(
+        url: str,
+        link_text: str,
+        special_tokens: set[str],
+        *,
+        supercharged: bool,
+        turbocharged: bool,
+        gas_turbine: bool,
+        fuel_type: str | None,
+    ) -> tuple[bool, bool, bool, str | None]:
+        """Update modifier flags based on URL fragments."""
+        if "supercharger" in url:
+            supercharged = True
+            special_tokens.add(link_text)
+        if "turbocharger" in url or "turbo" in url:
+            turbocharged = True
+            special_tokens.add(link_text)
+        if "gas_turbine" in url:
+            gas_turbine = True
+            special_tokens.add(link_text)
+        if fuel_type is None:
+            for url_key, ftype in _FUEL_TYPE_URLS.items():
+                if url_key in url:
+                    fuel_type = ftype
+                    special_tokens.add(link_text)
+                    break
+        return supercharged, turbocharged, gas_turbine, fuel_type
+
+    @staticmethod
     def _process_secondary_links(
         links: list[LinkRecord],
         type_str: str | None,
@@ -374,41 +466,29 @@ class EngineParsingHelpers:
             link_text = link.get("text") or ""
             url = (link.get("url") or "").lower()
 
-            if type_str is None:
-                type_str = EngineParsingHelpers._extract_type_from_link(
+            type_str = EngineParsingHelpers._update_type_from_link_text(
+                link_text,
+                type_str,
+                special_tokens,
+            )
+            type_str, supercharged, turbocharged = (
+                EngineParsingHelpers._strip_type_modifier(
+                    type_str,
+                    supercharged=supercharged,
+                    turbocharged=turbocharged,
+                )
+            )
+            supercharged, turbocharged, gas_turbine, fuel_type = (
+                EngineParsingHelpers._update_modifiers_from_url(
+                    url,
                     link_text,
                     special_tokens,
+                    supercharged=supercharged,
+                    turbocharged=turbocharged,
+                    gas_turbine=gas_turbine,
+                    fuel_type=fuel_type,
                 )
-                if type_str is None:
-                    m = _AFTER_DISPLACEMENT_TYPE_RE.search(link_text)
-                    if m:
-                        type_str = m.group(1)
-
-            if type_str is not None:
-                m_mod = _TYPE_WITH_MODIFIER_RE.match(type_str)
-                if m_mod:
-                    modifier = m_mod.group(2).lower()
-                    if modifier == "t":
-                        turbocharged = True
-                    elif modifier == "s":
-                        supercharged = True
-                    type_str = m_mod.group(1)
-
-            if "supercharger" in url:
-                supercharged = True
-                special_tokens.add(link_text)
-            if "turbocharger" in url or "turbo" in url:
-                turbocharged = True
-                special_tokens.add(link_text)
-            if "gas_turbine" in url:
-                gas_turbine = True
-                special_tokens.add(link_text)
-            if fuel_type is None:
-                for url_key, ftype in _FUEL_TYPE_URLS.items():
-                    if url_key in url:
-                        fuel_type = ftype
-                        special_tokens.add(link_text)
-                        break
+            )
 
         return type_str, supercharged, turbocharged, gas_turbine, fuel_type
 
@@ -443,6 +523,7 @@ class EngineParsingHelpers:
     def _fallback_type_from_text(
         text: str,
         type_str: str | None,
+        *,
         turbocharged: bool,
         supercharged: bool,
     ) -> tuple[str | None, bool, bool]:
@@ -476,6 +557,7 @@ class EngineParsingHelpers:
         type_str: str | None,
         layout: str | None,
         cylinders: int | None,
+        *,
         supercharged: bool,
         turbocharged: bool,
         gas_turbine: bool,
@@ -519,12 +601,13 @@ class EngineParsingHelpers:
         """
         if not text:
             return None
-        # First try: number followed by litre unit or start of type indicator (e.g. "1.5 L8")
+        # First try: number followed by litre unit or start of type indicator
+        # (e.g. "1.5 L8").
         match = re.search(r"(\d+\.?\d*)\s*(?:L|l|litre|litres|cc|cm³)", text)
         if match:
             value = parse_float_from_text(match.group(1))
             if "cc" in text.lower() or "cm" in text.lower():
-                if value and value > 100:
+                if value and value > _CC_TO_L_THRESHOLD:
                     value = value / 1000
             return value
         # Fallback: bare decimal number (e.g. "3.0 V8")
@@ -532,6 +615,47 @@ class EngineParsingHelpers:
         if match:
             return parse_float_from_text(match.group(1))
         return None
+
+    @staticmethod
+    def _trim_text_before_displacement(text: str) -> str:
+        """Return text prefix that appears before displacement tokens."""
+        disp_match = _DISPLACEMENT_RE.search(text)
+        if not disp_match:
+            return text
+        return text[: disp_match.start()].strip() or text
+
+    @staticmethod
+    def _strip_special_suffix_tokens(
+        suffix: str,
+        special_tokens: set[str] | None,
+    ) -> str:
+        """Strip suffix words after the first special token."""
+        if not (special_tokens and suffix):
+            return suffix
+
+        lower_tokens = {token.lower() for token in special_tokens}
+        clean_words: list[str] = []
+        for word in suffix.split():
+            if word.lower() in lower_tokens:
+                break
+            clean_words.append(word)
+        return " ".join(clean_words).strip()
+
+    @staticmethod
+    def _extract_model_suffix(
+        after_link: str,
+        special_tokens: set[str] | None,
+    ) -> str:
+        """Extract model suffix from text following first link text."""
+        disp_match = _DISPLACEMENT_RE.search(after_link)
+        if disp_match:
+            return after_link[: disp_match.start()].strip()
+
+        raw_suffix = after_link.strip()
+        return EngineParsingHelpers._strip_special_suffix_tokens(
+            raw_suffix,
+            special_tokens,
+        )
 
     @staticmethod
     def extract_model_text(
@@ -545,26 +669,29 @@ class EngineParsingHelpers:
         model number/suffix that appears before the displacement value.
 
         For example:
-        - text="Alfa Romeo 158 1.5 L8 s", first_link_text="Alfa Romeo" -> "Alfa Romeo 158"
-        - text="Ford Cosworth DFV 3.0 V8", first_link_text="Ford Cosworth DFV" -> "Ford Cosworth DFV"
-        - text="Climax FPF 2.0 L4", first_link_text="Climax FPF 2.0 L4" -> "Climax FPF"
+        - text="Alfa Romeo 158 1.5 L8 s", first_link_text="Alfa Romeo"
+          -> "Alfa Romeo 158"
+        - text="Ford Cosworth DFV 3.0 V8", first_link_text="Ford Cosworth DFV"
+          -> "Ford Cosworth DFV"
+        - text="Climax FPF 2.0 L4", first_link_text="Climax FPF 2.0 L4"
+          -> "Climax FPF"
 
         Args:
             text: Full cleaned text of the engine segment
             first_link_text: Text of the first (manufacturer) link
-            displacement_l: Extracted displacement value (used to locate suffix boundary)
-            special_tokens: Link texts with special meaning (type codes, "s", "tbn", etc.)
+            displacement_l: Extracted displacement value
+                (used to locate suffix boundary)
+            special_tokens: Link texts with special meaning
+                (type codes, "s", "tbn", etc.)
                 that should not appear in the model name suffix.
 
         Returns:
             Combined model text string
         """
         if not first_link_text:
-            if displacement_l is not None and text:
-                match = _DISPLACEMENT_RE.search(text)
-                if match:
-                    return text[: match.start()].strip() or text
-            return text
+            if displacement_l is None or not text:
+                return text
+            return EngineParsingHelpers._trim_text_before_displacement(text)
 
         pos = text.find(first_link_text)
         if pos < 0:
@@ -572,42 +699,23 @@ class EngineParsingHelpers:
 
         after_link = text[pos + len(first_link_text) :]
         if not after_link.strip():
-            # The entire segment text is (or is contained within) the first link text.
-            # Strip any trailing displacement and engine-type tokens that were included
-            # in the link text (e.g. "Climax FPF 2.0 L4" → "Climax FPF").
-            disp_match = _DISPLACEMENT_RE.search(first_link_text)
-            if disp_match:
-                return first_link_text[: disp_match.start()].strip() or first_link_text
+            return EngineParsingHelpers._trim_text_before_displacement(first_link_text)
+
+        model_suffix = EngineParsingHelpers._extract_model_suffix(
+            after_link,
+            special_tokens,
+        )
+        if not model_suffix:
             return first_link_text
-
-        # Find where displacement begins in the text after the first link
-        disp_match = _DISPLACEMENT_RE.search(after_link)
-        if disp_match:
-            model_suffix = after_link[: disp_match.start()].strip()
-        else:
-            model_suffix = after_link.strip()
-            # Strip trailing tokens that belong to the engine specification
-            # (e.g. "tbn" for gas turbine) rather than the model name.
-            if special_tokens and model_suffix:
-                lower_tokens = {t.lower() for t in special_tokens}
-                words = model_suffix.split()
-                clean_words = []
-                for word in words:
-                    if word.lower() in lower_tokens:
-                        break
-                    clean_words.append(word)
-                model_suffix = " ".join(clean_words).strip()
-
-        if model_suffix:
-            return first_link_text + " " + model_suffix
-        return first_link_text
+        return f"{first_link_text} {model_suffix}"
 
     @staticmethod
     def parse_layout_and_cylinders(
         type_str: str | None,
     ) -> tuple[str | None, int | None]:
         """
-        Parse engine layout letter and cylinder count from a type string like "V8" or "L6".
+        Parse engine layout letter and cylinder count from a type string
+        like "V8" or "L6".
 
         Args:
             type_str: Engine type string (e.g., "V8", "L8", "F4")
