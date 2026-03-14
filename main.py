@@ -24,6 +24,7 @@ from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engines.engine_regulation import EngineRegulationScraper
 from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
+from scrapers.engines.helpers.export import export_complete_engine_manufacturers
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
@@ -194,6 +195,13 @@ def run_complete_scrapers() -> None:
         include_urls=True,
     )
     print("[complete] finished CompleteSeasonScraper")
+
+    print("[complete] running  F1CompleteEngineManufacturerScraper")
+    export_complete_engine_manufacturers(
+        output_dir=BASE_WIKI_DIR / "engines/complete_engine_manufacturers",
+        include_urls=True,
+    )
+    print("[complete] finished F1CompleteEngineManufacturerScraper")
 
 
 def main() -> None:
