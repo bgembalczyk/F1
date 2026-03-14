@@ -8,7 +8,7 @@ from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
 
 
-@pytest.fixture()
+@pytest.fixture
 def parser():
     """Create a CancelledRoundsParser instance for testing."""
     options = ScraperOptions()
@@ -23,7 +23,7 @@ def parser():
 def test_cancelled_rounds_returns_second_table_when_two_tables_in_section(
     parser,
 ) -> None:
-    """When there are 2 tables in the section, cancelled_rounds should be the second one."""
+    """When section has two tables, cancelled_rounds should be second."""
     html = """
     <html>
       <body>

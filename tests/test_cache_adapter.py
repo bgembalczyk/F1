@@ -23,7 +23,7 @@ class _StubHttpClient:
     def __init__(self) -> None:
         self.calls: list[str] = []
 
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+    def get_text(self, url: str, *, _timeout: int | None = None) -> str:
         self.calls.append(url)
         return f"html-{url}"
 
