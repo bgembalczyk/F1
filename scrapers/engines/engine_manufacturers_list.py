@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from models.records.factories import build_engine_manufacturer_record
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
@@ -44,7 +45,8 @@ class EngineManufacturersListScraper(F1TableScraper):
             "Wins",
             "Points",
         ],
-        record_factory=EngineManufacturer,
+        record_factory=build_engine_manufacturer_record,
+        model_class=EngineManufacturer,
         schema=TableSchemaDSL(columns=schema_columns),
     )
 
