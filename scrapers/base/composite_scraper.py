@@ -3,7 +3,7 @@ from typing import Any
 
 from tqdm import tqdm
 
-from scrapers.base.ABC import F1Scraper
+from scrapers.base.abc import F1Scraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 
 
@@ -27,7 +27,7 @@ class CompositeScraper(F1Scraper):
         msg = "CompositeScraper requires build_children()."
         raise NotImplementedError(msg)
 
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
+    def get_detail_url(self, _record: dict[str, Any]) -> str | None:
         return None
 
     def assemble_record(

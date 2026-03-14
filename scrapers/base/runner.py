@@ -1,7 +1,7 @@
 from pathlib import Path
 from uuid import uuid4
 
-from scrapers.base.ABC import F1Scraper
+from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.paremeters import supports_param
 from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger

@@ -51,14 +51,14 @@ def export_result(
     result: ScrapeResult,
     path: str | Path,
     *,
-    format: str = "json",
+    output_format: str = "json",
     **kwargs,
 ) -> None:
     exporter = DataExporter()
-    if format == "json":
+    if output_format == "json":
         exporter.to_json(result, path, **kwargs)
         return
-    if format == "csv":
+    if output_format == "csv":
         exporter.to_csv(result, path, **kwargs)
         return
     msg = "Nieznany format eksportu. Dostępne: 'json', 'csv'."

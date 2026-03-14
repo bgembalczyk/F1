@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from scrapers.base.ABC import F1Scraper
+from scrapers.base.abc import F1Scraper
 from scrapers.base.run_config import RunConfig
 from scrapers.base.runner import ScraperRunner
 
