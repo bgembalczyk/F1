@@ -183,8 +183,8 @@ class SponsorshipSectionParser:
                 TextColumn(),
             ),
             column(
-                "Location-specific livery changes (2011–present)",
-                normalize_header("Location-specific livery changes (2011–present)"),
+                "Location-specific livery changes (2011-present)",
+                normalize_header("Location-specific livery changes (2011-present)"),
                 TextColumn(),
             ),
             column(
@@ -221,20 +221,22 @@ class SponsorshipSectionParser:
         return self._split_broader_records_by_scope(records)
 
     @staticmethod
-    def _split_broader_records_by_scope(
+    def _split_broader_records_by_scope(  # noqa: C901
         records: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
-        """Split season ranges that overlap with GP-scoped entries derived from season cells.
+        """Split season ranges overlapping GP-scoped entries from season cells.
 
         When a season cell contains a grand-prix parenthetical such as
-        ``2004–2005 (only Chinese GP)``, :class:`~scrapers.sponsorship_liveries.columns.seasons.SponsorshipSeasonsColumn`
+        ``2004-2005 (only Chinese GP)``,
+        :class:`~scrapers.sponsorship_liveries.columns.seasons.SponsorshipSeasonsColumn`
         marks the resulting record with ``_season_scoped_gp = True``.
 
         Any other record whose season range *overlaps* with such a scoped record
         (and does not itself carry a ``driver`` field) is split into:
 
         * the years *not* covered by the scoped record → no ``grand_prix_scope``
-        * the years *shared* with the scoped record → ``grand_prix_scope: {type: "other"}``
+        * the years *shared* with the scoped record ->
+          ``grand_prix_scope: {type: "other"}``
 
         The ``_season_scoped_gp`` marker is removed from all records before
         returning.
@@ -258,7 +260,7 @@ class SponsorshipSectionParser:
                 )
                 continue
 
-            # Driver-specific records are independent – do not split them.
+            # Driver-specific records are independent - do not split them.
             if record.get("driver"):
                 result.append(record)
                 continue
@@ -354,11 +356,11 @@ class SponsorshipSectionParser:
         headline = soup.find(id=section_id)
         if not isinstance(headline, Tag):
             msg = f"Nie znaleziono sekcji o id={section_id!r}"
-            raise RuntimeError(msg)
+            raise TypeError(msg)
         heading = headline.parent
         if not isinstance(heading, Tag):
             msg = f"Nie znaleziono nagłówka sekcji {section_id!r}"
-            raise RuntimeError(msg)
+            raise TypeError(msg)
 
         for element in self._iter_section_elements(heading, headline):
             if element.name != "table" or "wikitable" not in (
@@ -379,7 +381,7 @@ class SponsorshipSectionParser:
         msg = f"Nie znaleziono tabeli w sekcji {section_id!r}"
         raise RuntimeError(msg)
 
-    def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:  # noqa: C901
         records: list[dict[str, Any]] = []
         headings = []
         for headline in soup.select(".mw-headline"):
