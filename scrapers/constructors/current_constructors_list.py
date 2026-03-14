@@ -1,4 +1,5 @@
 from datetime import datetime
+from datetime import timezone
 from pathlib import Path
 
 from models.records.factories import build_constructor_record
@@ -19,12 +20,12 @@ from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
 
-CURRENT_YEAR = datetime.now().year
+CURRENT_YEAR = datetime.now(tz=timezone.utc).year
 
 
 class CurrentConstructorsListScraper(BaseConstructorListScraper):
     """
-    Aktualni konstruktorzy – sekcja
+    Aktualni konstruktorzy - sekcja
     'Constructors for the current season' z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
     """
