@@ -5,6 +5,8 @@ from typing import Any
 from models.value_objects.normalized_date import NormalizedDate
 from models.value_objects.time_types import DateValue
 
+SHORT_YEAR_DIGITS = 2
+
 
 def expand_range(start: int, end: int) -> Iterable[int]:
     if end < start:
@@ -29,11 +31,11 @@ def parse_year_range(text: str | None) -> dict[str, int | None]:
     if not normalized:
         return {"start": None, "end": None}
 
-    range_match = re.search(r"\b(\d{4})\s*[-–]\s*(\d{2,4})\b", normalized)
+    range_match = re.search(r"\b(\d{4})\s*[-\u2013]\s*(\d{2,4})\b", normalized)
     if range_match:
         start = int(range_match.group(1))
         end_text = range_match.group(2)
-        if len(end_text) == 2:
+        if len(end_text) == SHORT_YEAR_DIGITS:
             end = (start // 100) * 100 + int(end_text)
         else:
             end = int(end_text)
