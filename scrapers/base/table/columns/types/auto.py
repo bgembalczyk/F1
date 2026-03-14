@@ -12,11 +12,14 @@ class AutoColumn(BaseColumn):
     """
     Zachowanie:
     - domyślnie zwraca tekst z komórki (w tym tekst linków),
-    - jeśli jest dokładnie 1 link i cały tekst komórki == tekst linku (po czyszczeniu) → zwraca dict linka,
-    - jeśli 1 link + dodatkowy tekst → zwraca tekst,
-    - jeśli wiele linków i poza nimi są tylko separatory (',' / ';') → zwraca listę linków,
-    - w innym przypadku → zwraca tekst.
-    - dodatkowo ignoruje linki „językowe” (es/fr/de/it/...) przy decyzji o zwróceniu dict/listy.
+    - jeśli jest dokładnie 1 link i cały tekst komórki == tekst linku
+      (po czyszczeniu) -> zwraca dict linka,
+    - jeśli 1 link + dodatkowy tekst -> zwraca tekst,
+    - jeśli wiele linków i poza nimi są tylko separatory (',' / ';')
+      -> zwraca listę linków,
+    - w innym przypadku -> zwraca tekst.
+    - dodatkowo ignoruje linki "językowe" (es/fr/de/it/...)
+      przy decyzji o zwróceniu dict/listy.
     """
 
     def __init__(

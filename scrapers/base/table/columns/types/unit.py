@@ -32,7 +32,7 @@ class UnitColumn(BaseColumn):
         if self.unit:
             unit_pattern = re.escape(self.unit)
             match = re.search(
-                rf"([-+]?\d[\d,]*(?:\.\d+)?)\s*[-–−]?\s*{unit_pattern}\b",
+                rf"([-+]?\d[\d,]*(?:\.\d+)?)\s*[-—]?\s*{unit_pattern}\b",
                 text,
                 flags=re.IGNORECASE,
             )
@@ -42,7 +42,7 @@ class UnitColumn(BaseColumn):
             unit = self.unit
         else:
             match = re.search(
-                r"([-+]?\d[\d,]*(?:\.\d+)?)\s*[-–−]?\s*([A-Za-z][A-Za-z0-9/%]+)",
+                r"([-+]?\d[\d,]*(?:\.\d+)?)\s*[-—]?\s*([A-Za-z][A-Za-z0-9/%]+)",
                 text,
             )
             if not match:

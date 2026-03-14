@@ -39,7 +39,8 @@ class TimeColumn(BaseColumn):
         if not text:
             return NormalizedTime(text=None, seconds=None)
 
-        # czasem w polu mogą być dodatki typu "(qualifying)", bierzemy to, co przed nawiasem
+        # czasem w polu mogą być dodatki typu "(qualifying)",
+        # bierzemy to, co przed nawiasem
         base = text.split("(", 1)[0].strip()
 
         # 1) format "M:SS(.sss)"
@@ -65,5 +66,5 @@ class TimeColumn(BaseColumn):
             seconds = parse_time_seconds_from_text(m.group("sec"))
             return NormalizedTime(text=text, seconds=seconds)
 
-        # nie udało się sparsować – zwracamy tylko tekst
+        # nie udało się sparsować - zwracamy tylko tekst
         return NormalizedTime(text=text, seconds=None)

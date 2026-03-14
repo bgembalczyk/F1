@@ -7,7 +7,7 @@ from scrapers.base.table.columns.types.base import BaseColumn
 
 class TimeRangeColumn(BaseColumn):
     """
-    Parses time ranges from formats like "9:00am–1:00pm" to 24-hour format.
+    Parses time ranges from formats like "9:00am-1:00pm" to 24-hour format.
 
     Returns dict: {"start": "09:00", "end": "13:00"} or None if parsing fails.
     """
@@ -16,7 +16,7 @@ class TimeRangeColumn(BaseColumn):
     _TIME_12H_PATTERN = re.compile(r"(\d{1,2}):(\d{2})\s*(am|pm)", re.IGNORECASE)
 
     # Pattern for range separators
-    _SEPARATOR_PATTERN = re.compile(r"\s*[–—-]\s*")
+    _SEPARATOR_PATTERN = re.compile(r"\s*[-—]\s*")
 
     def parse(self, ctx: ColumnContext) -> Any:
         text = (ctx.clean_text or "").strip()
@@ -25,7 +25,8 @@ class TimeRangeColumn(BaseColumn):
 
         # Split text into start and end using separator
         parts = self._SEPARATOR_PATTERN.split(text, maxsplit=1)
-        if len(parts) != 2:
+        expected_parts = 2
+        if len(parts) != expected_parts:
             return None
 
         start_str, end_str = parts
@@ -54,9 +55,12 @@ class TimeRangeColumn(BaseColumn):
 
         # Convert to 24-hour format
         if period == "am":
-            if hours == 12:
+            noon_hour = 12
+            if hours == noon_hour:
                 hours = 0
-        elif hours != 12:
-            hours += 12
+        else:
+            noon_hour = 12
+            if hours != noon_hour:
+                hours += noon_hour
 
         return f"{hours:02d}:{minutes}"
