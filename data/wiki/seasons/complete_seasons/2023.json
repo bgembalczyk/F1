@@ -2122,19 +2122,11 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2023_Azerbaijan_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 2,
-                "footnotes": [
-                  "3"
-                ],
-                "background": "Second place"
-              }
-            ],
-            "sprint_position": 3,
-            "footnotes": [
-              "3"
-            ]
+            "results": {
+              "position": 2,
+              "background": "Second place",
+              "sprint_position": 3
+            }
           },
           "mia": {
             "round": {
@@ -2194,21 +2186,13 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2023_Austrian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "1"
-                ],
-                "background": "Winner",
-                "pole_position": true,
-                "fastest_lap": true
-              }
-            ],
-            "sprint_position": 1,
-            "footnotes": [
-              "1"
-            ]
+            "results": {
+              "position": 1,
+              "background": "Winner",
+              "pole_position": true,
+              "fastest_lap": true,
+              "sprint_position": 1
+            }
           },
           "gbr": {
             "round": {
@@ -2242,19 +2226,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/2023_Belgian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "1"
-                ],
-                "background": "Winner"
-              }
-            ],
-            "sprint_position": 1,
-            "footnotes": [
-              "1"
-            ]
+            "results": {
+              "position": 1,
+              "background": "Winner",
+              "sprint_position": 1
+            }
           },
           "ned": {
             "round": {
@@ -2312,40 +2288,24 @@
               "text": "QAT",
               "url": "https://en.wikipedia.org/wiki/2023_Qatar_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "2"
-                ],
-                "background": "Winner",
-                "pole_position": true,
-                "fastest_lap": true
-              }
-            ],
-            "sprint_position": 2,
-            "footnotes": [
-              "2"
-            ]
+            "results": {
+              "position": 1,
+              "background": "Winner",
+              "pole_position": true,
+              "fastest_lap": true,
+              "sprint_position": 2
+            }
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/2023_United_States_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "1"
-                ],
-                "background": "Winner"
-              }
-            ],
-            "sprint_position": 1,
-            "footnotes": [
-              "1"
-            ]
+            "results": {
+              "position": 1,
+              "background": "Winner",
+              "sprint_position": 1
+            }
           },
           "mxc": {
             "round": {
@@ -2364,20 +2324,12 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "1"
-                ],
-                "background": "Winner",
-                "pole_position": true
-              }
-            ],
-            "sprint_position": 1,
-            "footnotes": [
-              "1"
-            ]
+            "results": {
+              "position": 1,
+              "background": "Winner",
+              "pole_position": true,
+              "sprint_position": 1
+            }
           },
           "lvg": {
             "round": {
@@ -2456,19 +2408,11 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2023_Azerbaijan_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 1,
-                "footnotes": [
-                  "1"
-                ],
-                "background": "Winner"
-              }
-            ],
-            "sprint_position": 1,
-            "footnotes": [
-              "1"
-            ]
+            "results": {
+              "position": 1,
+              "background": "Winner",
+              "sprint_position": 1
+            }
           },
           "mia": {
             "round": {
@@ -2525,19 +2469,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2023_Austrian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "2"
-                ],
-                "background": "Third place"
-              }
-            ],
-            "sprint_position": 2,
-            "footnotes": [
-              "2"
-            ]
+            "results": {
+              "position": 3,
+              "background": "Third place",
+              "sprint_position": 2
+            }
           },
           "gbr": {
             "round": {
@@ -2640,19 +2576,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/2023_United_States_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 4,
-                "footnotes": [
-                  "5"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 5,
-            "footnotes": [
-              "5"
-            ]
+            "results": {
+              "position": 4,
+              "background": "Other points position",
+              "sprint_position": 5
+            }
           },
           "mxc": {
             "round": {
@@ -2671,19 +2599,11 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 4,
-                "footnotes": [
-                  "3"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 3,
-            "footnotes": [
-              "3"
-            ]
+            "results": {
+              "position": 4,
+              "background": "Other points position",
+              "sprint_position": 3
+            }
           },
           "lvg": {
             "round": {
@@ -2758,19 +2678,11 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2023_Azerbaijan_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "7"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 7,
-            "footnotes": [
-              "7"
-            ]
+            "results": {
+              "position": 6,
+              "background": "Other points position",
+              "sprint_position": 7
+            }
           },
           "mia": {
             "round": {
@@ -2863,20 +2775,12 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/2023_Belgian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 4,
-                "footnotes": [
-                  "7"
-                ],
-                "background": "Other points position",
-                "fastest_lap": true
-              }
-            ],
-            "sprint_position": 7,
-            "footnotes": [
-              "7"
-            ]
+            "results": {
+              "position": 4,
+              "background": "Other points position",
+              "fastest_lap": true,
+              "sprint_position": 7
+            }
           },
           "ned": {
             "round": {
@@ -2932,38 +2836,22 @@
               "text": "QAT",
               "url": "https://en.wikipedia.org/wiki/2023_Qatar_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "5"
-                ],
-                "background": "Not classified, retired"
-              }
-            ],
-            "sprint_position": 5,
-            "footnotes": [
-              "5"
-            ]
+            "results": {
+              "position": "Ret",
+              "background": "Not classified, retired",
+              "sprint_position": 5
+            }
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/2023_United_States_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "DSQ",
-                "footnotes": [
-                  "2"
-                ],
-                "background": "Disqualified"
-              }
-            ],
-            "sprint_position": 2,
-            "footnotes": [
-              "2"
-            ]
+            "results": {
+              "position": "DSQ",
+              "background": "Disqualified",
+              "sprint_position": 2
+            }
           },
           "mxc": {
             "round": {
@@ -2983,19 +2871,11 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 8,
-                "footnotes": [
-                  "7"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 7,
-            "footnotes": [
-              "7"
-            ]
+            "results": {
+              "position": 8,
+              "background": "Other points position",
+              "sprint_position": 7
+            }
           },
           "lvg": {
             "round": {
@@ -3070,19 +2950,11 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2023_Azerbaijan_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 4,
-                "footnotes": [
-                  "6"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 6,
-            "footnotes": [
-              "6"
-            ]
+            "results": {
+              "position": 4,
+              "background": "Other points position",
+              "sprint_position": 6
+            }
           },
           "mia": {
             "round": {
@@ -3137,19 +3009,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2023_Austrian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 5,
-                "footnotes": [
-                  "5"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 5,
-            "footnotes": [
-              "5"
-            ]
+            "results": {
+              "position": 5,
+              "background": "Other points position",
+              "sprint_position": 5
+            }
           },
           "gbr": {
             "round": {
@@ -3241,19 +3105,11 @@
               "text": "QAT",
               "url": "https://en.wikipedia.org/wiki/2023_Qatar_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "8"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 8,
-            "footnotes": [
-              "8"
-            ]
+            "results": {
+              "position": 6,
+              "background": "Other points position",
+              "sprint_position": 8
+            }
           },
           "usa": {
             "round": {
@@ -3364,20 +3220,12 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2023_Azerbaijan_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "2"
-                ],
-                "background": "Third place",
-                "pole_position": true
-              }
-            ],
-            "sprint_position": 2,
-            "footnotes": [
-              "2"
-            ]
+            "results": {
+              "position": 3,
+              "background": "Third place",
+              "pole_position": true,
+              "sprint_position": 2
+            }
           },
           "mia": {
             "round": {
@@ -3468,20 +3316,12 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/2023_Belgian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "5"
-                ],
-                "background": "Third place",
-                "pole_position": true
-              }
-            ],
-            "sprint_position": 5,
-            "footnotes": [
-              "5"
-            ]
+            "results": {
+              "position": 3,
+              "background": "Third place",
+              "pole_position": true,
+              "sprint_position": 5
+            }
           },
           "ned": {
             "round": {
@@ -3548,20 +3388,12 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/2023_United_States_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "DSQ",
-                "footnotes": [
-                  "3"
-                ],
-                "background": "Disqualified",
-                "pole_position": true
-              }
-            ],
-            "sprint_position": 3,
-            "footnotes": [
-              "3"
-            ]
+            "results": {
+              "position": "DSQ",
+              "background": "Disqualified",
+              "pole_position": true,
+              "sprint_position": 3
+            }
           },
           "mxc": {
             "round": {
@@ -3581,19 +3413,11 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "DNS",
-                "footnotes": [
-                  "5"
-                ],
-                "background": "Did not start"
-              }
-            ],
-            "sprint_position": 5,
-            "footnotes": [
-              "5"
-            ]
+            "results": {
+              "position": "DNS",
+              "background": "Did not start",
+              "sprint_position": 5
+            }
           },
           "lvg": {
             "round": {
@@ -3765,19 +3589,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/2023_Belgian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 7,
-                "footnotes": [
-                  "6"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 6,
-            "footnotes": [
-              "6"
-            ]
+            "results": {
+              "position": 7,
+              "background": "Other points position",
+              "sprint_position": 6
+            }
           },
           "ned": {
             "round": {
@@ -3832,38 +3648,22 @@
               "text": "QAT",
               "url": "https://en.wikipedia.org/wiki/2023_Qatar_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "3"
-                ],
-                "background": "Third place"
-              }
-            ],
-            "sprint_position": 3,
-            "footnotes": [
-              "3"
-            ]
+            "results": {
+              "position": 3,
+              "background": "Third place",
+              "sprint_position": 3
+            }
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/2023_United_States_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 2,
-                "footnotes": [
-                  "4"
-                ],
-                "background": "Second place"
-              }
-            ],
-            "sprint_position": 4,
-            "footnotes": [
-              "4"
-            ]
+            "results": {
+              "position": 2,
+              "background": "Second place",
+              "sprint_position": 4
+            }
           },
           "mxc": {
             "round": {
@@ -3882,20 +3682,12 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 2,
-                "footnotes": [
-                  "2"
-                ],
-                "background": "Second place",
-                "fastest_lap": true
-              }
-            ],
-            "sprint_position": 2,
-            "footnotes": [
-              "2"
-            ]
+            "results": {
+              "position": 2,
+              "background": "Second place",
+              "fastest_lap": true,
+              "sprint_position": 2
+            }
           },
           "lvg": {
             "round": {
@@ -3970,19 +3762,11 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2023_Azerbaijan_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 5,
-                "footnotes": [
-                  "5"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 5,
-            "footnotes": [
-              "5"
-            ]
+            "results": {
+              "position": 5,
+              "background": "Other points position",
+              "sprint_position": 5
+            }
           },
           "mia": {
             "round": {
@@ -4037,19 +3821,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2023_Austrian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "3"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 3,
-            "footnotes": [
-              "3"
-            ]
+            "results": {
+              "position": 6,
+              "background": "Other points position",
+              "sprint_position": 3
+            }
           },
           "gbr": {
             "round": {
@@ -4080,19 +3856,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/2023_Belgian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "4"
-                ],
-                "background": "Not classified, retired"
-              }
-            ],
-            "sprint_position": 4,
-            "footnotes": [
-              "4"
-            ]
+            "results": {
+              "position": "Ret",
+              "background": "Not classified, retired",
+              "sprint_position": 4
+            }
           },
           "ned": {
             "round": {
@@ -4149,38 +3917,22 @@
               "text": "QAT",
               "url": "https://en.wikipedia.org/wiki/2023_Qatar_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "DNS",
-                "footnotes": [
-                  "6"
-                ],
-                "background": "Did not start"
-              }
-            ],
-            "sprint_position": 6,
-            "footnotes": [
-              "6"
-            ]
+            "results": {
+              "position": "DNS",
+              "background": "Did not start",
+              "sprint_position": 6
+            }
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/2023_United_States_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 3,
-                "footnotes": [
-                  "6"
-                ],
-                "background": "Third place"
-              }
-            ],
-            "sprint_position": 6,
-            "footnotes": [
-              "6"
-            ]
+            "results": {
+              "position": 3,
+              "background": "Third place",
+              "sprint_position": 6
+            }
           },
           "mxc": {
             "round": {
@@ -4199,19 +3951,11 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "8"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 8,
-            "footnotes": [
-              "8"
-            ]
+            "results": {
+              "position": 6,
+              "background": "Other points position",
+              "sprint_position": 8
+            }
           },
           "lvg": {
             "round": {
@@ -4289,20 +4033,12 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2023_Azerbaijan_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 8,
-                "footnotes": [
-                  "4"
-                ],
-                "background": "Other points position",
-                "fastest_lap": true
-              }
-            ],
-            "sprint_position": 4,
-            "footnotes": [
-              "4"
-            ]
+            "results": {
+              "position": 8,
+              "background": "Other points position",
+              "fastest_lap": true,
+              "sprint_position": 4
+            }
           },
           "mia": {
             "round": {
@@ -4357,19 +4093,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2023_Austrian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 7,
-                "footnotes": [
-                  "8"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 8,
-            "footnotes": [
-              "8"
-            ]
+            "results": {
+              "position": 7,
+              "background": "Other points position",
+              "sprint_position": 8
+            }
           },
           "gbr": {
             "round": {
@@ -4400,19 +4128,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/2023_Belgian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "8"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 8,
-            "footnotes": [
-              "8"
-            ]
+            "results": {
+              "position": 6,
+              "background": "Other points position",
+              "sprint_position": 8
+            }
           },
           "ned": {
             "round": {
@@ -4470,38 +4190,22 @@
               "text": "QAT",
               "url": "https://en.wikipedia.org/wiki/2023_Qatar_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 4,
-                "footnotes": [
-                  "4"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 4,
-            "footnotes": [
-              "4"
-            ]
+            "results": {
+              "position": 4,
+              "background": "Other points position",
+              "sprint_position": 4
+            }
           },
           "usa": {
             "round": {
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/2023_United_States_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 5,
-                "footnotes": [
-                  "8"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 8,
-            "footnotes": [
-              "8"
-            ]
+            "results": {
+              "position": 5,
+              "background": "Other points position",
+              "sprint_position": 8
+            }
           },
           "mxc": {
             "round": {
@@ -4520,19 +4224,11 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "4"
-                ],
-                "background": "Not classified, retired"
-              }
-            ],
-            "sprint_position": 4,
-            "footnotes": [
-              "4"
-            ]
+            "results": {
+              "position": "Ret",
+              "background": "Not classified, retired",
+              "sprint_position": 4
+            }
           },
           "lvg": {
             "round": {
@@ -4703,19 +4399,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/2023_Belgian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "2"
-                ],
-                "background": "Not classified, retired"
-              }
-            ],
-            "sprint_position": 2,
-            "footnotes": [
-              "2"
-            ]
+            "results": {
+              "position": "Ret",
+              "background": "Not classified, retired",
+              "sprint_position": 2
+            }
           },
           "ned": {
             "round": {
@@ -4771,19 +4459,11 @@
               "text": "QAT",
               "url": "https://en.wikipedia.org/wiki/2023_Qatar_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 2,
-                "footnotes": [
-                  "1"
-                ],
-                "background": "Second place"
-              }
-            ],
-            "sprint_position": 1,
-            "footnotes": [
-              "1"
-            ]
+            "results": {
+              "position": 2,
+              "background": "Second place",
+              "sprint_position": 1
+            }
           },
           "usa": {
             "round": {
@@ -4895,19 +4575,11 @@
               "text": "AZE",
               "url": "https://en.wikipedia.org/wiki/2023_Azerbaijan_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 7,
-                "footnotes": [
-                  "8"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 8,
-            "footnotes": [
-              "8"
-            ]
+            "results": {
+              "position": 7,
+              "background": "Other points position",
+              "sprint_position": 8
+            }
           },
           "mia": {
             "round": {
@@ -4962,19 +4634,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2023_Austrian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 9,
-                "footnotes": [
-                  "4"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 4,
-            "footnotes": [
-              "4"
-            ]
+            "results": {
+              "position": 9,
+              "background": "Other points position",
+              "sprint_position": 4
+            }
           },
           "gbr": {
             "round": {
@@ -5285,19 +4949,11 @@
               "text": "BEL",
               "url": "https://en.wikipedia.org/wiki/2023_Belgian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 11,
-                "footnotes": [
-                  "3"
-                ],
-                "background": "Other classified position"
-              }
-            ],
-            "sprint_position": 3,
-            "footnotes": [
-              "3"
-            ]
+            "results": {
+              "position": 11,
+              "background": "Other classified position",
+              "sprint_position": 3
+            }
           },
           "ned": {
             "round": {
@@ -5364,19 +5020,11 @@
               "text": "USA",
               "url": "https://en.wikipedia.org/wiki/2023_United_States_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 6,
-                "footnotes": [
-                  "7"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 7,
-            "footnotes": [
-              "7"
-            ]
+            "results": {
+              "position": 6,
+              "background": "Other points position",
+              "sprint_position": 7
+            }
           },
           "mxc": {
             "round": {
@@ -5538,19 +5186,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2023_Austrian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 14,
-                "footnotes": [
-                  "7"
-                ],
-                "background": "Other classified position"
-              }
-            ],
-            "sprint_position": 7,
-            "footnotes": [
-              "7"
-            ]
+            "results": {
+              "position": 14,
+              "background": "Other classified position",
+              "sprint_position": 7
+            }
           },
           "gbr": {
             "round": {
@@ -5913,19 +5553,11 @@
               "text": "QAT",
               "url": "https://en.wikipedia.org/wiki/2023_Qatar_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 13,
-                "footnotes": [
-                  "7"
-                ],
-                "background": "Other classified position"
-              }
-            ],
-            "sprint_position": 7,
-            "footnotes": [
-              "7"
-            ]
+            "results": {
+              "position": 13,
+              "background": "Other classified position",
+              "sprint_position": 7
+            }
           },
           "usa": {
             "round": {
@@ -6229,19 +5861,11 @@
               "text": "SAP",
               "url": "https://en.wikipedia.org/wiki/2023_S%C3%A3o_Paulo_Grand_Prix"
             },
-            "results": [
-              {
-                "position": 9,
-                "footnotes": [
-                  "6"
-                ],
-                "background": "Other points position"
-              }
-            ],
-            "sprint_position": 6,
-            "footnotes": [
-              "6"
-            ]
+            "results": {
+              "position": 9,
+              "background": "Other points position",
+              "sprint_position": 6
+            }
           },
           "lvg": {
             "round": {
@@ -6651,19 +6275,11 @@
               "text": "AUT",
               "url": "https://en.wikipedia.org/wiki/2023_Austrian_Grand_Prix"
             },
-            "results": [
-              {
-                "position": "Ret",
-                "footnotes": [
-                  "6"
-                ],
-                "background": "Not classified, retired"
-              }
-            ],
-            "sprint_position": 6,
-            "footnotes": [
-              "6"
-            ]
+            "results": {
+              "position": "Ret",
+              "background": "Not classified, retired",
+              "sprint_position": 6
+            }
           },
           "gbr": {
             "round": {

@@ -738,27 +738,6 @@
               ]
             }
           ]
-        },
-        {
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Sources:",
-              "url": null
-            },
-            "engine_constructor": {
-              "text": "Sources:",
-              "url": null
-            }
-          },
-          "practice_drivers": [
-            {
-              "driver": {
-                "text": "Sources:",
-                "url": null
-              },
-              "rounds": []
-            }
-          ]
         }
       ],
       "calendar": [
