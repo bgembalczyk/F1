@@ -1,5 +1,6 @@
 """Test refactored base classes to ensure they maintain functionality."""
 
+from scrapers.base.abc import F1Scraper
 from scrapers.base.composite_scraper import CompositeScraper
 from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.circuits.complete_scraper import F1CompleteCircuitScraper
@@ -14,9 +15,12 @@ from scrapers.constructors.indianapolis_only_constructors_list import (
     IndianapolisOnlyConstructorsListScraper,
 )
 from scrapers.drivers.complete_scraper import CompleteDriverScraper
+from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerScraper
+from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
+from scrapers.engines.single_scraper import SingleEngineManufacturerScraper
 from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixScraper
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.points_scoring_systems_history import (
@@ -82,6 +86,30 @@ class TestCompleteScrapers:
     def test_driver_complete_inherits_from_composite(self):
         """Verify CompleteDriverScraper inherits from CompositeScraper."""
         assert issubclass(CompleteDriverScraper, CompositeScraper)
+
+    def test_engine_manufacturer_complete_inherits_from_composite(self):
+        """Verify F1CompleteEngineManufacturerScraper inherits from CompositeScraper."""
+        assert issubclass(F1CompleteEngineManufacturerScraper, CompositeScraper)
+
+    def test_engine_manufacturer_complete_url(self):
+        """Verify F1CompleteEngineManufacturerScraper uses correct URL."""
+        assert (
+            F1CompleteEngineManufacturerScraper.url
+            == EngineManufacturersListScraper.CONFIG.url
+        )
+
+
+class TestSingleEngineManufacturerScraper:
+    """Test SingleEngineManufacturerScraper structure."""
+
+    def test_inherits_from_f1_scraper(self):
+        """Verify SingleEngineManufacturerScraper inherits from F1Scraper."""
+        assert issubclass(SingleEngineManufacturerScraper, F1Scraper)
+
+    def test_has_fetch_by_url_method(self):
+        """Verify SingleEngineManufacturerScraper has fetch_by_url method."""
+        assert hasattr(SingleEngineManufacturerScraper, "fetch_by_url")
+        assert callable(SingleEngineManufacturerScraper.fetch_by_url)
 
 
 class TestConstructorListScrapers:
