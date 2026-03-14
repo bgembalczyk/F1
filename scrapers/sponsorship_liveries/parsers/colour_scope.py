@@ -9,7 +9,7 @@ from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordT
 class ColourScopeHandler:
     _POSSESSIVE_PAREN_RE = re.compile(r"\([^)]*'s[^)]*\)\s*$")
 
-    # Captures (base_colours_text, driver_name) from e.g. "Green and White (Pescarolo's car)"
+    # Regex for possessive colour-note suffixes with driver names.
     _POSSESSIVE_COLOUR_RE = re.compile(r"^(.*?)\s*\(([^)']*)'s[^)]*\)\s*$")
 
     @staticmethod
@@ -31,7 +31,7 @@ class ColourScopeHandler:
         return expanded
 
     @staticmethod
-    def _depth_aware_split_on_and_or(text: str) -> list[str]:
+    def _depth_aware_split_on_and_or(text: str) -> list[str]:  # noqa: C901
         """Split *text* on ' and ' / ' or ' only at parenthesis depth 0.
 
         Separators that appear inside parentheses are not treated as split
@@ -44,7 +44,8 @@ class ColourScopeHandler:
         describes the whole "and"-joined colour group, not just the final
         colour.  In that case the split is suppressed and the original text
         is returned as a single item, e.g.
-        ``"Green and White (Pescarolo's car)"`` → ``["Green and White (Pescarolo's car)"]``.
+        ``"Green and White (Pescarolo's car)"``
+        -> ``["Green and White (Pescarolo's car)"]``.
         """
         parts: list[str] = []
         current: list[str] = []
@@ -238,7 +239,11 @@ class ColourScopeHandler:
 
         Example::
 
-            ["Blue", "Green and White (Pescarolo's car)", "White and Red (Beltoise's car)"]
+            [
+                "Blue",
+                "Green and White (Pescarolo's car)",
+                "White and Red (Beltoise's car)",
+            ]
             →
             [(None, ["Blue"]),
              ("Pescarolo", ["Green", "White"]),

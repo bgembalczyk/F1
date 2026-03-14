@@ -5,12 +5,12 @@ Gdy w kolumnie ``Year`` wpis zawiera nawiasową adnotację (np.
 pyta Gemini API o to, czego ta adnotacja dotyczy, i zwraca ustrukturyzowaną
 odpowiedź JSON z następującymi kategoriami:
 
-* ``driver``            – konkretni kierowcy F1
-* ``car_model``         – modele bolidów/samochodów wyścigowych
-* ``engine_constructor`` – konstruktorzy silników
-* ``grand_prix``        – konkretne wyścigi Grand Prix lub GP
-* ``time_period``       – okresy czasowe w sezonie (np. „later races")
-* ``other``             – inne informacje (np. „never raced")
+* ``driver``            - konkretni kierowcy F1
+* ``car_model``         - modele bolidów/samochodów wyścigowych
+* ``engine_constructor`` - konstruktorzy silników
+* ``grand_prix``        - konkretne wyścigi Grand Prix lub GP
+* ``time_period``       - okresy czasowe w sezonie (np. „later races")
+* ``other``             - inne informacje (np. „never raced")
 
 Każda kategoria to lista łańcuchów (lub pusta lista, jeśli nie dotyczy).
 """
@@ -22,27 +22,36 @@ from infrastructure.gemini.client import GeminiClient
 
 logger = logging.getLogger(__name__)
 
-_PROMPT_TEMPLATE = """Analizujesz tabelę Wikipedii o historycznych malowaniach sponsorów w Formule 1.
+_PROMPT_TEMPLATE = """
+Analizujesz tabelę Wikipedii o historycznych malowaniach sponsorów w Formule 1.
 
-Określ, czego dotyczy ta adnotacja. Odpowiedz wyłącznie w formacie JSON z następującymi kluczami \
+Określ, czego dotyczy ta adnotacja.
+Odpowiedz wyłącznie w formacie JSON z następującymi kluczami
 (każdy zawiera listę elementów lub pustą listę []):
 - "driver": lista kierowców F1, których dotyczy adnotacja (imię i nazwisko)
 - "car_model": lista modeli bolidów/samochodów wyścigowych
 - "engine_constructor": lista konstruktorów/dostawców silników
-- "grand_prix": lista konkretnych wyścigów Grand Prix (pełna nazwa, np. "Monaco Grand Prix")
+- "grand_prix": lista konkretnych wyścigów Grand Prix
+  (pełna nazwa, np. "Monaco Grand Prix")
 
 Przykład odpowiedzi:
-{{"driver": [], "car_model": ["Dallara F188"], "engine_constructor": [], "grand_prix": []}}
+{{
+  "driver": [],
+  "car_model": ["Dallara F188"],
+  "engine_constructor": [],
+  "grand_prix": []
+}}
 
 Odpowiedz tylko poprawnym JSON, bez dodatkowego tekstu.
 
-Nie uzupełniaj za pomocą własnej wiedzy; odpowiedz tylko na podstawie poniższych informacji,
-jeśli danej informacji nie da się wywnioskować tylko i wyłącznie z tych danych, pozostaw odpowiednią kategorię pustą.
+Nie uzupełniaj za pomocą własnej wiedzy; odpowiedz tylko na podstawie
+poniższych informacji. Jeśli danej informacji nie da się wywnioskować
+wyłącznie z tych danych, pozostaw odpowiednią kategorię pustą.
 
 Zespół F1: {team_name}
 
-W kolumnie "Year" (rok) przy wpisie roku {year_text!r} pojawia się adnotacja w nawiasie: {paren_content!r}
-
+W kolumnie "Year" (rok) przy wpisie roku {year_text!r}
+pojawia się adnotacja w nawiasie: {paren_content!r}
 """
 
 
@@ -81,7 +90,8 @@ class ParenClassifier:
         team_name:
             Nazwa zespołu F1 (kontekst).
         year_text:
-            Tekst roku z komórki (np. "1988" lub "1988–1990").
+            Tekst roku z komórki
+            (np. "1988" lub "1988-1990").
         headers:
             Lista nagłówków kolumn tabeli (kontekst dla Gemini).
 
