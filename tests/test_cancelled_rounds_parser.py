@@ -306,3 +306,116 @@ def test_cancelled_rounds_ignores_results_table_from_next_section(parser) -> Non
 
     # Results table from Grands_Prix section must not pollute cancelled_rounds
     assert result == []
+
+
+def test_cancelled_rounds_finds_table_in_modern_wikipedia_h2_wrapper(parser) -> None:
+    """Modern Wikipedia wraps headings in <div class="mw-heading">.
+
+    When the id is placed directly on the <h2> (not on an inner span), and the
+    <h2> has no next siblings inside its wrapper div, the old find_next_siblings
+    approach returned an empty list.  The new find_all_next approach handles this
+    correctly.
+    """
+    html = """
+    <html>
+      <body>
+        <div class="mw-parser-output">
+          <div class="mw-heading mw-heading2">
+            <h2 id="Calendar">Calendar</h2>
+          </div>
+          <table class="wikitable">
+            <tr>
+              <th>Round</th>
+              <th>Grand Prix</th>
+              <th>Circuit</th>
+              <th>Date</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><a href="/wiki/Monaco_Grand_Prix">Monaco Grand Prix</a></td>
+              <td>Monte Carlo</td>
+              <td>May 1</td>
+            </tr>
+          </table>
+          <p>Due to the Le Mans disaster several races were cancelled.</p>
+          <table class="wikitable">
+            <tr>
+              <th>Grand Prix</th>
+              <th>Circuit</th>
+              <th>Original date</th>
+            </tr>
+            <tr>
+              <td><a href="/wiki/French_Grand_Prix">French Grand Prix</a></td>
+              <td>Reims-Gueux</td>
+              <td>3 July</td>
+            </tr>
+          </table>
+          <div class="mw-heading mw-heading2">
+            <h2 id="Grands_Prix">Grands Prix</h2>
+          </div>
+          <table class="wikitable">
+            <tr>
+              <th>Round</th>
+              <th>Grand Prix</th>
+              <th>Circuit</th>
+              <th>Pole position</th>
+            </tr>
+          </table>
+        </div>
+      </body>
+    </html>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    calendar_data = [
+        {
+            "round": 1,
+            "grand_prix": {
+                "text": "Monaco Grand Prix",
+                "url": "/wiki/Monaco_Grand_Prix",
+            },
+            "circuit": {"circuit": {"text": "Monte Carlo", "url": None}},
+            "race_date": "May 1",
+        },
+    ]
+
+    result = parser.parse(soup, season_year=1955, calendar_data=calendar_data)
+
+    assert len(result) == 1
+    assert result[0]["grand_prix"]["text"] == "French Grand Prix"
+
+
+def test_cancelled_rounds_finds_table_in_modern_wikipedia_h3_wrapper(parser) -> None:
+    """Modern Wikipedia with Cancelled_Grands_Prix as h3 inside div.mw-heading."""
+    html = """
+    <html>
+      <body>
+        <div class="mw-parser-output">
+          <div class="mw-heading mw-heading2">
+            <h2 id="Calendar">Calendar</h2>
+          </div>
+          <table class="wikitable">
+            <tr><th>Round</th><th>Grand Prix</th><th>Circuit</th><th>Date</th></tr>
+            <tr><td>1</td><td><a href="/wiki/Monaco">Monaco GP</a></td><td>Monte Carlo</td><td>May 1</td></tr>
+          </table>
+          <div class="mw-heading mw-heading3">
+            <h3 id="Cancelled_Grands_Prix">Cancelled rounds</h3>
+          </div>
+          <p>In the aftermath...</p>
+          <table class="wikitable">
+            <tr><th>Grand Prix</th><th>Circuit</th><th>Original date</th></tr>
+            <tr><td><a href="/wiki/French_Grand_Prix">French Grand Prix</a></td><td>Reims</td><td>3 July</td></tr>
+          </table>
+          <div class="mw-heading mw-heading2">
+            <h2 id="Grands_Prix">Grands Prix</h2>
+          </div>
+        </div>
+      </body>
+    </html>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    result = parser.parse(soup, season_year=1955, calendar_data=None)
+
+    assert len(result) == 1
+    assert result[0]["grand_prix"]["text"] == "French Grand Prix"
