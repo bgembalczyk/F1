@@ -1,2 +1,5 @@
-class RequestException(Exception):
+class RequestError(Exception):
     pass
+
+
+RequestException = RequestError
