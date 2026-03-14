@@ -3,7 +3,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.helpers.html_utils import find_section_elements
+from scrapers.base.helpers.html_utils import find_section_tables
 from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.url import UrlColumn
@@ -101,12 +101,7 @@ class CancelledRoundsParser:
         expected_headers: list[str],
     ) -> list[Tag]:
         try:
-            candidate_tables = find_section_elements(
-                soup,
-                section_id,
-                ["table"],
-                class_="wikitable",
-            )
+            candidate_tables = find_section_tables(soup, section_id)
         except RuntimeError:
             return []
 
