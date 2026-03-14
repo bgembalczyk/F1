@@ -6,6 +6,7 @@ from tqdm import tqdm
 
 from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
 from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
@@ -100,17 +101,17 @@ class CompleteConstructorsScraper(F1Scraper):
         constructor = record.get("constructor")
         if isinstance(constructor, dict):
             url = constructor.get("url")
-            if isinstance(url, str) and url:
+            if isinstance(url, str) and url and not is_wikipedia_redlink(url):
                 return url
 
         # IndianapolisOnlyConstructorsListScraper: "constructor_url" key
         url = record.get("constructor_url")
-        if isinstance(url, str) and url:
+        if isinstance(url, str) and url and not is_wikipedia_redlink(url):
             return url
 
         # PrivateerTeamsListScraper: "team_url" key
         url = record.get("team_url")
-        if isinstance(url, str) and url:
+        if isinstance(url, str) and url and not is_wikipedia_redlink(url):
             return url
 
         return None

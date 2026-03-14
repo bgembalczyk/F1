@@ -171,6 +171,32 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
             {"constructor": {"text": "NoUrl"}},
             None,
         ),
+        # Red link in constructor dict (LinkRecord style) - must be skipped
+        (
+            {
+                "constructor": {
+                    "text": "Ecurie Bleue",
+                    "url": "https://en.wikipedia.org/w/index.php?title=Ecurie_Bleue&action=edit&redlink=1",
+                },
+            },
+            None,
+        ),
+        # Red link as constructor_url - must be skipped
+        (
+            {
+                "constructor": "Ecurie Bleue",
+                "constructor_url": "https://en.wikipedia.org/w/index.php?title=Ecurie_Bleue&action=edit&redlink=1",
+            },
+            None,
+        ),
+        # Red link as team_url - must be skipped
+        (
+            {
+                "team": "Ecurie Bleue",
+                "team_url": "https://en.wikipedia.org/w/index.php?title=Ecurie_Bleue&action=edit&redlink=1",
+            },
+            None,
+        ),
     ],
 )
 def test_get_constructor_url(record: dict[str, Any], expected: str | None) -> None:
