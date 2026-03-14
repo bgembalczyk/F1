@@ -66,11 +66,6 @@ _DEFAULT_TIMEOUT = 30
 # Domyślna lista modeli używana przez from_key_file() gdy models nie zostanie podane.
 _DEFAULT_MODELS: list[ModelConfig] = [
     ModelConfig(
-        model="gemini-3.1-flash-lite-preview",
-        requests_per_minute=15,
-        requests_per_day=500,
-    ),
-    ModelConfig(
         model="gemini-3-flash-preview",
         requests_per_minute=5,
         requests_per_day=20,
@@ -79,6 +74,11 @@ _DEFAULT_MODELS: list[ModelConfig] = [
         model="gemini-2.5-flash",
         requests_per_minute=5,
         requests_per_day=20,
+    ),
+    ModelConfig(
+        model="gemini-3.1-flash-lite-preview",
+        requests_per_minute=15,
+        requests_per_day=500,
     ),
     ModelConfig(
         model="gemini-2.5-flash-lite",
