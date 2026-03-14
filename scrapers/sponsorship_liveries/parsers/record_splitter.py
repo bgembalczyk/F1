@@ -85,7 +85,7 @@ class SponsorshipRecordSplitter:
         return split_records
 
     def _record_has_possessive_colours(self, record: dict[str, Any]) -> bool:
-        """Return True when any colour field contains at least one possessive driver group."""
+        """Return True when any colour field has a possessive driver group."""
         for key in self._colour_keys:
             if ColourScopeHandler.has_possessive_colour_groups(record.get(key)):
                 return True
@@ -144,7 +144,7 @@ class SponsorshipRecordSplitter:
             result.append(new_record)
         return result
 
-    def _split_record_by_colour_scopes(
+    def _split_record_by_colour_scopes(  # noqa: C901, PLR0912
         self,
         record: dict[str, Any],
         seasons: list[Any],
@@ -235,7 +235,7 @@ class SponsorshipRecordSplitter:
         self,
         record: dict[str, Any],
     ) -> tuple[dict[str, list[Any]], dict[str, list[Any]]]:
-        """Partition sponsor lists into base (no GP scope) and scoped (with GP scope) items.
+        """Partition sponsor lists into base and GP-scoped items.
 
         Args:
             record: The full sponsorship record dict
@@ -277,7 +277,7 @@ class SponsorshipRecordSplitter:
         self,
         record: dict[str, Any],
     ) -> tuple[dict[str, list[Any]], dict[str, list[Any]]]:
-        """Partition colour lists into base (no GP scope) and scoped (with GP scope) items.
+        """Partition colour lists into base and GP-scoped items.
 
         Args:
             record: The full sponsorship record dict
@@ -317,7 +317,7 @@ class SponsorshipRecordSplitter:
         return base_colours, scoped_colours
 
     @staticmethod
-    def _build_scope_map(
+    def _build_scope_map(  # noqa: C901, PLR0912
         scoped_items: dict[str, list],
         scoped_colours: dict[str, list],
     ) -> dict[tuple, dict[str, Any]]:
@@ -334,7 +334,8 @@ class SponsorshipRecordSplitter:
 
         Args:
             scoped_items: Mapping of sponsor key to list of (scope, item) tuples
-            scoped_colours: Mapping of colour key to list of (scope, colour, replace) tuples
+            scoped_colours: Mapping of colour key to
+                list of (scope, colour, replace) tuples
 
         Returns:
             Dict mapping a stable items-key tuple to a dict with 'scope' and

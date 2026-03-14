@@ -10,6 +10,7 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 
 
@@ -89,9 +90,7 @@ class SponsorColumn(BaseColumn):
             parsed = [self._parse_part(p, links) for p in slash_group]
             if len(slash_group) > 1:
                 parsed = self._propagate_slash_group_year_params(parsed)
-            for item in parsed:
-                if item is not None:
-                    results.append(item)
+            results.extend(item for item in parsed if item is not None)
             slash_group.clear()
 
         for part, sep in parts_with_sep:
@@ -138,10 +137,6 @@ class SponsorColumn(BaseColumn):
         last = items[-1]
         trailing_scope_params = None
         if isinstance(last, dict) and last.get("params"):
-            from scrapers.sponsorship_liveries.parsers.grand_prix_scope import (
-                GrandPrixScopeParser,
-            )
-
             if GrandPrixScopeParser.parse_grand_prix_scope(last["params"]):
                 trailing_scope_params = last["params"]
 
@@ -200,7 +195,7 @@ class SponsorColumn(BaseColumn):
         return re.sub(r"^\s*and\s+", "", text, flags=re.IGNORECASE)
 
     @staticmethod
-    def _split_parts_with_sep(text: str) -> list[tuple[str, str]]:
+    def _split_parts_with_sep(text: str) -> list[tuple[str, str]]:  # noqa: C901
         """Split text into (part, separator_after) tuples.
 
         separator_after is one of ',', ';', '/' or '' for the last part.
@@ -210,7 +205,7 @@ class SponsorColumn(BaseColumn):
         starts a new token.  This handles Wikipedia entries where consecutive
         sponsors each carry their own parenthetical (e.g. year range or Grand
         Prix scope) but are not separated by a comma or semicolon:
-        ``Elf (1983–1986) Goodyear (1984–1986) Olympus (1985)``
+        ``Elf (1983-1986) Goodyear (1984-1986) Olympus (1985)``
         """
         if not text:
             return []
@@ -302,7 +297,10 @@ class SponsorColumn(BaseColumn):
         return parts
 
     @staticmethod
-    def _parse_part(part: str, links: list[dict[str, Any]]) -> Any | None:
+    def _parse_part(
+        part: str,
+        links: list[dict[str, Any]],
+    ) -> Any | None:
         base_text, params = SponsorColumn._extract_params(part)
         base_text = clean_wiki_text(base_text)
         matched_link = SponsorColumn._find_matching_link(base_text, links)
@@ -313,23 +311,33 @@ class SponsorColumn(BaseColumn):
         ]
         parsed_params = SponsorColumn._parse_params(params, link_pool)
 
+        result: Any | None
         if matched_link:
             if matched_link.get("url") is None:
                 text = matched_link.get("text") or base_text
-                if parsed_params:
-                    return {"text": text, "params": parsed_params}
-                return text
-            if parsed_params:
-                return {**matched_link, "params": parsed_params}
-            return matched_link
-
-        if not base_text:
-            base_text = clean_wiki_text(part)
-        if not base_text:
-            return None
-        if parsed_params:
-            return {"text": base_text, "params": parsed_params}
-        return base_text
+                result = (
+                    {"text": text, "params": parsed_params}
+                    if parsed_params
+                    else text
+                )
+            else:
+                result = (
+                    {**matched_link, "params": parsed_params}
+                    if parsed_params
+                    else matched_link
+                )
+        else:
+            if not base_text:
+                base_text = clean_wiki_text(part)
+            if not base_text:
+                result = None
+            else:
+                result = (
+                    {"text": base_text, "params": parsed_params}
+                    if parsed_params
+                    else base_text
+                )
+        return result
 
     @staticmethod
     def _extract_params(text: str) -> tuple[str, list[str]]:
@@ -385,9 +393,8 @@ class SponsorColumn(BaseColumn):
                     best = link
                     best_len = len(link_text)
                 continue
-            if target.startswith(link_lower) and target[len(link_lower) :].strip(
-                " -–—",
-            ):
+            remainder = target[len(link_lower) :]
+            if target.startswith(link_lower) and re.sub(r"[\s\-—]", "", remainder):
                 continue
             if target.startswith(link_lower):
                 if len(link_text) > best_len:
@@ -397,7 +404,10 @@ class SponsorColumn(BaseColumn):
 
     @staticmethod
     def _get_text_with_paragraph_breaks(cell: Tag) -> str:
-        """Extract text from a cell, treating direct <p> children as comma-separated entries."""
+        """Extract text from a cell.
+
+        Treat direct <p> children as comma-separated entries.
+        """
         parts: list[str] = []
         current: list[str] = []
         for child in cell.children:
