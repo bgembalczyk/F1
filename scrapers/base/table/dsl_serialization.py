@@ -25,16 +25,16 @@ def serialize_value(value: Any) -> Any:
 
 
 def column_ref_payload(spec: Any) -> dict[str, Any]:
-    """Return the serialisable ``{"class_path": ..., "kwargs": ...}`` payload for *spec*.
-
-    *spec* is a ``ColumnSpec`` (imported lazily to avoid circular imports).
-    """
-    from scrapers.base.table.dsl import ColumnRef
-
+    """Return a serialisable ``{"class_path": ..., "kwargs": ...}`` payload."""
     if isinstance(spec.column, BaseColumn):
-        ref = ColumnRef.from_instance(spec.column)
-        kwargs = {k: serialize_value(v) for k, v in dict(ref.kwargs).items()}
-        return {"class_path": ref.class_path, "kwargs": kwargs}
+        class_path = (
+            f"{spec.column.__class__.__module__}.{spec.column.__class__.__name__}"
+        )
+        kwargs = {
+            key: serialize_value(value)
+            for key, value in dict(getattr(spec.column, "__dict__", {})).items()
+        }
+        return {"class_path": class_path, "kwargs": kwargs}
     return {
         "class_path": spec.column.class_path,
         "kwargs": {k: serialize_value(v) for k, v in dict(spec.column.kwargs).items()},

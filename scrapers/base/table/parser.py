@@ -12,6 +12,8 @@ from scrapers.base.table.row import TableRow
 
 logger = logging.getLogger(__name__)
 
+HEADER_ROWS_WITH_SUBHEADERS = 2
+
 
 class HtmlTableParser:
     """
@@ -193,7 +195,10 @@ class HtmlTableParser:
         headers: Sequence[str],
         pending_rowspans: dict[int, dict[str, object]],
     ) -> int:
-        """Konsumuje oczekujące rowspany dla kolumny. Zwraca zaktualizowany col_index."""
+        """Konsumuje oczekujące rowspany dla kolumny.
+
+        Zwraca zaktualizowany ``col_index``.
+        """
         while col_index < len(headers) and col_index in pending_rowspans:
             pending = pending_rowspans[col_index]
             cell = pending["cell"]
@@ -210,49 +215,35 @@ class HtmlTableParser:
             col_index += 1
         return col_index
 
-    def _extract_headers(self, table: Tag) -> tuple[list[str], list[Tag], int]:
-        rows = table.find_all("tr")
-        if not rows:
-            msg = "Nie znaleziono wiersza nagłówkowego w tabeli."
-            raise RuntimeError(msg)
-
-        first_row = rows[0]
-        first_cells = first_row.find_all(["th", "td"])
-        if not first_cells:
-            msg = "Nie znaleziono wiersza nagłówkowego w tabeli."
-            raise RuntimeError(msg)
-
-        first_headers = [
+    def _clean_cells(self, cells: Sequence[Tag]) -> list[str]:
+        return [
             clean_wiki_text(
                 c.get_text(" ", strip=True),
                 strip_lang_suffix=self.strip_lang_suffix,
                 strip_refs=self.strip_refs,
                 normalize_dashes=self.normalize_dashes,
             )
-            for c in first_cells
+            for c in cells
         ]
 
-        if len(rows) < 2:
-            return first_headers, first_cells, 1
+    @staticmethod
+    def _has_multirow_header(
+        first_cells: Sequence[Tag],
+        second_cells: Sequence[Tag],
+    ) -> bool:
+        return (
+            bool(second_cells)
+            and all(cell.name == "th" for cell in second_cells)
+            and any(int(cell.get("colspan") or 1) > 1 for cell in first_cells)
+        )
 
-        second_row = rows[1]
-        second_cells = second_row.find_all(["th", "td"])
-        if not second_cells or not all(cell.name == "th" for cell in second_cells):
-            return first_headers, first_cells, 1
-
-        if not any(int(cell.get("colspan") or 1) > 1 for cell in first_cells):
-            return first_headers, first_cells, 1
-
-        second_headers = [
-            clean_wiki_text(
-                c.get_text(" ", strip=True),
-                strip_lang_suffix=self.strip_lang_suffix,
-                strip_refs=self.strip_refs,
-                normalize_dashes=self.normalize_dashes,
-            )
-            for c in second_cells
-        ]
-
+    @staticmethod
+    def _combine_header_rows(
+        first_cells: Sequence[Tag],
+        first_headers: Sequence[str],
+        second_cells: Sequence[Tag],
+        second_headers: Sequence[str],
+    ) -> tuple[list[str], list[Tag]]:
         combined: list[str] = []
         combined_cells: list[Tag] = []
         second_index = 0
@@ -280,4 +271,35 @@ class HtmlTableParser:
                     combined_cells.append(cell)
                 second_index += 1
 
-        return combined, combined_cells, 2
+        return combined, combined_cells
+
+    def _extract_headers(self, table: Tag) -> tuple[list[str], list[Tag], int]:
+        rows = table.find_all("tr")
+        if not rows:
+            msg = "Nie znaleziono wiersza nagłówkowego w tabeli."
+            raise RuntimeError(msg)
+
+        first_row = rows[0]
+        first_cells = first_row.find_all(["th", "td"])
+        if not first_cells:
+            msg = "Nie znaleziono wiersza nagłówkowego w tabeli."
+            raise RuntimeError(msg)
+
+        first_headers = self._clean_cells(first_cells)
+
+        if len(rows) < HEADER_ROWS_WITH_SUBHEADERS:
+            return first_headers, first_cells, 1
+
+        second_row = rows[1]
+        second_cells = second_row.find_all(["th", "td"])
+        if not self._has_multirow_header(first_cells, second_cells):
+            return first_headers, first_cells, 1
+
+        second_headers = self._clean_cells(second_cells)
+        combined, combined_cells = self._combine_header_rows(
+            first_cells,
+            first_headers,
+            second_cells,
+            second_headers,
+        )
+        return combined, combined_cells, HEADER_ROWS_WITH_SUBHEADERS

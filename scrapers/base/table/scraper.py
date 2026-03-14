@@ -22,11 +22,11 @@ class F1TableScraper(F1Scraper, ABC):
 
     Konfiguracja przez ScraperConfig:
 
-    - section_id       – id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
-                         jeśli None – szukamy po całej stronie.
-    - expected_headers – lista nagłówków, które MUSZĄ wystąpić w tabeli (podzbiór).
-    - column_map       – mapowanie "nagłówek z tabeli" -> "klucz w dict".
-    - columns          – mapowanie klucza/nagłówka -> BaseColumn / spec kolumny
+    - section_id       - id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
+                         jeśli None - szukamy po całej stronie.
+    - expected_headers - lista nagłówków, które MUSZĄ wystąpić w tabeli (podzbiór).
+    - column_map       - mapowanie "nagłówek z tabeli" -> "klucz w dict".
+    - columns          - mapowanie klucza/nagłówka -> BaseColumn / spec kolumny
                          (MultiColumn / FuncColumn / TextColumn / IntColumn / ...).
     """
 
@@ -72,7 +72,8 @@ class F1TableScraper(F1Scraper, ABC):
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
         """
-        Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
+        Parsuje tabelę przez HtmlTableParser
+        (wybór tabeli + mapowanie nagłówków -> komórki).
         """
         self.extractor.set_run_id(getattr(self, "_run_id", None))
         return self.extractor.extract(soup)
