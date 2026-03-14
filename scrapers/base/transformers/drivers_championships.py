@@ -14,8 +14,8 @@ class DriversChampionshipsTransformer(RecordTransformer):
 
         Wejście (po TextColumn) bywa np.:
         - "0"
-        - "2\\n2005–2006"
-        - "7\\n1994–1995, 2000–2004"
+        - "2\\n2005-2006"
+        - "7\\n1994-1995, 2000-2004"
         """
         return DriverService.parse_championships(raw)  # type: ignore[return-value]
 

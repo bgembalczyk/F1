@@ -303,7 +303,10 @@ class TablePipeline:
                 error=exc,
             )
             self.logger.exception(
-                "Failed parsing column (header=%s key=%s row_index=%s base_url=%s raw_text=%s)",
+                (
+                    "Failed parsing column (header=%s key=%s row_index=%s "
+                    "base_url=%s raw_text=%s)"
+                ),
                 header,
                 key,
                 row_index,
