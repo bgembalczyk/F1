@@ -41,7 +41,7 @@ class CircuitAdditionalInfoParser(CircuitEntityParser):
                         values.append(part)
                 info["values"] = values
             elif links:
-                # tutaj nie czyścimy agresywnie – to tylko additional_info
+                # tutaj nie czyścimy agresywnie - to tylko additional_info
                 info["links"] = links
 
             additional[key] = info

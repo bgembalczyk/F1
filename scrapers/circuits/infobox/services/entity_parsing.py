@@ -18,19 +18,41 @@ class CircuitEntityParser(CircuitTextProcessing):
         parts = [part.strip() for part in self._ENTITY_PARTS_RE.split(text)]
         return [part for part in parts if part]
 
-    def _build_entity_from_links(
+    def _links_to_entities(self, links: list[LinkRecord]) -> list[dict[str, Any]]:
+        entities: list[dict[str, Any]] = []
+        for link in links:
+            item = clean_link_record(link)
+            if item:
+                entities.append(dict(item))
+        return entities
+
+    def _parts_to_entities(
+        self,
+        parts: list[str],
+        links: list[LinkRecord],
+    ) -> list[dict[str, Any]]:
+        entities: list[dict[str, Any]] = []
+        for part in parts:
+            matched_link = self._find_link(part, links)
+            if matched_link:
+                cleaned = clean_link_record(matched_link)
+                if cleaned:
+                    entity_dict = dict(cleaned)
+                    entity_dict["text"] = part
+                    entities.append(entity_dict)
+                    continue
+            entities.append({"text": part, "url": None})
+        return entities
+
+    def _build_entity_from_links(  # noqa: PLR0911
         self,
         parts: list[str],
         links: list[LinkRecord],
     ) -> list[dict[str, Any]] | dict[str, Any] | str | None:
         if len(links) > 1:
-            out: list[dict[str, Any]] = []
-            for link in links:
-                item = clean_link_record(link)
-                if item:
-                    out.append(dict(item))
-            if out:
-                return out
+            entities = self._links_to_entities(links)
+            if entities:
+                return entities
             fallback = self._strip_lang_markers(", ".join(parts))
             return fallback or None
 
@@ -40,18 +62,7 @@ class CircuitEntityParser(CircuitTextProcessing):
             return parts[0] if parts else None
 
         if len(parts) > 1:
-            entities: list[dict[str, Any]] = []
-            for part in parts:
-                matched_link = self._find_link(part, links)
-                if matched_link:
-                    cleaned = clean_link_record(matched_link)
-                    if cleaned:
-                        entity_dict = dict(cleaned)
-                        entity_dict["text"] = part
-                        entities.append(entity_dict)
-                        continue
-                entities.append({"text": part, "url": None})
-            return entities
+            return self._parts_to_entities(parts, links)
 
         single = clean_link_record(links[0])
         if single:
@@ -78,7 +89,7 @@ class CircuitEntityParser(CircuitTextProcessing):
         return self._build_entity_from_links(parts, links)
 
     @staticmethod
-    def _parse_website(self, row: dict[str, Any] | None) -> str | None:
+    def _parse_website(row: dict[str, Any] | None) -> str | None:
         if not row:
             return None
         text = (clean_infobox_text(row.get("text")) or "").strip()

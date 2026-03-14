@@ -103,7 +103,10 @@ def build_core_key(rec: dict[str, Any]) -> tuple | None:
     return driver_txt, vehicle_txt, year
 
 
-def is_record_subset(small: dict[str, Any], big: dict[str, Any]) -> bool:
+def is_record_subset(  # noqa: C901, PLR0912
+    small: dict[str, Any],
+    big: dict[str, Any],
+) -> bool:
     """
     True, jeśli small nie wnosi sprzecznych danych względem big.
     Używamy tylko do bezpiecznego fallback-merge.
@@ -282,7 +285,10 @@ def collect_other_fields(records: list[dict[str, Any]]) -> dict[str, Any]:
     return merged
 
 
-def merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, Any]:
+def merge_two_records(  # noqa: C901, PLR0912
+    base: dict[str, Any],
+    extra: dict[str, Any],
+) -> dict[str, Any]:
     """Scala dwa rekordy w jeden, preferując bogatsze dane."""
     merged: dict[str, Any] = dict(base)
 
@@ -334,7 +340,9 @@ def merge_two_records(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, 
     return merged
 
 
-def merge_record_group(records: list[dict[str, Any]]) -> dict[str, Any]:
+def merge_record_group(  # noqa: C901
+    records: list[dict[str, Any]],
+) -> dict[str, Any]:
     """Scal grupę rekordów do jednego."""
     merged = collect_other_fields(records)
 
@@ -399,7 +407,7 @@ def _stage_b_merge_by_core_key(
     leftovers: list[dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """
-    Etap B: Merge po core_key (driver+vehicle+year) – łączy rekordy nawet bez time.
+    Etap B: Merge po core_key (driver+vehicle+year) - łączy rekordy nawet bez time.
     Zwraca zaktualizowane merged_main i pozostałe rekordy.
     """
     core_index: dict[tuple, list[int]] = {}
@@ -445,7 +453,7 @@ def _stage_c_merge_by_driver_time(
     still_left: list[dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """
-    Etap C: Merge po (driver+time) z prefixem vehicle – dla uciętych vehicle.
+    Etap C: Merge po (driver+time) z prefixem vehicle - dla uciętych vehicle.
     Zwraca zaktualizowane merged_main i pozostałe rekordy.
     """
     index_dt: dict[tuple, list[int]] = {}
@@ -489,7 +497,7 @@ def _stage_d_fallback_merge_by_time_and_driver(
     final_left: list[dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """
-    Etap D: Fallback merge po (time) z walidacją driver + subset – ostatnia szansa.
+    Etap D: Fallback merge po (time) z walidacją driver + subset - ostatnia szansa.
     Zwraca zaktualizowane merged_main i ostatecznie pozostałe rekordy.
     """
     time_index: dict[float, list[int]] = {}
@@ -535,9 +543,9 @@ def merge_race_lap_records(records: list[dict[str, Any]]) -> list[dict[str, Any]
 
     Etapy:
     - A: twardy merge po record_key (driver+vehicle+year+time).
-    - B: merge po core_key (driver+vehicle+year) – pozwala łączyć brakujące time.
-    - C: merge po (driver+time) z prefixem vehicle – dla uciętych vehicle.
-    - D: fallback merge po (time) z walidacją – ostatnia szansa.
+    - B: merge po core_key (driver+vehicle+year) - pozwala łączyć brakujące time.
+    - C: merge po (driver+time) z prefixem vehicle - dla uciętych vehicle.
+    - D: fallback merge po (time) z walidacją - ostatnia szansa.
     """
     # Etap A: Partycjonowanie po record_key
     key_buckets, leftovers = _stage_a_partition_by_record_key(records)

@@ -74,8 +74,8 @@ class F1CompleteCircuitScraper(CompositeScraper):
         full_record["details"] = details
         return CircuitService.normalize_record(full_record)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        """Metoda wymagana przez bazę – nie używana w tym scraperze."""
+    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
+        """Metoda wymagana przez bazę - nie używana w tym scraperze."""
         msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
         raise NotImplementedError(msg)
 

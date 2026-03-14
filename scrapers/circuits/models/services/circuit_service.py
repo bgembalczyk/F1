@@ -15,78 +15,35 @@ from scrapers.circuits.models.services.normalization import extract_history_even
 from scrapers.circuits.models.services.normalization import extract_infobox_layouts
 from scrapers.circuits.models.services.normalization import merge_tables_into_layouts
 
+TOP_LEVEL_KEYS = (
+    "circuit_status",
+    "type",
+    "direction",
+    "grands_prix",
+    "seasons",
+    "grands_prix_held",
+)
+
 
 @dataclass(frozen=True)
 class CircuitService:
     """Serwis domenowy dla operacji na torach wyścigowych."""
 
     @staticmethod
-    def normalize_record(raw: dict[str, Any]) -> dict[str, Any]:
-        """
-        Normalizuje pojedynczy rekord toru wg ustalonych zasad:
+    def _extract_infobox_data(details: Any) -> tuple[dict[str, Any], dict[str, Any]]:
+        if not isinstance(details, dict):
+            return {}, {}
+        infobox = details.get("infobox") or {}
+        return infobox, infobox.get("normalized") or {}
 
-        - circuit[text] -> name.list (dodajemy też infobox.title i infobox.normalized.name)
-        - circuit[url] -> url, ale jeśli details == None -> url = None
-        - former_names -> name.former_names
-        - layouts z infobox.layouts przenosimy na wierzch, race_lap_record -> race_lap_records (lista)
-        - tables łączymy z layouts (lap_records -> race_lap_records odpowiedniego layoutu)
-        - location: { places, coordinates }
-        - fia_grade wyciągnięte na wierzch
-        - history: tylko lista events
-        - nie kopiujemy last_length_used_km, last_length_used_mi, turns, specs (poza fia_grade)
-        """
-        out: dict[str, Any] = {}
-
-        details = raw.get("details")
-
-        infobox: dict[str, Any] = {}
-        normalized: dict[str, Any] = {}
-        if isinstance(details, dict):
-            infobox = (details or {}).get("infobox") or {}
-            normalized = infobox.get("normalized") or {}
-
-        # name + url
-        out["name"] = extract_circuit_names(raw, infobox, normalized)
-        out["url"] = extract_circuit_url(raw, details)
-
-        # proste pola z wierzchu
-        for key in (
-            "circuit_status",
-            "type",
-            "direction",
-            "grands_prix",
-            "seasons",
-            "grands_prix_held",
-        ):
+    @staticmethod
+    def _copy_top_level_fields(raw: dict[str, Any], out: dict[str, Any]) -> None:
+        for key in TOP_LEVEL_KEYS:
             if key in raw:
                 out[key] = raw[key]
 
-        # location
-        out["location"] = extract_circuit_location(raw, normalized)
-
-        # fia_grade + history (events)
-        fia_grade = extract_fia_grade(normalized)
-        history_events = extract_history_events(normalized)
-        if fia_grade is not None:
-            out["fia_grade"] = fia_grade
-        if history_events is not None:
-            out["history"] = history_events
-
-        # layouts
-        layouts = extract_infobox_layouts(infobox)
-
-        # tables łączymy z layouts
-        tables = None
-        if isinstance(details, dict):
-            tables = details.get("tables")
-        tables = tables or []
-
-        merge_tables_into_layouts(tables, layouts)
-
-        if layouts:
-            out["layouts"] = layouts
-
-        # Normalizacja rekordów okrążeń
+    @staticmethod
+    def _normalize_layout_lap_records(out: dict[str, Any]) -> None:
         for lay in out.get("layouts", []):
             records = lay.get("race_lap_records", []) or []
             for rec in records:
@@ -95,7 +52,33 @@ class CircuitService:
             if records:
                 lay["race_lap_records"] = merge_race_lap_records(records)
 
-        # Clean url=None w całym wyjściu
+    @staticmethod
+    def normalize_record(raw: dict[str, Any]) -> dict[str, Any]:
+        """Normalizuje pojedynczy rekord toru wg ustalonych zasad."""
+        out: dict[str, Any] = {}
+        details = raw.get("details")
+        infobox, normalized = CircuitService._extract_infobox_data(details)
+
+        out["name"] = extract_circuit_names(raw, infobox, normalized)
+        out["url"] = extract_circuit_url(raw, details)
+        CircuitService._copy_top_level_fields(raw, out)
+        out["location"] = extract_circuit_location(raw, normalized)
+
+        fia_grade = extract_fia_grade(normalized)
+        history_events = extract_history_events(normalized)
+        if fia_grade is not None:
+            out["fia_grade"] = fia_grade
+        if history_events is not None:
+            out["history"] = history_events
+
+        layouts = extract_infobox_layouts(infobox)
+        tables = (details.get("tables") if isinstance(details, dict) else None) or []
+        merge_tables_into_layouts(tables, layouts)
+
+        if layouts:
+            out["layouts"] = layouts
+            CircuitService._normalize_layout_lap_records(out)
+
         return prune_empty(
             out,
             drop_empty_lists=True,
