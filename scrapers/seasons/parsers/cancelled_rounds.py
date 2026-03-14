@@ -82,7 +82,7 @@ class CancelledRoundsParser:
         table_to_parse = self._select_table(matching_tables)
         records = self._parse_table_with_schema(table_to_parse, schema, section_id)
 
-        if len(matching_tables) == 1 and calendar_data is not None:
+        if calendar_data is not None:
             if self._is_same_as_calendar(records, calendar_data):
                 return []
 

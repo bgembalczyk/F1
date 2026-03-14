@@ -156,6 +156,73 @@ def test_cancelled_rounds_returns_table_when_one_table_differs_from_calendar(
     assert result[0]["grand_prix"]["text"] == "Belgian Grand Prix"
 
 
+def test_cancelled_rounds_returns_empty_when_two_tables_and_second_matches_calendar(
+    parser,
+) -> None:
+    """When section has two matching tables and the second matches calendar, return empty.
+
+    Regression test: for seasons without cancelled rounds (e.g. 1950), the Calendar
+    section may be followed by a results table that also has Grand Prix + Circuit columns.
+    The second table used to be returned as cancelled rounds without checking the calendar.
+    """
+    html = """
+    <html>
+      <body>
+        <h2><span id="Calendar">Calendar</span></h2>
+        <table class="wikitable">
+          <tr>
+            <th>Round</th>
+            <th>Grand Prix</th>
+            <th>Circuit</th>
+            <th>Date</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><a href="/wiki/Monaco_Grand_Prix">Monaco Grand Prix</a></td>
+            <td>Monte Carlo</td>
+            <td>May 1</td>
+          </tr>
+        </table>
+        <table class="wikitable">
+          <tr>
+            <th>Round</th>
+            <th>Grand Prix</th>
+            <th>Circuit</th>
+            <th>Pole position</th>
+            <th>Fastest lap</th>
+            <th>Winning driver</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><a href="/wiki/Monaco_Grand_Prix">Monaco Grand Prix</a></td>
+            <td>Monte Carlo</td>
+            <td><a href="/wiki/Fangio">Fangio</a></td>
+            <td><a href="/wiki/Fangio">Fangio</a></td>
+            <td><a href="/wiki/Fangio">Fangio</a></td>
+          </tr>
+        </table>
+      </body>
+    </html>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    calendar_data = [
+        {
+            "round": 1,
+            "grand_prix": {
+                "text": "Monaco Grand Prix",
+                "url": "/wiki/Monaco_Grand_Prix",
+            },
+            "circuit": {"circuit": {"text": "Monte Carlo", "url": None}},
+            "race_date": "May 1",
+        },
+    ]
+
+    result = parser.parse(soup, season_year=1950, calendar_data=calendar_data)
+
+    assert result == []
+
+
 def test_cancelled_rounds_returns_empty_when_no_table_found(parser) -> None:
     """When no table is found in any section, return empty list."""
     html = """
