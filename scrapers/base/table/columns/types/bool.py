@@ -12,13 +12,14 @@ class BoolColumn(BaseColumn):
     Kolumna zwracająca bool na podstawie predykatu.
 
     Predykat dostaje `ctx` (ColumnContext), czyli m.in.:
-        - ctx.value     – wstępnie sparsowana wartość (jeśli jakaś poprzednia kolumna coś już zrobiła)
-        - ctx.raw_text  – surowy tekst z komórki
-        - ctx.cell      – Tag z BeautifulSoup
-        - ctx.header    – nagłówek kolumny
-        - ctx.key       – klucz po column_map
+        - ctx.value     - wstępnie sparsowana wartość
+        - ctx.raw_text  - surowy tekst z komórki
+        - ctx.cell      - Tag z BeautifulSoup
+        - ctx.header    - nagłówek kolumny
+        - ctx.key       - klucz po column_map
 
-    Jeśli predykat rzuci wyjątek, zwracamy `default` (domyślnie False).
+    Jeśli predykat rzuci wyjątek,
+    zwracamy `default` (domyślnie False).
     """
 
     def __init__(
@@ -39,7 +40,10 @@ class BoolColumn(BaseColumn):
         except (ValueError, TypeError, AttributeError, KeyError) as exc:
             if self.log_errors:
                 logger.warning(
-                    "BoolColumn predicate error for header=%s key=%s raw_text=%s exc_type=%s",
+                    (
+                        "BoolColumn predicate error for header=%s key=%s "
+                        "raw_text=%s exc_type=%s"
+                    ),
                     ctx.header,
                     ctx.key,
                     ctx.raw_text,

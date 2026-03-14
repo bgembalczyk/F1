@@ -62,6 +62,37 @@ class LinksListColumn(BaseColumn):
 
             yield from self._iter_cell_tokens(child, link_iter=link_iter)
 
+
+    def _append_token(
+        self,
+        token: str | dict[str, Any] | object,
+        *,
+        items: list[Any],
+        text_parts: list[str],
+    ) -> None:
+        if token is self._separator_token:
+            self._flush_text_parts(items, text_parts)
+            return
+
+        if isinstance(token, dict):
+            self._flush_text_parts(items, text_parts)
+            normalized = normalize_links(token)
+            if not normalized:
+                return
+            link = normalized[0]
+            items.append(link["text"] if link.get("url") is None else link)
+            return
+
+        text_parts.append(str(token))
+
+    def _flush_text_parts(self, items: list[Any], text_parts: list[str]) -> None:
+        if not text_parts:
+            return
+        text_value = self._clean_text_item(" ".join(text_parts))
+        text_parts.clear()
+        if text_value:
+            items.append(text_value)
+
     def parse(self, ctx: ColumnContext) -> Any:
         links = normalize_links(ctx.links or [])
         if not self.text_for_missing_url:
@@ -80,29 +111,8 @@ class LinksListColumn(BaseColumn):
         items: list[Any] = []
         text_parts: list[str] = []
 
-        def flush_text_parts() -> None:
-            if not text_parts:
-                return
-            text_value = self._clean_text_item(" ".join(text_parts))
-            text_parts.clear()
-            if text_value:
-                items.append(text_value)
-
         for token in self._iter_cell_tokens(ctx.cell, link_iter=link_iter):
-            if token is self._separator_token:
-                flush_text_parts()
-                continue
+            self._append_token(token, items=items, text_parts=text_parts)
 
-            if isinstance(token, dict):
-                flush_text_parts()
-                normalized = normalize_links(token)
-                if not normalized:
-                    continue
-                link = normalized[0]
-                items.append(link["text"] if link.get("url") is None else link)
-                continue
-
-            text_parts.append(str(token))
-
-        flush_text_parts()
+        self._flush_text_parts(items, text_parts)
         return items

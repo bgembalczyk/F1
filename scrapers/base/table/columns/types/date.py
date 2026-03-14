@@ -16,7 +16,7 @@ class DateColumn(BaseColumn):
     - "7 Jun 2019"
     - "June 7, 2019"
     - "Jun 7, 2019"
-    - "7–8 June 2019"  -> bierze pierwszą datę
+    - "7-8 June 2019"  -> bierze pierwszą datę
     - "7 June 2019 (race 1)" -> ignoruje część w nawiasie
 
     Zwraca NormalizedDate:

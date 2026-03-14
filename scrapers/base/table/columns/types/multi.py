@@ -19,7 +19,7 @@ class MultiColumn(BaseColumn):
         self.subcolumns = subcolumns
 
     def parse(self, ctx: ColumnContext) -> Any:
-        # opcjonalnie – zwraca dict; niekoniecznie używane
+        # opcjonalnie - zwraca dict; niekoniecznie używane
         result: dict[str, Any] = {}
         for new_key, col in self.subcolumns.items():
             subctx = ColumnContext(
