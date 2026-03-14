@@ -325,7 +325,7 @@ class GeminiClient:
         print(prompt)
 
         try:
-            with urllib.request.urlopen(  # noqa: S310
+            with urllib.request.urlopen(
                 req,
                 timeout=self._timeout,
                 context=self._ssl_context,

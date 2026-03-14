@@ -83,7 +83,10 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         config=None,
     ) -> None:
         options = options or ScraperOptions()
-        options.transformers = [*list(options.transformers or []), FailedToMakeRestartTransformer()]
+        options.transformers = [
+            *list(options.transformers or []),
+            FailedToMakeRestartTransformer(),
+        ]
         super().__init__(options=options, config=config)
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
@@ -197,7 +200,9 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
                     headers, _ = MultiLevelHeaderBuilder.build_headers(tbl)
                     logger.error(f"  Table {i + 1}: {headers[:7]}...")
                 except Exception as e:
-                    logger.exception(f"  Table {i + 1}: Could not extract headers - {e}")
+                    logger.exception(
+                        f"  Table {i + 1}: Could not extract headers - {e}",
+                    )
 
         return (
             f"Nie znaleziono pasującej tabeli. "

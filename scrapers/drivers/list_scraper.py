@@ -89,7 +89,10 @@ class F1DriversListScraper(F1TableScraper):
                 validation_mode="hard",
             ),
         )
-        options.transformers = [*list(options.transformers or []), DriversChampionshipsTransformer()]
+        options.transformers = [
+            *list(options.transformers or []),
+            DriversChampionshipsTransformer(),
+        ]
         super().__init__(options=options, config=config)
 
 

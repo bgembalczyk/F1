@@ -71,7 +71,10 @@ class F1FatalitiesListScraper(F1TableScraper):
         config: ScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
-        options.transformers = [*list(options.transformers or []), FatalitiesCarTransformer()]
+        options.transformers = [
+            *list(options.transformers or []),
+            FatalitiesCarTransformer(),
+        ]
         super().__init__(options=options, config=config)
 
     # Methods using shared utilities from date_parsing module

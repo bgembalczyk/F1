@@ -107,9 +107,7 @@ class TableParser:
         normalized = [h.lower().strip() for h in headers]
         expected_wins_podiums_poles = ["wins", "podiums", "poles"]
         expected_wins_topten_poles = ["wins", "top tens", "poles"]
-        return (
-            normalized in (expected_wins_podiums_poles, expected_wins_topten_poles)
-        )
+        return normalized in (expected_wins_podiums_poles, expected_wins_topten_poles)
 
     @staticmethod
     def _extract_stats_from_table(table_data: dict[str, Any]) -> dict[str, int | None]:

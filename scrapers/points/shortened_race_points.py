@@ -34,7 +34,10 @@ class ShortenedRacePointsScraper(BasePointsScraper):
         config: ScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
-        options.transformers = [*list(options.transformers or []), ShortenedRacePointsTransformer()]
+        options.transformers = [
+            *list(options.transformers or []),
+            ShortenedRacePointsTransformer(),
+        ]
         super().__init__(options=options, config=config)
 
 

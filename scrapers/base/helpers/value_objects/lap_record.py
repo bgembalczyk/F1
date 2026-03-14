@@ -35,8 +35,8 @@ class LapRecord:
     def to_dict(self) -> dict[str, Any]:
         result: dict[str, Any] = {}
         for key, value in self.data.items():
-            if (
-                isinstance(value, (NormalizedTime, NormalizedDate)) or (hasattr(value, "to_dict") and callable(value.to_dict))
+            if isinstance(value, (NormalizedTime, NormalizedDate)) or (
+                hasattr(value, "to_dict") and callable(value.to_dict)
             ):
                 result[key] = value.to_dict()
             else:

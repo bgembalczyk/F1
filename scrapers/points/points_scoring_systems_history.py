@@ -67,7 +67,10 @@ class PointsScoringSystemsHistoryScraper(BasePointsScraper):
         config: ScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
-        options.transformers = [*list(options.transformers or []), PointsScoringSystemsHistoryTransformer()]
+        options.transformers = [
+            *list(options.transformers or []),
+            PointsScoringSystemsHistoryTransformer(),
+        ]
         super().__init__(options=options, config=config)
 
 

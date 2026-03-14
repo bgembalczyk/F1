@@ -103,4 +103,3 @@ class CircuitService:
             drop_empty_dicts=False,
             drop_url_none=True,
         )
-

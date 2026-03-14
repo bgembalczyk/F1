@@ -20,13 +20,6 @@ from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
     RedFlaggedWorldChampionshipRacesScraper,
 )
 
-try:
-    import pytest
-
-    PYTEST_AVAILABLE = True
-except ImportError:
-    PYTEST_AVAILABLE = False
-
 
 class TestRedFlaggedRacesScraperRobustness:
     """Test that the scraper handles various HTML structures gracefully."""

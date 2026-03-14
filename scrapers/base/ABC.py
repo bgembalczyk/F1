@@ -90,7 +90,9 @@ class F1Scraper(ABC):
             self.validator.set_record_factory(options.record_factory)
         self.validation_mode = options.validation_mode
         if self.validation_mode not in {"soft", "hard"}:
-            msg = "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
+            msg = (
+                "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
+            )
             raise ValueError(
                 msg,
             )
