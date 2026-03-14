@@ -7,11 +7,11 @@ from scrapers.base.helpers.text import clean_wiki_text
 class SponsorshipRecordText:
     _year_re = re.compile(r"\b\d{4}\b")
 
-    _year_range_re = re.compile(r"\b(\d{4})\s*[–\-]\s*(\d{4})\b")
+    _year_range_re = re.compile(r"\b(\d{4})\s*[-\-]\s*(\d{4})\b")
 
-    # Matches abbreviated end-year ranges like "1979–83" or "1977–82".
+    # Matches abbreviated end-year ranges like "1979-83" or "1977-82".
     # The end year is 2 digits and must NOT be followed by another digit.
-    _year_range_abbrev_re = re.compile(r"\b(\d{4})\s*[–\-]\s*(\d{2})(?!\d)")
+    _year_range_abbrev_re = re.compile(r"\b(\d{4})\s*[-\-]\s*(\d{2})(?!\d)")
 
     @classmethod
     def _expand_year_range(cls, start_year: int, end_year: int) -> set[int]:
@@ -43,15 +43,15 @@ class SponsorshipRecordText:
                 text = param.get("text")
             if text is None:
                 text = str(param)
-            # Expand full year ranges like "2021–2023".
+            # Expand full year ranges like "2021-2023".
             for range_match in cls._year_range_re.finditer(text):
                 start_year = int(range_match.group(1))
                 end_year = int(range_match.group(2))
                 years |= cls._expand_year_range(start_year, end_year)
-            # Expand abbreviated end-year ranges like "1979–83".
+            # Expand abbreviated end-year ranges like "1979-83".
             # _year_range_abbrev_re and _year_range_re are mutually exclusive:
             # the former requires the end token to be exactly 2 digits (not
-            # followed by another digit), so "1979–1983" is only matched by
+            # followed by another digit), so "1979-1983" is only matched by
             # the full-range pattern above.
             for range_match in cls._year_range_abbrev_re.finditer(text):
                 start_year = int(range_match.group(1))
@@ -74,7 +74,7 @@ class SponsorshipRecordText:
         text = cls.param_text(param)
         if not text or not cls._year_re.search(text):
             return False
-        stripped = re.sub(r"[\d\s\-–]", "", text)
+        stripped = re.sub(r"[\d\s\--]", "", text)
         return not stripped
 
     @staticmethod

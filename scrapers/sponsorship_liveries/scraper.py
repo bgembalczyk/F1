@@ -70,7 +70,8 @@ if __name__ == "__main__":
         _gemini_client = GeminiClient.from_key_file()
         _classifier: ParenClassifier | None = ParenClassifier(_gemini_client)
         print(
-            "[scraper] Gemini ParenClassifier załadowany – adnotacje w nawiasach będą klasyfikowane.",
+            "[scraper] Gemini ParenClassifier załadowany - "
+            "adnotacje w nawiasach będą klasyfikowane.",
         )
     except FileNotFoundError as _e:
         _classifier = None

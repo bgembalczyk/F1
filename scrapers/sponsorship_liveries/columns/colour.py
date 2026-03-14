@@ -27,7 +27,7 @@ class ColourListColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> Any:
         cell = ctx.cell
         if cell is None or (not cell.find("br") and not cell.find("p")):
-            # No special HTML structure – fall back to plain comma-split.
+            # No special HTML structure - fall back to plain comma-split.
             return split_delimited_text(ctx.clean_text or "")
 
         raw_segments = self._extract_segments(cell)
@@ -37,13 +37,15 @@ class ColourListColumn(BaseColumn):
         return result
 
     @staticmethod
-    def _extract_segments(cell: Tag) -> list[str]:
-        """Return text segments from *cell*, treating ``<br>`` and ``<p>`` as separators.
+    def _extract_segments(cell: Tag) -> list[str]:  # noqa: C901
+        """Return text segments from *cell*.
+
+        Treat ``<br>`` and ``<p>`` as separators.
 
         Rules
         -----
-        * ``<br>`` – flushes the current accumulated text as a new segment.
-        * ``<p>`` child – flushes any pre-paragraph text as a segment, then
+        * ``<br>`` - flushes the current accumulated text as a new segment.
+        * ``<p>`` child - flushes any pre-paragraph text as a segment, then
           processes the ``<p>`` contents as a separate segment.  A ``<p>``
           whose entire (cleaned) text is wrapped in a single pair of
           parentheses (e.g. ``(Image of a woman ...)``) is skipped entirely.

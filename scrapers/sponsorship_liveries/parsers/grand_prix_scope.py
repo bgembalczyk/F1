@@ -20,7 +20,10 @@ class GrandPrixScopeParser:
         return True
 
     @classmethod
-    def parse_grand_prix_scope(cls, params: list[Any]) -> dict[str, Any] | None:
+    def parse_grand_prix_scope(  # noqa: C901, PLR0911
+        cls,
+        params: list[Any],
+    ) -> dict[str, Any] | None:
         if not params:
             return None
         if not cls.params_contain_only_years_or_grand_prix(params):

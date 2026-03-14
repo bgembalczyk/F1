@@ -23,16 +23,16 @@ class SponsorshipSeasonsColumn(BaseColumn):
     is sent **exclusively** to the Gemini API for semantic classification.
     The structured result drives the following fields on the record:
 
-    * ``grand_prix_scope`` / ``_season_scoped_gp`` – when Gemini returns
+    * ``grand_prix_scope`` / ``_season_scoped_gp`` - when Gemini returns
       ``grand_prix`` entries.  The ``_season_scoped_gp`` marker is used by
       :class:`~scrapers.sponsorship_liveries.parsers.section_parser.SponsorshipSectionParser`
       to split any broader overlapping season entry.
 
-    * ``driver`` – when Gemini returns ``driver`` entries.
+    * ``driver`` - when Gemini returns ``driver`` entries.
 
-    * ``car`` – when Gemini returns ``car_model`` entries.
+    * ``car`` - when Gemini returns ``car_model`` entries.
 
-    * ``engine`` – when Gemini returns ``engine_constructor`` entries.
+    * ``engine`` - when Gemini returns ``engine_constructor`` entries.
 
     Classified values are validated against the original cell text before use;
     any value not found in the cell text is treated as a model hallucination and
@@ -40,7 +40,7 @@ class SponsorshipSeasonsColumn(BaseColumn):
     ignored entirely.
     """
 
-    # Year-only link text – e.g. "2004" or "2005"
+    # Year-only link text - e.g. "2004" or "2005"
     _YEAR_RE = re.compile(r"^\d{4}$")
 
     def __init__(
