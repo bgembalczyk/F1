@@ -202,10 +202,16 @@ class SeasonStandingsParser:
                 return cleaned
             return incoming
 
-        existing_results = existing.get("results", [])
-        new_results = incoming.get("results", [])
-        if isinstance(existing_results, list) and isinstance(new_results, list):
-            existing["results"] = existing_results + new_results
+        existing_results = existing.get("results")
+        new_results = incoming.get("results")
+        existing_list = existing_results if isinstance(existing_results, list) else (
+            [existing_results] if existing_results is not None else []
+        )
+        new_list = new_results if isinstance(new_results, list) else (
+            [new_results] if new_results is not None else []
+        )
+        if existing_list or new_list:
+            existing["results"] = existing_list + new_list
 
         for round_key, round_value in incoming.items():
             if round_key in {"results", *ROUND_LEVEL_RESULT_ATTRIBUTES}:

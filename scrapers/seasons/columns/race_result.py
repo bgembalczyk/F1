@@ -74,6 +74,7 @@ class RaceResultColumn(BaseColumn):
             fastest_lap=fastest_lap,
         )
         self._populate_payload_meta(payload, sprint_position, footnotes)
+        self._merge_single_result_with_sprint(payload, sprint_position)
         return payload or None
 
     @staticmethod
@@ -82,6 +83,10 @@ class RaceResultColumn(BaseColumn):
         if cell is None:
             return (ctx.clean_text or "").strip()
         fragment = BeautifulSoup(str(cell), "html.parser")
+        for span in fragment.find_all("span", style=True):
+            style = span.get("style", "").replace(" ", "")
+            if "position:absolute" in style:
+                span.decompose()
         for sup in fragment.find_all("sup"):
             sup.decompose()
         return clean_wiki_text(fragment.get_text(" ", strip=True))
@@ -180,6 +185,23 @@ class RaceResultColumn(BaseColumn):
             payload["sprint_position"] = sprint_position
         if footnotes:
             payload["footnotes"] = footnotes
+
+    @staticmethod
+    def _merge_single_result_with_sprint(
+        payload: dict[str, Any],
+        sprint_position: int | None,
+    ) -> None:
+        """For a single-result race with a sprint position, merge sprint_position
+        into the result dict and convert results from a list to a dict."""
+        if sprint_position is None:
+            return
+        results = payload.get("results")
+        if not isinstance(results, list) or len(results) != 1:
+            return
+        result = results[0]
+        result["sprint_position"] = sprint_position
+        payload["results"] = result
+        payload.pop("sprint_position", None)
 
     def _map_background(self, background: str | None) -> str | None:
         if not background:
@@ -364,6 +386,10 @@ class RaceResultColumn(BaseColumn):
             or self._season_year < self._SPRINT_POINTS_START_YEAR
         ):
             sprint_position = None
+        elif sprint_position is not None:
+            # The sprint position superscript is a positional indicator, not a footnote
+            sprint_str = str(sprint_position)
+            footnotes = [f for f in footnotes if f != sprint_str]
 
         if not pole_position and cell.find(["b", "strong"]):
             pole_position = True

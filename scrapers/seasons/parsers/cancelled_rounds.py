@@ -115,10 +115,10 @@ class CancelledRoundsParser:
     @staticmethod
     def _table_has_expected_headers(parser: HtmlTableParser, table: Tag) -> bool:
         try:
-            parser.parse_table(table)
+            headers, _, _ = parser._extract_headers(table)
         except RuntimeError:
             return False
-        return True
+        return parser._headers_match(headers)
 
     def _parse_table_with_schema(
         self,
