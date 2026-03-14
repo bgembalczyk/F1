@@ -16,7 +16,7 @@ class GeminiCache:
     Domyślnie odpowiedzi są ważne przez rok.
 
     Lokalizacja domyślna (poza repo): ``data/gemini_cache``
-    – katalog ten jest dodany do ``.gitignore``.
+    - katalog ten jest dodany do ``.gitignore``.
     """
 
     def __init__(

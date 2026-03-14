@@ -8,7 +8,11 @@ Przykład użycia::
 
     from infrastructure.gemini.client import GeminiClient, ModelConfig
     models = [
-        ModelConfig("gemini-2.5-flash-lite", requests_per_minute=9, requests_per_day=1500),
+        ModelConfig(
+            "gemini-2.5-flash-lite",
+            requests_per_minute=9,
+            requests_per_day=1500,
+        ),
     ]
     client = GeminiClient.from_key_file(models=models)
     result = client.query(prompt)
@@ -19,6 +23,7 @@ import ssl
 import threading
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from collections import deque
 from dataclasses import dataclass
@@ -239,9 +244,9 @@ class GeminiClient:
         """Wysyła zapytanie do Gemini i zwraca odpowiedź jako słownik.
 
         Korzysta z hierarchii modeli:
-        – jeśli model osiągnął limit RPM lub RPD, przełącza na następny,
-        – jeśli model zwróci błąd, ponawia zapytanie na następnym modelu,
-        – jeśli wyczerpią się modele, rzuca wyjątkiem.
+        - jeśli model osiągnął limit RPM lub RPD, przełącza na następny,
+        - jeśli model zwróci błąd, ponawia zapytanie na następnym modelu,
+        - jeśli wyczerpią się modele, rzuca wyjątkiem.
 
         Wynik z cache jest zwracany tylko jeśli pasuje zarówno *prompt*,
         jak i aktualnie wybrany model.
@@ -252,7 +257,8 @@ class GeminiClient:
             model = self._pick_model(exclude=error_models)
             if model is None:
                 msg = (
-                    "Wszystkie dostępne modele Gemini są wyczerpane lub osiągnęły limit.\n"
+                    "Wszystkie dostępne modele Gemini są wyczerpane "
+                    "lub osiągnęły limit.\n"
                     f"Modele z błędem API: {error_models or '(brak)'}\n"
                     f"Dostępne modele: {[s.model for s in self._model_states]}"
                 )
@@ -309,13 +315,17 @@ class GeminiClient:
         response_mime_type: str,
     ) -> dict[str, Any]:
         url = _API_URL_TEMPLATE.format(model=model, api_key=self._api_key)
+        parsed_url = urllib.parse.urlparse(url)
+        if parsed_url.scheme != "https":
+            msg = "Gemini API endpoint musi używać schematu https."
+            raise RuntimeError(msg)
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseMimeType": response_mime_type},
         }
         data = json.dumps(body).encode("utf-8")
-        req = urllib.request.Request(
-            url,
+        req = urllib.request.Request(  # noqa: S310
+            parsed_url.geturl(),
             data=data,
             headers={"Content-Type": "application/json"},
             method="POST",
@@ -325,7 +335,13 @@ class GeminiClient:
         print(prompt)
 
         try:
-            with urllib.request.urlopen(
+            req_url = req.full_url
+            parsed_req_url = urllib.parse.urlparse(req_url)
+            if parsed_req_url.scheme != "https":
+                msg = "Żądanie Gemini API musi używać schematu https."
+                raise RuntimeError(msg)
+
+            with urllib.request.urlopen(  # noqa: S310
                 req,
                 timeout=self._timeout,
                 context=self._ssl_context,
@@ -343,7 +359,8 @@ class GeminiClient:
         except urllib.error.URLError as exc:
             msg = (
                 "Nie udało się połączyć z Gemini API. "
-                "Sprawdź połączenie sieciowe, SSL/certyfikaty oraz poprawność endpointu.\n"
+                "Sprawdź połączenie sieciowe, SSL/certyfikaty oraz\n"
+                "poprawność endpointu.\n"
                 f"Szczegóły: {exc}"
             )
             raise RuntimeError(
@@ -371,7 +388,8 @@ class GeminiClient:
         if text is None:
             msg = (
                 "Gemini API nie zwróciło pola candidates[0].content.parts[0].text.\n"
-                f"Pełna odpowiedź:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}"
+                "Pełna odpowiedź:\n"
+                f"{json.dumps(api_response, ensure_ascii=False, indent=2)}"
             )
             raise RuntimeError(
                 msg,
@@ -383,7 +401,8 @@ class GeminiClient:
             msg = (
                 "Gemini zwróciło tekst, który nie jest poprawnym JSON-em.\n"
                 f"Text:\n{text}\n\n"
-                f"Pełna odpowiedź API:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}"
+                "Pełna odpowiedź API:\n"
+                f"{json.dumps(api_response, ensure_ascii=False, indent=2)}"
             )
             raise RuntimeError(
                 msg,
