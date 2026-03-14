@@ -1,4 +1,5 @@
 """Tests for nationality link extraction and championship titles order preservation."""
+# ruff: noqa: E501
 
 import pytest
 from bs4 import BeautifulSoup
@@ -6,8 +7,14 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 
+EXPECTED_NATIONALITY_COUNT = 1
+EXPECTED_TITLES_IN_LIST = 3
+YEAR_2022 = 2022
+YEAR_2009 = 2009
+YEAR_2007 = 2007
 
-@pytest.fixture()
+
+@pytest.fixture
 def scraper():
     """Create a scraper instance with URL extraction enabled."""
     options = ScraperOptions(include_urls=True)
@@ -22,16 +29,25 @@ def test_nationality_with_link(scraper):
     """
     html = """
     <table class="infobox vcard">
-        <tr><th colspan="2" class="infobox-header" style="background-color: gainsboro;">Formula One career</th></tr>
+        <tr>
+            <th colspan="2" class="infobox-header" style="background-color: gainsboro;">
+                Formula One career
+            </th>
+        </tr>
         <tr><th scope="row" class="infobox-label">Nationality</th>
         <td class="infobox-data">
             <span class="flagicon">
                 <span class="mw-image-border" typeof="mw:File">
                     <a href="/wiki/United_Kingdom" title="United Kingdom">
-                        <img alt="United Kingdom" src="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/40px-Flag_of_the_United_Kingdom.svg.png"
-                             decoding="async" width="23" height="12" class="mw-file-element"
+                        <img alt="United Kingdom"
+                             src="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/40px-Flag_of_the_United_Kingdom.svg.png"
+                             decoding="async"
+                             width="23"
+                             height="12"
+                             class="mw-file-element"
                              srcset="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/60px-Flag_of_the_United_Kingdom.svg.png 2x"
-                             data-file-width="1200" data-file-height="600">
+                             data-file-width="1200"
+                             data-file-height="600">
                     </a>
                 </span>
             </span>
@@ -58,7 +74,7 @@ def test_nationality_with_link(scraper):
 
     value = nationality_row["value"]
     assert isinstance(value, list), "Nationality value should be a list"
-    assert len(value) == 1, "Should have exactly one nationality"
+    assert len(value) == EXPECTED_NATIONALITY_COUNT
 
     nationality_item = value[0]
     assert isinstance(
@@ -79,7 +95,11 @@ def test_nationality_without_link(scraper):
     """
     html = """
     <table class="infobox vcard">
-        <tr><th colspan="2" class="infobox-header" style="background-color: gainsboro;">Formula One career</th></tr>
+        <tr>
+            <th colspan="2" class="infobox-header" style="background-color: gainsboro;">
+                Formula One career
+            </th>
+        </tr>
         <tr><th scope="row" class="infobox-label">Nationality</th>
         <td class="infobox-data">American or Italian</td></tr>
     </table>
@@ -112,13 +132,17 @@ def test_championship_titles_document_order(scraper):
     And titles in order: Indianapolis 500, Japanese F3, Formula BMW UK
 
     Expected pairing:
-    - Indianapolis 500 → 2022
-    - Japanese F3 → 2009
-    - Formula BMW UK → 2007
+    - Indianapolis 500 -> 2022
+    - Japanese F3 -> 2009
+    - Formula BMW UK -> 2007
     """
     html = """
     <table class="infobox vcard">
-        <tr><th colspan="2" class="infobox-header" style="background-color: gainsboro;">Championship titles</th></tr>
+        <tr>
+            <th colspan="2" class="infobox-header" style="background-color: gainsboro;">
+                Championship titles
+            </th>
+        </tr>
         <tr>
             <th scope="row" class="infobox-label">
                 <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1126788409">
@@ -153,22 +177,22 @@ def test_championship_titles_document_order(scraper):
     assert "championship_titles" in result[0]
 
     titles = result[0]["championship_titles"]
-    assert len(titles) == 3, "Should have exactly 3 championship titles"
+    assert len(titles) == EXPECTED_TITLES_IN_LIST
 
     # Verify the correct pairing (document order, not sorted order)
     assert titles[0]["title"]["text"] == "Indianapolis 500"
-    assert titles[0]["years"][0]["year"] == 2022
+    assert titles[0]["years"][0]["year"] == YEAR_2022
     assert "2022_Indianapolis_500" in titles[0]["years"][0]["url"]
 
     assert titles[1]["title"]["text"] == "Japanese F3"
-    assert titles[1]["years"][0]["year"] == 2009
+    assert titles[1]["years"][0]["year"] == YEAR_2009
     assert "2009_All-Japan_Formula_Three_Championship" in titles[1]["years"][0]["url"]
 
     assert titles[2]["title"]["text"] in [
         "Formula BMW",
         "Formula BMW UK",
     ]  # Link text may vary
-    assert titles[2]["years"][0]["year"] == 2007
+    assert titles[2]["years"][0]["year"] == YEAR_2007
     assert "2007_Formula_BMW_UK_season" in titles[2]["years"][0]["url"]
 
 
@@ -180,14 +204,20 @@ def test_championship_titles_sorted_for_non_list(scraper):
     """
     html = """
     <table class="infobox vcard">
-        <tr><th colspan="2" class="infobox-header" style="background-color: gainsboro;">Championship titles</th></tr>
+        <tr>
+            <th colspan="2" class="infobox-header" style="background-color: gainsboro;">
+                Championship titles
+            </th>
+        </tr>
         <tr>
             <th scope="row" class="infobox-label">
-                <a href="/wiki/1981_Japanese_Formula_Two_Championship" class="new">1981</a>–<a href="/wiki/1982_Japanese_Formula_Two_Championship" class="new">1982</a>,<br>
-                <a href="/wiki/1984_Japanese_Formula_Two_Championship" class="new">1984</a>–<a href="/wiki/1986_Japanese_Formula_Two_Championship">1986</a>
+                <a href="/wiki/1981_Japanese_Formula_Two_Championship" class="new">1981</a>-<a href="/wiki/1982_Japanese_Formula_Two_Championship" class="new">1982</a>,<br>
+                <a href="/wiki/1984_Japanese_Formula_Two_Championship" class="new">1984</a>-<a href="/wiki/1986_Japanese_Formula_Two_Championship">1986</a>
             </th>
             <td class="infobox-data">
-                <a href="/wiki/Super_Formula" class="mw-redirect" title="Super Formula">Japanese Formula Two</a>
+                <a href="/wiki/Super_Formula" class="mw-redirect" title="Super Formula">
+                    Japanese Formula Two
+                </a>
             </td>
         </tr>
     </table>
