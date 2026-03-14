@@ -27,7 +27,8 @@ from scrapers.points.constants import POINTS_SEASONS_HEADER
 
 class PointsScoringSystemsHistoryScraper(BasePointsScraper):
     """
-    Tabela: List of Formula One World Championship points scoring systems used throughout history
+    Tabela: List of Formula One World Championship points scoring systems
+    used throughout history.
     https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems
     """
 

@@ -31,7 +31,7 @@ if TYPE_CHECKING:
 
 class F1SingleGrandPrixScraper(F1Scraper):
     """
-    Scraper pojedynczego Grand Prix – pobiera tabelę "By year" z artykułu Wikipedii.
+    Scraper pojedynczego Grand Prix - pobiera tabelę "By year" z artykułu Wikipedii.
 
     Jeśli artykuł nie wygląda na Grand Prix (brak navboxa/kategorii),
     zwraca pustą listę.
@@ -141,8 +141,9 @@ class F1SingleGrandPrixScraper(F1Scraper):
 
     @staticmethod
     def _normalize_hex(value: str) -> str:
+        _hex_short_length = 3
         normalized = value.lower()
-        if len(normalized) == 3:
+        if len(normalized) == _hex_short_length:
             return "".join(ch * 2 for ch in normalized)
         return normalized
 
@@ -214,6 +215,41 @@ class F1SingleGrandPrixScraper(F1Scraper):
             return first_text
         return None
 
+    def _try_parse_section(
+        self,
+        soup: BeautifulSoup,
+        section_id: str,
+    ) -> list[dict[str, Any]] | None:
+        """Try to parse a section table.
+
+        Returns None when the next section should be tried.
+        """
+        try:
+            return [
+                {
+                    "url": self.url,
+                    "by_year": self._parse_section_table(soup, section_id=section_id),
+                },
+            ]
+        except Exception as exc:
+            if isinstance(exc, RuntimeError):
+                error: Exception = DomainParseError(
+                    f"Brak sekcji {section_id!r} w artykule.",
+                    url=self.url,
+                    cause=exc,
+                )
+            else:
+                error = (
+                    exc
+                    if isinstance(exc, ScraperError)
+                    else self._wrap_parse_error(exc)
+                )
+            if self._handle_scraper_error(error):
+                return None
+            if error is exc:
+                raise
+            raise error from exc
+
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         if not is_grand_prix_article(soup):
             return []
@@ -224,34 +260,9 @@ class F1SingleGrandPrixScraper(F1Scraper):
             "By_year:_the_European_Grand_Prix_as_a_standalone_event",
             "Winners_of_the_Caesars_Palace_Grand_Prix",
         ]:
-            try:
-                return [
-                    {
-                        "url": self.url,
-                        "by_year": self._parse_section_table(
-                            soup,
-                            section_id=section_id,
-                        ),
-                    },
-                ]
-            except Exception as exc:
-                if isinstance(exc, RuntimeError):
-                    error: Exception = DomainParseError(
-                        f"Brak sekcji {section_id!r} w artykule.",
-                        url=self.url,
-                        cause=exc,
-                    )
-                else:
-                    error = (
-                        exc
-                        if isinstance(exc, ScraperError)
-                        else self._wrap_parse_error(exc)
-                    )
-                if self._handle_scraper_error(error):
-                    continue
-                if error is exc:
-                    raise
-                raise error from exc
+            result = self._try_parse_section(soup, section_id)
+            if result is not None:
+                return result
 
         return [
             {

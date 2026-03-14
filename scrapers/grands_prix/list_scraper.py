@@ -37,7 +37,7 @@ class GrandsPrixListScraper(F1TableScraper):
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix",
         section_id="By_race_title",
-        # podzbiór nagłówków – do znalezienia właściwej tabeli
+        # podzbiór nagłówków - do znalezienia właściwej tabeli
         expected_headers=[
             "Race title",
             "Years held",

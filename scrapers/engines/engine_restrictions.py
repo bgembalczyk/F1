@@ -69,7 +69,8 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
             raise RuntimeError(msg)
 
         header_cells = header_row.find_all(["th", "td"])
-        if len(header_cells) < 2:
+        min_header_cells = 2
+        if len(header_cells) < min_header_cells:
             msg = "Nagłówek tabeli jest niekompletny."
             raise RuntimeError(msg)
 

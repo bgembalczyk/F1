@@ -71,8 +71,8 @@ class F1CompleteGrandPrixScraper(CompositeScraper):
         full_record["by_year"] = by_year
         return full_record
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        """Metoda wymagana przez bazę – nie używana w tym scraperze."""
+    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
+        """Metoda wymagana przez baze - nie uzywana w tym scraperze."""
         msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
         raise NotImplementedError(msg)
 
