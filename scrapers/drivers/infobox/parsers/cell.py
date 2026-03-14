@@ -49,7 +49,7 @@ class InfoboxCellParser:
 
         # Initialize specialized parsers (only those that need state/dependencies)
         self._active_years_parser = ActiveYearsParser(link_extractor)
-        self._teams_parser = TeamsParser(link_extractor, include_urls)
+        self._teams_parser = TeamsParser(link_extractor, include_urls=include_urls)
         self._championships_parser = ChampionshipsParser(link_extractor)
         self._table_parser = TableParser(link_extractor)
         self._race_event_parser = RaceEventParser(link_extractor)
@@ -135,7 +135,7 @@ class InfoboxCellParser:
         return self._licence_parser.parse_racing_licence(cell)
 
     def parse_full_data(self, cell: Tag) -> dict[str, Any]:
-        return self._table_parser.parse_full_data(cell, self._include_urls)
+        return self._table_parser.parse_full_data(cell, include_urls=self._include_urls)
 
     @staticmethod
     def parse_nested_table(table: Tag) -> dict[str, Any]:
