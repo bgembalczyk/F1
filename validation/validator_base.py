@@ -115,44 +115,62 @@ class RecordValidator(ABC):
 
         model_validate = getattr(record_factory, "model_validate", None)
         if callable(model_validate):
-            try:
-                model_validate(record)
-            except Exception as exc:
-                return [
-                    ValidationIssue.custom(
-                        f"model_validate failed: {exc}",
-                        code="record_factory",
-                    ),
-                ]
-            return []
+            return self._run_record_factory_validator(
+                validator=model_validate,
+                record=record,
+                failure_label="model_validate",
+            )
 
         validate_record = getattr(record_factory, "validate_record", None)
         if callable(validate_record):
-            try:
-                errors = validate_record(record)
-            except Exception as exc:
-                return [
-                    ValidationIssue.custom(
-                        f"validate_record failed: {exc}",
-                        code="record_factory",
-                    ),
-                ]
-            if not errors:
-                return []
-            return [self._coerce_issue(error) for error in errors]
+            return self._run_validate_record(validate_record, record)
 
         validate = getattr(record_factory, "validate", None)
         if callable(validate) and not isinstance(record_factory, type):
-            try:
-                validate()
-            except Exception as exc:
-                return [
-                    ValidationIssue.custom(
-                        f"validate failed: {exc}",
-                        code="record_factory",
-                    ),
-                ]
+            return self._run_record_factory_validator(
+                validator=validate,
+                record=None,
+                failure_label="validate",
+            )
         return []
+
+    def _run_record_factory_validator(
+        self,
+        validator: Callable[..., Any],
+        record: ExportRecord | None,
+        failure_label: str,
+    ) -> list[ValidationIssue]:
+        try:
+            if record is None:
+                validator()
+            else:
+                validator(record)
+        except (AttributeError, TypeError, ValueError) as exc:
+            return [
+                ValidationIssue.custom(
+                    f"{failure_label} failed: {exc}",
+                    code="record_factory",
+                ),
+            ]
+        return []
+
+    def _run_validate_record(
+        self,
+        validator: Callable[..., Any],
+        record: ExportRecord,
+    ) -> list[ValidationIssue]:
+        try:
+            errors = validator(record)
+        except (AttributeError, TypeError, ValueError) as exc:
+            return [
+                ValidationIssue.custom(
+                    f"validate_record failed: {exc}",
+                    code="record_factory",
+                ),
+            ]
+        if not errors:
+            return []
+        return [self._coerce_issue(error) for error in errors]
 
     @classmethod
     def validate_schema(
@@ -241,10 +259,7 @@ class RecordValidator(ABC):
         errors: Sequence[ValidationIssue],
         prefix: str,
     ) -> list[ValidationIssue]:
-        prefixed: list[ValidationIssue] = []
-        for error in errors:
-            prefixed.append(error.with_prefix(prefix))
-        return prefixed
+        return [error.with_prefix(prefix) for error in errors]
 
     @staticmethod
     def require_keys(

@@ -45,13 +45,21 @@ def main() -> int:
     )
     parser.add_argument(
         "target",
-        help="Target in module:attribute format (e.g. scrapers.drivers.list_scraper:F1DriversListScraper).",
+        help=(
+            "Target in module:attribute format "
+            "(e.g. scrapers.drivers.list_scraper:F1DriversListScraper)."
+        ),
     )
     args = parser.parse_args()
     try:
         obj = _load_target(args.target)
         payload = _convert_to_dsl(obj)
-    except Exception as exc:  # pragma: no cover - CLI guard
+    except (
+        AttributeError,
+        ImportError,
+        TypeError,
+        ValueError,
+    ) as exc:  # pragma: no cover - CLI guard
         print(f"Error: {exc}", file=sys.stderr)
         return 1
 
