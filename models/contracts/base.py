@@ -17,9 +17,11 @@ class DataContract(MutableMapping[str, Any]):
         field_names.discard("_extra")
         kwargs = {key: value for key, value in record.items() if key in field_names}
         instance = cls(**kwargs)  # type: ignore[arg-type]
-        instance._extra.update(
-            {key: value for key, value in record.items() if key not in field_names},
-        )
+        extra_items = {
+            key: value for key, value in record.items() if key not in field_names
+        }
+        for key, value in extra_items.items():
+            instance[key] = value
         return instance
 
     def _field_names(self) -> set[str]:
