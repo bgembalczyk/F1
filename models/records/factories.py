@@ -19,8 +19,7 @@ from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 from models.records.season_summary import SeasonSummaryRecord
 from models.records.special_driver import SpecialDriverRecord
-
-WIKI_SEASON_URL = "https://en.wikipedia.org/wiki/{year}_Formula_One_World_Championship"
+from models.records.constants import WIKI_SEASON_URL
 
 # Use the refactored normalizer from base_factory
 _normalizer = FieldNormalizer()

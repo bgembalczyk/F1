@@ -17,7 +17,7 @@ from typing import TypeVar
 from typing import cast
 
 from models.mappers.field_aliases import apply_field_aliases
-from models.records.factories import WIKI_SEASON_URL
+from models.records.constants import WIKI_SEASON_URL
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 from models.validation.core import validate_float
