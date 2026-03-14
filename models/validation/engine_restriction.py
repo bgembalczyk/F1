@@ -48,7 +48,7 @@ class EngineRestriction(ValidatedModel):
             return None
         if not isinstance(value, dict):
             msg = "Pole fuel_limit_per_race musi być słownikiem"
-            raise ValueError(msg)
+            raise TypeError(msg)
         result: dict[str, Any] = dict(value)
         if "range_kg" in result:
             result["range_kg"] = normalize_range_value(
@@ -68,7 +68,7 @@ class EngineRestriction(ValidatedModel):
             return None
         if not isinstance(value, dict):
             msg = "Pole fuel_flow_rate musi być słownikiem"
-            raise ValueError(msg)
+            raise TypeError(msg)
         result: dict[str, Any] = dict(value)
         if "rate" in result:
             result["rate"] = normalize_unit_value(
@@ -93,7 +93,7 @@ class EngineRestriction(ValidatedModel):
             return None
         if not isinstance(value, dict):
             msg = f"Pole {field_name} musi być słownikiem"
-            raise ValueError(msg)
+            raise TypeError(msg)
         result: dict[str, Any] = dict(value)
         key = range_key or "limit"
         if key in result:
