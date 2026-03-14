@@ -47,9 +47,7 @@ class MultiLevelHeaderBuilder:
 
         first_row_cells = header_rows[0].find_all(["th", "td"])
         second_row_cells = (
-            header_rows[1].find_all(["th", "td"])
-            if len(header_rows) > 1
-            else []
+            header_rows[1].find_all(["th", "td"]) if len(header_rows) > 1 else []
         )
         second_iter = iter(second_row_cells)
 

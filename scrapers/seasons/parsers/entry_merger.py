@@ -144,9 +144,7 @@ class EntryMerger:
         rounds_value = record.get("rounds") or record.get("races")
         rounds_by_index = self._rounds_by_index(rounds_value, len(race_drivers))
         rounds_all = (
-            []
-            if rounds_by_index is not None
-            else self._normalize_rounds(rounds_value)
+            [] if rounds_by_index is not None else self._normalize_rounds(rounds_value)
         )
         numbers_by_index = numbers if len(numbers) == len(race_drivers) else []
 

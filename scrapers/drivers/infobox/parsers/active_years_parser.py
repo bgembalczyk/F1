@@ -47,6 +47,5 @@ class ActiveYearsParser:
 
         # Build result list
         return [
-            {"year": year, "url": year_to_link.get(year)}
-            for year in sorted(years_set)
+            {"year": year, "url": year_to_link.get(year)} for year in sorted(years_set)
         ]

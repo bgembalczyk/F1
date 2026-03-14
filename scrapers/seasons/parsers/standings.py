@@ -137,7 +137,9 @@ class SeasonStandingsParser:
                 j += 1
 
             if len(entries_to_merge) > 1:
-                merged.append(SeasonStandingsParser._merge_multiple_entries(entries_to_merge))
+                merged.append(
+                    SeasonStandingsParser._merge_multiple_entries(entries_to_merge),
+                )
             else:
                 merged.append(current)
 

@@ -316,9 +316,7 @@ class SponsorColumn(BaseColumn):
             if matched_link.get("url") is None:
                 text = matched_link.get("text") or base_text
                 result = (
-                    {"text": text, "params": parsed_params}
-                    if parsed_params
-                    else text
+                    {"text": text, "params": parsed_params} if parsed_params else text
                 )
             else:
                 result = (

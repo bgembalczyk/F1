@@ -3,7 +3,6 @@
 import re
 from typing import Any
 
-
 _SHORT_YEAR_LEN = 2
 _MIN_URLS_FOR_PATTERN = 2
 

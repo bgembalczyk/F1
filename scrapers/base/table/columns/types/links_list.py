@@ -62,7 +62,6 @@ class LinksListColumn(BaseColumn):
 
             yield from self._iter_cell_tokens(child, link_iter=link_iter)
 
-
     def _append_token(
         self,
         token: str | dict[str, Any] | object,

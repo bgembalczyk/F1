@@ -9,6 +9,7 @@ from models.records.car import CarRecord
 from models.records.circuit import CircuitRecord
 from models.records.circuit_complete import CircuitCompleteRecord
 from models.records.circuit_details import CircuitDetailsRecord
+from models.records.constants import WIKI_SEASON_URL
 from models.records.constructor import ConstructorRecord
 from models.records.driver import DriverRecord
 from models.records.driver_championships import DriversChampionshipsRecord
@@ -19,7 +20,6 @@ from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 from models.records.season_summary import SeasonSummaryRecord
 from models.records.special_driver import SpecialDriverRecord
-from models.records.constants import WIKI_SEASON_URL
 
 # Use the refactored normalizer from base_factory
 _normalizer = FieldNormalizer()

@@ -98,8 +98,7 @@ class ConstructorParsingHelpers:
 
         lines = ConstructorParsingHelpers._split_cell_children(ctx)
         line_link_counts = [
-            ConstructorParsingHelpers._count_line_links(line)
-            for line in lines
+            ConstructorParsingHelpers._count_line_links(line) for line in lines
         ]
 
         line_contexts: list[ColumnContext] = []

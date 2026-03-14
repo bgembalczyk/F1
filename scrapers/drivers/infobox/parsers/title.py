@@ -40,8 +40,7 @@ class InfoboxTitlesParser:
 
             if title_links:
                 titles.extend(
-                    {"title": title_link, "years": []}
-                    for title_link in title_links
+                    {"title": title_link, "years": []} for title_link in title_links
                 )
                 continue
 

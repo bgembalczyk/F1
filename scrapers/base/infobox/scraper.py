@@ -24,6 +24,7 @@ RecoverableError = (
     ValueError,
 )
 
+
 class WikipediaInfoboxScraper:
     """
     Scraper infoboksów z artykułów Wikipedii.
@@ -104,7 +105,6 @@ class WikipediaInfoboxScraper:
                 exc_info=True,
             )
             return record
-
 
     def _handle_scrape_error(
         self,
