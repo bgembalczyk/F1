@@ -15,6 +15,7 @@ from scrapers.circuits.models.services.circuit_service import CircuitService
 CHAMPIONSHIP_SEASON_COUNT = 2
 EXPECTED_LAP_TIME = 80.0
 
+
 def test_season_service_parses_years_and_ranges() -> None:
     seasons = SeasonService.parse_seasons("1973, 1975-1976, 1984", current_year=2024)
     years = [season["year"] for season in seasons]

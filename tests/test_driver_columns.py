@@ -14,7 +14,6 @@ EXPECTED_CHAMPIONSHIP_POINTS = 42.0
 POINTS_TOLERANCE = 1e-9
 
 
-
 def _ctx(
     raw_text: str,
     *,

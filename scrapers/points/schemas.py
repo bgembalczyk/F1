@@ -38,7 +38,6 @@ def build_shortened_race_points_schema() -> TableSchemaDSL:
 def build_sprint_qualifying_schema() -> TableSchemaDSL:
     columns = [column(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn())]
     columns += [
-        column(position, position.lower(), IntColumn())
-        for position in SPRINT_POSITIONS
+        column(position, position.lower(), IntColumn()) for position in SPRINT_POSITIONS
     ]
     return TableSchemaDSL(columns=columns)

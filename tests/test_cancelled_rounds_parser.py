@@ -8,7 +8,7 @@ from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
 
 
-@pytest.fixture
+@pytest.fixture()
 def parser():
     """Create a CancelledRoundsParser instance for testing."""
     options = ScraperOptions()

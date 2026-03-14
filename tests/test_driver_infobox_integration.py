@@ -13,7 +13,7 @@ EXPECTED_TOP_TENS = 11
 EXPECTED_POLES = 2
 
 
-@pytest.fixture
+@pytest.fixture()
 def scraper():
     """Create a DriverInfoboxScraper instance."""
     options = ScraperOptions(include_urls=True)

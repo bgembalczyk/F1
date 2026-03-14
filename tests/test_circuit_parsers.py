@@ -21,7 +21,6 @@ EXPECTED_LENGTH_KM = 5.0
 EXPECTED_TURNS = 10
 
 
-
 def test_circuit_geo_parser_location_and_coordinates() -> None:
     parser = CircuitGeoParser()
     row = {

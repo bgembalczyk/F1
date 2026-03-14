@@ -14,7 +14,7 @@ YEAR_2009 = 2009
 YEAR_2007 = 2007
 
 
-@pytest.fixture
+@pytest.fixture()
 def scraper():
     """Create a scraper instance with URL extraction enabled."""
     options = ScraperOptions(include_urls=True)

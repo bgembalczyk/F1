@@ -141,8 +141,7 @@ class DriverInfoboxScraper:
                         if "major victories" in full_data_text.lower():
                             # Parse major victories from this cell
                             parse_fn = (
-                                self._titles_parser
-                                .parse_major_victories_from_full_data
+                                self._titles_parser.parse_major_victories_from_full_data
                             )
                             major_vics = parse_fn(full_data_cell)
                             parsed["major_victories"].extend(major_vics)
