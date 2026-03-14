@@ -1,6 +1,7 @@
 """Base record factory with common normalization patterns.
 
-This module provides a base class for record factories following DRY and SOLID principles.
+This module provides a base class for record factories
+following DRY and SOLID principles.
 Extracted common patterns from models/records/factories.py.
 
 Follows SOLID principles:
@@ -16,6 +17,7 @@ from typing import TypeVar
 from typing import cast
 
 from models.mappers.field_aliases import apply_field_aliases
+from models.records.factories import WIKI_SEASON_URL
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 from models.validation.core import validate_float
@@ -90,22 +92,21 @@ class FieldNormalizer:
         Returns:
             Normalized LinkRecord or None
         """
-        if value is None:
-            return None
+        normalized: LinkRecord | None = None
+
         if isinstance(value, str):
             text = value.strip()
-            if not text:
-                return None
-            return {"text": text, "url": None}
-        if isinstance(value, Mapping):
+            if text:
+                normalized = {"text": text, "url": None}
+        elif isinstance(value, Mapping):
             try:
-                normalized = validate_link(dict(value), field_name=field_name)
+                validated = validate_link(dict(value), field_name=field_name)
             except ValueError:
-                return None
-            if is_empty_link(normalized):
-                return None
-            return normalized
-        return None
+                validated = None
+            if validated and not is_empty_link(validated):
+                normalized = validated
+
+        return normalized
 
     @staticmethod
     def normalize_link_list(value: Any, field_name: str) -> list[LinkRecord]:
@@ -152,7 +153,6 @@ class FieldNormalizer:
             return []
 
         # Add URLs for seasons that don't have them
-        from models.records.factories import WIKI_SEASON_URL
 
         for season in seasons:
             if "url" not in season and "year" in season:

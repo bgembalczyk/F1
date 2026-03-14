@@ -33,4 +33,4 @@ class PointsContract(DataContract):
     def from_record(cls, record: Mapping[str, Any]) -> "PointsContract":
         payload = dict(record)
         payload.setdefault("seasons", [])
-        return super(PointsContract, cls).from_record(payload)
+        return super().from_record(payload)

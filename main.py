@@ -1,3 +1,4 @@
+from datetime import UTC
 from datetime import datetime
 from pathlib import Path
 
@@ -46,7 +47,7 @@ from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
 # Ścieżki wyjściowe względem katalogu repo (ten plik jest w root)
 BASE_WIKI_DIR = Path("data/wiki").resolve()
 BASE_DEBUG_DIR = Path("data/debug").resolve()
-CURRENT_YEAR = datetime.now().year
+CURRENT_YEAR = datetime.now(tz=UTC).year
 
 
 def run_list_scrapers() -> None:
@@ -137,7 +138,8 @@ def run_list_scrapers() -> None:
         _gemini_client = GeminiClient.from_key_file()
         _classifier: ParenClassifier | None = ParenClassifier(_gemini_client)
         print(
-            "[main] Gemini ParenClassifier załadowany – adnotacje w nawiasach będą klasyfikowane.",
+            "[main] Gemini ParenClassifier załadowany - "
+            "adnotacje w nawiasach będą klasyfikowane.",
         )
     except FileNotFoundError as _e:
         _classifier = None
