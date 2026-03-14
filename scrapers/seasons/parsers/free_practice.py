@@ -91,7 +91,7 @@ class SeasonFreePracticeParser:
         texts.extend(self._practice_driver_texts(record.get("practice_drivers")))
         if not texts:
             return False
-        return all(text == "Source:" for text in texts)
+        return all(text.lower().startswith("source") for text in texts)
 
     def _constructor_texts(self, value: Any) -> list[str]:
         texts: list[str] = []
