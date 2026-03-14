@@ -41,7 +41,7 @@ class HtmlTableParser:
         self.normalize_dashes = normalize_dashes
 
     def parse(self, soup: BeautifulSoup) -> list[TableRow]:
-        table = self._find_table(soup)
+        table = self.find_table(soup)
         return self.parse_table(table)
 
     def parse_table(self, table: Tag) -> list[TableRow]:
@@ -64,14 +64,14 @@ class HtmlTableParser:
                 )
                 for c in cells
             ]
-            if self._is_footer_row(cells, cleaned_cells, headers):
+            if self.is_footer_row(cells, cleaned_cells, headers):
                 logger.debug("Pomijam wiersz stopki w tabeli.")
                 continue
             if is_repeated_header_row(cleaned_cells, headers):
                 logger.debug("Pomijam powtórzony wiersz nagłówka w tabeli.")
                 continue
 
-            expanded_cells = self._expand_row_cells(
+            expanded_cells = self.expand_row_cells(
                 cells,
                 headers,
                 pending_rowspans,
@@ -87,7 +87,7 @@ class HtmlTableParser:
 
         return records
 
-    def _find_table(self, soup: BeautifulSoup) -> Tag:
+    def find_table(self, soup: BeautifulSoup) -> Tag:
         section_id = self.section_id or self._normalize_fragment(self.fragment)
         candidate_tables = find_section_elements(
             soup,
@@ -124,7 +124,7 @@ class HtmlTableParser:
         return normalized or None
 
     @staticmethod
-    def _is_footer_row(
+    def is_footer_row(
         cells: Sequence[Tag],
         cleaned_cells: Sequence[str],
         headers: Sequence[str],
@@ -144,7 +144,7 @@ class HtmlTableParser:
             return True
 
     @staticmethod
-    def _expand_row_cells(
+    def expand_row_cells(
         cells: Sequence[Tag],
         headers: Sequence[str],
         pending_rowspans: dict[int, dict[str, object]],

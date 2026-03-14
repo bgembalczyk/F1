@@ -22,8 +22,10 @@ def build_shortened_race_points_schema() -> TableSchemaDSL:
             TextColumn(),
         ),
     ]
-    for position in HISTORICAL_POSITIONS:
-        columns.append(column(position, position.lower(), AutoColumn()))
+    columns += [
+        column(position, position.lower(), AutoColumn())
+        for position in HISTORICAL_POSITIONS
+    ]
     columns.extend(
         [
             column(POINTS_FASTEST_LAP_HEADER, "fastest_lap", AutoColumn()),
@@ -35,6 +37,8 @@ def build_shortened_race_points_schema() -> TableSchemaDSL:
 
 def build_sprint_qualifying_schema() -> TableSchemaDSL:
     columns = [column(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn())]
-    for position in SPRINT_POSITIONS:
-        columns.append(column(position, position.lower(), IntColumn()))
+    columns += [
+        column(position, position.lower(), IntColumn())
+        for position in SPRINT_POSITIONS
+    ]
     return TableSchemaDSL(columns=columns)

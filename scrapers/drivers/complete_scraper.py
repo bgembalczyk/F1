@@ -54,7 +54,7 @@ class CompleteDriverScraper(CompositeScraper):
             return driver_link.get("url")
         return None
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
         msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
         raise NotImplementedError(msg)
 
