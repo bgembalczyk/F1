@@ -1,6 +1,7 @@
-"""Tests for GeminiCache – model is part of the cache key."""
+"""Tests for GeminiCache - model is part of the cache key."""
 
 import time
+from hashlib import sha256
 from pathlib import Path
 
 from infrastructure.gemini.cache import GeminiCache
@@ -55,8 +56,6 @@ def test_corrupted_cache_file_returns_none(tmp_path: Path) -> None:
     cache = _make_cache(tmp_path)
     cache.set("q", "model-a", {"x": 1})
     # Corrupt the cache file
-    from hashlib import sha256
-
     digest = sha256(b"model-a:q").hexdigest()
     cache_file = tmp_path / "gemini_cache" / f"{digest}.json"
     cache_file.write_text("not valid json", encoding="utf-8")

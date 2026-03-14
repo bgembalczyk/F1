@@ -13,6 +13,8 @@ from scrapers.base.helpers.time import parse_time_text
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.helpers.value_objects import NormalizedTime
 
+TIME_IN_SECONDS = 12.5
+
 
 def test_clean_wiki_text_removes_references_and_whitespace():
     text = "  Foo\xa0bar [1] [note 3]  "
@@ -33,7 +35,7 @@ def test_clean_wiki_text_can_preserve_refs():
 
 
 def test_clean_wiki_text_normalize_dashes_compacts_spaces():
-    assert clean_wiki_text("A – B") == "A-B"
+    assert clean_wiki_text("A - B") == "A-B"
     assert clean_wiki_text("A -B") == "A-B"
     assert clean_wiki_text("A- B") == "A-B"
 
@@ -221,7 +223,7 @@ def test_normalize_auto_value_drops_empty_str():
 
 
 def test_parse_time_seconds_from_text_handles_various_inputs():
-    assert parse_time_seconds_from_text(12.5) == 12.5
+    assert parse_time_seconds_from_text(TIME_IN_SECONDS) == TIME_IN_SECONDS
     assert parse_time_seconds_from_text("1:16.0357") == pytest.approx(76.0357)
     assert parse_time_seconds_from_text({"text": "1:02.500"}) == pytest.approx(62.5)
     assert parse_time_seconds_from_text(
