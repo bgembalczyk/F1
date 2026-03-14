@@ -8,7 +8,7 @@ from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import column
+from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
@@ -82,7 +82,7 @@ class CancelledRoundsParser:
         table_to_parse = self._select_table(matching_tables)
         records = self._parse_table_with_schema(table_to_parse, schema, section_id)
 
-        if len(matching_tables) == 1 and calendar_data is not None:
+        if calendar_data is not None:
             if self._is_same_as_calendar(records, calendar_data):
                 return []
 
