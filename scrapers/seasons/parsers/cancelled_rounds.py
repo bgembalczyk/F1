@@ -16,6 +16,10 @@ from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 
+EXPECTED_HEADERS = ["Grand Prix", "Circuit"]
+CANCELLED_ROUNDS_TABLE_INDEX = 1
+MIN_TABLES_WITH_CANCELLED = 2
+
 
 class CancelledRoundsParser:
     def __init__(self, table_parser: SeasonTableParser) -> None:
@@ -44,20 +48,16 @@ class CancelledRoundsParser:
         ]
         schema = TableSchemaDSL(columns=schema_columns)
 
-        # Try different sections in order
         section_ids = ["Cancelled_Grands_Prix", "Provisional_calendar", "Calendar"]
-
         for section_id in section_ids:
             records = self._parse_section(
                 soup,
                 section_id=section_id,
-                expected_headers=["Grand Prix", "Circuit"],
+                expected_headers=EXPECTED_HEADERS,
                 schema=schema,
                 calendar_data=calendar_data,
             )
-            # None means no tables found in this section, try next section
-            # Empty list means tables found but no cancelled_rounds (matched calendar)
-            if records is not None:  # Explicitly check for None vs empty list
+            if records is not None:
                 return records
 
         return []
@@ -70,14 +70,6 @@ class CancelledRoundsParser:
         schema: TableSchemaDSL,
         calendar_data: list[dict[str, Any]] | None,
     ) -> list[dict[str, Any]] | None:
-        """
-        Parse tables in a section with special logic for cancelled_rounds:
-        - If 2 tables found: return the second one
-        - If 1 table found and it matches calendar: return empty list
-        - If 1 table found and doesn't match calendar: return it
-        - If no tables found: return None (try next section)
-        """
-        # Find all matching tables in the section
         matching_tables = self._find_all_matching_tables(
             soup,
             section_id,
@@ -85,25 +77,22 @@ class CancelledRoundsParser:
         )
 
         if not matching_tables:
-            return None  # No tables found, try next section
+            return None
 
-        if len(matching_tables) >= 2:
-            # If there are 2+ tables, cancelled_rounds is the second one
-            table_to_parse = matching_tables[1]
-        else:
-            # Only one table found
-            table_to_parse = matching_tables[0]
-
-        # Parse the selected table
+        table_to_parse = self._select_table(matching_tables)
         records = self._parse_table_with_schema(table_to_parse, schema, section_id)
 
-        # If only one table was found and calendar_data is provided, check if it's the same
         if len(matching_tables) == 1 and calendar_data is not None:
             if self._is_same_as_calendar(records, calendar_data):
-                # This is the calendar table, not cancelled_rounds
                 return []
 
         return records
+
+    @staticmethod
+    def _select_table(matching_tables: list[Tag]) -> Tag:
+        if len(matching_tables) >= MIN_TABLES_WITH_CANCELLED:
+            return matching_tables[CANCELLED_ROUNDS_TABLE_INDEX]
+        return matching_tables[0]
 
     def _find_all_matching_tables(
         self,
@@ -111,7 +100,6 @@ class CancelledRoundsParser:
         section_id: str,
         expected_headers: list[str],
     ) -> list[Tag]:
-        """Find all tables in a section that match the expected headers."""
         try:
             candidate_tables = find_section_elements(
                 soup,
@@ -122,21 +110,20 @@ class CancelledRoundsParser:
         except RuntimeError:
             return []
 
-        matching_tables = []
-        for table in candidate_tables:
-            try:
-                # Create parser without section_id since table is already found
-                parser = HtmlTableParser(
-                    section_id=None,  # Table already found, no need to re-filter by section
-                    expected_headers=expected_headers,
-                )
-                headers, _, _ = parser._extract_headers(table)
-                if parser._headers_match(headers):
-                    matching_tables.append(table)
-            except RuntimeError:
-                continue
+        parser = HtmlTableParser(section_id=None, expected_headers=expected_headers)
+        return [
+            table
+            for table in candidate_tables
+            if self._table_has_expected_headers(parser, table)
+        ]
 
-        return matching_tables
+    @staticmethod
+    def _table_has_expected_headers(parser: HtmlTableParser, table: Tag) -> bool:
+        try:
+            parser.parse_table(table)
+        except RuntimeError:
+            return False
+        return True
 
     def _parse_table_with_schema(
         self,
@@ -144,19 +131,18 @@ class CancelledRoundsParser:
         schema: TableSchemaDSL,
         section_id: str,
     ) -> list[dict[str, Any]]:
-        """Parse a single table using the schema."""
         config = ScraperConfig(
             url=self._table_parser.url,
             section_id=section_id,
-            expected_headers=["Grand Prix", "Circuit"],
+            expected_headers=EXPECTED_HEADERS,
             schema=schema,
             default_column=None,
             record_factory=record_from_mapping,
         )
         pipeline = TablePipeline(
             config=config,
-            include_urls=self._table_parser._include_urls,
-            normalize_empty_values=self._table_parser._options.normalize_empty_values,
+            include_urls=self._table_parser.include_urls,
+            normalize_empty_values=self._table_parser.options.normalize_empty_values,
         )
         return TableParsingHelper.parse_table_with_pipeline(table, pipeline)
 
@@ -165,38 +151,32 @@ class CancelledRoundsParser:
         cancelled_data: list[dict[str, Any]],
         calendar_data: list[dict[str, Any]],
     ) -> bool:
-        """
-        Check if cancelled_rounds data is the same as calendar data.
-        Compare based on grand_prix names and circuits.
-        """
         if len(cancelled_data) != len(calendar_data):
             return False
 
-        # Extract comparable fields (grand_prix and circuit)
-        def extract_key_fields(data: list[dict[str, Any]]) -> list[tuple]:
-            result = []
-            for item in data:
-                gp = item.get("grand_prix", {})
-                circuit = item.get("circuit", {})
-
-                # Extract text from grand_prix
-                gp_text = gp.get("text", "") if isinstance(gp, dict) else str(gp)
-
-                # Extract text from circuit (handle nested structure)
-                if isinstance(circuit, dict):
-                    # Circuit might be nested like {'circuit': {'text': '...', 'url': ...}}
-                    circuit_inner = circuit.get("circuit", circuit)
-                    if isinstance(circuit_inner, dict):
-                        circuit_text = circuit_inner.get("text", "")
-                    else:
-                        circuit_text = str(circuit_inner)
-                else:
-                    circuit_text = str(circuit)
-
-                result.append((gp_text, circuit_text))
-            return result
-
-        cancelled_fields = extract_key_fields(cancelled_data)
-        calendar_fields = extract_key_fields(calendar_data)
-
+        cancelled_fields = self._extract_key_fields(cancelled_data)
+        calendar_fields = self._extract_key_fields(calendar_data)
         return cancelled_fields == calendar_fields
+
+    @staticmethod
+    def _extract_key_fields(data: list[dict[str, Any]]) -> list[tuple[str, str]]:
+        result: list[tuple[str, str]] = []
+        for item in data:
+            gp = item.get("grand_prix", {})
+            circuit = item.get("circuit", {})
+
+            gp_text = gp.get("text", "") if isinstance(gp, dict) else str(gp)
+            circuit_text = CancelledRoundsParser._extract_circuit_text(circuit)
+            result.append((gp_text, circuit_text))
+
+        return result
+
+    @staticmethod
+    def _extract_circuit_text(circuit: Any) -> str:
+        if not isinstance(circuit, dict):
+            return str(circuit)
+
+        circuit_inner = circuit.get("circuit", circuit)
+        if isinstance(circuit_inner, dict):
+            return str(circuit_inner.get("text", ""))
+        return str(circuit_inner)

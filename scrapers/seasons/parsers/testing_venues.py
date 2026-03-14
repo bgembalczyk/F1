@@ -12,6 +12,9 @@ from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.columns.date_range import DateRangeColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 
+TESTING_VENUES_YEARS = {2009, 2011}
+TESTING_VENUES_SWAPPED_COLUMNS_YEAR = 2011
+
 
 class TestingVenuesParser:
     def __init__(self, table_parser: SeasonTableParser) -> None:
@@ -23,10 +26,10 @@ class TestingVenuesParser:
         season_year: int | None,
     ) -> list[dict[str, Any]]:
         # This table only exists in 2011 and 2009
-        if season_year not in {2009, 2011}:
+        if season_year not in TESTING_VENUES_YEARS:
             return []
 
-        if season_year == 2011:
+        if season_year == TESTING_VENUES_SWAPPED_COLUMNS_YEAR:
             return self._parse_2011(soup, season_year)
         # 2009
         return self._parse_2009(soup, season_year)

@@ -37,6 +37,14 @@ class RaceResultColumn(BaseColumn):
     _HALF_POINTS_NOTE = "half_points"
     _DOUBLE_POINTS_NOTE = "double_points"
     _F2_INELIGIBLE_YEARS = {1957, 1958, 1966, 1967, 1969}
+    _SHARED_DRIVE_NO_POINTS_START_YEAR = 1960
+    _SHARED_DRIVE_NO_POINTS_END_YEAR = 1964
+    _SHARED_DRIVE_POINTS_START_YEAR = 1950
+    _SHARED_DRIVE_POINTS_END_YEAR = 1957
+    _FATAL_NOTES_START_YEAR = 1965
+    _DOUBLE_POINTS_SEASON_YEAR = 2014
+    _SPRINT_POINTS_START_YEAR = 2021
+    _SHORT_HEX_COLOR_LENGTH = 3
 
     def __init__(self, *, season_year: int | None = None) -> None:
         self._season_year = season_year
@@ -50,63 +58,22 @@ class RaceResultColumn(BaseColumn):
             self._parse_superscripts(ctx)
         )
         background = self._map_background(extract_race_result_background(ctx.cell))
-
         results = self._parse_results(text)
-        if not results and background is None:
-            return None
-        if background is None and all(
-            result.get("position") is None for result in results
-        ):
+
+        if self._should_skip_payload(results, background):
             return None
 
         payload: dict[str, Any] = {}
-        if ctx.header_link and (
-            ctx.header_link.get("url") or ctx.header_link.get("text")
-        ):
-            round_link = dict(ctx.header_link)
-            if not round_link.get("text"):
-                round_link["text"] = ctx.header
-            round_note = self._round_note(ctx, round_link)
-            if round_note:
-                round_link.update(round_note)
-            payload["round"] = round_link
-
-        if results:
-            share_count = len(results)
-            if footnotes:
-                for result in results:
-                    result["footnotes"] = footnotes
-            for result in results:
-                self._apply_result_notes(result, background)
-                if result.get("points_shared") and share_count > 1:
-                    result["points_share_count"] = share_count
-                result.pop("marks", None)
-                # Add background, pole_position, and fastest_lap to each result
-                if background is not None:
-                    # Special case: NC with blue background means "Not classified, finished"
-                    position = result.get("position")
-                    if (
-                        isinstance(position, str)
-                        and position.upper() == "NC"
-                        and background == "Other classified position"
-                    ):
-                        result["background"] = "Not classified, finished"
-                    else:
-                        result["background"] = background
-                if pole_position:
-                    result["pole_position"] = True
-                if fastest_lap:
-                    result["fastest_lap"] = True
-            payload["results"] = results
-            # For backwards compatibility with shared fastest laps in driver standings
-            if fastest_lap and len(results) > 1:
-                payload["fastest_lap_shared"] = True
-                payload["fastest_lap_share_count"] = len(results)
-        if sprint_position is not None:
-            payload["sprint_position"] = sprint_position
-        if footnotes:
-            payload["footnotes"] = footnotes
-
+        self._populate_round(payload, ctx)
+        self._populate_results(
+            payload,
+            results,
+            background,
+            footnotes,
+            pole_position=pole_position,
+            fastest_lap=fastest_lap,
+        )
+        self._populate_payload_meta(payload, sprint_position, footnotes)
         return payload or None
 
     @staticmethod
@@ -119,6 +86,101 @@ class RaceResultColumn(BaseColumn):
             sup.decompose()
         return clean_wiki_text(fragment.get_text(" ", strip=True))
 
+    @staticmethod
+    def _should_skip_payload(
+        results: list[dict[str, Any]],
+        background: str | None,
+    ) -> bool:
+        if not results and background is None:
+            return True
+        return background is None and all(
+            result.get("position") is None for result in results
+        )
+
+    def _populate_round(self, payload: dict[str, Any], ctx: ColumnContext) -> None:
+        if not ctx.header_link:
+            return
+        if not (ctx.header_link.get("url") or ctx.header_link.get("text")):
+            return
+
+        round_link = dict(ctx.header_link)
+        if not round_link.get("text"):
+            round_link["text"] = ctx.header
+        round_note = self._round_note(ctx, round_link)
+        if round_note:
+            round_link.update(round_note)
+        payload["round"] = round_link
+
+    def _populate_results(
+        self,
+        payload: dict[str, Any],
+        results: list[dict[str, Any]],
+        background: str | None,
+        footnotes: list[str],
+        *,
+        pole_position: bool,
+        fastest_lap: bool,
+    ) -> None:
+        if not results:
+            return
+
+        share_count = len(results)
+        for result in results:
+            if footnotes:
+                result["footnotes"] = footnotes
+            self._apply_result_notes(result, background)
+            if result.get("points_shared") and share_count > 1:
+                result["points_share_count"] = share_count
+            result.pop("marks", None)
+            self._apply_result_flags(
+                result,
+                background,
+                pole_position=pole_position,
+                fastest_lap=fastest_lap,
+            )
+
+        payload["results"] = results
+        if fastest_lap and len(results) > 1:
+            payload["fastest_lap_shared"] = True
+            payload["fastest_lap_share_count"] = len(results)
+
+    def _apply_result_flags(
+        self,
+        result: dict[str, Any],
+        background: str | None,
+        *,
+        pole_position: bool,
+        fastest_lap: bool,
+    ) -> None:
+        if background is not None:
+            result["background"] = self._resolve_background(result, background)
+        if pole_position:
+            result["pole_position"] = True
+        if fastest_lap:
+            result["fastest_lap"] = True
+
+    @staticmethod
+    def _resolve_background(result: dict[str, Any], background: str) -> str:
+        position = result.get("position")
+        if (
+            isinstance(position, str)
+            and position.upper() == "NC"
+            and background == "Other classified position"
+        ):
+            return "Not classified, finished"
+        return background
+
+    @staticmethod
+    def _populate_payload_meta(
+        payload: dict[str, Any],
+        sprint_position: int | None,
+        footnotes: list[str],
+    ) -> None:
+        if sprint_position is not None:
+            payload["sprint_position"] = sprint_position
+        if footnotes:
+            payload["footnotes"] = footnotes
+
     def _map_background(self, background: str | None) -> str | None:
         if not background:
             return None
@@ -126,14 +188,14 @@ class RaceResultColumn(BaseColumn):
         if not match:
             return None
         value = match.group(1).lower()
-        if len(value) == 3:
+        if len(value) == self._SHORT_HEX_COLOR_LENGTH:
             value = "".join(char * 2 for char in value)
         return self._BACKGROUND_TO_RESULT.get(value)
 
     def _parse_results(self, text: str) -> list[dict[str, Any]]:
         results: list[dict[str, Any]] = []
-        for part in SPLIT_RESULTS_RE.split(text):
-            part = part.strip()
+        for raw_part in SPLIT_RESULTS_RE.split(text):
+            part = raw_part.strip()
             if not part:
                 continue
             marks = MARKS_RE.findall(part)
@@ -141,12 +203,7 @@ class RaceResultColumn(BaseColumn):
             parenthesized = cleaned.startswith("(") and cleaned.endswith(")")
             if parenthesized:
                 cleaned = cleaned[1:-1].strip()
-            if not cleaned or cleaned in {"-", "–"}:
-                position: int | str | None = None
-            elif cleaned.isdigit():
-                position = int(cleaned)
-            else:
-                position = cleaned
+            position = self._parse_position(cleaned)
             result: dict[str, Any] = {"position": position}
             if marks:
                 result["marks"] = marks
@@ -154,6 +211,14 @@ class RaceResultColumn(BaseColumn):
                 result["points_counted"] = False
             results.append(result)
         return results
+
+    @staticmethod
+    def _parse_position(cleaned: str) -> int | str | None:
+        if not cleaned or cleaned in {"-", "--"}:
+            return None
+        if cleaned.isdigit():
+            return int(cleaned)
+        return cleaned
 
     def _append_note(self, result: dict[str, Any], note: str) -> None:
         notes = result.setdefault("notes", [])
@@ -167,7 +232,19 @@ class RaceResultColumn(BaseColumn):
     ) -> None:
         marks = result.get("marks") or []
         position = result.get("position")
+        self._apply_classified_dnf_notes(result, marks, position, background)
+        self._apply_mark_notes(result, marks, position, background)
+        self._apply_shared_drive_notes(result, marks)
+        self._apply_fatal_accident_notes(result, marks, position)
+        self._apply_f2_ineligible_notes(result)
 
+    def _apply_classified_dnf_notes(
+        self,
+        result: dict[str, Any],
+        marks: list[str],
+        position: Any,
+        background: str | None,
+    ) -> None:
         if (
             self._season_year is not None
             and self._season_year >= self._CLASSIFIED_DNF_START_YEAR
@@ -177,9 +254,15 @@ class RaceResultColumn(BaseColumn):
         ):
             self._append_note(result, self._CLASSIFIED_DNF_NOTE)
 
+    def _apply_mark_notes(
+        self,
+        result: dict[str, Any],
+        marks: list[str],
+        position: Any,
+        background: str | None,
+    ) -> None:
         if "*" in marks and background == "Other classified position":
             result["points_eligible"] = False
-            # Note: Don't add redundant note - points_eligible=False is sufficient
         if "~" in marks:
             result["points_eligible"] = False
             self._append_note(result, "shared_drive_no_points")
@@ -187,38 +270,57 @@ class RaceResultColumn(BaseColumn):
             result["points_eligible"] = False
             self._append_note(result, "no_points_awarded")
 
+    def _apply_shared_drive_notes(
+        self,
+        result: dict[str, Any],
+        marks: list[str],
+    ) -> None:
+        if self._season_year is None or "†" not in marks:
+            return
+
         if (
-            self._season_year is not None
-            and 1960 <= self._season_year <= 1964
-            and "†" in marks
+            self._SHARED_DRIVE_NO_POINTS_START_YEAR
+            <= self._season_year
+            <= self._SHARED_DRIVE_NO_POINTS_END_YEAR
         ):
             result["shared_drive"] = True
             result["points_eligible"] = False
             self._append_note(result, "shared_drive_no_points")
-        elif (
-            self._season_year is not None
-            and 1950 <= self._season_year <= 1957
-            and "†" in marks
+            return
+
+        if (
+            self._SHARED_DRIVE_POINTS_START_YEAR
+            <= self._season_year
+            <= self._SHARED_DRIVE_POINTS_END_YEAR
         ):
             result["shared_drive"] = True
             result["points_shared"] = True
 
+    def _apply_fatal_accident_notes(
+        self,
+        result: dict[str, Any],
+        marks: list[str],
+        position: Any,
+    ) -> None:
         if (
-            self._season_year is not None
-            and self._season_year >= 1965
-            and isinstance(position, str)
+            self._season_year is None
+            or self._season_year < self._FATAL_NOTES_START_YEAR
+            or not isinstance(position, str)
         ):
-            status = position.lower()
-            if status == "dns" and "†" in marks:
-                self._append_note(result, "fatal_accident_before_race")
-            elif status.startswith("ret") and ("†" in marks or "‡" in marks):
-                self._append_note(result, "fatal_accident_during_race")
+            return
 
-        if (
-            self._season_year in self._F2_INELIGIBLE_YEARS
-            and result.get("footnotes")
-            and "1" in result["footnotes"]
-        ):
+        status = position.lower()
+        if status == "dns" and "†" in marks:
+            self._append_note(result, "fatal_accident_before_race")
+            return
+        if status.startswith("ret") and ("†" in marks or "‡" in marks):
+            self._append_note(result, "fatal_accident_during_race")
+
+    def _apply_f2_ineligible_notes(self, result: dict[str, Any]) -> None:
+        if self._season_year not in self._F2_INELIGIBLE_YEARS:
+            return
+        footnotes = result.get("footnotes")
+        if footnotes and "1" in footnotes:
             result["points_eligible"] = False
             self._append_note(result, "ineligible_f2")
 
@@ -235,7 +337,7 @@ class RaceResultColumn(BaseColumn):
         if header_text == "500" or "Indianapolis_500" in round_url:
             return None
         if (
-            self._season_year == 2014
+            self._season_year == self._DOUBLE_POINTS_SEASON_YEAR
             and "Abu_Dhabi_Grand_Prix" in round_url
             and "‡" in marks
         ):
@@ -252,30 +354,15 @@ class RaceResultColumn(BaseColumn):
         if cell is None:
             return None, False, False, []
 
-        sup_texts = []
-        footnotes: list[str] = []
-        for sup in cell.find_all("sup"):
-            sup_text = clean_wiki_text(sup.get_text(" ", strip=True))
-            if sup_text:
-                sup_texts.append(sup_text)
-                footnotes.extend(re.findall(r"\d+", sup_text))
+        sup_texts, footnotes = self._collect_superscripts(cell)
+        sprint_position, pole_position, fastest_lap = self._parse_superscript_tokens(
+            sup_texts,
+        )
 
-        sprint_position = None
-        pole_position = False
-        fastest_lap = False
-
-        for token in " ".join(sup_texts).split():
-            letters = re.findall(r"[A-Za-z]", token)
-            for letter in letters:
-                upper = letter.upper()
-                if upper == "P":
-                    pole_position = True
-                elif upper == "F":
-                    fastest_lap = True
-            if token.isdigit() and sprint_position is None:
-                sprint_position = int(token)
-
-        if self._season_year is None or self._season_year < 2021:
+        if (
+            self._season_year is None
+            or self._season_year < self._SPRINT_POINTS_START_YEAR
+        ):
             sprint_position = None
 
         if not pole_position and cell.find(["b", "strong"]):
@@ -284,3 +371,35 @@ class RaceResultColumn(BaseColumn):
             fastest_lap = True
 
         return sprint_position, pole_position, fastest_lap, footnotes
+
+    @staticmethod
+    def _collect_superscripts(cell: Any) -> tuple[list[str], list[str]]:
+        sup_texts: list[str] = []
+        footnotes: list[str] = []
+        for sup in cell.find_all("sup"):
+            sup_text = clean_wiki_text(sup.get_text(" ", strip=True))
+            if not sup_text:
+                continue
+            sup_texts.append(sup_text)
+            footnotes.extend(re.findall(r"\d+", sup_text))
+        return sup_texts, footnotes
+
+    @staticmethod
+    def _parse_superscript_tokens(
+        sup_texts: list[str],
+    ) -> tuple[int | None, bool, bool]:
+        sprint_position = None
+        pole_position = False
+        fastest_lap = False
+
+        for token in " ".join(sup_texts).split():
+            for letter in re.findall(r"[A-Za-z]", token):
+                upper = letter.upper()
+                if upper == "P":
+                    pole_position = True
+                elif upper == "F":
+                    fastest_lap = True
+            if token.isdigit() and sprint_position is None:
+                sprint_position = int(token)
+
+        return sprint_position, pole_position, fastest_lap
