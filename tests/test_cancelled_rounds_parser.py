@@ -223,6 +223,7 @@ def test_cancelled_rounds_returns_empty_when_two_tables_and_second_matches_calen
     assert result == []
 
 
+
 def test_cancelled_rounds_returns_empty_when_no_table_found(parser) -> None:
     """When no table is found in any section, return empty list."""
     html = """
@@ -237,4 +238,71 @@ def test_cancelled_rounds_returns_empty_when_no_table_found(parser) -> None:
 
     result = parser.parse(soup, season_year=2020, calendar_data=None)
 
+    assert result == []
+
+
+def test_cancelled_rounds_ignores_results_table_from_next_section(parser) -> None:
+    """Tables from sections after Calendar are not picked up as cancelled rounds.
+
+    Regression test: ``find_all_next`` was used to find tables, so results tables
+    in later sections (e.g. Grands_Prix) were mistakenly included.  After the fix,
+    only tables that belong to the Calendar section itself are considered.
+    """
+    html = """
+    <html>
+      <body>
+        <h2><span id="Calendar">Calendar</span></h2>
+        <table class="wikitable">
+          <tr>
+            <th>Round</th>
+            <th>Grand Prix</th>
+            <th>Circuit</th>
+            <th>Date</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><a href="/wiki/Monaco_Grand_Prix">Monaco Grand Prix</a></td>
+            <td>Monte Carlo</td>
+            <td>May 1</td>
+          </tr>
+        </table>
+        <h2><span id="Grands_Prix">Grands Prix</span></h2>
+        <table class="wikitable">
+          <tr>
+            <th>Round</th>
+            <th>Grand Prix</th>
+            <th>Circuit</th>
+            <th>Pole position</th>
+            <th>Fastest lap</th>
+            <th>Winning driver</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><a href="/wiki/Monaco_Grand_Prix">Monaco Grand Prix</a></td>
+            <td>Monte Carlo</td>
+            <td><a href="/wiki/Fangio">Fangio</a></td>
+            <td><a href="/wiki/Fangio">Fangio</a></td>
+            <td><a href="/wiki/Fangio">Fangio</a></td>
+          </tr>
+        </table>
+      </body>
+    </html>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    calendar_data = [
+        {
+            "round": 1,
+            "grand_prix": {
+                "text": "Monaco Grand Prix",
+                "url": "/wiki/Monaco_Grand_Prix",
+            },
+            "circuit": {"circuit": {"text": "Monte Carlo", "url": None}},
+            "race_date": "May 1",
+        },
+    ]
+
+    result = parser.parse(soup, season_year=1950, calendar_data=calendar_data)
+
+    # Results table from Grands_Prix section must not pollute cancelled_rounds
     assert result == []
