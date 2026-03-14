@@ -4,7 +4,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 
-from scrapers.base.ABC import F1Scraper
+from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.seasons.list_scraper import SeasonsListScraper

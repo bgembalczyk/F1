@@ -25,6 +25,7 @@ def write_infobox_dump(
 ) -> Path:
     debug_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    _ = url
     safe_run_id = run_id or "unknown"
     filename = f"infobox_{safe_run_id}_{timestamp}.html"
     dump_path = debug_dir / filename

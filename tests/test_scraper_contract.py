@@ -8,7 +8,7 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.ABC import F1Scraper
+from scrapers.base.abc import F1Scraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
