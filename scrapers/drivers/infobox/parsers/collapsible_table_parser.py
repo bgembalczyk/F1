@@ -19,7 +19,7 @@ class CollapsibleTableParser:
         """
         self._delegate = cell_parser_delegate
 
-    def parse_collapsible_career_table(self, table: Tag) -> dict[str, Any] | None:
+    def parse_collapsible_career_table(self, table: Tag) -> dict[str, Any] | None:  # noqa: C901
         """Parse collapsible career statistics table (e.g., motorcycle racing).
 
         Example structure:

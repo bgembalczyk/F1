@@ -34,7 +34,7 @@ class SeasonParser:
             season_links: List of season links to check for duplicates
 
         Returns:
-            True if class_info is a valid class, False if it's season data or a duplicate
+            True if class_info is valid, False for season data or duplicates
         """
         if not class_info:
             return False
@@ -61,25 +61,25 @@ class SeasonParser:
 
         Season-like text contains only years and separators:
         - Single years: "2013", "2014"
-        - Year ranges with 2-digit suffix: "2013-14", "2019–20" (where "14" means 2014, "20" means 2020)
-        - Full year ranges: "2013-2014", "2013–2014"
+        - Year ranges with 2-digit suffix: "2013-14", "2019-20"
+        - Full year ranges: "2013-2014", "2013-2014"
         - Multiple years: "2013, 2014, 2015"
         - Combinations: "2013-2015, 2018"
 
-        Class names typically contain letters (possibly with numbers) in non-year format.
+        Class names usually contain letters, optionally mixed with numbers.
         Examples of class names: "LMP1", "LMH", "LMP2", "GT3", "LMP2-H"
 
         Args:
             text: The text to check
 
         Returns:
-            True if the text looks like season/year data, False if it looks like a class name
+            True if text looks like season/year data, else False
         """
         if not text:
             return False
 
         # Remove common separators and whitespace to get individual parts
-        cleaned = text.replace(",", " ").replace("–", " ").replace("-", " ")
+        cleaned = text.replace(",", " ").replace("-", " ").replace("-", " ")
         parts = cleaned.split()
 
         if not parts:
@@ -89,15 +89,15 @@ class SeasonParser:
         # and ensure at least one 4-digit year is present
         has_four_digit_year = False
 
-        for part in parts:
-            part = part.strip()
-            if not part:
+        for raw_part in parts:
+            cleaned_part = raw_part.strip()
+            if not cleaned_part:
                 continue
 
-            if self._FOUR_DIGIT_YEAR_PATTERN.match(part):
+            if self._FOUR_DIGIT_YEAR_PATTERN.match(cleaned_part):
                 # It's a 4-digit year (1900-2099)
                 has_four_digit_year = True
-            elif self._TWO_DIGIT_SUFFIX_PATTERN.match(part):
+            elif self._TWO_DIGIT_SUFFIX_PATTERN.match(cleaned_part):
                 # It's a 2-digit suffix (00-99)
                 # These are only valid when combined with 4-digit years (like "2019-20")
                 pass

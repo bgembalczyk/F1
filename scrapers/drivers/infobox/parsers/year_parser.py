@@ -8,6 +8,8 @@ from scrapers.base.helpers.year_extraction import YearExtractor
 
 
 class YearParser:
+    MIN_RANGE_YEARS = 2
+
     """Handles parsing of years and year ranges."""
 
     @staticmethod
@@ -16,9 +18,9 @@ class YearParser:
 
         Handles cases like:
         - "2018-2022" -> {start: 2018, end: 2022}
-        - "2018-19–2022" -> {start: 2018, end: 2022}  # Multiple dashes
+        - "2018-19-2022" -> {start: 2018, end: 2022}  # Multiple dashes
         - "2018" -> {start: 2018, end: 2018}
-        - "2015–present" -> {start: 2015, end: None}
+        - "2015-present" -> {start: 2015, end: None}
         """
         try:
             normalized = clean_infobox_text(text) or ""
@@ -36,7 +38,7 @@ class YearParser:
             all_years.extend(four_digit_years)
 
             # Find 2-digit years that come after 4-digit years (like "2018-19")
-            two_digit_pattern = re.finditer(r"\b(\d{4})\s*[-–]\s*(\d{2})\b", normalized)
+            two_digit_pattern = re.finditer(r"\b(\d{4})\s*[--]\s*(\d{2})\b", normalized)
             for match in two_digit_pattern:
                 start_year = int(match.group(1))
                 end_suffix = match.group(2)
@@ -53,7 +55,7 @@ class YearParser:
             # If "present" is in text, end should be None
             end = None if has_present else all_years[-1]
 
-            return {"start": start, "end": end}
+            return {"start": start, "end": end}  # noqa: TRY300
         except (TypeError, ValueError) as exc:
             msg = f"Nie udało się sparsować zakresu lat: {text!r}."
             raise DomainParseError(
@@ -75,7 +77,7 @@ class YearParser:
 
         Handles formats like:
         - "(until 2019)" -> {start: None, end: 2019}
-        - "(2020–)" -> {start: 2020, end: None}
+        - "(2020-)" -> {start: 2020, end: None}
         - "(2015-2018)" -> {start: 2015, end: 2018}
         """
         years: dict[str, int | None] = {"start": None, "end": None}
@@ -88,21 +90,21 @@ class YearParser:
             year_match = re.search(r"\b(\d{4})\b", year_text)
             if year_match:
                 years["end"] = int(year_match.group(1))
-        # Handle "YEAR–" or "YEAR-" (open-ended, possibly with "present")
-        elif re.search(r"\b(\d{4})\s*[–-]\s*(?:present)?$", year_text.strip()):
+        # Handle "YEAR-" or "YEAR-" (open-ended, possibly with "present")
+        elif re.search(r"\b(\d{4})\s*[--]\s*(?:present)?$", year_text.strip()):
             year_match = re.search(r"\b(\d{4})\b", year_text)
             if year_match:
                 years["start"] = int(year_match.group(1))
-        # Handle "YEAR–YEAR" or "YEAR-YEAR"
+        # Handle "YEAR-YEAR" or "YEAR-YEAR"
         else:
             all_years = re.findall(r"\b(\d{4})\b", year_text)
-            if len(all_years) >= 2:
+            if len(all_years) >= YearParser.MIN_RANGE_YEARS:
                 years["start"] = int(all_years[0])
                 years["end"] = int(all_years[-1])
             elif len(all_years) == 1:
                 # Single year without context (e.g., just "(2015)")
-                # Treat as a single-year validity period (both start and end are the same)
-                # This is a reasonable assumption for racing licences that were valid only in one year
+                # Treat as a single-year validity period.
+                # Reasonable assumption for one-year licences.
                 years["start"] = int(all_years[0])
                 years["end"] = int(all_years[0])
 

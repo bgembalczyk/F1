@@ -34,7 +34,7 @@ from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
 
 
 class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
-    _UNKNOWN_TOKEN = "unknown"
+    _UNKNOWN_VALUE = "unknown"
 
     def __init__(
         self,
@@ -269,11 +269,13 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         schema_columns = [
             column(header, key, columns[key]) for header, key in column_map.items()
         ]
-        for header in headers:
-            if header.isdigit():
-                schema_columns.append(
-                    column(header, header, self._unknown(RoundColumn())),
-                )
+        schema_columns.extend(
+            [
+                column(header, header, self._unknown(RoundColumn()))
+                for header in headers
+                if header.isdigit()
+            ],
+        )
 
         pipeline = self._build_pipeline(schema=TableSchemaDSL(columns=schema_columns))
         return self._parse_table(table, pipeline)
@@ -313,4 +315,4 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         return [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
 
     def _unknown(self, column: Any) -> UnknownValueColumn:
-        return UnknownValueColumn(column, unknown_token=self._UNKNOWN_TOKEN)
+        return UnknownValueColumn(column, unknown_value=self._UNKNOWN_VALUE)

@@ -27,7 +27,7 @@ class ChampionshipsParser:
 
         Handles cases like:
         - "1 (2014)" -> {count: 1, championships: [{text: "2014", url: ...}]}
-        - "2 (2015, 2016)" -> {count: 2, championships: [{text: "2015", url: ...}, {text: "2016", url: ...}]}
+        - "2 (2015, 2016)" -> {count: 2, championships: [...]}
 
         Args:
             cell: BeautifulSoup Tag representing the cell
@@ -47,7 +47,7 @@ class ChampionshipsParser:
             # Extract links from parentheses - treat as simple list of links
             championships = self._link_extractor.extract_links(cell)
 
-            return {"count": count, "championships": championships}
+            return {"count": count, "championships": championships}  # noqa: TRY300  # noqa: TRY300
         except (TypeError, ValueError) as exc:
             msg = f"Nie udało się sparsować mistrzostw: {text!r}."
             raise DomainParseError(
@@ -102,7 +102,7 @@ class ChampionshipsParser:
                         year = int(year_match.group(1))
                         wins.append({"year": year, "url": year_to_url.get(year)})
 
-            return {"count": count, "wins": wins}
+            return {"count": count, "wins": wins}  # noqa: TRY300  # noqa: TRY300
         except (TypeError, ValueError) as exc:
             msg = f"Nie udało się sparsować zwycięstw klasowych: {text!r}."
             raise DomainParseError(

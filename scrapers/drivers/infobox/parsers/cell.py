@@ -91,7 +91,7 @@ class InfoboxCellParser:
 
         Handles cases like:
         - "1 (2014)" -> {count: 1, championships: [{text: "2014", url: ...}]}
-        - "2 (2015, 2016)" -> {count: 2, championships: [{text: "2015", url: ...}, {text: "2016", url: ...}]}
+        - "2 (2015, 2016)" -> {count: 2, championships: [...]}
         """
         return self._championships_parser.parse_championships(cell)
 
@@ -116,7 +116,7 @@ class InfoboxCellParser:
         return self._best_finish_parser.parse_best_finish(cell)
 
     def parse_race_event(self, cell: Tag) -> list[dict[str, Any]]:
-        """Parse race event fields like First race, Last race, First win, Last win, First entry, Last entry.
+        """Parse race event fields (First/Last race, win, and entry).
 
         Returns a list of all links found in the cell.
         If no links are found, returns the text as a single-item list with text field.
@@ -147,7 +147,7 @@ class InfoboxCellParser:
         Handles cases like:
         - "American or Italian" -> ["American", "Italian"]
         - "British" with link -> [{"text": "British", "url": "..."}]
-        - "Federation of Rhodesia and Nyasaland (1963)" with year ranges -> structured data
+        - "Federation of Rhodesia and Nyasaland (1963)" -> structured data
         """
         return self._nationality_parser.parse_nationality(cell)
 

@@ -39,8 +39,10 @@ class InfoboxTitlesParser:
                 continue
 
             if title_links:
-                for title_link in title_links:
-                    titles.append({"title": title_link, "years": []})
+                titles.extend(
+                    {"title": title_link, "years": []}
+                    for title_link in title_links
+                )
                 continue
 
             title_text = clean_infobox_text(value_cell.get_text(" ", strip=True))
@@ -104,8 +106,10 @@ class InfoboxTitlesParser:
                 if series_links and year_data:
                     items.append({"title": series_links[0], "years": year_data})
                 elif series_links:
-                    for series_link in series_links:
-                        items.append({"title": series_link, "years": []})
+                    items.extend(
+                        {"title": series_link, "years": []}
+                        for series_link in series_links
+                    )
                 else:
                     series_text = clean_infobox_text(
                         value_cell.get_text(" ", strip=True),
@@ -138,13 +142,13 @@ class InfoboxTitlesParser:
         # Filter out empty parts
         return [p.strip() for p in parts if p.strip()]
 
-    def parse_major_victories_from_full_data(self, cell: Tag) -> list[dict[str, Any]]:
+    def parse_major_victories_from_full_data(self, cell: Tag) -> list[dict[str, Any]]:  # noqa: C901
         """Parse major victories from a full_data cell.
 
         Handles HTML like:
         <b>Major victories</b> <br>
-        <a href="/wiki/24_Hours_of_Le_Mans" title="24 Hours of Le Mans">24 Hours of Le Mans</a>
-        (<a href="/wiki/1934_24_Hours_of_Le_Mans" title="1934 24 Hours of Le Mans">1934</a>)
+        <a href="/wiki/24_Hours_of_Le_Mans">24 Hours of Le Mans</a>
+        (<a href="/wiki/1934_24_Hours_of_Le_Mans">1934</a>)
         """
         victories: list[dict[str, Any]] = []
 
