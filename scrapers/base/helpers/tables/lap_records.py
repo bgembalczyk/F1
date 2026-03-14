@@ -24,7 +24,7 @@ class LapRecordsTableScraper(F1TableScraper):
     """
     Lekki scraper pojedynczej tabeli z rekordami okrążeń.
 
-    Używany tylko jako helper w F1SingleCircuitScraper – korzystamy z całej
+    Używany tylko jako helper w F1SingleCircuitScraper - korzystamy z całej
     logiki kolumn / ColumnContext / extract_links_from_cell itd.
     """
 
@@ -47,14 +47,14 @@ class LapRecordsTableScraper(F1TableScraper):
         record_factory=record_from_mapping,
     )
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
         """
-        LapRecordsTableScraper nie jest używany bezpośrednio – w
+        LapRecordsTableScraper nie jest używany bezpośrednio - w
         F1SingleCircuitScraper sami podajemy konkretne tabele i nagłówki
         i wołamy parse_row().
         """
         msg = (
-            "LapRecordsTableScraper nie jest używany bezpośrednio – "
+            "LapRecordsTableScraper nie jest używany bezpośrednio - "
             "korzystaj z parse_row()/parse_multi_row() na konkretnych tabelach."
         )
         raise NotImplementedError(
@@ -95,7 +95,10 @@ class LapRecordsTableScraper(F1TableScraper):
 
             if as_value_objects:
                 if LapRecord is None:
-                    msg = "as_value_objects=True, ale LapRecord nie jest dostępny w projekcie."
+                    msg = (
+                        "as_value_objects=True, ale LapRecord "
+                        "nie jest dostępny w projekcie."
+                    )
                     raise RuntimeError(
                         msg,
                     )
@@ -106,7 +109,10 @@ class LapRecordsTableScraper(F1TableScraper):
         return out_records
 
     def headers_match(self, headers: list[str]) -> bool:
-        """Sprawdza czy nagłówki zawierają wymagane expected_headers (po normalizacji)."""
+        """Sprawdza, czy nagłówki zawierają wymagane expected_headers.
+
+        Dopasowanie odbywa się po normalizacji.
+        """
         if not self.expected_headers:
             return True
         normalized = {normalize_header(h) for h in headers}

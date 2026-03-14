@@ -9,7 +9,8 @@ def extract_background(cell: Tag) -> str | None:
     """
     Extracts the background color from a table cell.
 
-    Checks both the 'style' attribute (for background or background-color CSS properties)
+    Checks both the 'style' attribute
+    (for background or background-color CSS properties)
     and the 'bgcolor' attribute.
 
     Args:

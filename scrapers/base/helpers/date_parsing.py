@@ -34,7 +34,8 @@ def parse_formula_category(ctx: ColumnContext, category_marker: str) -> str | No
 
     Args:
         ctx: The column context containing the raw text.
-        category_marker: The marker that indicates a different category (e.g., "#" for F2).
+        category_marker: The marker that indicates a different category
+            (e.g., "#" for F2).
 
     Returns:
         "F2" if the marker is present in raw text, "F1" otherwise, or None if no text.

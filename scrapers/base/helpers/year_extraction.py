@@ -4,6 +4,10 @@ import re
 from typing import Any
 
 
+_SHORT_YEAR_LEN = 2
+_MIN_URLS_FOR_PATTERN = 2
+
+
 class YearExtractor:
     """Handles extraction of years and year ranges from text."""
 
@@ -13,7 +17,7 @@ class YearExtractor:
 
         Handles cases like:
         - Individual years: 2002, 2005, 2007
-        - Ranges: 2007-2008 or 2007–2008 (expands to all years in range)
+        - Ranges: 2007-2008 or 2007-2008 (expands to all years in range)
         - Short ranges: 2018-19 (expands to 2018, 2019)
 
         Args:
@@ -24,11 +28,11 @@ class YearExtractor:
         """
         years_set: set[int] = set()
 
-        # Find ranges like "2007-2008" or "2007–2008"
-        for match in re.finditer(r"\b(\d{4})\s*[-–]\s*(\d{2,4})\b", text):
+        # Find ranges like "2007-2008"
+        for match in re.finditer(r"\b(\d{4})\s*[-\u2013]\s*(\d{2,4})\b", text):
             start = int(match.group(1))
             end_text = match.group(2)
-            if len(end_text) == 2:
+            if len(end_text) == _SHORT_YEAR_LEN:
                 # Handle short form like "2018-19"
                 end = (start // 100) * 100 + int(end_text)
             else:
@@ -81,7 +85,7 @@ class YearExtractor:
             Pattern string with {year} placeholder, or None if no pattern found
         """
         urls = [(year, url) for year, url in year_to_url.items() if url]
-        if len(urls) < 2:
+        if len(urls) < _MIN_URLS_FOR_PATTERN:
             return None
 
         # Check if all URLs follow the same pattern
@@ -113,7 +117,7 @@ class YearExtractor:
         """
         result = dict(year_to_url)
 
-        if len(year_to_url) >= 2:
+        if len(year_to_url) >= _MIN_URLS_FOR_PATTERN:
             url_pattern = YearExtractor.detect_url_pattern(year_to_url)
             if url_pattern:
                 for year in years_set:

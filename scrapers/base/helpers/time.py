@@ -2,6 +2,7 @@
 
 import re
 from datetime import datetime
+from datetime import timezone
 from decimal import ROUND_HALF_UP
 from decimal import Decimal
 from typing import Any
@@ -104,20 +105,26 @@ def clean_date_base(text: str) -> str:
     return base
 
 
-def parse_date_iso(base: str) -> str | None:
-    for fmt in DATE_FORMATS:
+def _parse_with_formats(base: str, formats: tuple[str, ...]) -> datetime | None:
+    for fmt in formats:
+        parsed = None
         try:
-            dt = datetime.strptime(base, fmt)
-            return dt.date().isoformat()
+            parsed = datetime.strptime(base, fmt).replace(tzinfo=timezone.utc)
         except ValueError:
             continue
+        if parsed is not None:
+            return parsed
+    return None
 
-    for fmt in ("%B %Y", "%b %Y"):
-        try:
-            dt = datetime.strptime(base, fmt)
-            return dt.strftime("%Y-%m")
-        except ValueError:
-            continue
+
+def parse_date_iso(base: str) -> str | None:
+    parsed_date = _parse_with_formats(base, tuple(DATE_FORMATS))
+    if parsed_date is not None:
+        return parsed_date.date().isoformat()
+
+    parsed_month = _parse_with_formats(base, ("%B %Y", "%b %Y"))
+    if parsed_month is not None:
+        return parsed_month.strftime("%Y-%m")
 
     if re.fullmatch(r"\d{4}", base):
         return base

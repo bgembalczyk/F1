@@ -69,7 +69,7 @@ def strip_wiki_refs(text: str) -> str:
 
 def normalize_dashes(text: str) -> str:
     """Ujednolić warianty myślników i usuń spacje wokół '-'."""
-    t = text.replace("–", "-").replace("—", "-").replace("−", "-")
+    t = text.replace("\u2013", "-").replace("\u2014", "-").replace("\u2212", "-")
     return re.sub(r"(?<=\w)\s*-\s*(?=\w)", "-", t)
 
 
