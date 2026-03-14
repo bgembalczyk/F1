@@ -66,15 +66,13 @@ def normalize_unit(unit: str) -> str:
 def parse_unit_list(text: str) -> list[UnitValue]:
     if not text:
         return []
-    values: list[UnitValue] = []
-    for match in UNIT_RE.finditer(text):
-        values.append(
-            {
-                "value": parse_number(match.group("value")),
-                "unit": normalize_unit(match.group("unit")),
-            },
-        )
-    return values
+    return [
+        {
+            "value": parse_number(match.group("value")),
+            "unit": normalize_unit(match.group("unit")),
+        }
+        for match in UNIT_RE.finditer(text)
+    ]
 
 
 def extract_driver_text(record: dict[str, Any]) -> str | None:

@@ -20,7 +20,9 @@ class EmptyValuePolicy(Enum):
     NORMALIZE = "normalize"
 
     @classmethod
-    def from_flag(cls, normalize_empty_values: bool) -> "EmptyValuePolicy":
+    def from_flag(
+        cls, *, normalize_empty_values: bool,
+    ) -> "EmptyValuePolicy":
         return cls.NORMALIZE if normalize_empty_values else cls.KEEP
 
 
