@@ -57,27 +57,34 @@ def normalize_season_item(
     if item is None:
         return None
 
-    # 1) VO
+    season = _normalize_season_via_value_object(item)
+    if season is not None:
+        return season
+
+    return _normalize_season_fallback(item)
+
+
+def _normalize_season_via_value_object(
+    item: dict[str, Any] | SeasonRef,
+) -> dict[str, Any] | None:
     if isinstance(item, SeasonRef):
         return item.to_dict()
 
-    # 2) próba przez SeasonRef (źródło prawdy jeśli to jest kompatybilny dict)
     try:
         season = SeasonRef.from_dict(item)
     except (ValueError, TypeError):
-        season = None
+        return None
 
-    if season is not None:
-        return season.to_dict()
+    return season.to_dict()
 
-    # 3) fallback: minimalny schemat {year,url}
+
+def _normalize_season_fallback(
+    item: dict[str, Any] | SeasonRef,
+) -> dict[str, Any] | None:
     if not isinstance(item, dict):
         return None
 
     year = item.get("year")
-    if year is None:
-        return None
-
     year_int = validate_int(year, "year")
     if year_int is None:
         return None
@@ -85,12 +92,13 @@ def normalize_season_item(
     validated: dict[str, Any] = {"year": year_int}
 
     url = item.get("url")
-    if url:
-        if not isinstance(url, str) or not is_valid_url(url):
-            msg = "Pole seasons zawiera nieprawidłowy URL"
-            raise ValueError(msg)
-        validated["url"] = url
+    if not url:
+        return validated
 
+    if not isinstance(url, str) or not is_valid_url(url):
+        msg = "Pole seasons zawiera nieprawidłowy URL"
+        raise ValueError(msg)
+    validated["url"] = url
     return validated
 
 
@@ -102,8 +110,8 @@ def validate_seasons(
 
     Akceptuje:
     - SeasonRef -> to_dict(),
-    - dict -> próbuje SeasonRef.from_dict(item) (jak plik 1),
-             a jeśli to się nie uda, fallback na prostą walidację {year,url} (jak plik 2).
+    - dict -> próbuje SeasonRef.from_dict(item),
+             a jeśli to się nie uda, fallback na prostą walidację {year,url}.
     """
     normalized = (normalize_season_item(item) for item in seasons or [])
     return filter_nonempty(normalized)

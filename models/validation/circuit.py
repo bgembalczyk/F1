@@ -29,7 +29,7 @@ class Circuit(ValidatedModel):
     grands_prix_held: int | None = None
 
     def __post_init__(self) -> None:
-        # Jeśli ValidatedModel nie robi tego automatycznie, to ten hook gwarantuje walidację
+        # Ten hook gwarantuje walidację.
         self.validate()
 
     def validate(self) -> None:
@@ -55,7 +55,10 @@ class Circuit(ValidatedModel):
             "last_length_used_mi",
         )
         self.turns = validate_int(self.turns, "turns")
-        self.grands_prix_held = validate_int(self.grands_prix_held, "grands_prix_held")
+        self.grands_prix_held = validate_int(
+            self.grands_prix_held,
+            "grands_prix_held",
+        )
 
         # --- grands_prix: koercja do Link + filtr pustych ---
         self.grands_prix = normalize_link_list(self.grands_prix)
