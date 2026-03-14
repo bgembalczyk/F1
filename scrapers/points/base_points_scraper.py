@@ -7,7 +7,8 @@ class BasePointsScraper(F1TableScraper):
     """
     Base class for points scoring systems scrapers.
 
-    Provides common URL for all points scoring system tables from the same Wikipedia page.
+    Provides common URL for all points scoring system tables
+    from the same Wikipedia page.
 
     Subclasses should define their own CONFIG with specific:
     - section_id (specific section within the page)
@@ -17,4 +18,7 @@ class BasePointsScraper(F1TableScraper):
     """
 
     # All points scoring scrapers use the same Wikipedia page
-    BASE_URL = "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems"
+    BASE_URL = (
+        "https://en.wikipedia.org/wiki/"
+        "List_of_Formula_One_World_Championship_points_scoring_systems"
+    )

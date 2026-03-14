@@ -31,7 +31,7 @@ if TYPE_CHECKING:
 
 class F1SingleGrandPrixScraper(F1Scraper):
     """
-    Scraper pojedynczego Grand Prix – pobiera tabelę "By year" z artykułu Wikipedii.
+    Scraper pojedynczego Grand Prix - pobiera tabelę "By year" z artykułu Wikipedii.
 
     Jeśli artykuł nie wygląda na Grand Prix (brak navboxa/kategorii),
     zwraca pustą listę.
@@ -45,6 +45,14 @@ class F1SingleGrandPrixScraper(F1Scraper):
     }
     _DEFAULT_CHAMPIONSHIP = "formula_one_world_championship"
     _UNKNOWN_CHAMPIONSHIP = "unknown"
+    _SECTION_IDS_TO_TRY = [
+        "By_year",
+        "Winners",
+        "By_year:_the_European_Grand_Prix_as_a_standalone_event",
+        "Winners_of_the_Caesars_Palace_Grand_Prix",
+    ]
+    _NOT_HELD_MATCH_FIELDS = 3
+    _SHORT_HEX_LENGTH = 3
 
     def __init__(
         self,
@@ -142,7 +150,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
     @staticmethod
     def _normalize_hex(value: str) -> str:
         normalized = value.lower()
-        if len(normalized) == 3:
+        if len(normalized) == F1SingleGrandPrixScraper._SHORT_HEX_LENGTH:
             return "".join(ch * 2 for ch in normalized)
         return normalized
 
@@ -160,7 +168,9 @@ class F1SingleGrandPrixScraper(F1Scraper):
         chassis_text = self._get_text(record.get("chassis_constructor"))
         engine_text = self._get_text(record.get("engine_constructor"))
 
-        if not all([driver_text, chassis_text, engine_text, circuit_text]):
+        field_values = [driver_text, chassis_text, engine_text, circuit_text]
+        present_fields = [value for value in field_values if value]
+        if len(present_fields) < self._NOT_HELD_MATCH_FIELDS:
             return False
 
         if not (driver_text == chassis_text == engine_text == circuit_text):
@@ -214,44 +224,39 @@ class F1SingleGrandPrixScraper(F1Scraper):
             return first_text
         return None
 
+    def _section_ids_to_try(self) -> list[str]:
+        return self._SECTION_IDS_TO_TRY
+
+    def _try_parse_section(
+        self,
+        soup: BeautifulSoup,
+        section_id: str,
+    ) -> tuple[list[dict[str, Any]] | None, Exception | None]:
+        try:
+            parsed = self._parse_section_table(soup, section_id=section_id)
+        except RuntimeError as exc:
+            return None, DomainParseError(
+                f"Brak sekcji {section_id!r} w artykule.",
+                url=self.url,
+                cause=exc,
+            )
+        except ScraperError as exc:
+            return None, exc
+        else:
+            return parsed, None
+
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         if not is_grand_prix_article(soup):
             return []
 
-        for section_id in [
-            "By_year",
-            "Winners",
-            "By_year:_the_European_Grand_Prix_as_a_standalone_event",
-            "Winners_of_the_Caesars_Palace_Grand_Prix",
-        ]:
-            try:
-                return [
-                    {
-                        "url": self.url,
-                        "by_year": self._parse_section_table(
-                            soup,
-                            section_id=section_id,
-                        ),
-                    },
-                ]
-            except Exception as exc:
-                if isinstance(exc, RuntimeError):
-                    error: Exception = DomainParseError(
-                        f"Brak sekcji {section_id!r} w artykule.",
-                        url=self.url,
-                        cause=exc,
-                    )
-                else:
-                    error = (
-                        exc
-                        if isinstance(exc, ScraperError)
-                        else self._wrap_parse_error(exc)
-                    )
-                if self._handle_scraper_error(error):
-                    continue
-                if error is exc:
-                    raise
-                raise error from exc
+        for section_id in self._section_ids_to_try():
+            parsed, error = self._try_parse_section(soup, section_id)
+            if parsed is not None:
+                return [{"url": self.url, "by_year": parsed}]
+            if error and self._handle_scraper_error(error):
+                continue
+            if error is not None:
+                raise error
 
         return [
             {

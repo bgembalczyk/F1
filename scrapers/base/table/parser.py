@@ -39,8 +39,30 @@ class HtmlTableParser:
         self.normalize_dashes = normalize_dashes
 
     def parse(self, soup: BeautifulSoup) -> list[TableRow]:
-        table = self._find_table(soup)
+        table = self.find_table(soup)
         return self.parse_table(table)
+
+    def find_table(self, soup: BeautifulSoup) -> Tag:
+        """Public wrapper for locating table in document."""
+        return self._find_table(soup)
+
+    def is_footer_row(
+        self,
+        cells: Sequence[Tag],
+        cleaned_cells: Sequence[str],
+        headers: Sequence[str],
+    ) -> bool:
+        """Public wrapper for footer row detection."""
+        return self._is_footer_row(cells, cleaned_cells, headers)
+
+    def expand_row_cells(
+        self,
+        cells: Sequence[Tag],
+        headers: Sequence[str],
+        pending_rowspans: dict[int, dict[str, object]],
+    ) -> list[Tag]:
+        """Public wrapper for rowspan expansion logic."""
+        return self._expand_row_cells(cells, headers, pending_rowspans)
 
     def parse_table(self, table: Tag) -> list[TableRow]:
         headers, header_cells, header_rows = self._extract_headers(table)
@@ -62,14 +84,14 @@ class HtmlTableParser:
                 )
                 for c in cells
             ]
-            if self._is_footer_row(cells, cleaned_cells, headers):
+            if self.is_footer_row(cells, cleaned_cells, headers):
                 logger.debug("Pomijam wiersz stopki w tabeli.")
                 continue
             if is_repeated_header_row(cleaned_cells, headers):
                 logger.debug("Pomijam powtórzony wiersz nagłówka w tabeli.")
                 continue
 
-            expanded_cells = self._expand_row_cells(
+            expanded_cells = self.expand_row_cells(
                 cells,
                 headers,
                 pending_rowspans,
@@ -193,7 +215,10 @@ class HtmlTableParser:
         headers: Sequence[str],
         pending_rowspans: dict[int, dict[str, object]],
     ) -> int:
-        """Konsumuje oczekujące rowspany dla kolumny. Zwraca zaktualizowany col_index."""
+        """Konsumuje oczekujące rowspany dla kolumny.
+
+        Zwraca zaktualizowany col_index.
+        """
         while col_index < len(headers) and col_index in pending_rowspans:
             pending = pending_rowspans[col_index]
             cell = pending["cell"]

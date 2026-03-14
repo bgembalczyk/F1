@@ -22,6 +22,9 @@ from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
 
 logger = logging.getLogger(__name__)
 
+MAX_SECTIONS_PREVIEW = 10
+MAX_TABLES_TO_LOG = 5
+
 
 class RedFlaggedRacesBaseScraper(F1TableScraper):
     """
@@ -124,20 +127,19 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         )
 
         for section_id in section_ids_to_try:
-            logger.debug(f"Trying to find table with section_id={section_id!r}")
+            logger.debug("Trying to find table with section_id=%r", section_id)
             current_parser = HtmlTableParser(
                 section_id=section_id,
                 expected_headers=self.expected_headers,
                 table_css_class=self.table_css_class,
             )
             try:
-                table = current_parser._find_table(soup)
-                logger.info(f"Successfully found table with section_id={section_id!r}")
+                table = current_parser.find_table(soup)
+            except RuntimeError:
+                logger.debug("Failed to find table with section_id=%r", section_id)
+            else:
+                logger.info("Successfully found table with section_id=%r", section_id)
                 return table, current_parser
-            except RuntimeError as e:
-                logger.debug(
-                    f"Failed to find table with section_id={section_id!r}: {e}",
-                )
 
         return None, None
 
@@ -158,8 +160,9 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         for toc_id in toc_ids:
             if soup.find(id=toc_id):
                 logger.warning(
-                    f"Found TOC entry '{toc_id}' but no matching section heading. "
-                    f"Wikipedia page structure may be malformed or incomplete.",
+                    "Found TOC entry %r but no matching section heading. "
+                    "Wikipedia page structure may be malformed or incomplete.",
+                    toc_id,
                 )
 
     def _build_table_not_found_error(self, soup: BeautifulSoup) -> str:
@@ -183,26 +186,27 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         available_sections = [
             span.get("id", "no-id") for span in soup.select(".mw-headline")
         ]
-        sections_preview = available_sections[:10]
-        if len(available_sections) > 10:
-            sections_preview.append(f"... and {len(available_sections) - 10} more")
+        sections_preview = available_sections[:MAX_SECTIONS_PREVIEW]
+        if len(available_sections) > MAX_SECTIONS_PREVIEW:
+            sections_preview.append(
+                f"... and {len(available_sections) - MAX_SECTIONS_PREVIEW} more",
+            )
 
         all_tables = soup.find_all("table", class_=self.table_css_class)
         logger.error(
-            f"Table search failed. Found {len(all_tables)} tables with "
-            f"class='{self.table_css_class}' in the document.",
+            "Table search failed. Found %d tables with class=%r in the document.",
+            len(all_tables),
+            self.table_css_class,
         )
 
         if all_tables:
             logger.error("Available tables and their headers:")
-            for i, tbl in enumerate(all_tables[:5]):
-                try:
-                    headers, _ = MultiLevelHeaderBuilder.build_headers(tbl)
-                    logger.error(f"  Table {i + 1}: {headers[:7]}...")
-                except Exception as e:
-                    logger.exception(
-                        f"  Table {i + 1}: Could not extract headers - {e}",
-                    )
+            for i, tbl in enumerate(all_tables[:MAX_TABLES_TO_LOG]):
+                headers_preview = self._safe_headers_preview(tbl)
+                if headers_preview is None:
+                    logger.error("  Table %d: Could not extract headers", i + 1)
+                    continue
+                logger.error("  Table %d: %s...", i + 1, headers_preview)
 
         return (
             f"Nie znaleziono pasującej tabeli. "
@@ -210,6 +214,14 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             f"Dostępne sekcje na stronie: {sections_preview}. "
             f"Znaleziono {len(all_tables)} tabel z class='{self.table_css_class}'."
         )
+
+    @staticmethod
+    def _safe_headers_preview(table: Any) -> list[str] | None:
+        try:
+            headers, _ = MultiLevelHeaderBuilder.build_headers(table)
+        except RuntimeError:
+            return None
+        return headers[:7]
 
     def _parse_table_rows(
         self,
@@ -240,12 +252,12 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             cleaned_cells = [
                 clean_wiki_text(cell.get_text(" ", strip=True)) for cell in cells
             ]
-            if parser._is_footer_row(cells, cleaned_cells, headers):
+            if parser.is_footer_row(cells, cleaned_cells, headers):
                 continue
             if is_repeated_header_row(cleaned_cells, headers):
                 continue
 
-            expanded_cells = parser._expand_row_cells(
+            expanded_cells = parser.expand_row_cells(
                 cells,
                 headers,
                 pending_rowspans,

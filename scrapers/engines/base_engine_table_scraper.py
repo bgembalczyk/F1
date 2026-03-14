@@ -37,7 +37,7 @@ class BaseEngineTableScraper(F1TableScraper, ABC):
     def _find_table(self, soup: BeautifulSoup) -> Tag:
         """Find the target table in the HTML document."""
         parser = self._create_parser()
-        return parser._find_table(soup)
+        return parser.find_table(soup)
 
     def _is_valid_row(
         self,
@@ -56,7 +56,7 @@ class BaseEngineTableScraper(F1TableScraper, ABC):
 
         # Footer rows
         parser = self._create_parser()
-        return not parser._is_footer_row(cells, cleaned_cells, headers)
+        return not parser.is_footer_row(cells, cleaned_cells, headers)
 
     def _clean_cells(self, cells: list[Tag]) -> list[str]:
         """Clean cell text content."""

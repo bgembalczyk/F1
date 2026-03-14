@@ -85,7 +85,7 @@ class EngineRegulationScraper(BaseEngineTableScraper):
                 continue
 
             # Expand cells with rowspan handling
-            expanded_cells = parser._expand_row_cells(
+            expanded_cells = parser.expand_row_cells(
                 cells,
                 headers,
                 pending_rowspans,

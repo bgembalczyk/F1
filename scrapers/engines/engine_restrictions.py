@@ -22,6 +22,8 @@ from scrapers.engines.columns.fuel_injection_pressure_limit import (
 )
 from scrapers.engines.columns.fuel_limit_per_race import FuelLimitPerRaceColumn
 
+MIN_HEADER_CELLS = 2
+
 
 class EngineRestrictionsScraper(BaseEngineTableScraper):
     """
@@ -69,7 +71,7 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
             raise RuntimeError(msg)
 
         header_cells = header_row.find_all(["th", "td"])
-        if len(header_cells) < 2:
+        if len(header_cells) < MIN_HEADER_CELLS:
             msg = "Nagłówek tabeli jest niekompletny."
             raise RuntimeError(msg)
 
