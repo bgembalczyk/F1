@@ -1,7 +1,8 @@
 """Results and race data parsing helpers.
 
-This module contains helper functions for parsing race results, points, and related data
-from Wikipedia tables. Extracted from scrapers/base/table/columns/helpers.py to follow SRP.
+This module contains helper functions for parsing race results, points,
+and related data from Wikipedia tables.
+Extracted from scrapers/base/table/columns/helpers.py to follow SRP.
 
 Follows SOLID principles:
 - Single Responsibility: Handles only results/race data parsing
@@ -42,7 +43,7 @@ class ResultsParsingHelpers:
         - "12.5" -> 12.5
         - "1/2" -> 0.5
         - "1 1/2" -> 1.5
-        - "57 1⁄7" -> 57.142857...
+        - "57 1/7" -> 57.142857...
 
         Args:
             text: Text containing points value
@@ -55,7 +56,7 @@ class ResultsParsingHelpers:
 
         text = text.strip()
 
-        # Try fraction pattern first (e.g., "1/2", "1 1/2", "57 1⁄7")
+        # Try fraction pattern first (e.g., "1/2", "1 1/2", "57 1/7")
         # Must be tried before simple float to avoid returning only the integer part
         match = FRACTION_RE.match(text)
         if match:
@@ -99,37 +100,43 @@ class ResultsParsingHelpers:
         results: list[dict[str, Any]] = []
 
         for part in parts:
-            part = part.strip()
-            if not part:
+            cleaned_part = part.strip()
+            if not cleaned_part:
                 continue
 
-            result: dict[str, Any] = {}
-
-            # Try to extract position
-            pos_match = re.match(r"(\d+)(?:st|nd|rd|th)?", part, re.IGNORECASE)
-            if pos_match:
-                result["position"] = int(pos_match.group(1))
-                result["status"] = "finished"
-            else:
-                # Common status codes
-                part_upper = part.upper()
-                if part_upper in {"RET", "RETIRED"}:
-                    result["status"] = "retired"
-                elif part_upper in {"DNS", "DID NOT START"}:
-                    result["status"] = "did_not_start"
-                elif part_upper in {"DNQ", "DID NOT QUALIFY"}:
-                    result["status"] = "did_not_qualify"
-                elif part_upper in {"DSQ", "DISQUALIFIED"}:
-                    result["status"] = "disqualified"
-                elif part_upper == "NC":
-                    result["status"] = "not_classified"
-                else:
-                    result["status"] = part.lower()
-
+            result = ResultsParsingHelpers._parse_result_part(cleaned_part)
             if result:
                 results.append(result)
 
         return results
+
+    @staticmethod
+    def _parse_result_part(part: str) -> dict[str, Any]:
+        """Parse a single race-result token into a normalized dictionary."""
+        result: dict[str, Any] = {}
+
+        # Try to extract position
+        pos_match = re.match(r"(\d+)(?:st|nd|rd|th)?", part, re.IGNORECASE)
+        if pos_match:
+            result["position"] = int(pos_match.group(1))
+            result["status"] = "finished"
+            return result
+
+        # Common status codes
+        part_upper = part.upper()
+        status_map = {
+            "RET": "retired",
+            "RETIRED": "retired",
+            "DNS": "did_not_start",
+            "DID NOT START": "did_not_start",
+            "DNQ": "did_not_qualify",
+            "DID NOT QUALIFY": "did_not_qualify",
+            "DSQ": "disqualified",
+            "DISQUALIFIED": "disqualified",
+            "NC": "not_classified",
+        }
+        result["status"] = status_map.get(part_upper, part.lower())
+        return result
 
     @staticmethod
     def parse_superscripts(ctx: ColumnContext) -> tuple[int | None, bool, bool]:
@@ -173,7 +180,7 @@ class ResultsParsingHelpers:
     @staticmethod
     def parse_entrant_segment(
         segment: Tag,
-        link_lookup: dict[str, list[dict]],
+        _link_lookup: dict[str, list[dict]],
         base_url: str,
     ) -> dict[str, Any]:
         """
