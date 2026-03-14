@@ -56,10 +56,7 @@ class BaseEngineTableScraper(F1TableScraper, ABC):
 
         # Footer rows
         parser = self._create_parser()
-        if parser._is_footer_row(cells, cleaned_cells, headers):
-            return False
-
-        return True
+        return not parser._is_footer_row(cells, cleaned_cells, headers)
 
     def _clean_cells(self, cells: list[Tag]) -> list[str]:
         """Clean cell text content."""

@@ -49,8 +49,9 @@ class ChampionshipsParser:
 
             return {"count": count, "championships": championships}
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować mistrzostw: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować mistrzostw: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
 
@@ -103,7 +104,8 @@ class ChampionshipsParser:
 
             return {"count": count, "wins": wins}
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować zwycięstw klasowych: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować zwycięstw klasowych: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc

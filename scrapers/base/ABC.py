@@ -90,8 +90,9 @@ class F1Scraper(ABC):
             self.validator.set_record_factory(options.record_factory)
         self.validation_mode = options.validation_mode
         if self.validation_mode not in {"soft", "hard"}:
+            msg = "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
             raise ValueError(
-                "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)",
+                msg,
             )
 
         self._data: list[ExportRecord] | None = None
@@ -115,7 +116,8 @@ class F1Scraper(ABC):
         Zwraca zawsze listę ExportRecord (może być pusta).
         """
         if not getattr(self, "url", None):
-            raise ValueError("Scraper.url musi być ustawiony przed fetch().")
+            msg = "Scraper.url musi być ustawiony przed fetch()."
+            raise ValueError(msg)
 
         run_id = self._run_id or uuid4().hex
         self._run_id = run_id
@@ -234,8 +236,9 @@ class F1Scraper(ABC):
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[RawRecord]:
         """Parsowanie BS4 -> lista rekordów surowych."""
+        msg = f"{self.__class__.__name__} must implement _parse_soup() or override parse()."
         raise NotImplementedError(
-            f"{self.__class__.__name__} must implement _parse_soup() or override parse().",
+            msg,
         )
 
     def parse(self, soup: BeautifulSoup) -> list[RawRecord]:

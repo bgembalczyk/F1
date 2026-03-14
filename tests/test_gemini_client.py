@@ -144,7 +144,8 @@ def test_query_falls_back_to_next_model_on_error(tmp_path) -> None:
     def fake_call_api(prompt, *, model, response_mime_type):
         call_log.append(model)
         if model == "model-a":
-            raise RuntimeError("API error from model-a")
+            msg = "API error from model-a"
+            raise RuntimeError(msg)
         return {"result": "ok"}
 
     client._call_api = fake_call_api

@@ -9,7 +9,7 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 
 
-@pytest.fixture()
+@pytest.fixture
 def link_extractor():
     return InfoboxLinkExtractor(
         include_urls=True,
@@ -17,12 +17,12 @@ def link_extractor():
     )
 
 
-@pytest.fixture()
+@pytest.fixture
 def cell_parser(link_extractor):
     return InfoboxCellParser(include_urls=True, link_extractor=link_extractor)
 
 
-@pytest.fixture()
+@pytest.fixture
 def general_parser(link_extractor):
     return InfoboxGeneralParser(
         include_urls=True,
@@ -32,7 +32,7 @@ def general_parser(link_extractor):
     )
 
 
-@pytest.fixture()
+@pytest.fixture
 def titles_parser(link_extractor):
     return InfoboxTitlesParser(link_extractor)
 

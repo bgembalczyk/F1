@@ -37,8 +37,9 @@ class InfoboxTextUtils:
         try:
             return parse_int_from_text(text)
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować liczby całkowitej: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować liczby całkowitej: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
 
@@ -54,8 +55,9 @@ class InfoboxTextUtils:
         try:
             return parse_number_with_unit(text, unit=unit)
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować długości ({unit}): {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować długości ({unit}): {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
 
@@ -69,8 +71,9 @@ class InfoboxTextUtils:
         try:
             parsed = parse_date_text(text)
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować daty: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować daty: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
         iso = parsed.iso

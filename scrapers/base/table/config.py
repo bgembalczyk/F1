@@ -40,27 +40,34 @@ class ScraperConfig:
 
     def validate(self) -> None:
         if not isinstance(self.url, str) or not self.url.strip():
-            raise ValueError("ScraperConfig.url must be a non-empty string.")
+            msg = "ScraperConfig.url must be a non-empty string."
+            raise ValueError(msg)
 
         if not isinstance(self.column_map, Mapping):
-            raise TypeError("ScraperConfig.column_map must be a mapping.")
+            msg = "ScraperConfig.column_map must be a mapping."
+            raise TypeError(msg)
 
         for key, value in self.column_map.items():
             if not isinstance(key, str) or not isinstance(value, str):
+                msg = "ScraperConfig.column_map must map str keys to str values."
                 raise ValueError(
-                    "ScraperConfig.column_map must map str keys to str values.",
+                    msg,
                 )
 
         if not isinstance(self.columns, Mapping):
-            raise TypeError("ScraperConfig.columns must be a mapping.")
+            msg = "ScraperConfig.columns must be a mapping."
+            raise TypeError(msg)
 
         for key, value in self.columns.items():
             if not isinstance(key, str):
-                raise ValueError("ScraperConfig.columns must use str keys.")
+                msg = "ScraperConfig.columns must use str keys."
+                raise ValueError(msg)
             if not isinstance(value, BaseColumn):
+                msg = "ScraperConfig.columns must map str keys to BaseColumn values."
                 raise ValueError(
-                    "ScraperConfig.columns must map str keys to BaseColumn values.",
+                    msg,
                 )
 
         if self.record_factory is not None and not callable(self.record_factory):
-            raise TypeError("ScraperConfig.record_factory must be callable.")
+            msg = "ScraperConfig.record_factory must be callable."
+            raise TypeError(msg)

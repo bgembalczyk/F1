@@ -148,4 +148,5 @@ def test_apply_field_aliases_raises_on_conflict() -> None:
     except ValueError as exc:
         assert "Konflikt aliasów" in str(exc)
     else:
-        raise AssertionError("Expected conflict error for alias mapping")
+        msg = "Expected conflict error for alias mapping"
+        raise AssertionError(msg)

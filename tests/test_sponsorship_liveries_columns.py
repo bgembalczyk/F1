@@ -79,8 +79,10 @@ def test_split_after_paren_preserves_year_params() -> None:
     assert len(result) == 2
     elf = result[0]
     goodyear = result[1]
-    assert isinstance(elf, dict) and elf.get("text") == "Elf"
-    assert isinstance(goodyear, dict) and goodyear.get("text") == "Goodyear"
+    assert isinstance(elf, dict)
+    assert elf.get("text") == "Elf"
+    assert isinstance(goodyear, dict)
+    assert goodyear.get("text") == "Goodyear"
     # Year params should still be on each item (em-dash is normalised to hyphen)
     assert elf.get("params") == ["1983-1986"]
     assert goodyear.get("params") == ["1984-1986"]
@@ -803,7 +805,8 @@ def test_possessive_group_single_colour_not_affected() -> None:
 def test_non_possessive_paren_still_splits() -> None:
     """'Green and White (1965)' WITHOUT possessive 's still splits into two colours."""
     result = ColourScopeHandler.split_or_colours(["Green and White (1965)"])
-    assert "Green" in result and "White (1965)" in result
+    assert "Green" in result
+    assert "White (1965)" in result
 
 
 # ── Fix: livery_principal_sponsors year-range filtering ──────────────────────

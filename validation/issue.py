@@ -48,8 +48,5 @@ class ValidationIssue:
             return ValidationIssue(code="type", field=new_field, message=message)
 
         message = self.message
-        if message:
-            message = f"{prefix}.{message}"
-        else:
-            message = prefix
+        message = f"{prefix}.{message}" if message else prefix
         return ValidationIssue(code=self.code, message=message)

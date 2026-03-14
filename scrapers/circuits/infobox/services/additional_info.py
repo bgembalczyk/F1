@@ -1,9 +1,12 @@
+from typing import TYPE_CHECKING
 from typing import Any
 
-from models.records.link import LinkRecord
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.text_normalization import split_delimited_text
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
+
+if TYPE_CHECKING:
+    from models.records.link import LinkRecord
 
 
 class CircuitAdditionalInfoParser(CircuitEntityParser):

@@ -15,7 +15,8 @@ from scrapers.base.table.dsl import TableSchemaDSL
 
 def _load_target(target: str) -> Any:
     if ":" not in target:
-        raise ValueError("Target must be in module:attribute form.")
+        msg = "Target must be in module:attribute form."
+        raise ValueError(msg)
     module_path, attr = target.split(":", 1)
     module = importlib.import_module(module_path)
     obj = getattr(module, attr)
@@ -29,9 +30,12 @@ def _convert_to_dsl(obj: Any) -> dict[str, Any]:
         return TableSchemaDSL.from_config(obj).to_dict()
     if isinstance(obj, InfoboxSchema):
         return InfoboxSchemaDSL.from_schema(obj).to_dict()
-    raise TypeError(
+    msg = (
         "Unsupported target. Provide a ScraperConfig, InfoboxSchema, "
-        "or a class/module exposing CONFIG.",
+        "or a class/module exposing CONFIG."
+    )
+    raise TypeError(
+        msg,
     )
 
 

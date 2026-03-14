@@ -1,13 +1,17 @@
 from __future__ import annotations
 
-from collections.abc import Iterable
+from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.links import normalize_single_link
 from scrapers.base.normalization import EmptyValuePolicy
 from scrapers.base.transformers.record_transformer import RecordTransformer
-from validation.validator_base import ExportRecord
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable
+
+    from validation.validator_base import ExportRecord
 
 LINK_KEYS = {"text", "url"}
 

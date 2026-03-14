@@ -87,7 +87,8 @@ def normalize_season_item(
     url = item.get("url")
     if url:
         if not isinstance(url, str) or not is_valid_url(url):
-            raise ValueError("Pole seasons zawiera nieprawidłowy URL")
+            msg = "Pole seasons zawiera nieprawidłowy URL"
+            raise ValueError(msg)
         validated["url"] = url
 
     return validated
@@ -115,7 +116,8 @@ def model_to_dict(
 ) -> dict[str, Any]:
     result = to_dict_any(model, logger=logger)
     if not isinstance(result, dict):
-        raise TypeError("Nieobsługiwany typ modelu")
+        msg = "Nieobsługiwany typ modelu"
+        raise TypeError(msg)
     return result
 
 

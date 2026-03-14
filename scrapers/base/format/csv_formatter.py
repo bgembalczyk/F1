@@ -29,7 +29,7 @@ class CsvFormatter:
         if fieldnames is None:
             keys: list[str] = []
             for row in data:
-                for key in row.keys():
+                for key in row:
                     if key not in keys:
                         keys.append(key)
             fieldnames = keys

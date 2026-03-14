@@ -43,16 +43,19 @@ class F1ListScraper(F1Scraper, ABC):
             return candidate_lists[0]
 
         if self.section_id:
-            raise ScraperNotFoundError("Nie znaleziono listy w sekcji.")
+            msg = "Nie znaleziono listy w sekcji."
+            raise ScraperNotFoundError(msg)
 
-        raise ScraperNotFoundError("Nie znaleziono żadnej listy.")
+        msg = "Nie znaleziono żadnej listy."
+        raise ScraperNotFoundError(msg)
 
     def parse_item(self, li: Tag) -> ExportableRecord | None:
         """Zamienia pojedynczy <li> na słownik."""
 
         if not self.record_key:
+            msg = "record_key nie jest zdefiniowany; zaimplementuj parse_item"
             raise NotImplementedError(
-                "record_key nie jest zdefiniowany; zaimplementuj parse_item",
+                msg,
             )
 
         a = li.find("a")

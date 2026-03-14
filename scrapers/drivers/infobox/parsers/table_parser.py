@@ -1,5 +1,6 @@
 """Helper class for parsing nested tables from infobox cells."""
 
+import contextlib
 import re
 from typing import Any
 
@@ -43,15 +44,13 @@ class TableParser:
             # Check if this is a Wins/Podiums/Poles table or Wins/Top tens/Poles table
             if self._is_stats_table(table_data):
                 # Extract the values directly and return only stats
-                stats = self._extract_stats_from_table(table_data)
-                return stats
-            else:
-                # For other tables, include full metadata
-                payload: dict[str, Any] = {"text": text}
-                if include_urls:
-                    payload["links"] = self._link_extractor.extract_links(cell)
-                payload["table"] = table_data
-                return payload
+                return self._extract_stats_from_table(table_data)
+            # For other tables, include full metadata
+            payload: dict[str, Any] = {"text": text}
+            if include_urls:
+                payload["links"] = self._link_extractor.extract_links(cell)
+            payload["table"] = table_data
+            return payload
 
         # Check if this is "X races run over Y years" pattern
         # Only run regex if text is not None
@@ -109,8 +108,7 @@ class TableParser:
         expected_wins_podiums_poles = ["wins", "podiums", "poles"]
         expected_wins_topten_poles = ["wins", "top tens", "poles"]
         return (
-            normalized == expected_wins_podiums_poles
-            or normalized == expected_wins_topten_poles
+            normalized in (expected_wins_podiums_poles, expected_wins_topten_poles)
         )
 
     @staticmethod
@@ -139,27 +137,19 @@ class TableParser:
             has_podiums = "podiums" in normalized
             has_top_tens = "top tens" in normalized
 
-            try:
+            with contextlib.suppress(ValueError, IndexError):
                 stats["wins"] = int(rows[0][0])
-            except (ValueError, IndexError):
-                pass
 
             # Second column is either podiums or top tens
             if has_podiums:
-                try:
+                with contextlib.suppress(ValueError, IndexError):
                     stats["podiums"] = int(rows[0][1])
-                except (ValueError, IndexError):
-                    pass
             elif has_top_tens:
-                try:
+                with contextlib.suppress(ValueError, IndexError):
                     stats["top_tens"] = int(rows[0][1])
-                except (ValueError, IndexError):
-                    pass
 
-            try:
+            with contextlib.suppress(ValueError, IndexError):
                 stats["poles"] = int(rows[0][2])
-            except (ValueError, IndexError):
-                pass
 
         # Remove None values for cleaner output
         return {k: v for k, v in stats.items() if v is not None}

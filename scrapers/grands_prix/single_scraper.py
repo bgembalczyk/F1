@@ -1,17 +1,14 @@
 from __future__ import annotations
 
 import re
+from typing import TYPE_CHECKING
 from typing import Any
-
-from bs4 import BeautifulSoup
-from bs4 import Tag
 
 from scrapers.base.ABC import F1Scraper
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperError
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.normalize import normalize_auto_value
-from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
@@ -24,6 +21,12 @@ from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
 from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+    from bs4 import Tag
+
+    from scrapers.base.options import ScraperOptions
 
 
 class F1SingleGrandPrixScraper(F1Scraper):
@@ -166,10 +169,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
         if driver_text == "Not held":
             return True
 
-        if self._is_cancellation_context(report_text, layout_text):
-            return True
-
-        return False
+        return bool(self._is_cancellation_context(report_text, layout_text))
 
     @staticmethod
     def _is_cancellation_context(
@@ -181,9 +181,7 @@ class F1SingleGrandPrixScraper(F1Scraper):
         if not layout_text:
             return False
         layout_lower = layout_text.lower()
-        return layout_lower.startswith("not held due to") or layout_lower.startswith(
-            "cancelled due to",
-        )
+        return layout_lower.startswith(("not held due to", "cancelled due to"))
 
     @staticmethod
     def _get_text(value: Any) -> str | None:

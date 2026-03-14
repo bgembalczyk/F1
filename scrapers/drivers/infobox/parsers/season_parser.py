@@ -20,9 +20,7 @@ class SeasonParser:
         # Class links typically don't contain years or season references
         if "season" in url or "_season" in url:
             return False
-        if re.search(r"\d{4}", text):
-            return False
-        return True
+        return not re.search(r"\d{4}", text)
 
     def is_valid_class_info(
         self,

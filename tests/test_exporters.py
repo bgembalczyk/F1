@@ -20,7 +20,8 @@ def _read_metadata(path):
     with path.open(encoding="utf-8") as handle:
         line = handle.readline().strip()
     if not line.startswith("# meta: "):
-        raise AssertionError("Missing metadata line in CSV export.")
+        msg = "Missing metadata line in CSV export."
+        raise AssertionError(msg)
     return json.loads(line.replace("# meta: ", ""))
 
 

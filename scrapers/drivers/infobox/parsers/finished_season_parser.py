@@ -49,7 +49,8 @@ class FinishedSeasonParser:
 
             return result
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować ostatniego sezonu: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować ostatniego sezonu: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc

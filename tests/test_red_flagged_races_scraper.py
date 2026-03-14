@@ -148,7 +148,8 @@ class TestRedFlaggedRacesScraperRobustness:
 
         try:
             scraper._parse_soup(soup)
-            assert False, "Should have raised RuntimeError"
+            msg = "Should have raised RuntimeError"
+            raise AssertionError(msg)
         except RuntimeError as e:
             error_msg = str(e)
             # Should mention that 1 table was found (in Polish)

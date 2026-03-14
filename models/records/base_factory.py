@@ -121,10 +121,7 @@ class FieldNormalizer:
         """
         if not value:
             return []
-        if isinstance(value, list):
-            items = value
-        else:
-            items = [value]
+        items = value if isinstance(value, list) else [value]
         normalized_items: list[LinkRecord] = []
         for item in items:
             normalized = FieldNormalizer.normalize_link(item, field_name)
@@ -161,7 +158,7 @@ class FieldNormalizer:
             if "url" not in season and "year" in season:
                 season["url"] = WIKI_SEASON_URL.format(year=season["year"])
 
-        return cast(list[SeasonRecord], seasons)
+        return cast("list[SeasonRecord]", seasons)
 
     @staticmethod
     def normalize_status(

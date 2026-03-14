@@ -106,8 +106,9 @@ class CircuitSpecsParser(InfoboxTextUtils):
         try:
             vals = [_to_int(n) for n in numbers]
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować pojemności: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować pojemności: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
         result: dict[str, int] = {}
@@ -150,8 +151,9 @@ class CircuitSpecsParser(InfoboxTextUtils):
             try:
                 amount = float(amount_match.group(1).replace(",", ""))
             except (TypeError, ValueError) as exc:
+                msg = f"Nie udało się sparsować kosztu budowy: {text_clean!r}."
                 raise DomainParseError(
-                    f"Nie udało się sparsować kosztu budowy: {text_clean!r}.",
+                    msg,
                     cause=exc,
                 ) from exc
 
@@ -190,8 +192,9 @@ class CircuitSpecsParser(InfoboxTextUtils):
             try:
                 value = float(angle_match.group(1).replace(",", "."))
             except (TypeError, ValueError) as exc:
+                msg = f"Nie udało się sparsować nachylenia toru: {text!r}."
                 raise DomainParseError(
-                    f"Nie udało się sparsować nachylenia toru: {text!r}.",
+                    msg,
                     cause=exc,
                 ) from exc
             unit = "deg"
@@ -199,8 +202,9 @@ class CircuitSpecsParser(InfoboxTextUtils):
             try:
                 value = float(percent_match.group(1).replace(",", "."))
             except (TypeError, ValueError) as exc:
+                msg = f"Nie udało się sparsować nachylenia toru: {text!r}."
                 raise DomainParseError(
-                    f"Nie udało się sparsować nachylenia toru: {text!r}.",
+                    msg,
                     cause=exc,
                 ) from exc
             unit = "percent"

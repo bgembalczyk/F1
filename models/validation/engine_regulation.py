@@ -40,7 +40,8 @@ class EngineRegulation(ValidatedModel):
         if value is None:
             return None
         if not isinstance(value, dict):
-            raise ValueError("Pole maximum_displacement musi być słownikiem")
+            msg = "Pole maximum_displacement musi być słownikiem"
+            raise ValueError(msg)
         result: dict[str, Any] = dict(value)
         if "naturally_aspirated" in result:
             naturally_aspirated = result.get("naturally_aspirated")
@@ -78,7 +79,8 @@ class EngineRegulation(ValidatedModel):
         if value is None:
             return None
         if not isinstance(value, dict):
-            raise ValueError("Pole configuration musi być słownikiem")
+            msg = "Pole configuration musi być słownikiem"
+            raise ValueError(msg)
         result: dict[str, Any] = dict(value)
         result["text"] = normalize_text(result.get("text"))
         if "angle" in result:
@@ -97,7 +99,8 @@ class EngineRegulation(ValidatedModel):
         if extras is None:
             result["extras"] = []
         elif not isinstance(extras, list):
-            raise ValueError("Pole configuration.extras musi być listą")
+            msg = "Pole configuration.extras musi być listą"
+            raise ValueError(msg)
         else:
             result["extras"] = [
                 item.strip()
@@ -113,7 +116,8 @@ class EngineRegulation(ValidatedModel):
         if value is None:
             return None
         if not isinstance(value, dict):
-            raise ValueError("Pole fuel_composition musi być słownikiem")
+            msg = "Pole fuel_composition musi być słownikiem"
+            raise ValueError(msg)
         result: dict[str, Any] = dict(value)
         if "alcohol" in result:
             result["alcohol"] = normalize_text(result.get("alcohol"))

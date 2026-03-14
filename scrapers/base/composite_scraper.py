@@ -24,7 +24,8 @@ class CompositeScraper(F1Scraper):
         self.records_adapter = children.records_adapter
 
     def build_children(self) -> CompositeScraperChildren:
-        raise NotImplementedError("CompositeScraper requires build_children().")
+        msg = "CompositeScraper requires build_children()."
+        raise NotImplementedError(msg)
 
     def get_detail_url(self, record: dict[str, Any]) -> str | None:
         return None
@@ -45,9 +46,12 @@ class CompositeScraper(F1Scraper):
         scraper_name = self.__class__.__name__
         for record in tqdm(records, desc=scraper_name, unit="item"):
             if not isinstance(record, dict):
-                raise TypeError(
+                msg = (
                     f"{self.list_scraper.__class__.__name__} musi zwracać dict, "
-                    f"otrzymano: {type(record).__name__}",
+                    f"otrzymano: {type(record).__name__}"
+                )
+                raise TypeError(
+                    msg,
                 )
 
             detail_url = self.get_detail_url(record)

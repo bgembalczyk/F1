@@ -122,7 +122,7 @@ class RaceResultColumn(BaseColumn):
     def _map_background(self, background: str | None) -> str | None:
         if not background:
             return None
-        match = re.search(r"#?([0-9a-f]{6}|[0-9a-f]{3})", background, re.I)
+        match = re.search(r"#?([0-9a-f]{6}|[0-9a-f]{3})", background, re.IGNORECASE)
         if not match:
             return None
         value = match.group(1).lower()

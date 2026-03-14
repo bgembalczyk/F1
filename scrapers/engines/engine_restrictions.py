@@ -65,11 +65,13 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
         table = self._find_table(soup)
         header_row = table.find("tr")
         if not header_row:
-            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
+            msg = "Nie znaleziono wiersza nagłówkowego w tabeli."
+            raise RuntimeError(msg)
 
         header_cells = header_row.find_all(["th", "td"])
         if len(header_cells) < 2:
-            raise RuntimeError("Nagłówek tabeli jest niekompletny.")
+            msg = "Nagłówek tabeli jest niekompletny."
+            raise RuntimeError(msg)
 
         year_cells = header_cells[1:]
 

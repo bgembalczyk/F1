@@ -197,8 +197,7 @@ class SponsorColumn(BaseColumn):
     def _normalize_text(text: str) -> str:
         text = re.sub(r",\s*and\s+", ", ", text, flags=re.IGNORECASE)
         text = re.sub(r"\s+and\s+", ", ", text, flags=re.IGNORECASE)
-        text = re.sub(r"^\s*and\s+", "", text, flags=re.IGNORECASE)
-        return text
+        return re.sub(r"^\s*and\s+", "", text, flags=re.IGNORECASE)
 
     @staticmethod
     def _split_parts_with_sep(text: str) -> list[tuple[str, str]]:

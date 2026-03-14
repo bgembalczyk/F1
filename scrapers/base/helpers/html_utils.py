@@ -26,7 +26,8 @@ def find_section_elements(
         if not heading:
             heading = find_heading_by_text(soup, section_id)
         if not heading:
-            raise RuntimeError(f"Nie znaleziono sekcji o id={section_id!r}")
+            msg = f"Nie znaleziono sekcji o id={section_id!r}"
+            raise RuntimeError(msg)
 
         return list(heading.find_all_next(target_tags, **kwargs))
 

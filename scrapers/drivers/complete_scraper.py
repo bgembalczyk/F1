@@ -55,7 +55,8 @@ class CompleteDriverScraper(CompositeScraper):
         return None
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        raise NotImplementedError("Use fetch() bezpośrednio dla pełnego scrapingu")
+        msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
+        raise NotImplementedError(msg)
 
 
 if __name__ == "__main__":

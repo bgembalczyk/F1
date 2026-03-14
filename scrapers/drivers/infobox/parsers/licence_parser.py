@@ -61,8 +61,9 @@ class LicenceParser:
             return licences
         except (TypeError, ValueError) as exc:
             text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+            msg = f"Nie udało się sparsować licencji wyścigowej: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować licencji wyścigowej: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc
 

@@ -17,7 +17,8 @@ class SeasonRef(ValueObject):
         self.url = self.url or None
         if self.url:
             if not isinstance(self.url, str) or not is_valid_url(self.url):
-                raise ValueError("Pole seasons zawiera nieprawidłowy URL")
+                msg = "Pole seasons zawiera nieprawidłowy URL"
+                raise ValueError(msg)
 
     @classmethod
     def from_dict(cls, data: Mapping[str, Any] | None) -> "SeasonRef | None":

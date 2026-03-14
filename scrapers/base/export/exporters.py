@@ -61,4 +61,5 @@ def export_result(
     if format == "csv":
         exporter.to_csv(result, path, **kwargs)
         return
-    raise ValueError("Nieznany format eksportu. Dostępne: 'json', 'csv'.")
+    msg = "Nieznany format eksportu. Dostępne: 'json', 'csv'."
+    raise ValueError(msg)

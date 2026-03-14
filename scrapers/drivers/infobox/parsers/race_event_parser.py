@@ -50,7 +50,8 @@ class RaceEventParser:
             return []
         except (TypeError, ValueError) as exc:
             text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+            msg = f"Nie udało się sparsować wydarzenia wyścigowego: {text!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować wydarzenia wyścigowego: {text!r}.",
+                msg,
                 cause=exc,
             ) from exc

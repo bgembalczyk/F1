@@ -20,7 +20,7 @@ def extract_background(cell: Tag) -> str | None:
     """
     style = cell.get("style") or ""
     if style:
-        match = re.search(r"background(?:-color)?\s*:\s*([^;]+)", style, re.I)
+        match = re.search(r"background(?:-color)?\s*:\s*([^;]+)", style, re.IGNORECASE)
         if match:
             return match.group(1).strip()
 

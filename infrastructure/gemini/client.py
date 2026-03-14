@@ -176,9 +176,11 @@ class GeminiClient:
         timeout: int = _DEFAULT_TIMEOUT,
     ) -> None:
         if not api_key:
-            raise ValueError("Gemini API key nie może być pusty.")
+            msg = "Gemini API key nie może być pusty."
+            raise ValueError(msg)
         if not models:
-            raise ValueError("Lista modeli nie może być pusta.")
+            msg = "Lista modeli nie może być pusta."
+            raise ValueError(msg)
         self._api_key = api_key
         self._model_states = [_ModelState(m) for m in models]
         self._cache = cache if cache is not None else GeminiCache()
@@ -209,9 +211,12 @@ class GeminiClient:
         """
         path = Path(key_file) if key_file else _DEFAULT_KEY_FILE
         if not path.exists():
-            raise FileNotFoundError(
+            msg = (
                 f"Plik z kluczem Gemini API nie istnieje: {path}\n"
-                "Utwórz plik i wpisz do niego swój klucz API (tylko klucz, bez spacji).",
+                "Utwórz plik i wpisz do niego swój klucz API (tylko klucz, bez spacji)."
+            )
+            raise FileNotFoundError(
+                msg,
             )
         api_key = path.read_text(encoding="utf-8").strip()
         return cls(
@@ -246,10 +251,13 @@ class GeminiClient:
         while True:
             model = self._pick_model(exclude=error_models)
             if model is None:
-                raise RuntimeError(
+                msg = (
                     "Wszystkie dostępne modele Gemini są wyczerpane lub osiągnęły limit.\n"
                     f"Modele z błędem API: {error_models or '(brak)'}\n"
-                    f"Dostępne modele: {[s.model for s in self._model_states]}",
+                    f"Dostępne modele: {[s.model for s in self._model_states]}"
+                )
+                raise RuntimeError(
+                    msg,
                 )
 
             cached = self._cache.get(prompt, model)
@@ -325,15 +333,21 @@ class GeminiClient:
                 raw = resp.read().decode("utf-8")
         except urllib.error.HTTPError as exc:
             error_body = exc.read().decode("utf-8", errors="replace")
-            raise RuntimeError(
+            msg = (
                 f"Gemini API zwróciło HTTP {exc.code}: {exc.reason}\n"
-                f"Response body:\n{error_body}",
+                f"Response body:\n{error_body}"
+            )
+            raise RuntimeError(
+                msg,
             ) from exc
         except urllib.error.URLError as exc:
-            raise RuntimeError(
+            msg = (
                 "Nie udało się połączyć z Gemini API. "
                 "Sprawdź połączenie sieciowe, SSL/certyfikaty oraz poprawność endpointu.\n"
-                f"Szczegóły: {exc}",
+                f"Szczegóły: {exc}"
+            )
+            raise RuntimeError(
+                msg,
             ) from exc
 
         print("[GeminiClient] <<< Odpowiedź surowa od API:")
@@ -342,8 +356,9 @@ class GeminiClient:
         try:
             api_response = json.loads(raw)
         except json.JSONDecodeError as exc:
+            msg = f"Gemini API zwróciło niepoprawny JSON:\n{raw}"
             raise RuntimeError(
-                f"Gemini API zwróciło niepoprawny JSON:\n{raw}",
+                msg,
             ) from exc
 
         text = (
@@ -354,18 +369,24 @@ class GeminiClient:
         )
 
         if text is None:
-            raise RuntimeError(
+            msg = (
                 "Gemini API nie zwróciło pola candidates[0].content.parts[0].text.\n"
-                f"Pełna odpowiedź:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}",
+                f"Pełna odpowiedź:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}"
+            )
+            raise RuntimeError(
+                msg,
             )
 
         try:
             return json.loads(text)
         except json.JSONDecodeError as exc:
-            raise RuntimeError(
+            msg = (
                 "Gemini zwróciło tekst, który nie jest poprawnym JSON-em.\n"
                 f"Text:\n{text}\n\n"
-                f"Pełna odpowiedź API:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}",
+                f"Pełna odpowiedź API:\n{json.dumps(api_response, ensure_ascii=False, indent=2)}"
+            )
+            raise RuntimeError(
+                msg,
             ) from exc
 
     @staticmethod

@@ -163,6 +163,4 @@ def should_skip(
         return True
     if drop_empty_lists and isinstance(value, list) and len(value) == 0:
         return True
-    if drop_empty_dicts and isinstance(value, dict) and len(value) == 0:
-        return True
-    return False
+    return bool(drop_empty_dicts and isinstance(value, dict) and len(value) == 0)

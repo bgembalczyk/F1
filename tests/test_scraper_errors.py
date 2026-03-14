@@ -64,7 +64,8 @@ if "requests" not in sys.modules:
 
     class _Session:
         def get(self, *_args, **_kwargs):
-            raise _RequestException("requests stub")
+            msg = "requests stub"
+            raise _RequestException(msg)
 
     requests_stub.RequestException = _RequestException
     requests_stub.Session = _Session
@@ -121,7 +122,8 @@ class DummyParseScraper(F1Scraper):
     url = "https://example.com"
 
     def _parse_soup(self, soup):
-        raise ValueError("boom")
+        msg = "boom"
+        raise ValueError(msg)
 
 
 class DummyListScraper(F1ListScraper):
@@ -132,7 +134,8 @@ class DummyListScraper(F1ListScraper):
 
 class DummyInfoboxParser:
     def parse(self, soup):
-        raise ScraperNotFoundError("Brak infoboksu")
+        msg = "Brak infoboksu"
+        raise ScraperNotFoundError(msg)
 
 
 class DummySingleCircuitScraper(F1SingleCircuitScraper):
@@ -140,7 +143,8 @@ class DummySingleCircuitScraper(F1SingleCircuitScraper):
         return True
 
     def _parse_details(self, soup):
-        raise ScraperNotFoundError("Brak danych")
+        msg = "Brak danych"
+        raise ScraperNotFoundError(msg)
 
 
 def test_fetch_maps_network_errors_to_domain_exception():

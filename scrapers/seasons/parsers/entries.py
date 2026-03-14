@@ -86,10 +86,7 @@ class SeasonEntriesParser:
             if numbers is None:
                 continue
 
-            if isinstance(numbers, list):
-                numbers_list = numbers
-            else:
-                numbers_list = [numbers]
+            numbers_list = numbers if isinstance(numbers, list) else [numbers]
 
             if not numbers_list:
                 continue

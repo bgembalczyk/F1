@@ -145,8 +145,9 @@ class CircuitHistoryParser(InfoboxTextUtils):
                 year = int(m.group(1))
                 return str(year)
         except (TypeError, ValueError) as exc:
+            msg = f"Nie udało się sparsować zakresu daty: {raw!r}."
             raise DomainParseError(
-                f"Nie udało się sparsować zakresu daty: {raw!r}.",
+                msg,
                 cause=exc,
             ) from exc
 

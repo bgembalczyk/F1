@@ -55,7 +55,6 @@ class JimClarkTrophyParser:
         scraper = F1StandingsScraper(options=self._table_parser._options, config=config)
 
         try:
-            records = scraper.parse(soup)
-            return records
+            return scraper.parse(soup)
         except RuntimeError:
             return []
