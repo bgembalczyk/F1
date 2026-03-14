@@ -16,9 +16,9 @@ from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.logging import get_logger
-from scrapers.base.normalization_utils import EmptyValuePolicy
+from scrapers.base.normalization import EmptyValuePolicy
+from scrapers.base.normalization import normalize_record_values
 from scrapers.base.normalization_utils import normalize_empty
-from scrapers.base.normalization_utils import normalize_record_values
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
