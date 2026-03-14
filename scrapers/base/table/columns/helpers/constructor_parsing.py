@@ -1,6 +1,7 @@
 """Constructor-specific parsing helpers.
 
-This module contains helper functions for parsing constructor-related data from Wikipedia tables.
+This module contains helper functions for parsing constructor-related data
+from Wikipedia tables.
 Extracted from scrapers/base/table/columns/helpers.py to follow SRP.
 
 Follows SOLID principles:
@@ -15,6 +16,8 @@ from models.records.link import LinkRecord
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
 
+ENGINE_CONSTRUCTOR_INDEX = 1
+
 
 class ConstructorParsingHelpers:
     """
@@ -25,6 +28,56 @@ class ConstructorParsingHelpers:
     - Extracting constructor parts from multi-line cells
     - Parsing constructor segments
     """
+
+    @staticmethod
+    def _split_cell_children(ctx: ColumnContext) -> list[list[object]]:
+        lines: list[list[object]] = [[]]
+        for child in ctx.cell.children:
+            if isinstance(child, Tag) and child.name == "br":
+                lines.append([])
+                continue
+            lines[-1].append(child)
+        return lines
+
+    @staticmethod
+    def _count_line_links(line: list[object]) -> int:
+        return sum(
+            1 if node.name == "a" else len(node.find_all("a"))
+            for node in line
+            if isinstance(node, Tag)
+        )
+
+    @staticmethod
+    def _extract_line_text(line: list[object]) -> str:
+        text_parts = []
+        for node in line:
+            node_text = (
+                node.get_text(" ", strip=True)
+                if isinstance(node, Tag)
+                else str(node).strip()
+            )
+            if node_text:
+                text_parts.append(node_text)
+        return clean_wiki_text(" ".join(text_parts))
+
+    @staticmethod
+    def _build_line_context(
+        ctx: ColumnContext,
+        clean_text: str,
+        line_links: list[LinkRecord],
+    ) -> ColumnContext:
+        return ColumnContext(
+            cell=None,
+            raw_text=clean_text,
+            clean_text=clean_text,
+            links=line_links,
+            header=getattr(ctx, "header", None),
+            key=getattr(ctx, "key", None),
+            base_url=ctx.base_url,
+            skip_sentinel=getattr(ctx, "skip_sentinel", None),
+            model_fields=getattr(ctx, "model_fields", None),
+            header_link=getattr(ctx, "header_link", None),
+        )
 
     @staticmethod
     def split_lines(ctx: ColumnContext) -> list[ColumnContext]:
@@ -43,58 +96,23 @@ class ConstructorParsingHelpers:
         if not ctx.cell:
             return []
 
-        lines: list[list[object]] = [[]]
-        for child in ctx.cell.children:
-            if isinstance(child, Tag) and child.name == "br":
-                lines.append([])
-                continue
-            lines[-1].append(child)
+        lines = ConstructorParsingHelpers._split_cell_children(ctx)
+        line_link_counts = [
+            ConstructorParsingHelpers._count_line_links(line)
+            for line in lines
+        ]
 
-        if not lines:
-            return []
-
-        # Count links in each line
-        line_link_counts = []
-        for line in lines:
-            link_count = 0
-            for node in line:
-                if isinstance(node, Tag):
-                    if node.name == "a":
-                        link_count += 1
-                    else:
-                        link_count += len(node.find_all("a"))
-            line_link_counts.append(link_count)
-
-        # Create contexts for each line with proper link distribution
         line_contexts: list[ColumnContext] = []
         link_index = 0
         for line, link_count in zip(lines, line_link_counts, strict=False):
             line_links = ctx.links[link_index : link_index + link_count]
             link_index += link_count
-
-            text_parts = []
-            for node in line:
-                if isinstance(node, Tag):
-                    node_text = node.get_text(" ", strip=True)
-                else:
-                    node_text = str(node).strip()
-                if node_text:
-                    text_parts.append(node_text)
-
-            clean_text = clean_wiki_text(" ".join(text_parts))
-
+            clean_text = ConstructorParsingHelpers._extract_line_text(line)
             line_contexts.append(
-                ColumnContext(
-                    cell=None,
-                    raw_text=clean_text,
-                    clean_text=clean_text,
-                    links=line_links,
-                    header=getattr(ctx, "header", None),
-                    key=getattr(ctx, "key", None),
-                    base_url=ctx.base_url,
-                    skip_sentinel=getattr(ctx, "skip_sentinel", None),
-                    model_fields=getattr(ctx, "model_fields", None),
-                    header_link=getattr(ctx, "header_link", None),
+                ConstructorParsingHelpers._build_line_context(
+                    ctx,
+                    clean_text,
+                    line_links,
                 ),
             )
 
@@ -118,9 +136,11 @@ class ConstructorParsingHelpers:
             return None
 
         if index >= len(ctx.links):
-            # When a single link is present, it represents both chassis and engine constructor.
-            # Return index 0 (chassis) also as index 1 (engine) so both fields are populated.
-            if index == 1 and len(ctx.links) == 1:
+            # When a single link is present, it can represent both
+            # chassis and engine constructor.
+            # Return index 0 (chassis) also as index 1 (engine)
+            # so both fields are populated.
+            if index == ENGINE_CONSTRUCTOR_INDEX and len(ctx.links) == 1:
                 return ctx.links[0]
             return None
 
@@ -141,12 +161,9 @@ class ConstructorParsingHelpers:
         """
         text = ctx.clean_text or ctx.raw_text or ""
 
-        # Look for patterns like " - " or " – " (various dash types)
-        for separator in [" - ", " – ", " — "]:
-            if separator in text:
-                parts = text.split(separator, 1)
-                if len(parts) == 2:
-                    return parts[0].strip(), parts[1].strip()
+        if " - " in text:
+            parts = text.split(" - ", 1)
+            return parts[0].strip(), parts[1].strip()
 
         return None
 
@@ -174,7 +191,7 @@ class ConstructorParsingHelpers:
                     clean_text[:idx] + clean_text[idx + len(link_text) :]
                 ).strip()
 
-        clean_text = clean_text.strip(" -–—()")
+        clean_text = clean_text.strip(" -()")
         if not clean_text:
             return None
 
