@@ -2,7 +2,6 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
@@ -13,9 +12,10 @@ from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
+from scrapers.wiki.scraper import WikiScraper
 
 
-class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
+class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
     """
     Scraper pojedynczego toru - pobiera infobox i wszystkie tabele z artykułu Wikipedii.
 

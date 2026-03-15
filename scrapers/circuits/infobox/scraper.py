@@ -3,7 +3,6 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
@@ -25,9 +24,10 @@ from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
 from scrapers.circuits.infobox.services.layouts import CircuitLayoutsParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+from scrapers.wiki.scraper import WikiScraper
 
 
-class F1CircuitInfoboxScraper(F1Scraper):
+class F1CircuitInfoboxScraper(WikiScraper):
     """Parser infoboksów torów F1 z heurystykami pod typowe pola."""
 
     def __init__(

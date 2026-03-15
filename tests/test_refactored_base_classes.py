@@ -3,7 +3,11 @@
 from scrapers.base.abc import F1Scraper
 from scrapers.base.composite_scraper import CompositeScraper
 from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
+from scrapers.base.list.scraper import F1ListScraper
+from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.complete_scraper import F1CompleteCircuitScraper
+from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
@@ -14,7 +18,9 @@ from scrapers.constructors.former_constructors_list import FormerConstructorsLis
 from scrapers.constructors.indianapolis_only_constructors_list import (
     IndianapolisOnlyConstructorsListScraper,
 )
+from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.complete_scraper import CompleteDriverScraper
+from scrapers.drivers.single_scraper import SingleDriverScraper
 from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerScraper
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
@@ -22,12 +28,16 @@ from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
 )
 from scrapers.engines.single_scraper import SingleEngineManufacturerScraper
 from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixScraper
+from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.points_scoring_systems_history import (
     PointsScoringSystemsHistoryScraper,
 )
 from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
 from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
+from scrapers.seasons.single_scraper import SingleSeasonScraper
+from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
+from scrapers.wiki.scraper import WikiScraper
 
 
 class TestIndianapolisOnlyScrapers:
@@ -173,3 +183,93 @@ class TestPointsScrapers:
             PointsScoringSystemsHistoryScraper,
         ]:
             assert scraper_class.CONFIG.url == BasePointsScraper.BASE_URL
+
+
+class TestWikiScraperHierarchy:
+    """Test WikiScraper hierarchy – WikiScraper inherits F1Scraper,
+    ListScrapers and SingleScrapers inherit WikiScraper."""
+
+    def test_wiki_scraper_inherits_from_f1_scraper(self):
+        """Verify WikiScraper inherits from F1Scraper."""
+        assert issubclass(WikiScraper, F1Scraper)
+
+    # ---------- F1ListScraper ----------
+
+    def test_f1_list_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1ListScraper inherits from WikiScraper."""
+        assert issubclass(F1ListScraper, WikiScraper)
+
+    # ---------- F1TableScraper ----------
+
+    def test_f1_table_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1TableScraper inherits from WikiScraper."""
+        assert issubclass(F1TableScraper, WikiScraper)
+
+    # ---------- Single scrapers ----------
+
+    def test_single_circuit_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1SingleCircuitScraper inherits from WikiScraper."""
+        assert issubclass(F1SingleCircuitScraper, WikiScraper)
+
+    def test_single_constructor_scraper_inherits_from_wiki_scraper(self):
+        """Verify SingleConstructorScraper inherits from WikiScraper."""
+        assert issubclass(SingleConstructorScraper, WikiScraper)
+
+    def test_single_driver_scraper_inherits_from_wiki_scraper(self):
+        """Verify SingleDriverScraper inherits from WikiScraper."""
+        assert issubclass(SingleDriverScraper, WikiScraper)
+
+    def test_single_season_scraper_inherits_from_wiki_scraper(self):
+        """Verify SingleSeasonScraper inherits from WikiScraper."""
+        assert issubclass(SingleSeasonScraper, WikiScraper)
+
+    def test_single_engine_manufacturer_inherits_from_wiki_scraper(self):
+        """Verify SingleEngineManufacturerScraper inherits from WikiScraper."""
+        assert issubclass(SingleEngineManufacturerScraper, WikiScraper)
+
+    def test_single_grand_prix_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1SingleGrandPrixScraper inherits from WikiScraper."""
+        assert issubclass(F1SingleGrandPrixScraper, WikiScraper)
+
+    def test_circuit_infobox_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1CircuitInfoboxScraper inherits from WikiScraper."""
+        assert issubclass(F1CircuitInfoboxScraper, WikiScraper)
+
+    def test_sponsorship_liveries_scraper_inherits_from_wiki_scraper(self):
+        """Verify F1SponsorshipLiveriesScraper inherits from WikiScraper."""
+        assert issubclass(F1SponsorshipLiveriesScraper, WikiScraper)
+
+    # ---------- Transitivity through WikiScraper ----------
+
+    def test_list_scraper_still_inherits_f1_scraper(self):
+        """Verify F1ListScraper (transitively) inherits from F1Scraper."""
+        assert issubclass(F1ListScraper, F1Scraper)
+
+    def test_table_scraper_still_inherits_f1_scraper(self):
+        """Verify F1TableScraper (transitively) inherits from F1Scraper."""
+        assert issubclass(F1TableScraper, F1Scraper)
+
+    def test_single_scrapers_still_inherit_f1_scraper(self):
+        """Verify all single scrapers (transitively) inherit from F1Scraper."""
+        for cls in [
+            F1SingleCircuitScraper,
+            SingleConstructorScraper,
+            SingleDriverScraper,
+            SingleSeasonScraper,
+            SingleEngineManufacturerScraper,
+            F1SingleGrandPrixScraper,
+        ]:
+            assert issubclass(cls, F1Scraper), (
+                f"{cls.__name__} should (transitively) inherit F1Scraper"
+            )
+
+    def test_wiki_scraper_has_wiki_parsers(self):
+        """Verify WikiScraper exposes HeaderParser and BodyContentParser as attributes."""
+        scraper = WikiScraper()
+        assert hasattr(scraper, "header_parser")
+        assert hasattr(scraper, "body_content_parser")
+
+    def test_wiki_scraper_has_scrape_method(self):
+        """Verify WikiScraper has a scrape(url) convenience method."""
+        assert hasattr(WikiScraper, "scrape")
+        assert callable(WikiScraper.scrape)

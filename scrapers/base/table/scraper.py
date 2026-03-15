@@ -5,7 +5,6 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -14,9 +13,10 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.row import TableRow
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
+from scrapers.wiki.scraper import WikiScraper
 
 
-class F1TableScraper(F1Scraper, ABC):
+class F1TableScraper(WikiScraper, ABC):
     """
     Scraper oparty o pojedynczą tabelę 'wikitable'.
 

@@ -2,55 +2,68 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.abc import F1Scraper
+from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.options import ScraperOptions
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.header import HeaderParser
 
 
-class WikiScraper:
-    """Scraper artykułów Wikipedii.
+class WikiScraper(F1Scraper):
+    """Bazowy scraper artykułów Wikipedii.
 
-    Pobiera kod HTML strony Wikipedii na podstawie podanego URL,
-    a następnie parsuje go przy użyciu:
+    Dziedziczy z F1Scraper, zapewniając pełen pipeline:
+    download → parse → normalize → transform → validate → export.
+
+    Klasa ta obsługuje specyficzne dla Wikipedii parsery stron:
     - HeaderParser – przetwarza nagłówek strony
       (<header class="mw-body-header vector-page-titlebar no-font-mode-scale">)
     - BodyContentParser – przetwarza główną treść strony
       (<div id="bodyContent">)
 
-    Pobieranie HTML odbywa się za pośrednictwem http_client.
-    Po stronie klienta podejmowana jest decyzja, czy dane są pobierane
-    bezpośrednio z sieci, czy zwracane z cache.
+    Pobieranie HTML odbywa się za pośrednictwem source_adapter (HtmlFetcher),
+    który po swojej stronie decyduje, czy dane są pobierane bezpośrednio z sieci,
+    czy zwracane z cache.
 
-    Użycie:
-        from infrastructure.http_client.http_client import HttpClient
-        from scrapers.wiki.scraper import WikiScraper
+    ListScrapery i SingleScrapery dziedziczą po WikiScraperze i nadpisują
+    metodę _parse_soup, korzystając ze swoich wyspecjalizowanych parserów.
 
-        http_client = HttpClient(...)
-        scraper = WikiScraper(http_client=http_client)
+    Użycie jako samodzielny scraper artykułu Wikipedii:
+        scraper = WikiScraper()
         result = scraper.scrape("https://en.wikipedia.org/wiki/Lewis_Hamilton")
     """
 
+    #: URL artykułu Wikipedii (ustawiany dynamicznie lub przez podklasy)
+    url: str = ""
+
     def __init__(
         self,
-        http_client: Any,
         *,
+        options: ScraperOptions | None = None,
         header_parser: HeaderParser | None = None,
         body_content_parser: BodyContentParser | None = None,
     ) -> None:
         """Inicjalizuje WikiScraper.
 
         Args:
-            http_client: Klient HTTP z metodą get_text(url) używany do pobierania HTML.
-                Po stronie klienta leży decyzja o pobieraniu bezpośrednim lub z cache.
+            options: Opcje scrapera (HTTP, cache, eksport itp.).
+                Domyślnie tworzy nowe ScraperOptions.
             header_parser: Parser nagłówka strony. Domyślnie tworzy nowy HeaderParser.
             body_content_parser: Parser treści strony. Domyślnie tworzy nowy
                 BodyContentParser.
         """
-        self.http_client = http_client
+        options = init_scraper_options(options)
+        policy = self.get_http_policy(options)
+        options.with_fetcher(policy=policy)
+        super().__init__(options=options)
+
         self.header_parser = header_parser or HeaderParser()
         self.body_content_parser = body_content_parser or BodyContentParser()
 
     def scrape(self, url: str) -> dict[str, Any]:
         """Pobiera i parsuje artykuł Wikipedii pod podanym adresem URL.
+
+        Wygodna metoda opakowująca pełny pipeline F1Scrapera.
 
         Args:
             url: Adres URL artykułu Wikipedii.
@@ -60,34 +73,26 @@ class WikiScraper:
             - 'url': podany adres URL
             - 'header': wyniki parsowania nagłówka strony
             - 'body_content': wyniki parsowania treści strony
+            Lub pusty słownik, gdy nie udało się pobrać/sparsować.
         """
-        html = self._fetch(url)
-        soup = BeautifulSoup(html, "html.parser")
-        return self._parse(url, soup)
+        self.url = url
+        records = self.fetch()
+        return records[0] if records else {}
 
-    def _fetch(self, url: str) -> str:
-        """Pobiera kod HTML strony za pomocą http_client.
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        """Domyślne parsowanie strony Wikipedii.
+
+        Korzysta z HeaderParser i BodyContentParser.
+        Podklasy (ListScrapery, SingleScrapery) nadpisują tę metodę.
 
         Args:
-            url: Adres URL do pobrania.
-
-        Returns:
-            Kod HTML strony jako string.
-        """
-        return self.http_client.get_text(url)
-
-    def _parse(self, url: str, soup: BeautifulSoup) -> dict[str, Any]:
-        """Parsuje sparsowaną stronę HTML.
-
-        Args:
-            url: Adres URL (dołączany do wyniku).
             soup: Sparsowany HTML jako obiekt BeautifulSoup.
 
         Returns:
-            Słownik z wynikami parsowania nagłówka i treści.
+            Lista z jednym słownikiem zawierającym dane ze strony.
         """
         result: dict[str, Any] = {
-            "url": url,
+            "url": self.url,
             "header": None,
             "body_content": None,
         }
@@ -100,4 +105,4 @@ class WikiScraper:
         if body_content_el is not None:
             result["body_content"] = self.body_content_parser.parse(body_content_el)
 
-        return result
+        return [result]

@@ -3,7 +3,6 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
@@ -15,9 +14,10 @@ from scrapers.base.table.dsl.column import column as dsl_column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.wiki.scraper import WikiScraper
 
 
-class SingleEngineManufacturerScraper(F1Scraper):
+class SingleEngineManufacturerScraper(WikiScraper):
     """
     Scraper pojedynczego producenta silnika - pobiera wszystkie infoboksy
     oraz wszystkie tabele z artykułu Wikipedii.

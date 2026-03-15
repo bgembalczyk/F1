@@ -5,7 +5,6 @@ from typing import Optional
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
@@ -16,12 +15,13 @@ from scrapers.sponsorship_liveries.parsers.record_splitter import (
 from scrapers.sponsorship_liveries.parsers.section_parser import (
     SponsorshipSectionParser,
 )
+from scrapers.wiki.scraper import WikiScraper
 
 if TYPE_CHECKING:
     from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 
 
-class F1SponsorshipLiveriesScraper(F1Scraper):
+class F1SponsorshipLiveriesScraper(WikiScraper):
     """
     Scraper tabel sponsorskich malowań F1:
     https://en.wikipedia.org/wiki/Formula_One_sponsorship_liveries

@@ -3,7 +3,6 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
@@ -22,9 +21,10 @@ from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
 from scrapers.seasons.parsers.standings import SeasonStandingsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
+from scrapers.wiki.scraper import WikiScraper
 
 
-class SingleSeasonScraper(F1Scraper):
+class SingleSeasonScraper(WikiScraper):
     def __init__(
         self,
         *,

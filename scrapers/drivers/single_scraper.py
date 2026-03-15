@@ -3,7 +3,6 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.helpers.text import clean_wiki_text
@@ -31,9 +30,10 @@ from scrapers.drivers.columns.round import RoundColumn
 from scrapers.drivers.columns.series import SeriesColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
 from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
+from scrapers.wiki.scraper import WikiScraper
 
 
-class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
+class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
     _UNKNOWN_VALUE = "unknown"
 
     def __init__(

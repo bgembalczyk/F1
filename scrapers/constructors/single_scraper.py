@@ -3,16 +3,16 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
+from scrapers.wiki.scraper import WikiScraper
 
 _HAS_INFOBOX_CLASS = InfoboxHtmlParser._has_infobox_class  # noqa: SLF001
 
 
-class SingleConstructorScraper(F1Scraper):
+class SingleConstructorScraper(WikiScraper):
     """
     Scraper pojedynczego konstruktora - pobiera wszystkie infoboksy
     oraz wszystkie tabele z artykułu Wikipedii.
