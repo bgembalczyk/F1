@@ -4,16 +4,8 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
-from scrapers.base.records import record_from_mapping
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl.column import column as dsl_column
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.parser import HtmlTableParser
-from scrapers.base.table.pipeline import TablePipeline
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -67,46 +59,9 @@ class SingleEngineManufacturerScraper(WikiScraper):
         return all_tables
 
     def _parse_table(self, table: Tag) -> dict[str, Any] | None:
-        headers = self._extract_headers(table)
+        raw = self.table_parser.parse(table)
+        headers = raw["headers"]
         if not headers:
             return None
-
-        pipeline = self._build_pipeline(headers)
-        parser = HtmlTableParser()
-        rows: list[dict[str, Any]] = []
-        for row_index, row in enumerate(parser.parse_table(table)):
-            record = pipeline.parse_cells(
-                row.headers,
-                row.cells,
-                row_index=row_index,
-            )
-            if record:
-                rows.append(record)
-
+        rows = [dict(zip(headers, row_cells, strict=False)) for row_cells in raw["rows"]]
         return {"headers": headers, "rows": rows}
-
-    def _build_pipeline(self, headers: list[str]) -> TablePipeline:
-        schema = TableSchemaDSL(
-            columns=[dsl_column(header, header, AutoColumn()) for header in headers],
-        )
-        config = ScraperConfig(
-            url=self.url,
-            section_id=None,
-            expected_headers=None,
-            schema=schema,
-            default_column=AutoColumn(),
-            record_factory=record_from_mapping,
-        )
-        return TablePipeline(
-            config=config,
-            include_urls=self.include_urls,
-            normalize_empty_values=self.normalize_empty_values,
-            debug_dir=self.debug_dir,
-        )
-
-    def _extract_headers(self, table: Tag) -> list[str]:
-        header_row = table.find("tr")
-        if not header_row:
-            return []
-        header_cells = header_row.find_all(["th", "td"])
-        return [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]

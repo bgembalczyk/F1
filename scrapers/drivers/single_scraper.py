@@ -308,11 +308,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
         )
 
     def _extract_headers(self, table: Tag) -> list[str]:
-        header_row = table.find("tr")
-        if not header_row:
-            return []
-        header_cells = header_row.find_all(["th", "td"])
-        return [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
+        return self.table_parser.parse(table)["headers"]
 
     def _unknown(self, column: Any) -> UnknownValueColumn:
         return UnknownValueColumn(column, unknown_value=self._UNKNOWN_VALUE)

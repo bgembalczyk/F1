@@ -41,6 +41,7 @@ from scrapers.seasons.standings_scraper import F1StandingsScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.wiki.scraper import WikiScraper
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxParser
+from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
 
 
 class TestIndianapolisOnlyScrapers:
@@ -286,6 +287,15 @@ class TestWikiScraperHierarchy:
         assert hasattr(scraper, "header_parser")
         assert hasattr(scraper, "body_content_parser")
         assert hasattr(scraper, "section_parser")
+
+    def test_wiki_scraper_has_element_parsers_from_mixin(self):
+        """Verify WikiScraper exposes WikiElementParserMixin parsers (table_parser, infobox_parser, list_parser, ...)."""
+        assert issubclass(WikiScraper, WikiElementParserMixin)
+        scraper = WikiScraper()
+        assert hasattr(scraper, "table_parser")
+        assert hasattr(scraper, "infobox_parser")
+        assert hasattr(scraper, "list_parser")
+        assert hasattr(scraper, "paragraph_parser")
 
     def test_wiki_scraper_has_scrape_method(self):
         """Verify WikiScraper has a scrape(url) convenience method."""

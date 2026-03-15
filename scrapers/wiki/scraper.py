@@ -8,9 +8,10 @@ from scrapers.base.options import ScraperOptions
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.header import HeaderParser
 from scrapers.wiki.parsers.sections.section import SectionParser
+from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
 
 
-class WikiScraper(ABCScraper):
+class WikiScraper(WikiElementParserMixin, ABCScraper):
     """Bazowy scraper artykułów Wikipedii.
 
     Dziedziczy z ABCScraper, zapewniając pełen pipeline:
@@ -53,10 +54,11 @@ class WikiScraper(ABCScraper):
             body_content_parser: Parser treści strony. Domyślnie tworzy nowy
                 BodyContentParser.
         """
+        WikiElementParserMixin.__init__(self)
         options = init_scraper_options(options)
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
-        super().__init__(options=options)
+        ABCScraper.__init__(self, options=options)
 
         self.header_parser = header_parser or HeaderParser()
         self.body_content_parser = body_content_parser or BodyContentParser()
