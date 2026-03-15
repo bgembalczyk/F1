@@ -90,7 +90,7 @@ class YearParser:
             year_match = re.search(r"\b(\d{4})\b", year_text)
             if year_match:
                 years["end"] = int(year_match.group(1))
-        # Handle "YEAR-" or "YEAR–" (open-ended, possibly with "present")
+        # Handle open-ended values like "YEAR-" (optionally with "present")
         elif re.search(r"\b(\d{4})\s*[-\u2013]\s*(?:present)?$", year_text.strip()):
             year_match = re.search(r"\b(\d{4})\b", year_text)
             if year_match:

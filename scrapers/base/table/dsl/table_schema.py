@@ -1,18 +1,21 @@
-from collections.abc import Iterable
-from collections.abc import Mapping
+from __future__ import annotations
+
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.dsl.column import ColumnRef
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.serialization import column_ref_payload
 from scrapers.base.table.schema import TableSchema
 
+if TYPE_CHECKING:
+    from scrapers.base.table.columns.types.base import BaseColumn
+
 
 @dataclass(frozen=True)
 class TableSchemaDSL:
-    columns: Iterable[ColumnSpec]
+    columns: list[ColumnSpec]
 
     def build(self) -> TableSchema:
         column_map: dict[str, str] = {}
@@ -32,8 +35,8 @@ class TableSchemaDSL:
             column_instance = spec.build_column()
             signature = ColumnRef.from_instance(column_instance)
             if spec.key in key_signatures and key_signatures[spec.key] != (
-                    signature.class_path,
-                    dict(signature.kwargs),
+                signature.class_path,
+                dict(signature.kwargs),
             ):
                 duplicate_keys.add(spec.key)
             else:
@@ -64,7 +67,7 @@ class TableSchemaDSL:
         }
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "TableSchemaDSL":
+    def from_dict(cls, data: dict[str, Any]) -> TableSchemaDSL:
         columns_data = data.get("columns", [])
         specs: list[ColumnSpec] = []
         for item in columns_data:
@@ -83,7 +86,7 @@ class TableSchemaDSL:
         return cls(columns=specs)
 
     @classmethod
-    def from_config(cls, config: Any) -> "TableSchemaDSL":
+    def from_config(cls, config: Any) -> TableSchemaDSL:
         column_specs: list[ColumnSpec] = []
         for header, key in config.column_map.items():
             column_instance = config.columns.get(key, config.default_column)
