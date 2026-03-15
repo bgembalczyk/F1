@@ -6,7 +6,6 @@ from bs4 import Tag
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -33,7 +32,7 @@ from scrapers.drivers.infobox.scraper import DriverInfoboxParser
 from scrapers.wiki.scraper import WikiScraper
 
 
-class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
+class SingleDriverScraper(WikiScraper):
     _UNKNOWN_VALUE = "unknown"
 
     def __init__(
@@ -86,12 +85,11 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
         records: list[dict[str, Any]] = []
 
         for section_title in sections:
-            section_soup = self.extract_section_by_id(
-                soup,
-                section_title.replace(" ", "_"),
-            )
-            if section_soup is None:
+            section = self.find_section(soup, section_title.replace(" ", "_"))
+            if section is None:
                 continue
+
+            section_soup = section.soup
 
             for table in section_soup.find_all("table", class_="wikitable"):
                 table_meta = self._table_context(table, section_title)
