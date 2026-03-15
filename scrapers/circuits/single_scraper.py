@@ -55,7 +55,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
         if not fragment:
             return soup
 
-        section = self.extract_section_by_id(soup, fragment)
+        section = self.extract_section_by_id(soup, fragment, domain="circuits")
         return section or soup
 
     def _parse_details(self, soup: BeautifulSoup) -> dict[str, Any]:

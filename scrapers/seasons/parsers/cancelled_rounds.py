@@ -101,11 +101,11 @@ class CancelledRoundsParser:
         expected_headers: list[str],
     ) -> list[Tag]:
         try:
-            candidate_tables = find_section_tables(soup, section_id)
+            candidate_tables = find_section_tables(soup, section_id, domain="seasons")
         except RuntimeError:
             return []
 
-        parser = HtmlTableParser(section_id=None, expected_headers=expected_headers)
+        parser = HtmlTableParser(section_id=None, expected_headers=expected_headers, section_domain="seasons")
         return [
             table
             for table in candidate_tables

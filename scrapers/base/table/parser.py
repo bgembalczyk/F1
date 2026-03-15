@@ -28,6 +28,7 @@ class HtmlTableParser:
         fragment: str | None = None,
         expected_headers: Sequence[str] | None = None,
         table_css_class: str = "wikitable",
+        section_domain: str | None = None,
         strip_lang_suffix: bool = True,
         strip_refs: bool = True,
         normalize_dashes: bool = True,
@@ -36,6 +37,7 @@ class HtmlTableParser:
         self.fragment = fragment
         self.expected_headers = expected_headers
         self.table_css_class = table_css_class
+        self.section_domain = section_domain
         self.strip_lang_suffix = strip_lang_suffix
         self.strip_refs = strip_refs
         self.normalize_dashes = normalize_dashes
@@ -94,6 +96,7 @@ class HtmlTableParser:
             section_id,
             ["table"],
             class_=self.table_css_class,
+            domain=self.section_domain,
         )
 
         for table in candidate_tables:

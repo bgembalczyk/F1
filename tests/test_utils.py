@@ -137,3 +137,23 @@ def test_split_url_fragment_handles_missing_fragment():
 
     assert base_url == "https://en.wikipedia.org/wiki/Foo"
     assert fragment is None
+
+
+def test_extract_section_by_id_with_text_alias_and_modern_heading_wrapper():
+    html = """
+    <div class="mw-heading mw-heading2"><h2 id="Career_results">Career result</h2></div>
+    <table class="wikitable" id="t1"></table>
+    <div class="mw-heading mw-heading2"><h2 id="Other">Other</h2></div>
+    <table class="wikitable" id="t2"></table>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    section = WikipediaSectionByIdMixin.extract_section_by_id(
+        soup,
+        "Career_results",
+        domain="drivers",
+    )
+
+    assert section is not None
+    assert section.find(id="t1") is not None
+    assert section.find(id="t2") is None
