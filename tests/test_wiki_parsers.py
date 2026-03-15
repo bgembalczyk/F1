@@ -1,4 +1,5 @@
 """Tests for wiki parsers hierarchy."""
+
 import pytest
 from bs4 import BeautifulSoup
 
@@ -17,11 +18,8 @@ from scrapers.wiki.parsers.header import HeaderParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
-from scrapers.wiki.parsers.sections.sub_sub_sub_section import (
-    SubSubSubSectionParser,
-    _split_into_parts,
-)
-
+from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
+from scrapers.wiki.parsers.sections.sub_sub_sub_section import _split_into_parts
 
 # ---------------------------------------------------------------------------
 # WikiParser is abstract

@@ -41,7 +41,7 @@ class ContentTextParser(WikiParser):
             "sections": [
                 {
                     "name": name,
-                    **self.section_parser.parse_group(group_elements),  
+                    **self.section_parser.parse_group(group_elements),
                 }
                 for name, group_elements in parts
             ],

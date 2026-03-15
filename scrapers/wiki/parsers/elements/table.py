@@ -26,8 +26,7 @@ class TableParser(WikiParser):
         header_row = element.find("tr")
         if header_row:
             headers = [
-                th.get_text(" ", strip=True)
-                for th in header_row.find_all(["th", "td"])
+                th.get_text(" ", strip=True) for th in header_row.find_all(["th", "td"])
             ]
 
         for tr in element.find_all("tr")[1:]:

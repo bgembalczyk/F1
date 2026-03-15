@@ -42,10 +42,7 @@ class SingleConstructorScraper(WikiScraper):
 
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         parser = InfoboxHtmlParser()
-        return [
-            parser.parse_element(table)
-            for table in self.find_infoboxes(soup)
-        ]
+        return [parser.parse_element(table) for table in self.find_infoboxes(soup)]
 
     def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         tables = []
@@ -68,7 +65,9 @@ class SingleConstructorScraper(WikiScraper):
             else None
         )
 
-        rows = [dict(zip(headers, row_cells, strict=False)) for row_cells in raw["rows"]]
+        rows = [
+            dict(zip(headers, row_cells, strict=False)) for row_cells in raw["rows"]
+        ]
 
         result: dict[str, Any] = {"headers": headers, "rows": rows}
         if caption:

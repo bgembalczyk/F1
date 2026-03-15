@@ -20,7 +20,5 @@ class ReferencesWrapParser(WikiParser):
         Returns:
             Słownik z listą przypisów.
         """
-        refs = [
-            li.get_text(" ", strip=True) for li in element.find_all("li")
-        ]
+        refs = [li.get_text(" ", strip=True) for li in element.find_all("li")]
         return {"references": refs}

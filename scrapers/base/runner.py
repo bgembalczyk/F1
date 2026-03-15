@@ -48,7 +48,12 @@ class ScraperRunner:
             result.to_csv(csv_path, exporter=scraper.exporter)
         run_logger.info("Scrape run %s finished", run_id)
 
-    def _make_scraper(self, scraper_cls: type[ABCScraper], *, run_id: str) -> ABCScraper:
+    def _make_scraper(
+        self,
+        scraper_cls: type[ABCScraper],
+        *,
+        run_id: str,
+    ) -> ABCScraper:
         """
         Tworzy instancję scrapera w sposób kompatybilny z różnymi konstruktorami:
 

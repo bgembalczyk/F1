@@ -39,10 +39,10 @@ from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScrap
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 from scrapers.seasons.standings_scraper import F1StandingsScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
-from scrapers.wiki.scraper import WikiScraper
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
+from scrapers.wiki.scraper import WikiScraper
 
 
 class TestIndianapolisOnlyScrapers:
@@ -105,7 +105,8 @@ class TestCompleteScrapers:
     def test_engine_manufacturer_complete_inherits_from_composite(self):
         """Verify F1CompleteEngineManufacturerDataExtractor inherits from CompositeDataExtractor."""
         assert issubclass(
-            F1CompleteEngineManufacturerDataExtractor, CompositeDataExtractor
+            F1CompleteEngineManufacturerDataExtractor,
+            CompositeDataExtractor,
         )
 
     def test_engine_manufacturer_complete_url(self):
@@ -278,9 +279,10 @@ class TestWikiScraperHierarchy:
             SingleEngineManufacturerScraper,
             F1SingleGrandPrixScraper,
         ]:
-            assert issubclass(cls, ABCScraper), (
-                f"{cls.__name__} should (transitively) inherit ABCScraper"
-            )
+            assert issubclass(
+                cls,
+                ABCScraper,
+            ), f"{cls.__name__} should (transitively) inherit ABCScraper"
 
     def test_wiki_scraper_has_wiki_parsers(self):
         """Verify WikiScraper exposes HeaderParser, BodyContentParser and SectionParser as attributes."""

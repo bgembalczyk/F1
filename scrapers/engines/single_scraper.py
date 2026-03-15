@@ -63,5 +63,7 @@ class SingleEngineManufacturerScraper(WikiScraper):
         headers = raw["headers"]
         if not headers:
             return None
-        rows = [dict(zip(headers, row_cells, strict=False)) for row_cells in raw["rows"]]
+        rows = [
+            dict(zip(headers, row_cells, strict=False)) for row_cells in raw["rows"]
+        ]
         return {"headers": headers, "rows": rows}

@@ -55,7 +55,7 @@ class SubSectionParser(WikiElementParserMixin, WikiParser):
             "sub_sub_sections": [
                 {
                     "name": name,
-                    **self.sub_sub_section_parser.parse_group(group_elements),  
+                    **self.sub_sub_section_parser.parse_group(group_elements),
                 }
                 for name, group_elements in parts
             ],

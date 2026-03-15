@@ -42,14 +42,14 @@ class BodyContentParser(WikiParser):
         content_text = element.find(
             "div",
             id=lambda x: x and "content-text" in x,
-            class_=lambda x: x and "body-content" in (x if isinstance(x, list) else x.split()),
+            class_=lambda x: x
+            and "body-content" in (x if isinstance(x, list) else x.split()),
         )
         if content_text is None:
             content_text = element.find(
                 "div",
-                class_=lambda x: x and "mw-content-ltr" in (
-                    x if isinstance(x, list) else x.split()
-                ),
+                class_=lambda x: x
+                and "mw-content-ltr" in (x if isinstance(x, list) else x.split()),
             )
         if content_text and isinstance(content_text, Tag):
             result["content_text"] = self.content_text_parser.parse(content_text)
