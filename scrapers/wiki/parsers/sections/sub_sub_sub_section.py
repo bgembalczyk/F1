@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
@@ -70,6 +71,10 @@ class WikiElementParserMixin:
     - TableParser dla: <table class="wikitable">
     - NavBoxParser dla: <div role="navigation" class="navbox">
     - ReferencesWrapParser dla: divów z klasą zawierającą references-wrap
+
+    Udostępnia też pomocnicze metody do wyszukiwania infoboxów w soup:
+    - find_infobox(soup)   → pierwszy infobox jako Tag lub None
+    - find_infoboxes(soup) → lista wszystkich infoboxów jako list[Tag]
     """
 
     def __init__(self) -> None:
@@ -80,6 +85,26 @@ class WikiElementParserMixin:
         self.table_parser = TableParser()
         self.navbox_parser = NavBoxParser()
         self.references_wrap_parser = ReferencesWrapParser()
+
+    @staticmethod
+    def _has_infobox_class(classes: Any) -> bool:
+        """Sprawdza czy element zawiera klasę 'infobox'."""
+        if not classes:
+            return False
+        if isinstance(classes, str):
+            classes = classes.split()
+        try:
+            return "infobox" in list(classes)
+        except TypeError:
+            return False
+
+    def find_infobox(self, soup: BeautifulSoup) -> Tag | None:
+        """Zwraca pierwszą tabelę z klasą 'infobox' w podanym soup lub None."""
+        return soup.find("table", class_=self._has_infobox_class)
+
+    def find_infoboxes(self, soup: BeautifulSoup) -> list[Tag]:
+        """Zwraca listę wszystkich tabel z klasą 'infobox' w podanym soup."""
+        return soup.find_all("table", class_=self._has_infobox_class)
 
     def parse_elements(self, elements: list[Tag]) -> list[dict[str, Any]]:
         """Parsuje listę elementów HTML za pomocą odpowiednich narzędzi.

@@ -41,6 +41,7 @@ from scrapers.seasons.standings_scraper import F1StandingsScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.wiki.scraper import WikiScraper
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxParser
+from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
 
 
@@ -297,6 +298,13 @@ class TestWikiScraperHierarchy:
         assert hasattr(scraper, "list_parser")
         assert hasattr(scraper, "paragraph_parser")
 
+    def test_wiki_element_parser_mixin_has_find_infobox(self):
+        """Verify WikiElementParserMixin exposes find_infobox and find_infoboxes helpers."""
+        assert hasattr(WikiElementParserMixin, "find_infobox")
+        assert hasattr(WikiElementParserMixin, "find_infoboxes")
+        assert callable(WikiElementParserMixin.find_infobox)
+        assert callable(WikiElementParserMixin.find_infoboxes)
+
     def test_wiki_scraper_has_scrape_method(self):
         """Verify WikiScraper has a scrape(url) convenience method."""
         assert hasattr(WikiScraper, "scrape")
@@ -304,7 +312,7 @@ class TestWikiScraperHierarchy:
 
 
 class TestF1StandingsScraper:
-    """Test that F1StandingsScraper is a pure parser, not a WikiScraper."""
+    """Test that F1StandingsScraper is a TableParser, not a WikiScraper."""
 
     def test_standings_scraper_is_not_wiki_scraper(self):
         """Verify F1StandingsScraper does not inherit from WikiScraper."""
@@ -314,7 +322,11 @@ class TestF1StandingsScraper:
         """Verify F1StandingsScraper does not inherit from F1TableScraper."""
         assert not issubclass(F1StandingsScraper, F1TableScraper)
 
+    def test_standings_scraper_is_table_parser(self):
+        """Verify F1StandingsScraper inherits from TableParser."""
+        assert issubclass(F1StandingsScraper, TableParser)
+
     def test_standings_scraper_has_parse_method(self):
-        """Verify F1StandingsScraper exposes a parse(soup) method."""
+        """Verify F1StandingsScraper exposes a parse(element) method."""
         assert hasattr(F1StandingsScraper, "parse")
         assert callable(F1StandingsScraper.parse)

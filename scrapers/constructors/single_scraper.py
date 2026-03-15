@@ -44,7 +44,7 @@ class SingleConstructorScraper(WikiScraper):
         parser = InfoboxHtmlParser()
         return [
             parser.parse_element(table)
-            for table in soup.find_all("table", class_=InfoboxHtmlParser.has_infobox_class)
+            for table in self.find_infoboxes(soup)
         ]
 
     def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:

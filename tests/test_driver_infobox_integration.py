@@ -32,7 +32,8 @@ def test_died_field_aged_filtering(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "general" in result[0]
@@ -59,7 +60,8 @@ def test_best_finish_no_links(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "career" in result[0]
@@ -97,7 +99,8 @@ def test_championship_titles_with_year_ranges(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "championship_titles" in result[0]
@@ -128,7 +131,8 @@ def test_nationality_with_or(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "career" in result[0]
@@ -163,7 +167,8 @@ def test_major_victories_from_championship_section(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "major_victories" in result[0]
@@ -203,7 +208,8 @@ def test_full_data_table_top_tens(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "career" in result[0]

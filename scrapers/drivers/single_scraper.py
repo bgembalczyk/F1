@@ -63,6 +63,9 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
         ]
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
+        table = self.find_infobox(soup)
+        if table is None:
+            return {}
         infobox_scraper = DriverInfoboxParser(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -71,7 +74,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
             run_id=getattr(self, "_run_id", None),
             url=self.url,
         )
-        records = infobox_scraper.parse(soup)
+        records = infobox_scraper.parse(table)
         return records[0] if records else {}
 
     def _parse_results_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:

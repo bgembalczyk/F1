@@ -57,7 +57,8 @@ def test_nationality_with_link(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "career" in result[0]
@@ -105,7 +106,8 @@ def test_nationality_without_link(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "career" in result[0]
@@ -171,7 +173,8 @@ def test_championship_titles_document_order(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "championship_titles" in result[0]
@@ -223,7 +226,8 @@ def test_championship_titles_sorted_for_non_list(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "championship_titles" in result[0]
