@@ -8,6 +8,7 @@ from bs4 import Tag
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.context import WikiParserContext
 from scrapers.wiki.parsers.elements.table import TableParser
 
 
@@ -25,18 +26,24 @@ class ArticleTablesParser(WikiParser):
         self._table_parser = TableParser()
         self._html_table_parser = HtmlTableParser()
 
-    def parse(self, element: Tag | BeautifulSoup) -> list[dict[str, Any]]:
+    def parse(self, element: Tag | BeautifulSoup, context: WikiParserContext | None = None) -> list[dict[str, Any]]:
         tables: list[dict[str, Any]] = []
-        for table in element.find_all("table", class_="wikitable"):
-            parsed = self.parse_table(table)
+        base_context = context or WikiParserContext.empty()
+        for index, table in enumerate(element.find_all("table", class_="wikitable"), start=1):
+            table_context = base_context.for_table(index)
+            parsed = self.parse_table(table, context=table_context)
             if parsed is not None:
                 tables.append(parsed)
         return tables
 
-    def parse_table(self, table: Tag) -> dict[str, Any] | None:
+    def parse_table(
+        self,
+        table: Tag,
+        context: WikiParserContext | None = None,
+    ) -> dict[str, Any] | None:
         headers, rows = self._parse_with_html_table_parser(table)
         if not headers:
-            headers, rows = self._parse_with_legacy_parser(table)
+            headers, rows = self._parse_with_legacy_parser(table, context=context)
 
         if not headers:
             return None
@@ -45,9 +52,17 @@ class ArticleTablesParser(WikiParser):
         if not filtered_rows:
             return None
 
+        ctx = context or WikiParserContext.empty()
         parsed: dict[str, Any] = {
             "headers": headers,
             "rows": filtered_rows,
+            "context": {
+                "source_url": ctx.source_url,
+                "section_path": list(ctx.section_path),
+                "heading_id": ctx.heading_id,
+                "table_index": ctx.table_index,
+                "language": ctx.language,
+            },
         }
 
         caption = self._extract_caption(table)
@@ -81,8 +96,12 @@ class ArticleTablesParser(WikiParser):
 
         return normalized_headers, parsed_rows
 
-    def _parse_with_legacy_parser(self, table: Tag) -> tuple[list[str], list[dict[str, str]]]:
-        raw = self._table_parser.parse(table)
+    def _parse_with_legacy_parser(
+        self,
+        table: Tag,
+        context: WikiParserContext | None = None,
+    ) -> tuple[list[str], list[dict[str, str]]]:
+        raw = self._table_parser.parse(table, context=context)
         headers = self._normalize_headers(raw.get("headers", []))
         rows: list[dict[str, str]] = []
         for row_cells in raw.get("rows", []):

@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.context import WikiParserContext
 from scrapers.wiki.parsers.category_links import CategoryLinksParser
 from scrapers.wiki.parsers.content_text import ContentTextParser
 
@@ -21,7 +22,7 @@ class BodyContentParser(WikiParser):
         self.category_links_parser = CategoryLinksParser()
         self.content_text_parser = ContentTextParser()
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag, context: WikiParserContext | None = None) -> dict[str, Any]:
         """Parsuje główną treść strony Wikipedii.
 
         Args:
@@ -36,8 +37,10 @@ class BodyContentParser(WikiParser):
         }
 
         catlinks = element.find("div", id="catlinks")
+        ctx = context or WikiParserContext.empty()
+
         if catlinks and isinstance(catlinks, Tag):
-            result["category_links"] = self.category_links_parser.parse(catlinks)
+            result["category_links"] = self.category_links_parser.parse(catlinks, context=ctx)
 
         content_text = element.find(
             "div",
@@ -52,7 +55,7 @@ class BodyContentParser(WikiParser):
                 and "mw-content-ltr" in (x if isinstance(x, list) else x.split()),
             )
         if content_text and isinstance(content_text, Tag):
-            result["content_text"] = self.content_text_parser.parse(content_text)
+            result["content_text"] = self.content_text_parser.parse(content_text, context=ctx)
 
         return result
 

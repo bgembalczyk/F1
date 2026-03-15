@@ -446,3 +446,47 @@ def test_body_content_parser_find():
     el = BodyContentParser.find_body_content(soup)
     assert el is not None
     assert el.get("id") == "bodyContent"
+
+
+def test_content_text_parser_propagates_context_path_and_heading_to_table():
+    html = """
+    <div id="mw-content-text" class="mw-body-content">
+      <div class="mw-heading mw-heading2"><h2 id="Career">Career</h2></div>
+      <div class="mw-heading mw-heading3"><h3 id="Results">Results</h3></div>
+      <table class="wikitable">
+        <tr><th>Year</th><th>Team</th></tr>
+        <tr><td>2007</td><td>McLaren</td></tr>
+      </table>
+    </div>
+    """
+    soup = _make_soup(html)
+    parser = ContentTextParser()
+    result = parser.parse(soup.find("div"))
+
+    table_data = result["sections"][1]["sub_sections"][1]["sub_sub_sections"][0]["sub_sub_sub_sections"][0]["elements"][0]["data"]
+    assert table_data["context"]["heading_id"] == "Results"
+    assert table_data["context"]["section_path"] == ["Career", "Results", "(Top)", "(Top)"]
+
+
+def test_article_tables_parser_sets_table_index_in_context():
+    html = """
+    <div>
+      <table class="wikitable">
+        <tr><th>A</th></tr>
+        <tr><td>1</td></tr>
+      </table>
+      <table class="wikitable">
+        <tr><th>B</th></tr>
+        <tr><td>2</td></tr>
+      </table>
+    </div>
+    """
+    soup = _make_soup(html)
+    from scrapers.wiki.parsers.context import WikiParserContext
+    from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
+
+    parser = ArticleTablesParser()
+    rows = parser.parse(soup.find("div"), context=WikiParserContext(source_url="https://en.wikipedia.org/wiki/Test"))
+
+    assert rows[0]["context"]["table_index"] == 1
+    assert rows[1]["context"]["table_index"] == 2

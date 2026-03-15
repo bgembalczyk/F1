@@ -6,6 +6,7 @@ from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.wiki.parsers.body_content import BodyContentParser
+from scrapers.wiki.parsers.context import WikiParserContext
 from scrapers.wiki.parsers.header import HeaderParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
@@ -103,12 +104,31 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
             "body_content": None,
         }
 
+        parser_context = WikiParserContext(
+            source_url=self.url,
+            language=self._extract_language(self.url),
+        )
+
         header_el = HeaderParser.find_header(soup)
         if header_el is not None:
-            result["header"] = self.header_parser.parse(header_el)
+            result["header"] = self.header_parser.parse(header_el, context=parser_context)
 
         body_content_el = BodyContentParser.find_body_content(soup)
         if body_content_el is not None:
-            result["body_content"] = self.body_content_parser.parse(body_content_el)
+            result["body_content"] = self.body_content_parser.parse(
+                body_content_el,
+                context=parser_context,
+            )
 
         return [result]
+
+
+    @staticmethod
+    def _extract_language(url: str) -> str | None:
+        parts = url.split("//", 1)
+        if len(parts) < 2:
+            return None
+        host = parts[1].split("/", 1)[0]
+        if "." not in host:
+            return None
+        return host.split(".", 1)[0] or None
