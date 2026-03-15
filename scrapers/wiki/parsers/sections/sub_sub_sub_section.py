@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Callable
+from dataclasses import dataclass
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -85,6 +87,79 @@ class WikiElementParserMixin:
         self.table_parser = TableParser()
         self.navbox_parser = NavBoxParser()
         self.references_wrap_parser = ReferencesWrapParser()
+        self._parser_rules: list[ParserRule] = []
+        self._register_default_parser_rules()
+
+    @staticmethod
+    def _get_classes(el: Tag) -> list[str]:
+        """Zwraca klasy elementu HTML jako listę stringów."""
+        classes = el.get("class") or []
+        if isinstance(classes, str):
+            return classes.split()
+        return list(classes)
+
+    def register_parser_rule(
+        self,
+        *,
+        predicate: Callable[[Tag], bool],
+        parser: Callable[[Tag], Any],
+        result_type: str,
+        priority: int | None = None,
+    ) -> None:
+        """Rejestruje regułę parsowania elementów HTML.
+
+        Reguły są sprawdzane w kolejności rejestracji.
+        Parametr ``priority`` pozwala wstawić regułę pod konkretny indeks.
+        """
+        rule = ParserRule(predicate=predicate, parser=parser, result_type=result_type)
+        if priority is None:
+            self._parser_rules.append(rule)
+            return
+        index = max(0, min(priority, len(self._parser_rules)))
+        self._parser_rules.insert(index, rule)
+
+    def _register_default_parser_rules(self) -> None:
+        """Rejestruje domyślne reguły parsowania Wikipedii."""
+        self.register_parser_rule(
+            predicate=lambda el: el.name == "p",
+            parser=self.paragraph_parser.parse,
+            result_type="paragraph",
+        )
+        self.register_parser_rule(
+            predicate=lambda el: el.name == "figure",
+            parser=self.figure_parser.parse,
+            result_type="figure",
+        )
+        self.register_parser_rule(
+            predicate=lambda el: el.name == "ul",
+            parser=self.list_parser.parse,
+            result_type="list",
+        )
+        self.register_parser_rule(
+            predicate=lambda el: el.name == "table"
+            and "infobox" in self._get_classes(el),
+            parser=self.infobox_parser.parse,
+            result_type="infobox",
+        )
+        self.register_parser_rule(
+            predicate=lambda el: el.name == "table"
+            and "wikitable" in self._get_classes(el),
+            parser=self.table_parser.parse,
+            result_type="table",
+        )
+        self.register_parser_rule(
+            predicate=lambda el: el.name == "div"
+            and el.get("role") == "navigation"
+            and "navbox" in self._get_classes(el),
+            parser=self.navbox_parser.parse,
+            result_type="navbox",
+        )
+        self.register_parser_rule(
+            predicate=lambda el: el.name == "div"
+            and any("references-wrap" in c for c in self._get_classes(el)),
+            parser=self.references_wrap_parser.parse,
+            result_type="references_wrap",
+        )
 
     @staticmethod
     def _has_infobox_class(classes: Any) -> bool:
@@ -131,34 +206,20 @@ class WikiElementParserMixin:
         Returns:
             Sparsowane dane lub None jeśli element nie jest obsługiwany.
         """
-        if el.name == "p":
-            return {"type": "paragraph", "data": self.paragraph_parser.parse(el)}
-
-        if el.name == "figure":
-            return {"type": "figure", "data": self.figure_parser.parse(el)}
-
-        if el.name == "ul":
-            return {"type": "list", "data": self.list_parser.parse(el)}
-
-        if el.name == "table":
-            classes = el.get("class") or []
-            if "infobox" in classes:
-                return {"type": "infobox", "data": self.infobox_parser.parse(el)}
-            if "wikitable" in classes:
-                return {"type": "table", "data": self.table_parser.parse(el)}
-
-        if el.name == "div":
-            classes = el.get("class") or []
-            role = el.get("role")
-            if role == "navigation" and "navbox" in classes:
-                return {"type": "navbox", "data": self.navbox_parser.parse(el)}
-            if any("references-wrap" in c for c in classes):
-                return {
-                    "type": "references_wrap",
-                    "data": self.references_wrap_parser.parse(el),
-                }
+        for rule in self._parser_rules:
+            if rule.predicate(el):
+                return {"type": rule.result_type, "data": rule.parser(el)}
 
         return None
+
+
+@dataclass(frozen=True)
+class ParserRule:
+    """Pojedyncza reguła mapowania elementu HTML na parser wynikowy."""
+
+    predicate: Callable[[Tag], bool]
+    parser: Callable[[Tag], Any]
+    result_type: str
 
 
 class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):

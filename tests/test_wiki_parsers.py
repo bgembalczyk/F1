@@ -325,6 +325,67 @@ def test_sub_sub_sub_section_parser():
     assert "list" in types
 
 
+def test_wiki_element_parser_mixin_rules_priority_overlapping_table_classes() -> None:
+    html = '<table class="infobox wikitable"><tr><td>Cell</td></tr></table>'
+    soup = _make_soup(html)
+    parser = SubSubSubSectionParser()
+
+    result = parser._parse_element(soup.find("table"))
+
+    assert result is not None
+    assert result["type"] == "infobox"
+
+
+def test_wiki_element_parser_mixin_register_parser_rule_allows_domain_extensions() -> None:
+    html = '<blockquote>Domain specific note</blockquote>'
+    soup = _make_soup(html)
+    parser = SubSubSubSectionParser()
+    blockquote = soup.find("blockquote")
+
+    parser.register_parser_rule(
+        predicate=lambda el: el.name == "blockquote",
+        parser=lambda el: {"text": el.get_text(" ", strip=True)},
+        result_type="domain_blockquote",
+        priority=0,
+    )
+
+    result = parser._parse_element(blockquote)
+
+    assert result == {
+        "type": "domain_blockquote",
+        "data": {"text": "Domain specific note"},
+    }
+
+
+def test_wiki_element_parser_mixin_default_registry_matches_expected_types() -> None:
+    html = """
+    <div>
+      <p>Ala ma kota.</p>
+      <figure><img src="/img.png" alt="x" /></figure>
+      <ul><li>one</li></ul>
+      <table class="infobox"><tr><th>A</th><td>B</td></tr></table>
+      <table class="wikitable"><tr><th>A</th></tr><tr><td>B</td></tr></table>
+      <div role="navigation" class="navbox"><div class="navbox-title">N</div></div>
+      <div class="foo references-wrap bar"><ol><li>Ref</li></ol></div>
+    </div>
+    """
+    soup = _make_soup(html)
+    parser = SubSubSubSectionParser()
+    root = soup.find("div")
+
+    result = parser.parse_elements(list(root.find_all(recursive=False)))
+
+    assert [item["type"] for item in result] == [
+        "paragraph",
+        "figure",
+        "list",
+        "infobox",
+        "table",
+        "navbox",
+        "references_wrap",
+    ]
+
+
 def test_sub_sub_section_parser_divides_into_sub_sub_sub_sections():
     html = """
     <div>
