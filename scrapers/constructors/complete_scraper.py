@@ -1,10 +1,10 @@
 from pathlib import Path
 from typing import Any
 
-from bs4 import BeautifulSoup
 from tqdm import tqdm
 
 from scrapers.base.abc import ABCScraper
+from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
@@ -19,7 +19,7 @@ from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 
 
-class CompleteConstructorsScraper(ABCScraper):
+class CompleteConstructorsScraper(BaseDataExtractor):
     """
     Uruchamia cztery list scrapery konstruktorów, a następnie dla każdego
     elementu pobiera szczegóły (infoboksy + tabele) za pomocą
@@ -68,11 +68,6 @@ class CompleteConstructorsScraper(ABCScraper):
 
         self._data = results
         return self._data
-
-    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
-        """Metoda wymagana przez bazę - nie używana w tym scraperze."""
-        msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
-        raise NotImplementedError(msg)
 
     def _fetch_all_list_records(self) -> list[dict[str, Any]]:
         list_scrapers: list[ABCScraper] = [

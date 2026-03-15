@@ -1,17 +1,16 @@
 from pathlib import Path
 from typing import Any
 
-from bs4 import BeautifulSoup
 from tqdm import tqdm
 
-from scrapers.base.abc import ABCScraper
+from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
 
-class CompleteSeasonScraper(ABCScraper):
+class CompleteSeasonScraper(BaseDataExtractor):
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -20,9 +19,9 @@ class CompleteSeasonScraper(ABCScraper):
         self.url = SeasonsListScraper.CONFIG.url
         self._options = options
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def fetch(self) -> list[dict[str, Any]]:
         list_scraper = SeasonsListScraper(options=self._options)
-        seasons = list_scraper.parse(soup)
+        seasons = list_scraper.fetch()
 
         results: list[dict[str, Any]] = []
         season_scraper = SingleSeasonScraper(options=self._options)
@@ -48,7 +47,8 @@ class CompleteSeasonScraper(ABCScraper):
                 },
             )
 
-        return results
+        self._data = results
+        return self._data
 
 
 if __name__ == "__main__":

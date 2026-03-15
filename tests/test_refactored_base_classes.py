@@ -2,6 +2,7 @@
 
 from scrapers.base.abc import ABCScraper
 from scrapers.base.composite_scraper import CompositeScraper
+from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.table.scraper import F1TableScraper
@@ -83,7 +84,7 @@ class TestIndianapolisOnlyScrapers:
 
 
 class TestCompleteScrapers:
-    """Test complete scrapers use CompositeScraper base class correctly."""
+    """Test complete scrapers use CompositeScraper / BaseDataExtractor correctly."""
 
     def test_circuit_complete_inherits_from_composite(self):
         """Verify F1CompleteCircuitScraper inherits from CompositeScraper."""
@@ -107,6 +108,14 @@ class TestCompleteScrapers:
             F1CompleteEngineManufacturerScraper.url
             == EngineManufacturersListScraper.CONFIG.url
         )
+
+    def test_composite_scraper_inherits_base_data_extractor(self):
+        """Verify CompositeScraper inherits from BaseDataExtractor."""
+        assert issubclass(CompositeScraper, BaseDataExtractor)
+
+    def test_composite_scraper_does_not_inherit_abc_scraper(self):
+        """Verify CompositeScraper does NOT inherit from ABCScraper."""
+        assert not issubclass(CompositeScraper, ABCScraper)
 
 
 class TestSingleEngineManufacturerScraper:

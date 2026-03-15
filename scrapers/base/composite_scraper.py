@@ -4,6 +4,7 @@ from typing import Any
 from tqdm import tqdm
 
 from scrapers.base.abc import ABCScraper
+from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.source_adapter import IterableSourceAdapter
 
 
@@ -14,7 +15,7 @@ class CompositeScraperChildren:
     records_adapter: IterableSourceAdapter[dict[str, Any]]
 
 
-class CompositeScraper(ABCScraper):
+class CompositeScraper(BaseDataExtractor):
     def __init__(self, *, options) -> None:
         super().__init__(options=options)
         self.options = options
