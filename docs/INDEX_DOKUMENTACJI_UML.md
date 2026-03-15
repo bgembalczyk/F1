@@ -6,6 +6,7 @@
 1. **[uml_current_process_flow.puml](uml_current_process_flow.puml)** - Diagram przepływu procesu (obecny stan)
 2. **[uml_current_class_structure.puml](uml_current_class_structure.puml)** - Struktura i hierarchia klas (obecny stan)
 3. **[uml_proposed_class_structure.puml](uml_proposed_class_structure.puml)** - Proponowana uporządkowana struktura klas
+4. **[uml_wiki_parser_hierarchy.puml](uml_wiki_parser_hierarchy.puml)** - Hierarchia klas WikiScrapera i WikiParserów
 
 ### Dokumentacja README
 4. **[UML_DIAGRAMS_README.md](UML_DIAGRAMS_README.md)** - Kompleksowa dokumentacja w języku angielskim
@@ -69,6 +70,25 @@
 - Infrastructure (HTTP, Caching, Policies)
 - Models & Data
 - Validation
+
+---
+
+### 4. Hierarchia WikiScraper i WikiParserów
+**Plik**: `uml_wiki_parser_hierarchy.puml`
+
+**Pokazuje**:
+- Klasę `WikiScraper` (pobiera HTML – jest scraperem; używa http_client z opcjonalnym cache)
+- Abstrakcyjną klasę bazową `WikiParser`
+- Parsery poziomu strony: `HeaderParser`, `BodyContentParser`, `CategoryLinksParser`, `ContentTextParser`
+- Parsery sekcji: `SectionParser` → `SubSectionParser` → `SubSubSectionParser` → `SubSubSubSectionParser`
+- Parsery elementów HTML: `InfoboxParser`, `ParagrafParser`, `FigureParser`, `ListParser`, `TableParser`, `NavBoxParser`, `ReferencesWrapParser`
+- Mixin `WikiElementParserMixin` dostarczający narzędzia elementarne do parserów sekcji
+
+**Zasady architektury** widoczne w diagramie:
+- Klasa pobierająca HTML = **Scraper** (http_client obsługuje cache)
+- Klasa obsługująca wiele scraperów = **DataExtractor**
+- Sekcje zaczynające się bez nagłówka noszą nazwę `(Top)`
+- Każdy poziom sekcji deleguje parsowanie do niższego poziomu
 
 ---
 
