@@ -8,6 +8,8 @@ from scrapers.base.options import ScraperOptions
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.header import HeaderParser
 from scrapers.wiki.parsers.sections.section import SectionParser
+from scrapers.wiki.parsers.sections.extractor import WikiSection
+from scrapers.wiki.parsers.sections.extractor import WikiSectionExtractor
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
 
 
@@ -65,6 +67,7 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
         self.section_parser: SectionParser = (
             self.body_content_parser.content_text_parser.section_parser
         )
+        self.section_extractor = WikiSectionExtractor()
 
     def scrape(self, url: str) -> dict[str, Any]:
         """Pobiera i parsuje artykuł Wikipedii pod podanym adresem URL.
@@ -84,6 +87,17 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
         self.url = url
         records = self.fetch()
         return records[0] if records else {}
+
+
+    def find_section(
+        self,
+        soup: BeautifulSoup,
+        fragment: str | None,
+    ) -> WikiSection | None:
+        """Jedyny punkt wejścia do wycinania sekcji artykułu."""
+        if not fragment:
+            return None
+        return self.section_extractor.find_by_fragment(soup, fragment)
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         """Domyślne parsowanie strony Wikipedii.

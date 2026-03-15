@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import collect_lap_records
@@ -15,7 +14,7 @@ from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
 from scrapers.wiki.scraper import WikiScraper
 
 
-class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
+class F1SingleCircuitScraper(WikiScraper):
     """
     Scraper pojedynczego toru - pobiera infobox i wszystkie tabele z artykułu Wikipedii.
 
@@ -54,8 +53,8 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
         if not fragment:
             return soup
 
-        section = self.extract_section_by_id(soup, fragment)
-        return section or soup
+        section = self.find_section(soup, fragment)
+        return section.soup if section is not None else soup
 
     def _parse_details(self, soup: BeautifulSoup) -> dict[str, Any]:
         return {
