@@ -8,7 +8,7 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.abc import ABCScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
@@ -100,7 +100,7 @@ class DummySourceAdapter:
         return self.html
 
 
-class DummyScraper(F1Scraper):
+class DummyScraper(ABCScraper):
     url = "https://example.com"
 
     def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:

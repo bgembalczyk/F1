@@ -1,13 +1,11 @@
 from typing import Any
 
-from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.debug_dumps import write_infobox_dump
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
 from scrapers.drivers.infobox.parsers.career import InfoboxCareerParser
@@ -17,9 +15,11 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.section_collector import InfoboxSectionCollector
 from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
+from scrapers.base.infobox.html_parser import InfoboxHtmlParser
+from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 
 
-class DriverInfoboxScraper:
+class DriverInfoboxParser(InfoboxParser):
     _IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
 
     def __init__(
@@ -56,14 +56,10 @@ class DriverInfoboxScraper:
         self._career_parser = InfoboxCareerParser(self._cell_parser)
         self._section_collector = InfoboxSectionCollector()
 
-    def parse(self, soup: BeautifulSoup) -> list[Any]:
+    def parse(self, element: Tag) -> list[Any]:
         self.logger.debug("Infobox parse start (run_id=%s)", self.run_id)
-        table = InfoboxHtmlParser.find_infobox(soup)
-        if table is None:
-            self.logger.debug("Infobox not found (run_id=%s)", self.run_id)
-            return []
-        rows_count = len(table.find_all("tr"))
-        sections = self._section_collector.collect(table)
+        rows_count = len(element.find_all("tr"))
+        sections = self._section_collector.collect(element)
         total_rows = sum(len(section.get("rows", [])) for section in sections)
         self.logger.debug(
             "Infobox detected %d row(s) and %d section(s) (run_id=%s)",
@@ -72,12 +68,12 @@ class DriverInfoboxScraper:
             self.run_id,
         )
         try:
-            parsed = self._parse_infobox_with_sections(table, sections)
+            parsed = self._parse_infobox_with_sections(element, sections)
         except Exception:
             if self.debug_dir is not None:
                 dump_path = write_infobox_dump(
                     self.debug_dir,
-                    html=str(table),
+                    html=str(element),
                     url=self.url,
                     run_id=self.run_id,
                 )
@@ -169,3 +165,7 @@ class DriverInfoboxScraper:
         if not caption:
             return None
         return clean_infobox_text(caption.get_text(" ", strip=True))
+
+
+# Backward-compatible alias
+DriverInfoboxScraper = DriverInfoboxParser

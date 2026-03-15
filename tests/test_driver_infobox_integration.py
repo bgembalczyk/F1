@@ -1,11 +1,11 @@
-"""Integration test for DriverInfoboxScraper with real-world HTML examples."""
+"""Integration test for DriverInfoboxParser with real-world HTML examples."""
 # ruff: noqa: E501
 
 import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
+from scrapers.drivers.infobox.scraper import DriverInfoboxParser
 
 EXPANDED_YEAR_VALUES = [1981, 1982, 1984, 1985, 1986]
 EXPECTED_WINS = 7
@@ -15,9 +15,9 @@ EXPECTED_POLES = 2
 
 @pytest.fixture()
 def scraper():
-    """Create a DriverInfoboxScraper instance."""
+    """Create a DriverInfoboxParser instance."""
     options = ScraperOptions(include_urls=True)
-    return DriverInfoboxScraper(options=options)
+    return DriverInfoboxParser(options=options)
 
 
 def test_died_field_aged_filtering(scraper):
@@ -32,7 +32,8 @@ def test_died_field_aged_filtering(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "general" in result[0]
@@ -59,7 +60,8 @@ def test_best_finish_no_links(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "career" in result[0]
@@ -97,7 +99,8 @@ def test_championship_titles_with_year_ranges(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "championship_titles" in result[0]
@@ -128,7 +131,8 @@ def test_nationality_with_or(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "career" in result[0]
@@ -163,7 +167,8 @@ def test_major_victories_from_championship_section(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "major_victories" in result[0]
@@ -203,7 +208,8 @@ def test_full_data_table_top_tens(scraper):
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    result = scraper.parse(soup)
+    table = soup.find("table")
+    result = scraper.parse(table)
 
     assert len(result) == 1
     assert "career" in result[0]

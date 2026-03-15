@@ -3,7 +3,6 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.helpers.text import clean_wiki_text
@@ -30,10 +29,11 @@ from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
 from scrapers.drivers.columns.round import RoundColumn
 from scrapers.drivers.columns.series import SeriesColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
-from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
+from scrapers.drivers.infobox.scraper import DriverInfoboxParser
+from scrapers.wiki.scraper import WikiScraper
 
 
-class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
+class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
     _UNKNOWN_VALUE = "unknown"
 
     def __init__(
@@ -63,7 +63,10 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         ]
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
-        infobox_scraper = DriverInfoboxScraper(
+        table = self.find_infobox(soup)
+        if table is None:
+            return {}
+        infobox_scraper = DriverInfoboxParser(
             options=ScraperOptions(
                 include_urls=self.include_urls,
                 debug_dir=self.debug_dir,
@@ -71,7 +74,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
             run_id=getattr(self, "_run_id", None),
             url=self.url,
         )
-        records = infobox_scraper.parse(soup)
+        records = infobox_scraper.parse(table)
         return records[0] if records else {}
 
     def _parse_results_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
@@ -308,11 +311,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, F1Scraper):
         )
 
     def _extract_headers(self, table: Tag) -> list[str]:
-        header_row = table.find("tr")
-        if not header_row:
-            return []
-        header_cells = header_row.find_all(["th", "td"])
-        return [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
+        return self.table_parser.parse(table)["headers"]
 
     def _unknown(self, column: Any) -> UnknownValueColumn:
         return UnknownValueColumn(column, unknown_value=self._UNKNOWN_VALUE)

@@ -1,10 +1,8 @@
 from pathlib import Path
 from typing import Any
 
-from bs4 import BeautifulSoup
-
-from scrapers.base.composite_scraper import CompositeScraper
-from scrapers.base.composite_scraper import CompositeScraperChildren
+from scrapers.base.composite_scraper import CompositeDataExtractor
+from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.list_scraper import CircuitsListScraper
@@ -12,7 +10,7 @@ from scrapers.circuits.models.services.circuit_service import CircuitService
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
-class F1CompleteCircuitScraper(CompositeScraper):
+class F1CompleteCircuitDataExtractor(CompositeDataExtractor):
     """
     Pobiera listę torów, a następnie zaciąga szczegóły każdego toru (infobox + tabele),
     po czym normalizuje rekord do docelowej struktury.
@@ -30,12 +28,12 @@ class F1CompleteCircuitScraper(CompositeScraper):
         options: ScraperOptions | None = None,
     ) -> None:
         options = options or ScraperOptions()
-        # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
+        # Ten ekstraktor zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
         options.include_urls = True
 
         super().__init__(options=options)
 
-    def build_children(self) -> CompositeScraperChildren:
+    def build_children(self) -> CompositeDataExtractorChildren:
         list_scraper = CircuitsListScraper(
             options=ScraperOptions(
                 include_urls=True,
@@ -53,7 +51,7 @@ class F1CompleteCircuitScraper(CompositeScraper):
         )
         circuits_adapter = IterableSourceAdapter(list_scraper.fetch)
 
-        return CompositeScraperChildren(
+        return CompositeDataExtractorChildren(
             list_scraper=list_scraper,
             single_scraper=single_scraper,
             records_adapter=circuits_adapter,
@@ -73,11 +71,6 @@ class F1CompleteCircuitScraper(CompositeScraper):
         full_record = dict(record)
         full_record["details"] = details
         return CircuitService.normalize_record(full_record)
-
-    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
-        """Metoda wymagana przez bazę - nie używana w tym scraperze."""
-        msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
-        raise NotImplementedError(msg)
 
 
 if __name__ == "__main__":

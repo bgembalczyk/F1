@@ -3,13 +3,13 @@ from abc import ABC
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.errors import ScraperNotFoundError
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.types import ExportableRecord
+from scrapers.wiki.scraper import WikiScraper
 
 
-class F1ListScraper(F1Scraper, ABC):
+class F1ListScraper(WikiScraper, ABC):
     """
     Scraper dla list (ul/ol) w konkretnej sekcji.
 

@@ -5,7 +5,7 @@ from typing import Any
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.results import ScrapeResult
-from scrapers.constructors.complete_scraper import CompleteConstructorsScraper
+from scrapers.constructors.complete_scraper import CompleteConstructorsDataExtractor
 
 
 def constructor_name_initial(record: dict[str, Any]) -> str:
@@ -36,7 +36,7 @@ def export_complete_constructors(
     include_urls: bool = True,
 ) -> None:
     options = init_scraper_options(None, include_urls=include_urls)
-    scraper = CompleteConstructorsScraper(options=options)
+    scraper = CompleteConstructorsDataExtractor(options=options)
     data = scraper.fetch()
     scraper.logger.info("Pobrano rekordów: %s", len(data))
 

@@ -32,7 +32,7 @@ from validation.validator_base import RecordValidator
 T = TypeVar("T")
 
 
-class F1Scraper(ABC):
+class ABCScraper(ABC):
     """
     Bazowa klasa dla wszystkich scraperów F1.
 
@@ -46,7 +46,7 @@ class F1Scraper(ABC):
     - fetch() zawsze zwraca listę ExportRecord (może być pusta).
     """
 
-    #: Pełny URL strony Wikipedii (ustawiany w klasach potomnych)
+    #: Pełny URL strony (ustawiany w klasach potomnych)
     url: str
 
     def __init__(self, *, options: ScraperOptions) -> None:

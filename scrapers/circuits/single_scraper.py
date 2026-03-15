@@ -2,7 +2,6 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
@@ -12,10 +11,11 @@ from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
-from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
+from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
+from scrapers.wiki.scraper import WikiScraper
 
 
-class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
+class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
     """
     Scraper pojedynczego toru - pobiera infobox i wszystkie tabele z artykułu Wikipedii.
 
@@ -84,15 +84,14 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
         ]
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
-        infobox_scraper = F1CircuitInfoboxScraper(
+        infobox_parser = F1CircuitInfoboxParser(
             options=ScraperOptions(
                 include_urls=self.include_urls,
-                fetcher=self.fetcher,
-                policy=self.policy,
                 debug_dir=self.debug_dir,
             ),
+            url=self.url,
         )
-        records = infobox_scraper.parse(soup)
+        records = infobox_parser.parse(soup)
         return records[0] if records else {}
 
     def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:

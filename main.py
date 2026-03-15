@@ -29,7 +29,7 @@ from scrapers.engines.helpers.export import export_complete_engine_manufacturers
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
-from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixScraper
+from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
 from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
     RedFlaggedNonChampionshipRacesScraper,
 )
@@ -167,48 +167,48 @@ def run_complete_scrapers() -> None:
         debug_dir=BASE_DEBUG_DIR,
     )
 
-    print("[complete] running  F1CompleteGrandPrixScraper")
+    print("[complete] running  F1CompleteGrandPrixDataExtractor")
     run_and_export(
-        F1CompleteGrandPrixScraper,
+        F1CompleteGrandPrixDataExtractor,
         "grands_prix/f1_grands_prix_extended.json",
         run_config=run_config,
     )
-    print("[complete] finished F1CompleteGrandPrixScraper")
+    print("[complete] finished F1CompleteGrandPrixDataExtractor")
 
     # tory, kierowcy i sezony mają własne helpery eksportu do wielu plików
-    print("[complete] running  F1CompleteCircuitScraper")
+    print("[complete] running  F1CompleteCircuitDataExtractor")
     export_complete_circuits(
         output_dir=BASE_WIKI_DIR / "circuits/complete_circuits",
         include_urls=True,
     )
-    print("[complete] finished F1CompleteCircuitScraper")
+    print("[complete] finished F1CompleteCircuitDataExtractor")
 
-    print("[complete] running  CompleteDriverScraper")
+    print("[complete] running  CompleteDriverDataExtractor")
     export_complete_drivers(
         output_dir=BASE_WIKI_DIR / "drivers/complete_drivers",
         include_urls=True,
     )
-    print("[complete] finished CompleteDriverScraper")
+    print("[complete] finished CompleteDriverDataExtractor")
 
-    print("[complete] running  CompleteSeasonScraper")
+    print("[complete] running  CompleteSeasonDataExtractor")
     export_complete_seasons(
         output_dir=BASE_WIKI_DIR / "seasons/complete_seasons",
         include_urls=True,
     )
-    print("[complete] finished CompleteSeasonScraper")
+    print("[complete] finished CompleteSeasonDataExtractor")
 
-    print("[complete] running  F1CompleteEngineManufacturerScraper")
+    print("[complete] running  F1CompleteEngineManufacturerDataExtractor")
     export_complete_engine_manufacturers(
         output_dir=BASE_WIKI_DIR / "engines/complete_engine_manufacturers",
         include_urls=True,
     )
-    print("[complete] finished F1CompleteEngineManufacturerScraper")
-    print("[complete] running  CompleteConstructorsScraper")
+    print("[complete] finished F1CompleteEngineManufacturerDataExtractor")
+    print("[complete] running  CompleteConstructorsDataExtractor")
     export_complete_constructors(
         output_dir=BASE_WIKI_DIR / "constructors/complete_constructors",
         include_urls=True,
     )
-    print("[complete] finished CompleteConstructorsScraper")
+    print("[complete] finished CompleteConstructorsDataExtractor")
 
 
 def main() -> None:

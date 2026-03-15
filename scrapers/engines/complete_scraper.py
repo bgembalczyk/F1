@@ -1,10 +1,8 @@
 from pathlib import Path
 from typing import Any
 
-from bs4 import BeautifulSoup
-
-from scrapers.base.composite_scraper import CompositeScraper
-from scrapers.base.composite_scraper import CompositeScraperChildren
+from scrapers.base.composite_scraper import CompositeDataExtractor
+from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
@@ -14,7 +12,7 @@ from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
 from scrapers.engines.single_scraper import SingleEngineManufacturerScraper
 
 
-class F1CompleteEngineManufacturerScraper(CompositeScraper):
+class F1CompleteEngineManufacturerDataExtractor(CompositeDataExtractor):
     """
     Pobiera listę producentów silników z dwóch źródeł (główna lista oraz lista
     'Indianapolis 500 only'), a następnie zaciąga wszystkie infoboksy i tabele
@@ -33,7 +31,7 @@ class F1CompleteEngineManufacturerScraper(CompositeScraper):
 
         super().__init__(options=options)
 
-    def build_children(self) -> CompositeScraperChildren:
+    def build_children(self) -> CompositeDataExtractorChildren:
         list_scraper = EngineManufacturersListScraper(
             options=ScraperOptions(
                 include_urls=True,
@@ -63,7 +61,7 @@ class F1CompleteEngineManufacturerScraper(CompositeScraper):
 
         records_adapter = IterableSourceAdapter(get_all_records)
 
-        return CompositeScraperChildren(
+        return CompositeDataExtractorChildren(
             list_scraper=list_scraper,
             single_scraper=single_scraper,
             records_adapter=records_adapter,
@@ -78,18 +76,13 @@ class F1CompleteEngineManufacturerScraper(CompositeScraper):
             return url
         return None
 
-    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
-        """Metoda wymagana przez bazę - nie używana w tym scraperze."""
-        msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
-        raise NotImplementedError(msg)
-
 
 if __name__ == "__main__":
     from scrapers.base.helpers.runner import run_and_export
     from scrapers.base.run_config import RunConfig
 
     run_and_export(
-        F1CompleteEngineManufacturerScraper,
+        F1CompleteEngineManufacturerDataExtractor,
         "engines/f1_engine_manufacturers_complete.json",
         run_config=RunConfig(output_dir=Path("../../data/wiki")),
     )

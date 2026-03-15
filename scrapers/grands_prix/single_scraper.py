@@ -4,7 +4,6 @@ import re
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperError
 from scrapers.base.helpers.http import init_scraper_options
@@ -21,6 +20,7 @@ from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
 from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
+from scrapers.wiki.scraper import WikiScraper
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -29,7 +29,7 @@ if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
 
 
-class F1SingleGrandPrixScraper(F1Scraper):
+class F1SingleGrandPrixScraper(WikiScraper):
     """
     Scraper pojedynczego Grand Prix - pobiera tabelę "By year" z artykułu Wikipedii.
 

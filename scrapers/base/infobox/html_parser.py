@@ -1,13 +1,15 @@
 from typing import Any
 
 from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.url import normalize_url
+from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 
 
-class InfoboxHtmlParser:
+class InfoboxHtmlParser(InfoboxParser):
     """Parser HTML infoboxów z Wikipedii (tytuł, wiersze, linki)."""
 
     WIKIPEDIA_BASE = "https://en.wikipedia.org"
@@ -22,8 +24,24 @@ class InfoboxHtmlParser:
 
         return self._parse_infobox(infobox)
 
+    def parse_element(self, element: Tag) -> dict[str, Any]:
+        """Parsuje konkretny element tabeli infoboksa.
+
+        Umożliwia przetworzenie pojedynczej tabeli infoboxu bez
+        konieczności przeszukiwania całej strony. Jest to publiczny
+        odpowiednik prywatnej metody ``_parse_infobox``.
+
+        Args:
+            element: Element <table class="infobox ..."> do sparsowania.
+
+        Returns:
+            Słownik z tytułem i wierszami infoboksa (wiersze zawierają tekst
+            i linki).
+        """
+        return self._parse_infobox(element)
+
     @staticmethod
-    def _has_infobox_class(c) -> bool:
+    def has_infobox_class(c) -> bool:
         """Sprawdza czy element zawiera klasę 'infobox'."""
         if not c:
             return False
@@ -46,7 +64,7 @@ class InfoboxHtmlParser:
         - class="infobox vcard"
         - class=["infobox", "vcard"]
         """
-        return soup.find("table", class_=InfoboxHtmlParser._has_infobox_class)
+        return soup.find("table", class_=InfoboxHtmlParser.has_infobox_class)
 
     def _parse_infobox(self, table) -> dict[str, Any]:
         data: dict[str, Any] = {"title": None, "rows": {}}

@@ -26,7 +26,7 @@ class WikipediaSectionByIdMixin:
         """
         Zwraca listę z pojedynczym dict (lub pustą listę) z kluczami:
         - url     - oryginalny URL (z ewentualnym fragmentem),
-        - infobox - wynik F1CircuitInfoboxScraper.parse,
+        - infobox - wynik F1CircuitInfoboxParser.parse,
         - tables  - lista zparsowanych wikitabel.
 
         Jeżeli artykuł nie wygląda na tor/tor wyścigowy (brak odpowiednich kategorii),

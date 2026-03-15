@@ -3,16 +3,14 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.abc import F1Scraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
+from scrapers.wiki.scraper import WikiScraper
 
-_HAS_INFOBOX_CLASS = InfoboxHtmlParser._has_infobox_class  # noqa: SLF001
 
-
-class SingleConstructorScraper(F1Scraper):
+class SingleConstructorScraper(WikiScraper):
     """
     Scraper pojedynczego konstruktora - pobiera wszystkie infoboksy
     oraz wszystkie tabele z artykułu Wikipedii.
@@ -45,8 +43,8 @@ class SingleConstructorScraper(F1Scraper):
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         parser = InfoboxHtmlParser()
         return [
-            parser._parse_infobox(table)  # noqa: SLF001
-            for table in soup.find_all("table", class_=_HAS_INFOBOX_CLASS)
+            parser.parse_element(table)
+            for table in self.find_infoboxes(soup)
         ]
 
     def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
@@ -58,12 +56,8 @@ class SingleConstructorScraper(F1Scraper):
         return tables
 
     def _extract_table(self, table: Tag) -> dict[str, Any] | None:
-        header_row = table.find("tr")
-        if not header_row:
-            return None
-
-        header_cells = header_row.find_all(["th", "td"])
-        headers = [clean_wiki_text(c.get_text(" ", strip=True)) for c in header_cells]
+        raw = self.table_parser.parse(table)
+        headers = raw["headers"]
         if not headers:
             return None
 
@@ -74,16 +68,7 @@ class SingleConstructorScraper(F1Scraper):
             else None
         )
 
-        rows = []
-        for tr in table.find_all("tr")[1:]:
-            cells = tr.find_all(["td", "th"])
-            if not cells:
-                continue
-            cell_texts = [clean_wiki_text(c.get_text(" ", strip=True)) for c in cells]
-            if not any(cell_texts):
-                continue
-            row = dict(zip(headers, cell_texts, strict=False))
-            rows.append(row)
+        rows = [dict(zip(headers, row_cells, strict=False)) for row_cells in raw["rows"]]
 
         result: dict[str, Any] = {"headers": headers, "rows": rows}
         if caption:
