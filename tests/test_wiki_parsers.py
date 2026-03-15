@@ -199,6 +199,80 @@ def test_table_parser():
     assert result["rows"] == [["Hamilton", "2020"]]
 
 
+
+
+def test_table_parser_handles_multirow_headers_and_blank_th() -> None:
+    html = """
+    <table class="wikitable">
+      <tr>
+        <th rowspan="2">Pos</th>
+        <th colspan="2">Driver</th>
+        <th rowspan="2"></th>
+        <th rowspan="2">Points</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>Nationality</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Lewis Hamilton</td>
+        <td>British</td>
+        <td>x</td>
+        <td>413</td>
+      </tr>
+    </table>
+    """
+    soup = _make_soup(html)
+    parser = TableParser()
+
+    result = parser.parse(soup.find("table"))
+
+    assert result["headers"] == ["Pos", "Name", "Nationality", "Points"]
+    assert result["rows"] == [["1", "Lewis Hamilton", "British", "413"]]
+    assert result["raw_rows"] == [
+        {
+            "Pos": "1",
+            "Name": "Lewis Hamilton",
+            "Nationality": "British",
+            "Points": "413",
+        },
+    ]
+
+
+def test_table_parser_handles_rowspan_and_colspan_with_stable_mapping() -> None:
+    html = """
+    <table class="wikitable">
+      <tr>
+        <th>Year</th>
+        <th>Grand Prix</th>
+        <th>Result</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td rowspan="2">1953</td>
+        <td>Argentina</td>
+        <td colspan="2">Win</td>
+      </tr>
+      <tr>
+        <td>Monaco</td>
+        <td>DNF</td>
+        <td>Engine</td>
+      </tr>
+    </table>
+    """
+    soup = _make_soup(html)
+    parser = TableParser()
+
+    result = parser.parse(soup.find("table"))
+
+    assert result["headers"] == ["Year", "Grand Prix", "Result", "Notes"]
+    assert result["rows"] == [
+        ["1953", "Argentina", "Win", "Win"],
+        ["1953", "Monaco", "DNF", "Engine"],
+    ]
+    assert result["raw_rows"][1]["Year"] == "1953"
+    assert result["raw_rows"][1]["Grand Prix"] == "Monaco"
 def test_navbox_parser():
     html = """
     <div role="navigation" class="navbox">
