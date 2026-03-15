@@ -5,9 +5,10 @@ from bs4 import BeautifulSoup
 from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.url import normalize_url
+from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 
 
-class InfoboxHtmlParser:
+class InfoboxHtmlParser(InfoboxParser):
     """Parser HTML infoboxów z Wikipedii (tytuł, wiersze, linki)."""
 
     WIKIPEDIA_BASE = "https://en.wikipedia.org"

@@ -7,7 +7,7 @@ from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScr
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.complete_scraper import F1CompleteCircuitDataExtractor
-from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
+from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
@@ -39,6 +39,7 @@ from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScrap
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.wiki.scraper import WikiScraper
+from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxParser
 
 
 class TestIndianapolisOnlyScrapers:
@@ -242,9 +243,13 @@ class TestWikiScraperHierarchy:
         """Verify F1SingleGrandPrixScraper inherits from WikiScraper."""
         assert issubclass(F1SingleGrandPrixScraper, WikiScraper)
 
-    def test_circuit_infobox_scraper_inherits_from_wiki_scraper(self):
-        """Verify F1CircuitInfoboxScraper inherits from WikiScraper."""
-        assert issubclass(F1CircuitInfoboxScraper, WikiScraper)
+    def test_circuit_infobox_parser_inherits_from_wiki_scraper(self):
+        """Verify F1CircuitInfoboxParser inherits from WikiScraper."""
+        assert issubclass(F1CircuitInfoboxParser, WikiScraper)
+
+    def test_circuit_infobox_parser_inherits_from_infobox_parser(self):
+        """Verify F1CircuitInfoboxParser inherits from InfoboxParser."""
+        assert issubclass(F1CircuitInfoboxParser, WikiInfoboxParser)
 
     def test_sponsorship_liveries_scraper_inherits_from_wiki_scraper(self):
         """Verify F1SponsorshipLiveriesScraper inherits from WikiScraper."""

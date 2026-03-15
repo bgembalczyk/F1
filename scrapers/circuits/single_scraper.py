@@ -11,7 +11,7 @@ from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
-from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
+from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -84,7 +84,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
         ]
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
-        infobox_scraper = F1CircuitInfoboxScraper(
+        infobox_scraper = F1CircuitInfoboxParser(
             options=ScraperOptions(
                 include_urls=self.include_urls,
                 fetcher=self.fetcher,

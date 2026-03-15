@@ -24,10 +24,11 @@ from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
 from scrapers.circuits.infobox.services.layouts import CircuitLayoutsParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 from scrapers.wiki.scraper import WikiScraper
 
 
-class F1CircuitInfoboxScraper(WikiScraper):
+class F1CircuitInfoboxParser(WikiScraper, InfoboxParser):
     """Parser infoboksów torów F1 z heurystykami pod typowe pola."""
 
     def __init__(
@@ -224,3 +225,7 @@ class F1CircuitInfoboxScraper(WikiScraper):
         return self.fetcher.get_text(self.url, timeout=self.timeout)
 
     # ------------------------------
+
+
+# Backward-compatible alias
+F1CircuitInfoboxScraper = F1CircuitInfoboxParser

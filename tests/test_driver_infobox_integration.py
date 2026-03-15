@@ -1,11 +1,11 @@
-"""Integration test for DriverInfoboxScraper with real-world HTML examples."""
+"""Integration test for DriverInfoboxParser with real-world HTML examples."""
 # ruff: noqa: E501
 
 import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
+from scrapers.drivers.infobox.scraper import DriverInfoboxParser
 
 EXPANDED_YEAR_VALUES = [1981, 1982, 1984, 1985, 1986]
 EXPECTED_WINS = 7
@@ -15,9 +15,9 @@ EXPECTED_POLES = 2
 
 @pytest.fixture()
 def scraper():
-    """Create a DriverInfoboxScraper instance."""
+    """Create a DriverInfoboxParser instance."""
     options = ScraperOptions(include_urls=True)
-    return DriverInfoboxScraper(options=options)
+    return DriverInfoboxParser(options=options)
 
 
 def test_died_field_aged_filtering(scraper):

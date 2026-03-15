@@ -17,9 +17,10 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.section_collector import InfoboxSectionCollector
 from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
+from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 
 
-class DriverInfoboxScraper:
+class DriverInfoboxParser(InfoboxParser):
     _IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
 
     def __init__(
@@ -169,3 +170,7 @@ class DriverInfoboxScraper:
         if not caption:
             return None
         return clean_infobox_text(caption.get_text(" ", strip=True))
+
+
+# Backward-compatible alias
+DriverInfoboxScraper = DriverInfoboxParser

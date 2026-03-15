@@ -29,7 +29,7 @@ from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
 from scrapers.drivers.columns.round import RoundColumn
 from scrapers.drivers.columns.series import SeriesColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
-from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
+from scrapers.drivers.infobox.scraper import DriverInfoboxParser
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -63,7 +63,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
         ]
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
-        infobox_scraper = DriverInfoboxScraper(
+        infobox_scraper = DriverInfoboxParser(
             options=ScraperOptions(
                 include_urls=self.include_urls,
                 debug_dir=self.debug_dir,
