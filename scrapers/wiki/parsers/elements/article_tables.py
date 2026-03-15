@@ -9,6 +9,10 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.elements.table import TableParser
+from scrapers.wiki.parsers.elements.wiki_table import LapRecordsWikiTableParser
+from scrapers.wiki.parsers.elements.wiki_table import RaceResultsTableParser
+from scrapers.wiki.parsers.elements.wiki_table import StandingsTableParser
+from scrapers.wiki.parsers.elements.wiki_table import WikiTableBaseParser
 
 
 class ArticleTablesParser(WikiParser):
@@ -19,11 +23,17 @@ class ArticleTablesParser(WikiParser):
         *,
         include_heading_path: bool = False,
         include_source_table: bool = False,
+        specialized_parsers: list[WikiTableBaseParser] | None = None,
     ) -> None:
         self.include_heading_path = include_heading_path
         self.include_source_table = include_source_table
         self._table_parser = TableParser()
         self._html_table_parser = HtmlTableParser()
+        self._specialized_parsers = specialized_parsers or [
+            StandingsTableParser(),
+            RaceResultsTableParser(),
+            LapRecordsWikiTableParser(),
+        ]
 
     def parse(self, element: Tag | BeautifulSoup) -> list[dict[str, Any]]:
         tables: list[dict[str, Any]] = []
@@ -62,7 +72,16 @@ class ArticleTablesParser(WikiParser):
         if self.include_source_table:
             parsed["_table"] = table
 
+        parsed.update(self._parse_specialized(parsed))
+
         return parsed
+
+    def _parse_specialized(self, parsed: dict[str, Any]) -> dict[str, Any]:
+        for parser in self._specialized_parsers:
+            specialized = parser.parse(parsed)
+            if specialized is not None:
+                return specialized
+        return {"table_type": "wiki_table"}
 
     def _parse_with_html_table_parser(self, table: Tag) -> tuple[list[str], list[dict[str, str]]]:
         try:

@@ -113,7 +113,8 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
                 continue
 
             headers = table_data["headers"]
-            if not is_lap_record_table(headers, lap_scraper):
+            table_type = table_data.get("table_type")
+            if table_type != "lap_records" and not is_lap_record_table(headers, lap_scraper):
                 continue
 
             base_layout = detect_layout_name(table, headers)
