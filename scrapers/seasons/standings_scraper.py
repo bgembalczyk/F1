@@ -2,13 +2,23 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.scraper import F1TableScraper
 
 
-class F1StandingsScraper(F1TableScraper):
+class F1StandingsScraper:
+    """Czysty parser tabel klasyfikacji (standings) Formuły 1.
+
+    Parsuje tabelę klasyfikacji z podanego ``soup``, stosując logikę
+    obsługi remisów (TIED): jeżeli w kolumnie pozycji pojawia się wartość
+    ``PositionColumn.TIED``, zastępuje ją poprzednią zapamiętaną pozycją.
+
+    Klasa nie dziedziczy po ``WikiScraper`` ani ``F1TableScraper`` — jest
+    wyłącznie parserem (nie pobiera HTML samodzielnie).
+    """
+
     def __init__(
         self,
         *,
@@ -17,10 +27,14 @@ class F1StandingsScraper(F1TableScraper):
         position_key: str = "pos",
     ) -> None:
         self.position_key = position_key
-        super().__init__(options=options, config=config)
+        self._extractor = TableExtractor(
+            config=config,
+            include_urls=options.include_urls,
+            normalize_empty_values=options.normalize_empty_values,
+        )
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        rows = super()._parse_soup(soup)
+    def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        rows = self._extractor.extract(soup)
         previous_position = None
         for row in rows:
             pos = row.get(self.position_key)

@@ -52,8 +52,8 @@ class SingleEngineManufacturerScraper(WikiScraper):
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         parser = InfoboxHtmlParser()
         infoboxes: list[dict[str, Any]] = []
-        for table in soup.find_all("table", class_=lambda c: "infobox" in (c or [])):
-            parsed = parser.parse(BeautifulSoup(str(table), "lxml"))
+        for table in soup.find_all("table", class_=InfoboxHtmlParser.has_infobox_class):
+            parsed = parser.parse_element(table)
             if parsed["title"] is not None or parsed["rows"]:
                 infoboxes.append(parsed)
         return infoboxes

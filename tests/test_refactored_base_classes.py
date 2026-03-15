@@ -37,6 +37,7 @@ from scrapers.points.points_scoring_systems_history import (
 from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
 from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
+from scrapers.seasons.standings_scraper import F1StandingsScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.wiki.scraper import WikiScraper
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser as WikiInfoboxParser
@@ -290,3 +291,20 @@ class TestWikiScraperHierarchy:
         """Verify WikiScraper has a scrape(url) convenience method."""
         assert hasattr(WikiScraper, "scrape")
         assert callable(WikiScraper.scrape)
+
+
+class TestF1StandingsScraper:
+    """Test that F1StandingsScraper is a pure parser, not a WikiScraper."""
+
+    def test_standings_scraper_is_not_wiki_scraper(self):
+        """Verify F1StandingsScraper does not inherit from WikiScraper."""
+        assert not issubclass(F1StandingsScraper, WikiScraper)
+
+    def test_standings_scraper_is_not_f1_table_scraper(self):
+        """Verify F1StandingsScraper does not inherit from F1TableScraper."""
+        assert not issubclass(F1StandingsScraper, F1TableScraper)
+
+    def test_standings_scraper_has_parse_method(self):
+        """Verify F1StandingsScraper exposes a parse(soup) method."""
+        assert hasattr(F1StandingsScraper, "parse")
+        assert callable(F1StandingsScraper.parse)

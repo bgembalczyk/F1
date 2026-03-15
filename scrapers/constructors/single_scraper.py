@@ -9,8 +9,6 @@ from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
 from scrapers.wiki.scraper import WikiScraper
 
-_HAS_INFOBOX_CLASS = InfoboxHtmlParser._has_infobox_class  # noqa: SLF001
-
 
 class SingleConstructorScraper(WikiScraper):
     """
@@ -45,8 +43,8 @@ class SingleConstructorScraper(WikiScraper):
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         parser = InfoboxHtmlParser()
         return [
-            parser._parse_infobox(table)  # noqa: SLF001
-            for table in soup.find_all("table", class_=_HAS_INFOBOX_CLASS)
+            parser.parse_element(table)
+            for table in soup.find_all("table", class_=InfoboxHtmlParser.has_infobox_class)
         ]
 
     def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
