@@ -13,6 +13,7 @@ from models.records.constants import WIKI_SEASON_URL
 from models.records.constructor import ConstructorRecord
 from models.records.driver import DriverRecord
 from models.records.driver_championships import DriversChampionshipsRecord
+from models.records.engine_manufacturer import EngineManufacturerRecord
 from models.records.event import EventRecord
 from models.records.fatality import FatalityRecord
 from models.records.grand_prix import GrandsPrixRecord
@@ -320,3 +321,30 @@ def build_circuit_complete_record(record: Mapping[str, Any]) -> CircuitCompleteR
     payload.setdefault("grands_prix", [])
     payload.setdefault("seasons", [])
     return cast("CircuitCompleteRecord", payload)
+
+
+def build_engine_manufacturer_record(record: Mapping[str, Any]) -> EngineManufacturerRecord:
+    payload = dict(record)
+    payload["manufacturer"] = normalize_link_value(payload.get("manufacturer"), "manufacturer")
+    payload["manufacturer_status"] = normalize_status(
+        payload.get("manufacturer_status"),
+        ["current", "former"],
+        "manufacturer_status",
+    )
+    payload["engines_built_in"] = normalize_link_list(
+        payload.get("engines_built_in"),
+        "engines_built_in",
+    )
+    payload["seasons"] = normalize_seasons(payload.get("seasons"))
+    payload["races_entered"] = normalize_int(payload.get("races_entered"), "races_entered")
+    payload["races_started"] = normalize_int(payload.get("races_started"), "races_started")
+    payload["wins"] = normalize_int(payload.get("wins"), "wins")
+    payload["points"] = normalize_float(payload.get("points"), "points")
+    payload["poles"] = normalize_int(payload.get("poles"), "poles")
+    payload["fastest_laps"] = normalize_int(payload.get("fastest_laps"), "fastest_laps")
+    payload["podiums"] = normalize_int(payload.get("podiums"), "podiums")
+    payload["wcc"] = normalize_int(payload.get("wcc"), "wcc")
+    payload["wdc"] = normalize_int(payload.get("wdc"), "wdc")
+    payload.setdefault("engines_built_in", [])
+    payload.setdefault("seasons", [])
+    return cast("EngineManufacturerRecord", payload)
