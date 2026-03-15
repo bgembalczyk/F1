@@ -255,96 +255,92 @@
       "tables": [
         {
           "headers": [
-            "Key"
+            "Colour",
+            "Result"
           ],
           "rows": [
             {
-              "colour": "Gold",
-              "result": "Winner"
+              "Colour": "Gold",
+              "Result": "Winner"
             },
             {
-              "colour": "Silver",
-              "result": "Second place"
+              "Colour": "Silver",
+              "Result": "Second place"
             },
             {
-              "colour": "Bronze",
-              "result": "Third place"
+              "Colour": "Bronze",
+              "Result": "Third place"
             },
             {
-              "colour": "Green",
-              "result": "Other points position"
+              "Colour": "Green",
+              "Result": "Other points position"
             },
             {
-              "colour": "Blue",
-              "result": "Other classified position"
+              "Colour": "Blue",
+              "Result": "Other classified position"
             },
             {
-              "colour": "Blue",
-              "result": "Not classified, finished (NC)"
+              "Colour": "Blue",
+              "Result": "Not classified, finished (NC)"
             },
             {
-              "colour": "Purple",
-              "result": "Not classified, retired (Ret)"
+              "Colour": "Purple",
+              "Result": "Not classified, retired (Ret)"
             },
             {
-              "colour": "Red",
-              "result": "Did not qualify (DNQ)"
+              "Colour": "Red",
+              "Result": "Did not qualify (DNQ)"
             },
             {
-              "colour": "Black",
-              "result": "Disqualified (DSQ)"
+              "Colour": "Black",
+              "Result": "Disqualified (DSQ)"
             },
             {
-              "colour": "White",
-              "result": "Did not start (DNS)"
+              "Colour": "White",
+              "Result": "Did not start (DNS)"
             },
             {
-              "colour": "White",
-              "result": "Race cancelled (C)"
+              "Colour": "White",
+              "Result": "Race cancelled (C)"
             },
             {
-              "colour": "Blank",
-              "result": "Did not practice (DNP)"
+              "Colour": "Blank",
+              "Result": "Did not practice (DNP)"
             },
             {
-              "colour": "Blank",
-              "result": "Excluded (EX)"
+              "Colour": "Blank",
+              "Result": "Excluded (EX)"
             },
             {
-              "colour": "Blank",
-              "result": "Did not arrive (DNA)"
+              "Colour": "Blank",
+              "Result": "Did not arrive (DNA)"
             },
             {
-              "colour": "Blank",
-              "result": "Withdrawn (WD)"
+              "Colour": "Blank",
+              "Result": "Withdrawn (WD)"
             },
             {
-              "colour": "Blank",
-              "result": "Did not enter (empty cell)"
+              "Colour": "Blank",
+              "Result": "Did not enter (empty cell)"
             },
             {
-              "colour": "Annotation",
-              "result": "Meaning"
+              "Colour": "Annotation",
+              "Result": "Meaning"
             },
             {
-              "colour": "P",
-              "result": {
-                "text": "Pole position",
-                "url": "https://en.wikipedia.org/wiki/Pole_position"
-              }
+              "Colour": "P",
+              "Result": "Pole position"
             },
             {
-              "colour": "F",
-              "result": {
-                "text": "Fastest lap",
-                "url": "https://en.wikipedia.org/wiki/Fastest_lap"
-              }
+              "Colour": "F",
+              "Result": "Fastest lap"
             },
             {
-              "colour": "Superscript number",
-              "result": "Points-scoring position in sprint"
+              "Colour": "Superscript number",
+              "Result": "Points-scoring position in sprint"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -353,184 +349,158 @@
             "Chassis",
             "Engine",
             "Drivers",
-            "Grands Prix",
+            "BHR",
+            "SAU",
+            "AUS",
+            "EMI",
+            "MIA",
+            "ESP",
+            "MON",
+            "AZE",
+            "CAN",
+            "GBR",
+            "AUT",
+            "FRA",
+            "HUN",
+            "BEL",
+            "NED",
+            "ITA",
+            "SIN",
+            "JPN",
+            "USA",
+            "MXC",
+            "SAP",
+            "ABU",
             "Points",
             "WCC"
           ],
           "rows": [
             {
-              "Year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Oracle Red Bull Racing",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
-              "Chassis": {
-                "text": "RB18",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB18"
-              },
+              "Year": "2022",
+              "Entrant": "Oracle Red Bull Racing",
+              "Chassis": "RB18",
               "Engine": "RBPTH001 1.6 V6 t",
-              "Drivers": {
-                "text": "Sergio Pérez",
-                "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez"
-              },
-              "bhr": "18†",
-              "sau": "4 P",
-              "aus": "2",
-              "emi": "2 3 Race: 2; Sprint: 3",
-              "mia": "4",
-              "esp": "2 F",
-              "mon": "1",
-              "aze": "2 F",
-              "can": "Ret",
-              "gbr": "2",
-              "aut": "Ret 5 Race: Ret; Sprint: 5",
-              "fra": "4",
-              "hun": "5",
-              "bel": "2",
-              "ned": "5",
-              "ita": "6 F",
-              "sin": "1",
-              "jpn": "2",
-              "usa": "4",
-              "mxc": "3",
-              "sap": "7 5 Race: 7; Sprint: 5",
-              "abu": "3",
+              "Drivers": "Sergio Pérez",
+              "BHR": "18†",
+              "SAU": "4 P",
+              "AUS": "2",
+              "EMI": "2 3 Race: 2; Sprint: 3",
+              "MIA": "4",
+              "ESP": "2 F",
+              "MON": "1",
+              "AZE": "2 F",
+              "CAN": "Ret",
+              "GBR": "2",
+              "AUT": "Ret 5 Race: Ret; Sprint: 5",
+              "FRA": "4",
+              "HUN": "5",
+              "BEL": "2",
+              "NED": "5",
+              "ITA": "6 F",
+              "SIN": "1",
+              "JPN": "2",
+              "USA": "4",
+              "MXC": "3",
+              "SAP": "7 5 Race: 7; Sprint: 5",
+              "ABU": "3",
               "Points": "759",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Oracle Red Bull Racing",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
-              "Chassis": {
-                "text": "RB18",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB18"
-              },
+              "Year": "2022",
+              "Entrant": "Oracle Red Bull Racing",
+              "Chassis": "RB18",
               "Engine": "RBPTH001 1.6 V6 t",
-              "Drivers": {
-                "text": "Max Verstappen",
-                "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
-              },
-              "bhr": "19†",
-              "sau": "1",
-              "aus": "Ret",
-              "emi": "1 P 1 F",
-              "mia": "1 F",
-              "esp": "1",
-              "mon": "3",
-              "aze": "1",
-              "can": "1 P",
-              "gbr": "7",
-              "aut": "2 P 1 F",
-              "fra": "1",
-              "hun": "1",
-              "bel": "1 F",
-              "ned": "1 P F",
-              "ita": "1",
-              "sin": "7",
-              "jpn": "1 P",
-              "usa": "1",
-              "mxc": "1 P",
-              "sap": "6 4 Race: 6; Sprint: 4",
-              "abu": "1 P",
+              "Drivers": "Max Verstappen",
+              "BHR": "19†",
+              "SAU": "1",
+              "AUS": "Ret",
+              "EMI": "1 P 1 F",
+              "MIA": "1 F",
+              "ESP": "1",
+              "MON": "3",
+              "AZE": "1",
+              "CAN": "1 P",
+              "GBR": "7",
+              "AUT": "2 P 1 F",
+              "FRA": "1",
+              "HUN": "1",
+              "BEL": "1 F",
+              "NED": "1 P F",
+              "ITA": "1",
+              "SIN": "7",
+              "JPN": "1 P",
+              "USA": "1",
+              "MXC": "1 P",
+              "SAP": "6 4 Race: 6; Sprint: 4",
+              "ABU": "1 P",
               "Points": "759",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Scuderia AlphaTauri",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
-              },
-              "Chassis": {
-                "text": "AT03",
-                "url": "https://en.wikipedia.org/wiki/AlphaTauri_AT03"
-              },
+              "Year": "2022",
+              "Entrant": "Scuderia AlphaTauri",
+              "Chassis": "AT03",
               "Engine": "RBPTH001 1.6 V6 t",
-              "Drivers": {
-                "text": "Pierre Gasly",
-                "url": "https://en.wikipedia.org/wiki/Pierre_Gasly"
-              },
-              "bhr": "Ret",
-              "sau": "8",
-              "aus": "9",
-              "emi": "12",
-              "mia": "Ret",
-              "esp": "13",
-              "mon": "11",
-              "aze": "5",
-              "can": "14",
-              "gbr": "Ret",
-              "aut": "15",
-              "fra": "12",
-              "hun": "12",
-              "bel": "9",
-              "ned": "11",
-              "ita": "8",
-              "sin": "10",
-              "jpn": "18",
-              "usa": "14",
-              "mxc": "11",
-              "sap": "14",
-              "abu": "14",
+              "Drivers": "Pierre Gasly",
+              "BHR": "Ret",
+              "SAU": "8",
+              "AUS": "9",
+              "EMI": "12",
+              "MIA": "Ret",
+              "ESP": "13",
+              "MON": "11",
+              "AZE": "5",
+              "CAN": "14",
+              "GBR": "Ret",
+              "AUT": "15",
+              "FRA": "12",
+              "HUN": "12",
+              "BEL": "9",
+              "NED": "11",
+              "ITA": "8",
+              "SIN": "10",
+              "JPN": "18",
+              "USA": "14",
+              "MXC": "11",
+              "SAP": "14",
+              "ABU": "14",
               "Points": "35",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Scuderia AlphaTauri",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
-              },
-              "Chassis": {
-                "text": "AT03",
-                "url": "https://en.wikipedia.org/wiki/AlphaTauri_AT03"
-              },
+              "Year": "2022",
+              "Entrant": "Scuderia AlphaTauri",
+              "Chassis": "AT03",
               "Engine": "RBPTH001 1.6 V6 t",
-              "Drivers": {
-                "text": "Yuki Tsunoda",
-                "url": "https://en.wikipedia.org/wiki/Yuki_Tsunoda"
-              },
-              "bhr": "8",
-              "sau": "DNS",
-              "aus": "15",
-              "emi": "7",
-              "mia": "12",
-              "esp": "10",
-              "mon": "17",
-              "aze": "13",
-              "can": "Ret",
-              "gbr": "14",
-              "aut": "16",
-              "fra": "Ret",
-              "hun": "19",
-              "bel": "13",
-              "ned": "Ret",
-              "ita": "14",
-              "sin": "Ret",
-              "jpn": "13",
-              "usa": "10",
-              "mxc": "Ret",
-              "sap": "17",
-              "abu": "11",
+              "Drivers": "Yuki Tsunoda",
+              "BHR": "8",
+              "SAU": "DNS",
+              "AUS": "15",
+              "EMI": "7",
+              "MIA": "12",
+              "ESP": "10",
+              "MON": "17",
+              "AZE": "13",
+              "CAN": "Ret",
+              "GBR": "14",
+              "AUT": "16",
+              "FRA": "Ret",
+              "HUN": "19",
+              "BEL": "13",
+              "NED": "Ret",
+              "ITA": "14",
+              "SIN": "Ret",
+              "JPN": "13",
+              "USA": "10",
+              "MXC": "Ret",
+              "SAP": "17",
+              "ABU": "11",
               "Points": "35",
               "WCC": "9th"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -539,192 +509,168 @@
             "Chassis",
             "Engine",
             "Drivers",
-            "Grands Prix",
+            "AUS",
+            "CHN",
+            "JPN",
+            "BHR",
+            "SAU",
+            "MIA",
+            "CAN",
+            "MON",
+            "BCN",
+            "AUT",
+            "GBR",
+            "BEL",
+            "HUN",
+            "NED",
+            "ITA",
+            "ESP",
+            "AZE",
+            "SIN",
+            "USA",
+            "MXC",
+            "SAP",
+            "LVG",
+            "QAT",
+            "ABU",
             "Points",
             "WCC"
           ],
           "rows": [
             {
-              "Year": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Oracle Red Bull Racing",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
-              "Chassis": {
-                "text": "RB22",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB22"
-              },
+              "Year": "2026",
+              "Entrant": "Oracle Red Bull Racing",
+              "Chassis": "RB22",
               "Engine": "DM01 1.6 V6 t",
-              "Drivers": {
-                "text": "Max Verstappen",
-                "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
-              },
-              "aus": "6 F",
-              "chn": "Ret",
-              "jpn": null,
-              "bhr": null,
-              "sau": null,
-              "mia": null,
-              "can": null,
-              "mon": null,
-              "bcn": null,
-              "aut": null,
-              "gbr": null,
-              "bel": null,
-              "hun": null,
-              "ned": null,
-              "ita": null,
-              "esp": null,
-              "aze": null,
-              "sin": null,
-              "usa": null,
-              "mxc": null,
-              "sap": null,
-              "lvg": null,
-              "qat": null,
-              "abu": null,
+              "Drivers": "Max Verstappen",
+              "AUS": "6 F",
+              "CHN": "Ret",
+              "JPN": "",
+              "BHR": "",
+              "SAU": "",
+              "MIA": "",
+              "CAN": "",
+              "MON": "",
+              "BCN": "",
+              "AUT": "",
+              "GBR": "",
+              "BEL": "",
+              "HUN": "",
+              "NED": "",
+              "ITA": "",
+              "ESP": "",
+              "AZE": "",
+              "SIN": "",
+              "USA": "",
+              "MXC": "",
+              "SAP": "",
+              "LVG": "",
+              "QAT": "",
+              "ABU": "",
               "Points": "8*",
               "WCC": "4th*"
             },
             {
-              "Year": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Oracle Red Bull Racing",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
-              "Chassis": {
-                "text": "RB22",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB22"
-              },
+              "Year": "2026",
+              "Entrant": "Oracle Red Bull Racing",
+              "Chassis": "RB22",
               "Engine": "DM01 1.6 V6 t",
-              "Drivers": {
-                "text": "Isack Hadjar",
-                "url": "https://en.wikipedia.org/wiki/Isack_Hadjar"
-              },
-              "aus": "Ret",
-              "chn": "8",
-              "jpn": null,
-              "bhr": null,
-              "sau": null,
-              "mia": null,
-              "can": null,
-              "mon": null,
-              "bcn": null,
-              "aut": null,
-              "gbr": null,
-              "bel": null,
-              "hun": null,
-              "ned": null,
-              "ita": null,
-              "esp": null,
-              "aze": null,
-              "sin": null,
-              "usa": null,
-              "mxc": null,
-              "sap": null,
-              "lvg": null,
-              "qat": null,
-              "abu": null,
+              "Drivers": "Isack Hadjar",
+              "AUS": "Ret",
+              "CHN": "8",
+              "JPN": "",
+              "BHR": "",
+              "SAU": "",
+              "MIA": "",
+              "CAN": "",
+              "MON": "",
+              "BCN": "",
+              "AUT": "",
+              "GBR": "",
+              "BEL": "",
+              "HUN": "",
+              "NED": "",
+              "ITA": "",
+              "ESP": "",
+              "AZE": "",
+              "SIN": "",
+              "USA": "",
+              "MXC": "",
+              "SAP": "",
+              "LVG": "",
+              "QAT": "",
+              "ABU": "",
               "Points": "8*",
               "WCC": "4th*"
             },
             {
-              "Year": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Visa Cash App Racing Bulls F1 Team",
-                "url": "https://en.wikipedia.org/wiki/Racing_Bulls"
-              },
-              "Chassis": {
-                "text": "VCARB 03",
-                "url": "https://en.wikipedia.org/wiki/Racing_Bulls_VCARB_03"
-              },
+              "Year": "2026",
+              "Entrant": "Visa Cash App Racing Bulls F1 Team",
+              "Chassis": "VCARB 03",
               "Engine": "DM01 1.6 V6 t",
-              "Drivers": {
-                "text": "Liam Lawson",
-                "url": "https://en.wikipedia.org/wiki/Liam_Lawson"
-              },
-              "aus": "13",
-              "chn": "7 7 Race: 7; Sprint: 7",
-              "jpn": null,
-              "bhr": null,
-              "sau": null,
-              "mia": null,
-              "can": null,
-              "mon": null,
-              "bcn": null,
-              "aut": null,
-              "gbr": null,
-              "bel": null,
-              "hun": null,
-              "ned": null,
-              "ita": null,
-              "esp": null,
-              "aze": null,
-              "sin": null,
-              "usa": null,
-              "mxc": null,
-              "sap": null,
-              "lvg": null,
-              "qat": null,
-              "abu": null,
+              "Drivers": "Liam Lawson",
+              "AUS": "13",
+              "CHN": "7 7 Race: 7; Sprint: 7",
+              "JPN": "",
+              "BHR": "",
+              "SAU": "",
+              "MIA": "",
+              "CAN": "",
+              "MON": "",
+              "BCN": "",
+              "AUT": "",
+              "GBR": "",
+              "BEL": "",
+              "HUN": "",
+              "NED": "",
+              "ITA": "",
+              "ESP": "",
+              "AZE": "",
+              "SIN": "",
+              "USA": "",
+              "MXC": "",
+              "SAP": "",
+              "LVG": "",
+              "QAT": "",
+              "ABU": "",
               "Points": "6*",
               "WCC": "6th*"
             },
             {
-              "Year": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Visa Cash App Racing Bulls F1 Team",
-                "url": "https://en.wikipedia.org/wiki/Racing_Bulls"
-              },
-              "Chassis": {
-                "text": "VCARB 03",
-                "url": "https://en.wikipedia.org/wiki/Racing_Bulls_VCARB_03"
-              },
+              "Year": "2026",
+              "Entrant": "Visa Cash App Racing Bulls F1 Team",
+              "Chassis": "VCARB 03",
               "Engine": "DM01 1.6 V6 t",
-              "Drivers": {
-                "text": "Arvid Lindblad",
-                "url": "https://en.wikipedia.org/wiki/Arvid_Lindblad"
-              },
-              "aus": "8",
-              "chn": "12",
-              "jpn": null,
-              "bhr": null,
-              "sau": null,
-              "mia": null,
-              "can": null,
-              "mon": null,
-              "bcn": null,
-              "aut": null,
-              "gbr": null,
-              "bel": null,
-              "hun": null,
-              "ned": null,
-              "ita": null,
-              "esp": null,
-              "aze": null,
-              "sin": null,
-              "usa": null,
-              "mxc": null,
-              "sap": null,
-              "lvg": null,
-              "qat": null,
-              "abu": null,
+              "Drivers": "Arvid Lindblad",
+              "AUS": "8",
+              "CHN": "12",
+              "JPN": "",
+              "BHR": "",
+              "SAU": "",
+              "MIA": "",
+              "CAN": "",
+              "MON": "",
+              "BCN": "",
+              "AUT": "",
+              "GBR": "",
+              "BEL": "",
+              "HUN": "",
+              "NED": "",
+              "ITA": "",
+              "ESP": "",
+              "AZE": "",
+              "SIN": "",
+              "USA": "",
+              "MXC": "",
+              "SAP": "",
+              "LVG": "",
+              "QAT": "",
+              "ABU": "",
               "Points": "6*",
               "WCC": "6th*"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -985,96 +931,92 @@
       "tables": [
         {
           "headers": [
-            "Key"
+            "Colour",
+            "Result"
           ],
           "rows": [
             {
-              "colour": "Gold",
-              "result": "Winner"
+              "Colour": "Gold",
+              "Result": "Winner"
             },
             {
-              "colour": "Silver",
-              "result": "Second place"
+              "Colour": "Silver",
+              "Result": "Second place"
             },
             {
-              "colour": "Bronze",
-              "result": "Third place"
+              "Colour": "Bronze",
+              "Result": "Third place"
             },
             {
-              "colour": "Green",
-              "result": "Other points position"
+              "Colour": "Green",
+              "Result": "Other points position"
             },
             {
-              "colour": "Blue",
-              "result": "Other classified position"
+              "Colour": "Blue",
+              "Result": "Other classified position"
             },
             {
-              "colour": "Blue",
-              "result": "Not classified, finished (NC)"
+              "Colour": "Blue",
+              "Result": "Not classified, finished (NC)"
             },
             {
-              "colour": "Purple",
-              "result": "Not classified, retired (Ret)"
+              "Colour": "Purple",
+              "Result": "Not classified, retired (Ret)"
             },
             {
-              "colour": "Red",
-              "result": "Did not qualify (DNQ)"
+              "Colour": "Red",
+              "Result": "Did not qualify (DNQ)"
             },
             {
-              "colour": "Black",
-              "result": "Disqualified (DSQ)"
+              "Colour": "Black",
+              "Result": "Disqualified (DSQ)"
             },
             {
-              "colour": "White",
-              "result": "Did not start (DNS)"
+              "Colour": "White",
+              "Result": "Did not start (DNS)"
             },
             {
-              "colour": "White",
-              "result": "Race cancelled (C)"
+              "Colour": "White",
+              "Result": "Race cancelled (C)"
             },
             {
-              "colour": "Blank",
-              "result": "Did not practice (DNP)"
+              "Colour": "Blank",
+              "Result": "Did not practice (DNP)"
             },
             {
-              "colour": "Blank",
-              "result": "Excluded (EX)"
+              "Colour": "Blank",
+              "Result": "Excluded (EX)"
             },
             {
-              "colour": "Blank",
-              "result": "Did not arrive (DNA)"
+              "Colour": "Blank",
+              "Result": "Did not arrive (DNA)"
             },
             {
-              "colour": "Blank",
-              "result": "Withdrawn (WD)"
+              "Colour": "Blank",
+              "Result": "Withdrawn (WD)"
             },
             {
-              "colour": "Blank",
-              "result": "Did not enter (empty cell)"
+              "Colour": "Blank",
+              "Result": "Did not enter (empty cell)"
             },
             {
-              "colour": "Annotation",
-              "result": "Meaning"
+              "Colour": "Annotation",
+              "Result": "Meaning"
             },
             {
-              "colour": "P",
-              "result": {
-                "text": "Pole position",
-                "url": "https://en.wikipedia.org/wiki/Pole_position"
-              }
+              "Colour": "P",
+              "Result": "Pole position"
             },
             {
-              "colour": "F",
-              "result": {
-                "text": "Fastest lap",
-                "url": "https://en.wikipedia.org/wiki/Fastest_lap"
-              }
+              "Colour": "F",
+              "Result": "Fastest lap"
             },
             {
-              "colour": "Superscript number",
-              "result": "Points-scoring position in sprint"
+              "Colour": "Superscript number",
+              "Result": "Points-scoring position in sprint"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -1083,184 +1025,158 @@
             "Chassis",
             "Engine",
             "Drivers",
-            "Grands Prix",
+            "BHR",
+            "SAU",
+            "AUS",
+            "EMI",
+            "MIA",
+            "ESP",
+            "MON",
+            "AZE",
+            "CAN",
+            "GBR",
+            "AUT",
+            "FRA",
+            "HUN",
+            "BEL",
+            "NED",
+            "ITA",
+            "SIN",
+            "JPN",
+            "USA",
+            "MXC",
+            "SAP",
+            "ABU",
             "Points",
             "WCC"
           ],
           "rows": [
             {
-              "Year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Oracle Red Bull Racing",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
-              "Chassis": {
-                "text": "RB18",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB18"
-              },
+              "Year": "2022",
+              "Entrant": "Oracle Red Bull Racing",
+              "Chassis": "RB18",
               "Engine": "RBPTH001 1.6 V6 t",
-              "Drivers": {
-                "text": "Sergio Pérez",
-                "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez"
-              },
-              "bhr": "18†",
-              "sau": "4 P",
-              "aus": "2",
-              "emi": "2 3 Race: 2; Sprint: 3",
-              "mia": "4",
-              "esp": "2 F",
-              "mon": "1",
-              "aze": "2 F",
-              "can": "Ret",
-              "gbr": "2",
-              "aut": "Ret 5 Race: Ret; Sprint: 5",
-              "fra": "4",
-              "hun": "5",
-              "bel": "2",
-              "ned": "5",
-              "ita": "6 F",
-              "sin": "1",
-              "jpn": "2",
-              "usa": "4",
-              "mxc": "3",
-              "sap": "7 5 Race: 7; Sprint: 5",
-              "abu": "3",
+              "Drivers": "Sergio Pérez",
+              "BHR": "18†",
+              "SAU": "4 P",
+              "AUS": "2",
+              "EMI": "2 3 Race: 2; Sprint: 3",
+              "MIA": "4",
+              "ESP": "2 F",
+              "MON": "1",
+              "AZE": "2 F",
+              "CAN": "Ret",
+              "GBR": "2",
+              "AUT": "Ret 5 Race: Ret; Sprint: 5",
+              "FRA": "4",
+              "HUN": "5",
+              "BEL": "2",
+              "NED": "5",
+              "ITA": "6 F",
+              "SIN": "1",
+              "JPN": "2",
+              "USA": "4",
+              "MXC": "3",
+              "SAP": "7 5 Race: 7; Sprint: 5",
+              "ABU": "3",
               "Points": "759",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Oracle Red Bull Racing",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
-              "Chassis": {
-                "text": "RB18",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB18"
-              },
+              "Year": "2022",
+              "Entrant": "Oracle Red Bull Racing",
+              "Chassis": "RB18",
               "Engine": "RBPTH001 1.6 V6 t",
-              "Drivers": {
-                "text": "Max Verstappen",
-                "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
-              },
-              "bhr": "19†",
-              "sau": "1",
-              "aus": "Ret",
-              "emi": "1 P 1 F",
-              "mia": "1 F",
-              "esp": "1",
-              "mon": "3",
-              "aze": "1",
-              "can": "1 P",
-              "gbr": "7",
-              "aut": "2 P 1 F",
-              "fra": "1",
-              "hun": "1",
-              "bel": "1 F",
-              "ned": "1 P F",
-              "ita": "1",
-              "sin": "7",
-              "jpn": "1 P",
-              "usa": "1",
-              "mxc": "1 P",
-              "sap": "6 4 Race: 6; Sprint: 4",
-              "abu": "1 P",
+              "Drivers": "Max Verstappen",
+              "BHR": "19†",
+              "SAU": "1",
+              "AUS": "Ret",
+              "EMI": "1 P 1 F",
+              "MIA": "1 F",
+              "ESP": "1",
+              "MON": "3",
+              "AZE": "1",
+              "CAN": "1 P",
+              "GBR": "7",
+              "AUT": "2 P 1 F",
+              "FRA": "1",
+              "HUN": "1",
+              "BEL": "1 F",
+              "NED": "1 P F",
+              "ITA": "1",
+              "SIN": "7",
+              "JPN": "1 P",
+              "USA": "1",
+              "MXC": "1 P",
+              "SAP": "6 4 Race: 6; Sprint: 4",
+              "ABU": "1 P",
               "Points": "759",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Scuderia AlphaTauri",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
-              },
-              "Chassis": {
-                "text": "AT03",
-                "url": "https://en.wikipedia.org/wiki/AlphaTauri_AT03"
-              },
+              "Year": "2022",
+              "Entrant": "Scuderia AlphaTauri",
+              "Chassis": "AT03",
               "Engine": "RBPTH001 1.6 V6 t",
-              "Drivers": {
-                "text": "Pierre Gasly",
-                "url": "https://en.wikipedia.org/wiki/Pierre_Gasly"
-              },
-              "bhr": "Ret",
-              "sau": "8",
-              "aus": "9",
-              "emi": "12",
-              "mia": "Ret",
-              "esp": "13",
-              "mon": "11",
-              "aze": "5",
-              "can": "14",
-              "gbr": "Ret",
-              "aut": "15",
-              "fra": "12",
-              "hun": "12",
-              "bel": "9",
-              "ned": "11",
-              "ita": "8",
-              "sin": "10",
-              "jpn": "18",
-              "usa": "14",
-              "mxc": "11",
-              "sap": "14",
-              "abu": "14",
+              "Drivers": "Pierre Gasly",
+              "BHR": "Ret",
+              "SAU": "8",
+              "AUS": "9",
+              "EMI": "12",
+              "MIA": "Ret",
+              "ESP": "13",
+              "MON": "11",
+              "AZE": "5",
+              "CAN": "14",
+              "GBR": "Ret",
+              "AUT": "15",
+              "FRA": "12",
+              "HUN": "12",
+              "BEL": "9",
+              "NED": "11",
+              "ITA": "8",
+              "SIN": "10",
+              "JPN": "18",
+              "USA": "14",
+              "MXC": "11",
+              "SAP": "14",
+              "ABU": "14",
               "Points": "35",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "2022",
-                "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Scuderia AlphaTauri",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
-              },
-              "Chassis": {
-                "text": "AT03",
-                "url": "https://en.wikipedia.org/wiki/AlphaTauri_AT03"
-              },
+              "Year": "2022",
+              "Entrant": "Scuderia AlphaTauri",
+              "Chassis": "AT03",
               "Engine": "RBPTH001 1.6 V6 t",
-              "Drivers": {
-                "text": "Yuki Tsunoda",
-                "url": "https://en.wikipedia.org/wiki/Yuki_Tsunoda"
-              },
-              "bhr": "8",
-              "sau": "DNS",
-              "aus": "15",
-              "emi": "7",
-              "mia": "12",
-              "esp": "10",
-              "mon": "17",
-              "aze": "13",
-              "can": "Ret",
-              "gbr": "14",
-              "aut": "16",
-              "fra": "Ret",
-              "hun": "19",
-              "bel": "13",
-              "ned": "Ret",
-              "ita": "14",
-              "sin": "Ret",
-              "jpn": "13",
-              "usa": "10",
-              "mxc": "Ret",
-              "sap": "17",
-              "abu": "11",
+              "Drivers": "Yuki Tsunoda",
+              "BHR": "8",
+              "SAU": "DNS",
+              "AUS": "15",
+              "EMI": "7",
+              "MIA": "12",
+              "ESP": "10",
+              "MON": "17",
+              "AZE": "13",
+              "CAN": "Ret",
+              "GBR": "14",
+              "AUT": "16",
+              "FRA": "Ret",
+              "HUN": "19",
+              "BEL": "13",
+              "NED": "Ret",
+              "ITA": "14",
+              "SIN": "Ret",
+              "JPN": "13",
+              "USA": "10",
+              "MXC": "Ret",
+              "SAP": "17",
+              "ABU": "11",
               "Points": "35",
               "WCC": "9th"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -1269,192 +1185,168 @@
             "Chassis",
             "Engine",
             "Drivers",
-            "Grands Prix",
+            "AUS",
+            "CHN",
+            "JPN",
+            "BHR",
+            "SAU",
+            "MIA",
+            "CAN",
+            "MON",
+            "BCN",
+            "AUT",
+            "GBR",
+            "BEL",
+            "HUN",
+            "NED",
+            "ITA",
+            "ESP",
+            "AZE",
+            "SIN",
+            "USA",
+            "MXC",
+            "SAP",
+            "LVG",
+            "QAT",
+            "ABU",
             "Points",
             "WCC"
           ],
           "rows": [
             {
-              "Year": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Oracle Red Bull Racing",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
-              "Chassis": {
-                "text": "RB22",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB22"
-              },
+              "Year": "2026",
+              "Entrant": "Oracle Red Bull Racing",
+              "Chassis": "RB22",
               "Engine": "DM01 1.6 V6 t",
-              "Drivers": {
-                "text": "Max Verstappen",
-                "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
-              },
-              "aus": "6 F",
-              "chn": "Ret",
-              "jpn": null,
-              "bhr": null,
-              "sau": null,
-              "mia": null,
-              "can": null,
-              "mon": null,
-              "bcn": null,
-              "aut": null,
-              "gbr": null,
-              "bel": null,
-              "hun": null,
-              "ned": null,
-              "ita": null,
-              "esp": null,
-              "aze": null,
-              "sin": null,
-              "usa": null,
-              "mxc": null,
-              "sap": null,
-              "lvg": null,
-              "qat": null,
-              "abu": null,
+              "Drivers": "Max Verstappen",
+              "AUS": "6 F",
+              "CHN": "Ret",
+              "JPN": "",
+              "BHR": "",
+              "SAU": "",
+              "MIA": "",
+              "CAN": "",
+              "MON": "",
+              "BCN": "",
+              "AUT": "",
+              "GBR": "",
+              "BEL": "",
+              "HUN": "",
+              "NED": "",
+              "ITA": "",
+              "ESP": "",
+              "AZE": "",
+              "SIN": "",
+              "USA": "",
+              "MXC": "",
+              "SAP": "",
+              "LVG": "",
+              "QAT": "",
+              "ABU": "",
               "Points": "8*",
               "WCC": "4th*"
             },
             {
-              "Year": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Oracle Red Bull Racing",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
-              "Chassis": {
-                "text": "RB22",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB22"
-              },
+              "Year": "2026",
+              "Entrant": "Oracle Red Bull Racing",
+              "Chassis": "RB22",
               "Engine": "DM01 1.6 V6 t",
-              "Drivers": {
-                "text": "Isack Hadjar",
-                "url": "https://en.wikipedia.org/wiki/Isack_Hadjar"
-              },
-              "aus": "Ret",
-              "chn": "8",
-              "jpn": null,
-              "bhr": null,
-              "sau": null,
-              "mia": null,
-              "can": null,
-              "mon": null,
-              "bcn": null,
-              "aut": null,
-              "gbr": null,
-              "bel": null,
-              "hun": null,
-              "ned": null,
-              "ita": null,
-              "esp": null,
-              "aze": null,
-              "sin": null,
-              "usa": null,
-              "mxc": null,
-              "sap": null,
-              "lvg": null,
-              "qat": null,
-              "abu": null,
+              "Drivers": "Isack Hadjar",
+              "AUS": "Ret",
+              "CHN": "8",
+              "JPN": "",
+              "BHR": "",
+              "SAU": "",
+              "MIA": "",
+              "CAN": "",
+              "MON": "",
+              "BCN": "",
+              "AUT": "",
+              "GBR": "",
+              "BEL": "",
+              "HUN": "",
+              "NED": "",
+              "ITA": "",
+              "ESP": "",
+              "AZE": "",
+              "SIN": "",
+              "USA": "",
+              "MXC": "",
+              "SAP": "",
+              "LVG": "",
+              "QAT": "",
+              "ABU": "",
               "Points": "8*",
               "WCC": "4th*"
             },
             {
-              "Year": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Visa Cash App Racing Bulls F1 Team",
-                "url": "https://en.wikipedia.org/wiki/Racing_Bulls"
-              },
-              "Chassis": {
-                "text": "VCARB 03",
-                "url": "https://en.wikipedia.org/wiki/Racing_Bulls_VCARB_03"
-              },
+              "Year": "2026",
+              "Entrant": "Visa Cash App Racing Bulls F1 Team",
+              "Chassis": "VCARB 03",
               "Engine": "DM01 1.6 V6 t",
-              "Drivers": {
-                "text": "Liam Lawson",
-                "url": "https://en.wikipedia.org/wiki/Liam_Lawson"
-              },
-              "aus": "13",
-              "chn": "7 7 Race: 7; Sprint: 7",
-              "jpn": null,
-              "bhr": null,
-              "sau": null,
-              "mia": null,
-              "can": null,
-              "mon": null,
-              "bcn": null,
-              "aut": null,
-              "gbr": null,
-              "bel": null,
-              "hun": null,
-              "ned": null,
-              "ita": null,
-              "esp": null,
-              "aze": null,
-              "sin": null,
-              "usa": null,
-              "mxc": null,
-              "sap": null,
-              "lvg": null,
-              "qat": null,
-              "abu": null,
+              "Drivers": "Liam Lawson",
+              "AUS": "13",
+              "CHN": "7 7 Race: 7; Sprint: 7",
+              "JPN": "",
+              "BHR": "",
+              "SAU": "",
+              "MIA": "",
+              "CAN": "",
+              "MON": "",
+              "BCN": "",
+              "AUT": "",
+              "GBR": "",
+              "BEL": "",
+              "HUN": "",
+              "NED": "",
+              "ITA": "",
+              "ESP": "",
+              "AZE": "",
+              "SIN": "",
+              "USA": "",
+              "MXC": "",
+              "SAP": "",
+              "LVG": "",
+              "QAT": "",
+              "ABU": "",
               "Points": "6*",
               "WCC": "6th*"
             },
             {
-              "Year": {
-                "text": "2026",
-                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Visa Cash App Racing Bulls F1 Team",
-                "url": "https://en.wikipedia.org/wiki/Racing_Bulls"
-              },
-              "Chassis": {
-                "text": "VCARB 03",
-                "url": "https://en.wikipedia.org/wiki/Racing_Bulls_VCARB_03"
-              },
+              "Year": "2026",
+              "Entrant": "Visa Cash App Racing Bulls F1 Team",
+              "Chassis": "VCARB 03",
               "Engine": "DM01 1.6 V6 t",
-              "Drivers": {
-                "text": "Arvid Lindblad",
-                "url": "https://en.wikipedia.org/wiki/Arvid_Lindblad"
-              },
-              "aus": "8",
-              "chn": "12",
-              "jpn": null,
-              "bhr": null,
-              "sau": null,
-              "mia": null,
-              "can": null,
-              "mon": null,
-              "bcn": null,
-              "aut": null,
-              "gbr": null,
-              "bel": null,
-              "hun": null,
-              "ned": null,
-              "ita": null,
-              "esp": null,
-              "aze": null,
-              "sin": null,
-              "usa": null,
-              "mxc": null,
-              "sap": null,
-              "lvg": null,
-              "qat": null,
-              "abu": null,
+              "Drivers": "Arvid Lindblad",
+              "AUS": "8",
+              "CHN": "12",
+              "JPN": "",
+              "BHR": "",
+              "SAU": "",
+              "MIA": "",
+              "CAN": "",
+              "MON": "",
+              "BCN": "",
+              "AUT": "",
+              "GBR": "",
+              "BEL": "",
+              "HUN": "",
+              "NED": "",
+              "ITA": "",
+              "ESP": "",
+              "AZE": "",
+              "SIN": "",
+              "USA": "",
+              "MXC": "",
+              "SAP": "",
+              "LVG": "",
+              "QAT": "",
+              "ABU": "",
               "Points": "6*",
               "WCC": "6th*"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -2131,156 +2023,85 @@
               "Formula One results": "Year"
             },
             {
-              "Formula One results": {
-                "text": "1977",
-                "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
-              }
+              "Formula One results": "1977"
             },
             {
-              "Formula One results": {
-                "text": "1978",
-                "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
-              }
+              "Formula One results": "1978"
             },
             {
-              "Formula One results": {
-                "text": "1979",
-                "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
-              }
+              "Formula One results": "1979"
             },
             {
-              "Formula One results": {
-                "text": "1980",
-                "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
-              }
+              "Formula One results": "1980"
             },
             {
-              "Formula One results": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-              }
+              "Formula One results": "1981"
             },
             {
-              "Formula One results": {
-                "text": "1982",
-                "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-              }
+              "Formula One results": "1982"
             },
             {
-              "Formula One results": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              }
+              "Formula One results": "1983"
             },
             {
-              "Formula One results": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              }
+              "Formula One results": "1984"
             },
             {
-              "Formula One results": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              }
+              "Formula One results": "1985"
             },
             {
               "Formula One results": "1986-2001 : Renault did not compete as a constructor"
             },
             {
-              "Formula One results": {
-                "text": "2002",
-                "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
-              }
+              "Formula One results": "2002"
             },
             {
-              "Formula One results": {
-                "text": "2003",
-                "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
-              }
+              "Formula One results": "2003"
             },
             {
-              "Formula One results": {
-                "text": "2004",
-                "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
-              }
+              "Formula One results": "2004"
             },
             {
-              "Formula One results": {
-                "text": "2005",
-                "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
-              }
+              "Formula One results": "2005"
             },
             {
-              "Formula One results": {
-                "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-              }
+              "Formula One results": "2006"
             },
             {
-              "Formula One results": {
-                "text": "2007",
-                "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-              }
+              "Formula One results": "2007"
             },
             {
-              "Formula One results": {
-                "text": "2008",
-                "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-              }
+              "Formula One results": "2008"
             },
             {
-              "Formula One results": {
-                "text": "2009",
-                "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
-              }
+              "Formula One results": "2009"
             },
             {
-              "Formula One results": {
-                "text": "2010",
-                "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
-              }
+              "Formula One results": "2010"
             },
             {
-              "Formula One results": {
-                "text": "2011",
-                "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
-              }
+              "Formula One results": "2011"
             },
             {
               "Formula One results": "2012-2015 : Renault did not compete as a constructor"
             },
             {
-              "Formula One results": {
-                "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
-              }
+              "Formula One results": "2016"
             },
             {
-              "Formula One results": {
-                "text": "2017",
-                "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
-              }
+              "Formula One results": "2017"
             },
             {
-              "Formula One results": {
-                "text": "2018",
-                "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
-              }
+              "Formula One results": "2018"
             },
             {
-              "Formula One results": {
-                "text": "2019",
-                "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
-              }
+              "Formula One results": "2019"
             },
             {
-              "Formula One results": {
-                "text": "2020",
-                "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
-              }
+              "Formula One results": "2020"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -2295,35 +2116,17 @@
           ],
           "rows": [
             {
-              "Constructor": {
-                "text": "Lotus",
-                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-              },
+              "Constructor": "Lotus",
               "Season(s)": "1983-1986",
               "Total wins": "5",
-              "First win": {
-                "text": "1985 Portuguese Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1985_Portuguese_Grand_Prix"
-              },
-              "Last win": {
-                "text": "1986 Detroit Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
-              },
+              "First win": "1985 Portuguese Grand Prix",
+              "Last win": "1986 Detroit Grand Prix",
               "Pole positions": "19",
-              "First pole": {
-                "text": "1983 European Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1983_European_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "1986 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
-              }
+              "First pole": "1983 European Grand Prix",
+              "Last pole": "1986 Mexican Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Ligier",
-                "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
-              },
+              "Constructor": "Ligier",
               "Season(s)": "1984-1986 , 1992-1994",
               "Total wins": "0",
               "First win": "-",
@@ -2333,10 +2136,7 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Tyrrell",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
+              "Constructor": "Tyrrell",
               "Season(s)": "1985-1986",
               "Total wins": "0",
               "First win": "-",
@@ -2346,86 +2146,38 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Williams",
-                "url": "https://en.wikipedia.org/wiki/Williams_Racing"
-              },
+              "Constructor": "Williams",
               "Season(s)": "1989-1997 , 2012-2013",
               "Total wins": "64",
-              "First win": {
-                "text": "1989 Canadian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1989_Canadian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2012 Spanish Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2012_Spanish_Grand_Prix"
-              },
+              "First win": "1989 Canadian Grand Prix",
+              "Last win": "2012 Spanish Grand Prix",
               "Pole positions": "80",
-              "First pole": {
-                "text": "1989 Hungarian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1989_Hungarian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2012 Spanish Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2012_Spanish_Grand_Prix"
-              }
+              "First pole": "1989 Hungarian Grand Prix",
+              "Last pole": "2012 Spanish Grand Prix"
             },
             {
               "Constructor": "/ Benetton",
               "Season(s)": "1995-1997 , 2001",
               "Total wins": "12",
-              "First win": {
-                "text": "1995 Brazilian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1995_Brazilian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "1997 German Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1997_German_Grand_Prix"
-              },
+              "First win": "1995 Brazilian Grand Prix",
+              "Last win": "1997 German Grand Prix",
               "Pole positions": "6",
-              "First pole": {
-                "text": "1995 San Marino Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1995_San_Marino_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "1997 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1997_Italian_Grand_Prix"
-              }
+              "First pole": "1995 San Marino Grand Prix",
+              "Last pole": "1997 Italian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Red Bull",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
+              "Constructor": "Red Bull",
               "Season(s)": "2007-2015",
               "Total wins": "50",
-              "First win": {
-                "text": "2009 Chinese Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2009_Chinese_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2014 Belgian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2014_Belgian_Grand_Prix"
-              },
+              "First win": "2009 Chinese Grand Prix",
+              "Last win": "2014 Belgian Grand Prix",
               "Pole positions": "53",
-              "First pole": {
-                "text": "2009 Chinese Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2009_Chinese_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2013 Brazilian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2013_Brazilian_Grand_Prix"
-              }
+              "First pole": "2009 Chinese Grand Prix",
+              "Last pole": "2013 Brazilian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Lotus",
-                "url": "https://en.wikipedia.org/wiki/Team_Lotus_(2010%E2%80%932011)"
-              },
-              "Season(s)": {
-                "text": "2011",
-                "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
-              },
+              "Constructor": "Lotus",
+              "Season(s)": "2011",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -2434,29 +2186,17 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Lotus",
-                "url": "https://en.wikipedia.org/wiki/Lotus_F1"
-              },
+              "Constructor": "Lotus",
               "Season(s)": "2012-2014",
               "Total wins": "2",
-              "First win": {
-                "text": "2012 Abu Dhabi Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2012_Abu_Dhabi_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2013 Australian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2013_Australian_Grand_Prix"
-              },
+              "First win": "2012 Abu Dhabi Grand Prix",
+              "Last win": "2013 Australian Grand Prix",
               "Pole positions": "0",
               "First pole": "-",
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Caterham",
-                "url": "https://en.wikipedia.org/wiki/Caterham_F1"
-              },
+              "Constructor": "Caterham",
               "Season(s)": "2012-2014",
               "Total wins": "0",
               "First win": "-",
@@ -2466,10 +2206,7 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Toro Rosso",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-              },
+              "Constructor": "Toro Rosso",
               "Season(s)": "2014-2015",
               "Total wins": "0",
               "First win": "-",
@@ -2479,10 +2216,7 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "McLaren",
-                "url": "https://en.wikipedia.org/wiki/McLaren"
-              },
+              "Constructor": "McLaren",
               "Season(s)": "2018-2020",
               "Total wins": "0",
               "First win": "-",
@@ -2492,20 +2226,11 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Alpine",
-                "url": "https://en.wikipedia.org/wiki/Alpine_F1_Team"
-              },
+              "Constructor": "Alpine",
               "Season(s)": "2021-2025",
               "Total wins": "1",
-              "First win": {
-                "text": "2021 Hungarian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2021 Hungarian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-              },
+              "First win": "2021 Hungarian Grand Prix",
+              "Last win": "2021 Hungarian Grand Prix",
               "Pole positions": "0",
               "First pole": "-",
               "Last pole": "-"
@@ -2514,25 +2239,14 @@
               "Constructor": "Total",
               "Season(s)": "1983-2025",
               "Total wins": "134",
-              "First win": {
-                "text": "1985 Portuguese Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1985_Portuguese_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2021 Hungarian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Hungarian_Grand_Prix"
-              },
+              "First win": "1985 Portuguese Grand Prix",
+              "Last win": "2021 Hungarian Grand Prix",
               "Pole positions": "158",
-              "First pole": {
-                "text": "1983 European Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1983_European_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2013 Brazilian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2013_Brazilian_Grand_Prix"
-              }
+              "First pole": "1983 European Grand Prix",
+              "Last pole": "2013 Brazilian Grand Prix"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -2548,7 +2262,8 @@
             {
               "Achievements": "Preceded by Greece national football team"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -2766,193 +2481,104 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1966",
-                "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-              },
+              "Year": "1966",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Jack Brabham",
-                "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-              },
+              "Driver": "Jack Brabham",
               "# of GPs": "9",
               "WC": "World Champion"
             },
             {
-              "Year": {
-                "text": "1966",
-                "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-              },
+              "Year": "1966",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Denny Hulme",
-                "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
-              },
+              "Driver": "Denny Hulme",
               "# of GPs": "7",
               "WC": "4th"
             },
             {
-              "Year": {
-                "text": "1967",
-                "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-              },
+              "Year": "1967",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Denny Hulme",
-                "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
-              },
+              "Driver": "Denny Hulme",
               "# of GPs": "11",
               "WC": "World Champion"
             },
             {
-              "Year": {
-                "text": "1967",
-                "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-              },
+              "Year": "1967",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Jack Brabham",
-                "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-              },
+              "Driver": "Jack Brabham",
               "# of GPs": "11",
               "WC": "2nd"
             },
             {
-              "Year": {
-                "text": "1967",
-                "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-              },
+              "Year": "1967",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Guy Ligier",
-                "url": "https://en.wikipedia.org/wiki/Guy_Ligier"
-              },
+              "Driver": "Guy Ligier",
               "# of GPs": "5"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Jochen Rindt",
-                "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
-              },
+              "Driver": "Jochen Rindt",
               "# of GPs": "12",
               "WC": "12th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Jack Brabham",
-                "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-              },
+              "Driver": "Jack Brabham",
               "# of GPs": "11",
               "WC": "23rd"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Silvio Moser",
-                "url": "https://en.wikipedia.org/wiki/Silvio_Moser"
-              },
+              "Driver": "Silvio Moser",
               "# of GPs": "4",
               "WC": "23rd"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Dan Gurney",
-                "url": "https://en.wikipedia.org/wiki/Dan_Gurney"
-              },
+              "Driver": "Dan Gurney",
               "# of GPs": "1"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Dave Charlton",
-                "url": "https://en.wikipedia.org/wiki/Dave_Charlton"
-              },
+              "Driver": "Dave Charlton",
               "# of GPs": "1"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "John Love",
-                "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
-              },
+              "Driver": "John Love",
               "# of GPs": "1"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Kurt Ahrens Jr.",
-                "url": "https://en.wikipedia.org/wiki/Kurt_Ahrens_Jr."
-              },
+              "Driver": "Kurt Ahrens Jr.",
               "# of GPs": "1"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Team": "LDS-Repco",
-              "Driver": {
-                "text": "Sam Tingle",
-                "url": "https://en.wikipedia.org/wiki/Sam_Tingle"
-              },
+              "Driver": "Sam Tingle",
               "# of GPs": "1"
             },
             {
-              "Year": {
-                "text": "1969",
-                "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
-              },
+              "Year": "1969",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Peter de Klerk",
-                "url": "https://en.wikipedia.org/wiki/Peter_de_Klerk"
-              },
+              "Driver": "Peter de Klerk",
               "# of GPs": "1"
             },
             {
-              "Year": {
-                "text": "1969",
-                "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
-              },
+              "Year": "1969",
               "Team": "Brabham-Repco",
-              "Driver": {
-                "text": "Sam Tingle",
-                "url": "https://en.wikipedia.org/wiki/Sam_Tingle"
-              },
+              "Driver": "Sam Tingle",
               "# of GPs": "1"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -2979,82 +2605,34 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1966",
-                "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Brabham Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1966",
+              "Entrant": "Brabham Racing Organisation",
               "Chassis": "Brabham BT19 Brabham BT20",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1966_Monaco_Grand_Prix"
-              },
-              "2": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1966_Belgian_Grand_Prix"
-              },
-              "3": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1966_French_Grand_Prix"
-              },
-              "4": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1966_British_Grand_Prix"
-              },
-              "5": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1966_Dutch_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1966_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1966_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1966_United_States_Grand_Prix"
-              },
-              "9": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1966_Mexican_Grand_Prix"
-              },
-              "10": null,
-              "11": null,
-              "12": null,
+              "Tyre": "G",
+              "Drivers": "",
+              "1": "MON",
+              "2": "BEL",
+              "3": "FRA",
+              "4": "GBR",
+              "5": "NED",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "MEX",
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "42 (49)",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1966",
-                "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Brabham Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1966",
+              "Entrant": "Brabham Racing Organisation",
               "Chassis": "Brabham BT19 Brabham BT20",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Jack Brabham",
-                "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-              },
+              "Tyre": "G",
+              "Drivers": "Jack Brabham",
               "1": "Ret",
               "2": "4",
               "3": "1",
@@ -3064,33 +2642,21 @@
               "7": "Ret",
               "8": "Ret",
               "9": "2",
-              "10": null,
-              "11": null,
-              "12": null,
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "42 (49)",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1966",
-                "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Brabham Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1966",
+              "Entrant": "Brabham Racing Organisation",
               "Chassis": "Brabham BT19 Brabham BT20",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Denny Hulme",
-                "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
-              },
-              "1": null,
-              "2": null,
+              "Tyre": "G",
+              "Drivers": "Denny Hulme",
+              "1": "",
+              "2": "",
               "3": "3",
               "4": "2",
               "5": "Ret",
@@ -3098,95 +2664,41 @@
               "7": "3",
               "8": "Ret",
               "9": "3",
-              "10": null,
-              "11": null,
-              "12": null,
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "42 (49)",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1967",
-                "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Brabham Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1967",
+              "Entrant": "Brabham Racing Organisation",
               "Chassis": "Brabham BT19 Brabham BT20 Brabham BT24",
               "Engine": "620 3.0 V8 740 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1967_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1967_Dutch_Grand_Prix"
-              },
-              "4": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1967_Belgian_Grand_Prix"
-              },
-              "5": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1967_French_Grand_Prix"
-              },
-              "6": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1967_British_Grand_Prix"
-              },
-              "7": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1967_German_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1967_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1967_Italian_Grand_Prix"
-              },
-              "10": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1967_United_States_Grand_Prix"
-              },
-              "11": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1967_Mexican_Grand_Prix"
-              },
-              "12": null,
+              "Tyre": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MON",
+              "3": "NED",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "CAN",
+              "9": "ITA",
+              "10": "USA",
+              "11": "MEX",
+              "12": "",
               "Points": "63 (67)",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1967",
-                "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Brabham Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1967",
+              "Entrant": "Brabham Racing Organisation",
               "Chassis": "Brabham BT19 Brabham BT20 Brabham BT24",
               "Engine": "620 3.0 V8 740 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Jack Brabham",
-                "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-              },
+              "Tyre": "G",
+              "Drivers": "Jack Brabham",
               "1": "6",
               "2": "Ret",
               "3": "2",
@@ -3198,29 +2710,17 @@
               "9": "2",
               "10": "5",
               "11": "2",
-              "12": null,
+              "12": "",
               "Points": "63 (67)",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1967",
-                "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Brabham Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1967",
+              "Entrant": "Brabham Racing Organisation",
               "Chassis": "Brabham BT19 Brabham BT20 Brabham BT24",
               "Engine": "620 3.0 V8 740 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Denny Hulme",
-                "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
-              },
+              "Tyre": "G",
+              "Drivers": "Denny Hulme",
               "1": "4",
               "2": "1",
               "3": "3",
@@ -3232,130 +2732,61 @@
               "9": "Ret",
               "10": "3",
               "11": "3",
-              "12": null,
+              "12": "",
               "Points": "63 (67)",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1967",
-                "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Guy Ligier",
-                "url": "https://en.wikipedia.org/wiki/Guy_Ligier"
-              },
+              "Year": "1967",
+              "Entrant": "Guy Ligier",
               "Chassis": "Brabham BT20",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "F",
-                "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Guy Ligier",
-                "url": "https://en.wikipedia.org/wiki/Guy_Ligier"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Tyre": "F",
+              "Drivers": "Guy Ligier",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "10",
               "7": "8",
-              "8": null,
+              "8": "",
               "9": "Ret",
               "10": "Ret",
               "11": "11",
-              "12": null,
+              "12": "",
               "Points": "63 (67)",
               "WCC": "1st"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Brabham Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1968",
+              "Entrant": "Brabham Racing Organisation",
               "Chassis": "Brabham BT24 Brabham BT26",
               "Engine": "740 3.0 V8 860 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
-              },
-              "3": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
-              },
-              "4": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
-              },
-              "5": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
-              },
-              "6": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
-              },
-              "7": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
-              },
-              "8": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
-              },
-              "9": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
-              },
-              "10": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
-              },
-              "11": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
-              },
-              "12": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-              },
+              "Tyre": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "ESP",
+              "3": "MON",
+              "4": "BEL",
+              "5": "NED",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "ITA",
+              "10": "CAN",
+              "11": "USA",
+              "12": "MEX",
               "Points": "10",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Brabham Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1968",
+              "Entrant": "Brabham Racing Organisation",
               "Chassis": "Brabham BT24 Brabham BT26",
               "Engine": "740 3.0 V8 860 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Jack Brabham",
-                "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-              },
+              "Tyre": "G",
+              "Drivers": "Jack Brabham",
               "1": "Ret",
               "2": "DNS",
               "3": "Ret",
@@ -3372,24 +2803,12 @@
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Brabham Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1968",
+              "Entrant": "Brabham Racing Organisation",
               "Chassis": "Brabham BT24 Brabham BT26",
               "Engine": "740 3.0 V8 860 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Jochen Rindt",
-                "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
-              },
+              "Tyre": "G",
+              "Drivers": "Jochen Rindt",
               "1": "3",
               "2": "Ret",
               "3": "Ret",
@@ -3406,339 +2825,205 @@
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Brabham Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1968",
+              "Entrant": "Brabham Racing Organisation",
               "Chassis": "Brabham BT24 Brabham BT26",
               "Engine": "740 3.0 V8 860 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Dan Gurney",
-                "url": "https://en.wikipedia.org/wiki/Dan_Gurney"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyre": "G",
+              "Drivers": "Dan Gurney",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "Ret",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "10",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Team Gunston",
-                "url": "https://en.wikipedia.org/wiki/Team_Gunston"
-              },
+              "Year": "1968",
+              "Entrant": "Team Gunston",
               "Chassis": "Brabham BT20",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "F",
-                "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "John Love",
-                "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
-              },
+              "Tyre": "F",
+              "Drivers": "John Love",
               "1": "9",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "10",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Scuderia Scribante",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Scribante"
-              },
+              "Year": "1968",
+              "Entrant": "Scuderia Scribante",
               "Chassis": "Brabham BT11",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "F",
-                "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Dave Charlton",
-                "url": "https://en.wikipedia.org/wiki/Dave_Charlton"
-              },
+              "Tyre": "F",
+              "Drivers": "Dave Charlton",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "10",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Entrant": "Charles Vögele Racing",
               "Chassis": "Brabham BT20",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Silvio Moser",
-                "url": "https://en.wikipedia.org/wiki/Silvio_Moser"
-              },
-              "1": null,
-              "2": null,
+              "Tyre": "G",
+              "Drivers": "Silvio Moser",
+              "1": "",
+              "2": "",
               "3": "DNQ",
-              "4": null,
+              "4": "",
               "5": "5",
-              "6": null,
+              "6": "",
               "7": "NC",
               "8": "DNS",
               "9": "DNQ",
-              "10": null,
-              "11": null,
-              "12": null,
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "10",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Caltex Racing Team",
-                "url": "https://en.wikipedia.org/wiki/Caltex"
-              },
+              "Year": "1968",
+              "Entrant": "Caltex Racing Team",
               "Chassis": "Brabham BT24",
               "Engine": "740 3.0 V8",
-              "Tyre": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Drivers": {
-                "text": "Kurt Ahrens Jr.",
-                "url": "https://en.wikipedia.org/wiki/Kurt_Ahrens_Jr."
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
+              "Tyre": "D",
+              "Drivers": "Kurt Ahrens Jr.",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
               "8": "12",
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "10",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Team Gunston",
-                "url": "https://en.wikipedia.org/wiki/Team_Gunston"
-              },
-              "Chassis": {
-                "text": "LDS Mk3",
-                "url": "https://en.wikipedia.org/wiki/LDS_(automobile)"
-              },
+              "Year": "1968",
+              "Entrant": "Team Gunston",
+              "Chassis": "LDS Mk3",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "F",
-                "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Sam Tingle",
-                "url": "https://en.wikipedia.org/wiki/Sam_Tingle"
-              },
+              "Tyre": "F",
+              "Drivers": "Sam Tingle",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1969",
-                "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Team Gunston",
-                "url": "https://en.wikipedia.org/wiki/Team_Gunston"
-              },
+              "Year": "1969",
+              "Entrant": "Team Gunston",
               "Chassis": "Brabham BT24",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "F",
-                "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1969_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1969_Spanish_Grand_Prix"
-              },
-              "3": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
-              },
-              "4": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1969_Dutch_Grand_Prix"
-              },
-              "5": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1969_French_Grand_Prix"
-              },
-              "6": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1969_British_Grand_Prix"
-              },
-              "7": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1969_Italian_Grand_Prix"
-              },
-              "9": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1969_Canadian_Grand_Prix"
-              },
-              "10": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1969_United_States_Grand_Prix"
-              },
-              "11": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1969_Mexican_Grand_Prix"
-              },
-              "12": null,
+              "Tyre": "F",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "ESP",
+              "3": "MON",
+              "4": "NED",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "ITA",
+              "9": "CAN",
+              "10": "USA",
+              "11": "MEX",
+              "12": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1969",
-                "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Team Gunston",
-                "url": "https://en.wikipedia.org/wiki/Team_Gunston"
-              },
+              "Year": "1969",
+              "Entrant": "Team Gunston",
               "Chassis": "Brabham BT24",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "F",
-                "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Sam Tingle",
-                "url": "https://en.wikipedia.org/wiki/Sam_Tingle"
-              },
+              "Tyre": "F",
+              "Drivers": "Sam Tingle",
               "1": "8",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1969",
-                "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
-              },
+              "Year": "1969",
               "Entrant": "Jack Holme",
               "Chassis": "Brabham BT20",
               "Engine": "620 3.0 V8",
-              "Tyre": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Peter de Klerk",
-                "url": "https://en.wikipedia.org/wiki/Peter_de_Klerk"
-              },
+              "Tyre": "G",
+              "Drivers": "Peter de Klerk",
               "1": "NC",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "Points": "0",
               "WCC": "NC"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

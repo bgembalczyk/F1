@@ -182,657 +182,357 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1950",
-                "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1950",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": null,
-              "1": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1950_British_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1950_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1950_Indianapolis_500"
-              },
-              "4": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1950_Swiss_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1950_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1950_French_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1950_Italian_Grand_Prix"
-              },
-              "8": null,
-              "9": null
+              "Driver": "",
+              "1": "GBR",
+              "2": "MON",
+              "3": "500",
+              "4": "SUI",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "ITA",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1950",
-                "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1950",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": {
-                "text": "Robert Manzon",
-                "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
-              },
-              "1": null,
+              "Driver": "Robert Manzon",
+              "1": "",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "4",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1950",
-                "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1950",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": {
-                "text": "Maurice Trintignant",
-                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
-              },
-              "1": null,
+              "Driver": "Maurice Trintignant",
+              "1": "",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": null,
-              "1": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
-              },
-              "9": null
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "ESP",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": {
-                "text": "André Simon",
-                "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Simon_(racing_driver)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "André Simon",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
+              "5": "",
               "6": "Ret",
               "7": "6",
               "8": "Ret",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": {
-                "text": "Robert Manzon",
-                "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Robert Manzon",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
+              "5": "",
               "6": "7",
               "7": "Ret",
               "8": "9",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": {
-                "text": "Maurice Trintignant",
-                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Maurice Trintignant",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
+              "5": "",
               "6": "Ret",
               "7": "DNS",
               "8": "Ret",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": {
-                "text": "Aldo Gordini",
-                "url": "https://en.wikipedia.org/wiki/Aldo_Gordini"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Aldo Gordini",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": {
-                "text": "Jean Behra",
-                "url": "https://en.wikipedia.org/wiki/Jean_Behra"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver": "Jean Behra",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": null,
-              "1": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1952_Swiss_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1952_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1952_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1952_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1952_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
-              },
-              "7": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1952_Dutch_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1952_Italian_Grand_Prix"
-              },
-              "9": null
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Robert Manzon",
-                "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
-              },
+              "Driver": "Robert Manzon",
               "1": "Ret",
-              "2": null,
+              "2": "",
               "3": "3",
               "4": "4",
               "5": "Ret",
               "6": "Ret",
               "7": "5",
               "8": "14",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Jean Behra",
-                "url": "https://en.wikipedia.org/wiki/Jean_Behra"
-              },
+              "Driver": "Jean Behra",
               "1": "3",
-              "2": null,
+              "2": "",
               "3": "Ret",
               "4": "7",
-              "5": null,
+              "5": "",
               "6": "5",
               "7": "Ret",
               "8": "Ret",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Johnny Claes",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Claes"
-              },
-              "1": null,
-              "2": null,
+              "Driver": "Johnny Claes",
+              "1": "",
+              "2": "",
               "3": "8",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Prince Bira",
-                "url": "https://en.wikipedia.org/wiki/Prince_Bira"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Prince Bira",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
               "5": "11",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Maurice Trintignant",
-                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Driver": "Maurice Trintignant",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "Ret",
               "6": "Ret",
               "7": "6",
               "8": "Ret",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 11",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T11"
-              },
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 11",
               "Engine": "Simca straight-4",
-              "Driver": {
-                "text": "Max de Terra",
-                "url": "https://en.wikipedia.org/wiki/Max_de_Terra"
-              },
+              "Driver": "Max de Terra",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini Straight-4",
-              "Driver": {
-                "text": "Prince Bira",
-                "url": "https://en.wikipedia.org/wiki/Prince_Bira"
-              },
+              "Driver": "Prince Bira",
               "1": "Ret",
-              "2": null,
+              "2": "",
               "3": "10",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini Straight-4",
-              "Driver": {
-                "text": "Johnny Claes",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Claes"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Johnny Claes",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
               "5": "14",
-              "6": null,
-              "7": null,
+              "6": "",
+              "7": "",
               "8": "DNQ",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini Straight-4",
-              "Driver": {
-                "text": "Robert O'Brien",
-                "url": "https://en.wikipedia.org/wiki/Robert_O%27Brien_(auto_racer)"
-              },
-              "1": null,
-              "2": null,
+              "Driver": "Robert O'Brien",
+              "1": "",
+              "2": "",
               "3": "NC",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini Straight-4",
-              "Driver": {
-                "text": "Maurice Trintignant",
-                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Maurice Trintignant",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "5",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini Straight-4",
-              "Driver": {
-                "text": "Paul Frère",
-                "url": "https://en.wikipedia.org/wiki/Paul_Fr%C3%A8re"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver": "Paul Frère",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
-              },
-              "3": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
-              },
-              "4": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
-              },
-              "5": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
-              },
-              "6": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
-              },
-              "7": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
-              },
-              "8": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
-              },
-              "9": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
-              }
+              "Driver": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "NED",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "SUI",
+              "9": "ITA"
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Jean Behra",
-                "url": "https://en.wikipedia.org/wiki/Jean_Behra"
-              },
+              "Driver": "Jean Behra",
               "1": "6",
-              "2": null,
-              "3": null,
+              "2": "",
+              "3": "",
               "4": "Ret",
               "5": "10",
               "6": "Ret",
               "7": "Ret",
               "8": "Ret",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Maurice Trintignant",
-                "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
-              },
+              "Driver": "Maurice Trintignant",
               "1": "7†",
-              "2": null,
+              "2": "",
               "3": "6",
               "4": "5",
               "5": "Ret",
@@ -842,237 +542,132 @@
               "9": "5"
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Harry Schell",
-                "url": "https://en.wikipedia.org/wiki/Harry_Schell"
-              },
+              "Driver": "Harry Schell",
               "1": "7†",
-              "2": null,
+              "2": "",
               "3": "Ret",
               "4": "7",
               "5": "Ret",
               "6": "Ret",
               "7": "Ret",
-              "8": null,
+              "8": "",
               "9": "9"
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Robert Manzon",
-                "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
-              },
+              "Driver": "Robert Manzon",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Carlos Menditeguy",
-                "url": "https://en.wikipedia.org/wiki/Carlos_Menditeguy"
-              },
+              "Driver": "Carlos Menditeguy",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Roberto Mieres",
-                "url": "https://en.wikipedia.org/wiki/Roberto_Mieres"
-              },
-              "1": null,
-              "2": null,
+              "Driver": "Roberto Mieres",
+              "1": "",
+              "2": "",
               "3": "NC",
-              "4": null,
+              "4": "",
               "5": "Ret",
-              "6": null,
-              "7": null,
-              "8": null,
+              "6": "",
+              "7": "",
+              "8": "",
               "9": "6"
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Fred Wacker",
-                "url": "https://en.wikipedia.org/wiki/Fred_Wacker"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Fred Wacker",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "9",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1953",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": {
-                "text": "Pablo Birger",
-                "url": "https://en.wikipedia.org/wiki/Pablo_Birger"
-              },
+              "Driver": "Pablo Birger",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Simca-Gordini Type 15",
-                "url": "https://en.wikipedia.org/wiki/Simca-Gordini_T15"
-              },
+              "Year": "1953",
+              "Chassis": "Simca-Gordini Type 15",
               "Engine": "Gordini straight-4",
-              "Driver": {
-                "text": "Georges Berger",
-                "url": "https://en.wikipedia.org/wiki/Georges_Berger"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Georges Berger",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1954_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1954_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1954_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1954_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1954_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1954_German_Grand_Prix"
-              },
-              "7": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1954_Swiss_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1954_Italian_Grand_Prix"
-              },
-              "9": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1954_Spanish_Grand_Prix"
-              }
+              "Driver": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "SUI",
+              "8": "ITA",
+              "9": "ESP"
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Jean Behra",
-                "url": "https://en.wikipedia.org/wiki/Jean_Behra"
-              },
+              "Driver": "Jean Behra",
               "1": "DSQ",
-              "2": null,
+              "2": "",
               "3": "Ret",
               "4": "6",
               "5": "Ret F",
@@ -1082,693 +677,412 @@
               "9": "Ret"
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Élie Bayol",
-                "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
-              },
+              "Driver": "Élie Bayol",
               "1": "5",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Roger Loyer",
-                "url": "https://en.wikipedia.org/wiki/Roger_Loyer"
-              },
+              "Driver": "Roger Loyer",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Paul Frère",
-                "url": "https://en.wikipedia.org/wiki/Paul_Fr%C3%A8re"
-              },
-              "1": null,
-              "2": null,
+              "Driver": "Paul Frère",
+              "1": "",
+              "2": "",
               "3": "Ret",
               "4": "Ret",
-              "5": null,
+              "5": "",
               "6": "Ret",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "André Pilette",
-                "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Pilette"
-              },
-              "1": null,
-              "2": null,
+              "Driver": "André Pilette",
+              "1": "",
+              "2": "",
               "3": "5",
-              "4": null,
+              "4": "",
               "5": "9",
               "6": "Ret",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Jacques Pollet",
-                "url": "https://en.wikipedia.org/wiki/Jacques_Pollet"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Jacques Pollet",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
               "9": "Ret"
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Georges Berger",
-                "url": "https://en.wikipedia.org/wiki/Georges_Berger"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Driver": "Georges Berger",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Clemar Bucci",
-                "url": "https://en.wikipedia.org/wiki/Clemar_Bucci"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Driver": "Clemar Bucci",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "Ret",
               "6": "Ret",
               "7": "Ret",
               "8": "Ret",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1954",
-                "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Fred Wacker",
-                "url": "https://en.wikipedia.org/wiki/Fred_Wacker"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver": "Fred Wacker",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
               "8": "6",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1955_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1955_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
-              },
-              "4": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
-              },
-              "5": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1955_Dutch_Grand_Prix"
-              },
-              "6": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1955_British_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1955_Italian_Grand_Prix"
-              },
-              "8": null,
-              "9": null
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "NED",
+              "6": "GBR",
+              "7": "ITA",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Élie Bayol",
-                "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
-              },
+              "Driver": "Élie Bayol",
               "1": "Ret",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Jesús Iglesias",
-                "url": "https://en.wikipedia.org/wiki/Jes%C3%BAs_Iglesias"
-              },
+              "Driver": "Jesús Iglesias",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Pablo Birger",
-                "url": "https://en.wikipedia.org/wiki/Pablo_Birger"
-              },
+              "Driver": "Pablo Birger",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Robert Manzon",
-                "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
-              },
-              "1": null,
+              "Driver": "Robert Manzon",
+              "1": "",
               "2": "Ret",
-              "3": null,
-              "4": null,
+              "3": "",
+              "4": "",
               "5": "Ret",
               "6": "Ret",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Jacques Pollet",
-                "url": "https://en.wikipedia.org/wiki/Jacques_Pollet"
-              },
-              "1": null,
+              "Driver": "Jacques Pollet",
+              "1": "",
               "2": "7",
-              "3": null,
-              "4": null,
+              "3": "",
+              "4": "",
               "5": "10",
-              "6": null,
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Hermano da Silva Ramos",
-                "url": "https://en.wikipedia.org/wiki/Hermano_da_Silva_Ramos"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Driver": "Hermano da Silva Ramos",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "8",
               "6": "Ret",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Mike Sparken",
-                "url": "https://en.wikipedia.org/wiki/Mike_Sparken"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
+              "Driver": "Mike Sparken",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
               "6": "7",
-              "7": null,
-              "8": null,
-              "9": null
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1955",
-                "url": "https://en.wikipedia.org/wiki/1955_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Jean Lucas",
-                "url": "https://en.wikipedia.org/wiki/Jean_Lucas_(racing_driver)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver": "Jean Lucas",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 32",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T32"
-              },
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
               "Engine": "Gordini straight-8",
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1956_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1956_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1956_Indianapolis_500"
-              },
-              "4": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1956_Belgian_Grand_Prix"
-              },
-              "5": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1956_French_Grand_Prix"
-              },
-              "6": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1956_British_Grand_Prix"
-              },
-              "7": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1956_German_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
-              },
-              "9": null
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "ITA",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 32",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T32"
-              },
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
               "Engine": "Gordini straight-8",
-              "Driver": {
-                "text": "André Pilette",
-                "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Pilette"
-              },
-              "1": null,
+              "Driver": "André Pilette",
+              "1": "",
               "2": "6†",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "DNS",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 32",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T32"
-              },
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
               "Engine": "Gordini straight-8",
-              "Driver": {
-                "text": "Élie Bayol",
-                "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
-              },
-              "1": null,
+              "Driver": "Élie Bayol",
+              "1": "",
               "2": "6†",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 32",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T32"
-              },
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
               "Engine": "Gordini straight-8",
-              "Driver": {
-                "text": "Robert Manzon",
-                "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Driver": "Robert Manzon",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "9",
               "6": "9",
               "7": "Ret",
               "8": "Ret",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 32",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T32"
-              },
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
               "Engine": "Gordini straight-8",
-              "Driver": {
-                "text": "Hermano da Silva Ramos",
-                "url": "https://en.wikipedia.org/wiki/Hermano_da_Silva_Ramos"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Driver": "Hermano da Silva Ramos",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "8",
               "6": "Ret",
-              "7": null,
+              "7": "",
               "8": "Ret",
-              "9": null
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 32",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T32"
-              },
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
               "Engine": "Gordini straight-8",
-              "Driver": {
-                "text": "André Milhoux",
-                "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Milhoux"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Driver": "André Milhoux",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1956",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Hermano da Silva Ramos",
-                "url": "https://en.wikipedia.org/wiki/Hermano_da_Silva_Ramos"
-              },
-              "1": null,
+              "Driver": "Hermano da Silva Ramos",
+              "1": "",
               "2": "5",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1956",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "Robert Manzon",
-                "url": "https://en.wikipedia.org/wiki/Robert_Manzon"
-              },
-              "1": null,
+              "Driver": "Robert Manzon",
+              "1": "",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1956",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "André Pilette",
-                "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Pilette"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Driver": "André Pilette",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "11",
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
             },
             {
-              "Year": {
-                "text": "1956",
-                "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "Gordini Type 16",
-                "url": "https://en.wikipedia.org/wiki/Gordini_T16"
-              },
+              "Year": "1956",
+              "Chassis": "Gordini Type 16",
               "Engine": "Gordini straight-6",
-              "Driver": {
-                "text": "André Simon",
-                "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Simon_(racing_driver)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
+              "Driver": "André Simon",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
               "8": "9",
-              "9": null
+              "9": ""
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

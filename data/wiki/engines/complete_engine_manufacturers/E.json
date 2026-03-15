@@ -191,84 +191,43 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Year": "1953",
               "Chassis": "EMW R2",
               "Engine": "EMW L6",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": null,
-              "1": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1953_Argentine_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
-              },
-              "3": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1953_Dutch_Grand_Prix"
-              },
-              "4": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix"
-              },
-              "5": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1953_French_Grand_Prix"
-              },
-              "6": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1953_British_Grand_Prix"
-              },
-              "7": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
-              },
-              "8": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1953_Swiss_Grand_Prix"
-              },
-              "9": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1953_Italian_Grand_Prix"
-              },
+              "Tyres": "D",
+              "Driver": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "NED",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "SUI",
+              "9": "ITA",
               "Points": "n/a *",
               "WCC": "n/a *"
             },
             {
-              "Year": {
-                "text": "1953",
-                "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
-              },
+              "Year": "1953",
               "Chassis": "EMW R2",
               "Engine": "EMW L6",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Edgar Barth",
-                "url": "https://en.wikipedia.org/wiki/Edgar_Barth"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Tyres": "D",
+              "Driver": "Edgar Barth",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null,
+              "8": "",
+              "9": "",
               "Points": "n/a *",
               "WCC": "n/a *"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -326,339 +285,172 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1950",
-                "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-              },
-              "Chassis": null,
-              "Engine": null,
-              "Tyres": null,
-              "Driver": null,
-              "1": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1950_British_Grand_Prix"
-              },
-              "2": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1950_Monaco_Grand_Prix"
-              },
-              "3": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1950_Indianapolis_500"
-              },
-              "4": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1950_Swiss_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1950_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1950_French_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1950_Italian_Grand_Prix"
-              },
-              "8": null
+              "Year": "1950",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Driver": "",
+              "1": "GBR",
+              "2": "MON",
+              "3": "500",
+              "4": "SUI",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "ITA",
+              "8": ""
             },
             {
-              "Year": {
-                "text": "1950",
-                "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "ERA E-Type",
-                "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles#Postwar_history"
-              },
+              "Year": "1950",
+              "Chassis": "ERA E-Type",
               "Engine": "ERA 1.5 L6 s",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Leslie Johnson",
-                "url": "https://en.wikipedia.org/wiki/Leslie_Johnson_(racing_driver)"
-              },
+              "Tyres": "D",
+              "Driver": "Leslie Johnson",
               "1": "Ret",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": ""
             },
             {
-              "Year": {
-                "text": "1950",
-                "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "ERA E-Type",
-                "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles#Postwar_history"
-              },
+              "Year": "1950",
+              "Chassis": "ERA E-Type",
               "Engine": "ERA 1.5 L6 s",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Peter Walker",
-                "url": "https://en.wikipedia.org/wiki/Peter_Walker_(racing_driver)"
-              },
+              "Tyres": "D",
+              "Driver": "Peter Walker",
               "1": "Ret*",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": ""
             },
             {
-              "Year": {
-                "text": "1950",
-                "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "ERA E-Type",
-                "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles#Postwar_history"
-              },
+              "Year": "1950",
+              "Chassis": "ERA E-Type",
               "Engine": "ERA 1.5 L6 s",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Tony Rolt",
-                "url": "https://en.wikipedia.org/wiki/Tony_Rolt"
-              },
+              "Tyres": "D",
+              "Driver": "Tony Rolt",
               "1": "Ret*",
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": ""
             },
             {
-              "Year": {
-                "text": "1950",
-                "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-              },
+              "Year": "1950",
               "Chassis": "ERA B-Type ERA C-Type",
               "Engine": "ERA 1.5 L6 s",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Cuth Harrison",
-                "url": "https://en.wikipedia.org/wiki/Cuth_Harrison"
-              },
+              "Tyres": "D",
+              "Driver": "Cuth Harrison",
               "1": "7",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null
+              "8": ""
             },
             {
-              "Year": {
-                "text": "1950",
-                "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
-              },
+              "Year": "1950",
               "Chassis": "ERA C-Type ERA A-Type",
               "Engine": "ERA 1.5 L6 s",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Bob Gerard",
-                "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
-              },
+              "Tyres": "D",
+              "Driver": "Bob Gerard",
               "1": "6",
               "2": "6",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": ""
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Chassis": null,
-              "Engine": null,
-              "Tyres": null,
-              "Driver": null,
-              "1": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1951_Swiss_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1951_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1951_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1951_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1951_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
-              },
-              "7": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
-              },
-              "8": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1951_Spanish_Grand_Prix"
-              }
+              "Year": "1951",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "ESP"
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "ERA B-Type",
-                "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles#B-Type"
-              },
+              "Year": "1951",
+              "Chassis": "ERA B-Type",
               "Engine": "ERA 1.5 L6 s",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Bob Gerard",
-                "url": "https://en.wikipedia.org/wiki/Bob_Gerard"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "D",
+              "Driver": "Bob Gerard",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "11",
-              "6": null,
-              "7": null,
-              "8": null
+              "6": "",
+              "7": "",
+              "8": ""
             },
             {
-              "Year": {
-                "text": "1951",
-                "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "ERA B-Type",
-                "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles#B-Type"
-              },
+              "Year": "1951",
+              "Chassis": "ERA B-Type",
               "Engine": "ERA 1.5 L6 s",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Brian Shawe-Taylor",
-                "url": "https://en.wikipedia.org/wiki/Brian_Shawe-Taylor"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "D",
+              "Driver": "Brian Shawe-Taylor",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "8",
-              "6": null,
-              "7": null,
-              "8": null
+              "6": "",
+              "7": "",
+              "8": ""
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": null,
-              "Engine": null,
-              "Tyres": null,
-              "Driver": null,
-              "1": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1952_Swiss_Grand_Prix"
-              },
-              "2": {
-                "text": "500",
-                "url": "https://en.wikipedia.org/wiki/1952_Indianapolis_500"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1952_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1952_French_Grand_Prix"
-              },
-              "5": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1952_British_Grand_Prix"
-              },
-              "6": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1952_German_Grand_Prix"
-              },
-              "7": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1952_Dutch_Grand_Prix"
-              },
-              "8": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1952_Italian_Grand_Prix"
-              }
+              "Year": "1952",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA"
             },
             {
-              "Year": {
-                "text": "1952",
-                "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
-              },
-              "Chassis": {
-                "text": "ERA G-Type",
-                "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles#G-Type"
-              },
+              "Year": "1952",
+              "Chassis": "ERA G-Type",
               "Engine": "Bristol BS1 2.0 L6",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "Driver": {
-                "text": "Stirling Moss",
-                "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "D",
+              "Driver": "Stirling Moss",
+              "1": "",
+              "2": "",
               "3": "Ret",
-              "4": null,
+              "4": "",
               "5": "Ret",
-              "6": null,
+              "6": "",
               "7": "Ret",
-              "8": null
+              "8": ""
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -798,117 +590,39 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "2001",
-                "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-              },
-              "Team": {
-                "text": "European Minardi F1",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi PS01",
-                "url": "https://en.wikipedia.org/wiki/Minardi_PS01"
-              },
+              "Year": "2001",
+              "Team": "European Minardi F1",
+              "Chassis": "Minardi PS01",
               "Engine": "European 3.0 V10",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/2001_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "MAL",
-                "url": "https://en.wikipedia.org/wiki/2001_Malaysian_Grand_Prix"
-              },
-              "3": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/2001_Brazilian_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/2001_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/2001_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/2001_Austrian_Grand_Prix"
-              },
-              "7": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/2001_Monaco_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/2001_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/2001_European_Grand_Prix"
-              },
-              "10": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/2001_French_Grand_Prix"
-              },
-              "11": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/2001_British_Grand_Prix"
-              },
-              "12": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/2001_German_Grand_Prix"
-              },
-              "13": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/2001_Hungarian_Grand_Prix"
-              },
-              "14": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/2001_Belgian_Grand_Prix"
-              },
-              "15": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/2001_Italian_Grand_Prix"
-              },
-              "16": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/2001_United_States_Grand_Prix"
-              },
-              "17": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/2001_Japanese_Grand_Prix"
-              },
+              "Tyres": "M",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "MAL",
+              "3": "BRA",
+              "4": "SMR",
+              "5": "ESP",
+              "6": "AUT",
+              "7": "MON",
+              "8": "CAN",
+              "9": "EUR",
+              "10": "FRA",
+              "11": "GBR",
+              "12": "GER",
+              "13": "HUN",
+              "14": "BEL",
+              "15": "ITA",
+              "16": "USA",
+              "17": "JPN",
               "Points": "0",
               "WCC": "11th"
             },
             {
-              "Year": {
-                "text": "2001",
-                "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-              },
-              "Team": {
-                "text": "European Minardi F1",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi PS01",
-                "url": "https://en.wikipedia.org/wiki/Minardi_PS01"
-              },
+              "Year": "2001",
+              "Team": "European Minardi F1",
+              "Chassis": "Minardi PS01",
               "Engine": "European 3.0 V10",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Tarso Marques",
-                "url": "https://en.wikipedia.org/wiki/Tarso_Marques"
-              },
+              "Tyres": "M",
+              "Drivers": "Tarso Marques",
               "1": "Ret",
               "2": "14",
               "3": "9",
@@ -923,48 +637,33 @@
               "12": "Ret",
               "13": "Ret",
               "14": "13",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "Points": "0",
               "WCC": "11th"
             },
             {
-              "Year": {
-                "text": "2001",
-                "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-              },
-              "Team": {
-                "text": "European Minardi F1",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi PS01",
-                "url": "https://en.wikipedia.org/wiki/Minardi_PS01"
-              },
+              "Year": "2001",
+              "Team": "European Minardi F1",
+              "Chassis": "Minardi PS01",
               "Engine": "European 3.0 V10",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Alex Yoong",
-                "url": "https://en.wikipedia.org/wiki/Alex_Yoong"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
+              "Tyres": "M",
+              "Drivers": "Alex Yoong",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
               "15": "Ret",
               "16": "Ret",
               "17": "16",
@@ -972,27 +671,12 @@
               "WCC": "11th"
             },
             {
-              "Year": {
-                "text": "2001",
-                "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
-              },
-              "Team": {
-                "text": "European Minardi F1",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi PS01",
-                "url": "https://en.wikipedia.org/wiki/Minardi_PS01"
-              },
+              "Year": "2001",
+              "Team": "European Minardi F1",
+              "Chassis": "Minardi PS01",
               "Engine": "European 3.0 V10",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
-              "Drivers": {
-                "text": "Fernando Alonso",
-                "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
-              },
+              "Tyres": "M",
+              "Drivers": "Fernando Alonso",
               "1": "12",
               "2": "13",
               "3": "Ret",
@@ -1013,7 +697,8 @@
               "Points": "0",
               "WCC": "11th"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

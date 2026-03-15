@@ -215,114 +215,42 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Candy Toleman Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
-              "Chassis": {
-                "text": "Toleman TG181",
-                "url": "https://en.wikipedia.org/wiki/Toleman_TG181"
-              },
+              "Year": "1981",
+              "Entrant": "Candy Toleman Motorsport",
+              "Chassis": "Toleman TG181",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "USW",
-                "url": "https://en.wikipedia.org/wiki/1981_United_States_Grand_Prix_West"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1981_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1981_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1981_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1981_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1981_German_Grand_Prix"
-              },
-              "11": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1981_Austrian_Grand_Prix"
-              },
-              "12": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1981_Dutch_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1981_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1981_Canadian_Grand_Prix"
-              },
-              "15": {
-                "text": "LVS",
-                "url": "https://en.wikipedia.org/wiki/1981_Las_Vegas_Grand_Prix"
-              },
-              "16": null,
-              "17": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "USW",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "SMR",
+              "5": "BEL",
+              "6": "MON",
+              "7": "ESP",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "AUT",
+              "12": "NED",
+              "13": "ITA",
+              "14": "CAN",
+              "15": "LVS",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Candy Toleman Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
-              "Chassis": {
-                "text": "Toleman TG181",
-                "url": "https://en.wikipedia.org/wiki/Toleman_TG181"
-              },
+              "Year": "1981",
+              "Entrant": "Candy Toleman Motorsport",
+              "Chassis": "Toleman TG181",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Brian Henton",
-                "url": "https://en.wikipedia.org/wiki/Brian_Henton"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Tyres": "P",
+              "Drivers": "Brian Henton",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "DNQ",
               "5": "DNQ",
               "6": "DNPQ",
@@ -335,36 +263,21 @@
               "13": "10",
               "14": "DNQ",
               "15": "DNQ",
-              "16": null,
-              "17": null,
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1981",
-                "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Candy Toleman Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
-              "Chassis": {
-                "text": "Toleman TG181",
-                "url": "https://en.wikipedia.org/wiki/Toleman_TG181"
-              },
+              "Year": "1981",
+              "Entrant": "Candy Toleman Motorsport",
+              "Chassis": "Toleman TG181",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Derek Warwick",
-                "url": "https://en.wikipedia.org/wiki/Derek_Warwick"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Tyres": "P",
+              "Drivers": "Derek Warwick",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "DNQ",
               "5": "DNQ",
               "6": "DNPQ",
@@ -377,108 +290,45 @@
               "13": "DNQ",
               "14": "DNQ",
               "15": "Ret",
-              "16": null,
-              "17": null,
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1982",
-                "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-              },
+              "Year": "1982",
               "Entrant": "Candy Toleman Motorsport Toleman Group Motorsport",
               "Chassis": "Toleman TG181B Toleman TG181C Toleman TG183",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1982_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1982_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "USW",
-                "url": "https://en.wikipedia.org/wiki/1982_United_States_Grand_Prix_West"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1982_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1982_Detroit_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1982_Dutch_Grand_Prix"
-              },
-              "10": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1982_British_Grand_Prix"
-              },
-              "11": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1982_French_Grand_Prix"
-              },
-              "12": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1982_German_Grand_Prix"
-              },
-              "13": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1982_Austrian_Grand_Prix"
-              },
-              "14": {
-                "text": "SUI",
-                "url": "https://en.wikipedia.org/wiki/1982_Swiss_Grand_Prix"
-              },
-              "15": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
-              },
-              "16": {
-                "text": "LVS",
-                "url": "https://en.wikipedia.org/wiki/1982_Las_Vegas_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "BRA",
+              "3": "USW",
+              "4": "SMR",
+              "5": "BEL",
+              "6": "MON",
+              "7": "DET",
+              "8": "CAN",
+              "9": "NED",
+              "10": "GBR",
+              "11": "FRA",
+              "12": "GER",
+              "13": "AUT",
+              "14": "SUI",
+              "15": "ITA",
+              "16": "LVS",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1982",
-                "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-              },
+              "Year": "1982",
               "Entrant": "Candy Toleman Motorsport Toleman Group Motorsport",
               "Chassis": "Toleman TG181B Toleman TG181C Toleman TG183",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Derek Warwick",
-                "url": "https://en.wikipedia.org/wiki/Derek_Warwick"
-              },
+              "Tyres": "P",
+              "Drivers": "Derek Warwick",
               "1": "Ret",
               "2": "DNQ",
               "3": "DNPQ",
@@ -486,7 +336,7 @@
               "5": "Ret",
               "6": "DNQ",
               "7": "WD",
-              "8": null,
+              "8": "",
               "9": "Ret",
               "10": "Ret",
               "11": "15",
@@ -495,26 +345,17 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1982",
-                "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
-              },
+              "Year": "1982",
               "Entrant": "Candy Toleman Motorsport Toleman Group Motorsport",
               "Chassis": "Toleman TG181B Toleman TG181C Toleman TG183",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Teo Fabi",
-                "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
-              },
+              "Tyres": "P",
+              "Drivers": "Teo Fabi",
               "1": "DNQ",
               "2": "DNQ",
               "3": "DNQ",
@@ -522,7 +363,7 @@
               "5": "Ret",
               "6": "DNPQ",
               "7": "WD",
-              "8": null,
+              "8": "",
               "9": "DNQ",
               "10": "Ret",
               "11": "Ret",
@@ -531,116 +372,44 @@
               "14": "Ret",
               "15": "Ret",
               "16": "DNQ",
-              "17": null,
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Candy Toleman Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
-              "Chassis": {
-                "text": "Toleman TG183B",
-                "url": "https://en.wikipedia.org/wiki/Toleman_TG183"
-              },
+              "Year": "1983",
+              "Entrant": "Candy Toleman Motorsport",
+              "Chassis": "Toleman TG183B",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1983_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "USW",
-                "url": "https://en.wikipedia.org/wiki/1983_United_States_Grand_Prix_West"
-              },
-              "3": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1983_French_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1983_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1983_Monaco_Grand_Prix"
-              },
-              "6": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1983_Belgian_Grand_Prix"
-              },
-              "7": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1983_Detroit_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1983_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1983_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1983_German_Grand_Prix"
-              },
-              "11": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1983_Austrian_Grand_Prix"
-              },
-              "12": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1983_Dutch_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1983_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1983_European_Grand_Prix"
-              },
-              "15": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1983_South_African_Grand_Prix"
-              },
-              "16": null,
-              "17": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "USW",
+              "3": "FRA",
+              "4": "SMR",
+              "5": "MON",
+              "6": "BEL",
+              "7": "DET",
+              "8": "CAN",
+              "9": "GBR",
+              "10": "GER",
+              "11": "AUT",
+              "12": "NED",
+              "13": "ITA",
+              "14": "EUR",
+              "15": "RSA",
+              "16": "",
+              "17": "",
               "WCC": "9th",
               "Points": "10"
             },
             {
-              "Year": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Candy Toleman Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
-              "Chassis": {
-                "text": "Toleman TG183B",
-                "url": "https://en.wikipedia.org/wiki/Toleman_TG183"
-              },
+              "Year": "1983",
+              "Entrant": "Candy Toleman Motorsport",
+              "Chassis": "Toleman TG183B",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Derek Warwick",
-                "url": "https://en.wikipedia.org/wiki/Derek_Warwick"
-              },
+              "Tyres": "P",
+              "Drivers": "Derek Warwick",
               "1": "8",
               "2": "Ret",
               "3": "Ret",
@@ -656,33 +425,18 @@
               "13": "6",
               "14": "5",
               "15": "4",
-              "16": null,
-              "17": null,
+              "16": "",
+              "17": "",
               "WCC": "9th",
               "Points": "10"
             },
             {
-              "Year": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Candy Toleman Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
-              "Chassis": {
-                "text": "Toleman TG183B",
-                "url": "https://en.wikipedia.org/wiki/Toleman_TG183"
-              },
+              "Year": "1983",
+              "Entrant": "Candy Toleman Motorsport",
+              "Chassis": "Toleman TG183B",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Bruno Giacomelli",
-                "url": "https://en.wikipedia.org/wiki/Bruno_Giacomelli"
-              },
+              "Tyres": "P",
+              "Drivers": "Bruno Giacomelli",
               "1": "Ret",
               "2": "Ret",
               "3": "13",
@@ -698,114 +452,45 @@
               "13": "7",
               "14": "6",
               "15": "Ret",
-              "16": null,
-              "17": null,
+              "16": "",
+              "17": "",
               "WCC": "9th",
               "Points": "10"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Skoal Bandit Formula 1 Team",
-                "url": "https://en.wikipedia.org/wiki/RAM_Racing"
-              },
+              "Year": "1984",
+              "Entrant": "Skoal Bandit Formula 1 Team",
               "Chassis": "RAM 01 RAM 02",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1984_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1984_South_African_Grand_Prix"
-              },
-              "3": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1984_Belgian_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1984_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1984_French_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1984_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1984_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1984_Detroit_Grand_Prix"
-              },
-              "9": {
-                "text": "DAL",
-                "url": "https://en.wikipedia.org/wiki/1984_Dallas_Grand_Prix"
-              },
-              "10": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1984_British_Grand_Prix"
-              },
-              "11": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1984_German_Grand_Prix"
-              },
-              "12": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1984_Austrian_Grand_Prix"
-              },
-              "13": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1984_Dutch_Grand_Prix"
-              },
-              "14": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1984_Italian_Grand_Prix"
-              },
-              "15": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1984_European_Grand_Prix"
-              },
-              "16": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1984_Portuguese_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "RSA",
+              "3": "BEL",
+              "4": "SMR",
+              "5": "FRA",
+              "6": "MON",
+              "7": "CAN",
+              "8": "DET",
+              "9": "DAL",
+              "10": "GBR",
+              "11": "GER",
+              "12": "AUT",
+              "13": "NED",
+              "14": "ITA",
+              "15": "EUR",
+              "16": "POR",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Skoal Bandit Formula 1 Team",
-                "url": "https://en.wikipedia.org/wiki/RAM_Racing"
-              },
+              "Year": "1984",
+              "Entrant": "Skoal Bandit Formula 1 Team",
               "Chassis": "RAM 01 RAM 02",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Philippe Alliot",
-                "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
-              },
+              "Tyres": "P",
+              "Drivers": "Philippe Alliot",
               "1": "Ret",
               "2": "Ret",
               "3": "DNQ",
@@ -822,36 +507,24 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Skoal Bandit Formula 1 Team",
-                "url": "https://en.wikipedia.org/wiki/RAM_Racing"
-              },
+              "Year": "1984",
+              "Entrant": "Skoal Bandit Formula 1 Team",
               "Chassis": "RAM 01 RAM 02",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Jonathan Palmer",
-                "url": "https://en.wikipedia.org/wiki/Jonathan_Palmer"
-              },
+              "Tyres": "P",
+              "Drivers": "Jonathan Palmer",
               "1": "8",
               "2": "Ret",
               "3": "10",
               "4": "9",
               "5": "13",
               "6": "DNQ",
-              "7": null,
+              "7": "",
               "8": "Ret",
               "9": "Ret",
               "10": "Ret",
@@ -861,65 +534,44 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Skoal Bandit Formula 1 Team",
-                "url": "https://en.wikipedia.org/wiki/RAM_Racing"
-              },
+              "Year": "1984",
+              "Entrant": "Skoal Bandit Formula 1 Team",
               "Chassis": "RAM 01 RAM 02",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Mike Thackwell",
-                "url": "https://en.wikipedia.org/wiki/Mike_Thackwell"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Tyres": "P",
+              "Drivers": "Mike Thackwell",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "Ret",
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Toleman Group Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
+              "Year": "1984",
+              "Entrant": "Toleman Group Motorsport",
               "Chassis": "Toleman TG183B Toleman TG184",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
               "Tyres": "P M",
-              "Drivers": {
-                "text": "Ayrton Senna",
-                "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
-              },
+              "Drivers": "Ayrton Senna",
               "1": "Ret",
               "2": "6",
               "3": "6",
@@ -933,29 +585,20 @@
               "11": "Ret",
               "12": "Ret",
               "13": "Ret",
-              "14": null,
+              "14": "",
               "15": "Ret",
               "16": "3",
-              "17": null,
+              "17": "",
               "WCC": "7th",
               "Points": "16"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Toleman Group Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
+              "Year": "1984",
+              "Entrant": "Toleman Group Motorsport",
               "Chassis": "Toleman TG183B Toleman TG184",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
               "Tyres": "P M",
-              "Drivers": {
-                "text": "Johnny Cecotto",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Cecotto"
-              },
+              "Drivers": "Johnny Cecotto",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -966,281 +609,158 @@
               "8": "Ret",
               "9": "Ret",
               "10": "DNQ",
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "7th",
               "Points": "16"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Toleman Group Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
+              "Year": "1984",
+              "Entrant": "Toleman Group Motorsport",
               "Chassis": "Toleman TG183B Toleman TG184",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
               "Tyres": "P M",
-              "Drivers": {
-                "text": "Stefan Johansson",
-                "url": "https://en.wikipedia.org/wiki/Stefan_Johansson"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
+              "Drivers": "Stefan Johansson",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
               "14": "4",
               "15": "Ret",
               "16": "11",
-              "17": null,
+              "17": "",
               "WCC": "7th",
               "Points": "16"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Toleman Group Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
+              "Year": "1984",
+              "Entrant": "Toleman Group Motorsport",
               "Chassis": "Toleman TG183B Toleman TG184",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
               "Tyres": "P M",
-              "Drivers": {
-                "text": "Pierluigi Martini",
-                "url": "https://en.wikipedia.org/wiki/Pierluigi_Martini"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
+              "Drivers": "Pierluigi Martini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
               "14": "DNQ",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "7th",
               "Points": "16"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Spirit Racing",
-                "url": "https://en.wikipedia.org/wiki/Spirit_(racing_team)"
-              },
-              "Chassis": {
-                "text": "Spirit 101",
-                "url": "https://en.wikipedia.org/wiki/Spirit_101"
-              },
+              "Year": "1984",
+              "Entrant": "Spirit Racing",
+              "Chassis": "Spirit 101",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Mauro Baldi",
-                "url": "https://en.wikipedia.org/wiki/Mauro_Baldi"
-              },
+              "Tyres": "P",
+              "Drivers": "Mauro Baldi",
               "1": "Ret",
               "2": "8",
               "3": "Ret",
               "4": "8",
               "5": "Ret",
               "6": "DNQ",
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
               "15": "8",
               "16": "15",
-              "17": null,
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1984",
-                "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Spirit Racing",
-                "url": "https://en.wikipedia.org/wiki/Spirit_(racing_team)"
-              },
-              "Chassis": {
-                "text": "Spirit 101",
-                "url": "https://en.wikipedia.org/wiki/Spirit_101"
-              },
+              "Year": "1984",
+              "Entrant": "Spirit Racing",
+              "Chassis": "Spirit 101",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Huub Rothengatter",
-                "url": "https://en.wikipedia.org/wiki/Huub_Rothengatter"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
+              "Tyres": "P",
+              "Drivers": "Huub Rothengatter",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
               "7": "NC",
-              "8": null,
+              "8": "",
               "9": "Ret",
               "10": "NC",
               "11": "9",
               "12": "NC",
               "13": "Ret",
               "14": "8",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Skoal Bandit Formula 1 Team",
-                "url": "https://en.wikipedia.org/wiki/RAM_Racing"
-              },
-              "Chassis": {
-                "text": "RAM 03",
-                "url": "https://en.wikipedia.org/wiki/RAM_03"
-              },
+              "Year": "1985",
+              "Entrant": "Skoal Bandit Formula 1 Team",
+              "Chassis": "RAM 03",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1985_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1985_Portuguese_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1985_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1985_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1985_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1985_Detroit_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1985_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1985_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1985_German_Grand_Prix"
-              },
-              "10": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1985_Austrian_Grand_Prix"
-              },
-              "11": {
-                "text": "NED",
-                "url": "https://en.wikipedia.org/wiki/1985_Dutch_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1985_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1985_Belgian_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1985_European_Grand_Prix"
-              },
-              "15": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1985_South_African_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1985_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "POR",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "DET",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "AUT",
+              "11": "NED",
+              "12": "ITA",
+              "13": "BEL",
+              "14": "EUR",
+              "15": "RSA",
+              "16": "AUS",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Skoal Bandit Formula 1 Team",
-                "url": "https://en.wikipedia.org/wiki/RAM_Racing"
-              },
-              "Chassis": {
-                "text": "RAM 03",
-                "url": "https://en.wikipedia.org/wiki/RAM_03"
-              },
+              "Year": "1985",
+              "Entrant": "Skoal Bandit Formula 1 Team",
+              "Chassis": "RAM 03",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Manfred Winkelhock",
-                "url": "https://en.wikipedia.org/wiki/Manfred_Winkelhock"
-              },
+              "Tyres": "P",
+              "Drivers": "Manfred Winkelhock",
               "1": "13",
               "2": "Ret",
               "3": "Ret",
@@ -1250,39 +770,24 @@
               "7": "12",
               "8": "Ret",
               "9": "Ret",
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Skoal Bandit Formula 1 Team",
-                "url": "https://en.wikipedia.org/wiki/RAM_Racing"
-              },
-              "Chassis": {
-                "text": "RAM 03",
-                "url": "https://en.wikipedia.org/wiki/RAM_03"
-              },
+              "Year": "1985",
+              "Entrant": "Skoal Bandit Formula 1 Team",
+              "Chassis": "RAM 03",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Philippe Alliot",
-                "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
-              },
+              "Tyres": "P",
+              "Drivers": "Philippe Alliot",
               "1": "9",
               "2": "Ret",
               "3": "Ret",
@@ -1297,121 +802,76 @@
               "12": "Ret",
               "13": "Ret",
               "14": "Ret",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Skoal Bandit Formula 1 Team",
-                "url": "https://en.wikipedia.org/wiki/RAM_Racing"
-              },
-              "Chassis": {
-                "text": "RAM 03",
-                "url": "https://en.wikipedia.org/wiki/RAM_03"
-              },
+              "Year": "1985",
+              "Entrant": "Skoal Bandit Formula 1 Team",
+              "Chassis": "RAM 03",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Kenny Acheson",
-                "url": "https://en.wikipedia.org/wiki/Kenny_Acheson"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
+              "Tyres": "P",
+              "Drivers": "Kenny Acheson",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
               "10": "Ret",
               "11": "DNQ",
               "12": "Ret",
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Toleman Group Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
-              "Chassis": {
-                "text": "Toleman TG185",
-                "url": "https://en.wikipedia.org/wiki/Toleman_TG185"
-              },
+              "Year": "1985",
+              "Entrant": "Toleman Group Motorsport",
+              "Chassis": "Toleman TG185",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Stefan Johansson",
-                "url": "https://en.wikipedia.org/wiki/Stefan_Johansson"
-              },
+              "Tyres": "P",
+              "Drivers": "Stefan Johansson",
               "1": "WD",
               "2": "WD",
               "3": "WD",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Toleman Group Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
-              "Chassis": {
-                "text": "Toleman TG185",
-                "url": "https://en.wikipedia.org/wiki/Toleman_TG185"
-              },
+              "Year": "1985",
+              "Entrant": "Toleman Group Motorsport",
+              "Chassis": "Toleman TG185",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Teo Fabi",
-                "url": "https://en.wikipedia.org/wiki/Teo_Fabi"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Tyres": "P",
+              "Drivers": "Teo Fabi",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "Ret",
               "5": "Ret",
               "6": "Ret",
@@ -1425,83 +885,53 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Toleman Group Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
-              "Chassis": {
-                "text": "Toleman TG185",
-                "url": "https://en.wikipedia.org/wiki/Toleman_TG185"
-              },
+              "Year": "1985",
+              "Entrant": "Toleman Group Motorsport",
+              "Chassis": "Toleman TG185",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "John Watson",
-                "url": "https://en.wikipedia.org/wiki/John_Watson_(racing_driver)"
-              },
+              "Tyres": "P",
+              "Drivers": "John Watson",
               "1": "WD",
               "2": "WD",
               "3": "WD",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Toleman Group Motorsport",
-                "url": "https://en.wikipedia.org/wiki/Toleman"
-              },
-              "Chassis": {
-                "text": "Toleman TG185",
-                "url": "https://en.wikipedia.org/wiki/Toleman_TG185"
-              },
+              "Year": "1985",
+              "Entrant": "Toleman Group Motorsport",
+              "Chassis": "Toleman TG185",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Piercarlo Ghinzani",
-                "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
+              "Tyres": "P",
+              "Drivers": "Piercarlo Ghinzani",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
               "10": "DNS",
               "11": "Ret",
               "12": "DNS",
@@ -1509,374 +939,179 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Spirit Enterprises Ltd",
-                "url": "https://en.wikipedia.org/wiki/Spirit_(racing_team)"
-              },
-              "Chassis": {
-                "text": "Spirit 101D",
-                "url": "https://en.wikipedia.org/wiki/Spirit_101"
-              },
+              "Year": "1985",
+              "Entrant": "Spirit Enterprises Ltd",
+              "Chassis": "Spirit 101D",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Mauro Baldi",
-                "url": "https://en.wikipedia.org/wiki/Mauro_Baldi"
-              },
+              "Tyres": "P",
+              "Drivers": "Mauro Baldi",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
               "4": "WD",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1985",
-                "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Haas (USA) Ltd",
-                "url": "https://en.wikipedia.org/wiki/Haas_Lola"
-              },
-              "Chassis": {
-                "text": "Lola THL1",
-                "url": "https://en.wikipedia.org/wiki/Lola_THL1"
-              },
+              "Year": "1985",
+              "Entrant": "Team Haas (USA) Ltd",
+              "Chassis": "Lola THL1",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Alan Jones",
-                "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "Tyres": "G",
+              "Drivers": "Alan Jones",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "12": "Ret",
-              "13": null,
+              "13": "",
               "14": "Ret",
               "15": "DNS",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Haas (USA) Ltd",
-                "url": "https://en.wikipedia.org/wiki/Haas_Lola"
-              },
-              "Chassis": {
-                "text": "Lola THL1",
-                "url": "https://en.wikipedia.org/wiki/Lola_THL1"
-              },
+              "Year": "1986",
+              "Entrant": "Team Haas (USA) Ltd",
+              "Chassis": "Lola THL1",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1986_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1986_Spanish_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1986_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1986_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1986_Belgian_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1986_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1986_Detroit_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1986_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1986_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1986_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1986_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1986_Austrian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1986_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1986_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1986_Mexican_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1986_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "ESP",
+              "3": "SMR",
+              "4": "MON",
+              "5": "BEL",
+              "6": "CAN",
+              "7": "DET",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "AUT",
+              "13": "ITA",
+              "14": "POR",
+              "15": "MEX",
+              "16": "AUS",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Haas (USA) Ltd",
-                "url": "https://en.wikipedia.org/wiki/Haas_Lola"
-              },
-              "Chassis": {
-                "text": "Lola THL1",
-                "url": "https://en.wikipedia.org/wiki/Lola_THL1"
-              },
+              "Year": "1986",
+              "Entrant": "Team Haas (USA) Ltd",
+              "Chassis": "Lola THL1",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Alan Jones",
-                "url": "https://en.wikipedia.org/wiki/Alan_Jones_(racing_driver)"
-              },
+              "Tyres": "G",
+              "Drivers": "Alan Jones",
               "1": "Ret",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1986",
-                "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Haas (USA) Ltd",
-                "url": "https://en.wikipedia.org/wiki/Haas_Lola"
-              },
-              "Chassis": {
-                "text": "Lola THL1",
-                "url": "https://en.wikipedia.org/wiki/Lola_THL1"
-              },
+              "Year": "1986",
+              "Entrant": "Team Haas (USA) Ltd",
+              "Chassis": "Lola THL1",
               "Engine": "Hart 415T 1.5 S4 ( t/c )",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Patrick Tambay",
-                "url": "https://en.wikipedia.org/wiki/Patrick_Tambay"
-              },
+              "Tyres": "G",
+              "Drivers": "Patrick Tambay",
               "1": "Ret",
               "2": "8",
               "3": "Ret",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 193",
-                "url": "https://en.wikipedia.org/wiki/Jordan_193"
-              },
+              "Year": "1993",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 193",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1993_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1993_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1993_European_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1993_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1993_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1993_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1993_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1993_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1993_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1993_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1993_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1993_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1993_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1993_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1993_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1993_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "BRA",
+              "3": "EUR",
+              "4": "SMR",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "WCC": "11th",
               "Points": "3"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 193",
-                "url": "https://en.wikipedia.org/wiki/Jordan_193"
-              },
+              "Year": "1993",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 193",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Rubens Barrichello",
-                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-              },
+              "Tyres": "G",
+              "Drivers": "Rubens Barrichello",
               "1": "Ret",
               "2": "Ret",
               "3": "10",
@@ -1893,76 +1128,46 @@
               "14": "13",
               "15": "5",
               "16": "11",
-              "17": null,
+              "17": "",
               "WCC": "11th",
               "Points": "3"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 193",
-                "url": "https://en.wikipedia.org/wiki/Jordan_193"
-              },
+              "Year": "1993",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 193",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ivan Capelli",
-                "url": "https://en.wikipedia.org/wiki/Ivan_Capelli"
-              },
+              "Tyres": "G",
+              "Drivers": "Ivan Capelli",
               "1": "Ret",
               "2": "DNQ",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "11th",
               "Points": "3"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 193",
-                "url": "https://en.wikipedia.org/wiki/Jordan_193"
-              },
+              "Year": "1993",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 193",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Thierry Boutsen",
-                "url": "https://en.wikipedia.org/wiki/Thierry_Boutsen"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "G",
+              "Drivers": "Thierry Boutsen",
+              "1": "",
+              "2": "",
               "3": "Ret",
               "4": "Ret",
               "5": "11",
@@ -1973,249 +1178,129 @@
               "10": "13",
               "11": "9",
               "12": "Ret",
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "11th",
               "Points": "3"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 193",
-                "url": "https://en.wikipedia.org/wiki/Jordan_193"
-              },
+              "Year": "1993",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 193",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Marco Apicella",
-                "url": "https://en.wikipedia.org/wiki/Marco_Apicella"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "Tyres": "G",
+              "Drivers": "Marco Apicella",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "13": "Ret",
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "11th",
               "Points": "3"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 193",
-                "url": "https://en.wikipedia.org/wiki/Jordan_193"
-              },
+              "Year": "1993",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 193",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Emanuele Naspetti",
-                "url": "https://en.wikipedia.org/wiki/Emanuele_Naspetti"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
+              "Tyres": "G",
+              "Drivers": "Emanuele Naspetti",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
               "14": "Ret",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "11th",
               "Points": "3"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 193",
-                "url": "https://en.wikipedia.org/wiki/Jordan_193"
-              },
+              "Year": "1993",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 193",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Eddie Irvine",
-                "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
+              "Tyres": "G",
+              "Drivers": "Eddie Irvine",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
               "15": "6",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "11th",
               "Points": "3"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 194",
-                "url": "https://en.wikipedia.org/wiki/Jordan_194"
-              },
+              "Year": "1994",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 194",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1994_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "PAC",
-                "url": "https://en.wikipedia.org/wiki/1994_Pacific_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1994_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1994_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1994_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1994_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1994_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1994_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1994_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1994_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1994_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1994_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1994_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1994_European_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1994_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1994_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "PAC",
+              "3": "SMR",
+              "4": "MON",
+              "5": "ESP",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "EUR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "WCC": "5th",
               "Points": "28"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 194",
-                "url": "https://en.wikipedia.org/wiki/Jordan_194"
-              },
+              "Year": "1994",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 194",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Rubens Barrichello",
-                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-              },
+              "Tyres": "G",
+              "Drivers": "Rubens Barrichello",
               "1": "4",
               "2": "3",
               "3": "DNQ",
@@ -2232,32 +1317,17 @@
               "14": "12",
               "15": "Ret",
               "16": "4",
-              "17": null,
+              "17": "",
               "WCC": "5th",
               "Points": "28"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 194",
-                "url": "https://en.wikipedia.org/wiki/Jordan_194"
-              },
+              "Year": "1994",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 194",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Eddie Irvine",
-                "url": "https://en.wikipedia.org/wiki/Eddie_Irvine"
-              },
+              "Tyres": "G",
+              "Drivers": "Eddie Irvine",
               "1": "Ret",
               "2": "EX",
               "3": "EX",
@@ -2274,206 +1344,98 @@
               "14": "4",
               "15": "5",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "5th",
               "Points": "28"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 194",
-                "url": "https://en.wikipedia.org/wiki/Jordan_194"
-              },
+              "Year": "1994",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 194",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Aguri Suzuki",
-                "url": "https://en.wikipedia.org/wiki/Aguri_Suzuki"
-              },
-              "1": null,
+              "Tyres": "G",
+              "Drivers": "Aguri Suzuki",
+              "1": "",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "5th",
               "Points": "28"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Sasol Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
-              "Chassis": {
-                "text": "Jordan 194",
-                "url": "https://en.wikipedia.org/wiki/Jordan_194"
-              },
+              "Year": "1994",
+              "Entrant": "Sasol Jordan",
+              "Chassis": "Jordan 194",
               "Engine": "Hart 1035 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Andrea de Cesaris",
-                "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "G",
+              "Drivers": "Andrea de Cesaris",
+              "1": "",
+              "2": "",
               "3": "Ret",
               "4": "4",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "5th",
               "Points": "28"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Footwork Hart",
-                "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
-              },
-              "Chassis": {
-                "text": "Footwork FA16",
-                "url": "https://en.wikipedia.org/wiki/Footwork_FA16"
-              },
+              "Year": "1995",
+              "Entrant": "Footwork Hart",
+              "Chassis": "Footwork FA16",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1995_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1995_Argentine_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1995_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1995_Spanish_Grand_Prix"
-              },
-              "5": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1995_Monaco_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1995_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1995_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1995_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1995_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1995_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1995_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1995_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1995_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1995_European_Grand_Prix"
-              },
-              "15": {
-                "text": "PAC",
-                "url": "https://en.wikipedia.org/wiki/1995_Pacific_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1995_Japanese_Grand_Prix"
-              },
-              "17": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1995_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "ARG",
+              "3": "SMR",
+              "4": "ESP",
+              "5": "MON",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "EUR",
+              "15": "PAC",
+              "16": "JPN",
+              "17": "AUS",
               "WCC": "8th",
               "Points": "5"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Footwork Hart",
-                "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
-              },
-              "Chassis": {
-                "text": "Footwork FA16",
-                "url": "https://en.wikipedia.org/wiki/Footwork_FA16"
-              },
+              "Year": "1995",
+              "Entrant": "Footwork Hart",
+              "Chassis": "Footwork FA16",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Gianni Morbidelli",
-                "url": "https://en.wikipedia.org/wiki/Gianni_Morbidelli"
-              },
+              "Tyres": "G",
+              "Drivers": "Gianni Morbidelli",
               "1": "Ret",
               "2": "Ret",
               "3": "13",
@@ -2481,13 +1443,13 @@
               "5": "9",
               "6": "6",
               "7": "14",
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
               "15": "Ret",
               "16": "Ret",
               "17": "3",
@@ -2495,34 +1457,19 @@
               "Points": "5"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Footwork Hart",
-                "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
-              },
-              "Chassis": {
-                "text": "Footwork FA16",
-                "url": "https://en.wikipedia.org/wiki/Footwork_FA16"
-              },
+              "Year": "1995",
+              "Entrant": "Footwork Hart",
+              "Chassis": "Footwork FA16",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Massimiliano Papis",
-                "url": "https://en.wikipedia.org/wiki/Massimiliano_Papis"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
+              "Tyres": "G",
+              "Drivers": "Massimiliano Papis",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
               "8": "Ret",
               "9": "Ret",
               "10": "Ret",
@@ -2530,34 +1477,19 @@
               "12": "7",
               "13": "Ret",
               "14": "12",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "8th",
               "Points": "5"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Footwork Hart",
-                "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
-              },
-              "Chassis": {
-                "text": "Footwork FA16",
-                "url": "https://en.wikipedia.org/wiki/Footwork_FA16"
-              },
+              "Year": "1995",
+              "Entrant": "Footwork Hart",
+              "Chassis": "Footwork FA16",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Taki Inoue",
-                "url": "https://en.wikipedia.org/wiki/Taki_Inoue"
-              },
+              "Tyres": "G",
+              "Drivers": "Taki Inoue",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -2579,114 +1511,39 @@
               "Points": "5"
             },
             {
-              "Year": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Footwork Hart",
-                "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
-              },
-              "Chassis": {
-                "text": "Footwork FA17",
-                "url": "https://en.wikipedia.org/wiki/Footwork_FA17"
-              },
+              "Year": "1996",
+              "Entrant": "Footwork Hart",
+              "Chassis": "Footwork FA17",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1996_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1996_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1996_Argentine_Grand_Prix"
-              },
-              "4": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1996_European_Grand_Prix"
-              },
-              "5": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1996_San_Marino_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1996_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1996_Spanish_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1996_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1996_French_Grand_Prix"
-              },
-              "10": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1996_British_Grand_Prix"
-              },
-              "11": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1996_German_Grand_Prix"
-              },
-              "12": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1996_Hungarian_Grand_Prix"
-              },
-              "13": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1996_Belgian_Grand_Prix"
-              },
-              "14": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1996_Italian_Grand_Prix"
-              },
-              "15": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1996_Portuguese_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1996_Japanese_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "EUR",
+              "5": "SMR",
+              "6": "MON",
+              "7": "ESP",
+              "8": "CAN",
+              "9": "FRA",
+              "10": "GBR",
+              "11": "GER",
+              "12": "HUN",
+              "13": "BEL",
+              "14": "ITA",
+              "15": "POR",
+              "16": "JPN",
+              "17": "",
               "WCC": "9th",
               "Points": "1"
             },
             {
-              "Year": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Footwork Hart",
-                "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
-              },
-              "Chassis": {
-                "text": "Footwork FA17",
-                "url": "https://en.wikipedia.org/wiki/Footwork_FA17"
-              },
+              "Year": "1996",
+              "Entrant": "Footwork Hart",
+              "Chassis": "Footwork FA17",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ricardo Rosset",
-                "url": "https://en.wikipedia.org/wiki/Ricardo_Rosset"
-              },
+              "Tyres": "G",
+              "Drivers": "Ricardo Rosset",
               "1": "9",
               "2": "Ret",
               "3": "Ret",
@@ -2703,32 +1560,17 @@
               "14": "Ret",
               "15": "14",
               "16": "13",
-              "17": null,
+              "17": "",
               "WCC": "9th",
               "Points": "1"
             },
             {
-              "Year": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Footwork Hart",
-                "url": "https://en.wikipedia.org/wiki/Footwork_Arrows"
-              },
-              "Chassis": {
-                "text": "Footwork FA17",
-                "url": "https://en.wikipedia.org/wiki/Footwork_FA17"
-              },
+              "Year": "1996",
+              "Entrant": "Footwork Hart",
+              "Chassis": "Footwork FA17",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Jos Verstappen",
-                "url": "https://en.wikipedia.org/wiki/Jos_Verstappen"
-              },
+              "Tyres": "G",
+              "Drivers": "Jos Verstappen",
               "1": "Ret",
               "2": "Ret",
               "3": "6",
@@ -2745,122 +1587,44 @@
               "14": "8",
               "15": "Ret",
               "16": "11",
-              "17": null,
+              "17": "",
               "WCC": "9th",
               "Points": "1"
             },
             {
-              "Year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Minardi Team",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi M197",
-                "url": "https://en.wikipedia.org/wiki/Minardi_M197"
-              },
+              "Year": "1997",
+              "Entrant": "Minardi Team",
+              "Chassis": "Minardi M197",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1997_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1997_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1997_Argentine_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1997_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1997_Monaco_Grand_Prix"
-              },
-              "6": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1997_Spanish_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1997_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1997_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1997_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1997_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1997_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1997_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1997_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1997_Austrian_Grand_Prix"
-              },
-              "15": {
-                "text": "LUX",
-                "url": "https://en.wikipedia.org/wiki/1997_Luxembourg_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1997_Japanese_Grand_Prix"
-              },
-              "17": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix"
-              },
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "SMR",
+              "5": "MON",
+              "6": "ESP",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "AUT",
+              "15": "LUX",
+              "16": "JPN",
+              "17": "EUR",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Minardi Team",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi M197",
-                "url": "https://en.wikipedia.org/wiki/Minardi_M197"
-              },
+              "Year": "1997",
+              "Entrant": "Minardi Team",
+              "Chassis": "Minardi M197",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Ukyo Katayama",
-                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-              },
+              "Tyres": "B",
+              "Drivers": "Ukyo Katayama",
               "1": "Ret",
               "2": "18",
               "3": "Ret",
@@ -2882,27 +1646,12 @@
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Minardi Team",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi M197",
-                "url": "https://en.wikipedia.org/wiki/Minardi_M197"
-              },
+              "Year": "1997",
+              "Entrant": "Minardi Team",
+              "Chassis": "Minardi M197",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Jarno Trulli",
-                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-              },
+              "Tyres": "B",
+              "Drivers": "Jarno Trulli",
               "1": "9",
               "2": "12",
               "3": "9",
@@ -2910,48 +1659,33 @@
               "5": "Ret",
               "6": "15",
               "7": "Ret",
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "WCC": "NC",
               "Points": "0"
             },
             {
-              "Year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Minardi Team",
-                "url": "https://en.wikipedia.org/wiki/Minardi"
-              },
-              "Chassis": {
-                "text": "Minardi M197",
-                "url": "https://en.wikipedia.org/wiki/Minardi_M197"
-              },
+              "Year": "1997",
+              "Entrant": "Minardi Team",
+              "Chassis": "Minardi M197",
               "Engine": "Hart 830 3.0 V8",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Tarso Marques",
-                "url": "https://en.wikipedia.org/wiki/Tarso_Marques"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
+              "Tyres": "B",
+              "Drivers": "Tarso Marques",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
               "8": "Ret",
               "9": "10",
               "10": "Ret",
@@ -2993,114 +1727,39 @@
               "Points": "Engines badged as Arrows"
             },
             {
-              "Year": {
-                "text": "1998",
-                "url": "https://en.wikipedia.org/wiki/1998_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Arrows",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A19",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A19"
-              },
+              "Year": "1998",
+              "Entrant": "Arrows",
+              "Chassis": "Arrows A19",
               "Engine": "Arrows T2-F1 (Hart 1030) 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1998_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1998_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1998_Argentine_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1998_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1998_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1998_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1998_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1998_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1998_British_Grand_Prix"
-              },
-              "10": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1998_Austrian_Grand_Prix"
-              },
-              "11": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1998_German_Grand_Prix"
-              },
-              "12": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1998_Hungarian_Grand_Prix"
-              },
-              "13": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1998_Belgian_Grand_Prix"
-              },
-              "14": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1998_Italian_Grand_Prix"
-              },
-              "15": {
-                "text": "LUX",
-                "url": "https://en.wikipedia.org/wiki/1998_Luxembourg_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1998_Japanese_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "SMR",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "AUT",
+              "11": "GER",
+              "12": "HUN",
+              "13": "BEL",
+              "14": "ITA",
+              "15": "LUX",
+              "16": "JPN",
+              "17": "",
               "WCC": "7th",
               "Points": "6"
             },
             {
-              "Year": {
-                "text": "1998",
-                "url": "https://en.wikipedia.org/wiki/1998_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Arrows",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A19",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A19"
-              },
+              "Year": "1998",
+              "Entrant": "Arrows",
+              "Chassis": "Arrows A19",
               "Engine": "Arrows T2-F1 (Hart 1030) 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Pedro Diniz",
-                "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
-              },
+              "Tyres": "B",
+              "Drivers": "Pedro Diniz",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -3117,32 +1776,17 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "7th",
               "Points": "6"
             },
             {
-              "Year": {
-                "text": "1998",
-                "url": "https://en.wikipedia.org/wiki/1998_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Arrows",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A19",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A19"
-              },
+              "Year": "1998",
+              "Entrant": "Arrows",
+              "Chassis": "Arrows A19",
               "Engine": "Arrows T2-F1 (Hart 1030) 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Mika Salo",
-                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-              },
+              "Tyres": "B",
+              "Drivers": "Mika Salo",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -3159,119 +1803,44 @@
               "14": "Ret",
               "15": "14",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "7th",
               "Points": "6"
             },
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Arrows",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A20",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A20"
-              },
+              "Year": "1999",
+              "Entrant": "Arrows",
+              "Chassis": "Arrows A20",
               "Engine": "Arrows T2-F1 (Hart 1030) 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1999_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1999_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1999_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1999_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1999_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1999_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1999_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1999_British_Grand_Prix"
-              },
-              "9": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1999_Austrian_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1999_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1999_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1999_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1999_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1999_European_Grand_Prix"
-              },
-              "15": {
-                "text": "MAL",
-                "url": "https://en.wikipedia.org/wiki/1999_Malaysian_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1999_Japanese_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "ESP",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "AUT",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "EUR",
+              "15": "MAL",
+              "16": "JPN",
+              "17": "",
               "WCC": "9th",
               "Points": "1"
             },
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Arrows",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A20",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A20"
-              },
+              "Year": "1999",
+              "Entrant": "Arrows",
+              "Chassis": "Arrows A20",
               "Engine": "Arrows T2-F1 (Hart 1030) 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Pedro de la Rosa",
-                "url": "https://en.wikipedia.org/wiki/Pedro_de_la_Rosa"
-              },
+              "Tyres": "B",
+              "Drivers": "Pedro de la Rosa",
               "1": "6",
               "2": "Ret",
               "3": "Ret",
@@ -3288,32 +1857,17 @@
               "14": "Ret",
               "15": "Ret",
               "16": "13",
-              "17": null,
+              "17": "",
               "WCC": "9th",
               "Points": "1"
             },
             {
-              "Year": {
-                "text": "1999",
-                "url": "https://en.wikipedia.org/wiki/1999_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Arrows",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A20",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A20"
-              },
+              "Year": "1999",
+              "Entrant": "Arrows",
+              "Chassis": "Arrows A20",
               "Engine": "Arrows T2-F1 (Hart 1030) 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Toranosuke Takagi",
-                "url": "https://en.wikipedia.org/wiki/Toranosuke_Takagi"
-              },
+              "Tyres": "B",
+              "Drivers": "Toranosuke Takagi",
               "1": "7",
               "2": "8",
               "3": "Ret",
@@ -3330,11 +1884,12 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "WCC": "9th",
               "Points": "1"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -3974,122 +2529,68 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1964",
-                "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
-              },
+              "Year": "1964",
               "Name": "Honda R & D Company",
-              "Car": {
-                "text": "RA271",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA271"
-              },
+              "Car": "RA271",
               "Engine": "RA271E 1.5 V12",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "No.": null,
-              "Drivers": {
-                "text": "Ronnie Bucknum",
-                "url": "https://en.wikipedia.org/wiki/Ronnie_Bucknum"
-              },
+              "Tyres": "D",
+              "No.": "",
+              "Drivers": "Ronnie Bucknum",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1965",
-                "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
-              },
+              "Year": "1965",
               "Name": "Honda R & D Company",
-              "Car": {
-                "text": "RA272",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA272"
-              },
+              "Car": "RA272",
               "Engine": "RA272E 1.5 V12",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "No.": null,
+              "Tyres": "G",
+              "No.": "",
               "Drivers": "Ronnie Bucknum Richie Ginther",
               "Points": "11",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1966",
-                "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-              },
+              "Year": "1966",
               "Name": "Honda R & D Company",
-              "Car": {
-                "text": "RA273",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA273"
-              },
+              "Car": "RA273",
               "Engine": "RA273E 3.0 V12",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "No.": null,
+              "Tyres": "G",
+              "No.": "",
               "Drivers": "Ronnie Bucknum Richie Ginther",
               "Points": "3",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1967",
-                "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-              },
+              "Year": "1967",
               "Name": "Honda R & D Company",
               "Car": "RA273 RA300",
               "Engine": "RA273E 3.0 V12",
-              "Tyres": {
-                "text": "F",
-                "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-              },
-              "No.": null,
-              "Drivers": {
-                "text": "John Surtees",
-                "url": "https://en.wikipedia.org/wiki/John_Surtees"
-              },
+              "Tyres": "F",
+              "No.": "",
+              "Drivers": "John Surtees",
               "Points": "20",
               "WCC": "4th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Name": "Honda R & D Company",
               "Car": "RA300 RA301 RA302",
               "Engine": "RA273E 3.0 V12 RA301E 3.0 V12 RA302E 3.0 V8",
               "Tyres": "F G",
-              "No.": null,
+              "No.": "",
               "Drivers": "David Hobbs Jo Schlesser John Surtees",
               "Points": "14",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Name": "Joakim Bonnier Racing Team",
-              "Car": {
-                "text": "RA301",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA301"
-              },
+              "Car": "RA301",
               "Engine": "RA301E 3.0 V12",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "No.": null,
-              "Drivers": {
-                "text": "Joakim Bonnier",
-                "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier"
-              },
+              "Tyres": "G",
+              "No.": "",
+              "Drivers": "Joakim Bonnier",
               "Points": "14",
               "WCC": "6th"
             },
@@ -4105,66 +2606,40 @@
               "WCC": "1969-2005 : Honda did not compete as a chassis constructor."
             },
             {
-              "Year": {
-                "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-              },
+              "Year": "2006",
               "Name": "Lucky Strike Honda Racing F1 Team",
-              "Car": {
-                "text": "RA106",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA106"
-              },
+              "Car": "RA106",
               "Engine": "RA806E 2.4 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
+              "Tyres": "M",
               "No.": "11. 12.",
               "Drivers": "Rubens Barrichello Jenson Button",
               "Points": "86",
               "WCC": "4th"
             },
             {
-              "Year": {
-                "text": "2007",
-                "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-              },
+              "Year": "2007",
               "Name": "Honda Racing F1 Team",
-              "Car": {
-                "text": "RA107",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA107"
-              },
+              "Car": "RA107",
               "Engine": "RA807E 2.4 V8",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
+              "Tyres": "B",
               "No.": "7. 8.",
               "Drivers": "Jenson Button Rubens Barrichello",
               "Points": "6",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "2008",
-                "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-              },
+              "Year": "2008",
               "Name": "Honda Racing F1 Team",
-              "Car": {
-                "text": "RA108",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA108"
-              },
+              "Car": "RA108",
               "Engine": "RA808E 2.4 V8",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
+              "Tyres": "B",
               "No.": "16. 17.",
               "Drivers": "Jenson Button Rubens Barrichello",
               "Points": "14",
               "WCC": "9th"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -4174,38 +2649,27 @@
           ],
           "rows": [
             {
-              "Driver": {
-                "text": "Nelson Piquet",
-                "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-              },
+              "Driver": "Nelson Piquet",
               "Season(s)": "1987",
               "Total": "1"
             },
             {
-              "Driver": {
-                "text": "Ayrton Senna",
-                "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
-              },
+              "Driver": "Ayrton Senna",
               "Season(s)": "1988, 1990-1991",
               "Total": "3"
             },
             {
-              "Driver": {
-                "text": "Alain Prost",
-                "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-              },
+              "Driver": "Alain Prost",
               "Season(s)": "1989",
               "Total": "1"
             },
             {
-              "Driver": {
-                "text": "Max Verstappen",
-                "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
-              },
+              "Driver": "Max Verstappen",
               "Season(s)": "2021",
               "Total": "1"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -4224,7 +2688,8 @@
               "Season(s)": "1988-1991",
               "Total": "4"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -4242,33 +2707,15 @@
               "Constructor": "Honda",
               "Season(s)": "1964-1968 , 2006-2008",
               "Total wins": "3",
-              "First win": {
-                "text": "1965 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1965_Mexican_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2006 Hungarian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2006_Hungarian_Grand_Prix"
-              },
+              "First win": "1965 Mexican Grand Prix",
+              "Last win": "2006 Hungarian Grand Prix",
               "Pole positions": "2",
-              "First pole": {
-                "text": "1968 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2006 Australian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2006_Australian_Grand_Prix"
-              }
+              "First pole": "1968 Italian Grand Prix",
+              "Last pole": "2006 Australian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Spirit",
-                "url": "https://en.wikipedia.org/wiki/Spirit_Racing"
-              },
-              "Season(s)": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              },
+              "Constructor": "Spirit",
+              "Season(s)": "1983",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -4277,89 +2724,38 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Williams",
-                "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-              },
+              "Constructor": "Williams",
               "Season(s)": "1983-1987",
               "Total wins": "23",
-              "First win": {
-                "text": "1984 Dallas Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1984_Dallas_Grand_Prix"
-              },
-              "Last win": {
-                "text": "1987 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-              },
+              "First win": "1984 Dallas Grand Prix",
+              "Last win": "1987 Mexican Grand Prix",
               "Pole positions": "19",
-              "First pole": {
-                "text": "1985 French Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1985_French_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "1987 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-              }
+              "First pole": "1985 French Grand Prix",
+              "Last pole": "1987 Mexican Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Lotus",
-                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-              },
+              "Constructor": "Lotus",
               "Season(s)": "1987-1988",
               "Total wins": "2",
-              "First win": {
-                "text": "1987 Monaco Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-              },
-              "Last win": {
-                "text": "1987 Detroit Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-              },
+              "First win": "1987 Monaco Grand Prix",
+              "Last win": "1987 Detroit Grand Prix",
               "Pole positions": "1",
-              "First pole": {
-                "text": "1987 San Marino Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "1987 San Marino Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-              }
+              "First pole": "1987 San Marino Grand Prix",
+              "Last pole": "1987 San Marino Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "McLaren",
-                "url": "https://en.wikipedia.org/wiki/McLaren"
-              },
+              "Constructor": "McLaren",
               "Season(s)": "1988-1992 , 2015-2017",
               "Total wins": "44",
-              "First win": {
-                "text": "1988 Brazilian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1988_Brazilian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "1992 Australian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1992_Australian_Grand_Prix"
-              },
+              "First win": "1988 Brazilian Grand Prix",
+              "Last win": "1992 Australian Grand Prix",
               "Pole positions": "53",
-              "First pole": {
-                "text": "1988 Brazilian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1988_Brazilian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "1992 Canadian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1992_Canadian_Grand_Prix"
-              }
+              "First pole": "1988 Brazilian Grand Prix",
+              "Last pole": "1992 Canadian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Tyrrell",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Season(s)": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
+              "Constructor": "Tyrrell",
+              "Season(s)": "1991",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -4368,29 +2764,17 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "BAR",
-                "url": "https://en.wikipedia.org/wiki/British_American_Racing"
-              },
+              "Constructor": "BAR",
               "Season(s)": "2000-2005",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
               "Pole positions": "2",
-              "First pole": {
-                "text": "2004 San Marino Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2004_San_Marino_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2005 Canadian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2005_Canadian_Grand_Prix"
-              }
+              "First pole": "2004 San Marino Grand Prix",
+              "Last pole": "2005 Canadian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
+              "Constructor": "Jordan",
               "Season(s)": "2001-2002",
               "Total wins": "0",
               "First win": "-",
@@ -4400,10 +2784,7 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Super Aguri",
-                "url": "https://en.wikipedia.org/wiki/Super_Aguri_F1"
-              },
+              "Constructor": "Super Aguri",
               "Season(s)": "2006-2008",
               "Total wins": "0",
               "First win": "-",
@@ -4413,10 +2794,7 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Toro Rosso",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-              },
+              "Constructor": "Toro Rosso",
               "Season(s)": "2018-2019",
               "Total wins": "0",
               "First win": "-",
@@ -4426,54 +2804,27 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Red Bull",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
+              "Constructor": "Red Bull",
               "Season(s)": "2019-2021",
               "Total wins": "16",
-              "First win": {
-                "text": "2019 Austrian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2021 Abu Dhabi Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-              },
+              "First win": "2019 Austrian Grand Prix",
+              "Last win": "2021 Abu Dhabi Grand Prix",
               "Pole positions": "13",
-              "First pole": {
-                "text": "2019 Hungarian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2021 Abu Dhabi Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-              }
+              "First pole": "2019 Hungarian Grand Prix",
+              "Last pole": "2021 Abu Dhabi Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "AlphaTauri",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
-              },
+              "Constructor": "AlphaTauri",
               "Season(s)": "2020-2021",
               "Total wins": "1",
-              "First win": {
-                "text": "2020 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2020 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-              },
+              "First win": "2020 Italian Grand Prix",
+              "Last win": "2020 Italian Grand Prix",
               "Pole positions": "0",
               "First pole": "-",
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Aston Martin",
-                "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-              },
+              "Constructor": "Aston Martin",
               "Season(s)": "2026-present",
               "Total wins": "0",
               "First win": "-",
@@ -4486,25 +2837,14 @@
               "Constructor": "Total",
               "Season(s)": "1964-2026",
               "Total wins": "89",
-              "First win": {
-                "text": "1965 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1965_Mexican_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2021 Abu Dhabi Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-              },
+              "First win": "1965 Mexican Grand Prix",
+              "Last win": "2021 Abu Dhabi Grand Prix",
               "Pole positions": "90",
-              "First pole": {
-                "text": "1968 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2021 Abu Dhabi Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-              }
+              "First pole": "1968 Italian Grand Prix",
+              "Last pole": "2021 Abu Dhabi Grand Prix"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -4514,7 +2854,8 @@
             {
               "Achievements": "Preceded by TAG"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }
@@ -5038,122 +3379,68 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1964",
-                "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
-              },
+              "Year": "1964",
               "Name": "Honda R & D Company",
-              "Car": {
-                "text": "RA271",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA271"
-              },
+              "Car": "RA271",
               "Engine": "RA271E 1.5 V12",
-              "Tyres": {
-                "text": "D",
-                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
-              },
-              "No.": null,
-              "Drivers": {
-                "text": "Ronnie Bucknum",
-                "url": "https://en.wikipedia.org/wiki/Ronnie_Bucknum"
-              },
+              "Tyres": "D",
+              "No.": "",
+              "Drivers": "Ronnie Bucknum",
               "Points": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1965",
-                "url": "https://en.wikipedia.org/wiki/1965_Formula_One_season"
-              },
+              "Year": "1965",
               "Name": "Honda R & D Company",
-              "Car": {
-                "text": "RA272",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA272"
-              },
+              "Car": "RA272",
               "Engine": "RA272E 1.5 V12",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "No.": null,
+              "Tyres": "G",
+              "No.": "",
               "Drivers": "Ronnie Bucknum Richie Ginther",
               "Points": "11",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1966",
-                "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
-              },
+              "Year": "1966",
               "Name": "Honda R & D Company",
-              "Car": {
-                "text": "RA273",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA273"
-              },
+              "Car": "RA273",
               "Engine": "RA273E 3.0 V12",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "No.": null,
+              "Tyres": "G",
+              "No.": "",
               "Drivers": "Ronnie Bucknum Richie Ginther",
               "Points": "3",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1967",
-                "url": "https://en.wikipedia.org/wiki/1967_Formula_One_season"
-              },
+              "Year": "1967",
               "Name": "Honda R & D Company",
               "Car": "RA273 RA300",
               "Engine": "RA273E 3.0 V12",
-              "Tyres": {
-                "text": "F",
-                "url": "https://en.wikipedia.org/wiki/Firestone_Tire_and_Rubber_Company"
-              },
-              "No.": null,
-              "Drivers": {
-                "text": "John Surtees",
-                "url": "https://en.wikipedia.org/wiki/John_Surtees"
-              },
+              "Tyres": "F",
+              "No.": "",
+              "Drivers": "John Surtees",
               "Points": "20",
               "WCC": "4th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Name": "Honda R & D Company",
               "Car": "RA300 RA301 RA302",
               "Engine": "RA273E 3.0 V12 RA301E 3.0 V12 RA302E 3.0 V8",
               "Tyres": "F G",
-              "No.": null,
+              "No.": "",
               "Drivers": "David Hobbs Jo Schlesser John Surtees",
               "Points": "14",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1968",
-                "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
-              },
+              "Year": "1968",
               "Name": "Joakim Bonnier Racing Team",
-              "Car": {
-                "text": "RA301",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA301"
-              },
+              "Car": "RA301",
               "Engine": "RA301E 3.0 V12",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "No.": null,
-              "Drivers": {
-                "text": "Joakim Bonnier",
-                "url": "https://en.wikipedia.org/wiki/Joakim_Bonnier"
-              },
+              "Tyres": "G",
+              "No.": "",
+              "Drivers": "Joakim Bonnier",
               "Points": "14",
               "WCC": "6th"
             },
@@ -5169,66 +3456,40 @@
               "WCC": "1969-2005 : Honda did not compete as a chassis constructor."
             },
             {
-              "Year": {
-                "text": "2006",
-                "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
-              },
+              "Year": "2006",
               "Name": "Lucky Strike Honda Racing F1 Team",
-              "Car": {
-                "text": "RA106",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA106"
-              },
+              "Car": "RA106",
               "Engine": "RA806E 2.4 V8",
-              "Tyres": {
-                "text": "M",
-                "url": "https://en.wikipedia.org/wiki/Michelin"
-              },
+              "Tyres": "M",
               "No.": "11. 12.",
               "Drivers": "Rubens Barrichello Jenson Button",
               "Points": "86",
               "WCC": "4th"
             },
             {
-              "Year": {
-                "text": "2007",
-                "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
-              },
+              "Year": "2007",
               "Name": "Honda Racing F1 Team",
-              "Car": {
-                "text": "RA107",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA107"
-              },
+              "Car": "RA107",
               "Engine": "RA807E 2.4 V8",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
+              "Tyres": "B",
               "No.": "7. 8.",
               "Drivers": "Jenson Button Rubens Barrichello",
               "Points": "6",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "2008",
-                "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
-              },
+              "Year": "2008",
               "Name": "Honda Racing F1 Team",
-              "Car": {
-                "text": "RA108",
-                "url": "https://en.wikipedia.org/wiki/Honda_RA108"
-              },
+              "Car": "RA108",
               "Engine": "RA808E 2.4 V8",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
+              "Tyres": "B",
               "No.": "16. 17.",
               "Drivers": "Jenson Button Rubens Barrichello",
               "Points": "14",
               "WCC": "9th"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -5238,38 +3499,27 @@
           ],
           "rows": [
             {
-              "Driver": {
-                "text": "Nelson Piquet",
-                "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-              },
+              "Driver": "Nelson Piquet",
               "Season(s)": "1987",
               "Total": "1"
             },
             {
-              "Driver": {
-                "text": "Ayrton Senna",
-                "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
-              },
+              "Driver": "Ayrton Senna",
               "Season(s)": "1988, 1990-1991",
               "Total": "3"
             },
             {
-              "Driver": {
-                "text": "Alain Prost",
-                "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-              },
+              "Driver": "Alain Prost",
               "Season(s)": "1989",
               "Total": "1"
             },
             {
-              "Driver": {
-                "text": "Max Verstappen",
-                "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
-              },
+              "Driver": "Max Verstappen",
               "Season(s)": "2021",
               "Total": "1"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -5288,7 +3538,8 @@
               "Season(s)": "1988-1991",
               "Total": "4"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -5306,33 +3557,15 @@
               "Constructor": "Honda",
               "Season(s)": "1964-1968 , 2006-2008",
               "Total wins": "3",
-              "First win": {
-                "text": "1965 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1965_Mexican_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2006 Hungarian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2006_Hungarian_Grand_Prix"
-              },
+              "First win": "1965 Mexican Grand Prix",
+              "Last win": "2006 Hungarian Grand Prix",
               "Pole positions": "2",
-              "First pole": {
-                "text": "1968 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2006 Australian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2006_Australian_Grand_Prix"
-              }
+              "First pole": "1968 Italian Grand Prix",
+              "Last pole": "2006 Australian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Spirit",
-                "url": "https://en.wikipedia.org/wiki/Spirit_Racing"
-              },
-              "Season(s)": {
-                "text": "1983",
-                "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
-              },
+              "Constructor": "Spirit",
+              "Season(s)": "1983",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -5341,89 +3574,38 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Williams",
-                "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
-              },
+              "Constructor": "Williams",
               "Season(s)": "1983-1987",
               "Total wins": "23",
-              "First win": {
-                "text": "1984 Dallas Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1984_Dallas_Grand_Prix"
-              },
-              "Last win": {
-                "text": "1987 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-              },
+              "First win": "1984 Dallas Grand Prix",
+              "Last win": "1987 Mexican Grand Prix",
               "Pole positions": "19",
-              "First pole": {
-                "text": "1985 French Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1985_French_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "1987 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
-              }
+              "First pole": "1985 French Grand Prix",
+              "Last pole": "1987 Mexican Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Lotus",
-                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-              },
+              "Constructor": "Lotus",
               "Season(s)": "1987-1988",
               "Total wins": "2",
-              "First win": {
-                "text": "1987 Monaco Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_Monaco_Grand_Prix"
-              },
-              "Last win": {
-                "text": "1987 Detroit Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_Detroit_Grand_Prix"
-              },
+              "First win": "1987 Monaco Grand Prix",
+              "Last win": "1987 Detroit Grand Prix",
               "Pole positions": "1",
-              "First pole": {
-                "text": "1987 San Marino Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "1987 San Marino Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1987_San_Marino_Grand_Prix"
-              }
+              "First pole": "1987 San Marino Grand Prix",
+              "Last pole": "1987 San Marino Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "McLaren",
-                "url": "https://en.wikipedia.org/wiki/McLaren"
-              },
+              "Constructor": "McLaren",
               "Season(s)": "1988-1992 , 2015-2017",
               "Total wins": "44",
-              "First win": {
-                "text": "1988 Brazilian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1988_Brazilian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "1992 Australian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1992_Australian_Grand_Prix"
-              },
+              "First win": "1988 Brazilian Grand Prix",
+              "Last win": "1992 Australian Grand Prix",
               "Pole positions": "53",
-              "First pole": {
-                "text": "1988 Brazilian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1988_Brazilian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "1992 Canadian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1992_Canadian_Grand_Prix"
-              }
+              "First pole": "1988 Brazilian Grand Prix",
+              "Last pole": "1992 Canadian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Tyrrell",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Season(s)": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
+              "Constructor": "Tyrrell",
+              "Season(s)": "1991",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
@@ -5432,29 +3614,17 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "BAR",
-                "url": "https://en.wikipedia.org/wiki/British_American_Racing"
-              },
+              "Constructor": "BAR",
               "Season(s)": "2000-2005",
               "Total wins": "0",
               "First win": "-",
               "Last win": "-",
               "Pole positions": "2",
-              "First pole": {
-                "text": "2004 San Marino Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2004_San_Marino_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2005 Canadian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2005_Canadian_Grand_Prix"
-              }
+              "First pole": "2004 San Marino Grand Prix",
+              "Last pole": "2005 Canadian Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "Jordan",
-                "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
-              },
+              "Constructor": "Jordan",
               "Season(s)": "2001-2002",
               "Total wins": "0",
               "First win": "-",
@@ -5464,10 +3634,7 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Super Aguri",
-                "url": "https://en.wikipedia.org/wiki/Super_Aguri_F1"
-              },
+              "Constructor": "Super Aguri",
               "Season(s)": "2006-2008",
               "Total wins": "0",
               "First win": "-",
@@ -5477,10 +3644,7 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Toro Rosso",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
-              },
+              "Constructor": "Toro Rosso",
               "Season(s)": "2018-2019",
               "Total wins": "0",
               "First win": "-",
@@ -5490,54 +3654,27 @@
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Red Bull",
-                "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
-              },
+              "Constructor": "Red Bull",
               "Season(s)": "2019-2021",
               "Total wins": "16",
-              "First win": {
-                "text": "2019 Austrian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2019_Austrian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2021 Abu Dhabi Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-              },
+              "First win": "2019 Austrian Grand Prix",
+              "Last win": "2021 Abu Dhabi Grand Prix",
               "Pole positions": "13",
-              "First pole": {
-                "text": "2019 Hungarian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2019_Hungarian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2021 Abu Dhabi Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-              }
+              "First pole": "2019 Hungarian Grand Prix",
+              "Last pole": "2021 Abu Dhabi Grand Prix"
             },
             {
-              "Constructor": {
-                "text": "AlphaTauri",
-                "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
-              },
+              "Constructor": "AlphaTauri",
               "Season(s)": "2020-2021",
               "Total wins": "1",
-              "First win": {
-                "text": "2020 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2020 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2020_Italian_Grand_Prix"
-              },
+              "First win": "2020 Italian Grand Prix",
+              "Last win": "2020 Italian Grand Prix",
               "Pole positions": "0",
               "First pole": "-",
               "Last pole": "-"
             },
             {
-              "Constructor": {
-                "text": "Aston Martin",
-                "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
-              },
+              "Constructor": "Aston Martin",
               "Season(s)": "2026-present",
               "Total wins": "0",
               "First win": "-",
@@ -5550,25 +3687,14 @@
               "Constructor": "Total",
               "Season(s)": "1964-2026",
               "Total wins": "89",
-              "First win": {
-                "text": "1965 Mexican Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1965_Mexican_Grand_Prix"
-              },
-              "Last win": {
-                "text": "2021 Abu Dhabi Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-              },
+              "First win": "1965 Mexican Grand Prix",
+              "Last win": "2021 Abu Dhabi Grand Prix",
               "Pole positions": "90",
-              "First pole": {
-                "text": "1968 Italian Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
-              },
-              "Last pole": {
-                "text": "2021 Abu Dhabi Grand Prix",
-                "url": "https://en.wikipedia.org/wiki/2021_Abu_Dhabi_Grand_Prix"
-              }
+              "First pole": "1968 Italian Grand Prix",
+              "Last pole": "2021 Abu Dhabi Grand Prix"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         },
         {
           "headers": [
@@ -5578,7 +3704,8 @@
             {
               "Achievements": "Preceded by TAG"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

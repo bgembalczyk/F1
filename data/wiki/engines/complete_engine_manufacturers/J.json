@@ -1712,108 +1712,39 @@
           ],
           "rows": [
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Entrant": "Leyton House March Racing Team",
-              "Chassis": {
-                "text": "March 881",
-                "url": "https://en.wikipedia.org/wiki/March_881"
-              },
+              "Chassis": "March 881",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1988_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1988_San_Marino_Grand_Prix"
-              },
-              "3": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1988_Monaco_Grand_Prix"
-              },
-              "4": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1990_Mexican_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1990_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "DET",
-                "url": "https://en.wikipedia.org/wiki/1988_Detroit_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1988_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1988_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1988_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1988_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1988_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1988_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1988_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1988_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1988_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1988_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "CAN",
+              "6": "DET",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Pts.": "22",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Entrant": "Leyton House March Racing Team",
-              "Chassis": {
-                "text": "March 881",
-                "url": "https://en.wikipedia.org/wiki/March_881"
-              },
+              "Chassis": "March 881",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Maurício Gugelmin",
-                "url": "https://en.wikipedia.org/wiki/Maur%C3%ADcio_Gugelmin"
-              },
+              "Tyres": "G",
+              "Drivers": "Maurício Gugelmin",
               "1": "Ret",
               "2": "15",
               "3": "Ret",
@@ -1830,29 +1761,17 @@
               "14": "7",
               "15": "10",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "22",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Entrant": "Leyton House March Racing Team",
-              "Chassis": {
-                "text": "March 881",
-                "url": "https://en.wikipedia.org/wiki/March_881"
-              },
+              "Chassis": "March 881",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ivan Capelli",
-                "url": "https://en.wikipedia.org/wiki/Ivan_Capelli"
-              },
+              "Tyres": "G",
+              "Drivers": "Ivan Capelli",
               "1": "Ret",
               "2": "Ret",
               "3": "10",
@@ -1869,29 +1788,17 @@
               "14": "Ret",
               "15": "Ret",
               "16": "6",
-              "17": null,
+              "17": "",
               "Pts.": "22",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Entrant": "Ligier Loto",
-              "Chassis": {
-                "text": "Ligier JS31",
-                "url": "https://en.wikipedia.org/wiki/Ligier_JS31"
-              },
+              "Chassis": "Ligier JS31",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "René Arnoux",
-                "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Arnoux"
-              },
+              "Tyres": "G",
+              "Drivers": "René Arnoux",
               "1": "Ret",
               "2": "DNQ",
               "3": "Ret",
@@ -1908,29 +1815,17 @@
               "14": "Ret",
               "15": "17",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Entrant": "Ligier Loto",
-              "Chassis": {
-                "text": "Ligier JS31",
-                "url": "https://en.wikipedia.org/wiki/Ligier_JS31"
-              },
+              "Chassis": "Ligier JS31",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Stefan Johansson",
-                "url": "https://en.wikipedia.org/wiki/Stefan_Johansson"
-              },
+              "Tyres": "G",
+              "Drivers": "Stefan Johansson",
               "1": "9",
               "2": "DNQ",
               "3": "Ret",
@@ -1947,29 +1842,17 @@
               "14": "Ret",
               "15": "DNQ",
               "16": "9",
-              "17": null,
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Entrant": "Canon Williams Team",
-              "Chassis": {
-                "text": "Williams FW12",
-                "url": "https://en.wikipedia.org/wiki/Williams_FW12"
-              },
+              "Chassis": "Williams FW12",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Nigel Mansell",
-                "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-              },
+              "Tyres": "G",
+              "Drivers": "Nigel Mansell",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -1980,113 +1863,77 @@
               "8": "2",
               "9": "Ret",
               "10": "Ret",
-              "11": null,
-              "12": null,
+              "11": "",
+              "12": "",
               "13": "Ret",
               "14": "2",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "20",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Entrant": "Canon Williams Team",
-              "Chassis": {
-                "text": "Williams FW12",
-                "url": "https://en.wikipedia.org/wiki/Williams_FW12"
-              },
+              "Chassis": "Williams FW12",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Martin Brundle",
-                "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
+              "Tyres": "G",
+              "Drivers": "Martin Brundle",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
               "11": "7",
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "20",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Entrant": "Canon Williams Team",
-              "Chassis": {
-                "text": "Williams FW12",
-                "url": "https://en.wikipedia.org/wiki/Williams_FW12"
-              },
+              "Chassis": "Williams FW12",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Jean-Louis Schlesser",
-                "url": "https://en.wikipedia.org/wiki/Jean-Louis_Schlesser"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "Tyres": "G",
+              "Drivers": "Jean-Louis Schlesser",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "12": "11",
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "20",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1988",
-                "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
-              },
+              "Year": "1988",
               "Entrant": "Canon Williams Team",
-              "Chassis": {
-                "text": "Williams FW12",
-                "url": "https://en.wikipedia.org/wiki/Williams_FW12"
-              },
+              "Chassis": "Williams FW12",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Riccardo Patrese",
-                "url": "https://en.wikipedia.org/wiki/Riccardo_Patrese"
-              },
+              "Tyres": "G",
+              "Drivers": "Riccardo Patrese",
               "1": "Ret",
               "2": "13",
               "3": "6",
@@ -2103,119 +1950,44 @@
               "14": "5",
               "15": "6",
               "16": "4",
-              "17": null,
+              "17": "",
               "Pts.": "20",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Motor Racing Developments",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
-              "Chassis": {
-                "text": "Brabham BT58",
-                "url": "https://en.wikipedia.org/wiki/Brabham_BT58"
-              },
+              "Year": "1989",
+              "Entrant": "Motor Racing Developments",
+              "Chassis": "Brabham BT58",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1989_San_Marino_Grand_Prix"
-              },
-              "3": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1989_Monaco_Grand_Prix"
-              },
-              "4": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1989_Mexican_Grand_Prix"
-              },
-              "5": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1989_United_States_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1989_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1989_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1989_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1989_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1989_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1989_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1989_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1989_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1989_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1989_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1989_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "USA",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Pts.": "8",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Motor Racing Developments",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
-              "Chassis": {
-                "text": "Brabham BT58",
-                "url": "https://en.wikipedia.org/wiki/Brabham_BT58"
-              },
+              "Year": "1989",
+              "Entrant": "Motor Racing Developments",
+              "Chassis": "Brabham BT58",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Martin Brundle",
-                "url": "https://en.wikipedia.org/wiki/Martin_Brundle"
-              },
+              "Tyres": "P",
+              "Drivers": "Martin Brundle",
               "1": "Ret",
               "2": "Ret",
               "3": "6",
@@ -2232,32 +2004,17 @@
               "14": "Ret",
               "15": "5",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "8",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Motor Racing Developments",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
-              "Chassis": {
-                "text": "Brabham BT58",
-                "url": "https://en.wikipedia.org/wiki/Brabham_BT58"
-              },
+              "Year": "1989",
+              "Entrant": "Motor Racing Developments",
+              "Chassis": "Brabham BT58",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Stefano Modena",
-                "url": "https://en.wikipedia.org/wiki/Stefano_Modena"
-              },
+              "Tyres": "P",
+              "Drivers": "Stefano Modena",
               "1": "Ret",
               "2": "Ret",
               "3": "3",
@@ -2274,29 +2031,17 @@
               "14": "Ret",
               "15": "Ret",
               "16": "8",
-              "17": null,
+              "17": "",
               "Pts.": "8",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "EuroBrun Racing",
-                "url": "https://en.wikipedia.org/wiki/EuroBrun"
-              },
+              "Year": "1989",
+              "Entrant": "EuroBrun Racing",
               "Chassis": "EuroBrun ER188B EuroBrun ER189",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Gregor Foitek",
-                "url": "https://en.wikipedia.org/wiki/Gregor_Foitek"
-              },
+              "Tyres": "P",
+              "Drivers": "Gregor Foitek",
               "1": "DNQ",
               "2": "DNPQ",
               "3": "DNPQ",
@@ -2308,153 +2053,105 @@
               "9": "DNPQ",
               "10": "DNPQ",
               "11": "DNPQ",
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "EuroBrun Racing",
-                "url": "https://en.wikipedia.org/wiki/EuroBrun"
-              },
+              "Year": "1989",
+              "Entrant": "EuroBrun Racing",
               "Chassis": "EuroBrun ER188B EuroBrun ER189",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Oscar Larrauri",
-                "url": "https://en.wikipedia.org/wiki/Oscar_Larrauri"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
+              "Tyres": "P",
+              "Drivers": "Oscar Larrauri",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
               "12": "DNPQ",
               "13": "DNPQ",
               "14": "DNPQ",
               "15": "DNPQ",
               "16": "DNPQ",
-              "17": null,
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
+              "Year": "1989",
               "Entrant": "Leyton House March Racing Team",
-              "Chassis": {
-                "text": "March 881",
-                "url": "https://en.wikipedia.org/wiki/March_881"
-              },
+              "Chassis": "March 881",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Maurício Gugelmin",
-                "url": "https://en.wikipedia.org/wiki/Maur%C3%ADcio_Gugelmin"
-              },
+              "Tyres": "G",
+              "Drivers": "Maurício Gugelmin",
               "1": "3",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "4",
               "WCC": "12th"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
+              "Year": "1989",
               "Entrant": "Leyton House March Racing Team",
-              "Chassis": {
-                "text": "March 881",
-                "url": "https://en.wikipedia.org/wiki/March_881"
-              },
+              "Chassis": "March 881",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ivan Capelli",
-                "url": "https://en.wikipedia.org/wiki/Ivan_Capelli"
-              },
+              "Tyres": "G",
+              "Drivers": "Ivan Capelli",
               "1": "Ret",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "4",
               "WCC": "12th"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
+              "Year": "1989",
               "Entrant": "Leyton House March Racing Team",
-              "Chassis": {
-                "text": "March CG891",
-                "url": "https://en.wikipedia.org/wiki/March_CG891"
-              },
+              "Chassis": "March CG891",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Maurício Gugelmin",
-                "url": "https://en.wikipedia.org/wiki/Maur%C3%ADcio_Gugelmin"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "G",
+              "Drivers": "Maurício Gugelmin",
+              "1": "",
+              "2": "",
               "3": "Ret",
               "4": "DNQ",
               "5": "DSQ",
@@ -2469,31 +2166,19 @@
               "14": "Ret",
               "15": "7",
               "16": "7",
-              "17": null,
+              "17": "",
               "Pts.": "4",
               "WCC": "12th"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
+              "Year": "1989",
               "Entrant": "Leyton House March Racing Team",
-              "Chassis": {
-                "text": "March CG891",
-                "url": "https://en.wikipedia.org/wiki/March_CG891"
-              },
+              "Chassis": "March CG891",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ivan Capelli",
-                "url": "https://en.wikipedia.org/wiki/Ivan_Capelli"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "G",
+              "Drivers": "Ivan Capelli",
+              "1": "",
+              "2": "",
               "3": "11",
               "4": "Ret",
               "5": "Ret",
@@ -2508,29 +2193,17 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "4",
               "WCC": "12th"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
+              "Year": "1989",
               "Entrant": "Camel Team Lotus",
-              "Chassis": {
-                "text": "Lotus 101",
-                "url": "https://en.wikipedia.org/wiki/Lotus_101"
-              },
+              "Chassis": "Lotus 101",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Nelson Piquet",
-                "url": "https://en.wikipedia.org/wiki/Nelson_Piquet"
-              },
+              "Tyres": "G",
+              "Drivers": "Nelson Piquet",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -2547,29 +2220,17 @@
               "14": "8",
               "15": "4",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "15",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1989",
-                "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
-              },
+              "Year": "1989",
               "Entrant": "Camel Team Lotus",
-              "Chassis": {
-                "text": "Lotus 101",
-                "url": "https://en.wikipedia.org/wiki/Lotus_101"
-              },
+              "Chassis": "Lotus 101",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Satoru Nakajima",
-                "url": "https://en.wikipedia.org/wiki/Satoru_Nakajima"
-              },
+              "Tyres": "G",
+              "Drivers": "Satoru Nakajima",
               "1": "8",
               "2": "NC",
               "3": "DNQ",
@@ -2586,113 +2247,44 @@
               "14": "Ret",
               "15": "Ret",
               "16": "4",
-              "17": null,
+              "17": "",
               "Pts.": "15",
               "WCC": "6th"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Motor Racing Developments",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1990",
+              "Entrant": "Motor Racing Developments",
               "Chassis": "Brabham BT58 Brabham BT59",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1990_United_States_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1990_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1990_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1990_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1990_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1990_Mexican_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1990_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1990_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1990_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1990_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1990_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1990_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1990_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1990_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1990_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1990_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Pts.": "2",
               "WCC": "10th"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Motor Racing Developments",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1990",
+              "Entrant": "Motor Racing Developments",
               "Chassis": "Brabham BT58 Brabham BT59",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Stefano Modena",
-                "url": "https://en.wikipedia.org/wiki/Stefano_Modena"
-              },
+              "Tyres": "P",
+              "Drivers": "Stefano Modena",
               "1": "5",
               "2": "Ret",
               "3": "Ret",
@@ -2709,70 +2301,46 @@
               "14": "Ret",
               "15": "Ret",
               "16": "12",
-              "17": null,
+              "17": "",
               "Pts.": "2",
               "WCC": "10th"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Motor Racing Developments",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1990",
+              "Entrant": "Motor Racing Developments",
               "Chassis": "Brabham BT58 Brabham BT59",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Gregor Foitek",
-                "url": "https://en.wikipedia.org/wiki/Gregor_Foitek"
-              },
+              "Tyres": "P",
+              "Drivers": "Gregor Foitek",
               "1": "Ret",
               "2": "Ret",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "2",
               "WCC": "10th"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Motor Racing Developments",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
+              "Year": "1990",
+              "Entrant": "Motor Racing Developments",
               "Chassis": "Brabham BT58 Brabham BT59",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "David Brabham",
-                "url": "https://en.wikipedia.org/wiki/David_Brabham"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "P",
+              "Drivers": "David Brabham",
+              "1": "",
+              "2": "",
               "3": "DNQ",
               "4": "Ret",
               "5": "DNQ",
@@ -2787,32 +2355,17 @@
               "14": "DNQ",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "2",
               "WCC": "10th"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "EuroBrun Racing",
-                "url": "https://en.wikipedia.org/wiki/EuroBrun"
-              },
-              "Chassis": {
-                "text": "EuroBrun ER189B",
-                "url": "https://en.wikipedia.org/wiki/EuroBrun_ER189"
-              },
+              "Year": "1990",
+              "Entrant": "EuroBrun Racing",
+              "Chassis": "EuroBrun ER189B",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Roberto Moreno",
-                "url": "https://en.wikipedia.org/wiki/Roberto_Moreno"
-              },
+              "Tyres": "P",
+              "Drivers": "Roberto Moreno",
               "1": "13",
               "2": "DNPQ",
               "3": "Ret",
@@ -2827,34 +2380,19 @@
               "12": "DNPQ",
               "13": "DNPQ",
               "14": "DNPQ",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "EuroBrun Racing",
-                "url": "https://en.wikipedia.org/wiki/EuroBrun"
-              },
-              "Chassis": {
-                "text": "EuroBrun ER189B",
-                "url": "https://en.wikipedia.org/wiki/EuroBrun_ER189"
-              },
+              "Year": "1990",
+              "Entrant": "EuroBrun Racing",
+              "Chassis": "EuroBrun ER189B",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Claudio Langes",
-                "url": "https://en.wikipedia.org/wiki/Claudio_Langes"
-              },
+              "Tyres": "P",
+              "Drivers": "Claudio Langes",
               "1": "DNPQ",
               "2": "DNPQ",
               "3": "DNPQ",
@@ -2869,34 +2407,19 @@
               "12": "DNPQ",
               "13": "DNPQ",
               "14": "DNPQ",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Leyton House Racing",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_Racing"
-              },
-              "Chassis": {
-                "text": "Leyton House CG901",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG901"
-              },
+              "Year": "1990",
+              "Entrant": "Leyton House Racing",
+              "Chassis": "Leyton House CG901",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Maurício Gugelmin",
-                "url": "https://en.wikipedia.org/wiki/Maur%C3%ADcio_Gugelmin"
-              },
+              "Tyres": "G",
+              "Drivers": "Maurício Gugelmin",
               "1": "14",
               "2": "DNQ",
               "3": "Ret",
@@ -2913,32 +2436,17 @@
               "14": "8",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "7",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Leyton House Racing",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_Racing"
-              },
-              "Chassis": {
-                "text": "Leyton House CG901",
-                "url": "https://en.wikipedia.org/wiki/Leyton_House_CG901"
-              },
+              "Year": "1990",
+              "Entrant": "Leyton House Racing",
+              "Chassis": "Leyton House CG901",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ivan Capelli",
-                "url": "https://en.wikipedia.org/wiki/Ivan_Capelli"
-              },
+              "Tyres": "G",
+              "Drivers": "Ivan Capelli",
               "1": "Ret",
               "2": "DNQ",
               "3": "Ret",
@@ -2955,161 +2463,71 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "7",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1990",
-                "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Life Racing Engines",
-                "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines"
-              },
-              "Chassis": {
-                "text": "Life L190",
-                "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines#An_old_chassis"
-              },
+              "Year": "1990",
+              "Entrant": "Life Racing Engines",
+              "Chassis": "Life L190",
               "Engine": "Judd CV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Bruno Giacomelli",
-                "url": "https://en.wikipedia.org/wiki/Bruno_Giacomelli"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
+              "Tyres": "G",
+              "Drivers": "Bruno Giacomelli",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
               "13": "DNPQ",
               "14": "DNPQ",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Scuderia Italia",
-                "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
-              },
-              "Chassis": {
-                "text": "Dallara F191",
-                "url": "https://en.wikipedia.org/wiki/Dallara_F191"
-              },
+              "Year": "1991",
+              "Entrant": "Scuderia Italia",
+              "Chassis": "Dallara F191",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "USA",
-                "url": "https://en.wikipedia.org/wiki/1991_United_States_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1991_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1991_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1991_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1991_Canadian_Grand_Prix"
-              },
-              "6": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1991_Mexican_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1991_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1991_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1991_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1991_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1991_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1991_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1991_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1991_Spanish_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1991_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1991_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Pts.": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Scuderia Italia",
-                "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
-              },
-              "Chassis": {
-                "text": "Dallara F191",
-                "url": "https://en.wikipedia.org/wiki/Dallara_F191"
-              },
+              "Year": "1991",
+              "Entrant": "Scuderia Italia",
+              "Chassis": "Dallara F191",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "Emanuele Pirro",
-                "url": "https://en.wikipedia.org/wiki/Emanuele_Pirro"
-              },
+              "Tyres": "P",
+              "Drivers": "Emanuele Pirro",
               "1": "Ret",
               "2": "11",
               "3": "DNPQ",
@@ -3126,32 +2544,17 @@
               "14": "15",
               "15": "Ret",
               "16": "7",
-              "17": null,
+              "17": "",
               "Pts.": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Scuderia Italia",
-                "url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia"
-              },
-              "Chassis": {
-                "text": "Dallara F191",
-                "url": "https://en.wikipedia.org/wiki/Dallara_F191"
-              },
+              "Year": "1991",
+              "Entrant": "Scuderia Italia",
+              "Chassis": "Dallara F191",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "P",
-                "url": "https://en.wikipedia.org/wiki/Pirelli"
-              },
-              "Drivers": {
-                "text": "JJ Lehto",
-                "url": "https://en.wikipedia.org/wiki/JJ_Lehto"
-              },
+              "Tyres": "P",
+              "Drivers": "JJ Lehto",
               "1": "Ret",
               "2": "Ret",
               "3": "3",
@@ -3168,32 +2571,17 @@
               "14": "8",
               "15": "Ret",
               "16": "12",
-              "17": null,
+              "17": "",
               "Pts.": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Lotus",
-                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-              },
-              "Chassis": {
-                "text": "Lotus 102B",
-                "url": "https://en.wikipedia.org/wiki/Lotus_102"
-              },
+              "Year": "1991",
+              "Entrant": "Team Lotus",
+              "Chassis": "Lotus 102B",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Mika Häkkinen",
-                "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen"
-              },
+              "Tyres": "G",
+              "Drivers": "Mika Häkkinen",
               "1": "13",
               "2": "9",
               "3": "5",
@@ -3210,319 +2598,181 @@
               "14": "Ret",
               "15": "Ret",
               "16": "19",
-              "17": null,
+              "17": "",
               "Pts.": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Lotus",
-                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-              },
-              "Chassis": {
-                "text": "Lotus 102B",
-                "url": "https://en.wikipedia.org/wiki/Lotus_102"
-              },
+              "Year": "1991",
+              "Entrant": "Team Lotus",
+              "Chassis": "Lotus 102B",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Julian Bailey",
-                "url": "https://en.wikipedia.org/wiki/Julian_Bailey_(racing_driver)"
-              },
+              "Tyres": "G",
+              "Drivers": "Julian Bailey",
               "1": "DNQ",
               "2": "DNQ",
               "3": "6",
               "4": "DNQ",
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Lotus",
-                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-              },
-              "Chassis": {
-                "text": "Lotus 102B",
-                "url": "https://en.wikipedia.org/wiki/Lotus_102"
-              },
+              "Year": "1991",
+              "Entrant": "Team Lotus",
+              "Chassis": "Lotus 102B",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Johnny Herbert",
-                "url": "https://en.wikipedia.org/wiki/Johnny_Herbert"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
+              "Tyres": "G",
+              "Drivers": "Johnny Herbert",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
               "5": "DNQ",
               "6": "10",
               "7": "10",
               "8": "14",
-              "9": null,
-              "10": null,
+              "9": "",
+              "10": "",
               "11": "7",
-              "12": null,
+              "12": "",
               "13": "Ret",
-              "14": null,
+              "14": "",
               "15": "Ret",
               "16": "11",
-              "17": null,
+              "17": "",
               "Pts.": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1991",
-                "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Team Lotus",
-                "url": "https://en.wikipedia.org/wiki/Team_Lotus"
-              },
-              "Chassis": {
-                "text": "Lotus 102B",
-                "url": "https://en.wikipedia.org/wiki/Lotus_102"
-              },
+              "Year": "1991",
+              "Entrant": "Team Lotus",
+              "Chassis": "Lotus 102B",
               "Engine": "Judd EV 3.5 V8",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Michael Bartels",
-                "url": "https://en.wikipedia.org/wiki/Michael_Bartels"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
+              "Tyres": "G",
+              "Drivers": "Michael Bartels",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
               "9": "DNQ",
               "10": "DNQ",
-              "11": null,
+              "11": "",
               "12": "DNQ",
-              "13": null,
+              "13": "",
               "14": "DNQ",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "3",
               "WCC": "9th"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Andrea Moda Formula",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Moda_Formula"
-              },
+              "Year": "1992",
+              "Entrant": "Andrea Moda Formula",
               "Chassis": "Andrea Moda C4B Andrea Moda S921",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1992_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "MEX",
-                "url": "https://en.wikipedia.org/wiki/1992_Mexican_Grand_Prix"
-              },
-              "3": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1992_Brazilian_Grand_Prix"
-              },
-              "4": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1992_Spanish_Grand_Prix"
-              },
-              "5": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1992_San_Marino_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1992_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1992_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1992_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1992_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1992_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1992_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1992_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1992_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1992_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1992_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1992_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MEX",
+              "3": "BRA",
+              "4": "ESP",
+              "5": "SMR",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Andrea Moda Formula",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Moda_Formula"
-              },
+              "Year": "1992",
+              "Entrant": "Andrea Moda Formula",
               "Chassis": "Andrea Moda C4B Andrea Moda S921",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Alex Caffi",
-                "url": "https://en.wikipedia.org/wiki/Alex_Caffi"
-              },
+              "Tyres": "G",
+              "Drivers": "Alex Caffi",
               "1": "EX",
               "2": "DNP",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Andrea Moda Formula",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Moda_Formula"
-              },
+              "Year": "1992",
+              "Entrant": "Andrea Moda Formula",
               "Chassis": "Andrea Moda C4B Andrea Moda S921",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Enrico Bertaggia",
-                "url": "https://en.wikipedia.org/wiki/Enrico_Bertaggia"
-              },
+              "Tyres": "G",
+              "Drivers": "Enrico Bertaggia",
               "1": "EX",
               "2": "DNP",
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Andrea Moda Formula",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Moda_Formula"
-              },
+              "Year": "1992",
+              "Entrant": "Andrea Moda Formula",
               "Chassis": "Andrea Moda C4B Andrea Moda S921",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Roberto Moreno",
-                "url": "https://en.wikipedia.org/wiki/Roberto_Moreno"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "G",
+              "Drivers": "Roberto Moreno",
+              "1": "",
+              "2": "",
               "3": "DNPQ",
               "4": "DNPQ",
               "5": "DNPQ",
@@ -3533,35 +2783,23 @@
               "10": "DNPQ",
               "11": "DNQ",
               "12": "DNQ",
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Andrea Moda Formula",
-                "url": "https://en.wikipedia.org/wiki/Andrea_Moda_Formula"
-              },
+              "Year": "1992",
+              "Entrant": "Andrea Moda Formula",
               "Chassis": "Andrea Moda C4B Andrea Moda S921",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Perry McCarthy",
-                "url": "https://en.wikipedia.org/wiki/Perry_McCarthy"
-              },
-              "1": null,
-              "2": null,
+              "Tyres": "G",
+              "Drivers": "Perry McCarthy",
+              "1": "",
+              "2": "",
               "3": "DNP",
               "4": "DNPQ",
               "5": "DNPQ",
@@ -3572,36 +2810,21 @@
               "10": "EX",
               "11": "DNPQ",
               "12": "DNQ",
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Motor Racing Developments",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
-              "Chassis": {
-                "text": "Brabham BT60B",
-                "url": "https://en.wikipedia.org/wiki/Brabham_BT60"
-              },
+              "Year": "1992",
+              "Entrant": "Motor Racing Developments",
+              "Chassis": "Brabham BT60B",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Eric van de Poele",
-                "url": "https://en.wikipedia.org/wiki/Eric_van_de_Poele"
-              },
+              "Tyres": "G",
+              "Drivers": "Eric van de Poele",
               "1": "13",
               "2": "DNQ",
               "3": "DNQ",
@@ -3612,83 +2835,53 @@
               "8": "DNQ",
               "9": "DNQ",
               "10": "DNQ",
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Motor Racing Developments",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
-              "Chassis": {
-                "text": "Brabham BT60B",
-                "url": "https://en.wikipedia.org/wiki/Brabham_BT60"
-              },
+              "Year": "1992",
+              "Entrant": "Motor Racing Developments",
+              "Chassis": "Brabham BT60B",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Giovanna Amati",
-                "url": "https://en.wikipedia.org/wiki/Giovanna_Amati"
-              },
+              "Tyres": "G",
+              "Drivers": "Giovanna Amati",
               "1": "DNQ",
               "2": "DNQ",
               "3": "DNQ",
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1992",
-                "url": "https://en.wikipedia.org/wiki/1992_Formula_One_season"
-              },
-              "Entrant": {
-                "text": "Motor Racing Developments",
-                "url": "https://en.wikipedia.org/wiki/Brabham"
-              },
-              "Chassis": {
-                "text": "Brabham BT60B",
-                "url": "https://en.wikipedia.org/wiki/Brabham_BT60"
-              },
+              "Year": "1992",
+              "Entrant": "Motor Racing Developments",
+              "Chassis": "Brabham BT60B",
               "Engine": "Judd GV 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Damon Hill",
-                "url": "https://en.wikipedia.org/wiki/Damon_Hill"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
+              "Tyres": "G",
+              "Drivers": "Damon Hill",
+              "1": "",
+              "2": "",
+              "3": "",
               "4": "DNQ",
               "5": "DNQ",
               "6": "DNQ",
@@ -3697,12 +2890,12 @@
               "9": "16",
               "10": "DNQ",
               "11": "11",
-              "12": null,
-              "13": null,
-              "14": null,
-              "15": null,
-              "16": null,
-              "17": null,
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
@@ -3734,108 +2927,39 @@
               "WCC": "Engines badged as Yamaha"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
+              "Year": "1993",
+              "Entrant": "Tyrrell Racing Organisation",
               "Chassis": "Tyrrell 020C Tyrrell 021",
               "Engine": "Yamaha OX10A (Judd GV) 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "RSA",
-                "url": "https://en.wikipedia.org/wiki/1993_South_African_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1993_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1993_European_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1993_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1993_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1993_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1993_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1993_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1993_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1993_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1993_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1993_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1993_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1993_Portuguese_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1993_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1993_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "BRA",
+              "3": "EUR",
+              "4": "SMR",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
+              "Year": "1993",
+              "Entrant": "Tyrrell Racing Organisation",
               "Chassis": "Tyrrell 020C Tyrrell 021",
               "Engine": "Yamaha OX10A (Judd GV) 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ukyo Katayama",
-                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-              },
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -3852,29 +2976,17 @@
               "14": "Ret",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1993",
-                "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
+              "Year": "1993",
+              "Entrant": "Tyrrell Racing Organisation",
               "Chassis": "Tyrrell 020C Tyrrell 021",
               "Engine": "Yamaha OX10A (Judd GV) 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Andrea de Cesaris",
-                "url": "https://en.wikipedia.org/wiki/Andrea_de_Cesaris"
-              },
+              "Tyres": "G",
+              "Drivers": "Andrea de Cesaris",
               "1": "Ret",
               "2": "Ret",
               "3": "Ret",
@@ -3891,119 +3003,44 @@
               "14": "12",
               "15": "Ret",
               "16": "13",
-              "17": null,
+              "17": "",
               "Pts.": "0",
               "WCC": "NC"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 022",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_022"
-              },
+              "Year": "1994",
+              "Entrant": "Tyrrell Racing Organisation",
+              "Chassis": "Tyrrell 022",
               "Engine": "Yamaha OX10B (Judd GV) 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1994_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "PAC",
-                "url": "https://en.wikipedia.org/wiki/1994_Pacific_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1994_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1994_Monaco_Grand_Prix"
-              },
-              "5": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1994_Spanish_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1994_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1994_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1994_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1994_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1994_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1994_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1994_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1994_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1994_European_Grand_Prix"
-              },
-              "15": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1994_Japanese_Grand_Prix"
-              },
-              "16": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1994_Australian_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "PAC",
+              "3": "SMR",
+              "4": "MON",
+              "5": "ESP",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "EUR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
               "Pts.": "13",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 022",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_022"
-              },
+              "Year": "1994",
+              "Entrant": "Tyrrell Racing Organisation",
+              "Chassis": "Tyrrell 022",
               "Engine": "Yamaha OX10B (Judd GV) 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ukyo Katayama",
-                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-              },
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
               "1": "5",
               "2": "Ret",
               "3": "5",
@@ -4020,32 +3057,17 @@
               "14": "7",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "13",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1994",
-                "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Racing Organisation",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 022",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_022"
-              },
+              "Year": "1994",
+              "Entrant": "Tyrrell Racing Organisation",
+              "Chassis": "Tyrrell 022",
               "Engine": "Yamaha OX10B (Judd GV) 3.5 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Mark Blundell",
-                "url": "https://en.wikipedia.org/wiki/Mark_Blundell"
-              },
+              "Tyres": "G",
+              "Drivers": "Mark Blundell",
               "1": "Ret",
               "2": "Ret",
               "3": "9",
@@ -4062,122 +3084,44 @@
               "14": "13",
               "15": "Ret",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "13",
               "WCC": "7th"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Nokia Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 023",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_023"
-              },
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
               "Engine": "Yamaha OX10C (Judd HV) 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1995_Brazilian_Grand_Prix"
-              },
-              "2": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1995_Argentine_Grand_Prix"
-              },
-              "3": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1995_San_Marino_Grand_Prix"
-              },
-              "4": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1995_Spanish_Grand_Prix"
-              },
-              "5": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1995_Monaco_Grand_Prix"
-              },
-              "6": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1995_Canadian_Grand_Prix"
-              },
-              "7": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1995_French_Grand_Prix"
-              },
-              "8": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1995_British_Grand_Prix"
-              },
-              "9": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1995_German_Grand_Prix"
-              },
-              "10": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1995_Hungarian_Grand_Prix"
-              },
-              "11": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1995_Belgian_Grand_Prix"
-              },
-              "12": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1995_Italian_Grand_Prix"
-              },
-              "13": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1995_Portuguese_Grand_Prix"
-              },
-              "14": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1995_European_Grand_Prix"
-              },
-              "15": {
-                "text": "PAC",
-                "url": "https://en.wikipedia.org/wiki/1995_Pacific_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1995_Japanese_Grand_Prix"
-              },
-              "17": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1995_Australian_Grand_Prix"
-              },
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "ARG",
+              "3": "SMR",
+              "4": "ESP",
+              "5": "MON",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "EUR",
+              "15": "PAC",
+              "16": "JPN",
+              "17": "AUS",
               "Pts.": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Nokia Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 023",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_023"
-              },
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
               "Engine": "Yamaha OX10C (Judd HV) 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ukyo Katayama",
-                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-              },
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
               "1": "Ret",
               "2": "8",
               "3": "Ret",
@@ -4191,7 +3135,7 @@
               "11": "Ret",
               "12": "10",
               "13": "Ret",
-              "14": null,
+              "14": "",
               "15": "14",
               "16": "Ret",
               "17": "Ret",
@@ -4199,69 +3143,39 @@
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Nokia Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 023",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_023"
-              },
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
               "Engine": "Yamaha OX10C (Judd HV) 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Gabriele Tarquini",
-                "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
-              },
-              "1": null,
-              "2": null,
-              "3": null,
-              "4": null,
-              "5": null,
-              "6": null,
-              "7": null,
-              "8": null,
-              "9": null,
-              "10": null,
-              "11": null,
-              "12": null,
-              "13": null,
+              "Tyres": "G",
+              "Drivers": "Gabriele Tarquini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
               "14": "14",
-              "15": null,
-              "16": null,
-              "17": null,
+              "15": "",
+              "16": "",
+              "17": "",
               "Pts.": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1995",
-                "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Nokia Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 023",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_023"
-              },
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
               "Engine": "Yamaha OX10C (Judd HV) 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Mika Salo",
-                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-              },
+              "Tyres": "G",
+              "Drivers": "Mika Salo",
               "1": "7",
               "2": "Ret",
               "3": "Ret",
@@ -4283,114 +3197,39 @@
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 024",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_024"
-              },
+              "Year": "1996",
+              "Entrant": "Tyrrell Yamaha",
+              "Chassis": "Tyrrell 024",
               "Engine": "Yamaha OX11A (Judd JV) 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1996_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1996_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1996_Argentine_Grand_Prix"
-              },
-              "4": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1996_European_Grand_Prix"
-              },
-              "5": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1996_San_Marino_Grand_Prix"
-              },
-              "6": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1996_Monaco_Grand_Prix"
-              },
-              "7": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1996_Spanish_Grand_Prix"
-              },
-              "8": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1996_Canadian_Grand_Prix"
-              },
-              "9": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1996_French_Grand_Prix"
-              },
-              "10": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1996_British_Grand_Prix"
-              },
-              "11": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1996_German_Grand_Prix"
-              },
-              "12": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1996_Hungarian_Grand_Prix"
-              },
-              "13": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1996_Belgian_Grand_Prix"
-              },
-              "14": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1996_Italian_Grand_Prix"
-              },
-              "15": {
-                "text": "POR",
-                "url": "https://en.wikipedia.org/wiki/1996_Portuguese_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1996_Japanese_Grand_Prix"
-              },
-              "17": null,
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "EUR",
+              "5": "SMR",
+              "6": "MON",
+              "7": "ESP",
+              "8": "CAN",
+              "9": "FRA",
+              "10": "GBR",
+              "11": "GER",
+              "12": "HUN",
+              "13": "BEL",
+              "14": "ITA",
+              "15": "POR",
+              "16": "JPN",
+              "17": "",
               "Pts.": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 024",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_024"
-              },
+              "Year": "1996",
+              "Entrant": "Tyrrell Yamaha",
+              "Chassis": "Tyrrell 024",
               "Engine": "Yamaha OX11A (Judd JV) 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Ukyo Katayama",
-                "url": "https://en.wikipedia.org/wiki/Ukyo_Katayama"
-              },
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
               "1": "11",
               "2": "9",
               "3": "Ret",
@@ -4407,32 +3246,17 @@
               "14": "10",
               "15": "12",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1996",
-                "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Tyrrell Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
-              },
-              "Chassis": {
-                "text": "Tyrrell 024",
-                "url": "https://en.wikipedia.org/wiki/Tyrrell_024"
-              },
+              "Year": "1996",
+              "Entrant": "Tyrrell Yamaha",
+              "Chassis": "Tyrrell 024",
               "Engine": "Yamaha OX11A (Judd JV) 3.0 V10",
-              "Tyres": {
-                "text": "G",
-                "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-              },
-              "Drivers": {
-                "text": "Mika Salo",
-                "url": "https://en.wikipedia.org/wiki/Mika_Salo"
-              },
+              "Tyres": "G",
+              "Drivers": "Mika Salo",
               "1": "6",
               "2": "5",
               "3": "Ret",
@@ -4449,122 +3273,44 @@
               "14": "Ret",
               "15": "11",
               "16": "Ret",
-              "17": null,
+              "17": "",
               "Pts.": "5",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Danka Arrows Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A18",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A18"
-              },
+              "Year": "1997",
+              "Entrant": "Danka Arrows Yamaha",
+              "Chassis": "Arrows A18",
               "Engine": "Yamaha OX11C/D (Judd JV) 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": null,
-              "1": {
-                "text": "AUS",
-                "url": "https://en.wikipedia.org/wiki/1997_Australian_Grand_Prix"
-              },
-              "2": {
-                "text": "BRA",
-                "url": "https://en.wikipedia.org/wiki/1997_Brazilian_Grand_Prix"
-              },
-              "3": {
-                "text": "ARG",
-                "url": "https://en.wikipedia.org/wiki/1997_Argentine_Grand_Prix"
-              },
-              "4": {
-                "text": "SMR",
-                "url": "https://en.wikipedia.org/wiki/1997_San_Marino_Grand_Prix"
-              },
-              "5": {
-                "text": "MON",
-                "url": "https://en.wikipedia.org/wiki/1997_Monaco_Grand_Prix"
-              },
-              "6": {
-                "text": "ESP",
-                "url": "https://en.wikipedia.org/wiki/1997_Spanish_Grand_Prix"
-              },
-              "7": {
-                "text": "CAN",
-                "url": "https://en.wikipedia.org/wiki/1997_Canadian_Grand_Prix"
-              },
-              "8": {
-                "text": "FRA",
-                "url": "https://en.wikipedia.org/wiki/1997_French_Grand_Prix"
-              },
-              "9": {
-                "text": "GBR",
-                "url": "https://en.wikipedia.org/wiki/1997_British_Grand_Prix"
-              },
-              "10": {
-                "text": "GER",
-                "url": "https://en.wikipedia.org/wiki/1997_German_Grand_Prix"
-              },
-              "11": {
-                "text": "HUN",
-                "url": "https://en.wikipedia.org/wiki/1997_Hungarian_Grand_Prix"
-              },
-              "12": {
-                "text": "BEL",
-                "url": "https://en.wikipedia.org/wiki/1997_Belgian_Grand_Prix"
-              },
-              "13": {
-                "text": "ITA",
-                "url": "https://en.wikipedia.org/wiki/1997_Italian_Grand_Prix"
-              },
-              "14": {
-                "text": "AUT",
-                "url": "https://en.wikipedia.org/wiki/1997_Austrian_Grand_Prix"
-              },
-              "15": {
-                "text": "LUX",
-                "url": "https://en.wikipedia.org/wiki/1997_Luxembourg_Grand_Prix"
-              },
-              "16": {
-                "text": "JPN",
-                "url": "https://en.wikipedia.org/wiki/1997_Japanese_Grand_Prix"
-              },
-              "17": {
-                "text": "EUR",
-                "url": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix"
-              },
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "SMR",
+              "5": "MON",
+              "6": "ESP",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "AUT",
+              "15": "LUX",
+              "16": "JPN",
+              "17": "EUR",
               "Pts.": "9",
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Danka Arrows Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A18",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A18"
-              },
+              "Year": "1997",
+              "Entrant": "Danka Arrows Yamaha",
+              "Chassis": "Arrows A18",
               "Engine": "Yamaha OX11C/D (Judd JV) 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Damon Hill",
-                "url": "https://en.wikipedia.org/wiki/Damon_Hill"
-              },
+              "Tyres": "B",
+              "Drivers": "Damon Hill",
               "1": "DNS",
               "2": "17",
               "3": "Ret",
@@ -4586,27 +3332,12 @@
               "WCC": "8th"
             },
             {
-              "Year": {
-                "text": "1997",
-                "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
-              },
-              "Entrant": {
-                "text": "Danka Arrows Yamaha",
-                "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
-              },
-              "Chassis": {
-                "text": "Arrows A18",
-                "url": "https://en.wikipedia.org/wiki/Arrows_A18"
-              },
+              "Year": "1997",
+              "Entrant": "Danka Arrows Yamaha",
+              "Chassis": "Arrows A18",
               "Engine": "Yamaha OX11C/D (Judd JV) 3.0 V10",
-              "Tyres": {
-                "text": "B",
-                "url": "https://en.wikipedia.org/wiki/Bridgestone"
-              },
-              "Drivers": {
-                "text": "Pedro Diniz",
-                "url": "https://en.wikipedia.org/wiki/Pedro_Diniz"
-              },
+              "Tyres": "B",
+              "Drivers": "Pedro Diniz",
               "1": "10",
               "2": "Ret",
               "3": "Ret",
@@ -4627,7 +3358,8 @@
               "Pts.": "9",
               "WCC": "8th"
             }
-          ]
+          ],
+          "table_type": "wiki_table"
         }
       ]
     }

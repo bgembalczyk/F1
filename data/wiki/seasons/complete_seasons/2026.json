@@ -34,7 +34,12 @@
               "url": "https://en.wikipedia.org/wiki/Alpine_A526"
             }
           ],
-          "power_unit": null,
+          "power_unit": {
+            "model": {
+              "text": "Mercedes-AMG F1 M17",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
+            }
+          },
           "race_drivers": [
             {
               "driver": {
@@ -143,7 +148,12 @@
               "url": "https://en.wikipedia.org/wiki/Williams_FW48"
             }
           ],
-          "power_unit": null,
+          "power_unit": {
+            "model": {
+              "text": "Mercedes-AMG F1 M17",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
+            }
+          },
           "race_drivers": [
             {
               "driver": {
@@ -418,7 +428,12 @@
               "url": "https://en.wikipedia.org/wiki/McLaren_MCL40"
             }
           ],
-          "power_unit": null,
+          "power_unit": {
+            "model": {
+              "text": "Mercedes-AMG F1 M17",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
+            }
+          },
           "race_drivers": [
             {
               "driver": {
@@ -470,7 +485,12 @@
               "url": "https://en.wikipedia.org/wiki/Mercedes_W17"
             }
           ],
-          "power_unit": null,
+          "power_unit": {
+            "model": {
+              "text": "Mercedes-AMG F1 M17",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit"
+            }
+          },
           "race_drivers": [
             {
               "driver": {
