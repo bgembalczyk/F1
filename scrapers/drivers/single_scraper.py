@@ -30,6 +30,7 @@ from scrapers.drivers.columns.round import RoundColumn
 from scrapers.drivers.columns.series import SeriesColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
 from scrapers.drivers.infobox.scraper import DriverInfoboxParser
+from scrapers.wiki.parsers.article import CallableArticleParserAdapter
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -44,23 +45,22 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
-        super().__init__(options=options)
+        super().__init__(options=options, include_wiki_content=False)
         self.policy = self.http_policy
         self.url: str = ""
         self.debug_dir = options.debug_dir
+        self.register_article_parser(
+            CallableArticleParserAdapter(self._scrape_infobox),
+            target_key="infobox",
+        )
+        self.register_article_parser(
+            CallableArticleParserAdapter(self._parse_results_sections),
+            target_key="career_results",
+        )
 
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
         return super().fetch()
-
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return [
-            {
-                "url": self.url,
-                "infobox": self._scrape_infobox(soup),
-                "career_results": self._parse_results_sections(soup),
-            },
-        ]
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
         table = self.find_infobox(soup)

@@ -8,6 +8,7 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
 from scrapers.wiki.scraper import WikiScraper
+from scrapers.wiki.parsers.article import CallableArticleParserAdapter
 
 
 class SingleConstructorScraper(WikiScraper):
@@ -24,21 +25,20 @@ class SingleConstructorScraper(WikiScraper):
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
-        super().__init__(options=options)
+        super().__init__(options=options, include_wiki_content=False)
         self.url: str = ""
+        self.register_article_parser(
+            CallableArticleParserAdapter(self._scrape_infoboxes),
+            target_key="infoboxes",
+        )
+        self.register_article_parser(
+            CallableArticleParserAdapter(self._scrape_tables),
+            target_key="tables",
+        )
 
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
         return super().fetch()
-
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return [
-            {
-                "url": self.url,
-                "infoboxes": self._scrape_infoboxes(soup),
-                "tables": self._scrape_tables(soup),
-            },
-        ]
 
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         parser = InfoboxHtmlParser()

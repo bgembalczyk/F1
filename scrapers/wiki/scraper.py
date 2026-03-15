@@ -1,4 +1,5 @@
 from typing import Any
+from typing import NamedTuple
 
 from bs4 import BeautifulSoup
 
@@ -9,6 +10,13 @@ from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.header import HeaderParser
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
+from scrapers.wiki.parsers.article import ArticleParser
+from scrapers.wiki.parsers.article import WikiParserArticleAdapter
+
+
+class _ArticleStage(NamedTuple):
+    parser: ArticleParser
+    target_key: str | None
 
 
 class WikiScraper(WikiElementParserMixin, ABCScraper):
@@ -44,6 +52,7 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
         options: ScraperOptions | None = None,
         header_parser: HeaderParser | None = None,
         body_content_parser: BodyContentParser | None = None,
+        include_wiki_content: bool = True,
     ) -> None:
         """Inicjalizuje WikiScraper.
 
@@ -62,8 +71,30 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
 
         self.header_parser = header_parser or HeaderParser()
         self.body_content_parser = body_content_parser or BodyContentParser()
+        self.include_wiki_content = include_wiki_content
         self.section_parser: SectionParser = (
             self.body_content_parser.content_text_parser.section_parser
+        )
+        self._article_stages: list[_ArticleStage] = []
+
+    def register_article_parser(
+        self,
+        parser: ArticleParser,
+        *,
+        target_key: str | None,
+    ) -> None:
+        self._article_stages.append(_ArticleStage(parser=parser, target_key=target_key))
+
+    def register_wiki_parser(
+        self,
+        *,
+        parser: Any,
+        locator: Any,
+        target_key: str,
+    ) -> None:
+        self.register_article_parser(
+            WikiParserArticleAdapter(parser=parser, locator=locator),
+            target_key=target_key,
         )
 
     def scrape(self, url: str) -> dict[str, Any]:
@@ -97,18 +128,27 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
         Returns:
             Lista z jednym słownikiem zawierającym dane ze strony.
         """
-        result: dict[str, Any] = {
-            "url": self.url,
-            "header": None,
-            "body_content": None,
-        }
+        result: dict[str, Any] = {"url": self.url}
 
-        header_el = HeaderParser.find_header(soup)
-        if header_el is not None:
-            result["header"] = self.header_parser.parse(header_el)
+        if self.include_wiki_content:
+            result["header"] = None
+            result["body_content"] = None
 
-        body_content_el = BodyContentParser.find_body_content(soup)
-        if body_content_el is not None:
-            result["body_content"] = self.body_content_parser.parse(body_content_el)
+            header_el = HeaderParser.find_header(soup)
+            if header_el is not None:
+                result["header"] = self.header_parser.parse(header_el)
+
+            body_content_el = BodyContentParser.find_body_content(soup)
+            if body_content_el is not None:
+                result["body_content"] = self.body_content_parser.parse(body_content_el)
+
+        for stage in self._article_stages:
+            parsed = stage.parser.parse_article(soup)
+            if parsed is None:
+                continue
+            if stage.target_key is None and isinstance(parsed, dict):
+                result.update(parsed)
+            elif stage.target_key is not None:
+                result[stage.target_key] = parsed
 
         return [result]
