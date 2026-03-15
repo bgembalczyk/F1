@@ -4,6 +4,8 @@ from typing import Any
 
 from bs4 import Tag
 
+from scrapers.wiki.parsers.context import WikiParserContext
+
 
 class WikiParser(ABC):
     """Bazowa klasa dla wszystkich parserów HTML Wikipedii.
@@ -13,11 +15,12 @@ class WikiParser(ABC):
     """
 
     @abstractmethod
-    def parse(self, element: Tag) -> Any:
+    def parse(self, element: Tag, context: WikiParserContext | None = None) -> Any:
         """Parsuje przekazany element HTML.
 
         Args:
             element: Element BeautifulSoup do sparsowania.
+            context: Opcjonalny kontekst parsowania Wikipedii.
 
         Returns:
             Wyekstrahowane dane (format zależy od konkretnego parsera).

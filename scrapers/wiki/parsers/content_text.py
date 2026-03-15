@@ -3,6 +3,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.context import WikiParserContext
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import _split_into_parts
 
@@ -23,7 +24,7 @@ class ContentTextParser(WikiParser):
     def __init__(self) -> None:
         self.section_parser = SectionParser()
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag, context: WikiParserContext | None = None) -> dict[str, Any]:
         """Parsuje obszar treści artykułu.
 
         Dzieli element na sekcje, parsuje każdą z nich
@@ -37,12 +38,14 @@ class ContentTextParser(WikiParser):
         """
         tags = [c for c in element.children if isinstance(c, Tag)]
         parts = _split_into_parts(tags, _HEADING_CLASS)
-        return {
-            "sections": [
+        ctx = context or WikiParserContext.empty()
+        sections: list[dict[str, Any]] = []
+        for name, group_elements in parts:
+            child_ctx = ctx.child(section_name=name, heading_id=name if name != "(Top)" else None)
+            sections.append(
                 {
                     "name": name,
-                    **self.section_parser.parse_group(group_elements),
+                    **self.section_parser.parse_group(group_elements, context=child_ctx),
                 }
-                for name, group_elements in parts
-            ],
-        }
+            )
+        return {"sections": sections}

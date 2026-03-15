@@ -7,6 +7,7 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.parser import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.context import WikiParserContext
 
 
 class TableParser(WikiParser):
@@ -15,7 +16,7 @@ class TableParser(WikiParser):
     Przetwarza tabelę: <table class="wikitable">
     """
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag, context: WikiParserContext | None = None) -> dict[str, Any]:
         """Parsuje tabelę wikitable HTML.
 
         Args:
@@ -25,9 +26,10 @@ class TableParser(WikiParser):
             Słownik z nagłówkami i wierszami tabeli.
         """
         parser = HtmlTableParser()
+        ctx = context or WikiParserContext.empty()
         full_headers, header_rows = self._extract_full_headers(parser, element)
         if not full_headers:
-            return {"headers": [], "rows": [], "raw_rows": []}
+            return {"headers": [], "rows": [], "raw_rows": [], "context": {"table_index": ctx.table_index, "heading_id": ctx.heading_id, "section_path": list(ctx.section_path)}}
 
         included_indexes = [i for i, header in enumerate(full_headers) if header.strip()]
         headers = [full_headers[i] for i in included_indexes]
@@ -73,7 +75,7 @@ class TableParser(WikiParser):
             rows.append(normalized_row)
             raw_rows.append(dict(zip(headers, normalized_row, strict=False)))
 
-        return {"headers": headers, "rows": rows, "raw_rows": raw_rows}
+        return {"headers": headers, "rows": rows, "raw_rows": raw_rows, "context": {"table_index": ctx.table_index, "heading_id": ctx.heading_id, "section_path": list(ctx.section_path)}}
 
     @staticmethod
     def _extract_full_headers(parser: HtmlTableParser, table: Tag) -> tuple[list[str], int]:

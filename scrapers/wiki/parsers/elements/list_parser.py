@@ -3,6 +3,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.context import WikiParserContext
 
 
 class ListParser(WikiParser):
@@ -11,7 +12,7 @@ class ListParser(WikiParser):
     Przetwarza element: <ul>
     """
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag, context: WikiParserContext | None = None) -> dict[str, Any]:
         """Parsuje listę nieuporządkowaną HTML.
 
         Args:

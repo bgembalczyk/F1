@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.context import WikiParserContext
 
 _HEADER_CLASS = "mw-body-header"
 _HEADER_TAG = "header"
@@ -16,7 +17,7 @@ class HeaderParser(WikiParser):
     <header class="mw-body-header vector-page-titlebar no-font-mode-scale">
     """
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(self, element: Tag, context: WikiParserContext | None = None) -> dict[str, Any]:
         """Parsuje nagłówek strony Wikipedii.
 
         Args:

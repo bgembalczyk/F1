@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.context import WikiParserContext
 from scrapers.wiki.parsers.elements.figure import FigureParser
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 from scrapers.wiki.parsers.elements.list_parser import ListParser
@@ -106,7 +107,11 @@ class WikiElementParserMixin:
         """Zwraca listę wszystkich tabel z klasą 'infobox' w podanym soup."""
         return soup.find_all("table", class_=self._has_infobox_class)
 
-    def parse_elements(self, elements: list[Tag]) -> list[dict[str, Any]]:
+    def parse_elements(
+        self,
+        elements: list[Tag],
+        context: WikiParserContext | None = None,
+    ) -> list[dict[str, Any]]:
         """Parsuje listę elementów HTML za pomocą odpowiednich narzędzi.
 
         Args:
@@ -116,13 +121,23 @@ class WikiElementParserMixin:
             Lista wyekstrahowanych danych dla każdego poznanego elementu.
         """
         result: list[dict[str, Any]] = []
+        base_context = context or WikiParserContext.empty()
+        table_index = 0
         for el in elements:
-            parsed = self._parse_element(el)
+            parsed_context = base_context
+            if el.name == "table" and "wikitable" in (el.get("class") or []):
+                table_index += 1
+                parsed_context = base_context.for_table(table_index)
+            parsed = self._parse_element(el, parsed_context)
             if parsed is not None:
                 result.append(parsed)
         return result
 
-    def _parse_element(self, el: Tag) -> dict[str, Any] | None:
+    def _parse_element(
+        self,
+        el: Tag,
+        context: WikiParserContext | None = None,
+    ) -> dict[str, Any] | None:
         """Wybiera właściwy parser dla danego elementu i parsuje go.
 
         Args:
@@ -132,30 +147,36 @@ class WikiElementParserMixin:
             Sparsowane dane lub None jeśli element nie jest obsługiwany.
         """
         if el.name == "p":
-            return {"type": "paragraph", "data": self.paragraph_parser.parse(el)}
+            return {
+                "type": "paragraph",
+                "data": self.paragraph_parser.parse(el, context=context),
+            }
 
         if el.name == "figure":
-            return {"type": "figure", "data": self.figure_parser.parse(el)}
+            return {"type": "figure", "data": self.figure_parser.parse(el, context=context)}
 
         if el.name == "ul":
-            return {"type": "list", "data": self.list_parser.parse(el)}
+            return {"type": "list", "data": self.list_parser.parse(el, context=context)}
 
         if el.name == "table":
             classes = el.get("class") or []
             if "infobox" in classes:
-                return {"type": "infobox", "data": self.infobox_parser.parse(el)}
+                return {"type": "infobox", "data": self.infobox_parser.parse(el, context=context)}
             if "wikitable" in classes:
-                return {"type": "table", "data": self.table_parser.parse(el)}
+                return {
+                    "type": "table",
+                    "data": self.table_parser.parse(el, context=context),
+                }
 
         if el.name == "div":
             classes = el.get("class") or []
             role = el.get("role")
             if role == "navigation" and "navbox" in classes:
-                return {"type": "navbox", "data": self.navbox_parser.parse(el)}
+                return {"type": "navbox", "data": self.navbox_parser.parse(el, context=context)}
             if any("references-wrap" in c for c in classes):
                 return {
                     "type": "references_wrap",
-                    "data": self.references_wrap_parser.parse(el),
+                    "data": self.references_wrap_parser.parse(el, context=context),
                 }
 
         return None
@@ -175,7 +196,11 @@ class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
     def __init__(self) -> None:
         WikiElementParserMixin.__init__(self)
 
-    def parse(self, element: Tag) -> dict[str, Any]:
+    def parse(
+        self,
+        element: Tag,
+        context: WikiParserContext | None = None,
+    ) -> dict[str, Any]:
         """Parsuje zawartość podpodpodsekcji.
 
         Args:
@@ -184,9 +209,13 @@ class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
         Returns:
             Słownik z listą sparsowanych elementów.
         """
-        return self.parse_group(list(element.children))
+        return self.parse_group(list(element.children), context=context)
 
-    def parse_group(self, elements: list) -> dict[str, Any]:
+    def parse_group(
+        self,
+        elements: list,
+        context: WikiParserContext | None = None,
+    ) -> dict[str, Any]:
         """Parsuje grupę elementów HTML.
 
         Args:
@@ -196,4 +225,4 @@ class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
             Słownik z listą sparsowanych elementów.
         """
         tags = [c for c in elements if isinstance(c, Tag)]
-        return {"elements": self.parse_elements(tags)}
+        return {"elements": self.parse_elements(tags, context=context)}
