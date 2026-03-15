@@ -107,6 +107,7 @@ class SeasonTableParser:
                 fragment=pipeline.fragment,
                 expected_headers=pipeline.expected_headers,
                 table_css_class=pipeline.table_css_class,
+                section_domain="seasons",
             )
             try:
                 records: list[dict[str, Any]] = []

@@ -93,6 +93,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
             section_soup = self.extract_section_by_id(
                 soup,
                 section_title.replace(" ", "_"),
+                domain="drivers",
             )
             if section_soup is None:
                 continue
