@@ -3,18 +3,18 @@ from typing import Any
 
 from tqdm import tqdm
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.abc import ABCScraper
 from scrapers.base.source_adapter import IterableSourceAdapter
 
 
 @dataclass(frozen=True)
 class CompositeScraperChildren:
-    list_scraper: F1Scraper
+    list_scraper: ABCScraper
     single_scraper: Any
     records_adapter: IterableSourceAdapter[dict[str, Any]]
 
 
-class CompositeScraper(F1Scraper):
+class CompositeScraper(ABCScraper):
     def __init__(self, *, options) -> None:
         super().__init__(options=options)
         self.options = options

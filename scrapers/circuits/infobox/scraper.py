@@ -43,7 +43,7 @@ class F1CircuitInfoboxScraper(WikiScraper):
 
         super().__init__(options=options)
 
-        # Dla czytelności (F1Scraper i tak to trzyma)
+        # Dla czytelności (ABCScraper i tak to trzyma)
         self.fetcher = options.fetcher
         self.policy = self.http_policy
         self.timeout = self.policy.timeout
@@ -106,7 +106,7 @@ class F1CircuitInfoboxScraper(WikiScraper):
 
         Merge:
         - serwisy z main,
-        - osłona błędów w stylu nowego F1Scraper
+        - osłona błędów w stylu nowego ABCScrapera
           (network/parse + soft-skip jeśli _handle_scraper_error).
         """
         self.url = url

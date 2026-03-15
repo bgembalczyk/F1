@@ -4,14 +4,14 @@ from typing import Any
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
 
-class CompleteSeasonScraper(F1Scraper):
+class CompleteSeasonScraper(ABCScraper):
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)

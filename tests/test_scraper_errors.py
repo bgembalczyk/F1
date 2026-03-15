@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.abc import ABCScraper
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperNotFoundError
@@ -111,14 +111,14 @@ class DummyFetcher:
         return self.get_text(_url)
 
 
-class DummyScraper(F1Scraper):
+class DummyScraper(ABCScraper):
     url = "https://example.com"
 
     def _parse_soup(self, _soup):
         return []
 
 
-class DummyParseScraper(F1Scraper):
+class DummyParseScraper(ABCScraper):
     url = "https://example.com"
 
     def _parse_soup(self, _soup):

@@ -1,6 +1,6 @@
 """Test refactored base classes to ensure they maintain functionality."""
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.abc import ABCScraper
 from scrapers.base.composite_scraper import CompositeScraper
 from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.base.list.scraper import F1ListScraper
@@ -113,8 +113,8 @@ class TestSingleEngineManufacturerScraper:
     """Test SingleEngineManufacturerScraper structure."""
 
     def test_inherits_from_f1_scraper(self):
-        """Verify SingleEngineManufacturerScraper inherits from F1Scraper."""
-        assert issubclass(SingleEngineManufacturerScraper, F1Scraper)
+        """Verify SingleEngineManufacturerScraper inherits from ABCScraper."""
+        assert issubclass(SingleEngineManufacturerScraper, ABCScraper)
 
     def test_has_fetch_by_url_method(self):
         """Verify SingleEngineManufacturerScraper has fetch_by_url method."""
@@ -186,12 +186,12 @@ class TestPointsScrapers:
 
 
 class TestWikiScraperHierarchy:
-    """Test WikiScraper hierarchy – WikiScraper inherits F1Scraper,
+    """Test WikiScraper hierarchy – WikiScraper inherits ABCScraper,
     ListScrapers and SingleScrapers inherit WikiScraper."""
 
     def test_wiki_scraper_inherits_from_f1_scraper(self):
-        """Verify WikiScraper inherits from F1Scraper."""
-        assert issubclass(WikiScraper, F1Scraper)
+        """Verify WikiScraper inherits from ABCScraper."""
+        assert issubclass(WikiScraper, ABCScraper)
 
     # ---------- F1ListScraper ----------
 
@@ -242,15 +242,15 @@ class TestWikiScraperHierarchy:
     # ---------- Transitivity through WikiScraper ----------
 
     def test_list_scraper_still_inherits_f1_scraper(self):
-        """Verify F1ListScraper (transitively) inherits from F1Scraper."""
-        assert issubclass(F1ListScraper, F1Scraper)
+        """Verify F1ListScraper (transitively) inherits from ABCScraper."""
+        assert issubclass(F1ListScraper, ABCScraper)
 
     def test_table_scraper_still_inherits_f1_scraper(self):
-        """Verify F1TableScraper (transitively) inherits from F1Scraper."""
-        assert issubclass(F1TableScraper, F1Scraper)
+        """Verify F1TableScraper (transitively) inherits from ABCScraper."""
+        assert issubclass(F1TableScraper, ABCScraper)
 
     def test_single_scrapers_still_inherit_f1_scraper(self):
-        """Verify all single scrapers (transitively) inherit from F1Scraper."""
+        """Verify all single scrapers (transitively) inherit from ABCScraper."""
         for cls in [
             F1SingleCircuitScraper,
             SingleConstructorScraper,
@@ -259,8 +259,8 @@ class TestWikiScraperHierarchy:
             SingleEngineManufacturerScraper,
             F1SingleGrandPrixScraper,
         ]:
-            assert issubclass(cls, F1Scraper), (
-                f"{cls.__name__} should (transitively) inherit F1Scraper"
+            assert issubclass(cls, ABCScraper), (
+                f"{cls.__name__} should (transitively) inherit ABCScraper"
             )
 
     def test_wiki_scraper_has_wiki_parsers(self):

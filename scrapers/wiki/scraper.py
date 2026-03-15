@@ -2,17 +2,17 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.header import HeaderParser
 
 
-class WikiScraper(F1Scraper):
+class WikiScraper(ABCScraper):
     """Bazowy scraper artykułów Wikipedii.
 
-    Dziedziczy z F1Scraper, zapewniając pełen pipeline:
+    Dziedziczy z ABCScraper, zapewniając pełen pipeline:
     download → parse → normalize → transform → validate → export.
 
     Klasa ta obsługuje specyficzne dla Wikipedii parsery stron:
@@ -63,7 +63,7 @@ class WikiScraper(F1Scraper):
     def scrape(self, url: str) -> dict[str, Any]:
         """Pobiera i parsuje artykuł Wikipedii pod podanym adresem URL.
 
-        Wygodna metoda opakowująca pełny pipeline F1Scrapera.
+        Wygodna metoda opakowująca pełny pipeline ABCScrapera.
 
         Args:
             url: Adres URL artykułu Wikipedii.

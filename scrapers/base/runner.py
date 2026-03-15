@@ -1,7 +1,7 @@
 from pathlib import Path
 from uuid import uuid4
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.paremeters import supports_param
 from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger
@@ -19,7 +19,7 @@ class ScraperRunner:
 
     def run_and_export(
         self,
-        scraper_cls: type[F1Scraper],
+        scraper_cls: type[ABCScraper],
         json_rel: str | Path,
         csv_rel: str | Path | None = None,
     ) -> None:
@@ -48,7 +48,7 @@ class ScraperRunner:
             result.to_csv(csv_path, exporter=scraper.exporter)
         run_logger.info("Scrape run %s finished", run_id)
 
-    def _make_scraper(self, scraper_cls: type[F1Scraper], *, run_id: str) -> F1Scraper:
+    def _make_scraper(self, scraper_cls: type[ABCScraper], *, run_id: str) -> ABCScraper:
         """
         Tworzy instancję scrapera w sposób kompatybilny z różnymi konstruktorami:
 
@@ -91,7 +91,7 @@ class ScraperRunner:
     def _inject_options_kwargs(
         self,
         kwargs: dict[str, object],
-        scraper_cls: type[F1Scraper],
+        scraper_cls: type[ABCScraper],
         options: ScraperOptions,
         run_id: str,
     ) -> None:
@@ -104,7 +104,7 @@ class ScraperRunner:
     def _inject_legacy_kwargs(
         self,
         kwargs: dict[str, object],
-        scraper_cls: type[F1Scraper],
+        scraper_cls: type[ABCScraper],
         run_id: str,
     ) -> None:
         if supports_param(scraper_cls, "run_id"):

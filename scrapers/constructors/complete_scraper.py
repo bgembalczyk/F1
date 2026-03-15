@@ -4,7 +4,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 
-from scrapers.base.abc import F1Scraper
+from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
@@ -19,7 +19,7 @@ from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 
 
-class CompleteConstructorsScraper(F1Scraper):
+class CompleteConstructorsScraper(ABCScraper):
     """
     Uruchamia cztery list scrapery konstruktorów, a następnie dla każdego
     elementu pobiera szczegóły (infoboksy + tabele) za pomocą
@@ -75,7 +75,7 @@ class CompleteConstructorsScraper(F1Scraper):
         raise NotImplementedError(msg)
 
     def _fetch_all_list_records(self) -> list[dict[str, Any]]:
-        list_scrapers: list[F1Scraper] = [
+        list_scrapers: list[ABCScraper] = [
             CurrentConstructorsListScraper(options=self._options),
             FormerConstructorsListScraper(options=self._options),
             IndianapolisOnlyConstructorsListScraper(options=self._options),
