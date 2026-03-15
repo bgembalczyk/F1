@@ -18,7 +18,7 @@ class SubSubSectionParser(WikiElementParserMixin, WikiParser):
 
     Dzieli zawartość na podpodpodsekcje (poziom 5) i deleguje ich parsowanie
     do SubSubSubSectionParser. Dodatkowo korzysta z narzędzi elementarnych
-    (InfoboxParser, ParagrafParser, FigureParser, ListParser, TableParser,
+    (InfoboxParser, ParagraphParser, FigureParser, ListParser, TableParser,
     NavBoxParser, ReferencesWrapParser).
     """
 

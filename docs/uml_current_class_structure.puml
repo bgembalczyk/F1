@@ -86,7 +86,7 @@ package "Wiki Parsers - Sections" {
 
     abstract class WikiElementParserMixin {
         + infobox_parser: InfoboxParser
-        + paragraph_parser: ParagrafParser
+        + paragraph_parser: ParagraphParser
         + figure_parser: FigureParser
         + list_parser: ListParser
         + table_parser: TableParser
@@ -103,7 +103,7 @@ package "Wiki Parsers - Elements" {
         + parse(element: Tag): dict
     }
 
-    class ParagrafParser {
+    class ParagraphParser {
         + parse(element: Tag): dict
     }
 
@@ -162,7 +162,7 @@ SubSubSectionParser --> SubSubSubSectionParser: uses
 
 ' Element parser hierarchy
 WikiParser <|-- InfoboxParser
-WikiParser <|-- ParagrafParser
+WikiParser <|-- ParagraphParser
 WikiParser <|-- FigureParser
 WikiParser <|-- ListParser
 WikiParser <|-- TableParser
@@ -171,7 +171,7 @@ WikiParser <|-- ReferencesWrapParser
 
 ' WikiElementParserMixin uses element parsers
 WikiElementParserMixin --> InfoboxParser: uses
-WikiElementParserMixin --> ParagrafParser: uses
+WikiElementParserMixin --> ParagraphParser: uses
 WikiElementParserMixin --> FigureParser: uses
 WikiElementParserMixin --> ListParser: uses
 WikiElementParserMixin --> TableParser: uses

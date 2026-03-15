@@ -81,7 +81,7 @@
 - Abstrakcyjną klasę bazową `WikiParser`
 - Parsery poziomu strony: `HeaderParser`, `BodyContentParser`, `CategoryLinksParser`, `ContentTextParser`
 - Parsery sekcji: `SectionParser` → `SubSectionParser` → `SubSubSectionParser` → `SubSubSubSectionParser`
-- Parsery elementów HTML: `InfoboxParser`, `ParagrafParser`, `FigureParser`, `ListParser`, `TableParser`, `NavBoxParser`, `ReferencesWrapParser`
+- Parsery elementów HTML: `InfoboxParser`, `ParagraphParser`, `FigureParser`, `ListParser`, `TableParser`, `NavBoxParser`, `ReferencesWrapParser`
 - Mixin `WikiElementParserMixin` dostarczający narzędzia elementarne do parserów sekcji
 
 **Zasady architektury** widoczne w diagramie:

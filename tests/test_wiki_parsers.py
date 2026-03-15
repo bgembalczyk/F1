@@ -11,7 +11,7 @@ from scrapers.wiki.parsers.elements.figure import FigureParser
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 from scrapers.wiki.parsers.elements.list_parser import ListParser
 from scrapers.wiki.parsers.elements.navbox import NavBoxParser
-from scrapers.wiki.parsers.elements.paragraph import ParagrafParser
+from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.header import HeaderParser
@@ -158,7 +158,7 @@ def test_infobox_parser():
 def test_paragraph_parser():
     html = "<p>Hello World</p>"
     soup = _make_soup(html)
-    parser = ParagrafParser()
+    parser = ParagraphParser()
     result = parser.parse(soup.find("p"))
     assert result["text"] == "Hello World"
 

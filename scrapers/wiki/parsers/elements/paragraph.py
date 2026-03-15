@@ -5,7 +5,7 @@ from bs4 import Tag
 from scrapers.wiki.parsers.base import WikiParser
 
 
-class ParagrafParser(WikiParser):
+class ParagraphParser(WikiParser):
     """Parser akapitów Wikipedii.
 
     Przetwarza element: <p>
@@ -21,3 +21,7 @@ class ParagrafParser(WikiParser):
             Słownik z tekstem akapitu.
         """
         return {"text": element.get_text(" ", strip=True)}
+
+
+# Alias przejściowy dla kompatybilności wstecznej.
+ParagrafParser = ParagraphParser
