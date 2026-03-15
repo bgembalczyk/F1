@@ -243,9 +243,9 @@ class TestWikiScraperHierarchy:
         """Verify F1SingleGrandPrixScraper inherits from WikiScraper."""
         assert issubclass(F1SingleGrandPrixScraper, WikiScraper)
 
-    def test_circuit_infobox_parser_inherits_from_wiki_scraper(self):
-        """Verify F1CircuitInfoboxParser inherits from WikiScraper."""
-        assert issubclass(F1CircuitInfoboxParser, WikiScraper)
+    def test_circuit_infobox_parser_is_not_wiki_scraper(self):
+        """Verify F1CircuitInfoboxParser is a pure parser, not a WikiScraper."""
+        assert not issubclass(F1CircuitInfoboxParser, WikiScraper)
 
     def test_circuit_infobox_parser_inherits_from_infobox_parser(self):
         """Verify F1CircuitInfoboxParser inherits from InfoboxParser."""

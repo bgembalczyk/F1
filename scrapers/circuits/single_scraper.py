@@ -84,15 +84,14 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
         ]
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
-        infobox_scraper = F1CircuitInfoboxParser(
+        infobox_parser = F1CircuitInfoboxParser(
             options=ScraperOptions(
                 include_urls=self.include_urls,
-                fetcher=self.fetcher,
-                policy=self.policy,
                 debug_dir=self.debug_dir,
             ),
+            url=self.url,
         )
-        records = infobox_scraper.parse(soup)
+        records = infobox_parser.parse(soup)
         return records[0] if records else {}
 
     def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
