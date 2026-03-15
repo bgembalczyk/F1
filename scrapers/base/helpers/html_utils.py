@@ -9,7 +9,7 @@ from bs4 import Tag
 from scrapers.base.helpers.text import clean_wiki_text
 
 _HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
-_HEADING_AND_TABLE_TAGS = list(_HEADING_TAGS) + ["table"]
+_HEADING_AND_TABLE_TAGS = [*list(_HEADING_TAGS), "table"]
 
 
 def find_section_elements(
@@ -43,7 +43,9 @@ def find_section_tables(
     *,
     class_: str = "wikitable",
 ) -> list[Tag]:
-    """Find all tables within a section, stopping at the next heading of equal or higher level.
+    """Find all tables within a section.
+
+    Stop at the next heading of equal or higher level.
 
     Unlike ``find_section_elements``, this function respects section boundaries
     and does not return tables from subsequent sections.
@@ -63,10 +65,17 @@ def find_section_tables(
         raise RuntimeError(msg)
 
     # Determine this section's heading level so we can stop at the next peer section.
-    section_heading = heading if heading.name in _HEADING_TAGS else heading.find_parent(_HEADING_TAGS)
+    section_heading = (
+        heading if heading.name in _HEADING_TAGS else heading.find_parent(_HEADING_TAGS)
+    )
     if section_heading is None:
-        # No enclosing h-tag found — return all following tables without level-based stopping.
-        return [t for t in heading.find_all_next("table") if class_ in (t.get("class") or [])]
+        # No enclosing h-tag found - return all following tables without
+        # level-based stopping.
+        return [
+            t
+            for t in heading.find_all_next("table")
+            if class_ in (t.get("class") or [])
+        ]
 
     current_level = int(section_heading.name[1])
 
