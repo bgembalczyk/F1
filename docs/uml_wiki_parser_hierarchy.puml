@@ -68,7 +68,7 @@ package "WikiParser - Poziom Strony" {
 package "WikiParser - Sekcje" {
     abstract class WikiElementParserMixin {
         + infobox_parser: InfoboxParser
-        + paragraph_parser: ParagrafParser
+        + paragraph_parser: ParagraphParser
         + figure_parser: FigureParser
         + list_parser: ListParser
         + table_parser: TableParser
@@ -128,7 +128,7 @@ package "WikiParser - Elementy HTML" {
         + parse(element: Tag): dict
     }
 
-    class ParagrafParser {
+    class ParagraphParser {
         **HTML:** <p>
         --
         + parse(element: Tag): dict
@@ -198,7 +198,7 @@ SubSubSectionParser --> SubSubSubSectionParser: uses
 
 ' Element parser inheritance
 WikiParser <|-- InfoboxParser
-WikiParser <|-- ParagrafParser
+WikiParser <|-- ParagraphParser
 WikiParser <|-- FigureParser
 WikiParser <|-- ListParser
 WikiParser <|-- TableParser
@@ -207,7 +207,7 @@ WikiParser <|-- ReferencesWrapParser
 
 ' WikiElementParserMixin uses element parsers
 WikiElementParserMixin --> InfoboxParser: uses
-WikiElementParserMixin --> ParagrafParser: uses
+WikiElementParserMixin --> ParagraphParser: uses
 WikiElementParserMixin --> FigureParser: uses
 WikiElementParserMixin --> ListParser: uses
 WikiElementParserMixin --> TableParser: uses

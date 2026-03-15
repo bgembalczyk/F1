@@ -18,7 +18,7 @@ class SectionParser(WikiElementParserMixin, WikiParser):
 
     Dzieli zawartość na podsekcje (poziom 3) i deleguje ich parsowanie
     do SubSectionParser. Dodatkowo korzysta z narzędzi elementarnych
-    (InfoboxParser, ParagrafParser, FigureParser, ListParser, TableParser,
+    (InfoboxParser, ParagraphParser, FigureParser, ListParser, TableParser,
     NavBoxParser, ReferencesWrapParser).
     """
 

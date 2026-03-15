@@ -10,7 +10,7 @@ from scrapers.wiki.parsers.elements.figure import FigureParser
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 from scrapers.wiki.parsers.elements.list_parser import ListParser
 from scrapers.wiki.parsers.elements.navbox import NavBoxParser
-from scrapers.wiki.parsers.elements.paragraph import ParagrafParser
+from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
 
@@ -65,7 +65,7 @@ class WikiElementParserMixin:
     Używany przez parsery sekcji wszystkich poziomów.
     Zawiera parsery dla typowych elementów HTML obecnych w artykułach Wikipedii:
     - InfoboxParser dla: <table class="infobox vcard">
-    - ParagrafParser dla: <p>
+    - ParagraphParser dla: <p>
     - FigureParser dla: <figure>
     - ListParser dla: <ul>
     - TableParser dla: <table class="wikitable">
@@ -79,7 +79,7 @@ class WikiElementParserMixin:
 
     def __init__(self) -> None:
         self.infobox_parser = InfoboxParser()
-        self.paragraph_parser = ParagrafParser()
+        self.paragraph_parser = ParagraphParser()
         self.figure_parser = FigureParser()
         self.list_parser = ListParser()
         self.table_parser = TableParser()
@@ -168,7 +168,7 @@ class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
     <div class="mw-heading mw-heading5"><h5 id=...>
 
     Nie zagłębia się dalej – używa wyłącznie narzędzi elementarnych
-    (InfoboxParser, ParagrafParser, FigureParser, ListParser, TableParser,
+    (InfoboxParser, ParagraphParser, FigureParser, ListParser, TableParser,
     NavBoxParser, ReferencesWrapParser).
     """
 
