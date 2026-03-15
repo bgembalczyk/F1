@@ -16,7 +16,7 @@ def normalize_unit_value(value: Any, field_name: str) -> dict[str, Any] | None:
         )
         normalized_unit = str(unit).strip() if unit is not None else None
         return {"value": normalized_value, "unit": normalized_unit}
-    if isinstance(value, (int, float)):
+    if isinstance(value, int | float):
         return {"value": validate_float(value, f"{field_name}.value"), "unit": None}
     msg = f"Pole {field_name} musi być słownikiem lub liczbą"
     raise TypeError(msg)
@@ -57,7 +57,7 @@ def normalize_range_item(value: Any, field_name: str) -> Any:
         return None
     if isinstance(value, dict) and "unit" in value:
         return normalize_unit_value(value, field_name)
-    if isinstance(value, (int, float, dict)):
+    if isinstance(value, int | float | dict):
         return normalize_unit_value(value, field_name)
     msg = f"Pole {field_name} ma nieprawidłowy typ"
     raise ValueError(msg)

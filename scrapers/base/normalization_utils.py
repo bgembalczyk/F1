@@ -55,7 +55,7 @@ def normalize_record_values(
         cleaned = normalize_empty(value, policy=policy)
         if cleaned is None and (
             (isinstance(value, str) and value.strip() == "")
-            or (isinstance(value, (list, dict)) and not value)
+            or (isinstance(value, list | dict) and not value)
         ):
             normalized_empty_fields += 1
         normalized[key] = cleaned

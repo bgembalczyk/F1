@@ -68,7 +68,7 @@ def unique_sorted(values: Iterable[int]) -> list[int]:
 def normalize_date_value(rec: dict[str, Any]) -> None:
     """Zamienia date dict na wartość "YYYY-MM-DD" lub "YYYY-MM" lub "YYYY"."""
     d = rec.get("date")
-    if not isinstance(d, dict) and not isinstance(d, (DateValue, NormalizedDate)):
+    if not isinstance(d, dict) and not isinstance(d, DateValue | NormalizedDate):
         return
     if isinstance(d, DateValue):
         iso = d.iso

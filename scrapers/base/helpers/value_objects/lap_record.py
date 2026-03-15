@@ -14,13 +14,13 @@ class LapRecord:
 
     def __post_init__(self) -> None:
         time_val = self.data.get("time")
-        if isinstance(time_val, (Mapping, NormalizedTime)):
+        if isinstance(time_val, Mapping | NormalizedTime):
             normalized = NormalizedTime.from_value(time_val)
             if normalized is not None:
                 self.data["time"] = normalized
 
         date_val = self.data.get("date")
-        if isinstance(date_val, (Mapping, NormalizedDate)):
+        if isinstance(date_val, Mapping | NormalizedDate):
             normalized = NormalizedDate.from_value(date_val)
             if normalized is not None:
                 self.data["date"] = normalized
@@ -35,7 +35,7 @@ class LapRecord:
     def to_dict(self) -> dict[str, Any]:
         result: dict[str, Any] = {}
         for key, value in self.data.items():
-            if isinstance(value, (NormalizedTime, NormalizedDate)) or (
+            if isinstance(value, NormalizedTime | NormalizedDate) or (
                 hasattr(value, "to_dict") and callable(value.to_dict)
             ):
                 result[key] = value.to_dict()

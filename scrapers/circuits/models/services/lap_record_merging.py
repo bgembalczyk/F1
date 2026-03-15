@@ -154,16 +154,16 @@ def select_best_time(records: list[dict[str, Any]]) -> float | None:
     """Zwraca czas WYŁĄCZNIE jako sekundy (float)."""
     for r in records:
         tk = parse_time_key(r)
-        if isinstance(tk, (int, float)):
+        if isinstance(tk, int | float):
             return float(tk)
 
     for r in records:
         t = r.get("time")
         if isinstance(t, dict):
             sec = t.get("seconds")
-            if isinstance(sec, (int, float)):
+            if isinstance(sec, int | float):
                 return float(sec)
-        if isinstance(t, (int, float)):
+        if isinstance(t, int | float):
             return float(t)
         if isinstance(t, str):
             try:

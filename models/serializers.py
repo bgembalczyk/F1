@@ -50,10 +50,10 @@ def to_dict_any(
             return normalized_link
         return {k: to_dict_any(v, logger=logger) for k, v in mapping.items()}
 
-    if isinstance(value, (list, tuple)):
+    if isinstance(value, list | tuple):
         return [to_dict_any(v, logger=logger) for v in value]
 
-    if isinstance(value, (str, int, float, bool, type(None))):
+    if isinstance(value, str | int | float | bool | type(None)):
         return value
 
     if logger is not None:

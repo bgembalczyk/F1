@@ -44,5 +44,7 @@ ENGINE_MANUFACTURER_SCHEMA = RecordSchema(
 )
 
 
-def validate_engine_manufacturer_record(record: dict[str, Any]) -> list[ValidationIssue]:
+def validate_engine_manufacturer_record(
+    record: dict[str, Any],
+) -> list[ValidationIssue]:
     return BaseDomainRecordValidator.validate_schema(record, ENGINE_MANUFACTURER_SCHEMA)

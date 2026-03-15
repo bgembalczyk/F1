@@ -39,7 +39,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
         """
         if t is None:
             return None
-        if isinstance(t, (int, float)):
+        if isinstance(t, int | float):
             return f"{float(t):.6f}".rstrip("0").rstrip(".")
         s = str(t).strip()
         return s or None

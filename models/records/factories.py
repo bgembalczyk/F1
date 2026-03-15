@@ -41,7 +41,7 @@ def _normalize_points(value: Any) -> Any:
             if key in normalized:
                 normalized[key] = normalize_float(normalized.get(key), f"points.{key}")
         return normalized
-    if isinstance(value, (int, float, str)):
+    if isinstance(value, int | float | str):
         return normalize_float(value, "points")
     return value
 
@@ -210,7 +210,7 @@ def build_event_record(record: Mapping[str, Any]) -> EventRecord:
     event = payload.get("event")
     if isinstance(event, list):
         payload["event"] = normalize_link_list(event, "event")
-    elif isinstance(event, (Mapping, str)):
+    elif isinstance(event, Mapping | str):
         payload["event"] = normalize_link_value(event, "event") or (
             event.strip() if isinstance(event, str) else None
         )
@@ -323,9 +323,14 @@ def build_circuit_complete_record(record: Mapping[str, Any]) -> CircuitCompleteR
     return cast("CircuitCompleteRecord", payload)
 
 
-def build_engine_manufacturer_record(record: Mapping[str, Any]) -> EngineManufacturerRecord:
+def build_engine_manufacturer_record(
+    record: Mapping[str, Any],
+) -> EngineManufacturerRecord:
     payload = dict(record)
-    payload["manufacturer"] = normalize_link_value(payload.get("manufacturer"), "manufacturer")
+    payload["manufacturer"] = normalize_link_value(
+        payload.get("manufacturer"),
+        "manufacturer",
+    )
     payload["manufacturer_status"] = normalize_status(
         payload.get("manufacturer_status"),
         ["current", "former"],
@@ -336,8 +341,14 @@ def build_engine_manufacturer_record(record: Mapping[str, Any]) -> EngineManufac
         "engines_built_in",
     )
     payload["seasons"] = normalize_seasons(payload.get("seasons"))
-    payload["races_entered"] = normalize_int(payload.get("races_entered"), "races_entered")
-    payload["races_started"] = normalize_int(payload.get("races_started"), "races_started")
+    payload["races_entered"] = normalize_int(
+        payload.get("races_entered"),
+        "races_entered",
+    )
+    payload["races_started"] = normalize_int(
+        payload.get("races_started"),
+        "races_started",
+    )
     payload["wins"] = normalize_int(payload.get("wins"), "wins")
     payload["points"] = normalize_float(payload.get("points"), "points")
     payload["poles"] = normalize_int(payload.get("poles"), "poles")

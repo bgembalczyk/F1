@@ -29,11 +29,11 @@ def extract_time_value(value: Any) -> tuple[str | None, float | None]:
     if isinstance(value, dict):
         text = value.get("text")
         seconds = value.get("seconds")
-        sec = float(seconds) if isinstance(seconds, (int, float)) else None
+        sec = float(seconds) if isinstance(seconds, int | float) else None
         txt = str(text).strip() if text is not None else None
         return (txt or None), sec
 
-    if isinstance(value, (int, float)):
+    if isinstance(value, int | float):
         return None, float(value)
 
     if value is not None:
@@ -219,7 +219,7 @@ def parse_time_seconds(rec: dict[str, Any]) -> float | None:
     - rec["time"] jako NormalizedTime
     """
     ts = rec.get("time_seconds")
-    if isinstance(ts, (int, float)):
+    if isinstance(ts, int | float):
         return float(ts)
 
     t = rec.get("time")

@@ -23,7 +23,7 @@ class NormalizedTime:
             return value
         if isinstance(value, Mapping):
             return cls(text=value.get("text"), seconds=value.get("seconds"))
-        if isinstance(value, (int, float)):
+        if isinstance(value, int | float):
             return cls(text=None, seconds=float(value))
         return cls(text=str(value).strip(), seconds=None)
 

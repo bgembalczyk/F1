@@ -11,11 +11,11 @@ from scrapers.base.table.columns.types.base import BaseColumn
 
 def serialize_value(value: Any) -> Any:
     """Recursively convert a column-kwarg value to a JSON-safe type."""
-    if value is None or isinstance(value, (str, int, float, bool)):
+    if value is None or isinstance(value, str | int | float | bool):
         return value
     if isinstance(value, dict):
         return {k: serialize_value(v) for k, v in value.items()}
-    if isinstance(value, (list, tuple)):
+    if isinstance(value, list | tuple):
         return [serialize_value(item) for item in value]
     if isinstance(value, type):
         return f"{value.__module__}.{value.__name__}"

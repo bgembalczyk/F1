@@ -61,7 +61,7 @@ def normalize_links(
     drop_empty_text: bool = False,
     strip_lang_suffix: bool = True,
 ) -> list[LinkRecord]:
-    if isinstance(links, (Tag, str)):
+    if isinstance(links, Tag | str):
         if isinstance(links, Tag):
             search_root = links
         else:

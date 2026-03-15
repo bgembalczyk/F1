@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
 
 def normalize_seconds(value: Any) -> float | None:
-    if isinstance(value, (int, float)):
+    if isinstance(value, int | float):
         return float(value)
     if isinstance(value, str):
         stripped = value.strip()

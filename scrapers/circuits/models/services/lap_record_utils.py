@@ -84,7 +84,7 @@ def parse_lap_record_time_from_record(rec: Mapping[str, Any]) -> float | None:
     - rec["time"] jako NormalizedTime
     """
     ts = rec.get("time_seconds")
-    if isinstance(ts, (int, float)):
+    if isinstance(ts, int | float):
         return float(ts)
 
     t = rec.get("time")
