@@ -1,12 +1,12 @@
 """Test refactored base classes to ensure they maintain functionality."""
 
 from scrapers.base.abc import ABCScraper
-from scrapers.base.composite_scraper import CompositeScraper
+from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.circuits.complete_scraper import F1CompleteCircuitScraper
+from scrapers.circuits.complete_scraper import F1CompleteCircuitDataExtractor
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.constructors.base_constructor_list_scraper import (
@@ -20,15 +20,15 @@ from scrapers.constructors.indianapolis_only_constructors_list import (
     IndianapolisOnlyConstructorsListScraper,
 )
 from scrapers.constructors.single_scraper import SingleConstructorScraper
-from scrapers.drivers.complete_scraper import CompleteDriverScraper
+from scrapers.drivers.complete_scraper import CompleteDriverDataExtractor
 from scrapers.drivers.single_scraper import SingleDriverScraper
-from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerScraper
+from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerDataExtractor
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
 from scrapers.engines.single_scraper import SingleEngineManufacturerScraper
-from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixScraper
+from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.points_scoring_systems_history import (
@@ -84,38 +84,40 @@ class TestIndianapolisOnlyScrapers:
 
 
 class TestCompleteScrapers:
-    """Test complete scrapers use CompositeScraper / BaseDataExtractor correctly."""
+    """Test complete data extractors use CompositeDataExtractor / BaseDataExtractor correctly."""
 
     def test_circuit_complete_inherits_from_composite(self):
-        """Verify F1CompleteCircuitScraper inherits from CompositeScraper."""
-        assert issubclass(F1CompleteCircuitScraper, CompositeScraper)
+        """Verify F1CompleteCircuitDataExtractor inherits from CompositeDataExtractor."""
+        assert issubclass(F1CompleteCircuitDataExtractor, CompositeDataExtractor)
 
     def test_grand_prix_complete_inherits_from_composite(self):
-        """Verify F1CompleteGrandPrixScraper inherits from CompositeScraper."""
-        assert issubclass(F1CompleteGrandPrixScraper, CompositeScraper)
+        """Verify F1CompleteGrandPrixDataExtractor inherits from CompositeDataExtractor."""
+        assert issubclass(F1CompleteGrandPrixDataExtractor, CompositeDataExtractor)
 
     def test_driver_complete_inherits_from_composite(self):
-        """Verify CompleteDriverScraper inherits from CompositeScraper."""
-        assert issubclass(CompleteDriverScraper, CompositeScraper)
+        """Verify CompleteDriverDataExtractor inherits from CompositeDataExtractor."""
+        assert issubclass(CompleteDriverDataExtractor, CompositeDataExtractor)
 
     def test_engine_manufacturer_complete_inherits_from_composite(self):
-        """Verify F1CompleteEngineManufacturerScraper inherits from CompositeScraper."""
-        assert issubclass(F1CompleteEngineManufacturerScraper, CompositeScraper)
+        """Verify F1CompleteEngineManufacturerDataExtractor inherits from CompositeDataExtractor."""
+        assert issubclass(
+            F1CompleteEngineManufacturerDataExtractor, CompositeDataExtractor
+        )
 
     def test_engine_manufacturer_complete_url(self):
-        """Verify F1CompleteEngineManufacturerScraper uses correct URL."""
+        """Verify F1CompleteEngineManufacturerDataExtractor uses correct URL."""
         assert (
-            F1CompleteEngineManufacturerScraper.url
+            F1CompleteEngineManufacturerDataExtractor.url
             == EngineManufacturersListScraper.CONFIG.url
         )
 
-    def test_composite_scraper_inherits_base_data_extractor(self):
-        """Verify CompositeScraper inherits from BaseDataExtractor."""
-        assert issubclass(CompositeScraper, BaseDataExtractor)
+    def test_composite_data_extractor_inherits_base_data_extractor(self):
+        """Verify CompositeDataExtractor inherits from BaseDataExtractor."""
+        assert issubclass(CompositeDataExtractor, BaseDataExtractor)
 
-    def test_composite_scraper_does_not_inherit_abc_scraper(self):
-        """Verify CompositeScraper does NOT inherit from ABCScraper."""
-        assert not issubclass(CompositeScraper, ABCScraper)
+    def test_composite_data_extractor_does_not_inherit_abc_scraper(self):
+        """Verify CompositeDataExtractor does NOT inherit from ABCScraper."""
+        assert not issubclass(CompositeDataExtractor, ABCScraper)
 
 
 class TestSingleEngineManufacturerScraper:
@@ -273,10 +275,11 @@ class TestWikiScraperHierarchy:
             )
 
     def test_wiki_scraper_has_wiki_parsers(self):
-        """Verify WikiScraper exposes HeaderParser and BodyContentParser as attributes."""
+        """Verify WikiScraper exposes HeaderParser, BodyContentParser and SectionParser as attributes."""
         scraper = WikiScraper()
         assert hasattr(scraper, "header_parser")
         assert hasattr(scraper, "body_content_parser")
+        assert hasattr(scraper, "section_parser")
 
     def test_wiki_scraper_has_scrape_method(self):
         """Verify WikiScraper has a scrape(url) convenience method."""

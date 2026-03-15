@@ -9,13 +9,13 @@ from scrapers.base.source_adapter import IterableSourceAdapter
 
 
 @dataclass(frozen=True)
-class CompositeScraperChildren:
+class CompositeDataExtractorChildren:
     list_scraper: ABCScraper
     single_scraper: Any
     records_adapter: IterableSourceAdapter[dict[str, Any]]
 
 
-class CompositeScraper(BaseDataExtractor):
+class CompositeDataExtractor(BaseDataExtractor):
     def __init__(self, *, options) -> None:
         super().__init__(options=options)
         self.options = options
@@ -24,8 +24,8 @@ class CompositeScraper(BaseDataExtractor):
         self.single_scraper = children.single_scraper
         self.records_adapter = children.records_adapter
 
-    def build_children(self) -> CompositeScraperChildren:
-        msg = "CompositeScraper requires build_children()."
+    def build_children(self) -> CompositeDataExtractorChildren:
+        msg = "CompositeDataExtractor requires build_children()."
         raise NotImplementedError(msg)
 
     def get_detail_url(self, _record: dict[str, Any]) -> str | None:
@@ -44,8 +44,8 @@ class CompositeScraper(BaseDataExtractor):
         records = self.records_adapter.get()
         complete: list[dict[str, Any]] = []
 
-        scraper_name = self.__class__.__name__
-        for record in tqdm(records, desc=scraper_name, unit="item"):
+        extractor_name = self.__class__.__name__
+        for record in tqdm(records, desc=extractor_name, unit="item"):
             if not isinstance(record, dict):
                 msg = (
                     f"{self.list_scraper.__class__.__name__} musi zwracać dict, "

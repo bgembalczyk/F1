@@ -5,7 +5,7 @@ from typing import Any
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.results import ScrapeResult
-from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerScraper
+from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerDataExtractor
 
 
 def manufacturer_name_initial(record: dict[str, Any]) -> str:
@@ -32,7 +32,7 @@ def export_complete_engine_manufacturers(
     include_urls: bool = True,
 ) -> None:
     options = init_scraper_options(None, include_urls=include_urls)
-    scraper = F1CompleteEngineManufacturerScraper(options=options)
+    scraper = F1CompleteEngineManufacturerDataExtractor(options=options)
     data = scraper.fetch()
     scraper.logger.info("Pobrano rekordów: %s", len(data))
 

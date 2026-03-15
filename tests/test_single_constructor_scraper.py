@@ -3,7 +3,7 @@ from typing import Any
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.constructors.complete_scraper import CompleteConstructorsScraper
+from scrapers.constructors.complete_scraper import CompleteConstructorsDataExtractor
 from scrapers.constructors.helpers.export import constructor_name_initial
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 
@@ -128,7 +128,7 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
 
 
 # ---------------------------------------------------------------------------
-# CompleteConstructorsScraper - _get_constructor_url
+# CompleteConstructorsDataExtractor - _get_constructor_url
 # ---------------------------------------------------------------------------
 
 
@@ -200,7 +200,7 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
     ],
 )
 def test_get_constructor_url(record: dict[str, Any], expected: str | None) -> None:
-    result = CompleteConstructorsScraper._get_constructor_url(record)  # noqa: SLF001
+    result = CompleteConstructorsDataExtractor._get_constructor_url(record)  # noqa: SLF001
     assert result == expected
 
 

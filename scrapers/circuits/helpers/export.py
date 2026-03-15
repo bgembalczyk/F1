@@ -5,7 +5,7 @@ from typing import Any
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.results import ScrapeResult
-from scrapers.circuits.complete_scraper import F1CompleteCircuitScraper
+from scrapers.circuits.complete_scraper import F1CompleteCircuitDataExtractor
 
 
 def circuit_name_initial(record: dict[str, Any]) -> str:
@@ -30,7 +30,7 @@ def export_complete_circuits(
     include_urls: bool = True,
 ) -> None:
     options = init_scraper_options(None, include_urls=include_urls)
-    scraper = F1CompleteCircuitScraper(options=options)
+    scraper = F1CompleteCircuitDataExtractor(options=options)
     data = scraper.fetch()
     scraper.logger.info("Pobrano rekordów: %s", len(data))
 

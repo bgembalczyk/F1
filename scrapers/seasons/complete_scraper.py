@@ -10,7 +10,7 @@ from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
 
-class CompleteSeasonScraper(BaseDataExtractor):
+class CompleteSeasonDataExtractor(BaseDataExtractor):
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -26,7 +26,7 @@ class CompleteSeasonScraper(BaseDataExtractor):
         results: list[dict[str, Any]] = []
         season_scraper = SingleSeasonScraper(options=self._options)
 
-        for season in tqdm(seasons, desc="CompleteSeasonScraper", unit="season"):
+        for season in tqdm(seasons, desc="CompleteSeasonDataExtractor", unit="season"):
             season_info = season.get("season")
             if not isinstance(season_info, dict):
                 continue

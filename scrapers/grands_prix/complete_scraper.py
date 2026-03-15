@@ -1,10 +1,8 @@
 from pathlib import Path
 from typing import Any
 
-from bs4 import BeautifulSoup
-
-from scrapers.base.composite_scraper import CompositeScraper
-from scrapers.base.composite_scraper import CompositeScraperChildren
+from scrapers.base.composite_scraper import CompositeDataExtractor
+from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
@@ -13,7 +11,7 @@ from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
 
-class F1CompleteGrandPrixScraper(CompositeScraper):
+class F1CompleteGrandPrixDataExtractor(CompositeDataExtractor):
     """
     Pobiera listę Grand Prix, a następnie zaciąga tabelę "By year"
     z każdego artykułu na Wikipedii, rozszerzając rekordy listy.
@@ -33,7 +31,7 @@ class F1CompleteGrandPrixScraper(CompositeScraper):
 
         super().__init__(options=options)
 
-    def build_children(self) -> CompositeScraperChildren:
+    def build_children(self) -> CompositeDataExtractorChildren:
         list_scraper = GrandsPrixListScraper(
             options=ScraperOptions(
                 include_urls=True,
@@ -49,7 +47,7 @@ class F1CompleteGrandPrixScraper(CompositeScraper):
         )
         grands_prix_adapter = IterableSourceAdapter(list_scraper.fetch)
 
-        return CompositeScraperChildren(
+        return CompositeDataExtractorChildren(
             list_scraper=list_scraper,
             single_scraper=single_scraper,
             records_adapter=grands_prix_adapter,
@@ -71,15 +69,10 @@ class F1CompleteGrandPrixScraper(CompositeScraper):
         full_record["by_year"] = by_year
         return full_record
 
-    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
-        """Metoda wymagana przez baze - nie uzywana w tym scraperze."""
-        msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
-        raise NotImplementedError(msg)
-
 
 if __name__ == "__main__":
     run_and_export(
-        F1CompleteGrandPrixScraper,
+        F1CompleteGrandPrixDataExtractor,
         "grands_prix/f1_grands_prix_extended.json",
         run_config=RunConfig(output_dir=Path("../../data/wiki")),
     )

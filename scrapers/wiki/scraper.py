@@ -7,6 +7,7 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.header import HeaderParser
+from scrapers.wiki.parsers.sections.section import SectionParser
 
 
 class WikiScraper(ABCScraper):
@@ -59,6 +60,9 @@ class WikiScraper(ABCScraper):
 
         self.header_parser = header_parser or HeaderParser()
         self.body_content_parser = body_content_parser or BodyContentParser()
+        self.section_parser: SectionParser = (
+            self.body_content_parser.content_text_parser.section_parser
+        )
 
     def scrape(self, url: str) -> dict[str, Any]:
         """Pobiera i parsuje artykuł Wikipedii pod podanym adresem URL.

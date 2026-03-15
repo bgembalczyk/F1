@@ -1,17 +1,15 @@
 from pathlib import Path
 from typing import Any
 
-from bs4 import BeautifulSoup
-
-from scrapers.base.composite_scraper import CompositeScraper
-from scrapers.base.composite_scraper import CompositeScraperChildren
+from scrapers.base.composite_scraper import CompositeDataExtractor
+from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
 
-class CompleteDriverScraper(CompositeScraper):
+class CompleteDriverDataExtractor(CompositeDataExtractor):
     url = F1DriversListScraper.CONFIG.url
 
     def __init__(
@@ -21,12 +19,12 @@ class CompleteDriverScraper(CompositeScraper):
     ) -> None:
         options = options or ScraperOptions()
 
-        # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
+        # Ten ekstraktor zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
         options.include_urls = True
 
         super().__init__(options=options)
 
-    def build_children(self) -> CompositeScraperChildren:
+    def build_children(self) -> CompositeDataExtractorChildren:
         list_scraper = F1DriversListScraper(
             options=ScraperOptions(
                 include_urls=True,
@@ -42,7 +40,7 @@ class CompleteDriverScraper(CompositeScraper):
         )
         drivers_adapter = IterableSourceAdapter(list_scraper.fetch)
 
-        return CompositeScraperChildren(
+        return CompositeDataExtractorChildren(
             list_scraper=list_scraper,
             single_scraper=single_scraper,
             records_adapter=drivers_adapter,
@@ -53,10 +51,6 @@ class CompleteDriverScraper(CompositeScraper):
         if isinstance(driver_link, dict):
             return driver_link.get("url")
         return None
-
-    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
-        msg = "Use fetch() bezpośrednio dla pełnego scrapingu"
-        raise NotImplementedError(msg)
 
 
 if __name__ == "__main__":

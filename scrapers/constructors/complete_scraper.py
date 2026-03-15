@@ -19,7 +19,7 @@ from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 
 
-class CompleteConstructorsScraper(BaseDataExtractor):
+class CompleteConstructorsDataExtractor(BaseDataExtractor):
     """
     Uruchamia cztery list scrapery konstruktorów, a następnie dla każdego
     elementu pobiera szczegóły (infoboksy + tabele) za pomocą
@@ -46,7 +46,7 @@ class CompleteConstructorsScraper(BaseDataExtractor):
         results: list[dict[str, Any]] = []
         for record in tqdm(
             records,
-            desc="CompleteConstructorsScraper",
+            desc="CompleteConstructorsDataExtractor",
             unit="constructor",
         ):
             detail_url = self._get_constructor_url(record)

@@ -6,7 +6,7 @@ from typing import Any
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.parsers.helpers import extract_driver_text
 from scrapers.base.results import ScrapeResult
-from scrapers.drivers.complete_scraper import CompleteDriverScraper
+from scrapers.drivers.complete_scraper import CompleteDriverDataExtractor
 
 
 def surname_initial(record: dict[str, Any]) -> str:
@@ -30,7 +30,7 @@ def export_complete_drivers(
     include_urls: bool = True,
 ) -> None:
     options = init_scraper_options(None, include_urls=include_urls)
-    scraper = CompleteDriverScraper(options=options)
+    scraper = CompleteDriverDataExtractor(options=options)
     data = scraper.fetch()
     scraper.logger.info("Pobrano rekordów: %s", len(data))
 
