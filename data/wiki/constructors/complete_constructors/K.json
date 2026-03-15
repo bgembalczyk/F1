@@ -1,0 +1,962 @@
+[
+  {
+    "constructor": {
+      "text": "Kauhsen",
+      "url": "https://en.wikipedia.org/wiki/Kauhsen"
+    },
+    "licensed_in": [
+      {
+        "text": "Germany",
+        "url": "https://en.wikipedia.org/wiki/Germany"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1979,
+        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 2,
+    "races_started": 0,
+    "drivers": 1,
+    "total_entries": 2,
+    "wins": 0,
+    "points": 0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Kauhsen",
+      "infoboxes": [
+        {
+          "title": "Kauhsen",
+          "rows": {
+            "Full name": {
+              "text": "Willi Kauhsen Racing Team",
+              "links": []
+            },
+            "Base": {
+              "text": "Eschweiler , Germany",
+              "links": [
+                {
+                  "text": "Eschweiler",
+                  "url": "https://en.wikipedia.org/wiki/Eschweiler"
+                },
+                {
+                  "text": "Germany",
+                  "url": "https://en.wikipedia.org/wiki/Germany"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Willi Kauhsen",
+              "links": []
+            },
+            "Noted staff": {
+              "text": "Klaus Kapitza",
+              "links": []
+            },
+            "Noted drivers": {
+              "text": "Gianfranco Brancatelli",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Gianfranco Brancatelli",
+                  "url": "https://en.wikipedia.org/wiki/Gianfranco_Brancatelli"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1979 Spanish Grand Prix",
+              "links": [
+                {
+                  "text": "1979 Spanish Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1979_Spanish_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "2",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1979 Belgian Grand Prix",
+              "links": [
+                {
+                  "text": "1979 Belgian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1979_Belgian_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine(s)",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "rows": [
+            {
+              "Year": "1976",
+              "Chassis": "March 762",
+              "Engine(s)": "Hart BMW",
+              "Drivers": "",
+              "1": "HOC",
+              "2": "THR",
+              "3": "VAL",
+              "4": "SAL",
+              "5": "PAU",
+              "6": "HOC",
+              "7": "ROU",
+              "8": "MUG",
+              "9": "PER",
+              "10": "EST",
+              "11": "NOG",
+              "12": "HOC",
+              "13": ""
+            },
+            {
+              "Year": "Ingo Hoffmann",
+              "Chassis": "Ret",
+              "Engine(s)": "5",
+              "Drivers": "Ret",
+              "1": "Ret",
+              "2": "DNS",
+              "3": "",
+              "4": "6",
+              "5": "8",
+              "6": "DNQ",
+              "7": "",
+              "8": "DNQ",
+              "9": "8",
+              "10": ""
+            },
+            {
+              "Year": "Jochen Mass",
+              "Chassis": "",
+              "Engine(s)": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "Ret",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": ""
+            },
+            {
+              "Year": "Klaus Ludwig",
+              "Chassis": "Ret",
+              "Engine(s)": "",
+              "Drivers": "13",
+              "1": "",
+              "2": "5",
+              "3": "9",
+              "4": "",
+              "5": "9",
+              "6": "",
+              "7": "",
+              "8": "5",
+              "9": "10",
+              "10": ""
+            },
+            {
+              "Year": "Arturo Merzario",
+              "Chassis": "",
+              "Engine(s)": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "DNS",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": ""
+            },
+            {
+              "Year": "1977",
+              "Chassis": "Jabouille 2J",
+              "Engine(s)": "Renault",
+              "Drivers": "",
+              "1": "SIL",
+              "2": "THR",
+              "3": "HOC",
+              "4": "NÜR",
+              "5": "VAL",
+              "6": "PAU",
+              "7": "MUG",
+              "8": "ROU",
+              "9": "NOG",
+              "10": "PER",
+              "11": "MIS",
+              "12": "EST",
+              "13": "DON"
+            },
+            {
+              "Year": "Michel Leclère",
+              "Chassis": "Ret",
+              "Engine(s)": "Ret",
+              "Drivers": "Ret",
+              "1": "DNS",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "DNS",
+              "5": "DNQ",
+              "6": "15",
+              "7": "",
+              "8": "DNQ",
+              "9": "10",
+              "10": ""
+            },
+            {
+              "Year": "Klaus Ludwig",
+              "Chassis": "Ret",
+              "Engine(s)": "Ret",
+              "Drivers": "Ret",
+              "1": "9",
+              "2": "DSQ",
+              "3": "7",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": ""
+            },
+            {
+              "Year": "José Dolhem",
+              "Chassis": "",
+              "Engine(s)": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": ""
+            },
+            {
+              "Year": "Alain Prost",
+              "Chassis": "",
+              "Engine(s)": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "10",
+              "9": "",
+              "10": ""
+            },
+            {
+              "Year": "Vittorio Brambilla",
+              "Chassis": "",
+              "Engine(s)": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "Ret",
+              "9": "",
+              "10": ""
+            },
+            {
+              "Year": "Mario da Silva",
+              "Chassis": "",
+              "Engine(s)": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "DNQ",
+              "10": ""
+            }
+          ]
+        },
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "No.",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1979",
+              "Chassis": "WK",
+              "Engine": "Ford Cosworth DFV 3.0 V8",
+              "Tyres": "G",
+              "Drivers": "",
+              "No.": "",
+              "1": "ARG",
+              "2": "BRA",
+              "3": "RSA",
+              "4": "USW",
+              "5": "ESP",
+              "6": "BEL",
+              "7": "MON",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "AUT",
+              "12": "NED",
+              "13": "ITA",
+              "14": "CAN",
+              "15": "USA",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "Gianfranco Brancatelli",
+              "Chassis": "36",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "No.": "",
+              "1": "DNQ",
+              "2": "DNQ",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": ""
+            },
+            {
+              "Year": "Source:"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Klenk",
+      "url": "https://en.wikipedia.org/wiki/Klenk"
+    },
+    "licensed_in": [
+      {
+        "text": "Germany",
+        "url": "https://en.wikipedia.org/wiki/Germany"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 1,
+    "races_started": 1,
+    "drivers": 1,
+    "total_entries": 1,
+    "wins": 0,
+    "points": null,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": null,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Klenk",
+      "infoboxes": [
+        {
+          "title": "Klenk",
+          "rows": {
+            "Base": {
+              "text": "West Germany",
+              "links": []
+            },
+            "Founder(s)": {
+              "text": "Hans Klenk",
+              "links": [
+                {
+                  "text": "Hans Klenk",
+                  "url": "https://en.wikipedia.org/wiki/Hans_Klenk"
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Theo Helfrich",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/West_Germany"
+                },
+                {
+                  "text": "Theo Helfrich",
+                  "url": "https://en.wikipedia.org/wiki/Theo_Helfrich"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1954 German Grand Prix",
+              "links": [
+                {
+                  "text": "1954 German Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1954_German_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "1",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "0",
+              "links": []
+            },
+            "Points": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "rows": [
+            {
+              "Year": "1954",
+              "Chassis": "Klenk Meteor",
+              "Engine": "BMW L6",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "SUI",
+              "8": "ITA",
+              "9": "ESP"
+            },
+            {
+              "Year": "Theo Helfrich",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": ""
+            },
+            {
+              "Year": "Source:"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Kojima",
+      "url": "https://en.wikipedia.org/wiki/Kojima_Engineering"
+    },
+    "licensed_in": [
+      {
+        "text": "Japan",
+        "url": "https://en.wikipedia.org/wiki/Japan"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1976,
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+      },
+      {
+        "year": 1977,
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 2,
+    "races_started": 2,
+    "drivers": 3,
+    "total_entries": 3,
+    "wins": 0,
+    "points": 0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Kojima_Engineering",
+      "infoboxes": [
+        {
+          "title": "Kojima Engineering",
+          "rows": {
+            "Full name": {
+              "text": "Kojima Engineering",
+              "links": []
+            },
+            "Base": {
+              "text": "Japan",
+              "links": [
+                {
+                  "text": "Japan",
+                  "url": "https://en.wikipedia.org/wiki/Japan"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Matsuhisa Kojima",
+              "links": [
+                {
+                  "text": "Matsuhisa Kojima",
+                  "url": null
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Masahiro Hasemi",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Japan"
+                },
+                {
+                  "text": "Masahiro Hasemi",
+                  "url": "https://en.wikipedia.org/wiki/Masahiro_Hasemi"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1976 Japanese Grand Prix",
+              "links": [
+                {
+                  "text": "1976 Japanese Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "2",
+              "links": []
+            },
+            "Constructors": {
+              "text": "Kojima- Ford",
+              "links": [
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0 [1]",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Kojima_Engineering#endnote_FL"
+                }
+              ]
+            },
+            "Final entry": {
+              "text": "1977 Japanese Grand Prix",
+              "links": [
+                {
+                  "text": "1977 Japanese Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1976",
+              "Entrant": "Kojima Engineering",
+              "Chassis": "Kojima KE007",
+              "Engine": "Ford V8",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "RSA",
+              "3": "USW",
+              "4": "ESP",
+              "5": "BEL",
+              "6": "MON",
+              "7": "SWE",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "AUT",
+              "12": "NED",
+              "13": "ITA",
+              "14": "CAN",
+              "15": "USA",
+              "16": "JPN",
+              "17": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "Masahiro Hasemi",
+              "Entrant": "",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "11",
+              "12": ""
+            },
+            {
+              "Year": "1977",
+              "Entrant": "Kojima Engineering",
+              "Chassis": "Kojima KE009",
+              "Engine": "Ford V8",
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "BRA",
+              "3": "RSA",
+              "4": "USW",
+              "5": "ESP",
+              "6": "MON",
+              "7": "BEL",
+              "8": "SWE",
+              "9": "FRA",
+              "10": "GBR",
+              "11": "GER",
+              "12": "AUT",
+              "13": "NED",
+              "14": "ITA",
+              "15": "USA",
+              "16": "CAN",
+              "17": "JPN",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "Noritake Takahara",
+              "Entrant": "",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "Ret"
+            },
+            {
+              "Year": "Heros Racing",
+              "Entrant": "Kazuyoshi Hoshino",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "11"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Kurtis Kraft",
+      "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+    },
+    "licensed_in": [
+      {
+        "text": "United States",
+        "url": "https://en.wikipedia.org/wiki/United_States"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      },
+      {
+        "year": 1956,
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+      },
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      },
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      },
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 12,
+    "races_started": 12,
+    "drivers": 129,
+    "total_entries": 350,
+    "wins": 5,
+    "points": 0,
+    "poles": 6,
+    "fastest_laps": 7,
+    "podiums": 16,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
+      "infoboxes": [
+        {
+          "title": "Kurtis Kraft",
+          "rows": {
+            "Industry": {
+              "text": "Race car building",
+              "links": []
+            },
+            "Headquarters": {
+              "text": "Glendale, California , United States",
+              "links": [
+                {
+                  "text": "Glendale, California",
+                  "url": "https://en.wikipedia.org/wiki/Glendale,_California"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": null
+    }
+  }
+]

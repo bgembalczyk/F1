@@ -1,0 +1,1679 @@
+[
+  {
+    "manufacturer": {
+      "text": "De Tomaso",
+      "url": "https://en.wikipedia.org/wiki/De_Tomaso"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 1,
+    "races_started": 0,
+    "wins": 0,
+    "points": 0.0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": 0,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/De_Tomaso",
+      "infoboxes": [
+        {
+          "title": "De Tomaso Automobili Ltd.",
+          "rows": {
+            "Formerly": {
+              "text": "De Tomaso Modena SpA",
+              "links": []
+            },
+            "Company type": {
+              "text": "Private",
+              "links": [
+                {
+                  "text": "Private",
+                  "url": "https://en.wikipedia.org/wiki/Privately_held_company"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive_industry"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "1959 ; 67 years ago ( 1959 )",
+              "links": []
+            },
+            "Founder": {
+              "text": "Alejandro de Tomaso",
+              "links": [
+                {
+                  "text": "Alejandro de Tomaso",
+                  "url": "https://en.wikipedia.org/wiki/Alejandro_de_Tomaso"
+                }
+              ]
+            },
+            "Fate": {
+              "text": "Filed for bankruptcy in 2012; [ 1 ] Company sold to Ideal Team Ventures in 2014 [ 2 ]",
+              "links": []
+            },
+            "Headquarters": {
+              "text": "Modena , Italy (1959–2004)",
+              "links": [
+                {
+                  "text": "Modena",
+                  "url": "https://en.wikipedia.org/wiki/Modena"
+                }
+              ]
+            },
+            "Area served": {
+              "text": "Worldwide",
+              "links": []
+            },
+            "Key people": {
+              "text": "Norman Choi (Chairman) [ 3 ] [ 4 ]",
+              "links": []
+            },
+            "Products": {
+              "text": "Supercars",
+              "links": [
+                {
+                  "text": "Supercars",
+                  "url": "https://en.wikipedia.org/wiki/Supercar"
+                }
+              ]
+            },
+            "Owner": {
+              "text": "Ideal Team Ventures Limited",
+              "links": []
+            },
+            "Parent": {
+              "text": "Ford (1971–1974)",
+              "links": [
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
+            },
+            "Subsidiaries": {
+              "text": "Maserati (1976–1993) Innocenti (1976–1993) Moto Guzzi (1973–2000) Benelli (1972–1995)",
+              "links": [
+                {
+                  "text": "Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati"
+                },
+                {
+                  "text": "Innocenti",
+                  "url": "https://en.wikipedia.org/wiki/Innocenti"
+                },
+                {
+                  "text": "Moto Guzzi",
+                  "url": "https://en.wikipedia.org/wiki/Moto_Guzzi"
+                },
+                {
+                  "text": "Benelli",
+                  "url": "https://en.wikipedia.org/wiki/Benelli_(motorcycles)"
+                }
+              ]
+            },
+            "Website": {
+              "text": "detomaso-automobili.com",
+              "links": [
+                {
+                  "text": "detomaso-automobili.com",
+                  "url": "https://detomaso-automobili.com/"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "De Tomaso as a Formula One chassis constructor",
+          "rows": {
+            "Engines": {
+              "text": "OSCA , Alfa Romeo , De Tomaso, Ferrari , Ford",
+              "links": [
+                {
+                  "text": "OSCA",
+                  "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+                },
+                {
+                  "text": "Alfa Romeo",
+                  "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+                },
+                {
+                  "text": "Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                },
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
+            },
+            "Entrants": {
+              "text": "Scuderia Serenissima , Scuderia Settecolli, Frank Williams Racing Cars",
+              "links": [
+                {
+                  "text": "Scuderia Serenissima",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
+                },
+                {
+                  "text": "Frank Williams Racing Cars",
+                  "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1961 French Grand Prix",
+              "links": [
+                {
+                  "text": "1961 French Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1961_French_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "1970 United States Grand Prix",
+              "links": [
+                {
+                  "text": "1970 United States Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "15 (10 starts)",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Points": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": {
+                "text": "1961",
+                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+              },
+              "Entrant": null,
+              "Chassis": null,
+              "Engine": null,
+              "Tyres": null,
+              "Drivers": null,
+              "1": {
+                "text": "MON",
+                "url": "https://en.wikipedia.org/wiki/1961_Monaco_Grand_Prix"
+              },
+              "2": {
+                "text": "NED",
+                "url": "https://en.wikipedia.org/wiki/1961_Dutch_Grand_Prix"
+              },
+              "3": {
+                "text": "BEL",
+                "url": "https://en.wikipedia.org/wiki/1961_Belgian_Grand_Prix"
+              },
+              "4": {
+                "text": "FRA",
+                "url": "https://en.wikipedia.org/wiki/1961_French_Grand_Prix"
+              },
+              "5": {
+                "text": "GBR",
+                "url": "https://en.wikipedia.org/wiki/1961_British_Grand_Prix"
+              },
+              "6": {
+                "text": "GER",
+                "url": "https://en.wikipedia.org/wiki/1961_German_Grand_Prix"
+              },
+              "7": {
+                "text": "ITA",
+                "url": "https://en.wikipedia.org/wiki/1961_Italian_Grand_Prix"
+              },
+              "8": {
+                "text": "USA",
+                "url": "https://en.wikipedia.org/wiki/1961_United_States_Grand_Prix"
+              },
+              "9": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1961",
+                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+              },
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": {
+                "text": "De Tomaso F1/002",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_F1"
+              },
+              "Engine": "O.S.C.A. S4",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": {
+                "text": "Roberto Lippi",
+                "url": "https://en.wikipedia.org/wiki/Roberto_Lippi"
+              },
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": "Ret",
+              "8": null,
+              "9": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1961",
+                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+              },
+              "Entrant": {
+                "text": "Scuderia Serenissima",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
+              },
+              "Chassis": {
+                "text": "De Tomaso F1/001",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_F1"
+              },
+              "Engine": "O.S.C.A. S4",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": {
+                "text": "Giorgio Scarlatti",
+                "url": "https://en.wikipedia.org/wiki/Giorgio_Scarlatti"
+              },
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": "Ret",
+              "5": null,
+              "6": null,
+              "7": null,
+              "8": null,
+              "9": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1961",
+                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+              },
+              "Entrant": {
+                "text": "Scuderia Serenissima",
+                "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
+              },
+              "Chassis": {
+                "text": "De Tomaso F1/003",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_F1"
+              },
+              "Engine": "Alfa Romeo I4",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": {
+                "text": "Nino Vaccarella",
+                "url": "https://en.wikipedia.org/wiki/Nino_Vaccarella"
+              },
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": "Ret",
+              "8": null,
+              "9": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1961",
+                "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+              },
+              "Entrant": "Isobele de Tomaso",
+              "Chassis": {
+                "text": "De Tomaso F1/004",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_F1"
+              },
+              "Engine": "Alfa Romeo I4",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": {
+                "text": "Roberto Bussinello",
+                "url": "https://en.wikipedia.org/wiki/Roberto_Bussinello"
+              },
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": "Ret",
+              "8": null,
+              "9": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1962",
+                "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+              },
+              "Entrant": null,
+              "Chassis": null,
+              "Engine": null,
+              "Tyres": null,
+              "Drivers": null,
+              "1": {
+                "text": "NED",
+                "url": "https://en.wikipedia.org/wiki/1962_Dutch_Grand_Prix"
+              },
+              "2": {
+                "text": "MON",
+                "url": "https://en.wikipedia.org/wiki/1962_Monaco_Grand_Prix"
+              },
+              "3": {
+                "text": "BEL",
+                "url": "https://en.wikipedia.org/wiki/1962_Belgian_Grand_Prix"
+              },
+              "4": {
+                "text": "FRA",
+                "url": "https://en.wikipedia.org/wiki/1962_French_Grand_Prix"
+              },
+              "5": {
+                "text": "GBR",
+                "url": "https://en.wikipedia.org/wiki/1962_British_Grand_Prix"
+              },
+              "6": {
+                "text": "GER",
+                "url": "https://en.wikipedia.org/wiki/1962_German_Grand_Prix"
+              },
+              "7": {
+                "text": "ITA",
+                "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
+              },
+              "8": {
+                "text": "USA",
+                "url": "https://en.wikipedia.org/wiki/1962_United_States_Grand_Prix"
+              },
+              "9": {
+                "text": "RSA",
+                "url": "https://en.wikipedia.org/wiki/1962_South_African_Grand_Prix"
+              },
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1962",
+                "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+              },
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": {
+                "text": "De Tomaso F1/002",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_F1"
+              },
+              "Engine": "O.S.C.A. I4",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": {
+                "text": "Roberto Lippi",
+                "url": "https://en.wikipedia.org/wiki/Roberto_Lippi"
+              },
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": "DNQ",
+              "8": null,
+              "9": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1962",
+                "url": "https://en.wikipedia.org/wiki/1962_Formula_One_season"
+              },
+              "Entrant": "Scuderia de Tomaso",
+              "Chassis": {
+                "text": "De Tomaso 801",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_801"
+              },
+              "Engine": "De Tomaso Flat-8",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": {
+                "text": "Nasif Estéfano",
+                "url": "https://en.wikipedia.org/wiki/Nasif_Est%C3%A9fano"
+              },
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": "DNQ",
+              "8": null,
+              "9": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1963",
+                "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+              },
+              "Entrant": null,
+              "Chassis": null,
+              "Engine": null,
+              "Tyres": null,
+              "Drivers": null,
+              "1": {
+                "text": "MON",
+                "url": "https://en.wikipedia.org/wiki/1963_Monaco_Grand_Prix"
+              },
+              "2": {
+                "text": "BEL",
+                "url": "https://en.wikipedia.org/wiki/1963_Belgian_Grand_Prix"
+              },
+              "3": {
+                "text": "NED",
+                "url": "https://en.wikipedia.org/wiki/1963_Dutch_Grand_Prix"
+              },
+              "4": {
+                "text": "FRA",
+                "url": "https://en.wikipedia.org/wiki/1963_French_Grand_Prix"
+              },
+              "5": {
+                "text": "GBR",
+                "url": "https://en.wikipedia.org/wiki/1963_British_Grand_Prix"
+              },
+              "6": {
+                "text": "GER",
+                "url": "https://en.wikipedia.org/wiki/1963_German_Grand_Prix"
+              },
+              "7": {
+                "text": "ITA",
+                "url": "https://en.wikipedia.org/wiki/1963_Italian_Grand_Prix"
+              },
+              "8": {
+                "text": "USA",
+                "url": "https://en.wikipedia.org/wiki/1963_United_States_Grand_Prix"
+              },
+              "9": {
+                "text": "MEX",
+                "url": "https://en.wikipedia.org/wiki/1963_Mexican_Grand_Prix"
+              },
+              "10": {
+                "text": "RSA",
+                "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
+              },
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1963",
+                "url": "https://en.wikipedia.org/wiki/1963_Formula_One_season"
+              },
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": {
+                "text": "De Tomaso F1/002",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_F1"
+              },
+              "Engine": "Ferrari V6",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": {
+                "text": "Roberto Lippi",
+                "url": "https://en.wikipedia.org/wiki/Roberto_Lippi"
+              },
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": "DNQ",
+              "8": null,
+              "9": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1970",
+                "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+              },
+              "Entrant": {
+                "text": "Frank Williams Racing Cars",
+                "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              },
+              "Chassis": {
+                "text": "De Tomaso 505/38",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_505/38"
+              },
+              "Engine": "Cosworth V8",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": null,
+              "1": {
+                "text": "RSA",
+                "url": "https://en.wikipedia.org/wiki/1970_South_African_Grand_Prix"
+              },
+              "2": {
+                "text": "ESP",
+                "url": "https://en.wikipedia.org/wiki/1970_Spanish_Grand_Prix"
+              },
+              "3": {
+                "text": "MON",
+                "url": "https://en.wikipedia.org/wiki/1970_Monaco_Grand_Prix"
+              },
+              "4": {
+                "text": "BEL",
+                "url": "https://en.wikipedia.org/wiki/1970_Belgian_Grand_Prix"
+              },
+              "5": {
+                "text": "NED",
+                "url": "https://en.wikipedia.org/wiki/1970_Dutch_Grand_Prix"
+              },
+              "6": {
+                "text": "FRA",
+                "url": "https://en.wikipedia.org/wiki/1970_French_Grand_Prix"
+              },
+              "7": {
+                "text": "GBR",
+                "url": "https://en.wikipedia.org/wiki/1970_British_Grand_Prix"
+              },
+              "8": {
+                "text": "GER",
+                "url": "https://en.wikipedia.org/wiki/1970_German_Grand_Prix"
+              },
+              "9": {
+                "text": "AUT",
+                "url": "https://en.wikipedia.org/wiki/1970_Austrian_Grand_Prix"
+              },
+              "10": {
+                "text": "ITA",
+                "url": "https://en.wikipedia.org/wiki/1970_Italian_Grand_Prix"
+              },
+              "11": {
+                "text": "CAN",
+                "url": "https://en.wikipedia.org/wiki/1970_Canadian_Grand_Prix"
+              },
+              "12": {
+                "text": "USA",
+                "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
+              },
+              "13": {
+                "text": "MEX",
+                "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
+              },
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1970",
+                "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+              },
+              "Entrant": {
+                "text": "Frank Williams Racing Cars",
+                "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              },
+              "Chassis": {
+                "text": "De Tomaso 505/38",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_505/38"
+              },
+              "Engine": "Cosworth V8",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": {
+                "text": "Piers Courage",
+                "url": "https://en.wikipedia.org/wiki/Piers_Courage"
+              },
+              "1": "Ret",
+              "2": "DNS",
+              "3": "NC",
+              "4": "Ret",
+              "5": "Ret",
+              "6": null,
+              "7": null,
+              "8": null,
+              "9": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1970",
+                "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+              },
+              "Entrant": {
+                "text": "Frank Williams Racing Cars",
+                "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              },
+              "Chassis": {
+                "text": "De Tomaso 505/38",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_505/38"
+              },
+              "Engine": "Cosworth V8",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": {
+                "text": "Brian Redman",
+                "url": "https://en.wikipedia.org/wiki/Brian_Redman"
+              },
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": "DNS",
+              "8": "DNQ",
+              "9": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": {
+                "text": "1970",
+                "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+              },
+              "Entrant": {
+                "text": "Frank Williams Racing Cars",
+                "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+              },
+              "Chassis": {
+                "text": "De Tomaso 505/38",
+                "url": "https://en.wikipedia.org/wiki/De_Tomaso_505/38"
+              },
+              "Engine": "Cosworth V8",
+              "Tyres": {
+                "text": "D",
+                "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+              },
+              "Drivers": {
+                "text": "Tim Schenken",
+                "url": "https://en.wikipedia.org/wiki/Tim_Schenken"
+              },
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": null,
+              "8": null,
+              "9": "Ret",
+              "10": "Ret",
+              "11": "NC",
+              "12": "Ret",
+              "13": null,
+              "Points": "0",
+              "WCC": "-"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": "DeSoto",
+    "manufacturer_url": "https://en.wikipedia.org/wiki/DeSoto_(automobile)",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/DeSoto_(automobile)",
+      "infoboxes": [
+        {
+          "title": "DeSoto",
+          "rows": {
+            "Product type": {
+              "text": "Automobile , trucks",
+              "links": [
+                {
+                  "text": "Automobile",
+                  "url": "https://en.wikipedia.org/wiki/Automobile"
+                },
+                {
+                  "text": "trucks",
+                  "url": "https://en.wikipedia.org/wiki/Truck"
+                }
+              ]
+            },
+            "Produced by": {
+              "text": "Chrysler Corporation",
+              "links": []
+            },
+            "Introduced": {
+              "text": "1928 by Walter Chrysler",
+              "links": [
+                {
+                  "text": "Walter Chrysler",
+                  "url": "https://en.wikipedia.org/wiki/Walter_Chrysler"
+                }
+              ]
+            },
+            "Discontinued": {
+              "text": "1961 ; 65 years ago ( 1961 )",
+              "links": []
+            },
+            "Related brands": {
+              "text": "Plymouth",
+              "links": [
+                {
+                  "text": "Plymouth",
+                  "url": "https://en.wikipedia.org/wiki/Plymouth_(automobile)"
+                }
+              ]
+            },
+            "Markets": {
+              "text": "North America",
+              "links": []
+            },
+            "Previous owners": {
+              "text": "Chrysler Corporation",
+              "links": [
+                {
+                  "text": "Chrysler Corporation",
+                  "url": "https://en.wikipedia.org/wiki/Chrysler"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": null
+    }
+  },
+  {
+    "manufacturer": "Dodge",
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Dodge",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Dodge",
+      "infoboxes": [
+        {
+          "title": "Dodge",
+          "rows": {
+            "Company type": {
+              "text": "Private (1900–1928) Division (1928–present)",
+              "links": [
+                {
+                  "text": "Private",
+                  "url": "https://en.wikipedia.org/wiki/Privately_held_company"
+                },
+                {
+                  "text": "Division",
+                  "url": "https://en.wikipedia.org/wiki/Division_(business)"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive_industry"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "December 14, 1900 ; 125 years ago ( 1900-12-14 ) (as Dodge Brothers Company) Detroit , Michigan, U.S.",
+              "links": [
+                {
+                  "text": "Detroit",
+                  "url": "https://en.wikipedia.org/wiki/Detroit"
+                }
+              ]
+            },
+            "Founders": {
+              "text": "John Francis Dodge Horace Elgin Dodge",
+              "links": [
+                {
+                  "text": "John Francis Dodge",
+                  "url": "https://en.wikipedia.org/wiki/John_Francis_Dodge"
+                },
+                {
+                  "text": "Horace Elgin Dodge",
+                  "url": "https://en.wikipedia.org/wiki/Horace_Elgin_Dodge"
+                }
+              ]
+            },
+            "Fate": {
+              "text": "Acquired by Chrysler Corporation in 1928",
+              "links": [
+                {
+                  "text": "Chrysler Corporation",
+                  "url": "https://en.wikipedia.org/wiki/Chrysler"
+                }
+              ]
+            },
+            "Headquarters": {
+              "text": "Auburn Hills, Michigan , U.S.",
+              "links": [
+                {
+                  "text": "Auburn Hills, Michigan",
+                  "url": "https://en.wikipedia.org/wiki/Auburn_Hills,_Michigan"
+                }
+              ]
+            },
+            "Area served": {
+              "text": "North America South America Europe Middle East Angola Brunei Egypt Philippines",
+              "links": []
+            },
+            "Key people": {
+              "text": "Matt McAlear, CEO of Dodge brand [ 1 ]",
+              "links": []
+            },
+            "Products": {
+              "text": "Muscle cars, SUVs",
+              "links": []
+            },
+            "Parent": {
+              "text": "Stellantis North America",
+              "links": [
+                {
+                  "text": "Stellantis North America",
+                  "url": "https://en.wikipedia.org/wiki/Chrysler"
+                }
+              ]
+            },
+            "Website": {
+              "text": "dodge.com",
+              "links": [
+                {
+                  "text": "dodge.com",
+                  "url": "https://www.dodge.com/"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Model",
+            "Year"
+          ],
+          "rows": [
+            {
+              "Model": {
+                "text": "Attitude",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Attitude"
+              },
+              "Year": "2006-present (Mexico only)"
+            },
+            {
+              "Model": {
+                "text": "Charger",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Charger_(2024)"
+              },
+              "Year": "1966-1978; 1983-87; 2006-present"
+            },
+            {
+              "Model": {
+                "text": "Durango",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Durango"
+              },
+              "Year": "1998-2009; 2011-present"
+            },
+            {
+              "Model": {
+                "text": "Journey",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Journey_(2021)"
+              },
+              "Year": "2021-present (Mexico only)"
+            }
+          ]
+        },
+        {
+          "headers": [
+            "Model",
+            "Year"
+          ],
+          "rows": [
+            {
+              "Model": {
+                "text": "50 series",
+                "url": "https://en.wikipedia.org/wiki/Dodge_50_Series"
+              },
+              "Year": "1979-1993"
+            },
+            {
+              "Model": {
+                "text": "100 \"Commando\"",
+                "url": "https://en.wikipedia.org/wiki/Dodge_100_%22Commando%22"
+              },
+              "Year": "1970-1980"
+            },
+            {
+              "Model": {
+                "text": "100 \"Kew\"",
+                "url": "https://en.wikipedia.org/wiki/Dodge_100_%22Kew%22"
+              },
+              "Year": "1949-1957"
+            },
+            {
+              "Model": {
+                "text": "300",
+                "url": "https://en.wikipedia.org/wiki/Dodge_300"
+              },
+              "Year": "1957-1965"
+            },
+            {
+              "Model": {
+                "text": "330",
+                "url": "https://en.wikipedia.org/wiki/Dodge_330"
+              },
+              "Year": "1963-1964"
+            },
+            {
+              "Model": {
+                "text": "400",
+                "url": "https://en.wikipedia.org/wiki/Dodge_400"
+              },
+              "Year": "1982-1983"
+            },
+            {
+              "Model": {
+                "text": "440",
+                "url": "https://en.wikipedia.org/wiki/Dodge_440"
+              },
+              "Year": "1962-1964"
+            },
+            {
+              "Model": {
+                "text": "500",
+                "url": "https://en.wikipedia.org/wiki/Dodge_500"
+              },
+              "Year": "1964-unknown"
+            },
+            {
+              "Model": {
+                "text": "600",
+                "url": "https://en.wikipedia.org/wiki/Dodge_600"
+              },
+              "Year": "1983-1988"
+            },
+            {
+              "Model": {
+                "text": "A100",
+                "url": "https://en.wikipedia.org/wiki/Dodge_A100"
+              },
+              "Year": "1964-1970"
+            },
+            {
+              "Model": {
+                "text": "Attitude",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Attitude"
+              },
+              "Year": "2006"
+            },
+            {
+              "Model": {
+                "text": "Aries",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Aries"
+              },
+              "Year": "1981-1989"
+            },
+            {
+              "Model": {
+                "text": "Aspen",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Aspen"
+              },
+              "Year": "1976-1980"
+            },
+            {
+              "Model": {
+                "text": "Avenger",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Avenger"
+              },
+              "Year": "1995-2000; 2008-2014"
+            },
+            {
+              "Model": {
+                "text": "B Series",
+                "url": "https://en.wikipedia.org/wiki/Dodge_B_Series"
+              },
+              "Year": "1948-1953"
+            },
+            {
+              "Model": {
+                "text": "C Series",
+                "url": "https://en.wikipedia.org/wiki/Dodge_C_Series"
+              },
+              "Year": "1950-1960"
+            },
+            {
+              "Model": {
+                "text": "Caliber",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Caliber"
+              },
+              "Year": "2006-2012"
+            },
+            {
+              "Model": {
+                "text": "Challenger (E-body)",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Challenger#First_generation_(1970–1974)"
+              },
+              "Year": "1970-1974"
+            },
+            {
+              "Model": {
+                "text": "Challenger",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Challenger"
+              },
+              "Year": "1970-74; 1978-83; 2008-2023"
+            },
+            {
+              "Model": {
+                "text": "Challenger (Mitsubishi)",
+                "url": "https://en.wikipedia.org/wiki/Mitsubishi_Galant_Lambda"
+              },
+              "Year": "1978-1983"
+            },
+            {
+              "Model": {
+                "text": "Charger (B-body)",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Charger_(B-body)"
+              },
+              "Year": "1966-1978"
+            },
+            {
+              "Model": "Charger (Sedan)",
+              "Year": "2006-2023; 2026-"
+            },
+            {
+              "Model": {
+                "text": "Charger (L-body)",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Charger_(L-body)"
+              },
+              "Year": "1981-1987"
+            },
+            {
+              "Model": {
+                "text": "Colt",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Colt"
+              },
+              "Year": "1971-1994"
+            },
+            {
+              "Model": {
+                "text": "Crusader",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Crusader"
+              },
+              "Year": "1951-1958"
+            },
+            {
+              "Model": {
+                "text": "Coronet",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Coronet"
+              },
+              "Year": "1949-1959; 1965-1976"
+            },
+            {
+              "Model": {
+                "text": "Custom",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Custom"
+              },
+              "Year": "1946-1948"
+            },
+            {
+              "Model": {
+                "text": "Custom 880",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Custom_880"
+              },
+              "Year": "1962-1965"
+            },
+            {
+              "Model": {
+                "text": "Custom Royal",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Custom_Royal"
+              },
+              "Year": "1955-1959"
+            },
+            {
+              "Model": {
+                "text": "D5/D6/D7",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Series_D5"
+              },
+              "Year": "1937"
+            },
+            {
+              "Model": {
+                "text": "D8/D9/D10",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Series_D8"
+              },
+              "Year": "1938"
+            },
+            {
+              "Model": {
+                "text": "D Series",
+                "url": "https://en.wikipedia.org/wiki/Dodge_D_Series"
+              },
+              "Year": "1961-1993"
+            },
+            {
+              "Model": {
+                "text": "Dakota",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Dakota"
+              },
+              "Year": "1987-2011"
+            },
+            {
+              "Model": {
+                "text": "Dart (original)",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Dart"
+              },
+              "Year": "1960-1976"
+            },
+            {
+              "Model": {
+                "text": "Dart (PF)",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Dart_(PF)"
+              },
+              "Year": "2013-2016"
+            },
+            {
+              "Model": {
+                "text": "Daytona",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Daytona"
+              },
+              "Year": "1984-1993"
+            },
+            {
+              "Model": {
+                "text": "Deluxe",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Deluxe"
+              },
+              "Year": "1946-1948"
+            },
+            {
+              "Model": {
+                "text": "Diplomat",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Diplomat"
+              },
+              "Year": "1977-1989"
+            },
+            {
+              "Model": {
+                "text": "Dynasty",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Dynasty"
+              },
+              "Year": "1988-1993"
+            },
+            {
+              "Model": {
+                "text": "Fast Four",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Fast_Four"
+              },
+              "Year": "1927-1928"
+            },
+            {
+              "Model": {
+                "text": "Grand Caravan",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Grand_Caravan"
+              },
+              "Year": "1984-2020"
+            },
+            {
+              "Model": {
+                "text": "Hornet",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Hornet"
+              },
+              "Year": "2022-2025 (U.S. and Canada only)"
+            },
+            {
+              "Model": {
+                "text": "Intrepid",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Intrepid"
+              },
+              "Year": "1993-2004"
+            },
+            {
+              "Model": {
+                "text": "Journey",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Journey"
+              },
+              "Year": "2009-2020"
+            },
+            {
+              "Model": {
+                "text": "Kingsway",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Kingsway"
+              },
+              "Year": "1946-1959"
+            },
+            {
+              "Model": {
+                "text": "La Femme",
+                "url": "https://en.wikipedia.org/wiki/Dodge_La_Femme"
+              },
+              "Year": "1955-1956"
+            },
+            {
+              "Model": {
+                "text": "Lancer",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Lancer"
+              },
+              "Year": "1955-1959; 1961-1962; 1985-1989"
+            },
+            {
+              "Model": {
+                "text": "Magnum",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Magnum"
+              },
+              "Year": "1978-1979; 2005-2008"
+            },
+            {
+              "Model": {
+                "text": "Matador",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Matador"
+              },
+              "Year": "1960"
+            },
+            {
+              "Model": {
+                "text": "Mayfair",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Mayfair"
+              },
+              "Year": "1953-1959"
+            },
+            {
+              "Model": {
+                "text": "Meadowbrook",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Meadowbrook"
+              },
+              "Year": "1949-1954"
+            },
+            {
+              "Model": {
+                "text": "Mirada",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Mirada"
+              },
+              "Year": "1980-1983"
+            },
+            {
+              "Model": {
+                "text": "Monaco",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Monaco"
+              },
+              "Year": "1965-1978; 1990-1992"
+            },
+            {
+              "Model": {
+                "text": "Neon",
+                "url": "https://en.wikipedia.org/wiki/Chrysler_Neon"
+              },
+              "Year": "1995-2005"
+            },
+            {
+              "Model": {
+                "text": "Nitro",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Nitro"
+              },
+              "Year": "2006-2012"
+            },
+            {
+              "Model": {
+                "text": "Omni",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Omni"
+              },
+              "Year": "1978-1990"
+            },
+            {
+              "Model": {
+                "text": "Omni 024",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Omni_024"
+              },
+              "Year": "1979-1982"
+            },
+            {
+              "Model": {
+                "text": "Omni (GLH)",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Omni_(GLH)"
+              },
+              "Year": "1984-1986"
+            },
+            {
+              "Model": {
+                "text": "Phoenix",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Phoenix"
+              },
+              "Year": "1960-1973"
+            },
+            {
+              "Model": {
+                "text": "Polara",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Polara"
+              },
+              "Year": "1960-1973"
+            },
+            {
+              "Model": {
+                "text": "Power Wagon",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Power_Wagon"
+              },
+              "Year": "1945-1980"
+            },
+            {
+              "Model": {
+                "text": "Raider",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Raider"
+              },
+              "Year": "1987-1989"
+            },
+            {
+              "Model": {
+                "text": "Ram 50",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Ram_50"
+              },
+              "Year": "1979-1996"
+            },
+            {
+              "Model": {
+                "text": "Ram Pickup",
+                "url": "https://en.wikipedia.org/wiki/Ram_Pickup"
+              },
+              "Year": "1981-2009"
+            },
+            {
+              "Model": {
+                "text": "Ram SRT 10",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Ram_SRT_10"
+              },
+              "Year": "2004-2006"
+            },
+            {
+              "Model": {
+                "text": "Ram Van",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Ram_Van"
+              },
+              "Year": "1971-2003"
+            },
+            {
+              "Model": {
+                "text": "Ramcharger",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Ramcharger"
+              },
+              "Year": "1974-2001"
+            },
+            {
+              "Model": {
+                "text": "Rampage",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Rampage"
+              },
+              "Year": "1982-1984"
+            },
+            {
+              "Model": {
+                "text": "Regent",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Regent"
+              },
+              "Year": "1951-1960"
+            },
+            {
+              "Model": {
+                "text": "Royal",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Royal"
+              },
+              "Year": "1954-1959"
+            },
+            {
+              "Model": {
+                "text": "Shadow",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Shadow"
+              },
+              "Year": "1987-1994"
+            },
+            {
+              "Model": {
+                "text": "Sierra",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Sierra"
+              },
+              "Year": "1955-1956"
+            },
+            {
+              "Model": {
+                "text": "Spirit",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Spirit"
+              },
+              "Year": "1989-1995"
+            },
+            {
+              "Model": {
+                "text": "Sprinter",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Sprinter"
+              },
+              "Year": "2004-2009"
+            },
+            {
+              "Model": {
+                "text": "SRT-4",
+                "url": "https://en.wikipedia.org/wiki/Dodge_SRT-4"
+              },
+              "Year": "2003-2005"
+            },
+            {
+              "Model": {
+                "text": "St. Regis",
+                "url": "https://en.wikipedia.org/wiki/Dodge_St._Regis"
+              },
+              "Year": "1979-1981"
+            },
+            {
+              "Model": {
+                "text": "Stealth",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Stealth"
+              },
+              "Year": "1991-1996"
+            },
+            {
+              "Model": {
+                "text": "Stratus",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Stratus"
+              },
+              "Year": "1995-2006"
+            },
+            {
+              "Model": {
+                "text": "Town Panel / Wagon",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Town_Panel_and_Town_Wagon"
+              },
+              "Year": "1954-1966"
+            },
+            {
+              "Model": {
+                "text": "Travco",
+                "url": "https://en.wikipedia.org/wiki/Travco"
+              },
+              "Year": "1964-late 1980s"
+            },
+            {
+              "Model": "Victory",
+              "Year": "1928-1929"
+            },
+            {
+              "Model": {
+                "text": "Viscount",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Viscount"
+              },
+              "Year": "1959"
+            },
+            {
+              "Model": {
+                "text": "Vision",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Vision"
+              },
+              "Year": "2015-2019"
+            },
+            {
+              "Model": {
+                "text": "Viper",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Viper"
+              },
+              "Year": "1992-2010; 2012-2017"
+            },
+            {
+              "Model": {
+                "text": "Wayfarer",
+                "url": "https://en.wikipedia.org/wiki/Dodge_Wayfarer"
+              },
+              "Year": "1949-1952"
+            },
+            {
+              "Model": {
+                "text": "WC series",
+                "url": "https://en.wikipedia.org/wiki/Dodge_WC_series"
+              },
+              "Year": "1940-1945"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": "Duray",
+    "details": null
+  }
+]

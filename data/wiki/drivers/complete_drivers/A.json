@@ -173,8 +173,8 @@
               "car": "Ferrari 250 GT SWB",
               "class": "GT 3.0",
               "laps": 162,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -204,8 +204,8 @@
               },
               "class": "E 3.0",
               "laps": 30,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -235,8 +235,8 @@
               },
               "class": "GT 3.0",
               "laps": 105,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Career results",
@@ -276,7 +276,7 @@
                   "name": "Scuderia SSS Republica di Venezia",
                   "title_sponsors": [
                     {
-                      "text": "Scuderia SSSRepublica di Venezia",
+                      "text": "Scuderia SSS Republica di Venezia",
                       "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
                     }
                   ]
@@ -3191,7 +3191,7 @@
               "9": null,
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -3682,7 +3682,7 @@
               "9": null,
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -3812,7 +3812,7 @@
               "9": null,
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -3970,7 +3970,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             }
           ],
@@ -4934,7 +4934,7 @@
               "9": null,
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -5035,7 +5035,7 @@
               "9": null,
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -5100,7 +5100,7 @@
                 "superscript": null
               },
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -5237,7 +5237,7 @@
               },
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -5388,7 +5388,7 @@
                 "superscript": null
               },
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -5555,7 +5555,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -6195,8 +6195,8 @@
               },
               "class": "C1",
               "laps": null,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNQ",
+              "class_pos": "DNQ"
             },
             {
               "year": {
@@ -6227,8 +6227,8 @@
               "car": "Sauber C9-Mercedes",
               "class": "C1",
               "laps": null,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNS",
+              "class_pos": "DNS"
             },
             {
               "year": {
@@ -6298,8 +6298,8 @@
               },
               "class": "C1",
               "laps": 0,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -6424,8 +6424,8 @@
               },
               "class": "C1",
               "laps": 212,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -6456,8 +6456,8 @@
               "car": "SARD MC8-R-Toyota",
               "class": "GT1",
               "laps": 14,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -6654,7 +6654,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             }
           ],
@@ -7042,7 +7042,7 @@
               "15": null,
               "16": null,
               "17": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -7313,7 +7313,7 @@
               "15": null,
               "16": null,
               "17": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -7453,7 +7453,7 @@
               "15": null,
               "16": null,
               "17": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -7885,7 +7885,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             }
           ],
@@ -9710,8 +9710,8 @@
               },
               "class": "P 3.0",
               "laps": 222,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -17381,7 +17381,7 @@
               "15": null,
               "16": null,
               "17": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -17483,7 +17483,7 @@
               "15": null,
               "16": null,
               "17": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -22479,8 +22479,8 @@
               },
               "class": "Hypercar",
               "laps": 247,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -27546,8 +27546,8 @@
               },
               "class": "LMP1",
               "laps": 331,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -31011,7 +31011,7 @@
                 "url": "https://en.wikipedia.org/wiki/Dallara_F312"
               },
               "qualifying": 15,
-              "quali_race": null,
+              "quali_race": "DNF",
               "main_race": 13
             }
           ],
@@ -40240,8 +40240,8 @@
               "car": "Porsche 962 C",
               "class": "C1",
               "laps": 69,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -42621,7 +42621,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -48281,8 +48281,8 @@
               },
               "class": "C1",
               "laps": 22,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -48386,8 +48386,8 @@
               },
               "class": "GT1",
               "laps": 77,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -48418,8 +48418,8 @@
               "car": "Courage C36-Porsche",
               "class": "LMP1",
               "laps": 215,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -48450,8 +48450,8 @@
               "car": "Courage C65-JPX",
               "class": "LMP675",
               "laps": 41,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -61483,8 +61483,8 @@
                   "url": "https://en.wikipedia.org/wiki/Chevrolet"
                 }
               },
-              "start": null,
-              "finish": null,
+              "start": "DNQ",
+              "finish": "DNQ",
               "team": [
                 {
                   "name": "McLaren Racing",
@@ -71466,7 +71466,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -71600,7 +71600,7 @@
               },
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             }
           ],
@@ -71652,7 +71652,7 @@
               "car": "Shelby Cobra Daytona-Ford",
               "class": "GT +3.0",
               "laps": 131,
-              "pos": null,
+              "pos": "DSQ",
               "class_pos.": "DSQ"
             },
             {
@@ -71680,7 +71680,7 @@
               "car": "Ford GT40 Mk.II",
               "class": "P +5.0",
               "laps": 89,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -71736,7 +71736,7 @@
               "car": "Ferrari 330 P3 Spyder",
               "class": "P +5.0",
               "laps": 105,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -71764,7 +71764,7 @@
               "car": "Ferrari 312P Coupe",
               "class": "P 3.0",
               "laps": 0,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -71796,7 +71796,7 @@
               "car": "Matra-Simca MS660",
               "class": "P 3.0",
               "laps": null,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -71832,7 +71832,7 @@
               "car": "Matra-Simca MS670",
               "class": "S 3.0",
               "laps": 1,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -71863,7 +71863,7 @@
               },
               "class": "T 5.0",
               "laps": 160,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             }
           ],
@@ -78585,8 +78585,8 @@
               "car": "Ford GT40 Mk.II",
               "class": "P +5.0",
               "laps": 97,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -78613,8 +78613,8 @@
               "car": "Ford GT40 Mk.IV",
               "class": "P +5.0",
               "laps": 188,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -78636,8 +78636,8 @@
               "car": "Mirage M12-Ford Cosworth",
               "class": "C",
               "laps": null,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNS",
+              "class_pos": "DNS"
             },
             {
               "year": {
@@ -78806,8 +78806,8 @@
               "car": "Courage C36-Porsche",
               "class": "LMP",
               "laps": 197,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -83538,8 +83538,8 @@
               },
               "class": "LMP",
               "laps": 197,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -100680,8 +100680,8 @@
               "car": "Riley & Scott Mk III /2-Ford",
               "class": "LMP",
               "laps": 67,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -100712,8 +100712,8 @@
               "car": "Lamborghini Murciélago RG-1LM",
               "class": "GT1",
               "laps": 283,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -100740,8 +100740,8 @@
               "car": "Lamborghini Murciélago RG-1LM",
               "class": "GT1",
               "laps": 1,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -100768,8 +100768,8 @@
               "car": "Lamborghini Murciélago RG-1LM",
               "class": "GT1",
               "laps": 1,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -103474,7 +103474,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             }
           ],
@@ -103660,7 +103660,7 @@
               "11": null,
               "12": null,
               "13": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -107314,8 +107314,8 @@
               },
               "class": "S +2.0",
               "laps": 0,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -107368,8 +107368,8 @@
               },
               "class": "WSC",
               "laps": 7,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -114772,8 +114772,8 @@
               },
               "class": "S3.0",
               "laps": null,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -114803,8 +114803,8 @@
               },
               "class": "S5.0",
               "laps": 229,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -114857,8 +114857,8 @@
               },
               "class": "S5.0",
               "laps": 87,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -114912,8 +114912,8 @@
               },
               "class": "S",
               "laps": 216,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -114961,8 +114961,8 @@
                 "url": "https://en.wikipedia.org/wiki/Auto_Avio_Costruzioni_815"
               },
               "class": "1.5",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -114991,8 +114991,8 @@
                 "url": "https://en.wikipedia.org/wiki/Maserati_A6"
               },
               "class": "S2./+2.0",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -115021,8 +115021,8 @@
                 "url": "https://en.wikipedia.org/wiki/Ferrari_275"
               },
               "class": "S+2.0",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -115051,8 +115051,8 @@
                 "url": "https://en.wikipedia.org/wiki/Ferrari_America"
               },
               "class": "S/GT+2.0",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -115151,8 +115151,8 @@
                 "url": "https://en.wikipedia.org/wiki/Ferrari_340"
               },
               "class": "S",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -115207,8 +115207,8 @@
                 "url": "https://en.wikipedia.org/wiki/Ferrari_375_MM"
               },
               "class": "S+2.0",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNS",
+              "class_pos": "DNS"
             },
             {
               "year": {
@@ -120371,7 +120371,7 @@
               "car": "Lola Mk6 GT",
               "class": "P +3.0",
               "laps": 151,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -120402,7 +120402,7 @@
               },
               "class": "P 5.0",
               "laps": 58,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -120428,7 +120428,7 @@
               },
               "class": "P 5.0",
               "laps": 33,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -120454,7 +120454,7 @@
               },
               "class": "P 5.0",
               "laps": 208,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -120516,7 +120516,7 @@
               },
               "class": "S 5.0",
               "laps": 327,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -120611,7 +120611,7 @@
               },
               "class": "C1",
               "laps": 92,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             }
           ],

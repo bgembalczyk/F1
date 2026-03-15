@@ -1,0 +1,415 @@
+[
+  {
+    "constructor": "Nichels",
+    "constructor_url": "https://en.wikipedia.org/wiki/Nichels",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Nichels",
+      "infoboxes": null,
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Date",
+            "Participating drivers",
+            "Car",
+            "Distance covered in 24 hours",
+            "Speed"
+          ],
+          "rows": [
+            {
+              "Year": "1961",
+              "Date": "Nov 20-21",
+              "Participating drivers": "Paul Goldsmith Marvin Panch Fireball Roberts Len Sutton Rodger Ward Joe Weatherly",
+              "Car": "Pontiac Catalina",
+              "Distance covered in 24 hours": "2,576.241 miles",
+              "Speed": "107.343 mph"
+            },
+            {
+              "Year": "Pontiac Enforcer",
+              "Date": "2,586.878 miles",
+              "Participating drivers": "107.787 mph"
+            }
+          ]
+        },
+        {
+          "headers": [
+            "Season",
+            "Driver",
+            "Grid",
+            "Classification",
+            "Points",
+            "Note",
+            "Race Report"
+          ],
+          "rows": [
+            {
+              "Season": "1950",
+              "Driver": "Paul Russo",
+              "Grid": "19",
+              "Classification": "9",
+              "Points": "",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1954",
+              "Driver": "Johnny Thomson",
+              "Grid": "4",
+              "Classification": "Ret",
+              "Points": "",
+              "Note": "Retirement",
+              "Race Report": "Report"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "team": "North American Racing Team",
+    "team_url": "https://en.wikipedia.org/wiki/North_American_Racing_Team",
+    "seasons": [
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      }
+    ],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/North_American_Racing_Team",
+      "infoboxes": [
+        {
+          "title": "North American Racing Team",
+          "rows": {
+            "Founded": {
+              "text": "1958",
+              "links": []
+            },
+            "Founder(s)": {
+              "text": "Luigi Chinetti",
+              "links": [
+                {
+                  "text": "Luigi Chinetti",
+                  "url": "https://en.wikipedia.org/wiki/Luigi_Chinetti"
+                }
+              ]
+            },
+            "Team principal(s)": {
+              "text": "Luigi Chinetti",
+              "links": [
+                {
+                  "text": "Luigi Chinetti",
+                  "url": "https://en.wikipedia.org/wiki/Luigi_Chinetti"
+                }
+              ]
+            },
+            "Former series": {
+              "text": "Formula One WSC Can-Am",
+              "links": [
+                {
+                  "text": "Formula One",
+                  "url": "https://en.wikipedia.org/wiki/Formula_One"
+                },
+                {
+                  "text": "WSC",
+                  "url": "https://en.wikipedia.org/wiki/World_Sportscar_Championship"
+                },
+                {
+                  "text": "Can-Am",
+                  "url": "https://en.wikipedia.org/wiki/Can-Am"
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Pedro Rodríguez Ricardo Rodríguez Phil Hill Jochen Rindt Masten Gregory Mario Andretti Jean Guichet",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Mexico"
+                },
+                {
+                  "text": "Pedro Rodríguez",
+                  "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Mexico"
+                },
+                {
+                  "text": "Ricardo Rodríguez",
+                  "url": "https://en.wikipedia.org/wiki/Ricardo_Rodr%C3%ADguez_(racing_driver)"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_States"
+                },
+                {
+                  "text": "Phil Hill",
+                  "url": "https://en.wikipedia.org/wiki/Phil_Hill"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Austria"
+                },
+                {
+                  "text": "Jochen Rindt",
+                  "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_States"
+                },
+                {
+                  "text": "Masten Gregory",
+                  "url": "https://en.wikipedia.org/wiki/Masten_Gregory"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_States"
+                },
+                {
+                  "text": "Mario Andretti",
+                  "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/France"
+                },
+                {
+                  "text": "Jean Guichet",
+                  "url": "https://en.wikipedia.org/wiki/Jean_Guichet"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Race",
+            "Car",
+            "Driver 1",
+            "Driver 2"
+          ],
+          "rows": [
+            {
+              "Year": "1962",
+              "Race": "400 km of Bridgehampton",
+              "Car": "Ferrari 330 TRI/LM",
+              "Driver 1": "Pedro Rodríguez",
+              "Driver 2": ""
+            },
+            {
+              "Year": "1000 km of Paris",
+              "Race": "Ferrari 250 GTO",
+              "Car": "Pedro Rodríguez",
+              "Driver 1": "Ricardo Rodríguez"
+            },
+            {
+              "Year": "1963",
+              "Race": "Daytona 3 Hours",
+              "Car": "Ferrari 250 GTO",
+              "Driver 1": "Pedro Rodríguez",
+              "Driver 2": ""
+            },
+            {
+              "Year": "1964",
+              "Race": "Daytona 2000 km",
+              "Car": "Ferrari 250 GTO",
+              "Driver 1": "Pedro Rodríguez",
+              "Driver 2": "Phil Hill"
+            },
+            {
+              "Year": "1965",
+              "Race": "24 Hours of Le Mans",
+              "Car": "Ferrari 250 LM",
+              "Driver 1": "Jochen Rindt",
+              "Driver 2": "Masten Gregory"
+            },
+            {
+              "Year": "12 Hours of Reims",
+              "Race": "Ferrari 365 P2",
+              "Car": "Pedro Rodríguez",
+              "Driver 1": "Jean Guichet"
+            }
+          ]
+        },
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engines",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "rows": [
+            {
+              "Year": "1964",
+              "Chassis": "Ferrari 158",
+              "Engines": "Ferrari 205B 1.5 V8",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "MON",
+              "2": "NED",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "AUT",
+              "8": "ITA",
+              "9": "USA",
+              "10": "MEX",
+              "11": ""
+            },
+            {
+              "Year": "John Surtees",
+              "Chassis": "",
+              "Engines": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "2",
+              "6": "2",
+              "7": ""
+            },
+            {
+              "Year": "Ferrari 1512",
+              "Chassis": "Ferrari 207 1.5 V12",
+              "Engines": "Lorenzo Bandini",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "3",
+              "9": ""
+            },
+            {
+              "Year": "Ferrari 156 F1",
+              "Chassis": "Ferrari 178 1.5 V6",
+              "Engines": "Pedro Rodríguez",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "6",
+              "9": ""
+            },
+            {
+              "Year": "1965",
+              "Chassis": "Ferrari 1512",
+              "Engines": "Ferrari 207 1.5 V12",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MON",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "NED",
+              "7": "GER",
+              "8": "ITA",
+              "9": "USA",
+              "10": "MEX",
+              "11": ""
+            },
+            {
+              "Year": "Pedro Rodriguez",
+              "Chassis": "",
+              "Engines": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "5",
+              "6": "7",
+              "7": ""
+            },
+            {
+              "Year": "Ferrari 158",
+              "Chassis": "Ferrari 205B 1.5 V8",
+              "Engines": "Bob Bondurant",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "9",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1969",
+              "Chassis": "Ferrari 312",
+              "Engines": "Ferrari 3.0 V12",
+              "Tyres": "F",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "ESP",
+              "3": "MON",
+              "4": "NED",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "ITA",
+              "9": "CAN",
+              "10": "USA",
+              "11": "MEX"
+            },
+            {
+              "Year": "Pedro Rodríguez",
+              "Chassis": "",
+              "Engines": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "5",
+              "7": "7"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
