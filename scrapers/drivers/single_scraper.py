@@ -5,7 +5,6 @@ from bs4 import Tag
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.table_parsing import TableParsingHelper
-from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
@@ -30,6 +29,7 @@ from scrapers.drivers.columns.round import RoundColumn
 from scrapers.drivers.columns.series import SeriesColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
 from scrapers.drivers.infobox.scraper import DriverInfoboxParser
+from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -48,6 +48,10 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
         self.policy = self.http_policy
         self.url: str = ""
         self.debug_dir = options.debug_dir
+        self.article_tables_parser = ArticleTablesParser(
+            include_heading_path=True,
+            include_source_table=True,
+        )
 
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
@@ -93,50 +97,24 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
             if section_soup is None:
                 continue
 
-            for table in section_soup.find_all("table", class_="wikitable"):
-                table_meta = self._table_context(table, section_title)
-                parsed = self._parse_results_table(table)
+            tables = self.article_tables_parser.parse(section_soup)
+            for table_data in tables:
+                parsed = self._parse_results_table_data(table_data)
                 if parsed:
-                    parsed.update(table_meta)
+                    parsed["section"] = section_title
+                    if "heading_path" in table_data:
+                        parsed["heading_path"] = table_data["heading_path"]
                     records.append(parsed)
 
         return records
 
-    def _table_context(self, table: Tag, section_title: str) -> dict[str, Any]:
-        return {
-            "section": section_title,
-            "heading_path": self._heading_context(table),
-        }
-
-    def _heading_context(self, table: Tag) -> list[str]:
-        headings: list[str] = []
-        node = table
-        while node is not None:
-            node = node.previous_sibling
-            if not isinstance(node, Tag):
-                continue
-
-            heading_tag = None
-            if node.name in {"h2", "h3", "h4", "h5"}:
-                heading_tag = node
-            elif "mw-heading" in (node.get("class") or []):
-                heading_tag = node.find(["h2", "h3", "h4", "h5"], recursive=False)
-
-            if heading_tag is None:
-                continue
-
-            text = clean_wiki_text(heading_tag.get_text(" ", strip=True))
-            if text:
-                headings.append(text)
-            if heading_tag.name == "h2":
-                break
-
-        headings.reverse()
-        return headings
-
-    def _parse_results_table(self, table: Tag) -> dict[str, Any] | None:
-        headers = self._extract_headers(table)
+    def _parse_results_table_data(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+        headers = table_data["headers"]
         if not headers:
+            return None
+
+        table = table_data.get("_table")
+        if not isinstance(table, Tag):
             return None
 
         header_set = set(headers)
@@ -156,7 +134,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
 
         if "Year" in header_set:
             return {
-                "table_type": "results_by_year",
+                "table_type": "complete_results",
                 "headers": headers,
                 "rows": self._parse_complete_results(table, headers),
             }
