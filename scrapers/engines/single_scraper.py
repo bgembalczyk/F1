@@ -1,11 +1,11 @@
 from typing import Any
 
 from bs4 import BeautifulSoup
-from bs4 import Tag
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
+from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -27,6 +27,7 @@ class SingleEngineManufacturerScraper(WikiScraper):
         self.policy = self.http_policy
         self.url: str = ""
         self.debug_dir = options.debug_dir
+        self.article_tables_parser = ArticleTablesParser()
 
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
@@ -51,19 +52,4 @@ class SingleEngineManufacturerScraper(WikiScraper):
         return infoboxes
 
     def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        all_tables: list[dict[str, Any]] = []
-        for table in soup.find_all("table", class_="wikitable"):
-            parsed = self._parse_table(table)
-            if parsed is not None:
-                all_tables.append(parsed)
-        return all_tables
-
-    def _parse_table(self, table: Tag) -> dict[str, Any] | None:
-        raw = self.table_parser.parse(table)
-        headers = raw["headers"]
-        if not headers:
-            return None
-        rows = [
-            dict(zip(headers, row_cells, strict=False)) for row_cells in raw["rows"]
-        ]
-        return {"headers": headers, "rows": rows}
+        return self.article_tables_parser.parse(soup)

@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
@@ -12,6 +11,7 @@ from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
+from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -45,6 +45,7 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
         self.debug_dir = options.debug_dir
         self._original_url: str | None = None
         self._section_fragment: str | None = None
+        self.article_tables_parser = ArticleTablesParser(include_source_table=True)
 
     def _select_section(
         self,
@@ -106,14 +107,12 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
         lap_scraper.url = self.url  # żeby _full_url działało poprawnie
         all_records: list[dict[str, Any]] = []
 
-        for table in soup.find_all("table", class_="wikitable"):
-            header_row = table.find("tr")
-            if not header_row:
+        for table_data in self.article_tables_parser.parse(soup):
+            table = table_data.get("_table")
+            if table is None:
                 continue
 
-            header_cells = header_row.find_all(["th", "td"])
-            headers = [clean_wiki_text(c.get_text(strip=True)) for c in header_cells]
-
+            headers = table_data["headers"]
             if not is_lap_record_table(headers, lap_scraper):
                 continue
 
