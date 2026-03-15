@@ -20,6 +20,7 @@ from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
 from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
+from scrapers.wiki.parsers.article import CallableArticleParserAdapter
 from scrapers.wiki.scraper import WikiScraper
 
 if TYPE_CHECKING:
@@ -55,9 +56,13 @@ class F1SingleGrandPrixScraper(WikiScraper):
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
 
-        super().__init__(options=options)
+        super().__init__(options=options, include_wiki_content=False)
         self.policy = self.http_policy
         self.url: str = ""
+        self.register_article_parser(
+            CallableArticleParserAdapter(self._parse_by_year),
+            target_key="by_year",
+        )
 
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
@@ -225,12 +230,7 @@ class F1SingleGrandPrixScraper(WikiScraper):
         Returns None when the next section should be tried.
         """
         try:
-            return [
-                {
-                    "url": self.url,
-                    "by_year": self._parse_section_table(soup, section_id=section_id),
-                },
-            ]
+            return self._parse_section_table(soup, section_id=section_id)
         except Exception as exc:
             if isinstance(exc, RuntimeError):
                 error: Exception = DomainParseError(
@@ -253,7 +253,9 @@ class F1SingleGrandPrixScraper(WikiScraper):
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         if not is_grand_prix_article(soup):
             return []
+        return super().parse(soup)
 
+    def _parse_by_year(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         for section_id in [
             "By_year",
             "Winners",
@@ -263,10 +265,4 @@ class F1SingleGrandPrixScraper(WikiScraper):
             result = self._try_parse_section(soup, section_id)
             if result is not None:
                 return result
-
-        return [
-            {
-                "url": self.url,
-                "by_year": [],
-            },
-        ]
+        return []
