@@ -13,28 +13,13 @@ from scrapers.wiki.parsers.elements.navbox import NavBoxParser
 from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
+from scrapers.wiki.parsers.result_model import TOP_SECTION_NAME
+from scrapers.wiki.parsers.result_model import ParserResultItem
+from scrapers.wiki.parsers.result_model import build_meta
+from scrapers.wiki.parsers.result_model import to_legacy_element
 
-TOP_SECTION_NAME = "(Top)"
 
-
-def _split_into_parts(
-    children: list[Tag],
-    heading_class: str,
-) -> list[tuple[str, list[Tag]]]:
-    """Dzieli listę elementów na części według nagłówków danego poziomu.
-
-    Pierwsza część (przed pierwszym nagłówkiem) otrzymuje nazwę TOP_SECTION_NAME.
-    Każda kolejna część jest otwierana przez div nagłówkowy i nosi nazwę
-    zgodną z id nagłówka w headerze.
-
-    Args:
-        children: Lista elementów potomnych kontenera.
-        heading_class: Klasa CSS identyfikująca nagłówki tego poziomu
-            (np. "mw-heading2").
-
-    Returns:
-        Lista krotek (nazwa, lista_elementów).
-    """
+def _split_into_parts(children: list[Tag], heading_class: str) -> list[tuple[str, list[Tag]]]:
     parts: list[tuple[str, list[Tag]]] = []
     current_name: str = TOP_SECTION_NAME
     current_elements: list[Tag] = []
@@ -60,23 +45,6 @@ def _split_into_parts(
 
 
 class WikiElementParserMixin:
-    """Mixin dostarczający narzędzia do parsowania elementów HTML Wikipedii.
-
-    Używany przez parsery sekcji wszystkich poziomów.
-    Zawiera parsery dla typowych elementów HTML obecnych w artykułach Wikipedii:
-    - InfoboxParser dla: <table class="infobox vcard">
-    - ParagraphParser dla: <p>
-    - FigureParser dla: <figure>
-    - ListParser dla: <ul>
-    - TableParser dla: <table class="wikitable">
-    - NavBoxParser dla: <div role="navigation" class="navbox">
-    - ReferencesWrapParser dla: divów z klasą zawierającą references-wrap
-
-    Udostępnia też pomocnicze metody do wyszukiwania infoboxów w soup:
-    - find_infobox(soup)   → pierwszy infobox jako Tag lub None
-    - find_infoboxes(soup) → lista wszystkich infoboxów jako list[Tag]
-    """
-
     def __init__(self) -> None:
         self.infobox_parser = InfoboxParser()
         self.paragraph_parser = ParagraphParser()
@@ -88,7 +56,6 @@ class WikiElementParserMixin:
 
     @staticmethod
     def _has_infobox_class(classes: Any) -> bool:
-        """Sprawdza czy element zawiera klasę 'infobox'."""
         if not classes:
             return False
         if isinstance(classes, str):
@@ -99,101 +66,84 @@ class WikiElementParserMixin:
             return False
 
     def find_infobox(self, soup: BeautifulSoup) -> Tag | None:
-        """Zwraca pierwszą tabelę z klasą 'infobox' w podanym soup lub None."""
         return soup.find("table", class_=self._has_infobox_class)
 
     def find_infoboxes(self, soup: BeautifulSoup) -> list[Tag]:
-        """Zwraca listę wszystkich tabel z klasą 'infobox' w podanym soup."""
         return soup.find_all("table", class_=self._has_infobox_class)
 
-    def parse_elements(self, elements: list[Tag]) -> list[dict[str, Any]]:
-        """Parsuje listę elementów HTML za pomocą odpowiednich narzędzi.
-
-        Args:
-            elements: Lista elementów HTML do sparsowania.
-
-        Returns:
-            Lista wyekstrahowanych danych dla każdego poznanego elementu.
-        """
-        result: list[dict[str, Any]] = []
-        for el in elements:
-            parsed = self._parse_element(el)
+    def parse_elements(
+        self,
+        elements: list[Tag],
+        *,
+        section_id: str,
+        heading_id: str | None,
+        heading_path: list[str],
+    ) -> list[ParserResultItem]:
+        result: list[ParserResultItem] = []
+        for position, el in enumerate(elements):
+            meta = build_meta(
+                section_id=section_id,
+                heading_id=heading_id,
+                heading_path=heading_path,
+                position=position,
+            )
+            parsed = self._parse_element(el, meta)
             if parsed is not None:
                 result.append(parsed)
         return result
 
-    def _parse_element(self, el: Tag) -> dict[str, Any] | None:
-        """Wybiera właściwy parser dla danego elementu i parsuje go.
-
-        Args:
-            el: Element HTML do sparsowania.
-
-        Returns:
-            Sparsowane dane lub None jeśli element nie jest obsługiwany.
-        """
+    def _parse_element(self, el: Tag, meta: dict[str, Any]) -> ParserResultItem | None:
         if el.name == "p":
-            return {"type": "paragraph", "data": self.paragraph_parser.parse(el)}
+            return self.paragraph_parser.parse(el, meta=meta)
 
         if el.name == "figure":
-            return {"type": "figure", "data": self.figure_parser.parse(el)}
+            return self.figure_parser.parse(el, meta=meta)
 
         if el.name == "ul":
-            return {"type": "list", "data": self.list_parser.parse(el)}
+            return self.list_parser.parse(el, meta=meta)
 
         if el.name == "table":
             classes = el.get("class") or []
             if "infobox" in classes:
-                return {"type": "infobox", "data": self.infobox_parser.parse(el)}
+                return self.infobox_parser.parse(el, meta=meta)
             if "wikitable" in classes:
-                return {"type": "table", "data": self.table_parser.parse(el)}
+                return self.table_parser.parse(el, meta=meta)
 
         if el.name == "div":
             classes = el.get("class") or []
             role = el.get("role")
             if role == "navigation" and "navbox" in classes:
-                return {"type": "navbox", "data": self.navbox_parser.parse(el)}
+                return self.navbox_parser.parse(el, meta=meta)
             if any("references-wrap" in c for c in classes):
-                return {
-                    "type": "references_wrap",
-                    "data": self.references_wrap_parser.parse(el),
-                }
+                return self.references_wrap_parser.parse(el, meta=meta)
 
         return None
 
 
 class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
-    """Parser podpodpodsekcji Wikipedii (poziom 5).
-
-    Przetwarza fragment HTML między kolejnymi:
-    <div class="mw-heading mw-heading5"><h5 id=...>
-
-    Nie zagłębia się dalej – używa wyłącznie narzędzi elementarnych
-    (InfoboxParser, ParagraphParser, FigureParser, ListParser, TableParser,
-    NavBoxParser, ReferencesWrapParser).
-    """
-
     def __init__(self) -> None:
         WikiElementParserMixin.__init__(self)
 
     def parse(self, element: Tag) -> dict[str, Any]:
-        """Parsuje zawartość podpodpodsekcji.
-
-        Args:
-            element: Kontener zawierający elementy podpodpodsekcji.
-
-        Returns:
-            Słownik z listą sparsowanych elementów.
-        """
         return self.parse_group(list(element.children))
 
-    def parse_group(self, elements: list) -> dict[str, Any]:
-        """Parsuje grupę elementów HTML.
-
-        Args:
-            elements: Lista elementów (potomków kontenera sekcji).
-
-        Returns:
-            Słownik z listą sparsowanych elementów.
-        """
+    def parse_group(
+        self,
+        elements: list,
+        *,
+        section_id: str = TOP_SECTION_NAME,
+        heading_id: str | None = None,
+        heading_path: list[str] | None = None,
+    ) -> dict[str, Any]:
         tags = [c for c in elements if isinstance(c, Tag)]
-        return {"elements": self.parse_elements(tags)}
+        resolved_heading_path = heading_path or [section_id]
+        items = self.parse_elements(
+            tags,
+            section_id=section_id,
+            heading_id=heading_id,
+            heading_path=resolved_heading_path,
+        )
+        return {
+            "items": items,
+            "elements": [to_legacy_element(item) for item in items],
+        }

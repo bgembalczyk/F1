@@ -3,25 +3,14 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.result_model import ParserMeta
+from scrapers.wiki.parsers.result_model import build_result_item
 
 
 class ParagraphParser(WikiParser):
-    """Parser akapitów Wikipedii.
-
-    Przetwarza element: <p>
-    """
-
-    def parse(self, element: Tag) -> dict[str, Any]:
-        """Parsuje akapit HTML.
-
-        Args:
-            element: Element <p>.
-
-        Returns:
-            Słownik z tekstem akapitu.
-        """
-        return {"text": element.get_text(" ", strip=True)}
+    def parse(self, element: Tag, meta: ParserMeta | None = None) -> dict[str, Any]:
+        payload = {"text": element.get_text(" ", strip=True)}
+        return build_result_item("paragraph", payload, meta or {})
 
 
-# Alias przejściowy dla kompatybilności wstecznej.
 ParagrafParser = ParagraphParser

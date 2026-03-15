@@ -150,9 +150,10 @@ def test_infobox_parser():
     soup = _make_soup(html)
     parser = InfoboxParser()
     result = parser.parse(soup.find("table"))
-    assert result["title"] == "Test Article"
-    assert result["rows"]["Born"] == "1985"
-    assert result["rows"]["Nationality"] == "British"
+    assert result["type"] == "infobox"
+    assert result["data"]["title"] == "Test Article"
+    assert result["data"]["rows"]["Born"] == "1985"
+    assert result["data"]["rows"]["Nationality"] == "British"
 
 
 def test_paragraph_parser():
@@ -160,7 +161,8 @@ def test_paragraph_parser():
     soup = _make_soup(html)
     parser = ParagraphParser()
     result = parser.parse(soup.find("p"))
-    assert result["text"] == "Hello World"
+    assert result["type"] == "paragraph"
+    assert result["data"]["text"] == "Hello World"
 
 
 def test_figure_parser():
@@ -173,8 +175,9 @@ def test_figure_parser():
     soup = _make_soup(html)
     parser = FigureParser()
     result = parser.parse(soup.find("figure"))
-    assert result["caption"] == "A caption"
-    assert result["src"] == "image.jpg"
+    assert result["type"] == "figure"
+    assert result["data"]["caption"] == "A caption"
+    assert result["data"]["src"] == "image.jpg"
 
 
 def test_list_parser():
@@ -182,7 +185,8 @@ def test_list_parser():
     soup = _make_soup(html)
     parser = ListParser()
     result = parser.parse(soup.find("ul"))
-    assert result["items"] == ["Item 1", "Item 2", "Item 3"]
+    assert result["type"] == "list"
+    assert result["data"]["items"] == ["Item 1", "Item 2", "Item 3"]
 
 
 def test_table_parser():
@@ -195,8 +199,9 @@ def test_table_parser():
     soup = _make_soup(html)
     parser = TableParser()
     result = parser.parse(soup.find("table"))
-    assert result["headers"] == ["Name", "Year"]
-    assert result["rows"] == [["Hamilton", "2020"]]
+    assert result["type"] == "table"
+    assert result["data"]["headers"] == ["Name", "Year"]
+    assert result["data"]["rows"] == [["Hamilton", "2020"]]
 
 
 
@@ -228,9 +233,9 @@ def test_table_parser_handles_multirow_headers_and_blank_th() -> None:
 
     result = parser.parse(soup.find("table"))
 
-    assert result["headers"] == ["Pos", "Name", "Nationality", "Points"]
-    assert result["rows"] == [["1", "Lewis Hamilton", "British", "413"]]
-    assert result["raw_rows"] == [
+    assert result["data"]["headers"] == ["Pos", "Name", "Nationality", "Points"]
+    assert result["data"]["rows"] == [["1", "Lewis Hamilton", "British", "413"]]
+    assert result["data"]["raw_rows"] == [
         {
             "Pos": "1",
             "Name": "Lewis Hamilton",
@@ -266,13 +271,13 @@ def test_table_parser_handles_rowspan_and_colspan_with_stable_mapping() -> None:
 
     result = parser.parse(soup.find("table"))
 
-    assert result["headers"] == ["Year", "Grand Prix", "Result", "Notes"]
-    assert result["rows"] == [
+    assert result["data"]["headers"] == ["Year", "Grand Prix", "Result", "Notes"]
+    assert result["data"]["rows"] == [
         ["1953", "Argentina", "Win", "Win"],
         ["1953", "Monaco", "DNF", "Engine"],
     ]
-    assert result["raw_rows"][1]["Year"] == "1953"
-    assert result["raw_rows"][1]["Grand Prix"] == "Monaco"
+    assert result["data"]["raw_rows"][1]["Year"] == "1953"
+    assert result["data"]["raw_rows"][1]["Grand Prix"] == "Monaco"
 def test_navbox_parser():
     html = """
     <div role="navigation" class="navbox">
@@ -284,8 +289,9 @@ def test_navbox_parser():
     soup = _make_soup(html)
     parser = NavBoxParser()
     result = parser.parse(soup.find("div"))
-    assert result["title"] == "Navigation"
-    assert len(result["links"]) == 2
+    assert result["type"] == "navbox"
+    assert result["data"]["title"] == "Navigation"
+    assert len(result["data"]["links"]) == 2
 
 
 def test_references_wrap_parser():
@@ -300,7 +306,8 @@ def test_references_wrap_parser():
     soup = _make_soup(html)
     parser = ReferencesWrapParser()
     result = parser.parse(soup.find("div"))
-    assert len(result["references"]) == 2
+    assert result["type"] == "references_wrap"
+    assert len(result["data"]["references"]) == 2
 
 
 # ---------------------------------------------------------------------------
