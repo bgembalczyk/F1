@@ -3,25 +3,13 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.result_model import ParserMeta
+from scrapers.wiki.parsers.result_model import build_result_item
 
 
 class InfoboxParser(WikiParser):
-    """Parser infoboxów Wikipedii.
-
-    Przetwarza tabelę: <table class="infobox vcard">
-    """
-
-    def parse(self, element: Tag) -> dict[str, Any]:
-        """Parsuje infobox Wikipedii.
-
-        Args:
-            element: Element <table class="infobox vcard">.
-
-        Returns:
-            Słownik z tytułem i wierszami infoboxa.
-        """
+    def parse(self, element: Tag, meta: ParserMeta | None = None) -> dict[str, Any]:
         data: dict[str, Any] = {"title": None, "rows": {}}
-
         caption = element.find("caption")
         if caption:
             data["title"] = caption.get_text(" ", strip=True)
@@ -36,4 +24,4 @@ class InfoboxParser(WikiParser):
             key = header.get_text(" ", strip=True)
             data["rows"][key] = value.get_text(" ", strip=True)
 
-        return data
+        return build_result_item("infobox", data, meta or {})

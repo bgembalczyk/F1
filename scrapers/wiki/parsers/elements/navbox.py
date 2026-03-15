@@ -3,23 +3,12 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.result_model import ParserMeta
+from scrapers.wiki.parsers.result_model import build_result_item
 
 
 class NavBoxParser(WikiParser):
-    """Parser navboxów Wikipedii.
-
-    Przetwarza element: <div role="navigation" class="navbox">
-    """
-
-    def parse(self, element: Tag) -> dict[str, Any]:
-        """Parsuje navbox HTML.
-
-        Args:
-            element: Element <div role="navigation" class="navbox">.
-
-        Returns:
-            Słownik z tytułem navboxa i linkami.
-        """
+    def parse(self, element: Tag, meta: ParserMeta | None = None) -> dict[str, Any]:
         title_tag = element.find(class_="navbox-title")
         title = title_tag.get_text(" ", strip=True) if title_tag else None
         links = [
@@ -27,4 +16,4 @@ class NavBoxParser(WikiParser):
             for a in element.find_all("a")
             if a.get("href")
         ]
-        return {"title": title, "links": links}
+        return build_result_item("navbox", {"title": title, "links": links}, meta or {})
