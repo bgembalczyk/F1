@@ -12,6 +12,26 @@ SectionTree = dict[str, Any]
 
 
 @dataclass(slots=True)
+class SectionExtractionContext:
+    """Shared context passed through every section parser layer."""
+
+    page_title: str = ""
+    page_url: str = ""
+    breadcrumbs: tuple[str, ...] = ()
+    html_metadata: dict[str, Any] | None = None
+    section_id: str | None = None
+
+    def with_section(self, *, section_name: str, section_id: str | None = None) -> "SectionExtractionContext":
+        return SectionExtractionContext(
+            page_title=self.page_title,
+            page_url=self.page_url,
+            breadcrumbs=(*self.breadcrumbs, section_name),
+            html_metadata=self.html_metadata,
+            section_id=section_id,
+        )
+
+
+@dataclass(slots=True)
 class SectionTreeMatch:
     section: SectionTree
     strategy: str
@@ -71,7 +91,7 @@ def _find_match(
 
     for section in _iter_sections(sections):
         section_name = str(section.get("name", ""))
-        section_id = _normalize_id(section_name)
+        section_id = str(section.get("section_id") or _normalize_id(section_name))
         if section_id in target_ids:
             return SectionTreeMatch(section=section, strategy="exact_id", score=3.0)
 
@@ -129,7 +149,7 @@ def collect_section_elements(section: SectionTree, element_type: str) -> list[di
 
     def walk(node: SectionTree) -> None:
         for item in node.get("elements", []):
-            if item.get("type") == element_type:
+            if item.get("kind") == element_type or item.get("type") == element_type:
                 found.append(item)
         for key in ("sub_sections", "sub_sub_sections", "sub_sub_sub_sections"):
             for child in node.get(key, []):

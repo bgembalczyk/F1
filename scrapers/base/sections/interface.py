@@ -26,3 +26,17 @@ class SectionParser(Protocol):
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         ...
+
+
+class SectionTextParser(Protocol):
+    """Common parser interface for narrative/text section content."""
+
+    def parse(self, section_fragment: BeautifulSoup) -> list[dict[str, Any]]:
+        ...
+
+
+class SectionTableParser(Protocol):
+    """Common parser interface for table-oriented section content."""
+
+    def parse(self, section_fragment: BeautifulSoup) -> list[dict[str, Any]]:
+        ...

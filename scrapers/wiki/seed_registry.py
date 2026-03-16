@@ -6,9 +6,35 @@ from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
 )
+from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
+from scrapers.constructors.indianapolis_only_constructors_list import (
+    IndianapolisOnlyConstructorsListScraper,
+)
+from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
+from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
+from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
 from scrapers.drivers.list_scraper import F1DriversListScraper
+from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
+from scrapers.engines.engine_regulation import EngineRegulationScraper
+from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
+from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
+    IndianapolisOnlyEngineManufacturersListScraper,
+)
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
+from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
+    RedFlaggedNonChampionshipRacesScraper,
+)
+from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
+    RedFlaggedWorldChampionshipRacesScraper,
+)
+from scrapers.points.points_scoring_systems_history import (
+    PointsScoringSystemsHistoryScraper,
+)
+from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
+from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
 from scrapers.seasons.list_scraper import SeasonsListScraper
+from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
+from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
 
 
 @dataclass(frozen=True)
@@ -18,6 +44,19 @@ class SeedRegistryEntry:
     output_category: str
     list_scraper_cls: type[Any]
     default_output_path: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class ListJobRegistryEntry:
+    seed_name: str
+    wikipedia_url: str
+    output_category: str
+    list_scraper_cls: type[Any]
+    json_output_path: str
+    csv_output_path: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -62,6 +101,143 @@ WIKI_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
 )
 
 
+WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
+    ListJobRegistryEntry(
+        seed_name="circuits",
+        wikipedia_url=CircuitsListScraper.CONFIG.url,
+        output_category="circuits",
+        list_scraper_cls=CircuitsListScraper,
+        json_output_path="circuits/f1_circuits.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="constructors_current",
+        wikipedia_url=CurrentConstructorsListScraper.CONFIG.url,
+        output_category="constructors",
+        list_scraper_cls=CurrentConstructorsListScraper,
+        json_output_path="constructors/f1_constructors_{year}.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="constructors_former",
+        wikipedia_url=FormerConstructorsListScraper.CONFIG.url,
+        output_category="constructors",
+        list_scraper_cls=FormerConstructorsListScraper,
+        json_output_path="constructors/f1_former_constructors.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="constructors_indianapolis_only",
+        wikipedia_url=IndianapolisOnlyConstructorsListScraper.url,
+        output_category="constructors",
+        list_scraper_cls=IndianapolisOnlyConstructorsListScraper,
+        json_output_path="constructors/f1_indianapolis_only_constructors.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="constructors_privateer",
+        wikipedia_url=PrivateerTeamsListScraper.url,
+        output_category="constructors",
+        list_scraper_cls=PrivateerTeamsListScraper,
+        json_output_path="constructors/f1_privateer_teams.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="drivers",
+        wikipedia_url=F1DriversListScraper.CONFIG.url,
+        output_category="drivers",
+        list_scraper_cls=F1DriversListScraper,
+        json_output_path="drivers/f1_drivers.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="drivers_female",
+        wikipedia_url=FemaleDriversListScraper.CONFIG.url,
+        output_category="drivers",
+        list_scraper_cls=FemaleDriversListScraper,
+        json_output_path="drivers/female_drivers.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="drivers_fatalities",
+        wikipedia_url=F1FatalitiesListScraper.CONFIG.url,
+        output_category="drivers",
+        list_scraper_cls=F1FatalitiesListScraper,
+        json_output_path="drivers/f1_driver_fatalities.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="engines_indianapolis_only",
+        wikipedia_url=IndianapolisOnlyEngineManufacturersListScraper.url,
+        output_category="engines",
+        list_scraper_cls=IndianapolisOnlyEngineManufacturersListScraper,
+        json_output_path="engines/f1_indianapolis_only_engine_manufacturers.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="engines_restrictions",
+        wikipedia_url=EngineRestrictionsScraper.CONFIG.url,
+        output_category="engines",
+        list_scraper_cls=EngineRestrictionsScraper,
+        json_output_path="engines/f1_engine_restrictions.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="engines_regulations",
+        wikipedia_url=EngineRegulationScraper.CONFIG.url,
+        output_category="engines",
+        list_scraper_cls=EngineRegulationScraper,
+        json_output_path="engines/f1_engine_regulations.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="engines_manufacturers",
+        wikipedia_url=EngineManufacturersListScraper.CONFIG.url,
+        output_category="engines",
+        list_scraper_cls=EngineManufacturersListScraper,
+        json_output_path="engines/f1_engine_manufacturers.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="grands_prix_red_flagged_world_championship",
+        wikipedia_url=RedFlaggedWorldChampionshipRacesScraper.CONFIG.url,
+        output_category="grands_prix",
+        list_scraper_cls=RedFlaggedWorldChampionshipRacesScraper,
+        json_output_path="grands_prix/f1_red_flagged_world_championship_races.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="grands_prix_red_flagged_non_championship",
+        wikipedia_url=RedFlaggedNonChampionshipRacesScraper.CONFIG.url,
+        output_category="grands_prix",
+        list_scraper_cls=RedFlaggedNonChampionshipRacesScraper,
+        json_output_path="grands_prix/f1_red_flagged_non_championship_races.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="points_sprint",
+        wikipedia_url=SprintQualifyingPointsScraper.CONFIG.url,
+        output_category="points",
+        list_scraper_cls=SprintQualifyingPointsScraper,
+        json_output_path="points/points_scoring_systems_sprint.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="points_shortened",
+        wikipedia_url=ShortenedRacePointsScraper.CONFIG.url,
+        output_category="points",
+        list_scraper_cls=ShortenedRacePointsScraper,
+        json_output_path="points/points_scoring_systems_shortened.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="points_history",
+        wikipedia_url=PointsScoringSystemsHistoryScraper.CONFIG.url,
+        output_category="points",
+        list_scraper_cls=PointsScoringSystemsHistoryScraper,
+        json_output_path="points/points_scoring_systems_history.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="tyres",
+        wikipedia_url=TyreManufacturersBySeasonScraper.CONFIG.url,
+        output_category="tyres",
+        list_scraper_cls=TyreManufacturersBySeasonScraper,
+        json_output_path="tyres/f1_tyre_manufacturers_by_season.json",
+    ),
+    ListJobRegistryEntry(
+        seed_name="sponsorship_liveries",
+        wikipedia_url=F1SponsorshipLiveriesScraper.url,
+        output_category="sponsorship_liveries",
+        list_scraper_cls=F1SponsorshipLiveriesScraper,
+        json_output_path="sponsorship_liveries/f1_sponsorship_liveries.json",
+    ),
+)
+
+
 def validate_seed_registry(
     registry: tuple[SeedRegistryEntry, ...] = WIKI_SEED_REGISTRY,
 ) -> None:
@@ -83,4 +259,28 @@ def validate_seed_registry(
                 f"Seed '{entry.seed_name}' has inconsistent output path "
                 f"'{entry.default_output_path}' for category '{entry.output_category}'"
             )
+            raise ValueError(msg)
+
+
+def validate_list_job_registry(
+    registry: tuple[ListJobRegistryEntry, ...] = WIKI_LIST_JOB_REGISTRY,
+) -> None:
+    seen_seed_names: set[str] = set()
+
+    for entry in registry:
+        if entry.seed_name in seen_seed_names:
+            msg = f"Duplicate list seed_name found: {entry.seed_name}"
+            raise ValueError(msg)
+        seen_seed_names.add(entry.seed_name)
+
+        expected_prefix = f"{entry.output_category}/"
+        if not entry.json_output_path.startswith(expected_prefix):
+            msg = (
+                f"List seed '{entry.seed_name}' has inconsistent output path "
+                f"'{entry.json_output_path}' for category '{entry.output_category}'"
+            )
+            raise ValueError(msg)
+
+        if not entry.wikipedia_url.strip():
+            msg = f"List seed '{entry.seed_name}' has empty wikipedia_url"
             raise ValueError(msg)

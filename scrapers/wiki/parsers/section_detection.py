@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections.abc import Mapping
 from dataclasses import dataclass
 from difflib import SequenceMatcher
+import re
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -25,6 +26,34 @@ def normalize_section_text(text: str) -> str:
 
 def _normalize_id(text: str) -> str:
     return normalize_section_text(text).replace(" ", "_")
+
+
+def normalize_section_slug(text: str) -> str:
+    """Create stable section slug used in parser output IDs.
+
+    Keeps wikipedia-like underscores while removing unstable punctuation.
+    """
+    normalized = normalize_section_text(text)
+    sanitized = re.sub(r"[^a-z0-9\s_-]", "", normalized)
+    collapsed = re.sub(r"[\s_-]+", "_", sanitized).strip("_")
+    return collapsed or "section"
+
+
+def make_stable_section_id(
+    *,
+    heading_anchor: str | None,
+    heading_text: str,
+    breadcrumbs: tuple[str, ...] = (),
+) -> str:
+    """Build stable section identifier from heading anchor + normalized slug."""
+    anchor_slug = normalize_section_slug(heading_anchor) if heading_anchor else ""
+    text_slug = normalize_section_slug(heading_text)
+    breadcrumb_slug = "__".join(normalize_section_slug(item) for item in breadcrumbs if item)
+    if anchor_slug:
+        return anchor_slug
+    if breadcrumb_slug:
+        return f"{breadcrumb_slug}__{text_slug}"
+    return text_slug
 
 
 def _headline_text(heading: Tag) -> str:

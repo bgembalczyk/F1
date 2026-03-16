@@ -58,3 +58,23 @@
 - [x] Wprowadzić wspólny interfejs parsera sekcyjnego (`SectionParseResult`, `SectionParser`).
 - [x] Dodać mapę `DOMAIN_CRITICAL_SECTIONS` (`section_id`, `alternative_section_ids`) i użyć jej jako fallbacku w parserach GP.
 - [ ] Migrować kolejne parsery domenowe (constructors/circuits) na nowy interfejs sekcyjny.
+
+## Strumień C — Podział projektu na wcześniej powstałe części (stabilizacja architektury)
+- [x] C1. Domknąć mapę odpowiedzialności modułów: `list/` (seed), `sections/` (body), `infobox/` (structured core), `postprocess/` (normalizacja domenowa).
+  - Kontekst: dodano dokument granic modułów z mapą odpowiedzialności i regułami przepływu.
+- [x] C2. Wymusić regułę importów: moduły `sections/` nie odwołują się do `single_scraper.py`; komunikacja wyłącznie przez serwisy/adaptory.
+  - Kontekst: dodano test regresyjny skanujący importy we wszystkich domenach sekcyjnych.
+- [x] C3. Dodać dokument „granice modułów” z przykładami przepływu danych dla każdej domeny (`drivers`, `constructors`, `circuits`, `seasons`, `grands_prix`).
+  - Kontekst: nowy dokument `docs/MODULE_BOUNDARIES.md` z przykładami flow 0→1 i użyciem adaptera sekcji.
+- [x] C4. Wprowadzić checklistę Definition of Done dla każdego nowego parsera sekcji (test snapshotowy + mapowanie aliasów + walidacja kontraktu + wpis w README domeny).
+  - Kontekst: checklista DoD została osadzona w dokumencie granic modułów jako standard wejścia do code review.
+- [x] C5. Przenieść wspólne helpery czyszczenia treści wiki do jednego modułu współdzielonego (`scrapers/wiki/parsers/elements/*`), aby uniknąć duplikacji domenowej.
+  - Kontekst: dodano `text_cleaning.py` i podłączono parsery elementów oraz parser tabel.
+
+## Kryteria ukończenia planu sekcyjnego
+- [ ] Każda domena ma co najmniej 3 parsery sekcji działające przez wspólny adapter i wspólny kontrakt wynikowy.
+- [x] Każda krytyczna sekcja z `DOMAIN_CRITICAL_SECTIONS` ma fallback aliasów i test regresyjny.
+  - Kontekst: rozszerzono aliasy fallback dla `seasons` i `circuits` oraz dodano test obecności aliasów dla wszystkich domen.
+- [x] Każdy parser sekcji ma przypisanie do jednej warstwy (`list`/`sections`/`infobox`/`postprocess`) bez mieszania odpowiedzialności.
+  - Kontekst: granice warstw zostały zdefiniowane i spięte testem reguły importów dla `sections/`.
+
