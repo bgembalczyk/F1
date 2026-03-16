@@ -3,18 +3,15 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess import DriverSectionContractPostProcessor
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.sections.service import DriverSectionExtractionService
-from scrapers.wiki.scraper import WikiScraper
 
 
-class SingleDriverScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper):
+class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
     def __init__(
         self,
         *,
@@ -25,14 +22,8 @@ class SingleDriverScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper
         ) = None,
         assembler: DriverRecordAssembler | None = None,
     ) -> None:
-        options = init_scraper_options(options, include_urls=True)
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
-        options.post_processors.append(DriverSectionContractPostProcessor())
         super().__init__(options=options)
-        self.url: str = ""
-        self._options = options
-        self.debug_dir = options.debug_dir
+        self.debug_dir = self._options.debug_dir
         self._infobox_service = infobox_service or DriverInfoboxExtractionService(
             include_urls=self.include_urls,
             debug_dir=self.debug_dir,
@@ -47,6 +38,8 @@ class SingleDriverScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper
         )
         self._assembler = assembler or DriverRecordAssembler()
 
+    def _build_post_processor(self) -> DriverSectionContractPostProcessor:
+        return DriverSectionContractPostProcessor()
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
         return super().fetch()
