@@ -1,0 +1,1175 @@
+{
+  "migrated": [
+    {
+      "source": "data/wiki/circuits/circuits.csv",
+      "destination": "data/raw/circuits/circuits.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/circuits.json",
+      "destination": "data/raw/circuits/circuits.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/A.json",
+      "destination": "data/normalized/circuits/complete_circuits/A.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/B.json",
+      "destination": "data/normalized/circuits/complete_circuits/B.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/C.json",
+      "destination": "data/normalized/circuits/complete_circuits/C.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/D.json",
+      "destination": "data/normalized/circuits/complete_circuits/D.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/F.json",
+      "destination": "data/normalized/circuits/complete_circuits/F.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/H.json",
+      "destination": "data/normalized/circuits/complete_circuits/H.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/I.json",
+      "destination": "data/normalized/circuits/complete_circuits/I.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/J.json",
+      "destination": "data/normalized/circuits/complete_circuits/J.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/K.json",
+      "destination": "data/normalized/circuits/complete_circuits/K.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/L.json",
+      "destination": "data/normalized/circuits/complete_circuits/L.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/M.json",
+      "destination": "data/normalized/circuits/complete_circuits/M.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/N.json",
+      "destination": "data/normalized/circuits/complete_circuits/N.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/P.json",
+      "destination": "data/normalized/circuits/complete_circuits/P.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/R.json",
+      "destination": "data/normalized/circuits/complete_circuits/R.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/S.json",
+      "destination": "data/normalized/circuits/complete_circuits/S.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/T.json",
+      "destination": "data/normalized/circuits/complete_circuits/T.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/V.json",
+      "destination": "data/normalized/circuits/complete_circuits/V.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/W.json",
+      "destination": "data/normalized/circuits/complete_circuits/W.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/Y.json",
+      "destination": "data/normalized/circuits/complete_circuits/Y.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/complete_circuits/Z.json",
+      "destination": "data/normalized/circuits/complete_circuits/Z.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/f1_circuits.csv",
+      "destination": "data/raw/circuits/f1_circuits.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/f1_circuits.json",
+      "destination": "data/raw/circuits/f1_circuits.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/circuits/f1_circuits_extended.json",
+      "destination": "data/raw/circuits/f1_circuits_extended.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/A.json",
+      "destination": "data/normalized/constructors/complete_constructors/A.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/B.json",
+      "destination": "data/normalized/constructors/complete_constructors/B.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/C.json",
+      "destination": "data/normalized/constructors/complete_constructors/C.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/D.json",
+      "destination": "data/normalized/constructors/complete_constructors/D.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/E.json",
+      "destination": "data/normalized/constructors/complete_constructors/E.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/F.json",
+      "destination": "data/normalized/constructors/complete_constructors/F.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/G.json",
+      "destination": "data/normalized/constructors/complete_constructors/G.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/H.json",
+      "destination": "data/normalized/constructors/complete_constructors/H.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/J.json",
+      "destination": "data/normalized/constructors/complete_constructors/J.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/K.json",
+      "destination": "data/normalized/constructors/complete_constructors/K.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/L.json",
+      "destination": "data/normalized/constructors/complete_constructors/L.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/M.json",
+      "destination": "data/normalized/constructors/complete_constructors/M.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/N.json",
+      "destination": "data/normalized/constructors/complete_constructors/N.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/O.json",
+      "destination": "data/normalized/constructors/complete_constructors/O.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/P.json",
+      "destination": "data/normalized/constructors/complete_constructors/P.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/Q.json",
+      "destination": "data/normalized/constructors/complete_constructors/Q.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/R.json",
+      "destination": "data/normalized/constructors/complete_constructors/R.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/S.json",
+      "destination": "data/normalized/constructors/complete_constructors/S.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/T.json",
+      "destination": "data/normalized/constructors/complete_constructors/T.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/V.json",
+      "destination": "data/normalized/constructors/complete_constructors/V.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/W.json",
+      "destination": "data/normalized/constructors/complete_constructors/W.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/Z.json",
+      "destination": "data/normalized/constructors/complete_constructors/Z.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/complete_constructors/other.json",
+      "destination": "data/normalized/constructors/complete_constructors/other.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/constructors_current.json",
+      "destination": "data/raw/constructors/constructors_current.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/constructors_former.json",
+      "destination": "data/raw/constructors/constructors_former.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/constructors_indianapolis_only.json",
+      "destination": "data/raw/constructors/constructors_indianapolis_only.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/constructors_privateer.json",
+      "destination": "data/raw/constructors/constructors_privateer.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/current_constructors.csv",
+      "destination": "data/raw/constructors/current_constructors.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/f1_constructors_2025.csv",
+      "destination": "data/raw/constructors/f1_constructors_2025.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/f1_constructors_2025.json",
+      "destination": "data/raw/constructors/f1_constructors_2025.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/f1_constructors_2026.json",
+      "destination": "data/raw/constructors/f1_constructors_2026.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/f1_former_constructors.csv",
+      "destination": "data/raw/constructors/f1_former_constructors.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/f1_former_constructors.json",
+      "destination": "data/raw/constructors/f1_former_constructors.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/f1_indianapolis_only_constructors.csv",
+      "destination": "data/raw/constructors/f1_indianapolis_only_constructors.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/f1_indianapolis_only_constructors.json",
+      "destination": "data/raw/constructors/f1_indianapolis_only_constructors.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/f1_privateer_teams.csv",
+      "destination": "data/raw/constructors/f1_privateer_teams.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/constructors/f1_privateer_teams.json",
+      "destination": "data/raw/constructors/f1_privateer_teams.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/A.json",
+      "destination": "data/normalized/drivers/complete_drivers/A.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/B.json",
+      "destination": "data/normalized/drivers/complete_drivers/B.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/C.json",
+      "destination": "data/normalized/drivers/complete_drivers/C.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/D.json",
+      "destination": "data/normalized/drivers/complete_drivers/D.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/E.json",
+      "destination": "data/normalized/drivers/complete_drivers/E.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/F.json",
+      "destination": "data/normalized/drivers/complete_drivers/F.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/G.json",
+      "destination": "data/normalized/drivers/complete_drivers/G.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/H.json",
+      "destination": "data/normalized/drivers/complete_drivers/H.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/I.json",
+      "destination": "data/normalized/drivers/complete_drivers/I.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/J.json",
+      "destination": "data/normalized/drivers/complete_drivers/J.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/K.json",
+      "destination": "data/normalized/drivers/complete_drivers/K.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/L.json",
+      "destination": "data/normalized/drivers/complete_drivers/L.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/M.json",
+      "destination": "data/normalized/drivers/complete_drivers/M.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/N.json",
+      "destination": "data/normalized/drivers/complete_drivers/N.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/O.json",
+      "destination": "data/normalized/drivers/complete_drivers/O.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/P.json",
+      "destination": "data/normalized/drivers/complete_drivers/P.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/Q.json",
+      "destination": "data/normalized/drivers/complete_drivers/Q.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/R.json",
+      "destination": "data/normalized/drivers/complete_drivers/R.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/S.json",
+      "destination": "data/normalized/drivers/complete_drivers/S.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/T.json",
+      "destination": "data/normalized/drivers/complete_drivers/T.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/U.json",
+      "destination": "data/normalized/drivers/complete_drivers/U.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/V.json",
+      "destination": "data/normalized/drivers/complete_drivers/V.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/W.json",
+      "destination": "data/normalized/drivers/complete_drivers/W.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/Y.json",
+      "destination": "data/normalized/drivers/complete_drivers/Y.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/complete_drivers/Z.json",
+      "destination": "data/normalized/drivers/complete_drivers/Z.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/drivers.csv",
+      "destination": "data/raw/drivers/drivers.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/drivers.json",
+      "destination": "data/raw/drivers/drivers.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/drivers_fatalities.json",
+      "destination": "data/raw/drivers/drivers_fatalities.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/drivers_female.json",
+      "destination": "data/raw/drivers/drivers_female.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/f1_driver_fatalities.json",
+      "destination": "data/raw/drivers/f1_driver_fatalities.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/f1_drivers.csv",
+      "destination": "data/raw/drivers/f1_drivers.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/f1_drivers.json",
+      "destination": "data/raw/drivers/f1_drivers.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/female_drivers.csv",
+      "destination": "data/raw/drivers/female_drivers.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/drivers/female_drivers.json",
+      "destination": "data/raw/drivers/female_drivers.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/A.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/A.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/B.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/B.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/C.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/C.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/D.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/D.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/E.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/E.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/F.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/F.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/G.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/G.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/H.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/H.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/I.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/I.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/J.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/J.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/K.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/K.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/L.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/L.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/M.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/M.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/N.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/N.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/O.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/O.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/P.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/P.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/R.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/R.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/S.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/S.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/T.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/T.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/V.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/V.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/W.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/W.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/Y.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/Y.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/complete_engine_manufacturers/Z.json",
+      "destination": "data/normalized/engines/complete_engine_manufacturers/Z.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/engines_indianapolis_only.json",
+      "destination": "data/raw/engines/engines_indianapolis_only.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/engines_manufacturers.json",
+      "destination": "data/raw/engines/engines_manufacturers.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/engines_regulations.json",
+      "destination": "data/raw/engines/engines_regulations.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/engines_restrictions.json",
+      "destination": "data/raw/engines/engines_restrictions.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/f1_engine_manufacturers.csv",
+      "destination": "data/raw/engines/f1_engine_manufacturers.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/f1_engine_manufacturers.json",
+      "destination": "data/raw/engines/f1_engine_manufacturers.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/f1_engine_regulations.csv",
+      "destination": "data/raw/engines/f1_engine_regulations.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/f1_engine_regulations.json",
+      "destination": "data/raw/engines/f1_engine_regulations.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/f1_engine_restrictions.csv",
+      "destination": "data/raw/engines/f1_engine_restrictions.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/f1_engine_restrictions.json",
+      "destination": "data/raw/engines/f1_engine_restrictions.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/f1_indianapolis_only_engine_manufacturers.csv",
+      "destination": "data/raw/engines/f1_indianapolis_only_engine_manufacturers.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/engines/f1_indianapolis_only_engine_manufacturers.json",
+      "destination": "data/raw/engines/f1_indianapolis_only_engine_manufacturers.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/grands_prix/f1_grands_prix_by_title.csv",
+      "destination": "data/raw/grands_prix/f1_grands_prix_by_title.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/grands_prix/f1_grands_prix_by_title.json",
+      "destination": "data/raw/grands_prix/f1_grands_prix_by_title.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/grands_prix/f1_grands_prix_extended.json",
+      "destination": "data/raw/grands_prix/f1_grands_prix_extended.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/grands_prix/f1_red_flagged_non_championship_races.json",
+      "destination": "data/raw/grands_prix/f1_red_flagged_non_championship_races.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/grands_prix/f1_red_flagged_world_championship_races.csv",
+      "destination": "data/raw/grands_prix/f1_red_flagged_world_championship_races.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/grands_prix/f1_red_flagged_world_championship_races.json",
+      "destination": "data/raw/grands_prix/f1_red_flagged_world_championship_races.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/grands_prix/grand_prix.csv",
+      "destination": "data/raw/grands_prix/grand_prix.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/grands_prix/grands_prix_red_flagged_non_championship.json",
+      "destination": "data/raw/grands_prix/grands_prix_red_flagged_non_championship.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/grands_prix/grands_prix_red_flagged_world_championship.json",
+      "destination": "data/raw/grands_prix/grands_prix_red_flagged_world_championship.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/points/points_history.json",
+      "destination": "data/raw/points/points_history.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/points/points_scoring_systems_history.csv",
+      "destination": "data/raw/points/points_scoring_systems_history.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/points/points_scoring_systems_history.json",
+      "destination": "data/raw/points/points_scoring_systems_history.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/points/points_scoring_systems_shortened.csv",
+      "destination": "data/raw/points/points_scoring_systems_shortened.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/points/points_scoring_systems_shortened.json",
+      "destination": "data/raw/points/points_scoring_systems_shortened.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/points/points_scoring_systems_sprint.csv",
+      "destination": "data/raw/points/points_scoring_systems_sprint.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/points/points_scoring_systems_sprint.json",
+      "destination": "data/raw/points/points_scoring_systems_sprint.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/points/points_shortened.json",
+      "destination": "data/raw/points/points_shortened.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/points/points_sprint.json",
+      "destination": "data/raw/points/points_sprint.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1950.json",
+      "destination": "data/normalized/seasons/complete_seasons/1950.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1951.json",
+      "destination": "data/normalized/seasons/complete_seasons/1951.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1952.json",
+      "destination": "data/normalized/seasons/complete_seasons/1952.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1953.json",
+      "destination": "data/normalized/seasons/complete_seasons/1953.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1954.json",
+      "destination": "data/normalized/seasons/complete_seasons/1954.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1955.json",
+      "destination": "data/normalized/seasons/complete_seasons/1955.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1956.json",
+      "destination": "data/normalized/seasons/complete_seasons/1956.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1957.json",
+      "destination": "data/normalized/seasons/complete_seasons/1957.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1958.json",
+      "destination": "data/normalized/seasons/complete_seasons/1958.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1959.json",
+      "destination": "data/normalized/seasons/complete_seasons/1959.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1960.json",
+      "destination": "data/normalized/seasons/complete_seasons/1960.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1961.json",
+      "destination": "data/normalized/seasons/complete_seasons/1961.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1962.json",
+      "destination": "data/normalized/seasons/complete_seasons/1962.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1963.json",
+      "destination": "data/normalized/seasons/complete_seasons/1963.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1964.json",
+      "destination": "data/normalized/seasons/complete_seasons/1964.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1965.json",
+      "destination": "data/normalized/seasons/complete_seasons/1965.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1966.json",
+      "destination": "data/normalized/seasons/complete_seasons/1966.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1967.json",
+      "destination": "data/normalized/seasons/complete_seasons/1967.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1968.json",
+      "destination": "data/normalized/seasons/complete_seasons/1968.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1969.json",
+      "destination": "data/normalized/seasons/complete_seasons/1969.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1970.json",
+      "destination": "data/normalized/seasons/complete_seasons/1970.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1971.json",
+      "destination": "data/normalized/seasons/complete_seasons/1971.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1972.json",
+      "destination": "data/normalized/seasons/complete_seasons/1972.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1973.json",
+      "destination": "data/normalized/seasons/complete_seasons/1973.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1974.json",
+      "destination": "data/normalized/seasons/complete_seasons/1974.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1975.json",
+      "destination": "data/normalized/seasons/complete_seasons/1975.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1976.json",
+      "destination": "data/normalized/seasons/complete_seasons/1976.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1977.json",
+      "destination": "data/normalized/seasons/complete_seasons/1977.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1978.json",
+      "destination": "data/normalized/seasons/complete_seasons/1978.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1979.json",
+      "destination": "data/normalized/seasons/complete_seasons/1979.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1980.json",
+      "destination": "data/normalized/seasons/complete_seasons/1980.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1981.json",
+      "destination": "data/normalized/seasons/complete_seasons/1981.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1982.json",
+      "destination": "data/normalized/seasons/complete_seasons/1982.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1983.json",
+      "destination": "data/normalized/seasons/complete_seasons/1983.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1984.json",
+      "destination": "data/normalized/seasons/complete_seasons/1984.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1985.json",
+      "destination": "data/normalized/seasons/complete_seasons/1985.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1986.json",
+      "destination": "data/normalized/seasons/complete_seasons/1986.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1987.json",
+      "destination": "data/normalized/seasons/complete_seasons/1987.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1988.json",
+      "destination": "data/normalized/seasons/complete_seasons/1988.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1989.json",
+      "destination": "data/normalized/seasons/complete_seasons/1989.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1990.json",
+      "destination": "data/normalized/seasons/complete_seasons/1990.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1991.json",
+      "destination": "data/normalized/seasons/complete_seasons/1991.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1992.json",
+      "destination": "data/normalized/seasons/complete_seasons/1992.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1993.json",
+      "destination": "data/normalized/seasons/complete_seasons/1993.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1994.json",
+      "destination": "data/normalized/seasons/complete_seasons/1994.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1995.json",
+      "destination": "data/normalized/seasons/complete_seasons/1995.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1996.json",
+      "destination": "data/normalized/seasons/complete_seasons/1996.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1997.json",
+      "destination": "data/normalized/seasons/complete_seasons/1997.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1998.json",
+      "destination": "data/normalized/seasons/complete_seasons/1998.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/1999.json",
+      "destination": "data/normalized/seasons/complete_seasons/1999.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2000.json",
+      "destination": "data/normalized/seasons/complete_seasons/2000.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2001.json",
+      "destination": "data/normalized/seasons/complete_seasons/2001.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2002.json",
+      "destination": "data/normalized/seasons/complete_seasons/2002.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2003.json",
+      "destination": "data/normalized/seasons/complete_seasons/2003.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2004.json",
+      "destination": "data/normalized/seasons/complete_seasons/2004.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2005.json",
+      "destination": "data/normalized/seasons/complete_seasons/2005.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2006.json",
+      "destination": "data/normalized/seasons/complete_seasons/2006.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2007.json",
+      "destination": "data/normalized/seasons/complete_seasons/2007.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2008.json",
+      "destination": "data/normalized/seasons/complete_seasons/2008.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2009.json",
+      "destination": "data/normalized/seasons/complete_seasons/2009.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2010.json",
+      "destination": "data/normalized/seasons/complete_seasons/2010.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2011.json",
+      "destination": "data/normalized/seasons/complete_seasons/2011.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2012.json",
+      "destination": "data/normalized/seasons/complete_seasons/2012.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2013.json",
+      "destination": "data/normalized/seasons/complete_seasons/2013.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2014.json",
+      "destination": "data/normalized/seasons/complete_seasons/2014.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2015.json",
+      "destination": "data/normalized/seasons/complete_seasons/2015.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2016.json",
+      "destination": "data/normalized/seasons/complete_seasons/2016.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2017.json",
+      "destination": "data/normalized/seasons/complete_seasons/2017.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2018.json",
+      "destination": "data/normalized/seasons/complete_seasons/2018.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2019.json",
+      "destination": "data/normalized/seasons/complete_seasons/2019.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2020.json",
+      "destination": "data/normalized/seasons/complete_seasons/2020.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2021.json",
+      "destination": "data/normalized/seasons/complete_seasons/2021.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2022.json",
+      "destination": "data/normalized/seasons/complete_seasons/2022.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2023.json",
+      "destination": "data/normalized/seasons/complete_seasons/2023.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2024.json",
+      "destination": "data/normalized/seasons/complete_seasons/2024.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2025.json",
+      "destination": "data/normalized/seasons/complete_seasons/2025.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/complete_seasons/2026.json",
+      "destination": "data/normalized/seasons/complete_seasons/2026.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/f1_seasons.csv",
+      "destination": "data/raw/seasons/f1_seasons.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/seasons/f1_seasons.json",
+      "destination": "data/raw/seasons/f1_seasons.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/sponsorship_liveries/f1_sponsorship_liveries.csv",
+      "destination": "data/raw/sponsorship_liveries/f1_sponsorship_liveries.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/sponsorship_liveries/f1_sponsorship_liveries.json",
+      "destination": "data/raw/sponsorship_liveries/f1_sponsorship_liveries.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/sponsorship_liveries/sponsorship_liveries.json",
+      "destination": "data/raw/sponsorship_liveries/sponsorship_liveries.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/tyres/f1_tyre_manufacturers_by_season.csv",
+      "destination": "data/raw/tyres/f1_tyre_manufacturers_by_season.csv",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/tyres/f1_tyre_manufacturers_by_season.json",
+      "destination": "data/raw/tyres/f1_tyre_manufacturers_by_season.json",
+      "status": "planned"
+    },
+    {
+      "source": "data/wiki/tyres/tyres.json",
+      "destination": "data/raw/tyres/tyres.json",
+      "status": "planned"
+    }
+  ],
+  "missing": []
+}

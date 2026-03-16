@@ -12,6 +12,7 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 from scrapers.base.helpers.http import init_scraper_options
+from scrapers.data_paths import default_data_paths
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
 PARSER_VERSION = "drivers-checkpoint-flow-v1"
@@ -78,7 +79,8 @@ class DriversCheckpointFlow:
         self.run_layer1_from_checkpoint()
 
     def run_layer0_checkpoint(self) -> None:
-        source_data = self._load_json(self.source_file)
+        source_path = default_data_paths().resolve_legacy_wiki_read(self.source_file)
+        source_data = self._load_json(source_path)
         urls = self._extract_driver_urls(source_data)
 
         checkpoint_payload = {
@@ -100,7 +102,7 @@ class DriversCheckpointFlow:
         self.registry.record(
             StepRun(
                 step="step_0_layer0_drivers",
-                input=str(self.source_file),
+                input=str(source_path),
                 parser=self.parser_version,
                 output=str(self.checkpoint_file),
             ),
@@ -198,8 +200,8 @@ def run_drivers_checkpoint_first_flow(
 ) -> None:
     flow = DriversCheckpointFlow(
         source_file=base_dir / "wiki" / "drivers" / "f1_drivers.json",
-        checkpoint_file=base_dir / "checkpoints" / "step_0_layer0_drivers.json",
-        layer1_output_file=base_dir / "raw" / "drivers" / "step_1_layer1_drivers.json",
-        registry_file=base_dir / "checkpoints" / "step_registry.json",
+        checkpoint_file=base_dir / "checkpoints" / "drivers" / "step_0_layer0_drivers.json",
+        layer1_output_file=base_dir / "normalized" / "drivers" / "sections" / "step_1_layer1_drivers.json",
+        registry_file=base_dir / "checkpoints" / "drivers" / "step_registry.json",
     )
     flow.run()

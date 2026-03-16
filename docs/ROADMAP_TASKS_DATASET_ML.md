@@ -7,17 +7,22 @@
 - [x] Zdefiniować listę stron startowych (kierowcy, konstruktorzy, GP, tory, sezony).
   - Potwierdzenie: istnieją dedykowane list scrape'ry dla kluczowych seedów (`drivers`, `constructors`, `grands_prix`, `circuits`, `seasons`).
   - Moduły referencyjne: `scrapers/drivers/list_scraper.py`, `scrapers/constructors/*_list*.py`, `scrapers/grands_prix/list_scraper.py`, `scrapers/circuits/list_scraper.py`, `scrapers/seasons/list_scraper.py`.
-- [ ] Dodać konfigurację mapującą: `seed_name -> wikipedia_url -> output_category`.
-- [ ] Ustalić minimalny wspólny schemat rekordu seed (`name`, `link`, `source_url`, `scraped_at`).
-- [ ] Wdrożyć eksport JSON dla każdej kategorii do `data/raw/<category>/`.
-- [ ] Dodać logowanie jakości: liczba rekordów, puste pola, duplikaty.
+- [x] Dodać konfigurację mapującą: `seed_name -> wikipedia_url -> output_category`.
+  - Status migracji: centralna konfiguracja ścieżek i registry seedów/list jobów spięte w `scrapers/config.py` oraz `scrapers/wiki/seed_registry.py`.
+- [x] Ustalić minimalny wspólny schemat rekordu seed (`name`, `link`, `source_url`, `scraped_at`).
+  - Status migracji: schemat `SeedRecord` i normalizacja działają przez `scrapers/wiki/seed_l0.py`.
+- [x] Wdrożyć eksport JSON dla każdej kategorii do `data/raw/<category>/`.
+  - Status migracji: list scrape'ry zapisują bezpośrednio do `data/raw`, z kopią kompatybilności do `data/wiki`.
+- [x] Dodać logowanie jakości: liczba rekordów, puste pola, duplikaty.
+  - Status migracji: `compute_seed_quality()` i log linii jakości po każdym seedzie w `main.py`.
 
 ## Etap 2 — Parsery encji szczegółowych (Warstwa 1)
 - [ ] Dodać parser infoboxów dla stron encji (driver/constructor/circuit/grand_prix/season).
   - Status: częściowo zrobione dla `driver`/`constructor`/`circuit`; brak spójnego domknięcia dla całego kompletu encji 1:1 z roadmapą.
 - [ ] Znormalizować kluczowe pola (daty, kraj, aliasy nazw).
 - [ ] Dodać mapowanie i wersjonowanie schematów rekordów.
-- [ ] Zapisywać wynik w `data/normalized/<category>/`.
+- [x] Zapisywać wynik w `data/normalized/<category>/`.
+  - Status migracji: complete scrape'ry i flow sekcyjny L1 zapisują do `data/normalized/...`.
 
 ## Etap 3 — Iteracyjny orchestrator 0/1 (na sztywno)
 - [ ] Zaimplementować orchestrator kroków z ręcznie określonym zakresem przejść 0/1.
@@ -41,7 +46,8 @@
 ## Nowe zadania wynikające z aktualnych luk
 - [ ] Adapter sekcji: wprowadzić warstwę `SectionSourceAdapter` dla pobierania „kolejnych punktów startowych” bezpośrednio z `data/checkpoints/*.json` (z fallbackiem do `data/raw/*`).
 - [ ] Orchestrator 0/1: dodać jawny `StepOrchestrator` (hardcoded flow) wykonujący kroki `L0 -> L1 -> L0/L1` z deklaratywnym `checkpoint_input` i rejestrem kroków.
-- [ ] Migracja output layout: przejść z obecnego `data/wiki/...` na layout docelowy (`data/raw`, `data/normalized`, `data/checkpoints`) z mapą kompatybilności ścieżek i etapem migracyjnym.
+- [x] Migracja output layout: przejść z obecnego `data/wiki/...` na layout docelowy (`data/raw`, `data/normalized`, `data/checkpoints`) z mapą kompatybilności ścieżek i etapem migracyjnym.
+  - Status migracji: dodano warstwę kompatybilności odczytu (`resolve_legacy_wiki_read`) oraz skrypt `scripts/migrate_data_layout.py` generujący raport braków.
 
 ## Następne 3 konkretne taski (short-term)
 - [ ] Task A: Utworzyć konfigurację seed URL-i i kategorii wyjściowych.
@@ -78,3 +84,11 @@
 - [x] Każdy parser sekcji ma przypisanie do jednej warstwy (`list`/`sections`/`infobox`/`postprocess`) bez mieszania odpowiedzialności.
   - Kontekst: granice warstw zostały zdefiniowane i spięte testem reguły importów dla `sections/`.
 
+
+
+## Reguły wersjonowania plików datasetu (po migracji)
+- Każdy artefakt seed Layer-0 zawiera `schema_version` na poziomie rekordu (`SeedRecord.schema_version`).
+- Dla przepływów checkpoint-first utrzymujemy `parser_version` w metadanych checkpointu oraz wpis parsera w `step_registry.json`.
+- Zmiana schematu rekordu lub parsera wymaga inkrementacji wersji (`schema_version`/`parser_version`) i dopisania noty migracyjnej w roadmapie.
+- Dla bezpiecznej migracji utrzymujemy odczyt kompatybilności: preferowane `data/raw`, fallback `data/wiki` dla ścieżek legacy.
+- Raport migracji (`data/checkpoints/migration/wiki_to_domain_layout_report.json`) jest artefaktem kontrolnym i powinien być aktualizowany po każdej większej migracji plików.
