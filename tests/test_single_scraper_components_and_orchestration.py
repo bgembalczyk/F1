@@ -5,8 +5,6 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
-from scrapers.circuits.sections.service import CircuitSectionExtractionService
-from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService

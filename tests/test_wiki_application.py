@@ -38,7 +38,12 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
     ran_seeds: list[str] = []
 
     class _Runner:
-        def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
+        def run(
+            self,
+            seed: SeedRegistryEntry,
+            run_config: RunConfig,
+            base_wiki_dir: Path,
+        ) -> None:
             ran_seeds.append(seed.seed_name)
 
     engine_runner_calls: list[tuple[Path, bool]] = []
@@ -47,12 +52,17 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
         seed_registry=(supported_seed, unsupported_seed),
         validate_seed_registry_function=lambda registry: None,
         runner_map_builder=lambda: {"drivers": _Runner()},
-        engine_manufacturers_runner=lambda base_wiki_dir, include_urls: engine_runner_calls.append(
+        engine_manufacturers_runner=lambda base_wiki_dir,
+        include_urls: engine_runner_calls.append(
             (base_wiki_dir, include_urls),
         ),
     )
 
-    run_config = RunConfig(output_dir=Path("/tmp"), include_urls=True, debug_dir=Path("/tmp/debug"))
+    run_config = RunConfig(
+        output_dir=Path("/tmp"),
+        include_urls=True,
+        debug_dir=Path("/tmp/debug"),
+    )
     executor.run(run_config, Path("/tmp/wiki"))
 
     assert ran_seeds == ["drivers"]
@@ -60,7 +70,16 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
 
 
 def test_constructors_mirror_service_mirrors_json_to_targets(tmp_path: Path) -> None:
-    source_json_path = tmp_path / "data" / "wiki" / "layers" / "0_layer" / "constructors" / "raw" / "f1_constructors_2026.json"
+    source_json_path = (
+        tmp_path
+        / "data"
+        / "wiki"
+        / "layers"
+        / "0_layer"
+        / "constructors"
+        / "raw"
+        / "f1_constructors_2026.json"
+    )
     source_json_path.parent.mkdir(parents=True, exist_ok=True)
     source_json_path.write_text("{}", encoding="utf-8")
 
@@ -83,14 +102,30 @@ def test_constructors_mirror_service_mirrors_json_to_targets(tmp_path: Path) -> 
     mirror_service.mirror(tmp_path / "data" / "wiki", source_json_path)
 
     assert copied_targets == [
-        tmp_path / "data" / "wiki" / "layers" / "0_layer" / "chassis_constructors" / "raw" / "f1_constructors_2026.json",
-        tmp_path / "data" / "wiki" / "layers" / "0_layer" / "teams" / "raw" / "f1_constructors_2026.json",
+        tmp_path
+        / "data"
+        / "wiki"
+        / "layers"
+        / "0_layer"
+        / "chassis_constructors"
+        / "raw"
+        / "f1_constructors_2026.json",
+        tmp_path
+        / "data"
+        / "wiki"
+        / "layers"
+        / "0_layer"
+        / "teams"
+        / "raw"
+        / "f1_constructors_2026.json",
     ]
 
 
 def test_layer_zero_executor_runs_merge_after_jobs() -> None:
     merge_calls: list[Path] = []
-    merge_service = LayerZeroMergeService(merge_function=lambda base_wiki_dir: merge_calls.append(base_wiki_dir))
+    merge_service = LayerZeroMergeService(
+        merge_function=lambda base_wiki_dir: merge_calls.append(base_wiki_dir),
+    )
 
     run_calls: list[type] = []
 
@@ -109,27 +144,38 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
         copy_file=lambda source, target: None,
         year_provider=lambda: 2026,
     )
-    constructors_mirror_service.mirror = lambda base_wiki_dir, source_json_path: mirror_calls.append(
-        (base_wiki_dir, source_json_path),
+    constructors_mirror_service.mirror = (
+        lambda base_wiki_dir, source_json_path: mirror_calls.append(
+            (base_wiki_dir, source_json_path),
+        )
     )
 
     class _DefaultConfigFactory:
-        def create_scraper_kwargs(self, list_job: ListJobRegistryEntry) -> dict[str, object]:
+        def create_scraper_kwargs(
+            self,
+            list_job: ListJobRegistryEntry,
+        ) -> dict[str, object]:
             return {}
 
     executor = LayerZeroExecutor(
         list_job_registry=(job,),
         validate_list_registry=lambda registry: None,
-        run_config_factory_map_builder=lambda: {},
+        run_config_factory_map_builder=dict,
         default_config_factory=_DefaultConfigFactory(),
-        run_and_export_function=lambda scraper_cls, *_args, **_kwargs: run_calls.append(scraper_cls),
+        run_and_export_function=lambda scraper_cls, *_args, **_kwargs: run_calls.append(
+            scraper_cls,
+        ),
         constructors_mirror_service=constructors_mirror_service,
         merge_service=merge_service,
         current_constructors_scraper_name="CurrentConstructorsListScraper",
         year_provider=lambda: 2026,
     )
 
-    run_config = RunConfig(output_dir=Path("/tmp"), include_urls=True, debug_dir=Path("/tmp/debug"))
+    run_config = RunConfig(
+        output_dir=Path("/tmp"),
+        include_urls=True,
+        debug_dir=Path("/tmp/debug"),
+    )
     base_wiki_dir = Path("/tmp/wiki")
     executor.run(run_config, base_wiki_dir)
 

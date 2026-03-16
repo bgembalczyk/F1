@@ -13,7 +13,8 @@ class CircuitRecordFactory(BaseRecordFactory):
             record,
             {
                 "field_normalizers": {
-                    "circuit_status": lambda value, field: self.normalizer.normalize_status(
+                    "circuit_status": lambda value,
+                    field: self.normalizer.normalize_status(
                         value,
                         ["current", "future", "former"],
                         field,

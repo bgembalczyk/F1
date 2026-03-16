@@ -16,7 +16,10 @@ from scrapers.base.orchestration import StepOrchestrator
 
 class FakeInputResolver:
     def __init__(self) -> None:
-        self.value = ResolvedInput(records=[{"value": 1}], source_path=Path("/tmp/input.json"))
+        self.value = ResolvedInput(
+            records=[{"value": 1}],
+            source_path=Path("/tmp/input.json"),
+        )
 
     def resolve(self, step: StepDeclaration, domain: str) -> ResolvedInput:
         return self.value
@@ -27,7 +30,9 @@ class FakeCheckpointRepository:
         self.saved = []
 
     def save(self, step, domain, input_path, input_records, execution):
-        self.saved.append((step.step_id, domain, input_path, input_records, execution.records))
+        self.saved.append(
+            (step.step_id, domain, input_path, input_records, execution.records),
+        )
         return Path(f"/tmp/step_{step.step_id}_{domain}.json")
 
 
@@ -58,7 +63,13 @@ def test_input_resolver_contract_returns_records_and_path(tmp_path: Path) -> Non
 
 def test_step_executor_contract_handles_success_and_error() -> None:
     executor = ParserStepExecutor()
-    step_ok = StepDeclaration(1, "layer1", "x", lambda rows: rows + [{"ok": True}], "checkpoints")
+    step_ok = StepDeclaration(
+        1,
+        "layer1",
+        "x",
+        lambda rows: rows + [{"ok": True}],
+        "checkpoints",
+    )
     ok = executor.execute(step_ok, [{"value": 1}])
     assert ok.errors == []
     assert ok.records[-1] == {"ok": True}
@@ -73,11 +84,20 @@ def test_step_executor_contract_handles_success_and_error() -> None:
 
 
 def test_checkpoint_repository_contract_writes_payload(tmp_path: Path) -> None:
-    repo = JsonCheckpointRepository(base_dir=tmp_path / "data", payload_factory=CheckpointPayloadFactory())
+    repo = JsonCheckpointRepository(
+        base_dir=tmp_path / "data",
+        payload_factory=CheckpointPayloadFactory(),
+    )
     step = StepDeclaration(3, "layer2", "x", lambda rows: rows, "checkpoints")
     execution = ExecutedStep(records=[{"k": "v"}], errors=[], duration_ms=1.2)
 
-    output_path = repo.save(step, "drivers", Path("/tmp/source.json"), [{"in": 1}], execution)
+    output_path = repo.save(
+        step,
+        "drivers",
+        Path("/tmp/source.json"),
+        [{"in": 1}],
+        execution,
+    )
 
     payload = json.loads(output_path.read_text(encoding="utf-8"))
     assert payload["metadata"]["metrics"]["input_records"] == 1
@@ -107,7 +127,9 @@ def test_audit_repository_contract_appends_and_reports(tmp_path: Path) -> None:
         ),
     )
 
-    report = audit.write_regression_report(tmp_path / "data" / "checkpoints" / "report.md")
+    report = audit.write_regression_report(
+        tmp_path / "data" / "checkpoints" / "report.md",
+    )
     assert report.exists()
     assert "# Step Regression Audit Report" in report.read_text(encoding="utf-8")
 
@@ -123,7 +145,13 @@ def test_orchestrator_integration_with_fake_repositories() -> None:
         audit_repository=audit_repository,
     )
 
-    step = StepDeclaration(7, "layer7", "any", lambda rows: [{"value": rows[0]["value"] + 1}], "checkpoints")
+    step = StepDeclaration(
+        7,
+        "layer7",
+        "any",
+        lambda rows: [{"value": rows[0]["value"] + 1}],
+        "checkpoints",
+    )
     result = orchestrator.run(step, "drivers")
 
     assert result.output_path == "/tmp/step_7_drivers.json"

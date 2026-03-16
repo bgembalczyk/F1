@@ -37,7 +37,10 @@ def _flags(parser: argparse.ArgumentParser) -> set[str]:
     }
 
 
-@pytest.mark.parametrize(("_module", "quality_default", "error_default"), ENTRYPOINT_DEFAULTS)
+@pytest.mark.parametrize(
+    ("_module", "quality_default", "error_default"),
+    ENTRYPOINT_DEFAULTS,
+)
 def test_entrypoint_parsers_expose_consistent_flag_contract(
     _module: str,
     quality_default: bool,
@@ -77,7 +80,7 @@ def test_cli_runner_passes_run_config_to_run_config_aware_targets() -> None:
             output_dir=Path("../../data/wiki"),
             quality_report=True,
             error_report=True,
-        )
+        ),
     ]
 
 

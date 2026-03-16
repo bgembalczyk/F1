@@ -1,7 +1,7 @@
+from collections.abc import Callable
 from dataclasses import asdict
 from dataclasses import dataclass
 from typing import Any
-from typing import Callable
 
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.current_constructors_list import (
@@ -360,7 +360,12 @@ def _validate_unique_seed_name(
     seen_seed_names.add(seed_name)
 
 
-def _validate_wikipedia_url(*, seed_name: str, wikipedia_url: str, message: Callable[[str], str]) -> None:
+def _validate_wikipedia_url(
+    *,
+    seed_name: str,
+    wikipedia_url: str,
+    message: Callable[[str], str],
+) -> None:
     if not wikipedia_url.strip():
         msg = message(seed_name)
         raise ValueError(msg)
@@ -374,7 +379,11 @@ def _validate_path_prefix(*, entry: Any, rule: RegistryValidationRule) -> None:
         raise ValueError(msg)
 
 
-def _validate_registry(*, registry: tuple[Any, ...], spec: RegistryValidationSpec) -> None:
+def _validate_registry(
+    *,
+    registry: tuple[Any, ...],
+    spec: RegistryValidationSpec,
+) -> None:
     seen_seed_names: set[str] = set()
 
     for entry in registry:

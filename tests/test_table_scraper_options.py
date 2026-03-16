@@ -1,8 +1,8 @@
 from scrapers.base.helpers.config_factory import ScraperCommonConfig
-from scrapers.base.helpers.config_factory import build_list_scraper_options
 from scrapers.base.helpers.config_factory import build_list_config
-from scrapers.base.helpers.config_factory import build_table_scraper_options
+from scrapers.base.helpers.config_factory import build_list_scraper_options
 from scrapers.base.helpers.config_factory import build_table_config
+from scrapers.base.helpers.config_factory import build_table_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
@@ -90,12 +90,18 @@ def test_build_list_config_overrides_existing_options():
 
 
 def test_build_table_scraper_options_uses_profile_and_domain_override():
-    circuits_options = build_table_scraper_options(domain="circuits", profile="soft_seed")
+    circuits_options = build_table_scraper_options(
+        domain="circuits",
+        profile="soft_seed",
+    )
     assert circuits_options.include_urls is True
     assert circuits_options.normalize_empty_values is False
     assert circuits_options.validation_mode == "soft"
 
-    drivers_options = build_table_scraper_options(domain="drivers", profile="strict_seed")
+    drivers_options = build_table_scraper_options(
+        domain="drivers",
+        profile="strict_seed",
+    )
     assert drivers_options.include_urls is True
     assert drivers_options.normalize_empty_values is False
     assert drivers_options.validation_mode == "hard"
@@ -141,4 +147,6 @@ def test_extend_options_hook_keeps_custom_transformers_behavior():
     scraper = F1DriversListScraper(options=options)
 
     assert len(scraper.transformers) == 2
-    assert scraper.transformers[-1].__class__.__name__ == "DriversChampionshipsTransformer"
+    assert (
+        scraper.transformers[-1].__class__.__name__ == "DriversChampionshipsTransformer"
+    )

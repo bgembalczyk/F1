@@ -35,3 +35,22 @@ class IterableSourceAdapter(Generic[T]):
         if callable(self._iterable):
             return list(self._iterable())
         return list(self._iterable)
+
+
+class MultiIterableSourceAdapter(Generic[T]):
+    """Adapter łączący rekordy z wielu iterable/fabryk iterable."""
+
+    def __init__(
+        self,
+        iterables: Iterable[Iterable[T] | Callable[[], Iterable[T]]],
+    ) -> None:
+        self._iterables = list(iterables)
+
+    def get(self) -> list[T]:
+        records: list[T] = []
+        for iterable in self._iterables:
+            if callable(iterable):
+                records.extend(iterable())
+                continue
+            records.extend(iterable)
+        return records

@@ -4,10 +4,7 @@ from pathlib import Path
 
 from models.records.factories import build_circuit_record
 from models.validation.circuit import Circuit
-from scrapers.base.helpers.config_factory import ScraperCommonConfig
-from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
-from scrapers.base.mixins.section_table_parse import SectionTableParseMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import ScraperConfig

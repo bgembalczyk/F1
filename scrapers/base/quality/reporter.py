@@ -9,7 +9,6 @@ from datetime import timezone
 from pathlib import Path
 from typing import Any
 
-
 SCHEMA_VERSION = "1.0"
 
 
@@ -93,11 +92,7 @@ class QualityReporter:
                 for record in records
             ]
 
-        return {
-            key: count
-            for key, count in sorted(Counter(keys).items())
-            if count > 1
-        }
+        return {key: count for key, count in sorted(Counter(keys).items()) if count > 1}
 
     @staticmethod
     def _normalize_primary_key(value: Any) -> list[str]:
@@ -108,7 +103,10 @@ class QualityReporter:
         return []
 
     @staticmethod
-    def _join_key_fields(record: Mapping[str, Any], key_fields: list[str]) -> str | None:
+    def _join_key_fields(
+        record: Mapping[str, Any],
+        key_fields: list[str],
+    ) -> str | None:
         values: list[str] = []
         for field in key_fields:
             value = record.get(field)

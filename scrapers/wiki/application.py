@@ -1,10 +1,10 @@
 from __future__ import annotations
 
+import shutil
+from collections.abc import Callable
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
-from typing import Callable
-import shutil
 
 from scrapers.base.run_config import RunConfig
 from scrapers.wiki.seed_registry import ListJobRegistryEntry
@@ -82,7 +82,10 @@ class LayerZeroExecutor:
         for job in self._list_job_registry:
             print(f"[list] running  {job.list_scraper_cls.__name__}")
 
-            config_factory = config_factories.get(job.seed_name, self._default_config_factory)
+            config_factory = config_factories.get(
+                job.seed_name,
+                self._default_config_factory,
+            )
             scraper_kwargs = config_factory.create_scraper_kwargs(job)
 
             rendered_json_path = job.json_output_path.format(year=self._year_provider())
@@ -119,7 +122,10 @@ class LayerZeroExecutor:
 
             if job.list_scraper_cls.__name__ == self._current_constructors_scraper_name:
                 source_json_path = base_wiki_dir / l0_raw_json_path
-                self._constructors_mirror_service.mirror(base_wiki_dir, source_json_path)
+                self._constructors_mirror_service.mirror(
+                    base_wiki_dir,
+                    source_json_path,
+                )
 
             print(f"[list] finished {job.list_scraper_cls.__name__}")
 
@@ -131,7 +137,10 @@ class LayerOneExecutor:
         self,
         *,
         seed_registry: tuple[SeedRegistryEntry, ...],
-        validate_seed_registry_function: Callable[[tuple[SeedRegistryEntry, ...]], None],
+        validate_seed_registry_function: Callable[
+            [tuple[SeedRegistryEntry, ...]],
+            None,
+        ],
         runner_map_builder: Callable[[], dict[str, object]],
         engine_manufacturers_runner: Callable[[Path, bool], None],
     ) -> None:
@@ -226,7 +235,9 @@ def create_default_wiki_pipeline_application(
         default_config_factory=DefaultLayerZeroRunConfigFactory(),
         run_and_export_function=run_and_export,
         constructors_mirror_service=constructors_mirror_service,
-        merge_service=LayerZeroMergeService(merge_function=merge_layer_zero_raw_outputs),
+        merge_service=LayerZeroMergeService(
+            merge_function=merge_layer_zero_raw_outputs,
+        ),
         current_constructors_scraper_name="CurrentConstructorsListScraper",
         year_provider=_current_year,
     )

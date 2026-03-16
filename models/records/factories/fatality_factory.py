@@ -19,7 +19,9 @@ class FatalityRecordFactory(BaseRecordFactory):
             record,
             {
                 "field_normalizers": {
-                    "session": lambda value, _field: self.normalizer.normalize_string(value),
+                    "session": lambda value, _field: self.normalizer.normalize_string(
+                        value,
+                    ),
                 },
                 "list_field_normalizers": {
                     "link": ["driver", "circuit"],

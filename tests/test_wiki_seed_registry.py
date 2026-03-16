@@ -152,7 +152,9 @@ from scrapers.wiki.seed_registry import validate_seed_registry
     ),
 )
 def test_registry_validation_negative_cases(
-    registry_factory, validator, expected_message
+    registry_factory,
+    validator,
+    expected_message,
 ) -> None:
     with pytest.raises(ValueError, match=expected_message):
         validator(registry_factory())

@@ -1,6 +1,7 @@
 from pathlib import Path
 from uuid import uuid4
 
+from models.mappers.serialization import to_dict_list
 from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.paremeters import supports_param
 from scrapers.base.helpers.path import ensure_parent
@@ -45,7 +46,7 @@ class ScraperRunner:
         if callable(step_report):
             step_report(
                 step_name="export_json",
-                records=[dict(record) for record in data],
+                records=to_dict_list(list(data)),
             )
 
         if csv_rel:
@@ -56,7 +57,7 @@ class ScraperRunner:
             if callable(step_report):
                 step_report(
                     step_name="export_csv",
-                    records=[dict(record) for record in data],
+                    records=to_dict_list(list(data)),
                 )
         run_logger.info("Scrape run %s finished", run_id)
 

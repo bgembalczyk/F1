@@ -6,7 +6,8 @@ import argparse
 import dataclasses
 import inspect
 import warnings
-from collections.abc import Callable, Sequence
+from collections.abc import Callable
+from collections.abc import Sequence
 
 from scrapers.base.run_config import RunConfig
 

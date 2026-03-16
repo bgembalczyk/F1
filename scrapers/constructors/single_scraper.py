@@ -28,15 +28,17 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
     ) -> None:
         super().__init__(options=options)
         self._infobox_service = infobox_service or ConstructorInfoboxExtractionService()
-        self._sections_service_factory = (
-            sections_service_factory
-            or (lambda adapter: ConstructorSectionExtractionService(adapter=adapter))
+        self._sections_service_factory = sections_service_factory or (
+            lambda adapter: ConstructorSectionExtractionService(adapter=adapter)
         )
         self._assembler = assembler or ConstructorRecordAssembler()
         self.article_tables_parser = ArticleTablesParser()
 
     def _build_post_processor(self) -> ConstructorSectionContractPostProcessor:
         return ConstructorSectionContractPostProcessor()
+    def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
+        self.url = url
+        return super().fetch()
 
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._infobox_service.extract(soup)

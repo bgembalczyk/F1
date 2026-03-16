@@ -55,6 +55,7 @@ class GrandsPrixListScraper(F1TableScraper):
     ) -> None:
         super().__init__(options=options, config=config)
 
+
 if __name__ == "__main__":
     from scrapers.base.cli_entrypoint import run_cli_entrypoint
     from scrapers.grands_prix.entrypoint import run_list_scraper

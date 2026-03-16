@@ -29,6 +29,7 @@ from scrapers.base.results import ScrapeResult
 from scrapers.base.transformers.helpers import apply_transformers
 from validation.validator_base import ExportRecord
 from validation.validator_base import RecordValidator
+from models.mappers.serialization import to_dict_list
 
 T = TypeVar("T")
 
@@ -160,35 +161,38 @@ class ABCScraper(ABC):
             self.logger.debug("Scrape run %s: start parse", run_id)
             raw_records = self.parse(soup)
             self.logger.debug("Scrape run %s: finish parse", run_id)
-            self._write_step_quality_report(step_name="parse", records=list(raw_records))
+            self._write_step_quality_report(
+                step_name="parse",
+                records=list(raw_records),
+            )
 
             self.logger.debug("Scrape run %s: start normalize", run_id)
             normalized_records = self._record_normalizer.normalize(list(raw_records))
             self.logger.debug("Scrape run %s: finish normalize", run_id)
             self._write_step_quality_report(
                 step_name="normalize",
-                records=[dict(record) for record in normalized_records],
+                records=to_dict_list(list(normalized_records)),
             )
             self.logger.debug("Scrape run %s: start transform", run_id)
             transformed_records = self._apply_transformers(normalized_records)
             self.logger.debug("Scrape run %s: finish transform", run_id)
             self._write_step_quality_report(
                 step_name="transform",
-                records=[dict(record) for record in transformed_records],
+                records=to_dict_list(list(transformed_records)),
             )
             self.logger.debug("Scrape run %s: start validate", run_id)
             validated_records = self.validate_records(transformed_records)
             self.logger.debug("Scrape run %s: finish validate", run_id)
             self._write_step_quality_report(
                 step_name="validate",
-                records=[dict(record) for record in validated_records],
+                records=to_dict_list(list(validated_records)),
             )
             self.logger.debug("Scrape run %s: start post-process", run_id)
             self._data = self.post_process_records(validated_records)
             self.logger.debug("Scrape run %s: finish post-process", run_id)
             self._write_step_quality_report(
                 step_name="post_process",
-                records=[dict(record) for record in self._data],
+                records=to_dict_list(list(self._data)),
             )
         except Exception as exc:
             error = (
@@ -363,7 +367,9 @@ class ABCScraper(ABC):
 
     def _source_metadata(self) -> dict[str, object]:
         return {
-            "domain": self.__module__.split(".")[1] if "." in self.__module__ else self.__module__,
+            "domain": self.__module__.split(".")[1]
+            if "." in self.__module__
+            else self.__module__,
             "scraper": self.__class__.__name__,
             "scraper_kind": getattr(self, "scraper_kind", "single"),
             "url": getattr(self, "url", ""),

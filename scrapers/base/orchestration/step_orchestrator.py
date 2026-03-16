@@ -117,7 +117,11 @@ class InputResolver(Protocol):
 
 
 class StepExecutor(Protocol):
-    def execute(self, step: StepDeclaration, input_records: list[dict[str, Any]]) -> ExecutedStep:
+    def execute(
+        self,
+        step: StepDeclaration,
+        input_records: list[dict[str, Any]],
+    ) -> ExecutedStep:
         """Execute parser for step and return normalized execution outcome."""
 
 
@@ -155,15 +159,24 @@ class SectionSourceAdapter:
     ) -> ResolvedInput:
         direct_path = Path(step.input_source)
         if direct_path.is_absolute() and direct_path.exists():
-            return ResolvedInput(records=self._read_records(direct_path), source_path=direct_path)
+            return ResolvedInput(
+                records=self._read_records(direct_path),
+                source_path=direct_path,
+            )
 
         checkpoint_path = self._resolve_checkpoint(step, domain)
         if checkpoint_path is not None:
-            return ResolvedInput(records=self._read_records(checkpoint_path), source_path=checkpoint_path)
+            return ResolvedInput(
+                records=self._read_records(checkpoint_path),
+                source_path=checkpoint_path,
+            )
 
         raw_path = self._resolve_raw(step, domain)
         if raw_path is not None:
-            return ResolvedInput(records=self._read_records(raw_path), source_path=raw_path)
+            return ResolvedInput(
+                records=self._read_records(raw_path),
+                source_path=raw_path,
+            )
 
         msg = (
             "Brak źródła wejścia dla "
@@ -225,7 +238,11 @@ class SectionSourceAdapter:
 
 
 class ParserStepExecutor:
-    def execute(self, step: StepDeclaration, input_records: list[dict[str, Any]]) -> ExecutedStep:
+    def execute(
+        self,
+        step: StepDeclaration,
+        input_records: list[dict[str, Any]],
+    ) -> ExecutedStep:
         errors: list[str] = []
         started_at = time.perf_counter()
         try:
@@ -235,7 +252,11 @@ class ParserStepExecutor:
             errors.append(str(exc))
 
         duration_ms = (time.perf_counter() - started_at) * 1000
-        return ExecutedStep(records=output_records, errors=errors, duration_ms=duration_ms)
+        return ExecutedStep(
+            records=output_records,
+            errors=errors,
+            duration_ms=duration_ms,
+        )
 
 
 class CheckpointPayloadFactory:
@@ -425,7 +446,9 @@ class StepOrchestrator:
         resolved_audit = audit_repository or audit_trail
         self.input_resolver = resolved_input or SectionSourceAdapter(base_dir=base_dir)
         self.step_executor = step_executor or ParserStepExecutor()
-        self.checkpoint_repository = checkpoint_repository or JsonCheckpointRepository(base_dir=base_dir)
+        self.checkpoint_repository = checkpoint_repository or JsonCheckpointRepository(
+            base_dir=base_dir,
+        )
         self.audit_repository = resolved_audit or StepAuditTrail(
             json_path=self.paths.checkpoint_file("step_audit.json"),
             csv_path=self.paths.checkpoint_file("step_audit.csv"),
