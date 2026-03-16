@@ -5,12 +5,14 @@ from models.validation.circuit import Circuit
 from scrapers.base.helpers.config_factory import ScraperCommonConfig
 from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
 from scrapers.circuits.schemas import build_circuits_schema
+from scrapers.circuits.sections import CircuitsListSectionParser
 from scrapers.circuits.validator import CircuitsRecordValidator
 
 
@@ -47,6 +49,27 @@ class CircuitsListScraper(F1TableScraper):
             ),
         )
         super().__init__(options=options, config=config)
+
+    def _parse_soup(self, soup):
+        section_id = self.config.section_id
+        if not section_id:
+            return super()._parse_soup(soup)
+
+        section_fragment = WikipediaSectionByIdMixin.extract_section_by_id(
+            soup,
+            section_id,
+            domain="circuits",
+        )
+        if section_fragment is None:
+            msg = f"Nie znaleziono sekcji o id={section_id!r}"
+            raise RuntimeError(msg)
+
+        parser = CircuitsListSectionParser(
+            config=self.config,
+            include_urls=self.include_urls,
+            normalize_empty_values=self.normalize_empty_values,
+        )
+        return parser.parse(section_fragment).records
 
 
 if __name__ == "__main__":
