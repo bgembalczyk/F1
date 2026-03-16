@@ -54,3 +54,19 @@ def test_find_heading_uses_domain_aliases() -> None:
 
     assert heading is not None
     assert heading.get_text(" ", strip=True) == "Grands Prix"
+
+
+def test_find_section_heading_regression_multilevel_fixture() -> None:
+    html = """
+    <div class="mw-heading mw-heading2"><h2 id="History"><span class="mw-headline">History</span></h2></div>
+    <div class="mw-heading mw-heading3"><h3 id="Origins"><span class="mw-headline">Origins</span></h3></div>
+    <div class="mw-heading mw-heading2"><h2 id="Grands_Prix"><span class="mw-headline">Grands Prix</span></h2></div>
+    <div class="mw-heading mw-heading3"><h3 id="Round_results"><span class="mw-headline">Round results</span></h3></div>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    match = find_section_heading(soup, "Results", domain="seasons")
+
+    assert match is not None
+    assert match.strategy in {"exact_id", "exact_text", "fuzzy"}
+    assert match.heading.get("id") == "Grands_Prix"
