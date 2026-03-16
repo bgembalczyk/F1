@@ -214,4 +214,30 @@ WikiElementParserMixin --> TableParser: uses
 WikiElementParserMixin --> NavBoxParser: uses
 WikiElementParserMixin --> ReferencesWrapParser: uses
 
+
+package "Domain Layer (drivers/constructors/circuits/seasons/grands_prix)" {
+    class DomainListScraper
+    class DomainInfoboxParser
+    class DomainSectionParser
+    class DomainPostProcessor
+
+    note right of DomainSectionParser
+      Wspólny kontrakt:
+      parse(section_fragment) -> SectionParseResult
+      SectionParseResult = {section_id, section_label, records, metadata}
+    end note
+
+    class CriticalSectionsMap {
+      DOMAIN_CRITICAL_SECTIONS
+      + section_id
+      + alternative_section_ids
+    }
+}
+
+WikiScraper --> DomainListScraper: entrypoint list/
+WikiScraper --> DomainInfoboxParser: infobox/
+WikiScraper --> DomainSectionParser: sections/
+DomainSectionParser --> CriticalSectionsMap: fallback section IDs
+DomainPostProcessor ..> DomainSectionParser: consumes records
+
 @enduml
