@@ -1,11 +1,161 @@
 import json
 
+import pytest
+
 from scrapers.wiki.seed_registry import WIKI_LIST_JOB_REGISTRY
 from scrapers.wiki.seed_registry import WIKI_SEED_REGISTRY
 from scrapers.wiki.seed_registry import ListJobRegistryEntry
 from scrapers.wiki.seed_registry import SeedRegistryEntry
 from scrapers.wiki.seed_registry import validate_list_job_registry
 from scrapers.wiki.seed_registry import validate_seed_registry
+
+
+@pytest.mark.parametrize(
+    ("registry_factory", "validator", "expected_message"),
+    (
+        pytest.param(
+            lambda: (
+                SeedRegistryEntry(
+                    seed_name="duplicate",
+                    wikipedia_url="https://example.test/a",
+                    output_category="drivers",
+                    list_scraper_cls=object,
+                    default_output_path="raw/drivers/seeds/a",
+                    legacy_output_path="drivers/a",
+                ),
+                SeedRegistryEntry(
+                    seed_name="duplicate",
+                    wikipedia_url="https://example.test/b",
+                    output_category="drivers",
+                    list_scraper_cls=object,
+                    default_output_path="raw/drivers/seeds/b",
+                    legacy_output_path="drivers/b",
+                ),
+            ),
+            validate_seed_registry,
+            "Duplicate seed_name found: duplicate",
+            id="seed_registry_duplicate_seed_name",
+        ),
+        pytest.param(
+            lambda: (
+                SeedRegistryEntry(
+                    seed_name="empty-url",
+                    wikipedia_url="   ",
+                    output_category="drivers",
+                    list_scraper_cls=object,
+                    default_output_path="raw/drivers/seeds/a",
+                    legacy_output_path="drivers/a",
+                ),
+            ),
+            validate_seed_registry,
+            "Seed 'empty-url' has empty wikipedia_url",
+            id="seed_registry_empty_url",
+        ),
+        pytest.param(
+            lambda: (
+                SeedRegistryEntry(
+                    seed_name="bad-default-path",
+                    wikipedia_url="https://example.test/a",
+                    output_category="drivers",
+                    list_scraper_cls=object,
+                    default_output_path="raw/circuits/seeds/a",
+                    legacy_output_path="drivers/a",
+                ),
+            ),
+            validate_seed_registry,
+            "Seed 'bad-default-path' has inconsistent output path 'raw/circuits/seeds/a' for category 'drivers'",
+            id="seed_registry_invalid_default_path_prefix",
+        ),
+        pytest.param(
+            lambda: (
+                SeedRegistryEntry(
+                    seed_name="bad-legacy-path",
+                    wikipedia_url="https://example.test/a",
+                    output_category="drivers",
+                    list_scraper_cls=object,
+                    default_output_path="raw/drivers/seeds/a",
+                    legacy_output_path="circuits/a",
+                ),
+            ),
+            validate_seed_registry,
+            "Seed 'bad-legacy-path' has inconsistent legacy output path 'circuits/a' for category 'drivers'",
+            id="seed_registry_invalid_legacy_path_prefix",
+        ),
+        pytest.param(
+            lambda: (
+                ListJobRegistryEntry(
+                    seed_name="duplicate",
+                    wikipedia_url="https://example.test/a",
+                    output_category="drivers",
+                    list_scraper_cls=object,
+                    json_output_path="raw/drivers/list/a.json",
+                    legacy_json_output_path="drivers/a.json",
+                ),
+                ListJobRegistryEntry(
+                    seed_name="duplicate",
+                    wikipedia_url="https://example.test/b",
+                    output_category="drivers",
+                    list_scraper_cls=object,
+                    json_output_path="raw/drivers/list/b.json",
+                    legacy_json_output_path="drivers/b.json",
+                ),
+            ),
+            validate_list_job_registry,
+            "Duplicate list seed_name found: duplicate",
+            id="list_registry_duplicate_seed_name",
+        ),
+        pytest.param(
+            lambda: (
+                ListJobRegistryEntry(
+                    seed_name="empty-url",
+                    wikipedia_url=" ",
+                    output_category="drivers",
+                    list_scraper_cls=object,
+                    json_output_path="raw/drivers/list/a.json",
+                    legacy_json_output_path="drivers/a.json",
+                ),
+            ),
+            validate_list_job_registry,
+            "List seed 'empty-url' has empty wikipedia_url",
+            id="list_registry_empty_url",
+        ),
+        pytest.param(
+            lambda: (
+                ListJobRegistryEntry(
+                    seed_name="bad-json-path",
+                    wikipedia_url="https://example.test/a",
+                    output_category="drivers",
+                    list_scraper_cls=object,
+                    json_output_path="raw/circuits/list/a.json",
+                    legacy_json_output_path="drivers/a.json",
+                ),
+            ),
+            validate_list_job_registry,
+            "List seed 'bad-json-path' has inconsistent output path 'raw/circuits/list/a.json' for category 'drivers'",
+            id="list_registry_invalid_json_path_prefix",
+        ),
+        pytest.param(
+            lambda: (
+                ListJobRegistryEntry(
+                    seed_name="bad-legacy-path",
+                    wikipedia_url="https://example.test/a",
+                    output_category="drivers",
+                    list_scraper_cls=object,
+                    json_output_path="raw/drivers/list/a.json",
+                    legacy_json_output_path="circuits/a.json",
+                ),
+            ),
+            validate_list_job_registry,
+            "List seed 'bad-legacy-path' has inconsistent legacy output path 'circuits/a.json' for category 'drivers'",
+            id="list_registry_invalid_legacy_path_prefix",
+        ),
+    ),
+)
+def test_registry_validation_negative_cases(
+    registry_factory, validator, expected_message
+) -> None:
+    with pytest.raises(ValueError, match=expected_message):
+        validator(registry_factory())
 
 
 def test_wiki_seed_registry_integrity() -> None:

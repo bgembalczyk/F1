@@ -1,6 +1,7 @@
 from dataclasses import asdict
 from dataclasses import dataclass
 from typing import Any
+from typing import Callable
 
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.current_constructors_list import (
@@ -62,6 +63,21 @@ class ListJobRegistryEntry:
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+
+@dataclass(frozen=True)
+class RegistryValidationRule:
+    label: str
+    extractor: Callable[[Any], str]
+    expected_prefix: Callable[[Any], str]
+    message: Callable[[Any], str]
+
+
+@dataclass(frozen=True)
+class RegistryValidationSpec:
+    duplicate_message: Callable[[str], str]
+    empty_url_message: Callable[[str], str]
+    path_rules: tuple[RegistryValidationRule, ...]
 
 
 WIKI_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
@@ -280,65 +296,109 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
 )
 
 
-def validate_seed_registry(
-    registry: tuple[SeedRegistryEntry, ...] = WIKI_SEED_REGISTRY,
+SEED_REGISTRY_VALIDATION_SPEC = RegistryValidationSpec(
+    duplicate_message=lambda seed_name: f"Duplicate seed_name found: {seed_name}",
+    empty_url_message=lambda seed_name: f"Seed '{seed_name}' has empty wikipedia_url",
+    path_rules=(
+        RegistryValidationRule(
+            label="default_output_path",
+            extractor=lambda entry: entry.default_output_path,
+            expected_prefix=lambda entry: f"raw/{entry.output_category}/",
+            message=lambda entry: (
+                f"Seed '{entry.seed_name}' has inconsistent output path "
+                f"'{entry.default_output_path}' for category '{entry.output_category}'"
+            ),
+        ),
+        RegistryValidationRule(
+            label="legacy_output_path",
+            extractor=lambda entry: entry.legacy_output_path,
+            expected_prefix=lambda entry: f"{entry.output_category}/",
+            message=lambda entry: (
+                f"Seed '{entry.seed_name}' has inconsistent legacy output path "
+                f"'{entry.legacy_output_path}' for category '{entry.output_category}'"
+            ),
+        ),
+    ),
+)
+
+
+LIST_JOB_REGISTRY_VALIDATION_SPEC = RegistryValidationSpec(
+    duplicate_message=lambda seed_name: f"Duplicate list seed_name found: {seed_name}",
+    empty_url_message=lambda seed_name: f"List seed '{seed_name}' has empty wikipedia_url",
+    path_rules=(
+        RegistryValidationRule(
+            label="json_output_path",
+            extractor=lambda entry: entry.json_output_path,
+            expected_prefix=lambda entry: f"raw/{entry.output_category}/",
+            message=lambda entry: (
+                f"List seed '{entry.seed_name}' has inconsistent output path "
+                f"'{entry.json_output_path}' for category '{entry.output_category}'"
+            ),
+        ),
+        RegistryValidationRule(
+            label="legacy_json_output_path",
+            extractor=lambda entry: entry.legacy_json_output_path,
+            expected_prefix=lambda entry: f"{entry.output_category}/",
+            message=lambda entry: (
+                f"List seed '{entry.seed_name}' has inconsistent legacy output path "
+                f"'{entry.legacy_json_output_path}' for category '{entry.output_category}'"
+            ),
+        ),
+    ),
+)
+
+
+def _validate_unique_seed_name(
+    *,
+    seed_name: str,
+    seen_seed_names: set[str],
+    duplicate_message: Callable[[str], str],
 ) -> None:
+    if seed_name in seen_seed_names:
+        msg = duplicate_message(seed_name)
+        raise ValueError(msg)
+    seen_seed_names.add(seed_name)
+
+
+def _validate_wikipedia_url(*, seed_name: str, wikipedia_url: str, message: Callable[[str], str]) -> None:
+    if not wikipedia_url.strip():
+        msg = message(seed_name)
+        raise ValueError(msg)
+
+
+def _validate_path_prefix(*, entry: Any, rule: RegistryValidationRule) -> None:
+    output_path = rule.extractor(entry)
+    prefix = rule.expected_prefix(entry)
+    if not output_path.startswith(prefix):
+        msg = rule.message(entry)
+        raise ValueError(msg)
+
+
+def _validate_registry(*, registry: tuple[Any, ...], spec: RegistryValidationSpec) -> None:
     seen_seed_names: set[str] = set()
 
     for entry in registry:
-        if entry.seed_name in seen_seed_names:
-            msg = f"Duplicate seed_name found: {entry.seed_name}"
-            raise ValueError(msg)
-        seen_seed_names.add(entry.seed_name)
+        _validate_unique_seed_name(
+            seed_name=entry.seed_name,
+            seen_seed_names=seen_seed_names,
+            duplicate_message=spec.duplicate_message,
+        )
+        _validate_wikipedia_url(
+            seed_name=entry.seed_name,
+            wikipedia_url=entry.wikipedia_url,
+            message=spec.empty_url_message,
+        )
+        for rule in spec.path_rules:
+            _validate_path_prefix(entry=entry, rule=rule)
 
-        if not entry.wikipedia_url.strip():
-            msg = f"Seed '{entry.seed_name}' has empty wikipedia_url"
-            raise ValueError(msg)
 
-        expected_prefix = f"raw/{entry.output_category}/"
-        if not entry.default_output_path.startswith(expected_prefix):
-            msg = (
-                f"Seed '{entry.seed_name}' has inconsistent output path "
-                f"'{entry.default_output_path}' for category '{entry.output_category}'"
-            )
-            raise ValueError(msg)
-
-        legacy_prefix = f"{entry.output_category}/"
-        if not entry.legacy_output_path.startswith(legacy_prefix):
-            msg = (
-                f"Seed '{entry.seed_name}' has inconsistent legacy output path "
-                f"'{entry.legacy_output_path}' for category '{entry.output_category}'"
-            )
-            raise ValueError(msg)
+def validate_seed_registry(
+    registry: tuple[SeedRegistryEntry, ...] = WIKI_SEED_REGISTRY,
+) -> None:
+    _validate_registry(registry=registry, spec=SEED_REGISTRY_VALIDATION_SPEC)
 
 
 def validate_list_job_registry(
     registry: tuple[ListJobRegistryEntry, ...] = WIKI_LIST_JOB_REGISTRY,
 ) -> None:
-    seen_seed_names: set[str] = set()
-
-    for entry in registry:
-        if entry.seed_name in seen_seed_names:
-            msg = f"Duplicate list seed_name found: {entry.seed_name}"
-            raise ValueError(msg)
-        seen_seed_names.add(entry.seed_name)
-
-        expected_prefix = f"raw/{entry.output_category}/"
-        if not entry.json_output_path.startswith(expected_prefix):
-            msg = (
-                f"List seed '{entry.seed_name}' has inconsistent output path "
-                f"'{entry.json_output_path}' for category '{entry.output_category}'"
-            )
-            raise ValueError(msg)
-
-        if not entry.wikipedia_url.strip():
-            msg = f"List seed '{entry.seed_name}' has empty wikipedia_url"
-            raise ValueError(msg)
-
-        legacy_prefix = f"{entry.output_category}/"
-        if not entry.legacy_json_output_path.startswith(legacy_prefix):
-            msg = (
-                f"List seed '{entry.seed_name}' has inconsistent legacy output path "
-                f"'{entry.legacy_json_output_path}' for category '{entry.output_category}'"
-            )
-            raise ValueError(msg)
+    _validate_registry(registry=registry, spec=LIST_JOB_REGISTRY_VALIDATION_SPEC)
