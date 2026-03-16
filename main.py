@@ -45,6 +45,8 @@ from scrapers.seasons.helpers import export_complete_seasons
 from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
+from scrapers.wiki.seed_registry import WIKI_SEED_REGISTRY
+from scrapers.wiki.seed_registry import validate_seed_registry
 
 # Ścieżki wyjściowe względem katalogu repo (ten plik jest w root)
 BASE_WIKI_DIR = Path("data/wiki").resolve()
@@ -160,42 +162,45 @@ def run_list_scrapers() -> None:
 
 
 def run_complete_scrapers() -> None:
-    # grand prix używa standardowego eksportu do pojedynczego pliku
     run_config = RunConfig(
         output_dir=BASE_WIKI_DIR,
         include_urls=True,
         debug_dir=BASE_DEBUG_DIR,
     )
 
-    print("[complete] running  F1CompleteGrandPrixDataExtractor")
-    run_and_export(
-        F1CompleteGrandPrixDataExtractor,
-        "grands_prix/f1_grands_prix_extended.json",
-        run_config=run_config,
-    )
-    print("[complete] finished F1CompleteGrandPrixDataExtractor")
+    validate_seed_registry(WIKI_SEED_REGISTRY)
 
-    # tory, kierowcy i sezony mają własne helpery eksportu do wielu plików
-    print("[complete] running  F1CompleteCircuitDataExtractor")
-    export_complete_circuits(
-        output_dir=BASE_WIKI_DIR / "circuits/complete_circuits",
-        include_urls=True,
-    )
-    print("[complete] finished F1CompleteCircuitDataExtractor")
+    for seed in WIKI_SEED_REGISTRY:
+        print(f"[complete] running  {seed.seed_name}")
 
-    print("[complete] running  CompleteDriverDataExtractor")
-    export_complete_drivers(
-        output_dir=BASE_WIKI_DIR / "drivers/complete_drivers",
-        include_urls=True,
-    )
-    print("[complete] finished CompleteDriverDataExtractor")
+        if seed.seed_name == "grands_prix":
+            run_and_export(
+                F1CompleteGrandPrixDataExtractor,
+                seed.default_output_path,
+                run_config=run_config,
+            )
+        elif seed.seed_name == "circuits":
+            export_complete_circuits(
+                output_dir=BASE_WIKI_DIR / seed.default_output_path,
+                include_urls=True,
+            )
+        elif seed.seed_name == "drivers":
+            export_complete_drivers(
+                output_dir=BASE_WIKI_DIR / seed.default_output_path,
+                include_urls=True,
+            )
+        elif seed.seed_name == "seasons":
+            export_complete_seasons(
+                output_dir=BASE_WIKI_DIR / seed.default_output_path,
+                include_urls=True,
+            )
+        elif seed.seed_name == "constructors":
+            export_complete_constructors(
+                output_dir=BASE_WIKI_DIR / seed.default_output_path,
+                include_urls=True,
+            )
 
-    print("[complete] running  CompleteSeasonDataExtractor")
-    export_complete_seasons(
-        output_dir=BASE_WIKI_DIR / "seasons/complete_seasons",
-        include_urls=True,
-    )
-    print("[complete] finished CompleteSeasonDataExtractor")
+        print(f"[complete] finished {seed.seed_name}")
 
     print("[complete] running  F1CompleteEngineManufacturerDataExtractor")
     export_complete_engine_manufacturers(
@@ -203,12 +208,6 @@ def run_complete_scrapers() -> None:
         include_urls=True,
     )
     print("[complete] finished F1CompleteEngineManufacturerDataExtractor")
-    print("[complete] running  CompleteConstructorsDataExtractor")
-    export_complete_constructors(
-        output_dir=BASE_WIKI_DIR / "constructors/complete_constructors",
-        include_urls=True,
-    )
-    print("[complete] finished CompleteConstructorsDataExtractor")
 
 
 def main() -> None:
