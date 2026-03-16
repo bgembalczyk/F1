@@ -1,4 +1,6 @@
 # ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
+import pytest
+
 from models.records.factories import build_constructor_record
 from models.records.factories import build_driver_record
 from models.records.factories import build_fatality_record
@@ -6,6 +8,8 @@ from models.records.factories import build_grands_prix_record
 from models.records.factories import build_season_record
 from models.records.factories import build_season_summary_record
 from models.records.factories import build_special_driver_record
+from models.records.factories import build_record
+
 
 
 def test_build_season_record_adds_url() -> None:
@@ -124,3 +128,13 @@ def test_build_season_summary_record_normalizes_links() -> None:
     assert record["races"] == 17
     assert record["countries"] == 10
     assert record["winners"] == 9
+
+
+def test_build_record_uses_registry() -> None:
+    record = build_record("season", {"year": "2022"})
+    assert record["year"] == 2022
+
+
+def test_build_record_raises_for_unsupported_type() -> None:
+    with pytest.raises(ValueError, match="Unsupported record type"):
+        build_record("unknown", {})
