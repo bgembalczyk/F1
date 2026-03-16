@@ -1,25 +1,17 @@
 """Domain facade for launching the seasons list scraper."""
 
-from pathlib import Path
-
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.run_config import RunConfig
+from scrapers.base.domain_entrypoint import build_run_list_scraper
+from scrapers.base.domain_entrypoint import minimal_profile
 from scrapers.seasons.list_scraper import SeasonsListScraper
 
 LIST_SCRAPER_CLASS = SeasonsListScraper
 DEFAULT_OUTPUT_JSON = "seasons/f1_seasons.json"
 DEFAULT_OUTPUT_CSV = "seasons/f1_seasons.csv"
+RUN_CONFIG_PROFILE = minimal_profile
 
-
-def run_list_scraper(*, run_config: RunConfig | None = None) -> None:
-    """Run the canonical seasons list scraping entrypoint."""
-    run_and_export(
-        LIST_SCRAPER_CLASS,
-        DEFAULT_OUTPUT_JSON,
-        DEFAULT_OUTPUT_CSV,
-        run_config=run_config
-        or RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+run_list_scraper = build_run_list_scraper(
+    list_scraper_cls=LIST_SCRAPER_CLASS,
+    default_output_json=DEFAULT_OUTPUT_JSON,
+    default_output_csv=DEFAULT_OUTPUT_CSV,
+    default_profile=RUN_CONFIG_PROFILE,
+)
