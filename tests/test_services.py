@@ -200,6 +200,19 @@ def test_parse_year_range_handles_edge_cases() -> None:
     assert parse_year_range("2019-present") == {"start": 2019, "end": None}
 
 
+
+def test_season_service_normalizes_list_delimiters() -> None:
+    seasons = SeasonService.parse_seasons("2001 and 2003/2004; 2005", current_year=2026)
+
+    assert [season["year"] for season in seasons] == [2001, 2003, 2004, 2005]
+
+
+def test_year_parser_uses_domain_range_rules() -> None:
+    from scrapers.drivers.infobox.parsers.year_parser import YearParser
+
+    assert YearParser.parse_year_range("2019 onwards") == {"start": 2019, "end": None}
+    assert YearParser.parse_year_range("2007—2005") == {"start": 2005, "end": 2007}
+
 def test_rounds_service_handles_dash_variants_and_reversed_ranges() -> None:
     rounds = parse_rounds("5—3; 2–4; round 4")
     assert rounds == [2, 3, 4, 5]
