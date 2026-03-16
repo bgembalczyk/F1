@@ -13,6 +13,9 @@ from typing import Any
 if TYPE_CHECKING:
     from collections.abc import Callable
 
+from scrapers.config import DataPaths
+from scrapers.config import default_data_paths
+
 
 @dataclass(frozen=True)
 class StepDeclaration:
@@ -52,6 +55,7 @@ class SectionSourceAdapter:
 
     def __init__(self, base_dir: Path = Path("data")) -> None:
         self.base_dir = base_dir
+        self.paths = default_data_paths(base_dir=base_dir)
 
     def resolve(
         self,
@@ -77,7 +81,7 @@ class SectionSourceAdapter:
         raise FileNotFoundError(msg)
 
     def _resolve_checkpoint(self, step: StepDeclaration, domain: str) -> Path | None:
-        checkpoints_dir = self.base_dir / "checkpoints"
+        checkpoints_dir = self.paths.checkpoints
         explicit = checkpoints_dir / f"{step.input_source}.json"
         if explicit.exists():
             return explicit
@@ -100,11 +104,13 @@ class SectionSourceAdapter:
         return None
 
     def _resolve_raw(self, step: StepDeclaration, domain: str) -> Path | None:
-        raw_dir = self.base_dir / "raw"
+        raw_dir = self.paths.raw
         candidates = [
             raw_dir / f"{step.input_source}.json",
             raw_dir / domain / f"{step.input_source}.json",
             raw_dir / domain / f"{domain}.json",
+            self.paths.legacy_wiki / domain / f"{step.input_source}.json",
+            self.paths.legacy_wiki / domain / f"{domain}.json",
         ]
         for candidate in candidates:
             if candidate.exists():
@@ -182,10 +188,11 @@ class StepOrchestrator:
         audit_trail: StepAuditTrail | None = None,
     ) -> None:
         self.base_dir = base_dir
+        self.paths: DataPaths = default_data_paths(base_dir=base_dir)
         self.source_adapter = source_adapter or SectionSourceAdapter(base_dir=base_dir)
         self.audit_trail = audit_trail or StepAuditTrail(
-            json_path=base_dir / "checkpoints" / "step_audit.json",
-            csv_path=base_dir / "checkpoints" / "step_audit.csv",
+            json_path=self.paths.checkpoint_file("step_audit.json"),
+            csv_path=self.paths.checkpoint_file("step_audit.csv"),
         )
 
     def run(self, step: StepDeclaration, domain: str) -> StepExecutionResult:
@@ -246,4 +253,4 @@ class StepOrchestrator:
 
     def _output_path(self, step: StepDeclaration, domain: str) -> Path:
         name = f"step_{step.step_id}_{step.layer}_{domain}.json"
-        return self.base_dir / "checkpoints" / name
+        return self.paths.checkpoint_file(name)
