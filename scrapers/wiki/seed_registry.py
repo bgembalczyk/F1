@@ -264,10 +264,10 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
     ListJobRegistryEntry(
         seed_name="tyres",
         wikipedia_url=TyreManufacturersBySeasonScraper.CONFIG.url,
-        output_category="season",
+        output_category="seasons",
         list_scraper_cls=TyreManufacturersBySeasonScraper,
-        json_output_path="raw/season/list/f1_tyre_manufacturers_by_season.json",
-        legacy_json_output_path="season/f1_tyre_manufacturers_by_season.json",
+        json_output_path="raw/seasons/list/f1_tyre_manufacturers_by_season.json",
+        legacy_json_output_path="seasons/f1_tyre_manufacturers_by_season.json",
     ),
     ListJobRegistryEntry(
         seed_name="sponsorship_liveries",

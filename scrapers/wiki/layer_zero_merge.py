@@ -7,12 +7,75 @@ CHASSIS_CONSTRUCTOR_DOMAINS = {"constructors", "chassis_constructors"}
 FORMER_CONSTRUCTORS_SOURCE = "f1_former_constructors.json"
 INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE = "f1_indianapolis_only_constructors.json"
 
+CIRCUITS_FORMULA_ONE_FIELDS = {
+    "circuit_status",
+    "last_length_used_km",
+    "last_length_used_mi",
+    "turns",
+    "grands_prix",
+    "seasons",
+    "grands_prix_held",
+}
+CONSTRUCTORS_FORMULA_ONE_FIELDS = {
+    "licensed_in",
+    "based_in",
+    "seasons",
+    "races_entered",
+    "races_started",
+    "drivers",
+    "total_entries",
+    "wins",
+    "points",
+    "poles",
+    "fastest_laps",
+    "podiums",
+    "wcc_titles",
+    "wdc_titles",
+    "antecedent_teams",
+    "status",
+}
+ENGINES_FORMULA_ONE_FIELDS = {
+    "manufacturer_status",
+    "engines_built_in",
+    "seasons",
+    "races_entered",
+    "races_started",
+    "wins",
+    "points",
+    "poles",
+    "fastest_laps",
+    "podiums",
+    "wcc",
+    "wdc",
+}
+GRANDS_PRIX_FORMULA_ONE_FIELDS = {
+    "race_status",
+    "country",
+    "years_held",
+    "circuits",
+    "total",
+}
+
+
+def _build_racing_series(formula_one: dict[str, object]) -> list[dict[str, object]]:
+    return [{"formula_one": formula_one}]
+
+
+def _move_fields_to_formula_one(
+    transformed: dict[str, object],
+    fields: set[str],
+) -> None:
+    formula_one = {key: transformed.pop(key) for key in fields if key in transformed}
+    if not formula_one:
+        return
+    transformed["racing_series"] = _build_racing_series(formula_one)
+
 
 def _extract_red_flag(record: dict[str, object]) -> dict[str, object]:
     return {
         key: value
         for key, value in record.items()
-        if key not in {"season", "grand_prix", "event"}
+        if key in {"lap", "restart_status", "winner", "incident"}
     }
 
 
@@ -22,8 +85,6 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
 
     transformed = dict(record)
 
-    if domain == "circuits":
-        transformed["series"] = FORMULA_ONE_SERIES.copy()
 
     if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
         if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
@@ -34,15 +95,15 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
                     "text": constructor_text,
                     "url": constructor_url,
                 },
-                "racing_series": {
-                    "AAA_national_championship": [],
-                    "formula_one": [
-                        {
+                "racing_series": [
+                    {
+                        "AAA_national_championship": [],
+                        "formula_one": {
                             "status": "former",
                             "indianapolis_only": True,
                         },
-                    ],
-                },
+                    },
+                ],
             }
         elif source_name == FORMER_CONSTRUCTORS_SOURCE:
             constructor = transformed.get("constructor")
@@ -54,26 +115,77 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
             formula_one["status"] = "former"
             transformed = {
                 "constructor": constructor,
-                "racing_series": {
-                    "formula_one": [formula_one],
-                },
+                "racing_series": _build_racing_series(formula_one),
             }
         else:
-            transformed["status"] = "active"
+            _move_fields_to_formula_one(transformed, CONSTRUCTORS_FORMULA_ONE_FIELDS)
+            if "racing_series" not in transformed:
+                transformed["status"] = "active"
+                transformed["series"] = FORMULA_ONE_SERIES.copy()
+
+    if domain == "circuits":
+        _move_fields_to_formula_one(transformed, CIRCUITS_FORMULA_ONE_FIELDS)
+        if "racing_series" not in transformed:
             transformed["series"] = FORMULA_ONE_SERIES.copy()
+
+    if domain == "engines":
+        if source_name == "f1_indianapolis_only_engine_manufacturers.json":
+            transformed["racing_series"] = [
+                {
+                    "AAA_national_championship": [],
+                    "formula_one": {
+                        "status": "former",
+                        "indianapolis_only": True,
+                    },
+                },
+            ]
+        elif source_name == "f1_engine_manufacturers.json":
+            _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
+
+    if domain == "grands_prix":
+        _move_fields_to_formula_one(transformed, GRANDS_PRIX_FORMULA_ONE_FIELDS)
+
+    if domain == "teams":
+        if source_name == "f1_sponsorship_liveries.json" and "liveries" in transformed:
+            transformed["racing_series"] = _build_racing_series(
+                {"liveries": transformed.pop("liveries")},
+            )
+        if source_name == "f1_privateer_teams.json":
+            formula_one = {
+                key: transformed.pop(key)
+                for key in ("seasons",)
+                if key in transformed
+            }
+            formula_one["privateer"] = True
+            transformed["racing_series"] = _build_racing_series(formula_one)
 
     if domain == "drivers":
         if source_name == "female_drivers.json":
             transformed["gender"] = "female"
         if source_name == "f1_driver_fatalities.json":
-            transformed["fatality"] = {
-                key: value for key, value in transformed.items() if key != "driver"
+            death_fields = {
+                key: transformed.pop(key)
+                for key in ("date", "age")
+                if key in transformed
+            }
+            crash_fields = {
+                key: transformed.pop(key)
+                for key in ("event", "circuit", "car", "session")
+                if key in transformed
+            }
+            transformed["death"] = {
+                **death_fields,
+                "crash": crash_fields,
             }
 
     if domain == "races":
         if source_name == "f1_red_flagged_world_championship_races.json":
-            transformed["non_championship"] = "true"
+            transformed["championship"] = True
+        if source_name == "f1_red_flagged_non_championship_races.json":
+            transformed["championship"] = False
         transformed["red_flag"] = _extract_red_flag(transformed)
+        for key in ("lap", "restart_status", "winner", "incident"):
+            transformed.pop(key, None)
 
     return transformed
 
