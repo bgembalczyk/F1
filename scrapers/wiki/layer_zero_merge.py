@@ -6,6 +6,7 @@ FORMULA_ONE_SERIES = ["Formula One"]
 CHASSIS_CONSTRUCTOR_DOMAINS = {"constructors", "chassis_constructors"}
 FORMER_CONSTRUCTORS_SOURCE = "f1_former_constructors.json"
 INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE = "f1_indianapolis_only_constructors.json"
+TYRE_MANUFACTURERS_SOURCE = "f1_tyre_manufacturers_by_season.json"
 
 CIRCUITS_FORMULA_ONE_FIELDS = {
     "circuit_status",
@@ -75,7 +76,13 @@ def _extract_red_flag(record: dict[str, object]) -> dict[str, object]:
     return {
         key: value
         for key, value in record.items()
-        if key in {"lap", "restart_status", "winner", "incident"}
+        if key in {
+            "lap",
+            "restart_status",
+            "winner",
+            "incident",
+            "failed_to_make_restart",
+        }
     }
 
 
@@ -84,6 +91,9 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
         return record
 
     transformed = dict(record)
+
+    if source_name == TYRE_MANUFACTURERS_SOURCE and "manufacturers" in transformed:
+        transformed["tyre_manufacturers"] = transformed.pop("manufacturers")
 
 
     if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
@@ -122,6 +132,9 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
             if "racing_series" not in transformed:
                 transformed["status"] = "active"
                 transformed["series"] = FORMULA_ONE_SERIES.copy()
+            else:
+                formula_one = transformed["racing_series"][0].setdefault("formula_one", {})
+                formula_one.setdefault("status", "active")
 
     if domain == "circuits":
         _move_fields_to_formula_one(transformed, CIRCUITS_FORMULA_ONE_FIELDS)
@@ -184,7 +197,13 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
         if source_name == "f1_red_flagged_non_championship_races.json":
             transformed["championship"] = False
         transformed["red_flag"] = _extract_red_flag(transformed)
-        for key in ("lap", "restart_status", "winner", "incident"):
+        for key in (
+            "lap",
+            "restart_status",
+            "winner",
+            "incident",
+            "failed_to_make_restart",
+        ):
             transformed.pop(key, None)
 
     return transformed
