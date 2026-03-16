@@ -16,15 +16,12 @@ from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
 from scrapers.grands_prix.red_flagged_races_scraper.base import (
     RedFlaggedRacesBaseScraper,
 )
+from scrapers.wiki.parsers.section_alias_registry import get_aliases
 
 
 class RedFlaggedWorldChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
-    alternative_section_ids = [
-        "World_Championship_races",
-        "Championship_races",
-        "World_championship_races",
-        "Red_flagged_races",
-    ]
+    alternative_section_ids = get_aliases("grands_prix", "Red-flagged_races")
+
 
     schema_columns = [
         column("Year", "season", IntColumn()),

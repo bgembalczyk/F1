@@ -10,6 +10,7 @@ from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.wiki.parsers.section_alias_registry import get_aliases
 
 
 class SeasonNonChampionshipParser:
@@ -23,7 +24,7 @@ class SeasonNonChampionshipParser:
     ) -> list[dict[str, Any]]:
         return self._table_parser.parse_table(
             soup,
-            section_ids=["Non-championship_races", "Non-championship_race"],
+            section_ids=["Non-championship_races", *get_aliases("seasons", "Non-championship_races")],
             expected_headers=[
                 "Race name",
                 "Circuit",

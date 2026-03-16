@@ -11,6 +11,7 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.wiki.parsers.section_alias_registry import get_aliases
 
 
 class SeasonResultsParser:
@@ -20,7 +21,7 @@ class SeasonResultsParser:
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._table_parser.parse_table(
             soup,
-            section_ids=["Grands_Prix", "Results_and_standings"],
+            section_ids=["Grands_Prix", *get_aliases("seasons", "Grands_Prix")],
             expected_headers=[
                 "Round",
                 "Fastest lap",

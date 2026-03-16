@@ -30,6 +30,7 @@ from scrapers.drivers.columns.series import SeriesColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
 from scrapers.drivers.infobox.scraper import DriverInfoboxParser
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
+from scrapers.wiki.parsers.section_alias_registry import get_aliases
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -82,11 +83,7 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
         return records[0] if records else {}
 
     def _parse_results_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        sections = [
-            "Career results",
-            "Karting record",
-            "Racing record",
-        ]
+        sections = ["Career results", *get_aliases("drivers", "Career results")]
         records: list[dict[str, Any]] = []
 
         for section_title in sections:

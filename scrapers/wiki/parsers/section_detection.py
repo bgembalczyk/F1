@@ -8,19 +8,10 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.wiki.parsers.section_alias_registry import get_aliases
+from scrapers.wiki.parsers.section_alias_registry import register_alias_hit
 
 _HEADING_TAGS = ("h1", "h2", "h3", "h4", "h5", "h6")
-
-COMMON_SECTION_ALIASES: dict[str, set[str]] = {
-    "results": {"result", "results and standings", "grands prix"},
-    "career results": {
-        "racing record",
-        "career record",
-        "motorsport career results",
-        "racing career",
-    },
-}
-
 
 @dataclass(slots=True)
 class SectionMatch:
@@ -80,7 +71,7 @@ def _resolve_aliases(
     domain: str | None,
 ) -> set[str]:
     normalized_target = normalize_section_text(target)
-    resolved = set(COMMON_SECTION_ALIASES.get(normalized_target, set()))
+    resolved = set(get_aliases(domain, normalized_target))
 
     if domain and domain_aliases:
         per_domain = domain_aliases.get(domain, {})
@@ -90,6 +81,27 @@ def _resolve_aliases(
         resolved.update(aliases.get(normalized_target, set()))
 
     return resolved
+
+
+def _find_matched_alias(target: str, aliases: set[str], heading: Tag) -> str | None:
+    normalized_target = normalize_section_text(target)
+    normalized_aliases = {normalize_section_text(alias) for alias in aliases}
+    if not normalized_aliases:
+        return None
+
+    heading_ids = {_normalize_id(value) for value in _collect_heading_ids(heading)}
+    heading_text = normalize_section_text(_headline_text(heading))
+
+    alias_matches = {
+        alias
+        for alias in normalized_aliases
+        if alias != normalized_target
+        and (alias == heading_text or _normalize_id(alias) in heading_ids)
+    }
+    if alias_matches:
+        return sorted(alias_matches)[0]
+
+    return None
 
 
 def find_section_heading(
@@ -114,10 +126,28 @@ def find_section_heading(
     for heading in soup.find_all(_HEADING_TAGS):
         heading_ids = {_normalize_id(value) for value in _collect_heading_ids(heading)}
         if heading_ids & target_ids:
+            if domain:
+                alias = _find_matched_alias(target, resolved_aliases, heading)
+                if alias:
+                    register_alias_hit(
+                        domain=domain,
+                        canonical_section=target,
+                        alias=alias,
+                        strategy="exact_id",
+                    )
             return SectionMatch(heading=heading, strategy="exact_id", score=3.0)
 
         heading_text = normalize_section_text(_headline_text(heading))
         if heading_text in target_texts:
+            if domain:
+                alias = _find_matched_alias(target, resolved_aliases, heading)
+                if alias:
+                    register_alias_hit(
+                        domain=domain,
+                        canonical_section=target,
+                        alias=alias,
+                        strategy="exact_text",
+                    )
             return SectionMatch(heading=heading, strategy="exact_text", score=2.0)
 
         ratio = max(
@@ -131,4 +161,14 @@ def find_section_heading(
     if not fuzzy_candidates:
         return None
 
-    return max(fuzzy_candidates, key=lambda match: match.score)
+    best_match = max(fuzzy_candidates, key=lambda match: match.score)
+    if domain:
+        alias = _find_matched_alias(target, resolved_aliases, best_match.heading)
+        if alias:
+            register_alias_hit(
+                domain=domain,
+                canonical_section=target,
+                alias=alias,
+                strategy="fuzzy",
+            )
+    return best_match

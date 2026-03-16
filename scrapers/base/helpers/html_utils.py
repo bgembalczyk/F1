@@ -1,7 +1,6 @@
 """HTML helper utilities used by scrapers."""
 
 from collections.abc import Iterable
-from collections.abc import Mapping
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -11,18 +10,6 @@ from scrapers.wiki.parsers.section_detection import find_section_heading
 
 _HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
 _HEADING_AND_TABLE_TAGS = [*list(_HEADING_TAGS), "table"]
-
-DOMAIN_SECTION_ALIASES: dict[str, dict[str, set[str]]] = {
-    "seasons": {
-        "results": {"grands prix", "results and standings"},
-    },
-    "drivers": {
-        "career results": {"racing record", "karting record"},
-    },
-    "circuits": {
-        "results": {"race results"},
-    },
-}
 
 
 def find_section_elements(
@@ -93,7 +80,7 @@ def find_heading(
     soup: BeautifulSoup,
     section_id: str,
     *,
-    aliases: Mapping[str, set[str]] | None = None,
+    aliases: dict[str, set[str]] | None = None,
     domain: str | None = None,
 ) -> Tag | None:
     match = find_section_heading(
@@ -101,7 +88,6 @@ def find_heading(
         section_id,
         aliases=aliases,
         domain=domain,
-        domain_aliases=DOMAIN_SECTION_ALIASES,
     )
     if not match:
         return None

@@ -21,6 +21,7 @@ from scrapers.grands_prix.columns.circuit_location import LocationColumn
 from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
 from scrapers.wiki.scraper import WikiScraper
+from scrapers.wiki.parsers.section_alias_registry import get_aliases
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -254,12 +255,7 @@ class F1SingleGrandPrixScraper(WikiScraper):
         if not is_grand_prix_article(soup):
             return []
 
-        for section_id in [
-            "By_year",
-            "Winners",
-            "By_year:_the_European_Grand_Prix_as_a_standalone_event",
-            "Winners_of_the_Caesars_Palace_Grand_Prix",
-        ]:
+        for section_id in ["By_year", *get_aliases("grands_prix", "By_year")]:
             result = self._try_parse_section(soup, section_id)
             if result is not None:
                 return result
