@@ -1,3 +1,4 @@
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -6,9 +7,8 @@ from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
-from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
-    IndianapolisOnlyEngineManufacturersListScraper,
-)
+from scrapers.engines.indianapolis_only_engine_manufacturers_list import \
+    IndianapolisOnlyEngineManufacturersListScraper
 from scrapers.engines.single_scraper import SingleEngineManufacturerScraper
 
 
@@ -25,14 +25,30 @@ class F1CompleteEngineManufacturerDataExtractor(CompositeDataExtractor):
         self,
         *,
         options: ScraperOptions | None = None,
+        list_scraper_factory: (
+            Callable[[ScraperOptions], EngineManufacturersListScraper] | None
+        ) = None,
+        indianapolis_list_scraper_factory: (
+            Callable[[ScraperOptions], IndianapolisOnlyEngineManufacturersListScraper]
+            | None
+        ) = None,
+        single_scraper_factory: (
+            Callable[[ScraperOptions], SingleEngineManufacturerScraper] | None
+        ) = None,
     ) -> None:
         options = options or ScraperOptions()
         options.include_urls = True
+        self._list_scraper_factory = list_scraper_factory or EngineManufacturersListScraper
+        self._indianapolis_list_scraper_factory = (
+            indianapolis_list_scraper_factory
+            or IndianapolisOnlyEngineManufacturersListScraper
+        )
+        self._single_scraper_factory = single_scraper_factory or SingleEngineManufacturerScraper
 
         super().__init__(options=options)
 
     def build_children(self) -> CompositeDataExtractorChildren:
-        list_scraper = EngineManufacturersListScraper(
+        list_scraper = self._list_scraper_factory(
             options=ScraperOptions(
                 include_urls=True,
                 policy=self.http_policy,
@@ -40,7 +56,7 @@ class F1CompleteEngineManufacturerDataExtractor(CompositeDataExtractor):
                 debug_dir=self.debug_dir,
             ),
         )
-        indianapolis_list_scraper = IndianapolisOnlyEngineManufacturersListScraper(
+        indianapolis_list_scraper = self._indianapolis_list_scraper_factory(
             options=ScraperOptions(
                 include_urls=True,
                 policy=self.http_policy,
@@ -48,7 +64,7 @@ class F1CompleteEngineManufacturerDataExtractor(CompositeDataExtractor):
                 debug_dir=self.debug_dir,
             ),
         )
-        single_scraper = SingleEngineManufacturerScraper(
+        single_scraper = self._single_scraper_factory(
             options=ScraperOptions(
                 policy=self.http_policy,
                 source_adapter=self.source_adapter,

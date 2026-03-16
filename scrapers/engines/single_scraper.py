@@ -1,3 +1,4 @@
+from collections.abc import Callable
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -5,6 +6,8 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
+from scrapers.engines.contracts import EngineArticleTablesParserProtocol
+from scrapers.engines.contracts import EngineInfoboxParserProtocol
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
 
@@ -19,6 +22,8 @@ class SingleEngineManufacturerScraper(WikiScraper):
         self,
         *,
         options: ScraperOptions | None = None,
+        infobox_parser_factory: Callable[[], EngineInfoboxParserProtocol] | None = None,
+        article_tables_parser: EngineArticleTablesParserProtocol | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -27,7 +32,8 @@ class SingleEngineManufacturerScraper(WikiScraper):
         self.policy = self.http_policy
         self.url: str = ""
         self.debug_dir = options.debug_dir
-        self.article_tables_parser = ArticleTablesParser()
+        self._infobox_parser_factory = infobox_parser_factory or InfoboxHtmlParser
+        self.article_tables_parser = article_tables_parser or ArticleTablesParser()
 
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
@@ -43,7 +49,7 @@ class SingleEngineManufacturerScraper(WikiScraper):
         ]
 
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        parser = InfoboxHtmlParser()
+        parser = self._infobox_parser_factory()
         infoboxes: list[dict[str, Any]] = []
         for table in self.find_infoboxes(soup):
             parsed = parser.parse_element(table)

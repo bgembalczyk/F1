@@ -1,3 +1,4 @@
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -11,20 +12,28 @@ from scrapers.seasons.single_scraper import SingleSeasonScraper
 
 
 class CompleteSeasonDataExtractor(BaseDataExtractor):
-    def __init__(self, *, options: ScraperOptions | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        list_scraper_factory: Callable[[ScraperOptions], SeasonsListScraper] | None = None,
+        single_scraper_factory: Callable[[ScraperOptions], SingleSeasonScraper] | None = None,
+    ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
         super().__init__(options=options)
         self.url = SeasonsListScraper.CONFIG.url
         self._options = options
+        self._list_scraper_factory = list_scraper_factory or SeasonsListScraper
+        self._single_scraper_factory = single_scraper_factory or SingleSeasonScraper
 
     def fetch(self) -> list[dict[str, Any]]:
-        list_scraper = SeasonsListScraper(options=self._options)
+        list_scraper = self._list_scraper_factory(options=self._options)
         seasons = list_scraper.fetch()
 
         results: list[dict[str, Any]] = []
-        season_scraper = SingleSeasonScraper(options=self._options)
+        season_scraper = self._single_scraper_factory(options=self._options)
 
         for season in tqdm(seasons, desc="CompleteSeasonDataExtractor", unit="season"):
             season_info = season.get("season")

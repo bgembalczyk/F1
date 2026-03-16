@@ -8,6 +8,9 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.constructors.contracts import ConstructorInfoboxExtractionServiceProtocol
+from scrapers.constructors.contracts import ConstructorRecordAssemblerProtocol
+from scrapers.constructors.contracts import ConstructorSectionExtractionServiceProtocol
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess import ConstructorSectionContractPostProcessor
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
@@ -21,11 +24,12 @@ class SingleConstructorScraper(SectionAdapter, WikiScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        infobox_service: ConstructorInfoboxExtractionService | None = None,
+        infobox_service: ConstructorInfoboxExtractionServiceProtocol | None = None,
         sections_service_factory: (
-            Callable[[SectionAdapter], ConstructorSectionExtractionService] | None
+            Callable[[SectionAdapter], ConstructorSectionExtractionServiceProtocol] | None
         ) = None,
-        assembler: ConstructorRecordAssembler | None = None,
+        assembler: ConstructorRecordAssemblerProtocol | None = None,
+        article_tables_parser: ArticleTablesParser | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -39,12 +43,11 @@ class SingleConstructorScraper(SectionAdapter, WikiScraper):
             or (lambda adapter: ConstructorSectionExtractionService(adapter=adapter))
         )
         self._assembler = assembler or ConstructorRecordAssembler()
-        self.article_tables_parser = ArticleTablesParser()
+        self.article_tables_parser = article_tables_parser or ArticleTablesParser()
 
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
         return super().fetch()
-
 
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._infobox_service.extract(soup)

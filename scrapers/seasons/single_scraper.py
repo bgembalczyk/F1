@@ -7,6 +7,9 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.seasons.contracts import SeasonRecordAssemblerProtocol
+from scrapers.seasons.contracts import SeasonSectionParserProtocol
+from scrapers.seasons.contracts import SeasonTextSectionExtractionServiceProtocol
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.colin_chapman_trophy import ColinChapmanTrophyParser
@@ -40,9 +43,21 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
         options: ScraperOptions | None = None,
         season_year: int | None = None,
         text_sections_service_factory: (
-            Callable[[SectionAdapter], SeasonTextSectionExtractionService] | None
+            Callable[[SectionAdapter], SeasonTextSectionExtractionServiceProtocol] | None
         ) = None,
-        assembler: SeasonRecordAssembler | None = None,
+        calendar_section_parser_factory: (
+            Callable[[SeasonCalendarParser, int | None], SeasonSectionParserProtocol] | None
+        ) = None,
+        results_section_parser_factory: (
+            Callable[[SeasonResultsParser], SeasonSectionParserProtocol] | None
+        ) = None,
+        drivers_standings_section_parser_factory: (
+            Callable[[SeasonStandingsParser, int | None], SeasonSectionParserProtocol] | None
+        ) = None,
+        constructors_standings_section_parser_factory: (
+            Callable[[SeasonStandingsParser], SeasonSectionParserProtocol] | None
+        ) = None,
+        assembler: SeasonRecordAssemblerProtocol | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -75,7 +90,23 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
         self._regional_parser = SeasonRegionalChampionshipParser(self._table_parser)
         self._text_sections_service_factory = (
             text_sections_service_factory
-            or (lambda adapter: SeasonTextSectionExtractionService(adapter=adapter))
+            or (lambda section_adapter: SeasonTextSectionExtractionService(adapter=section_adapter))
+        )
+        self._calendar_section_parser_factory = (
+            calendar_section_parser_factory
+            or (lambda parser, year: SeasonCalendarSectionParser(parser, year))
+        )
+        self._results_section_parser_factory = (
+            results_section_parser_factory
+            or (lambda parser: SeasonResultsSectionParser(parser))
+        )
+        self._drivers_standings_section_parser_factory = (
+            drivers_standings_section_parser_factory
+            or (lambda parser, year: SeasonDriversStandingsSectionParser(parser, year))
+        )
+        self._constructors_standings_section_parser_factory = (
+            constructors_standings_section_parser_factory
+            or (lambda parser: SeasonConstructorsStandingsSectionParser(parser))
         )
         self._assembler = assembler or SeasonRecordAssembler()
 
@@ -94,27 +125,20 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
         return super().fetch()
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        calendar_data = (
-            SeasonCalendarSectionParser(self._calendar_parser, self.season_year)
-            .parse(soup)
-            .records
-        )
-        results_data = (
-            SeasonResultsSectionParser(self._results_parser).parse(soup).records
-        )
-        drivers_standings = (
-            SeasonDriversStandingsSectionParser(
-                self._standings_parser,
-                self.season_year,
-            )
-            .parse(soup)
-            .records
-        )
-        constructors_standings = (
-            SeasonConstructorsStandingsSectionParser(self._standings_parser)
-            .parse(soup)
-            .records
-        )
+        calendar_data = self._calendar_section_parser_factory(
+            self._calendar_parser,
+            self.season_year,
+        ).parse(soup).records
+        results_data = self._results_section_parser_factory(
+            self._results_parser,
+        ).parse(soup).records
+        drivers_standings = self._drivers_standings_section_parser_factory(
+            self._standings_parser,
+            self.season_year,
+        ).parse(soup).records
+        constructors_standings = self._constructors_standings_section_parser_factory(
+            self._standings_parser,
+        ).parse(soup).records
         text_records = self._text_sections_service_factory(self).extract(soup)
 
         return [

@@ -7,6 +7,9 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.drivers.contracts import DriverInfoboxExtractionServiceProtocol
+from scrapers.drivers.contracts import DriverRecordAssemblerProtocol
+from scrapers.drivers.contracts import DriverSectionExtractionServiceProtocol
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess import DriverSectionContractPostProcessor
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
@@ -19,11 +22,11 @@ class SingleDriverScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper
         self,
         *,
         options: ScraperOptions | None = None,
-        infobox_service: DriverInfoboxExtractionService | None = None,
+        infobox_service: DriverInfoboxExtractionServiceProtocol | None = None,
         sections_service_factory: (
-            Callable[[ScraperOptions, str], DriverSectionExtractionService] | None
+            Callable[[ScraperOptions, str], DriverSectionExtractionServiceProtocol] | None
         ) = None,
-        assembler: DriverRecordAssembler | None = None,
+        assembler: DriverRecordAssemblerProtocol | None = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
@@ -53,7 +56,6 @@ class SingleDriverScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         self.url = url
         return super().fetch()
-
 
     def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
         return self._infobox_service.extract(soup, url=self.url)

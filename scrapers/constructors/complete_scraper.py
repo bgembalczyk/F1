@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -6,12 +9,10 @@ from tqdm import tqdm
 from scrapers.base.abc import ABCScraper
 from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
-from scrapers.constructors.current_constructors_list import (
-    CurrentConstructorsListScraper,
-)
+from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
+from scrapers.constructors.list.current import CurrentConstructorsListScraper
 from scrapers.constructors.indianapolis_only_constructors_list import (
     IndianapolisOnlyConstructorsListScraper,
 )
@@ -32,15 +33,43 @@ class CompleteConstructorsDataExtractor(BaseDataExtractor):
         self,
         *,
         options: ScraperOptions | None = None,
+        single_scraper_factory: Callable[[ScraperOptions], SingleConstructorScraper]
+        | None = None,
+        current_list_scraper_factory: (
+            Callable[[ScraperOptions], CurrentConstructorsListScraper] | None
+        ) = None,
+        former_list_scraper_factory: (
+            Callable[[ScraperOptions], FormerConstructorsListScraper] | None
+        ) = None,
+        indianapolis_list_scraper_factory: (
+            Callable[[ScraperOptions], IndianapolisOnlyConstructorsListScraper] | None
+        ) = None,
+        privateer_list_scraper_factory: (
+            Callable[[ScraperOptions], PrivateerTeamsListScraper] | None
+        ) = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
         super().__init__(options=options)
         self._options = options
+        self._single_scraper_factory = single_scraper_factory or SingleConstructorScraper
+        self._current_list_scraper_factory = (
+            current_list_scraper_factory or CurrentConstructorsListScraper
+        )
+        self._former_list_scraper_factory = (
+            former_list_scraper_factory or FormerConstructorsListScraper
+        )
+        self._indianapolis_list_scraper_factory = (
+            indianapolis_list_scraper_factory
+            or IndianapolisOnlyConstructorsListScraper
+        )
+        self._privateer_list_scraper_factory = (
+            privateer_list_scraper_factory or PrivateerTeamsListScraper
+        )
 
     def fetch(self) -> list[dict[str, Any]]:
-        single_scraper = SingleConstructorScraper(options=self._options)
+        single_scraper = self._single_scraper_factory(self._options)
         records = self._fetch_all_list_records()
 
         results: list[dict[str, Any]] = []
@@ -71,10 +100,10 @@ class CompleteConstructorsDataExtractor(BaseDataExtractor):
 
     def _fetch_all_list_records(self) -> list[dict[str, Any]]:
         list_scrapers: list[ABCScraper] = [
-            CurrentConstructorsListScraper(options=self._options),
-            FormerConstructorsListScraper(options=self._options),
-            IndianapolisOnlyConstructorsListScraper(options=self._options),
-            PrivateerTeamsListScraper(options=self._options),
+            self._current_list_scraper_factory(options=self._options),
+            self._former_list_scraper_factory(options=self._options),
+            self._indianapolis_list_scraper_factory(options=self._options),
+            self._privateer_list_scraper_factory(options=self._options),
         ]
 
         all_records: list[dict[str, Any]] = []
