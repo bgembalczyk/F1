@@ -1,0 +1,26 @@
+{
+  "domain": "drivers",
+  "seed_record": {
+    "name": "Lewis Hamilton",
+    "link": "https://example.test/wiki/Lewis_Hamilton",
+    "source_url": "https://example.test/drivers",
+    "scraped_at": "2026-01-01T00:00:00"
+  },
+  "section_record": {
+    "name": "Career",
+    "section_id": "career"
+  },
+  "infobox_record": {
+    "title": "Lewis Hamilton",
+    "rows": {
+      "Nationality": "British"
+    }
+  },
+  "postprocess_record": {
+    "domain": "drivers",
+    "url": "https://example.test/drivers",
+    "source_url": "https://example.test/drivers",
+    "section_id": "career",
+    "scraped_at": "2026-01-01T00:00:00"
+  }
+}

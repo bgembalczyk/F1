@@ -1,0 +1,26 @@
+{
+  "domain": "seasons",
+  "seed_record": {
+    "name": "2024",
+    "link": "https://example.test/wiki/2024_Formula_One_World_Championship",
+    "source_url": "https://example.test/seasons",
+    "scraped_at": "2026-01-01T00:00:00"
+  },
+  "section_record": {
+    "name": "Grands Prix",
+    "section_id": "grands_prix"
+  },
+  "infobox_record": {
+    "title": "2024 Formula One World Championship",
+    "rows": {
+      "Races": "24"
+    }
+  },
+  "postprocess_record": {
+    "domain": "seasons",
+    "url": "https://example.test/seasons",
+    "source_url": "https://example.test/seasons",
+    "section_id": "grands_prix",
+    "scraped_at": "2026-01-01T00:00:00"
+  }
+}
