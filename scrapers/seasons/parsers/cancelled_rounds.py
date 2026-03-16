@@ -105,7 +105,9 @@ class CancelledRoundsParser:
         except RuntimeError:
             return []
 
-        parser = HtmlTableParser(section_id=None, expected_headers=expected_headers, section_domain="seasons")
+        parser = HtmlTableParser(
+            section_id=None, expected_headers=expected_headers, section_domain="seasons"
+        )
         return [
             table
             for table in candidate_tables

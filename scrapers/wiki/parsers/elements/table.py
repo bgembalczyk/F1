@@ -29,7 +29,9 @@ class TableParser(WikiParser):
         if not full_headers:
             return {"headers": [], "rows": [], "raw_rows": []}
 
-        included_indexes = [i for i, header in enumerate(full_headers) if header.strip()]
+        included_indexes = [
+            i for i, header in enumerate(full_headers) if header.strip()
+        ]
         headers = [full_headers[i] for i in included_indexes]
 
         rows: list[list[str]] = []
@@ -55,7 +57,9 @@ class TableParser(WikiParser):
             if is_repeated_header_row(cleaned_cells, headers):
                 continue
 
-            expanded_cells = parser.expand_row_cells(cells, full_headers, pending_rowspans)
+            expanded_cells = parser.expand_row_cells(
+                cells, full_headers, pending_rowspans
+            )
             cleaned_expanded = [
                 clean_wiki_text(
                     c.get_text(" ", strip=True),
@@ -76,7 +80,9 @@ class TableParser(WikiParser):
         return {"headers": headers, "rows": rows, "raw_rows": raw_rows}
 
     @staticmethod
-    def _extract_full_headers(parser: HtmlTableParser, table: Tag) -> tuple[list[str], int]:
+    def _extract_full_headers(
+        parser: HtmlTableParser, table: Tag
+    ) -> tuple[list[str], int]:
         table_rows = table.find_all("tr")
         if not table_rows:
             return [], 0

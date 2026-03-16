@@ -23,7 +23,9 @@ class WikiTableBaseParser(ABC):
             return None
 
         column_map = self.map_columns(headers)
-        mapped_rows = [self._map_row(row, column_map) for row in table_data.get("rows", [])]
+        mapped_rows = [
+            self._map_row(row, column_map) for row in table_data.get("rows", [])
+        ]
 
         return {
             "table_type": self.table_type,

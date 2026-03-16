@@ -60,9 +60,13 @@ class WikipediaSectionByIdMixin:
 
         for sib in heading_block.next_siblings:
             if isinstance(sib, Tag):
-                same_level_header_tag = WikipediaSectionByIdMixin._extract_same_level_header(sib)
+                same_level_header_tag = (
+                    WikipediaSectionByIdMixin._extract_same_level_header(sib)
+                )
                 if same_level_header_tag is not None and header_level is not None:
-                    sib_level = WikipediaSectionByIdMixin._get_header_level(same_level_header_tag)
+                    sib_level = WikipediaSectionByIdMixin._get_header_level(
+                        same_level_header_tag
+                    )
                     if sib_level == header_level:
                         break
 

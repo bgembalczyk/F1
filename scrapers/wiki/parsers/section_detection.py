@@ -61,7 +61,9 @@ def _collect_heading_ids(heading: Tag) -> set[str]:
 
 def _expand_target_values(target: str, aliases: set[str]) -> tuple[set[str], set[str]]:
     values = {target, *aliases}
-    normalized_texts = {normalize_section_text(value) for value in values if value.strip()}
+    normalized_texts = {
+        normalize_section_text(value) for value in values if value.strip()
+    }
     normalized_ids = {
         variant
         for text in normalized_texts
@@ -119,8 +121,7 @@ def find_section_heading(
             return SectionMatch(heading=heading, strategy="exact_text", score=2.0)
 
         ratio = max(
-            SequenceMatcher(None, heading_text, value).ratio()
-            for value in target_texts
+            SequenceMatcher(None, heading_text, value).ratio() for value in target_texts
         )
         if ratio >= min_fuzzy_score:
             fuzzy_candidates.append(

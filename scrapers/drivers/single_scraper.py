@@ -109,7 +109,9 @@ class SingleDriverScraper(WikipediaSectionByIdMixin, WikiScraper):
 
         return records
 
-    def _parse_results_table_data(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+    def _parse_results_table_data(
+        self, table_data: dict[str, Any]
+    ) -> dict[str, Any] | None:
         headers = table_data["headers"]
         if not headers:
             return None

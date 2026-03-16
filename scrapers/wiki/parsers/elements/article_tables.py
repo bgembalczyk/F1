@@ -51,7 +51,9 @@ class ArticleTablesParser(WikiParser):
         if not headers:
             return None
 
-        filtered_rows = [row for row in rows if any(value.strip() for value in row.values())]
+        filtered_rows = [
+            row for row in rows if any(value.strip() for value in row.values())
+        ]
         if not filtered_rows:
             return None
 
@@ -83,7 +85,9 @@ class ArticleTablesParser(WikiParser):
                 return specialized
         return {"table_type": "wiki_table"}
 
-    def _parse_with_html_table_parser(self, table: Tag) -> tuple[list[str], list[dict[str, str]]]:
+    def _parse_with_html_table_parser(
+        self, table: Tag
+    ) -> tuple[list[str], list[dict[str, str]]]:
         try:
             rows = self._html_table_parser.parse_table(table)
         except RuntimeError:
@@ -95,12 +99,16 @@ class ArticleTablesParser(WikiParser):
         normalized_headers = self._normalize_headers(rows[0].headers)
         parsed_rows: list[dict[str, str]] = []
         for row in rows:
-            values = [self._clean_text(cell.get_text(" ", strip=True)) for cell in row.cells]
+            values = [
+                self._clean_text(cell.get_text(" ", strip=True)) for cell in row.cells
+            ]
             parsed_rows.append(dict(zip(normalized_headers, values, strict=False)))
 
         return normalized_headers, parsed_rows
 
-    def _parse_with_legacy_parser(self, table: Tag) -> tuple[list[str], list[dict[str, str]]]:
+    def _parse_with_legacy_parser(
+        self, table: Tag
+    ) -> tuple[list[str], list[dict[str, str]]]:
         raw = self._table_parser.parse(table)
         headers = self._normalize_headers(raw.get("headers", []))
         rows: list[dict[str, str]] = []
@@ -110,7 +118,9 @@ class ArticleTablesParser(WikiParser):
         return headers, rows
 
     def _normalize_headers(self, headers: list[str]) -> list[str]:
-        return [self._clean_text(header) for header in headers if self._clean_text(header)]
+        return [
+            self._clean_text(header) for header in headers if self._clean_text(header)
+        ]
 
     def _extract_caption(self, table: Tag) -> str | None:
         caption_tag = table.find("caption")

@@ -199,8 +199,6 @@ def test_table_parser():
     assert result["rows"] == [["Hamilton", "2020"]]
 
 
-
-
 def test_table_parser_handles_multirow_headers_and_blank_th() -> None:
     html = """
     <table class="wikitable">
@@ -273,6 +271,8 @@ def test_table_parser_handles_rowspan_and_colspan_with_stable_mapping() -> None:
     ]
     assert result["raw_rows"][1]["Year"] == "1953"
     assert result["raw_rows"][1]["Grand Prix"] == "Monaco"
+
+
 def test_navbox_parser():
     html = """
     <div role="navigation" class="navbox">
@@ -336,8 +336,10 @@ def test_wiki_element_parser_mixin_rules_priority_overlapping_table_classes() ->
     assert result["type"] == "infobox"
 
 
-def test_wiki_element_parser_mixin_register_parser_rule_allows_domain_extensions() -> None:
-    html = '<blockquote>Domain specific note</blockquote>'
+def test_wiki_element_parser_mixin_register_parser_rule_allows_domain_extensions() -> (
+    None
+):
+    html = "<blockquote>Domain specific note</blockquote>"
     soup = _make_soup(html)
     parser = SubSubSubSectionParser()
     blockquote = soup.find("blockquote")
