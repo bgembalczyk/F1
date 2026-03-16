@@ -59,8 +59,8 @@ GRANDS_PRIX_FORMULA_ONE_FIELDS = {
 }
 
 
-def _build_racing_series(formula_one: dict[str, object]) -> list[dict[str, object]]:
-    return [{"formula_one": formula_one}]
+def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
+    return {"formula_one": formula_one}
 
 
 def _move_fields_to_formula_one(
@@ -133,15 +133,13 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
                     "text": constructor_text,
                     "url": constructor_url,
                 },
-                "racing_series": [
-                    {
-                        "AAA_national_championship": [],
-                        "formula_one": {
-                            "status": "former",
-                            "indianapolis_only": True,
-                        },
+                "racing_series": {
+                    "AAA_national_championship": [],
+                    "formula_one": {
+                        "status": "former",
+                        "indianapolis_only": True,
                     },
-                ],
+                },
             }
         elif source_name == FORMER_CONSTRUCTORS_SOURCE:
             constructor = transformed.get("constructor")
@@ -166,10 +164,11 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
                 transformed["status"] = "active"
                 transformed["series"] = FORMULA_ONE_SERIES.copy()
             else:
-                formula_one = transformed["racing_series"][0].setdefault(
-                    "formula_one",
-                    {},
-                )
+                racing_series = transformed.get("racing_series")
+                if not isinstance(racing_series, dict):
+                    racing_series = {}
+                    transformed["racing_series"] = racing_series
+                formula_one = racing_series.setdefault("formula_one", {})
                 formula_one.setdefault("status", "active")
 
     if domain == "circuits":
@@ -179,15 +178,13 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
 
     if domain == "engines":
         if source_name == "f1_indianapolis_only_engine_manufacturers.json":
-            transformed["racing_series"] = [
-                {
-                    "AAA_national_championship": [],
-                    "formula_one": {
-                        "status": "former",
-                        "indianapolis_only": True,
-                    },
+            transformed["racing_series"] = {
+                "AAA_national_championship": [],
+                "formula_one": {
+                    "status": "former",
+                    "indianapolis_only": True,
                 },
-            ]
+            }
         elif source_name == "f1_engine_manufacturers.json":
             _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
 
@@ -335,6 +332,41 @@ def _merge_driver_values(existing: object, incoming: object) -> object:
     return existing
 
 
+def _merge_values(existing: object, incoming: object) -> object:
+    if isinstance(existing, dict) and isinstance(incoming, dict):
+        merged = dict(existing)
+        for key, value in incoming.items():
+            if key in merged:
+                merged[key] = _merge_values(merged[key], value)
+            else:
+                merged[key] = value
+        return merged
+
+    if isinstance(existing, list) and isinstance(incoming, list):
+        merged = list(existing)
+        seen = {
+            json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
+            for item in merged
+        }
+        for item in incoming:
+            serialized = json.dumps(
+                item,
+                sort_keys=True,
+                ensure_ascii=False,
+                default=str,
+            )
+            if serialized in seen:
+                continue
+            seen.add(serialized)
+            merged.append(item)
+        return merged
+
+    if existing in (None, "", []):
+        return incoming
+
+    return existing
+
+
 def _merge_duplicate_drivers(records: list[object]) -> list[object]:
     merged_records: list[object] = []
     key_to_index: dict[str, int] = {}
@@ -397,6 +429,48 @@ def _team_sort_key(record: object) -> str:
     return _link_text(record.get("team")).casefold()
 
 
+def _team_record_key(record: object) -> str | None:
+    if not isinstance(record, dict):
+        return None
+
+    team = record.get("team")
+    if isinstance(team, dict):
+        url = team.get("url")
+        if isinstance(url, str) and url:
+            return url
+        text = team.get("text")
+        if isinstance(text, str) and text:
+            return text.casefold()
+
+    if isinstance(team, str) and team:
+        return team.casefold()
+
+    return None
+
+
+def _merge_duplicate_teams(records: list[object]) -> list[object]:
+    merged_records: list[object] = []
+    key_to_index: dict[str, int] = {}
+
+    for record in records:
+        key = _team_record_key(record)
+        if key is None or not isinstance(record, dict):
+            merged_records.append(record)
+            continue
+
+        index = key_to_index.get(key)
+        if index is None:
+            key_to_index[key] = len(merged_records)
+            merged_records.append(record)
+            continue
+
+        existing = merged_records[index]
+        if isinstance(existing, dict):
+            merged_records[index] = _merge_values(existing, record)
+
+    return merged_records
+
+
 def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
     layer_zero_dir = base_wiki_dir / "layers" / "0_layer"
     if not layer_zero_dir.exists():
@@ -428,6 +502,7 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
             merged_records = sorted(merged_records, key=_constructor_sort_key)
 
         if domain_dir.name == "teams":
+            merged_records = _merge_duplicate_teams(merged_records)
             merged_records = sorted(merged_records, key=_team_sort_key)
 
         if domain_dir.name == "seasons":

@@ -253,6 +253,44 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
                 "engine": {"text": "Engine X", "url": "https://example.com/engine-x"},
                 "wins": 1,
             },
+            {
+                "constructor": {
+                    "text": "Cadillac",
+                    "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
+                },
+                "engine": [
+                    {
+                        "text": "Ferrari",
+                        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
+                    },
+                ],
+                "wins": 0,
+            },
+        ],
+    )
+    _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "teams"
+        / "raw"
+        / "cadillac_livery.json",
+        [
+            {
+                "team": {
+                    "text": "Cadillac",
+                    "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
+                },
+                "racing_series": {
+                    "formula_one": {
+                        "liveries": [
+                            {
+                                "main_colours": ["White", "Black"],
+                            },
+                        ],
+                    },
+                },
+            },
         ],
     )
     _write_json(
@@ -332,64 +370,54 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     assert circuits_merged == [
         {
             "circuit": "Monza",
-            "racing_series": [
-                {
-                    "formula_one": {
-                        "turns": 11,
-                        "circuit_status": "active",
-                        "grands_prix": ["Italian Grand Prix"],
-                    },
+            "racing_series": {
+                "formula_one": {
+                    "turns": 11,
+                    "circuit_status": "active",
+                    "grands_prix": ["Italian Grand Prix"],
                 },
-            ],
+            },
         },
     ]
     assert constructors_merged == [
         {
             "constructor": "Ferrari",
-            "racing_series": [
-                {
-                    "formula_one": {
-                        "engine": "Ferrari",
-                        "licensed_in": "Italy",
-                        "wins": 248,
-                        "status": "active",
-                    },
+            "racing_series": {
+                "formula_one": {
+                    "engine": "Ferrari",
+                    "licensed_in": "Italy",
+                    "wins": 248,
+                    "status": "active",
                 },
-            ],
+            },
         },
         {
             "constructor": {"text": "Indy Team", "url": "https://example.com/indy"},
-            "racing_series": [
-                {
-                    "AAA_national_championship": [],
-                    "formula_one": {
-                        "status": "former",
-                        "indianapolis_only": True,
-                    },
+            "racing_series": {
+                "AAA_national_championship": [],
+                "formula_one": {
+                    "status": "former",
+                    "indianapolis_only": True,
                 },
-            ],
+            },
         },
         {
             "constructor": "McLaren",
-            "racing_series": [
-                {
-                    "formula_one": {
-                        "wins": 2,
-                        "status": "active",
-                    },
+            "racing_series": {
+                "formula_one": {
+                    "wins": 2,
+                    "status": "active",
                 },
-            ],
+            },
         },
         {
             "constructor": {"text": "Team Old", "url": "https://example.com/old"},
-            "racing_series": [
-                {
-                    "formula_one": {
-                        "wins": 0,
-                        "status": "former",
-                    },
+            "racing_series": {
+                "formula_one": {
+                    "wins": 0,
+                    "status": "former",
                 },
-            ],
+            },
         },
     ]
 
@@ -397,7 +425,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     assert female_driver == {
         "driver": {"text": "Maria", "url": "https://example.com/maria"},
         "gender": "female",
-        "racing_series": [{"formula_one": {}}],
+        "racing_series": {"formula_one": {}},
     }
     female_driver = next(
         item for item in drivers_merged if item["driver"]["text"] == "Maria"
@@ -429,7 +457,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         if item["driver"]["url"] == "https://en.wikipedia.org/wiki/Giovanna_Amati"
     )
     assert amati_driver["race_entries"] == 3
-    assert amati_driver["race_starts"] == 0
+    assert "race_starts" not in amati_driver
     assert amati_driver["nationality"] == "Italy"
     assert "entries" not in amati_driver
     assert amati_driver["teams"] == [
@@ -465,77 +493,92 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     assert engines_merged == [
         {
             "manufacturer": "Ferrari",
-            "racing_series": [
-                {
-                    "formula_one": {
-                        "manufacturer_status": "active",
-                        "wins": 200,
-                    },
+            "racing_series": {
+                "formula_one": {
+                    "manufacturer_status": "active",
+                    "wins": 200,
                 },
-            ],
+            },
         },
         {
             "manufacturer": "Offy",
-            "racing_series": [
-                {
-                    "AAA_national_championship": [],
-                    "formula_one": {
-                        "status": "former",
-                        "indianapolis_only": True,
-                    },
+            "racing_series": {
+                "AAA_national_championship": [],
+                "formula_one": {
+                    "status": "former",
+                    "indianapolis_only": True,
                 },
-            ],
+            },
         },
     ]
 
     assert grands_prix_merged == [
         {
             "grand_prix": "Italian",
-            "racing_series": [
-                {
-                    "formula_one": {
-                        "race_status": "active",
-                        "total": 74,
-                    },
+            "racing_series": {
+                "formula_one": {
+                    "race_status": "active",
+                    "total": 74,
                 },
-            ],
+            },
         },
     ]
 
     ferrari_team = next(item for item in teams_merged if item["team"] == "Ferrari")
-    assert ferrari_team["racing_series"] == [
-        {
-            "formula_one": {
-                "liveries": ["Marlboro"],
-            },
+    assert ferrari_team["racing_series"] == {
+        "formula_one": {
+            "liveries": ["Marlboro"],
         },
-    ]
+    }
 
     rob_walker_team = next(
         item for item in teams_merged if item["team"] == "Rob Walker"
     )
-    assert rob_walker_team["racing_series"] == [
-        {
-            "formula_one": {
-                "seasons": ["1950"],
-                "privateer": True,
-            },
+    assert rob_walker_team["racing_series"] == {
+        "formula_one": {
+            "seasons": ["1950"],
+            "privateer": True,
         },
-    ]
+    }
 
 
     team_x = next(item for item in teams_merged if isinstance(item.get("team"), dict) and item["team"]["text"] == "Team X")
     assert team_x["team"] == {"text": "Team X", "url": "https://example.com/team-x"}
-    team_x = next(item for item in teams_merged if item["team"]["text"] == "Team X")
-    assert team_x["racing_series"] == [
-        {
-            "formula_one": {
-                "constructor": {"text": "Team X", "url": "https://example.com/team-x"},
-                "engine": {"text": "Engine X", "url": "https://example.com/engine-x"},
-                "wins": 1,
-            },
+    team_x = next(
+        item
+        for item in teams_merged
+        if isinstance(item.get("team"), dict) and item["team"]["text"] == "Team X"
+    )
+    assert team_x["racing_series"] == {
+        "formula_one": {
+            "constructor": {"text": "Team X", "url": "https://example.com/team-x"},
+            "engine": {"text": "Engine X", "url": "https://example.com/engine-x"},
+            "wins": 1,
         },
-    ]
+    }
+
+    cadillac_team = next(
+        item
+        for item in teams_merged
+        if isinstance(item.get("team"), dict)
+        and item["team"]["text"] == "Cadillac"
+    )
+    assert cadillac_team["racing_series"] == {
+        "formula_one": {
+            "constructor": {
+                "text": "Cadillac",
+                "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
+            },
+            "engine": [
+                {
+                    "text": "Ferrari",
+                    "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
+                },
+            ],
+            "wins": 0,
+            "liveries": [{"main_colours": ["White", "Black"]}],
+        },
+    }
 
     assert seasons_merged == [{"season": 1950}, {"season": 2005}, {"season": 2026}]
 
