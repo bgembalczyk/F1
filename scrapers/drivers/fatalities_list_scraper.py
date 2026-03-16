@@ -5,7 +5,6 @@ from models.records.factories import build_fatality_record
 from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.context import ColumnContext
@@ -96,10 +95,16 @@ class F1FatalitiesListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        F1FatalitiesListScraper,
-        "drivers/f1_driver_fatalities.json",
-        run_config=RunConfig(
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.helpers.runner import run_and_export
+
+    run_cli_entrypoint(
+        target=lambda *, run_config: run_and_export(
+            F1FatalitiesListScraper,
+            "drivers/f1_driver_fatalities.json",
+            run_config=run_config,
+        ),
+        base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),

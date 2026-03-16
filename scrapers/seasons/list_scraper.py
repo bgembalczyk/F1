@@ -1,6 +1,5 @@
 """DEPRECATED ENTRYPOINT: use scrapers.seasons.entrypoint.run_list_scraper."""
 
-import warnings
 from pathlib import Path
 
 from models.records.factories import build_season_summary_record
@@ -47,16 +46,17 @@ class SeasonsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
     from scrapers.seasons.entrypoint import run_list_scraper
 
-    warnings.warn(
-        "scrapers.seasons.list_scraper is deprecated; use scrapers.seasons.entrypoint.run_list_scraper.",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    run_list_scraper(
-        run_config=RunConfig(
+    run_cli_entrypoint(
+        target=run_list_scraper,
+        base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
+        ),
+        deprecation_message=(
+            "scrapers.seasons.list_scraper is deprecated; use "
+            "scrapers.seasons.entrypoint.run_list_scraper."
         ),
     )
