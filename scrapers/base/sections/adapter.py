@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+from dataclasses import asdict
 from dataclasses import dataclass
+
+from typing import Any
 
 from bs4 import BeautifulSoup
 
@@ -39,3 +42,13 @@ class SectionAdapter(WikipediaSectionByIdMixin):
                 continue
             parsed.append(entry.parser.parse(section_fragment))
         return parsed
+
+    def parse_section_dicts(
+        self,
+        *,
+        soup: BeautifulSoup,
+        domain: str,
+        entries: list[SectionAdapterEntry],
+    ) -> list[dict[str, Any]]:
+        return [asdict(result) for result in self.parse_sections(soup=soup, domain=domain, entries=entries)]
+
