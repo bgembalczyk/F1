@@ -3,8 +3,9 @@ from pathlib import Path
 
 from models.services.driver_service import DriverService
 from models.services.helpers import parse_int_values
-from models.services.helpers import parse_year_range
+from models.domain_utils.years import parse_year_range
 from models.services.helpers import split_delimited_text
+from models.services.rounds_service import RoundsService
 from models.services.season_service import SeasonService
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.helpers.runner import run_and_export
@@ -182,3 +183,23 @@ def test_parse_year_range_handles_present_and_short_end_year() -> None:
     assert parse_year_range("2005-present") == {"start": 2005, "end": None}
     assert parse_year_range("1999") == {"start": 1999, "end": 1999}
     assert parse_year_range("unknown") == {"start": None, "end": None}
+
+
+def test_season_service_handles_dash_variants_reversed_ranges_and_duplicates() -> None:
+    seasons = SeasonService.parse_seasons(
+        "2005—2003, 2001–03, 2003, 2004", current_year=2026
+    )
+
+    assert [season["year"] for season in seasons] == [2003, 2004, 2005, 2001, 2002]
+
+
+def test_parse_year_range_handles_edge_cases() -> None:
+    assert parse_year_range("2001–03") == {"start": 2001, "end": 2003}
+    assert parse_year_range("2007—2005") == {"start": 2005, "end": 2007}
+    assert parse_year_range("2005 onwards") == {"start": 2005, "end": None}
+    assert parse_year_range("2019-present") == {"start": 2019, "end": None}
+
+
+def test_rounds_service_handles_dash_variants_and_reversed_ranges() -> None:
+    rounds = RoundsService.parse_rounds("5—3; 2–4; round 4")
+    assert rounds == [2, 3, 4, 5]
