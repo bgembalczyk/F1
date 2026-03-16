@@ -17,6 +17,10 @@ from scrapers.seasons.parsers.regional_championship import (
     SeasonRegionalChampionshipParser,
 )
 from scrapers.seasons.parsers.results import SeasonResultsParser
+from scrapers.seasons.sections.calendar import SeasonCalendarSectionParser
+from scrapers.seasons.sections.results import SeasonResultsSectionParser
+from scrapers.seasons.sections.standings import SeasonConstructorsStandingsSectionParser
+from scrapers.seasons.sections.standings import SeasonDriversStandingsSectionParser
 from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
 from scrapers.seasons.parsers.standings import SeasonStandingsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
@@ -76,7 +80,10 @@ class SingleSeasonScraper(WikiScraper):
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         # Parse calendar first, as cancelled_rounds may need it for comparison
-        calendar_data = self._calendar_parser.parse(soup, self.season_year)
+        calendar_data = SeasonCalendarSectionParser(self._calendar_parser, self.season_year).parse(soup).records
+        results_data = SeasonResultsSectionParser(self._results_parser).parse(soup).records
+        drivers_standings = SeasonDriversStandingsSectionParser(self._standings_parser, self.season_year).parse(soup).records
+        constructors_standings = SeasonConstructorsStandingsSectionParser(self._standings_parser).parse(soup).records
 
         return [
             {
@@ -92,19 +99,14 @@ class SingleSeasonScraper(WikiScraper):
                     soup,
                     self.season_year,
                 ),
-                "results": self._results_parser.parse(soup),
+                "results": results_data,
                 "non_championship_races": self._non_championship_parser.parse(
                     soup,
                     self.season_year,
                 ),
                 "scoring_system": self._scoring_system_parser.parse(soup),
-                "drivers_standings": self._standings_parser.parse_drivers(
-                    soup,
-                    self.season_year,
-                ),
-                "constructors_standings": self._standings_parser.parse_constructors(
-                    soup,
-                ),
+                "drivers_standings": drivers_standings,
+                "constructors_standings": constructors_standings,
                 "jim_clark_trophy": self._jim_clark_trophy_parser.parse(
                     soup,
                     self.season_year,
