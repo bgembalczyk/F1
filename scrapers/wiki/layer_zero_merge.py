@@ -23,7 +23,7 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
         if not merged_records:
             continue
 
-        merged_path = domain_dir / "merged.json"
+        merged_path = domain_dir / f"{domain_dir.name}.json"
         merged_path.write_text(
             json.dumps(merged_records, ensure_ascii=False, indent=2),
             encoding="utf-8",

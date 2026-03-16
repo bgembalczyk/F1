@@ -34,12 +34,12 @@ def test_merge_layer_zero_raw_outputs_merges_all_domain_json_files(tmp_path: Pat
     merge_layer_zero_raw_outputs(base_wiki_dir)
 
     drivers_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "drivers" / "merged.json").read_text(
+        (base_wiki_dir / "layers" / "0_layer" / "drivers" / "drivers.json").read_text(
             encoding="utf-8",
         ),
     )
     rules_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "rules" / "merged.json").read_text(
+        (base_wiki_dir / "layers" / "0_layer" / "rules" / "rules.json").read_text(
             encoding="utf-8",
         ),
     )
