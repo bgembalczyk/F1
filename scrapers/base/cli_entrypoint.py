@@ -8,8 +8,22 @@ import inspect
 import warnings
 from collections.abc import Callable
 from collections.abc import Sequence
+from typing import Literal
 
 from scrapers.base.run_config import RunConfig
+
+CliMainProfile = Literal[
+    "list_scraper",
+    "complete_extractor",
+    "deprecated_entrypoint",
+]
+
+
+_PROFILE_DEFAULTS: dict[CliMainProfile, tuple[bool, bool]] = {
+    "list_scraper": (True, False),
+    "complete_extractor": (False, False),
+    "deprecated_entrypoint": (True, False),
+}
 
 
 def build_standard_parser(
@@ -71,6 +85,42 @@ def run_cli_entrypoint(
     _invoke_target(target=target, run_config=run_config)
 
 
+def build_cli_main(
+    *,
+    target: Callable[..., None],
+    base_config: RunConfig,
+    profile: CliMainProfile,
+    argv: Sequence[str] | None = None,
+    quality_report_default: bool | None = None,
+    error_report_default: bool | None = None,
+    deprecation_message: str | None = None,
+    deprecation_stacklevel: int = 2,
+) -> Callable[[], None]:
+    """Build reusable ``__main__`` launcher with standardized profile defaults."""
+    profile_quality_default, profile_error_default = _PROFILE_DEFAULTS[profile]
+    quality_default = (
+        profile_quality_default
+        if quality_report_default is None
+        else quality_report_default
+    )
+    error_default = (
+        profile_error_default if error_report_default is None else error_report_default
+    )
+
+    def _main() -> None:
+        run_cli_entrypoint(
+            target=target,
+            base_config=base_config,
+            argv=argv,
+            quality_report_default=quality_default,
+            error_report_default=error_default,
+            deprecation_message=deprecation_message,
+            deprecation_stacklevel=deprecation_stacklevel,
+        )
+
+    return _main
+
+
 def _invoke_target(*, target: Callable[..., None], run_config: RunConfig) -> None:
     try:
         signature = inspect.signature(target)
@@ -86,6 +136,8 @@ def _invoke_target(*, target: Callable[..., None], run_config: RunConfig) -> Non
 
 
 __all__ = [
+    "CliMainProfile",
+    "build_cli_main",
     "build_run_config",
     "build_standard_parser",
     "run_cli_entrypoint",

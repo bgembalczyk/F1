@@ -57,17 +57,18 @@ class GrandsPrixListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.cli_entrypoint import build_cli_main
     from scrapers.grands_prix.entrypoint import run_list_scraper
 
-    run_cli_entrypoint(
+    build_cli_main(
         target=run_list_scraper,
         base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
         ),
+        profile="deprecated_entrypoint",
         deprecation_message=(
             "scrapers.grands_prix.list_scraper is deprecated; use "
             "scrapers.grands_prix.entrypoint.run_list_scraper."
         ),
-    )
+    )()

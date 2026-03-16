@@ -78,11 +78,16 @@ class F1CompleteEngineManufacturerDataExtractor(CompositeDataExtractor):
 
 
 if __name__ == "__main__":
+    from scrapers.base.cli_entrypoint import build_cli_main
     from scrapers.base.helpers.runner import run_and_export
     from scrapers.base.run_config import RunConfig
 
-    run_and_export(
-        F1CompleteEngineManufacturerDataExtractor,
-        "engines/f1_engine_manufacturers_complete.json",
-        run_config=RunConfig(output_dir=Path("../../data/wiki")),
-    )
+    build_cli_main(
+        target=lambda *, run_config: run_and_export(
+            F1CompleteEngineManufacturerDataExtractor,
+            "engines/f1_engine_manufacturers_complete.json",
+            run_config=run_config,
+        ),
+        base_config=RunConfig(output_dir=Path("../../data/wiki")),
+        profile="complete_extractor",
+    )()

@@ -46,17 +46,18 @@ class SeasonsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.cli_entrypoint import build_cli_main
     from scrapers.seasons.entrypoint import run_list_scraper
 
-    run_cli_entrypoint(
+    build_cli_main(
         target=run_list_scraper,
         base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
         ),
+        profile="deprecated_entrypoint",
         deprecation_message=(
             "scrapers.seasons.list_scraper is deprecated; use "
             "scrapers.seasons.entrypoint.run_list_scraper."
         ),
-    )
+    )()
