@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 
 
@@ -18,6 +19,7 @@ CIRCUITS_FORMULA_ONE_FIELDS = {
     "grands_prix_held",
 }
 CONSTRUCTORS_FORMULA_ONE_FIELDS = {
+    "engine",
     "licensed_in",
     "based_in",
     "seasons",
@@ -164,6 +166,11 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
         _move_fields_to_formula_one(transformed, GRANDS_PRIX_FORMULA_ONE_FIELDS)
 
     if domain == "teams":
+        if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
+            transformed = {
+                "team": transformed.get("constructor"),
+                "racing_series": _build_racing_series({**transformed}),
+            }
         if source_name == "f1_sponsorship_liveries.json" and "liveries" in transformed:
             transformed["racing_series"] = _build_racing_series(
                 {"liveries": transformed.pop("liveries")},
@@ -221,6 +228,84 @@ def _iter_transformed_records(domain: str, source_name: str, payload: object) ->
     return [_transform_record(domain, source_name, payload)]
 
 
+def _driver_record_key(record: object) -> str | None:
+    if not isinstance(record, dict):
+        return None
+
+    driver_url = record.get("driver_url")
+    if isinstance(driver_url, str) and driver_url:
+        return driver_url
+
+    driver = record.get("driver")
+    if isinstance(driver, dict):
+        url = driver.get("url")
+        if isinstance(url, str) and url:
+            return url
+
+    return None
+
+
+def _merge_driver_values(existing: object, incoming: object) -> object:
+    if isinstance(existing, dict) and isinstance(incoming, dict):
+        merged = dict(existing)
+        for key, value in incoming.items():
+            if key in merged:
+                merged[key] = _merge_driver_values(merged[key], value)
+            else:
+                merged[key] = value
+        return merged
+
+    if isinstance(existing, list) and isinstance(incoming, list):
+        merged = list(existing)
+        seen = {json.dumps(item, sort_keys=True, ensure_ascii=False, default=str) for item in merged}
+        for item in incoming:
+            serialized = json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
+            if serialized in seen:
+                continue
+            seen.add(serialized)
+            merged.append(item)
+        return merged
+
+    if existing in (None, "", []):
+        return incoming
+
+    return existing
+
+
+def _merge_duplicate_drivers(records: list[object]) -> list[object]:
+    merged_records: list[object] = []
+    key_to_index: dict[str, int] = {}
+
+    for record in records:
+        key = _driver_record_key(record)
+        if key is None or not isinstance(record, dict):
+            merged_records.append(record)
+            continue
+
+        index = key_to_index.get(key)
+        if index is None:
+            key_to_index[key] = len(merged_records)
+            merged_records.append(record)
+            continue
+
+        existing = merged_records[index]
+        if isinstance(existing, dict):
+            merged_records[index] = _merge_driver_values(existing, record)
+
+    return merged_records
+
+
+def _season_sort_key(record: object) -> tuple[int, str]:
+    if not isinstance(record, dict):
+        return (1, "")
+
+    season = record.get("season")
+    if isinstance(season, int):
+        return (0, str(season).zfill(10))
+
+    return (1, "")
+
+
 def _driver_sort_key(record: object) -> str:
     if not isinstance(record, dict):
         return ""
@@ -261,7 +346,11 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
             continue
 
         if domain_dir.name == "drivers":
+            merged_records = _merge_duplicate_drivers(merged_records)
             merged_records = sorted(merged_records, key=_driver_sort_key)
+
+        if domain_dir.name == "seasons":
+            merged_records = sorted(merged_records, key=_season_sort_key)
 
         merged_path = domain_dir / f"{domain_dir.name}.json"
         merged_path.write_text(
