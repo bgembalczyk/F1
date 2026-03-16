@@ -31,6 +31,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             {
                 "constructor": "Ferrari",
                 "licensed_in": "Italy",
+                "engine": "Ferrari",
                 "wins": 248,
             },
         ],
@@ -84,13 +85,32 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         / "drivers"
         / "raw"
         / "female_drivers.json",
-        [{"driver": "Maria"}],
+        [{"driver": {"text": "Maria", "url": "https://example.com/maria"}}],
     )
     _write_json(
         base_wiki_dir / "layers" / "0_layer" / "drivers" / "raw" / "drivers.json",
         [
-            {"driver": "Max Verstappen"},
-            {"driver": "Lewis Hamilton"},
+            {"driver": {"text": "Max Verstappen", "url": "https://example.com/max"}},
+            {"driver": {"text": "Lewis Hamilton", "url": "https://example.com/lewis"}},
+            {
+                "driver": {"text": "Giovanna Amati", "url": "https://en.wikipedia.org/wiki/Giovanna_Amati"},
+                "race_entries": 3,
+            },
+        ],
+    )
+    _write_json(
+        base_wiki_dir / "layers" / "0_layer" / "drivers" / "raw" / "f1_women_drivers_who_entered_a_formula_one_race.json",
+        [
+            {
+                "driver": {"text": "Giovanna Amati", "url": "https://en.wikipedia.org/wiki/Giovanna_Amati"},
+                "entries": 3,
+                "teams": [{"text": "Brabham", "url": "https://en.wikipedia.org/wiki/Brabham"}],
+            },
+            {
+                "driver": {"text": "Bob Anderson", "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"},
+                "is_active": False,
+                "race_entries": 29,
+            },
         ],
     )
     _write_json(
@@ -102,13 +122,22 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         / "f1_driver_fatalities.json",
         [
             {
-                "driver": "X",
+                "driver": {"text": "X", "url": "https://example.com/x"},
                 "date": "2000-01-01",
                 "age": 28,
                 "event": "test",
                 "circuit": "Monza",
                 "car": "Car",
                 "session": "Practice",
+            },
+            {
+                "driver": {"text": "Bob Anderson", "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"},
+                "date": "1967-08-14",
+                "age": 36,
+                "event": "Test",
+                "circuit": "Silverstone",
+                "car": "Brabham BT11",
+                "session": "Test",
             },
         ],
     )
@@ -192,6 +221,16 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         [{"team": "Rob Walker", "seasons": ["1950"]}],
     )
     _write_json(
+        base_wiki_dir / "layers" / "0_layer" / "teams" / "raw" / "f1_constructors_2026.json",
+        [
+            {
+                "constructor": {"text": "Team X", "url": "https://example.com/team-x"},
+                "engine": {"text": "Engine X", "url": "https://example.com/engine-x"},
+                "wins": 1,
+            },
+        ],
+    )
+    _write_json(
         base_wiki_dir / "layers" / "0_layer" / "rules" / "raw" / "a.json",
         [{"rule": "X"}],
     )
@@ -208,6 +247,11 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         / "raw"
         / "f1_tyre_manufacturers_by_season.json",
         [{"seasons": [1950], "manufacturers": ["Pirelli"]}],
+    )
+
+    _write_json(
+        base_wiki_dir / "layers" / "0_layer" / "seasons" / "raw" / "a.json",
+        [{"season": 2026}, {"season": 1950}, {"season": 2005}],
     )
 
     merge_layer_zero_raw_outputs(base_wiki_dir)
@@ -249,6 +293,11 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             encoding="utf-8",
         ),
     )
+    seasons_merged = json.loads(
+        (base_wiki_dir / "layers" / "0_layer" / "seasons" / "seasons.json").read_text(
+            encoding="utf-8",
+        ),
+    )
     season_merged = json.loads(
         (base_wiki_dir / "layers" / "0_layer" / "season" / "season.json").read_text(
             encoding="utf-8",
@@ -275,6 +324,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             "racing_series": [
                 {
                     "formula_one": {
+                        "engine": "Ferrari",
                         "licensed_in": "Italy",
                         "wins": 248,
                         "status": "active",
@@ -318,15 +368,15 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         },
     ]
 
-    female_driver = next(item for item in drivers_merged if item["driver"] == "Maria")
+    female_driver = next(item for item in drivers_merged if item["driver"]["text"] == "Maria")
     assert female_driver["gender"] == "female"
 
-    ordered_driver_names = [item["driver"] for item in drivers_merged]
+    ordered_driver_names = [item["driver"]["text"] for item in drivers_merged]
     assert ordered_driver_names.index("Lewis Hamilton") < ordered_driver_names.index(
         "Max Verstappen",
     )
 
-    fatality_driver = next(item for item in drivers_merged if item["driver"] == "X")
+    fatality_driver = next(item for item in drivers_merged if item["driver"]["text"] == "X")
     assert fatality_driver["death"] == {
         "date": "2000-01-01",
         "age": 28,
@@ -337,6 +387,25 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             "session": "Practice",
         },
     }
+
+    amati_driver = next(
+        item
+        for item in drivers_merged
+        if item["driver"]["url"] == "https://en.wikipedia.org/wiki/Giovanna_Amati"
+    )
+    assert amati_driver["race_entries"] == 3
+    assert amati_driver["entries"] == 3
+    assert amati_driver["teams"] == [
+        {"text": "Brabham", "url": "https://en.wikipedia.org/wiki/Brabham"},
+    ]
+
+    bob_anderson = next(
+        item
+        for item in drivers_merged
+        if item["driver"]["url"] == "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"
+    )
+    assert bob_anderson["death"]["date"] == "1967-08-14"
+    assert bob_anderson["race_entries"] == 29
 
     world_race = next(item for item in races_merged if "grand_prix" in item)
     assert world_race["championship"] is True
@@ -415,6 +484,20 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             },
         },
     ]
+
+
+    team_x = next(item for item in teams_merged if item["team"]["text"] == "Team X")
+    assert team_x["racing_series"] == [
+        {
+            "formula_one": {
+                "constructor": {"text": "Team X", "url": "https://example.com/team-x"},
+                "engine": {"text": "Engine X", "url": "https://example.com/engine-x"},
+                "wins": 1,
+            },
+        },
+    ]
+
+    assert seasons_merged == [{"season": 1950}, {"season": 2005}, {"season": 2026}]
 
     assert season_merged == [{"season": 1950, "tyre_manufacturers": ["Pirelli"]}]
 
