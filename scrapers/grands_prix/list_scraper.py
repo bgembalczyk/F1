@@ -4,8 +4,6 @@ import warnings
 from pathlib import Path
 
 from models.records.factories import build_grands_prix_record
-from scrapers.base.helpers.config_factory import ScraperCommonConfig
-from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.options import ScraperOptions
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
@@ -27,6 +25,8 @@ class GrandsPrixListScraper(F1TableScraper):
     """
 
     default_validator = GrandsPrixRecordValidator()
+    options_domain = "grands_prix"
+    options_profile = "soft_seed"
 
     schema_columns = [
         column("Race title", "race_title", RaceTitleStatusColumn()),
@@ -54,16 +54,7 @@ class GrandsPrixListScraper(F1TableScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = build_table_config(
-            options,
-            config=ScraperCommonConfig(
-                include_urls=True,
-                normalize_empty_values=True,
-                validation_mode="soft",
-            ),
-        )
         super().__init__(options=options, config=config)
-
 
 if __name__ == "__main__":
     from scrapers.grands_prix.entrypoint import run_list_scraper
