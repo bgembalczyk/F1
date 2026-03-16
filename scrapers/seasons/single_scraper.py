@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
-from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.colin_chapman_trophy import ColinChapmanTrophyParser
@@ -19,13 +18,8 @@ from scrapers.seasons.parsers.regional_championship import (
     SeasonRegionalChampionshipParser,
 )
 from scrapers.seasons.parsers.results import SeasonResultsParser
+from scrapers.seasons.sections import season_section_entries
 from scrapers.seasons.sections.calendar import SeasonCalendarSectionParser
-from scrapers.seasons.sections.mid_season_changes import (
-    SeasonMidSeasonChangesSectionParser,
-)
-from scrapers.seasons.sections.regulation_changes import (
-    SeasonRegulationChangesSectionParser,
-)
 from scrapers.seasons.sections.results import SeasonResultsSectionParser
 from scrapers.seasons.sections.standings import SeasonConstructorsStandingsSectionParser
 from scrapers.seasons.sections.standings import SeasonDriversStandingsSectionParser
@@ -89,28 +83,18 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
         return super().fetch()
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        # Parse calendar first, as cancelled_rounds may need it for comparison
-        calendar_data = SeasonCalendarSectionParser(self._calendar_parser, self.season_year).parse(soup).records
-        results_data = SeasonResultsSectionParser(self._results_parser).parse(soup).records
-        drivers_standings = SeasonDriversStandingsSectionParser(self._standings_parser, self.season_year).parse(soup).records
-        constructors_standings = SeasonConstructorsStandingsSectionParser(self._standings_parser).parse(soup).records
-        text_sections = self.parse_sections(
+        sections = self.parse_section_dicts(
             soup=soup,
             domain="seasons",
-            entries=[
-                SectionAdapterEntry(
-                    section_id="Regulation_changes",
-                    aliases=("Rule_changes",),
-                    parser=SeasonRegulationChangesSectionParser(),
-                ),
-                SectionAdapterEntry(
-                    section_id="Mid-season_changes",
-                    aliases=("Driver_changes",),
-                    parser=SeasonMidSeasonChangesSectionParser(),
-                ),
-            ],
+            entries=season_section_entries(
+                calendar_parser=SeasonCalendarSectionParser(self._calendar_parser, self.season_year),
+                results_parser=SeasonResultsSectionParser(self._results_parser),
+                drivers_standings_parser=SeasonDriversStandingsSectionParser(self._standings_parser, self.season_year),
+                constructors_standings_parser=SeasonConstructorsStandingsSectionParser(self._standings_parser),
+            ),
         )
-        text_records = {result.section_id: result.records for result in text_sections}
+        section_records = {section["section_id"]: section["records"] for section in sections}
+        calendar_data = section_records.get("Calendar", [])
 
         return [
             {
@@ -126,14 +110,14 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
                     soup,
                     self.season_year,
                 ),
-                "results": results_data,
+                "results": section_records.get("Results", []),
                 "non_championship_races": self._non_championship_parser.parse(
                     soup,
                     self.season_year,
                 ),
                 "scoring_system": self._scoring_system_parser.parse(soup),
-                "drivers_standings": drivers_standings,
-                "constructors_standings": constructors_standings,
+                "drivers_standings": section_records.get("World_Drivers'_Championship_standings", []),
+                "constructors_standings": section_records.get("World_Constructors'_Championship_standings", []),
                 "jim_clark_trophy": self._jim_clark_trophy_parser.parse(
                     soup,
                     self.season_year,
@@ -152,8 +136,9 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
                     section_ids=["British_Formula_One_Championship"],
                     season_year=self.season_year,
                 ),
-                "regulation_changes": text_records.get("Regulation_changes", []),
-                "mid_season_changes": text_records.get("Mid-season_changes", []),
+                "regulation_changes": section_records.get("Regulation_changes", []),
+                "mid_season_changes": section_records.get("Mid-season_changes", []),
+                "sections": sections,
             },
         ]
 

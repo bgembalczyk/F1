@@ -103,8 +103,10 @@ def test_driver_sections_include_non_championship_alias() -> None:
         "html.parser",
     )
 
-    records = scraper._parse_results_sections(soup)  # noqa: SLF001
+    result = scraper._parse_soup(soup)[0]  # noqa: SLF001
 
+    assert result["sections"]
+    records = result["career_results"]
     assert records
     assert all(record["section_id"] == "Non-championship" for record in records)
 
@@ -127,6 +129,10 @@ def test_single_season_separates_text_sections() -> None:
 
     assert result["regulation_changes"] == [{"text": "Point system update"}]
     assert result["mid_season_changes"] == [{"text": "Driver transfer"}]
+    assert {section["section_id"] for section in result["sections"]} >= {
+        "Regulation_changes",
+        "Mid-season_changes",
+    }
 
 
 def test_grand_prix_by_year_uses_domain_critical_alias_fallback() -> None:
