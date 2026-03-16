@@ -74,14 +74,15 @@ class F1CompleteCircuitDataExtractor(CompositeDataExtractor):
 
 
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.cli_entrypoint import build_cli_main
     from scrapers.base.run_config import RunConfig
     from scrapers.circuits.helpers.export import export_complete_circuits
 
-    run_cli_entrypoint(
+    build_cli_main(
         target=lambda: export_complete_circuits(
             output_dir=Path("../../data/wiki/circuits/complete_circuits"),
             include_urls=True,
         ),
         base_config=RunConfig(),
-    )
+        profile="complete_extractor",
+    )()

@@ -69,15 +69,16 @@ class F1CompleteGrandPrixDataExtractor(CompositeDataExtractor):
 
 
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.cli_entrypoint import build_cli_main
     from scrapers.base.helpers.runner import run_and_export
     from scrapers.base.run_config import RunConfig
 
-    run_cli_entrypoint(
+    build_cli_main(
         target=lambda *, run_config: run_and_export(
             F1CompleteGrandPrixDataExtractor,
             "grands_prix/f1_grands_prix_extended.json",
             run_config=run_config,
         ),
         base_config=RunConfig(output_dir=Path("../../data/wiki")),
-    )
+        profile="complete_extractor",
+    )()

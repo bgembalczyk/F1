@@ -59,18 +59,19 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.cli_entrypoint import build_cli_main
     from scrapers.constructors.entrypoint import run_list_scraper
 
-    run_cli_entrypoint(
+    build_cli_main(
         target=run_list_scraper,
         base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),
         ),
+        profile="deprecated_entrypoint",
         deprecation_message=(
             "scrapers.constructors.current_constructors_list is deprecated as "
             "an entrypoint; use scrapers.constructors.entrypoint.run_list_scraper."
         ),
-    )
+    )()
