@@ -15,23 +15,25 @@ class FatalityRecordFactory(BaseRecordFactory):
         self.car_factory = CarRecordFactory(self.normalizer)
 
     def build(self, record: Mapping[str, Any]) -> FatalityRecord:
-        payload = dict(record)
-        self.normalize_link_fields(payload, ["driver", "circuit"])
-        self.normalize_int_fields(payload, ["age"])
-
-        event = payload.get("event")
-        payload["event"] = (
-            self.event_factory.build(event) if isinstance(event, Mapping) else None
+        payload = self.apply_spec(
+            record,
+            {
+                "field_normalizers": {
+                    "session": lambda value, _field: self.normalizer.normalize_string(value),
+                },
+                "list_field_normalizers": {
+                    "link": ["driver", "circuit"],
+                    "int": ["age"],
+                },
+                "nested_factories": {
+                    "event": self.event_factory,
+                    "car": self.car_factory,
+                },
+            },
         )
 
         car = payload.get("car")
-        payload["car"] = (
-            self.car_factory.build(car)
-            if isinstance(car, Mapping)
-            else self.normalizer.normalize_link(car, "car")
-            if car
-            else None
-        )
+        if not isinstance(car, Mapping) and car:
+            payload["car"] = self.normalizer.normalize_link(car, "car")
 
-        self.normalize_string_field(payload, "session")
         return cast("FatalityRecord", payload)
