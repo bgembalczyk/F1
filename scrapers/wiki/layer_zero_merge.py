@@ -3,6 +3,9 @@ from pathlib import Path
 
 
 FORMULA_ONE_SERIES = ["Formula One"]
+CHASSIS_CONSTRUCTOR_DOMAINS = {"constructors", "chassis_constructors"}
+FORMER_CONSTRUCTORS_SOURCE = "f1_former_constructors.json"
+INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE = "f1_indianapolis_only_constructors.json"
 
 
 def _extract_red_flag(record: dict[str, object]) -> dict[str, object]:
@@ -22,9 +25,42 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
     if domain == "circuits":
         transformed["series"] = FORMULA_ONE_SERIES.copy()
 
-    if domain == "constructors":
-        transformed["status"] = "active"
-        transformed["series"] = FORMULA_ONE_SERIES.copy()
+    if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
+        if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
+            constructor_text = transformed.get("constructor")
+            constructor_url = transformed.get("constructor_url")
+            transformed = {
+                "constructor": {
+                    "text": constructor_text,
+                    "url": constructor_url,
+                },
+                "racing_series": {
+                    "AAA_national_championship": [],
+                    "formula_one": [
+                        {
+                            "status": "former",
+                            "indianapolis_only": True,
+                        },
+                    ],
+                },
+            }
+        elif source_name == FORMER_CONSTRUCTORS_SOURCE:
+            constructor = transformed.get("constructor")
+            formula_one = {
+                key: value
+                for key, value in transformed.items()
+                if key != "constructor"
+            }
+            formula_one["status"] = "former"
+            transformed = {
+                "constructor": constructor,
+                "racing_series": {
+                    "formula_one": [formula_one],
+                },
+            }
+        else:
+            transformed["status"] = "active"
+            transformed["series"] = FORMULA_ONE_SERIES.copy()
 
     if domain == "drivers":
         if source_name == "female_drivers.json":
