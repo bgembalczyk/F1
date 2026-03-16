@@ -1,0 +1,8 @@
+{
+  "step_id": "layer0_circuits",
+  "input_source": "wikipedia",
+  "parser": "CircuitsListScraper",
+  "output_path": "data/wiki/circuits/f1_circuits.json",
+  "timestamp": "2026-01-01T00:00:00+00:00",
+  "schema_version": "1.0"
+}
