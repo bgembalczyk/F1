@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from tests._section_parser_fixture_pattern import SNAPSHOT_CASES_BY_DOMAIN
 from tests.test_section_parser_contract import CONTRACT_CASES
 from tests.test_section_parser_regressions import ALIAS_DOMAINS
@@ -20,3 +22,14 @@ def test_ci_meta_requires_section_parse_result_contract_suite() -> None:
 
 def test_ci_meta_requires_alias_coverage_for_new_parser_domains() -> None:
     assert {"constructors", "circuits", "seasons"}.issubset(set(ALIAS_DOMAINS))
+
+
+def test_ci_meta_requires_sections_boundary_regression_suite() -> None:
+    boundary_test_file = Path("tests/test_section_architecture_boundaries.py")
+    source = boundary_test_file.read_text(encoding="utf-8")
+
+    assert "test_sections_modules_do_not_import_single_scraper" in source
+    assert (
+        "test_single_scraper_can_depend_on_sections_without_reverse_dependency"
+        in source
+    )
