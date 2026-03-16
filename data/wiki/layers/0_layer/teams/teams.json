@@ -10074,7 +10074,44 @@
         "formula_one": {
           "liveries": [
             {
-              "season": null,
+              "season": [
+                {
+                  "year": 1951,
+                  "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1952,
+                  "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1953,
+                  "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1954,
+                  "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1955,
+                  "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1956,
+                  "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1957,
+                  "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1958,
+                  "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1959,
+                  "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+                }
+              ],
               "main_colours": [
                 "Dark Metallic Gray-Green"
               ],
@@ -10084,7 +10121,28 @@
               "other_informations_including_non-tobacco_alcohol_race_changes": null
             },
             {
-              "season": null,
+              "season": [
+                {
+                  "year": 1960,
+                  "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1961,
+                  "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1962,
+                  "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1963,
+                  "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1964,
+                  "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+                }
+              ],
               "main_colours": [
                 "Black"
               ],
@@ -10096,7 +10154,36 @@
               "other_informations_including_non-tobacco_alcohol_race_changes": null
             },
             {
-              "season": null,
+              "season": [
+                {
+                  "year": 1964,
+                  "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1965,
+                  "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1966,
+                  "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1967,
+                  "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1968,
+                  "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1969,
+                  "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+                },
+                {
+                  "year": 1970,
+                  "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+                }
+              ],
               "main_colours": [
                 "Black"
               ],
