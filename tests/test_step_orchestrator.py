@@ -26,6 +26,26 @@ def test_section_source_adapter_fallbacks_to_raw(tmp_path: Path) -> None:
     assert records == [{"driver": {"url": "x"}}]
 
 
+def test_section_source_adapter_fallbacks_to_legacy_wiki(tmp_path: Path) -> None:
+    legacy_path = tmp_path / "data" / "wiki" / "drivers" / "drivers.json"
+    legacy_path.parent.mkdir(parents=True, exist_ok=True)
+    legacy_path.write_text(json.dumps([{"driver": {"url": "legacy"}}]), encoding="utf-8")
+
+    adapter = SectionSourceAdapter(base_dir=tmp_path / "data")
+    step = StepDeclaration(
+        step_id=1,
+        layer="layer1",
+        input_source="drivers",
+        parser=lambda rows: rows,
+        output_target="checkpoints",
+    )
+
+    records, source_path = adapter.resolve(step, "drivers")
+
+    assert source_path == legacy_path
+    assert records == [{"driver": {"url": "legacy"}}]
+
+
 def test_step_orchestrator_writes_standardized_checkpoint(tmp_path: Path) -> None:
     source = tmp_path / "data" / "checkpoints" / "step_0_layer0_drivers.json"
     source.parent.mkdir(parents=True, exist_ok=True)
