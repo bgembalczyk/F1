@@ -6,7 +6,6 @@ from pathlib import Path
 import warnings
 
 from models.records.factories import build_constructor_record
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -57,29 +56,17 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
     )
 
     def _parse_soup(self, soup):
-        section_id = self.config.section_id
-        if not section_id:
-            return super()._parse_soup(soup)
-
-        section_fragment = WikipediaSectionByIdMixin.extract_section_by_id(
+        return self.parse_section_or_fallback(
             soup,
-            section_id,
             domain="constructors",
-        )
-        if section_fragment is None:
-            msg = f"Nie znaleziono sekcji o id={section_id!r}"
-            raise RuntimeError(msg)
-
-        parser = ConstructorsListSectionParser(
-            config=self.config,
             section_label="Current constructors",
-            include_urls=self.include_urls,
-            normalize_empty_values=self.normalize_empty_values,
+            parser_factory=lambda: ConstructorsListSectionParser(
+                config=self.config,
+                section_label="Current constructors",
+                include_urls=self.include_urls,
+                normalize_empty_values=self.normalize_empty_values,
+            ),
         )
-        try:
-            return parser.parse(section_fragment).records
-        except RuntimeError:
-            return super()._parse_soup(soup)
 
 
 if __name__ == "__main__":
