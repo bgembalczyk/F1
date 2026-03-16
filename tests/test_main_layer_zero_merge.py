@@ -98,6 +98,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
                     "url": "https://en.wikipedia.org/wiki/Giovanna_Amati",
                 },
                 "race_entries": 3,
+                "nationality": "Italy",
             },
         ],
     )
@@ -357,6 +358,18 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             ],
         },
         {
+            "constructor": {"text": "Indy Team", "url": "https://example.com/indy"},
+            "racing_series": [
+                {
+                    "AAA_national_championship": [],
+                    "formula_one": {
+                        "status": "former",
+                        "indianapolis_only": True,
+                    },
+                },
+            ],
+        },
+        {
             "constructor": "McLaren",
             "racing_series": [
                 {
@@ -378,20 +391,14 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
                 },
             ],
         },
-        {
-            "constructor": {"text": "Indy Team", "url": "https://example.com/indy"},
-            "racing_series": [
-                {
-                    "AAA_national_championship": [],
-                    "formula_one": {
-                        "status": "former",
-                        "indianapolis_only": True,
-                    },
-                },
-            ],
-        },
     ]
 
+    female_driver = next(item for item in drivers_merged if item["driver"]["text"] == "Maria")
+    assert female_driver == {
+        "driver": {"text": "Maria", "url": "https://example.com/maria"},
+        "gender": "female",
+        "racing_series": [{"formula_one": {}}],
+    }
     female_driver = next(
         item for item in drivers_merged if item["driver"]["text"] == "Maria"
     )
@@ -422,7 +429,9 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         if item["driver"]["url"] == "https://en.wikipedia.org/wiki/Giovanna_Amati"
     )
     assert amati_driver["race_entries"] == 3
-    assert amati_driver["entries"] == 3
+    assert amati_driver["race_starts"] == 0
+    assert amati_driver["nationality"] == "Italy"
+    assert "entries" not in amati_driver
     assert amati_driver["teams"] == [
         {"text": "Brabham", "url": "https://en.wikipedia.org/wiki/Brabham"},
     ]
@@ -514,6 +523,9 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         },
     ]
 
+
+    team_x = next(item for item in teams_merged if isinstance(item.get("team"), dict) and item["team"]["text"] == "Team X")
+    assert team_x["team"] == {"text": "Team X", "url": "https://example.com/team-x"}
     team_x = next(item for item in teams_merged if item["team"]["text"] == "Team X")
     assert team_x["racing_series"] == [
         {

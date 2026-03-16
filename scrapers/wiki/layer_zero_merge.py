@@ -73,6 +73,27 @@ def _move_fields_to_formula_one(
     transformed["racing_series"] = _build_racing_series(formula_one)
 
 
+def _link_text(value: object) -> str:
+    if isinstance(value, dict):
+        return str(value.get("text", ""))
+    return str(value or "")
+
+
+def _normalize_driver_series_stats(formula_one: dict[str, object]) -> dict[str, object]:
+    normalized = dict(formula_one)
+    if "race_entries" not in normalized and "entries" in normalized:
+        normalized["race_entries"] = normalized.pop("entries")
+    else:
+        normalized.pop("entries", None)
+
+    if "race_starts" not in normalized and "starts" in normalized:
+        normalized["race_starts"] = normalized.pop("starts")
+    else:
+        normalized.pop("starts", None)
+
+    return normalized
+
+
 def _extract_red_flag(record: dict[str, object]) -> dict[str, object]:
     return {
         key: value
@@ -133,7 +154,14 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
                 "racing_series": _build_racing_series(formula_one),
             }
         else:
-            _move_fields_to_formula_one(transformed, CONSTRUCTORS_FORMULA_ONE_FIELDS)
+            constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
+            if domain == "constructors" and re.fullmatch(
+                r"f1_constructors_\d{4}\.json",
+                source_name,
+            ):
+                constructor_fields.discard("engine")
+
+            _move_fields_to_formula_one(transformed, constructor_fields)
             if "racing_series" not in transformed:
                 transformed["status"] = "active"
                 transformed["series"] = FORMULA_ONE_SERIES.copy()
@@ -184,8 +212,25 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
             transformed["racing_series"] = _build_racing_series(formula_one)
 
     if domain == "drivers":
+        if source_name == "f1_drivers.json":
+            driver = transformed.pop("driver", None)
+            nationality = transformed.pop("nationality", None)
+            formula_one = _normalize_driver_series_stats(transformed)
+            transformed = {
+                "driver": driver,
+                "nationality": nationality,
+                "racing_series": _build_racing_series(formula_one),
+            }
+
         if source_name == "female_drivers.json":
-            transformed["gender"] = "female"
+            driver = transformed.pop("driver", None)
+            formula_one = _normalize_driver_series_stats(transformed)
+            transformed = {
+                "driver": driver,
+                "gender": "female",
+                "racing_series": _build_racing_series(formula_one),
+            }
+
         if source_name == "f1_driver_fatalities.json":
             death_fields = {
                 key: transformed.pop(key)
@@ -250,8 +295,15 @@ def _driver_record_key(record: object) -> str | None:
 
 def _merge_driver_values(existing: object, incoming: object) -> object:
     if isinstance(existing, dict) and isinstance(incoming, dict):
+        if "race_entries" not in incoming and "entries" in incoming:
+            incoming = {**incoming, "race_entries": incoming["entries"]}
+        if "race_starts" not in incoming and "starts" in incoming:
+            incoming = {**incoming, "race_starts": incoming["starts"]}
+
         merged = dict(existing)
         for key, value in incoming.items():
+            if key in {"entries", "starts"}:
+                continue
             if key in merged:
                 merged[key] = _merge_driver_values(merged[key], value)
             else:
@@ -333,6 +385,18 @@ def _driver_sort_key(record: object) -> str:
     return name_parts[1].strip().casefold()
 
 
+def _constructor_sort_key(record: object) -> str:
+    if not isinstance(record, dict):
+        return ""
+    return _link_text(record.get("constructor")).casefold()
+
+
+def _team_sort_key(record: object) -> str:
+    if not isinstance(record, dict):
+        return ""
+    return _link_text(record.get("team")).casefold()
+
+
 def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
     layer_zero_dir = base_wiki_dir / "layers" / "0_layer"
     if not layer_zero_dir.exists():
@@ -359,6 +423,12 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
         if domain_dir.name == "drivers":
             merged_records = _merge_duplicate_drivers(merged_records)
             merged_records = sorted(merged_records, key=_driver_sort_key)
+
+        if domain_dir.name in CHASSIS_CONSTRUCTOR_DOMAINS:
+            merged_records = sorted(merged_records, key=_constructor_sort_key)
+
+        if domain_dir.name == "teams":
+            merged_records = sorted(merged_records, key=_team_sort_key)
 
         if domain_dir.name == "seasons":
             merged_records = sorted(merged_records, key=_season_sort_key)
