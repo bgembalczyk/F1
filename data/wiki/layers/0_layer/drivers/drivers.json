@@ -22,7 +22,28 @@
       "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles",
       "formula_category": "F1"
     },
-    "session": "Test"
+    "session": "Test",
+    "fatality": {
+      "date": "1952-06-18",
+      "age": 29,
+      "event": {
+        "event": {
+          "text": "Test",
+          "url": null
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "MIRA",
+        "url": "https://en.wikipedia.org/wiki/MIRA_Ltd."
+      },
+      "car": {
+        "text": "ERA",
+        "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles",
+        "formula_category": "F1"
+      },
+      "session": "Test"
+    }
   },
   {
     "driver": {
@@ -47,7 +68,28 @@
       "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1953-05-15",
+      "age": 50,
+      "event": {
+        "event": {
+          "text": "Indianapolis 500",
+          "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Indianapolis Motor Speedway",
+        "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+      },
+      "car": {
+        "text": "Kurtis Kraft",
+        "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -72,7 +114,28 @@
       "url": "https://en.wikipedia.org/wiki/Ferrari_Tipo_500",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1953-09-18",
+      "age": 26,
+      "event": {
+        "event": {
+          "text": "Modena Grand Prix",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Aerautodromo di Modena",
+        "url": "https://en.wikipedia.org/wiki/Aerautodromo_di_Modena"
+      },
+      "car": {
+        "text": "Ferrari Tipo 500",
+        "url": "https://en.wikipedia.org/wiki/Ferrari_Tipo_500",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -97,7 +160,28 @@
       "url": "https://en.wikipedia.org/wiki/Maserati_250F",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1954-07-31",
+      "age": 30,
+      "event": {
+        "event": {
+          "text": "German Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1954_German_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Nürburgring",
+        "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+      },
+      "car": {
+        "text": "Maserati 250F",
+        "url": "https://en.wikipedia.org/wiki/Maserati_250F",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -122,7 +206,28 @@
       "url": "https://en.wikipedia.org/wiki/Maserati_4CLT",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1955-04-11",
+      "age": 26,
+      "event": {
+        "event": {
+          "text": "Pau Grand Prix",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Circuit de Pau-Ville",
+        "url": "https://en.wikipedia.org/wiki/Pau_Grand_Prix"
+      },
+      "car": {
+        "text": "Maserati 4CLT",
+        "url": "https://en.wikipedia.org/wiki/Maserati_4CLT",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -147,7 +252,28 @@
       "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1955-05-16",
+      "age": 33,
+      "event": {
+        "event": {
+          "text": "Indianapolis 500",
+          "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Indianapolis Motor Speedway",
+        "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+      },
+      "car": {
+        "text": "Kurtis Kraft",
+        "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -172,7 +298,28 @@
       "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1955-05-30",
+      "age": 36,
+      "event": {
+        "event": {
+          "text": "Indianapolis 500",
+          "url": "https://en.wikipedia.org/wiki/1955_Indianapolis_500"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Indianapolis Motor Speedway",
+        "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+      },
+      "car": {
+        "text": "Kurtis Kraft",
+        "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -197,7 +344,28 @@
       "url": "https://en.wikipedia.org/wiki/Ferrari_801",
       "formula_category": "F1"
     },
-    "session": "Test"
+    "session": "Test",
+    "fatality": {
+      "date": "1957-03-14",
+      "age": 26,
+      "event": {
+        "event": {
+          "text": "Test",
+          "url": null
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Aerautodromo di Modena",
+        "url": "https://en.wikipedia.org/wiki/Aerautodromo_di_Modena"
+      },
+      "car": {
+        "text": "Ferrari 801",
+        "url": "https://en.wikipedia.org/wiki/Ferrari_801",
+        "formula_category": "F1"
+      },
+      "session": "Test"
+    }
   },
   {
     "driver": {
@@ -222,7 +390,28 @@
       "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1957-05-15",
+      "age": 36,
+      "event": {
+        "event": {
+          "text": "Indianapolis 500",
+          "url": "https://en.wikipedia.org/wiki/1957_Indianapolis_500"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Indianapolis Motor Speedway",
+        "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+      },
+      "car": {
+        "text": "Kurtis Kraft",
+        "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -247,7 +436,28 @@
       "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1958-05-30",
+      "age": 29,
+      "event": {
+        "event": {
+          "text": "Indianapolis 500",
+          "url": "https://en.wikipedia.org/wiki/1958_Indianapolis_500"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Indianapolis Motor Speedway",
+        "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+      },
+      "car": {
+        "text": "Kurtis Kraft",
+        "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -272,7 +482,28 @@
       "url": "https://en.wikipedia.org/wiki/Ferrari_246_F1",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1958-07-06",
+      "age": 33,
+      "event": {
+        "event": {
+          "text": "French Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1958_French_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit de Reims-Gueux",
+        "url": "https://en.wikipedia.org/wiki/Reims-Gueux"
+      },
+      "car": {
+        "text": "Ferrari 246 F1",
+        "url": "https://en.wikipedia.org/wiki/Ferrari_246_F1",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -297,7 +528,28 @@
       "url": "https://en.wikipedia.org/wiki/Ferrari_246_F1",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1958-08-03",
+      "age": 26,
+      "event": {
+        "event": {
+          "text": "German Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1958_German_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Nürburgring",
+        "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+      },
+      "car": {
+        "text": "Ferrari 246 F1",
+        "url": "https://en.wikipedia.org/wiki/Ferrari_246_F1",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -322,7 +574,28 @@
       "url": "https://en.wikipedia.org/wiki/Vanwall",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1958-10-19",
+      "age": 28,
+      "event": {
+        "event": {
+          "text": "Moroccan Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1958_Moroccan_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit d'Ain-Diab",
+        "url": "https://en.wikipedia.org/wiki/Ain-Diab_Circuit"
+      },
+      "car": {
+        "text": "Vanwall",
+        "url": "https://en.wikipedia.org/wiki/Vanwall",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -347,7 +620,28 @@
       "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1959-05-02",
+      "age": 26,
+      "event": {
+        "event": {
+          "text": "Indianapolis 500",
+          "url": "https://en.wikipedia.org/wiki/1959_Indianapolis_500"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Indianapolis Motor Speedway",
+        "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+      },
+      "car": {
+        "text": "Kuzma",
+        "url": "https://en.wikipedia.org/wiki/Kuzma_(constructor)",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -372,7 +666,28 @@
       "url": null,
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1959-05-19",
+      "age": 32,
+      "event": {
+        "event": {
+          "text": "Indianapolis 500",
+          "url": "https://en.wikipedia.org/wiki/1959_Indianapolis_500"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Indianapolis Motor Speedway",
+        "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+      },
+      "car": {
+        "text": "Cornis",
+        "url": null,
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -397,7 +712,28 @@
       "url": "https://en.wikipedia.org/wiki/Cooper_T51",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1960-05-13",
+      "age": 38,
+      "event": {
+        "event": {
+          "text": "BRDC International Trophy",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Silverstone Circuit",
+        "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+      },
+      "car": {
+        "text": "Cooper T51",
+        "url": "https://en.wikipedia.org/wiki/Cooper_T51",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -422,7 +758,28 @@
       "url": "https://en.wikipedia.org/wiki/Cooper_T51",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1960-06-19",
+      "age": 22,
+      "event": {
+        "event": {
+          "text": "Belgian Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1960_Belgian_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit de Spa-Francorchamps",
+        "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+      },
+      "car": {
+        "text": "Cooper T51",
+        "url": "https://en.wikipedia.org/wiki/Cooper_T51",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -447,7 +804,28 @@
       "url": "https://en.wikipedia.org/wiki/Lotus_18",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1960-06-19",
+      "age": 26,
+      "event": {
+        "event": {
+          "text": "Belgian Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1960_Belgian_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit de Spa-Francorchamps",
+        "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"
+      },
+      "car": {
+        "text": "Lotus 18",
+        "url": "https://en.wikipedia.org/wiki/Lotus_18",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -472,7 +850,28 @@
       "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1961-06-01",
+      "age": 24,
+      "event": {
+        "event": {
+          "text": "Silver City Trophy",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Brands Hatch",
+        "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
+      },
+      "car": {
+        "text": "Cooper",
+        "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -497,7 +896,28 @@
       "url": "https://en.wikipedia.org/wiki/Cooper_T51",
       "formula_category": "F1"
     },
-    "session": "Test"
+    "session": "Test",
+    "fatality": {
+      "date": "1961-06-15",
+      "age": 38,
+      "event": {
+        "event": {
+          "text": "Test",
+          "url": null
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Aerautodromo di Modena",
+        "url": "https://en.wikipedia.org/wiki/Aerautodromo_di_Modena"
+      },
+      "car": {
+        "text": "Cooper T51",
+        "url": "https://en.wikipedia.org/wiki/Cooper_T51",
+        "formula_category": "F1"
+      },
+      "session": "Test"
+    }
   },
   {
     "driver": {
@@ -522,7 +942,28 @@
       "url": "https://en.wikipedia.org/wiki/Ferrari_156_F1",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1961-09-10",
+      "age": 33,
+      "event": {
+        "event": {
+          "text": "Italian Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1961_Italian_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Autodromo Nazionale di Monza",
+        "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza"
+      },
+      "car": {
+        "text": "Ferrari 156 F1",
+        "url": "https://en.wikipedia.org/wiki/Ferrari_156_F1",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -547,7 +988,28 @@
       "url": "https://en.wikipedia.org/wiki/Lotus_24",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1962-11-01",
+      "age": 20,
+      "event": {
+        "event": {
+          "text": "Mexican Grand Prix",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Autódromo Magdalena Mixiuhca",
+        "url": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez"
+      },
+      "car": {
+        "text": "Lotus 24",
+        "url": "https://en.wikipedia.org/wiki/Lotus_24",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -572,7 +1034,28 @@
       "url": "https://en.wikipedia.org/wiki/Lotus_24",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1962-12-21",
+      "age": 25,
+      "event": {
+        "event": {
+          "text": "Natal Grand Prix",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Westmead Circuit",
+        "url": null
+      },
+      "car": {
+        "text": "Lotus 24",
+        "url": "https://en.wikipedia.org/wiki/Lotus_24",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -597,7 +1080,28 @@
       "url": "https://en.wikipedia.org/wiki/Porsche_718",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1964-08-01",
+      "age": 30,
+      "event": {
+        "event": {
+          "text": "German Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1964_German_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Nürburgring",
+        "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+      },
+      "car": {
+        "text": "Porsche 718",
+        "url": "https://en.wikipedia.org/wiki/Porsche_718",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -622,7 +1126,28 @@
       "url": "https://en.wikipedia.org/wiki/Brabham_BT11",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1966-08-07",
+      "age": 33,
+      "event": {
+        "event": {
+          "text": "German Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1966_German_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Nürburgring",
+        "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+      },
+      "car": {
+        "text": "Brabham BT11",
+        "url": "https://en.wikipedia.org/wiki/Brabham_BT11",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -647,7 +1172,28 @@
       "url": "https://en.wikipedia.org/wiki/Ferrari_312",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1967-05-07",
+      "age": 31,
+      "event": {
+        "event": {
+          "text": "Monaco Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1967_Monaco_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit de Monaco",
+        "url": "https://en.wikipedia.org/wiki/Circuit_de_Monaco"
+      },
+      "car": {
+        "text": "Ferrari 312",
+        "url": "https://en.wikipedia.org/wiki/Ferrari_312",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -672,7 +1218,28 @@
       "url": "https://en.wikipedia.org/wiki/Brabham_BT11",
       "formula_category": "F1"
     },
-    "session": "Test"
+    "session": "Test",
+    "fatality": {
+      "date": "1967-08-14",
+      "age": 36,
+      "event": {
+        "event": {
+          "text": "Test",
+          "url": null
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Silverstone Circuit",
+        "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+      },
+      "car": {
+        "text": "Brabham BT11",
+        "url": "https://en.wikipedia.org/wiki/Brabham_BT11",
+        "formula_category": "F1"
+      },
+      "session": "Test"
+    }
   },
   {
     "driver": {
@@ -697,7 +1264,28 @@
       "url": "https://en.wikipedia.org/wiki/Honda_RA302",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1968-07-07",
+      "age": 40,
+      "event": {
+        "event": {
+          "text": "French Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit de Rouen-les-Essarts",
+        "url": "https://en.wikipedia.org/wiki/Rouen-Les-Essarts"
+      },
+      "car": {
+        "text": "Honda RA302",
+        "url": "https://en.wikipedia.org/wiki/Honda_RA302",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -722,7 +1310,28 @@
       "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One",
       "formula_category": "F2"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1969-08-01",
+      "age": 33,
+      "event": {
+        "event": {
+          "text": "German Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1969_German_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Nürburgring",
+        "url": "https://en.wikipedia.org/wiki/N%C3%BCrburgring"
+      },
+      "car": {
+        "text": "BMW 269",
+        "url": "https://en.wikipedia.org/wiki/BMW_in_Formula_One",
+        "formula_category": "F2"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -747,7 +1356,28 @@
       "url": "https://en.wikipedia.org/wiki/Cooper_T86",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1970-05-25",
+      "age": 37,
+      "event": {
+        "event": {
+          "text": "Nottingham Sports Car Club meeting",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Silverstone Circuit",
+        "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+      },
+      "car": {
+        "text": "Cooper T86B",
+        "url": "https://en.wikipedia.org/wiki/Cooper_T86",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -772,7 +1402,28 @@
       "url": "https://en.wikipedia.org/wiki/De_Tomaso_505/38",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1970-06-21",
+      "age": 28,
+      "event": {
+        "event": {
+          "text": "Dutch Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1970_Dutch_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit Park Zandvoort",
+        "url": "https://en.wikipedia.org/wiki/Circuit_Park_Zandvoort"
+      },
+      "car": {
+        "text": "De Tomaso 505/38",
+        "url": "https://en.wikipedia.org/wiki/De_Tomaso_505/38",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -797,7 +1448,28 @@
       "url": "https://en.wikipedia.org/wiki/Lotus_72",
       "formula_category": "F1"
     },
-    "session": "Qualifying"
+    "session": "Qualifying",
+    "fatality": {
+      "date": "1970-09-05",
+      "age": 28,
+      "event": {
+        "event": {
+          "text": "Italian Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1970_Italian_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Autodromo Nazionale di Monza",
+        "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza"
+      },
+      "car": {
+        "text": "Lotus 72",
+        "url": "https://en.wikipedia.org/wiki/Lotus_72",
+        "formula_category": "F1"
+      },
+      "session": "Qualifying"
+    }
   },
   {
     "driver": {
@@ -822,7 +1494,28 @@
       "url": "https://en.wikipedia.org/wiki/BRM_P160",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1971-10-24",
+      "age": 35,
+      "event": {
+        "event": {
+          "text": "World Championship Victory Race",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Brands Hatch",
+        "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
+      },
+      "car": {
+        "text": "BRM P160",
+        "url": "https://en.wikipedia.org/wiki/BRM_P160",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -847,7 +1540,28 @@
       "url": "https://en.wikipedia.org/wiki/March_Engineering",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1973-07-29",
+      "age": 25,
+      "event": {
+        "event": {
+          "text": "Dutch Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1973_Dutch_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit Park Zandvoort",
+        "url": "https://en.wikipedia.org/wiki/Circuit_Park_Zandvoort"
+      },
+      "car": {
+        "text": "March 731",
+        "url": "https://en.wikipedia.org/wiki/March_Engineering",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -872,7 +1586,28 @@
       "url": "https://en.wikipedia.org/wiki/Tyrrell_006",
       "formula_category": "F1"
     },
-    "session": "Qualifying"
+    "session": "Qualifying",
+    "fatality": {
+      "date": "1973-10-06",
+      "age": 29,
+      "event": {
+        "event": {
+          "text": "United States Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1973_United_States_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Watkins Glen International",
+        "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+      },
+      "car": {
+        "text": "Tyrrell 006",
+        "url": "https://en.wikipedia.org/wiki/Tyrrell_006",
+        "formula_category": "F1"
+      },
+      "session": "Qualifying"
+    }
   },
   {
     "driver": {
@@ -897,7 +1632,28 @@
       "url": "https://en.wikipedia.org/wiki/Shadow_DN3",
       "formula_category": "F1"
     },
-    "session": "Test"
+    "session": "Test",
+    "fatality": {
+      "date": "1974-03-22",
+      "age": 35,
+      "event": {
+        "event": {
+          "text": "South African Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1974_South_African_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Kyalami Racing Circuit",
+        "url": "https://en.wikipedia.org/wiki/Kyalami"
+      },
+      "car": {
+        "text": "Shadow DN3",
+        "url": "https://en.wikipedia.org/wiki/Shadow_DN3",
+        "formula_category": "F1"
+      },
+      "session": "Test"
+    }
   },
   {
     "driver": {
@@ -922,7 +1678,28 @@
       "url": "https://en.wikipedia.org/wiki/Surtees_TS16",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1974-10-06",
+      "age": 25,
+      "event": {
+        "event": {
+          "text": "United States Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1974_United_States_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Watkins Glen International",
+        "url": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
+      },
+      "car": {
+        "text": "Surtees TS16",
+        "url": "https://en.wikipedia.org/wiki/Surtees_TS16",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -947,7 +1724,28 @@
       "url": "https://en.wikipedia.org/wiki/March_Engineering",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1975-08-17",
+      "age": 38,
+      "event": {
+        "event": {
+          "text": "Austrian Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Österreichring",
+        "url": "https://en.wikipedia.org/wiki/Red_Bull_Ring"
+      },
+      "car": {
+        "text": "March 751",
+        "url": "https://en.wikipedia.org/wiki/March_Engineering",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -972,7 +1770,28 @@
       "url": "https://en.wikipedia.org/wiki/Shadow_DN8",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1977-03-05",
+      "age": 27,
+      "event": {
+        "event": {
+          "text": "South African Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1977_South_African_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Kyalami Racing Circuit",
+        "url": "https://en.wikipedia.org/wiki/Kyalami"
+      },
+      "car": {
+        "text": "Shadow DN8",
+        "url": "https://en.wikipedia.org/wiki/Shadow_DN8",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -997,7 +1816,28 @@
       "url": "https://en.wikipedia.org/wiki/McGuire_(Formula_One)",
       "formula_category": "F1"
     },
-    "session": "Practice"
+    "session": "Practice",
+    "fatality": {
+      "date": "1977-08-29",
+      "age": 31,
+      "event": {
+        "event": {
+          "text": "Shellsport International Series Round 11",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Brands Hatch",
+        "url": "https://en.wikipedia.org/wiki/Brands_Hatch"
+      },
+      "car": {
+        "text": "McGuire",
+        "url": "https://en.wikipedia.org/wiki/McGuire_(Formula_One)",
+        "formula_category": "F1"
+      },
+      "session": "Practice"
+    }
   },
   {
     "driver": {
@@ -1022,7 +1862,28 @@
       "url": "https://en.wikipedia.org/wiki/Lotus_78",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1978-09-10",
+      "age": 34,
+      "event": {
+        "event": {
+          "text": "Italian Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1978_Italian_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Autodromo Nazionale di Monza",
+        "url": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza"
+      },
+      "car": {
+        "text": "Lotus 78",
+        "url": "https://en.wikipedia.org/wiki/Lotus_78",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -1047,7 +1908,28 @@
       "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
       "formula_category": "F1"
     },
-    "session": "Test"
+    "session": "Test",
+    "fatality": {
+      "date": "1980-08-01",
+      "age": 35,
+      "event": {
+        "event": {
+          "text": "Test",
+          "url": null
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Hockenheimring",
+        "url": "https://en.wikipedia.org/wiki/Hockenheimring"
+      },
+      "car": {
+        "text": "Alfa Romeo 179",
+        "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
+        "formula_category": "F1"
+      },
+      "session": "Test"
+    }
   },
   {
     "driver": {
@@ -1072,7 +1954,28 @@
       "url": "https://en.wikipedia.org/wiki/Ferrari_126C",
       "formula_category": "F1"
     },
-    "session": "Qualifying"
+    "session": "Qualifying",
+    "fatality": {
+      "date": "1982-05-08",
+      "age": 32,
+      "event": {
+        "event": {
+          "text": "Belgian Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1982_Belgian_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit Zolder",
+        "url": "https://en.wikipedia.org/wiki/Circuit_Zolder"
+      },
+      "car": {
+        "text": "Ferrari 126C2",
+        "url": "https://en.wikipedia.org/wiki/Ferrari_126C",
+        "formula_category": "F1"
+      },
+      "session": "Qualifying"
+    }
   },
   {
     "driver": {
@@ -1097,7 +2000,28 @@
       "url": "https://en.wikipedia.org/wiki/Osella",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1982-06-13",
+      "age": 23,
+      "event": {
+        "event": {
+          "text": "Canadian Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1982_Canadian_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit Gilles Villeneuve",
+        "url": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve"
+      },
+      "car": {
+        "text": "Osella FA1C",
+        "url": "https://en.wikipedia.org/wiki/Osella",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -1122,7 +2046,28 @@
       "url": "https://en.wikipedia.org/wiki/Brabham_BT55",
       "formula_category": "F1"
     },
-    "session": "Test"
+    "session": "Test",
+    "fatality": {
+      "date": "1986-05-14",
+      "age": 28,
+      "event": {
+        "event": {
+          "text": "Test",
+          "url": null
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Circuit Paul Ricard",
+        "url": "https://en.wikipedia.org/wiki/Circuit_Paul_Ricard"
+      },
+      "car": {
+        "text": "Brabham BT55",
+        "url": "https://en.wikipedia.org/wiki/Brabham_BT55",
+        "formula_category": "F1"
+      },
+      "session": "Test"
+    }
   },
   {
     "driver": {
@@ -1147,7 +2092,28 @@
       "url": "https://en.wikipedia.org/wiki/Simtek_S941",
       "formula_category": "F1"
     },
-    "session": "Qualifying"
+    "session": "Qualifying",
+    "fatality": {
+      "date": "1994-04-30",
+      "age": 33,
+      "event": {
+        "event": {
+          "text": "San Marino Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1994_San_Marino_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Autodromo Enzo e Dino Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari"
+      },
+      "car": {
+        "text": "Simtek S941",
+        "url": "https://en.wikipedia.org/wiki/Simtek_S941",
+        "formula_category": "F1"
+      },
+      "session": "Qualifying"
+    }
   },
   {
     "driver": {
@@ -1172,7 +2138,28 @@
       "url": "https://en.wikipedia.org/wiki/Williams_FW16",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "1994-05-01",
+      "age": 34,
+      "event": {
+        "event": {
+          "text": "San Marino Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/1994_San_Marino_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Autodromo Enzo e Dino Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari"
+      },
+      "car": {
+        "text": "Williams FW16",
+        "url": "https://en.wikipedia.org/wiki/Williams_FW16",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -1197,7 +2184,28 @@
       "url": "https://en.wikipedia.org/wiki/Lotus_63",
       "formula_category": "F1"
     },
-    "session": "Run"
+    "session": "Run",
+    "fatality": {
+      "date": "2000-06-24",
+      "age": 59,
+      "event": {
+        "event": {
+          "text": "Goodwood Festival of Speed",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Goodwood Hillclimb",
+        "url": "https://en.wikipedia.org/wiki/Goodwood_House"
+      },
+      "car": {
+        "text": "Lotus 63",
+        "url": "https://en.wikipedia.org/wiki/Lotus_63",
+        "formula_category": "F1"
+      },
+      "session": "Run"
+    }
   },
   {
     "driver": {
@@ -1222,7 +2230,28 @@
       "url": "https://en.wikipedia.org/wiki/Footwork_FA17",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "2002-07-14",
+      "age": 58,
+      "event": {
+        "event": {
+          "text": "Czech Superprix",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Autodrom Most",
+        "url": "https://en.wikipedia.org/wiki/Autodrom_Most"
+      },
+      "car": {
+        "text": "Footwork FA17",
+        "url": "https://en.wikipedia.org/wiki/Footwork_FA17",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -1247,7 +2276,28 @@
       "url": "https://en.wikipedia.org/wiki/Lotus_18",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "2014-07-27",
+      "age": 69,
+      "event": {
+        "event": {
+          "text": "Jack Brabham Memorial Trophy",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Silverstone Circuit",
+        "url": "https://en.wikipedia.org/wiki/Silverstone_Circuit"
+      },
+      "car": {
+        "text": "Lotus 18",
+        "url": "https://en.wikipedia.org/wiki/Lotus_18",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -1272,7 +2322,28 @@
       "url": "https://en.wikipedia.org/wiki/Marussia_MR03",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "2014-10-05",
+      "age": 25,
+      "event": {
+        "event": {
+          "text": "Japanese Grand Prix",
+          "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
+        },
+        "championship": true
+      },
+      "circuit": {
+        "text": "Suzuka International Racing Course",
+        "url": "https://en.wikipedia.org/wiki/Suzuka_Circuit"
+      },
+      "car": {
+        "text": "Marussia MR03",
+        "url": "https://en.wikipedia.org/wiki/Marussia_MR03",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -1297,7 +2368,28 @@
       "url": "https://en.wikipedia.org/wiki/March_701",
       "formula_category": "F1"
     },
-    "session": "Race"
+    "session": "Race",
+    "fatality": {
+      "date": "2017-09-02",
+      "age": 62,
+      "event": {
+        "event": {
+          "text": "Historic Grand Prix",
+          "url": null
+        },
+        "championship": false
+      },
+      "circuit": {
+        "text": "Circuit Park Zandvoort",
+        "url": "https://en.wikipedia.org/wiki/Circuit_Zandvoort"
+      },
+      "car": {
+        "text": "March 701",
+        "url": "https://en.wikipedia.org/wiki/March_701",
+        "formula_category": "F1"
+      },
+      "session": "Race"
+    }
   },
   {
     "driver": {
@@ -34035,7 +35127,8 @@
     ],
     "entries": 5,
     "starts": 3,
-    "points": 0.0
+    "points": 0.0,
+    "gender": "female"
   },
   {
     "driver": {
@@ -34072,7 +35165,8 @@
     ],
     "entries": 17,
     "starts": 12,
-    "points": 0.5
+    "points": 0.5,
+    "gender": "female"
   },
   {
     "driver": {
@@ -34101,7 +35195,8 @@
     ],
     "entries": 3,
     "starts": 0,
-    "points": null
+    "points": null,
+    "gender": "female"
   },
   {
     "driver": {
@@ -34122,7 +35217,8 @@
     ],
     "entries": 1,
     "starts": 0,
-    "points": null
+    "points": null,
+    "gender": "female"
   },
   {
     "driver": {
@@ -34143,6 +35239,7 @@
     ],
     "entries": 3,
     "starts": 0,
-    "points": null
+    "points": null,
+    "gender": "female"
   }
 ]
