@@ -1,3 +1,4 @@
+from .adapter import season_section_entries
 from .calendar import SeasonCalendarSectionParser
 from .mid_season_changes import SeasonMidSeasonChangesSectionParser
 from .regulation_changes import SeasonRegulationChangesSectionParser
@@ -12,4 +13,5 @@ __all__ = [
     "SeasonDriversStandingsSectionParser",
     "SeasonRegulationChangesSectionParser",
     "SeasonMidSeasonChangesSectionParser",
+    "season_section_entries",
 ]
