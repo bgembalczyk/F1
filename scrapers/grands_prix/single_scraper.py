@@ -9,6 +9,7 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.critical_sections import resolve_section_candidates
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 from scrapers.wiki.scraper import WikiScraper
@@ -61,7 +62,11 @@ class F1SingleGrandPrixScraper(WikipediaSectionByIdMixin, WikiScraper):
             return []
 
         by_year = DOMAIN_CRITICAL_SECTIONS["grands_prix"][0]
-        for section_id in [by_year.section_id, *by_year.alternative_section_ids]:
+        for section_id in resolve_section_candidates(
+            domain="grands_prix",
+            section_id=by_year.section_id,
+            alternative_section_ids=by_year.alternative_section_ids,
+        ):
             result = self._try_parse_section(soup, section_id)
             if result is not None:
                 return result

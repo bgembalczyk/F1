@@ -8,6 +8,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
+from scrapers.base.sections.critical_sections import resolve_section_candidates
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.interface import SectionParser
 from scrapers.wiki.parsers.section_detection import find_section_heading
@@ -41,12 +42,21 @@ class SectionAdapter(WikipediaSectionByIdMixin):
     ) -> list[SectionParseResult]:
         parsed: list[SectionParseResult] = []
         for entry in entries:
-            heading_match = find_section_heading(
-                soup,
-                entry.section_id,
-                aliases={entry.section_id.lower().replace("_", " "): set(entry.aliases)},
+            section_candidates = resolve_section_candidates(
                 domain=domain,
+                section_id=entry.section_id,
+                alternative_section_ids=entry.aliases,
             )
+            heading_match = None
+            for candidate in section_candidates:
+                heading_match = find_section_heading(
+                    soup,
+                    candidate,
+                    aliases={entry.section_id.lower().replace("_", " "): set(entry.aliases)},
+                    domain=domain,
+                )
+                if heading_match is not None:
+                    break
             if heading_match is None:
                 continue
 
