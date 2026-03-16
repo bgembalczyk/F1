@@ -49,7 +49,8 @@ def test_split_into_parts_no_headings():
     parts = _split_into_parts(tags, "mw-heading2")
     assert len(parts) == 1
     assert parts[0][0] == "(Top)"
-    assert len(parts[0][1]) == 2
+    assert parts[0][1] is None
+    assert len(parts[0][2]) == 2
 
 
 def test_split_into_parts_with_headings():
@@ -70,6 +71,7 @@ def test_split_into_parts_with_headings():
     assert len(parts) == 3
     assert parts[0][0] == "(Top)"
     assert parts[1][0] == "Sec1"
+    assert parts[1][1] == "Sec1"
     assert parts[2][0] == "Sec2"
 
 
@@ -320,7 +322,7 @@ def test_sub_sub_sub_section_parser():
     result = parser.parse(soup.find("div"))
     assert "elements" in result
     assert len(result["elements"]) == 2
-    types = {e["type"] for e in result["elements"]}
+    types = {e["kind"] for e in result["elements"]}
     assert "paragraph" in types
     assert "list" in types
 
@@ -330,10 +332,15 @@ def test_wiki_element_parser_mixin_rules_priority_overlapping_table_classes() ->
     soup = _make_soup(html)
     parser = SubSubSubSectionParser()
 
-    result = parser._parse_element(soup.find("table"))
+    from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
+
+    result = parser._parse_element(
+        soup.find("table"), section_context=SectionExtractionContext()
+    )
 
     assert result is not None
-    assert result["type"] == "infobox"
+    assert result["kind"] == "infobox"
+    assert result["source_section_id"] is None
 
 
 def test_wiki_element_parser_mixin_register_parser_rule_allows_domain_extensions() -> (
@@ -351,12 +358,15 @@ def test_wiki_element_parser_mixin_register_parser_rule_allows_domain_extensions
         priority=0,
     )
 
-    result = parser._parse_element(blockquote)
+    from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
 
-    assert result == {
-        "type": "domain_blockquote",
-        "data": {"text": "Domain specific note"},
-    }
+    result = parser._parse_element(
+        blockquote, section_context=SectionExtractionContext()
+    )
+
+    assert result["kind"] == "domain_blockquote"
+    assert result["data"] == {"text": "Domain specific note"}
+    assert "raw_html_fragment" in result
 
 
 def test_wiki_element_parser_mixin_default_registry_matches_expected_types() -> None:
@@ -375,9 +385,14 @@ def test_wiki_element_parser_mixin_default_registry_matches_expected_types() -> 
     parser = SubSubSubSectionParser()
     root = soup.find("div")
 
-    result = parser.parse_elements(list(root.find_all(recursive=False)))
+    from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
 
-    assert [item["type"] for item in result] == [
+    result = parser.parse_elements(
+        list(root.find_all(recursive=False)),
+        section_context=SectionExtractionContext(section_id="demo"),
+    )
+
+    assert [item["kind"] for item in result] == [
         "paragraph",
         "figure",
         "list",
@@ -405,8 +420,8 @@ def test_sub_sub_section_parser_divides_into_sub_sub_sub_sections():
     sections = result["sub_sub_sub_sections"]
     assert len(sections) == 3
     assert sections[0]["name"] == "(Top)"
-    assert sections[1]["name"] == "Sub5_One"
-    assert sections[2]["name"] == "Sub5_Two"
+    assert sections[1]["name"] == "Sub5 One"
+    assert sections[2]["name"] == "Sub5 Two"
 
 
 def test_sub_section_parser_divides_into_sub_sub_sections():
@@ -422,7 +437,7 @@ def test_sub_section_parser_divides_into_sub_sub_sections():
     assert "sub_sub_sections" in result
     sections = result["sub_sub_sections"]
     assert sections[0]["name"] == "(Top)"
-    assert sections[1]["name"] == "Level4"
+    assert sections[1]["name"] == "Level 4"
 
 
 def test_section_parser_divides_into_sub_sections():
@@ -440,7 +455,7 @@ def test_section_parser_divides_into_sub_sections():
     sub_sections = result["sub_sections"]
     assert len(sub_sections) == 2
     assert sub_sections[0]["name"] == "(Top)"
-    assert sub_sections[1]["name"] == "Sub_A"
+    assert sub_sections[1]["name"] == "Sub A"
 
 
 # ---------------------------------------------------------------------------
@@ -464,7 +479,7 @@ def test_content_text_parser_divides_into_sections():
     sections = result["sections"]
     assert len(sections) == 3
     assert sections[0]["name"] == "(Top)"
-    assert sections[1]["name"] == "Early_life"
+    assert sections[1]["name"] == "Early life"
     assert sections[2]["name"] == "Career"
 
 

@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.html_utils import find_heading
 from scrapers.wiki.parsers.section_detection import find_section_heading
+from scrapers.wiki.parsers.section_detection import make_stable_section_id
+from scrapers.wiki.parsers.section_detection import normalize_section_slug
 
 
 def test_find_section_heading_prefers_exact_id_over_text() -> None:
@@ -70,3 +72,9 @@ def test_find_section_heading_regression_multilevel_fixture() -> None:
     assert match is not None
     assert match.strategy in {"exact_id", "exact_text", "fuzzy"}
     assert match.heading.get("id") == "Grands_Prix"
+
+
+def test_normalize_section_slug_and_stable_id() -> None:
+    assert normalize_section_slug("Grands Prix!") == "grands_prix"
+    assert make_stable_section_id(heading_anchor="Results_2024", heading_text="Results", breadcrumbs=("Season",)) == "results_2024"
+    assert make_stable_section_id(heading_anchor=None, heading_text="Final standings", breadcrumbs=("Season", "Results")) == "season__results__final_standings"

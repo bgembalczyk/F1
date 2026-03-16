@@ -33,7 +33,7 @@ def test_find_section_tree_with_multilevel_sections_and_alias() -> None:
     section = find_section_tree(article, "Results", {"grands prix"})
 
     assert section is not None
-    assert section["name"] == "Grands_Prix"
+    assert section["section_id"] == "grands_prix"
     tables = collect_section_elements(section, "table")
     assert len(tables) == 1
 
