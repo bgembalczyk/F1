@@ -3,8 +3,6 @@
 from pathlib import Path
 
 from models.records.factories import build_driver_record
-from scrapers.base.helpers.config_factory import ScraperCommonConfig
-from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
@@ -45,6 +43,8 @@ class F1DriversListScraper(F1TableScraper):
     """
 
     default_validator = DriversRecordValidator()
+    options_domain = "drivers"
+    options_profile = "strict_seed"
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
@@ -82,19 +82,14 @@ class F1DriversListScraper(F1TableScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = build_table_config(
-            options,
-            config=ScraperCommonConfig(
-                include_urls=True,
-                normalize_empty_values=False,
-                validation_mode="hard",
-            ),
-        )
+        super().__init__(options=options, config=config)
+
+    def extend_options(self, options: ScraperOptions) -> ScraperOptions:
         options.transformers = [
             *list(options.transformers or []),
             DriversChampionshipsTransformer(),
         ]
-        super().__init__(options=options, config=config)
+        return options
 
 
 if __name__ == "__main__":

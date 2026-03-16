@@ -4,8 +4,6 @@ from pathlib import Path
 
 from models.records.factories import build_circuit_record
 from models.validation.circuit import Circuit
-from scrapers.base.helpers.config_factory import ScraperCommonConfig
-from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.mixins.section_table_parse import SectionTableParseMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
@@ -25,6 +23,8 @@ class CircuitsListScraper(SectionTableParseMixin, F1TableScraper):
     """
 
     default_validator = CircuitsRecordValidator()
+    options_domain = "circuits"
+    options_profile = "soft_seed"
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
@@ -41,14 +41,6 @@ class CircuitsListScraper(SectionTableParseMixin, F1TableScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = build_table_config(
-            options,
-            config=ScraperCommonConfig(
-                include_urls=True,
-                normalize_empty_values=False,
-                validation_mode="soft",
-            ),
-        )
         super().__init__(options=options, config=config)
 
     def _parse_soup(self, soup):
