@@ -74,10 +74,6 @@
         "text": "Lotus",
         "url": "https://en.wikipedia.org/wiki/Lotus_F1"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -171,10 +167,6 @@
         "text": "Racing Point",
         "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -407,11 +399,7 @@
     "podiums": 315,
     "wcc_titles": 9,
     "wdc_titles": 7,
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -476,10 +464,6 @@
         "text": "Kick Sauber",
         "url": "https://en.wikipedia.org/wiki/Sauber"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -524,11 +508,7 @@
     "podiums": 0,
     "wcc_titles": 0,
     "wdc_titles": 0,
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -872,11 +852,7 @@
     "podiums": 837,
     "wcc_titles": 16,
     "wdc_titles": 15,
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -964,11 +940,7 @@
     "podiums": 0,
     "wcc_titles": 0,
     "wdc_titles": 0,
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1248,11 +1220,7 @@
     "podiums": 558,
     "wcc_titles": 10,
     "wdc_titles": 13,
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1381,10 +1349,6 @@
         "text": "Brawn",
         "url": "https://en.wikipedia.org/wiki/Brawn_GP"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -1450,10 +1414,6 @@
         "text": "AlphaTauri",
         "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -1587,10 +1547,6 @@
         "text": "Jaguar",
         "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -1627,11 +1583,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1683,11 +1635,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1775,11 +1723,7 @@
     "wdc_titles": 2,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1815,11 +1759,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1863,11 +1803,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1907,11 +1843,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1943,11 +1875,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -1979,11 +1907,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2015,11 +1939,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2147,11 +2067,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2183,11 +2099,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2219,11 +2131,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2255,11 +2163,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2319,11 +2223,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2379,11 +2279,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2419,11 +2315,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2459,11 +2351,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2559,11 +2447,7 @@
     "wdc_titles": 2,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2599,11 +2483,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2751,11 +2631,7 @@
     "wdc_titles": 4,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2787,11 +2663,7 @@
     "wdc_titles": 1,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2911,11 +2783,7 @@
     "wdc_titles": 1,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2951,11 +2819,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -2987,11 +2851,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3031,11 +2891,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3067,11 +2923,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3119,11 +2971,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3183,11 +3031,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3219,11 +3063,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3327,11 +3167,7 @@
     "wdc_titles": 2,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3379,11 +3215,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3427,11 +3259,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3475,11 +3303,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3511,11 +3335,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3555,11 +3375,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3591,11 +3407,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3627,11 +3439,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3699,11 +3507,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3743,11 +3547,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3787,11 +3587,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3823,11 +3619,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3859,11 +3651,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3923,11 +3711,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -3963,11 +3747,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4039,11 +3819,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4079,11 +3855,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4131,11 +3903,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4167,11 +3935,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4203,11 +3967,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4247,11 +4007,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4299,11 +4055,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4335,11 +4087,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4387,11 +4135,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4423,11 +4167,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4467,11 +4207,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4531,11 +4267,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4583,11 +4315,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4635,11 +4363,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4679,11 +4403,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4771,11 +4491,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4807,11 +4523,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4843,11 +4555,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4883,11 +4591,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4959,11 +4663,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -4995,11 +4695,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5035,11 +4731,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5075,11 +4767,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5127,11 +4815,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5163,11 +4847,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5203,11 +4883,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5239,11 +4915,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5355,11 +5027,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5447,11 +5115,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5627,11 +5291,7 @@
     "wdc_titles": 6,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5667,11 +5327,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5715,11 +5371,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5755,11 +5407,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5799,11 +5447,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5835,11 +5479,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5923,11 +5563,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -5959,11 +5595,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6011,11 +5643,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6087,11 +5715,7 @@
     "wdc_titles": 2,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6143,11 +5767,7 @@
     "wdc_titles": 1,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6179,11 +5799,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6215,11 +5831,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6255,11 +5867,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6291,11 +5899,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6327,11 +5931,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6443,11 +6043,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6483,11 +6079,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6531,11 +6123,7 @@
     "wdc_titles": null,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6607,11 +6195,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6647,11 +6231,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6691,11 +6271,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6739,11 +6315,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6803,11 +6375,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6855,11 +6423,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6899,11 +6463,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6935,11 +6495,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -6975,11 +6531,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7011,11 +6563,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7143,11 +6691,7 @@
     "wdc_titles": 2,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7179,11 +6723,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7219,11 +6759,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7367,11 +6903,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7403,11 +6935,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7443,11 +6971,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7511,11 +7035,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7547,11 +7067,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7595,11 +7111,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7635,11 +7147,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7679,11 +7187,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7715,11 +7219,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7751,11 +7251,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7795,11 +7291,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7839,11 +7331,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7907,11 +7395,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7943,11 +7427,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -7983,11 +7463,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8019,11 +7495,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8059,11 +7531,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8107,11 +7575,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8143,11 +7607,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8195,11 +7655,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8283,11 +7739,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8347,11 +7799,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8383,11 +7831,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8531,11 +7975,7 @@
     "wdc_titles": 2,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8591,11 +8031,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8627,11 +8063,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8671,11 +8103,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8715,11 +8143,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8759,11 +8183,7 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": {
@@ -8811,265 +8231,133 @@
     "wdc_titles": 0,
     "engine": [],
     "based_in": [],
-    "antecedent_teams": [],
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "antecedent_teams": []
   },
   {
     "constructor": "Adams",
-    "constructor_url": "https://en.wikipedia.org/wiki/Adams_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Adams_(constructor)"
   },
   {
     "constructor": "Bromme",
-    "constructor_url": "https://en.wikipedia.org/wiki/Bromme",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Bromme"
   },
   {
     "constructor": "Christensen",
-    "constructor_url": "https://en.wikipedia.org/wiki/Christensen_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Christensen_(constructor)"
   },
   {
     "constructor": "Emil Diedt",
-    "constructor_url": "https://en.wikipedia.org/wiki/Emil_Diedt",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Emil_Diedt"
   },
   {
     "constructor": "Frank DelRoy",
-    "constructor_url": "https://en.wikipedia.org/wiki/Frank_DelRoy",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Frank_DelRoy"
   },
   {
     "constructor": "Dunn",
-    "constructor_url": "https://en.wikipedia.org/wiki/Dunn_Engineering",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Dunn_Engineering"
   },
   {
     "constructor": "Elder",
-    "constructor_url": "https://en.wikipedia.org/wiki/Elder_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Elder_(constructor)"
   },
   {
     "constructor": "Quin Epperly",
-    "constructor_url": "https://en.wikipedia.org/wiki/Quin_Epperly",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Quin_Epperly"
   },
   {
     "constructor": "Wayne Ewing",
-    "constructor_url": "https://en.wikipedia.org/wiki/Wayne_Ewing",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Wayne_Ewing"
   },
   {
-    "constructor": "Hall",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor": "Hall"
   },
   {
     "constructor": "Eddie Kuzma",
-    "constructor_url": "https://en.wikipedia.org/wiki/Eddie_Kuzma",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Eddie_Kuzma"
   },
   {
     "constructor": "Langley",
-    "constructor_url": "https://en.wikipedia.org/wiki/Langley_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Langley_(constructor)"
   },
   {
     "constructor": "Lesovsky",
-    "constructor_url": "https://en.wikipedia.org/wiki/Lesovsky",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Lesovsky"
   },
   {
     "constructor": "Carl Marchese",
-    "constructor_url": "https://en.wikipedia.org/wiki/Carl_Marchese",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Carl_Marchese"
   },
   {
     "constructor": "Meskowski",
-    "constructor_url": "https://en.wikipedia.org/wiki/Meskowski",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Meskowski"
   },
   {
     "constructor": "Lou Moore",
-    "constructor_url": "https://en.wikipedia.org/wiki/Lou_Moore",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Lou_Moore"
   },
   {
     "constructor": "Nichels",
-    "constructor_url": "https://en.wikipedia.org/wiki/Nichels",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Nichels"
   },
   {
     "constructor": "Olson",
-    "constructor_url": "https://en.wikipedia.org/wiki/Olson_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Olson_(constructor)"
   },
   {
     "constructor": "Pankratz",
-    "constructor_url": "https://en.wikipedia.org/wiki/Pankratz",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Pankratz"
   },
   {
     "constructor": "Pawl",
-    "constructor_url": "https://en.wikipedia.org/wiki/Pawl_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Pawl_(constructor)"
   },
   {
     "constructor": "Phillips",
-    "constructor_url": "https://en.wikipedia.org/wiki/Phillips_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Phillips_(constructor)"
   },
   {
     "constructor": "Johnny Rae",
-    "constructor_url": "https://en.wikipedia.org/wiki/Johnny_Rae_(motorsport)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Johnny_Rae_(motorsport)"
   },
   {
     "constructor": "George Salih",
-    "constructor_url": "https://en.wikipedia.org/wiki/George_Salih",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/George_Salih"
   },
   {
     "constructor": "Schroeder",
-    "constructor_url": "https://en.wikipedia.org/wiki/Schroeder_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Schroeder_(constructor)"
   },
   {
     "constructor": "Sherman",
-    "constructor_url": "https://en.wikipedia.org/wiki/Sherman_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Sherman_(constructor)"
   },
   {
     "constructor": "Russ Snowberger",
-    "constructor_url": "https://en.wikipedia.org/wiki/Russ_Snowberger",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Russ_Snowberger"
   },
   {
     "constructor": "Stevens",
-    "constructor_url": "https://en.wikipedia.org/wiki/Stevens_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Stevens_(constructor)"
   },
   {
     "constructor": "Sutton",
-    "constructor_url": "https://en.wikipedia.org/wiki/Sutton_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Sutton_(constructor)"
   },
   {
     "constructor": "Trevis",
-    "constructor_url": "https://en.wikipedia.org/wiki/Trevis_(constructor)",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Trevis_(constructor)"
   },
   {
-    "constructor": "Turner",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor": "Turner"
   },
   {
     "constructor": "A. J. Watson",
-    "constructor_url": "https://en.wikipedia.org/wiki/A._J._Watson",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/A._J._Watson"
   },
   {
     "constructor": "Wetteroth",
-    "constructor_url": "https://en.wikipedia.org/wiki/Wetteroth",
-    "status": "active",
-    "series": [
-      "Formula One"
-    ]
+    "constructor_url": "https://en.wikipedia.org/wiki/Wetteroth"
   },
   {
     "team": "AE Moss",
@@ -9079,10 +8367,6 @@
         "year": 1954,
         "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9101,10 +8385,6 @@
         "year": 1968,
         "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9135,10 +8415,6 @@
         "year": 1993,
         "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9149,10 +8425,6 @@
         "year": 1977,
         "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9171,10 +8443,6 @@
         "year": 1978,
         "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9193,10 +8461,6 @@
         "year": 1961,
         "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9223,10 +8487,6 @@
         "year": 1967,
         "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9249,10 +8509,6 @@
         "year": 1953,
         "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9271,10 +8527,6 @@
         "year": 1960,
         "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9313,10 +8565,6 @@
         "year": 1971,
         "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9335,10 +8583,6 @@
         "year": 1954,
         "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9357,10 +8601,6 @@
         "year": 1952,
         "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9371,10 +8611,6 @@
         "year": 1950,
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9413,10 +8649,6 @@
         "year": 1964,
         "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9451,10 +8683,6 @@
         "year": 1956,
         "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9477,10 +8705,6 @@
         "year": 1953,
         "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9491,10 +8715,6 @@
         "year": 1981,
         "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9505,10 +8725,6 @@
         "year": 1954,
         "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9527,10 +8743,6 @@
         "year": 1953,
         "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9541,10 +8753,6 @@
         "year": 1961,
         "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9575,10 +8783,6 @@
         "year": 1957,
         "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9589,10 +8793,6 @@
         "year": 1974,
         "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9607,10 +8807,6 @@
         "year": 1965,
         "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9625,10 +8821,6 @@
         "year": 1969,
         "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9639,10 +8831,6 @@
         "year": 1962,
         "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9661,10 +8849,6 @@
         "year": 1969,
         "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9683,10 +8867,6 @@
         "year": 1965,
         "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9733,10 +8913,6 @@
         "year": 1969,
         "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9811,10 +8987,6 @@
         "year": 1970,
         "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9825,10 +8997,6 @@
         "year": 1950,
         "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9847,10 +9015,6 @@
         "year": 1954,
         "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9889,10 +9053,6 @@
         "year": 1965,
         "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9907,10 +9067,6 @@
         "year": 1963,
         "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9921,10 +9077,6 @@
         "year": 1952,
         "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9935,10 +9087,6 @@
         "year": 1961,
         "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9949,10 +9097,6 @@
         "year": 1958,
         "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9971,10 +9115,6 @@
         "year": 1970,
         "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -9985,10 +9125,6 @@
         "year": 1953,
         "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   },
   {
@@ -10039,10 +9175,6 @@
         "year": 1975,
         "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
       }
-    ],
-    "status": "active",
-    "series": [
-      "Formula One"
     ]
   }
 ]

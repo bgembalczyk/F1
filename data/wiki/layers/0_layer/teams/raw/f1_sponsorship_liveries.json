@@ -1498,43 +1498,6 @@
           "Gold"
         ],
         "additional_colours": null,
-        "main_sponsors": [
-          {
-            "text": "Warsteiner",
-            "url": "https://en.wikipedia.org/wiki/Warsteiner"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "FINA",
-            "url": "https://en.wikipedia.org/wiki/Petrofina"
-          },
-          {
-            "text": "Heuer",
-            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-          },
-          "Scicon Micro Systems"
-        ],
-        "grand_prix_scope": {
-          "type": "range",
-          "from": {
-            "text": "South African Grand Prix",
-            "url": "https://en.wikipedia.org/wiki/1978_South_African_Grand_Prix"
-          },
-          "to": null
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1978,
-            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Gold"
-        ],
-        "additional_colours": null,
         "main_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -1559,6 +1522,43 @@
               "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
             }
           ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1978,
+            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Gold"
+        ],
+        "additional_colours": null,
+        "main_sponsors": [
+          {
+            "text": "Warsteiner",
+            "url": "https://en.wikipedia.org/wiki/Warsteiner"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "FINA",
+            "url": "https://en.wikipedia.org/wiki/Petrofina"
+          },
+          {
+            "text": "Heuer",
+            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
+          },
+          "Scicon Micro Systems"
+        ],
+        "grand_prix_scope": {
+          "type": "range",
+          "from": {
+            "text": "South African Grand Prix",
+            "url": "https://en.wikipedia.org/wiki/1978_South_African_Grand_Prix"
+          },
+          "to": null
         }
       },
       {
@@ -9661,6 +9661,112 @@
           {
             "text": "Valvoline",
             "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Texaco",
+            "url": "https://en.wikipedia.org/wiki/Texaco"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "French Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Chris Amon",
+            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+          },
+          {
+            "text": "Patrick Nève",
+            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+          },
+          {
+            "text": "Hans Binder",
+            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
+          },
+          {
+            "text": "Jacky Ickx",
+            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Alpquell Natürliches Mineralwasser"
+          },
+          {
+            "text": "Elan"
+          },
+          {
+            "text": "Raiffeisen",
+            "url": "https://en.wikipedia.org/wiki/Raiffeisen_Bank_International"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Austrian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Chris Amon",
+            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+          },
+          {
+            "text": "Patrick Nève",
+            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+          },
+          {
+            "text": "Hans Binder",
+            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
+          },
+          {
+            "text": "Jacky Ickx",
+            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           },
           {
             "text": "John Day Model Cars"
@@ -9877,112 +9983,6 @@
             {
               "text": "British Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          {
-            "text": "Patrick Nève",
-            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-          },
-          {
-            "text": "Hans Binder",
-            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
-          },
-          {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "main_sponsors": [
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "Texaco",
-            "url": "https://en.wikipedia.org/wiki/Texaco"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "French Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          {
-            "text": "Patrick Nève",
-            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-          },
-          {
-            "text": "Hans Binder",
-            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
-          },
-          {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "main_sponsors": [
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "Alpquell Natürliches Mineralwasser"
-          },
-          {
-            "text": "Elan"
-          },
-          {
-            "text": "Raiffeisen",
-            "url": "https://en.wikipedia.org/wiki/Raiffeisen_Bank_International"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Austrian Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             }
           ]
         }
@@ -24875,52 +24875,6 @@
         "main_colours": [
           "White"
         ],
-        "livery_sponsors": [
-          {
-            "text": "Theodore Racing Hong Kong",
-            "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "Champion",
-            "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
-          },
-          {
-            "text": "Goodyear",
-            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-          },
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "United States Grand Prix West",
-              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Hans-Joachim Stuck",
-            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
-          }
-        ],
-        "main_colours": [
-          "White"
-        ],
         "livery_sponsors": [],
         "additional_major_sponsors": [
           {
@@ -24989,6 +24943,52 @@
             {
               "text": "British Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Hans-Joachim Stuck",
+            "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+          }
+        ],
+        "main_colours": [
+          "White"
+        ],
+        "livery_sponsors": [
+          {
+            "text": "Theodore Racing Hong Kong",
+            "url": "https://en.wikipedia.org/wiki/Teddy_Yip_(businessman)"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Champion",
+            "url": "https://en.wikipedia.org/wiki/Champion_(spark_plug)"
+          },
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "United States Grand Prix West",
+              "url": "https://en.wikipedia.org/wiki/1976_United_States_Grand_Prix_West"
             }
           ]
         }
@@ -38760,6 +38760,41 @@
         "main_colours": [
           "Black"
         ],
+        "livery_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "F&S Properties"
+          }
+        ],
+        "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Dutch Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
         "livery_sponsors": [
           {
             "text": "BiC",
@@ -38806,20 +38841,11 @@
           {
             "text": "Valvoline",
             "url": "https://en.wikipedia.org/wiki/Valvoline"
-          },
-          {
-            "text": "F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
         "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Dutch Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
-            }
-          ]
+          "type": "other"
         }
       },
       {
@@ -38841,11 +38867,20 @@
           {
             "text": "Valvoline",
             "url": "https://en.wikipedia.org/wiki/Valvoline"
+          },
+          {
+            "text": "F&S Properties"
           }
         ],
         "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
         "grand_prix_scope": {
-          "type": "other"
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Dutch Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
+            }
+          ]
         }
       },
       {
@@ -38904,6 +38939,37 @@
           {
             "text": "Valvoline",
             "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
+        "grand_prix_scope": {
+          "type": "other"
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "livery_sponsors": [
+          {
+            "text": "Tabatip",
+            "url": "https://en.wikipedia.org/wiki/Villiger_Sons"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           },
           {
             "text": "F&S Properties"
@@ -38918,32 +38984,6 @@
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             }
           ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "livery_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "Goodyear",
-            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-          },
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          }
-        ],
-        "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
-        "grand_prix_scope": {
-          "type": "other"
         }
       },
       {
@@ -39001,12 +39041,33 @@
         "main_colours": [
           "Black"
         ],
-        "livery_sponsors": [
+        "livery_sponsors": [],
+        "additional_major_sponsors": [
           {
-            "text": "Tabatip",
-            "url": "https://en.wikipedia.org/wiki/Villiger_Sons"
+            "text": "Goodyear",
+            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
+          },
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
           }
         ],
+        "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
+        "grand_prix_scope": {
+          "type": "other"
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "livery_sponsors": [],
         "additional_major_sponsors": [
           {
             "text": "Goodyear",
@@ -39029,32 +39090,6 @@
               "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             }
           ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "livery_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "Goodyear",
-            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-          },
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          }
-        ],
-        "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
-        "grand_prix_scope": {
-          "type": "other"
         }
       },
       {
@@ -39090,41 +39125,6 @@
             {
               "text": "Japanese Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_Japanese_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "livery_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "Goodyear",
-            "url": "https://en.wikipedia.org/wiki/Goodyear_Tire_and_Rubber_Company"
-          },
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          },
-          {
-            "text": "F&S Properties"
-          }
-        ],
-        "notes": "A US flag as a mark of the team's origin (until the 1976 British GP ).",
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Dutch Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Dutch_Grand_Prix"
             }
           ]
         }
@@ -43556,7 +43556,8 @@
             "url": "https://en.wikipedia.org/wiki/Valvoline"
           },
           {
-            "text": "Simac"
+            "text": "7-Eleven",
+            "url": "https://en.wikipedia.org/wiki/7-Eleven"
           }
         ],
         "notes": null,
@@ -43564,8 +43565,8 @@
           "type": "only",
           "grand_prix": [
             {
-              "text": "Italian Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
+              "text": "Caesars Palace Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
             }
           ]
         }
@@ -43606,8 +43607,7 @@
             "url": "https://en.wikipedia.org/wiki/Valvoline"
           },
           {
-            "text": "7-Eleven",
-            "url": "https://en.wikipedia.org/wiki/7-Eleven"
+            "text": "Simac"
           }
         ],
         "notes": null,
@@ -43615,8 +43615,8 @@
           "type": "only",
           "grand_prix": [
             {
-              "text": "Caesars Palace Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1982_Caesars_Palace_Grand_Prix"
+              "text": "Italian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1982_Italian_Grand_Prix"
             }
           ]
         }
