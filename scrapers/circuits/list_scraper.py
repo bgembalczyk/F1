@@ -7,7 +7,7 @@ from models.records.factories import build_circuit_record
 from models.validation.circuit import Circuit
 from scrapers.base.helpers.config_factory import ScraperCommonConfig
 from scrapers.base.helpers.config_factory import build_table_config
-from scrapers.base.mixins.section_table_parse import SectionTableParseMixin
+from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import ScraperConfig
@@ -18,7 +18,7 @@ from scrapers.circuits.sections import CircuitsListSectionParser
 from scrapers.circuits.validator import CircuitsRecordValidator
 
 
-class CircuitsListScraper(SectionTableParseMixin, F1TableScraper):
+class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
     """
     Lista torów F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_circuits
@@ -52,17 +52,9 @@ class CircuitsListScraper(SectionTableParseMixin, F1TableScraper):
         )
         super().__init__(options=options, config=config)
 
-    def _parse_soup(self, soup):
-        return self.parse_section_or_fallback(
-            soup,
-            domain="circuits",
-            section_label="Circuits",
-            parser_factory=lambda: CircuitsListSectionParser(
-                config=self.config,
-                include_urls=self.include_urls,
-                normalize_empty_values=self.normalize_empty_values,
-            ),
-        )
+    domain = "circuits"
+    section_label = "Circuits"
+    section_parser_class = CircuitsListSectionParser
 
 
 if __name__ == "__main__":
