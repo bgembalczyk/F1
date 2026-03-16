@@ -8,7 +8,7 @@ from scrapers.base.errors import ScraperError
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 from scrapers.wiki.scraper import WikiScraper

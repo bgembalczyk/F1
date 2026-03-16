@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections import SectionAdapter
-from scrapers.base.sections import SectionAdapterEntry
+from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.drivers.infobox.scraper import DriverInfoboxParser
 from scrapers.drivers.sections import DriverCareerSectionParser
 from scrapers.drivers.sections import DriverNonChampionshipSectionParser
