@@ -86,38 +86,35 @@ class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScra
             {
                 "url": self._original_url or self.url,
                 **parsed,
-                "sections": [
-                    result.__dict__
-                    for result in self.parse_sections(
-                        soup=working_soup,
-                        domain="circuits",
-                        entries=[
-                            SectionAdapterEntry(
-                                section_id="Layout_history",
-                                aliases=("History",),
-                                parser=CircuitLayoutHistorySectionParser(),
-                            ),
-                            SectionAdapterEntry(
-                                section_id="Lap_records",
-                                aliases=("Formula_One_lap_records",),
-                                parser=CircuitLapRecordsSectionParser(
-                                    options=ScraperOptions(
-                                        include_urls=self.include_urls,
-                                        fetcher=self.fetcher,
-                                        policy=self.policy,
-                                        debug_dir=self.debug_dir,
-                                    ),
-                                    url=self.url,
+                "sections": self.parse_section_dicts(
+                    soup=working_soup,
+                    domain="circuits",
+                    entries=[
+                        SectionAdapterEntry(
+                            section_id="layout_history",
+                            aliases=("Layout_history", "History"),
+                            parser=CircuitLayoutHistorySectionParser(),
+                        ),
+                        SectionAdapterEntry(
+                            section_id="lap_records",
+                            aliases=("Lap_records", "Formula_One_lap_records"),
+                            parser=CircuitLapRecordsSectionParser(
+                                options=ScraperOptions(
+                                    include_urls=self.include_urls,
+                                    fetcher=self.fetcher,
+                                    policy=self.policy,
+                                    debug_dir=self.debug_dir,
                                 ),
+                                url=self.url,
                             ),
-                            SectionAdapterEntry(
-                                section_id="Events",
-                                aliases=("Races",),
-                                parser=CircuitEventsSectionParser(),
-                            ),
-                        ],
-                    )
-                ],
+                        ),
+                        SectionAdapterEntry(
+                            section_id="events",
+                            aliases=("Events", "Races"),
+                            parser=CircuitEventsSectionParser(),
+                        ),
+                    ],
+                ),
             },
         ]
 

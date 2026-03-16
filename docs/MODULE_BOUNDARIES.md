@@ -1,73 +1,71 @@
-# Granice modułów parserów wiki (stabilizacja architektury)
+# Granice modułów parserów wiki (docelowy layout domen + entrypoint)
 
-## 1. Mapa odpowiedzialności warstw
+## 1. Finalny layout domenowy
 
-- `list/` — seed scrape, pozyskanie list encji i linków do stron szczegółowych.
-- `sections/` — parsowanie `bodyContent` po sekcjach i podsekcjach; wyłącznie logika sekcyjna.
-- `infobox/` — strukturalny rdzeń encji (`table.infobox`) i mapowanie pól high-signal.
-- `postprocess/` — normalizacja domenowa i domknięcie kontraktu wynikowego.
+Każda domena (`drivers`, `constructors`, `circuits`, `seasons`, `grands_prix`) ma ten sam szkielet:
 
-### Reguła architektoniczna
+- `entrypoint.py` — **jedyny wspierany entrypoint domenowy** (`run_list_scraper`).
+- `list/` — seed scrape (lista encji i linków do szczegółów).
+- `sections/` — parsowanie sekcji artykułu (`bodyContent`) i mapowanie tabel/treści.
+- `infobox/` — mapowanie pól strukturalnych (`table.infobox`).
+- `postprocess/` — normalizacja końcowa i domknięcie kontraktu danych.
 
-Moduły `sections/` **nie importują** `single_scraper.py`.
-Komunikacja między warstwami odbywa się wyłącznie przez:
-- serwisy parserów,
-- adaptery (`section_adapter`),
-- wspólny kontrakt (`SectionParseResult`).
+Legacy pliki typu `list_scraper.py` / `*_constructors_list.py` pozostają tylko jako zgodność wsteczna:
+- mają oznaczenie **deprecated**,
+- emitują `DeprecationWarning`,
+- delegują uruchomienie do `entrypoint.py`.
 
-## 2. Wspólny kontrakt sekcyjny
+## 2. Reguły zależności między warstwami
 
-Każdy parser sekcji zwraca `SectionParseResult`:
-- `section_id`
-- `section_label`
-- `records`
-- `metadata`
+- `list/` nie importuje `sections/`, `infobox/`, `postprocess/`.
+- `sections/` nie importuje `single_scraper.py` ani legacy `list_scraper.py`.
+- `infobox/` nie importuje `list/`, `sections/`, `postprocess/`.
+- `postprocess/` nie importuje `list/`, `sections/`, `infobox/`.
 
-Dzięki temu adapter i orkiestrator 0/1 mogą traktować parsery domenowe jednolicie.
+Warstwy komunikują się przez kontrakty i orchestration w scraperach domenowych, nie przez ciasne importy między katalogami warstw.
 
-## 3. Przepływ danych per domena
+## 3. Standardowy interfejs uruchamiania
 
-## `drivers`
-1. `drivers/list/` — seed kierowców i URL-e.
-2. `drivers/sections/` — parsery sekcji (np. `Career_results`) przez adapter sekcji.
-3. `drivers/infobox/` — pola personalne i statystyczne.
-4. `drivers/postprocess/` — aliasy nazw, normalizacja dat/kraju.
+Każda domena eksportuje z `entrypoint.py` funkcję:
 
-## `constructors`
-1. `constructors/list/` — seed konstruktorów.
-2. `constructors/sections/` — parsery sekcyjne wyników/championship context.
-3. `constructors/infobox/` — pola strukturalne zespołu.
-4. `constructors/postprocess/` — normalizacja identyfikatorów i nazw historycznych.
+- `run_list_scraper(*, run_config: RunConfig | None = None) -> None`
 
-## `circuits`
-1. `circuits/list/` — seed torów.
-2. `circuits/sections/` — parsery sekcyjne (np. lap records).
-3. `circuits/infobox/` — lokalizacja, layout, długość.
-4. `circuits/postprocess/` — normalizacja geo i wariantów nazw.
+To jest docelowy punkt startowy dla CLI/skryptów i automatyzacji.
 
-## `seasons`
-1. `seasons/list/` — seed sezonów.
-2. `seasons/sections/` — kalendarz, wyniki, klasyfikacje.
-3. `seasons/infobox/` — strukturalne pola sezonu.
-4. `seasons/postprocess/` — normalizacja round ordering i nazewnictwa klasyfikacji.
+## 4. Przykładowy flow per domena
 
-## `grands_prix`
-1. `grands_prix/list/` — seed GP.
-2. `grands_prix/sections/` — by year / sekcje krytyczne przez fallback aliasów.
-3. `grands_prix/infobox/` — rdzeń metadanych wyścigu.
-4. `grands_prix/postprocess/` — normalizacja statusu mistrzostw, mapowanie domenowe.
+### `drivers`
+1. `scrapers.drivers.entrypoint.run_list_scraper()`
+2. `drivers/list_scraper.py` (klasa listy + parser tabeli)
+3. `drivers/sections/*` + `drivers/infobox/*` w scraperach szczegółowych
+4. `drivers/postprocess/*` (normalizacja końcowa)
 
-## 4. Definition of Done (DoD) dla nowego parsera sekcji
+### `constructors`
+1. `scrapers.constructors.entrypoint.run_list_scraper()`
+2. `constructors/current_constructors_list.py` (lista bieżącego sezonu)
+3. `constructors/sections/*` + `constructors/infobox/*`
+4. `constructors/postprocess/*`
 
-Nowy parser sekcji jest gotowy do merge, jeżeli:
-- [ ] ma test snapshotowy HTML (sekcja i edge-cases),
-- [ ] ma mapowanie aliasów sekcji (`DOMAIN_CRITICAL_SECTIONS` + fallback),
-- [ ] waliduje kontrakt (`SectionParseResult`) i pola `records`,
-- [ ] ma wpis w README domeny (`list/sections/infobox/postprocess` + source/fallback).
+### `circuits`
+1. `scrapers.circuits.entrypoint.run_list_scraper()`
+2. `circuits/list_scraper.py`
+3. `circuits/sections/*` + `circuits/infobox/*`
+4. `circuits/postprocess/*`
 
-## 5. Wspólne helpery czyszczenia treści wiki
+### `seasons`
+1. `scrapers.seasons.entrypoint.run_list_scraper()`
+2. `seasons/list_scraper.py`
+3. `seasons/sections/*` + `seasons/infobox/*`
+4. `seasons/postprocess/*`
 
-Helpery czyszczenia tekstu parserów elementów zostały skonsolidowane w:
-- `scrapers/wiki/parsers/elements/text_cleaning.py`
+### `grands_prix`
+1. `scrapers.grands_prix.entrypoint.run_list_scraper()`
+2. `grands_prix/list_scraper.py`
+3. `grands_prix/sections/*` + `grands_prix/infobox/*`
+4. `grands_prix/postprocess/*`
 
-Celem jest eliminacja duplikacji i spójna normalizacja tekstu we wszystkich parserach elementarnych.
+## 5. Kontrola statyczna
+
+W repo jest test statyczny sprawdzający:
+- obecność `entrypoint.py` i wymaganych katalogów warstw w każdej domenie,
+- brak zabronionych importów łamiących granice architektoniczne.

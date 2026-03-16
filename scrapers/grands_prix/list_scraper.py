@@ -1,9 +1,11 @@
+"""DEPRECATED ENTRYPOINT: use scrapers.grands_prix.entrypoint.run_list_scraper."""
+
 from pathlib import Path
+import warnings
 
 from models.records.factories import build_grands_prix_record
 from scrapers.base.helpers.config_factory import ScraperCommonConfig
 from scrapers.base.helpers.config_factory import build_table_config
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.runner import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
@@ -64,10 +66,14 @@ class GrandsPrixListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        GrandsPrixListScraper,
-        "grands_prix/f1_grands_prix_by_title.json",
-        "grands_prix/f1_grands_prix_by_title.csv",
+    from scrapers.grands_prix.entrypoint import run_list_scraper
+
+    warnings.warn(
+        "scrapers.grands_prix.list_scraper is deprecated; use scrapers.grands_prix.entrypoint.run_list_scraper.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    run_list_scraper(
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,

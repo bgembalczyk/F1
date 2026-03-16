@@ -1,9 +1,16 @@
 from pathlib import Path
 
+from bs4 import BeautifulSoup
+
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.current_constructors_list import CurrentConstructorsListScraper
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
+from scrapers.seasons.parsers.results import SeasonResultsParser
+from scrapers.seasons.parsers.table import SeasonTableParser
+from tests._section_parser_fixture_pattern import ALIAS_FIXTURES
+
+ALIAS_DOMAINS = ("constructors", "circuits", "seasons")
 
 
 class FixtureFetcher:
@@ -25,7 +32,7 @@ def _fixture_html(name: str) -> str:
 def test_current_constructors_section_parser_handles_current_season_alias() -> None:
     scraper = CurrentConstructorsListScraper(
         options=ScraperOptions(
-            fetcher=FixtureFetcher(_fixture_html("current_constructors_alias.html")),
+            fetcher=FixtureFetcher(ALIAS_FIXTURES["constructors"]),
             include_urls=True,
         ),
     )
@@ -61,7 +68,7 @@ def test_former_constructors_section_parser_handles_defunct_alias() -> None:
 def test_circuits_section_parser_handles_formula_one_circuits_alias() -> None:
     scraper = CircuitsListScraper(
         options=ScraperOptions(
-            fetcher=FixtureFetcher(_fixture_html("circuits_alias.html")),
+            fetcher=FixtureFetcher(ALIAS_FIXTURES["circuits"]),
             include_urls=True,
         ),
     )
@@ -71,6 +78,23 @@ def test_circuits_section_parser_handles_formula_one_circuits_alias() -> None:
     assert data
     assert data[0]["circuit"]["text"] == "Monza"
     assert data[0]["country"]["text"] == "Italy"
+
+
+def test_seasons_results_parser_handles_results_and_standings_alias() -> None:
+    soup = BeautifulSoup(ALIAS_FIXTURES["seasons"], "html.parser")
+    parser = SeasonResultsParser(
+        SeasonTableParser(
+            options=ScraperOptions(),
+            include_urls=True,
+            url="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+        )
+    )
+
+    rows = parser.parse(soup)
+
+    assert rows
+    assert rows[0]["round"] == 1
+    assert rows[0]["grand_prix"]["text"] == "Bahrain Grand Prix"
 
 
 def test_circuits_section_parser_falls_back_to_legacy_full_document_search() -> None:

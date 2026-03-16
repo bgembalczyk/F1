@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 from datetime import timezone
+from hashlib import sha256
 from pathlib import Path
 
 from infrastructure.gemini.client import GeminiClient
@@ -24,7 +25,17 @@ from scrapers.wiki.seed_registry import validate_seed_registry
 # Ścieżki wyjściowe względem katalogu repo (ten plik jest w root)
 BASE_WIKI_DIR = Path("data/wiki").resolve()
 BASE_DEBUG_DIR = Path("data/debug").resolve()
+BASE_WIKI_CACHE_DIR = Path("data/wiki_cache").resolve()
 CURRENT_YEAR = datetime.now(tz=timezone.utc).year
+
+
+def _resolve_cache_scraped_at(source_url: str) -> datetime:
+    """Zwraca czas scrapowania odpowiadający wpisowi cache dla wskazanego URL."""
+    digest = sha256(source_url.encode("utf-8")).hexdigest()
+    cache_path = BASE_WIKI_CACHE_DIR / f"{digest}.html"
+    if cache_path.exists():
+        return datetime.fromtimestamp(cache_path.stat().st_mtime, tz=timezone.utc)
+    return datetime.now(tz=timezone.utc)
 
 
 def run_layer_zero() -> None:
@@ -76,6 +87,7 @@ def run_layer_zero() -> None:
             normalized_seed_records = normalize_seed_records(
                 raw_seed_records,
                 source_url=job.wikipedia_url,
+                scraped_at=_resolve_cache_scraped_at(job.wikipedia_url),
             )
             l0_path = write_seed_l0(
                 records=normalized_seed_records,

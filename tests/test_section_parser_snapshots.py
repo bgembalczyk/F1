@@ -1,6 +1,11 @@
+from __future__ import annotations
+
 from bs4 import BeautifulSoup
+import pytest
 
 from scrapers.wiki.parsers.content_text import ContentTextParser
+from tests._section_parser_fixture_pattern import SNAPSHOT_CASES_BY_DOMAIN
+from tests._section_parser_fixture_pattern import iter_snapshot_cases
 
 
 def _parse_sections(html: str) -> list[dict]:
@@ -28,67 +33,16 @@ def _snapshot_payload(sections: list[dict]) -> list[dict]:
     return payload
 
 
-def test_snapshot_driver_page_sections() -> None:
-    html = """
-    <div id="mw-content-text" class="mw-body-content">
-      <p>Intro</p>
-      <div class="mw-heading mw-heading2"><h2 id="Career">Career</h2></div>
-      <div class="mw-heading mw-heading3"><h3 id="Formula_One">Formula One</h3></div>
-      <div><span><p>Debut in 2007.</p></span></div>
-    </div>
-    """
-    snapshot = _snapshot_payload(_parse_sections(html))
-    assert snapshot[1]["section_id"] == "career"
-    assert "paragraph" in snapshot[1]["kinds"]
+@pytest.mark.parametrize("fixture", iter_snapshot_cases(), ids=lambda case: f"{case.domain}-{case.variant}")
+def test_snapshot_section_parser_contract_per_domain(fixture) -> None:
+    snapshot = _snapshot_payload(_parse_sections(fixture.html))
+
+    assert snapshot[1]["section_id"] == fixture.expected_section_id
+    assert fixture.expected_kind in snapshot[1]["kinds"]
 
 
-def test_snapshot_constructor_page_sections() -> None:
-    html = """
-    <div id="mw-content-text" class="mw-body-content">
-      <div class="mw-heading mw-heading2"><h2 id="Results">Results</h2></div>
-      <div class="mw-heading mw-heading3"><h3 id="Championship_results">Championship results</h3></div>
-      <div><table class="wikitable"><tr><th>Year</th></tr><tr><td>2024</td></tr></table></div>
-    </div>
-    """
-    snapshot = _snapshot_payload(_parse_sections(html))
-    assert snapshot[1]["section_id"] == "results"
-    assert "table" in snapshot[1]["kinds"]
-
-
-def test_snapshot_gp_page_sections() -> None:
-    html = """
-    <div id="mw-content-text" class="mw-body-content">
-      <div class="mw-heading mw-heading2"><h2 id="Race">Race</h2></div>
-      <div class="mw-heading mw-heading3"><h3 id="Classification">Classification</h3></div>
-      <span><ul><li>P1</li></ul></span>
-    </div>
-    """
-    snapshot = _snapshot_payload(_parse_sections(html))
-    assert snapshot[1]["section_id"] == "race"
-    assert "list" in snapshot[1]["kinds"]
-
-
-def test_snapshot_season_page_sections() -> None:
-    html = """
-    <div id="mw-content-text" class="mw-body-content">
-      <div class="mw-heading mw-heading2"><h2 id="Grands_Prix">Grands Prix</h2></div>
-      <div class="mw-heading mw-heading3"><h3 id="Rounds">Rounds</h3></div>
-      <p>24 races.</p>
-    </div>
-    """
-    snapshot = _snapshot_payload(_parse_sections(html))
-    assert snapshot[1]["section_id"] == "grands_prix"
-    assert "paragraph" in snapshot[1]["kinds"]
-
-
-def test_snapshot_circuit_page_sections() -> None:
-    html = """
-    <div id="mw-content-text" class="mw-body-content">
-      <div class="mw-heading mw-heading2"><h2 id="Layout">Layout</h2></div>
-      <div class="mw-heading mw-heading3"><h3 id="Current">Current</h3></div>
-      <figure><img src="x.png"/></figure>
-    </div>
-    """
-    snapshot = _snapshot_payload(_parse_sections(html))
-    assert snapshot[1]["section_id"] == "layout"
-    assert "figure" in snapshot[1]["kinds"]
+def test_snapshot_matrix_covers_new_parser_domains() -> None:
+    assert {"constructors", "circuits", "seasons"}.issubset(SNAPSHOT_CASES_BY_DOMAIN)
+    for domain in ("constructors", "circuits", "seasons"):
+        variants = {fixture.variant for fixture in SNAPSHOT_CASES_BY_DOMAIN[domain]}
+        assert variants == {"minimal", "edge"}

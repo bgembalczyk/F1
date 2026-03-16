@@ -4,6 +4,11 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
+from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.base.sections.adapter import SectionAdapterEntry
+from scrapers.circuits.sections import CircuitEventsSectionParser
+from scrapers.circuits.sections import CircuitLapRecordsSectionParser
+from scrapers.circuits.sections import CircuitLayoutHistorySectionParser
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
@@ -25,6 +30,66 @@ def test_constructor_sections_are_parsed_through_section_adapter() -> None:
     result = scraper._parse_soup(soup)[0]  # noqa: SLF001
 
     assert len(result["sections"]) == 3
+    assert {section["section_id"] for section in result["sections"]} == {
+        "history",
+        "championship_results",
+        "complete_formula_one_results",
+    }
+    assert all(set(section) == {"section_id", "section_label", "records", "metadata"} for section in result["sections"])
+
+
+
+def test_circuit_sections_are_parsed_through_section_adapter() -> None:
+    class _CircuitSectionsHarness(SectionAdapter):
+        pass
+
+    scraper = _CircuitSectionsHarness()
+    soup = BeautifulSoup(
+        """
+        <div id="mw-normal-catlinks"><a href="/wiki/Category:Formula_One_circuits">Formula One circuits</a></div>
+        <h2 id="History">History</h2><p>First layout</p>
+        <h2 id="Formula_One_lap_records">Lap records</h2>
+        <table class="wikitable"><tr><th>Driver</th><th>Time</th></tr><tr><td>A. Senna</td><td>1:20.000</td></tr></table>
+        <h2 id="Races">Races</h2>
+        <table class="wikitable"><tr><th>Series</th></tr><tr><td>Formula One</td></tr></table>
+        """,
+        "html.parser",
+    )
+
+    sections = scraper.parse_section_dicts(
+        soup=soup,
+        domain="circuits",
+        entries=[
+            SectionAdapterEntry(
+                section_id="layout_history",
+                aliases=("Layout_history", "History"),
+                parser=CircuitLayoutHistorySectionParser(),
+            ),
+            SectionAdapterEntry(
+                section_id="lap_records",
+                aliases=("Lap_records", "Formula_One_lap_records"),
+                parser=CircuitLapRecordsSectionParser(
+                    options=ScraperOptions(include_urls=True),
+                    url="https://example.com/circuit",
+                ),
+            ),
+            SectionAdapterEntry(
+                section_id="events",
+                aliases=("Events", "Races"),
+                parser=CircuitEventsSectionParser(),
+            ),
+        ],
+    )
+
+    assert {section["section_id"] for section in sections} == {
+        "layout_history",
+        "lap_records",
+        "events",
+    }
+    assert all(
+        set(section) == {"section_id", "section_label", "records", "metadata"}
+        for section in sections
+    )
 
 
 def test_driver_sections_include_non_championship_alias() -> None:
@@ -87,6 +152,13 @@ def test_grand_prix_by_year_uses_domain_critical_alias_fallback() -> None:
 
 
 def test_each_critical_section_has_alias_fallback() -> None:
-    for sections in DOMAIN_CRITICAL_SECTIONS.values():
+    required_domains = {"drivers", "constructors", "circuits", "seasons", "grands_prix"}
+    assert required_domains.issubset(DOMAIN_CRITICAL_SECTIONS.keys())
+
+    for domain in required_domains:
+        sections = DOMAIN_CRITICAL_SECTIONS[domain]
+        assert sections, f"Missing critical sections for domain={domain}"
         for section in sections:
-            assert section.alternative_section_ids
+            assert section.alternative_section_ids, (
+                f"Critical section without aliases: domain={domain} section={section.section_id}"
+            )
