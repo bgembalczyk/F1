@@ -26,6 +26,34 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         base_wiki_dir
         / "layers"
         / "0_layer"
+        / "constructors"
+        / "raw"
+        / "f1_former_constructors.json",
+        [
+            {
+                "constructor": {"text": "Team Old", "url": "https://example.com/old"},
+                "wins": 0,
+            },
+        ],
+    )
+    _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "constructors"
+        / "raw"
+        / "f1_indianapolis_only_constructors.json",
+        [
+            {
+                "constructor": "Indy Team",
+                "constructor_url": "https://example.com/indy",
+            },
+        ],
+    )
+    _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
         / "drivers"
         / "raw"
         / "female_drivers.json",
@@ -102,6 +130,29 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             "constructor": "Ferrari",
             "status": "active",
             "series": ["Formula One"],
+        },
+        {
+            "constructor": {"text": "Team Old", "url": "https://example.com/old"},
+            "racing_series": {
+                "formula_one": [
+                    {
+                        "wins": 0,
+                        "status": "former",
+                    },
+                ],
+            },
+        },
+        {
+            "constructor": {"text": "Indy Team", "url": "https://example.com/indy"},
+            "racing_series": {
+                "AAA_national_championship": [],
+                "formula_one": [
+                    {
+                        "status": "former",
+                        "indianapolis_only": True,
+                    },
+                ],
+            },
         },
     ]
 
