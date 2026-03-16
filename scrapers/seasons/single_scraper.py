@@ -34,6 +34,7 @@ from scrapers.seasons.parsers.standings import SeasonStandingsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
 from scrapers.wiki.scraper import WikiScraper
+from scrapers.seasons.postprocess import SeasonSectionContractPostProcessor
 
 
 class SingleSeasonScraper(SectionAdapter, WikiScraper):
@@ -46,6 +47,7 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
+        options.post_processors.append(SeasonSectionContractPostProcessor())
         super().__init__(options=options)
         self.url: str = ""
         self.season_year = season_year

@@ -13,6 +13,7 @@ from scrapers.drivers.sections import DriverNonChampionshipSectionParser
 from scrapers.drivers.sections import DriverRacingRecordSectionParser
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 from scrapers.wiki.scraper import WikiScraper
+from scrapers.drivers.postprocess import DriverSectionContractPostProcessor
 
 
 class SingleDriverScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper):
@@ -24,6 +25,7 @@ class SingleDriverScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
+        options.post_processors.append(DriverSectionContractPostProcessor())
         super().__init__(options=options)
         self.url: str = ""
         self._options = options

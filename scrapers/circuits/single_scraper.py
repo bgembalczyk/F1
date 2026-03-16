@@ -7,17 +7,15 @@ from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
-from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
-from scrapers.circuits.sections import CircuitEventsSectionParser
-from scrapers.circuits.sections import CircuitLapRecordsSectionParser
-from scrapers.circuits.sections import CircuitLayoutHistorySectionParser
+from scrapers.circuits.sections import circuit_section_entries
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
+from scrapers.circuits.postprocess import CircuitSectionContractPostProcessor
 
 
 class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper):
@@ -44,6 +42,7 @@ class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScra
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
 
+        options.post_processors.append(CircuitSectionContractPostProcessor())
         super().__init__(options=options)
         self.policy = self.http_policy
         self.url: str = ""
@@ -89,31 +88,15 @@ class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScra
                 "sections": self.parse_section_dicts(
                     soup=working_soup,
                     domain="circuits",
-                    entries=[
-                        SectionAdapterEntry(
-                            section_id="layout_history",
-                            aliases=("Layout_history", "History"),
-                            parser=CircuitLayoutHistorySectionParser(),
+                    entries=circuit_section_entries(
+                        options=ScraperOptions(
+                            include_urls=self.include_urls,
+                            fetcher=self.fetcher,
+                            policy=self.policy,
+                            debug_dir=self.debug_dir,
                         ),
-                        SectionAdapterEntry(
-                            section_id="lap_records",
-                            aliases=("Lap_records", "Formula_One_lap_records"),
-                            parser=CircuitLapRecordsSectionParser(
-                                options=ScraperOptions(
-                                    include_urls=self.include_urls,
-                                    fetcher=self.fetcher,
-                                    policy=self.policy,
-                                    debug_dir=self.debug_dir,
-                                ),
-                                url=self.url,
-                            ),
-                        ),
-                        SectionAdapterEntry(
-                            section_id="events",
-                            aliases=("Events", "Races"),
-                            parser=CircuitEventsSectionParser(),
-                        ),
-                    ],
+                        url=self.url,
+                    ),
                 ),
             },
         ]
