@@ -7,8 +7,8 @@ from models.validation.constants import ALLOWED_MANUFACTURER_STATUSES
 from models.validation.core import validate_float
 from models.validation.core import validate_int
 from models.validation.core import validate_status
-from models.validation.validators import normalize_link_list
 from models.validation.validators import normalize_season_list
+from models.domain_utils.normalization import normalize_link_items
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
 
@@ -49,7 +49,7 @@ class EngineManufacturer(ValidatedModel):
         )
 
         # --- engines_built_in: koercja do Link + filtr pustych ---
-        self.engines_built_in = normalize_link_list(self.engines_built_in)
+        self.engines_built_in = [Link.from_dict(item) for item in normalize_link_items(self.engines_built_in, field_name="engines_built_in")]
 
         # --- seasons: koercja do SeasonRef + filtr None ---
         self.seasons = normalize_season_list(self.seasons)
