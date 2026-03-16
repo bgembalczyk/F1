@@ -1,52 +1,22 @@
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.composite_scraper import CompositeDataExtractor
-from scrapers.base.composite_scraper import CompositeDataExtractorChildren
+from scrapers.base.complete_extractor_base import CompleteExtractorBase
 from scrapers.base.options import ScraperOptions
-from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
 
-class CompleteDriverDataExtractor(CompositeDataExtractor):
+class CompleteDriverDataExtractor(CompleteExtractorBase):
     url = F1DriversListScraper.CONFIG.url
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-    ) -> None:
-        options = options or ScraperOptions()
+    def build_list_scraper(self, options: ScraperOptions) -> F1DriversListScraper:
+        return F1DriversListScraper(options=self.list_scraper_options(options))
 
-        # Ten ekstraktor zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
-        options.include_urls = True
+    def build_single_scraper(self, options: ScraperOptions) -> SingleDriverScraper:
+        return SingleDriverScraper(options=self.single_scraper_options(options))
 
-        super().__init__(options=options)
-
-    def build_children(self) -> CompositeDataExtractorChildren:
-        list_scraper = F1DriversListScraper(
-            options=ScraperOptions(
-                include_urls=True,
-                policy=self.http_policy,
-                source_adapter=self.source_adapter,
-            ),
-        )
-        single_scraper = SingleDriverScraper(
-            options=ScraperOptions(
-                policy=self.http_policy,
-                source_adapter=self.source_adapter,
-            ),
-        )
-        drivers_adapter = IterableSourceAdapter(list_scraper.fetch)
-
-        return CompositeDataExtractorChildren(
-            list_scraper=list_scraper,
-            single_scraper=single_scraper,
-            records_adapter=drivers_adapter,
-        )
-
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
+    def extract_detail_url(self, record: dict[str, Any]) -> str | None:
         driver_link = record.get("driver")
         if isinstance(driver_link, dict):
             return driver_link.get("url")

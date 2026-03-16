@@ -1,15 +1,13 @@
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.composite_scraper import CompositeDataExtractor
-from scrapers.base.composite_scraper import CompositeDataExtractorChildren
+from scrapers.base.complete_extractor_base import CompleteExtractorBase
 from scrapers.base.options import ScraperOptions
-from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
 
-class F1CompleteGrandPrixDataExtractor(CompositeDataExtractor):
+class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
     """
     Pobiera listę Grand Prix, a następnie zaciąga tabelę "By year"
     z każdego artykułu na Wikipedii, rozszerzając rekordy listy.
@@ -19,39 +17,13 @@ class F1CompleteGrandPrixDataExtractor(CompositeDataExtractor):
 
     url = GrandsPrixListScraper.CONFIG.url
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-    ) -> None:
-        options = options or ScraperOptions()
-        options.include_urls = True
+    def build_list_scraper(self, options: ScraperOptions) -> GrandsPrixListScraper:
+        return GrandsPrixListScraper(options=self.list_scraper_options(options))
 
-        super().__init__(options=options)
+    def build_single_scraper(self, options: ScraperOptions) -> F1SingleGrandPrixScraper:
+        return F1SingleGrandPrixScraper(options=self.single_scraper_options(options))
 
-    def build_children(self) -> CompositeDataExtractorChildren:
-        list_scraper = GrandsPrixListScraper(
-            options=ScraperOptions(
-                include_urls=True,
-                policy=self.http_policy,
-                source_adapter=self.source_adapter,
-            ),
-        )
-        single_scraper = F1SingleGrandPrixScraper(
-            options=ScraperOptions(
-                policy=self.http_policy,
-                source_adapter=self.source_adapter,
-            ),
-        )
-        grands_prix_adapter = IterableSourceAdapter(list_scraper.fetch)
-
-        return CompositeDataExtractorChildren(
-            list_scraper=list_scraper,
-            single_scraper=single_scraper,
-            records_adapter=grands_prix_adapter,
-        )
-
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
+    def extract_detail_url(self, record: dict[str, Any]) -> str | None:
         race_title = record.get("race_title")
         if isinstance(race_title, dict):
             return race_title.get("url")

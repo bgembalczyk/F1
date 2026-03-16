@@ -1,33 +1,22 @@
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.composite_scraper import CompositeDataExtractor
-from scrapers.base.composite_scraper import CompositeDataExtractorChildren
-from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.complete_extractor_base import CompleteExtractorBase
 from scrapers.base.options import ScraperOptions
-from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
 
-class CompleteSeasonDataExtractor(CompositeDataExtractor):
-    def __init__(self, *, options: ScraperOptions | None = None) -> None:
-        options = init_scraper_options(options, include_urls=True)
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
-        self._options = options
-        super().__init__(options=options)
-        self.url = SeasonsListScraper.CONFIG.url
+class CompleteSeasonDataExtractor(CompleteExtractorBase):
+    url = SeasonsListScraper.CONFIG.url
 
-    def build_children(self) -> CompositeDataExtractorChildren:
-        list_scraper = SeasonsListScraper(options=self._options)
-        return CompositeDataExtractorChildren(
-            list_scraper=list_scraper,
-            single_scraper=SingleSeasonScraper(options=self._options),
-            records_adapter=IterableSourceAdapter(list_scraper.fetch),
-        )
+    def build_list_scraper(self, options: ScraperOptions) -> SeasonsListScraper:
+        return SeasonsListScraper(options=self.list_scraper_options(options))
 
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
+    def build_single_scraper(self, options: ScraperOptions) -> SingleSeasonScraper:
+        return SingleSeasonScraper(options=self.single_scraper_options(options))
+
+    def extract_detail_url(self, record: dict[str, Any]) -> str | None:
         season_info = record.get("season")
         if not isinstance(season_info, dict):
             return None

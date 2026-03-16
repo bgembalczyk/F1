@@ -1,16 +1,14 @@
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.composite_scraper import CompositeDataExtractor
-from scrapers.base.composite_scraper import CompositeDataExtractorChildren
+from scrapers.base.complete_extractor_base import CompleteExtractorBase
 from scrapers.base.options import ScraperOptions
-from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.models.services.circuit_service import CircuitService
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 
 
-class F1CompleteCircuitDataExtractor(CompositeDataExtractor):
+class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
     """
     Pobiera listę torów, a następnie zaciąga szczegóły każdego toru (infobox + tabele),
     po czym normalizuje rekord do docelowej struktury.
@@ -22,42 +20,13 @@ class F1CompleteCircuitDataExtractor(CompositeDataExtractor):
 
     url = CircuitsListScraper.CONFIG.url
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-    ) -> None:
-        options = options or ScraperOptions()
-        # Ten ekstraktor zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
-        options.include_urls = True
+    def build_list_scraper(self, options: ScraperOptions) -> CircuitsListScraper:
+        return CircuitsListScraper(options=self.list_scraper_options(options))
 
-        super().__init__(options=options)
+    def build_single_scraper(self, options: ScraperOptions) -> F1SingleCircuitScraper:
+        return F1SingleCircuitScraper(options=self.single_scraper_options(options))
 
-    def build_children(self) -> CompositeDataExtractorChildren:
-        list_scraper = CircuitsListScraper(
-            options=ScraperOptions(
-                include_urls=True,
-                policy=self.http_policy,
-                source_adapter=self.source_adapter,
-                debug_dir=self.debug_dir,
-            ),
-        )
-        single_scraper = F1SingleCircuitScraper(
-            options=ScraperOptions(
-                policy=self.http_policy,
-                source_adapter=self.source_adapter,
-                debug_dir=self.debug_dir,
-            ),
-        )
-        circuits_adapter = IterableSourceAdapter(list_scraper.fetch)
-
-        return CompositeDataExtractorChildren(
-            list_scraper=list_scraper,
-            single_scraper=single_scraper,
-            records_adapter=circuits_adapter,
-        )
-
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
+    def extract_detail_url(self, record: dict[str, Any]) -> str | None:
         circuit_data = record.get("circuit")
         if isinstance(circuit_data, dict):
             return circuit_data.get("url")
@@ -68,9 +37,7 @@ class F1CompleteCircuitDataExtractor(CompositeDataExtractor):
         record: dict[str, Any],
         details: dict[str, Any] | None,
     ) -> dict[str, Any]:
-        full_record = dict(record)
-        full_record["details"] = details
-        return CircuitService.normalize_record(full_record)
+        return CircuitService.normalize_record(super().assemble_record(record, details))
 
 
 if __name__ == "__main__":
