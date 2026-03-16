@@ -20,10 +20,10 @@ def test_section_source_adapter_fallbacks_to_raw(tmp_path: Path) -> None:
         output_target="checkpoints",
     )
 
-    records, source_path = adapter.resolve(step, "drivers")
+    resolved = adapter.resolve(step, "drivers")
 
-    assert source_path == raw_path
-    assert records == [{"driver": {"url": "x"}}]
+    assert resolved.source_path == raw_path
+    assert resolved.records == [{"driver": {"url": "x"}}]
 
 
 def test_section_source_adapter_fallbacks_to_legacy_wiki(tmp_path: Path) -> None:
@@ -40,10 +40,10 @@ def test_section_source_adapter_fallbacks_to_legacy_wiki(tmp_path: Path) -> None
         output_target="checkpoints",
     )
 
-    records, source_path = adapter.resolve(step, "drivers")
+    resolved = adapter.resolve(step, "drivers")
 
-    assert source_path == legacy_path
-    assert records == [{"driver": {"url": "legacy"}}]
+    assert resolved.source_path == legacy_path
+    assert resolved.records == [{"driver": {"url": "legacy"}}]
 
 
 def test_step_orchestrator_writes_standardized_checkpoint(tmp_path: Path) -> None:
