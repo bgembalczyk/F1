@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from difflib import SequenceMatcher
 from typing import Any
 
-from scrapers.wiki.parsers.section_detection import COMMON_SECTION_ALIASES
+from scrapers.base.sections.aliases import COMMON_SECTION_ALIASES
 from scrapers.wiki.parsers.section_detection import normalize_section_text
 
 SectionTree = dict[str, Any]

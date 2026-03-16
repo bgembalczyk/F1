@@ -8,20 +8,10 @@ import re
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base.sections.aliases import builtin_aliases_for_target
 from scrapers.base.helpers.text import clean_wiki_text
 
 _HEADING_TAGS = ("h1", "h2", "h3", "h4", "h5", "h6")
-
-COMMON_SECTION_ALIASES: dict[str, set[str]] = {
-    "results": {"result", "results and standings", "grands prix"},
-    "career results": {
-        "racing record",
-        "career record",
-        "motorsport career results",
-        "racing career",
-    },
-}
-
 
 @dataclass(slots=True)
 class SectionMatch:
@@ -109,11 +99,10 @@ def _resolve_aliases(
     domain: str | None,
 ) -> set[str]:
     normalized_target = normalize_section_text(target)
-    resolved = set(COMMON_SECTION_ALIASES.get(normalized_target, set()))
+    resolved = builtin_aliases_for_target(target, domain=domain)
 
     if domain and domain_aliases:
-        per_domain = domain_aliases.get(domain, {})
-        resolved.update(per_domain.get(normalized_target, set()))
+        resolved.update(domain_aliases.get(domain, {}).get(normalized_target, set()))
 
     if aliases:
         resolved.update(aliases.get(normalized_target, set()))

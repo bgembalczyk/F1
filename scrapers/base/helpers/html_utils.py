@@ -7,23 +7,11 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base.sections.aliases import DOMAIN_SECTION_ALIASES
 from scrapers.wiki.parsers.section_detection import find_section_heading
 
 _HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
 _HEADING_AND_TABLE_TAGS = [*list(_HEADING_TAGS), "table"]
-
-DOMAIN_SECTION_ALIASES: dict[str, dict[str, set[str]]] = {
-    "seasons": {
-        "results": {"grands prix", "results and standings"},
-    },
-    "drivers": {
-        "career results": {"racing record", "karting record"},
-    },
-    "circuits": {
-        "results": {"race results"},
-    },
-}
-
 
 def find_section_elements(
     soup: BeautifulSoup,
