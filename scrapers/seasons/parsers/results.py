@@ -77,7 +77,7 @@ class SeasonResultsParser:
         body_content = BodyContentParser().parse(body)
         article = body_content.get("content_text") or {}
         aliases = DOMAIN_SECTION_ALIASES.get("seasons", {}).get("results", set())
-        target_section = find_section_tree(article, "Results", aliases)
+        target_section = find_section_tree(article, "Results", aliases, domain="seasons")
         if not target_section:
             return []
 

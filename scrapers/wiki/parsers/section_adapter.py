@@ -5,8 +5,8 @@ from dataclasses import dataclass
 from difflib import SequenceMatcher
 from typing import Any
 
-from scrapers.base.sections.aliases import COMMON_SECTION_ALIASES
 from scrapers.wiki.parsers.section_detection import normalize_section_text
+from scrapers.wiki.parsers.section_profiles import get_section_profile
 
 SectionTree = dict[str, Any]
 
@@ -42,9 +42,16 @@ def _normalize_id(text: str) -> str:
     return normalize_section_text(text).replace(" ", "_")
 
 
-def _expand_targets(target: str, aliases: Iterable[str]) -> tuple[set[str], set[str]]:
-    normalized_target = normalize_section_text(target)
-    values = {target, *aliases, *COMMON_SECTION_ALIASES.get(normalized_target, set())}
+def _expand_targets(target: str, aliases: Iterable[str], *, domain: str | None = None) -> tuple[set[str], set[str]]:
+    profile = get_section_profile(domain)
+    if profile:
+        canonical = profile.canonical_for(target)
+        if canonical:
+            target = canonical
+
+    values = {target, *aliases}
+    if profile:
+        values.update(profile.aliases_for(target))
     normalized_texts = {
         normalize_section_text(value) for value in values if isinstance(value, str) and value.strip()
     }
@@ -84,20 +91,30 @@ def _find_match(
     target: str,
     aliases: Iterable[str],
     *,
+    domain: str | None = None,
     min_fuzzy_score: float,
 ) -> SectionTreeMatch | None:
-    target_ids, target_texts = _expand_targets(target, aliases)
+    profile = get_section_profile(domain)
+    if profile:
+        canonical = profile.canonical_for(target)
+        if canonical:
+            target = canonical
+        min_fuzzy_score = profile.priorities.fuzzy_threshold
+
+    target_ids, target_texts = _expand_targets(target, aliases, domain=domain)
     fuzzy_candidates: list[SectionTreeMatch] = []
 
     for section in _iter_sections(sections):
         section_name = str(section.get("name", ""))
         section_id = str(section.get("section_id") or _normalize_id(section_name))
         if section_id in target_ids:
-            return SectionTreeMatch(section=section, strategy="exact_id", score=3.0)
+            exact_id_score = profile.priorities.exact_id_score if profile else 3.0
+            return SectionTreeMatch(section=section, strategy="exact_id", score=exact_id_score)
 
         section_text = normalize_section_text(section_name)
         if section_text in target_texts:
-            return SectionTreeMatch(section=section, strategy="exact_text", score=2.0)
+            exact_text_score = profile.priorities.exact_text_score if profile else 2.0
+            return SectionTreeMatch(section=section, strategy="exact_text", score=exact_text_score)
 
         if not target_texts:
             continue
@@ -106,8 +123,9 @@ def _find_match(
             SequenceMatcher(None, section_text, value).ratio() for value in target_texts
         )
         if ratio >= min_fuzzy_score:
+            fuzzy_base_score = profile.priorities.fuzzy_base_score if profile else 1.0
             fuzzy_candidates.append(
-                SectionTreeMatch(section=section, strategy="fuzzy", score=1.0 + ratio)
+                SectionTreeMatch(section=section, strategy="fuzzy", score=fuzzy_base_score + ratio)
             )
 
     if not fuzzy_candidates:
@@ -120,6 +138,7 @@ def find_section_tree(
     target: str,
     aliases: Iterable[str] | None = None,
     *,
+    domain: str | None = None,
     min_fuzzy_score: float = 0.82,
 ) -> SectionTree | None:
     """Find section fragment in ContentTextParser output.
@@ -135,6 +154,7 @@ def find_section_tree(
         sections,
         target,
         aliases or set(),
+        domain=domain,
         min_fuzzy_score=min_fuzzy_score,
     )
     if not match:

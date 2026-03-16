@@ -12,6 +12,7 @@ from scrapers.base.sections.critical_sections import resolve_section_candidates
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.interface import SectionParser
 from scrapers.wiki.parsers.section_detection import find_section_heading
+from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
 
 
 @dataclass(frozen=True)
@@ -42,17 +43,18 @@ class SectionAdapter(WikipediaSectionByIdMixin):
     ) -> list[SectionParseResult]:
         parsed: list[SectionParseResult] = []
         for entry in entries:
+            entry_aliases = profile_entry_aliases(domain, entry.section_id, *entry.aliases)
             section_candidates = resolve_section_candidates(
                 domain=domain,
                 section_id=entry.section_id,
-                alternative_section_ids=entry.aliases,
+                alternative_section_ids=entry_aliases,
             )
             heading_match = None
             for candidate in section_candidates:
                 heading_match = find_section_heading(
                     soup,
                     candidate,
-                    aliases={entry.section_id.lower().replace("_", " "): set(entry.aliases)},
+                    aliases={entry.section_id.lower().replace("_", " "): set(entry_aliases)},
                     domain=domain,
                 )
                 if heading_match is not None:

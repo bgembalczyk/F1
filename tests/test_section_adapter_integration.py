@@ -30,7 +30,7 @@ def test_find_section_tree_with_multilevel_sections_and_alias() -> None:
     content_text = soup.find("div", id="mw-content-text")
     article = ContentTextParser().parse(content_text)
 
-    section = find_section_tree(article, "Results", {"grands prix"})
+    section = find_section_tree(article, "Results", {"grands prix"}, domain="seasons")
 
     assert section is not None
     assert section["section_id"] == "grands_prix"
