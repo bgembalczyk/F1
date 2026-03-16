@@ -12,6 +12,7 @@ from scrapers.engines.helpers.export import export_complete_engine_manufacturers
 from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
 from scrapers.seasons.helpers import export_complete_seasons
 from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+from scrapers.wiki.layer_zero_merge import merge_layer_zero_raw_outputs
 from scrapers.wiki.seed_registry import WIKI_LIST_JOB_REGISTRY
 from scrapers.wiki.seed_registry import WIKI_SEED_REGISTRY
 from scrapers.wiki.seed_registry import validate_list_job_registry
@@ -84,6 +85,8 @@ def run_layer_zero() -> None:
         )
 
         print(f"[list] finished {job.list_scraper_cls.__name__}")
+
+    merge_layer_zero_raw_outputs(BASE_WIKI_DIR)
 
 
 def run_layer_one() -> None:
