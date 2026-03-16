@@ -12,7 +12,8 @@ class GrandsPrixRecordFactory(BaseRecordFactory):
             record,
             {
                 "field_normalizers": {
-                    "race_status": lambda value, _field: self.normalizer.normalize_string(
+                    "race_status": lambda value,
+                    _field: self.normalizer.normalize_string(
                         value,
                     ),
                 },

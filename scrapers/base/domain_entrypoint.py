@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Callable
 from pathlib import Path
+
 from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig

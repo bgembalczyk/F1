@@ -13,7 +13,9 @@ class SeasonRecordFactory(BaseRecordFactory):
             record,
             {
                 "field_normalizers": {
-                    "url": lambda value, _field: self.normalizer.normalize_string(value),
+                    "url": lambda value, _field: self.normalizer.normalize_string(
+                        value,
+                    ),
                 },
                 "list_field_normalizers": {"int": ["year"]},
             },

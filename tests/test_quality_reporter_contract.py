@@ -57,7 +57,9 @@ def test_quality_reporter_contract_for_multiple_domains(tmp_path: Path) -> None:
         assert payload["source_metadata"]["domain"] == domain
 
 
-def test_quality_report_is_generated_automatically_for_pipeline_steps(tmp_path: Path) -> None:
+def test_quality_report_is_generated_automatically_for_pipeline_steps(
+    tmp_path: Path,
+) -> None:
     scraper = DummyContractScraper(
         options=ScraperOptions(
             source_adapter=DummySourceAdapter("<html></html>"),
@@ -79,10 +81,7 @@ def test_quality_report_is_generated_automatically_for_pipeline_steps(tmp_path: 
     ]
     for step in expected_steps:
         report_path = (
-            tmp_path
-            / "data"
-            / "debug"
-            / f"quality_report_step_step-42_{step}.json"
+            tmp_path / "data" / "debug" / f"quality_report_step_step-42_{step}.json"
         )
         assert report_path.exists()
         payload = json.loads(report_path.read_text(encoding="utf-8"))

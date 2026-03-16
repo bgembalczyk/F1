@@ -15,12 +15,14 @@ class EventRecordFactory(BaseRecordFactory):
             record,
             {
                 "field_normalizers": {
-                    "event": lambda value, field: normalize_optional_link_list_or_link_or_string(
+                    "event": lambda value,
+                    field: normalize_optional_link_list_or_link_or_string(
                         self.normalizer,
                         value,
                         field,
                     ),
-                    "championship": lambda value, _field: self.normalizer.normalize_bool(
+                    "championship": lambda value,
+                    _field: self.normalizer.normalize_bool(
                         value,
                     ),
                 },

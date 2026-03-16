@@ -48,17 +48,14 @@ class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScra
             include_urls=self.include_urls,
             debug_dir=self.debug_dir,
         )
-        self._sections_service_factory = (
-            sections_service_factory
-            or (
-                lambda adapter, url: CircuitSectionExtractionService(
-                    adapter=adapter,
-                    include_urls=self.include_urls,
-                    fetcher=self.fetcher,
-                    policy=self.policy,
-                    debug_dir=self.debug_dir,
-                    url=url,
-                )
+        self._sections_service_factory = sections_service_factory or (
+            lambda adapter, url: CircuitSectionExtractionService(
+                adapter=adapter,
+                include_urls=self.include_urls,
+                fetcher=self.fetcher,
+                policy=self.policy,
+                debug_dir=self.debug_dir,
+                url=url,
             )
         )
         self._assembler = assembler or CircuitRecordAssembler()

@@ -73,9 +73,8 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
         self._jim_clark_trophy_parser = JimClarkTrophyParser(self._table_parser)
         self._colin_chapman_trophy_parser = ColinChapmanTrophyParser(self._table_parser)
         self._regional_parser = SeasonRegionalChampionshipParser(self._table_parser)
-        self._text_sections_service_factory = (
-            text_sections_service_factory
-            or (lambda adapter: SeasonTextSectionExtractionService(adapter=adapter))
+        self._text_sections_service_factory = text_sections_service_factory or (
+            lambda adapter: SeasonTextSectionExtractionService(adapter=adapter)
         )
         self._assembler = assembler or SeasonRecordAssembler()
 

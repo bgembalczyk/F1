@@ -260,9 +260,17 @@ def _merge_driver_values(existing: object, incoming: object) -> object:
 
     if isinstance(existing, list) and isinstance(incoming, list):
         merged = list(existing)
-        seen = {json.dumps(item, sort_keys=True, ensure_ascii=False, default=str) for item in merged}
+        seen = {
+            json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
+            for item in merged
+        }
         for item in incoming:
-            serialized = json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
+            serialized = json.dumps(
+                item,
+                sort_keys=True,
+                ensure_ascii=False,
+                default=str,
+            )
             if serialized in seen:
                 continue
             seen.add(serialized)

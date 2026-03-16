@@ -13,7 +13,10 @@ class SpecialDriverRecordFactory(BaseRecordFactory):
             record,
             {
                 "field_normalizers": {
-                    "points": lambda value, _field: normalize_points(self.normalizer, value),
+                    "points": lambda value, _field: normalize_points(
+                        self.normalizer,
+                        value,
+                    ),
                 },
                 "list_field_normalizers": {
                     "link": ["driver"],

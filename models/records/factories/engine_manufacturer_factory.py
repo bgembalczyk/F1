@@ -12,7 +12,8 @@ class EngineManufacturerRecordFactory(BaseRecordFactory):
             record,
             {
                 "field_normalizers": {
-                    "manufacturer_status": lambda value, field: self.normalizer.normalize_status(
+                    "manufacturer_status": lambda value,
+                    field: self.normalizer.normalize_status(
                         value,
                         ["current", "former"],
                         field,

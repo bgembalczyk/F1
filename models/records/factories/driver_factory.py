@@ -22,11 +22,15 @@ class DriverRecordFactory(BaseRecordFactory):
                 "aliases": FIELD_ALIASES["driver"],
                 "record_name": "driver",
                 "field_normalizers": {
-                    "nationality": lambda value, _field: self.normalizer.normalize_string(
+                    "nationality": lambda value,
+                    _field: self.normalizer.normalize_string(
                         value,
                     ),
-                    "is_active": lambda value, _field: self.normalizer.normalize_bool(value),
-                    "is_world_champion": lambda value, _field: self.normalizer.normalize_bool(
+                    "is_active": lambda value, _field: self.normalizer.normalize_bool(
+                        value,
+                    ),
+                    "is_world_champion": lambda value,
+                    _field: self.normalizer.normalize_bool(
                         value,
                     ),
                 },

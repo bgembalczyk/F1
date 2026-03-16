@@ -160,7 +160,10 @@ class ABCScraper(ABC):
             self.logger.debug("Scrape run %s: start parse", run_id)
             raw_records = self.parse(soup)
             self.logger.debug("Scrape run %s: finish parse", run_id)
-            self._write_step_quality_report(step_name="parse", records=list(raw_records))
+            self._write_step_quality_report(
+                step_name="parse",
+                records=list(raw_records),
+            )
 
             self.logger.debug("Scrape run %s: start normalize", run_id)
             normalized_records = self._record_normalizer.normalize(list(raw_records))
@@ -363,7 +366,9 @@ class ABCScraper(ABC):
 
     def _source_metadata(self) -> dict[str, object]:
         return {
-            "domain": self.__module__.split(".")[1] if "." in self.__module__ else self.__module__,
+            "domain": self.__module__.split(".")[1]
+            if "." in self.__module__
+            else self.__module__,
             "scraper": self.__class__.__name__,
             "scraper_kind": getattr(self, "scraper_kind", "single"),
             "url": getattr(self, "url", ""),

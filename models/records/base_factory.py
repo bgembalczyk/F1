@@ -111,7 +111,11 @@ class BaseRecordFactory:
     def normalize_bool_field(self, payload: dict[str, Any], field_name: str) -> None:
         payload[field_name] = self.normalizer.normalize_bool(payload.get(field_name))
 
-    def apply_spec(self, record: Mapping[str, Any], spec: FactorySpec) -> dict[str, Any]:
+    def apply_spec(
+        self,
+        record: Mapping[str, Any],
+        spec: FactorySpec,
+    ) -> dict[str, Any]:
         aliases = spec.get("aliases")
         if aliases:
             payload = self.apply_aliases(
@@ -124,7 +128,10 @@ class BaseRecordFactory:
 
         self.normalize_fields(payload, spec.get("field_normalizers", {}))
 
-        for normalizer_name, field_names in spec.get("list_field_normalizers", {}).items():
+        for normalizer_name, field_names in spec.get(
+            "list_field_normalizers",
+            {},
+        ).items():
             method = getattr(self, f"normalize_{normalizer_name}_fields")
             method(payload, field_names)
 
