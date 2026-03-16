@@ -1,9 +1,6 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
-from datetime import datetime
-from datetime import timezone
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
@@ -12,45 +9,11 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.orchestration import StepDeclaration
+from scrapers.base.orchestration import StepOrchestrator
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
 PARSER_VERSION = "drivers-checkpoint-flow-v1"
-
-
-@dataclass(frozen=True)
-class StepRun:
-    step: str
-    input: str
-    parser: str
-    output: str
-
-
-class StepRegistry:
-    def __init__(self, path: Path) -> None:
-        self.path = path
-
-    def record(self, run: StepRun) -> None:
-        payload = self._load()
-        steps = payload.get("steps", [])
-        updated = [entry for entry in steps if entry.get("step") != run.step]
-        updated.append(
-            {
-                "step": run.step,
-                "input": run.input,
-                "parser": run.parser,
-                "output": run.output,
-                "recorded_at": datetime.now(tz=timezone.utc).isoformat(),
-            },
-        )
-        payload["steps"] = updated
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        body = json.dumps(payload, ensure_ascii=False, indent=2)
-        self.path.write_text(body, encoding="utf-8")
-
-    def _load(self) -> dict[str, Any]:
-        if not self.path.exists():
-            return {"steps": []}
-        return json.loads(self.path.read_text(encoding="utf-8"))
 
 
 class DriversCheckpointFlow:
@@ -69,51 +32,69 @@ class DriversCheckpointFlow:
         self.source_category = source_category
         self.checkpoint_file = checkpoint_file
         self.layer1_output_file = layer1_output_file
-        self.registry = StepRegistry(registry_file)
+        self.registry_file = registry_file
         self.parser_version = parser_version
         self.detail_fetcher = detail_fetcher or self._fetch_driver_details
+
+        self._base_dir = self._resolve_base_data_dir()
+        self.orchestrator = StepOrchestrator(base_dir=self._base_dir)
 
     def run(self) -> None:
         self.run_layer0_checkpoint()
         self.run_layer1_from_checkpoint()
 
     def run_layer0_checkpoint(self) -> None:
-        source_data = self._load_json(self.source_file)
-        urls = self._extract_driver_urls(source_data)
-
-        checkpoint_payload = {
-            "metadata": {
-                "source_file": str(self.source_file),
-                "source_category": self.source_category,
-                "scraped_at": datetime.now(tz=timezone.utc).isoformat(),
-                "parser_version": self.parser_version,
-            },
-            "records": urls,
-        }
-
-        self.checkpoint_file.parent.mkdir(parents=True, exist_ok=True)
-        self.checkpoint_file.write_text(
-            json.dumps(checkpoint_payload, ensure_ascii=False, indent=2),
-            encoding="utf-8",
+        step = StepDeclaration(
+            step_id=0,
+            layer="layer0",
+            input_source=str(self.source_file),
+            parser=self._parse_layer0_urls,
+            output_target="checkpoints",
         )
-
-        self.registry.record(
-            StepRun(
-                step="step_0_layer0_drivers",
-                input=str(self.source_file),
-                parser=self.parser_version,
-                output=str(self.checkpoint_file),
-            ),
-        )
+        result = self.orchestrator.run(step, self.source_category)
+        if Path(result.output_path) != self.checkpoint_file:
+            self._copy_file(Path(result.output_path), self.checkpoint_file)
 
     def run_layer1_from_checkpoint(self) -> None:
-        checkpoint_payload = self._load_json(self.checkpoint_file)
-        checkpoint_records = checkpoint_payload.get("records", [])
-        checkpoint_urls = [
-            record.get("url")
-            for record in checkpoint_records
-            if isinstance(record, dict)
-        ]
+        checkpoint_input = self.checkpoint_file.stem
+        step = StepDeclaration(
+            step_id=1,
+            layer="layer1",
+            input_source=checkpoint_input,
+            parser=self._parse_layer1_details,
+            output_target="checkpoints",
+        )
+        result = self.orchestrator.run(step, self.source_category)
+        if Path(result.output_path) != self.layer1_output_file:
+            self._copy_file(Path(result.output_path), self.layer1_output_file)
+
+    def _parse_layer0_urls(
+        self,
+        source_data: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        extracted: list[dict[str, Any]] = []
+        seen_urls: set[str] = set()
+
+        for row in source_data:
+            driver_field = row.get("driver")
+            if not isinstance(driver_field, dict):
+                continue
+            url = driver_field.get("url")
+            text = driver_field.get("text")
+            if not isinstance(url, str) or not url or url in seen_urls:
+                continue
+            if not isinstance(text, str):
+                text = ""
+            extracted.append({"name": text, "url": url})
+            seen_urls.add(url)
+
+        return extracted
+
+    def _parse_layer1_details(
+        self,
+        checkpoint_records: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        checkpoint_urls = [record.get("url") for record in checkpoint_records]
         urls = [url for url in checkpoint_urls if isinstance(url, str) and url]
 
         existing = self._load_existing_layer1_records()
@@ -128,27 +109,17 @@ class DriversCheckpointFlow:
             details = self.detail_fetcher(url)
             new_records.append(details)
 
-        merged_records = existing + new_records
-
-        self.layer1_output_file.parent.mkdir(parents=True, exist_ok=True)
-        self.layer1_output_file.write_text(
-            json.dumps(merged_records, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
-
-        self.registry.record(
-            StepRun(
-                step="step_1_layer1_drivers",
-                input=str(self.checkpoint_file),
-                parser=self.detail_fetcher.__name__,
-                output=str(self.layer1_output_file),
-            ),
-        )
+        return existing + new_records
 
     def _load_existing_layer1_records(self) -> list[dict[str, Any]]:
         if not self.layer1_output_file.exists():
             return []
         payload = self._load_json(self.layer1_output_file)
+        if isinstance(payload, dict):
+            records = payload.get("records", [])
+            if isinstance(records, list):
+                return [record for record in records if isinstance(record, dict)]
+            return []
         if not isinstance(payload, list):
             return []
         return [record for record in payload if isinstance(record, dict)]
@@ -158,29 +129,18 @@ class DriversCheckpointFlow:
         return json.loads(path.read_text(encoding="utf-8"))
 
     @staticmethod
-    def _extract_driver_urls(source_data: Any) -> list[dict[str, str]]:
-        if not isinstance(source_data, list):
-            return []
+    def _copy_file(source: Path, target: Path) -> None:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
 
-        extracted: list[dict[str, str]] = []
-        seen_urls: set[str] = set()
-
-        for row in source_data:
-            if not isinstance(row, dict):
-                continue
-            driver_field = row.get("driver")
-            if not isinstance(driver_field, dict):
-                continue
-            url = driver_field.get("url")
-            text = driver_field.get("text")
-            if not isinstance(url, str) or not url or url in seen_urls:
-                continue
-            if not isinstance(text, str):
-                text = ""
-            extracted.append({"name": text, "url": url})
-            seen_urls.add(url)
-
-        return extracted
+    def _resolve_base_data_dir(self) -> Path:
+        if self.source_file.parts:
+            try:
+                index = self.source_file.parts.index("data")
+                return Path(*self.source_file.parts[: index + 1])
+            except ValueError:
+                pass
+        return Path("data")
 
     @staticmethod
     def _fetch_driver_details(url: str) -> dict[str, Any]:
@@ -199,7 +159,7 @@ def run_drivers_checkpoint_first_flow(
     flow = DriversCheckpointFlow(
         source_file=base_dir / "wiki" / "drivers" / "f1_drivers.json",
         checkpoint_file=base_dir / "checkpoints" / "step_0_layer0_drivers.json",
-        layer1_output_file=base_dir / "raw" / "drivers" / "step_1_layer1_drivers.json",
+        layer1_output_file=base_dir / "checkpoints" / "step_1_layer1_drivers.json",
         registry_file=base_dir / "checkpoints" / "step_registry.json",
     )
     flow.run()

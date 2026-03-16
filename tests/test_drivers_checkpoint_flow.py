@@ -26,7 +26,7 @@ def test_layer0_writes_checkpoint_with_metadata(tmp_path: Path) -> None:
     )
 
     checkpoint_file = tmp_path / "data" / "checkpoints" / "step_0_layer0_drivers.json"
-    output_file = tmp_path / "data" / "raw" / "drivers" / "step_1_layer1_drivers.json"
+    output_file = tmp_path / "data" / "checkpoints" / "step_1_layer1_drivers.json"
     registry_file = tmp_path / "data" / "checkpoints" / "step_registry.json"
 
     flow = DriversCheckpointFlow(
@@ -39,10 +39,9 @@ def test_layer0_writes_checkpoint_with_metadata(tmp_path: Path) -> None:
     flow.run_layer0_checkpoint()
 
     payload = _read_json(checkpoint_file)
-    assert payload["metadata"]["source_file"] == str(source_file)
-    assert payload["metadata"]["source_category"] == "drivers"
-    assert payload["metadata"]["parser_version"] == "drivers-checkpoint-flow-v1"
-    assert payload["metadata"]["scraped_at"]
+    assert payload["metadata"]["input_source"] == str(source_file)
+    assert payload["metadata"]["domain"] == "drivers"
+    assert payload["metadata"]["parser"] == "_parse_layer0_urls"
     assert payload["records"] == [
         {"name": "Max Verstappen", "url": "https://example.test/max"},
     ]
@@ -72,7 +71,7 @@ def test_layer1_reads_only_checkpoint_urls_and_is_idempotent(tmp_path: Path) -> 
     )
 
     checkpoint_file = tmp_path / "data" / "checkpoints" / "step_0_layer0_drivers.json"
-    output_file = tmp_path / "data" / "raw" / "drivers" / "step_1_layer1_drivers.json"
+    output_file = tmp_path / "data" / "checkpoints" / "step_1_layer1_drivers.json"
     registry_file = tmp_path / "data" / "checkpoints" / "step_registry.json"
 
     calls: list[str] = []
@@ -107,10 +106,16 @@ def test_layer1_reads_only_checkpoint_urls_and_is_idempotent(tmp_path: Path) -> 
     ]
 
     output_payload = _read_json(output_file)
-    assert [item["url"] for item in output_payload] == calls
+    assert [item["url"] for item in output_payload["records"]] == calls
 
-    registry_payload = _read_json(registry_file)
-    recorded_steps = {entry["step"]: entry for entry in registry_payload["steps"]}
-    assert recorded_steps["step_0_layer0_drivers"]["input"] == str(source_file)
-    assert recorded_steps["step_1_layer1_drivers"]["input"] == str(checkpoint_file)
-    assert recorded_steps["step_1_layer1_drivers"]["output"] == str(output_file)
+    audit_json = _read_json(tmp_path / "data" / "checkpoints" / "step_audit.json")
+    expected_entries = 3
+    assert len(audit_json) == expected_entries
+    assert audit_json[-1]["step_id"] == 1
+    assert audit_json[-1]["input_path"] == str(checkpoint_file)
+    assert audit_json[-1]["output_path"] == str(output_file)
+
+    audit_csv = (tmp_path / "data" / "checkpoints" / "step_audit.csv").read_text(
+        encoding="utf-8",
+    )
+    assert "step_id,layer,domain" in audit_csv
