@@ -1,57 +1,30 @@
-from datetime import UTC
+import json
 from datetime import datetime
+from datetime import timezone
 from pathlib import Path
 
 from infrastructure.gemini.client import GeminiClient
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
-
-# List scrapers
 from scrapers.circuits.helpers.export import export_complete_circuits
-from scrapers.circuits.list_scraper import CircuitsListScraper
-from scrapers.constructors.current_constructors_list import (
-    CurrentConstructorsListScraper,
-)
-from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.constructors.helpers.export import export_complete_constructors
-from scrapers.constructors.indianapolis_only_constructors_list import (
-    IndianapolisOnlyConstructorsListScraper,
-)
-from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
-from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
-from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
 from scrapers.drivers.helpers.export import export_complete_drivers
-from scrapers.drivers.list_scraper import F1DriversListScraper
-from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
-from scrapers.engines.engine_regulation import EngineRegulationScraper
-from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
 from scrapers.engines.helpers.export import export_complete_engine_manufacturers
-from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
-    IndianapolisOnlyEngineManufacturersListScraper,
-)
 from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
-from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
-    RedFlaggedNonChampionshipRacesScraper,
-)
-from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
-    RedFlaggedWorldChampionshipRacesScraper,
-)
-from scrapers.points.points_scoring_systems_history import (
-    PointsScoringSystemsHistoryScraper,
-)
-from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
-from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
 from scrapers.seasons.helpers import export_complete_seasons
 from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
-from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
-from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
+from scrapers.wiki.seed_l0 import compute_seed_quality
+from scrapers.wiki.seed_l0 import normalize_seed_records
+from scrapers.wiki.seed_l0 import write_seed_l0
+from scrapers.wiki.seed_registry import WIKI_LIST_JOB_REGISTRY
 from scrapers.wiki.seed_registry import WIKI_SEED_REGISTRY
+from scrapers.wiki.seed_registry import validate_list_job_registry
 from scrapers.wiki.seed_registry import validate_seed_registry
 
 # Ścieżki wyjściowe względem katalogu repo (ten plik jest w root)
 BASE_WIKI_DIR = Path("data/wiki").resolve()
 BASE_DEBUG_DIR = Path("data/debug").resolve()
-CURRENT_YEAR = datetime.now(tz=UTC).year
+CURRENT_YEAR = datetime.now(tz=timezone.utc).year
 
 
 def run_list_scrapers() -> None:
@@ -61,104 +34,73 @@ def run_list_scrapers() -> None:
         debug_dir=BASE_DEBUG_DIR,
     )
 
-    jobs: list[tuple[object, str, str | None]] = [
-        (CircuitsListScraper, "circuits/f1_circuits.json", None),
-        (
-            CurrentConstructorsListScraper,
-            f"constructors/f1_constructors_{CURRENT_YEAR}.json",
-            None,
-        ),
-        (
-            FormerConstructorsListScraper,
-            "constructors/f1_former_constructors.json",
-            None,
-        ),
-        (
-            IndianapolisOnlyConstructorsListScraper,
-            "constructors/f1_indianapolis_only_constructors.json",
-            None,
-        ),
-        (
-            PrivateerTeamsListScraper,
-            "constructors/f1_privateer_teams.json",
-            None,
-        ),
-        (F1DriversListScraper, "drivers/f1_drivers.json", None),
-        (FemaleDriversListScraper, "drivers/female_drivers.json", None),
-        (F1FatalitiesListScraper, "drivers/f1_driver_fatalities.json", None),
-        (
-            IndianapolisOnlyEngineManufacturersListScraper,
-            "engines/f1_indianapolis_only_engine_manufacturers.json",
-            None,
-        ),
-        (EngineRestrictionsScraper, "engines/f1_engine_restrictions.json", None),
-        (EngineRegulationScraper, "engines/f1_engine_regulations.json", None),
-        (
-            EngineManufacturersListScraper,
-            "engines/f1_engine_manufacturers.json",
-            None,
-        ),
-        (
-            RedFlaggedWorldChampionshipRacesScraper,
-            "grands_prix/f1_red_flagged_world_championship_races.json",
-            None,
-        ),
-        (
-            RedFlaggedNonChampionshipRacesScraper,
-            "grands_prix/f1_red_flagged_non_championship_races.json",
-            None,
-        ),
-        (
-            SprintQualifyingPointsScraper,
-            "points/points_scoring_systems_sprint.json",
-            None,
-        ),
-        (
-            ShortenedRacePointsScraper,
-            "points/points_scoring_systems_shortened.json",
-            None,
-        ),
-        (
-            PointsScoringSystemsHistoryScraper,
-            "points/points_scoring_systems_history.json",
-            None,
-        ),
-        (
-            TyreManufacturersBySeasonScraper,
-            "tyres/f1_tyre_manufacturers_by_season.json",
-            None,
-        ),
-    ]
+    validate_list_job_registry(WIKI_LIST_JOB_REGISTRY)
 
-    for scraper_cls, json_rel, csv_rel in jobs:
-        print(f"[list] running  {scraper_cls.__name__}")
-        run_and_export(scraper_cls, json_rel, csv_rel, run_config=run_config)
-        print(f"[list] finished {scraper_cls.__name__}")
+    for job in WIKI_LIST_JOB_REGISTRY:
+        print(f"[list] running  {job.list_scraper_cls.__name__}")
 
-    # F1SponsorshipLiveriesScraper uses a Gemini-backed ParenClassifier that must be
-    # passed explicitly.  We try to load the key file; if it is absent we fall back
-    # gracefully (no classification, no crash).
-    try:
-        _gemini_client = GeminiClient.from_key_file()
-        _classifier: ParenClassifier | None = ParenClassifier(_gemini_client)
-        print(
-            "[main] Gemini ParenClassifier załadowany - "
-            "adnotacje w nawiasach będą klasyfikowane.",
-        )
-    except FileNotFoundError as _e:
-        _classifier = None
-        print(f"[main] Brak klucza Gemini API ({_e}), klasyfikacja Gemini wyłączona.")
+        scraper_kwargs: dict[str, object] = {}
+        if job.seed_name == "sponsorship_liveries":
+            try:
+                _gemini_client = GeminiClient.from_key_file()
+                _classifier = ParenClassifier(_gemini_client)
+                scraper_kwargs["classifier"] = _classifier
+                print(
+                    "[main] Gemini ParenClassifier załadowany - "
+                    "adnotacje w nawiasach będą klasyfikowane.",
+                )
+            except FileNotFoundError as _e:
+                print(
+                    "[main] Brak klucza Gemini API "
+                    f"({_e}), klasyfikacja Gemini wyłączona.",
+                )
 
-    run_and_export(
-        F1SponsorshipLiveriesScraper,
-        "sponsorship_liveries/f1_sponsorship_liveries.json",
-        run_config=RunConfig(
+        rendered_json_path = job.json_output_path.format(year=CURRENT_YEAR)
+        local_run_config = RunConfig(
             output_dir=BASE_WIKI_DIR,
             include_urls=True,
             debug_dir=BASE_DEBUG_DIR,
-            scraper_kwargs={"classifier": _classifier},
-        ),
-    )
+            scraper_kwargs=scraper_kwargs,
+        )
+
+        run_and_export(
+            job.list_scraper_cls,
+            rendered_json_path,
+            job.csv_output_path,
+            run_config=local_run_config if scraper_kwargs else run_config,
+        )
+
+        try:
+            seed_data_path = BASE_WIKI_DIR / rendered_json_path
+            raw_seed_records = json.loads(seed_data_path.read_text(encoding="utf-8"))
+            normalized_seed_records = normalize_seed_records(
+                raw_seed_records,
+                source_url=job.wikipedia_url,
+            )
+            l0_path = write_seed_l0(
+                records=normalized_seed_records,
+                category=job.output_category,
+                seed_name=job.seed_name,
+                output_root=Path("data/raw"),
+            )
+            compatibility_path = write_seed_l0(
+                records=normalized_seed_records,
+                category=job.output_category,
+                seed_name=job.seed_name,
+                output_root=Path("data/wiki"),
+            )
+            quality_report = compute_seed_quality(
+                normalized_seed_records,
+                seed_name=job.seed_name,
+                category=job.output_category,
+            )
+            print(quality_report.to_log_line())
+            print(f"[seed-l0] wrote {l0_path}")
+            print(f"[seed-l0] compatibility copy {compatibility_path}")
+        except (OSError, ValueError, TypeError) as exc:
+            print(f"[seed-l0] skip {job.seed_name}: {exc}")
+
+        print(f"[list] finished {job.list_scraper_cls.__name__}")
 
 
 def run_complete_scrapers() -> None:
