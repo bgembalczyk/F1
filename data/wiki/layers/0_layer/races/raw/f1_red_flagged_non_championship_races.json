@@ -1,0 +1,19 @@
+[
+  {
+    "season": 1971,
+    "event": {
+      "text": "Brand Hatch",
+      "url": "https://en.wikipedia.org/wiki/1971_World_Championship_Victory_Race"
+    },
+    "lap": 15,
+    "restart_status": {
+      "code": "N",
+      "description": "race_was_not_restarted"
+    },
+    "winner": {
+      "text": "Peter Gethin",
+      "url": "https://en.wikipedia.org/wiki/Peter_Gethin"
+    },
+    "incident": "Fatal crash of Jo Siffert ."
+  }
+]
