@@ -1,0 +1,1295 @@
+[
+  {
+    "seasons": [
+      {
+        "year": 1947,
+        "url": "https://en.wikipedia.org/wiki/1947_Formula_One_World_Championship"
+      },
+      {
+        "year": 1948,
+        "url": "https://en.wikipedia.org/wiki/1948_Formula_One_World_Championship"
+      },
+      {
+        "year": 1949,
+        "url": "https://en.wikipedia.org/wiki/1949_Formula_One_World_Championship"
+      },
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "Unspecified",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 4.5,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 1.5,
+          "unit": "L"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "Unrestricted",
+      "max_cylinders": null,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Unrestricted",
+      "petrol": "Unrestricted"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      },
+      {
+        "year": 1956,
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+      },
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "Unspecified",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 2.5,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 0.75,
+          "unit": "L"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "Unrestricted",
+      "max_cylinders": null,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Unrestricted",
+      "petrol": "Unrestricted"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      },
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "Unspecified",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 2.5,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 0.75,
+          "unit": "L"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "Unrestricted",
+      "max_cylinders": null,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Avgas"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      },
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "Unspecified",
+    "maximum_displacement": {
+      "naturally_aspirated": {
+        "max": {
+          "value": 1.5,
+          "unit": "L"
+        },
+        "min": {
+          "value": 1.3,
+          "unit": "L"
+        }
+      },
+      "forced_induction": "prohibited"
+    },
+    "configuration": {
+      "text": "Unrestricted",
+      "max_cylinders": null,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Pump Gas"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      },
+      {
+        "year": 1970,
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+      },
+      {
+        "year": 1971,
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "Piston, Rotary, and Turbine",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 3.0,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 1.5,
+          "unit": "L"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "Unrestricted",
+      "max_cylinders": null,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Commercial"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1972,
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
+      },
+      {
+        "year": 1973,
+        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
+      },
+      {
+        "year": 1974,
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
+      },
+      {
+        "year": 1975,
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
+      },
+      {
+        "year": 1976,
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+      },
+      {
+        "year": 1977,
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
+      },
+      {
+        "year": 1978,
+        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+      },
+      {
+        "year": 1979,
+        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
+      },
+      {
+        "year": 1980,
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "Piston, Rotary, and Turbine",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 3.0,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 1.5,
+          "unit": "L"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Commercial"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1981,
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+      },
+      {
+        "year": 1982,
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+      },
+      {
+        "year": 1983,
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+      },
+      {
+        "year": 1984,
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+      },
+      {
+        "year": 1985,
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 3.0,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 1.5,
+          "unit": "L"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Commercial"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1986,
+        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": "prohibited",
+      "forced_induction": [
+        {
+          "value": 1.5,
+          "unit": "L"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Commercial"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1987,
+        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 3.5,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 1.5,
+          "unit": "L"
+        },
+        {
+          "value": 4.0,
+          "unit": "bar"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Commercial"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1988,
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 3.5,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 1.5,
+          "unit": "L"
+        },
+        {
+          "value": 2.5,
+          "unit": "bar"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Commercial"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 3.5,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": "prohibited"
+    },
+    "configuration": {
+      "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Commercial"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      },
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 3.5,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": "prohibited"
+    },
+    "configuration": {
+      "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Unleaded"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 1995,
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+      },
+      {
+        "year": 1996,
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+      },
+      {
+        "year": 1997,
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+      },
+      {
+        "year": 1998,
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+      },
+      {
+        "year": 1999,
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 3.0,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": "prohibited"
+    },
+    "configuration": {
+      "text": "Up to 12 cylinders",
+      "max_cylinders": 12,
+      "angle": null,
+      "type": null,
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Unleaded"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      },
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      },
+      {
+        "year": 2002,
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      },
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 3.0,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": "prohibited"
+    },
+    "configuration": {
+      "text": "V10",
+      "max_cylinders": 10,
+      "angle": null,
+      "type": "V10",
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Unleaded"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 2.4,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": "prohibited"
+    },
+    "configuration": {
+      "text": "90° V8",
+      "max_cylinders": 8,
+      "angle": {
+        "value": 90.0,
+        "unit": "deg"
+      },
+      "type": "V8",
+      "extras": []
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Unleaded"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 2.4,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": "prohibited"
+    },
+    "configuration": {
+      "text": "90° V8",
+      "max_cylinders": 8,
+      "angle": {
+        "value": 90.0,
+        "unit": "deg"
+      },
+      "type": "V8",
+      "extras": []
+    },
+    "rpm_limit": {
+      "value": 19000.0,
+      "unit": "rpm"
+    },
+    "fuel_composition": {
+      "alcohol": "Prohibited",
+      "petrol": "Unleaded"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 2.4,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": "prohibited"
+    },
+    "configuration": {
+      "text": "90° V8",
+      "max_cylinders": 8,
+      "angle": {
+        "value": 90.0,
+        "unit": "deg"
+      },
+      "type": "V8",
+      "extras": []
+    },
+    "rpm_limit": {
+      "value": 19000.0,
+      "unit": "rpm"
+    },
+    "fuel_composition": {
+      "alcohol": "5.75%",
+      "petrol": "Unleaded"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 2.4,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": "prohibited"
+    },
+    "configuration": {
+      "text": "90° V8 + KERS",
+      "max_cylinders": 8,
+      "angle": {
+        "value": 90.0,
+        "unit": "deg"
+      },
+      "type": "V8",
+      "extras": [
+        "KERS"
+      ]
+    },
+    "rpm_limit": {
+      "value": 18000.0,
+      "unit": "rpm"
+    },
+    "fuel_composition": {
+      "alcohol": "5.75%",
+      "petrol": "Unleaded"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 2014,
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+      },
+      {
+        "year": 2015,
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+      },
+      {
+        "year": 2016,
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+      },
+      {
+        "year": 2017,
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+      },
+      {
+        "year": 2018,
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+      },
+      {
+        "year": 2019,
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
+      },
+      {
+        "year": 2020,
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+      },
+      {
+        "year": 2021,
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 1.6,
+          "unit": "L"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 1.6,
+          "unit": "L"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "90° V6 + MGU-K + MGU-H",
+      "max_cylinders": 6,
+      "angle": {
+        "value": 90.0,
+        "unit": "deg"
+      },
+      "type": "V6",
+      "extras": [
+        "MGU-K",
+        "MGU-H"
+      ]
+    },
+    "rpm_limit": {
+      "value": 15000.0,
+      "unit": "rpm"
+    },
+    "fuel_composition": {
+      "alcohol": "5.75%",
+      "petrol": "Unleaded"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 2022,
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+      },
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 1.6,
+          "unit": "L"
+        },
+        {
+          "value": 1590.0,
+          "unit": "cc"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 1.6,
+          "unit": "L"
+        },
+        {
+          "value": 1590.0,
+          "unit": "cc"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "90° V6 + MGU-K + MGU-H",
+      "max_cylinders": 6,
+      "angle": {
+        "value": 90.0,
+        "unit": "deg"
+      },
+      "type": "V6",
+      "extras": [
+        "MGU-K",
+        "MGU-H"
+      ]
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "≥10%",
+      "petrol": "Unleaded"
+    }
+  },
+  {
+    "seasons": [
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+      }
+    ],
+    "operating_principle": "4-stroke Piston",
+    "maximum_displacement": {
+      "naturally_aspirated": [
+        {
+          "value": 1.6,
+          "unit": "L"
+        },
+        {
+          "value": 1590.0,
+          "unit": "cc"
+        }
+      ],
+      "forced_induction": [
+        {
+          "value": 1.6,
+          "unit": "L"
+        },
+        {
+          "value": 1590.0,
+          "unit": "cc"
+        }
+      ]
+    },
+    "configuration": {
+      "text": "90° V6 + MGU-K",
+      "max_cylinders": 6,
+      "angle": {
+        "value": 90.0,
+        "unit": "deg"
+      },
+      "type": "V6",
+      "extras": [
+        "MGU-K"
+      ]
+    },
+    "rpm_limit": null,
+    "fuel_composition": {
+      "alcohol": "100% synthetic hydrocarbon fuel",
+      "petrol": "100% synthetic hydrocarbon fuel"
+    }
+  },
+  {
+    "year": [
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      },
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      },
+      {
+        "year": 2002,
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      },
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      }
+    ],
+    "size": {
+      "value": 3.0,
+      "unit": "litre"
+    },
+    "type_of_engine": [
+      {
+        "text": "V10",
+        "url": "https://en.wikipedia.org/wiki/V10"
+      }
+    ],
+    "fuel_limit_per_race": {
+      "has_limit": false,
+      "is_estimated": true,
+      "range_kg": {
+        "min": {
+          "value": 180.0,
+          "unit": "kg"
+        },
+        "max": {
+          "value": 200.0,
+          "unit": "kg"
+        }
+      },
+      "range_l": {
+        "min": {
+          "value": 250.0,
+          "unit": "L"
+        },
+        "max": {
+          "value": 290.0,
+          "unit": "L"
+        }
+      }
+    },
+    "fuel_flow_rate": null,
+    "fuel_injection_pressure_limit": null,
+    "engine_rpm_limit": null,
+    "power_output": {
+      "min": {
+        "value": 770.0,
+        "unit": "hp"
+      },
+      "max": {
+        "value": 1000.0,
+        "unit": "hp"
+      }
+    }
+  },
+  {
+    "year": [
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      },
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      },
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      }
+    ],
+    "size": {
+      "value": 2.4,
+      "unit": "litre"
+    },
+    "type_of_engine": [
+      {
+        "text": "V8",
+        "url": "https://en.wikipedia.org/wiki/V8"
+      }
+    ],
+    "fuel_limit_per_race": {
+      "has_limit": false,
+      "is_estimated": true,
+      "range_kg": {
+        "min": {
+          "value": 130.0,
+          "unit": "kg"
+        },
+        "max": {
+          "value": 160.0,
+          "unit": "kg"
+        }
+      },
+      "range_l": {
+        "min": {
+          "value": 190.0,
+          "unit": "L"
+        },
+        "max": {
+          "value": 230.0,
+          "unit": "L"
+        }
+      }
+    },
+    "fuel_flow_rate": null,
+    "fuel_injection_pressure_limit": null,
+    "engine_rpm_limit": {
+      "limit": {
+        "min": {
+          "value": 18000.0,
+          "unit": null
+        },
+        "max": {
+          "value": 20500.0,
+          "unit": null
+        }
+      }
+    },
+    "power_output": {
+      "min": {
+        "value": 730.0,
+        "unit": "hp"
+      },
+      "max": {
+        "value": 840.0,
+        "unit": "hp"
+      }
+    }
+  },
+  {
+    "year": [
+      {
+        "year": 2014,
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+      },
+      {
+        "year": 2015,
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+      },
+      {
+        "year": 2016,
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+      },
+      {
+        "year": 2017,
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+      },
+      {
+        "year": 2018,
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+      },
+      {
+        "year": 2019,
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
+      },
+      {
+        "year": 2020,
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+      },
+      {
+        "year": 2021,
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+      },
+      {
+        "year": 2022,
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+      },
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "size": {
+      "value": 1.6,
+      "unit": "litre"
+    },
+    "type_of_engine": [
+      {
+        "text": "V6",
+        "url": "https://en.wikipedia.org/wiki/V6"
+      },
+      {
+        "text": "turbo",
+        "url": "https://en.wikipedia.org/wiki/Turbocharged"
+      },
+      {
+        "text": "hybrid",
+        "url": "https://en.wikipedia.org/wiki/Hybrid_vehicle_drivetrain"
+      }
+    ],
+    "fuel_limit_per_race": {
+      "has_limit": true,
+      "is_estimated": false,
+      "range_kg": {
+        "min": {
+          "value": 100.0,
+          "unit": "kg"
+        },
+        "max": {
+          "value": 110.0,
+          "unit": "kg"
+        }
+      },
+      "range_l": {
+        "min": {
+          "value": 130.0,
+          "unit": "L"
+        },
+        "max": {
+          "value": 145.0,
+          "unit": "L"
+        }
+      }
+    },
+    "fuel_flow_rate": {
+      "rate": {
+        "value": 100.0,
+        "unit": "kg/h"
+      },
+      "applies_above_rpm": {
+        "value": 10500.0,
+        "unit": "RPM"
+      }
+    },
+    "fuel_injection_pressure_limit": {
+      "limit": {
+        "value": 500.0,
+        "unit": "bar"
+      }
+    },
+    "engine_rpm_limit": {
+      "limit": {
+        "min": {
+          "value": 15000.0,
+          "unit": null
+        },
+        "max": {
+          "value": 15000.0,
+          "unit": null
+        }
+      }
+    },
+    "power_output": {
+      "min": {
+        "value": 750.0,
+        "unit": "hp"
+      },
+      "max": {
+        "value": 1000.0,
+        "unit": "hp"
+      }
+    }
+  }
+]
