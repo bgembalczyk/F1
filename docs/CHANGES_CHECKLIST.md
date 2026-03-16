@@ -116,7 +116,8 @@ Poniższa lista jest checklistą jakości dla każdego merge'a, który dodaje/zm
 - [x] Snapshot HTML: pokrycie `minimal + edge` dla domen `drivers/constructors/circuits/seasons/grands_prix` w `tests/test_section_parser_snapshots.py`.
 - [x] Kontrakt `SectionParseResult`: testy kontraktowe w `tests/test_section_parser_contract.py`.
 - [x] Aliasy sekcji: testy aliasów dla parserów domenowych (co najmniej `constructors/circuits/seasons`) w `tests/test_section_parser_regressions.py`.
-- [x] Meta-check CI: wymuszenie obecności trzech warstw testów w `tests/test_section_parser_ci_meta.py`.
+- [x] Wpis dokumentacyjny domeny: aktualizacja `scrapers/<domain>/README.md` przy zmianie parsera sekcji.
+- [x] Meta-check CI: wymuszenie obecności trzech warstw testów oraz coverage nowych modułów `scrapers/*/sections/*.py` w `tests/test_section_parser_ci_meta.py`.
 
 ### Zasada aktualizacji statusu
 - Przy każdym merge'u parsera sekcji zaktualizuj status tej listy (`[ ]` / `[x]`) oraz dodaj krótką notkę, co zostało objęte zmianą.
