@@ -1,6 +1,6 @@
 from typing import Any
 
-from models.services.rounds_service import RoundsService
+from models.services.rounds_service import parse_rounds
 from scrapers.base.helpers.parsing import parse_int_from_text
 
 
@@ -291,5 +291,5 @@ class EntryMerger:
         if isinstance(value, int):
             return [value]
         if isinstance(value, str):
-            return RoundsService.parse_rounds(value)
+            return parse_rounds(value)
         return []

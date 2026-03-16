@@ -750,27 +750,27 @@ def test_colour_list_column_skips_parenthetical_p() -> None:
 
 def test_season_service_to_range() -> None:
     """'1997 to 1999' is parsed as a full year range."""
-    from models.services.season_service import SeasonService
+    from models.services.season_service import parse_seasons
 
-    result = SeasonService.parse_seasons("1997 to 1999")
+    result = parse_seasons("1997 to 1999")
     years = [e["year"] for e in result]
     assert years == [1997, 1998, 1999]
 
 
 def test_season_service_to_range_mixed_with_comma() -> None:
     """'1997 to 1999, 2001' is parsed correctly."""
-    from models.services.season_service import SeasonService
+    from models.services.season_service import parse_seasons
 
-    result = SeasonService.parse_seasons("1997 to 1999, 2001")
+    result = parse_seasons("1997 to 1999, 2001")
     years = [e["year"] for e in result]
     assert years == [1997, 1998, 1999, 2001]
 
 
 def test_season_service_to_range_case_insensitive() -> None:
     """'1997 TO 1999' (uppercase) is also parsed correctly."""
-    from models.services.season_service import SeasonService
+    from models.services.season_service import parse_seasons
 
-    result = SeasonService.parse_seasons("1997 TO 1999")
+    result = parse_seasons("1997 TO 1999")
     years = [e["year"] for e in result]
     assert years == [1997, 1998, 1999]
 
