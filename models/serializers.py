@@ -6,6 +6,8 @@ from typing import TYPE_CHECKING
 from typing import Any
 from typing import cast
 
+from models.contracts.helpers import map_record_to_contract
+
 if TYPE_CHECKING:
     from models.records.link import LinkRecord
 
@@ -48,7 +50,8 @@ def to_dict_any(
         normalized_link = _normalize_link_mapping(mapping)
         if normalized_link is not None:
             return normalized_link
-        return {k: to_dict_any(v, logger=logger) for k, v in mapping.items()}
+        mapped = map_record_to_contract(mapping)
+        return {k: to_dict_any(v, logger=logger) for k, v in mapped.items()}
 
     if isinstance(value, list | tuple):
         return [to_dict_any(v, logger=logger) for v in value]
