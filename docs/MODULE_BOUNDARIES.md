@@ -69,3 +69,18 @@ To jest docelowy punkt startowy dla CLI/skryptów i automatyzacji.
 W repo jest test statyczny sprawdzający:
 - obecność `entrypoint.py` i wymaganych katalogów warstw w każdej domenie,
 - brak zabronionych importów łamiących granice architektoniczne.
+
+
+## 6. Standard DoD merge-gate dla parserów sekcji
+
+Każdy PR, który dodaje lub modyfikuje plik w `scrapers/*/sections/`, musi spełnić pełny merge-gate:
+
+- Snapshot HTML (`minimal + edge`) dla domen parserów sekcji.
+- Aliasy sekcji (regresje mapowania nagłówków i fallbacków).
+- Test kontraktu (`SectionParseResult` + metadata parsera).
+- Wpis w dokumentacji domeny (`scrapers/<domain>/README.md`) o zakresie zmiany parsera.
+
+Wymuszenie CI:
+- test meta (`tests/test_section_parser_ci_meta.py`) blokuje merge, gdy pojawi się nowy moduł `scrapers/*/sections/*.py` bez rozszerzenia macierzy snapshot/contract.
+
+Checklistę operacyjną merge-gate utrzymujemy również w `docs/CHANGES_CHECKLIST.md`.

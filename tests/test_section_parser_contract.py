@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.table_section_parser import TableSectionParser
 from scrapers.base.table.config import ScraperConfig
+from tests._section_parser_fixture_pattern import SectionContractFixture
+from tests._section_parser_fixture_pattern import assert_section_contract_template
 
 CONTRACT_CASES = ("section_id", "section_label", "records", "metadata")
 
@@ -55,6 +57,9 @@ def test_table_section_parser_returns_section_parse_result_contract() -> None:
     assert isinstance(result, SectionParseResult)
     assert result.section_id == "results"
     assert result.section_label == "Results"
-    assert result.records == [{"year": "2024", "champion": "Max Verstappen"}]
-    assert result.metadata["parser"] == "TableSectionParser"
-    assert result.metadata["domain"] == "constructors"
+    fixture = SectionContractFixture(
+        html=html,
+        expected_records=[{"year": "2024", "champion": "Max Verstappen"}],
+        expected_metadata={"parser": "TableSectionParser", "domain": "constructors"},
+    )
+    assert_section_contract_template(result, fixture)

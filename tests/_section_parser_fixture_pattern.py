@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -10,6 +12,13 @@ class SectionFixture:
     html: str
     expected_section_id: str
     expected_kind: str
+
+
+@dataclass(frozen=True)
+class SectionContractFixture:
+    html: str
+    expected_records: list[dict[str, Any]]
+    expected_metadata: dict[str, Any]
 
 
 def _content_text_fixture(*, h2_id: str, h2_text: str, h3_id: str, h3_text: str, body_html: str) -> str:
@@ -169,6 +178,46 @@ SNAPSHOT_CASES_BY_DOMAIN: dict[str, tuple[SectionFixture, SectionFixture]] = {
 
 def iter_snapshot_cases() -> list[SectionFixture]:
     return [fixture for fixtures in SNAPSHOT_CASES_BY_DOMAIN.values() for fixture in fixtures]
+
+
+def assert_section_contract_template(result: Any, fixture: SectionContractFixture) -> None:
+    assert result.records == fixture.expected_records
+    for key, expected_value in fixture.expected_metadata.items():
+        assert result.metadata[key] == expected_value
+
+
+SECTION_MODULES_REQUIRING_DOD: tuple[str, ...] = tuple(
+    sorted(
+        str(path).replace("\\", "/")
+        for path in Path("scrapers").glob("*/sections/*.py")
+        if path.name != "__init__.py" and path.parts[1] in {"drivers", "constructors", "circuits", "seasons", "grands_prix"}
+    )
+)
+
+SNAPSHOT_COVERED_SECTION_MODULES: tuple[str, ...] = (
+    "scrapers/circuits/sections/events.py",
+    "scrapers/circuits/sections/lap_records.py",
+    "scrapers/circuits/sections/layout_history.py",
+    "scrapers/circuits/sections/list_section.py",
+    "scrapers/constructors/sections/championship_results.py",
+    "scrapers/constructors/sections/common.py",
+    "scrapers/constructors/sections/complete_f1_results.py",
+    "scrapers/constructors/sections/history.py",
+    "scrapers/constructors/sections/list_section.py",
+    "scrapers/drivers/sections/career.py",
+    "scrapers/drivers/sections/non_championship.py",
+    "scrapers/drivers/sections/racing_record.py",
+    "scrapers/drivers/sections/results.py",
+    "scrapers/grands_prix/sections/by_year.py",
+    "scrapers/seasons/sections/calendar.py",
+    "scrapers/seasons/sections/contracts.py",
+    "scrapers/seasons/sections/mid_season_changes.py",
+    "scrapers/seasons/sections/regulation_changes.py",
+    "scrapers/seasons/sections/results.py",
+    "scrapers/seasons/sections/standings.py",
+)
+
+CONTRACT_COVERED_SECTION_MODULES: tuple[str, ...] = SNAPSHOT_COVERED_SECTION_MODULES
 
 ALIAS_FIXTURES: dict[str, str] = {
     "constructors": """

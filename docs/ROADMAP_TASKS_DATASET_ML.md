@@ -81,11 +81,13 @@
 - [x] C3. Dodać dokument „granice modułów” z przykładami przepływu danych dla każdej domeny (`drivers`, `constructors`, `circuits`, `seasons`, `grands_prix`).
   - Kontekst: nowy dokument `docs/MODULE_BOUNDARIES.md` z przykładami flow 0→1 i użyciem adaptera sekcji.
 - [x] C4. Wprowadzić checklistę Definition of Done dla każdego nowego parsera sekcji (test snapshotowy + mapowanie aliasów + walidacja kontraktu + wpis w README domeny).
-  - Kontekst: checklista DoD została osadzona w dokumencie granic modułów jako standard wejścia do code review.
+  - Kontekst: checklista DoD została osadzona w dokumencie granic modułów jako standard wejścia do code review, a testy sekcji korzystają ze wspólnego template'u fixture + expected records + metadata assertions.
 - [x] C5. Przenieść wspólne helpery czyszczenia treści wiki do jednego modułu współdzielonego (`scrapers/wiki/parsers/elements/*`), aby uniknąć duplikacji domenowej.
   - Kontekst: dodano `text_cleaning.py` i podłączono parsery elementów oraz parser tabel.
 
 ## Kryteria ukończenia planu sekcyjnego
+- [x] C6. Dodać meta-test CI wykrywający nowy moduł `scrapers/*/sections/*.py` bez aktualizacji coverage snapshot/contract.
+  - Kontekst: `tests/test_section_parser_ci_meta.py` porównuje listę modułów sekcji z jawnie utrzymywaną macierzą coverage testów.
 - [ ] Każda domena ma co najmniej 3 parsery sekcji działające przez wspólny adapter i wspólny kontrakt wynikowy.
 - [x] Każda krytyczna sekcja z `DOMAIN_CRITICAL_SECTIONS` ma fallback aliasów i test regresyjny.
   - Kontekst: rozszerzono aliasy fallback dla `seasons` i `circuits` oraz dodano test obecności aliasów dla wszystkich domen.
