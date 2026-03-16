@@ -4,9 +4,9 @@
       "text": "Alex von Falkenhausen Motorenbau",
       "url": "https://en.wikipedia.org/wiki/Alex_von_Falkenhausen_Motorenbau"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Germany",
@@ -39,17 +39,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Automobiles Gonfaronnaises Sportives",
       "url": "https://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -98,17 +98,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Alfa Romeo",
       "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -193,17 +193,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Alfa Special",
       "url": "https://en.wikipedia.org/wiki/Alfa_Special"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "South Africa",
@@ -236,17 +236,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "AlphaTauri",
       "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -287,17 +287,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Alta",
       "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -334,17 +334,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Amon",
       "url": "https://en.wikipedia.org/wiki/Amon_(Formula_One_team)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "New Zealand",
@@ -373,17 +373,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Andrea Moda",
       "url": "https://en.wikipedia.org/wiki/Andrea_Moda_Formula"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -412,17 +412,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Apollon",
       "url": "https://en.wikipedia.org/wiki/Apollon_(Formula_One)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Switzerland",
@@ -451,17 +451,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Arrows",
       "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -586,17 +586,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Arzani-Volpini",
       "url": "https://en.wikipedia.org/wiki/Arzani-Volpini"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -625,17 +625,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Aston Butterworth",
       "url": "https://en.wikipedia.org/wiki/Aston_Butterworth"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -664,17 +664,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Automobili Turismo e Sport",
       "url": "https://en.wikipedia.org/wiki/Automobili_Turismo_e_Sport"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -703,17 +703,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Auto Technisches Spezialzubehör",
       "url": "https://en.wikipedia.org/wiki/ATS_(wheels)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Germany",
@@ -770,17 +770,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "British American Racing",
       "url": "https://en.wikipedia.org/wiki/British_American_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -833,17 +833,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Behra-Porsche",
       "url": "https://en.wikipedia.org/wiki/Behra-Porsche"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Germany",
@@ -876,17 +876,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Bellasi",
       "url": "https://en.wikipedia.org/wiki/Bellasi"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Switzerland",
@@ -919,17 +919,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Benetton",
       "url": "https://en.wikipedia.org/wiki/Benetton_Formula"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -1022,17 +1022,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Boro",
       "url": "https://en.wikipedia.org/wiki/Boro_(Formula_One)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Netherlands",
@@ -1065,17 +1065,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Brabham",
       "url": "https://en.wikipedia.org/wiki/Brabham"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -1220,17 +1220,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Brawn GP",
       "url": "https://en.wikipedia.org/wiki/Brawn_GP"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -1259,17 +1259,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "British Racing Motors",
       "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -1386,17 +1386,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "British Racing Partnership",
       "url": "https://en.wikipedia.org/wiki/British_Racing_Partnership"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -1429,17 +1429,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Bugatti",
       "url": "https://en.wikipedia.org/wiki/Bugatti"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -1468,17 +1468,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Caterham",
       "url": "https://en.wikipedia.org/wiki/Caterham_F1"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Malaysia",
@@ -1515,17 +1515,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Cisitalia",
       "url": "https://en.wikipedia.org/wiki/Cisitalia"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -1554,17 +1554,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Coloni",
       "url": "https://en.wikipedia.org/wiki/Enzo_Coloni_Racing_Car_Systems"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -1609,17 +1609,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Connaught",
       "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -1676,17 +1676,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Connew",
       "url": "https://en.wikipedia.org/wiki/Connew"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -1715,17 +1715,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Cooper Car Company",
       "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -1826,17 +1826,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Dallara",
       "url": "https://en.wikipedia.org/wiki/Dallara"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -1881,17 +1881,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "De Tomaso",
       "url": "https://en.wikipedia.org/wiki/De_Tomaso"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -1932,17 +1932,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Eagle",
       "url": "https://en.wikipedia.org/wiki/All_American_Racers"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United States",
@@ -1983,17 +1983,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Eifelland",
       "url": "https://en.wikipedia.org/wiki/Eifelland"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Germany",
@@ -2022,17 +2022,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Emeryson",
       "url": "https://en.wikipedia.org/wiki/Emeryson"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -2069,17 +2069,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Eisenacher Motorenwerk",
       "url": "https://en.wikipedia.org/wiki/Eisenacher_Motorenwerk"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "East Germany",
@@ -2108,17 +2108,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Ecurie Nationale Belge",
       "url": "https://en.wikipedia.org/wiki/Ecurie_Nationale_Belge"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Belgium",
@@ -2147,17 +2147,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Ensign",
       "url": "https://en.wikipedia.org/wiki/Ensign_(racing_team)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -2222,17 +2222,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "English Racing Automobiles",
       "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -2269,17 +2269,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "EuroBrun",
       "url": "https://en.wikipedia.org/wiki/EuroBrun"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -2316,17 +2316,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Ferguson Research Ltd.",
       "url": "https://en.wikipedia.org/wiki/Ferguson_Research_Ltd."
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -2355,17 +2355,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "FIRST",
       "url": "https://en.wikipedia.org/wiki/FIRST_(constructor)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -2394,17 +2394,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Fittipaldi Automotive",
       "url": "https://en.wikipedia.org/wiki/Fittipaldi_Automotive"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Brazil",
@@ -2461,17 +2461,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Fondmetal",
       "url": "https://en.wikipedia.org/wiki/Fondmetal"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -2504,17 +2504,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Force India",
       "url": "https://en.wikipedia.org/wiki/Force_India"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "India",
@@ -2583,17 +2583,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Forti",
       "url": "https://en.wikipedia.org/wiki/Forti"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -2626,17 +2626,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Frank Williams Racing Cars",
       "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -2681,17 +2681,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Frazer-Nash",
       "url": "https://en.wikipedia.org/wiki/Frazer_Nash"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -2720,17 +2720,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Fry",
       "url": "https://en.wikipedia.org/wiki/Fry_(racing_team)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -2759,17 +2759,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Gilby Engineering",
       "url": "https://en.wikipedia.org/wiki/Gilby_Engineering"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -2806,17 +2806,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Gordini",
       "url": "https://en.wikipedia.org/wiki/Gordini"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -2861,17 +2861,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Greifzu",
       "url": "https://en.wikipedia.org/wiki/Paul_Greifzu"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "East Germany",
@@ -2900,17 +2900,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Hesketh",
       "url": "https://en.wikipedia.org/wiki/Hesketh_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -2955,17 +2955,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Hill",
       "url": "https://en.wikipedia.org/wiki/Embassy_Hill"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -2994,17 +2994,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "HRT",
       "url": "https://en.wikipedia.org/wiki/HRT_Formula_1_Team"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Spain",
@@ -3041,17 +3041,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Honda",
       "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Japan",
@@ -3108,17 +3108,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "HWM",
       "url": "https://en.wikipedia.org/wiki/Hersham_and_Walton_Motors"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -3163,17 +3163,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Jaguar",
       "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -3218,17 +3218,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "JBW",
       "url": "https://en.wikipedia.org/wiki/JBW"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -3265,17 +3265,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Jordan",
       "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Ireland",
@@ -3360,17 +3360,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Kauhsen",
       "url": "https://en.wikipedia.org/wiki/Kauhsen"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Germany",
@@ -3399,17 +3399,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Klenk",
       "url": "https://en.wikipedia.org/wiki/Klenk"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Germany",
@@ -3438,17 +3438,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Kojima",
       "url": "https://en.wikipedia.org/wiki/Kojima_Engineering"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Japan",
@@ -3481,17 +3481,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Kurtis Kraft",
       "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United States",
@@ -3560,17 +3560,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Lambo",
       "url": "https://en.wikipedia.org/wiki/Modena_(racing_team)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -3599,17 +3599,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Lancia",
       "url": "https://en.wikipedia.org/wiki/Scuderia_Lancia"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -3642,17 +3642,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Larrousse",
       "url": "https://en.wikipedia.org/wiki/Larrousse"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -3685,17 +3685,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "LDS",
       "url": "https://en.wikipedia.org/wiki/LDS_(automobile)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "South Africa",
@@ -3740,17 +3740,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "LEC",
       "url": "https://en.wikipedia.org/wiki/LEC_Refrigeration_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -3779,17 +3779,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Leyton House",
       "url": "https://en.wikipedia.org/wiki/Leyton_House_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -3822,17 +3822,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Life",
       "url": "https://en.wikipedia.org/wiki/Life_(Racing_Team)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -3861,17 +3861,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Ligier",
       "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -3980,17 +3980,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Lola",
       "url": "https://en.wikipedia.org/wiki/Lola_Cars"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -4075,17 +4075,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Lotus",
       "url": "https://en.wikipedia.org/wiki/Team_Lotus"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -4258,17 +4258,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Lotus",
       "url": "https://en.wikipedia.org/wiki/Team_Lotus_(2010%E2%80%9311)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Malaysia",
@@ -4301,17 +4301,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Lotus",
       "url": "https://en.wikipedia.org/wiki/Lotus_F1"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -4352,17 +4352,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Lyncar",
       "url": "https://en.wikipedia.org/wiki/Lyncar"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -4395,17 +4395,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Maki",
       "url": "https://en.wikipedia.org/wiki/Maki_(constructor)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Japan",
@@ -4442,17 +4442,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Manor",
       "url": "https://en.wikipedia.org/wiki/Manor_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -4481,17 +4481,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "March",
       "url": "https://en.wikipedia.org/wiki/March_Engineering"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -4572,17 +4572,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Martini",
       "url": "https://en.wikipedia.org/wiki/Martini_(cars)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -4611,17 +4611,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Marussia",
       "url": "https://en.wikipedia.org/wiki/Marussia_F1"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Russia",
@@ -4666,17 +4666,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Maserati",
       "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport#Formula_One"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -4745,17 +4745,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Matra",
       "url": "https://en.wikipedia.org/wiki/Equipe_Matra_Sports"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -4804,17 +4804,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "MBM",
       "url": "https://en.wikipedia.org/wiki/MBM_(automobile)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Switzerland",
@@ -4843,17 +4843,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "McGuire",
       "url": "https://en.wikipedia.org/wiki/McGuire_(Formula_One)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Australia",
@@ -4882,17 +4882,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Merzario",
       "url": "https://en.wikipedia.org/wiki/Merzario"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -4925,17 +4925,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Midland",
       "url": "https://en.wikipedia.org/wiki/Midland_F1_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Russia",
@@ -4964,17 +4964,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Milano",
       "url": "https://en.wikipedia.org/wiki/Milano_(racing_team)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -5003,17 +5003,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Minardi",
       "url": "https://en.wikipedia.org/wiki/Minardi"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -5122,17 +5122,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Onyx",
       "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -5165,17 +5165,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "O.S.C.A.",
       "url": "https://en.wikipedia.org/wiki/O.S.C.A."
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -5216,17 +5216,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Osella",
       "url": "https://en.wikipedia.org/wiki/Osella"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -5295,17 +5295,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Pacific",
       "url": "https://en.wikipedia.org/wiki/Pacific_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -5338,17 +5338,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Parnelli",
       "url": "https://en.wikipedia.org/wiki/Vel%27s_Parnelli_Jones_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United States",
@@ -5385,17 +5385,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Penske",
       "url": "https://en.wikipedia.org/wiki/Penske_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United States",
@@ -5436,17 +5436,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Porsche",
       "url": "https://en.wikipedia.org/wiki/Porsche_in_motorsport#Formula_One"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Germany",
@@ -5503,17 +5503,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Prost",
       "url": "https://en.wikipedia.org/wiki/Prost_Grand_Prix"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -5558,17 +5558,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "RAM",
       "url": "https://en.wikipedia.org/wiki/RAM_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -5605,17 +5605,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Racing Point Force India",
       "url": "https://en.wikipedia.org/wiki/Racing_Point_Force_India"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -5644,17 +5644,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Racing Point",
       "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -5687,17 +5687,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "RE",
       "url": "https://en.wikipedia.org/wiki/RE_(automobile)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Rhodesia",
@@ -5726,17 +5726,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Renault",
       "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -5861,17 +5861,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Rebaque",
       "url": "https://en.wikipedia.org/wiki/Rebaque"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Mexico",
@@ -5900,17 +5900,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Rial",
       "url": "https://en.wikipedia.org/wiki/Rial_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Germany",
@@ -5943,17 +5943,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Sauber",
       "url": "https://en.wikipedia.org/wiki/Sauber"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Switzerland",
@@ -6094,17 +6094,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Scarab",
       "url": "https://en.wikipedia.org/wiki/Scarab_(constructor)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United States",
@@ -6133,17 +6133,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Scirocco",
       "url": "https://en.wikipedia.org/wiki/Scirocco-Powell"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -6176,17 +6176,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Shadow",
       "url": "https://en.wikipedia.org/wiki/Shadow_Racing_Cars"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United States",
@@ -6247,17 +6247,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Shannon",
       "url": "https://en.wikipedia.org/wiki/Shannon_(Formula_One)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -6286,17 +6286,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Simca-Gordini",
       "url": "https://en.wikipedia.org/wiki/Simca-Gordini"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -6337,17 +6337,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Simtek",
       "url": "https://en.wikipedia.org/wiki/Simtek"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -6380,17 +6380,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Spirit",
       "url": "https://en.wikipedia.org/wiki/Spirit_(racing_team)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -6427,17 +6427,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Spyker",
       "url": "https://en.wikipedia.org/wiki/Spyker_F1"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Netherlands",
@@ -6466,17 +6466,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Stebro",
       "url": "https://en.wikipedia.org/wiki/Stebro"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Canada",
@@ -6505,17 +6505,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Stewart",
       "url": "https://en.wikipedia.org/wiki/Stewart_Grand_Prix"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -6552,17 +6552,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Super Aguri",
       "url": "https://en.wikipedia.org/wiki/Super_Aguri"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Japan",
@@ -6599,17 +6599,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Surtees",
       "url": "https://en.wikipedia.org/wiki/Surtees_Racing_Organisation"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -6670,17 +6670,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "SVA",
       "url": "https://en.wikipedia.org/wiki/Societ%C3%A0_Valdostana_Automobili"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -6709,17 +6709,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Talbot-Lago",
       "url": "https://en.wikipedia.org/wiki/Talbot-Lago"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -6752,17 +6752,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Tec-Mec",
       "url": "https://en.wikipedia.org/wiki/Tec-Mec"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United States",
@@ -6791,17 +6791,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Tecno",
       "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -6834,17 +6834,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Theodore",
       "url": "https://en.wikipedia.org/wiki/Theodore_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Hong Kong",
@@ -6885,17 +6885,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Token",
       "url": "https://en.wikipedia.org/wiki/Token_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -6924,17 +6924,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Toleman",
       "url": "https://en.wikipedia.org/wiki/Toleman"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -6979,17 +6979,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Toro Rosso",
       "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Italy",
@@ -7070,17 +7070,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Toyota",
       "url": "https://en.wikipedia.org/wiki/Toyota_F1"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Japan",
@@ -7137,17 +7137,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Trojan",
       "url": "https://en.wikipedia.org/wiki/Trojan%E2%80%93Tauranac_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -7176,17 +7176,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Tyrrell",
       "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -7327,17 +7327,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Vanwall",
       "url": "https://en.wikipedia.org/wiki/Vanwall"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -7390,17 +7390,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Venturi",
       "url": "https://en.wikipedia.org/wiki/Venturi_Automobiles"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "France",
@@ -7429,17 +7429,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Veritas",
       "url": "https://en.wikipedia.org/wiki/Veritas_(automobile)"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Germany",
@@ -7476,17 +7476,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Virgin",
       "url": "https://en.wikipedia.org/wiki/Virgin_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "United Kingdom",
@@ -7523,17 +7523,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Wolf",
       "url": "https://en.wikipedia.org/wiki/Walter_Wolf_Racing"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Canada",
@@ -7570,17 +7570,17 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Zakspeed",
       "url": "https://en.wikipedia.org/wiki/Zakspeed"
     },
-    "racing_series": {
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "formula_one": {
           "licensed_in": [
             {
               "text": "Germany",
@@ -7625,487 +7625,487 @@
           "antecedent_teams": [],
           "status": "former"
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Adams",
       "url": "https://en.wikipedia.org/wiki/Adams_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Bromme",
       "url": "https://en.wikipedia.org/wiki/Bromme"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Christensen",
       "url": "https://en.wikipedia.org/wiki/Christensen_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Emil Diedt",
       "url": "https://en.wikipedia.org/wiki/Emil_Diedt"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Frank DelRoy",
       "url": "https://en.wikipedia.org/wiki/Frank_DelRoy"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Dunn",
       "url": "https://en.wikipedia.org/wiki/Dunn_Engineering"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Elder",
       "url": "https://en.wikipedia.org/wiki/Elder_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Quin Epperly",
       "url": "https://en.wikipedia.org/wiki/Quin_Epperly"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Wayne Ewing",
       "url": "https://en.wikipedia.org/wiki/Wayne_Ewing"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Hall",
       "url": null
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Eddie Kuzma",
       "url": "https://en.wikipedia.org/wiki/Eddie_Kuzma"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Langley",
       "url": "https://en.wikipedia.org/wiki/Langley_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Lesovsky",
       "url": "https://en.wikipedia.org/wiki/Lesovsky"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Carl Marchese",
       "url": "https://en.wikipedia.org/wiki/Carl_Marchese"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Meskowski",
       "url": "https://en.wikipedia.org/wiki/Meskowski"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Lou Moore",
       "url": "https://en.wikipedia.org/wiki/Lou_Moore"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Nichels",
       "url": "https://en.wikipedia.org/wiki/Nichels"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Olson",
       "url": "https://en.wikipedia.org/wiki/Olson_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Pankratz",
       "url": "https://en.wikipedia.org/wiki/Pankratz"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Pawl",
       "url": "https://en.wikipedia.org/wiki/Pawl_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Phillips",
       "url": "https://en.wikipedia.org/wiki/Phillips_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Johnny Rae",
       "url": "https://en.wikipedia.org/wiki/Johnny_Rae_(motorsport)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "George Salih",
       "url": "https://en.wikipedia.org/wiki/George_Salih"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Schroeder",
       "url": "https://en.wikipedia.org/wiki/Schroeder_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Sherman",
       "url": "https://en.wikipedia.org/wiki/Sherman_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Russ Snowberger",
       "url": "https://en.wikipedia.org/wiki/Russ_Snowberger"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Stevens",
       "url": "https://en.wikipedia.org/wiki/Stevens_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Sutton",
       "url": "https://en.wikipedia.org/wiki/Sutton_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Trevis",
       "url": "https://en.wikipedia.org/wiki/Trevis_(constructor)"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Turner",
       "url": null
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "A. J. Watson",
       "url": "https://en.wikipedia.org/wiki/A._J._Watson"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   },
   {
     "constructor": {
       "text": "Wetteroth",
       "url": "https://en.wikipedia.org/wiki/Wetteroth"
     },
-    "racing_series": {
-      "AAA_national_championship": [],
-      "formula_one": [
-        {
+    "racing_series": [
+      {
+        "AAA_national_championship": [],
+        "formula_one": {
           "status": "former",
           "indianapolis_only": true
         }
-      ]
-    }
+      }
+    ]
   }
 ]

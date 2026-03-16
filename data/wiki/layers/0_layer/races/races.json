@@ -5,16 +5,19 @@
       "text": "Brand Hatch",
       "url": "https://en.wikipedia.org/wiki/1971_World_Championship_Victory_Race"
     },
-    "lap": 15,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Peter Gethin",
-      "url": "https://en.wikipedia.org/wiki/Peter_Gethin"
-    },
-    "incident": "Fatal crash of Jo Siffert ."
+    "championship": false,
+    "red_flag": {
+      "lap": 15,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Peter Gethin",
+        "url": "https://en.wikipedia.org/wiki/Peter_Gethin"
+      },
+      "incident": "Fatal crash of Jo Siffert ."
+    }
   },
   {
     "season": 1971,
@@ -171,16 +174,19 @@
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/1974_Brazilian_Grand_Prix"
     },
-    "lap": 32,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Emerson Fittipaldi",
-      "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
-    },
-    "incident": "Rain."
+    "championship": true,
+    "red_flag": {
+      "lap": 32,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Emerson Fittipaldi",
+        "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
+      },
+      "incident": "Rain."
+    }
   },
   {
     "season": 1975,
@@ -188,16 +194,19 @@
       "text": "Spanish",
       "url": "https://en.wikipedia.org/wiki/1975_Spanish_Grand_Prix"
     },
-    "lap": 29,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Jochen Mass",
-      "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
-    },
-    "incident": "Crash of Rolf Stommelen which killed four people. Half points were awarded."
+    "championship": true,
+    "red_flag": {
+      "lap": 29,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Jochen Mass",
+        "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+      },
+      "incident": "Crash of Rolf Stommelen which killed four people. Half points were awarded."
+    }
   },
   {
     "season": 1975,
@@ -205,16 +214,19 @@
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/1975_British_Grand_Prix"
     },
-    "lap": 56,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Emerson Fittipaldi",
-      "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
-    },
-    "incident": "Rain and crashes involving Wilson Fittipaldi , Jochen Mass , John Watson , Carlos Pace , Jody Scheckter , James Hunt and Mark Donohue ."
+    "championship": true,
+    "red_flag": {
+      "lap": 56,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Emerson Fittipaldi",
+        "url": "https://en.wikipedia.org/wiki/Emerson_Fittipaldi"
+      },
+      "incident": "Rain and crashes involving Wilson Fittipaldi , Jochen Mass , John Watson , Carlos Pace , Jody Scheckter , James Hunt and Mark Donohue ."
+    }
   },
   {
     "season": 1975,
@@ -222,16 +234,19 @@
       "text": "Austrian",
       "url": "https://en.wikipedia.org/wiki/1975_Austrian_Grand_Prix"
     },
-    "lap": 29,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Vittorio Brambilla",
-      "url": "https://en.wikipedia.org/wiki/Vittorio_Brambilla"
-    },
-    "incident": "Rain. Half points were awarded."
+    "championship": true,
+    "red_flag": {
+      "lap": 29,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Vittorio Brambilla",
+        "url": "https://en.wikipedia.org/wiki/Vittorio_Brambilla"
+      },
+      "incident": "Rain. Half points were awarded."
+    }
   },
   {
     "season": 1976,
@@ -655,16 +670,19 @@
       "text": "South African",
       "url": "https://en.wikipedia.org/wiki/1979_South_African_Grand_Prix"
     },
-    "lap": 2,
-    "restart_status": {
-      "code": "R",
-      "description": "race_was_resumed_to_complete_original_distance"
-    },
-    "winner": {
-      "text": "Gilles Villeneuve",
-      "url": "https://en.wikipedia.org/wiki/Gilles_Villeneuve"
-    },
-    "incident": "Rain."
+    "championship": true,
+    "red_flag": {
+      "lap": 2,
+      "restart_status": {
+        "code": "R",
+        "description": "race_was_resumed_to_complete_original_distance"
+      },
+      "winner": {
+        "text": "Gilles Villeneuve",
+        "url": "https://en.wikipedia.org/wiki/Gilles_Villeneuve"
+      },
+      "incident": "Rain."
+    }
   },
   {
     "season": 1980,
@@ -754,16 +772,19 @@
       "text": "Belgian",
       "url": "https://en.wikipedia.org/wiki/1981_Belgian_Grand_Prix"
     },
-    "lap": 54,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Carlos Reutemann",
-      "url": "https://en.wikipedia.org/wiki/Carlos_Reutemann"
-    },
-    "incident": "Rain."
+    "championship": true,
+    "red_flag": {
+      "lap": 54,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Carlos Reutemann",
+        "url": "https://en.wikipedia.org/wiki/Carlos_Reutemann"
+      },
+      "incident": "Rain."
+    }
   },
   {
     "season": 1981,
@@ -771,16 +792,19 @@
       "text": "French",
       "url": "https://en.wikipedia.org/wiki/1981_French_Grand_Prix"
     },
-    "lap": 58,
-    "restart_status": {
-      "code": "R",
-      "description": "race_was_resumed_to_complete_original_distance"
-    },
-    "winner": {
-      "text": "Alain Prost",
-      "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-    },
-    "incident": "Rain. The race was decided by combining the time from the first 58 laps with the time from the restarted 22 laps."
+    "championship": true,
+    "red_flag": {
+      "lap": 58,
+      "restart_status": {
+        "code": "R",
+        "description": "race_was_resumed_to_complete_original_distance"
+      },
+      "winner": {
+        "text": "Alain Prost",
+        "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+      },
+      "incident": "Rain. The race was decided by combining the time from the first 58 laps with the time from the restarted 22 laps."
+    }
   },
   {
     "season": 1982,
@@ -896,16 +920,19 @@
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/1984_Monaco_Grand_Prix"
     },
-    "lap": 31,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Alain Prost",
-      "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-    },
-    "incident": "Rain. Half points were awarded."
+    "championship": true,
+    "red_flag": {
+      "lap": 31,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Alain Prost",
+        "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+      },
+      "incident": "Rain. Half points were awarded."
+    }
   },
   {
     "season": 1984,
@@ -939,16 +966,19 @@
       "text": "British",
       "url": "https://en.wikipedia.org/wiki/1984_British_Grand_Prix"
     },
-    "lap": 11,
-    "restart_status": {
-      "code": "S",
-      "description": "race_was_restarted_or_resumed_without_completing_original_distance"
-    },
-    "winner": {
-      "text": "Niki Lauda",
-      "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
-    },
-    "incident": "Crash of Jonathan Palmer . The race was restarted for 60 laps, rather than the original 64 laps."
+    "championship": true,
+    "red_flag": {
+      "lap": 11,
+      "restart_status": {
+        "code": "S",
+        "description": "race_was_restarted_or_resumed_without_completing_original_distance"
+      },
+      "winner": {
+        "text": "Niki Lauda",
+        "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+      },
+      "incident": "Crash of Jonathan Palmer . The race was restarted for 60 laps, rather than the original 64 laps."
+    }
   },
   {
     "season": 1984,
@@ -956,16 +986,19 @@
       "text": "Austrian",
       "url": "https://en.wikipedia.org/wiki/1984_Austrian_Grand_Prix"
     },
-    "lap": 1,
-    "restart_status": {
-      "code": "Y",
-      "description": "race_was_restarted_over_original_distance"
-    },
-    "winner": {
-      "text": "Niki Lauda",
-      "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
-    },
-    "incident": "Improper start procedure."
+    "championship": true,
+    "red_flag": {
+      "lap": 1,
+      "restart_status": {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance"
+      },
+      "winner": {
+        "text": "Niki Lauda",
+        "url": "https://en.wikipedia.org/wiki/Niki_Lauda"
+      },
+      "incident": "Improper start procedure."
+    }
   },
   {
     "season": 1985,
@@ -1107,16 +1140,19 @@
       "text": "Austrian",
       "url": "https://en.wikipedia.org/wiki/1987_Austrian_Grand_Prix"
     },
-    "lap": 1,
-    "restart_status": {
-      "code": "Y",
-      "description": "race_was_restarted_over_original_distance"
-    },
-    "winner": {
-      "text": "Nigel Mansell",
-      "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-    },
-    "incident": "The first race start ended quickly after Martin Brundle crashed, then Jonathan Palmer , Philippe Streiff and Piercarlo Ghinzani collided."
+    "championship": true,
+    "red_flag": {
+      "lap": 1,
+      "restart_status": {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance"
+      },
+      "winner": {
+        "text": "Nigel Mansell",
+        "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+      },
+      "incident": "The first race start ended quickly after Martin Brundle crashed, then Jonathan Palmer , Philippe Streiff and Piercarlo Ghinzani collided."
+    }
   },
   {
     "season": 1987,
@@ -1176,16 +1212,19 @@
       "text": "Mexican",
       "url": "https://en.wikipedia.org/wiki/1987_Mexican_Grand_Prix"
     },
-    "lap": 30,
-    "restart_status": {
-      "code": "S",
-      "description": "race_was_restarted_or_resumed_without_completing_original_distance"
-    },
-    "winner": {
-      "text": "Nigel Mansell",
-      "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-    },
-    "incident": "Crash of Derek Warwick . The race was decided by combining the time from the first 30 laps with the time from the restarted 33 laps."
+    "championship": true,
+    "red_flag": {
+      "lap": 30,
+      "restart_status": {
+        "code": "S",
+        "description": "race_was_restarted_or_resumed_without_completing_original_distance"
+      },
+      "winner": {
+        "text": "Nigel Mansell",
+        "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+      },
+      "incident": "Crash of Derek Warwick . The race was decided by combining the time from the first 30 laps with the time from the restarted 33 laps."
+    }
   },
   {
     "season": 1988,
@@ -1193,16 +1232,19 @@
       "text": "Portuguese",
       "url": "https://en.wikipedia.org/wiki/1988_Portuguese_Grand_Prix"
     },
-    "lap": 1,
-    "restart_status": {
-      "code": "Y",
-      "description": "race_was_restarted_over_original_distance"
-    },
-    "winner": {
-      "text": "Alain Prost",
-      "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-    },
-    "incident": "After the first start was aborted, the second start was red-flagged after Derek Warwick stalled his car and was hit by Andrea de Cesaris , with Luis Pérez-Sala and Satoru Nakajima also involved."
+    "championship": true,
+    "red_flag": {
+      "lap": 1,
+      "restart_status": {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance"
+      },
+      "winner": {
+        "text": "Alain Prost",
+        "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+      },
+      "incident": "After the first start was aborted, the second start was red-flagged after Derek Warwick stalled his car and was hit by Andrea de Cesaris , with Luis Pérez-Sala and Satoru Nakajima also involved."
+    }
   },
   {
     "season": 1989,
@@ -1236,16 +1278,19 @@
       "text": "Mexican",
       "url": "https://en.wikipedia.org/wiki/1989_Mexican_Grand_Prix"
     },
-    "lap": 2,
-    "restart_status": {
-      "code": "Y",
-      "description": "race_was_restarted_over_original_distance"
-    },
-    "winner": {
-      "text": "Ayrton Senna",
-      "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
-    },
-    "incident": "Crash involving Stefano Modena and Olivier Grouillard"
+    "championship": true,
+    "red_flag": {
+      "lap": 2,
+      "restart_status": {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance"
+      },
+      "winner": {
+        "text": "Ayrton Senna",
+        "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+      },
+      "incident": "Crash involving Stefano Modena and Olivier Grouillard"
+    }
   },
   {
     "season": 1989,
@@ -1253,16 +1298,19 @@
       "text": "French",
       "url": "https://en.wikipedia.org/wiki/1989_French_Grand_Prix"
     },
-    "lap": 1,
-    "restart_status": {
-      "code": "Y",
-      "description": "race_was_restarted_over_original_distance"
-    },
-    "winner": {
-      "text": "Alain Prost",
-      "url": "https://en.wikipedia.org/wiki/Alain_Prost"
-    },
-    "incident": "Crash involving Nigel Mansell , Maurício Gugelmin , Thierry Boutsen , René Arnoux and Jonathan Palmer"
+    "championship": true,
+    "red_flag": {
+      "lap": 1,
+      "restart_status": {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance"
+      },
+      "winner": {
+        "text": "Alain Prost",
+        "url": "https://en.wikipedia.org/wiki/Alain_Prost"
+      },
+      "incident": "Crash involving Nigel Mansell , Maurício Gugelmin , Thierry Boutsen , René Arnoux and Jonathan Palmer"
+    }
   },
   {
     "season": 1989,
@@ -1322,16 +1370,19 @@
       "text": "Monaco",
       "url": "https://en.wikipedia.org/wiki/1990_Monaco_Grand_Prix"
     },
-    "lap": 1,
-    "restart_status": {
-      "code": "Y",
-      "description": "race_was_restarted_over_original_distance"
-    },
-    "winner": {
-      "text": "Ayrton Senna",
-      "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
-    },
-    "incident": "Crash involving Gerhard Berger and Alain Prost which partially blocked the track."
+    "championship": true,
+    "red_flag": {
+      "lap": 1,
+      "restart_status": {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance"
+      },
+      "winner": {
+        "text": "Ayrton Senna",
+        "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+      },
+      "incident": "Crash involving Gerhard Berger and Alain Prost which partially blocked the track."
+    }
   },
   {
     "season": 1990,
@@ -1391,16 +1442,19 @@
       "text": "Italian",
       "url": "https://en.wikipedia.org/wiki/1990_Italian_Grand_Prix"
     },
-    "lap": 2,
-    "restart_status": {
-      "code": "Y",
-      "description": "race_was_restarted_over_original_distance"
-    },
-    "winner": {
-      "text": "Ayrton Senna",
-      "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
-    },
-    "incident": "Crash of Derek Warwick ."
+    "championship": true,
+    "red_flag": {
+      "lap": 2,
+      "restart_status": {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance"
+      },
+      "winner": {
+        "text": "Ayrton Senna",
+        "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+      },
+      "incident": "Crash of Derek Warwick ."
+    }
   },
   {
     "season": 1990,
@@ -1408,16 +1462,19 @@
       "text": "Portuguese",
       "url": "https://en.wikipedia.org/wiki/1990_Portuguese_Grand_Prix"
     },
-    "lap": 61,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Nigel Mansell",
-      "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-    },
-    "incident": "Crash involving Aguri Suzuki and Alex Caffi ."
+    "championship": true,
+    "red_flag": {
+      "lap": 61,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Nigel Mansell",
+        "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+      },
+      "incident": "Crash involving Aguri Suzuki and Alex Caffi ."
+    }
   },
   {
     "season": 1991,
@@ -1425,16 +1482,19 @@
       "text": "Australian",
       "url": "https://en.wikipedia.org/wiki/1991_Australian_Grand_Prix"
     },
-    "lap": 14,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Ayrton Senna",
-      "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
-    },
-    "incident": "Rain. Half points were awarded."
+    "championship": true,
+    "red_flag": {
+      "lap": 14,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Ayrton Senna",
+        "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+      },
+      "incident": "Rain. Half points were awarded."
+    }
   },
   {
     "season": 1992,
@@ -1442,16 +1502,19 @@
       "text": "French",
       "url": "https://en.wikipedia.org/wiki/1992_French_Grand_Prix"
     },
-    "lap": 18,
-    "restart_status": {
-      "code": "S",
-      "description": "race_was_restarted_or_resumed_without_completing_original_distance"
-    },
-    "winner": {
-      "text": "Nigel Mansell",
-      "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
-    },
-    "incident": "Rain. The race was decided by combining the time from the first 18 laps with the time from the restarted 51 laps."
+    "championship": true,
+    "red_flag": {
+      "lap": 18,
+      "restart_status": {
+        "code": "S",
+        "description": "race_was_restarted_or_resumed_without_completing_original_distance"
+      },
+      "winner": {
+        "text": "Nigel Mansell",
+        "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+      },
+      "incident": "Rain. The race was decided by combining the time from the first 18 laps with the time from the restarted 51 laps."
+    }
   },
   {
     "season": 1994,
@@ -1511,16 +1574,19 @@
       "text": "Italian",
       "url": "https://en.wikipedia.org/wiki/1994_Italian_Grand_Prix"
     },
-    "lap": 1,
-    "restart_status": {
-      "code": "Y",
-      "description": "race_was_restarted_over_original_distance"
-    },
-    "winner": {
-      "text": "Damon Hill",
-      "url": "https://en.wikipedia.org/wiki/Damon_Hill"
-    },
-    "incident": "Crash involving Johnny Herbert , Eddie Irvine , David Coulthard and Olivier Panis"
+    "championship": true,
+    "red_flag": {
+      "lap": 1,
+      "restart_status": {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance"
+      },
+      "winner": {
+        "text": "Damon Hill",
+        "url": "https://en.wikipedia.org/wiki/Damon_Hill"
+      },
+      "incident": "Crash involving Johnny Herbert , Eddie Irvine , David Coulthard and Olivier Panis"
+    }
   },
   {
     "season": 1994,
@@ -1766,16 +1832,19 @@
       "text": "Canadian",
       "url": "https://en.wikipedia.org/wiki/1997_Canadian_Grand_Prix"
     },
-    "lap": 56,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Michael Schumacher",
-      "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-    },
-    "incident": "Crash of Olivier Panis ."
+    "championship": true,
+    "red_flag": {
+      "lap": 56,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Michael Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+      },
+      "incident": "Crash of Olivier Panis ."
+    }
   },
   {
     "season": 1998,
@@ -1783,16 +1852,19 @@
       "text": "Canadian",
       "url": "https://en.wikipedia.org/wiki/1998_Canadian_Grand_Prix"
     },
-    "lap": 1,
-    "restart_status": {
-      "code": "Y",
-      "description": "race_was_restarted_over_original_distance"
-    },
-    "winner": {
-      "text": "Michael Schumacher",
-      "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-    },
-    "incident": "Crash involving Jean Alesi , Johnny Herbert , Jarno Trulli and Alexander Wurz ."
+    "championship": true,
+    "red_flag": {
+      "lap": 1,
+      "restart_status": {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance"
+      },
+      "winner": {
+        "text": "Michael Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+      },
+      "incident": "Crash involving Jean Alesi , Johnny Herbert , Jarno Trulli and Alexander Wurz ."
+    }
   },
   {
     "season": 1998,
@@ -1800,16 +1872,19 @@
       "text": "French",
       "url": "https://en.wikipedia.org/wiki/1998_French_Grand_Prix"
     },
-    "lap": 1,
-    "restart_status": {
-      "code": "S",
-      "description": "race_was_restarted_or_resumed_without_completing_original_distance"
-    },
-    "winner": {
-      "text": "Michael Schumacher",
-      "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
-    },
-    "incident": "Improper start procedure after Jos Verstappen stalled his car at the start."
+    "championship": true,
+    "red_flag": {
+      "lap": 1,
+      "restart_status": {
+        "code": "S",
+        "description": "race_was_restarted_or_resumed_without_completing_original_distance"
+      },
+      "winner": {
+        "text": "Michael Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+      },
+      "incident": "Improper start procedure after Jos Verstappen stalled his car at the start."
+    }
   },
   {
     "season": 1998,
@@ -1907,16 +1982,19 @@
       "text": "German",
       "url": "https://en.wikipedia.org/wiki/2001_German_Grand_Prix"
     },
-    "lap": 2,
-    "restart_status": {
-      "code": "Y",
-      "description": "race_was_restarted_over_original_distance"
-    },
-    "winner": {
-      "text": "Ralf Schumacher",
-      "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
-    },
-    "incident": "Crash involving Luciano Burti and Michael Schumacher ."
+    "championship": true,
+    "red_flag": {
+      "lap": 2,
+      "restart_status": {
+        "code": "Y",
+        "description": "race_was_restarted_over_original_distance"
+      },
+      "winner": {
+        "text": "Ralf Schumacher",
+        "url": "https://en.wikipedia.org/wiki/Ralf_Schumacher"
+      },
+      "incident": "Crash involving Luciano Burti and Michael Schumacher ."
+    }
   },
   {
     "season": 2001,
@@ -2028,16 +2106,19 @@
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/2003_Brazilian_Grand_Prix"
     },
-    "lap": 56,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Giancarlo Fisichella",
-      "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-    },
-    "incident": "Crashes of Mark Webber and Fernando Alonso ."
+    "championship": true,
+    "red_flag": {
+      "lap": 56,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Giancarlo Fisichella",
+        "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
+      },
+      "incident": "Crashes of Mark Webber and Fernando Alonso ."
+    }
   },
   {
     "season": 2007,
@@ -2087,16 +2168,19 @@
       "text": "Malaysian",
       "url": "https://en.wikipedia.org/wiki/2009_Malaysian_Grand_Prix"
     },
-    "lap": 33,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Jenson Button",
-      "url": "https://en.wikipedia.org/wiki/Jenson_Button"
-    },
-    "incident": "Torrential rain and crashes of Sébastien Buemi , Sebastian Vettel and Giancarlo Fisichella . Half points were awarded."
+    "championship": true,
+    "red_flag": {
+      "lap": 33,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Jenson Button",
+        "url": "https://en.wikipedia.org/wiki/Jenson_Button"
+      },
+      "incident": "Torrential rain and crashes of Sébastien Buemi , Sebastian Vettel and Giancarlo Fisichella . Half points were awarded."
+    }
   },
   {
     "season": 2010,
@@ -2104,16 +2188,19 @@
       "text": "Korean",
       "url": "https://en.wikipedia.org/wiki/2010_Korean_Grand_Prix"
     },
-    "lap": 3,
-    "restart_status": {
-      "code": "R",
-      "description": "race_was_resumed_to_complete_original_distance"
-    },
-    "winner": {
-      "text": "Fernando Alonso",
-      "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
-    },
-    "incident": "Rain."
+    "championship": true,
+    "red_flag": {
+      "lap": 3,
+      "restart_status": {
+        "code": "R",
+        "description": "race_was_resumed_to_complete_original_distance"
+      },
+      "winner": {
+        "text": "Fernando Alonso",
+        "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+      },
+      "incident": "Rain."
+    }
   },
   {
     "season": 2011,
@@ -2151,16 +2238,19 @@
       "text": "Canadian",
       "url": "https://en.wikipedia.org/wiki/2011_Canadian_Grand_Prix"
     },
-    "lap": 25,
-    "restart_status": {
-      "code": "R",
-      "description": "race_was_resumed_to_complete_original_distance"
-    },
-    "winner": {
-      "text": "Jenson Button",
-      "url": "https://en.wikipedia.org/wiki/Jenson_Button"
-    },
-    "incident": "Rain."
+    "championship": true,
+    "red_flag": {
+      "lap": 25,
+      "restart_status": {
+        "code": "R",
+        "description": "race_was_resumed_to_complete_original_distance"
+      },
+      "winner": {
+        "text": "Jenson Button",
+        "url": "https://en.wikipedia.org/wiki/Jenson_Button"
+      },
+      "incident": "Rain."
+    }
   },
   {
     "season": 2012,
@@ -2168,16 +2258,19 @@
       "text": "Malaysian",
       "url": "https://en.wikipedia.org/wiki/2012_Malaysian_Grand_Prix"
     },
-    "lap": 9,
-    "restart_status": {
-      "code": "R",
-      "description": "race_was_resumed_to_complete_original_distance"
-    },
-    "winner": {
-      "text": "Fernando Alonso",
-      "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
-    },
-    "incident": "Rain."
+    "championship": true,
+    "red_flag": {
+      "lap": 9,
+      "restart_status": {
+        "code": "R",
+        "description": "race_was_resumed_to_complete_original_distance"
+      },
+      "winner": {
+        "text": "Fernando Alonso",
+        "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
+      },
+      "incident": "Rain."
+    }
   },
   {
     "season": 2013,
@@ -2241,16 +2334,19 @@
       "text": "Japanese",
       "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
     },
-    "lap": 2,
-    "restart_status": {
-      "code": "R",
-      "description": "race_was_resumed_to_complete_original_distance"
-    },
-    "winner": {
-      "text": "Lewis Hamilton",
-      "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
-    },
-    "incident": "Torrential rain as a consequence of Typhoon Phanfone ."
+    "championship": true,
+    "red_flag": {
+      "lap": 2,
+      "restart_status": {
+        "code": "R",
+        "description": "race_was_resumed_to_complete_original_distance"
+      },
+      "winner": {
+        "text": "Lewis Hamilton",
+        "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      },
+      "incident": "Torrential rain as a consequence of Typhoon Phanfone ."
+    }
   },
   {
     "season": 2014,
@@ -2258,16 +2354,19 @@
       "text": "Japanese",
       "url": "https://en.wikipedia.org/wiki/2014_Japanese_Grand_Prix"
     },
-    "lap": 46,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Lewis Hamilton",
-      "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
-    },
-    "incident": "Fatal crash of Jules Bianchi ."
+    "championship": true,
+    "red_flag": {
+      "lap": 46,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Lewis Hamilton",
+        "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      },
+      "incident": "Fatal crash of Jules Bianchi ."
+    }
   },
   {
     "season": 2016,
@@ -2431,16 +2530,19 @@
       "text": "Brazilian",
       "url": "https://en.wikipedia.org/wiki/2016_Brazilian_Grand_Prix"
     },
-    "lap": 28,
-    "restart_status": {
-      "code": "R",
-      "description": "race_was_resumed_to_complete_original_distance"
-    },
-    "winner": {
-      "text": "Lewis Hamilton",
-      "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
-    },
-    "incident": "Rain."
+    "championship": true,
+    "red_flag": {
+      "lap": 28,
+      "restart_status": {
+        "code": "R",
+        "description": "race_was_resumed_to_complete_original_distance"
+      },
+      "winner": {
+        "text": "Lewis Hamilton",
+        "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+      },
+      "incident": "Rain."
+    }
   },
   {
     "season": 2017,
@@ -2448,16 +2550,19 @@
       "text": "Azerbaijan",
       "url": "https://en.wikipedia.org/wiki/2017_Azerbaijan_Grand_Prix"
     },
-    "lap": 22,
-    "restart_status": {
-      "code": "R",
-      "description": "race_was_resumed_to_complete_original_distance"
-    },
-    "winner": {
-      "text": "Daniel Ricciardo",
-      "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
-    },
-    "incident": "Debris on the track following multiple incidents."
+    "championship": true,
+    "red_flag": {
+      "lap": 22,
+      "restart_status": {
+        "code": "R",
+        "description": "race_was_resumed_to_complete_original_distance"
+      },
+      "winner": {
+        "text": "Daniel Ricciardo",
+        "url": "https://en.wikipedia.org/wiki/Daniel_Ricciardo"
+      },
+      "incident": "Debris on the track following multiple incidents."
+    }
   },
   {
     "season": 2020,
@@ -2731,16 +2836,19 @@
       "text": "Belgian",
       "url": "https://en.wikipedia.org/wiki/2021_Belgian_Grand_Prix"
     },
-    "lap": 3,
-    "restart_status": {
-      "code": "N",
-      "description": "race_was_not_restarted"
-    },
-    "winner": {
-      "text": "Max Verstappen",
-      "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
-    },
-    "incident": "Rain. Half points were awarded."
+    "championship": true,
+    "red_flag": {
+      "lap": 3,
+      "restart_status": {
+        "code": "N",
+        "description": "race_was_not_restarted"
+      },
+      "winner": {
+        "text": "Max Verstappen",
+        "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+      },
+      "incident": "Rain. Half points were awarded."
+    }
   },
   {
     "season": 2021,
