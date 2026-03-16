@@ -11,13 +11,21 @@ from models.records.factories.helpers import (
 
 class EventRecordFactory(BaseRecordFactory):
     def build(self, record: Mapping[str, Any]) -> EventRecord:
-        payload = dict(record)
-        payload["event"] = normalize_optional_link_list_or_link_or_string(
-            self.normalizer,
-            payload.get("event"),
-            "event",
-        )
-        payload["championship"] = self.normalizer.normalize_bool(
-            payload.get("championship"),
+        payload = self.apply_spec(
+            record,
+            {
+                "field_normalizers": {
+                    "event": lambda value,
+                    field: normalize_optional_link_list_or_link_or_string(
+                        self.normalizer,
+                        value,
+                        field,
+                    ),
+                    "championship": lambda value,
+                    _field: self.normalizer.normalize_bool(
+                        value,
+                    ),
+                },
+            },
         )
         return cast("EventRecord", payload)

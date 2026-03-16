@@ -21,6 +21,8 @@ class F1ListScraper(WikiScraper, ABC):
     - url_key     - klucz pod którym zapisywany jest pełny URL linku.
     """
 
+    scraper_kind: str = "list"
+
     section_id: str | None = None
     record_key: str | None = None
     url_key: str = "url"

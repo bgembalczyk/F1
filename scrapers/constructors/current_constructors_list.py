@@ -1,6 +1,5 @@
 """DEPRECATED ENTRYPOINT: use scrapers.constructors.entrypoint.run_list_scraper."""
 
-import warnings
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
@@ -55,32 +54,23 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
         record_factory=build_constructor_record,
     )
 
-    def _parse_soup(self, soup):
-        return self.parse_section_or_fallback(
-            soup,
-            domain="constructors",
-            section_label="Current constructors",
-            parser_factory=lambda: ConstructorsListSectionParser(
-                config=self.config,
-                section_label="Current constructors",
-                include_urls=self.include_urls,
-                normalize_empty_values=self.normalize_empty_values,
-            ),
-        )
+    section_label = "Current constructors"
+    section_parser_class = ConstructorsListSectionParser
 
 
 if __name__ == "__main__":
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
     from scrapers.constructors.entrypoint import run_list_scraper
 
-    warnings.warn(
-        "scrapers.constructors.current_constructors_list is deprecated as an entrypoint; use scrapers.constructors.entrypoint.run_list_scraper.",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    run_list_scraper(
-        run_config=RunConfig(
+    run_cli_entrypoint(
+        target=run_list_scraper,
+        base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),
+        ),
+        deprecation_message=(
+            "scrapers.constructors.current_constructors_list is deprecated as "
+            "an entrypoint; use scrapers.constructors.entrypoint.run_list_scraper."
         ),
     )

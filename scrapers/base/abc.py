@@ -22,12 +22,14 @@ from scrapers.base.logging import get_logger
 from scrapers.base.normalization import RecordNormalizer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.post_processors import apply_post_processors
+from scrapers.base.quality.reporter import QualityReporter
 from scrapers.base.records import NormalizedRecord
 from scrapers.base.records import RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.transformers.helpers import apply_transformers
 from validation.validator_base import ExportRecord
 from validation.validator_base import RecordValidator
+from models.mappers.serialization import to_dict_list
 
 T = TypeVar("T")
 
@@ -81,6 +83,14 @@ class ABCScraper(ABC):
         self._run_id: str | None = options.run_id
         self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
         self._quality_report_enabled = options.quality_report
+        self._quality_reporter: QualityReporter | None = None
+
+        if self._quality_report_enabled:
+            self._quality_reporter = QualityReporter(
+                report_root=self._resolve_quality_report_root(),
+                run_id=self._run_id or "pending",
+                source_metadata=self._source_metadata(),
+            )
 
         self.validator: RecordValidator | None = options.validator or getattr(
             self,
@@ -131,6 +141,7 @@ class ABCScraper(ABC):
             self.logger.debug("Scrape run %s: start download", run_id)
             html = self._download()
             self.logger.debug("Scrape run %s: finish download", run_id)
+            self._write_step_quality_report(step_name="download", records=[])
         except Exception as exc:
             error: Exception
             if isinstance(exc, ScraperError):
@@ -150,19 +161,39 @@ class ABCScraper(ABC):
             self.logger.debug("Scrape run %s: start parse", run_id)
             raw_records = self.parse(soup)
             self.logger.debug("Scrape run %s: finish parse", run_id)
+            self._write_step_quality_report(
+                step_name="parse",
+                records=list(raw_records),
+            )
 
             self.logger.debug("Scrape run %s: start normalize", run_id)
             normalized_records = self._record_normalizer.normalize(list(raw_records))
             self.logger.debug("Scrape run %s: finish normalize", run_id)
+            self._write_step_quality_report(
+                step_name="normalize",
+                records=to_dict_list(list(normalized_records)),
+            )
             self.logger.debug("Scrape run %s: start transform", run_id)
             transformed_records = self._apply_transformers(normalized_records)
             self.logger.debug("Scrape run %s: finish transform", run_id)
+            self._write_step_quality_report(
+                step_name="transform",
+                records=to_dict_list(list(transformed_records)),
+            )
             self.logger.debug("Scrape run %s: start validate", run_id)
             validated_records = self.validate_records(transformed_records)
             self.logger.debug("Scrape run %s: finish validate", run_id)
+            self._write_step_quality_report(
+                step_name="validate",
+                records=to_dict_list(list(validated_records)),
+            )
             self.logger.debug("Scrape run %s: start post-process", run_id)
             self._data = self.post_process_records(validated_records)
             self.logger.debug("Scrape run %s: finish post-process", run_id)
+            self._write_step_quality_report(
+                step_name="post_process",
+                records=to_dict_list(list(self._data)),
+            )
         except Exception as exc:
             error = (
                 exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
@@ -333,6 +364,39 @@ class ABCScraper(ABC):
 
         self._write_quality_report()
         return valid_records
+
+    def _source_metadata(self) -> dict[str, object]:
+        return {
+            "domain": self.__module__.split(".")[1]
+            if "." in self.__module__
+            else self.__module__,
+            "scraper": self.__class__.__name__,
+            "scraper_kind": getattr(self, "scraper_kind", "single"),
+            "url": getattr(self, "url", ""),
+        }
+
+    def _resolve_quality_report_root(self) -> Path:
+        if self.debug_dir is not None:
+            return self.debug_dir
+        return Path("data/checkpoints")
+
+    def _write_step_quality_report(
+        self,
+        *,
+        step_name: str,
+        records: list[dict[str, object]],
+    ) -> None:
+        if not self._quality_report_enabled or self._quality_reporter is None:
+            return
+        run_id = self._run_id or "no_run_id"
+        self._quality_reporter.run_id = run_id
+        step_id = f"{run_id}_{step_name}"
+        report_path = self._quality_reporter.report_step(
+            step_id=step_id,
+            records=records,
+            source_metadata=self._source_metadata(),
+        )
+        self.logger.debug("Saved step quality report: %s", report_path)
 
     def _write_quality_report(self) -> None:
         if (

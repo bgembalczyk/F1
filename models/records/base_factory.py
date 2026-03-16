@@ -3,12 +3,22 @@
 from collections.abc import Callable
 from collections.abc import Mapping
 from typing import Any
+from typing import TypedDict
 from typing import TypeVar
 
 from models.mappers.field_aliases import apply_field_aliases
 from models.records.field_normalizer import FieldNormalizer
 
 T = TypeVar("T")
+
+
+class FactorySpec(TypedDict, total=False):
+    aliases: dict[str, str]
+    record_name: str
+    field_normalizers: dict[str, Callable[[Any, str], Any]]
+    list_field_normalizers: dict[str, list[str]]
+    defaults: dict[str, Any]
+    nested_factories: dict[str, "BaseRecordFactory"]
 
 
 class BaseRecordFactory:
@@ -97,3 +107,38 @@ class BaseRecordFactory:
     def set_defaults(self, payload: dict[str, Any], defaults: dict[str, Any]) -> None:
         for key, default_value in defaults.items():
             payload.setdefault(key, default_value)
+
+    def normalize_bool_field(self, payload: dict[str, Any], field_name: str) -> None:
+        payload[field_name] = self.normalizer.normalize_bool(payload.get(field_name))
+
+    def apply_spec(
+        self,
+        record: Mapping[str, Any],
+        spec: FactorySpec,
+    ) -> dict[str, Any]:
+        aliases = spec.get("aliases")
+        if aliases:
+            payload = self.apply_aliases(
+                record,
+                aliases,
+                spec.get("record_name", "record"),
+            )
+        else:
+            payload = dict(record)
+
+        self.normalize_fields(payload, spec.get("field_normalizers", {}))
+
+        for normalizer_name, field_names in spec.get(
+            "list_field_normalizers",
+            {},
+        ).items():
+            method = getattr(self, f"normalize_{normalizer_name}_fields")
+            method(payload, field_names)
+
+        for field_name, nested_factory in spec.get("nested_factories", {}).items():
+            nested_payload = payload.get(field_name)
+            if isinstance(nested_payload, Mapping):
+                payload[field_name] = nested_factory.build(nested_payload)
+
+        self.set_defaults(payload, spec.get("defaults", {}))
+        return payload

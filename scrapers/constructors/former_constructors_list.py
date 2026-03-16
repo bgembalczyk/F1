@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from models.records.factories import build_constructor_record
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -51,26 +50,22 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
         record_factory=build_constructor_record,
     )
 
-    def _parse_soup(self, soup):
-        return self.parse_section_or_fallback(
-            soup,
-            domain="constructors",
-            section_label="Former constructors",
-            parser_factory=lambda: ConstructorsListSectionParser(
-                config=self.config,
-                section_label="Former constructors",
-                include_urls=self.include_urls,
-                normalize_empty_values=self.normalize_empty_values,
-            ),
-        )
+    section_label = "Former constructors"
+    section_parser_class = ConstructorsListSectionParser
 
 
 if __name__ == "__main__":
-    run_and_export(
-        FormerConstructorsListScraper,
-        "constructors/f1_former_constructors.json",
-        "constructors/f1_former_constructors.csv",
-        run_config=RunConfig(
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.helpers.runner import run_and_export
+
+    run_cli_entrypoint(
+        target=lambda *, run_config: run_and_export(
+            FormerConstructorsListScraper,
+            "constructors/f1_former_constructors.json",
+            "constructors/f1_former_constructors.csv",
+            run_config=run_config,
+        ),
+        base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),

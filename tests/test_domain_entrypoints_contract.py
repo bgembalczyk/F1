@@ -21,10 +21,19 @@ def test_entrypoints_expose_uniform_run_list_scraper_signature() -> None:
         assert str(signature) == "(*, run_config: 'RunConfig | None' = None) -> 'None'"
 
 
-def test_entrypoints_delegate_to_run_and_export_with_default_profile(monkeypatch) -> None:
+def test_entrypoints_delegate_to_run_and_export_with_default_profile(
+    monkeypatch,
+) -> None:
     delegate_calls = []
 
-    def fake_run_and_export(scraper_cls, json_rel, csv_rel=None, *, run_config, supports_urls=True):
+    def fake_run_and_export(
+        scraper_cls,
+        json_rel,
+        csv_rel=None,
+        *,
+        run_config,
+        supports_urls=True,
+    ):
         delegate_calls.append(
             {
                 "scraper_cls": scraper_cls,
@@ -32,10 +41,13 @@ def test_entrypoints_delegate_to_run_and_export_with_default_profile(monkeypatch
                 "csv_rel": csv_rel,
                 "run_config": run_config,
                 "supports_urls": supports_urls,
-            }
+            },
         )
 
-    monkeypatch.setattr("scrapers.base.domain_entrypoint.run_and_export", fake_run_and_export)
+    monkeypatch.setattr(
+        "scrapers.base.domain_entrypoint.run_and_export",
+        fake_run_and_export,
+    )
 
     for module_name in ENTRYPOINT_MODULES:
         module = importlib.import_module(module_name)
@@ -50,13 +62,25 @@ def test_entrypoints_delegate_to_run_and_export_with_default_profile(monkeypatch
         assert call["run_config"] == module.RUN_CONFIG_PROFILE()
 
 
-def test_entrypoints_delegate_to_run_and_export_with_overridden_run_config(monkeypatch) -> None:
+def test_entrypoints_delegate_to_run_and_export_with_overridden_run_config(
+    monkeypatch,
+) -> None:
     delegate_calls = []
 
-    def fake_run_and_export(scraper_cls, json_rel, csv_rel=None, *, run_config, supports_urls=True):
+    def fake_run_and_export(
+        scraper_cls,
+        json_rel,
+        csv_rel=None,
+        *,
+        run_config,
+        supports_urls=True,
+    ):
         delegate_calls.append(run_config)
 
-    monkeypatch.setattr("scrapers.base.domain_entrypoint.run_and_export", fake_run_and_export)
+    monkeypatch.setattr(
+        "scrapers.base.domain_entrypoint.run_and_export",
+        fake_run_and_export,
+    )
 
     custom_config = RunConfig(include_urls=False)
     for module_name in ENTRYPOINT_MODULES:

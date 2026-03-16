@@ -8,8 +8,14 @@ from models.records.driver_championships import DriversChampionshipsRecord
 
 class DriversChampionshipsRecordFactory(BaseRecordFactory):
     def build(self, record: Mapping[str, Any]) -> DriversChampionshipsRecord:
-        payload = dict(record)
-        self.normalize_int_fields(payload, ["count"])
-        payload["count"] = payload["count"] or 0
-        self.normalize_seasons_fields(payload, ["seasons"])
+        payload = self.apply_spec(
+            record,
+            {
+                "list_field_normalizers": {
+                    "int": ["count"],
+                    "seasons": ["seasons"],
+                },
+            },
+        )
+        payload["count"] = payload.get("count") or 0
         return cast("DriversChampionshipsRecord", payload)

@@ -1,11 +1,8 @@
 """DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
 
-import warnings
 from pathlib import Path
 
 from models.records.factories import build_driver_record
-from scrapers.base.helpers.config_factory import ScraperCommonConfig
-from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
@@ -46,6 +43,8 @@ class F1DriversListScraper(F1TableScraper):
     """
 
     default_validator = DriversRecordValidator()
+    options_domain = "drivers"
+    options_profile = "strict_seed"
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
@@ -83,51 +82,31 @@ class F1DriversListScraper(F1TableScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = build_table_config(
-            options,
-            config=ScraperCommonConfig(
-                include_urls=True,
-                normalize_empty_values=False,
-                validation_mode="hard",
-            ),
-        )
+        super().__init__(options=options, config=config)
+
+    def extend_options(self, options: ScraperOptions) -> ScraperOptions:
         options.transformers = [
             *list(options.transformers or []),
             DriversChampionshipsTransformer(),
         ]
-        super().__init__(options=options, config=config)
+        return options
 
 
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--quality-report",
-        action=argparse.BooleanOptionalAction,
-        default=True,
-        help="Zapisz raport jakości do debug_dir/quality_report.json.",
-    )
-    parser.add_argument(
-        "--error-report",
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help="Zapisz raporty błędów do debug_dir/errors.jsonl.",
-    )
-    args = parser.parse_args()
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
     from scrapers.drivers.entrypoint import run_list_scraper
 
-    warnings.warn(
-        "scrapers.drivers.list_scraper is deprecated; use scrapers.drivers.entrypoint.run_list_scraper.",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    run_list_scraper(
-        run_config=RunConfig(
+    run_cli_entrypoint(
+        target=run_list_scraper,
+        base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),
-            quality_report=args.quality_report,
-            error_report=args.error_report,
+        ),
+        quality_report_default=True,
+        error_report_default=False,
+        deprecation_message=(
+            "scrapers.drivers.list_scraper is deprecated; use "
+            "scrapers.drivers.entrypoint.run_list_scraper."
         ),
     )

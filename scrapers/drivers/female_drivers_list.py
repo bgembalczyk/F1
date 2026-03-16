@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from models.records.factories import build_special_driver_record
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -68,10 +67,16 @@ class FemaleDriversListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        FemaleDriversListScraper,
-        "drivers/female_drivers.json",
-        run_config=RunConfig(
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.helpers.runner import run_and_export
+
+    run_cli_entrypoint(
+        target=lambda *, run_config: run_and_export(
+            FemaleDriversListScraper,
+            "drivers/female_drivers.json",
+            run_config=run_config,
+        ),
+        base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),
