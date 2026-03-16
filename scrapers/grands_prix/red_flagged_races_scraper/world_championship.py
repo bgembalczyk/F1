@@ -67,7 +67,11 @@ if __name__ == "__main__":
         RedFlaggedWorldChampionshipRacesScraper,
         "grands_prix/f1_red_flagged_world_championship_races.json",
         run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
+            output_category="grands_prix",
+            output_layer="raw",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
             include_urls=True,
         ),
     )

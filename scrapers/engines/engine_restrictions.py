@@ -112,7 +112,11 @@ if __name__ == "__main__":
         EngineRestrictionsScraper,
         "engines/f1_engine_restrictions.json",
         run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
+            output_category="engines",
+            output_layer="raw",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
             include_urls=True,
         ),
     )

@@ -69,7 +69,11 @@ if __name__ == "__main__":
         "grands_prix/f1_grands_prix_by_title.json",
         "grands_prix/f1_grands_prix_by_title.csv",
         run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
+            output_category="grands_prix",
+            output_layer="raw",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
             include_urls=True,
         ),
     )

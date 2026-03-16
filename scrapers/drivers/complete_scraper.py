@@ -1,9 +1,9 @@
-from pathlib import Path
 from typing import Any
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
+from scrapers.base.output_layout import output_dir_for
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
@@ -57,6 +57,6 @@ if __name__ == "__main__":
     from scrapers.drivers.helpers.export import export_complete_drivers
 
     export_complete_drivers(
-        output_dir=Path("../../data/wiki/drivers/complete_drivers"),
+        output_dir=output_dir_for(category="drivers", layer="normalized"),
         include_urls=True,
     )

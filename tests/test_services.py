@@ -161,7 +161,9 @@ def test_run_and_export_uses_run_config(tmp_path: Path) -> None:
     assert csv_path.exists()
 
     payload = json.loads(json_path.read_text(encoding="utf-8"))
-    assert payload == [
+    assert payload["meta"]["source_url"] is None
+    assert payload["meta"]["records_count"] == 1
+    assert payload["data"] == [
         {"name": "test", "marker": "custom", "url": None},
     ]
     assert "marker" in csv_path.read_text(encoding="utf-8")

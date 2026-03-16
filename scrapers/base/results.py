@@ -18,6 +18,8 @@ if TYPE_CHECKING:
 class ScrapeResult:
     data: list[ExportRecord]
     source_url: str | None
+    parser_version: str | None = None
+    schema_version: str | None = None
     timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
 
     def _with_normalized_data(
@@ -38,6 +40,8 @@ class ScrapeResult:
         return ScrapeResult(
             data=normalized,
             source_url=self.source_url,
+            parser_version=self.parser_version,
+            schema_version=self.schema_version,
             timestamp=self.timestamp,
         )
 

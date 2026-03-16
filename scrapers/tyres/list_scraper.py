@@ -48,7 +48,11 @@ if __name__ == "__main__":
         "tyres/f1_tyre_manufacturers_by_season.json",
         "tyres/f1_tyre_manufacturers_by_season.csv",
         run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
+            output_category="tyres",
+            output_layer="raw",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
             include_urls=True,
         ),
     )

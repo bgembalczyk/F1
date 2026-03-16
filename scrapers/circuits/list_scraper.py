@@ -71,7 +71,11 @@ if __name__ == "__main__":
         "circuits/f1_circuits.json",
         "circuits/f1_circuits.csv",
         run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
+            output_category="circuits",
+            output_layer="raw",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
             include_urls=True,
             debug_dir=Path("../../data/debug"),
             quality_report=args.quality_report,

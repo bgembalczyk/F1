@@ -22,7 +22,11 @@ if __name__ == "__main__":
         "constructors/f1_indianapolis_only_constructors.json",
         "constructors/f1_indianapolis_only_constructors.csv",
         run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
+            output_category="constructors",
+            output_layer="raw",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
             include_urls=True,
             debug_dir=Path("../../data/debug"),
         ),

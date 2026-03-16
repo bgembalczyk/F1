@@ -50,7 +50,11 @@ if __name__ == "__main__":
         "seasons/f1_seasons.json",
         "seasons/f1_seasons.csv",
         run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
+            output_category="seasons",
+            output_layer="raw",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
             include_urls=True,
         ),
     )

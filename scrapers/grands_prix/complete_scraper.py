@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Any
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
@@ -74,5 +73,11 @@ if __name__ == "__main__":
     run_and_export(
         F1CompleteGrandPrixDataExtractor,
         "grands_prix/f1_grands_prix_extended.json",
-        run_config=RunConfig(output_dir=Path("../../data/wiki")),
+        run_config=RunConfig(
+            output_category="grands_prix",
+            output_layer="normalized",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
+        ),
     )

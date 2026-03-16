@@ -42,7 +42,7 @@ def test_json_formatter_with_metadata() -> None:
     parsed = json.loads(payload)
 
     assert parsed["meta"]["source_url"] == "https://example.com"
-    assert parsed["meta"]["timestamp"]
+    assert parsed["meta"]["scraped_at"]
     assert parsed["meta"]["records_count"] == 1
     assert parsed["data"] == [{"name": "Ayrton", "wins": 41}]
 

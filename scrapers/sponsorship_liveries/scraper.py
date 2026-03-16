@@ -81,7 +81,11 @@ if __name__ == "__main__":
         F1SponsorshipLiveriesScraper,
         "sponsorship_liveries/f1_sponsorship_liveries.json",
         run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
+            output_category="sponsorship_liveries",
+            output_layer="raw",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
             include_urls=True,
             scraper_kwargs={"classifier": _classifier},
         ),

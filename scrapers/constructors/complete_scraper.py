@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Any
 
 from tqdm import tqdm
@@ -8,6 +7,7 @@ from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
+from scrapers.base.output_layout import output_dir_for
 from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
 )
@@ -116,6 +116,6 @@ if __name__ == "__main__":
     from scrapers.constructors.helpers.export import export_complete_constructors
 
     export_complete_constructors(
-        output_dir=Path("../../data/wiki/constructors/complete_constructors"),
+        output_dir=output_dir_for(category="constructors", layer="normalized"),
         include_urls=True,
     )

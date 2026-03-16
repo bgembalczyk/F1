@@ -11,6 +11,11 @@ from scrapers.base.options import ScraperOptions
 class RunConfig:
     include_urls: bool = True
     output_dir: str | Path = Path()
+    output_category: str | None = None
+    output_layer: str | None = None
+    legacy_output_enabled: bool = False
+    parser_version: str | None = None
+    schema_version: str | None = None
     debug_dir: str | Path | None = None
     cache_dir: str | Path | None = None
     cache_ttl: int | None = None

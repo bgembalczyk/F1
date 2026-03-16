@@ -56,6 +56,8 @@ def test_to_json_includes_metadata_from_result(tmp_path):
     result = ScrapeResult(
         data=[{"driver": "Max"}],
         source_url="https://example.com",
+        parser_version="2.1.0",
+        schema_version="2026-01",
         timestamp=timestamp,
     )
     output = tmp_path / "result.json"
@@ -64,7 +66,9 @@ def test_to_json_includes_metadata_from_result(tmp_path):
 
     payload = json.loads(output.read_text(encoding="utf-8"))
     assert payload["meta"]["source_url"] == "https://example.com"
-    assert payload["meta"]["timestamp"] == timestamp.isoformat()
+    assert payload["meta"]["scraped_at"] == timestamp.isoformat()
+    assert payload["meta"]["parser_version"] == "2.1.0"
+    assert payload["meta"]["schema_version"] == "2026-01"
     assert payload["meta"]["records_count"] == 1
     assert payload["data"] == [{"driver": "Max"}]
 

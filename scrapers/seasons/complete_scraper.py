@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Any
 
 from tqdm import tqdm
@@ -6,6 +5,7 @@ from tqdm import tqdm
 from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
+from scrapers.base.output_layout import output_dir_for
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
@@ -55,6 +55,6 @@ if __name__ == "__main__":
     from scrapers.seasons.helpers import export_complete_seasons
 
     export_complete_seasons(
-        output_dir=Path("../../data/wiki/seasons/complete_seasons"),
+        output_dir=output_dir_for(category="seasons", layer="normalized"),
         include_urls=True,
     )

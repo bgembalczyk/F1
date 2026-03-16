@@ -1,9 +1,9 @@
-from pathlib import Path
 from typing import Any
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
+from scrapers.base.output_layout import output_dir_for
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.models.services.circuit_service import CircuitService
@@ -77,6 +77,6 @@ if __name__ == "__main__":
     from scrapers.circuits.helpers.export import export_complete_circuits
 
     export_complete_circuits(
-        output_dir=Path("../../data/wiki/circuits/complete_circuits"),
+        output_dir=output_dir_for(category="circuits", layer="normalized"),
         include_urls=True,
     )

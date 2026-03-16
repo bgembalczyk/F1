@@ -77,7 +77,11 @@ if __name__ == "__main__":
         "constructors/f1_privateer_teams.json",
         "constructors/f1_privateer_teams.csv",
         run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
+            output_category="constructors",
+            output_layer="raw",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
             include_urls=True,
             debug_dir=Path("../../data/debug"),
         ),

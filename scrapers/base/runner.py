@@ -5,6 +5,7 @@ from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.paremeters import supports_param
 from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger
+from scrapers.base.output_layout import output_targets
 from scrapers.base.options import ScraperOptions
 from scrapers.base.results import ScrapeResult
 from scrapers.base.run_config import RunConfig
@@ -35,18 +36,30 @@ class ScraperRunner:
         result = ScrapeResult(
             data=data,
             source_url=getattr(scraper, "url", None),
+            parser_version=self._run_config.parser_version,
+            schema_version=self._run_config.schema_version,
         )
 
-        output_dir = Path(self._run_config.output_dir)
-        json_path = output_dir / Path(json_rel)
-        ensure_parent(json_path)
-        result.to_json(json_path, exporter=scraper.exporter)
+        output_dirs = self._resolve_output_dirs()
+        for output_dir in output_dirs:
+            json_path = output_dir / Path(json_rel)
+            ensure_parent(json_path)
+            result.to_json(json_path, exporter=scraper.exporter, include_metadata=True)
 
-        if csv_rel:
-            csv_path = output_dir / Path(csv_rel)
-            ensure_parent(csv_path)
-            result.to_csv(csv_path, exporter=scraper.exporter)
+            if csv_rel:
+                csv_path = output_dir / Path(csv_rel)
+                ensure_parent(csv_path)
+                result.to_csv(csv_path, exporter=scraper.exporter, include_metadata=True)
         run_logger.info("Scrape run %s finished", run_id)
+
+    def _resolve_output_dirs(self) -> list[Path]:
+        if self._run_config.output_category and self._run_config.output_layer:
+            return output_targets(
+                category=self._run_config.output_category,
+                layer=self._run_config.output_layer,
+                legacy_enabled=self._run_config.legacy_output_enabled,
+            )
+        return [Path(self._run_config.output_dir)]
 
     def _make_scraper(
         self,

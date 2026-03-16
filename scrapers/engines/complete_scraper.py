@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Any
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
@@ -84,5 +83,11 @@ if __name__ == "__main__":
     run_and_export(
         F1CompleteEngineManufacturerDataExtractor,
         "engines/f1_engine_manufacturers_complete.json",
-        run_config=RunConfig(output_dir=Path("../../data/wiki")),
+        run_config=RunConfig(
+            output_category="engines",
+            output_layer="normalized",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
+        ),
     )

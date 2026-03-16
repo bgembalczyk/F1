@@ -21,7 +21,11 @@ if __name__ == "__main__":
         "engines/f1_indianapolis_only_engine_manufacturers.json",
         "engines/f1_indianapolis_only_engine_manufacturers.csv",
         run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
+            output_category="engines",
+            output_layer="raw",
+            legacy_output_enabled=True,
+            parser_version="1.0.0",
+            schema_version="1.0.0",
             include_urls=True,
         ),
     )
