@@ -22,19 +22,35 @@ Ten katalog zawiera parsery odpowiedzialne za ekstrakcję treści z HTML-a Wikip
 - `SubSubSectionParser` (poziom 4)
 - `SubSubSubSectionParser` (poziom 5)
 
-Parsery sekcji delegują parsowanie pojedynczych elementów do `WikiElementParserMixin` (zdefiniowanego w `sub_sub_sub_section.py`), który trzyma instancje parserów elementarnych i wybiera parser na podstawie typu elementu HTML.
+Parsery sekcji działają przez wspólny kontekst `SectionExtractionContext`
+(z `section_adapter.py`), który przenosi:
+- `page_title`
+- `page_url`
+- `breadcrumbs`
+- `html_metadata`
+- `section_id`
+
+## Kontrakt parsera elementów
+
+Każdy sparsowany element w polu `elements` ma ujednolicony kontrakt:
+
+```python
+{
+  "kind": str,
+  "source_section_id": str | None,
+  "confidence": float,
+  "raw_html_fragment": str,
+  "data": dict[str, Any],
+  "type": str,  # alias kompatybilności wstecznej
+}
+```
+
+Dodatkowo parsery elementów mają fallback dla wrapperów `div`/`span`:
+jeśli sam wrapper nie pasuje do reguły, parser próbuje dopasować pierwszy
+obsługiwany element wśród jego bezpośrednich dzieci.
 
 ## Przepływ parsowania
 1. Parser sekcji dzieli dzieci kontenera na części nagłówkami (`_split_into_parts`).
-2. Każda część jest przekazywana do parsera niższego poziomu sekcji.
-3. Najniższy poziom (`SubSubSubSectionParser`) parsuje elementy bezpośrednio przez `WikiElementParserMixin._parse_element`.
-
-## Kontrakt sygnatur
-W parserach z `elements/` i `sections/` metody publiczne `parse` mają spójny kontrakt:
-
-```python
-def parse(self, element: Tag) -> dict[str, Any]:
-    ...
-```
-
-Dzięki temu parsery można łatwo podmieniać i testować w jednolity sposób.
+2. Każda część dostaje `section_id` (anchor nagłówka + normalizacja sluga).
+3. Każda część jest przekazywana do parsera niższego poziomu sekcji z tym samym kontekstem.
+4. Najniższy poziom (`SubSubSubSectionParser`) parsuje elementy przez rejestr reguł.
