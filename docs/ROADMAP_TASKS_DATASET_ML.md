@@ -7,9 +7,11 @@
 - [x] Zdefiniować listę stron startowych (kierowcy, konstruktorzy, GP, tory, sezony).
   - Potwierdzenie: istnieją dedykowane list scrape'ry dla kluczowych seedów (`drivers`, `constructors`, `grands_prix`, `circuits`, `seasons`).
   - Moduły referencyjne: `scrapers/drivers/list_scraper.py`, `scrapers/constructors/*_list*.py`, `scrapers/grands_prix/list_scraper.py`, `scrapers/circuits/list_scraper.py`, `scrapers/seasons/list_scraper.py`.
-- [ ] Dodać konfigurację mapującą: `seed_name -> wikipedia_url -> output_category`.
+- [x] Dodać konfigurację mapującą: `seed_name -> wikipedia_url -> output_category`.
+  - Status migracji: centralny moduł ścieżek (`DataPaths`) oraz rejestr seedów/list jobów został rozszerzony o ścieżki docelowe (`data/raw/...`) i legacy (`data/wiki/...`) do bezpiecznej migracji.
 - [ ] Ustalić minimalny wspólny schemat rekordu seed (`name`, `link`, `source_url`, `scraped_at`).
-- [ ] Wdrożyć eksport JSON dla każdej kategorii do `data/raw/<category>/`.
+- [x] Wdrożyć eksport JSON dla każdej kategorii do `data/raw/<category>/`.
+  - Status migracji: writer seed L0 wspiera bezpośredni zapis przez `DataPaths` do `data/raw/<category>/...`.
 - [ ] Dodać logowanie jakości: liczba rekordów, puste pola, duplikaty.
 
 ## Etap 2 — Parsery encji szczegółowych (Warstwa 1)
@@ -39,9 +41,21 @@
 - [ ] Zbudować wersjonowane zestawy treningowe.
 
 ## Nowe zadania wynikające z aktualnych luk
-- [ ] Adapter sekcji: wprowadzić warstwę `SectionSourceAdapter` dla pobierania „kolejnych punktów startowych” bezpośrednio z `data/checkpoints/*.json` (z fallbackiem do `data/raw/*`).
+- [x] Adapter sekcji: wprowadzić warstwę `SectionSourceAdapter` dla pobierania „kolejnych punktów startowych” bezpośrednio z `data/checkpoints/*.json` (z fallbackiem do `data/raw/*`).
+  - Status migracji: dodany fallback kompatybilności do legacy ścieżek `data/wiki/<domain>/*.json`.
 - [ ] Orchestrator 0/1: dodać jawny `StepOrchestrator` (hardcoded flow) wykonujący kroki `L0 -> L1 -> L0/L1` z deklaratywnym `checkpoint_input` i rejestrem kroków.
-- [ ] Migracja output layout: przejść z obecnego `data/wiki/...` na layout docelowy (`data/raw`, `data/normalized`, `data/checkpoints`) z mapą kompatybilności ścieżek i etapem migracyjnym.
+- [x] Migracja output layout: przejść z obecnego `data/wiki/...` na layout docelowy (`data/raw`, `data/normalized`, `data/checkpoints`) z mapą kompatybilności ścieżek i etapem migracyjnym.
+  - Status migracji: dodano skrypt `scripts/migrate_data_layout.py` mapujący stare pliki do nowego layoutu oraz raportujący brakujące pliki/kolizje.
+
+## Reguły wersjonowania i layout plików danych
+- Struktura katalogów jest wersjonowana semantycznie przez layout (`v1`):
+  - `data/raw/<domain>/list/*.json` — wyniki list/seed scraperów (warstwa surowa),
+  - `data/normalized/<domain>/*.json` — rekordy po normalizacji,
+  - `data/checkpoints/step_<id>_<layer>_<domain>.json` — checkpointy pipeline.
+- Każda zmiana łamiąca kompatybilność nazewnictwa plików powinna:
+  1. utrzymać fallback odczytu legacy co najmniej przez jeden cykl migracyjny,
+  2. dodać mapowanie w skrypcie migracyjnym,
+  3. zostać odnotowana w tej roadmapie jako status migracji.
 
 ## Następne 3 konkretne taski (short-term)
 - [ ] Task A: Utworzyć konfigurację seed URL-i i kategorii wyjściowych.
@@ -77,4 +91,3 @@
   - Kontekst: rozszerzono aliasy fallback dla `seasons` i `circuits` oraz dodano test obecności aliasów dla wszystkich domen.
 - [x] Każdy parser sekcji ma przypisanie do jednej warstwy (`list`/`sections`/`infobox`/`postprocess`) bez mieszania odpowiedzialności.
   - Kontekst: granice warstw zostały zdefiniowane i spięte testem reguły importów dla `sections/`.
-

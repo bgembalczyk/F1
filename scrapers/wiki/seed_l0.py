@@ -7,6 +7,9 @@ from datetime import datetime
 from datetime import timezone
 from typing import Any
 
+from scrapers.config import DataPaths
+from scrapers.config import default_data_paths
+
 SEED_RECORD_SCHEMA_VERSION = "1.0"
 NAME_CANDIDATE_KEYS = (
     "name",
@@ -165,7 +168,11 @@ def write_seed_l0(
     seed_name: str,
     output_root: Any,
 ) -> Any:
-    destination = output_root / category / f"{seed_name}.json"
+    if isinstance(output_root, DataPaths):
+        destination = output_root.raw_file(category, f"{seed_name}.json")
+    else:
+        output_path = output_root if output_root is not None else default_data_paths().raw
+        destination = output_path / category / f"{seed_name}.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(records, ensure_ascii=False, indent=2)
     destination.write_text(payload, encoding="utf-8")

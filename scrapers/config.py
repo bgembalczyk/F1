@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from dataclasses import field
+from pathlib import Path
 
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.html_fetcher import HtmlFetcher
@@ -17,9 +18,62 @@ class ScraperConfig:
     policy: HttpPolicy = field(default_factory=default_http_policy)
 
 
+@dataclass(frozen=True)
+class DataPaths:
+    base_dir: Path = Path("data")
+    raw_dir_name: str = "raw"
+    normalized_dir_name: str = "normalized"
+    checkpoints_dir_name: str = "checkpoints"
+    legacy_wiki_dir_name: str = "wiki"
+
+    @property
+    def raw(self) -> Path:
+        return self.base_dir / self.raw_dir_name
+
+    @property
+    def normalized(self) -> Path:
+        return self.base_dir / self.normalized_dir_name
+
+    @property
+    def checkpoints(self) -> Path:
+        return self.base_dir / self.checkpoints_dir_name
+
+    @property
+    def legacy_wiki(self) -> Path:
+        return self.base_dir / self.legacy_wiki_dir_name
+
+    def raw_file(self, category: str, filename: str) -> Path:
+        return self.raw / category / filename
+
+    def normalized_file(self, category: str, filename: str) -> Path:
+        return self.normalized / category / filename
+
+    def checkpoint_file(self, filename: str) -> Path:
+        return self.checkpoints / filename
+
+    def legacy_wiki_file(self, category: str, filename: str) -> Path:
+        return self.legacy_wiki / category / filename
+
+    def compatible_input_candidates(self, category: str, filename: str) -> tuple[Path, ...]:
+        return (
+            self.raw_file(category, filename),
+            self.legacy_wiki_file(category, filename),
+        )
+
+    def resolve_compatible_input(self, category: str, filename: str) -> Path | None:
+        for candidate in self.compatible_input_candidates(category, filename):
+            if candidate.exists():
+                return candidate
+        return None
+
+
 def default_scraper_config() -> ScraperConfig:
     return ScraperConfig()
 
 
 def default_config() -> ScraperConfig:
     return default_scraper_config()
+
+
+def default_data_paths(*, base_dir: Path = Path("data")) -> DataPaths:
+    return DataPaths(base_dir=base_dir)

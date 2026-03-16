@@ -11,6 +11,7 @@ if TYPE_CHECKING:
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.orchestration import StepDeclaration
 from scrapers.base.orchestration import StepOrchestrator
+from scrapers.config import default_data_paths
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
 PARSER_VERSION = "drivers-checkpoint-flow-v1"
@@ -156,10 +157,15 @@ def run_drivers_checkpoint_first_flow(
     *,
     base_dir: Path = Path("data"),
 ) -> None:
+    paths = default_data_paths(base_dir=base_dir)
+    source_file = paths.resolve_compatible_input("drivers", "f1_drivers.json")
+    if source_file is None:
+        source_file = paths.raw_file("drivers", "f1_drivers.json")
+
     flow = DriversCheckpointFlow(
-        source_file=base_dir / "wiki" / "drivers" / "f1_drivers.json",
-        checkpoint_file=base_dir / "checkpoints" / "step_0_layer0_drivers.json",
-        layer1_output_file=base_dir / "checkpoints" / "step_1_layer1_drivers.json",
-        registry_file=base_dir / "checkpoints" / "step_registry.json",
+        source_file=source_file,
+        checkpoint_file=paths.checkpoint_file("step_0_layer0_drivers.json"),
+        layer1_output_file=paths.checkpoint_file("step_1_layer1_drivers.json"),
+        registry_file=paths.checkpoint_file("step_registry.json"),
     )
     flow.run()

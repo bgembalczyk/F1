@@ -22,7 +22,8 @@ def test_seed_registry_entry_serialization() -> None:
     assert payload["seed_name"] == "drivers"
     assert payload["wikipedia_url"].startswith("https://")
     assert payload["output_category"] == "drivers"
-    assert payload["default_output_path"].startswith("drivers/")
+    assert payload["default_output_path"].startswith("raw/drivers/")
+    assert payload["legacy_output_path"].startswith("drivers/")
     assert "F1DriversListScraper" in serialized
 
 
@@ -39,5 +40,6 @@ def test_list_job_registry_entry_serialization() -> None:
     assert isinstance(entry, ListJobRegistryEntry)
     assert payload["output_category"] == "circuits"
     assert payload["wikipedia_url"].startswith("https://")
-    assert payload["json_output_path"].startswith("circuits/")
+    assert payload["json_output_path"].startswith("raw/circuits/")
+    assert payload["legacy_json_output_path"].startswith("circuits/")
     assert "CircuitsListScraper" in serialized
