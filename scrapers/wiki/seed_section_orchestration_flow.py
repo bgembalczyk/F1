@@ -28,7 +28,16 @@ class SeedSectionOrchestrationFlow:
         self.orchestrator = StepOrchestrator(base_dir=base_dir)
         self.detail_fetchers = detail_fetchers or {}
 
-    def run(self, domains: Iterable[str] = ("drivers", "constructors")) -> dict[str, str]:
+    def run(
+        self,
+        domains: Iterable[str] = (
+            "drivers",
+            "constructors",
+            "circuits",
+            "seasons",
+            "grands_prix",
+        ),
+    ) -> dict[str, str]:
         outputs: dict[str, str] = {}
         for domain in domains:
             self._run_domain(domain)
@@ -48,7 +57,10 @@ class SeedSectionOrchestrationFlow:
             step_id=0,
             layer="layer0",
             input_source=domain,
-            parser=lambda rows, item_key=domain[:-1]: self._parse_seed_urls(rows, item_key),
+            parser=lambda rows, item_key=self._seed_item_key(domain): self._parse_seed_urls(
+                rows,
+                item_key,
+            ),
             output_target="checkpoints",
         )
         self.orchestrator.run(step0, domain)
@@ -81,6 +93,16 @@ class SeedSectionOrchestrationFlow:
             seen_urls.add(url)
         return records
 
+    @staticmethod
+    def _seed_item_key(domain: str) -> str:
+        return {
+            "drivers": "driver",
+            "constructors": "constructor",
+            "circuits": "circuit",
+            "seasons": "season",
+            "grands_prix": "grand_prix",
+        }.get(domain, domain[:-1])
+
     def _parse_sections(
         self,
         seed_urls: list[dict[str, Any]],
@@ -92,8 +114,15 @@ class SeedSectionOrchestrationFlow:
             url = record.get("url")
             if not isinstance(url, str) or not url:
                 continue
-            output.append(fetcher(url))
+            output.append(self._ensure_fetcher_contract(fetcher(url), url))
         return output
+
+
+    @staticmethod
+    def _ensure_fetcher_contract(record: dict[str, Any], url: str) -> dict[str, Any]:
+        if "url" in record and "details" in record:
+            return record
+        return {"url": record.get("url", url), "details": record}
 
     @staticmethod
     def _default_fetcher(domain: str) -> DetailFetcher:
@@ -104,6 +133,21 @@ class SeedSectionOrchestrationFlow:
         if domain == "constructors":
             scraper = SingleConstructorScraper(options=options)
             return lambda url: _pick_first(scraper.fetch_by_url(url), url)
+        if domain == "circuits":
+            from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+
+            scraper = F1SingleCircuitScraper(options=options)
+            return lambda url: _pick_first(scraper.fetch_by_url(url), url)
+        if domain == "seasons":
+            from scrapers.seasons.single_scraper import SingleSeasonScraper
+
+            scraper = SingleSeasonScraper(options=options)
+            return lambda url: _pick_first(scraper.fetch_by_url(url), url)
+        if domain == "grands_prix":
+            from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
+
+            scraper = F1SingleGrandPrixScraper(options=options)
+            return lambda url: _pick_first(scraper.fetch_by_url(url), url)
 
         msg = f"Unsupported domain for section flow: {domain}"
         raise ValueError(msg)
@@ -111,7 +155,9 @@ class SeedSectionOrchestrationFlow:
 
 def _pick_first(records: list[dict[str, Any]], url: str) -> dict[str, Any]:
     if records:
-        return records[0]
+        first = dict(records[0])
+        first.setdefault("url", url)
+        return {"url": first["url"], "details": first}
     return {"url": url, "details": None}
 
 
