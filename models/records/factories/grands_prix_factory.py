@@ -3,10 +3,14 @@ from typing import Any
 from typing import cast
 
 from models.records.base_factory import BaseRecordFactory
+from models.records.factories.registry import register_factory
 from models.records.grand_prix import GrandsPrixRecord
 
 
+@register_factory("grands_prix")
 class GrandsPrixRecordFactory(BaseRecordFactory):
+    record_type = "grands_prix"
+
     def build(self, record: Mapping[str, Any]) -> GrandsPrixRecord:
         payload = self.apply_spec(
             record,

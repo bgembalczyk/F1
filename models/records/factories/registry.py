@@ -1,44 +1,98 @@
+from __future__ import annotations
+
+from collections import Counter
+from importlib import import_module
+from pkgutil import iter_modules
+from typing import TYPE_CHECKING
 from typing import Final
 
-from models.records.base_factory import BaseRecordFactory
-from models.records.factories.car_factory import CarRecordFactory
-from models.records.factories.circuit_complete_factory import (
-    CircuitCompleteRecordFactory,
-)
-from models.records.factories.circuit_details_factory import CircuitDetailsRecordFactory
-from models.records.factories.circuit_factory import CircuitRecordFactory
-from models.records.factories.constructor_factory import ConstructorRecordFactory
-from models.records.factories.driver_factory import DriverRecordFactory
-from models.records.factories.drivers_championships_factory import (
-    DriversChampionshipsRecordFactory,
-)
-from models.records.factories.engine_manufacturer_factory import (
-    EngineManufacturerRecordFactory,
-)
-from models.records.factories.event_factory import EventRecordFactory
-from models.records.factories.fatality_factory import FatalityRecordFactory
-from models.records.factories.grands_prix_factory import GrandsPrixRecordFactory
-from models.records.factories.link_factory import LinkRecordFactory
-from models.records.factories.season_factory import SeasonRecordFactory
-from models.records.factories.season_summary_factory import SeasonSummaryRecordFactory
-from models.records.factories.special_driver_factory import SpecialDriverRecordFactory
 from models.records.field_normalizer import FieldNormalizer
 
-NORMALIZER: Final[FieldNormalizer] = FieldNormalizer()
-FACTORY_REGISTRY: Final[dict[str, BaseRecordFactory]] = {
-    "link": LinkRecordFactory(NORMALIZER),
-    "season": SeasonRecordFactory(NORMALIZER),
-    "drivers_championships": DriversChampionshipsRecordFactory(NORMALIZER),
-    "driver": DriverRecordFactory(NORMALIZER),
-    "special_driver": SpecialDriverRecordFactory(NORMALIZER),
-    "constructor": ConstructorRecordFactory(NORMALIZER),
-    "circuit": CircuitRecordFactory(NORMALIZER),
-    "event": EventRecordFactory(NORMALIZER),
-    "car": CarRecordFactory(NORMALIZER),
-    "fatality": FatalityRecordFactory(NORMALIZER),
-    "season_summary": SeasonSummaryRecordFactory(NORMALIZER),
-    "grands_prix": GrandsPrixRecordFactory(NORMALIZER),
-    "circuit_details": CircuitDetailsRecordFactory(NORMALIZER),
-    "circuit_complete": CircuitCompleteRecordFactory(NORMALIZER),
-    "engine_manufacturer": EngineManufacturerRecordFactory(NORMALIZER),
-}
+if TYPE_CHECKING:
+    from models.records.base_factory import BaseRecordFactory
+
+
+class FactoryRegistryError(ValueError):
+    """Raised when record factory registry initialization fails."""
+
+
+_REGISTERED_FACTORY_CLASSES: list[type[BaseRecordFactory]] = []
+CRITICAL_RECORD_TYPES: Final[frozenset[str]] = frozenset(
+    {
+        "link",
+        "season",
+        "drivers_championships",
+        "driver",
+        "special_driver",
+        "constructor",
+        "circuit",
+        "event",
+        "car",
+        "fatality",
+        "season_summary",
+        "grands_prix",
+        "circuit_details",
+        "circuit_complete",
+        "engine_manufacturer",
+    },
+)
+
+
+def register_factory(record_type: str | None = None):
+    def decorator(factory_cls: type[BaseRecordFactory]) -> type[BaseRecordFactory]:
+        class_record_type = getattr(factory_cls, "record_type", None)
+        if not class_record_type:
+            message = "factory_missing_record_type"
+            raise FactoryRegistryError(message)
+        if record_type and record_type != class_record_type:
+            message = "factory_record_type_mismatch"
+            raise FactoryRegistryError(message)
+        _REGISTERED_FACTORY_CLASSES.append(factory_cls)
+        return factory_cls
+
+    return decorator
+
+
+def _import_factory_modules() -> None:
+    package = import_module("models.records.factories")
+    for module_info in iter_modules(package.__path__):
+        module_name = module_info.name
+        if not module_name.endswith("_factory"):
+            continue
+        import_module(f"{package.__name__}.{module_name}")
+
+
+def _validate_factory_classes(factory_classes: list[type[BaseRecordFactory]]) -> None:
+    record_types = [factory_class.record_type for factory_class in factory_classes]
+    duplicate_keys = sorted(
+        record_type
+        for record_type, count in Counter(record_types).items()
+        if count > 1
+    )
+    if duplicate_keys:
+        message = "duplicate_factory_record_types: " + ", ".join(duplicate_keys)
+        raise FactoryRegistryError(message)
+
+    missing_critical = sorted(CRITICAL_RECORD_TYPES - set(record_types))
+    if missing_critical:
+        message = "missing_critical_factory_record_types: " + ", ".join(
+            missing_critical,
+        )
+        raise FactoryRegistryError(message)
+
+
+def build_factory_registry(
+    normalizer: FieldNormalizer | None = None,
+) -> dict[str, BaseRecordFactory]:
+    _import_factory_modules()
+    factory_classes = list(_REGISTERED_FACTORY_CLASSES)
+    _validate_factory_classes(factory_classes)
+
+    shared_normalizer = normalizer or FieldNormalizer()
+    return {
+        factory_class.record_type: factory_class(shared_normalizer)
+        for factory_class in factory_classes
+    }
+
+
+FACTORY_REGISTRY: Final[dict[str, BaseRecordFactory]] = build_factory_registry()

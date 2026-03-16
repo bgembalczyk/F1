@@ -5,10 +5,14 @@ from typing import cast
 from models.records.base_factory import BaseRecordFactory
 from models.records.factories.car_factory import CarRecordFactory
 from models.records.factories.event_factory import EventRecordFactory
+from models.records.factories.registry import register_factory
 from models.records.fatality import FatalityRecord
 
 
+@register_factory("fatality")
 class FatalityRecordFactory(BaseRecordFactory):
+    record_type = "fatality"
+
     def __init__(self, normalizer=None):
         super().__init__(normalizer)
         self.event_factory = EventRecordFactory(self.normalizer)

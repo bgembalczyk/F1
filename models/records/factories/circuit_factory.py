@@ -5,9 +5,13 @@ from typing import cast
 from models.records.base_factory import BaseRecordFactory
 from models.records.circuit import CircuitRecord
 from models.records.factories.helpers import normalize_optional_link_or_string
+from models.records.factories.registry import register_factory
 
 
+@register_factory("circuit")
 class CircuitRecordFactory(BaseRecordFactory):
+    record_type = "circuit"
+
     def build(self, record: Mapping[str, Any]) -> CircuitRecord:
         payload = self.apply_spec(
             record,

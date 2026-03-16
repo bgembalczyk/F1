@@ -4,9 +4,13 @@ from typing import cast
 
 from models.records.base_factory import BaseRecordFactory
 from models.records.circuit_complete import CircuitCompleteRecord
+from models.records.factories.registry import register_factory
 
 
+@register_factory("circuit_complete")
 class CircuitCompleteRecordFactory(BaseRecordFactory):
+    record_type = "circuit_complete"
+
     def build(self, record: Mapping[str, Any]) -> CircuitCompleteRecord:
         payload = self.apply_spec(
             record,
