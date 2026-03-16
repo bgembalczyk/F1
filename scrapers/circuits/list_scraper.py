@@ -1,6 +1,5 @@
 """DEPRECATED ENTRYPOINT: use scrapers.circuits.entrypoint.run_list_scraper."""
 
-import warnings
 from pathlib import Path
 
 from models.records.factories import build_circuit_record
@@ -8,6 +7,7 @@ from models.validation.circuit import Circuit
 from scrapers.base.helpers.config_factory import ScraperCommonConfig
 from scrapers.base.helpers.config_factory import build_table_config
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
+from scrapers.base.mixins.section_table_parse import SectionTableParseMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import ScraperConfig
@@ -26,6 +26,8 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
     """
 
     default_validator = CircuitsRecordValidator()
+    options_domain = "circuits"
+    options_profile = "soft_seed"
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
@@ -42,14 +44,6 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = build_table_config(
-            options,
-            config=ScraperCommonConfig(
-                include_urls=True,
-                normalize_empty_values=False,
-                validation_mode="soft",
-            ),
-        )
         super().__init__(options=options, config=config)
 
     domain = "circuits"
@@ -58,35 +52,20 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
 
 
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--quality-report",
-        action=argparse.BooleanOptionalAction,
-        default=True,
-        help="Zapisz raport jakości do debug_dir/quality_report.json.",
-    )
-    parser.add_argument(
-        "--error-report",
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help="Zapisz raporty błędów do debug_dir/errors.jsonl.",
-    )
-    args = parser.parse_args()
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
     from scrapers.circuits.entrypoint import run_list_scraper
 
-    warnings.warn(
-        "scrapers.circuits.list_scraper is deprecated; use scrapers.circuits.entrypoint.run_list_scraper.",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    run_list_scraper(
-        run_config=RunConfig(
+    run_cli_entrypoint(
+        target=run_list_scraper,
+        base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),
-            quality_report=args.quality_report,
-            error_report=args.error_report,
+        ),
+        quality_report_default=True,
+        error_report_default=False,
+        deprecation_message=(
+            "scrapers.circuits.list_scraper is deprecated; use "
+            "scrapers.circuits.entrypoint.run_list_scraper."
         ),
     )

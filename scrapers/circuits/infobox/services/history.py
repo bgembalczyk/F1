@@ -1,6 +1,6 @@
 import re
-from datetime import UTC
 from datetime import datetime
+from datetime import timezone
 from typing import Any
 
 from scrapers.base.errors import DomainParseError
@@ -51,7 +51,7 @@ class CircuitHistoryParser(InfoboxTextUtils):
 
     def _parse_periods_string(self, periods_raw: str) -> list[dict[str, str]]:
         """Normalizuje zakresy lat do listy dictów."""
-        now_year = datetime.now(tz=UTC).year
+        now_year = datetime.now(tz=timezone.utc).year
         periods: list[dict[str, str]] = []
         segments = [seg.strip() for seg in periods_raw.split(",") if seg.strip()]
 

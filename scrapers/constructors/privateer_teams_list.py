@@ -7,7 +7,6 @@ from bs4 import Tag
 from infrastructure.http_client.policies.http import HttpPolicy
 from models.services.season_service import parse_seasons
 from scrapers.base.helpers.http import build_http_policy
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
@@ -72,11 +71,17 @@ class PrivateerTeamsListScraper(F1ListScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        PrivateerTeamsListScraper,
-        "constructors/f1_privateer_teams.json",
-        "constructors/f1_privateer_teams.csv",
-        run_config=RunConfig(
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.helpers.runner import run_and_export
+
+    run_cli_entrypoint(
+        target=lambda *, run_config: run_and_export(
+            PrivateerTeamsListScraper,
+            "constructors/f1_privateer_teams.json",
+            "constructors/f1_privateer_teams.csv",
+            run_config=run_config,
+        ),
+        base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),

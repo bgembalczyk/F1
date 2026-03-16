@@ -1,6 +1,5 @@
 from pathlib import Path
 
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListScraper
 from scrapers.base.run_config import RunConfig
 
@@ -17,11 +16,17 @@ class IndianapolisOnlyConstructorsListScraper(IndianapolisOnlyListScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        IndianapolisOnlyConstructorsListScraper,
-        "constructors/f1_indianapolis_only_constructors.json",
-        "constructors/f1_indianapolis_only_constructors.csv",
-        run_config=RunConfig(
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.helpers.runner import run_and_export
+
+    run_cli_entrypoint(
+        target=lambda *, run_config: run_and_export(
+            IndianapolisOnlyConstructorsListScraper,
+            "constructors/f1_indianapolis_only_constructors.json",
+            "constructors/f1_indianapolis_only_constructors.csv",
+            run_config=run_config,
+        ),
+        base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),

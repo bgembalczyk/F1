@@ -54,9 +54,14 @@ class CompleteDriverDataExtractor(CompositeDataExtractor):
 
 
 if __name__ == "__main__":
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
     from scrapers.drivers.helpers.export import export_complete_drivers
+    from scrapers.base.run_config import RunConfig
 
-    export_complete_drivers(
-        output_dir=Path("../../data/wiki/drivers/complete_drivers"),
-        include_urls=True,
+    run_cli_entrypoint(
+        target=lambda: export_complete_drivers(
+            output_dir=Path("../../data/wiki/drivers/complete_drivers"),
+            include_urls=True,
+        ),
+        base_config=RunConfig(),
     )

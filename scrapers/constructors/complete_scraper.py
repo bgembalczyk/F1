@@ -113,9 +113,14 @@ class CompleteConstructorsDataExtractor(BaseDataExtractor):
 
 
 if __name__ == "__main__":
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.run_config import RunConfig
     from scrapers.constructors.helpers.export import export_complete_constructors
 
-    export_complete_constructors(
-        output_dir=Path("../../data/wiki/constructors/complete_constructors"),
-        include_urls=True,
+    run_cli_entrypoint(
+        target=lambda: export_complete_constructors(
+            output_dir=Path("../../data/wiki/constructors/complete_constructors"),
+            include_urls=True,
+        ),
+        base_config=RunConfig(),
     )
