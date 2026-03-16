@@ -1,5 +1,6 @@
 """Base scraper for constructor list pages."""
 
+from scrapers.base.mixins.section_table_parse import SectionTableParseMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
@@ -15,7 +16,7 @@ from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
 
 
-class BaseConstructorListScraper(F1TableScraper):
+class BaseConstructorListScraper(SectionTableParseMixin, F1TableScraper):
     """
     Base class for constructor list scrapers.
 

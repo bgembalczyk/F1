@@ -7,7 +7,7 @@ from models.records.factories import build_circuit_record
 from models.validation.circuit import Circuit
 from scrapers.base.helpers.config_factory import ScraperCommonConfig
 from scrapers.base.helpers.config_factory import build_table_config
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
+from scrapers.base.mixins.section_table_parse import SectionTableParseMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import ScraperConfig
@@ -18,7 +18,7 @@ from scrapers.circuits.sections import CircuitsListSectionParser
 from scrapers.circuits.validator import CircuitsRecordValidator
 
 
-class CircuitsListScraper(F1TableScraper):
+class CircuitsListScraper(SectionTableParseMixin, F1TableScraper):
     """
     Lista torów F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_circuits
@@ -53,31 +53,16 @@ class CircuitsListScraper(F1TableScraper):
         super().__init__(options=options, config=config)
 
     def _parse_soup(self, soup):
-        section_id = self.config.section_id
-        if not section_id:
-            return super()._parse_soup(soup)
-
-        section_fragment = WikipediaSectionByIdMixin.extract_section_by_id(
+        return self.parse_section_or_fallback(
             soup,
-            section_id,
             domain="circuits",
+            section_label="Circuits",
+            parser_factory=lambda: CircuitsListSectionParser(
+                config=self.config,
+                include_urls=self.include_urls,
+                normalize_empty_values=self.normalize_empty_values,
+            ),
         )
-        if section_fragment is None:
-            msg = f"Nie znaleziono sekcji o id={section_id!r}"
-            raise RuntimeError(msg)
-
-        parser = CircuitsListSectionParser(
-            config=self.config,
-            include_urls=self.include_urls,
-            normalize_empty_values=self.normalize_empty_values,
-        )
-        try:
-            return parser.parse(section_fragment).records
-        except RuntimeError:
-            # Fallback do legacy flow: przeszukaj pełny dokument po section_id.
-            # Chroni przed zmianami struktury strony, gdy wycięty fragment nie
-            # zawiera pasującej tabeli mimo obecności jej w pełnym HTML.
-            return super()._parse_soup(soup)
 
 
 if __name__ == "__main__":
