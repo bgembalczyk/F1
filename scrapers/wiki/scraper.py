@@ -37,6 +37,7 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
 
     #: URL artykułu Wikipedii (ustawiany dynamicznie lub przez podklasy)
     url: str = ""
+    scraper_kind: str = "single"
 
     def __init__(
         self,
