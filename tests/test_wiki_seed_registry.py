@@ -43,3 +43,24 @@ def test_list_job_registry_entry_serialization() -> None:
     assert payload["json_output_path"].startswith("raw/circuits/")
     assert payload["legacy_json_output_path"].startswith("circuits/")
     assert "CircuitsListScraper" in serialized
+
+
+def test_wiki_list_job_registry_contains_expected_layer_zero_jobs() -> None:
+    jobs_by_seed = {entry.seed_name: entry for entry in WIKI_LIST_JOB_REGISTRY}
+
+    assert jobs_by_seed["seasons"].json_output_path == "raw/seasons/list/f1_seasons.json"
+    assert (
+        jobs_by_seed["grands_prix_by_title"].json_output_path
+        == "raw/grands_prix/list/f1_grands_prix_by_title.json"
+    )
+    assert jobs_by_seed["engines_regulations"].output_category == "rules"
+    assert jobs_by_seed["engines_restrictions"].output_category == "rules"
+    assert (
+        jobs_by_seed["grands_prix_red_flagged_non_championship"].output_category
+        == "races"
+    )
+    assert (
+        jobs_by_seed["grands_prix_red_flagged_world_championship"].output_category
+        == "races"
+    )
+    assert jobs_by_seed["sponsorship_liveries"].output_category == "teams"
