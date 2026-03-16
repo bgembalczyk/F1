@@ -7,10 +7,7 @@
     "date": "1952-06-18",
     "age": 29,
     "event": {
-      "event": {
-        "text": "Test",
-        "url": null
-      },
+      "event": "Test",
       "championship": true
     },
     "circuit": {
@@ -57,10 +54,7 @@
     "date": "1953-09-18",
     "age": 26,
     "event": {
-      "event": {
-        "text": "Modena Grand Prix",
-        "url": null
-      },
+      "event": "Modena Grand Prix",
       "championship": false
     },
     "circuit": {
@@ -107,10 +101,7 @@
     "date": "1955-04-11",
     "age": 26,
     "event": {
-      "event": {
-        "text": "Pau Grand Prix",
-        "url": null
-      },
+      "event": "Pau Grand Prix",
       "championship": false
     },
     "circuit": {
@@ -182,10 +173,7 @@
     "date": "1957-03-14",
     "age": 26,
     "event": {
-      "event": {
-        "text": "Test",
-        "url": null
-      },
+      "event": "Test",
       "championship": true
     },
     "circuit": {
@@ -382,10 +370,7 @@
     "date": "1960-05-13",
     "age": 38,
     "event": {
-      "event": {
-        "text": "BRDC International Trophy",
-        "url": null
-      },
+      "event": "BRDC International Trophy",
       "championship": false
     },
     "circuit": {
@@ -457,10 +442,7 @@
     "date": "1961-06-01",
     "age": 24,
     "event": {
-      "event": {
-        "text": "Silver City Trophy",
-        "url": null
-      },
+      "event": "Silver City Trophy",
       "championship": false
     },
     "circuit": {
@@ -482,10 +464,7 @@
     "date": "1961-06-15",
     "age": 38,
     "event": {
-      "event": {
-        "text": "Test",
-        "url": null
-      },
+      "event": "Test",
       "championship": true
     },
     "circuit": {
@@ -532,10 +511,7 @@
     "date": "1962-11-01",
     "age": 20,
     "event": {
-      "event": {
-        "text": "Mexican Grand Prix",
-        "url": null
-      },
+      "event": "Mexican Grand Prix",
       "championship": false
     },
     "circuit": {
@@ -557,10 +533,7 @@
     "date": "1962-12-21",
     "age": 25,
     "event": {
-      "event": {
-        "text": "Natal Grand Prix",
-        "url": null
-      },
+      "event": "Natal Grand Prix",
       "championship": false
     },
     "circuit": {
@@ -657,10 +630,7 @@
     "date": "1967-08-14",
     "age": 36,
     "event": {
-      "event": {
-        "text": "Test",
-        "url": null
-      },
+      "event": "Test",
       "championship": true
     },
     "circuit": {
@@ -732,10 +702,7 @@
     "date": "1970-05-25",
     "age": 37,
     "event": {
-      "event": {
-        "text": "Nottingham Sports Car Club meeting",
-        "url": null
-      },
+      "event": "Nottingham Sports Car Club meeting",
       "championship": false
     },
     "circuit": {
@@ -807,10 +774,7 @@
     "date": "1971-10-24",
     "age": 35,
     "event": {
-      "event": {
-        "text": "World Championship Victory Race",
-        "url": null
-      },
+      "event": "World Championship Victory Race",
       "championship": false
     },
     "circuit": {
@@ -982,10 +946,7 @@
     "date": "1977-08-29",
     "age": 31,
     "event": {
-      "event": {
-        "text": "Shellsport International Series Round 11",
-        "url": null
-      },
+      "event": "Shellsport International Series Round 11",
       "championship": false
     },
     "circuit": {
@@ -1032,10 +993,7 @@
     "date": "1980-08-01",
     "age": 35,
     "event": {
-      "event": {
-        "text": "Test",
-        "url": null
-      },
+      "event": "Test",
       "championship": true
     },
     "circuit": {
@@ -1107,10 +1065,7 @@
     "date": "1986-05-14",
     "age": 28,
     "event": {
-      "event": {
-        "text": "Test",
-        "url": null
-      },
+      "event": "Test",
       "championship": true
     },
     "circuit": {
@@ -1182,10 +1137,7 @@
     "date": "2000-06-24",
     "age": 59,
     "event": {
-      "event": {
-        "text": "Goodwood Festival of Speed",
-        "url": null
-      },
+      "event": "Goodwood Festival of Speed",
       "championship": false
     },
     "circuit": {
@@ -1207,10 +1159,7 @@
     "date": "2002-07-14",
     "age": 58,
     "event": {
-      "event": {
-        "text": "Czech Superprix",
-        "url": null
-      },
+      "event": "Czech Superprix",
       "championship": false
     },
     "circuit": {
@@ -1232,10 +1181,7 @@
     "date": "2014-07-27",
     "age": 69,
     "event": {
-      "event": {
-        "text": "Jack Brabham Memorial Trophy",
-        "url": null
-      },
+      "event": "Jack Brabham Memorial Trophy",
       "championship": false
     },
     "circuit": {
@@ -1282,10 +1228,7 @@
     "date": "2017-09-02",
     "age": 62,
     "event": {
-      "event": {
-        "text": "Historic Grand Prix",
-        "url": null
-      },
+      "event": "Historic Grand Prix",
       "championship": false
     },
     "circuit": {
