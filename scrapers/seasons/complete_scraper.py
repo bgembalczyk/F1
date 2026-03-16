@@ -6,6 +6,7 @@ from tqdm import tqdm
 from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
+from scrapers.seasons.detail_url_resolver import SeasonDetailUrlResolver
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
@@ -18,6 +19,7 @@ class CompleteSeasonDataExtractor(BaseDataExtractor):
         super().__init__(options=options)
         self.url = SeasonsListScraper.CONFIG.url
         self._options = options
+        self.detail_url_resolver = SeasonDetailUrlResolver()
 
     def fetch(self) -> list[dict[str, Any]]:
         list_scraper = SeasonsListScraper(options=self._options)
@@ -30,8 +32,8 @@ class CompleteSeasonDataExtractor(BaseDataExtractor):
             season_info = season.get("season")
             if not isinstance(season_info, dict):
                 continue
-            url = season_info.get("url")
-            if not isinstance(url, str) or not url:
+            url = self.detail_url_resolver.resolve(season)
+            if not url:
                 continue
             year_text = season_info.get("text")
             year = (

@@ -5,6 +5,7 @@ from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
+from scrapers.grands_prix.detail_url_resolver import GrandPrixDetailUrlResolver
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
@@ -28,6 +29,7 @@ class F1CompleteGrandPrixDataExtractor(CompositeDataExtractor):
         options.include_urls = True
 
         super().__init__(options=options)
+        self.detail_url_resolver = GrandPrixDetailUrlResolver()
 
     def build_children(self) -> CompositeDataExtractorChildren:
         list_scraper = GrandsPrixListScraper(
@@ -52,10 +54,7 @@ class F1CompleteGrandPrixDataExtractor(CompositeDataExtractor):
         )
 
     def get_detail_url(self, record: dict[str, Any]) -> str | None:
-        race_title = record.get("race_title")
-        if isinstance(race_title, dict):
-            return race_title.get("url")
-        return None
+        return self.detail_url_resolver.resolve(record)
 
     def assemble_record(
         self,

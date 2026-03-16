@@ -6,11 +6,11 @@ from tqdm import tqdm
 from scrapers.base.abc import ABCScraper
 from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
 from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
 )
+from scrapers.constructors.detail_url_resolver import ConstructorDetailUrlResolver
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.constructors.indianapolis_only_constructors_list import (
     IndianapolisOnlyConstructorsListScraper,
@@ -38,6 +38,7 @@ class CompleteConstructorsDataExtractor(BaseDataExtractor):
         options.with_fetcher(policy=policy)
         super().__init__(options=options)
         self._options = options
+        self.detail_url_resolver = ConstructorDetailUrlResolver()
 
     def fetch(self) -> list[dict[str, Any]]:
         single_scraper = SingleConstructorScraper(options=self._options)
@@ -49,7 +50,7 @@ class CompleteConstructorsDataExtractor(BaseDataExtractor):
             desc="CompleteConstructorsDataExtractor",
             unit="constructor",
         ):
-            detail_url = self._get_constructor_url(record)
+            detail_url = self.detail_url_resolver.resolve(record)
             details: dict[str, Any] | None = None
 
             if detail_url:
@@ -88,28 +89,6 @@ class CompleteConstructorsDataExtractor(BaseDataExtractor):
                     scraper.__class__.__name__,
                 )
         return all_records
-
-    @staticmethod
-    def _get_constructor_url(record: dict[str, Any]) -> str | None:
-        # CurrentConstructorsListScraper / FormerConstructorsListScraper:
-        # constructor is a LinkRecord dict with "url" key
-        constructor = record.get("constructor")
-        if isinstance(constructor, dict):
-            url = constructor.get("url")
-            if isinstance(url, str) and url and not is_wikipedia_redlink(url):
-                return url
-
-        # IndianapolisOnlyConstructorsListScraper: "constructor_url" key
-        url = record.get("constructor_url")
-        if isinstance(url, str) and url and not is_wikipedia_redlink(url):
-            return url
-
-        # PrivateerTeamsListScraper: "team_url" key
-        url = record.get("team_url")
-        if isinstance(url, str) and url and not is_wikipedia_redlink(url):
-            return url
-
-        return None
 
 
 if __name__ == "__main__":
