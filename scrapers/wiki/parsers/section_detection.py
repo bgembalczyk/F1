@@ -10,6 +10,7 @@ from bs4 import Tag
 
 from scrapers.base.sections.aliases import builtin_aliases_for_target
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.wiki.parsers.section_profiles import get_section_profile
 
 _HEADING_TAGS = ("h1", "h2", "h3", "h4", "h5", "h6")
 
@@ -119,6 +120,13 @@ def find_section_heading(
     domain: str | None = None,
     min_fuzzy_score: float = 0.82,
 ) -> SectionMatch | None:
+    profile = get_section_profile(domain)
+    if profile:
+        canonical = profile.canonical_for(target)
+        if canonical:
+            target = canonical
+        min_fuzzy_score = profile.priorities.fuzzy_threshold
+
     resolved_aliases = _resolve_aliases(
         target,
         aliases=aliases,
@@ -132,18 +140,21 @@ def find_section_heading(
     for heading in soup.find_all(_HEADING_TAGS):
         heading_ids = {_normalize_id(value) for value in _collect_heading_ids(heading)}
         if heading_ids & target_ids:
-            return SectionMatch(heading=heading, strategy="exact_id", score=3.0)
+            exact_id_score = profile.priorities.exact_id_score if profile else 3.0
+            return SectionMatch(heading=heading, strategy="exact_id", score=exact_id_score)
 
         heading_text = normalize_section_text(_headline_text(heading))
         if heading_text in target_texts:
-            return SectionMatch(heading=heading, strategy="exact_text", score=2.0)
+            exact_text_score = profile.priorities.exact_text_score if profile else 2.0
+            return SectionMatch(heading=heading, strategy="exact_text", score=exact_text_score)
 
         ratio = max(
             SequenceMatcher(None, heading_text, value).ratio() for value in target_texts
         )
         if ratio >= min_fuzzy_score:
+            fuzzy_base_score = profile.priorities.fuzzy_base_score if profile else 1.0
             fuzzy_candidates.append(
-                SectionMatch(heading=heading, strategy="fuzzy", score=1.0 + ratio),
+                SectionMatch(heading=heading, strategy="fuzzy", score=fuzzy_base_score + ratio),
             )
 
     if not fuzzy_candidates:

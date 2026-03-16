@@ -29,6 +29,7 @@ from scrapers.seasons.sections.regulation_changes import (
 from scrapers.seasons.sections.results import SeasonResultsSectionParser
 from scrapers.seasons.sections.standings import SeasonConstructorsStandingsSectionParser
 from scrapers.seasons.sections.standings import SeasonDriversStandingsSectionParser
+from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
 from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
 from scrapers.seasons.parsers.standings import SeasonStandingsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
@@ -100,12 +101,12 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
             entries=[
                 SectionAdapterEntry(
                     section_id="Regulation_changes",
-                    aliases=("Rule_changes",),
+                    aliases=profile_entry_aliases("seasons", "Regulation_changes", "Rule_changes"),
                     parser=SeasonRegulationChangesSectionParser(),
                 ),
                 SectionAdapterEntry(
                     section_id="Mid-season_changes",
-                    aliases=("Driver_changes",),
+                    aliases=profile_entry_aliases("seasons", "Mid-season_changes", "Driver_changes"),
                     parser=SeasonMidSeasonChangesSectionParser(),
                 ),
             ],

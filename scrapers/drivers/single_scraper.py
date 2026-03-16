@@ -67,17 +67,17 @@ class SingleDriverScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper
             entries=[
                 SectionAdapterEntry(
                     section_id="Career_results",
-                    aliases=("Karting_record",),
+                    aliases=profile_entry_aliases("drivers", "Career_results", "Karting_record"),
                     parser=DriverCareerSectionParser(parser=raw_parser),
                 ),
                 SectionAdapterEntry(
                     section_id="Racing_record",
-                    aliases=("Motorsport_career_results",),
+                    aliases=profile_entry_aliases("drivers", "Racing_record", "Motorsport_career_results"),
                     parser=DriverRacingRecordSectionParser(parser=raw_parser),
                 ),
                 SectionAdapterEntry(
                     section_id="Non-championship",
-                    aliases=("Non-championship_races",),
+                    aliases=profile_entry_aliases("drivers", "Non-championship", "Non-championship_races"),
                     parser=DriverNonChampionshipSectionParser(parser=raw_parser),
                 ),
             ],

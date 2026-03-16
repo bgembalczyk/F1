@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
 from scrapers.wiki.parsers.section_detection import find_section_heading
+from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
 
 
 def _fixture(name: str) -> BeautifulSoup:
@@ -29,7 +30,9 @@ def test_critical_section_alias_snapshots_cover_all_target_domains() -> None:
             match = find_section_heading(
                 soup,
                 critical.section_id,
-                aliases={critical.section_id.lower().replace("_", " "): set(critical.alternative_section_ids)},
+                aliases={
+                    critical.section_id.lower().replace("_", " "): set(profile_entry_aliases(domain, critical.section_id, *critical.alternative_section_ids))
+                },
                 domain=domain,
             )
             if match is not None:
