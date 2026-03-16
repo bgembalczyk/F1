@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from models.services.rounds_service import RoundsService
+from models.services.rounds_service import parse_rounds
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.table.columns.types.br_list import BrListColumn
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
@@ -166,7 +166,7 @@ class SeasonFreePracticeParser:
 
                 if index < len(rounds_list):
                     rounds_text = rounds_list[index]
-                    rounds = RoundsService.parse_rounds(rounds_text)
+                    rounds = parse_rounds(rounds_text)
                     if rounds_text or rounds:
                         entry["rounds"] = rounds
 

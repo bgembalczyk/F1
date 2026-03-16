@@ -5,7 +5,7 @@ from typing import Any
 from bs4 import Tag
 
 from infrastructure.http_client.policies.http import HttpPolicy
-from models.services.season_service import SeasonService
+from models.services.season_service import parse_seasons
 from scrapers.base.helpers.http import build_http_policy
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.text import clean_wiki_text
@@ -64,7 +64,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
         m = re.search(r"\((.+?)\)", full_text)
         if m:
             seasons_raw = clean_wiki_text(m.group(1))
-            seasons = SeasonService.parse_seasons(seasons_raw)
+            seasons = parse_seasons(seasons_raw)
             if seasons:
                 record["seasons"] = seasons
 

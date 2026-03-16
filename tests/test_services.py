@@ -1,12 +1,12 @@
 import json
 from pathlib import Path
 
-from models.services.driver_service import DriverService
+from models.services.driver_service import parse_championships
 from models.services.helpers import parse_int_values
 from models.domain_utils.years import parse_year_range
 from models.services.helpers import split_delimited_text
-from models.services.rounds_service import RoundsService
-from models.services.season_service import SeasonService
+from models.services.rounds_service import parse_rounds
+from models.services.season_service import parse_seasons
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
@@ -18,7 +18,7 @@ EXPECTED_LAP_TIME = 80.0
 
 
 def test_season_service_parses_years_and_ranges() -> None:
-    seasons = SeasonService.parse_seasons("1973, 1975-1976, 1984", current_year=2024)
+    seasons = parse_seasons("1973, 1975-1976, 1984", current_year=2024)
     years = [season["year"] for season in seasons]
 
     assert years == [1973, 1975, 1976, 1984]
@@ -26,13 +26,13 @@ def test_season_service_parses_years_and_ranges() -> None:
 
 
 def test_season_service_parses_onwards_range() -> None:
-    seasons = SeasonService.parse_seasons("2025 onwards", current_year=2027)
+    seasons = parse_seasons("2025 onwards", current_year=2027)
 
     assert [season["year"] for season in seasons] == [2025, 2026, 2027]
 
 
 def test_driver_service_parses_championships() -> None:
-    result = DriverService.parse_championships("2\n2005-2006")
+    result = parse_championships("2\n2005-2006")
 
     assert result["count"] == CHAMPIONSHIP_SEASON_COUNT
     assert [season["year"] for season in result["seasons"]] == [2005, 2006]
@@ -46,7 +46,7 @@ def test_driver_service_parses_championships_variants() -> None:
     ]
 
     for raw, expected_count, expected_years in cases:
-        result = DriverService.parse_championships(raw)
+        result = parse_championships(raw)
 
         assert result["count"] == expected_count
         assert [season["year"] for season in result["seasons"]] == expected_years
@@ -186,7 +186,7 @@ def test_parse_year_range_handles_present_and_short_end_year() -> None:
 
 
 def test_season_service_handles_dash_variants_reversed_ranges_and_duplicates() -> None:
-    seasons = SeasonService.parse_seasons(
+    seasons = parse_seasons(
         "2005—2003, 2001–03, 2003, 2004", current_year=2026
     )
 
@@ -201,5 +201,5 @@ def test_parse_year_range_handles_edge_cases() -> None:
 
 
 def test_rounds_service_handles_dash_variants_and_reversed_ranges() -> None:
-    rounds = RoundsService.parse_rounds("5—3; 2–4; round 4")
+    rounds = parse_rounds("5—3; 2–4; round 4")
     assert rounds == [2, 3, 4, 5]
