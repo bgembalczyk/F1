@@ -2,6 +2,7 @@
 
 import re
 
+from models.domain_utils.years import parse_year_range as parse_domain_year_range
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.year_extraction import YearExtractor
@@ -14,48 +15,10 @@ class YearParser:
 
     @staticmethod
     def parse_year_range(text: str) -> dict[str, int | None]:
-        """Parse year range from text.
-
-        Handles cases like:
-        - "2018-2022" -> {start: 2018, end: 2022}
-        - "2018-19-2022" -> {start: 2018, end: 2022}  # Multiple dashes
-        - "2018" -> {start: 2018, end: 2018}
-        - "2015-present" -> {start: 2015, end: None}
-        """
+        """Parse year range from text."""
         try:
             normalized = clean_infobox_text(text) or ""
-
-            # Check for "present" keyword
-            has_present = (
-                re.search(r"\bpresent\b", normalized, re.IGNORECASE) is not None
-            )
-
-            # Extract all 4-digit years and 2-digit years
-            all_years = []
-
-            # Find all standalone 4-digit years
-            four_digit_years = [int(y) for y in re.findall(r"\b(\d{4})\b", normalized)]
-            all_years.extend(four_digit_years)
-
-            # Find 2-digit years that come after 4-digit years (like "2018-19")
-            two_digit_pattern = re.finditer(r"\b(\d{4})\s*[--]\s*(\d{2})\b", normalized)
-            for match in two_digit_pattern:
-                start_year = int(match.group(1))
-                end_suffix = match.group(2)
-                end_year = (start_year // 100) * 100 + int(end_suffix)
-                if end_year not in all_years:
-                    all_years.append(end_year)
-
-            if not all_years:
-                return {"start": None, "end": None}
-
-            # Sort years and take first and last
-            all_years.sort()
-            start = all_years[0]
-            # If "present" is in text, end should be None
-            end = None if has_present else all_years[-1]
-
-            return {"start": start, "end": end}  # noqa: TRY300
+            return parse_domain_year_range(normalized)
         except (TypeError, ValueError) as exc:
             msg = f"Nie udało się sparsować zakresu lat: {text!r}."
             raise DomainParseError(
