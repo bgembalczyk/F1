@@ -1,10 +1,9 @@
 import re
-from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+from scrapers.base.export.export_helpers import export_grouped_json
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.results import ScrapeResult
 from scrapers.constructors.complete_scraper import CompleteConstructorsDataExtractor
 
 
@@ -38,19 +37,4 @@ def export_complete_constructors(
     options = init_scraper_options(None, include_urls=include_urls)
     scraper = CompleteConstructorsDataExtractor(options=options)
     data = scraper.fetch()
-    scraper.logger.info("Pobrano rekordów: %s", len(data))
-
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for record in data:
-        grouped[constructor_name_initial(record)].append(record)
-
-    for initial, records in grouped.items():
-        filename = f"{initial}.json"
-        json_path = output_dir / filename
-        result = ScrapeResult(
-            data=records,
-            source_url=getattr(scraper, "url", None),
-        )
-        result.to_json(json_path, exporter=scraper.exporter)
+    export_grouped_json(scraper, data, output_dir, constructor_name_initial)
