@@ -50,3 +50,11 @@
   - Skąd bierzemy kolejne punkty startowe: po standaryzacji zapis do `data/raw/<category>/...`; `checkpoint_input` następnego kroku wskazuje konkretny plik `data/raw/drivers/drivers_seed_v1.json`.
 - [ ] Task C: Dodać pierwszy pionowy slice end-to-end dla `drivers` z checkpointem wejścia do kolejnego kroku.
   - Skąd bierzemy kolejne punkty startowe: `data/checkpoints/step_1_layer1_drivers.json` (URL-e kierowców po L0) -> wejście do kolejnego kroku L1.
+
+
+## Etap 0.5 — Ujednolicenie struktury domen parserów (NOWE)
+- [x] Dodać spójny podział katalogów domenowych: `list/`, `sections/`, `infobox/`, `postprocess/`.
+- [x] Wydzielić logikę sekcyjną z parserów single/list do `sections/` (driver results, grand prix by year, season adapters: calendar/results/standings).
+- [x] Wprowadzić wspólny interfejs parsera sekcyjnego (`SectionParseResult`, `SectionParser`).
+- [x] Dodać mapę `DOMAIN_CRITICAL_SECTIONS` (`section_id`, `alternative_section_ids`) i użyć jej jako fallbacku w parserach GP.
+- [ ] Migrować kolejne parsery domenowe (constructors/circuits) na nowy interfejs sekcyjny.

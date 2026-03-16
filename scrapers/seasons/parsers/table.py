@@ -125,3 +125,49 @@ class SeasonTableParser:
                 continue
 
         return []
+
+    def parse_table_data(
+        self,
+        table_data: dict[str, Any],
+        *,
+        expected_headers: list[str],
+        schema: TableSchemaDSL,
+        default_column: Any | None = None,
+    ) -> list[dict[str, Any]]:
+        headers = [str(value) for value in table_data.get("headers") or []]
+        rows = table_data.get("rows") or []
+        if not headers or not rows:
+            return []
+        normalized_headers = {header.strip().lower() for header in headers}
+        if not all(
+            expected_header.strip().lower() in normalized_headers
+            for expected_header in expected_headers
+        ):
+            return []
+
+        config = ScraperConfig(
+            url=self.url,
+            section_id="adapter_section",
+            expected_headers=expected_headers,
+            schema=schema,
+            default_column=default_column,
+            record_factory=record_from_mapping,
+        )
+        pipeline = TablePipeline(
+            config=config,
+            include_urls=self._include_urls,
+            normalize_empty_values=self._options.normalize_empty_values,
+        )
+
+        records: list[dict[str, Any]] = []
+        for row_index, row in enumerate(rows):
+            if not isinstance(row, list):
+                continue
+            record = pipeline.parse_cells(
+                headers,
+                [str(cell) for cell in row],
+                row_index=row_index,
+            )
+            if record:
+                records.append(record)
+        return records
