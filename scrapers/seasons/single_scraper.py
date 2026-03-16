@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections import SectionAdapter
-from scrapers.base.sections import SectionAdapterEntry
+from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.colin_chapman_trophy import ColinChapmanTrophyParser

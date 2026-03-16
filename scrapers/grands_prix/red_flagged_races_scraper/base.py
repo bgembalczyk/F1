@@ -7,7 +7,7 @@ from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.int import IntColumn

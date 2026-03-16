@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections import SectionAdapter
-from scrapers.base.sections import SectionAdapterEntry
+from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.constructors.sections import ConstructorChampionshipResultsSectionParser
 from scrapers.constructors.sections import ConstructorCompleteF1ResultsSectionParser
 from scrapers.constructors.sections import ConstructorHistorySectionParser

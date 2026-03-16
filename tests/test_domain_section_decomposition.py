@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper

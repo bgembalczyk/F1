@@ -6,8 +6,8 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections import SectionAdapter
-from scrapers.base.sections import SectionAdapterEntry
+from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
