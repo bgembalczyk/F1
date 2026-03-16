@@ -64,3 +64,7 @@ def test_wiki_list_job_registry_contains_expected_layer_zero_jobs() -> None:
         == "races"
     )
     assert jobs_by_seed["sponsorship_liveries"].output_category == "teams"
+    assert jobs_by_seed["constructors_privateer"].output_category == "teams"
+    assert jobs_by_seed["constructors_former"].output_category == "chassis_constructors"
+    assert jobs_by_seed["constructors_indianapolis_only"].output_category == "chassis_constructors"
+    assert jobs_by_seed["tyres"].output_category == "season"

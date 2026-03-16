@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from tests._section_parser_fixture_pattern import CONTRACT_COVERED_SECTION_MODULES
 from tests._section_parser_fixture_pattern import SECTION_MODULES_REQUIRING_DOD
 from tests._section_parser_fixture_pattern import SNAPSHOT_CASES_BY_DOMAIN
@@ -28,3 +30,13 @@ def test_ci_meta_requires_alias_coverage_for_new_parser_domains() -> None:
 def test_ci_meta_requires_snapshot_and_contract_for_all_section_modules() -> None:
     assert SNAPSHOT_COVERED_SECTION_MODULES == SECTION_MODULES_REQUIRING_DOD
     assert CONTRACT_COVERED_SECTION_MODULES == SECTION_MODULES_REQUIRING_DOD
+
+def test_ci_meta_requires_sections_boundary_regression_suite() -> None:
+    boundary_test_file = Path("tests/test_section_architecture_boundaries.py")
+    source = boundary_test_file.read_text(encoding="utf-8")
+
+    assert "test_sections_modules_do_not_import_single_scraper" in source
+    assert (
+        "test_single_scraper_can_depend_on_sections_without_reverse_dependency"
+        in source
+    )

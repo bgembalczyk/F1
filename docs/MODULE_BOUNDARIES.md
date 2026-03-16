@@ -21,8 +21,23 @@ Legacy pliki typu `list_scraper.py` / `*_constructors_list.py` pozostają tylko 
 - `sections/` nie importuje `single_scraper.py` ani legacy `list_scraper.py`.
 - `infobox/` nie importuje `list/`, `sections/`, `postprocess/`.
 - `postprocess/` nie importuje `list/`, `sections/`, `infobox/`.
+- `single_scraper.py` może importować moduły z `sections/` (do orkiestracji parsowania).
+- `sections/` nie może importować `single_scraper.py` (zakaz zależności zwrotnej).
 
 Warstwy komunikują się przez kontrakty i orchestration w scraperach domenowych, nie przez ciasne importy między katalogami warstw.
+
+### Niedozwolone kierunki importu
+
+- `sections/ -> single_scraper.py`
+- `list/ -> sections/`
+- `list/ -> infobox/`
+- `list/ -> postprocess/`
+- `infobox/ -> list/`
+- `infobox/ -> sections/`
+- `infobox/ -> postprocess/`
+- `postprocess/ -> list/`
+- `postprocess/ -> sections/`
+- `postprocess/ -> infobox/`
 
 ## 3. Standardowy interfejs uruchamiania
 

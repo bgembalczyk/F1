@@ -7,7 +7,7 @@ from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.critical_sections import resolve_section_candidates
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -93,13 +93,14 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
 
 
     def _resolved_alternative_section_ids(self) -> list[str]:
-        if self.alternative_section_ids:
-            return self.alternative_section_ids
-        domain_sections = DOMAIN_CRITICAL_SECTIONS.get(self.section_domain, ())
-        for candidate in domain_sections:
-            if candidate.section_id == self.section_id:
-                return list(candidate.alternative_section_ids)
-        return []
+        if self.section_id is None:
+            return []
+        candidates = resolve_section_candidates(
+            domain=self.section_domain,
+            section_id=self.section_id,
+            alternative_section_ids=tuple(self.alternative_section_ids),
+        )
+        return [candidate for candidate in candidates[1:] if candidate is not None]
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         table, parser = self._find_table_with_fallbacks(soup)

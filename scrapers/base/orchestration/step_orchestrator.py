@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import time
 from dataclasses import asdict
 from dataclasses import dataclass
 from datetime import datetime
@@ -13,8 +14,28 @@ from typing import Any
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-from scrapers.config import DataPaths
-from scrapers.config import default_data_paths
+
+
+@dataclass(frozen=True)
+class _OrchestrationPaths:
+    base_dir: Path
+
+    @property
+    def raw(self) -> Path:
+        return self.base_dir / "raw"
+
+    @property
+    def checkpoints(self) -> Path:
+        return self.base_dir / "checkpoints"
+
+    @property
+    def legacy_wiki(self) -> Path:
+        return self.base_dir / "wiki"
+
+    def checkpoint_file(self, filename: str) -> Path:
+        return self.checkpoints / filename
+
+
 
 
 @dataclass(frozen=True)
@@ -35,6 +56,7 @@ class StepExecutionResult:
     input_records: int
     output_records: int
     errors: list[str]
+    duration_ms: float
 
 
 @dataclass(frozen=True)
@@ -48,6 +70,7 @@ class AuditEntry:
     input_records: int
     output_records: int
     errors: list[str]
+    duration_ms: float
 
 
 class SectionSourceAdapter:
@@ -55,7 +78,7 @@ class SectionSourceAdapter:
 
     def __init__(self, base_dir: Path = Path("data")) -> None:
         self.base_dir = base_dir
-        self.paths = default_data_paths(base_dir=base_dir)
+        self.paths = _OrchestrationPaths(base_dir=base_dir)
 
     def resolve(
         self,
@@ -162,6 +185,7 @@ class StepAuditTrail:
                     "input_records",
                     "output_records",
                     "errors",
+                    "duration_ms",
                 ],
             )
             if write_header:
@@ -169,6 +193,59 @@ class StepAuditTrail:
             row = asdict(entry)
             row["errors"] = " | ".join(entry.errors)
             writer.writerow(row)
+
+    def write_regression_report(self, report_path: Path) -> Path:
+        entries = self._load_json()
+        total_steps = len(entries)
+        total_errors = sum(1 for entry in entries if entry.get("errors"))
+        total_duration = sum(float(entry.get("duration_ms", 0.0)) for entry in entries)
+
+        grouped: dict[tuple[int, str, str], dict[str, Any]] = {}
+        for entry in entries:
+            key = (
+                int(entry.get("step_id", -1)),
+                str(entry.get("layer", "")),
+                str(entry.get("domain", "")),
+            )
+            bucket = grouped.setdefault(
+                key,
+                {
+                    "runs": 0,
+                    "input_records": 0,
+                    "output_records": 0,
+                    "errors": 0,
+                    "duration_ms": 0.0,
+                },
+            )
+            bucket["runs"] += 1
+            bucket["input_records"] += int(entry.get("input_records", 0))
+            bucket["output_records"] += int(entry.get("output_records", 0))
+            bucket["duration_ms"] += float(entry.get("duration_ms", 0.0))
+            if entry.get("errors"):
+                bucket["errors"] += 1
+
+        lines = [
+            "# Step Regression Audit Report",
+            "",
+            f"- Total runs: {total_steps}",
+            f"- Total error runs: {total_errors}",
+            f"- Total duration [ms]: {total_duration:.3f}",
+            "",
+            "| step_id | layer | domain | runs | input_records | output_records | error_runs | duration_ms |",
+            "|---:|---|---|---:|---:|---:|---:|---:|",
+        ]
+
+        for (step_id, layer, domain), data in sorted(grouped.items()):
+            lines.append(
+                "| "
+                f"{step_id} | {layer} | {domain} | {data['runs']} | "
+                f"{data['input_records']} | {data['output_records']} | "
+                f"{data['errors']} | {data['duration_ms']:.3f} |"
+            )
+
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        return report_path
 
     def _load_json(self) -> list[dict[str, Any]]:
         if not self.json_path.exists():
@@ -188,7 +265,7 @@ class StepOrchestrator:
         audit_trail: StepAuditTrail | None = None,
     ) -> None:
         self.base_dir = base_dir
-        self.paths: DataPaths = default_data_paths(base_dir=base_dir)
+        self.paths = _OrchestrationPaths(base_dir=base_dir)
         self.source_adapter = source_adapter or SectionSourceAdapter(base_dir=base_dir)
         self.audit_trail = audit_trail or StepAuditTrail(
             json_path=self.paths.checkpoint_file("step_audit.json"),
@@ -198,6 +275,7 @@ class StepOrchestrator:
     def run(self, step: StepDeclaration, domain: str) -> StepExecutionResult:
         input_records, input_path = self.source_adapter.resolve(step, domain)
         errors: list[str] = []
+        started_at = time.perf_counter()
 
         try:
             output_records = step.parser(input_records)
@@ -206,6 +284,7 @@ class StepOrchestrator:
             errors.append(str(exc))
 
         output_path = self._output_path(step, domain)
+        duration_ms = (time.perf_counter() - started_at) * 1000
         payload = {
             "metadata": {
                 "step_id": step.step_id,
@@ -215,6 +294,13 @@ class StepOrchestrator:
                 "output_target": step.output_target,
                 "parser": step.parser.__name__,
                 "generated_at": datetime.now(tz=timezone.utc).isoformat(),
+                "metrics": {
+                    "input_records": len(input_records),
+                    "output_records": len(output_records),
+                    "errors": len(errors),
+                    "duration_ms": duration_ms,
+                    "input_path": str(input_path),
+                },
             },
             "records": output_records,
         }
@@ -232,6 +318,7 @@ class StepOrchestrator:
             input_records=len(input_records),
             output_records=len(output_records),
             errors=errors,
+            duration_ms=duration_ms,
         )
         self.audit_trail.append(
             AuditEntry(
@@ -244,6 +331,7 @@ class StepOrchestrator:
                 input_records=result.input_records,
                 output_records=result.output_records,
                 errors=result.errors,
+                duration_ms=result.duration_ms,
             ),
         )
         if errors:
