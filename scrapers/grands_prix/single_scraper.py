@@ -12,6 +12,7 @@ from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 from scrapers.wiki.scraper import WikiScraper
+from scrapers.grands_prix.postprocess import GrandPrixSectionContractPostProcessor
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -22,6 +23,7 @@ class F1SingleGrandPrixScraper(WikipediaSectionByIdMixin, WikiScraper):
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
+        options.post_processors.append(GrandPrixSectionContractPostProcessor())
         super().__init__(options=options)
         self.url: str = ""
 

@@ -6,12 +6,10 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
-from scrapers.base.sections.adapter import SectionAdapterEntry
-from scrapers.constructors.sections import ConstructorChampionshipResultsSectionParser
-from scrapers.constructors.sections import ConstructorCompleteF1ResultsSectionParser
-from scrapers.constructors.sections import ConstructorHistorySectionParser
+from scrapers.constructors.sections import constructor_section_entries
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
+from scrapers.constructors.postprocess import ConstructorSectionContractPostProcessor
 
 
 class SingleConstructorScraper(SectionAdapter, WikiScraper):
@@ -28,6 +26,7 @@ class SingleConstructorScraper(SectionAdapter, WikiScraper):
         options = init_scraper_options(options, include_urls=True)
         policy = self.get_http_policy(options)
         options.with_fetcher(policy=policy)
+        options.post_processors.append(ConstructorSectionContractPostProcessor())
         super().__init__(options=options)
         self.url: str = ""
         self.article_tables_parser = ArticleTablesParser()
@@ -40,23 +39,7 @@ class SingleConstructorScraper(SectionAdapter, WikiScraper):
         sections = self.parse_section_dicts(
             soup=soup,
             domain="constructors",
-            entries=[
-                SectionAdapterEntry(
-                    section_id="history",
-                    aliases=("History",),
-                    parser=ConstructorHistorySectionParser(),
-                ),
-                SectionAdapterEntry(
-                    section_id="championship_results",
-                    aliases=("Championship_results", "Formula_One/World_Championship_results"),
-                    parser=ConstructorChampionshipResultsSectionParser(),
-                ),
-                SectionAdapterEntry(
-                    section_id="complete_formula_one_results",
-                    aliases=("Complete_Formula_One_results", "Complete_World_Championship_results"),
-                    parser=ConstructorCompleteF1ResultsSectionParser(),
-                ),
-            ],
+            entries=constructor_section_entries(),
         )
         return [
             {
