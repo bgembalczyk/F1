@@ -3,6 +3,7 @@ from typing import Any
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
+from scrapers.base.detail_url_resolver import GrandPrixDetailUrlResolver
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
@@ -17,6 +18,7 @@ class F1CompleteGrandPrixDataExtractor(CompositeDataExtractor):
     Jeżeli artykuł nie wygląda na Grand Prix, pole `by_year` będzie None.
     """
 
+    DETAIL_URL_RESOLVER = GrandPrixDetailUrlResolver()
     url = GrandsPrixListScraper.CONFIG.url
 
     def __init__(
@@ -50,12 +52,6 @@ class F1CompleteGrandPrixDataExtractor(CompositeDataExtractor):
             single_scraper=single_scraper,
             records_adapter=grands_prix_adapter,
         )
-
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
-        race_title = record.get("race_title")
-        if isinstance(race_title, dict):
-            return race_title.get("url")
-        return None
 
     def assemble_record(
         self,

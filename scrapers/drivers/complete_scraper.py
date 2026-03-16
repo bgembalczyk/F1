@@ -1,8 +1,8 @@
 from pathlib import Path
-from typing import Any
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
+from scrapers.base.detail_url_resolver import DriverDetailUrlResolver
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.drivers.list_scraper import F1DriversListScraper
@@ -10,6 +10,7 @@ from scrapers.drivers.single_scraper import SingleDriverScraper
 
 
 class CompleteDriverDataExtractor(CompositeDataExtractor):
+    DETAIL_URL_RESOLVER = DriverDetailUrlResolver()
     url = F1DriversListScraper.CONFIG.url
 
     def __init__(
@@ -45,12 +46,6 @@ class CompleteDriverDataExtractor(CompositeDataExtractor):
             single_scraper=single_scraper,
             records_adapter=drivers_adapter,
         )
-
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
-        driver_link = record.get("driver")
-        if isinstance(driver_link, dict):
-            return driver_link.get("url")
-        return None
 
 
 if __name__ == "__main__":
