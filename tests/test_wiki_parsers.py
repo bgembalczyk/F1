@@ -419,9 +419,9 @@ def test_sub_sub_section_parser_divides_into_sub_sub_sub_sections():
     assert "sub_sub_sub_sections" in result
     sections = result["sub_sub_sub_sections"]
     assert len(sections) == 3
-    assert sections[0]["name"] == "(Top)"
-    assert sections[1]["name"] == "Sub5 One"
-    assert sections[2]["name"] == "Sub5 Two"
+    assert sections[0]["section_label"] == "(Top)"
+    assert sections[1]["section_label"] == "Sub5 One"
+    assert sections[2]["section_label"] == "Sub5 Two"
 
 
 def test_sub_section_parser_divides_into_sub_sub_sections():
@@ -436,8 +436,8 @@ def test_sub_section_parser_divides_into_sub_sub_sections():
     result = parser.parse(soup.find("div"))
     assert "sub_sub_sections" in result
     sections = result["sub_sub_sections"]
-    assert sections[0]["name"] == "(Top)"
-    assert sections[1]["name"] == "Level 4"
+    assert sections[0]["section_label"] == "(Top)"
+    assert sections[1]["section_label"] == "Level 4"
 
 
 def test_section_parser_divides_into_sub_sections():
@@ -454,8 +454,8 @@ def test_section_parser_divides_into_sub_sections():
     assert "sub_sections" in result
     sub_sections = result["sub_sections"]
     assert len(sub_sections) == 2
-    assert sub_sections[0]["name"] == "(Top)"
-    assert sub_sections[1]["name"] == "Sub A"
+    assert sub_sections[0]["section_label"] == "(Top)"
+    assert sub_sections[1]["section_label"] == "Sub A"
 
 
 # ---------------------------------------------------------------------------
@@ -478,9 +478,9 @@ def test_content_text_parser_divides_into_sections():
     result = parser.parse(soup.find("div"))
     sections = result["sections"]
     assert len(sections) == 3
-    assert sections[0]["name"] == "(Top)"
-    assert sections[1]["name"] == "Early life"
-    assert sections[2]["name"] == "Career"
+    assert sections[0]["section_label"] == "(Top)"
+    assert sections[1]["section_label"] == "Early life"
+    assert sections[2]["section_label"] == "Career"
 
 
 # ---------------------------------------------------------------------------
@@ -509,8 +509,8 @@ def test_body_content_parser():
     result = parser.parse(soup.find("div", id="bodyContent"))
     assert result["content_text"] is not None
     sections = result["content_text"]["sections"]
-    assert sections[0]["name"] == "(Top)"
-    assert sections[1]["name"] == "History"
+    assert sections[0]["section_label"] == "(Top)"
+    assert sections[1]["section_label"] == "History"
     assert result["category_links"] is not None
 
 
