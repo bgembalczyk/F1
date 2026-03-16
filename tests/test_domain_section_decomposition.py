@@ -87,6 +87,13 @@ def test_grand_prix_by_year_uses_domain_critical_alias_fallback() -> None:
 
 
 def test_each_critical_section_has_alias_fallback() -> None:
-    for sections in DOMAIN_CRITICAL_SECTIONS.values():
+    required_domains = {"drivers", "constructors", "circuits", "seasons", "grands_prix"}
+    assert required_domains.issubset(DOMAIN_CRITICAL_SECTIONS.keys())
+
+    for domain in required_domains:
+        sections = DOMAIN_CRITICAL_SECTIONS[domain]
+        assert sections, f"Missing critical sections for domain={domain}"
         for section in sections:
-            assert section.alternative_section_ids
+            assert section.alternative_section_ids, (
+                f"Critical section without aliases: domain={domain} section={section.section_id}"
+            )
