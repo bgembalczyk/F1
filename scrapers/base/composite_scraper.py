@@ -3,16 +3,19 @@ from typing import Any
 
 from tqdm import tqdm
 
-from scrapers.base.abc import ABCScraper
 from scrapers.base.data_extractor import BaseDataExtractor
 from scrapers.base.source_adapter import IterableSourceAdapter
+from scrapers.base.source_adapter import MultiIterableSourceAdapter
 
 
 @dataclass(frozen=True)
 class CompositeDataExtractorChildren:
-    list_scraper: ABCScraper
+    list_scraper: Any
     single_scraper: Any
-    records_adapter: IterableSourceAdapter[dict[str, Any]]
+    records_adapter: (
+        IterableSourceAdapter[dict[str, Any]]
+        | MultiIterableSourceAdapter[dict[str, Any]]
+    )
 
 
 class CompositeDataExtractor(BaseDataExtractor):
@@ -48,12 +51,10 @@ class CompositeDataExtractor(BaseDataExtractor):
         for record in tqdm(records, desc=extractor_name, unit="item"):
             if not isinstance(record, dict):
                 msg = (
-                    f"{self.list_scraper.__class__.__name__} musi zwracać dict, "
+                    "Records adapter musi zwracać dict, "
                     f"otrzymano: {type(record).__name__}"
                 )
-                raise TypeError(
-                    msg,
-                )
+                raise TypeError(msg)
 
             detail_url = self.get_detail_url(record)
             details: dict[str, Any] | None = None
