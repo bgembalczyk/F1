@@ -37,3 +37,11 @@
 - [ ] Task A: Utworzyć konfigurację seed URL-i i kategorii wyjściowych.
 - [ ] Task B: Ujednolicić format rekordu seed + writer JSON.
 - [ ] Task C: Dodać pierwszy pionowy slice end-to-end dla `drivers` z checkpointem wejścia do kolejnego kroku.
+
+
+## Etap 0.5 — Ujednolicenie struktury domen parserów (NOWE)
+- [x] Dodać spójny podział katalogów domenowych: `list/`, `sections/`, `infobox/`, `postprocess/`.
+- [x] Wydzielić logikę sekcyjną z parserów single/list do `sections/` (driver results, grand prix by year, season adapters: calendar/results/standings).
+- [x] Wprowadzić wspólny interfejs parsera sekcyjnego (`SectionParseResult`, `SectionParser`).
+- [x] Dodać mapę `DOMAIN_CRITICAL_SECTIONS` (`section_id`, `alternative_section_ids`) i użyć jej jako fallbacku w parserach GP.
+- [ ] Migrować kolejne parsery domenowe (constructors/circuits) na nowy interfejs sekcyjny.
