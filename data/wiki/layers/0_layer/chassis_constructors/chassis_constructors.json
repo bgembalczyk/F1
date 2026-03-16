@@ -8100,11 +8100,12 @@
     },
     "racing_series": {
       "AAA_national_championship": [],
-      "formula_one":
+      "formula_one": [
         {
           "status": "former",
           "indianapolis_only": true
         }
+      ]
     }
   }
 ]
