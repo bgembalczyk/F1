@@ -3,6 +3,7 @@ from typing import Any
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
+from scrapers.base.detail_url_resolver import CircuitDetailUrlResolver
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.circuits.list_scraper import CircuitsListScraper
@@ -20,6 +21,7 @@ class F1CompleteCircuitDataExtractor(CompositeDataExtractor):
     mogą być puste.
     """
 
+    DETAIL_URL_RESOLVER = CircuitDetailUrlResolver()
     url = CircuitsListScraper.CONFIG.url
 
     def __init__(
@@ -56,12 +58,6 @@ class F1CompleteCircuitDataExtractor(CompositeDataExtractor):
             single_scraper=single_scraper,
             records_adapter=circuits_adapter,
         )
-
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
-        circuit_data = record.get("circuit")
-        if isinstance(circuit_data, dict):
-            return circuit_data.get("url")
-        return None
 
     def assemble_record(
         self,

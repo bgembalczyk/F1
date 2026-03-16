@@ -3,8 +3,8 @@ from typing import Any
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
+from scrapers.base.detail_url_resolver import ConstructorDetailUrlResolver
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
 from scrapers.constructors.current_constructors_list import (
@@ -25,6 +25,7 @@ class CompleteConstructorsDataExtractor(CompositeDataExtractor):
     SingleConstructorScraper.
     """
 
+    DETAIL_URL_RESOLVER = ConstructorDetailUrlResolver()
     url = CurrentConstructorsListScraper.CONFIG.url
 
     def __init__(
@@ -53,27 +54,6 @@ class CompleteConstructorsDataExtractor(CompositeDataExtractor):
             single_scraper=SingleConstructorScraper(options=self._options),
             records_adapter=records_adapter,
         )
-
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
-        # CurrentConstructorsListScraper / FormerConstructorsListScraper:
-        # constructor is a LinkRecord dict with "url" key
-        constructor = record.get("constructor")
-        if isinstance(constructor, dict):
-            url = constructor.get("url")
-            if isinstance(url, str) and url and not is_wikipedia_redlink(url):
-                return url
-
-        # IndianapolisOnlyConstructorsListScraper: "constructor_url" key
-        url = record.get("constructor_url")
-        if isinstance(url, str) and url and not is_wikipedia_redlink(url):
-            return url
-
-        # PrivateerTeamsListScraper: "team_url" key
-        url = record.get("team_url")
-        if isinstance(url, str) and url and not is_wikipedia_redlink(url):
-            return url
-
-        return None
 
     def assemble_record(
         self,

@@ -4,6 +4,8 @@ from typing import Any
 from tqdm import tqdm
 
 from scrapers.base.data_extractor import BaseDataExtractor
+from scrapers.base.detail_url_resolver import DetailUrlResolver
+from scrapers.base.detail_url_resolver import LegacyDetailUrlResolver
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
 
@@ -19,13 +21,25 @@ class CompositeDataExtractorChildren:
 
 
 class CompositeDataExtractor(BaseDataExtractor):
-    def __init__(self, *, options) -> None:
+    def __init__(
+        self,
+        *,
+        options,
+        detail_url_resolver: DetailUrlResolver | None = None,
+    ) -> None:
         super().__init__(options=options)
         self.options = options
         children = self.build_children()
         self.list_scraper = children.list_scraper
         self.single_scraper = children.single_scraper
         self.records_adapter = children.records_adapter
+        self.detail_url_resolver = detail_url_resolver or self._build_detail_url_resolver()
+
+    def _build_detail_url_resolver(self) -> DetailUrlResolver:
+        class_resolver = getattr(self, "DETAIL_URL_RESOLVER", None)
+        if class_resolver is not None:
+            return class_resolver
+        return LegacyDetailUrlResolver(self)
 
     def build_children(self) -> CompositeDataExtractorChildren:
         msg = "CompositeDataExtractor requires build_children()."
@@ -56,7 +70,7 @@ class CompositeDataExtractor(BaseDataExtractor):
                 )
                 raise TypeError(msg)
 
-            detail_url = self.get_detail_url(record)
+            detail_url = self.detail_url_resolver.resolve(record)
             details: dict[str, Any] | None = None
 
             if detail_url:
