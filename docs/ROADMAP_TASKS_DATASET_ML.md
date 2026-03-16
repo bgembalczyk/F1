@@ -93,3 +93,25 @@
   - Kontekst: rozszerzono aliasy fallback dla `seasons` i `circuits` oraz dodano test obecności aliasów dla wszystkich domen.
 - [x] Każdy parser sekcji ma przypisanie do jednej warstwy (`list`/`sections`/`infobox`/`postprocess`) bez mieszania odpowiedzialności.
   - Kontekst: granice warstw zostały zdefiniowane i spięte testem reguły importów dla `sections/`.
+
+## Strumień D — OOP/DRY hardening
+- [ ] D1. Wspólna baza `Complete*Extractor` dla domenowych extractorów complete (używanych w L0/L1) z kontraktem rozszerzeń per domena.
+  - Metryka wejściowa: liczba zduplikowanych bloków logiki w `*complete*extractor*.py` + suma LOC extractorów complete (baseline z raportu duplikacji i LOC).
+  - Metryka wyjściowa: spadek liczby zduplikowanych bloków o min. 40% oraz spadek LOC w extractorach complete o min. 20% bez utraty pokrycia testami kontraktowymi.
+  - Kryterium ukończenia: istnieje wspólna klasa bazowa + co najmniej 3 domeny przepięte na nią + test regresyjny kontraktu extractora complete.
+  - Skąd bierzemy kolejne punkty startowe: lista kandydatów do refaktoru pochodzi z raportu duplikacji (`scripts/analysis/duplication_report.md`) i z aktualnych kroków `data/checkpoints/step_*_layer*.json`, które wskazują najczęściej używane extractory.
+- [ ] D2. Strategia resolverów URL (`UrlResolverStrategy`) zamiast domenowych if-else/fallbacków rozproszonych po parserach.
+  - Metryka wejściowa: liczba miejsc w kodzie, gdzie URL jest składany/normalizowany inline (baseline: grep po `resolve`, `urljoin`, `wikipedia.org/wiki`).
+  - Metryka wyjściowa: 100% budowania URL dla parserów L0/L1 przechodzi przez strategię + redukcja duplikacji resolverów o min. 50%.
+  - Kryterium ukończenia: zarejestrowane strategie per domena, jeden punkt wejścia resolvera i testy regresyjne dla aliasów/relative URL/fallback.
+  - Skąd bierzemy kolejne punkty startowe: źródła URL do migracji bierzemy z `checkpoint_input` aktywnych kroków orchestratora (pliki `data/checkpoints/*.json`) oraz z listy parserów wskazanych przez registry kroków 0/1.
+- [ ] D3. Centralizacja CLI i deprecated launcherów w jednym entrypoincie (z mapą kompatybilności i deprecations).
+  - Metryka wejściowa: liczba aktywnych skryptów uruchomieniowych/entrypointów CLI + liczba zduplikowanych opcji uruchomieniowych.
+  - Metryka wyjściowa: jeden canonical launcher + max 2 cienkie wrappery legacy, redukcja duplikowanych flag CLI o min. 60%.
+  - Kryterium ukończenia: dokumentowana mapa `old_command -> new_command`, warning deprecacyjny w wrapperach i przejście smoke-testów uruchomienia dla przepływu L0/L1.
+  - Skąd bierzemy kolejne punkty startowe: priorytetowe komendy do migracji wyznaczamy z logów użycia CI/dev scripts i z kroków uruchamianych przez orchestrator `step_registry`.
+- [ ] D4. Automatyzacja registry factory (auto-discovery parserów/extractorów/strategii zamiast ręcznej rejestracji).
+  - Metryka wejściowa: liczba ręcznych wpisów w registry/factory + liczba incydentów „zapomniano zarejestrować komponent”.
+  - Metryka wyjściowa: min. 80% wpisów generowanych automatycznie (konwencja + metadane), 0 incydentów brakującej rejestracji przez 2 kolejne iteracje.
+  - Kryterium ukończenia: generator/rejestr auto-discovery działa dla parserów L0/L1, ma walidację konfliktów nazw i test CI blokujący niejawne komponenty.
+  - Skąd bierzemy kolejne punkty startowe: backlog komponentów do auto-rejestracji budujemy z aktualnego `step_registry` i listy modułów domenowych używanych przez checkpointy iteracyjne.
