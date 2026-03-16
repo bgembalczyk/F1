@@ -59,3 +59,23 @@ def test_default_data_paths_and_compatibility_resolution(tmp_path):
 
     resolved = paths.resolve_compatible_input("drivers", "f1_drivers.json")
     assert resolved == legacy
+
+
+def test_data_paths_domain_value_object_and_layout_policy(tmp_path):
+    from scrapers.config import DomainId
+
+    paths = DataPaths(base_dir=tmp_path / "data")
+
+    assert str(DomainId(" Drivers ")) == "drivers"
+    assert paths.raw_seed_file("drivers", "complete_drivers") == tmp_path / "data" / "raw" / "drivers" / "seeds" / "complete_drivers"
+    assert paths.raw_list_file("drivers", "f1_drivers.json") == tmp_path / "data" / "raw" / "drivers" / "list" / "f1_drivers.json"
+    assert paths.normalized_file("drivers", "f1_drivers.json") == tmp_path / "data" / "normalized" / "drivers" / "f1_drivers.json"
+    assert paths.checkpoint_step_file(1, "layer1", "drivers") == tmp_path / "data" / "checkpoints" / "step_1_layer1_drivers.json"
+    assert paths.audit_file("step_audit.json") == tmp_path / "data" / "audit" / "step_audit.json"
+
+
+def test_domain_value_object_rejects_invalid_identifier():
+    from scrapers.config import DomainId
+
+    with pytest.raises(ValueError):
+        DomainId("bad/domain")

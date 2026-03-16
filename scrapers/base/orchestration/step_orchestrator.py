@@ -11,29 +11,11 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.data_paths import DataPaths
+from scrapers.data_paths import DomainId
+
 if TYPE_CHECKING:
     from collections.abc import Callable
-
-
-
-@dataclass(frozen=True)
-class _OrchestrationPaths:
-    base_dir: Path
-
-    @property
-    def raw(self) -> Path:
-        return self.base_dir / "raw"
-
-    @property
-    def checkpoints(self) -> Path:
-        return self.base_dir / "checkpoints"
-
-    @property
-    def legacy_wiki(self) -> Path:
-        return self.base_dir / "wiki"
-
-    def checkpoint_file(self, filename: str) -> Path:
-        return self.checkpoints / filename
 
 
 
@@ -78,7 +60,7 @@ class SectionSourceAdapter:
 
     def __init__(self, base_dir: Path = Path("data")) -> None:
         self.base_dir = base_dir
-        self.paths = _OrchestrationPaths(base_dir=base_dir)
+        self.paths = DataPaths(base_dir=base_dir)
 
     def resolve(
         self,
@@ -105,7 +87,7 @@ class SectionSourceAdapter:
 
     def _resolve_checkpoint(self, step: StepDeclaration, domain: str) -> Path | None:
         checkpoints_dir = self.paths.checkpoints
-        explicit = checkpoints_dir / f"{step.input_source}.json"
+        explicit = self.paths.checkpoint_file(f"{step.input_source}.json")
         if explicit.exists():
             return explicit
 
@@ -119,7 +101,7 @@ class SectionSourceAdapter:
 
         layer_match = sorted(
             checkpoints_dir.glob(
-                f"step_*_{step.layer}_{domain}.json",
+                f"step_*_{step.layer}_{DomainId(domain)}.json",
             ),
         )
         if layer_match:
@@ -130,16 +112,16 @@ class SectionSourceAdapter:
         raw_dir = self.paths.raw
         candidates = [
             raw_dir / f"{step.input_source}.json",
-            raw_dir / domain / f"{step.input_source}.json",
-            raw_dir / domain / f"{domain}.json",
-            self.paths.legacy_wiki / domain / f"{step.input_source}.json",
-            self.paths.legacy_wiki / domain / f"{domain}.json",
+            self.paths.raw_file(domain, f"{step.input_source}.json"),
+            self.paths.raw_file(domain, f"{DomainId(domain)}.json"),
+            self.paths.legacy_wiki_file(domain, f"{step.input_source}.json"),
+            self.paths.legacy_wiki_file(domain, f"{DomainId(domain)}.json"),
         ]
         for candidate in candidates:
             if candidate.exists():
                 return candidate
 
-        wildcard = sorted(raw_dir.glob(f"**/*{domain}*.json"))
+        wildcard = sorted(raw_dir.glob(f"**/*{DomainId(domain)}*.json"))
         if wildcard:
             return wildcard[-1]
         return None
@@ -265,11 +247,11 @@ class StepOrchestrator:
         audit_trail: StepAuditTrail | None = None,
     ) -> None:
         self.base_dir = base_dir
-        self.paths = _OrchestrationPaths(base_dir=base_dir)
+        self.paths = DataPaths(base_dir=base_dir)
         self.source_adapter = source_adapter or SectionSourceAdapter(base_dir=base_dir)
         self.audit_trail = audit_trail or StepAuditTrail(
-            json_path=self.paths.checkpoint_file("step_audit.json"),
-            csv_path=self.paths.checkpoint_file("step_audit.csv"),
+            json_path=self.paths.audit_file("step_audit.json"),
+            csv_path=self.paths.audit_file("step_audit.csv"),
         )
 
     def run(self, step: StepDeclaration, domain: str) -> StepExecutionResult:
@@ -340,5 +322,4 @@ class StepOrchestrator:
         return result
 
     def _output_path(self, step: StepDeclaration, domain: str) -> Path:
-        name = f"step_{step.step_id}_{step.layer}_{domain}.json"
-        return self.paths.checkpoint_file(name)
+        return self.paths.checkpoint_step_file(step.step_id, step.layer, domain)

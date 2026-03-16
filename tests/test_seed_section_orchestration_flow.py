@@ -116,7 +116,7 @@ def test_step_metrics_are_logged_for_audit(tmp_path: Path) -> None:
     assert metrics["errors"] == 0
     assert isinstance(metrics["duration_ms"], float)
 
-    audit_json = _read_json(tmp_path / "data" / "checkpoints" / "step_audit.json")
+    audit_json = _read_json(tmp_path / "data" / "audit" / "step_audit.json")
     assert isinstance(audit_json[-1]["duration_ms"], float)
 
 

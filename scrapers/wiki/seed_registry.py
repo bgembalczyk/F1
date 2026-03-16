@@ -1,6 +1,10 @@
 from dataclasses import asdict
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
+
+from scrapers.data_paths import DataPaths
+from scrapers.data_paths import DomainId
 
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.current_constructors_list import (
@@ -280,6 +284,25 @@ WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (
 )
 
 
+_PATH_POLICY = DataPaths(base_dir=Path("."))
+
+
+def _relative(path: Path) -> str:
+    return path.as_posix().lstrip("./")
+
+
+def _expected_seed_path(category: str, filename: str) -> str:
+    return _relative(_PATH_POLICY.raw_seed_file(category, filename))
+
+
+def _expected_list_path(category: str, filename: str) -> str:
+    return _relative(_PATH_POLICY.raw_list_file(category, filename))
+
+
+def _expected_legacy_path(category: str, filename: str) -> str:
+    return f"{DomainId(category)}/{filename}"
+
+
 def validate_seed_registry(
     registry: tuple[SeedRegistryEntry, ...] = WIKI_SEED_REGISTRY,
 ) -> None:
@@ -295,19 +318,21 @@ def validate_seed_registry(
             msg = f"Seed '{entry.seed_name}' has empty wikipedia_url"
             raise ValueError(msg)
 
-        expected_prefix = f"raw/{entry.output_category}/"
-        if not entry.default_output_path.startswith(expected_prefix):
+        default_name = Path(entry.default_output_path).name
+        expected_default = _expected_seed_path(entry.output_category, default_name)
+        if entry.default_output_path != expected_default:
             msg = (
                 f"Seed '{entry.seed_name}' has inconsistent output path "
-                f"'{entry.default_output_path}' for category '{entry.output_category}'"
+                f"'{entry.default_output_path}', expected '{expected_default}'"
             )
             raise ValueError(msg)
 
-        legacy_prefix = f"{entry.output_category}/"
-        if not entry.legacy_output_path.startswith(legacy_prefix):
+        legacy_name = Path(entry.legacy_output_path).name
+        expected_legacy = _expected_legacy_path(entry.output_category, legacy_name)
+        if entry.legacy_output_path != expected_legacy:
             msg = (
                 f"Seed '{entry.seed_name}' has inconsistent legacy output path "
-                f"'{entry.legacy_output_path}' for category '{entry.output_category}'"
+                f"'{entry.legacy_output_path}', expected '{expected_legacy}'"
             )
             raise ValueError(msg)
 
@@ -323,11 +348,12 @@ def validate_list_job_registry(
             raise ValueError(msg)
         seen_seed_names.add(entry.seed_name)
 
-        expected_prefix = f"raw/{entry.output_category}/"
-        if not entry.json_output_path.startswith(expected_prefix):
+        json_name = Path(entry.json_output_path).name
+        expected_json = _expected_list_path(entry.output_category, json_name)
+        if entry.json_output_path != expected_json:
             msg = (
                 f"List seed '{entry.seed_name}' has inconsistent output path "
-                f"'{entry.json_output_path}' for category '{entry.output_category}'"
+                f"'{entry.json_output_path}', expected '{expected_json}'"
             )
             raise ValueError(msg)
 
@@ -335,10 +361,11 @@ def validate_list_job_registry(
             msg = f"List seed '{entry.seed_name}' has empty wikipedia_url"
             raise ValueError(msg)
 
-        legacy_prefix = f"{entry.output_category}/"
-        if not entry.legacy_json_output_path.startswith(legacy_prefix):
+        legacy_name = Path(entry.legacy_json_output_path).name
+        expected_legacy = _expected_legacy_path(entry.output_category, legacy_name)
+        if entry.legacy_json_output_path != expected_legacy:
             msg = (
                 f"List seed '{entry.seed_name}' has inconsistent legacy output path "
-                f"'{entry.legacy_json_output_path}' for category '{entry.output_category}'"
+                f"'{entry.legacy_json_output_path}', expected '{expected_legacy}'"
             )
             raise ValueError(msg)

@@ -6,6 +6,7 @@ from typing import Any
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.orchestration import StepDeclaration
 from scrapers.base.orchestration import StepOrchestrator
+from scrapers.data_paths import DataPaths
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
@@ -25,6 +26,7 @@ class SeedSectionOrchestrationFlow:
         detail_fetchers: dict[str, DetailFetcher] | None = None,
     ) -> None:
         self.base_dir = base_dir
+        self.paths = DataPaths(base_dir=base_dir)
         self.orchestrator = StepOrchestrator(base_dir=base_dir)
         self.detail_fetchers = detail_fetchers or {}
 
@@ -50,7 +52,7 @@ class SeedSectionOrchestrationFlow:
         return outputs
 
     def _checkpoint_file(self, filename: str) -> Path:
-        return self.base_dir / "checkpoints" / filename
+        return self.paths.checkpoint_file(filename)
 
     def _run_domain(self, domain: str) -> None:
         step0 = StepDeclaration(

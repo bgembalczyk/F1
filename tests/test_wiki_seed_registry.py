@@ -1,3 +1,4 @@
+import pytest
 import json
 
 from scrapers.wiki.seed_registry import WIKI_LIST_JOB_REGISTRY
@@ -68,3 +69,18 @@ def test_wiki_list_job_registry_contains_expected_layer_zero_jobs() -> None:
     assert jobs_by_seed["constructors_former"].output_category == "chassis_constructors"
     assert jobs_by_seed["constructors_indianapolis_only"].output_category == "chassis_constructors"
     assert jobs_by_seed["tyres"].output_category == "seasons"
+
+
+def test_registry_validation_enforces_path_policy() -> None:
+    broken = list(WIKI_LIST_JOB_REGISTRY)
+    broken[0] = ListJobRegistryEntry(
+        seed_name=broken[0].seed_name,
+        wikipedia_url=broken[0].wikipedia_url,
+        output_category=broken[0].output_category,
+        list_scraper_cls=broken[0].list_scraper_cls,
+        json_output_path="raw/circuits/f1_circuits.json",
+        legacy_json_output_path=broken[0].legacy_json_output_path,
+    )
+
+    with pytest.raises(ValueError, match="expected"):
+        validate_list_job_registry(tuple(broken))

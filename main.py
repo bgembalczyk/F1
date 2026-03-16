@@ -14,9 +14,10 @@ from scrapers.wiki.seed_registry import WIKI_LIST_JOB_REGISTRY
 from scrapers.wiki.seed_registry import WIKI_SEED_REGISTRY
 from scrapers.wiki.seed_registry import validate_list_job_registry
 from scrapers.wiki.seed_registry import validate_seed_registry
+from scrapers.data_paths import default_data_paths
 
-# Ścieżki wyjściowe względem katalogu repo (ten plik jest w root)
-BASE_WIKI_DIR = Path("data/wiki").resolve()
+DATA_PATHS = default_data_paths(base_dir=Path("data").resolve())
+BASE_WIKI_DIR = DATA_PATHS.legacy_wiki
 BASE_DEBUG_DIR = Path("data/debug").resolve()
 CURRENT_YEAR = datetime.now(tz=timezone.utc).year
 
@@ -33,13 +34,9 @@ def _mirror_current_constructors_output(
     source_json_path: Path,
 ) -> None:
     for target_category, target_name_template in _CURRENT_CONSTRUCTORS_MIRROR_TARGETS:
-        target_path = (
-            base_wiki_dir
-            / "layers"
-            / "0_layer"
-            / target_category
-            / "raw"
-            / target_name_template.format(year=CURRENT_YEAR)
+        target_path = DATA_PATHS.raw_list_file(
+            target_category,
+            target_name_template.format(year=CURRENT_YEAR),
         )
 
         if target_path == source_json_path:
@@ -51,7 +48,7 @@ def _mirror_current_constructors_output(
 
 def run_layer_zero() -> None:
     run_config = RunConfig(
-        output_dir=BASE_WIKI_DIR,
+        output_dir=DATA_PATHS.base_dir,
         include_urls=True,
         debug_dir=BASE_DEBUG_DIR,
     )
@@ -69,27 +66,21 @@ def run_layer_zero() -> None:
 
         rendered_json_path = job.json_output_path.format(year=CURRENT_YEAR)
         local_run_config = RunConfig(
-            output_dir=BASE_WIKI_DIR,
+            output_dir=DATA_PATHS.base_dir,
             include_urls=True,
             debug_dir=BASE_DEBUG_DIR,
             scraper_kwargs=scraper_kwargs,
         )
 
-        l0_raw_json_path = (
-            Path("layers")
-            / "0_layer"
-            / job.output_category
-            / "raw"
-            / Path(rendered_json_path).name
+        l0_raw_json_path = DATA_PATHS.raw_list_file(
+            job.output_category,
+            Path(rendered_json_path).name,
         )
         l0_raw_csv_path: Path | None = None
         if job.csv_output_path:
-            l0_raw_csv_path = (
-                Path("layers")
-                / "0_layer"
-                / job.output_category
-                / "raw"
-                / Path(job.csv_output_path).name
+            l0_raw_csv_path = DATA_PATHS.raw_list_file(
+                job.output_category,
+                Path(job.csv_output_path).name,
             )
 
         run_and_export(
@@ -100,7 +91,7 @@ def run_layer_zero() -> None:
         )
 
         if job.list_scraper_cls.__name__ == "CurrentConstructorsListScraper":
-            source_json_path = BASE_WIKI_DIR / l0_raw_json_path
+            source_json_path = l0_raw_json_path
             _mirror_current_constructors_output(
                 BASE_WIKI_DIR,
                 source_json_path,
@@ -113,7 +104,7 @@ def run_layer_zero() -> None:
 
 def run_layer_one() -> None:
     run_config = RunConfig(
-        output_dir=BASE_WIKI_DIR,
+        output_dir=DATA_PATHS.base_dir,
         include_urls=True,
         debug_dir=BASE_DEBUG_DIR,
     )

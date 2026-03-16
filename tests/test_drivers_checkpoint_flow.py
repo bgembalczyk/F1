@@ -108,14 +108,14 @@ def test_layer1_reads_only_checkpoint_urls_and_is_idempotent(tmp_path: Path) -> 
     output_payload = _read_json(output_file)
     assert [item["url"] for item in output_payload["records"]] == calls
 
-    audit_json = _read_json(tmp_path / "data" / "checkpoints" / "step_audit.json")
+    audit_json = _read_json(tmp_path / "data" / "audit" / "step_audit.json")
     expected_entries = 3
     assert len(audit_json) == expected_entries
     assert audit_json[-1]["step_id"] == 1
     assert audit_json[-1]["input_path"] == str(checkpoint_file)
     assert audit_json[-1]["output_path"] == str(output_file)
 
-    audit_csv = (tmp_path / "data" / "checkpoints" / "step_audit.csv").read_text(
+    audit_csv = (tmp_path / "data" / "audit" / "step_audit.csv").read_text(
         encoding="utf-8",
     )
     assert "step_id,layer,domain" in audit_csv
