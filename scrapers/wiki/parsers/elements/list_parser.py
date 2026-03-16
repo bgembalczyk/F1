@@ -3,6 +3,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.elements.text_cleaning import extract_text
 
 
 class ListParser(WikiParser):
@@ -21,7 +22,7 @@ class ListParser(WikiParser):
             Słownik z listą elementów.
         """
         items = [
-            li.get_text(" ", strip=True)
+            extract_text(li) or ""
             for li in element.find_all("li", recursive=False)
         ]
         return {"items": items}

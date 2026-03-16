@@ -3,7 +3,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.wiki.parsers.elements.text_cleaning import clean_table_cell_text
 from scrapers.base.table.parser import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
@@ -44,7 +44,7 @@ class TableParser(WikiParser):
                 continue
 
             cleaned_cells = [
-                clean_wiki_text(
+                clean_table_cell_text(
                     c.get_text(" ", strip=True),
                     strip_lang_suffix=parser.strip_lang_suffix,
                     strip_refs=parser.strip_refs,
@@ -61,7 +61,7 @@ class TableParser(WikiParser):
                 cells, full_headers, pending_rowspans
             )
             cleaned_expanded = [
-                clean_wiki_text(
+                clean_table_cell_text(
                     c.get_text(" ", strip=True),
                     strip_lang_suffix=parser.strip_lang_suffix,
                     strip_refs=parser.strip_refs,

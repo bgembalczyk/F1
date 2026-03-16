@@ -11,17 +11,32 @@ class CriticalSection:
 
 DOMAIN_CRITICAL_SECTIONS: dict[str, tuple[CriticalSection, ...]] = {
     "drivers": (
-        CriticalSection(section_id="Career_results", alternative_section_ids=("Racing_record", "Karting_record")),
+        CriticalSection(
+            section_id="Career_results",
+            alternative_section_ids=("Racing_record", "Karting_record"),
+        ),
     ),
     "constructors": (
-        CriticalSection(section_id="Constructors"),
+        CriticalSection(
+            section_id="Constructors",
+            alternative_section_ids=("Teams", "Constructors'_Championship"),
+        ),
     ),
     "circuits": (
-        CriticalSection(section_id="Circuits"),
-        CriticalSection(section_id="Lap_records", alternative_section_ids=("Formula_One_lap_records",)),
+        CriticalSection(
+            section_id="Circuits",
+            alternative_section_ids=("Current_circuits", "Active_circuits"),
+        ),
+        CriticalSection(
+            section_id="Lap_records",
+            alternative_section_ids=("Formula_One_lap_records",),
+        ),
     ),
     "seasons": (
-        CriticalSection(section_id="Calendar"),
+        CriticalSection(
+            section_id="Calendar",
+            alternative_section_ids=("Season_calendar", "Race_calendar"),
+        ),
         CriticalSection(
             section_id="World_Drivers'_Championship_standings",
             alternative_section_ids=("World_Championship_of_Drivers_standings",),
