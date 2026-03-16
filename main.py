@@ -1,3 +1,4 @@
+import shutil
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
@@ -18,6 +19,34 @@ from scrapers.wiki.seed_registry import validate_seed_registry
 BASE_WIKI_DIR = Path("data/wiki").resolve()
 BASE_DEBUG_DIR = Path("data/debug").resolve()
 CURRENT_YEAR = datetime.now(tz=timezone.utc).year
+
+
+_CURRENT_CONSTRUCTORS_MIRROR_TARGETS: tuple[tuple[str, str], ...] = (
+    ("chassis_constructors", "f1_constructors_{year}.json"),
+    ("constructors", "f1_constructors_{year}.json"),
+    ("teams", "f1_constructors_{year}.json"),
+)
+
+
+def _mirror_current_constructors_output(
+    base_wiki_dir: Path,
+    source_json_path: Path,
+) -> None:
+    for target_category, target_name_template in _CURRENT_CONSTRUCTORS_MIRROR_TARGETS:
+        target_path = (
+            base_wiki_dir
+            / "layers"
+            / "0_layer"
+            / target_category
+            / "raw"
+            / target_name_template.format(year=CURRENT_YEAR)
+        )
+
+        if target_path == source_json_path:
+            continue
+
+        target_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source_json_path, target_path)
 
 
 def run_layer_zero() -> None:
@@ -69,6 +98,13 @@ def run_layer_zero() -> None:
             l0_raw_csv_path,
             run_config=local_run_config if scraper_kwargs else run_config,
         )
+
+        if job.list_scraper_cls.__name__ == "CurrentConstructorsListScraper":
+            source_json_path = BASE_WIKI_DIR / l0_raw_json_path
+            _mirror_current_constructors_output(
+                BASE_WIKI_DIR,
+                source_json_path,
+            )
 
         print(f"[list] finished {job.list_scraper_cls.__name__}")
 

@@ -87,6 +87,13 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         [{"driver": "Maria"}],
     )
     _write_json(
+        base_wiki_dir / "layers" / "0_layer" / "drivers" / "raw" / "drivers.json",
+        [
+            {"driver": "Max Verstappen"},
+            {"driver": "Lewis Hamilton"},
+        ],
+    )
+    _write_json(
         base_wiki_dir
         / "layers"
         / "0_layer"
@@ -308,6 +315,11 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     female_driver = next(item for item in drivers_merged if item["driver"] == "Maria")
     assert female_driver["gender"] == "female"
 
+    ordered_driver_names = [item["driver"] for item in drivers_merged]
+    assert ordered_driver_names.index("Lewis Hamilton") < ordered_driver_names.index(
+        "Max Verstappen",
+    )
+
     fatality_driver = next(item for item in drivers_merged if item["driver"] == "X")
     assert fatality_driver["death"] == {
         "date": "2000-01-01",
@@ -396,7 +408,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         },
     ]
 
-    assert season_merged == [{"seasons": [1950], "tyre_manufacturers": ["Pirelli"]}]
+    assert season_merged == [{"season": 1950, "tyre_manufacturers": ["Pirelli"]}]
 
     assert not (base_wiki_dir / "layers" / "0_layer" / "rules" / "rules.json").exists()
     assert not (base_wiki_dir / "layers" / "0_layer" / "points" / "points.json").exists()

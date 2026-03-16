@@ -94,7 +94,12 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
 
     if source_name == TYRE_MANUFACTURERS_SOURCE and "manufacturers" in transformed:
         transformed["tyre_manufacturers"] = transformed.pop("manufacturers")
-
+    if (
+        source_name == TYRE_MANUFACTURERS_SOURCE
+        and isinstance(transformed.get("seasons"), list)
+        and len(transformed["seasons"]) == 1
+    ):
+        transformed["season"] = transformed.pop("seasons")[0]
 
     if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
         if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
@@ -216,6 +221,22 @@ def _iter_transformed_records(domain: str, source_name: str, payload: object) ->
     return [_transform_record(domain, source_name, payload)]
 
 
+def _driver_sort_key(record: object) -> str:
+    if not isinstance(record, dict):
+        return ""
+
+    driver_value = record.get("driver")
+    if isinstance(driver_value, dict):
+        driver_text = str(driver_value.get("text", ""))
+    else:
+        driver_text = str(driver_value or "")
+
+    name_parts = driver_text.split(" ", 1)
+    if len(name_parts) == 1:
+        return driver_text.strip().casefold()
+    return name_parts[1].strip().casefold()
+
+
 def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
     layer_zero_dir = base_wiki_dir / "layers" / "0_layer"
     if not layer_zero_dir.exists():
@@ -238,6 +259,9 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
 
         if not merged_records:
             continue
+
+        if domain_dir.name == "drivers":
+            merged_records = sorted(merged_records, key=_driver_sort_key)
 
         merged_path = domain_dir / f"{domain_dir.name}.json"
         merged_path.write_text(
