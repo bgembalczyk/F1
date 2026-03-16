@@ -37,23 +37,23 @@ class SingleConstructorScraper(SectionAdapter, WikiScraper):
         return super().fetch()
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        section_results = self.parse_sections(
+        sections = self.parse_section_dicts(
             soup=soup,
             domain="constructors",
             entries=[
                 SectionAdapterEntry(
-                    section_id="History",
-                    aliases=(),
+                    section_id="history",
+                    aliases=("History",),
                     parser=ConstructorHistorySectionParser(),
                 ),
                 SectionAdapterEntry(
-                    section_id="Championship_results",
-                    aliases=("Formula_One/World_Championship_results",),
+                    section_id="championship_results",
+                    aliases=("Championship_results", "Formula_One/World_Championship_results"),
                     parser=ConstructorChampionshipResultsSectionParser(),
                 ),
                 SectionAdapterEntry(
-                    section_id="Complete_Formula_One_results",
-                    aliases=("Complete_World_Championship_results",),
+                    section_id="complete_formula_one_results",
+                    aliases=("Complete_Formula_One_results", "Complete_World_Championship_results"),
                     parser=ConstructorCompleteF1ResultsSectionParser(),
                 ),
             ],
@@ -63,7 +63,7 @@ class SingleConstructorScraper(SectionAdapter, WikiScraper):
                 "url": self.url,
                 "infoboxes": self._scrape_infoboxes(soup),
                 "tables": self._scrape_tables(soup),
-                "sections": [result.__dict__ for result in section_results],
+                "sections": sections,
             },
         ]
 

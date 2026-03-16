@@ -12,7 +12,7 @@ class CircuitEventsSectionParser:
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         return SectionParseResult(
-            section_id="Events",
+            section_id="events",
             section_label="Events",
             records=self._tables.parse(section_fragment),
             metadata={"parser": self.__class__.__name__},

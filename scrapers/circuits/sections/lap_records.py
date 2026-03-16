@@ -32,7 +32,7 @@ class CircuitLapRecordsSectionParser:
             all_records.extend(collect_lap_records(table, headers, layout, lap_scraper))
 
         return SectionParseResult(
-            section_id="Lap_records",
+            section_id="lap_records",
             section_label="Lap records",
             records=all_records,
             metadata={"parser": self.__class__.__name__},
