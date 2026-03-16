@@ -12,47 +12,42 @@ from models.records.factories.helpers import (
 
 class ConstructorRecordFactory(BaseRecordFactory):
     def build(self, record: Mapping[str, Any]) -> ConstructorRecord:
-        payload = self.apply_aliases(
+        payload = self.apply_spec(
             record,
-            FIELD_ALIASES["constructor"],
-            "constructor",
-        )
-        self.normalize_link_fields(payload, ["constructor"])
-        self.normalize_link_list_fields(
-            payload,
-            ["engine", "based_in", "antecedent_teams"],
-        )
-        self.normalize_seasons_fields(payload, ["seasons"])
-
-        payload["licensed_in"] = normalize_optional_link_list_or_link_or_string(
-            self.normalizer,
-            payload.get("licensed_in"),
-            "licensed_in",
-        )
-
-        self.normalize_int_fields(
-            payload,
-            [
-                "races_entered",
-                "races_started",
-                "drivers",
-                "total_entries",
-                "wins",
-                "points",
-                "poles",
-                "fastest_laps",
-                "podiums",
-                "wcc_titles",
-                "wdc_titles",
-            ],
-        )
-        self.set_defaults(
-            payload,
             {
-                "engine": [],
-                "based_in": [],
-                "seasons": [],
-                "antecedent_teams": [],
+                "aliases": FIELD_ALIASES["constructor"],
+                "record_name": "constructor",
+                "field_normalizers": {
+                    "licensed_in": lambda value, field: normalize_optional_link_list_or_link_or_string(
+                        self.normalizer,
+                        value,
+                        field,
+                    ),
+                },
+                "list_field_normalizers": {
+                    "link": ["constructor"],
+                    "link_list": ["engine", "based_in", "antecedent_teams"],
+                    "seasons": ["seasons"],
+                    "int": [
+                        "races_entered",
+                        "races_started",
+                        "drivers",
+                        "total_entries",
+                        "wins",
+                        "points",
+                        "poles",
+                        "fastest_laps",
+                        "podiums",
+                        "wcc_titles",
+                        "wdc_titles",
+                    ],
+                },
+                "defaults": {
+                    "engine": [],
+                    "based_in": [],
+                    "seasons": [],
+                    "antecedent_teams": [],
+                },
             },
         )
         return cast("ConstructorRecord", payload)

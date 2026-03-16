@@ -8,28 +8,33 @@ from models.records.engine_manufacturer import EngineManufacturerRecord
 
 class EngineManufacturerRecordFactory(BaseRecordFactory):
     def build(self, record: Mapping[str, Any]) -> EngineManufacturerRecord:
-        payload = dict(record)
-        self.normalize_link_fields(payload, ["manufacturer"])
-        payload["manufacturer_status"] = self.normalizer.normalize_status(
-            payload.get("manufacturer_status"),
-            ["current", "former"],
-            "manufacturer_status",
+        payload = self.apply_spec(
+            record,
+            {
+                "field_normalizers": {
+                    "manufacturer_status": lambda value, field: self.normalizer.normalize_status(
+                        value,
+                        ["current", "former"],
+                        field,
+                    ),
+                },
+                "list_field_normalizers": {
+                    "link": ["manufacturer"],
+                    "link_list": ["engines_built_in"],
+                    "seasons": ["seasons"],
+                    "int": [
+                        "races_entered",
+                        "races_started",
+                        "wins",
+                        "poles",
+                        "fastest_laps",
+                        "podiums",
+                        "wcc",
+                        "wdc",
+                    ],
+                    "float": ["points"],
+                },
+                "defaults": {"engines_built_in": [], "seasons": []},
+            },
         )
-        self.normalize_link_list_fields(payload, ["engines_built_in"])
-        self.normalize_seasons_fields(payload, ["seasons"])
-        self.normalize_int_fields(
-            payload,
-            [
-                "races_entered",
-                "races_started",
-                "wins",
-                "poles",
-                "fastest_laps",
-                "podiums",
-                "wcc",
-                "wdc",
-            ],
-        )
-        self.normalize_float_fields(payload, ["points"])
-        self.set_defaults(payload, {"engines_built_in": [], "seasons": []})
         return cast("EngineManufacturerRecord", payload)

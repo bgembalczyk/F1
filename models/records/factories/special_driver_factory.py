@@ -9,11 +9,19 @@ from models.records.special_driver import SpecialDriverRecord
 
 class SpecialDriverRecordFactory(BaseRecordFactory):
     def build(self, record: Mapping[str, Any]) -> SpecialDriverRecord:
-        payload = dict(record)
-        self.normalize_link_fields(payload, ["driver"])
-        self.normalize_seasons_fields(payload, ["seasons"])
-        self.normalize_link_list_fields(payload, ["teams"])
-        self.normalize_int_fields(payload, ["entries", "starts"])
-        payload["points"] = normalize_points(self.normalizer, payload.get("points"))
-        self.set_defaults(payload, {"seasons": [], "teams": []})
+        payload = self.apply_spec(
+            record,
+            {
+                "field_normalizers": {
+                    "points": lambda value, _field: normalize_points(self.normalizer, value),
+                },
+                "list_field_normalizers": {
+                    "link": ["driver"],
+                    "seasons": ["seasons"],
+                    "link_list": ["teams"],
+                    "int": ["entries", "starts"],
+                },
+                "defaults": {"seasons": [], "teams": []},
+            },
+        )
         return cast("SpecialDriverRecord", payload)

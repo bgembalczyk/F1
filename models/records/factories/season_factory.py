@@ -9,9 +9,15 @@ from models.records.season import SeasonRecord
 
 class SeasonRecordFactory(BaseRecordFactory):
     def build(self, record: Mapping[str, Any]) -> SeasonRecord:
-        payload = dict(record)
-        self.normalize_int_fields(payload, ["year"])
-        self.normalize_string_field(payload, "url")
+        payload = self.apply_spec(
+            record,
+            {
+                "field_normalizers": {
+                    "url": lambda value, _field: self.normalizer.normalize_string(value),
+                },
+                "list_field_normalizers": {"int": ["year"]},
+            },
+        )
         if payload.get("year") is not None and not payload.get("url"):
             payload["url"] = WIKI_SEASON_URL.format(year=payload["year"])
         return cast("SeasonRecord", payload)
