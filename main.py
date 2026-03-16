@@ -2,17 +2,13 @@ from datetime import datetime
 from datetime import timezone
 from pathlib import Path
 
-from infrastructure.gemini.client import GeminiClient
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
-from scrapers.circuits.helpers.export import export_complete_circuits
-from scrapers.constructors.helpers.export import export_complete_constructors
-from scrapers.drivers.helpers.export import export_complete_drivers
-from scrapers.engines.helpers.export import export_complete_engine_manufacturers
-from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
-from scrapers.seasons.helpers import export_complete_seasons
-from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 from scrapers.wiki.layer_zero_merge import merge_layer_zero_raw_outputs
+from scrapers.wiki.orchestration import DefaultLayerZeroRunConfigFactory
+from scrapers.wiki.orchestration import build_layer_one_runner_map
+from scrapers.wiki.orchestration import build_layer_zero_run_config_factory_map
+from scrapers.wiki.orchestration import run_engine_manufacturers
 from scrapers.wiki.seed_registry import WIKI_LIST_JOB_REGISTRY
 from scrapers.wiki.seed_registry import WIKI_SEED_REGISTRY
 from scrapers.wiki.seed_registry import validate_list_job_registry
@@ -33,24 +29,14 @@ def run_layer_zero() -> None:
 
     validate_list_job_registry(WIKI_LIST_JOB_REGISTRY)
 
+    config_factories = build_layer_zero_run_config_factory_map()
+    default_factory = DefaultLayerZeroRunConfigFactory()
+
     for job in WIKI_LIST_JOB_REGISTRY:
         print(f"[list] running  {job.list_scraper_cls.__name__}")
 
-        scraper_kwargs: dict[str, object] = {}
-        if job.seed_name == "sponsorship_liveries":
-            try:
-                _gemini_client = GeminiClient.from_key_file()
-                _classifier = ParenClassifier(_gemini_client)
-                scraper_kwargs["classifier"] = _classifier
-                print(
-                    "[main] Gemini ParenClassifier załadowany - "
-                    "adnotacje w nawiasach będą klasyfikowane.",
-                )
-            except FileNotFoundError as _e:
-                print(
-                    "[main] Brak klucza Gemini API "
-                    f"({_e}), klasyfikacja Gemini wyłączona.",
-                )
+        config_factory = config_factories.get(job.seed_name, default_factory)
+        scraper_kwargs = config_factory.create_scraper_kwargs(job)
 
         rendered_json_path = job.json_output_path.format(year=CURRENT_YEAR)
         local_run_config = RunConfig(
@@ -97,45 +83,21 @@ def run_layer_one() -> None:
     )
 
     validate_seed_registry(WIKI_SEED_REGISTRY)
+    runner_map = build_layer_one_runner_map()
 
     for seed in WIKI_SEED_REGISTRY:
         print(f"[complete] running  {seed.seed_name}")
 
-        if seed.seed_name == "grands_prix":
-            run_and_export(
-                F1CompleteGrandPrixDataExtractor,
-                seed.default_output_path,
-                run_config=run_config,
-            )
-        elif seed.seed_name == "circuits":
-            export_complete_circuits(
-                output_dir=BASE_WIKI_DIR / seed.default_output_path,
-                include_urls=True,
-            )
-        elif seed.seed_name == "drivers":
-            export_complete_drivers(
-                output_dir=BASE_WIKI_DIR / seed.default_output_path,
-                include_urls=True,
-            )
-        elif seed.seed_name == "seasons":
-            export_complete_seasons(
-                output_dir=BASE_WIKI_DIR / seed.default_output_path,
-                include_urls=True,
-            )
-        elif seed.seed_name == "constructors":
-            export_complete_constructors(
-                output_dir=BASE_WIKI_DIR / seed.default_output_path,
-                include_urls=True,
-            )
+        runner = runner_map.get(seed.seed_name)
+        if runner is None:
+            print(f"[complete] skipping unsupported seed: {seed.seed_name}")
+            continue
+
+        runner.run(seed, run_config, BASE_WIKI_DIR)
 
         print(f"[complete] finished {seed.seed_name}")
 
-    print("[complete] running  F1CompleteEngineManufacturerDataExtractor")
-    export_complete_engine_manufacturers(
-        output_dir=BASE_WIKI_DIR / "engines/complete_engine_manufacturers",
-        include_urls=True,
-    )
-    print("[complete] finished F1CompleteEngineManufacturerDataExtractor")
+    run_engine_manufacturers(base_wiki_dir=BASE_WIKI_DIR, include_urls=True)
 
 
 def main() -> None:
