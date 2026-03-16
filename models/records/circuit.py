@@ -4,12 +4,12 @@ from typing import TypedDict
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
+from models.records.record_definition import RecordDefinition
+from models.records.record_definition import build_validator
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.domain_validator import BaseDomainRecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
-from validation.schemas import RecordSchema
 
 
 class CircuitRecord(TypedDict, total=False):
@@ -27,7 +27,8 @@ class CircuitRecord(TypedDict, total=False):
     grands_prix_held: int | None
 
 
-CIRCUIT_SCHEMA = RecordSchema(
+CIRCUIT_DEFINITION = RecordDefinition(
+    name="circuit",
     required=("circuit", "circuit_status", "country", "seasons"),
     types={
         "circuit": dict,
@@ -44,6 +45,9 @@ CIRCUIT_SCHEMA = RecordSchema(
     },
 )
 
+CIRCUIT_SCHEMA = CIRCUIT_DEFINITION.to_schema()
+_CIRCUIT_VALIDATOR = build_validator(CIRCUIT_DEFINITION)
+
 
 def validate_circuit_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(record, CIRCUIT_SCHEMA)
+    return _CIRCUIT_VALIDATOR(record)
