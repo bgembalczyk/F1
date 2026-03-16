@@ -28,6 +28,14 @@ class DriverContract(DataContract):
     points: str | None = None
 
     @classmethod
+    def can_handle(cls, record: Mapping[str, Any]) -> bool:
+        has_driver = "driver" in record
+        has_driver_shape = (
+            "is_active" in record or "drivers_championships" in record
+        )
+        return has_driver and has_driver_shape
+
+    @classmethod
     def from_record(cls, record: Mapping[str, Any]) -> "DriverContract":
         payload = dict(record)
         payload.setdefault("seasons_competed", [])
