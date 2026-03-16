@@ -5,8 +5,8 @@ from typing import Any
 from models.validation.base import ValidatedModel
 from models.validation.helpers import normalize_range_value
 from models.validation.helpers import normalize_unit_value
-from models.validation.validators import normalize_link_list
 from models.validation.validators import normalize_season_list
+from models.domain_utils.normalization import normalize_link_items
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
 
@@ -27,7 +27,7 @@ class EngineRestriction(ValidatedModel):
 
     def validate(self) -> None:
         self.year = normalize_season_list(self.year)
-        self.type_of_engine = normalize_link_list(self.type_of_engine)
+        self.type_of_engine = [Link.from_dict(item) for item in normalize_link_items(self.type_of_engine, field_name="type_of_engine")]
         self.size = normalize_unit_value(self.size, "size")
         self.fuel_limit_per_race = self._normalize_fuel_limit(self.fuel_limit_per_race)
         self.fuel_flow_rate = self._normalize_flow_rate(self.fuel_flow_rate)
