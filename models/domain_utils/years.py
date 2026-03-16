@@ -31,6 +31,8 @@ def expand_inclusive_range(start: int, end: int) -> Iterable[int]:
 
 def normalize_year_text(text: str, current_year: int) -> str:
     normalized = ONWARDS_PATTERN.sub(r"\1-present", text)
+    normalized = re.sub(r"\band\b", ",", normalized, flags=re.IGNORECASE)
+    normalized = normalized.replace(";", ",").replace("/", ",")
     return PRESENT_PATTERN.sub(str(current_year), normalized)
 
 
@@ -83,9 +85,7 @@ def parse_year_range(text: str | None) -> dict[str, int | None]:
     if not normalized:
         return {"start": None, "end": None}
 
-    onward_match = re.search(r"\b(\d{4})\s+onward(?:s)?\b", normalized, re.IGNORECASE)
-    if onward_match:
-        return {"start": int(onward_match.group(1)), "end": None}
+    normalized = ONWARDS_PATTERN.sub(r"\1-present", normalized)
 
     range_match = re.search(
         r"\b(\d{4})\s*[\-\u2013\u2014]\s*(\d{2,4}|present)\b",

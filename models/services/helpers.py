@@ -1,21 +1,12 @@
 import re
 from collections.abc import Iterable
-import warnings
 from typing import Any
 
-from models.domain_utils.years import expand_inclusive_range
-from models.domain_utils.years import parse_year_range as parse_domain_year_range
+from models.domain_utils.years import expand_inclusive_range as expand_range
+from models.domain_utils.years import parse_year_range
 from models.value_objects.normalized_date import NormalizedDate
 from models.value_objects.time_types import DateValue
 
-
-def expand_range(start: int, end: int) -> Iterable[int]:
-    warnings.warn(
-        "expand_range() is deprecated; use models.domain_utils.years.expand_inclusive_range()",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    return expand_inclusive_range(start, end)
 
 
 def split_delimited_text(text: str | None, *, pattern: str = r"[,;/]") -> list[str]:
@@ -29,14 +20,6 @@ def parse_int_values(text: str | None) -> list[int]:
         return []
     return [int(value) for value in re.findall(r"\d+", text)]
 
-
-def parse_year_range(text: str | None) -> dict[str, int | None]:
-    warnings.warn(
-        "parse_year_range() is deprecated; use models.domain_utils.years.parse_year_range()",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    return parse_domain_year_range(text)
 
 
 def expand_all(total_rounds: int | None) -> list[int]:
