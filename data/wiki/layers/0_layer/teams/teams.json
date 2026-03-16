@@ -1,5 +1,823 @@
 [
   {
+    "team": "AE Moss",
+    "team_url": "https://en.wikipedia.org/wiki/Alfred_Moss",
+    "seasons": [
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Bernard White Racing",
+    "team_url": "https://en.wikipedia.org/wiki/Bernard_White_Racing",
+    "seasons": [
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "BMS Scuderia Italia",
+    "team_url": "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia",
+    "seasons": [
+      {
+        "year": 1988,
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+      },
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "British Formula One Racing Team",
+    "team_url": "https://en.wikipedia.org/wiki/British_Formula_One_Racing_Team",
+    "seasons": [
+      {
+        "year": 1977,
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "BS Fabrications",
+    "team_url": "https://en.wikipedia.org/wiki/BS_Fabrications",
+    "seasons": [
+      {
+        "year": 1976,
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+      },
+      {
+        "year": 1977,
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
+      },
+      {
+        "year": 1978,
+        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Camoradi International",
+    "team_url": "https://en.wikipedia.org/wiki/Camoradi_International",
+    "seasons": [
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      },
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "DW Racing Enterprises",
+    "team_url": "https://en.wikipedia.org/wiki/DW_Racing_Enterprises",
+    "seasons": [
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      },
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Ecurie Belge",
+    "team_url": "https://en.wikipedia.org/wiki/Ecurie_Belge",
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Ecurie Bleue",
+    "team_url": "https://en.wikipedia.org/w/index.php?title=Ecurie_Bleue&action=edit&redlink=1",
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Ecurie Bonnier",
+    "team_url": "https://en.wikipedia.org/wiki/Ecurie_Bonnier",
+    "seasons": [
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      },
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      },
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      },
+      {
+        "year": 1970,
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+      },
+      {
+        "year": 1971,
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Ecurie Ecosse",
+    "team_url": "https://en.wikipedia.org/wiki/Ecurie_Ecosse",
+    "seasons": [
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Ecurie Espadon",
+    "team_url": "https://en.wikipedia.org/wiki/Ecurie_Espadon",
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Ecurie Lutetia",
+    "team_url": "https://en.wikipedia.org/wiki/Ecurie_Lutetia",
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Ecurie Maarsbergen",
+    "team_url": "https://en.wikipedia.org/wiki/Ecurie_Maarsbergen",
+    "seasons": [
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      },
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      },
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      },
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      },
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Ecurie Rosier",
+    "team_url": "https://en.wikipedia.org/wiki/Ecurie_Rosier",
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      },
+      {
+        "year": 1956,
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Enrico Platé",
+    "team_url": "https://en.wikipedia.org/wiki/Enrico_Plat%C3%A9",
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Equipe Banco Occidental",
+    "team_url": "https://en.wikipedia.org/wiki/Emilio_de_Villota",
+    "seasons": [
+      {
+        "year": 1981,
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Equipe Moss",
+    "team_url": "https://en.wikipedia.org/wiki/Alfred_Moss",
+    "seasons": [
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Escuderia Bandeirantes",
+    "team_url": "https://en.wikipedia.org/wiki/Escuderia_Bandeirantes",
+    "seasons": [
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "FISA",
+    "team_url": "https://en.wikipedia.org/wiki/Giancarlo_Baghetti",
+    "seasons": [
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "FR Gerard Cars",
+    "team_url": "https://en.wikipedia.org/wiki/Bob_Gerard",
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1956,
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+      },
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Goldie Hexagon Racing",
+    "team_url": "https://en.wikipedia.org/wiki/Goldie_Hexagon_Racing",
+    "seasons": [
+      {
+        "year": 1974,
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "1964",
+    "team_url": "https://en.wikipedia.org/wiki/1964_Formula_One_season",
+    "seasons": [
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Matra International",
+    "team_url": "https://en.wikipedia.org/wiki/Matra_International",
+    "seasons": [
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Mecom Racing Team",
+    "team_url": "https://en.wikipedia.org/wiki/Mecom_Racing_Team",
+    "seasons": [
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "North American Racing Team",
+    "team_url": "https://en.wikipedia.org/wiki/North_American_Racing_Team",
+    "seasons": [
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Otelle Nucci",
+    "team_url": "https://en.wikipedia.org/w/index.php?title=Otelle_Nucci&action=edit&redlink=1",
+    "seasons": [
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Reg Parnell Racing",
+    "team_url": "https://en.wikipedia.org/wiki/Reg_Parnell_Racing",
+    "seasons": [
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      },
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      },
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Rob Walker Racing Team",
+    "team_url": "https://en.wikipedia.org/wiki/Rob_Walker_Racing_Team",
+    "seasons": [
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      },
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      },
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      },
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      },
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      },
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      },
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      },
+      {
+        "year": 1970,
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Scuderia Achille Varzi",
+    "team_url": "https://en.wikipedia.org/wiki/Scuderia_Achille_Varzi",
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Scuderia Ambrosiana",
+    "team_url": "https://en.wikipedia.org/wiki/Scuderia_Ambrosiana",
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Scuderia Centro Sud",
+    "team_url": "https://en.wikipedia.org/wiki/Scuderia_Centro_Sud",
+    "seasons": [
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      },
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      },
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      },
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Scuderia Filipinetti",
+    "team_url": "https://en.wikipedia.org/wiki/Scuderia_Filipinetti",
+    "seasons": [
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Scuderia Franera",
+    "team_url": "https://en.wikipedia.org/w/index.php?title=Scuderia_Franera&action=edit&redlink=1",
+    "seasons": [
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Scuderia Sant'Ambroeus",
+    "team_url": "https://en.wikipedia.org/w/index.php?title=Scuderia_Sant%27Ambroeus&action=edit&redlink=1",
+    "seasons": [
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Scuderia Sud Americana",
+    "team_url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio",
+    "seasons": [
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Silvio Moser Racing Team",
+    "team_url": "https://en.wikipedia.org/wiki/Silvio_Moser_Racing_Team",
+    "seasons": [
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      },
+      {
+        "year": 1970,
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "T.A.S.O. Mathieson",
+    "team_url": "https://en.wikipedia.org/wiki/T.A.S.O._Mathieson",
+    "seasons": [
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
+    "team": "Team Gunston",
+    "team_url": "https://en.wikipedia.org/wiki/Team_Gunston",
+    "seasons": [
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      },
+      {
+        "year": 1970,
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+      },
+      {
+        "year": 1971,
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
+      },
+      {
+        "year": 1972,
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
+      },
+      {
+        "year": 1974,
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
+      },
+      {
+        "year": 1975,
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
+      }
+    ]
+  },
+  {
     "team": "AGS",
     "liveries": [
       {
@@ -1498,43 +2316,6 @@
           "Gold"
         ],
         "additional_colours": null,
-        "main_sponsors": [],
-        "additional_major_sponsors": [
-          {
-            "text": "FINA",
-            "url": "https://en.wikipedia.org/wiki/Petrofina"
-          },
-          {
-            "text": "Heuer",
-            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
-          },
-          "Scicon Micro Systems",
-          {
-            "text": "ARCO Graphite",
-            "url": "https://en.wikipedia.org/wiki/ARCO"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Long Beach Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1978,
-            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
-          }
-        ],
-        "main_colours": [
-          "Gold"
-        ],
-        "additional_colours": null,
         "main_sponsors": [
           {
             "text": "Warsteiner",
@@ -1559,6 +2340,43 @@
             "url": "https://en.wikipedia.org/wiki/1978_South_African_Grand_Prix"
           },
           "to": null
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1978,
+            "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+          }
+        ],
+        "main_colours": [
+          "Gold"
+        ],
+        "additional_colours": null,
+        "main_sponsors": [],
+        "additional_major_sponsors": [
+          {
+            "text": "FINA",
+            "url": "https://en.wikipedia.org/wiki/Petrofina"
+          },
+          {
+            "text": "Heuer",
+            "url": "https://en.wikipedia.org/wiki/TAG_Heuer"
+          },
+          "Scicon Micro Systems",
+          {
+            "text": "ARCO Graphite",
+            "url": "https://en.wikipedia.org/wiki/ARCO"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Long Beach Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1978_United_States_Grand_Prix_West"
+            }
+          ]
         }
       },
       {
@@ -9661,112 +10479,6 @@
           {
             "text": "Valvoline",
             "url": "https://en.wikipedia.org/wiki/Valvoline"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "Texaco",
-            "url": "https://en.wikipedia.org/wiki/Texaco"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "French Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          {
-            "text": "Patrick Nève",
-            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-          },
-          {
-            "text": "Hans Binder",
-            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
-          },
-          {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "main_sponsors": [
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
-          }
-        ],
-        "additional_major_sponsors": [
-          {
-            "text": "Alpquell Natürliches Mineralwasser"
-          },
-          {
-            "text": "Elan"
-          },
-          {
-            "text": "Raiffeisen",
-            "url": "https://en.wikipedia.org/wiki/Raiffeisen_Bank_International"
-          }
-        ],
-        "grand_prix_scope": {
-          "type": "only",
-          "grand_prix": [
-            {
-              "text": "Austrian Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
-            }
-          ]
-        }
-      },
-      {
-        "season": [
-          {
-            "year": 1976,
-            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
-          }
-        ],
-        "drivers": [
-          {
-            "text": "Chris Amon",
-            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
-          },
-          {
-            "text": "Patrick Nève",
-            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
-          },
-          {
-            "text": "Hans Binder",
-            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
-          },
-          {
-            "text": "Jacky Ickx",
-            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
-          }
-        ],
-        "main_colours": [
-          "Black"
-        ],
-        "main_sponsors": [
-          {
-            "text": "Valvoline",
-            "url": "https://en.wikipedia.org/wiki/Valvoline"
           },
           {
             "text": "John Day Model Cars"
@@ -9983,6 +10695,112 @@
             {
               "text": "British Grand Prix",
               "url": "https://en.wikipedia.org/wiki/1976_British_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Chris Amon",
+            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+          },
+          {
+            "text": "Patrick Nève",
+            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+          },
+          {
+            "text": "Hans Binder",
+            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
+          },
+          {
+            "text": "Jacky Ickx",
+            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Texaco",
+            "url": "https://en.wikipedia.org/wiki/Texaco"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "French Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_French_Grand_Prix"
+            }
+          ]
+        }
+      },
+      {
+        "season": [
+          {
+            "year": 1976,
+            "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+          }
+        ],
+        "drivers": [
+          {
+            "text": "Chris Amon",
+            "url": "https://en.wikipedia.org/wiki/Chris_Amon"
+          },
+          {
+            "text": "Patrick Nève",
+            "url": "https://en.wikipedia.org/wiki/Patrick_N%C3%A8ve"
+          },
+          {
+            "text": "Hans Binder",
+            "url": "https://en.wikipedia.org/wiki/Hans_Binder"
+          },
+          {
+            "text": "Jacky Ickx",
+            "url": "https://en.wikipedia.org/wiki/Jacky_Ickx"
+          }
+        ],
+        "main_colours": [
+          "Black"
+        ],
+        "main_sponsors": [
+          {
+            "text": "Valvoline",
+            "url": "https://en.wikipedia.org/wiki/Valvoline"
+          }
+        ],
+        "additional_major_sponsors": [
+          {
+            "text": "Alpquell Natürliches Mineralwasser"
+          },
+          {
+            "text": "Elan"
+          },
+          {
+            "text": "Raiffeisen",
+            "url": "https://en.wikipedia.org/wiki/Raiffeisen_Bank_International"
+          }
+        ],
+        "grand_prix_scope": {
+          "type": "only",
+          "grand_prix": [
+            {
+              "text": "Austrian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1976_Austrian_Grand_Prix"
             }
           ]
         }
