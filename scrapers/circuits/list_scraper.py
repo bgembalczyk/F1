@@ -69,7 +69,13 @@ class CircuitsListScraper(F1TableScraper):
             include_urls=self.include_urls,
             normalize_empty_values=self.normalize_empty_values,
         )
-        return parser.parse(section_fragment).records
+        try:
+            return parser.parse(section_fragment).records
+        except RuntimeError:
+            # Fallback do legacy flow: przeszukaj pełny dokument po section_id.
+            # Chroni przed zmianami struktury strony, gdy wycięty fragment nie
+            # zawiera pasującej tabeli mimo obecności jej w pełnym HTML.
+            return super()._parse_soup(soup)
 
 
 if __name__ == "__main__":

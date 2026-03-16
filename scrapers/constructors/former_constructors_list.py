@@ -72,7 +72,10 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
             include_urls=self.include_urls,
             normalize_empty_values=self.normalize_empty_values,
         )
-        return parser.parse(section_fragment).records
+        try:
+            return parser.parse(section_fragment).records
+        except RuntimeError:
+            return super()._parse_soup(soup)
 
 
 if __name__ == "__main__":

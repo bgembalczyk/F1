@@ -71,3 +71,35 @@ def test_circuits_section_parser_handles_formula_one_circuits_alias() -> None:
     assert data
     assert data[0]["circuit"]["text"] == "Monza"
     assert data[0]["country"]["text"] == "Italy"
+
+
+def test_circuits_section_parser_falls_back_to_legacy_full_document_search() -> None:
+    html = """
+    <html><body>
+      <h2><span id="Circuits">Circuits</span></h2>
+      <p>Section exists but has no matching table.</p>
+
+      <h2><span id="Other">Other</span></h2>
+      <table class="wikitable">
+        <tr><th>Circuit</th><th>Type</th><th>Location</th><th>Country</th></tr>
+        <tr>
+          <td><a href="/wiki/Spa-Francorchamps">Spa</a></td>
+          <td>Permanent</td>
+          <td>Stavelot</td>
+          <td><a href="/wiki/Belgium">Belgium</a></td>
+        </tr>
+      </table>
+    </body></html>
+    """
+
+    scraper = CircuitsListScraper(
+        options=ScraperOptions(
+            fetcher=FixtureFetcher(html),
+            include_urls=True,
+        ),
+    )
+
+    data = scraper.get_data()
+
+    assert data
+    assert data[0]["circuit"]["text"] == "Spa"
