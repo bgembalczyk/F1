@@ -5,6 +5,7 @@ from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
+from scrapers.drivers.detail_url_resolver import DriverDetailUrlResolver
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
@@ -23,6 +24,7 @@ class CompleteDriverDataExtractor(CompositeDataExtractor):
         options.include_urls = True
 
         super().__init__(options=options)
+        self.detail_url_resolver = DriverDetailUrlResolver()
 
     def build_children(self) -> CompositeDataExtractorChildren:
         list_scraper = F1DriversListScraper(
@@ -47,10 +49,7 @@ class CompleteDriverDataExtractor(CompositeDataExtractor):
         )
 
     def get_detail_url(self, record: dict[str, Any]) -> str | None:
-        driver_link = record.get("driver")
-        if isinstance(driver_link, dict):
-            return driver_link.get("url")
-        return None
+        return self.detail_url_resolver.resolve(record)
 
 
 if __name__ == "__main__":
