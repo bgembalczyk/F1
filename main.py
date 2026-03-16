@@ -38,7 +38,7 @@ def _resolve_cache_scraped_at(source_url: str) -> datetime:
     return datetime.now(tz=timezone.utc)
 
 
-def run_list_scrapers() -> None:
+def run_layer_zero() -> None:
     run_config = RunConfig(
         output_dir=BASE_WIKI_DIR,
         include_urls=True,
@@ -91,15 +91,9 @@ def run_list_scrapers() -> None:
             )
             l0_path = write_seed_l0(
                 records=normalized_seed_records,
-                category=job.output_category,
+                category=f"{job.output_category}/raw",
                 seed_name=job.seed_name,
-                output_root=Path("data/raw"),
-            )
-            compatibility_path = write_seed_l0(
-                records=normalized_seed_records,
-                category=job.output_category,
-                seed_name=job.seed_name,
-                output_root=Path("data/wiki"),
+                output_root=Path("data/wiki/layers/0_layer"),
             )
             quality_report = compute_seed_quality(
                 normalized_seed_records,
@@ -108,14 +102,13 @@ def run_list_scrapers() -> None:
             )
             print(quality_report.to_log_line())
             print(f"[seed-l0] wrote {l0_path}")
-            print(f"[seed-l0] compatibility copy {compatibility_path}")
         except (OSError, ValueError, TypeError) as exc:
             print(f"[seed-l0] skip {job.seed_name}: {exc}")
 
         print(f"[list] finished {job.list_scraper_cls.__name__}")
 
 
-def run_complete_scrapers() -> None:
+def run_layer_one() -> None:
     run_config = RunConfig(
         output_dir=BASE_WIKI_DIR,
         include_urls=True,
@@ -165,9 +158,7 @@ def run_complete_scrapers() -> None:
 
 
 def main() -> None:
-    # Najpierw wszystkie listy, potem komplety
-    run_list_scrapers()
-    run_complete_scrapers()
+    run_layer_zero()
 
 
 if __name__ == "__main__":
