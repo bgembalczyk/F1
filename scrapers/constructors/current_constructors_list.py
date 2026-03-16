@@ -1,9 +1,11 @@
+"""DEPRECATED ENTRYPOINT: use scrapers.constructors.entrypoint.run_list_scraper."""
+
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
+import warnings
 
 from models.records.factories import build_constructor_record
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.auto import AutoColumn
@@ -81,10 +83,14 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        CurrentConstructorsListScraper,
-        f"constructors/f1_constructors_{CURRENT_YEAR}.json",
-        f"constructors/f1_constructors_{CURRENT_YEAR}.csv",
+    from scrapers.constructors.entrypoint import run_list_scraper
+
+    warnings.warn(
+        "scrapers.constructors.current_constructors_list is deprecated as an entrypoint; use scrapers.constructors.entrypoint.run_list_scraper.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    run_list_scraper(
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,

@@ -1,9 +1,11 @@
+"""DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
+
 from pathlib import Path
+import warnings
 
 from models.records.factories import build_driver_record
 from scrapers.base.helpers.config_factory import ScraperCommonConfig
 from scrapers.base.helpers.config_factory import build_table_config
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
@@ -113,9 +115,14 @@ if __name__ == "__main__":
         help="Zapisz raporty błędów do debug_dir/errors.jsonl.",
     )
     args = parser.parse_args()
-    run_and_export(
-        F1DriversListScraper,
-        "drivers/f1_drivers.json",
+    from scrapers.drivers.entrypoint import run_list_scraper
+
+    warnings.warn(
+        "scrapers.drivers.list_scraper is deprecated; use scrapers.drivers.entrypoint.run_list_scraper.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    run_list_scraper(
         run_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
