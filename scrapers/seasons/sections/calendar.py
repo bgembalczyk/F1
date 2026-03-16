@@ -17,5 +17,5 @@ class SeasonCalendarSectionParser:
             section_id="Calendar",
             section_label="Calendar",
             records=records,
-            metadata={"season_year": self._season_year},
+            metadata={"season_year": self._season_year, "kind": "table"},
         )

@@ -16,5 +16,5 @@ class SeasonResultsSectionParser:
             section_id="Results",
             section_label="Results",
             records=records,
-            metadata={},
+            metadata={"kind": "table"},
         )

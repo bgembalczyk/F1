@@ -5,11 +5,16 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
+from scrapers.base.sections import SectionAdapter
+from scrapers.base.sections import SectionAdapterEntry
+from scrapers.constructors.sections import ConstructorChampionshipResultsSectionParser
+from scrapers.constructors.sections import ConstructorCompleteF1ResultsSectionParser
+from scrapers.constructors.sections import ConstructorHistorySectionParser
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
 
 
-class SingleConstructorScraper(WikiScraper):
+class SingleConstructorScraper(SectionAdapter, WikiScraper):
     """
     Scraper pojedynczego konstruktora - pobiera wszystkie infoboksy
     oraz wszystkie tabele z artykułu Wikipedii.
@@ -32,11 +37,33 @@ class SingleConstructorScraper(WikiScraper):
         return super().fetch()
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        section_results = self.parse_sections(
+            soup=soup,
+            domain="constructors",
+            entries=[
+                SectionAdapterEntry(
+                    section_id="History",
+                    aliases=(),
+                    parser=ConstructorHistorySectionParser(),
+                ),
+                SectionAdapterEntry(
+                    section_id="Championship_results",
+                    aliases=("Formula_One/World_Championship_results",),
+                    parser=ConstructorChampionshipResultsSectionParser(),
+                ),
+                SectionAdapterEntry(
+                    section_id="Complete_Formula_One_results",
+                    aliases=("Complete_World_Championship_results",),
+                    parser=ConstructorCompleteF1ResultsSectionParser(),
+                ),
+            ],
+        )
         return [
             {
                 "url": self.url,
                 "infoboxes": self._scrape_infoboxes(soup),
                 "tables": self._scrape_tables(soup),
+                "sections": [result.__dict__ for result in section_results],
             },
         ]
 
