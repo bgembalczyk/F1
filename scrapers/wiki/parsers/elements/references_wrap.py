@@ -3,6 +3,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.elements.text_cleaning import extract_text
 
 
 class ReferencesWrapParser(WikiParser):
@@ -20,5 +21,5 @@ class ReferencesWrapParser(WikiParser):
         Returns:
             Słownik z listą przypisów.
         """
-        refs = [li.get_text(" ", strip=True) for li in element.find_all("li")]
+        refs = [extract_text(li) or "" for li in element.find_all("li")]
         return {"references": refs}

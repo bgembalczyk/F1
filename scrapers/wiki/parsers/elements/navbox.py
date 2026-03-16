@@ -3,6 +3,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.elements.text_cleaning import extract_text
 
 
 class NavBoxParser(WikiParser):
@@ -21,9 +22,9 @@ class NavBoxParser(WikiParser):
             Słownik z tytułem navboxa i linkami.
         """
         title_tag = element.find(class_="navbox-title")
-        title = title_tag.get_text(" ", strip=True) if title_tag else None
+        title = extract_text(title_tag)
         links = [
-            {"text": a.get_text(" ", strip=True), "href": a.get("href")}
+            {"text": extract_text(a), "href": a.get("href")}
             for a in element.find_all("a")
             if a.get("href")
         ]

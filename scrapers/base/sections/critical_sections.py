@@ -15,12 +15,12 @@ DOMAIN_CRITICAL_SECTIONS: dict[str, tuple[CriticalSection, ...]] = {
             section_id="Career_results",
             alternative_section_ids=("Racing_record", "Karting_record"),
         ),
-        CriticalSection(
-            section_id="Non-championship",
-            alternative_section_ids=("Non-championship_races",),
-        ),
     ),
     "constructors": (
+        CriticalSection(
+            section_id="Constructors",
+            alternative_section_ids=("Teams", "Constructors'_Championship"),
+        ),
         CriticalSection(
             section_id="Championship_results",
             alternative_section_ids=("Formula_One/World_Championship_results",),
@@ -32,12 +32,19 @@ DOMAIN_CRITICAL_SECTIONS: dict[str, tuple[CriticalSection, ...]] = {
         CriticalSection(section_id="History", alternative_section_ids=("Team_history",)),
     ),
     "circuits": (
+        CriticalSection(
+            section_id="Circuits",
+            alternative_section_ids=("Current_circuits", "Active_circuits"),
+        ),
         CriticalSection(section_id="Layout_history", alternative_section_ids=("History",)),
         CriticalSection(section_id="Lap_records", alternative_section_ids=("Formula_One_lap_records",)),
         CriticalSection(section_id="Events", alternative_section_ids=("Races",)),
     ),
     "seasons": (
-        CriticalSection(section_id="Calendar", alternative_section_ids=("Grands_Prix",)),
+        CriticalSection(
+            section_id="Calendar",
+            alternative_section_ids=("Season_calendar", "Race_calendar", "Grands_Prix"),
+        ),
         CriticalSection(
             section_id="World_Drivers'_Championship_standings",
             alternative_section_ids=("World_Championship_of_Drivers_standings",),
@@ -45,6 +52,10 @@ DOMAIN_CRITICAL_SECTIONS: dict[str, tuple[CriticalSection, ...]] = {
         CriticalSection(
             section_id="World_Constructors'_Championship_standings",
             alternative_section_ids=("International_Cup_for_F1_Constructors_standings",),
+        ),
+        CriticalSection(
+            section_id="Non-championship",
+            alternative_section_ids=("Non-championship_races",),
         ),
     ),
     "grands_prix": (

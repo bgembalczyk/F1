@@ -3,6 +3,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.elements.text_cleaning import extract_text
 
 
 class ParagraphParser(WikiParser):
@@ -20,7 +21,7 @@ class ParagraphParser(WikiParser):
         Returns:
             Słownik z tekstem akapitu.
         """
-        return {"text": element.get_text(" ", strip=True)}
+        return {"text": extract_text(element) or ""}
 
 
 # Alias przejściowy dla kompatybilności wstecznej.
