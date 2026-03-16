@@ -17,7 +17,7 @@ class SeasonDriversStandingsSectionParser:
             section_id="World_Drivers'_Championship_standings",
             section_label="Drivers standings",
             records=records,
-            metadata={"season_year": self._season_year},
+            metadata={"season_year": self._season_year, "kind": "table"},
         )
 
 
@@ -31,5 +31,5 @@ class SeasonConstructorsStandingsSectionParser:
             section_id="World_Constructors'_Championship_standings",
             section_label="Constructors standings",
             records=records,
-            metadata={},
+            metadata={"kind": "table"},
         )
