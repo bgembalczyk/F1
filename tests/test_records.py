@@ -2,14 +2,21 @@
 from models.mappers.field_aliases import FIELD_ALIASES
 from models.mappers.field_aliases import apply_field_aliases
 from models.mappers.serialization import to_circuit_record_dict
+from models.records.circuit import CIRCUIT_DEFINITION
 from models.records.circuit import CircuitRecord
+from models.records.circuit import validate_circuit_record
 from models.records.circuit_base import CircuitBaseRecord
 from models.records.circuit_complete import CircuitCompleteRecord
 from models.records.circuit_complete import validate_circuit_complete_record
 from models.records.circuit_details import CircuitDetailsRecord
 from models.records.circuit_details import validate_circuit_details_record
+from models.records.constructor import CONSTRUCTOR_DEFINITION
+from models.records.constructor import ConstructorRecord
+from models.records.constructor import validate_constructor_record
+from models.records.driver import DRIVER_DEFINITION
 from models.records.driver import DRIVER_SCHEMA
 from models.records.driver import DriverRecord
+from models.records.driver import validate_driver_record
 from models.records.driver_championships import DriversChampionshipsRecord
 from models.records.link import LinkRecord
 from models.records.season import SEASON_SCHEMA
@@ -151,3 +158,18 @@ def test_apply_field_aliases_raises_on_conflict() -> None:
     else:
         msg = "Expected conflict error for alias mapping"
         raise AssertionError(msg)
+
+
+def test_record_definition_consistency_for_core_typeddicts() -> None:
+    metadata = (
+        (DriverRecord, DRIVER_DEFINITION, validate_driver_record),
+        (ConstructorRecord, CONSTRUCTOR_DEFINITION, validate_constructor_record),
+        (CircuitRecord, CIRCUIT_DEFINITION, validate_circuit_record),
+    )
+
+    for typed_dict, definition, validator in metadata:
+        assert definition.name
+        assert definition.to_schema().required
+        assert callable(validator)
+        assert validator({})
+        assert set(definition.required).issubset(set(typed_dict.__annotations__))

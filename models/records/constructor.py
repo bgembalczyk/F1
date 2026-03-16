@@ -3,12 +3,12 @@ from typing import TypedDict
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
+from models.records.record_definition import RecordDefinition
+from models.records.record_definition import build_validator
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.domain_validator import BaseDomainRecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
-from validation.schemas import RecordSchema
 
 
 class ConstructorRecord(TypedDict, total=False):
@@ -33,7 +33,8 @@ class ConstructorRecord(TypedDict, total=False):
     antecedent_teams: list[LinkRecord]
 
 
-CONSTRUCTOR_SCHEMA = RecordSchema(
+CONSTRUCTOR_DEFINITION = RecordDefinition(
+    name="constructor",
     required=("constructor", "engine", "based_in", "seasons", "antecedent_teams"),
     types={
         "constructor": dict,
@@ -51,6 +52,9 @@ CONSTRUCTOR_SCHEMA = RecordSchema(
     },
 )
 
+CONSTRUCTOR_SCHEMA = CONSTRUCTOR_DEFINITION.to_schema()
+_CONSTRUCTOR_VALIDATOR = build_validator(CONSTRUCTOR_DEFINITION)
+
 
 def validate_constructor_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(record, CONSTRUCTOR_SCHEMA)
+    return _CONSTRUCTOR_VALIDATOR(record)
