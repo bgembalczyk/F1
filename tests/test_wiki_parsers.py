@@ -335,7 +335,8 @@ def test_wiki_element_parser_mixin_rules_priority_overlapping_table_classes() ->
     from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
 
     result = parser._parse_element(
-        soup.find("table"), section_context=SectionExtractionContext()
+        soup.find("table"),
+        section_context=SectionExtractionContext(),
     )
 
     assert result is not None
@@ -361,7 +362,8 @@ def test_wiki_element_parser_mixin_register_parser_rule_allows_domain_extensions
     from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
 
     result = parser._parse_element(
-        blockquote, section_context=SectionExtractionContext()
+        blockquote,
+        section_context=SectionExtractionContext(),
     )
 
     assert result["kind"] == "domain_blockquote"

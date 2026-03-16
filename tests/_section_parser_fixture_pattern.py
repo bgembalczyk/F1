@@ -21,7 +21,14 @@ class SectionContractFixture:
     expected_metadata: dict[str, Any]
 
 
-def _content_text_fixture(*, h2_id: str, h2_text: str, h3_id: str, h3_text: str, body_html: str) -> str:
+def _content_text_fixture(
+    *,
+    h2_id: str,
+    h2_text: str,
+    h3_id: str,
+    h3_text: str,
+    body_html: str,
+) -> str:
     return f"""
     <div id=\"mw-content-text\" class=\"mw-body-content\">
       <p>Intro</p>
@@ -177,10 +184,17 @@ SNAPSHOT_CASES_BY_DOMAIN: dict[str, tuple[SectionFixture, SectionFixture]] = {
 
 
 def iter_snapshot_cases() -> list[SectionFixture]:
-    return [fixture for fixtures in SNAPSHOT_CASES_BY_DOMAIN.values() for fixture in fixtures]
+    return [
+        fixture
+        for fixtures in SNAPSHOT_CASES_BY_DOMAIN.values()
+        for fixture in fixtures
+    ]
 
 
-def assert_section_contract_template(result: Any, fixture: SectionContractFixture) -> None:
+def assert_section_contract_template(
+    result: Any,
+    fixture: SectionContractFixture,
+) -> None:
     assert result.records == fixture.expected_records
     for key, expected_value in fixture.expected_metadata.items():
         assert result.metadata[key] == expected_value
@@ -190,8 +204,10 @@ SECTION_MODULES_REQUIRING_DOD: tuple[str, ...] = tuple(
     sorted(
         str(path).replace("\\", "/")
         for path in Path("scrapers").glob("*/sections/*.py")
-        if path.name != "__init__.py" and path.parts[1] in {"drivers", "constructors", "circuits", "seasons", "grands_prix"}
-    )
+        if path.name != "__init__.py"
+        and path.parts[1]
+        in {"drivers", "constructors", "circuits", "seasons", "grands_prix"}
+    ),
 )
 
 SNAPSHOT_COVERED_SECTION_MODULES: tuple[str, ...] = (

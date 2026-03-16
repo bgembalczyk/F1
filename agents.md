@@ -26,4 +26,3 @@ to **najpierw** sprawdź i oprzyj się głównie na plikach:
 ## Zasada dla poprawek po review
 - Nie modyfikuj plików `*.json` przy poprawkach po komentarzach do PR.
 - Zmiany wprowadzaj wyłącznie w plikach Python (`*.py`) oraz dokumentacji (`docs/`, `agents.md`).
-

@@ -16,7 +16,6 @@ from scrapers.base.table.columns.types.engine import EngineColumn
 from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
@@ -65,7 +64,10 @@ class DriverResultsSectionParser:
             metadata={"parser": self.__class__.__name__},
         )
 
-    def _parse_results_table_data(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
+    def _parse_results_table_data(
+        self,
+        table_data: dict[str, Any],
+    ) -> dict[str, Any] | None:
         headers = table_data["headers"]
         if not headers:
             return None
@@ -128,37 +130,91 @@ class DriverResultsSectionParser:
         )
         return self._parse_table(table, self._build_pipeline(schema=schema))
 
-    def _parse_complete_results(self, table: Tag, headers: list[str]) -> list[dict[str, Any]]:
+    def _parse_complete_results(
+        self,
+        table: Tag,
+        headers: list[str],
+    ) -> list[dict[str, Any]]:
         column_map = {
-            "Year": "year", "Team": "team", "Co-Drivers": "co_drivers", "Co-drivers": "co_drivers",
-            "Car": "car", "Class": "class", "Laps": "laps", "Pos.": "pos", "Pos": "pos",
-            "Class Pos.": "class_pos", "Class Pos": "class_pos", "Entrant": "entrant", "Chassis": "chassis",
-            "Engine": "engine", "WDC": "wdc", "Points": "points", "Rank": "rank", "DC": "dc",
-            "Qualifying": "qualifying", "Quali Race": "quali_race", "Main race": "main_race", "Tyres": "tyres",
-            "No.": "no", "No": "no", "Start": "start", "Finish": "finish", "Stages won": "stages_won",
-            "Pts": "points", "Pts.": "points", "Ref": "ref", "Make": "make", "Manufacturer": "manufacturer",
-            "NGNC": "ngnc", "QH": "qh", "F": "f",
+            "Year": "year",
+            "Team": "team",
+            "Co-Drivers": "co_drivers",
+            "Co-drivers": "co_drivers",
+            "Car": "car",
+            "Class": "class",
+            "Laps": "laps",
+            "Pos.": "pos",
+            "Pos": "pos",
+            "Class Pos.": "class_pos",
+            "Class Pos": "class_pos",
+            "Entrant": "entrant",
+            "Chassis": "chassis",
+            "Engine": "engine",
+            "WDC": "wdc",
+            "Points": "points",
+            "Rank": "rank",
+            "DC": "dc",
+            "Qualifying": "qualifying",
+            "Quali Race": "quali_race",
+            "Main race": "main_race",
+            "Tyres": "tyres",
+            "No.": "no",
+            "No": "no",
+            "Start": "start",
+            "Finish": "finish",
+            "Stages won": "stages_won",
+            "Pts": "points",
+            "Pts.": "points",
+            "Ref": "ref",
+            "Make": "make",
+            "Manufacturer": "manufacturer",
+            "NGNC": "ngnc",
+            "QH": "qh",
+            "F": "f",
         }
         columns: dict[str, Any] = {
-            "year": self._unknown(AutoColumn()), "team": self._unknown(EntrantColumn()),
-            "co_drivers": self._unknown(DriverListColumn()), "car": self._unknown(AutoColumn()),
-            "class": self._unknown(AutoColumn()), "laps": self._unknown(IntColumn()),
-            "pos": self._unknown(PositionColumn()), "class_pos": self._unknown(PositionColumn()),
+            "year": self._unknown(AutoColumn()),
+            "team": self._unknown(EntrantColumn()),
+            "co_drivers": self._unknown(DriverListColumn()),
+            "car": self._unknown(AutoColumn()),
+            "class": self._unknown(AutoColumn()),
+            "laps": self._unknown(IntColumn()),
+            "pos": self._unknown(PositionColumn()),
+            "class_pos": self._unknown(PositionColumn()),
             "entrant": self._unknown(EntrantColumn()),
             "chassis": self._unknown(LinksListColumn(text_for_missing_url=True)),
-            "engine": self._unknown(EngineColumn()), "wdc": self._unknown(PositionColumn()),
-            "points": self._unknown(PointsOrTextColumn()), "rank": self._unknown(PositionColumn()),
-            "dc": self._unknown(PositionColumn()), "qualifying": self._unknown(PositionColumn()),
-            "quali_race": self._unknown(PositionColumn()), "main_race": self._unknown(PositionColumn()),
-            "tyres": self._unknown(TyreColumn()), "no": self._unknown(IntColumn()), "start": self._unknown(PositionColumn()),
-            "finish": self._unknown(PositionColumn()), "stages_won": self._unknown(IntColumn()),
-            "make": self._unknown(ConstructorColumn()), "manufacturer": self._unknown(ConstructorColumn()),
-            "ngnc": self._unknown(PositionColumn()), "qh": self._unknown(PositionColumn()), "f": self._unknown(PositionColumn()),
+            "engine": self._unknown(EngineColumn()),
+            "wdc": self._unknown(PositionColumn()),
+            "points": self._unknown(PointsOrTextColumn()),
+            "rank": self._unknown(PositionColumn()),
+            "dc": self._unknown(PositionColumn()),
+            "qualifying": self._unknown(PositionColumn()),
+            "quali_race": self._unknown(PositionColumn()),
+            "main_race": self._unknown(PositionColumn()),
+            "tyres": self._unknown(TyreColumn()),
+            "no": self._unknown(IntColumn()),
+            "start": self._unknown(PositionColumn()),
+            "finish": self._unknown(PositionColumn()),
+            "stages_won": self._unknown(IntColumn()),
+            "make": self._unknown(ConstructorColumn()),
+            "manufacturer": self._unknown(ConstructorColumn()),
+            "ngnc": self._unknown(PositionColumn()),
+            "qh": self._unknown(PositionColumn()),
+            "f": self._unknown(PositionColumn()),
             "ref": SkipColumn(),
         }
-        schema_columns = [column(header, key, columns[key]) for header, key in column_map.items()]
-        schema_columns.extend(column(header, header, self._unknown(RoundColumn())) for header in headers if header.isdigit())
-        return self._parse_table(table, self._build_pipeline(schema=TableSchemaDSL(columns=schema_columns)))
+        schema_columns = [
+            column(header, key, columns[key]) for header, key in column_map.items()
+        ]
+        schema_columns.extend(
+            column(header, header, self._unknown(RoundColumn()))
+            for header in headers
+            if header.isdigit()
+        )
+        return self._parse_table(
+            table,
+            self._build_pipeline(schema=TableSchemaDSL(columns=schema_columns)),
+        )
 
     def _parse_table(self, table: Tag, pipeline: TablePipeline) -> list[dict[str, Any]]:
         return TableParsingHelper.parse_table_with_pipeline(table, pipeline)

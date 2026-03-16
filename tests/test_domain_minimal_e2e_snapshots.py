@@ -4,8 +4,8 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-from bs4 import BeautifulSoup
 import pytest
+from bs4 import BeautifulSoup
 
 from scrapers.base.post_processors import CommonMetadataPostProcessor
 from scrapers.base.post_processors import apply_post_processors
@@ -25,7 +25,9 @@ def test_domain_minimal_e2e_snapshot_contract(domain: str) -> None:
 
     table_link = soup.select_one("table.wikitable a")
     assert table_link is not None
-    seed_input = [{"name": table_link.get_text(strip=True), "link": table_link.get("href")}]
+    seed_input = [
+        {"name": table_link.get_text(strip=True), "link": table_link.get("href")},
+    ]
 
     seed_records = [
         {
@@ -33,7 +35,7 @@ def test_domain_minimal_e2e_snapshot_contract(domain: str) -> None:
             "link": seed_input[0]["link"],
             "source_url": f"https://example.test/{domain}",
             "scraped_at": SCRAPED_AT.isoformat(),
-        }
+        },
     ]
 
     content = soup.find("div", id="mw-content-text")

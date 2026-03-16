@@ -4,8 +4,8 @@ from collections.abc import MutableMapping
 from dataclasses import dataclass
 from dataclasses import field
 from dataclasses import fields
-from typing import Protocol
 from typing import Any
+from typing import Protocol
 
 
 class RecordContract(Protocol):

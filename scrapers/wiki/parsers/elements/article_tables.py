@@ -86,7 +86,8 @@ class ArticleTablesParser(WikiParser):
         return {"table_type": "wiki_table"}
 
     def _parse_with_html_table_parser(
-        self, table: Tag
+        self,
+        table: Tag,
     ) -> tuple[list[str], list[dict[str, str]]]:
         try:
             rows = self._html_table_parser.parse_table(table)
@@ -107,7 +108,8 @@ class ArticleTablesParser(WikiParser):
         return normalized_headers, parsed_rows
 
     def _parse_with_legacy_parser(
-        self, table: Tag
+        self,
+        table: Tag,
     ) -> tuple[list[str], list[dict[str, str]]]:
         raw = self._table_parser.parse(table)
         headers = self._normalize_headers(raw.get("headers", []))

@@ -27,4 +27,3 @@ class ConstructorsListSectionParser:
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         return self._parser.parse(section_fragment)
-

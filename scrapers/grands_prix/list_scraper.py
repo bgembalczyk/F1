@@ -1,7 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.grands_prix.entrypoint.run_list_scraper."""
 
-from pathlib import Path
 import warnings
+from pathlib import Path
 
 from models.records.factories import build_grands_prix_record
 from scrapers.base.helpers.config_factory import ScraperCommonConfig

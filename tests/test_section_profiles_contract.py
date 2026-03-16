@@ -38,8 +38,8 @@ def test_section_profile_aliases_resolve_canonical_heading_in_tree_adapter() -> 
                 "section_id": "rule_changes",
                 "elements": [],
                 "sub_sections": [],
-            }
-        ]
+            },
+        ],
     }
 
     section = find_section_tree(article, "Regulation_changes", domain="seasons")

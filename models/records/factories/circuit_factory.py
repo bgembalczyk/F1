@@ -1,5 +1,6 @@
 from collections.abc import Mapping
-from typing import Any, cast
+from typing import Any
+from typing import cast
 
 from models.records.base_factory import BaseRecordFactory
 from models.records.circuit import CircuitRecord
@@ -15,7 +16,10 @@ class CircuitRecordFactory(BaseRecordFactory):
             ["current", "future", "former"],
             "circuit_status",
         )
-        self.normalize_float_fields(payload, ["last_length_used_km", "last_length_used_mi"])
+        self.normalize_float_fields(
+            payload,
+            ["last_length_used_km", "last_length_used_mi"],
+        )
         self.normalize_int_fields(payload, ["turns", "grands_prix_held"])
         self.normalize_link_list_fields(payload, ["grands_prix"])
         self.normalize_seasons_fields(payload, ["seasons"])

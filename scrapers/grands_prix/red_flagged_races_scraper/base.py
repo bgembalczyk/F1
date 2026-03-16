@@ -91,7 +91,6 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         ]
         super().__init__(options=options, config=config)
 
-
     def _resolved_alternative_section_ids(self) -> list[str]:
         if self.section_id is None:
             return []

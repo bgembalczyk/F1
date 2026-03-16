@@ -3,9 +3,6 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.html_utils import DOMAIN_SECTION_ALIASES
-from scrapers.wiki.parsers.body_content import BodyContentParser
-from scrapers.wiki.parsers.section_adapter import collect_section_elements
-from scrapers.wiki.parsers.section_adapter import find_section_tree
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
@@ -15,6 +12,9 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.wiki.parsers.body_content import BodyContentParser
+from scrapers.wiki.parsers.section_adapter import collect_section_elements
+from scrapers.wiki.parsers.section_adapter import find_section_tree
 
 
 class SeasonResultsParser:
@@ -77,7 +77,12 @@ class SeasonResultsParser:
         body_content = BodyContentParser().parse(body)
         article = body_content.get("content_text") or {}
         aliases = DOMAIN_SECTION_ALIASES.get("seasons", {}).get("results", set())
-        target_section = find_section_tree(article, "Results", aliases, domain="seasons")
+        target_section = find_section_tree(
+            article,
+            "Results",
+            aliases,
+            domain="seasons",
+        )
         if not target_section:
             return []
 

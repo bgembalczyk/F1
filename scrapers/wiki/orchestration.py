@@ -20,12 +20,22 @@ from scrapers.wiki.seed_registry import SeedRegistryEntry
 
 class LayerJobRunner(ABC):
     @abstractmethod
-    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
+    def run(
+        self,
+        seed: SeedRegistryEntry,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+    ) -> None:
         """Execute layer-one job for given seed."""
 
 
 class GrandPrixRunner(LayerJobRunner):
-    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
+    def run(
+        self,
+        seed: SeedRegistryEntry,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+    ) -> None:
         run_and_export(
             F1CompleteGrandPrixDataExtractor,
             seed.default_output_path,
@@ -34,7 +44,12 @@ class GrandPrixRunner(LayerJobRunner):
 
 
 class CircuitsRunner(LayerJobRunner):
-    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
+    def run(
+        self,
+        seed: SeedRegistryEntry,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+    ) -> None:
         export_complete_circuits(
             output_dir=base_wiki_dir / seed.default_output_path,
             include_urls=run_config.include_urls,
@@ -42,7 +57,12 @@ class CircuitsRunner(LayerJobRunner):
 
 
 class DriversRunner(LayerJobRunner):
-    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
+    def run(
+        self,
+        seed: SeedRegistryEntry,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+    ) -> None:
         export_complete_drivers(
             output_dir=base_wiki_dir / seed.default_output_path,
             include_urls=run_config.include_urls,
@@ -50,7 +70,12 @@ class DriversRunner(LayerJobRunner):
 
 
 class SeasonsRunner(LayerJobRunner):
-    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
+    def run(
+        self,
+        seed: SeedRegistryEntry,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+    ) -> None:
         export_complete_seasons(
             output_dir=base_wiki_dir / seed.default_output_path,
             include_urls=run_config.include_urls,
@@ -58,7 +83,12 @@ class SeasonsRunner(LayerJobRunner):
 
 
 class ConstructorsRunner(LayerJobRunner):
-    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
+    def run(
+        self,
+        seed: SeedRegistryEntry,
+        run_config: RunConfig,
+        base_wiki_dir: Path,
+    ) -> None:
         export_complete_constructors(
             output_dir=base_wiki_dir / seed.default_output_path,
             include_urls=run_config.include_urls,

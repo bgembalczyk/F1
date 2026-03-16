@@ -27,7 +27,10 @@ def test_parse_section_or_fallback_raises_with_unified_context(monkeypatch):
         staticmethod(lambda soup, section_id, *, domain=None: None),
     )
 
-    with pytest.raises(RuntimeError, match="domain='constructors', section_label='Current constructors'"):
+    with pytest.raises(
+        RuntimeError,
+        match="domain='constructors', section_label='Current constructors'",
+    ):
         scraper.parse_section_or_fallback(
             object(),
             domain="constructors",

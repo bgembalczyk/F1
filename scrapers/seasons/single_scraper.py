@@ -19,6 +19,11 @@ from scrapers.seasons.parsers.regional_championship import (
     SeasonRegionalChampionshipParser,
 )
 from scrapers.seasons.parsers.results import SeasonResultsParser
+from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
+from scrapers.seasons.parsers.standings import SeasonStandingsParser
+from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
+from scrapers.seasons.postprocess import SeasonSectionContractPostProcessor
 from scrapers.seasons.sections.calendar import SeasonCalendarSectionParser
 from scrapers.seasons.sections.mid_season_changes import (
     SeasonMidSeasonChangesSectionParser,
@@ -30,12 +35,7 @@ from scrapers.seasons.sections.results import SeasonResultsSectionParser
 from scrapers.seasons.sections.standings import SeasonConstructorsStandingsSectionParser
 from scrapers.seasons.sections.standings import SeasonDriversStandingsSectionParser
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
-from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
-from scrapers.seasons.parsers.standings import SeasonStandingsParser
-from scrapers.seasons.parsers.table import SeasonTableParser
-from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
 from scrapers.wiki.scraper import WikiScraper
-from scrapers.seasons.postprocess import SeasonSectionContractPostProcessor
 
 
 class SingleSeasonScraper(SectionAdapter, WikiScraper):
@@ -91,22 +91,47 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         # Parse calendar first, as cancelled_rounds may need it for comparison
-        calendar_data = SeasonCalendarSectionParser(self._calendar_parser, self.season_year).parse(soup).records
-        results_data = SeasonResultsSectionParser(self._results_parser).parse(soup).records
-        drivers_standings = SeasonDriversStandingsSectionParser(self._standings_parser, self.season_year).parse(soup).records
-        constructors_standings = SeasonConstructorsStandingsSectionParser(self._standings_parser).parse(soup).records
+        calendar_data = (
+            SeasonCalendarSectionParser(self._calendar_parser, self.season_year)
+            .parse(soup)
+            .records
+        )
+        results_data = (
+            SeasonResultsSectionParser(self._results_parser).parse(soup).records
+        )
+        drivers_standings = (
+            SeasonDriversStandingsSectionParser(
+                self._standings_parser,
+                self.season_year,
+            )
+            .parse(soup)
+            .records
+        )
+        constructors_standings = (
+            SeasonConstructorsStandingsSectionParser(self._standings_parser)
+            .parse(soup)
+            .records
+        )
         text_sections = self.parse_sections(
             soup=soup,
             domain="seasons",
             entries=[
                 SectionAdapterEntry(
                     section_id="Regulation_changes",
-                    aliases=profile_entry_aliases("seasons", "Regulation_changes", "Rule_changes"),
+                    aliases=profile_entry_aliases(
+                        "seasons",
+                        "Regulation_changes",
+                        "Rule_changes",
+                    ),
                     parser=SeasonRegulationChangesSectionParser(),
                 ),
                 SectionAdapterEntry(
                     section_id="Mid-season_changes",
-                    aliases=profile_entry_aliases("seasons", "Mid-season_changes", "Driver_changes"),
+                    aliases=profile_entry_aliases(
+                        "seasons",
+                        "Mid-season_changes",
+                        "Driver_changes",
+                    ),
                     parser=SeasonMidSeasonChangesSectionParser(),
                 ),
             ],

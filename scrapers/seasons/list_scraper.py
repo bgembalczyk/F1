@@ -1,7 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.seasons.entrypoint.run_list_scraper."""
 
-from pathlib import Path
 import warnings
+from pathlib import Path
 
 from models.records.factories import build_season_summary_record
 from scrapers.base.run_config import RunConfig

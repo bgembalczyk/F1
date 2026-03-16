@@ -13,6 +13,7 @@ from scrapers.wiki.parsers.section_detection import find_section_heading
 _HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
 _HEADING_AND_TABLE_TAGS = [*list(_HEADING_TAGS), "table"]
 
+
 def find_section_elements(
     soup: BeautifulSoup,
     section_id: str | None,

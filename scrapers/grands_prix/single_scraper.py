@@ -11,9 +11,9 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
 from scrapers.base.sections.critical_sections import resolve_section_candidates
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
+from scrapers.grands_prix.postprocess import GrandPrixSectionContractPostProcessor
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 from scrapers.wiki.scraper import WikiScraper
-from scrapers.grands_prix.postprocess import GrandPrixSectionContractPostProcessor
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -32,9 +32,17 @@ class F1SingleGrandPrixScraper(WikipediaSectionByIdMixin, WikiScraper):
         self.url = url
         return super().fetch()
 
-    def _try_parse_section(self, soup: BeautifulSoup, section_id: str) -> list[dict[str, Any]] | None:
+    def _try_parse_section(
+        self,
+        soup: BeautifulSoup,
+        section_id: str,
+    ) -> list[dict[str, Any]] | None:
         try:
-            section_fragment = self.extract_section_by_id(soup, section_id, domain="grands_prix")
+            section_fragment = self.extract_section_by_id(
+                soup,
+                section_id,
+                domain="grands_prix",
+            )
             if section_fragment is None:
                 raise RuntimeError(f"Missing section: {section_id}")
             parser = GrandPrixByYearSectionParser(
@@ -43,7 +51,9 @@ class F1SingleGrandPrixScraper(WikipediaSectionByIdMixin, WikiScraper):
                 normalize_empty_values=self.normalize_empty_values,
             )
             result = parser.parse(section_fragment)
-            return [{"url": self.url, "by_year": result.records, "section_id": section_id}]
+            return [
+                {"url": self.url, "by_year": result.records, "section_id": section_id},
+            ]
         except Exception as exc:
             if isinstance(exc, RuntimeError):
                 error: Exception = DomainParseError(
@@ -52,7 +62,11 @@ class F1SingleGrandPrixScraper(WikipediaSectionByIdMixin, WikiScraper):
                     cause=exc,
                 )
             else:
-                error = exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+                error = (
+                    exc
+                    if isinstance(exc, ScraperError)
+                    else self._wrap_parse_error(exc)
+                )
             if self._handle_scraper_error(error):
                 return None
             if error is exc:

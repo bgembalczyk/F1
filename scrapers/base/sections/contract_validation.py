@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import Any
 
-
 SECTION_RESULT_KEYS = ("section_id", "section_label", "records", "metadata")
 
 
@@ -29,4 +28,3 @@ def validate_section_result_payload(payload: dict[str, Any]) -> None:
 def validate_section_payloads(payloads: list[dict[str, Any]]) -> None:
     for payload in payloads:
         validate_section_result_payload(payload)
-

@@ -15,7 +15,6 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 
-
 @dataclass(frozen=True)
 class _OrchestrationPaths:
     base_dir: Path
@@ -34,8 +33,6 @@ class _OrchestrationPaths:
 
     def checkpoint_file(self, filename: str) -> Path:
         return self.checkpoints / filename
-
-
 
 
 @dataclass(frozen=True)
@@ -240,7 +237,7 @@ class StepAuditTrail:
                 "| "
                 f"{step_id} | {layer} | {domain} | {data['runs']} | "
                 f"{data['input_records']} | {data['output_records']} | "
-                f"{data['errors']} | {data['duration_ms']:.3f} |"
+                f"{data['errors']} | {data['duration_ms']:.3f} |",
             )
 
         report_path.parent.mkdir(parents=True, exist_ok=True)

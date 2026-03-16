@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Callable
+from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
 
@@ -8,9 +10,6 @@ from scrapers.base.orchestration import StepDeclaration
 from scrapers.base.orchestration import StepOrchestrator
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
-
-from collections.abc import Callable
-from collections.abc import Iterable
 
 DetailFetcher = Callable[[str], dict[str, Any]]
 
@@ -57,7 +56,8 @@ class SeedSectionOrchestrationFlow:
             step_id=0,
             layer="layer0",
             input_source=domain,
-            parser=lambda rows, item_key=self._seed_item_key(domain): self._parse_seed_urls(
+            parser=lambda rows,
+            item_key=self._seed_item_key(domain): self._parse_seed_urls(
                 rows,
                 item_key,
             ),
@@ -69,7 +69,10 @@ class SeedSectionOrchestrationFlow:
             step_id=1,
             layer="layer1",
             input_source=f"step_0_layer0_{domain}",
-            parser=lambda rows, current_domain=domain: self._parse_sections(rows, current_domain),
+            parser=lambda rows, current_domain=domain: self._parse_sections(
+                rows,
+                current_domain,
+            ),
             output_target="checkpoints",
         )
         self.orchestrator.run(step1, domain)
@@ -116,7 +119,6 @@ class SeedSectionOrchestrationFlow:
                 continue
             output.append(self._ensure_fetcher_contract(fetcher(url), url))
         return output
-
 
     @staticmethod
     def _ensure_fetcher_contract(record: dict[str, Any], url: str) -> dict[str, Any]:

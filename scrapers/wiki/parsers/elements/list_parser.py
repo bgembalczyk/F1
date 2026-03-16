@@ -22,7 +22,6 @@ class ListParser(WikiParser):
             Słownik z listą elementów.
         """
         items = [
-            extract_text(li) or ""
-            for li in element.find_all("li", recursive=False)
+            extract_text(li) or "" for li in element.find_all("li", recursive=False)
         ]
         return {"items": items}

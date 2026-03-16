@@ -1,9 +1,12 @@
 from collections.abc import Mapping
-from typing import Any, cast
+from typing import Any
+from typing import cast
 
 from models.records.base_factory import BaseRecordFactory
 from models.records.event import EventRecord
-from models.records.factories.helpers import normalize_optional_link_list_or_link_or_string
+from models.records.factories.helpers import (
+    normalize_optional_link_list_or_link_or_string,
+)
 
 
 class EventRecordFactory(BaseRecordFactory):
@@ -14,5 +17,7 @@ class EventRecordFactory(BaseRecordFactory):
             payload.get("event"),
             "event",
         )
-        payload["championship"] = self.normalizer.normalize_bool(payload.get("championship"))
+        payload["championship"] = self.normalizer.normalize_bool(
+            payload.get("championship"),
+        )
         return cast("EventRecord", payload)

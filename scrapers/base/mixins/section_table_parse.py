@@ -41,7 +41,10 @@ class SectionTableParseMixin:
             domain=domain,
         )
         if section_fragment is None:
-            context = self._diagnostic_context(domain=domain, section_label=section_label)
+            context = self._diagnostic_context(
+                domain=domain,
+                section_label=section_label,
+            )
             msg = f"Nie znaleziono sekcji o id={section_id!r} ({context})"
             raise RuntimeError(msg)
 

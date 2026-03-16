@@ -34,7 +34,10 @@ class FieldNormalizer:
 
     @staticmethod
     def normalize_link(value: Any, field_name: str) -> LinkRecord | None:
-        return cast("LinkRecord | None", normalize_link_item(value, field_name=field_name))
+        return cast(
+            "LinkRecord | None",
+            normalize_link_item(value, field_name=field_name),
+        )
 
     @staticmethod
     def normalize_link_list(value: Any, field_name: str) -> list[LinkRecord]:

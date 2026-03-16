@@ -12,10 +12,10 @@ from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
+from scrapers.circuits.postprocess import CircuitSectionContractPostProcessor
 from scrapers.circuits.sections import circuit_section_entries
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
-from scrapers.circuits.postprocess import CircuitSectionContractPostProcessor
 
 
 class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper):
@@ -132,7 +132,8 @@ class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScra
             headers = table_data["headers"]
             table_type = table_data.get("table_type")
             if table_type != "lap_records" and not is_lap_record_table(
-                headers, lap_scraper
+                headers,
+                lap_scraper,
             ):
                 continue
 

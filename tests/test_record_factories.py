@@ -5,11 +5,10 @@ from models.records.factories import build_constructor_record
 from models.records.factories import build_driver_record
 from models.records.factories import build_fatality_record
 from models.records.factories import build_grands_prix_record
+from models.records.factories import build_record
 from models.records.factories import build_season_record
 from models.records.factories import build_season_summary_record
 from models.records.factories import build_special_driver_record
-from models.records.factories import build_record
-
 
 
 def test_build_season_record_adds_url() -> None:

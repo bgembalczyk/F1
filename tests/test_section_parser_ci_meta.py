@@ -31,6 +31,7 @@ def test_ci_meta_requires_snapshot_and_contract_for_all_section_modules() -> Non
     assert SNAPSHOT_COVERED_SECTION_MODULES == SECTION_MODULES_REQUIRING_DOD
     assert CONTRACT_COVERED_SECTION_MODULES == SECTION_MODULES_REQUIRING_DOD
 
+
 def test_ci_meta_requires_sections_boundary_regression_suite() -> None:
     boundary_test_file = Path("tests/test_section_architecture_boundaries.py")
     source = boundary_test_file.read_text(encoding="utf-8")

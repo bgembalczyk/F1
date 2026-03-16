@@ -48,7 +48,9 @@ def test_list_job_registry_entry_serialization() -> None:
 def test_wiki_list_job_registry_contains_expected_layer_zero_jobs() -> None:
     jobs_by_seed = {entry.seed_name: entry for entry in WIKI_LIST_JOB_REGISTRY}
 
-    assert jobs_by_seed["seasons"].json_output_path == "raw/seasons/list/f1_seasons.json"
+    assert (
+        jobs_by_seed["seasons"].json_output_path == "raw/seasons/list/f1_seasons.json"
+    )
     assert (
         jobs_by_seed["grands_prix_by_title"].json_output_path
         == "raw/grands_prix/list/f1_grands_prix_by_title.json"
@@ -66,5 +68,8 @@ def test_wiki_list_job_registry_contains_expected_layer_zero_jobs() -> None:
     assert jobs_by_seed["sponsorship_liveries"].output_category == "teams"
     assert jobs_by_seed["constructors_privateer"].output_category == "teams"
     assert jobs_by_seed["constructors_former"].output_category == "chassis_constructors"
-    assert jobs_by_seed["constructors_indianapolis_only"].output_category == "chassis_constructors"
+    assert (
+        jobs_by_seed["constructors_indianapolis_only"].output_category
+        == "chassis_constructors"
+    )
     assert jobs_by_seed["tyres"].output_category == "seasons"

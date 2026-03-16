@@ -1,9 +1,9 @@
 """DEPRECATED ENTRYPOINT: use scrapers.constructors.entrypoint.run_list_scraper."""
 
+import warnings
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
-import warnings
 
 from models.records.factories import build_constructor_record
 from scrapers.base.run_config import RunConfig

@@ -6,10 +6,10 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.constructors.postprocess import ConstructorSectionContractPostProcessor
 from scrapers.constructors.sections import constructor_section_entries
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
-from scrapers.constructors.postprocess import ConstructorSectionContractPostProcessor
 
 
 class SingleConstructorScraper(SectionAdapter, WikiScraper):

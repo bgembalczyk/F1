@@ -20,7 +20,9 @@ CONTRACT_REGISTRY: tuple[type[RecordContract], ...] = (
 def resolve_record_contract(
     record: Mapping[str, Any],
 ) -> type[RecordContract] | None:
-    matches = [contract for contract in CONTRACT_REGISTRY if contract.can_handle(record)]
+    matches = [
+        contract for contract in CONTRACT_REGISTRY if contract.can_handle(record)
+    ]
     if not matches:
         return None
 

@@ -4,7 +4,9 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.list_scraper import CircuitsListScraper
-from scrapers.constructors.current_constructors_list import CurrentConstructorsListScraper
+from scrapers.constructors.current_constructors_list import (
+    CurrentConstructorsListScraper,
+)
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
 from scrapers.seasons.parsers.results import SeasonResultsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
@@ -87,7 +89,7 @@ def test_seasons_results_parser_handles_results_and_standings_alias() -> None:
             options=ScraperOptions(),
             include_urls=True,
             url="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
-        )
+        ),
     )
 
     rows = parser.parse(soup)

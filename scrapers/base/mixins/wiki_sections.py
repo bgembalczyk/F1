@@ -65,7 +65,7 @@ class WikipediaSectionByIdMixin:
                 )
                 if same_level_header_tag is not None and header_level is not None:
                     sib_level = WikipediaSectionByIdMixin._get_header_level(
-                        same_level_header_tag
+                        same_level_header_tag,
                     )
                     if sib_level == header_level:
                         break

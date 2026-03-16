@@ -1,15 +1,22 @@
 from collections.abc import Mapping
-from typing import Any, cast
+from typing import Any
+from typing import cast
 
 from models.mappers.field_aliases import FIELD_ALIASES
 from models.records.base_factory import BaseRecordFactory
 from models.records.constructor import ConstructorRecord
-from models.records.factories.helpers import normalize_optional_link_list_or_link_or_string
+from models.records.factories.helpers import (
+    normalize_optional_link_list_or_link_or_string,
+)
 
 
 class ConstructorRecordFactory(BaseRecordFactory):
     def build(self, record: Mapping[str, Any]) -> ConstructorRecord:
-        payload = self.apply_aliases(record, FIELD_ALIASES["constructor"], "constructor")
+        payload = self.apply_aliases(
+            record,
+            FIELD_ALIASES["constructor"],
+            "constructor",
+        )
         self.normalize_link_fields(payload, ["constructor"])
         self.normalize_link_list_fields(
             payload,

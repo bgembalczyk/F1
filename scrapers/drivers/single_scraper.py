@@ -8,12 +8,12 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.drivers.infobox.scraper import DriverInfoboxParser
+from scrapers.drivers.postprocess import DriverSectionContractPostProcessor
 from scrapers.drivers.sections import DriverCareerSectionParser
 from scrapers.drivers.sections import DriverNonChampionshipSectionParser
 from scrapers.drivers.sections import DriverRacingRecordSectionParser
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 from scrapers.wiki.scraper import WikiScraper
-from scrapers.drivers.postprocess import DriverSectionContractPostProcessor
 
 
 class SingleDriverScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper):
@@ -67,17 +67,29 @@ class SingleDriverScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper
             entries=[
                 SectionAdapterEntry(
                     section_id="Career_results",
-                    aliases=profile_entry_aliases("drivers", "Career_results", "Karting_record"),
+                    aliases=profile_entry_aliases(
+                        "drivers",
+                        "Career_results",
+                        "Karting_record",
+                    ),
                     parser=DriverCareerSectionParser(parser=raw_parser),
                 ),
                 SectionAdapterEntry(
                     section_id="Racing_record",
-                    aliases=profile_entry_aliases("drivers", "Racing_record", "Motorsport_career_results"),
+                    aliases=profile_entry_aliases(
+                        "drivers",
+                        "Racing_record",
+                        "Motorsport_career_results",
+                    ),
                     parser=DriverRacingRecordSectionParser(parser=raw_parser),
                 ),
                 SectionAdapterEntry(
                     section_id="Non-championship",
-                    aliases=profile_entry_aliases("drivers", "Non-championship", "Non-championship_races"),
+                    aliases=profile_entry_aliases(
+                        "drivers",
+                        "Non-championship",
+                        "Non-championship_races",
+                    ),
                     parser=DriverNonChampionshipSectionParser(parser=raw_parser),
                 ),
             ],

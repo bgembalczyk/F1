@@ -31,11 +31,19 @@ def test_critical_section_alias_snapshots_cover_all_target_domains() -> None:
                 soup,
                 critical.section_id,
                 aliases={
-                    critical.section_id.lower().replace("_", " "): set(profile_entry_aliases(domain, critical.section_id, *critical.alternative_section_ids))
+                    critical.section_id.lower().replace("_", " "): set(
+                        profile_entry_aliases(
+                            domain,
+                            critical.section_id,
+                            *critical.alternative_section_ids,
+                        ),
+                    ),
                 },
                 domain=domain,
             )
             if match is not None:
                 matched += 1
 
-        assert matched >= 1, f"No critical alias resolved for domain={domain} fixture={fixture_name}"
+        assert (
+            matched >= 1
+        ), f"No critical alias resolved for domain={domain} fixture={fixture_name}"

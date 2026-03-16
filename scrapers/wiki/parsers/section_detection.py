@@ -1,18 +1,19 @@
 from __future__ import annotations
 
+import re
 from collections.abc import Mapping
 from dataclasses import dataclass
 from difflib import SequenceMatcher
-import re
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.sections.aliases import builtin_aliases_for_target
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.sections.aliases import builtin_aliases_for_target
 from scrapers.wiki.parsers.section_profiles import get_section_profile
 
 _HEADING_TAGS = ("h1", "h2", "h3", "h4", "h5", "h6")
+
 
 @dataclass(slots=True)
 class SectionMatch:
@@ -49,7 +50,9 @@ def make_stable_section_id(
     """Build stable section identifier from heading anchor + normalized slug."""
     anchor_slug = normalize_section_slug(heading_anchor) if heading_anchor else ""
     text_slug = normalize_section_slug(heading_text)
-    breadcrumb_slug = "__".join(normalize_section_slug(item) for item in breadcrumbs if item)
+    breadcrumb_slug = "__".join(
+        normalize_section_slug(item) for item in breadcrumbs if item
+    )
     if anchor_slug:
         return anchor_slug
     if breadcrumb_slug:
@@ -141,12 +144,20 @@ def find_section_heading(
         heading_ids = {_normalize_id(value) for value in _collect_heading_ids(heading)}
         if heading_ids & target_ids:
             exact_id_score = profile.priorities.exact_id_score if profile else 3.0
-            return SectionMatch(heading=heading, strategy="exact_id", score=exact_id_score)
+            return SectionMatch(
+                heading=heading,
+                strategy="exact_id",
+                score=exact_id_score,
+            )
 
         heading_text = normalize_section_text(_headline_text(heading))
         if heading_text in target_texts:
             exact_text_score = profile.priorities.exact_text_score if profile else 2.0
-            return SectionMatch(heading=heading, strategy="exact_text", score=exact_text_score)
+            return SectionMatch(
+                heading=heading,
+                strategy="exact_text",
+                score=exact_text_score,
+            )
 
         ratio = max(
             SequenceMatcher(None, heading_text, value).ratio() for value in target_texts
@@ -154,7 +165,11 @@ def find_section_heading(
         if ratio >= min_fuzzy_score:
             fuzzy_base_score = profile.priorities.fuzzy_base_score if profile else 1.0
             fuzzy_candidates.append(
-                SectionMatch(heading=heading, strategy="fuzzy", score=fuzzy_base_score + ratio),
+                SectionMatch(
+                    heading=heading,
+                    strategy="fuzzy",
+                    score=fuzzy_base_score + ratio,
+                ),
             )
 
     if not fuzzy_candidates:

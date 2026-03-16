@@ -1,5 +1,6 @@
 from collections.abc import Mapping
-from typing import Any, cast
+from typing import Any
+from typing import cast
 
 from models.records.base_factory import BaseRecordFactory
 from models.records.constants import WIKI_SEASON_URL

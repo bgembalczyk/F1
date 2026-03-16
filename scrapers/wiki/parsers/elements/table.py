@@ -3,10 +3,10 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.wiki.parsers.elements.text_cleaning import clean_table_cell_text
 from scrapers.base.table.parser import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.elements.text_cleaning import clean_table_cell_text
 
 
 class TableParser(WikiParser):
@@ -58,7 +58,9 @@ class TableParser(WikiParser):
                 continue
 
             expanded_cells = parser.expand_row_cells(
-                cells, full_headers, pending_rowspans
+                cells,
+                full_headers,
+                pending_rowspans,
             )
             cleaned_expanded = [
                 clean_table_cell_text(
@@ -81,7 +83,8 @@ class TableParser(WikiParser):
 
     @staticmethod
     def _extract_full_headers(
-        parser: HtmlTableParser, table: Tag
+        parser: HtmlTableParser,
+        table: Tag,
     ) -> tuple[list[str], int]:
         table_rows = table.find_all("tr")
         if not table_rows:

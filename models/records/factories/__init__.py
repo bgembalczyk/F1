@@ -1,5 +1,6 @@
 from collections.abc import Mapping
-from typing import Any, cast
+from typing import Any
+from typing import cast
 
 from models.records.car import CarRecord
 from models.records.circuit import CircuitRecord
@@ -10,13 +11,13 @@ from models.records.driver import DriverRecord
 from models.records.driver_championships import DriversChampionshipsRecord
 from models.records.engine_manufacturer import EngineManufacturerRecord
 from models.records.event import EventRecord
+from models.records.factories.registry import FACTORY_REGISTRY
 from models.records.fatality import FatalityRecord
 from models.records.grand_prix import GrandsPrixRecord
 from models.records.link import LinkRecord
 from models.records.season import SeasonRecord
 from models.records.season_summary import SeasonSummaryRecord
 from models.records.special_driver import SpecialDriverRecord
-from models.records.factories.registry import FACTORY_REGISTRY
 
 
 def build_record(record_type: str, record: Mapping[str, Any]) -> Any:
@@ -34,8 +35,13 @@ def build_season_record(record: Mapping[str, Any]) -> SeasonRecord:
     return cast("SeasonRecord", build_record("season", record))
 
 
-def build_drivers_championships_record(record: Mapping[str, Any]) -> DriversChampionshipsRecord:
-    return cast("DriversChampionshipsRecord", build_record("drivers_championships", record))
+def build_drivers_championships_record(
+    record: Mapping[str, Any],
+) -> DriversChampionshipsRecord:
+    return cast(
+        "DriversChampionshipsRecord",
+        build_record("drivers_championships", record),
+    )
 
 
 def build_driver_record(record: Mapping[str, Any]) -> DriverRecord:
@@ -82,5 +88,7 @@ def build_circuit_complete_record(record: Mapping[str, Any]) -> CircuitCompleteR
     return cast("CircuitCompleteRecord", build_record("circuit_complete", record))
 
 
-def build_engine_manufacturer_record(record: Mapping[str, Any]) -> EngineManufacturerRecord:
+def build_engine_manufacturer_record(
+    record: Mapping[str, Any],
+) -> EngineManufacturerRecord:
     return cast("EngineManufacturerRecord", build_record("engine_manufacturer", record))

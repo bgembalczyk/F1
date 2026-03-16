@@ -2,11 +2,15 @@ import logging
 from collections.abc import Iterable
 from typing import Any
 
-from models.domain_utils.normalization import normalize_link_item as core_normalize_link_item
+from models.domain_utils.normalization import (
+    normalize_link_item as core_normalize_link_item,
+)
 from models.domain_utils.normalization import (
     normalize_link_items as core_normalize_link_items,
 )
-from models.domain_utils.normalization import normalize_season_item as core_normalize_season_item
+from models.domain_utils.normalization import (
+    normalize_season_item as core_normalize_season_item,
+)
 from models.domain_utils.normalization import (
     normalize_season_items as core_normalize_season_items,
 )
@@ -58,7 +62,10 @@ def model_to_dict(
 def normalize_link_list(
     items: list[Link | dict[str, Any] | None] | None,
 ) -> list[Link]:
-    return [Link.from_dict(item) for item in core_normalize_link_items(items, field_name="link")]
+    return [
+        Link.from_dict(item)
+        for item in core_normalize_link_items(items, field_name="link")
+    ]
 
 
 def normalize_season_list(

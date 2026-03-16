@@ -1,7 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.circuits.entrypoint.run_list_scraper."""
 
-from pathlib import Path
 import warnings
+from pathlib import Path
 
 from models.records.factories import build_circuit_record
 from models.validation.circuit import Circuit

@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-from validation.validator_base import ExportRecord
-
 from scrapers.base.sections.contract_validation import validate_section_payloads
+from validation.validator_base import ExportRecord
 
 
 class CircuitSectionContractPostProcessor:

@@ -37,12 +37,15 @@ class ContentTextParser(WikiParser):
                 heading_text=name,
                 breadcrumbs=root_context.breadcrumbs,
             )
-            context = root_context.with_section(section_name=name, section_id=section_id)
+            context = root_context.with_section(
+                section_name=name,
+                section_id=section_id,
+            )
             sections.append(
                 {
                     "section_label": name,
                     "section_id": section_id,
                     **self.section_parser.parse_group(group_elements, context=context),
-                }
+                },
             )
         return {"sections": sections}

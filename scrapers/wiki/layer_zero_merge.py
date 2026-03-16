@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 
-
 FORMULA_ONE_SERIES = ["Formula One"]
 CHASSIS_CONSTRUCTOR_DOMAINS = {"constructors", "chassis_constructors"}
 FORMER_CONSTRUCTORS_SOURCE = "f1_former_constructors.json"
@@ -76,7 +75,8 @@ def _extract_red_flag(record: dict[str, object]) -> dict[str, object]:
     return {
         key: value
         for key, value in record.items()
-        if key in {
+        if key
+        in {
             "lap",
             "restart_status",
             "winner",
@@ -123,9 +123,7 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
         elif source_name == FORMER_CONSTRUCTORS_SOURCE:
             constructor = transformed.get("constructor")
             formula_one = {
-                key: value
-                for key, value in transformed.items()
-                if key != "constructor"
+                key: value for key, value in transformed.items() if key != "constructor"
             }
             formula_one["status"] = "former"
             transformed = {
@@ -138,7 +136,10 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
                 transformed["status"] = "active"
                 transformed["series"] = FORMULA_ONE_SERIES.copy()
             else:
-                formula_one = transformed["racing_series"][0].setdefault("formula_one", {})
+                formula_one = transformed["racing_series"][0].setdefault(
+                    "formula_one",
+                    {},
+                )
                 formula_one.setdefault("status", "active")
 
     if domain == "circuits":
@@ -170,9 +171,7 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
             )
         if source_name == "f1_privateer_teams.json":
             formula_one = {
-                key: transformed.pop(key)
-                for key in ("seasons",)
-                if key in transformed
+                key: transformed.pop(key) for key in ("seasons",) if key in transformed
             }
             formula_one["privateer"] = True
             transformed["racing_series"] = _build_racing_series(formula_one)
@@ -214,7 +213,11 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
     return transformed
 
 
-def _iter_transformed_records(domain: str, source_name: str, payload: object) -> list[object]:
+def _iter_transformed_records(
+    domain: str,
+    source_name: str,
+    payload: object,
+) -> list[object]:
     if isinstance(payload, list):
         return [_transform_record(domain, source_name, item) for item in payload]
 

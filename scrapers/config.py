@@ -54,7 +54,11 @@ class DataPaths:
     def legacy_wiki_file(self, category: str, filename: str) -> Path:
         return self.legacy_wiki / category / filename
 
-    def compatible_input_candidates(self, category: str, filename: str) -> tuple[Path, ...]:
+    def compatible_input_candidates(
+        self,
+        category: str,
+        filename: str,
+    ) -> tuple[Path, ...]:
         return (
             self.raw_file(category, filename),
             self.legacy_wiki_file(category, filename),

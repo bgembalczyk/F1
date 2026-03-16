@@ -171,7 +171,9 @@ def write_seed_l0(
     if isinstance(output_root, DataPaths):
         destination = output_root.raw_file(category, f"{seed_name}.json")
     else:
-        output_path = output_root if output_root is not None else default_data_paths().raw
+        output_path = (
+            output_root if output_root is not None else default_data_paths().raw
+        )
         destination = output_path / category / f"{seed_name}.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(records, ensure_ascii=False, indent=2)

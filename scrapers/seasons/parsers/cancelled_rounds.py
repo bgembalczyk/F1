@@ -106,7 +106,9 @@ class CancelledRoundsParser:
             return []
 
         parser = HtmlTableParser(
-            section_id=None, expected_headers=expected_headers, section_domain="seasons"
+            section_id=None,
+            expected_headers=expected_headers,
+            section_domain="seasons",
         )
         return [
             table

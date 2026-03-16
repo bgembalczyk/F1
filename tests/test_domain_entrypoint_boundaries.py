@@ -18,15 +18,15 @@ def test_domains_have_required_layout_and_facade_entrypoint() -> None:
     for domain in DOMAINS:
         domain_dir = root / domain
         assert domain_dir.exists(), f"Missing domain directory: {domain_dir}"
-        assert (domain_dir / "entrypoint.py").exists(), (
-            f"Missing facade entrypoint in domain: {domain}"
-        )
+        assert (
+            domain_dir / "entrypoint.py"
+        ).exists(), f"Missing facade entrypoint in domain: {domain}"
         for layer in LAYERS:
             layer_dir = domain_dir / layer
             assert layer_dir.exists(), f"Missing layer directory: {layer_dir}"
-            assert (layer_dir / "__init__.py").exists(), (
-                f"Missing layer package init: {layer_dir / '__init__.py'}"
-            )
+            assert (
+                layer_dir / "__init__.py"
+            ).exists(), f"Missing layer package init: {layer_dir / '__init__.py'}"
 
 
 def test_layer_import_boundaries_are_not_violated() -> None:
@@ -40,9 +40,9 @@ def test_layer_import_boundaries_are_not_violated() -> None:
                 for forbidden_target in forbidden:
                     dotted = f"scrapers.{domain}.{forbidden_target}"
                     slashed = f"scrapers/{domain}/{forbidden_target}"
-                    assert dotted not in source, (
-                        f"Layer boundary violation: {py_file} imports {dotted}"
-                    )
-                    assert slashed not in source, (
-                        f"Layer boundary violation: {py_file} references {slashed}"
-                    )
+                    assert (
+                        dotted not in source
+                    ), f"Layer boundary violation: {py_file} imports {dotted}"
+                    assert (
+                        slashed not in source
+                    ), f"Layer boundary violation: {py_file} references {slashed}"

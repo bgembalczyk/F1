@@ -11,5 +11,7 @@ class SeasonSectionContractPostProcessor:
                 if value is None:
                     continue
                 if not isinstance(value, list):
-                    raise ValueError(f"Season postprocess contract violation: {key} must be list.")
+                    raise ValueError(
+                        f"Season postprocess contract violation: {key} must be list.",
+                    )
         return records

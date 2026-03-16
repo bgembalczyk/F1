@@ -176,7 +176,11 @@ class WikiElementParserMixin:
                 }
 
         if el.name in {"div", "span"}:
-            nested = [child for child in el.find_all(recursive=False) if isinstance(child, Tag)]
+            nested = [
+                child
+                for child in el.find_all(recursive=False)
+                if isinstance(child, Tag)
+            ]
             for nested_el in nested:
                 parsed = self._parse_element(nested_el, section_context=section_context)
                 if parsed is not None:

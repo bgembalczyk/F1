@@ -29,7 +29,10 @@ def test_section_source_adapter_fallbacks_to_raw(tmp_path: Path) -> None:
 def test_section_source_adapter_fallbacks_to_legacy_wiki(tmp_path: Path) -> None:
     legacy_path = tmp_path / "data" / "wiki" / "drivers" / "drivers.json"
     legacy_path.parent.mkdir(parents=True, exist_ok=True)
-    legacy_path.write_text(json.dumps([{"driver": {"url": "legacy"}}]), encoding="utf-8")
+    legacy_path.write_text(
+        json.dumps([{"driver": {"url": "legacy"}}]),
+        encoding="utf-8",
+    )
 
     adapter = SectionSourceAdapter(base_dir=tmp_path / "data")
     step = StepDeclaration(

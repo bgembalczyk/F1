@@ -146,7 +146,12 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         ],
     )
     _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "engines" / "raw" / "f1_engine_manufacturers.json",
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "engines"
+        / "raw"
+        / "f1_engine_manufacturers.json",
         [
             {
                 "manufacturer": "Ferrari",
@@ -178,7 +183,12 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         [{"team": "Ferrari", "liveries": ["Marlboro"]}],
     )
     _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "teams" / "raw" / "f1_privateer_teams.json",
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "teams"
+        / "raw"
+        / "f1_privateer_teams.json",
         [{"team": "Rob Walker", "seasons": ["1950"]}],
     )
     _write_json(
@@ -209,11 +219,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     )
     constructors_merged = json.loads(
         (
-            base_wiki_dir
-            / "layers"
-            / "0_layer"
-            / "constructors"
-            / "constructors.json"
+            base_wiki_dir / "layers" / "0_layer" / "constructors" / "constructors.json"
         ).read_text(
             encoding="utf-8",
         ),
@@ -398,7 +404,9 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         },
     ]
 
-    rob_walker_team = next(item for item in teams_merged if item["team"] == "Rob Walker")
+    rob_walker_team = next(
+        item for item in teams_merged if item["team"] == "Rob Walker"
+    )
     assert rob_walker_team["racing_series"] == [
         {
             "formula_one": {
@@ -411,4 +419,6 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     assert season_merged == [{"season": 1950, "tyre_manufacturers": ["Pirelli"]}]
 
     assert not (base_wiki_dir / "layers" / "0_layer" / "rules" / "rules.json").exists()
-    assert not (base_wiki_dir / "layers" / "0_layer" / "points" / "points.json").exists()
+    assert not (
+        base_wiki_dir / "layers" / "0_layer" / "points" / "points.json"
+    ).exists()

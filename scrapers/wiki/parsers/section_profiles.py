@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 import re
+from dataclasses import dataclass
 
 from scrapers.base.helpers.text import clean_wiki_text
 
@@ -154,13 +154,17 @@ def profile_aliases_for_target(target: str, *, domain: str | None) -> set[str]:
                 "constructors for the current season",
                 "current constructors",
                 "constructors",
-            }
+            },
         )
 
     return aliases
 
 
-def profile_entry_aliases(domain: str, section_id: str, *fallback_aliases: str) -> tuple[str, ...]:
+def profile_entry_aliases(
+    domain: str,
+    section_id: str,
+    *fallback_aliases: str,
+) -> tuple[str, ...]:
     profile = get_section_profile(domain)
     merged: list[str] = []
     seen: set[str] = set()

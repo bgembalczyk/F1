@@ -8,5 +8,4 @@ from scrapers.base.sections.interface import SectionParseResult
 
 
 class SeasonSectionParser(Protocol):
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        ...
+    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...

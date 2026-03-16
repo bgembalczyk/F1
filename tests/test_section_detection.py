@@ -76,5 +76,19 @@ def test_find_section_heading_regression_multilevel_fixture() -> None:
 
 def test_normalize_section_slug_and_stable_id() -> None:
     assert normalize_section_slug("Grands Prix!") == "grands_prix"
-    assert make_stable_section_id(heading_anchor="Results_2024", heading_text="Results", breadcrumbs=("Season",)) == "results_2024"
-    assert make_stable_section_id(heading_anchor=None, heading_text="Final standings", breadcrumbs=("Season", "Results")) == "season__results__final_standings"
+    assert (
+        make_stable_section_id(
+            heading_anchor="Results_2024",
+            heading_text="Results",
+            breadcrumbs=("Season",),
+        )
+        == "results_2024"
+    )
+    assert (
+        make_stable_section_id(
+            heading_anchor=None,
+            heading_text="Final standings",
+            breadcrumbs=("Season", "Results"),
+        )
+        == "season__results__final_standings"
+    )

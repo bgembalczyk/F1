@@ -1,14 +1,14 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
-from scrapers.constructors.single_scraper import SingleConstructorScraper
-from scrapers.drivers.single_scraper import SingleDriverScraper
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.sections.adapter import SectionAdapterEntry
+from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
 from scrapers.circuits.sections import CircuitEventsSectionParser
 from scrapers.circuits.sections import CircuitLapRecordsSectionParser
 from scrapers.circuits.sections import CircuitLayoutHistorySectionParser
+from scrapers.constructors.single_scraper import SingleConstructorScraper
+from scrapers.drivers.single_scraper import SingleDriverScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
@@ -35,8 +35,10 @@ def test_constructor_sections_are_parsed_through_section_adapter() -> None:
         "championship_results",
         "complete_formula_one_results",
     }
-    assert all(set(section) == {"section_id", "section_label", "records", "metadata"} for section in result["sections"])
-
+    assert all(
+        set(section) == {"section_id", "section_label", "records", "metadata"}
+        for section in result["sections"]
+    )
 
 
 def test_circuit_sections_are_parsed_through_section_adapter() -> None:
@@ -110,7 +112,10 @@ def test_driver_sections_include_non_championship_alias() -> None:
 
 
 def test_single_season_separates_text_sections() -> None:
-    scraper = SingleSeasonScraper(options=ScraperOptions(include_urls=True), season_year=2024)
+    scraper = SingleSeasonScraper(
+        options=ScraperOptions(include_urls=True),
+        season_year=2024,
+    )
     scraper.url = "https://example.com/2024_Formula_One_World_Championship"
     scraper._table_parser.update_url(scraper.url)  # noqa: SLF001
     soup = BeautifulSoup(
@@ -159,6 +164,4 @@ def test_each_critical_section_has_alias_fallback() -> None:
         sections = DOMAIN_CRITICAL_SECTIONS[domain]
         assert sections, f"Missing critical sections for domain={domain}"
         for section in sections:
-            assert section.alternative_section_ids, (
-                f"Critical section without aliases: domain={domain} section={section.section_id}"
-            )
+            assert section.alternative_section_ids, f"Critical section without aliases: domain={domain} section={section.section_id}"

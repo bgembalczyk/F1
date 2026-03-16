@@ -19,8 +19,18 @@ def test_seed_section_orchestration_l0_l1_for_drivers_and_constructors(
     drivers_seed.write_text(
         json.dumps(
             [
-                {"driver": {"text": "Driver A", "url": "https://example.test/driver-a"}},
-                {"driver": {"text": "Driver B", "url": "https://example.test/driver-b"}},
+                {
+                    "driver": {
+                        "text": "Driver A",
+                        "url": "https://example.test/driver-a",
+                    },
+                },
+                {
+                    "driver": {
+                        "text": "Driver B",
+                        "url": "https://example.test/driver-b",
+                    },
+                },
             ],
         ),
         encoding="utf-8",
@@ -49,10 +59,14 @@ def test_seed_section_orchestration_l0_l1_for_drivers_and_constructors(
 
     outputs = flow.run(domains=("drivers", "constructors"))
 
-    drivers_l0 = _read_json(tmp_path / "data" / "checkpoints" / "step_0_layer0_drivers.json")
+    drivers_l0 = _read_json(
+        tmp_path / "data" / "checkpoints" / "step_0_layer0_drivers.json",
+    )
     assert len(drivers_l0["records"]) == 2
 
-    drivers_l1 = _read_json(tmp_path / "data" / "checkpoints" / "step_1_layer1_drivers.json")
+    drivers_l1 = _read_json(
+        tmp_path / "data" / "checkpoints" / "step_1_layer1_drivers.json",
+    )
     assert [record["details"]["kind"] for record in drivers_l1["records"]] == [
         "driver-section",
         "driver-section",
@@ -77,7 +91,9 @@ def test_section_source_adapter_prefers_checkpoint_before_raw(tmp_path: Path) ->
     raw.mkdir(parents=True, exist_ok=True)
 
     (checkpoints / "drivers.json").write_text(
-        json.dumps({"records": [{"driver": {"url": "https://example.test/checkpoint"}}]}),
+        json.dumps(
+            {"records": [{"driver": {"url": "https://example.test/checkpoint"}}]},
+        ),
         encoding="utf-8",
     )
     (raw / "drivers.json").write_text(
@@ -91,8 +107,12 @@ def test_section_source_adapter_prefers_checkpoint_before_raw(tmp_path: Path) ->
     )
     flow.run(domains=("drivers",))
 
-    l0_payload = _read_json(tmp_path / "data" / "checkpoints" / "step_0_layer0_drivers.json")
-    assert l0_payload["records"] == [{"name": "", "url": "https://example.test/checkpoint"}]
+    l0_payload = _read_json(
+        tmp_path / "data" / "checkpoints" / "step_0_layer0_drivers.json",
+    )
+    assert l0_payload["records"] == [
+        {"name": "", "url": "https://example.test/checkpoint"},
+    ]
 
 
 def test_step_metrics_are_logged_for_audit(tmp_path: Path) -> None:
@@ -109,7 +129,9 @@ def test_step_metrics_are_logged_for_audit(tmp_path: Path) -> None:
     )
     flow.run(domains=("drivers",))
 
-    layer1_payload = _read_json(tmp_path / "data" / "checkpoints" / "step_1_layer1_drivers.json")
+    layer1_payload = _read_json(
+        tmp_path / "data" / "checkpoints" / "step_1_layer1_drivers.json",
+    )
     metrics = layer1_payload["metadata"]["metrics"]
     assert metrics["input_records"] == 1
     assert metrics["output_records"] == 1
@@ -134,15 +156,25 @@ def test_seed_section_orchestration_supports_extended_domains_without_unsupporte
         seed = data_dir / "raw" / domain / f"{domain}.json"
         seed.parent.mkdir(parents=True, exist_ok=True)
         seed.write_text(
-            json.dumps([{key: {"text": domain, "url": f"https://example.test/{domain}"}}]),
+            json.dumps(
+                [{key: {"text": domain, "url": f"https://example.test/{domain}"}}],
+            ),
             encoding="utf-8",
         )
 
     flow = SeedSectionOrchestrationFlow(
         base_dir=data_dir,
         detail_fetchers={
-            domain: (lambda kind: (lambda url: {"url": url, "details": {"kind": kind}}))(domain)
-            for domain in ("drivers", "constructors", "circuits", "seasons", "grands_prix")
+            domain: (
+                lambda kind: (lambda url: {"url": url, "details": {"kind": kind}})
+            )(domain)
+            for domain in (
+                "drivers",
+                "constructors",
+                "circuits",
+                "seasons",
+                "grands_prix",
+            )
         },
     )
 
@@ -162,11 +194,17 @@ def test_seed_section_orchestration_writes_checkpoints_for_extended_domains(
     tmp_path: Path,
 ) -> None:
     data_dir = tmp_path / "data"
-    for domain, key in (("circuits", "circuit"), ("seasons", "season"), ("grands_prix", "grand_prix")):
+    for domain, key in (
+        ("circuits", "circuit"),
+        ("seasons", "season"),
+        ("grands_prix", "grand_prix"),
+    ):
         seed = data_dir / "raw" / domain / f"{domain}.json"
         seed.parent.mkdir(parents=True, exist_ok=True)
         seed.write_text(
-            json.dumps([{key: {"text": domain, "url": f"https://example.test/{domain}"}}]),
+            json.dumps(
+                [{key: {"text": domain, "url": f"https://example.test/{domain}"}}],
+            ),
             encoding="utf-8",
         )
 
@@ -186,11 +224,15 @@ def test_seed_section_orchestration_writes_checkpoints_for_extended_domains(
     assert outputs["grands_prix"].endswith("checkpoints/step_1_layer1_grands_prix.json")
 
 
-def test_seed_section_orchestration_normalizes_minimal_result_contract(tmp_path: Path) -> None:
+def test_seed_section_orchestration_normalizes_minimal_result_contract(
+    tmp_path: Path,
+) -> None:
     seed = tmp_path / "data" / "raw" / "drivers" / "drivers.json"
     seed.parent.mkdir(parents=True, exist_ok=True)
     seed.write_text(
-        json.dumps([{"driver": {"text": "Driver A", "url": "https://example.test/driver-a"}}]),
+        json.dumps(
+            [{"driver": {"text": "Driver A", "url": "https://example.test/driver-a"}}],
+        ),
         encoding="utf-8",
     )
 
@@ -201,7 +243,9 @@ def test_seed_section_orchestration_normalizes_minimal_result_contract(tmp_path:
 
     flow.run(domains=("drivers",))
 
-    drivers_l1 = _read_json(tmp_path / "data" / "checkpoints" / "step_1_layer1_drivers.json")
+    drivers_l1 = _read_json(
+        tmp_path / "data" / "checkpoints" / "step_1_layer1_drivers.json",
+    )
     record = drivers_l1["records"][0]
 
     assert set(record) == {"url", "details"}

@@ -1,11 +1,10 @@
 """Section parser namespace for constructors domain."""
 
-from .list_section import ConstructorsListSectionParser
+from .adapter import constructor_section_entries
 from .championship_results import ConstructorChampionshipResultsSectionParser
 from .complete_f1_results import ConstructorCompleteF1ResultsSectionParser
 from .history import ConstructorHistorySectionParser
-from .adapter import constructor_section_entries
-
+from .list_section import ConstructorsListSectionParser
 
 __all__ = [
     "ConstructorsListSectionParser",

@@ -39,12 +39,18 @@ class SubSectionParser(WikiParser):
                 heading_text=name,
                 breadcrumbs=section_context.breadcrumbs,
             )
-            child_context = section_context.with_section(section_name=name, section_id=section_id)
+            child_context = section_context.with_section(
+                section_name=name,
+                section_id=section_id,
+            )
             sub_sections.append(
                 {
                     "section_label": name,
                     "section_id": section_id,
-                    **self.sub_sub_section_parser.parse_group(group_elements, context=child_context),
-                }
+                    **self.sub_sub_section_parser.parse_group(
+                        group_elements,
+                        context=child_context,
+                    ),
+                },
             )
         return {"sub_sub_sections": sub_sections}

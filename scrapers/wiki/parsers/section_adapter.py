@@ -21,7 +21,12 @@ class SectionExtractionContext:
     html_metadata: dict[str, Any] | None = None
     section_id: str | None = None
 
-    def with_section(self, *, section_name: str, section_id: str | None = None) -> "SectionExtractionContext":
+    def with_section(
+        self,
+        *,
+        section_name: str,
+        section_id: str | None = None,
+    ) -> SectionExtractionContext:
         return SectionExtractionContext(
             page_title=self.page_title,
             page_url=self.page_url,
@@ -42,7 +47,12 @@ def _normalize_id(text: str) -> str:
     return normalize_section_text(text).replace(" ", "_")
 
 
-def _expand_targets(target: str, aliases: Iterable[str], *, domain: str | None = None) -> tuple[set[str], set[str]]:
+def _expand_targets(
+    target: str,
+    aliases: Iterable[str],
+    *,
+    domain: str | None = None,
+) -> tuple[set[str], set[str]]:
     profile = get_section_profile(domain)
     if profile:
         canonical = profile.canonical_for(target)
@@ -53,7 +63,9 @@ def _expand_targets(target: str, aliases: Iterable[str], *, domain: str | None =
     if profile:
         values.update(profile.aliases_for(target))
     normalized_texts = {
-        normalize_section_text(value) for value in values if isinstance(value, str) and value.strip()
+        normalize_section_text(value)
+        for value in values
+        if isinstance(value, str) and value.strip()
     }
     normalized_ids = {
         variant
@@ -109,12 +121,20 @@ def _find_match(
         section_id = str(section.get("section_id") or _normalize_id(section_name))
         if section_id in target_ids:
             exact_id_score = profile.priorities.exact_id_score if profile else 3.0
-            return SectionTreeMatch(section=section, strategy="exact_id", score=exact_id_score)
+            return SectionTreeMatch(
+                section=section,
+                strategy="exact_id",
+                score=exact_id_score,
+            )
 
         section_text = normalize_section_text(section_name)
         if section_text in target_texts:
             exact_text_score = profile.priorities.exact_text_score if profile else 2.0
-            return SectionTreeMatch(section=section, strategy="exact_text", score=exact_text_score)
+            return SectionTreeMatch(
+                section=section,
+                strategy="exact_text",
+                score=exact_text_score,
+            )
 
         if not target_texts:
             continue
@@ -125,7 +145,11 @@ def _find_match(
         if ratio >= min_fuzzy_score:
             fuzzy_base_score = profile.priorities.fuzzy_base_score if profile else 1.0
             fuzzy_candidates.append(
-                SectionTreeMatch(section=section, strategy="fuzzy", score=fuzzy_base_score + ratio)
+                SectionTreeMatch(
+                    section=section,
+                    strategy="fuzzy",
+                    score=fuzzy_base_score + ratio,
+                ),
             )
 
     if not fuzzy_candidates:
@@ -162,7 +186,10 @@ def find_section_tree(
     return match.section
 
 
-def collect_section_elements(section: SectionTree, element_type: str) -> list[dict[str, Any]]:
+def collect_section_elements(
+    section: SectionTree,
+    element_type: str,
+) -> list[dict[str, Any]]:
     """Collect parsed elements of a given type from section subtree."""
 
     found: list[dict[str, Any]] = []

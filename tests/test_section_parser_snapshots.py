@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from bs4 import BeautifulSoup
 import pytest
+from bs4 import BeautifulSoup
 
 from scrapers.wiki.parsers.content_text import ContentTextParser
 from tests._section_parser_fixture_pattern import SNAPSHOT_CASES_BY_DOMAIN
@@ -28,12 +28,16 @@ def _snapshot_payload(sections: list[dict]) -> list[dict]:
                     for s3 in s2.get("sub_sub_sub_sections", [])
                     for el in s3.get("elements", [])
                 ],
-            }
+            },
         )
     return payload
 
 
-@pytest.mark.parametrize("fixture", iter_snapshot_cases(), ids=lambda case: f"{case.domain}-{case.variant}")
+@pytest.mark.parametrize(
+    "fixture",
+    iter_snapshot_cases(),
+    ids=lambda case: f"{case.domain}-{case.variant}",
+)
 def test_snapshot_section_parser_contract_per_domain(fixture) -> None:
     snapshot = _snapshot_payload(_parse_sections(fixture.html))
 
