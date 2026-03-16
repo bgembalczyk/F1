@@ -41,6 +41,20 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         / "0_layer"
         / "constructors"
         / "raw"
+        / "f1_constructor_standings.json",
+        [
+            {
+                "constructor": "McLaren",
+                "wins": 2,
+            },
+        ],
+    )
+    _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "constructors"
+        / "raw"
         / "f1_former_constructors.json",
         [
             {
@@ -104,6 +118,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
                 "grand_prix": "Canadian",
                 "lap": 64,
                 "winner": "Stewart",
+                "failed_to_make_restart": {"drivers": ["A"], "reason": "Crash"},
             },
         ],
     )
@@ -168,6 +183,16 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         [{"points": "X"}],
     )
 
+    _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "season"
+        / "raw"
+        / "f1_tyre_manufacturers_by_season.json",
+        [{"seasons": [1950], "manufacturers": ["Pirelli"]}],
+    )
+
     merge_layer_zero_raw_outputs(base_wiki_dir)
 
     circuits_merged = json.loads(
@@ -211,6 +236,11 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             encoding="utf-8",
         ),
     )
+    season_merged = json.loads(
+        (base_wiki_dir / "layers" / "0_layer" / "season" / "season.json").read_text(
+            encoding="utf-8",
+        ),
+    )
 
     assert circuits_merged == [
         {
@@ -234,6 +264,18 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
                     "formula_one": {
                         "licensed_in": "Italy",
                         "wins": 248,
+                        "status": "active",
+                    },
+                },
+            ],
+        },
+        {
+            "constructor": "McLaren",
+            "racing_series": [
+                {
+                    "formula_one": {
+                        "wins": 2,
+                        "status": "active",
                     },
                 },
             ],
@@ -280,9 +322,14 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
 
     world_race = next(item for item in races_merged if "grand_prix" in item)
     assert world_race["championship"] is True
-    assert world_race["red_flag"] == {"lap": 64, "winner": "Stewart"}
+    assert world_race["red_flag"] == {
+        "lap": 64,
+        "winner": "Stewart",
+        "failed_to_make_restart": {"drivers": ["A"], "reason": "Crash"},
+    }
     assert "lap" not in world_race
     assert "winner" not in world_race
+    assert "failed_to_make_restart" not in world_race
 
     non_champ_race = next(item for item in races_merged if "event" in item)
     assert non_champ_race["championship"] is False
@@ -348,6 +395,8 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             },
         },
     ]
+
+    assert season_merged == [{"seasons": [1950], "tyre_manufacturers": ["Pirelli"]}]
 
     assert not (base_wiki_dir / "layers" / "0_layer" / "rules" / "rules.json").exists()
     assert not (base_wiki_dir / "layers" / "0_layer" / "points" / "points.json").exists()

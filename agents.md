@@ -22,3 +22,8 @@ to **najpierw** sprawdź i oprzyj się głównie na plikach:
 1. Najpierw domykanie fundamentów wiki-parserów i warstwy 0.
 2. Potem warstwa 1 oraz iteracyjny orchestrator 0/1.
 3. Na końcu przygotowanie pod tokenizację i encoding pod ML.
+
+## Zasada dla poprawek po review
+- Nie modyfikuj plików `*.json` przy poprawkach po komentarzach do PR.
+- Zmiany wprowadzaj wyłącznie w plikach Python (`*.py`) oraz dokumentacji (`docs/`, `agents.md`).
+
