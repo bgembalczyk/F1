@@ -3,9 +3,7 @@ from typing import Any
 
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
@@ -71,8 +69,15 @@ class F1CompleteGrandPrixDataExtractor(CompositeDataExtractor):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        F1CompleteGrandPrixDataExtractor,
-        "grands_prix/f1_grands_prix_extended.json",
-        run_config=RunConfig(output_dir=Path("../../data/wiki")),
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
+    from scrapers.base.helpers.runner import run_and_export
+    from scrapers.base.run_config import RunConfig
+
+    run_cli_entrypoint(
+        target=lambda *, run_config: run_and_export(
+            F1CompleteGrandPrixDataExtractor,
+            "grands_prix/f1_grands_prix_extended.json",
+            run_config=run_config,
+        ),
+        base_config=RunConfig(output_dir=Path("../../data/wiki")),
     )

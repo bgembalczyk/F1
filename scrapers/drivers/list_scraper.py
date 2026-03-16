@@ -1,6 +1,5 @@
 """DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
 
-import warnings
 from pathlib import Path
 
 from models.records.factories import build_driver_record
@@ -99,35 +98,20 @@ class F1DriversListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--quality-report",
-        action=argparse.BooleanOptionalAction,
-        default=True,
-        help="Zapisz raport jakości do debug_dir/quality_report.json.",
-    )
-    parser.add_argument(
-        "--error-report",
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help="Zapisz raporty błędów do debug_dir/errors.jsonl.",
-    )
-    args = parser.parse_args()
+    from scrapers.base.cli_entrypoint import run_cli_entrypoint
     from scrapers.drivers.entrypoint import run_list_scraper
 
-    warnings.warn(
-        "scrapers.drivers.list_scraper is deprecated; use scrapers.drivers.entrypoint.run_list_scraper.",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    run_list_scraper(
-        run_config=RunConfig(
+    run_cli_entrypoint(
+        target=run_list_scraper,
+        base_config=RunConfig(
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),
-            quality_report=args.quality_report,
-            error_report=args.error_report,
+        ),
+        quality_report_default=True,
+        error_report_default=False,
+        deprecation_message=(
+            "scrapers.drivers.list_scraper is deprecated; use "
+            "scrapers.drivers.entrypoint.run_list_scraper."
         ),
     )
