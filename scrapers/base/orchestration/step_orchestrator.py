@@ -10,6 +10,7 @@ from datetime import timezone
 from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
+from typing import Protocol
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -45,6 +46,46 @@ class StepDeclaration:
 
 
 @dataclass(frozen=True)
+class ResolvedInput:
+    records: list[dict[str, Any]]
+    source_path: Path
+
+
+@dataclass(frozen=True)
+class ExecutedStep:
+    records: list[dict[str, Any]]
+    errors: list[str]
+    duration_ms: float
+
+
+@dataclass(frozen=True)
+class CheckpointMetrics:
+    input_records: int
+    output_records: int
+    errors: int
+    duration_ms: float
+    input_path: str
+
+
+@dataclass(frozen=True)
+class CheckpointMetadata:
+    step_id: int
+    layer: str
+    domain: str
+    input_source: str
+    output_target: str
+    parser: str
+    generated_at: str
+    metrics: CheckpointMetrics
+
+
+@dataclass(frozen=True)
+class CheckpointPayload:
+    metadata: CheckpointMetadata
+    records: list[dict[str, Any]]
+
+
+@dataclass(frozen=True)
 class StepExecutionResult:
     step: StepDeclaration
     domain: str
@@ -70,6 +111,36 @@ class AuditEntry:
     duration_ms: float
 
 
+class InputResolver(Protocol):
+    def resolve(self, step: StepDeclaration, domain: str) -> ResolvedInput:
+        """Resolve step input records and source path."""
+
+
+class StepExecutor(Protocol):
+    def execute(self, step: StepDeclaration, input_records: list[dict[str, Any]]) -> ExecutedStep:
+        """Execute parser for step and return normalized execution outcome."""
+
+
+class CheckpointRepository(Protocol):
+    def save(
+        self,
+        step: StepDeclaration,
+        domain: str,
+        input_path: Path,
+        input_records: list[dict[str, Any]],
+        execution: ExecutedStep,
+    ) -> Path:
+        """Persist checkpoint payload for a step and return output path."""
+
+
+class AuditRepository(Protocol):
+    def append(self, entry: AuditEntry) -> None:
+        """Append audit row for step execution."""
+
+    def write_regression_report(self, report_path: Path) -> Path:
+        """Persist aggregated audit report and return path."""
+
+
 class SectionSourceAdapter:
     """Pobiera wejście dla kroku z checkpointów i fallbackiem do raw."""
 
@@ -81,18 +152,18 @@ class SectionSourceAdapter:
         self,
         step: StepDeclaration,
         domain: str,
-    ) -> tuple[list[dict[str, Any]], Path]:
+    ) -> ResolvedInput:
         direct_path = Path(step.input_source)
         if direct_path.is_absolute() and direct_path.exists():
-            return self._read_records(direct_path), direct_path
+            return ResolvedInput(records=self._read_records(direct_path), source_path=direct_path)
 
         checkpoint_path = self._resolve_checkpoint(step, domain)
         if checkpoint_path is not None:
-            return self._read_records(checkpoint_path), checkpoint_path
+            return ResolvedInput(records=self._read_records(checkpoint_path), source_path=checkpoint_path)
 
         raw_path = self._resolve_raw(step, domain)
         if raw_path is not None:
-            return self._read_records(raw_path), raw_path
+            return ResolvedInput(records=self._read_records(raw_path), source_path=raw_path)
 
         msg = (
             "Brak źródła wejścia dla "
@@ -151,6 +222,89 @@ class SectionSourceAdapter:
             if isinstance(records, list):
                 return [item for item in records if isinstance(item, dict)]
         return []
+
+
+class ParserStepExecutor:
+    def execute(self, step: StepDeclaration, input_records: list[dict[str, Any]]) -> ExecutedStep:
+        errors: list[str] = []
+        started_at = time.perf_counter()
+        try:
+            output_records = step.parser(input_records)
+        except Exception as exc:  # noqa: BLE001
+            output_records = []
+            errors.append(str(exc))
+
+        duration_ms = (time.perf_counter() - started_at) * 1000
+        return ExecutedStep(records=output_records, errors=errors, duration_ms=duration_ms)
+
+
+class CheckpointPayloadFactory:
+    def build(
+        self,
+        *,
+        step: StepDeclaration,
+        domain: str,
+        input_path: Path,
+        input_records: list[dict[str, Any]],
+        execution: ExecutedStep,
+    ) -> CheckpointPayload:
+        return CheckpointPayload(
+            metadata=CheckpointMetadata(
+                step_id=step.step_id,
+                layer=step.layer,
+                domain=domain,
+                input_source=str(input_path),
+                output_target=step.output_target,
+                parser=step.parser.__name__,
+                generated_at=datetime.now(tz=timezone.utc).isoformat(),
+                metrics=CheckpointMetrics(
+                    input_records=len(input_records),
+                    output_records=len(execution.records),
+                    errors=len(execution.errors),
+                    duration_ms=execution.duration_ms,
+                    input_path=str(input_path),
+                ),
+            ),
+            records=execution.records,
+        )
+
+
+class JsonCheckpointRepository:
+    def __init__(
+        self,
+        *,
+        base_dir: Path = Path("data"),
+        payload_factory: CheckpointPayloadFactory | None = None,
+    ) -> None:
+        self.paths = _OrchestrationPaths(base_dir=base_dir)
+        self.payload_factory = payload_factory or CheckpointPayloadFactory()
+
+    def save(
+        self,
+        step: StepDeclaration,
+        domain: str,
+        input_path: Path,
+        input_records: list[dict[str, Any]],
+        execution: ExecutedStep,
+    ) -> Path:
+        output_path = self._output_path(step, domain)
+        payload = self.payload_factory.build(
+            step=step,
+            domain=domain,
+            input_path=input_path,
+            input_records=input_records,
+            execution=execution,
+        )
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(
+            json.dumps(asdict(payload), ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        return output_path
+
+    def _output_path(self, step: StepDeclaration, domain: str) -> Path:
+        name = f"step_{step.step_id}_{step.layer}_{domain}.json"
+        return self.paths.checkpoint_file(name)
 
 
 class StepAuditTrail:
@@ -258,66 +412,50 @@ class StepOrchestrator:
         self,
         *,
         base_dir: Path = Path("data"),
+        input_resolver: InputResolver | None = None,
+        step_executor: StepExecutor | None = None,
+        checkpoint_repository: CheckpointRepository | None = None,
+        audit_repository: AuditRepository | None = None,
         source_adapter: SectionSourceAdapter | None = None,
         audit_trail: StepAuditTrail | None = None,
     ) -> None:
         self.base_dir = base_dir
         self.paths = _OrchestrationPaths(base_dir=base_dir)
-        self.source_adapter = source_adapter or SectionSourceAdapter(base_dir=base_dir)
-        self.audit_trail = audit_trail or StepAuditTrail(
+        resolved_input = input_resolver or source_adapter
+        resolved_audit = audit_repository or audit_trail
+        self.input_resolver = resolved_input or SectionSourceAdapter(base_dir=base_dir)
+        self.step_executor = step_executor or ParserStepExecutor()
+        self.checkpoint_repository = checkpoint_repository or JsonCheckpointRepository(base_dir=base_dir)
+        self.audit_repository = resolved_audit or StepAuditTrail(
             json_path=self.paths.checkpoint_file("step_audit.json"),
             csv_path=self.paths.checkpoint_file("step_audit.csv"),
         )
+        # Backward-compatible alias for existing callers.
+        self.audit_trail = self.audit_repository
 
     def run(self, step: StepDeclaration, domain: str) -> StepExecutionResult:
-        input_records, input_path = self.source_adapter.resolve(step, domain)
-        errors: list[str] = []
-        started_at = time.perf_counter()
+        resolved_input = self.input_resolver.resolve(step, domain)
+        execution = self.step_executor.execute(step, resolved_input.records)
 
-        try:
-            output_records = step.parser(input_records)
-        except Exception as exc:  # noqa: BLE001
-            output_records = []
-            errors.append(str(exc))
-
-        output_path = self._output_path(step, domain)
-        duration_ms = (time.perf_counter() - started_at) * 1000
-        payload = {
-            "metadata": {
-                "step_id": step.step_id,
-                "layer": step.layer,
-                "domain": domain,
-                "input_source": str(input_path),
-                "output_target": step.output_target,
-                "parser": step.parser.__name__,
-                "generated_at": datetime.now(tz=timezone.utc).isoformat(),
-                "metrics": {
-                    "input_records": len(input_records),
-                    "output_records": len(output_records),
-                    "errors": len(errors),
-                    "duration_ms": duration_ms,
-                    "input_path": str(input_path),
-                },
-            },
-            "records": output_records,
-        }
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_path.write_text(
-            json.dumps(payload, ensure_ascii=False, indent=2),
-            encoding="utf-8",
+        output_path = self.checkpoint_repository.save(
+            step=step,
+            domain=domain,
+            input_path=resolved_input.source_path,
+            input_records=resolved_input.records,
+            execution=execution,
         )
 
         result = StepExecutionResult(
             step=step,
             domain=domain,
-            input_path=str(input_path),
+            input_path=str(resolved_input.source_path),
             output_path=str(output_path),
-            input_records=len(input_records),
-            output_records=len(output_records),
-            errors=errors,
-            duration_ms=duration_ms,
+            input_records=len(resolved_input.records),
+            output_records=len(execution.records),
+            errors=execution.errors,
+            duration_ms=execution.duration_ms,
         )
-        self.audit_trail.append(
+        self.audit_repository.append(
             AuditEntry(
                 timestamp=datetime.now(tz=timezone.utc).isoformat(),
                 step_id=step.step_id,
@@ -331,11 +469,7 @@ class StepOrchestrator:
                 duration_ms=result.duration_ms,
             ),
         )
-        if errors:
-            msg = f"Błąd parsera kroku {step.step_id}: {errors[0]}"
+        if execution.errors:
+            msg = f"Błąd parsera kroku {step.step_id}: {execution.errors[0]}"
             raise RuntimeError(msg)
         return result
-
-    def _output_path(self, step: StepDeclaration, domain: str) -> Path:
-        name = f"step_{step.step_id}_{step.layer}_{domain}.json"
-        return self.paths.checkpoint_file(name)
