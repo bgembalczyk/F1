@@ -54,18 +54,8 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
         record_factory=build_constructor_record,
     )
 
-    def _parse_soup(self, soup):
-        return self.parse_section_or_fallback(
-            soup,
-            domain="constructors",
-            section_label="Current constructors",
-            parser_factory=lambda: ConstructorsListSectionParser(
-                config=self.config,
-                section_label="Current constructors",
-                include_urls=self.include_urls,
-                normalize_empty_values=self.normalize_empty_values,
-            ),
-        )
+    section_label = "Current constructors"
+    section_parser_class = ConstructorsListSectionParser
 
 
 if __name__ == "__main__":

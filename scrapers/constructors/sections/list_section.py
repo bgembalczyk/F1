@@ -12,14 +12,14 @@ class ConstructorsListSectionParser:
         self,
         *,
         config: ScraperConfig,
-        section_label: str,
+        section_label: str | None = None,
         include_urls: bool,
         normalize_empty_values: bool,
     ) -> None:
         self._parser = TableSectionParser(
             config=config,
             section_id=config.section_id or "constructors",
-            section_label=section_label,
+            section_label=section_label or "Constructors",
             domain="constructors",
             include_urls=include_urls,
             normalize_empty_values=normalize_empty_values,
