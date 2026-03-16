@@ -7,6 +7,7 @@ from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.options import ScraperOptions
+from scrapers.base.sections import DOMAIN_CRITICAL_SECTIONS
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -40,6 +41,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
 
     # Subclasses can override to provide fallback section IDs
     alternative_section_ids: list[str] = []
+    section_domain: str = "grands_prix"
 
     @staticmethod
     def build_common_red_flag_columns(race_name_header: str = "Grand Prix"):
@@ -89,6 +91,16 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         ]
         super().__init__(options=options, config=config)
 
+
+    def _resolved_alternative_section_ids(self) -> list[str]:
+        if self.alternative_section_ids:
+            return self.alternative_section_ids
+        domain_sections = DOMAIN_CRITICAL_SECTIONS.get(self.section_domain, ())
+        for candidate in domain_sections:
+            if candidate.section_id == self.section_id:
+                return list(candidate.alternative_section_ids)
+        return []
+
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         table, parser = self._find_table_with_fallbacks(soup)
 
@@ -119,7 +131,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         """
         section_ids_to_try = (
             ([self.section_id] if self.section_id is not None else [])
-            + self.alternative_section_ids
+            + self._resolved_alternative_section_ids()
             + [None]
         )
 
@@ -180,7 +192,7 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         """
         section_ids_to_try = (
             ([self.section_id] if self.section_id is not None else [])
-            + self.alternative_section_ids
+            + self._resolved_alternative_section_ids()
             + [None]
         )
 
