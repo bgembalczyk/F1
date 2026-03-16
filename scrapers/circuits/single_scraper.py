@@ -6,16 +6,21 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
+from scrapers.base.sections import SectionAdapter
+from scrapers.base.sections import SectionAdapterEntry
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
+from scrapers.circuits.sections import CircuitEventsSectionParser
+from scrapers.circuits.sections import CircuitLapRecordsSectionParser
+from scrapers.circuits.sections import CircuitLayoutHistorySectionParser
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
 
 
-class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
+class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper):
     """
     Scraper pojedynczego toru - pobiera infobox i wszystkie tabele z artykułu Wikipedii.
 
@@ -81,6 +86,38 @@ class F1SingleCircuitScraper(WikipediaSectionByIdMixin, WikiScraper):
             {
                 "url": self._original_url or self.url,
                 **parsed,
+                "sections": [
+                    result.__dict__
+                    for result in self.parse_sections(
+                        soup=working_soup,
+                        domain="circuits",
+                        entries=[
+                            SectionAdapterEntry(
+                                section_id="Layout_history",
+                                aliases=("History",),
+                                parser=CircuitLayoutHistorySectionParser(),
+                            ),
+                            SectionAdapterEntry(
+                                section_id="Lap_records",
+                                aliases=("Formula_One_lap_records",),
+                                parser=CircuitLapRecordsSectionParser(
+                                    options=ScraperOptions(
+                                        include_urls=self.include_urls,
+                                        fetcher=self.fetcher,
+                                        policy=self.policy,
+                                        debug_dir=self.debug_dir,
+                                    ),
+                                    url=self.url,
+                                ),
+                            ),
+                            SectionAdapterEntry(
+                                section_id="Events",
+                                aliases=("Races",),
+                                parser=CircuitEventsSectionParser(),
+                            ),
+                        ],
+                    )
+                ],
             },
         ]
 
