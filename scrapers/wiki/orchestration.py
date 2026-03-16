@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from abc import ABC
 from abc import abstractmethod
+from collections.abc import Callable
 from pathlib import Path
 
 from infrastructure.gemini.client import GeminiClient
@@ -17,6 +18,8 @@ from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifi
 from scrapers.wiki.seed_registry import ListJobRegistryEntry
 from scrapers.wiki.seed_registry import SeedRegistryEntry
 
+LayerOneExportFn = Callable[..., None]
+
 
 class LayerJobRunner(ABC):
     @abstractmethod
@@ -24,45 +27,36 @@ class LayerJobRunner(ABC):
         """Execute layer-one job for given seed."""
 
 
-class GrandPrixRunner(LayerJobRunner):
+class FunctionLayerJobRunner(LayerJobRunner):
+    def __init__(self, export_fn: LayerOneExportFn) -> None:
+        self._export_fn = export_fn
+
+    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
+        self._export_fn(
+            output_dir=base_wiki_dir / seed.default_output_path,
+            include_urls=run_config.include_urls,
+        )
+
+
+class RunAndExportLayerJobRunner(LayerJobRunner):
+    def __init__(self, extractor_cls: type[object]) -> None:
+        self._extractor_cls = extractor_cls
+
     def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
         run_and_export(
-            F1CompleteGrandPrixDataExtractor,
+            self._extractor_cls,
             seed.default_output_path,
             run_config=run_config,
         )
 
 
-class CircuitsRunner(LayerJobRunner):
-    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
-        export_complete_circuits(
-            output_dir=base_wiki_dir / seed.default_output_path,
-            include_urls=run_config.include_urls,
-        )
-
-
-class DriversRunner(LayerJobRunner):
-    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
-        export_complete_drivers(
-            output_dir=base_wiki_dir / seed.default_output_path,
-            include_urls=run_config.include_urls,
-        )
-
-
-class SeasonsRunner(LayerJobRunner):
-    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
-        export_complete_seasons(
-            output_dir=base_wiki_dir / seed.default_output_path,
-            include_urls=run_config.include_urls,
-        )
-
-
-class ConstructorsRunner(LayerJobRunner):
-    def run(self, seed: SeedRegistryEntry, run_config: RunConfig, base_wiki_dir: Path) -> None:
-        export_complete_constructors(
-            output_dir=base_wiki_dir / seed.default_output_path,
-            include_urls=run_config.include_urls,
-        )
+LAYER_ONE_STRATEGIES: dict[str, LayerJobRunner] = {
+    "circuits": FunctionLayerJobRunner(export_complete_circuits),
+    "drivers": FunctionLayerJobRunner(export_complete_drivers),
+    "seasons": FunctionLayerJobRunner(export_complete_seasons),
+    "constructors": FunctionLayerJobRunner(export_complete_constructors),
+    "grands_prix": RunAndExportLayerJobRunner(F1CompleteGrandPrixDataExtractor),
+}
 
 
 class LayerZeroRunConfigFactory(ABC):
@@ -96,13 +90,7 @@ class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
 
 
 def build_layer_one_runner_map() -> dict[str, LayerJobRunner]:
-    return {
-        "grands_prix": GrandPrixRunner(),
-        "circuits": CircuitsRunner(),
-        "drivers": DriversRunner(),
-        "seasons": SeasonsRunner(),
-        "constructors": ConstructorsRunner(),
-    }
+    return {seed_name: runner for seed_name, runner in LAYER_ONE_STRATEGIES.items()}
 
 
 def build_layer_zero_run_config_factory_map() -> dict[str, LayerZeroRunConfigFactory]:

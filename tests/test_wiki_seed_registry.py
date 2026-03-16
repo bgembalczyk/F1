@@ -68,3 +68,17 @@ def test_wiki_list_job_registry_contains_expected_layer_zero_jobs() -> None:
     assert jobs_by_seed["constructors_former"].output_category == "chassis_constructors"
     assert jobs_by_seed["constructors_indianapolis_only"].output_category == "chassis_constructors"
     assert jobs_by_seed["tyres"].output_category == "seasons"
+
+
+def test_layer_one_runner_map_is_complete_for_seed_registry() -> None:
+    import datetime
+
+    if not hasattr(datetime, "UTC"):
+        datetime.UTC = datetime.timezone.utc
+
+    from scrapers.wiki.orchestration import build_layer_one_runner_map
+
+    runner_map = build_layer_one_runner_map()
+    seed_names = {entry.seed_name for entry in WIKI_SEED_REGISTRY}
+
+    assert set(runner_map) == seed_names
