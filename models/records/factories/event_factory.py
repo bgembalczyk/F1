@@ -7,9 +7,13 @@ from models.records.event import EventRecord
 from models.records.factories.helpers import (
     normalize_optional_link_list_or_link_or_string,
 )
+from models.records.factories.registry import register_factory
 
 
+@register_factory("event")
 class EventRecordFactory(BaseRecordFactory):
+    record_type = "event"
+
     def build(self, record: Mapping[str, Any]) -> EventRecord:
         payload = self.apply_spec(
             record,

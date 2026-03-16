@@ -8,9 +8,13 @@ from models.records.constructor import ConstructorRecord
 from models.records.factories.helpers import (
     normalize_optional_link_list_or_link_or_string,
 )
+from models.records.factories.registry import register_factory
 
 
+@register_factory("constructor")
 class ConstructorRecordFactory(BaseRecordFactory):
+    record_type = "constructor"
+
     def build(self, record: Mapping[str, Any]) -> ConstructorRecord:
         payload = self.apply_spec(
             record,

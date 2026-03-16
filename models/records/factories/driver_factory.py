@@ -8,9 +8,13 @@ from models.records.driver import DriverRecord
 from models.records.factories.drivers_championships_factory import (
     DriversChampionshipsRecordFactory,
 )
+from models.records.factories.registry import register_factory
 
 
+@register_factory("driver")
 class DriverRecordFactory(BaseRecordFactory):
+    record_type = "driver"
+
     def __init__(self, normalizer=None):
         super().__init__(normalizer)
         self.championships_factory = DriversChampionshipsRecordFactory(self.normalizer)
