@@ -42,7 +42,7 @@ class SectionParser(WikiParser):
             child_context = section_context.with_section(section_name=name, section_id=section_id)
             sub_sections.append(
                 {
-                    "name": name,
+                    "section_label": name,
                     "section_id": section_id,
                     **self.sub_section_parser.parse_group(group_elements, context=child_context),
                 }

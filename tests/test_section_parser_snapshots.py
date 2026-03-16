@@ -19,7 +19,7 @@ def _snapshot_payload(sections: list[dict]) -> list[dict]:
     for section in sections:
         payload.append(
             {
-                "name": section["name"],
+                "section_label": section["section_label"],
                 "section_id": section["section_id"],
                 "kinds": [
                     el["kind"]

@@ -40,7 +40,7 @@ class ContentTextParser(WikiParser):
             context = root_context.with_section(section_name=name, section_id=section_id)
             sections.append(
                 {
-                    "name": name,
+                    "section_label": name,
                     "section_id": section_id,
                     **self.section_parser.parse_group(group_elements, context=context),
                 }

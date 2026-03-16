@@ -40,7 +40,7 @@ def test_domain_minimal_e2e_snapshot_contract(domain: str) -> None:
     assert content is not None
     sections = ContentTextParser().parse(content)["sections"]
     section_record = {
-        "name": sections[1]["name"],
+        "section_label": sections[1]["section_label"],
         "section_id": sections[1]["section_id"],
     }
 
