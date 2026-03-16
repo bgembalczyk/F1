@@ -8,6 +8,24 @@ from datetime import timezone
 from typing import Any
 
 SEED_RECORD_SCHEMA_VERSION = "1.0"
+NAME_CANDIDATE_KEYS = (
+    "name",
+    "driver",
+    "constructor",
+    "team",
+    "circuit",
+    "race_title",
+    "season",
+    "manufacturer",
+)
+LINK_CANDIDATE_KEYS = (
+    "link",
+    "url",
+    "driver_url",
+    "constructor_url",
+    "team_url",
+    "circuit_url",
+)
 
 
 @dataclass(frozen=True)
@@ -27,15 +45,10 @@ class SeedRecord:
         scraped_at: datetime,
         schema_version: str = SEED_RECORD_SCHEMA_VERSION,
     ) -> SeedRecord:
-        name = str(
-            raw.get("name") or raw.get("driver") or raw.get("circuit") or "",
-        ).strip()
-        link_value = raw.get("link") or raw.get("url")
-        link = str(link_value).strip() if link_value is not None else None
         return cls(
             schema_version=schema_version,
-            name=name,
-            link=link,
+            name=_extract_name(raw),
+            link=_extract_link(raw),
             source_url=source_url,
             scraped_at=scraped_at.astimezone(timezone.utc).isoformat(),
         )
@@ -63,6 +76,51 @@ class SeedQualityReport:
             f"empty_link={self.empty_link_count} "
             f"duplicate_name={self.duplicate_name_count}"
         )
+
+
+def _extract_name(record: dict[str, Any]) -> str:
+    for key in NAME_CANDIDATE_KEYS:
+        value = record.get(key)
+        text = _coerce_text(value)
+        if text:
+            return text
+    return ""
+
+
+def _extract_link(record: dict[str, Any]) -> str | None:
+    for key in LINK_CANDIDATE_KEYS:
+        value = record.get(key)
+        link = _coerce_link(value)
+        if link:
+            return link
+
+    for key in NAME_CANDIDATE_KEYS:
+        value = record.get(key)
+        link = _coerce_link(value)
+        if link:
+            return link
+    return None
+
+
+def _coerce_text(value: Any) -> str:
+    if isinstance(value, dict):
+        nested_text = value.get("text") or value.get("name")
+        return str(nested_text).strip() if nested_text else ""
+    if isinstance(value, str):
+        return value.strip()
+    if isinstance(value, (int, float)):
+        return str(value)
+    return ""
+
+
+def _coerce_link(value: Any) -> str | None:
+    if isinstance(value, dict):
+        nested_link = value.get("url") or value.get("link")
+        return str(nested_link).strip() if nested_link else None
+    if isinstance(value, str):
+        candidate = value.strip()
+        return candidate if candidate.startswith("http") else None
+    return None
 
 
 def normalize_seed_records(

@@ -75,7 +75,7 @@ def run_list_scrapers() -> None:
             raw_seed_records = json.loads(seed_data_path.read_text(encoding="utf-8"))
             normalized_seed_records = normalize_seed_records(
                 raw_seed_records,
-                source_url=getattr(job.list_scraper_cls.CONFIG, "url", ""),
+                source_url=job.wikipedia_url,
             )
             l0_path = write_seed_l0(
                 records=normalized_seed_records,

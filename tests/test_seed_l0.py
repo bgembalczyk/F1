@@ -8,7 +8,7 @@ from scrapers.wiki.seed_l0 import normalize_seed_records
 
 def test_normalize_seed_records_contract() -> None:
     records = [
-        {"driver": "Lewis Hamilton", "url": "https://example.com/hamilton"},
+        {"driver": {"text": "Lewis Hamilton", "url": "https://example.com/hamilton"}},
         {"name": "Max Verstappen", "link": "https://example.com/max"},
     ]
 

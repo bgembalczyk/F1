@@ -38,5 +38,6 @@ def test_list_job_registry_entry_serialization() -> None:
 
     assert isinstance(entry, ListJobRegistryEntry)
     assert payload["output_category"] == "circuits"
+    assert payload["wikipedia_url"].startswith("https://")
     assert payload["json_output_path"].startswith("circuits/")
     assert "CircuitsListScraper" in serialized
