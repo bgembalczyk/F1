@@ -1,0 +1,26 @@
+{
+  "domain": "circuits",
+  "seed_record": {
+    "name": "Monza",
+    "link": "https://example.test/wiki/Monza_Circuit",
+    "source_url": "https://example.test/circuits",
+    "scraped_at": "2026-01-01T00:00:00"
+  },
+  "section_record": {
+    "name": "Layout",
+    "section_id": "layout"
+  },
+  "infobox_record": {
+    "title": "Monza Circuit",
+    "rows": {
+      "Location": "Monza, Italy"
+    }
+  },
+  "postprocess_record": {
+    "domain": "circuits",
+    "url": "https://example.test/circuits",
+    "source_url": "https://example.test/circuits",
+    "section_id": "layout",
+    "scraped_at": "2026-01-01T00:00:00"
+  }
+}

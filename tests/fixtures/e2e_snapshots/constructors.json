@@ -1,0 +1,26 @@
+{
+  "domain": "constructors",
+  "seed_record": {
+    "name": "Ferrari",
+    "link": "https://example.test/wiki/Ferrari",
+    "source_url": "https://example.test/constructors",
+    "scraped_at": "2026-01-01T00:00:00"
+  },
+  "section_record": {
+    "name": "Results",
+    "section_id": "results"
+  },
+  "infobox_record": {
+    "title": "Ferrari",
+    "rows": {
+      "Base": "Maranello"
+    }
+  },
+  "postprocess_record": {
+    "domain": "constructors",
+    "url": "https://example.test/constructors",
+    "source_url": "https://example.test/constructors",
+    "section_id": "results",
+    "scraped_at": "2026-01-01T00:00:00"
+  }
+}
