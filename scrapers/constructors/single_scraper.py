@@ -5,18 +5,17 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
+from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess import ConstructorSectionContractPostProcessor
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
-from scrapers.wiki.scraper import WikiScraper
 
 
-class SingleConstructorScraper(SectionAdapter, WikiScraper):
+class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
     def __init__(
         self,
         *,
@@ -27,12 +26,7 @@ class SingleConstructorScraper(SectionAdapter, WikiScraper):
         ) = None,
         assembler: ConstructorRecordAssembler | None = None,
     ) -> None:
-        options = init_scraper_options(options, include_urls=True)
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
-        options.post_processors.append(ConstructorSectionContractPostProcessor())
         super().__init__(options=options)
-        self.url: str = ""
         self._infobox_service = infobox_service or ConstructorInfoboxExtractionService()
         self._sections_service_factory = (
             sections_service_factory
@@ -41,10 +35,8 @@ class SingleConstructorScraper(SectionAdapter, WikiScraper):
         self._assembler = assembler or ConstructorRecordAssembler()
         self.article_tables_parser = ArticleTablesParser()
 
-    def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
-        self.url = url
-        return super().fetch()
-
+    def _build_post_processor(self) -> ConstructorSectionContractPostProcessor:
+        return ConstructorSectionContractPostProcessor()
 
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._infobox_service.extract(soup)

@@ -4,8 +4,8 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
+from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
@@ -30,10 +30,9 @@ from scrapers.seasons.sections.results import SeasonResultsSectionParser
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 from scrapers.seasons.sections.standings import SeasonConstructorsStandingsSectionParser
 from scrapers.seasons.sections.standings import SeasonDriversStandingsSectionParser
-from scrapers.wiki.scraper import WikiScraper
 
 
-class SingleSeasonScraper(SectionAdapter, WikiScraper):
+class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
     def __init__(
         self,
         *,
@@ -44,14 +43,8 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
         ) = None,
         assembler: SeasonRecordAssembler | None = None,
     ) -> None:
-        options = init_scraper_options(options, include_urls=True)
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
-        options.post_processors.append(SeasonSectionContractPostProcessor())
         super().__init__(options=options)
-        self.url: str = ""
         self.season_year = season_year
-        self._options = options
         self._entry_merger = EntryMerger()
         self._table_parser = SeasonTableParser(
             options=self._options,
@@ -92,6 +85,9 @@ class SingleSeasonScraper(SectionAdapter, WikiScraper):
         elif self.season_year is None:
             self.season_year = self._extract_year_from_url(url)
         return super().fetch()
+
+    def _build_post_processor(self) -> SeasonSectionContractPostProcessor:
+        return SeasonSectionContractPostProcessor()
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         calendar_data = (
