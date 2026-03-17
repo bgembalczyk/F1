@@ -1,4 +1,4 @@
-from models.records.factories import build_constructor_record
+from models.records.factories.build import build_constructor_record
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import ScraperConfig

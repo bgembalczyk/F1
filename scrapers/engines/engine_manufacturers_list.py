@@ -1,4 +1,4 @@
-from models.records.factories import build_engine_manufacturer_record
+from models.records.factories.build import build_engine_manufacturer_record
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.table.columns.types.float import FloatColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn

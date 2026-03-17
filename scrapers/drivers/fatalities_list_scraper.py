@@ -1,6 +1,6 @@
 from typing import Any
 
-from models.records.factories import build_fatality_record
+from models.records.factories.build import build_fatality_record
 from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value

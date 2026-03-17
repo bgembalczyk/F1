@@ -3,7 +3,7 @@
 from datetime import datetime
 from datetime import timezone
 
-from models.records.factories import build_constructor_record
+from models.records.factories.build import build_constructor_record
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.config import ScraperConfig

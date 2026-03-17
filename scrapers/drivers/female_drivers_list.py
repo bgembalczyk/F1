@@ -1,4 +1,4 @@
-from models.records.factories import build_special_driver_record
+from models.records.factories.build import build_special_driver_record
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.points import PointsColumn

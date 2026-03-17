@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
 
-from models.records.factories import build_driver_record
+from models.records.factories.build import build_driver_record
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn

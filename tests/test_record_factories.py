@@ -1,14 +1,14 @@
 # ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
 import pytest
 
-from models.records.factories import build_constructor_record
-from models.records.factories import build_driver_record
-from models.records.factories import build_fatality_record
-from models.records.factories import build_grands_prix_record
-from models.records.factories import build_record
-from models.records.factories import build_season_record
-from models.records.factories import build_season_summary_record
-from models.records.factories import build_special_driver_record
+from models.records.factories.build import build_constructor_record
+from models.records.factories.build import build_driver_record
+from models.records.factories.build import build_fatality_record
+from models.records.factories.build import build_grands_prix_record
+from models.records.factories.build import build_record
+from models.records.factories.build import build_season_record
+from models.records.factories.build import build_season_summary_record
+from models.records.factories.build import build_special_driver_record
 
 
 def test_build_season_record_adds_url() -> None:

@@ -8,14 +8,14 @@ import pytest
 
 from models.mappers.field_aliases import FIELD_ALIASES
 from models.mappers.field_aliases import apply_field_aliases
-from models.records.factories import build_circuit_record
-from models.records.factories import build_constructor_record
-from models.records.factories import build_driver_record
-from models.records.factories import build_engine_manufacturer_record
-from models.records.factories import build_fatality_record
-from models.records.factories import build_grands_prix_record
-from models.records.factories import build_season_summary_record
-from models.records.factories import build_special_driver_record
+from models.records.factories.build import build_circuit_record
+from models.records.factories.build import build_constructor_record
+from models.records.factories.build import build_driver_record
+from models.records.factories.build import build_engine_manufacturer_record
+from models.records.factories.build import build_fatality_record
+from models.records.factories.build import build_grands_prix_record
+from models.records.factories.build import build_season_summary_record
+from models.records.factories.build import build_special_driver_record
 from models.records.factories.car_factory import CarRecordFactory
 from models.records.factories.drivers_championships_factory import (
     DriversChampionshipsRecordFactory,

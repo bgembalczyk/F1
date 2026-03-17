@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.grands_prix.entrypoint.run_list_scraper."""
 
-from models.records.factories import build_grands_prix_record
+from models.records.factories.build import build_grands_prix_record
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
