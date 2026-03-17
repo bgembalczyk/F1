@@ -52,8 +52,10 @@ def test_quality_reporter_contract_for_multiple_domains(tmp_path: Path) -> None:
         payload = json.loads(report_path.read_text(encoding="utf-8"))
         assert payload["schema_version"] == "1.0"
         assert payload["record_count"] == 2
+        assert payload["null_rate"] == 0.25
         assert payload["missing_fields"]["country"] == 1
         assert payload["duplicate_keys"]["Ayrton"] == 2
+        assert payload["duplicate_logical_key_count"] == 1
         assert payload["source_metadata"]["domain"] == domain
 
 
@@ -87,6 +89,8 @@ def test_quality_report_is_generated_automatically_for_pipeline_steps(
         payload = json.loads(report_path.read_text(encoding="utf-8"))
         assert payload["schema_version"] == "1.0"
         assert "record_count" in payload
+        assert "null_rate" in payload
         assert "missing_fields" in payload
         assert "duplicate_keys" in payload
+        assert "duplicate_logical_key_count" in payload
         assert "source_metadata" in payload
