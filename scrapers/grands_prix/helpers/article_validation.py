@@ -1,34 +1,24 @@
 from bs4 import BeautifulSoup
 
+from scrapers.base.helpers.article_validation import (
+    has_category_keyword,
+    has_navbox_template_link,
+)
+
 GRAND_PRIX_KEYWORD = "grand prix"
 GRAND_PRIX_NAVBOX_TEMPLATE = "Template:Formula_One_Grands_Prix"
 
 
 def has_grand_prix_navbox(soup: BeautifulSoup) -> bool:
-    navboxes = soup.find_all("table", class_="navbox-inner")
-    for navbox in navboxes:
-        if navbox.find(
-            "a",
-            href=lambda href: href and GRAND_PRIX_NAVBOX_TEMPLATE in href,
-        ):
-            return True
-    return False
+    """Sprawdza navbox Grand Prix po linku szablonu (BeautifulSoup -> bool)."""
+    return has_navbox_template_link(soup, GRAND_PRIX_NAVBOX_TEMPLATE)
 
 
 def has_grand_prix_category(soup: BeautifulSoup) -> bool:
-    cat_div = soup.find("div", id="mw-normal-catlinks")
-    if not cat_div:
-        return False
-
-    for link in cat_div.find_all("a"):
-        text = link.get_text(strip=True).lower()
-        if GRAND_PRIX_KEYWORD in text:
-            return True
-    return False
+    """Sprawdza kategorię Grand Prix po słowie kluczowym (BeautifulSoup -> bool)."""
+    return has_category_keyword(soup, [GRAND_PRIX_KEYWORD])
 
 
 def is_grand_prix_article(soup: BeautifulSoup) -> bool:
-    """Sprawdza, czy artykuł wygląda na Grand Prix (navbox lub kategorie)."""
-    if has_grand_prix_navbox(soup):
-        return True
-    return has_grand_prix_category(soup)
+    """Sprawdza, czy artykuł wygląda na Grand Prix (BeautifulSoup -> bool)."""
+    return has_grand_prix_navbox(soup) or has_grand_prix_category(soup)
