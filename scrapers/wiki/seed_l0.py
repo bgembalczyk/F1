@@ -144,6 +144,21 @@ def compute_seed_quality(
     )
 
 
+
+
+def _resolve_seed_destination(
+    *,
+    output_root: Any,
+    category: str,
+    seed_name: str,
+) -> Any:
+    if isinstance(output_root, DataPaths):
+        return output_root.raw_file(category, f"{seed_name}.json")
+    output_path = (
+        output_root if output_root is not None else default_data_paths().raw
+    )
+    return output_path / category / f"{seed_name}.json"
+
 def write_seed_l0(
     *,
     records: list[dict[str, Any]],
@@ -151,13 +166,11 @@ def write_seed_l0(
     seed_name: str,
     output_root: Any,
 ) -> Any:
-    if isinstance(output_root, DataPaths):
-        destination = output_root.raw_file(category, f"{seed_name}.json")
-    else:
-        output_path = (
-            output_root if output_root is not None else default_data_paths().raw
-        )
-        destination = output_path / category / f"{seed_name}.json"
+    destination = _resolve_seed_destination(
+        output_root=output_root,
+        category=category,
+        seed_name=seed_name,
+    )
     destination.parent.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(records, ensure_ascii=False, indent=2)
     destination.write_text(payload, encoding="utf-8")

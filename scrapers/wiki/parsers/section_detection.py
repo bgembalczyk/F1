@@ -116,6 +116,33 @@ def _resolve_aliases(
     return resolved
 
 
+
+
+def _profile_score(
+    profile: object | None,
+    *,
+    exact_id: bool = False,
+    exact_text: bool = False,
+) -> float:
+    if profile is None:
+        if exact_id:
+            return 3.0
+        if exact_text:
+            return 2.0
+        return 1.0
+    if exact_id:
+        return profile.priorities.exact_id_score
+    if exact_text:
+        return profile.priorities.exact_text_score
+    return profile.priorities.fuzzy_base_score
+
+
+def _best_fuzzy_ratio(heading_text: str, target_texts: set[str]) -> float:
+    return max(
+        SequenceMatcher(None, heading_text, value).ratio()
+        for value in target_texts
+    )
+
 def find_section_heading(
     soup: BeautifulSoup,
     target: str,
@@ -145,32 +172,27 @@ def find_section_heading(
     for heading in soup.find_all(HEADING_TAGS):
         heading_ids = {_normalize_id(value) for value in _collect_heading_ids(heading)}
         if heading_ids & target_ids:
-            exact_id_score = profile.priorities.exact_id_score if profile else 3.0
             return SectionMatch(
                 heading=heading,
                 strategy="exact_id",
-                score=exact_id_score,
+                score=_profile_score(profile, exact_id=True),
             )
 
         heading_text = normalize_section_text(_headline_text(heading))
         if heading_text in target_texts:
-            exact_text_score = profile.priorities.exact_text_score if profile else 2.0
             return SectionMatch(
                 heading=heading,
                 strategy="exact_text",
-                score=exact_text_score,
+                score=_profile_score(profile, exact_text=True),
             )
 
-        ratio = max(
-            SequenceMatcher(None, heading_text, value).ratio() for value in target_texts
-        )
+        ratio = _best_fuzzy_ratio(heading_text, target_texts)
         if ratio >= min_fuzzy_score:
-            fuzzy_base_score = profile.priorities.fuzzy_base_score if profile else 1.0
             fuzzy_candidates.append(
                 SectionMatch(
                     heading=heading,
                     strategy="fuzzy",
-                    score=fuzzy_base_score + ratio,
+                    score=_profile_score(profile) + ratio,
                 ),
             )
 

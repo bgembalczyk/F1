@@ -1,5 +1,6 @@
 import json
 import re
+from collections.abc import Callable
 from pathlib import Path
 
 from scrapers.wiki.contants import CHASSIS_CONSTRUCTOR_DOMAINS
@@ -11,6 +12,14 @@ from scrapers.wiki.contants import FORMULA_ONE_SERIES
 from scrapers.wiki.contants import GRANDS_PRIX_FORMULA_ONE_FIELDS
 from scrapers.wiki.contants import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
 from scrapers.wiki.contants import TYRE_MANUFACTURERS_SOURCE
+
+RED_FLAG_FIELDS = (
+    "lap",
+    "restart_status",
+    "winner",
+    "incident",
+    "failed_to_make_restart",
+)
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:
@@ -49,18 +58,12 @@ def _normalize_driver_series_stats(formula_one: dict[str, object]) -> dict[str, 
 
 
 def _extract_red_flag(record: dict[str, object]) -> dict[str, object]:
-    return {
-        key: value
-        for key, value in record.items()
-        if key
-        in {
-            "lap",
-            "restart_status",
-            "winner",
-            "incident",
-            "failed_to_make_restart",
-        }
-    }
+    return {key: value for key, value in record.items() if key in RED_FLAG_FIELDS}
+
+
+def _pop_red_flag_fields(record: dict[str, object]) -> None:
+    for key in RED_FLAG_FIELDS:
+        record.pop(key, None)
 
 
 def _transform_record(domain: str, source_name: str, record: object) -> object:
@@ -307,14 +310,7 @@ def _transform_races_domain(
     if source_name == "f1_red_flagged_non_championship_races.json":
         transformed["championship"] = False
     transformed["red_flag"] = _extract_red_flag(transformed)
-    for key in (
-        "lap",
-        "restart_status",
-        "winner",
-        "incident",
-        "failed_to_make_restart",
-    ):
-        transformed.pop(key, None)
+    _pop_red_flag_fields(transformed)
     return transformed
 
 
@@ -676,21 +672,33 @@ def _load_domain_records(domain_dir: Path) -> list[object]:
     return merged_records
 
 
+
+
+def _domain_post_processors(
+    domain: str,
+) -> list[Callable[[list[object]], list[object]]]:
+    processors: list[Callable[[list[object]], list[object]]] = []
+    if domain == "drivers":
+        processors.extend([
+            _merge_duplicate_drivers,
+            lambda items: sorted(items, key=_driver_sort_key),
+        ])
+    if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
+        processors.append(lambda items: sorted(items, key=_constructor_sort_key))
+    if domain == "teams":
+        processors.extend([
+            _merge_duplicate_teams,
+            lambda items: [_nest_team_liveries_in_seasons(record) for record in items],
+            lambda items: sorted(items, key=_team_sort_key),
+        ])
+    if domain == "seasons":
+        processors.append(lambda items: sorted(items, key=_season_sort_key))
+    return processors
+
 def _post_process_domain_records(domain: str, records: list[object]) -> list[object]:
     merged_records = records
-    if domain == "drivers":
-        merged_records = _merge_duplicate_drivers(merged_records)
-        merged_records = sorted(merged_records, key=_driver_sort_key)
-    if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
-        merged_records = sorted(merged_records, key=_constructor_sort_key)
-    if domain == "teams":
-        merged_records = _merge_duplicate_teams(merged_records)
-        merged_records = [
-            _nest_team_liveries_in_seasons(record) for record in merged_records
-        ]
-        merged_records = sorted(merged_records, key=_team_sort_key)
-    if domain == "seasons":
-        merged_records = sorted(merged_records, key=_season_sort_key)
+    for processor in _domain_post_processors(domain):
+        merged_records = processor(merged_records)
     return merged_records
 
 

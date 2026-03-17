@@ -53,81 +53,87 @@ class WikiTableBaseParser(ABC):
         return mapped
 
 
-class StandingsTableParser(WikiTableBaseParser):
+class MappedWikiTableParser(WikiTableBaseParser):
+    """Parser oparty o statyczną mapę nagłówków i wymagane kolumny."""
+
+    required_header_groups: tuple[frozenset[str], ...] = ()
+    column_mapping: dict[str, str] = {}
+
+    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
+        header_set = set(headers)
+        return all(bool(header_set & group) for group in self.required_header_groups)
+
+    def map_columns(self, headers: list[str]) -> dict[str, str]:
+        return {
+            header: self.column_mapping[header]
+            for header in headers
+            if header in self.column_mapping
+        }
+
+
+class StandingsTableParser(MappedWikiTableParser):
     table_type = "standings"
     missing_columns_policy = "fail_if_missing_subject_or_points"
     extra_columns_policy = "collect_as_round_columns"
 
-    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        header_set = set(headers)
-        has_position = bool(header_set & {"Pos", "Pos."})
-        has_points = bool(header_set & {"Points", "Pts", "Pts."})
-        has_subject = "Driver" in header_set or "Constructor" in header_set
-        return has_position and has_points and has_subject
-
-    def map_columns(self, headers: list[str]) -> dict[str, str]:
-        mapping = {
-            "Pos.": "pos",
-            "Pos": "pos",
-            "Driver": "driver",
-            "Constructor": "constructor",
-            "Points": "points",
-            "Pts": "points",
-            "Pts.": "points",
-            "No.": "no",
-            "No": "no",
-            "Car no.": "no",
-        }
-        return {header: mapping[header] for header in headers if header in mapping}
+    required_header_groups = (
+        frozenset({"Pos", "Pos."}),
+        frozenset({"Points", "Pts", "Pts."}),
+        frozenset({"Driver", "Constructor"}),
+    )
+    column_mapping = {
+        "Pos.": "pos",
+        "Pos": "pos",
+        "Driver": "driver",
+        "Constructor": "constructor",
+        "Points": "points",
+        "Pts": "points",
+        "Pts.": "points",
+        "No.": "no",
+        "No": "no",
+        "Car no.": "no",
+    }
 
 
-class RaceResultsTableParser(WikiTableBaseParser):
+class RaceResultsTableParser(MappedWikiTableParser):
     table_type = "race_results"
     missing_columns_policy = "require_round_and_winner"
     extra_columns_policy = "ignore"
 
-    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        header_set = set(headers)
-        has_round = "Round" in header_set
-        has_winner = "Winning driver" in header_set
-        return has_round and has_winner
-
-    def map_columns(self, headers: list[str]) -> dict[str, str]:
-        mapping = {
-            "Round": "round",
-            "Grand Prix": "grand_prix",
-            "Race": "grand_prix",
-            "Pole position": "pole_position",
-            "Pole Position": "pole_position",
-            "Fastest lap": "fastest_lap",
-            "Winning driver": "winning_driver",
-            "Winning constructor": "winning_constructor",
-            "Constructor": "winning_constructor",
-            "Report": "report",
-            "Tyre": "tyre",
-        }
-        return {header: mapping[header] for header in headers if header in mapping}
+    required_header_groups = (
+        frozenset({"Round"}),
+        frozenset({"Winning driver"}),
+    )
+    column_mapping = {
+        "Round": "round",
+        "Grand Prix": "grand_prix",
+        "Race": "grand_prix",
+        "Pole position": "pole_position",
+        "Pole Position": "pole_position",
+        "Fastest lap": "fastest_lap",
+        "Winning driver": "winning_driver",
+        "Winning constructor": "winning_constructor",
+        "Constructor": "winning_constructor",
+        "Report": "report",
+        "Tyre": "tyre",
+    }
 
 
-class LapRecordsWikiTableParser(WikiTableBaseParser):
+class LapRecordsWikiTableParser(MappedWikiTableParser):
     table_type = "lap_records"
     missing_columns_policy = "require_time_and_driver"
     extra_columns_policy = "ignore"
 
-    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
-        header_set = set(headers)
-        has_time = "Time" in header_set
-        has_driver = "Driver" in header_set or "Driver/Rider" in header_set
-        return has_time and has_driver
-
-    def map_columns(self, headers: list[str]) -> dict[str, str]:
-        mapping = {
-            "Time": "time",
-            "Driver": "driver",
-            "Driver/Rider": "driver",
-            "Vehicle": "vehicle",
-            "Car": "vehicle",
-            "Year": "year",
-            "Series": "series",
-        }
-        return {header: mapping[header] for header in headers if header in mapping}
+    required_header_groups = (
+        frozenset({"Time"}),
+        frozenset({"Driver", "Driver/Rider"}),
+    )
+    column_mapping = {
+        "Time": "time",
+        "Driver": "driver",
+        "Driver/Rider": "driver",
+        "Vehicle": "vehicle",
+        "Car": "vehicle",
+        "Year": "year",
+        "Series": "series",
+    }

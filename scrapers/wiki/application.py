@@ -18,6 +18,40 @@ if TYPE_CHECKING:
     from scrapers.wiki.seed_registry import SeedRegistryEntry
 
 
+def _build_debug_run_config(*, base_wiki_dir: Path, base_debug_dir: Path) -> RunConfig:
+    return build_run_profile(
+        RunProfileName.DEBUG,
+        paths=RunPathConfig(
+            wiki_output_dir=base_wiki_dir,
+            debug_dir=base_debug_dir,
+        ),
+    )
+
+
+def _layer_zero_raw_paths(
+    *,
+    output_category: str,
+    rendered_json_path: str,
+    csv_output_path: str | None,
+) -> tuple[Path, Path | None]:
+    json_path = (
+        Path("layers")
+        / "0_layer"
+        / output_category
+        / "raw"
+        / Path(rendered_json_path).name
+    )
+    csv_path: Path | None = None
+    if csv_output_path:
+        csv_path = (
+            Path("layers")
+            / "0_layer"
+            / output_category
+            / "raw"
+            / Path(csv_output_path).name
+        )
+    return json_path, csv_path
+
 class ConstructorsMirrorService:
     def __init__(
         self,
@@ -103,22 +137,11 @@ class LayerZeroExecutor:
                 scraper_kwargs=scraper_kwargs,
             )
 
-            l0_raw_json_path = (
-                Path("layers")
-                / "0_layer"
-                / job.output_category
-                / "raw"
-                / Path(rendered_json_path).name
+            l0_raw_json_path, l0_raw_csv_path = _layer_zero_raw_paths(
+                output_category=job.output_category,
+                rendered_json_path=rendered_json_path,
+                csv_output_path=job.csv_output_path,
             )
-            l0_raw_csv_path: Path | None = None
-            if job.csv_output_path:
-                l0_raw_csv_path = (
-                    Path("layers")
-                    / "0_layer"
-                    / job.output_category
-                    / "raw"
-                    / Path(job.csv_output_path).name
-                )
 
             self._run_and_export_function(
                 job.list_scraper_cls,
@@ -192,22 +215,16 @@ class WikiPipelineApplication:
         self._layer_one_executor = layer_one_executor
 
     def run_layer_zero(self) -> None:
-        run_config = build_run_profile(
-            RunProfileName.DEBUG,
-            paths=RunPathConfig(
-                wiki_output_dir=self._base_wiki_dir,
-                debug_dir=self._base_debug_dir,
-            ),
+        run_config = _build_debug_run_config(
+            base_wiki_dir=self._base_wiki_dir,
+            base_debug_dir=self._base_debug_dir,
         )
         self._layer_zero_executor.run(run_config, self._base_wiki_dir)
 
     def run_layer_one(self) -> None:
-        run_config = build_run_profile(
-            RunProfileName.DEBUG,
-            paths=RunPathConfig(
-                wiki_output_dir=self._base_wiki_dir,
-                debug_dir=self._base_debug_dir,
-            ),
+        run_config = _build_debug_run_config(
+            base_wiki_dir=self._base_wiki_dir,
+            base_debug_dir=self._base_debug_dir,
         )
         self._layer_one_executor.run(run_config, self._base_wiki_dir)
 
