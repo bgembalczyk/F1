@@ -14,6 +14,17 @@ from scrapers.grands_prix.validator import GrandsPrixRecordValidator
 
 
 class GrandsPrixListScraper(F1TableScraper):
+    COMPONENT_METADATA = {
+        "domain": "grands_prix",
+        "seed_name": "grands_prix",
+        "layer": "layer_one",
+        "output_category": "grands_prix",
+        "component_type": "list_scraper",
+        "default_output_path": "raw/grands_prix/seeds/f1_grands_prix_extended.json",
+        "legacy_output_path": "grands_prix/f1_grands_prix_extended.json",
+    }
+
+
     """
     Uproszczony scraper np. dla tabeli 'By race title'
     z:

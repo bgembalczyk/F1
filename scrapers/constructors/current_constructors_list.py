@@ -26,6 +26,17 @@ CURRENT_YEAR = datetime.now(tz=timezone.utc).year
 
 
 class CurrentConstructorsListScraper(BaseConstructorListScraper):
+    COMPONENT_METADATA = {
+        "domain": "constructors",
+        "seed_name": "constructors",
+        "layer": "layer_one",
+        "output_category": "constructors",
+        "component_type": "list_scraper",
+        "default_output_path": "raw/constructors/seeds/complete_constructors",
+        "legacy_output_path": "constructors/complete_constructors",
+    }
+
+
     """
     Aktualni konstruktorzy - sekcja
     'Constructors for the current season' z:
