@@ -410,6 +410,81 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
                                 ],
                                 "main_colours": ["White"],
                             },
+                            {
+                                "season": [
+                                    {
+                                        "year": 2024,
+                                        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+                                    },
+                                ],
+                                "main_colours": ["Red"],
+                            },
+                        ],
+                    },
+                },
+            },
+        ],
+    )
+
+    _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "teams"
+        / "raw"
+        / "aston_martin_constructor.json",
+        [
+            {
+                "team": {
+                    "text": "Aston Martin",
+                    "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
+                },
+                "racing_series": {
+                    "formula_one": {
+                        "seasons": [
+                            {
+                                "year": 1959,
+                                "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
+                            },
+                            {
+                                "year": 1960,
+                                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship",
+                            },
+                        ],
+                    },
+                },
+            },
+        ],
+    )
+    _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "teams"
+        / "raw"
+        / "aston_martin_livery.json",
+        [
+            {
+                "team": {
+                    "text": "Aston Martin",
+                    "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
+                },
+                "racing_series": {
+                    "formula_one": {
+                        "liveries": [
+                            {
+                                "season": [
+                                    {
+                                        "year": 1959,
+                                        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
+                                    },
+                                    {
+                                        "year": 1960,
+                                        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship",
+                                    },
+                                ],
+                                "main_colours": ["British racing green"],
+                            },
                         ],
                     },
                 },
@@ -722,20 +797,46 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
                 {
                     "year": 2024,
                     "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
-                    "livery": {
-                        "main_colours": ["Blue", "White"],
-                        "special_liveries": "Miami",
-                    },
+                    "liveries": [
+                        {
+                            "main_colours": ["Blue", "White"],
+                            "special_liveries": "Miami",
+                        },
+                        {
+                            "main_colours": ["Red"],
+                        },
+                    ],
                 },
                 {
                     "year": 2025,
                     "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
-                    "livery": {
-                        "main_colours": ["White"],
-                    },
+                    "liveries": [
+                        {
+                            "main_colours": ["White"],
+                        },
+                    ],
                 },
             ],
             "wins": 0,
+        },
+    }
+
+
+    aston_martin = next(item for item in teams_merged if _team_text(item) == "Aston Martin")
+    assert aston_martin["racing_series"] == {
+        "formula_one": {
+            "seasons": [
+                {
+                    "year": 1959,
+                    "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
+                    "liveries": [{"main_colours": ["British racing green"]}],
+                },
+                {
+                    "year": 1960,
+                    "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship",
+                    "liveries": [{"main_colours": ["British racing green"]}],
+                },
+            ],
         },
     }
 
