@@ -41,19 +41,21 @@ class SponsorColumn(BaseColumn):
         """
         results: list[Any] = []
         for seg_nodes in self._split_cell_by_br(ctx.cell):
-            seg_html = "".join(str(node) for node in seg_nodes)
-            seg_soup = BeautifulSoup(seg_html, "html.parser")
-            raw_text = seg_soup.get_text(" ", strip=True)
-            seg_text = clean_wiki_text(raw_text)
-            seg_links = normalize_links(
-                seg_soup,
-                full_url=lambda href: normalize_url(ctx.base_url, href),
-                drop_empty_text=True,
-            )
-            seg_items = self._parse_text_with_links(seg_text, seg_links)
-            seg_items = self._propagate_segment_scope(seg_items)
-            results.extend(seg_items)
+            results.extend(self._parse_br_segment(seg_nodes, ctx.base_url))
         return results
+
+    def _parse_br_segment(self, seg_nodes: list[Any], base_url: str) -> list[Any]:
+        seg_html = "".join(str(node) for node in seg_nodes)
+        seg_soup = BeautifulSoup(seg_html, "html.parser")
+        seg_text = clean_wiki_text(seg_soup.get_text(" ", strip=True))
+        seg_links = normalize_links(
+            seg_soup,
+            full_url=lambda href: normalize_url(base_url, href),
+            drop_empty_text=True,
+        )
+        return self._propagate_segment_scope(
+            self._parse_text_with_links(seg_text, seg_links),
+        )
 
     def _parse_text_with_links(
         self,
@@ -81,25 +83,36 @@ class SponsorColumn(BaseColumn):
             for p, s in parts_with_sep
         ]
 
+        return self._parse_parts_grouped_by_slash(parts_with_sep, links)
+
+    def _parse_parts_grouped_by_slash(
+        self,
+        parts_with_sep: list[tuple[str, str]],
+        links: list[dict[str, Any]],
+    ) -> list[Any]:
         results: list[Any] = []
         slash_group: list[str] = []
-
-        def flush_slash_group() -> None:
-            if not slash_group:
-                return
-            parsed = [self._parse_part(p, links) for p in slash_group]
-            if len(slash_group) > 1:
-                parsed = self._propagate_slash_group_year_params(parsed)
-            results.extend(item for item in parsed if item is not None)
-            slash_group.clear()
 
         for part, sep in parts_with_sep:
             slash_group.append(part)
             if sep != "/":
-                flush_slash_group()
-        flush_slash_group()
-
+                self._flush_slash_group(results, slash_group, links)
+        self._flush_slash_group(results, slash_group, links)
         return results
+
+    def _flush_slash_group(
+        self,
+        results: list[Any],
+        slash_group: list[str],
+        links: list[dict[str, Any]],
+    ) -> None:
+        if not slash_group:
+            return
+        parsed = [self._parse_part(p, links) for p in slash_group]
+        if len(slash_group) > 1:
+            parsed = self._propagate_slash_group_year_params(parsed)
+        results.extend(item for item in parsed if item is not None)
+        slash_group.clear()
 
     @staticmethod
     def _split_cell_by_br(cell: Tag) -> list[list[Any]]:
