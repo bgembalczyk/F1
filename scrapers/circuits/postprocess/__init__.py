@@ -1,7 +1,11 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from scrapers.base.sections.contract_validation import validate_section_payloads
-from validation.validator_base import ExportRecord
+
+if TYPE_CHECKING:
+    from validation.validator_base import ExportRecord
 
 
 class CircuitSectionContractPostProcessor:

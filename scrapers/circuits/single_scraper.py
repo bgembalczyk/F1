@@ -1,9 +1,7 @@
 from __future__ import annotations
 
-from collections.abc import Callable
+from typing import TYPE_CHECKING
 from typing import Any
-
-from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
@@ -20,6 +18,11 @@ from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.sections.service import CircuitSectionExtractionService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+    from bs4 import BeautifulSoup
 
 
 class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper):
