@@ -1,9 +1,9 @@
 from pathlib import Path
-from typing import Any
-
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.options import ScraperOptions
+from scrapers.base.scraper_protocols import ScraperRecord
+from scrapers.base.scraper_protocols import ScraperRecords
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
@@ -56,18 +56,21 @@ class F1CompleteEngineManufacturerDataExtractor(CompositeDataExtractor):
             ),
         )
 
-        def get_all_records() -> list[dict[str, Any]]:
+        def get_all_records() -> ScraperRecords:
             return list_scraper.fetch() + indianapolis_list_scraper.fetch()
 
-        records_adapter = IterableSourceAdapter(get_all_records)
+        records_adapter = IterableSourceAdapter[ScraperRecord](get_all_records)
 
         return CompositeDataExtractorChildren(
-            list_scraper=list_scraper,
+            list_scraper=[
+                list_scraper,
+                indianapolis_list_scraper,
+            ],
             single_scraper=single_scraper,
             records_adapter=records_adapter,
         )
 
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
+    def get_detail_url(self, record: ScraperRecord) -> str | None:
         manufacturer = record.get("manufacturer")
         if isinstance(manufacturer, dict):
             return manufacturer.get("url")

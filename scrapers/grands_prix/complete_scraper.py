@@ -1,8 +1,7 @@
 from pathlib import Path
-from typing import Any
-
 from scrapers.base.complete_extractor_base import CompleteExtractorBase
 from scrapers.base.options import ScraperOptions
+from scrapers.base.scraper_protocols import ScraperRecord
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
 
@@ -23,7 +22,7 @@ class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
     def build_single_scraper(self, options: ScraperOptions) -> F1SingleGrandPrixScraper:
         return F1SingleGrandPrixScraper(options=self.single_scraper_options(options))
 
-    def extract_detail_url(self, record: dict[str, Any]) -> str | None:
+    def extract_detail_url(self, record: ScraperRecord) -> str | None:
         race_title = record.get("race_title")
         if isinstance(race_title, dict):
             return race_title.get("url")
@@ -31,9 +30,9 @@ class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
 
     def assemble_record(
         self,
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-    ) -> dict[str, Any]:
+        record: ScraperRecord,
+        details: ScraperRecord | None,
+    ) -> ScraperRecord:
         full_record = dict(record)
         by_year = details.get("by_year") if details else None
         full_record["by_year"] = by_year
