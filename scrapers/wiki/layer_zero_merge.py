@@ -448,6 +448,27 @@ def _team_record_key(record: object) -> str | None:
     return None
 
 
+def _team_record_aliases(record: object) -> set[str]:
+    if not isinstance(record, dict):
+        return set()
+
+    aliases: set[str] = set()
+    team = record.get("team")
+
+    if isinstance(team, dict):
+        url = team.get("url")
+        if isinstance(url, str) and url:
+            aliases.add(url)
+        text = team.get("text")
+        if isinstance(text, str) and text:
+            aliases.add(text.casefold())
+
+    if isinstance(team, str) and team:
+        aliases.add(team.casefold())
+
+    return aliases
+
+
 def _merge_duplicate_teams(records: list[object]) -> list[object]:
     merged_records: list[object] = []
     key_to_index: dict[str, int] = {}
@@ -460,13 +481,18 @@ def _merge_duplicate_teams(records: list[object]) -> list[object]:
 
         index = key_to_index.get(key)
         if index is None:
-            key_to_index[key] = len(merged_records)
+            index = len(merged_records)
+            key_to_index[key] = index
             merged_records.append(record)
+            for alias in _team_record_aliases(record):
+                key_to_index[alias] = index
             continue
 
         existing = merged_records[index]
         if isinstance(existing, dict):
             merged_records[index] = _merge_values(existing, record)
+            for alias in _team_record_aliases(merged_records[index]):
+                key_to_index[alias] = index
 
     return merged_records
 
