@@ -9,35 +9,23 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
 from scrapers.circuits.schemas import build_circuits_schema
 from scrapers.circuits.sections import CircuitsListSectionParser
-from scrapers.circuits.validator import CircuitsRecordValidator
+from scrapers.circuits.spec import CIRCUITS_LIST_SPEC
+from scrapers.circuits.spec import build_circuits_list_config
 
 
 class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
-    """
-    Lista torów F1:
-    https://en.wikipedia.org/wiki/List_of_Formula_One_circuits
-    (duża tabela 'Circuits')
-    """
+    default_validator = CIRCUITS_LIST_SPEC.default_validator
+    options_domain = CIRCUITS_LIST_SPEC.domain
+    options_profile = CIRCUITS_LIST_SPEC.options_profile
 
-    default_validator = CircuitsRecordValidator()
-    options_domain = "circuits"
-    options_profile = "soft_seed"
-
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
-        section_id="Circuits",
+    CONFIG = build_circuits_list_config(
         expected_headers=CIRCUITS_EXPECTED_HEADERS,
         model_class=Circuit,
         schema=build_circuits_schema(),
         record_factory=build_circuit_record,
     )
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
+    def __init__(self, *, options: ScraperOptions | None = None, config: ScraperConfig | None = None) -> None:
         super().__init__(options=options, config=config)
 
     domain = "circuits"
