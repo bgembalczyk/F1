@@ -111,7 +111,7 @@ def _coerce_text(value: Any) -> str:
         return str(nested_text).strip() if nested_text else ""
     if isinstance(value, str):
         return value.strip()
-    if isinstance(value, (int, float)):
+    if isinstance(value, int | float):
         return str(value)
     return ""
 

@@ -1,8 +1,11 @@
 from __future__ import annotations
 
-from collections.abc import Callable
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 from typing import Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -36,7 +39,7 @@ def _split_into_parts(
         classes = child.get("class") or []
         if heading_class in classes:
             parts.append((current_name, current_anchor, current_elements))
-            heading_tag = child.find(True, recursive=False)
+            heading_tag = child.find(name=True, recursive=False)
             current_anchor = heading_tag.get("id") if heading_tag else None
             current_name = (
                 heading_tag.get_text(" ", strip=True)
@@ -139,10 +142,10 @@ class WikiElementParserMixin:
             return False
 
     def find_infobox(self, soup: BeautifulSoup) -> Tag | None:
-        return soup.find("table", class_=self._has_infobox_class)
+        return soup.find(name="table", class_=self._has_infobox_class)
 
     def find_infoboxes(self, soup: BeautifulSoup) -> list[Tag]:
-        return soup.find_all("table", class_=self._has_infobox_class)
+        return soup.find_all(name="table", class_=self._has_infobox_class)
 
     def parse_elements(
         self,

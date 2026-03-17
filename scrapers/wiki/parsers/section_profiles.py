@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from dataclasses import field
 
 from scrapers.base.helpers.text import clean_wiki_text
 
@@ -23,7 +24,9 @@ class SectionProfile:
     domain: str
     canonical_section_ids: frozenset[str]
     heading_aliases: dict[str, frozenset[str]]
-    priorities: SectionMatchPriorities = SectionMatchPriorities()
+    priorities: SectionMatchPriorities = field(
+        default_factory=SectionMatchPriorities,
+    )
     required_sections: frozenset[str] = frozenset()
     optional_sections: frozenset[str] = frozenset()
 

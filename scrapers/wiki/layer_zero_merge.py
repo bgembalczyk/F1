@@ -113,15 +113,36 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
     if not isinstance(record, dict):
         return record
 
-    transformed = _transform_tyre_manufacturers(source_name, dict(record))
-    transformed = _transform_constructor_domain(domain, source_name, transformed)
-    transformed = _transform_circuits_domain(domain, transformed)
-    transformed = _transform_engines_domain(domain, source_name, transformed)
-    transformed = _transform_grands_prix_domain(domain, transformed)
-    transformed = _transform_teams_domain(domain, source_name, transformed)
-    transformed = _transform_drivers_domain(domain, source_name, transformed)
-    transformed = _transform_races_domain(domain, source_name, transformed)
-    return transformed
+    return _transform_races_domain(
+        domain,
+        source_name,
+        _transform_drivers_domain(
+            domain,
+            source_name,
+            _transform_teams_domain(
+                domain,
+                source_name,
+                _transform_grands_prix_domain(
+                    domain,
+                    _transform_engines_domain(
+                        domain,
+                        source_name,
+                        _transform_circuits_domain(
+                            domain,
+                            _transform_constructor_domain(
+                                domain,
+                                source_name,
+                                _transform_tyre_manufacturers(
+                                    source_name,
+                                    dict(record),
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+    )
 
 
 def _transform_tyre_manufacturers(
