@@ -28,31 +28,31 @@ class DataPaths:
 
     @property
     def raw(self) -> Path:
-        return self.base_dir / self.raw_dir_name
+        return self._dir(self.raw_dir_name)
 
     @property
     def normalized(self) -> Path:
-        return self.base_dir / self.normalized_dir_name
+        return self._dir(self.normalized_dir_name)
 
     @property
     def checkpoints(self) -> Path:
-        return self.base_dir / self.checkpoints_dir_name
+        return self._dir(self.checkpoints_dir_name)
 
     @property
     def legacy_wiki(self) -> Path:
-        return self.base_dir / self.legacy_wiki_dir_name
+        return self._dir(self.legacy_wiki_dir_name)
 
     def raw_file(self, category: str, filename: str) -> Path:
-        return self.raw / category / filename
+        return self._file(self.raw, category, filename)
 
     def normalized_file(self, category: str, filename: str) -> Path:
-        return self.normalized / category / filename
+        return self._file(self.normalized, category, filename)
 
     def checkpoint_file(self, filename: str) -> Path:
-        return self.checkpoints / filename
+        return self._file(self.checkpoints, filename)
 
     def legacy_wiki_file(self, category: str, filename: str) -> Path:
-        return self.legacy_wiki / category / filename
+        return self._file(self.legacy_wiki, category, filename)
 
     def compatible_input_candidates(
         self,
@@ -69,6 +69,13 @@ class DataPaths:
             if candidate.exists():
                 return candidate
         return None
+
+    def _dir(self, dirname: str) -> Path:
+        return self.base_dir / dirname
+
+    @staticmethod
+    def _file(base: Path, *parts: str) -> Path:
+        return base.joinpath(*parts)
 
 
 def default_scraper_config() -> ScraperConfig:

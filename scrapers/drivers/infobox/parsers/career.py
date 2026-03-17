@@ -1,4 +1,5 @@
 from typing import Any
+from typing import Callable
 
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
@@ -31,47 +32,67 @@ class InfoboxCareerParser:
         return {"label": label, "value": value}
 
     def _parse_value_for_label(self, label: str | None, value_cell: Any) -> Any:
-        if label in {"Active years", "Years active", "Years"}:
-            return self._cell_parser.parse_active_years(value_cell)
+        parser = self._parser_for_label(label)
+        return parser(value_cell)
+
+    def _parser_for_label(self, label: str | None) -> Callable[[Any], Any]:
+        if label in self._active_year_labels():
+            return self._cell_parser.parse_active_years
         if label == "Car number":
-            return self._cell_parser.parse_car_numbers(value_cell)
-        if label in {"Teams", "Former teams"}:
-            return self._cell_parser.parse_teams(value_cell)
+            return self._cell_parser.parse_car_numbers
+        if label in self._team_labels():
+            return self._cell_parser.parse_teams
         if label == "Entries":
-            return self._cell_parser.parse_entries(value_cell)
+            return self._cell_parser.parse_entries
         if label == "Championships":
-            return self._cell_parser.parse_championships(value_cell)
+            return self._cell_parser.parse_championships
         if label == "Class wins":
-            return self._cell_parser.parse_class_wins(value_cell)
-        if label in {
+            return self._cell_parser.parse_class_wins
+        if label in self._int_cell_labels():
+            return self._cell_parser.parse_int_cell
+        if label == "Career points":
+            return self._cell_parser.parse_float_cell
+        if label == "Best finish":
+            return self._cell_parser.parse_best_finish
+        if label in self._race_event_labels():
+            return self._cell_parser.parse_race_event
+        if label == "Finished last season":
+            return self._cell_parser.parse_finished_last_season
+        if label == "Racing licence":
+            return self._cell_parser.parse_racing_licence
+        if label == "Nationality":
+            return self._cell_parser.parse_nationality
+        return self._cell_parser.parse_cell
+
+    @staticmethod
+    def _active_year_labels() -> set[str]:
+        return {"Active years", "Years active", "Years"}
+
+    @staticmethod
+    def _team_labels() -> set[str]:
+        return {"Teams", "Former teams"}
+
+    @staticmethod
+    def _int_cell_labels() -> set[str]:
+        return {
             "Wins",
             "Podiums",
             "Pole positions",
             "Poles",
             "Fastest laps",
             "Starts",
-        }:
-            return self._cell_parser.parse_int_cell(value_cell)
-        if label == "Career points":
-            return self._cell_parser.parse_float_cell(value_cell)
-        if label == "Best finish":
-            return self._cell_parser.parse_best_finish(value_cell)
-        if label in {
+        }
+
+    @staticmethod
+    def _race_event_labels() -> set[str]:
+        return {
             "First race",
             "Last race",
             "First win",
             "Last win",
             "First entry",
             "Last entry",
-        }:
-            return self._cell_parser.parse_race_event(value_cell)
-        if label == "Finished last season":
-            return self._cell_parser.parse_finished_last_season(value_cell)
-        if label == "Racing licence":
-            return self._cell_parser.parse_racing_licence(value_cell)
-        if label == "Nationality":
-            return self._cell_parser.parse_nationality(value_cell)
-        return self._cell_parser.parse_cell(value_cell)
+        }
 
     def _parse_full_data_row(self, row: dict[str, Any]) -> dict[str, Any] | None:
         if "collapsible_table" in row:
