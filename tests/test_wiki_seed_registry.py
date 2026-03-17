@@ -1,3 +1,4 @@
+# ruff: noqa: E501, PT007
 import json
 
 import pytest

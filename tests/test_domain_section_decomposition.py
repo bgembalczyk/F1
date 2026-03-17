@@ -1,3 +1,4 @@
+# ruff: noqa: E501, PLR2004
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions

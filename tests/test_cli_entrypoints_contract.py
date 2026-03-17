@@ -1,3 +1,4 @@
+# ruff: noqa: FBT001, SLF001, TC003
 from __future__ import annotations
 
 import argparse

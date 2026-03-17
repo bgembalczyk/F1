@@ -1,3 +1,4 @@
+# ruff: noqa: PT001
 import importlib.util
 import sys
 import types
