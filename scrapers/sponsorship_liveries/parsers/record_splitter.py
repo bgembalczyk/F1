@@ -1,8 +1,6 @@
 from __future__ import annotations
 
 from typing import Any
-from typing import Protocol
-
 from scrapers.sponsorship_liveries.helpers.constants import COLOUR_KEYS
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_KEYS
 from scrapers.sponsorship_liveries.parsers.colour_scope import ColourScopeHandler
@@ -11,42 +9,20 @@ from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordT
 from scrapers.sponsorship_liveries.parsers.sponsor_scope import SponsorScopeHandler
 
 
-class RecordSplitStrategy(Protocol):
-    def apply(self, record: dict[str, Any]) -> list[dict[str, Any]]:
-        """Split a record into zero, one, or many records."""
-
-
-class SplitRule(Protocol):
-    def should_apply(self, record: dict[str, Any]) -> bool:
-        """Return True when a strategy branch should run for this record."""
-
-
-class HasPossessiveColoursRule:
-    def should_apply(self, record: dict[str, Any]) -> bool:
-        return any(
-            ColourScopeHandler.has_possessive_colour_groups(record.get(key))
-            for key in COLOUR_KEYS
-        )
-
-
-class HasMultipleSeasonsRule:
-    def should_apply(self, record: dict[str, Any]) -> bool:
-        seasons = record.get("season")
-        return isinstance(seasons, list) and len(seasons) > 1
-
-
-class HasYearSpecificSponsorsRule:
-    def should_apply(self, record: dict[str, Any]) -> bool:
-        return SponsorScopeHandler.record_has_year_specific_sponsors(
-            record,
-            SPONSOR_KEYS,
-        )
-
-
-class HasYearSpecificColoursRule:
-    def should_apply(self, record: dict[str, Any]) -> bool:
-        return ColourScopeHandler.record_has_year_specific_colours(record, COLOUR_KEYS)
-
+from scrapers.sponsorship_liveries.parsers.record_splitter_pipeline import (
+    DeduplicateRecordStrategy,
+    RecordSplitPipeline,
+)
+from scrapers.sponsorship_liveries.parsers.record_splitter_protocols import (
+    RecordSplitStrategy,
+    SplitRule,
+)
+from scrapers.sponsorship_liveries.parsers.record_splitter_rules import (
+    HasMultipleSeasonsRule,
+    HasPossessiveColoursRule,
+    HasYearSpecificColoursRule,
+    HasYearSpecificSponsorsRule,
+)
 
 class PossessiveDriverColourSplitStrategy:
     def __init__(self, rule: SplitRule | None = None):
@@ -600,56 +576,6 @@ class GrandPrixSplitStrategy:
             if key in base_colours:
                 other_record[key] = base_colours[key]
         return other_record
-
-
-class DeduplicateRecordStrategy:
-    def __init__(self):
-        self._seen: set[tuple[Any, ...]] = set()
-
-    def reset(self) -> None:
-        self._seen.clear()
-
-    def apply(self, record: dict[str, Any]) -> list[dict[str, Any]]:
-        fingerprint = self._fingerprint(record)
-        if fingerprint in self._seen:
-            return []
-        self._seen.add(fingerprint)
-        return [record]
-
-    @staticmethod
-    def _fingerprint(value: Any) -> tuple[Any, ...]:
-        if isinstance(value, dict):
-            return (
-                "dict",
-                tuple(
-                    (key, DeduplicateRecordStrategy._fingerprint(val))
-                    for key, val in sorted(value.items())
-                ),
-            )
-        if isinstance(value, list):
-            return (
-                "list",
-                tuple(DeduplicateRecordStrategy._fingerprint(item) for item in value),
-            )
-        return ("scalar", str(value))
-
-
-class RecordSplitPipeline:
-    def __init__(self, strategies: list[RecordSplitStrategy]):
-        self._strategies = strategies
-
-    def apply(self, record: dict[str, Any]) -> list[dict[str, Any]]:
-        for strategy in self._strategies:
-            if hasattr(strategy, "reset"):
-                strategy.reset()  # type: ignore[attr-defined]
-
-        records = [record]
-        for strategy in self._strategies:
-            next_records: list[dict[str, Any]] = []
-            for candidate in records:
-                next_records.extend(strategy.apply(candidate))
-            records = next_records
-        return records
 
 
 class SponsorshipRecordSplitter:
