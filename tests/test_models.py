@@ -1,7 +1,4 @@
 # ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
-import re
-import sys
-import types
 from dataclasses import dataclass
 
 import pytest
@@ -16,64 +13,11 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 
-if "bs4" not in sys.modules:
-    bs4_stub = types.ModuleType("bs4")
+from tests.support.compat_stubs import ensure_bs4_stub
+from tests.support.compat_stubs import ensure_certifi_stub
 
-    class _StubTag:
-        def __init__(self, attrs=None, text: str = ""):
-            self.attrs = attrs or {}
-            self.text = text
-
-        def get(self, key, default=None):
-            return self.attrs.get(key, default)
-
-        def get_text(self, *_, **__):
-            return self.text
-
-        def find_all(self, *_, **__):
-            return []
-
-        def find_all_next(self, *_, **__):
-            return []
-
-        @property
-        def contents(self):
-            return [self.text]
-
-    class _StubBeautifulSoup:
-        def __init__(self, html: str, *_):
-            self.html = html
-
-        def find(self, name: str | None = None, *_, **__):
-            if name == "a":
-                return self._parse_a(self.html)
-            return _StubTag()
-
-        def find_all(self, *_, **__):
-            return []
-
-        def _parse_a(self, html: str) -> _StubTag:
-            href_match = re.search(r'href="([^"]*)"', html)
-            class_match = re.search(r'class="([^"]*)"', html)
-            text_match = re.search(r">([^<]*)<", html)
-
-            attrs = {}
-            if href_match:
-                attrs["href"] = href_match.group(1)
-            if class_match:
-                attrs["class"] = class_match.group(1).split()
-
-            return _StubTag(attrs, text_match.group(1) if text_match else "")
-
-    bs4_stub.Tag = _StubTag
-    bs4_stub.BeautifulSoup = _StubBeautifulSoup
-    sys.modules["bs4"] = bs4_stub
-
-if "certifi" not in sys.modules:
-    certifi_stub = types.ModuleType("certifi")
-    certifi_stub.where = lambda: ""
-    sys.modules["certifi"] = certifi_stub
-
+ensure_bs4_stub()
+ensure_certifi_stub()
 
 def test_circuit_rejects_invalid_url():
     with pytest.raises(ValueError):

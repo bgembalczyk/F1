@@ -16,6 +16,7 @@ from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.helpers.link_lookup import build_link_lookup
 
 
 class DriverParsingHelpers:
@@ -30,8 +31,8 @@ class DriverParsingHelpers:
 
     @staticmethod
     def build_link_lookup(
-        links: list[dict[str, str | None]],
-    ) -> dict[str, list[dict[str, str | None]]]:
+        links: list[LinkRecord],
+    ) -> dict[str, list[LinkRecord]]:
         """
         Build lookup dictionary mapping driver names to their link records.
 
@@ -41,21 +42,12 @@ class DriverParsingHelpers:
         Returns:
             Dictionary mapping lowercase driver names to lists of matching links
         """
-        lookup: dict[str, list[dict[str, str | None]]] = {}
-        for link in links:
-            text = link.get("text")
-            if not text:
-                continue
-            key = text.strip().lower()
-            if key not in lookup:
-                lookup[key] = []
-            lookup[key].append(link)
-        return lookup
+        return build_link_lookup(links)
 
     @staticmethod
     def parse_segment(
         segment: Tag,
-        link_lookup: dict[str, list[dict[str, str | None]]],
+        link_lookup: dict[str, list[LinkRecord]],
         base_url: str,
     ) -> LinkRecord | None:
         """

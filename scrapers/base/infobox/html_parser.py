@@ -66,36 +66,14 @@ class InfoboxHtmlParser(InfoboxParser):
         """
         return soup.find("table", class_=InfoboxHtmlParser.has_infobox_class)
 
-    def _parse_infobox(self, table) -> dict[str, Any]:
-        data: dict[str, Any] = {"title": None, "rows": {}}
+    def _parse_infobox(self, table: Tag) -> dict[str, Any]:
+        return self.parse_table_rows(table)
 
-        # Tytuł (często <caption>)
-        caption = table.find("caption")
-        if caption:
-            data["title"] = caption.get_text(" ", strip=True)
-
-        # Faktyczne wiersze infoboksa. W artykułach Wikipedii <tr> znajdują się
-        # zwykle wewnątrz <tbody>, dlatego szukamy w całej tabeli, ale
-        # odfiltrowujemy wiersze zagnieżdżonych tabel.
-        for tr in table.find_all("tr"):
-            # pomiń wiersze należące do zagnieżdżonych tabel (np. miniaturek)
-            if tr.find_parent("table") is not table:
-                continue
-
-            header = tr.find("th", recursive=False)
-            value = tr.find("td", recursive=False)
-
-            # ignorujemy wiersze bez pary th/td
-            if not header or not value:
-                continue
-
-            key = header.get_text(" ", strip=True)
-            text = value.get_text(" ", strip=True)
-            links = self.extract_links(value)
-
-            data["rows"][key] = {"text": text, "links": links}
-
-        return data
+    def parse_row_value(self, value: Tag) -> dict[str, Any]:
+        return {
+            "text": value.get_text(" ", strip=True),
+            "links": self.extract_links(value),
+        }
 
     def extract_links(self, td) -> list[LinkRecord]:
         """
