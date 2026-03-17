@@ -11,6 +11,17 @@ from scrapers.base.results import ScrapeResult
 from scrapers.base.run_config import RunConfig
 
 
+RUN_CONFIG_OPTION_FIELD_MAP: tuple[tuple[str, str], ...] = (
+    ("debug_dir", "debug_dir"),
+    ("cache_dir", "cache_dir"),
+    ("cache_ttl", "cache_ttl"),
+    ("cache_adapter", "cache_adapter"),
+    ("http_timeout", "http_timeout"),
+    ("http_retries", "http_retries"),
+    ("http_backoff_seconds", "http_backoff_seconds"),
+)
+
+
 class ScraperRunner:
     """Orkiestruje tworzenie scrapera i eksport wyników."""
 
@@ -87,21 +98,14 @@ class ScraperRunner:
 
     def _build_options(self, run_id: str) -> ScraperOptions:
         options = self._run_config.options or ScraperOptions()
+
+        for run_attr, option_attr in RUN_CONFIG_OPTION_FIELD_MAP:
+            value = getattr(self._run_config, run_attr)
+            if value is not None:
+                setattr(options, option_attr, value)
+
+        # Reguły biznesowe specjalne: run_id i raporty jakości/błędów.
         options.run_id = run_id
-        if self._run_config.debug_dir is not None:
-            options.debug_dir = self._run_config.debug_dir
-        if self._run_config.cache_dir is not None:
-            options.cache_dir = self._run_config.cache_dir
-        if self._run_config.cache_ttl is not None:
-            options.cache_ttl = self._run_config.cache_ttl
-        if self._run_config.cache_adapter is not None:
-            options.cache_adapter = self._run_config.cache_adapter
-        if self._run_config.http_timeout is not None:
-            options.http_timeout = self._run_config.http_timeout
-        if self._run_config.http_retries is not None:
-            options.http_retries = self._run_config.http_retries
-        if self._run_config.http_backoff_seconds is not None:
-            options.http_backoff_seconds = self._run_config.http_backoff_seconds
         options.quality_report = self._run_config.quality_report
         options.error_report = self._run_config.error_report
         return options
