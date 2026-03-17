@@ -182,7 +182,12 @@ class InfoboxTitlesParser:
             event_index = text.find(event_link.get("text", ""))
             if event_index < 0:
                 continue
-            next_event_index = self._next_event_index(text, event_links, event_link, event_index)
+            next_event_index = self._next_event_index(
+                text,
+                event_links,
+                event_link,
+                event_index,
+            )
             associated_years = self._find_years_for_event(
                 text,
                 year_links,

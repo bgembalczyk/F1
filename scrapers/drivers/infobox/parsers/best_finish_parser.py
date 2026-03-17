@@ -178,7 +178,11 @@ class BestFinishParser:
         season_links: list[dict[str, Any]],
     ) -> dict[str, Any] | None:
         """Find class information for a specific season."""
-        found_small = self._find_nearest_small_tag(season_tag, season_link, season_links)
+        found_small = self._find_nearest_small_tag(
+            season_tag,
+            season_link,
+            season_links,
+        )
         if not found_small:
             return None
         return self._extract_valid_class_candidate(found_small, season_link)
@@ -196,7 +200,11 @@ class BestFinishParser:
                 return None
             if self._is_other_season_tag(next_elem, season_link, season_links):
                 return None
-            small_in_elem = self._small_tag_from_elem(next_elem, season_link, season_links)
+            small_in_elem = self._small_tag_from_elem(
+                next_elem,
+                season_link,
+                season_links,
+            )
             if small_in_elem is not None:
                 return small_in_elem
         return None

@@ -77,7 +77,10 @@ class ColourListColumn(BaseColumn):
             ColourListColumn._flush_current_parts(segments, current_parts)
             ColourListColumn._append_paragraph_segment(child, segments)
             return
-        ColourListColumn._append_text_part(child.get_text(" ", strip=True), current_parts)
+        ColourListColumn._append_text_part(
+            child.get_text(" ", strip=True),
+            current_parts,
+        )
 
     @staticmethod
     def _append_paragraph_segment(child: Tag, segments: list[str]) -> None:
