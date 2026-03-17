@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Optional
@@ -6,9 +5,7 @@ from typing import Optional
 from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 from scrapers.sponsorship_liveries.parsers.record_splitter import (
     SponsorshipRecordSplitter,
 )
@@ -60,6 +57,7 @@ class F1SponsorshipLiveriesScraper(WikiScraper):
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._section_parser.parse_sections(soup)
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

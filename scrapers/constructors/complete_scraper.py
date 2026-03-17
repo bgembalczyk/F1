@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Any
 
 from scrapers.base.complete_extractor_base import CompleteExtractorBase
@@ -56,6 +55,7 @@ class CompleteConstructorsDataExtractor(CompleteExtractorBase):
             return url
 
         return None
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

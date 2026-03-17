@@ -1,8 +1,4 @@
-from pathlib import Path
-
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.records import record_from_mapping
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.config import ScraperConfig
@@ -40,6 +36,7 @@ class TyreManufacturersBySeasonScraper(F1TableScraper):
         schema=TableSchemaDSL(columns=schema_columns),
         record_factory=record_from_mapping,
     )
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 import importlib
 import inspect
+from dataclasses import dataclass
 from pathlib import Path
 from types import ModuleType
 from typing import Any
@@ -43,7 +43,9 @@ def _iter_discovery_module_names() -> tuple[str, ...]:
     module_paths.update(root.glob("scrapers/*/list/*.py"))
     module_paths.add(root / "scrapers/wiki/orchestration.py")
 
-    return tuple(sorted(_path_to_module(path) for path in module_paths if path.is_file()))
+    return tuple(
+        sorted(_path_to_module(path) for path in module_paths if path.is_file()),
+    )
 
 
 def _read_component_metadata(candidate: type[Any]) -> ComponentMetadata | None:
@@ -124,12 +126,18 @@ def validate_discovery_metadata_completeness() -> None:
         for _, candidate in inspect.getmembers(module, inspect.isclass):
             if candidate.__module__ != module.__name__:
                 continue
-            if candidate.__name__.endswith("Runner") and candidate.__name__ != "LayerJobRunner":
+            if (
+                candidate.__name__.endswith("Runner")
+                and candidate.__name__ != "LayerJobRunner"
+            ):
                 if getattr(candidate, COMPONENT_METADATA_ATTR, None) is None:
                     missing.append(f"{module_name}.{candidate.__name__}")
 
         list_scraper_cls = getattr(module, "LIST_SCRAPER_CLASS", None)
-        if inspect.isclass(list_scraper_cls) and getattr(list_scraper_cls, COMPONENT_METADATA_ATTR, None) is None:
+        if (
+            inspect.isclass(list_scraper_cls)
+            and getattr(list_scraper_cls, COMPONENT_METADATA_ATTR, None) is None
+        ):
             missing.append(f"{list_scraper_cls.__module__}.{list_scraper_cls.__name__}")
 
     if missing:

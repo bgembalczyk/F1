@@ -46,6 +46,7 @@ def run_list_scraper(*, run_config: RunConfig) -> None:
         run_config=run_config,
     )
 
+
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper
 

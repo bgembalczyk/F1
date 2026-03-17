@@ -1,7 +1,4 @@
-from pathlib import Path
-
 from models.records.factories import build_constructor_record
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.config import ScraperConfig
@@ -52,6 +49,7 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
 
     section_label = "Former constructors"
     section_parser_class = ConstructorsListSectionParser
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

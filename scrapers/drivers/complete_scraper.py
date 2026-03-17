@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Any
 
 from scrapers.base.complete_extractor_base import CompleteExtractorBase
@@ -21,6 +20,7 @@ class CompleteDriverDataExtractor(CompleteExtractorBase):
         if isinstance(driver_link, dict):
             return driver_link.get("url")
         return None
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

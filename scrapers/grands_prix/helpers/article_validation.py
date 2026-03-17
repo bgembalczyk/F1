@@ -1,9 +1,7 @@
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.article_validation import (
-    has_category_keyword,
-    has_navbox_template_link,
-)
+from scrapers.base.helpers.article_validation import has_category_keyword
+from scrapers.base.helpers.article_validation import has_navbox_template_link
 
 GRAND_PRIX_KEYWORD = "grand prix"
 GRAND_PRIX_NAVBOX_TEMPLATE = "Template:Formula_One_Grands_Prix"

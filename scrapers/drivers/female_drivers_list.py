@@ -1,8 +1,5 @@
-from pathlib import Path
-
 from models.records.factories import build_special_driver_record
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -64,6 +61,7 @@ class FemaleDriversListScraper(F1TableScraper):
         ):
             resolved_options.post_processors.append(EntriesStartsPointsPostProcessor())
         super().__init__(options=resolved_options, config=config)
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

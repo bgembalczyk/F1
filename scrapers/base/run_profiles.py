@@ -28,12 +28,15 @@ class RunProfileName(str, Enum):
     DEPRECATED = "deprecated"
 
 
-RunProfileSelector = RunProfileName | Literal[
-    "strict",
-    "minimal",
-    "debug",
-    "deprecated",
-]
+RunProfileSelector = (
+    RunProfileName
+    | Literal[
+        "strict",
+        "minimal",
+        "debug",
+        "deprecated",
+    ]
+)
 
 
 def _coerce_profile(profile: RunProfileSelector) -> RunProfileName:

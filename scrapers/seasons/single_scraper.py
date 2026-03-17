@@ -5,8 +5,8 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.colin_chapman_trophy import ColinChapmanTrophyParser

@@ -1030,7 +1030,6 @@ def test_split_pipeline_mixed_season_gp_and_possessive_order() -> None:
     ]
 
 
-
 def test_split_pipeline_is_deterministic_for_mixed_case() -> None:
     """Same mixed input produces identical output ordering across repeated runs."""
     from scrapers.sponsorship_liveries.parsers.record_splitter import (

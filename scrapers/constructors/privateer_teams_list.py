@@ -1,5 +1,4 @@
 import re
-from pathlib import Path
 from typing import Any
 
 from bs4 import Tag
@@ -10,7 +9,6 @@ from scrapers.base.helpers.http import build_http_policy
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 
 
 class PrivateerTeamsListScraper(F1ListScraper):
@@ -68,6 +66,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
                 record["seasons"] = seasons
 
         return record
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

@@ -520,9 +520,15 @@ def test_sub_section_parser_snapshot_structure_regression() -> None:
     result = parser.parse(soup.find("div"))
 
     assert result["sub_sub_sections"][0]["section_id"] == "top"
-    assert result["sub_sub_sections"][0]["sub_sub_sub_sections"][0]["section_id"] == "top__top"
+    assert (
+        result["sub_sub_sections"][0]["sub_sub_sub_sections"][0]["section_id"]
+        == "top__top"
+    )
     assert result["sub_sub_sections"][1]["section_id"] == "sub4_one"
-    assert result["sub_sub_sections"][1]["sub_sub_sub_sections"][1]["section_id"] == "sub5_one"
+    assert (
+        result["sub_sub_sections"][1]["sub_sub_sub_sections"][1]["section_id"]
+        == "sub5_one"
+    )
 
 
 def test_section_parser_snapshot_structure_regression() -> None:
@@ -543,7 +549,10 @@ def test_section_parser_snapshot_structure_regression() -> None:
 
     assert result["sub_sections"][0]["section_id"] == "top"
     assert result["sub_sections"][1]["section_id"] == "sub3_one"
-    assert result["sub_sections"][1]["sub_sub_sections"][0]["section_id"] == "sub3_one__top"
+    assert (
+        result["sub_sections"][1]["sub_sub_sections"][0]["section_id"]
+        == "sub3_one__top"
+    )
     assert result["sub_sections"][1]["sub_sub_sections"][1]["section_id"] == "sub4_one"
     assert (
         result["sub_sections"][1]["sub_sub_sections"][1]["sub_sub_sub_sections"][1][

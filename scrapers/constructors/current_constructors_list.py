@@ -2,10 +2,8 @@
 
 from datetime import datetime
 from datetime import timezone
-from pathlib import Path
 
 from models.records.factories import build_constructor_record
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.config import ScraperConfig
@@ -35,7 +33,6 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
         "default_output_path": "raw/constructors/seeds/complete_constructors",
         "legacy_output_path": "constructors/complete_constructors",
     }
-
 
     """
     Aktualni konstruktorzy - sekcja
@@ -67,6 +64,7 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
 
     section_label = "Current constructors"
     section_parser_class = ConstructorsListSectionParser
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

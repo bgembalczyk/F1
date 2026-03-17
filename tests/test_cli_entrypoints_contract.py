@@ -113,7 +113,9 @@ def test_deprecated_module_base_config_has_expected_defaults() -> None:
 
 
 def test_complete_extractor_base_config_has_expected_defaults() -> None:
-    assert complete_extractor_base_config() == RunConfig(output_dir=Path("../../data/wiki"))
+    assert complete_extractor_base_config() == RunConfig(
+        output_dir=Path("../../data/wiki"),
+    )
 
 
 def test_build_deprecated_module_main_warns_and_passes_run_config() -> None:

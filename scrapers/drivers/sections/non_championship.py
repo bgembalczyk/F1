@@ -4,7 +4,6 @@ from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
 from scrapers.drivers.sections.common import DriverResultsSectionConfig
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 
-
 NON_CHAMPIONSHIP_SECTION = DriverResultsSectionConfig(
     section_id="Non-championship",
     section_label="Non-championship",

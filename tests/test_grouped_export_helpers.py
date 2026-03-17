@@ -19,7 +19,9 @@ class _StubScraper:
         self.exporter = None
 
 
-def test_export_grouped_json_writes_files_and_uses_other_fallback(tmp_path: Path) -> None:
+def test_export_grouped_json_writes_files_and_uses_other_fallback(
+    tmp_path: Path,
+) -> None:
     scraper = _StubScraper()
     data: list[dict[str, Any]] = [
         {"name": "Alpha"},

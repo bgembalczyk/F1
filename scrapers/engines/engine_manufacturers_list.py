@@ -1,9 +1,5 @@
-from pathlib import Path
-
 from models.records.factories import build_engine_manufacturer_record
 from models.validation.engine_manufacturer import EngineManufacturer
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.float import FloatColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.config import ScraperConfig
@@ -49,6 +45,7 @@ class EngineManufacturersListScraper(F1TableScraper):
         model_class=EngineManufacturer,
         schema=TableSchemaDSL(columns=schema_columns),
     )
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

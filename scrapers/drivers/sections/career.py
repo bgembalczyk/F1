@@ -4,7 +4,6 @@ from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
 from scrapers.drivers.sections.common import DriverResultsSectionConfig
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 
-
 CAREER_RESULTS_SECTION = DriverResultsSectionConfig(
     section_id="Career_results",
     section_label="Career",

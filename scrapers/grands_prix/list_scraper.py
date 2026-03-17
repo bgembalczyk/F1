@@ -24,7 +24,6 @@ class GrandsPrixListScraper(F1TableScraper):
         "legacy_output_path": "grands_prix/f1_grands_prix_extended.json",
     }
 
-
     """
     Uproszczony scraper np. dla tabeli 'By race title'
     z:
@@ -62,6 +61,7 @@ class GrandsPrixListScraper(F1TableScraper):
         config: ScraperConfig | None = None,
     ) -> None:
         super().__init__(options=options, config=config)
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

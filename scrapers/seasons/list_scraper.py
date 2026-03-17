@@ -21,7 +21,6 @@ class SeasonsListScraper(F1TableScraper):
         "legacy_output_path": "seasons/complete_seasons",
     }
 
-
     """
     Scraper listy sezonów z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_seasons
@@ -51,6 +50,7 @@ class SeasonsListScraper(F1TableScraper):
         schema=TableSchemaDSL(columns=schema_columns),
         record_factory=build_season_summary_record,
     )
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

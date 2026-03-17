@@ -277,12 +277,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         ],
     )
     _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "teams"
-        / "raw"
-        / "cadillac_livery.json",
+        base_wiki_dir / "layers" / "0_layer" / "teams" / "raw" / "cadillac_livery.json",
         [
             {
                 "team": {
@@ -323,12 +318,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         ],
     )
     _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "teams"
-        / "raw"
-        / "audi_livery.json",
+        base_wiki_dir / "layers" / "0_layer" / "teams" / "raw" / "audi_livery.json",
         [
             {
                 "team": "Audi",
@@ -619,7 +609,9 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         },
     ]
 
-    female_driver = next(item for item in drivers_merged if item["driver"]["text"] == "Maria")
+    female_driver = next(
+        item for item in drivers_merged if item["driver"]["text"] == "Maria"
+    )
     assert female_driver == {
         "driver": {"text": "Maria", "url": "https://example.com/maria"},
         "gender": "female",
@@ -739,8 +731,11 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         },
     }
 
-
-    team_x = next(item for item in teams_merged if isinstance(item.get("team"), dict) and item["team"]["text"] == "Team X")
+    team_x = next(
+        item
+        for item in teams_merged
+        if isinstance(item.get("team"), dict) and item["team"]["text"] == "Team X"
+    )
     assert team_x["team"] == {"text": "Team X", "url": "https://example.com/team-x"}
     team_x = next(
         item
@@ -758,8 +753,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     cadillac_team = next(
         item
         for item in teams_merged
-        if isinstance(item.get("team"), dict)
-        and item["team"]["text"] == "Cadillac"
+        if isinstance(item.get("team"), dict) and item["team"]["text"] == "Cadillac"
     )
     assert cadillac_team["racing_series"] == {
         "formula_one": {
@@ -790,7 +784,9 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         },
     }
 
-    racing_bulls = next(item for item in teams_merged if _team_text(item) == "Racing Bulls")
+    racing_bulls = next(
+        item for item in teams_merged if _team_text(item) == "Racing Bulls"
+    )
     assert racing_bulls["racing_series"] == {
         "formula_one": {
             "seasons": [
@@ -821,8 +817,9 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         },
     }
 
-
-    aston_martin = next(item for item in teams_merged if _team_text(item) == "Aston Martin")
+    aston_martin = next(
+        item for item in teams_merged if _team_text(item) == "Aston Martin"
+    )
     assert aston_martin["racing_series"] == {
         "formula_one": {
             "seasons": [

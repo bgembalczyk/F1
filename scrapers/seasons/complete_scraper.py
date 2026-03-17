@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from scrapers.base.complete_extractor_base import CompleteExtractorBase
 from scrapers.base.complete_extractor_base import CompleteExtractorDomainConfig
 from scrapers.seasons.list_scraper import SeasonsListScraper
@@ -19,6 +17,7 @@ class CompleteSeasonDataExtractor(CompleteExtractorBase):
             "details_default": {},
         },
     )
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

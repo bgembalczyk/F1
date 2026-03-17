@@ -2,10 +2,10 @@ from .career import CAREER_RESULTS_SECTION
 from .career import DriverCareerSectionParser
 from .common import BaseDriverResultsSectionParser
 from .common import DriverResultsSectionConfig
-from .non_championship import DriverNonChampionshipSectionParser
 from .non_championship import NON_CHAMPIONSHIP_SECTION
-from .racing_record import DriverRacingRecordSectionParser
+from .non_championship import DriverNonChampionshipSectionParser
 from .racing_record import RACING_RECORD_SECTION
+from .racing_record import DriverRacingRecordSectionParser
 from .results import DriverResultsSectionParser
 
 __all__ = [

@@ -38,8 +38,8 @@ def test_cli_entrypoint_profiles_match_central_definitions() -> None:
 def test_wiki_application_uses_central_debug_profile_for_layer_runs() -> None:
     layer_zero = _LayerExecutorSpy()
     layer_one = _LayerExecutorSpy()
-    base_wiki_dir = Path('/tmp/wiki')
-    base_debug_dir = Path('/tmp/debug')
+    base_wiki_dir = Path("/tmp/wiki")
+    base_debug_dir = Path("/tmp/debug")
 
     app = WikiPipelineApplication(
         base_wiki_dir=base_wiki_dir,

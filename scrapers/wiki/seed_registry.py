@@ -13,7 +13,6 @@ from scrapers.constructors.indianapolis_only_constructors_list import (
 )
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
-from scrapers.wiki.discovery import discover_layer_one_seed_components
 from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
@@ -37,6 +36,7 @@ from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScrap
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
 from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
+from scrapers.wiki.discovery import discover_layer_one_seed_components
 
 
 @dataclass(frozen=True)
@@ -127,7 +127,9 @@ EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
 
 def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]:
     discovered = discover_layer_one_seed_components()
-    explicit_by_seed = {entry.seed_name: entry for entry in EXPLICIT_LAYER_ONE_SEED_REGISTRY}
+    explicit_by_seed = {
+        entry.seed_name: entry for entry in EXPLICIT_LAYER_ONE_SEED_REGISTRY
+    }
     registry: list[SeedRegistryEntry] = []
 
     for seed_name, explicit in explicit_by_seed.items():
@@ -149,8 +151,10 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
                 wikipedia_url=component.cls.CONFIG.url,
                 output_category=metadata.output_category,
                 list_scraper_cls=component.cls,
-                default_output_path=metadata.default_output_path or explicit.default_output_path,
-                legacy_output_path=metadata.legacy_output_path or explicit.legacy_output_path,
+                default_output_path=metadata.default_output_path
+                or explicit.default_output_path,
+                legacy_output_path=metadata.legacy_output_path
+                or explicit.legacy_output_path,
             ),
         )
 
@@ -159,9 +163,7 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
             continue
         metadata = component.metadata
         if not metadata.default_output_path or not metadata.legacy_output_path:
-            msg = (
-                f"Discovered layer-one seed '{seed_name}' is missing output paths in metadata"
-            )
+            msg = f"Discovered layer-one seed '{seed_name}' is missing output paths in metadata"
             raise ValueError(msg)
         registry.append(
             SeedRegistryEntry(
@@ -177,7 +179,9 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
     return tuple(registry)
 
 
-WIKI_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = _build_discovered_layer_one_seed_registry()
+WIKI_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
+    _build_discovered_layer_one_seed_registry()
+)
 
 
 WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (

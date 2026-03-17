@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from scrapers.base.complete_extractor_base import CompleteExtractorBase
 from scrapers.base.complete_extractor_base import CompleteExtractorDomainConfig
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
@@ -22,6 +20,7 @@ class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
         assemble_record_strategy="extract_detail_field",
         assemble_record_params={"detail_field": "by_year"},
     )
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

@@ -51,7 +51,11 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
         return super().fetch()
 
 
-class SingleWikiArticleSectionAdapterBase(SectionAdapter, SingleWikiArticleScraperBase, ABC):
+class SingleWikiArticleSectionAdapterBase(
+    SectionAdapter,
+    SingleWikiArticleScraperBase,
+    ABC,
+):
     """Wariant dla scraperów opartych o ``SectionAdapter``.
 
     Zapewnia nie-fragmentowe ``fetch_by_url`` (bez rozdzielania ``#section``).

@@ -65,9 +65,7 @@ def _import_factory_modules() -> None:
 def _validate_factory_classes(factory_classes: list[type[BaseRecordFactory]]) -> None:
     record_types = [factory_class.record_type for factory_class in factory_classes]
     duplicate_keys = sorted(
-        record_type
-        for record_type, count in Counter(record_types).items()
-        if count > 1
+        record_type for record_type, count in Counter(record_types).items() if count > 1
     )
     if duplicate_keys:
         message = "duplicate_factory_record_types: " + ", ".join(duplicate_keys)

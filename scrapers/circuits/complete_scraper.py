@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from scrapers.base.complete_extractor_base import CompleteExtractorBase
 from scrapers.base.complete_extractor_base import CompleteExtractorDomainConfig
 from scrapers.circuits.list_scraper import CircuitsListScraper
@@ -24,6 +22,7 @@ class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
         detail_url_field_path="circuit.url",
         record_postprocessor=CircuitService.normalize_record,
     )
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

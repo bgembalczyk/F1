@@ -1,4 +1,3 @@
-from pathlib import Path
 from typing import Any
 
 from models.records.factories import build_fatality_record
@@ -6,7 +5,6 @@ from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -92,6 +90,7 @@ class F1FatalitiesListScraper(F1TableScraper):
         auto_value = AutoColumn().parse(ctx)
         normalized = normalize_auto_value(auto_value, strip_marks=True)
         return {"event": normalized, "championship": championship}
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

@@ -537,7 +537,9 @@ def _nest_team_liveries_in_seasons(record: object) -> object:
             continue
 
         livery_years = _season_years(livery.get("season"))
-        livery_payload = {key: value for key, value in livery.items() if key != "season"}
+        livery_payload = {
+            key: value for key, value in livery.items() if key != "season"
+        }
         matched = False
 
         for season in seasons:

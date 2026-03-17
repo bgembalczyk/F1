@@ -9,10 +9,20 @@ from scrapers.drivers.columns.round import RoundColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
 from scrapers.drivers.sections.driver_results_constants import (
     CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY,
+)
+from scrapers.drivers.sections.driver_results_constants import (
     CAREER_HIGHLIGHTS_HEADER_TO_KEY,
+)
+from scrapers.drivers.sections.driver_results_constants import (
     CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY,
+)
+from scrapers.drivers.sections.driver_results_constants import (
     CAREER_SUMMARY_HEADER_TO_KEY,
+)
+from scrapers.drivers.sections.driver_results_constants import (
     COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY,
+)
+from scrapers.drivers.sections.driver_results_constants import (
     COMPLETE_RESULTS_HEADER_TO_KEY,
 )
 

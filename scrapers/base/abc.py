@@ -8,6 +8,7 @@ from uuid import uuid4
 from bs4 import BeautifulSoup
 
 from infrastructure.http_client.policies.http import HttpPolicy
+from models.mappers.serialization import to_dict_list
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
 from scrapers.base.errors import ScraperNetworkError
@@ -29,7 +30,6 @@ from scrapers.base.results import ScrapeResult
 from scrapers.base.transformers.helpers import apply_transformers
 from validation.validator_base import ExportRecord
 from validation.validator_base import RecordValidator
-from models.mappers.serialization import to_dict_list
 
 T = TypeVar("T")
 

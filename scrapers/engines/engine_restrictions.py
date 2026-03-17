@@ -1,12 +1,9 @@
-from pathlib import Path
 from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.range import RangeColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -105,6 +102,7 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
                 records.append(record)
 
         return records
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

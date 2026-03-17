@@ -11,8 +11,7 @@ class ResultRuleContext:
 
 
 class ResultRule(Protocol):
-    def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None:
-        ...
+    def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None: ...
 
 
 def append_note(result: dict[str, Any], note: str) -> None:
@@ -141,8 +140,7 @@ class RoundRuleContext:
 
 
 class RoundRule(Protocol):
-    def apply(self, context: RoundRuleContext) -> dict[str, Any] | None:
-        ...
+    def apply(self, context: RoundRuleContext) -> dict[str, Any] | None: ...
 
 
 class HalfPointsRoundRule:

@@ -46,7 +46,10 @@ class HasMultipleSeasonsRule:
 
 class HasYearSpecificSponsorsRule:
     def should_apply(self, record: dict[str, Any]) -> bool:
-        return SponsorScopeHandler.record_has_year_specific_sponsors(record, SPONSOR_KEYS)
+        return SponsorScopeHandler.record_has_year_specific_sponsors(
+            record,
+            SPONSOR_KEYS,
+        )
 
 
 class HasYearSpecificColoursRule:
@@ -368,7 +371,12 @@ class GrandPrixSplitStrategy:
                         parts.append(
                             (
                                 key,
-                                tuple(sorted((item_key, str(value)) for item_key, value in item.items())),
+                                tuple(
+                                    sorted(
+                                        (item_key, str(value))
+                                        for item_key, value in item.items()
+                                    ),
+                                ),
                             ),
                         )
                     else:

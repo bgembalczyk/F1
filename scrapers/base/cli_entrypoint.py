@@ -8,6 +8,7 @@ import inspect
 import warnings
 from collections.abc import Callable
 from collections.abc import Sequence
+
 from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
@@ -119,7 +120,9 @@ def build_cli_main(
 ) -> Callable[[], None]:
     """Build reusable ``__main__`` launcher with standardized profile defaults."""
     normalized_profile = _coerce_cli_main_profile(profile)
-    profile_quality_default, profile_error_default = _PROFILE_DEFAULTS[normalized_profile]
+    profile_quality_default, profile_error_default = _PROFILE_DEFAULTS[
+        normalized_profile
+    ]
     quality_default = (
         profile_quality_default
         if quality_report_default is None

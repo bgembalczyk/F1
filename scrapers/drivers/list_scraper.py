@@ -1,10 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
 
-from pathlib import Path
-
 from models.records.factories import build_driver_record
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
@@ -41,7 +38,6 @@ class F1DriversListScraper(F1TableScraper):
         "default_output_path": "raw/drivers/seeds/complete_drivers",
         "legacy_output_path": "drivers/complete_drivers",
     }
-
 
     """
     Scraper listy kierowców F1 z:
@@ -101,6 +97,7 @@ class F1DriversListScraper(F1TableScraper):
             DriversChampionshipsTransformer(),
         ]
         return options
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper

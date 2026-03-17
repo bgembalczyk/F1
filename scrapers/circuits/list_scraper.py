@@ -23,7 +23,6 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
         "legacy_output_path": "circuits/complete_circuits",
     }
 
-
     """
     Lista torów F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_circuits
@@ -54,6 +53,7 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
     domain = "circuits"
     section_label = "Circuits"
     section_parser_class = CircuitsListSectionParser
+
 
 if __name__ == "__main__":
     from scrapers.cli import run_legacy_wrapper
