@@ -11,6 +11,17 @@ from scrapers.base.table.scraper import F1TableScraper
 
 
 class SeasonsListScraper(F1TableScraper):
+    COMPONENT_METADATA = {
+        "domain": "seasons",
+        "seed_name": "seasons",
+        "layer": "layer_one",
+        "output_category": "seasons",
+        "component_type": "list_scraper",
+        "default_output_path": "raw/seasons/seeds/complete_seasons",
+        "legacy_output_path": "seasons/complete_seasons",
+    }
+
+
     """
     Scraper listy sezonów z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_seasons

@@ -13,6 +13,7 @@ from scrapers.constructors.indianapolis_only_constructors_list import (
 )
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
+from scrapers.wiki.discovery import discover_layer_one_seed_components
 from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
@@ -80,7 +81,7 @@ class RegistryValidationSpec:
     path_rules: tuple[RegistryValidationRule, ...]
 
 
-WIKI_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
+EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
     SeedRegistryEntry(
         seed_name="drivers",
         wikipedia_url=F1DriversListScraper.CONFIG.url,
@@ -122,6 +123,61 @@ WIKI_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
         legacy_output_path="seasons/complete_seasons",
     ),
 )
+
+
+def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]:
+    discovered = discover_layer_one_seed_components()
+    explicit_by_seed = {entry.seed_name: entry for entry in EXPLICIT_LAYER_ONE_SEED_REGISTRY}
+    registry: list[SeedRegistryEntry] = []
+
+    for seed_name, explicit in explicit_by_seed.items():
+        component = discovered.get(seed_name)
+        if component is None:
+            registry.append(explicit)
+            continue
+
+        metadata = component.metadata
+        if metadata.output_category != explicit.output_category:
+            msg = (
+                f"Conflicting output_category for seed '{seed_name}': "
+                f"explicit='{explicit.output_category}' discovered='{metadata.output_category}'"
+            )
+            raise ValueError(msg)
+        registry.append(
+            SeedRegistryEntry(
+                seed_name=metadata.seed_name,
+                wikipedia_url=component.cls.CONFIG.url,
+                output_category=metadata.output_category,
+                list_scraper_cls=component.cls,
+                default_output_path=metadata.default_output_path or explicit.default_output_path,
+                legacy_output_path=metadata.legacy_output_path or explicit.legacy_output_path,
+            ),
+        )
+
+    for seed_name, component in discovered.items():
+        if seed_name in explicit_by_seed:
+            continue
+        metadata = component.metadata
+        if not metadata.default_output_path or not metadata.legacy_output_path:
+            msg = (
+                f"Discovered layer-one seed '{seed_name}' is missing output paths in metadata"
+            )
+            raise ValueError(msg)
+        registry.append(
+            SeedRegistryEntry(
+                seed_name=seed_name,
+                wikipedia_url=component.cls.CONFIG.url,
+                output_category=metadata.output_category,
+                list_scraper_cls=component.cls,
+                default_output_path=metadata.default_output_path,
+                legacy_output_path=metadata.legacy_output_path,
+            ),
+        )
+
+    return tuple(registry)
+
+
+WIKI_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = _build_discovered_layer_one_seed_registry()
 
 
 WIKI_LIST_JOB_REGISTRY: tuple[ListJobRegistryEntry, ...] = (

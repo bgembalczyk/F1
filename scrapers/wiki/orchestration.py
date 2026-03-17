@@ -14,6 +14,7 @@ from scrapers.engines.helpers.export import export_complete_engine_manufacturers
 from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
 from scrapers.seasons.helpers import export_complete_seasons
 from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 from scrapers.wiki.seed_registry import ListJobRegistryEntry
 from scrapers.wiki.seed_registry import SeedRegistryEntry
 
@@ -30,6 +31,14 @@ class LayerJobRunner(ABC):
 
 
 class GrandPrixRunner(LayerJobRunner):
+    COMPONENT_METADATA = {
+        "domain": "grands_prix",
+        "seed_name": "grands_prix",
+        "layer": "layer_one",
+        "output_category": "grands_prix",
+        "component_type": "runner",
+    }
+
     def run(
         self,
         seed: SeedRegistryEntry,
@@ -44,6 +53,14 @@ class GrandPrixRunner(LayerJobRunner):
 
 
 class CircuitsRunner(LayerJobRunner):
+    COMPONENT_METADATA = {
+        "domain": "circuits",
+        "seed_name": "circuits",
+        "layer": "layer_one",
+        "output_category": "circuits",
+        "component_type": "runner",
+    }
+
     def run(
         self,
         seed: SeedRegistryEntry,
@@ -57,6 +74,14 @@ class CircuitsRunner(LayerJobRunner):
 
 
 class DriversRunner(LayerJobRunner):
+    COMPONENT_METADATA = {
+        "domain": "drivers",
+        "seed_name": "drivers",
+        "layer": "layer_one",
+        "output_category": "drivers",
+        "component_type": "runner",
+    }
+
     def run(
         self,
         seed: SeedRegistryEntry,
@@ -70,6 +95,14 @@ class DriversRunner(LayerJobRunner):
 
 
 class SeasonsRunner(LayerJobRunner):
+    COMPONENT_METADATA = {
+        "domain": "seasons",
+        "seed_name": "seasons",
+        "layer": "layer_one",
+        "output_category": "seasons",
+        "component_type": "runner",
+    }
+
     def run(
         self,
         seed: SeedRegistryEntry,
@@ -83,6 +116,14 @@ class SeasonsRunner(LayerJobRunner):
 
 
 class ConstructorsRunner(LayerJobRunner):
+    COMPONENT_METADATA = {
+        "domain": "constructors",
+        "seed_name": "constructors",
+        "layer": "layer_one",
+        "output_category": "constructors",
+        "component_type": "runner",
+    }
+
     def run(
         self,
         seed: SeedRegistryEntry,
@@ -126,13 +167,18 @@ class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
 
 
 def build_layer_one_runner_map() -> dict[str, LayerJobRunner]:
-    return {
+    explicit_runner_map: dict[str, LayerJobRunner] = {
         "grands_prix": GrandPrixRunner(),
         "circuits": CircuitsRunner(),
         "drivers": DriversRunner(),
         "seasons": SeasonsRunner(),
         "constructors": ConstructorsRunner(),
     }
+    discovered_runner_map = build_layer_one_runner_map_discovered()
+    merged = dict(discovered_runner_map)
+    for seed_name, runner in explicit_runner_map.items():
+        merged.setdefault(seed_name, runner)
+    return merged
 
 
 def build_layer_zero_run_config_factory_map() -> dict[str, LayerZeroRunConfigFactory]:

@@ -13,6 +13,17 @@ from scrapers.circuits.validator import CircuitsRecordValidator
 
 
 class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
+    COMPONENT_METADATA = {
+        "domain": "circuits",
+        "seed_name": "circuits",
+        "layer": "layer_one",
+        "output_category": "circuits",
+        "component_type": "list_scraper",
+        "default_output_path": "raw/circuits/seeds/complete_circuits",
+        "legacy_output_path": "circuits/complete_circuits",
+    }
+
+
     """
     Lista torów F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_circuits

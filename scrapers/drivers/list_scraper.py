@@ -32,6 +32,17 @@ from scrapers.drivers.validator import DriversRecordValidator
 
 
 class F1DriversListScraper(F1TableScraper):
+    COMPONENT_METADATA = {
+        "domain": "drivers",
+        "seed_name": "drivers",
+        "layer": "layer_one",
+        "output_category": "drivers",
+        "component_type": "list_scraper",
+        "default_output_path": "raw/drivers/seeds/complete_drivers",
+        "legacy_output_path": "drivers/complete_drivers",
+    }
+
+
     """
     Scraper listy kierowców F1 z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_drivers
