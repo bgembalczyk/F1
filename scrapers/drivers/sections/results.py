@@ -1,17 +1,16 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.table_parsing import TableParsingHelper
-from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.drivers.sections.driver_results_schema_factory import (
     DriverResultsSchemaFactory,
@@ -20,6 +19,10 @@ from scrapers.drivers.sections.driver_results_table_classifier import (
     DriverResultsTableClassifier,
 )
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
+
+if TYPE_CHECKING:
+    from scrapers.base.options import ScraperOptions
+    from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 
 
 class DriverResultsSectionParser:

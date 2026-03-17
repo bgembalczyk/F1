@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-
-from bs4 import BeautifulSoup
+from typing import TYPE_CHECKING
 
 from scrapers.base.sections.interface import SectionParseResult
-from scrapers.drivers.sections.results import DriverResultsSectionParser
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.drivers.sections.results import DriverResultsSectionParser
 
 
 @dataclass(frozen=True)
