@@ -61,28 +61,7 @@ class F1SponsorshipLiveriesScraper(WikiScraper):
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._section_parser.parse_sections(soup)
 
-
 if __name__ == "__main__":
-    from infrastructure.gemini.client import GeminiClient
-    from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
+    from scrapers.cli import run_legacy_wrapper
 
-    try:
-        _gemini_client = GeminiClient.from_key_file()
-        _classifier: ParenClassifier | None = ParenClassifier(_gemini_client)
-        print(
-            "[scraper] Gemini ParenClassifier załadowany - "
-            "adnotacje w nawiasach będą klasyfikowane.",
-        )
-    except FileNotFoundError as _e:
-        _classifier = None
-        print("[scraper] Brak klucza Gemini API ({_e}), klasyfikacja Gemini wyłączona.")
-
-    run_and_export(
-        F1SponsorshipLiveriesScraper,
-        "sponsorship_liveries/f1_sponsorship_liveries.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            scraper_kwargs={"classifier": _classifier},
-        ),
-    )
+    run_legacy_wrapper("scrapers.sponsorship_liveries.scraper")

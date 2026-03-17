@@ -93,20 +93,7 @@ class F1FatalitiesListScraper(F1TableScraper):
         normalized = normalize_auto_value(auto_value, strip_marks=True)
         return {"event": normalized, "championship": championship}
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import run_cli_entrypoint
-    from scrapers.base.helpers.runner import run_and_export
+    from scrapers.cli import run_legacy_wrapper
 
-    run_cli_entrypoint(
-        target=lambda *, run_config: run_and_export(
-            F1FatalitiesListScraper,
-            "drivers/f1_driver_fatalities.json",
-            run_config=run_config,
-        ),
-        base_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-    )
+    run_legacy_wrapper("scrapers.drivers.fatalities_list_scraper")

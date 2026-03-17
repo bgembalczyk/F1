@@ -65,20 +65,7 @@ class FemaleDriversListScraper(F1TableScraper):
             resolved_options.post_processors.append(EntriesStartsPointsPostProcessor())
         super().__init__(options=resolved_options, config=config)
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import run_cli_entrypoint
-    from scrapers.base.helpers.runner import run_and_export
+    from scrapers.cli import run_legacy_wrapper
 
-    run_cli_entrypoint(
-        target=lambda *, run_config: run_and_export(
-            FemaleDriversListScraper,
-            "drivers/female_drivers.json",
-            run_config=run_config,
-        ),
-        base_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-    )
+    run_legacy_wrapper("scrapers.drivers.female_drivers_list")

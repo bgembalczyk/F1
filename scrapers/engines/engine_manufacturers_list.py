@@ -50,14 +50,7 @@ class EngineManufacturersListScraper(F1TableScraper):
         schema=TableSchemaDSL(columns=schema_columns),
     )
 
-
 if __name__ == "__main__":
-    run_and_export(
-        EngineManufacturersListScraper,
-        "engines/f1_engine_manufacturers.json",
-        "engines/f1_engine_manufacturers.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.cli import run_legacy_wrapper
+
+    run_legacy_wrapper("scrapers.engines.engine_manufacturers_list")

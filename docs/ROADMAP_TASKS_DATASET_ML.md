@@ -105,10 +105,11 @@
   - Metryka wyjściowa: 100% budowania URL dla parserów L0/L1 przechodzi przez strategię + redukcja duplikacji resolverów o min. 50%.
   - Kryterium ukończenia: zarejestrowane strategie per domena, jeden punkt wejścia resolvera i testy regresyjne dla aliasów/relative URL/fallback.
   - Skąd bierzemy kolejne punkty startowe: źródła URL do migracji bierzemy z `checkpoint_input` aktywnych kroków orchestratora (pliki `data/checkpoints/*.json`) oraz z listy parserów wskazanych przez registry kroków 0/1.
-- [ ] D3. Centralizacja CLI i deprecated launcherów w jednym entrypoincie (z mapą kompatybilności i deprecations).
+- [x] D3. Centralizacja CLI i deprecated launcherów w jednym entrypoincie (z mapą kompatybilności i deprecations).
   - Metryka wejściowa: liczba aktywnych skryptów uruchomieniowych/entrypointów CLI + liczba zduplikowanych opcji uruchomieniowych.
   - Metryka wyjściowa: jeden canonical launcher + max 2 cienkie wrappery legacy, redukcja duplikowanych flag CLI o min. 60%.
   - Kryterium ukończenia: dokumentowana mapa `old_command -> new_command`, warning deprecacyjny w wrapperach i przejście smoke-testów uruchomienia dla przepływu L0/L1.
+  - Kontekst: dodano canonical launcher `scrapers/cli.py`, cienkie wrappery delegujące w modułach z `__main__`, spójny `DeprecationWarning` i test statyczny pilnujący granic bootstrapów CLI.
   - Skąd bierzemy kolejne punkty startowe: priorytetowe komendy do migracji wyznaczamy z logów użycia CI/dev scripts i z kroków uruchamianych przez orchestrator `step_registry`.
 - [ ] D4. Automatyzacja registry factory (auto-discovery parserów/extractorów/strategii zamiast ręcznej rejestracji).
   - Metryka wejściowa: liczba ręcznych wpisów w registry/factory + liczba incydentów „zapomniano zarejestrować komponent”.

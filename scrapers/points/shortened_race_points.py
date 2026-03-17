@@ -46,13 +46,7 @@ def run_list_scraper(*, run_config: RunConfig) -> None:
         run_config=run_config,
     )
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_cli_main
-    from scrapers.base.cli_entrypoint import deprecated_module_base_config
+    from scrapers.cli import run_legacy_wrapper
 
-    build_cli_main(
-        target=run_list_scraper,
-        base_config=deprecated_module_base_config(),
-        profile="list_scraper",
-    )()
+    run_legacy_wrapper("scrapers.points.shortened_race_points")

@@ -98,13 +98,7 @@ class EngineRegulationScraper(BaseEngineTableScraper):
 
         return records
 
-
 if __name__ == "__main__":
-    run_and_export(
-        EngineRegulationScraper,
-        "engines/f1_engine_regulations.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.cli import run_legacy_wrapper
+
+    run_legacy_wrapper("scrapers.engines.engine_regulation")
