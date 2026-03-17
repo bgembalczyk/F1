@@ -345,6 +345,78 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         ],
     )
     _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "teams"
+        / "raw"
+        / "racing_bulls_constructor.json",
+        [
+            {
+                "team": {
+                    "text": "Racing Bulls",
+                    "url": "https://en.wikipedia.org/wiki/Racing_Bulls",
+                },
+                "racing_series": {
+                    "formula_one": {
+                        "seasons": [
+                            {
+                                "year": 2024,
+                                "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+                            },
+                            {
+                                "year": 2025,
+                                "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+                            },
+                        ],
+                        "wins": 0,
+                    },
+                },
+            },
+        ],
+    )
+    _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "teams"
+        / "raw"
+        / "racing_bulls_livery.json",
+        [
+            {
+                "team": {
+                    "text": "Racing Bulls",
+                    "url": "https://en.wikipedia.org/wiki/Racing_Bulls",
+                },
+                "racing_series": {
+                    "formula_one": {
+                        "liveries": [
+                            {
+                                "season": [
+                                    {
+                                        "year": 2024,
+                                        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+                                    },
+                                ],
+                                "main_colours": ["Blue", "White"],
+                                "special_liveries": "Miami",
+                            },
+                            {
+                                "season": [
+                                    {
+                                        "year": 2025,
+                                        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+                                    },
+                                ],
+                                "main_colours": ["White"],
+                            },
+                        ],
+                    },
+                },
+            },
+        ],
+    )
+    _write_json(
         base_wiki_dir / "layers" / "0_layer" / "rules" / "raw" / "a.json",
         [{"rule": "X"}],
     )
@@ -640,6 +712,30 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         "formula_one": {
             "wins": 0,
             "liveries": [{"main_colours": ["Silver", "Red", "Black"]}],
+        },
+    }
+
+    racing_bulls = next(item for item in teams_merged if _team_text(item) == "Racing Bulls")
+    assert racing_bulls["racing_series"] == {
+        "formula_one": {
+            "seasons": [
+                {
+                    "year": 2024,
+                    "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+                    "livery": {
+                        "main_colours": ["Blue", "White"],
+                        "special_liveries": "Miami",
+                    },
+                },
+                {
+                    "year": 2025,
+                    "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+                    "livery": {
+                        "main_colours": ["White"],
+                    },
+                },
+            ],
+            "wins": 0,
         },
     }
 
