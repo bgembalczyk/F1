@@ -1,44 +1,10 @@
 from dataclasses import dataclass
 
+from scrapers.base.helpers.common_config import ScraperCommonConfig
+from scrapers.base.helpers.constants import COMMON_CONFIG_PROFILES
+from scrapers.base.helpers.constants import DEFAULT_CONFIG_PROFILE
+from scrapers.base.helpers.constants import DOMAIN_CONFIG_PROFILE_OVERRIDES
 from scrapers.base.options import ScraperOptions
-
-
-@dataclass(frozen=True)
-class ScraperCommonConfig:
-    include_urls: bool = True
-    normalize_empty_values: bool = True
-    validation_mode: str = "soft"
-
-
-DEFAULT_CONFIG_PROFILE = "soft_seed"
-
-COMMON_CONFIG_PROFILES: dict[str, ScraperCommonConfig] = {
-    "soft_seed": ScraperCommonConfig(
-        include_urls=True,
-        normalize_empty_values=True,
-        validation_mode="soft",
-    ),
-    "strict_seed": ScraperCommonConfig(
-        include_urls=True,
-        normalize_empty_values=False,
-        validation_mode="hard",
-    ),
-    "details": ScraperCommonConfig(
-        include_urls=True,
-        normalize_empty_values=True,
-        validation_mode="soft",
-    ),
-}
-
-DOMAIN_CONFIG_PROFILE_OVERRIDES: dict[str, dict[str, ScraperCommonConfig]] = {
-    "circuits": {
-        "soft_seed": ScraperCommonConfig(
-            include_urls=True,
-            normalize_empty_values=False,
-            validation_mode="soft",
-        ),
-    },
-}
 
 
 def _resolve_common_config(*, domain: str | None, profile: str) -> ScraperCommonConfig:

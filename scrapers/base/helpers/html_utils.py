@@ -7,11 +7,10 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base.helpers.constants import HEADING_AND_TABLE_TAGS
+from scrapers.base.helpers.constants import HEADING_TAGS
 from scrapers.base.sections.aliases import DOMAIN_SECTION_ALIASES
 from scrapers.wiki.parsers.section_detection import find_section_heading
-
-_HEADING_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
-_HEADING_AND_TABLE_TAGS = [*list(_HEADING_TAGS), "table"]
 
 
 def find_section_elements(
@@ -68,8 +67,8 @@ def find_section_tables(
     current_level = int(heading.name[1])
 
     tables: list[Tag] = []
-    for element in heading.find_all_next(_HEADING_AND_TABLE_TAGS):
-        if element.name in _HEADING_TAGS:
+    for element in heading.find_all_next(HEADING_AND_TABLE_TAGS):
+        if element.name in HEADING_TAGS:
             if int(element.name[1]) <= current_level:
                 break
         elif element.name == "table":
