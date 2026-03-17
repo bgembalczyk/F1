@@ -490,8 +490,9 @@ def _merge_duplicate_teams(records: list[object]) -> list[object]:
 
         existing = merged_records[index]
         if isinstance(existing, dict):
-            merged_records[index] = _merge_values(existing, record)
-            for alias in _team_record_aliases(merged_records[index]):
+            merged_record = _merge_values(existing, record)
+            merged_records[index] = merged_record
+            for alias in _team_record_aliases(merged_record):
                 key_to_index[alias] = index
 
     return merged_records
@@ -547,11 +548,17 @@ def _nest_team_liveries_in_seasons(record: object) -> object:
                 continue
 
             matched = True
-            existing_livery = season.get("livery")
-            if existing_livery is None:
-                season["livery"] = livery_payload
-            else:
-                season["livery"] = _merge_values(existing_livery, livery_payload)
+            existing_liveries = season.get("liveries")
+            if isinstance(existing_liveries, list):
+                existing_liveries.append(livery_payload)
+                continue
+
+            existing_livery = season.pop("livery", None)
+            season_liveries: list[object] = []
+            if existing_livery is not None:
+                season_liveries.append(existing_livery)
+            season_liveries.append(livery_payload)
+            season["liveries"] = season_liveries
 
         if not matched:
             remaining_liveries.append(livery)
