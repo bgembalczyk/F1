@@ -29,7 +29,6 @@ def _seed_domain_raw(
         )
 
 
-
 def _seed_layer_zero_raw_data(base_wiki_dir: Path) -> None:
     _seed_domain_raw(
         base_wiki_dir,
@@ -454,7 +453,6 @@ def _seed_layer_zero_raw_data(base_wiki_dir: Path) -> None:
         "seasons",
         [("a.json", [{"season": 2026}, {"season": 1950}, {"season": 2005}])],
     )
-
 
 
 def _assert_merged_outputs(

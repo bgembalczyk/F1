@@ -1,28 +1,33 @@
 from __future__ import annotations
 
 from typing import Any
+
 from scrapers.sponsorship_liveries.helpers.constants import COLOUR_KEYS
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_KEYS
 from scrapers.sponsorship_liveries.parsers.colour_scope import ColourScopeHandler
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
+from scrapers.sponsorship_liveries.parsers.record_splitter_pipeline import (
+    DeduplicateRecordStrategy,
+)
+from scrapers.sponsorship_liveries.parsers.record_splitter_pipeline import (
+    RecordSplitPipeline,
+)
+from scrapers.sponsorship_liveries.parsers.record_splitter_protocols import SplitRule
+from scrapers.sponsorship_liveries.parsers.record_splitter_rules import (
+    HasMultipleSeasonsRule,
+)
+from scrapers.sponsorship_liveries.parsers.record_splitter_rules import (
+    HasPossessiveColoursRule,
+)
+from scrapers.sponsorship_liveries.parsers.record_splitter_rules import (
+    HasYearSpecificColoursRule,
+)
+from scrapers.sponsorship_liveries.parsers.record_splitter_rules import (
+    HasYearSpecificSponsorsRule,
+)
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 from scrapers.sponsorship_liveries.parsers.sponsor_scope import SponsorScopeHandler
 
-
-from scrapers.sponsorship_liveries.parsers.record_splitter_pipeline import (
-    DeduplicateRecordStrategy,
-    RecordSplitPipeline,
-)
-from scrapers.sponsorship_liveries.parsers.record_splitter_protocols import (
-    RecordSplitStrategy,
-    SplitRule,
-)
-from scrapers.sponsorship_liveries.parsers.record_splitter_rules import (
-    HasMultipleSeasonsRule,
-    HasPossessiveColoursRule,
-    HasYearSpecificColoursRule,
-    HasYearSpecificSponsorsRule,
-)
 
 class PossessiveDriverColourSplitStrategy:
     def __init__(self, rule: SplitRule | None = None):

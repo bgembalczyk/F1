@@ -3,14 +3,8 @@ import json
 from pathlib import Path
 
 from scrapers.wiki.layer_zero_merge import merge_layer_zero_raw_outputs
-from tests.support.main_layer_zero_merge_helpers import (
-    _assert_merged_outputs,
-    _seed_layer_zero_raw_data,
-)
-
-
-
-
+from tests.support.main_layer_zero_merge_helpers import _assert_merged_outputs
+from tests.support.main_layer_zero_merge_helpers import _seed_layer_zero_raw_data
 
 
 def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
@@ -82,5 +76,3 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         season_merged=season_merged,
         base_wiki_dir=base_wiki_dir,
     )
-
-

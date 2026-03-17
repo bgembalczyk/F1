@@ -35,7 +35,6 @@ class InfoboxCareerParser:
         parser = parser_for_label(label=label, cell_parser=self._cell_parser)
         return parser(value_cell)
 
-
     def _parse_full_data_row(self, row: dict[str, Any]) -> dict[str, Any] | None:
         if "collapsible_table" in row:
             career_stats = self._cell_parser.parse_collapsible_career_table(

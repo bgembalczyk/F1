@@ -1,7 +1,6 @@
 from scrapers.sponsorship_liveries.helpers.constants import COLOUR_KEYS
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_KEYS
 from scrapers.sponsorship_liveries.parsers.colour_scope import ColourScopeHandler
-from scrapers.sponsorship_liveries.parsers.record_splitter_protocols import SplitRule
 from scrapers.sponsorship_liveries.parsers.sponsor_scope import SponsorScopeHandler
 
 
