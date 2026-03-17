@@ -153,7 +153,10 @@ def _transform_constructor_domain(
         return _transform_former_constructor(transformed)
 
     constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
-    if domain == "constructors" and re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
+    if domain == "constructors" and re.fullmatch(
+        r"f1_constructors_\d{4}\.json",
+        source_name,
+    ):
         constructor_fields.discard("engine")
 
     _move_fields_to_formula_one(transformed, constructor_fields)
@@ -181,7 +184,9 @@ def _transform_indianapolis_only_constructor(
 
 def _transform_former_constructor(transformed: dict[str, object]) -> dict[str, object]:
     constructor = transformed.get("constructor")
-    formula_one = {key: value for key, value in transformed.items() if key != "constructor"}
+    formula_one = {
+        key: value for key, value in transformed.items() if key != "constructor"
+    }
     formula_one["status"] = "former"
     return {
         "constructor": constructor,
@@ -254,9 +259,13 @@ def _transform_teams_domain(
             "racing_series": _build_racing_series({**transformed}),
         }
     if source_name == "f1_sponsorship_liveries.json" and "liveries" in transformed:
-        transformed["racing_series"] = _build_racing_series({"liveries": transformed.pop("liveries")})
+        transformed["racing_series"] = _build_racing_series(
+            {"liveries": transformed.pop("liveries")},
+        )
     if source_name == "f1_privateer_teams.json":
-        formula_one = {key: transformed.pop(key) for key in ("seasons",) if key in transformed}
+        formula_one = {
+            key: transformed.pop(key) for key in ("seasons",) if key in transformed
+        }
         formula_one["privateer"] = True
         transformed["racing_series"] = _build_racing_series(formula_one)
     return transformed
@@ -300,7 +309,9 @@ def _transform_female_driver(transformed: dict[str, object]) -> dict[str, object
 
 
 def _attach_driver_death_data(transformed: dict[str, object]) -> None:
-    death_fields = {key: transformed.pop(key) for key in ("date", "age") if key in transformed}
+    death_fields = {
+        key: transformed.pop(key) for key in ("date", "age") if key in transformed
+    }
     crash_fields = {
         key: transformed.pop(key)
         for key in ("event", "circuit", "car", "session")
@@ -321,7 +332,13 @@ def _transform_races_domain(
     if source_name == "f1_red_flagged_non_championship_races.json":
         transformed["championship"] = False
     transformed["red_flag"] = _extract_red_flag(transformed)
-    for key in ("lap", "restart_status", "winner", "incident", "failed_to_make_restart"):
+    for key in (
+        "lap",
+        "restart_status",
+        "winner",
+        "incident",
+        "failed_to_make_restart",
+    ):
         transformed.pop(key, None)
     return transformed
 
@@ -678,7 +695,9 @@ def _load_domain_records(domain_dir: Path) -> list[object]:
     raw_dir = domain_dir / "raw"
     for json_path in sorted(raw_dir.rglob("*.json")):
         payload = json.loads(json_path.read_text(encoding="utf-8"))
-        merged_records.extend(_iter_transformed_records(domain_dir.name, json_path.name, payload))
+        merged_records.extend(
+            _iter_transformed_records(domain_dir.name, json_path.name, payload),
+        )
     return merged_records
 
 
@@ -691,14 +710,19 @@ def _post_process_domain_records(domain: str, records: list[object]) -> list[obj
         merged_records = sorted(merged_records, key=_constructor_sort_key)
     if domain == "teams":
         merged_records = _merge_duplicate_teams(merged_records)
-        merged_records = [_nest_team_liveries_in_seasons(record) for record in merged_records]
+        merged_records = [
+            _nest_team_liveries_in_seasons(record) for record in merged_records
+        ]
         merged_records = sorted(merged_records, key=_team_sort_key)
     if domain == "seasons":
         merged_records = sorted(merged_records, key=_season_sort_key)
     return merged_records
 
 
-def _write_merged_domain_records(domain_dir: Path, merged_records: list[object]) -> None:
+def _write_merged_domain_records(
+    domain_dir: Path,
+    merged_records: list[object],
+) -> None:
     merged_path = domain_dir / f"{domain_dir.name}.json"
     merged_path.write_text(
         json.dumps(merged_records, ensure_ascii=False, indent=2),

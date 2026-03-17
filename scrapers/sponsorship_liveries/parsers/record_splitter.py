@@ -386,10 +386,15 @@ class GrandPrixSplitStrategy:
         gp_item_map.setdefault(gp_key, {}).setdefault(field_key, []).append(item)
 
     @staticmethod
-    def _scope_keys(scope: dict[str, Any]) -> list[tuple[tuple[Any, ...], dict[str, Any]]]:
+    def _scope_keys(
+        scope: dict[str, Any],
+    ) -> list[tuple[tuple[Any, ...], dict[str, Any]]]:
         if scope.get("type") == "only":
             return [
-                ((gp_entry.get("text"), gp_entry.get("url")), {"type": "only", "grand_prix": [gp_entry]})
+                (
+                    (gp_entry.get("text"), gp_entry.get("url")),
+                    {"type": "only", "grand_prix": [gp_entry]},
+                )
                 for gp_entry in scope.get("grand_prix") or []
             ]
         scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
@@ -438,7 +443,17 @@ class GrandPrixSplitStrategy:
         for key in sorted(items.keys()):
             for item in items[key]:
                 if isinstance(item, dict):
-                    parts.append((key, tuple(sorted((item_key, str(value)) for item_key, value in item.items()))))
+                    parts.append(
+                        (
+                            key,
+                            tuple(
+                                sorted(
+                                    (item_key, str(value))
+                                    for item_key, value in item.items()
+                                ),
+                            ),
+                        ),
+                    )
                 else:
                     parts.append((key, str(item)))
         return tuple(parts)
@@ -449,7 +464,10 @@ class GrandPrixSplitStrategy:
     ) -> dict[tuple[Any, ...], list[tuple[Any, ...]]]:
         grouped: dict[tuple[Any, ...], list[tuple[Any, ...]]] = {}
         for gp_key, items_dict in gp_item_map.items():
-            grouped.setdefault(GrandPrixSplitStrategy._items_key(items_dict), []).append(gp_key)
+            grouped.setdefault(
+                GrandPrixSplitStrategy._items_key(items_dict),
+                [],
+            ).append(gp_key)
         return grouped
 
     @staticmethod
@@ -461,7 +479,10 @@ class GrandPrixSplitStrategy:
         scope_map: dict[tuple[Any, ...], dict[str, Any]] = {}
         for items_key, gp_keys in group_to_gps.items():
             items_dict = gp_item_map[gp_keys[0]]
-            merged_scope = GrandPrixSplitStrategy._merge_group_scope(gp_scope_for_key, gp_keys)
+            merged_scope = GrandPrixSplitStrategy._merge_group_scope(
+                gp_scope_for_key,
+                gp_keys,
+            )
             scope_map[items_key] = {"scope": merged_scope, "items": items_dict}
         return scope_map
 
@@ -471,8 +492,7 @@ class GrandPrixSplitStrategy:
         gp_keys: list[tuple[Any, ...]],
     ) -> dict[str, Any]:
         all_only = all(
-            gp_scope_for_key.get(gp_key, {}).get("type") == "only"
-            for gp_key in gp_keys
+            gp_scope_for_key.get(gp_key, {}).get("type") == "only" for gp_key in gp_keys
         )
         if not all_only:
             return gp_scope_for_key[gp_keys[0]]

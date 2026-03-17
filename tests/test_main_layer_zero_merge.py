@@ -482,7 +482,7 @@ def _seed_layer_zero_raw_data(base_wiki_dir: Path) -> None:
             },
         ],
     )
-    
+
     _write_json(
         base_wiki_dir
         / "layers"
@@ -556,7 +556,7 @@ def _seed_layer_zero_raw_data(base_wiki_dir: Path) -> None:
         base_wiki_dir / "layers" / "0_layer" / "points" / "raw" / "a.json",
         [{"points": "X"}],
     )
-    
+
     _write_json(
         base_wiki_dir
         / "layers"
@@ -566,13 +566,12 @@ def _seed_layer_zero_raw_data(base_wiki_dir: Path) -> None:
         / "f1_tyre_manufacturers_by_season.json",
         [{"seasons": [1950], "manufacturers": ["Pirelli"]}],
     )
-    
+
     _write_json(
         base_wiki_dir / "layers" / "0_layer" / "seasons" / "raw" / "a.json",
         [{"season": 2026}, {"season": 1950}, {"season": 2005}],
     )
-    
-    
+
 
 def _assert_merged_outputs(
     *,
@@ -640,7 +639,7 @@ def _assert_merged_outputs(
             },
         },
     ]
-    
+
     female_driver = next(
         item for item in drivers_merged if item["driver"]["text"] == "Maria"
     )
@@ -653,12 +652,12 @@ def _assert_merged_outputs(
         item for item in drivers_merged if item["driver"]["text"] == "Maria"
     )
     assert female_driver["gender"] == "female"
-    
+
     ordered_driver_names = [item["driver"]["text"] for item in drivers_merged]
     assert ordered_driver_names.index("Lewis Hamilton") < ordered_driver_names.index(
         "Max Verstappen",
     )
-    
+
     fatality_driver = next(
         item for item in drivers_merged if item["driver"]["text"] == "X"
     )
@@ -672,7 +671,7 @@ def _assert_merged_outputs(
             "session": "Practice",
         },
     }
-    
+
     amati_driver = next(
         item
         for item in drivers_merged
@@ -685,7 +684,7 @@ def _assert_merged_outputs(
     assert amati_driver["teams"] == [
         {"text": "Brabham", "url": "https://en.wikipedia.org/wiki/Brabham"},
     ]
-    
+
     bob_anderson = next(
         item
         for item in drivers_merged
@@ -694,7 +693,7 @@ def _assert_merged_outputs(
     )
     assert bob_anderson["death"]["date"] == "1967-08-14"
     assert bob_anderson["race_entries"] == 29
-    
+
     world_race = next(item for item in races_merged if "grand_prix" in item)
     assert world_race["championship"] is True
     assert world_race["red_flag"] == {
@@ -705,13 +704,13 @@ def _assert_merged_outputs(
     assert "lap" not in world_race
     assert "winner" not in world_race
     assert "failed_to_make_restart" not in world_race
-    
+
     non_champ_race = next(item for item in races_merged if "event" in item)
     assert non_champ_race["championship"] is False
     assert non_champ_race["red_flag"] == {"lap": 15, "incident": "Crash"}
     assert "lap" not in non_champ_race
     assert "incident" not in non_champ_race
-    
+
     assert engines_merged == [
         {
             "manufacturer": "Ferrari",
@@ -733,7 +732,7 @@ def _assert_merged_outputs(
             },
         },
     ]
-    
+
     assert grands_prix_merged == [
         {
             "grand_prix": "Italian",
@@ -745,14 +744,14 @@ def _assert_merged_outputs(
             },
         },
     ]
-    
+
     ferrari_team = next(item for item in teams_merged if item["team"] == "Ferrari")
     assert ferrari_team["racing_series"] == {
         "formula_one": {
             "liveries": ["Marlboro"],
         },
     }
-    
+
     rob_walker_team = next(
         item for item in teams_merged if item["team"] == "Rob Walker"
     )
@@ -762,7 +761,7 @@ def _assert_merged_outputs(
             "privateer": True,
         },
     }
-    
+
     team_x = next(
         item
         for item in teams_merged
@@ -781,7 +780,7 @@ def _assert_merged_outputs(
             "wins": 1,
         },
     }
-    
+
     cadillac_team = next(
         item
         for item in teams_merged
@@ -803,7 +802,7 @@ def _assert_merged_outputs(
             "liveries": [{"main_colours": ["White", "Black"]}],
         },
     }
-    
+
     audi_team = next(item for item in teams_merged if _team_text(item) == "Audi")
     assert audi_team["team"] == {
         "text": "Audi",
@@ -815,7 +814,7 @@ def _assert_merged_outputs(
             "liveries": [{"main_colours": ["Silver", "Red", "Black"]}],
         },
     }
-    
+
     racing_bulls = next(
         item for item in teams_merged if _team_text(item) == "Racing Bulls"
     )
@@ -848,7 +847,7 @@ def _assert_merged_outputs(
             "wins": 0,
         },
     }
-    
+
     aston_martin = next(
         item for item in teams_merged if _team_text(item) == "Aston Martin"
     )
@@ -868,13 +867,12 @@ def _assert_merged_outputs(
             ],
         },
     }
-    
+
     assert seasons_merged == [{"season": 1950}, {"season": 2005}, {"season": 2026}]
-    
+
     assert season_merged == [{"season": 1950, "tyre_manufacturers": ["Pirelli"]}]
-    
+
     assert not (base_wiki_dir / "layers" / "0_layer" / "rules" / "rules.json").exists()
     assert not (
         base_wiki_dir / "layers" / "0_layer" / "points" / "points.json"
     ).exists()
-    

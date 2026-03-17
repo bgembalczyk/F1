@@ -145,7 +145,6 @@ class ABCScraper(ABC):
         self.logger.debug("Scrape run %s finished", run_id)
         return self._data
 
-
     def _validate_fetch_url(self) -> None:
         if getattr(self, "url", None):
             return
@@ -233,7 +232,7 @@ class ABCScraper(ABC):
 
     def _handle_fetch_error(self, exc: Exception, error: Exception):
         if self._handle_scraper_error(error):
-            return None
+            return
         if error is exc:
             raise
         raise error from exc
