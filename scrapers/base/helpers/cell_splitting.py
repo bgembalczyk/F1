@@ -28,20 +28,7 @@ def split_cell_on_br(cell: Tag, *, replace_link_breaks: bool = False) -> list[Ta
         html = _replace_link_breaks(html)
 
     parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
-
-    segments: list[Tag] = []
-    soup = cell.soup or BeautifulSoup("", "html.parser")
-
-    for part in parts:
-        if not part.strip():
-            continue
-        frag_soup = BeautifulSoup(part, "html.parser")
-        span = soup.new_tag("span")
-        for el in list(frag_soup.contents):
-            span.append(el)
-        segments.append(span)
-
-    return segments or [cell]
+    return _wrap_parts_as_spans(parts, cell)
 
 
 def split_cell_on_br_dom_based(cell: Tag) -> list[Tag]:
@@ -112,6 +99,10 @@ def split_cell_on_br_with_children(cell: Tag) -> list[Tag]:
         html = cell.decode_contents()
         parts = re.split(r"<br\s*/?>", html, flags=re.IGNORECASE)
 
+    return _wrap_parts_as_spans(parts, cell)
+
+
+def _wrap_parts_as_spans(parts: list[str], cell: Tag) -> list[Tag]:
     segments: list[Tag] = []
     soup = cell.soup or BeautifulSoup("", "html.parser")
 

@@ -1,4 +1,3 @@
-import importlib.util
 import logging
 import sys
 import types
@@ -16,47 +15,16 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
+from tests.support.dependency_stubs import ensure_optional_deps
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
-if importlib.util.find_spec("requests") is None:
-    requests_stub = types.ModuleType("requests")
-
-    class _RequestError(Exception):
-        pass
-
-    class _Session:
-        def get(self, *_args, **_kwargs):
-            msg = "requests stub"
-            raise _RequestError(msg)
-
-    requests_stub.RequestException = _RequestError
-    requests_stub.Session = _Session
-    sys.modules["requests"] = requests_stub
-
-if importlib.util.find_spec("certifi") is None:
-    certifi_stub = types.ModuleType("certifi")
-
-    def _where():
-        return ""
-
-    certifi_stub.where = _where
-    sys.modules["certifi"] = certifi_stub
-
-if importlib.util.find_spec("pandas") is None:
-    pandas_stub = types.ModuleType("pandas")
-
-    class _StubDataFrame:
-        def __init__(self, *_args, **_kwargs):
-            pass
-
-    pandas_stub.DataFrame = _StubDataFrame
-    sys.modules["pandas"] = pandas_stub
-
-if importlib.util.find_spec("bs4") is None:
-    pytest.skip("bs4 is required for scraper contract tests", allow_module_level=True)
+ensure_optional_deps(
+    require_bs4=True,
+    bs4_skip_reason="bs4 is required for scraper contract tests",
+)
 
 try:
     import scrapers.base.infobox.circuits.scraper  # noqa: F401

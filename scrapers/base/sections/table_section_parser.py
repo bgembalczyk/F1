@@ -2,8 +2,6 @@ from __future__ import annotations
 
 from dataclasses import replace
 from typing import TYPE_CHECKING
-from typing import Any
-
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
@@ -47,16 +45,7 @@ class TableSectionParser:
             include_urls=self._include_urls,
             normalize_empty_values=self._normalize_empty_values,
         )
-        records: list[dict[str, Any]] = []
-        for row_index, row in enumerate(parser.parse(section_fragment)):
-            parsed = pipeline.parse_cells(
-                row.headers,
-                row.cells,
-                row_index=row_index,
-                header_cells=row.header_cells,
-            )
-            if parsed:
-                records.append(parsed)
+        records = pipeline.parse_rows(parser.parse(section_fragment))
 
         return SectionParseResult(
             section_id=self._section_id,

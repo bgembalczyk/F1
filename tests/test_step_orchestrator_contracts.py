@@ -13,6 +13,9 @@ from scrapers.base.orchestration.step_orchestrator import ResolvedInput
 from scrapers.base.orchestration.step_orchestrator import SectionSourceAdapter
 from scrapers.base.orchestration.step_orchestrator import StepDeclaration
 from scrapers.base.orchestration.step_orchestrator import StepOrchestrator
+from tests.support.step_orchestrator_assertions import (
+    assert_section_source_adapter_falls_back_to_raw,
+)
 
 
 class FakeInputResolver:
@@ -49,17 +52,7 @@ class FakeAuditRepository:
 
 
 def test_input_resolver_contract_returns_records_and_path(tmp_path: Path) -> None:
-    source = tmp_path / "data" / "raw" / "drivers" / "drivers.json"
-    source.parent.mkdir(parents=True, exist_ok=True)
-    source.write_text(json.dumps([{"driver": {"url": "x"}}]), encoding="utf-8")
-
-    resolver = SectionSourceAdapter(base_dir=tmp_path / "data")
-    step = StepDeclaration(1, "layer1", "drivers", lambda rows: rows, "checkpoints")
-
-    resolved = resolver.resolve(step, "drivers")
-
-    assert resolved.source_path == source
-    assert resolved.records == [{"driver": {"url": "x"}}]
+    assert_section_source_adapter_falls_back_to_raw(tmp_path)
 
 
 def test_step_executor_contract_handles_success_and_error() -> None:

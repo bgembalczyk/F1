@@ -84,7 +84,10 @@ class WikipediaSectionByIdMixin:
         header = find_heading(soup, fragment, domain=domain)
         if header is None:
             return None
+        return WikipediaSectionByIdMixin.extract_section_by_heading(header)
 
+    @staticmethod
+    def extract_section_by_heading(header: Tag) -> BeautifulSoup | None:
         header_level = WikipediaSectionByIdMixin._get_header_level(header)
         heading_block = WikipediaSectionByIdMixin._get_heading_block(header)
         collected = WikipediaSectionByIdMixin._collect_section_siblings(

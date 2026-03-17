@@ -17,6 +17,7 @@ from scrapers.base.table.columns.helpers.constants import FUEL_TYPE_URLS
 from scrapers.base.table.columns.helpers.constants import MODIFIER_ONLY_URLS
 from scrapers.base.table.columns.helpers.constants import TYPE_WITH_MODIFIER_RE
 from scrapers.base.table.columns.helpers.constants import VERBOSE_TYPE_MAP
+from scrapers.base.table.columns.helpers.link_lookup import build_link_lookup
 
 
 class EngineLinkHelpers:
@@ -41,16 +42,7 @@ class EngineLinkHelpers:
         Returns:
             Dictionary mapping lowercase engine names to lists of matching links
         """
-        lookup: dict[str, list[LinkRecord]] = {}
-        for link in links:
-            text = link.get("text")
-            if not text:
-                continue
-            key = text.strip().lower()
-            if key not in lookup:
-                lookup[key] = []
-            lookup[key].append(link)
-        return lookup
+        return build_link_lookup(links)
 
     @staticmethod
     def _extract_modifier_flags(

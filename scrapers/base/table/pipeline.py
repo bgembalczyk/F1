@@ -100,16 +100,7 @@ class TablePipeline:
             table_css_class=self.table_css_class,
         )
 
-        records: list[dict[str, Any]] = []
-        for row_index, row in enumerate(parser.parse(soup)):
-            record = self.parse_cells(
-                row.headers,
-                row.cells,
-                row_index=row_index,
-                header_cells=row.header_cells,
-            )
-            if record:
-                records.append(record)
+        records = self.parse_rows(parser.parse(soup))
 
         self.logger.debug(
             "TablePipeline parsed %d row(s) from %d table(s) (section_id=%s run_id=%s)",
@@ -126,6 +117,19 @@ class TablePipeline:
                 self.run_id,
             )
 
+        return records
+
+    def parse_rows(self, rows: Sequence[Any]) -> list[dict[str, Any]]:
+        records: list[dict[str, Any]] = []
+        for row_index, row in enumerate(rows):
+            record = self.parse_cells(
+                row.headers,
+                row.cells,
+                row_index=row_index,
+                header_cells=row.header_cells,
+            )
+            if record:
+                records.append(record)
         return records
 
     def parse_row(
