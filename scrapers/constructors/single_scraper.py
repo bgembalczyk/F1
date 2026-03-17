@@ -6,8 +6,8 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess import ConstructorSectionContractPostProcessor
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
@@ -36,23 +36,30 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
 
     def _build_post_processor(self) -> ConstructorSectionContractPostProcessor:
         return ConstructorSectionContractPostProcessor()
-    def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
-        self.url = url
-        return super().fetch()
+
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        return self._infobox_service.extract(soup)
+
+    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        sections_service = self._sections_service_factory(self)
+        return sections_service.extract(soup)
 
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._infobox_service.extract(soup)
+        return self._build_infobox_payload(soup)
 
     def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self.article_tables_parser.parse(soup)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        sections_service = self._sections_service_factory(self)
-        return [
-            self._assembler.assemble(
-                url=self.url,
-                infoboxes=self._scrape_infoboxes(soup),
-                tables=self._scrape_tables(soup),
-                sections=sections_service.extract(soup),
-            ),
-        ]
+    def _assemble_record(
+        self,
+        *,
+        soup: BeautifulSoup,
+        infobox_payload: list[dict[str, Any]],
+        sections_payload: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        return self._assembler.assemble(
+            url=self.url,
+            infoboxes=infobox_payload,
+            tables=self._scrape_tables(soup),
+            sections=sections_payload,
+        )

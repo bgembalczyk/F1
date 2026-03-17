@@ -4,6 +4,8 @@ from abc import ABC
 from abc import abstractmethod
 from typing import Any
 
+from bs4 import BeautifulSoup
+
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
@@ -57,6 +59,35 @@ class SingleWikiArticleSectionAdapterBase(SectionAdapter, SingleWikiArticleScrap
 
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         return SingleWikiArticleScraperBase.fetch_by_url(self, url)
+
+    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        infobox_payload = self._build_infobox_payload(soup)
+        sections_payload = self._build_sections_payload(soup)
+        return [
+            self._assemble_record(
+                soup=soup,
+                infobox_payload=infobox_payload,
+                sections_payload=sections_payload,
+            ),
+        ]
+
+    @abstractmethod
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        """Build normalized infobox payload used by ``_assemble_record``."""
+
+    @abstractmethod
+    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        """Build normalized section payload used by ``_assemble_record``."""
+
+    @abstractmethod
+    def _assemble_record(
+        self,
+        *,
+        soup: BeautifulSoup,
+        infobox_payload: list[dict[str, Any]],
+        sections_payload: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        """Compose final domain record from template-method payload hooks."""
 
 
 class SingleWikiArticleSectionByIdBase(

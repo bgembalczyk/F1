@@ -88,7 +88,28 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
     def _build_post_processor(self) -> SeasonSectionContractPostProcessor:
         return SeasonSectionContractPostProcessor()
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        _ = soup
+        return []
+
+    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        text_records = self._text_sections_service_factory(self).extract(soup)
+        return [
+            {
+                "regulation_changes": text_records.get("Regulation_changes", []),
+                "mid_season_changes": text_records.get("Mid-season_changes", []),
+            },
+        ]
+
+    def _assemble_record(
+        self,
+        *,
+        soup: BeautifulSoup,
+        infobox_payload: list[dict[str, Any]],
+        sections_payload: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        _ = infobox_payload
+        text_payload = sections_payload[0] if sections_payload else {}
         calendar_data = (
             SeasonCalendarSectionParser(self._calendar_parser, self.season_year)
             .parse(soup)
@@ -110,52 +131,49 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
             .parse(soup)
             .records
         )
-        text_records = self._text_sections_service_factory(self).extract(soup)
 
-        return [
-            self._assembler.assemble(
-                entries=self._entries_parser.parse(soup, self.season_year),
-                free_practice_drivers=self._free_practice_parser.parse(soup),
-                calendar=calendar_data,
-                cancelled_rounds=self._cancelled_rounds_parser.parse(
-                    soup,
-                    self.season_year,
-                    calendar_data,
-                ),
-                testing_venues_and_dates=self._testing_venues_parser.parse(
-                    soup,
-                    self.season_year,
-                ),
-                results=results_data,
-                non_championship_races=self._non_championship_parser.parse(
-                    soup,
-                    self.season_year,
-                ),
-                scoring_system=self._scoring_system_parser.parse(soup),
-                drivers_standings=drivers_standings,
-                constructors_standings=constructors_standings,
-                jim_clark_trophy=self._jim_clark_trophy_parser.parse(
-                    soup,
-                    self.season_year,
-                ),
-                colin_chapman_trophy=self._colin_chapman_trophy_parser.parse(
-                    soup,
-                    self.season_year,
-                ),
-                south_african_formula_one_championship=self._regional_parser.parse(
-                    soup,
-                    section_ids=["South_African_Formula_One_Championship"],
-                    season_year=self.season_year,
-                ),
-                british_formula_one_championship=self._regional_parser.parse(
-                    soup,
-                    section_ids=["British_Formula_One_Championship"],
-                    season_year=self.season_year,
-                ),
-                regulation_changes=text_records.get("Regulation_changes", []),
-                mid_season_changes=text_records.get("Mid-season_changes", []),
+        return self._assembler.assemble(
+            entries=self._entries_parser.parse(soup, self.season_year),
+            free_practice_drivers=self._free_practice_parser.parse(soup),
+            calendar=calendar_data,
+            cancelled_rounds=self._cancelled_rounds_parser.parse(
+                soup,
+                self.season_year,
+                calendar_data,
             ),
-        ]
+            testing_venues_and_dates=self._testing_venues_parser.parse(
+                soup,
+                self.season_year,
+            ),
+            results=results_data,
+            non_championship_races=self._non_championship_parser.parse(
+                soup,
+                self.season_year,
+            ),
+            scoring_system=self._scoring_system_parser.parse(soup),
+            drivers_standings=drivers_standings,
+            constructors_standings=constructors_standings,
+            jim_clark_trophy=self._jim_clark_trophy_parser.parse(
+                soup,
+                self.season_year,
+            ),
+            colin_chapman_trophy=self._colin_chapman_trophy_parser.parse(
+                soup,
+                self.season_year,
+            ),
+            south_african_formula_one_championship=self._regional_parser.parse(
+                soup,
+                section_ids=["South_African_Formula_One_Championship"],
+                season_year=self.season_year,
+            ),
+            british_formula_one_championship=self._regional_parser.parse(
+                soup,
+                section_ids=["British_Formula_One_Championship"],
+                season_year=self.season_year,
+            ),
+            regulation_changes=text_payload.get("regulation_changes", []),
+            mid_season_changes=text_payload.get("mid_season_changes", []),
+        )
 
     @staticmethod
     def _extract_year_from_url(url: str) -> int | None:
