@@ -71,7 +71,8 @@ def normalize_season_item(
     elif isinstance(value, Mapping) or value is None:
         season = SeasonRef.from_dict(value)
     else:
-        raise ValueError("Pole seasons musi być obiektem SeasonRef albo słownikiem")
+        msg = "Pole seasons musi być obiektem SeasonRef albo słownikiem"
+        raise ValueError(msg)
     if season is None:
         return None
 
