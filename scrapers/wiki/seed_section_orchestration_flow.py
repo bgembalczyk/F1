@@ -52,15 +52,12 @@ class SeedSectionOrchestrationFlow:
         return self.base_dir / "checkpoints" / filename
 
     def _run_domain(self, domain: str) -> None:
+        item_key = self._seed_item_key(domain)
         step0 = StepDeclaration(
             step_id=0,
             layer="layer0",
             input_source=domain,
-            parser=lambda rows,
-            item_key=self._seed_item_key(domain): self._parse_seed_urls(
-                rows,
-                item_key,
-            ),
+            parser=lambda rows: self._parse_seed_urls(rows, item_key),
             output_target="checkpoints",
         )
         self.orchestrator.run(step0, domain)

@@ -276,6 +276,31 @@ class HtmlTableParser:
 
         return combined, combined_cells
 
+
+    def clean_cells(self, cells: Sequence[Tag]) -> list[str]:
+        return self._clean_cells(cells)
+
+    @staticmethod
+    def has_multirow_header(
+        first_cells: Sequence[Tag],
+        second_cells: Sequence[Tag],
+    ) -> bool:
+        return HtmlTableParser._has_multirow_header(first_cells, second_cells)
+
+    @staticmethod
+    def combine_header_rows(
+        first_cells: Sequence[Tag],
+        first_headers: Sequence[str],
+        second_cells: Sequence[Tag],
+        second_headers: Sequence[str],
+    ) -> tuple[list[str], list[Tag]]:
+        return HtmlTableParser._combine_header_rows(
+            first_cells,
+            first_headers,
+            second_cells,
+            second_headers,
+        )
+
     def _extract_headers(self, table: Tag) -> tuple[list[str], list[Tag], int]:
         rows = table.find_all("tr")
         if not rows:

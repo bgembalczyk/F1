@@ -1,3 +1,4 @@
+from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -7,8 +8,10 @@ from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.wiki.parsers.body_content import BodyContentParser
 from scrapers.wiki.parsers.header import HeaderParser
-from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import WikiElementParserMixin
+
+if TYPE_CHECKING:
+    from scrapers.wiki.parsers.sections.section import SectionParser
 
 
 class WikiScraper(WikiElementParserMixin, ABCScraper):
@@ -18,9 +21,9 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
     download → parse → normalize → transform → validate → export.
 
     Klasa ta obsługuje specyficzne dla Wikipedii parsery stron:
-    - HeaderParser – przetwarza nagłówek strony
+    - HeaderParser - przetwarza nagłówek strony
       (<header class="mw-body-header vector-page-titlebar no-font-mode-scale">)
-    - BodyContentParser – przetwarza główną treść strony
+    - BodyContentParser - przetwarza główną treść strony
       (<div id="bodyContent">)
 
     Pobieranie HTML odbywa się za pośrednictwem source_adapter (HtmlFetcher),

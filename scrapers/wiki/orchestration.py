@@ -2,11 +2,10 @@ from __future__ import annotations
 
 from abc import ABC
 from abc import abstractmethod
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 from infrastructure.gemini.client import GeminiClient
 from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.run_config import RunConfig
 from scrapers.circuits.helpers.export import export_complete_circuits
 from scrapers.constructors.helpers.export import export_complete_constructors
 from scrapers.drivers.helpers.export import export_complete_drivers
@@ -15,8 +14,14 @@ from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtract
 from scrapers.seasons.helpers import export_complete_seasons
 from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
-from scrapers.wiki.seed_registry import ListJobRegistryEntry
-from scrapers.wiki.seed_registry import SeedRegistryEntry
+
+if TYPE_CHECKING:
+    from pathlib import Path
+
+    from scrapers.base.run_config import RunConfig
+    from scrapers.wiki.seed_registry import ListJobRegistryEntry
+    from scrapers.wiki.seed_registry import SeedRegistryEntry
+
 
 
 class LayerJobRunner(ABC):
@@ -43,7 +48,7 @@ class GrandPrixRunner(LayerJobRunner):
         self,
         seed: SeedRegistryEntry,
         run_config: RunConfig,
-        base_wiki_dir: Path,
+        _base_wiki_dir: Path,
     ) -> None:
         run_and_export(
             F1CompleteGrandPrixDataExtractor,
@@ -138,21 +143,21 @@ class ConstructorsRunner(LayerJobRunner):
 
 class LayerZeroRunConfigFactory(ABC):
     @abstractmethod
-    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
+    def create_scraper_kwargs(self, _job: ListJobRegistryEntry) -> dict[str, object]:
         """Build scraper kwargs for layer-zero list job."""
 
 
 class DefaultLayerZeroRunConfigFactory(LayerZeroRunConfigFactory):
-    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
+    def create_scraper_kwargs(self, _job: ListJobRegistryEntry) -> dict[str, object]:
         return {}
 
 
 class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
-    def create_scraper_kwargs(self, job: ListJobRegistryEntry) -> dict[str, object]:
+    def create_scraper_kwargs(self, _job: ListJobRegistryEntry) -> dict[str, object]:
         scraper_kwargs: dict[str, object] = {}
         try:
             gemini_client = GeminiClient.from_key_file()
-            classifier = ParenClassifier(gemini_client)
+            classifier = ParenClassifier(gemini_client=gemini_client)
             scraper_kwargs["classifier"] = classifier
             print(
                 "[main] Gemini ParenClassifier załadowany - "
@@ -187,7 +192,7 @@ def build_layer_zero_run_config_factory_map() -> dict[str, LayerZeroRunConfigFac
     }
 
 
-def run_engine_manufacturers(base_wiki_dir: Path, include_urls: bool) -> None:
+def run_engine_manufacturers(*, base_wiki_dir: Path, include_urls: bool) -> None:
     print("[complete] running  F1CompleteEngineManufacturerDataExtractor")
     export_complete_engine_manufacturers(
         output_dir=base_wiki_dir / "engines/complete_engine_manufacturers",

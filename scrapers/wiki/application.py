@@ -1,17 +1,21 @@
 from __future__ import annotations
 
 import shutil
-from collections.abc import Callable
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import RunPathConfig
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
-from scrapers.wiki.seed_registry import ListJobRegistryEntry
-from scrapers.wiki.seed_registry import SeedRegistryEntry
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+    from scrapers.wiki.seed_registry import ListJobRegistryEntry
+    from scrapers.wiki.seed_registry import SeedRegistryEntry
 
 
 class ConstructorsMirrorService:
@@ -167,7 +171,10 @@ class LayerOneExecutor:
             runner.run(seed, run_config, base_wiki_dir)
             print(f"[complete] finished {seed.seed_name}")
 
-        self._engine_manufacturers_runner(base_wiki_dir, run_config.include_urls)
+        self._engine_manufacturers_runner(
+            base_wiki_dir=base_wiki_dir,
+            include_urls=run_config.include_urls,
+        )
 
 
 class WikiPipelineApplication:
