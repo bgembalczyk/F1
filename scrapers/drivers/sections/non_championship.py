@@ -1,8 +1,12 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
 from scrapers.drivers.sections.common import DriverResultsSectionConfig
-from scrapers.drivers.sections.results import DriverResultsSectionParser
+
+if TYPE_CHECKING:
+    from scrapers.drivers.sections.results import DriverResultsSectionParser
 
 NON_CHAMPIONSHIP_SECTION = DriverResultsSectionConfig(
     section_id="Non-championship",

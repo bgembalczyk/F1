@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Any
-
-from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
 from scrapers.drivers.infobox.scraper import DriverInfoboxParser
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
 
 
 class DriverInfoboxExtractionService:

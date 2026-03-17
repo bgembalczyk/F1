@@ -1,8 +1,7 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Any
-
-from bs4 import BeautifulSoup
 
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.sections.adapter import SectionAdapterEntry
@@ -13,6 +12,9 @@ from scrapers.seasons.sections.regulation_changes import (
     SeasonRegulationChangesSectionParser,
 )
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
 
 
 class SeasonTextSectionExtractionService:

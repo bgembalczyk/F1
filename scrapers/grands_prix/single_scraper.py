@@ -5,7 +5,6 @@ from typing import Any
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperError
-from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
 from scrapers.base.sections.critical_sections import resolve_section_candidates
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionByIdBase
@@ -16,6 +15,8 @@ from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
+    from scrapers.base.options import ScraperOptions
+
 
 class F1SingleGrandPrixScraper(SingleWikiArticleSectionByIdBase):
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
@@ -23,6 +24,20 @@ class F1SingleGrandPrixScraper(SingleWikiArticleSectionByIdBase):
 
     def _build_post_processor(self) -> GrandPrixSectionContractPostProcessor:
         return GrandPrixSectionContractPostProcessor()
+
+    def _missing_section_error(
+        self,
+        *,
+        section_id: str,
+        cause: RuntimeError,
+    ) -> DomainParseError:
+        msg = f"Brak sekcji {section_id!r} w artykule."
+        return DomainParseError(msg, url=self.url, cause=cause)
+
+    @staticmethod
+    def _raise_missing_section_error(section_id: str) -> None:
+        msg = f"Missing section: {section_id}"
+        raise RuntimeError(msg)
 
     def _try_parse_section(
         self,
@@ -36,21 +51,26 @@ class F1SingleGrandPrixScraper(SingleWikiArticleSectionByIdBase):
                 domain="grands_prix",
             )
             if section_fragment is None:
-                raise RuntimeError(f"Missing section: {section_id}")
-            parser = GrandPrixByYearSectionParser(
-                url=self.url,
-                include_urls=self.include_urls,
-                normalize_empty_values=self.normalize_empty_values,
-            )
-            result = parser.parse(section_fragment)
-            return [
-                {"url": self.url, "by_year": result.records, "section_id": section_id},
-            ]
+                self._raise_missing_section_error(section_id)
+            else:
+                parser = GrandPrixByYearSectionParser(
+                    url=self.url,
+                    include_urls=self.include_urls,
+                    normalize_empty_values=self.normalize_empty_values,
+                )
+                result = parser.parse(section_fragment)
+                section_records = result.records
+                return [
+                    {
+                        "url": self.url,
+                        "by_year": section_records,
+                        "section_id": section_id,
+                    },
+                ]
         except Exception as exc:
             if isinstance(exc, RuntimeError):
-                error: Exception = DomainParseError(
-                    f"Brak sekcji {section_id!r} w artykule.",
-                    url=self.url,
+                error: Exception = self._missing_section_error(
+                    section_id=section_id,
                     cause=exc,
                 )
             else:
