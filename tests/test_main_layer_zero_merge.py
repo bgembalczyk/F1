@@ -4,6 +4,14 @@ from pathlib import Path
 from scrapers.wiki.layer_zero_merge import merge_layer_zero_raw_outputs
 
 
+def _team_text(record: dict[str, object]) -> str:
+    team = record.get("team")
+    if isinstance(team, dict):
+        value = team.get("text")
+        return value if isinstance(value, str) else ""
+    return team if isinstance(team, str) else ""
+
+
 def _write_json(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload), encoding="utf-8")
@@ -286,6 +294,49 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
                         "liveries": [
                             {
                                 "main_colours": ["White", "Black"],
+                            },
+                        ],
+                    },
+                },
+            },
+        ],
+    )
+    _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "teams"
+        / "raw"
+        / "audi_constructor.json",
+        [
+            {
+                "team": {
+                    "text": "Audi",
+                    "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One",
+                },
+                "racing_series": {
+                    "formula_one": {
+                        "wins": 0,
+                    },
+                },
+            },
+        ],
+    )
+    _write_json(
+        base_wiki_dir
+        / "layers"
+        / "0_layer"
+        / "teams"
+        / "raw"
+        / "audi_livery.json",
+        [
+            {
+                "team": "Audi",
+                "racing_series": {
+                    "formula_one": {
+                        "liveries": [
+                            {
+                                "main_colours": ["Silver", "Red", "Black"],
                             },
                         ],
                     },
@@ -577,6 +628,18 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             ],
             "wins": 0,
             "liveries": [{"main_colours": ["White", "Black"]}],
+        },
+    }
+
+    audi_team = next(item for item in teams_merged if _team_text(item) == "Audi")
+    assert audi_team["team"] == {
+        "text": "Audi",
+        "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One",
+    }
+    assert audi_team["racing_series"] == {
+        "formula_one": {
+            "wins": 0,
+            "liveries": [{"main_colours": ["Silver", "Red", "Black"]}],
         },
     }
 
