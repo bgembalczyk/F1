@@ -5,9 +5,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
+from typing import Callable
+from typing import TYPE_CHECKING
 from typing import Literal
 
-from scrapers.base.run_config import RunConfig
+if TYPE_CHECKING:
+    from scrapers.base.run_config import RunConfig
 
 
 @dataclass(frozen=True)
@@ -51,29 +54,35 @@ def build_run_profile(
     paths: RunPathConfig = DEFAULT_RUN_PATHS,
 ) -> RunConfig:
     """Build ``RunConfig`` for a named profile."""
-    normalized_profile = _coerce_profile(profile)
+    from scrapers.base.run_config import RunConfig
 
-    if normalized_profile is RunProfileName.STRICT:
-        return RunConfig(
+    normalized_profile = _coerce_profile(profile)
+    config_builders: dict[RunProfileName, Callable[[], RunConfig]] = {
+        RunProfileName.STRICT: lambda: RunConfig(
             output_dir=paths.wiki_output_dir,
             include_urls=True,
             debug_dir=paths.debug_dir,
             quality_report=True,
             error_report=False,
-        )
-
-    if normalized_profile is RunProfileName.MINIMAL:
-        return RunConfig(
+        ),
+        RunProfileName.MINIMAL: lambda: RunConfig(
             output_dir=paths.wiki_output_dir,
             include_urls=True,
-        )
-
-    if normalized_profile in {RunProfileName.DEBUG, RunProfileName.DEPRECATED}:
-        return RunConfig(
+        ),
+        RunProfileName.DEBUG: lambda: RunConfig(
             output_dir=paths.wiki_output_dir,
             include_urls=True,
             debug_dir=paths.debug_dir,
-        )
+        ),
+        RunProfileName.DEPRECATED: lambda: RunConfig(
+            output_dir=paths.wiki_output_dir,
+            include_urls=True,
+            debug_dir=paths.debug_dir,
+        ),
+    }
+    builder = config_builders.get(normalized_profile)
+    if builder is not None:
+        return builder()
 
     msg = f"Unsupported run profile: {normalized_profile!r}"
     raise ValueError(msg)

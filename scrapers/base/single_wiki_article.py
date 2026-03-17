@@ -69,15 +69,14 @@ class SingleWikiArticleSectionAdapterBase(
         return SingleWikiArticleScraperBase.fetch_by_url(self, url)
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        infobox_payload = self._build_infobox_payload(soup)
-        sections_payload = self._build_sections_payload(soup)
-        return [
-            self._assemble_record(
-                soup=soup,
-                infobox_payload=infobox_payload,
-                sections_payload=sections_payload,
-            ),
-        ]
+        return [self._build_article_record(soup)]
+
+    def _build_article_record(self, soup: BeautifulSoup) -> dict[str, Any]:
+        return self._assemble_record(
+            soup=soup,
+            infobox_payload=self._build_infobox_payload(soup),
+            sections_payload=self._build_sections_payload(soup),
+        )
 
     @abstractmethod
     def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:

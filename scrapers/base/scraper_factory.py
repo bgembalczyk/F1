@@ -17,24 +17,26 @@ class RunConfigOptionsMapper:
         options: ScraperOptions,
         run_id: str,
     ) -> None:
-        if run_config.debug_dir is not None:
-            options.debug_dir = run_config.debug_dir
-        if run_config.cache_dir is not None:
-            options.cache_dir = run_config.cache_dir
-        if run_config.cache_ttl is not None:
-            options.cache_ttl = run_config.cache_ttl
-        if run_config.cache_adapter is not None:
-            options.cache_adapter = run_config.cache_adapter
-        if run_config.http_timeout is not None:
-            options.http_timeout = run_config.http_timeout
-        if run_config.http_retries is not None:
-            options.http_retries = run_config.http_retries
-        if run_config.http_backoff_seconds is not None:
-            options.http_backoff_seconds = run_config.http_backoff_seconds
+        self._apply_if_present(options, "debug_dir", run_config.debug_dir)
+        self._apply_if_present(options, "cache_dir", run_config.cache_dir)
+        self._apply_if_present(options, "cache_ttl", run_config.cache_ttl)
+        self._apply_if_present(options, "cache_adapter", run_config.cache_adapter)
+        self._apply_if_present(options, "http_timeout", run_config.http_timeout)
+        self._apply_if_present(options, "http_retries", run_config.http_retries)
+        self._apply_if_present(
+            options,
+            "http_backoff_seconds",
+            run_config.http_backoff_seconds,
+        )
 
         options.run_id = run_id
         options.quality_report = run_config.quality_report
         options.error_report = run_config.error_report
+
+    @staticmethod
+    def _apply_if_present(options: ScraperOptions, name: str, value: object) -> None:
+        if value is not None:
+            setattr(options, name, value)
 
 
 @dataclass(frozen=True)
@@ -72,21 +74,27 @@ class _OptionsScraperAdapter:
         context: ScraperCreationContext,
         ctor: _ConstructorIntrospection,
     ) -> ABCScraper:
-        kwargs = dict(context.run_config.scraper_kwargs)
-        options = context.run_config.options or ScraperOptions()
+        kwargs = self._build_kwargs(context)
+        options = self._resolve_options(context)
         self._mapper.apply(
             run_config=context.run_config,
             options=options,
             run_id=context.run_id,
         )
-
         if context.supports_urls:
             options.include_urls = context.run_config.include_urls
-
         kwargs.setdefault("options", options)
         if ctor.accepts("run_id"):
             kwargs.setdefault("run_id", context.run_id)
         return context.scraper_cls(**kwargs)
+
+    @staticmethod
+    def _build_kwargs(context: ScraperCreationContext) -> dict[str, object]:
+        return dict(context.run_config.scraper_kwargs)
+
+    @staticmethod
+    def _resolve_options(context: ScraperCreationContext) -> ScraperOptions:
+        return context.run_config.options or ScraperOptions()
 
 
 class _LegacyScraperAdapter:

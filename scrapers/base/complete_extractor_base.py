@@ -46,26 +46,30 @@ class CompleteExtractorBase(CompositeDataExtractor):
 
     def build_children(self) -> CompositeDataExtractorChildren:
         list_scrapers = self.build_list_scrapers(self.options)
-        list_scraper: Any
-        records_adapter: (
-            IterableSourceAdapter[dict[str, Any]]
-            | MultiIterableSourceAdapter[dict[str, Any]]
-        )
-
-        if list_scrapers is None:
-            list_scraper = self.build_list_scraper(self.options)
-            records_adapter = IterableSourceAdapter(self._records_fetcher(list_scraper))
-        else:
-            list_scraper = list_scrapers
-            records_adapter = MultiIterableSourceAdapter(
-                [self._records_fetcher(scraper) for scraper in list_scrapers],
-            )
+        list_scraper, records_adapter = self._build_list_sources(list_scrapers)
 
         return CompositeDataExtractorChildren(
             list_scraper=list_scraper,
             single_scraper=self.build_single_scraper(self.options),
             records_adapter=records_adapter,
         )
+
+    def _build_list_sources(
+        self,
+        list_scrapers: list[Any] | None,
+    ) -> tuple[
+        Any,
+        IterableSourceAdapter[dict[str, Any]]
+        | MultiIterableSourceAdapter[dict[str, Any]],
+    ]:
+        if list_scrapers is None:
+            list_scraper = self.build_list_scraper(self.options)
+            records_adapter = IterableSourceAdapter(self._records_fetcher(list_scraper))
+            return list_scraper, records_adapter
+        records_adapter = MultiIterableSourceAdapter(
+            [self._records_fetcher(scraper) for scraper in list_scrapers],
+        )
+        return list_scrapers, records_adapter
 
     def list_scraper_options(self, options: ScraperOptions) -> ScraperOptions:
         return ScraperOptions(
@@ -144,34 +148,55 @@ class CompleteExtractorBase(CompositeDataExtractor):
     ) -> dict[str, Any]:
         strategy = self.DOMAIN_CONFIG.assemble_record_strategy
         params = self.DOMAIN_CONFIG.assemble_record_params or {}
-
-        if strategy == "attach_details":
-            details_key = params.get("details_key", "details")
-            assembled = dict(record)
-            assembled[details_key] = details
-            return assembled
-
-        if strategy == "extract_detail_field":
-            detail_field = params["detail_field"]
-            target_key = params.get("target_key", detail_field)
-            assembled = dict(record)
-            assembled[target_key] = (
-                details.get(detail_field) if isinstance(details, dict) else None
-            )
-            return assembled
-
-        if strategy == "bundle":
-            record_field = params["record_field"]
-            details_key = params.get("details_key", "details")
-            record_value = record.get(record_field)
-            details_default = params.get("details_default", {})
-            return {
-                record_field: record_value if isinstance(record_value, dict) else {},
-                details_key: details if details is not None else details_default,
-            }
+        handlers = {
+            "attach_details": self._assemble_attach_details,
+            "extract_detail_field": self._assemble_extract_detail_field,
+            "bundle": self._assemble_bundle,
+        }
+        handler = handlers.get(strategy)
+        if handler is not None:
+            return handler(record, details, params)
 
         msg = f"Nieznana strategia składania rekordu: {strategy}"
         raise ValueError(msg)
+
+    @staticmethod
+    def _assemble_attach_details(
+        record: dict[str, Any],
+        details: dict[str, Any] | None,
+        params: dict[str, Any],
+    ) -> dict[str, Any]:
+        details_key = params.get("details_key", "details")
+        assembled = dict(record)
+        assembled[details_key] = details
+        return assembled
+
+    @staticmethod
+    def _assemble_extract_detail_field(
+        record: dict[str, Any],
+        details: dict[str, Any] | None,
+        params: dict[str, Any],
+    ) -> dict[str, Any]:
+        detail_field = params["detail_field"]
+        target_key = params.get("target_key", detail_field)
+        assembled = dict(record)
+        assembled[target_key] = details.get(detail_field) if isinstance(details, dict) else None
+        return assembled
+
+    @staticmethod
+    def _assemble_bundle(
+        record: dict[str, Any],
+        details: dict[str, Any] | None,
+        params: dict[str, Any],
+    ) -> dict[str, Any]:
+        record_field = params["record_field"]
+        details_key = params.get("details_key", "details")
+        record_value = record.get(record_field)
+        details_default = params.get("details_default", {})
+        return {
+            record_field: record_value if isinstance(record_value, dict) else {},
+            details_key: details if details is not None else details_default,
+        }
 
     def _get_value_by_path(self, source: dict[str, Any], field_path: str) -> Any:
         current: Any = source
