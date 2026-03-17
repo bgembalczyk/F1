@@ -7,14 +7,22 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.sections.adapter import SectionAdapterEntry
-from scrapers.drivers.sections import DriverCareerSectionParser
-from scrapers.drivers.sections import DriverNonChampionshipSectionParser
-from scrapers.drivers.sections import DriverRacingRecordSectionParser
+from scrapers.drivers.sections.career import CAREER_RESULTS_SECTION
+from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
+from scrapers.drivers.sections.common import DriverResultsSectionConfig
+from scrapers.drivers.sections.non_championship import NON_CHAMPIONSHIP_SECTION
+from scrapers.drivers.sections.racing_record import RACING_RECORD_SECTION
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
 
 
 class DriverSectionExtractionService:
+    _SECTION_CONFIGS: tuple[tuple[DriverResultsSectionConfig, tuple[str, ...]], ...] = (
+        (CAREER_RESULTS_SECTION, ("Karting_record",)),
+        (RACING_RECORD_SECTION, ("Motorsport_career_results",)),
+        (NON_CHAMPIONSHIP_SECTION, ("Non-championship_races",)),
+    )
+
     def __init__(
         self,
         *,
@@ -33,32 +41,18 @@ class DriverSectionExtractionService:
             domain="drivers",
             entries=[
                 SectionAdapterEntry(
-                    section_id="Career_results",
+                    section_id=config.section_id,
                     aliases=profile_entry_aliases(
                         "drivers",
-                        "Career_results",
-                        "Karting_record",
+                        config.section_id,
+                        *aliases,
                     ),
-                    parser=DriverCareerSectionParser(parser=raw_parser),
-                ),
-                SectionAdapterEntry(
-                    section_id="Racing_record",
-                    aliases=profile_entry_aliases(
-                        "drivers",
-                        "Racing_record",
-                        "Motorsport_career_results",
+                    parser=BaseDriverResultsSectionParser.from_config(
+                        parser=raw_parser,
+                        config=config,
                     ),
-                    parser=DriverRacingRecordSectionParser(parser=raw_parser),
-                ),
-                SectionAdapterEntry(
-                    section_id="Non-championship",
-                    aliases=profile_entry_aliases(
-                        "drivers",
-                        "Non-championship",
-                        "Non-championship_races",
-                    ),
-                    parser=DriverNonChampionshipSectionParser(parser=raw_parser),
-                ),
+                )
+                for config, aliases in self._SECTION_CONFIGS
             ],
         )
 

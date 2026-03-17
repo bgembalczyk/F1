@@ -1,23 +1,22 @@
 from __future__ import annotations
 
-from bs4 import BeautifulSoup
-
-from scrapers.base.sections.interface import SectionParseResult
+from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
+from scrapers.drivers.sections.common import DriverResultsSectionConfig
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 
 
-class DriverNonChampionshipSectionParser:
-    SECTION_ID = "Non-championship"
-    HEADER_ALIASES = ("Non-championship", "Non-championship races")
+NON_CHAMPIONSHIP_SECTION = DriverResultsSectionConfig(
+    section_id="Non-championship",
+    section_label="Non-championship",
+    header_aliases=("Non-championship", "Non-championship races"),
+)
 
+
+class DriverNonChampionshipSectionParser(BaseDriverResultsSectionParser):
     def __init__(self, *, parser: DriverResultsSectionParser) -> None:
-        self._parser = parser
-
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        parsed = self._parser.parse(section_fragment)
-        return SectionParseResult(
-            section_id=self.SECTION_ID,
-            section_label="Non-championship",
-            records=parsed.records,
-            metadata={"aliases": self.HEADER_ALIASES},
+        super().__init__(
+            parser=parser,
+            section_id=NON_CHAMPIONSHIP_SECTION.section_id,
+            section_label=NON_CHAMPIONSHIP_SECTION.section_label,
+            header_aliases=NON_CHAMPIONSHIP_SECTION.header_aliases,
         )
