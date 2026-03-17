@@ -178,68 +178,89 @@ class BestFinishParser:
         season_links: list[dict[str, Any]],
     ) -> dict[str, Any] | None:
         """Find class information for a specific season."""
+        found_small = self._find_nearest_small_tag(season_tag, season_link, season_links)
+        if not found_small:
+            return None
+        return self._extract_valid_class_candidate(found_small, season_link)
+
+    def _find_nearest_small_tag(
+        self,
+        season_tag: Tag,
+        season_link: dict[str, Any],
+        season_links: list[dict[str, Any]],
+    ) -> Tag | None:
+        next_elem = season_tag
+        while next_elem:
+            next_elem = next_elem.next_sibling
+            if next_elem is None:
+                return None
+            if self._is_other_season_tag(next_elem, season_link, season_links):
+                return None
+            small_in_elem = self._small_tag_from_elem(next_elem, season_link, season_links)
+            if small_in_elem is not None:
+                return small_in_elem
+        return None
+
+    def _is_other_season_tag(
+        self,
+        elem: Any,
+        season_link: dict[str, Any],
+        season_links: list[dict[str, Any]],
+    ) -> bool:
+        if not isinstance(elem, Tag) or elem.name != "a":
+            return False
+        next_text = clean_infobox_text(elem.get_text(strip=True))
+        return any(s.get("text") == next_text for s in season_links if s != season_link)
+
+    def _small_tag_from_elem(
+        self,
+        elem: Any,
+        season_link: dict[str, Any],
+        season_links: list[dict[str, Any]],
+    ) -> Tag | None:
+        if not isinstance(elem, Tag):
+            return None
+        if elem.name == "small":
+            return elem
+
+        small_in_sibling = elem.find("small")
+        if not small_in_sibling:
+            return None
+        if self._contains_other_season(elem, season_link, season_links):
+            return None
+        return small_in_sibling
+
+    def _contains_other_season(
+        self,
+        elem: Tag,
+        season_link: dict[str, Any],
+        season_links: list[dict[str, Any]],
+    ) -> bool:
+        for a_tag in elem.find_all("a"):
+            a_text = clean_infobox_text(a_tag.get_text(strip=True))
+            if any(s.get("text") == a_text for s in season_links if s != season_link):
+                return True
+        return False
+
+    def _extract_valid_class_candidate(
+        self,
+        small_tag: Tag,
+        season_link: dict[str, Any],
+    ) -> dict[str, Any] | None:
+        class_links = self._link_extractor.extract_links(small_tag)
+        if not class_links:
+            return None
+
+        class_candidate = class_links[0]
+        class_text = class_candidate.get("text", "")
+        class_url = class_candidate.get("url", "")
         season_text = season_link.get("text", "")
         season_url = season_link.get("url", "")
 
-        # Navigate forward to find next small tag
-        next_elem = season_tag
-        found_small = None
-        found_next_season = False
-
-        while next_elem and not found_small and not found_next_season:
-            next_elem = next_elem.next_sibling
-            if next_elem:
-                # Check if next_elem is a Tag before calling methods
-                if hasattr(next_elem, "name"):
-                    if next_elem.name == "small":
-                        found_small = next_elem
-                        break
-                    # Check if we hit another season link
-                    if next_elem.name == "a":
-                        next_text = clean_infobox_text(next_elem.get_text(strip=True))
-                        if any(
-                            s.get("text") == next_text
-                            for s in season_links
-                            if s != season_link
-                        ):
-                            found_next_season = True
-                            break
-                # Also search descendants of text/tag siblings
-                if isinstance(next_elem, Tag):
-                    small_in_sibling = next_elem.find("small")
-                    if small_in_sibling:
-                        # Check if there's a season link before this small
-                        for a_tag in next_elem.find_all("a"):
-                            a_text = clean_infobox_text(a_tag.get_text(strip=True))
-                            if any(
-                                s.get("text") == a_text
-                                for s in season_links
-                                if s != season_link
-                            ):
-                                found_next_season = True
-                                break
-                        if not found_next_season:
-                            found_small = small_in_sibling
-                            break
-
-        # Extract class from found small tag
-        if found_small:
-            class_links = self._link_extractor.extract_links(found_small)
-            if class_links:
-                class_candidate = class_links[0]
-                class_text = class_candidate.get("text", "")
-                class_url = class_candidate.get("url", "")
-
-                # Validate that this is actually a class, not season data
-                is_valid = not self._season_parser.is_season_like_text(class_text)
-                # Check if it duplicates the current season
-                if is_valid and (season_text == class_text or season_url == class_url):
-                    is_valid = False
-
-                if is_valid:
-                    return class_candidate
-
-        return None
+        is_valid = not self._season_parser.is_season_like_text(class_text)
+        if is_valid and (season_text == class_text or season_url == class_url):
+            is_valid = False
+        return class_candidate if is_valid else None
 
     def _extract_seasons_from_text(self, text: str) -> list[int] | None:
         """Extract seasons from text when no links are available."""
