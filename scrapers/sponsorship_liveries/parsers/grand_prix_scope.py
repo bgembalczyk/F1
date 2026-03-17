@@ -44,17 +44,34 @@ class GrandPrixScopeParser:
         if SponsorshipRecordText.is_year_param(param):
             return
         text = SponsorshipRecordText.param_text(param)
-        if not re.search(r"grand prix", text, flags=re.IGNORECASE):
+        if not cls._is_grand_prix_text(text):
             parsed.invalid = True
             return
-        if re.search(r"\bonwards?\b", text, flags=re.IGNORECASE):
-            parsed.has_onwards = True
 
+        cls._update_onwards_flag(parsed, text)
         range_scope = cls._build_range_scope_from_text(param, text)
         if range_scope is not None:
             parsed.range_scope = range_scope
             return
 
+        cls._append_entry(parsed, param, text)
+
+    @staticmethod
+    def _is_grand_prix_text(text: str) -> bool:
+        return bool(re.search(r"grand prix", text, flags=re.IGNORECASE))
+
+    @staticmethod
+    def _update_onwards_flag(parsed: "_GrandPrixScopeAccumulator", text: str) -> None:
+        if re.search(r"\bonwards?\b", text, flags=re.IGNORECASE):
+            parsed.has_onwards = True
+
+    @classmethod
+    def _append_entry(
+        cls,
+        parsed: "_GrandPrixScopeAccumulator",
+        param: Any,
+        text: str,
+    ) -> None:
         cleaned = SponsorshipRecordText.clean_grand_prix_text(text)
         if cleaned:
             parsed.entries.append(cls.build_grand_prix_entry(param, cleaned))

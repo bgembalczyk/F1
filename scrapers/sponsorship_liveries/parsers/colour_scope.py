@@ -34,25 +34,10 @@ class ColourScopeHandler:
 
     @staticmethod
     def filter_colours_for_years(colours: Any, years: set[int]) -> Any:
-        if not isinstance(colours, list):
-            return colours
-        filtered: list[Any] = []
-        for item in colours:
-            if not isinstance(item, str):
-                filtered.append(item)
-                continue
-            year_params = SponsorshipRecordText.extract_years_from_text(item)
-            if not year_params:
-                filtered.append(item)
-                continue
-            if year_params & years:
-                if re.search(r"grand prix", item, flags=re.IGNORECASE):
-                    filtered.append(
-                        SponsorshipRecordText.strip_years_keep_context(item),
-                    )
-                else:
-                    filtered.append(SponsorshipRecordText.strip_year_suffix(item))
-        return filtered
+        return ColourScopeHandler._filter_colours_by_year_match(
+            colours,
+            matcher=lambda year_params: bool(year_params & years),
+        )
 
     @staticmethod
     def remove_year_specific_colours(colours: Any) -> Any:
@@ -69,25 +54,37 @@ class ColourScopeHandler:
 
     @staticmethod
     def filter_colours_for_year(colours: Any, year: int) -> Any:
+        return ColourScopeHandler._filter_colours_by_year_match(
+            colours,
+            matcher=lambda year_params: year in year_params,
+        )
+
+    @staticmethod
+    def _filter_colours_by_year_match(
+        colours: Any,
+        matcher: Any,
+    ) -> Any:
         if not isinstance(colours, list):
             return colours
         filtered: list[Any] = []
         for item in colours:
-            if not isinstance(item, str):
-                filtered.append(item)
-                continue
-            year_params = SponsorshipRecordText.extract_years_from_text(item)
-            if not year_params or year in year_params:
-                if not year_params:
-                    filtered.append(item)
-                    continue
-                if re.search(r"grand prix", item, flags=re.IGNORECASE):
-                    filtered.append(
-                        SponsorshipRecordText.strip_years_keep_context(item),
-                    )
-                else:
-                    filtered.append(SponsorshipRecordText.strip_year_suffix(item))
+            filtered_item = ColourScopeHandler._filter_colour_item(item, matcher)
+            if filtered_item is not None:
+                filtered.append(filtered_item)
         return filtered
+
+    @staticmethod
+    def _filter_colour_item(item: Any, matcher: Any) -> Any | None:
+        if not isinstance(item, str):
+            return item
+        year_params = SponsorshipRecordText.extract_years_from_text(item)
+        if not year_params:
+            return item
+        if not matcher(year_params):
+            return None
+        if re.search(r"grand prix", item, flags=re.IGNORECASE):
+            return SponsorshipRecordText.strip_years_keep_context(item)
+        return SponsorshipRecordText.strip_year_suffix(item)
 
     @staticmethod
     def colour_grand_prix_scope(
