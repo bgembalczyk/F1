@@ -5,7 +5,11 @@ from pathlib import Path
 
 import pytest
 
+from scrapers.base.cli_entrypoint import build_complete_extractor_main
+from scrapers.base.cli_entrypoint import build_deprecated_module_main
 from scrapers.base.cli_entrypoint import build_standard_parser
+from scrapers.base.cli_entrypoint import complete_extractor_base_config
+from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.cli_entrypoint import run_cli_entrypoint
 from scrapers.base.run_config import RunConfig
 
@@ -98,3 +102,59 @@ def test_cli_runner_supports_targets_without_run_config_argument() -> None:
     )
 
     assert called is True
+
+
+def test_deprecated_module_base_config_has_expected_defaults() -> None:
+    assert deprecated_module_base_config() == RunConfig(
+        output_dir=Path("../../data/wiki"),
+        include_urls=True,
+        debug_dir=Path("../../data/debug"),
+    )
+
+
+def test_complete_extractor_base_config_has_expected_defaults() -> None:
+    assert complete_extractor_base_config() == RunConfig(output_dir=Path("../../data/wiki"))
+
+
+def test_build_deprecated_module_main_warns_and_passes_run_config() -> None:
+    captured: list[RunConfig] = []
+
+    def target(*, run_config: RunConfig) -> None:
+        captured.append(run_config)
+
+    main = build_deprecated_module_main(
+        target=target,
+        deprecation_message="deprecated module",
+        argv=["--error-report"],
+    )
+
+    with pytest.warns(DeprecationWarning, match="deprecated module"):
+        main()
+
+    assert captured == [
+        RunConfig(
+            output_dir=Path("../../data/wiki"),
+            include_urls=True,
+            debug_dir=Path("../../data/debug"),
+            quality_report=True,
+            error_report=True,
+        ),
+    ]
+
+
+def test_build_complete_extractor_main_passes_default_base_config() -> None:
+    captured: list[RunConfig] = []
+
+    def target(*, run_config: RunConfig) -> None:
+        captured.append(run_config)
+
+    main = build_complete_extractor_main(target=target, argv=["--quality-report"])
+    main()
+
+    assert captured == [
+        RunConfig(
+            output_dir=Path("../../data/wiki"),
+            quality_report=True,
+            error_report=False,
+        ),
+    ]

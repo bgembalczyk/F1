@@ -8,6 +8,7 @@ import inspect
 import warnings
 from collections.abc import Callable
 from collections.abc import Sequence
+from pathlib import Path
 from typing import Literal
 
 from scrapers.base.run_config import RunConfig
@@ -24,6 +25,23 @@ _PROFILE_DEFAULTS: dict[CliMainProfile, tuple[bool, bool]] = {
     "complete_extractor": (False, False),
     "deprecated_entrypoint": (True, False),
 }
+
+DEFAULT_WIKI_OUTPUT_DIR = Path("../../data/wiki")
+DEFAULT_DEBUG_DIR = Path("../../data/debug")
+
+
+def deprecated_module_base_config() -> RunConfig:
+    """Build canonical ``RunConfig`` for deprecated compatibility modules."""
+    return RunConfig(
+        output_dir=DEFAULT_WIKI_OUTPUT_DIR,
+        include_urls=True,
+        debug_dir=DEFAULT_DEBUG_DIR,
+    )
+
+
+def complete_extractor_base_config() -> RunConfig:
+    """Build canonical ``RunConfig`` for complete-extractor CLI modules."""
+    return RunConfig(output_dir=DEFAULT_WIKI_OUTPUT_DIR)
 
 
 def build_standard_parser(
@@ -121,6 +139,40 @@ def build_cli_main(
     return _main
 
 
+def build_deprecated_module_main(
+    *,
+    target: Callable[..., None],
+    deprecation_message: str,
+    argv: Sequence[str] | None = None,
+    base_config: RunConfig | None = None,
+    deprecation_stacklevel: int = 2,
+) -> Callable[[], None]:
+    """Build ``__main__`` launcher dedicated to deprecated module shims."""
+    return build_cli_main(
+        target=target,
+        base_config=base_config or deprecated_module_base_config(),
+        profile="deprecated_entrypoint",
+        argv=argv,
+        deprecation_message=deprecation_message,
+        deprecation_stacklevel=deprecation_stacklevel,
+    )
+
+
+def build_complete_extractor_main(
+    *,
+    target: Callable[..., None],
+    argv: Sequence[str] | None = None,
+    base_config: RunConfig | None = None,
+) -> Callable[[], None]:
+    """Build ``__main__`` launcher for complete extractor modules."""
+    return build_cli_main(
+        target=target,
+        base_config=base_config or complete_extractor_base_config(),
+        profile="complete_extractor",
+        argv=argv,
+    )
+
+
 def _invoke_target(*, target: Callable[..., None], run_config: RunConfig) -> None:
     try:
         signature = inspect.signature(target)
@@ -138,7 +190,11 @@ def _invoke_target(*, target: Callable[..., None], run_config: RunConfig) -> Non
 __all__ = [
     "CliMainProfile",
     "build_cli_main",
+    "build_complete_extractor_main",
+    "build_deprecated_module_main",
     "build_run_config",
     "build_standard_parser",
+    "complete_extractor_base_config",
+    "deprecated_module_base_config",
     "run_cli_entrypoint",
 ]

@@ -1,10 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.grands_prix.entrypoint.run_list_scraper."""
 
-from pathlib import Path
-
 from models.records.factories import build_grands_prix_record
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -57,16 +54,11 @@ class GrandsPrixListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_cli_main
+    from scrapers.base.cli_entrypoint import build_deprecated_module_main
     from scrapers.grands_prix.entrypoint import run_list_scraper
 
-    build_cli_main(
+    build_deprecated_module_main(
         target=run_list_scraper,
-        base_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-        profile="deprecated_entrypoint",
         deprecation_message=(
             "scrapers.grands_prix.list_scraper is deprecated; use "
             "scrapers.grands_prix.entrypoint.run_list_scraper."
