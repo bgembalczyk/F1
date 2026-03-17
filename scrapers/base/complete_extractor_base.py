@@ -1,10 +1,13 @@
 from abc import abstractmethod
-from typing import Any
-
+from collections.abc import Callable
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
+from scrapers.base.scraper_protocols import ListScraperProtocol
+from scrapers.base.scraper_protocols import ScraperRecord
+from scrapers.base.scraper_protocols import ScraperRecords
+from scrapers.base.scraper_protocols import SingleScraperProtocol
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
 
@@ -22,9 +25,9 @@ class CompleteExtractorBase(CompositeDataExtractor):
 
     def build_children(self) -> CompositeDataExtractorChildren:
         list_scrapers = self.build_list_scrapers(self.options)
-        list_scraper: Any
-        records_adapter: IterableSourceAdapter[dict[str, Any]] | MultiIterableSourceAdapter[
-            dict[str, Any]
+        list_scraper: ListScraperProtocol | list[ListScraperProtocol]
+        records_adapter: IterableSourceAdapter[ScraperRecord] | MultiIterableSourceAdapter[
+            ScraperRecord
         ]
 
         if list_scrapers is None:
@@ -58,35 +61,41 @@ class CompleteExtractorBase(CompositeDataExtractor):
         )
 
     @abstractmethod
-    def build_list_scraper(self, options: ScraperOptions) -> Any:
+    def build_list_scraper(self, options: ScraperOptions) -> ListScraperProtocol:
         """Zbuduj scraper listy dla przypadków jedno-listowych."""
 
-    def build_list_scrapers(self, _options: ScraperOptions) -> list[Any] | None:
+    def build_list_scrapers(
+        self,
+        _options: ScraperOptions,
+    ) -> list[ListScraperProtocol] | None:
         """Opcjonalny hook dla przypadków wielolistowych."""
         return None
 
     @abstractmethod
-    def build_single_scraper(self, options: ScraperOptions) -> Any:
+    def build_single_scraper(self, options: ScraperOptions) -> SingleScraperProtocol:
         """Zbuduj scraper szczegółów."""
 
     @abstractmethod
-    def extract_detail_url(self, record: dict[str, Any]) -> str | None:
+    def extract_detail_url(self, record: ScraperRecord) -> str | None:
         """Wyciągnij URL szczegółów z rekordu listy."""
 
-    def get_detail_url(self, record: dict[str, Any]) -> str | None:
+    def get_detail_url(self, record: ScraperRecord) -> str | None:
         return self.extract_detail_url(record)
 
     def assemble_record(
         self,
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-    ) -> dict[str, Any]:
+        record: ScraperRecord,
+        details: ScraperRecord | None,
+    ) -> ScraperRecord:
         assembled = dict(record)
         assembled["details"] = details
         return assembled
 
-    def _records_fetcher(self, scraper: Any):
-        def _fetch() -> list[dict[str, Any]]:
+    def _records_fetcher(
+        self,
+        scraper: ListScraperProtocol,
+    ) -> Callable[[], ScraperRecords]:
+        def _fetch() -> ScraperRecords:
             try:
                 return scraper.fetch()
             except Exception:

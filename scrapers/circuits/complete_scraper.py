@@ -1,8 +1,7 @@
 from pathlib import Path
-from typing import Any
-
 from scrapers.base.complete_extractor_base import CompleteExtractorBase
 from scrapers.base.options import ScraperOptions
+from scrapers.base.scraper_protocols import ScraperRecord
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.models.services.circuit_service import CircuitService
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
@@ -26,7 +25,7 @@ class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
     def build_single_scraper(self, options: ScraperOptions) -> F1SingleCircuitScraper:
         return F1SingleCircuitScraper(options=self.single_scraper_options(options))
 
-    def extract_detail_url(self, record: dict[str, Any]) -> str | None:
+    def extract_detail_url(self, record: ScraperRecord) -> str | None:
         circuit_data = record.get("circuit")
         if isinstance(circuit_data, dict):
             return circuit_data.get("url")
@@ -34,9 +33,9 @@ class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
 
     def assemble_record(
         self,
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-    ) -> dict[str, Any]:
+        record: ScraperRecord,
+        details: ScraperRecord | None,
+    ) -> ScraperRecord:
         return CircuitService.normalize_record(super().assemble_record(record, details))
 
 

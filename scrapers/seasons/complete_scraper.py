@@ -1,8 +1,7 @@
 from pathlib import Path
-from typing import Any
-
 from scrapers.base.complete_extractor_base import CompleteExtractorBase
 from scrapers.base.options import ScraperOptions
+from scrapers.base.scraper_protocols import ScraperRecord
 from scrapers.seasons.list_scraper import SeasonsListScraper
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
@@ -16,7 +15,7 @@ class CompleteSeasonDataExtractor(CompleteExtractorBase):
     def build_single_scraper(self, options: ScraperOptions) -> SingleSeasonScraper:
         return SingleSeasonScraper(options=self.single_scraper_options(options))
 
-    def extract_detail_url(self, record: dict[str, Any]) -> str | None:
+    def extract_detail_url(self, record: ScraperRecord) -> str | None:
         season_info = record.get("season")
         if not isinstance(season_info, dict):
             return None
@@ -25,9 +24,9 @@ class CompleteSeasonDataExtractor(CompleteExtractorBase):
 
     def assemble_record(
         self,
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-    ) -> dict[str, Any]:
+        record: ScraperRecord,
+        details: ScraperRecord | None,
+    ) -> ScraperRecord:
         season_info = record.get("season")
         if not isinstance(season_info, dict):
             return {

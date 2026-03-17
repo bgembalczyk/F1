@@ -1,20 +1,22 @@
 from dataclasses import dataclass
-from typing import Any
-
 from tqdm import tqdm
 
 from scrapers.base.data_extractor import BaseDataExtractor
+from scrapers.base.scraper_protocols import ListScraperProtocol
+from scrapers.base.scraper_protocols import ScraperRecord
+from scrapers.base.scraper_protocols import ScraperRecords
+from scrapers.base.scraper_protocols import SingleScraperProtocol
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
 
 
 @dataclass(frozen=True)
 class CompositeDataExtractorChildren:
-    list_scraper: Any
-    single_scraper: Any
+    list_scraper: ListScraperProtocol | list[ListScraperProtocol]
+    single_scraper: SingleScraperProtocol
     records_adapter: (
-        IterableSourceAdapter[dict[str, Any]]
-        | MultiIterableSourceAdapter[dict[str, Any]]
+        IterableSourceAdapter[ScraperRecord]
+        | MultiIterableSourceAdapter[ScraperRecord]
     )
 
 
@@ -31,21 +33,21 @@ class CompositeDataExtractor(BaseDataExtractor):
         msg = "CompositeDataExtractor requires build_children()."
         raise NotImplementedError(msg)
 
-    def get_detail_url(self, _record: dict[str, Any]) -> str | None:
+    def get_detail_url(self, _record: ScraperRecord) -> str | None:
         return None
 
     def assemble_record(
         self,
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-    ) -> dict[str, Any]:
+        record: ScraperRecord,
+        details: ScraperRecord | None,
+    ) -> ScraperRecord:
         full_record = dict(record)
         full_record["details"] = details
         return full_record
 
-    def fetch(self) -> list[dict[str, Any]]:
+    def fetch(self) -> ScraperRecords:
         records = self.records_adapter.get()
-        complete: list[dict[str, Any]] = []
+        complete: ScraperRecords = []
 
         extractor_name = self.__class__.__name__
         for record in tqdm(records, desc=extractor_name, unit="item"):
@@ -57,7 +59,7 @@ class CompositeDataExtractor(BaseDataExtractor):
                 raise TypeError(msg)
 
             detail_url = self.get_detail_url(record)
-            details: dict[str, Any] | None = None
+            details: ScraperRecord | None = None
 
             if detail_url:
                 try:
