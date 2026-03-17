@@ -8,40 +8,43 @@ import inspect
 import warnings
 from collections.abc import Callable
 from collections.abc import Sequence
-from pathlib import Path
-from typing import Literal
-
 from scrapers.base.run_config import RunConfig
+from scrapers.base.run_profiles import RunProfileName
+from scrapers.base.run_profiles import build_run_profile
 
-CliMainProfile = Literal[
-    "list_scraper",
-    "complete_extractor",
-    "deprecated_entrypoint",
-]
+CliMainProfile = RunProfileName
 
 
 _PROFILE_DEFAULTS: dict[CliMainProfile, tuple[bool, bool]] = {
-    "list_scraper": (True, False),
-    "complete_extractor": (False, False),
-    "deprecated_entrypoint": (True, False),
+    RunProfileName.STRICT: (True, False),
+    RunProfileName.MINIMAL: (False, False),
+    RunProfileName.DEPRECATED: (True, False),
 }
 
-DEFAULT_WIKI_OUTPUT_DIR = Path("../../data/wiki")
-DEFAULT_DEBUG_DIR = Path("../../data/debug")
+
+_LEGACY_PROFILE_ALIASES: dict[str, RunProfileName] = {
+    "list_scraper": RunProfileName.STRICT,
+    "complete_extractor": RunProfileName.MINIMAL,
+    "deprecated_entrypoint": RunProfileName.DEPRECATED,
+}
+
+
+def _coerce_cli_main_profile(profile: CliMainProfile | str) -> RunProfileName:
+    if isinstance(profile, RunProfileName):
+        return profile
+    if profile in _LEGACY_PROFILE_ALIASES:
+        return _LEGACY_PROFILE_ALIASES[profile]
+    return RunProfileName(profile)
 
 
 def deprecated_module_base_config() -> RunConfig:
     """Build canonical ``RunConfig`` for deprecated compatibility modules."""
-    return RunConfig(
-        output_dir=DEFAULT_WIKI_OUTPUT_DIR,
-        include_urls=True,
-        debug_dir=DEFAULT_DEBUG_DIR,
-    )
+    return build_run_profile(RunProfileName.DEPRECATED)
 
 
 def complete_extractor_base_config() -> RunConfig:
     """Build canonical ``RunConfig`` for complete-extractor CLI modules."""
-    return RunConfig(output_dir=DEFAULT_WIKI_OUTPUT_DIR)
+    return build_run_profile(RunProfileName.MINIMAL)
 
 
 def build_standard_parser(
@@ -107,7 +110,7 @@ def build_cli_main(
     *,
     target: Callable[..., None],
     base_config: RunConfig,
-    profile: CliMainProfile,
+    profile: CliMainProfile | str,
     argv: Sequence[str] | None = None,
     quality_report_default: bool | None = None,
     error_report_default: bool | None = None,
@@ -115,7 +118,8 @@ def build_cli_main(
     deprecation_stacklevel: int = 2,
 ) -> Callable[[], None]:
     """Build reusable ``__main__`` launcher with standardized profile defaults."""
-    profile_quality_default, profile_error_default = _PROFILE_DEFAULTS[profile]
+    normalized_profile = _coerce_cli_main_profile(profile)
+    profile_quality_default, profile_error_default = _PROFILE_DEFAULTS[normalized_profile]
     quality_default = (
         profile_quality_default
         if quality_report_default is None
@@ -151,7 +155,7 @@ def build_deprecated_module_main(
     return build_cli_main(
         target=target,
         base_config=base_config or deprecated_module_base_config(),
-        profile="deprecated_entrypoint",
+        profile=RunProfileName.DEPRECATED,
         argv=argv,
         deprecation_message=deprecation_message,
         deprecation_stacklevel=deprecation_stacklevel,
@@ -168,7 +172,7 @@ def build_complete_extractor_main(
     return build_cli_main(
         target=target,
         base_config=base_config or complete_extractor_base_config(),
-        profile="complete_extractor",
+        profile=RunProfileName.MINIMAL,
         argv=argv,
     )
 
