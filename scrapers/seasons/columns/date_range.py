@@ -15,6 +15,7 @@ class DateRangeColumn(BaseColumn):
 
     Returns dict: {"start": NormalizedDate, "end": NormalizedDate}
     """
+
     def __init__(self, *, year: int | None = None) -> None:
         self.year = year
 

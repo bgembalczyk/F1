@@ -1,8 +1,5 @@
 """DEPRECATED ENTRYPOINT: use scrapers.constructors.entrypoint.run_list_scraper."""
 
-from datetime import datetime
-from datetime import timezone
-
 from models.records.factories.build import build_constructor_record
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn

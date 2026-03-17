@@ -10,7 +10,6 @@ from scrapers.base.orchestration.step_orchestrator import ExecutedStep
 from scrapers.base.orchestration.step_orchestrator import JsonCheckpointRepository
 from scrapers.base.orchestration.step_orchestrator import ParserStepExecutor
 from scrapers.base.orchestration.step_orchestrator import ResolvedInput
-from scrapers.base.orchestration.step_orchestrator import SectionSourceAdapter
 from scrapers.base.orchestration.step_orchestrator import StepDeclaration
 from scrapers.base.orchestration.step_orchestrator import StepOrchestrator
 from tests.support.step_orchestrator_assertions import (

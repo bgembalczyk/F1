@@ -2,7 +2,6 @@ import re
 
 from scrapers.base.run_profiles import RunProfileName
 
-
 CliMainProfile = RunProfileName
 
 

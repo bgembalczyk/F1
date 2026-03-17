@@ -7,4 +7,3 @@ from dataclasses import dataclass
 class CriticalSection:
     section_id: str
     alternative_section_ids: tuple[str, ...] = ()
-

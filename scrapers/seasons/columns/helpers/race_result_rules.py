@@ -106,8 +106,7 @@ class FatalAccidentRule:
 
 class F2EligibilityRule:
     def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None:
-        if (context.season_year not in
-                F2_INELIGIBLE_YEARS):
+        if context.season_year not in F2_INELIGIBLE_YEARS:
             return
         if "1" in context.footnotes:
             result["points_eligible"] = False

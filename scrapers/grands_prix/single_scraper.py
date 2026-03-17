@@ -9,7 +9,9 @@ from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionByIdBase
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
-from scrapers.grands_prix.postprocess.contract import GrandPrixSectionContractPostProcessor
+from scrapers.grands_prix.postprocess.contract import (
+    GrandPrixSectionContractPostProcessor,
+)
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 
 if TYPE_CHECKING:

@@ -6,9 +6,13 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.constants import MARKS_RE
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.seasons.columns.helpers.constants import BACKGROUND_TO_RESULT
-from scrapers.seasons.columns.helpers.race_result_components import RaceResultBackgroundMapper
+from scrapers.seasons.columns.helpers.race_result_components import (
+    RaceResultBackgroundMapper,
+)
 from scrapers.seasons.columns.helpers.race_result_components import RaceResultCellParser
-from scrapers.seasons.columns.helpers.race_result_components import SuperscriptParseResult
+from scrapers.seasons.columns.helpers.race_result_components import (
+    SuperscriptParseResult,
+)
 from scrapers.seasons.columns.helpers.race_result_rules import ClassifiedDnfRule
 from scrapers.seasons.columns.helpers.race_result_rules import DoublePointsRoundRule
 from scrapers.seasons.columns.helpers.race_result_rules import F2EligibilityRule

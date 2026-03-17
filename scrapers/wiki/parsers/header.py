@@ -48,5 +48,5 @@ class HeaderParser(WikiParser):
         return soup.find(
             HEADER_TAG,
             class_=lambda x: x
-                             and HEADER_CLASS in (x if isinstance(x, list) else x.split()),
+            and HEADER_CLASS in (x if isinstance(x, list) else x.split()),
         )

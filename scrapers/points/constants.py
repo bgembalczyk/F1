@@ -1,6 +1,5 @@
 import re
 
-
 POINTS_SEASONS_HEADER = "Seasons"
 POINTS_RACE_LENGTH_COMPLETED_HEADER = (
     "Race length completed"  # Kryterium skróconego wyścigu.

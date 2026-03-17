@@ -5,9 +5,7 @@ from typing import Any
 
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.sections.adapter import SectionAdapterEntry
-from scrapers.drivers.sections.career import CAREER_RESULTS_SECTION
 from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
-from scrapers.drivers.sections.common import DriverResultsSectionConfig
 from scrapers.drivers.sections.constants import SECTION_CONFIGS
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases

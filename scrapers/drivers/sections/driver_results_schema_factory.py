@@ -7,24 +7,12 @@ from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.drivers.columns.round import RoundColumn
 from scrapers.drivers.columns.unknown_value import UnknownValueColumn
-from scrapers.drivers.sections.constants import (
-    CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY,
-)
-from scrapers.drivers.sections.constants import (
-    CAREER_HIGHLIGHTS_HEADER_TO_KEY,
-)
-from scrapers.drivers.sections.constants import (
-    CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY,
-)
-from scrapers.drivers.sections.constants import (
-    CAREER_SUMMARY_HEADER_TO_KEY,
-)
-from scrapers.drivers.sections.constants import (
-    COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY,
-)
-from scrapers.drivers.sections.constants import (
-    COMPLETE_RESULTS_HEADER_TO_KEY,
-)
+from scrapers.drivers.sections.constants import CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY
+from scrapers.drivers.sections.constants import CAREER_HIGHLIGHTS_HEADER_TO_KEY
+from scrapers.drivers.sections.constants import CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY
+from scrapers.drivers.sections.constants import CAREER_SUMMARY_HEADER_TO_KEY
+from scrapers.drivers.sections.constants import COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY
+from scrapers.drivers.sections.constants import COMPLETE_RESULTS_HEADER_TO_KEY
 
 if TYPE_CHECKING:
     from scrapers.base.table.columns.types.base import BaseColumn

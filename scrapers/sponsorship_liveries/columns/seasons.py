@@ -73,9 +73,7 @@ class SponsorshipSeasonsColumn(BaseColumn):
 
         links = normalize_links(ctx.links or [])
         non_year_links = [
-            lnk
-            for lnk in links
-            if not YEAR_RE.match((lnk.get("text") or "").strip())
+            lnk for lnk in links if not YEAR_RE.match((lnk.get("text") or "").strip())
         ]
 
         classification = self._classifier.classify(

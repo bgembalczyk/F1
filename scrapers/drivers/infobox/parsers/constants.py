@@ -9,9 +9,7 @@ TWO_DIGIT_YEAR_SUFFIX = 2
 MIN_VALID_CAR_NUMBER_YEAR = 1900
 
 # Date pattern for matching common date formats
-DATE_PATTERN = (
-    r"\b\d{1,2}\s+[A-Za-z]+\s+\d{4}|\b[A-Za-z]+\s+\d{1,2},\s*\d{4}|\b\d{4}\b"
-)
+DATE_PATTERN = r"\b\d{1,2}\s+[A-Za-z]+\s+\d{4}|\b[A-Za-z]+\s+\d{1,2},\s*\d{4}|\b\d{4}\b"
 
 # Regex patterns for year detection (compiled once for performance)
 FOUR_DIGIT_YEAR_PATTERN = re.compile(r"^(19|20)\d{2}$")

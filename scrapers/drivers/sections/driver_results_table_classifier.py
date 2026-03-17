@@ -1,14 +1,8 @@
 from __future__ import annotations
 
-from scrapers.drivers.sections.constants import (
-    CAREER_HIGHLIGHTS_REQUIRED_HEADERS,
-)
-from scrapers.drivers.sections.constants import (
-    CAREER_SUMMARY_REQUIRED_HEADERS,
-)
-from scrapers.drivers.sections.constants import (
-    COMPLETE_RESULTS_REQUIRED_HEADER,
-)
+from scrapers.drivers.sections.constants import CAREER_HIGHLIGHTS_REQUIRED_HEADERS
+from scrapers.drivers.sections.constants import CAREER_SUMMARY_REQUIRED_HEADERS
+from scrapers.drivers.sections.constants import COMPLETE_RESULTS_REQUIRED_HEADER
 
 
 class DriverResultsTableClassifier:

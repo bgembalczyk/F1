@@ -1,5 +1,4 @@
 # scrapers/base/table/columns/types/time.py
-import re
 from typing import Any
 
 from scrapers.base.helpers.time import parse_time_seconds_from_text

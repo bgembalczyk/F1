@@ -12,12 +12,12 @@ from models.value_objects.link_utils import normalize_link
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-
 from tests.support.compat_stubs import ensure_bs4_stub
 from tests.support.compat_stubs import ensure_certifi_stub
 
 ensure_bs4_stub()
 ensure_certifi_stub()
+
 
 def test_circuit_rejects_invalid_url():
     with pytest.raises(ValueError):

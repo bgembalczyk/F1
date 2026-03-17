@@ -8,9 +8,9 @@ import inspect
 import warnings
 from typing import TYPE_CHECKING
 
-from scrapers.base.constants import CliMainProfile
 from scrapers.base.constants import LEGACY_PROFILE_ALIASES
 from scrapers.base.constants import PROFILE_DEFAULTS
+from scrapers.base.constants import CliMainProfile
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
 

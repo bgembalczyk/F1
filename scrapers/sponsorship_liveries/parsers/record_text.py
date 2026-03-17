@@ -8,7 +8,6 @@ from scrapers.sponsorship_liveries.helpers.constants import year_re
 
 
 class SponsorshipRecordText:
-
     @classmethod
     def _expand_year_range(cls, start_year: int, end_year: int) -> set[int]:
         if start_year <= end_year:

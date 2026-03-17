@@ -6,6 +6,7 @@ def section_id_to_label(section_id: str) -> str:
         section_id.replace("_", " ").replace("-", " ").replace("/", " / ").split(),
     )
 
+
 def resolve_section_candidates(
     *,
     domain: str,
@@ -35,4 +36,3 @@ def resolve_section_candidates(
     if section_label and section_label not in candidates:
         candidates.append(section_label)
     return tuple(candidates)
-

@@ -5,11 +5,9 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.date import DateColumn
 from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
 from scrapers.base.table.columns.types.time import TimeColumn
-
 from tests.support.compat_stubs import ensure_bs4_stub
 
 ensure_bs4_stub()
-
 
 
 def _ctx(clean_text: str) -> ColumnContext:

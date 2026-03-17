@@ -12,9 +12,9 @@ from scrapers.base.table.columns.types.tyre import TyreColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
+from scrapers.seasons.parsers.constants import ENGINE_V8_YEAR
 from scrapers.seasons.parsers.constants import ENGINE_V10_END_YEAR
 from scrapers.seasons.parsers.constants import ENGINE_V10_START_YEAR
-from scrapers.seasons.parsers.constants import ENGINE_V8_YEAR
 from scrapers.seasons.parsers.constants import PRE_2007_NORMALIZATION_CUTOFF
 from scrapers.seasons.parsers.entry_merger import EntryMerger
 from scrapers.seasons.parsers.table import SeasonTableParser

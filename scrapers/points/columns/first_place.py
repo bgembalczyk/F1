@@ -1,5 +1,3 @@
-import re
-
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -7,7 +5,6 @@ from scrapers.points.constants import ROLE_PATTERN
 
 
 class FirstPlaceColumn(BaseColumn):
-
     def parse(self, ctx: ColumnContext) -> int | dict | None:
         value = parse_int_from_text(ctx.clean_text)
         if value is None:

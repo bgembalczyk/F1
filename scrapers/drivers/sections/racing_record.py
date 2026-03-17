@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
-from scrapers.drivers.sections.common import DriverResultsSectionConfig
 from scrapers.drivers.sections.constants import RACING_RECORD_SECTION
 
 if TYPE_CHECKING:

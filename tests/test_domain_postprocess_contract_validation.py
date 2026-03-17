@@ -4,7 +4,9 @@ from __future__ import annotations
 import pytest
 
 from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
-from scrapers.constructors.postprocess.contract import ConstructorSectionContractPostProcessor
+from scrapers.constructors.postprocess.contract import (
+    ConstructorSectionContractPostProcessor,
+)
 
 
 def test_constructor_postprocess_validates_section_payload_contract() -> None:
