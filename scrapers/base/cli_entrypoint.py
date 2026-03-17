@@ -6,12 +6,16 @@ import argparse
 import dataclasses
 import inspect
 import warnings
-from collections.abc import Callable
-from collections.abc import Sequence
+from typing import TYPE_CHECKING
 
-from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+    from collections.abc import Sequence
+
+    from scrapers.base.run_config import RunConfig
 
 CliMainProfile = RunProfileName
 

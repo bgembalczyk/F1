@@ -2,14 +2,18 @@
 
 from __future__ import annotations
 
-from collections.abc import Callable
-from pathlib import Path
+from typing import TYPE_CHECKING
 
-from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+    from pathlib import Path
+
+    from scrapers.base.abc import ABCScraper
+    from scrapers.base.run_config import RunConfig
 
 
 def strict_quality_profile() -> RunConfig:

@@ -75,7 +75,8 @@ def build_run_profile(
             debug_dir=paths.debug_dir,
         )
 
-    raise ValueError(f"Unsupported run profile: {normalized_profile!r}")
+    msg = f"Unsupported run profile: {normalized_profile!r}"
+    raise ValueError(msg)
 
 
 __all__ = [

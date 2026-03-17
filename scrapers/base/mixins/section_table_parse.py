@@ -30,7 +30,7 @@ class SectionTableParseMixin:
         parser_factory: Callable[[], Any],
         section_label: str | None = None,
     ) -> list[Any]:
-        """Parse records from configured section, then fallback to full soup if needed."""
+        """Parse records from configured section, then fallback to full soup."""
         section_id = self.config.section_id
         if not section_id:
             return super()._parse_soup(soup)

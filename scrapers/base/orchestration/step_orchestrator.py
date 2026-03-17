@@ -403,7 +403,8 @@ class StepAuditTrail:
             f"- Total error runs: {total_errors}",
             f"- Total duration [ms]: {total_duration:.3f}",
             "",
-            "| step_id | layer | domain | runs | input_records | output_records | error_runs | duration_ms |",
+            "| step_id | layer | domain | runs | input_records | "
+            "output_records | error_runs | duration_ms |",
             "|---:|---|---|---:|---:|---:|---:|---:|",
         ]
 

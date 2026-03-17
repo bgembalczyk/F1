@@ -17,7 +17,7 @@ class BaseDataExtractor(ABC):
     """
     Bazowa klasa dla ekstraktorów danych, które orkiestrują wiele scraperów.
 
-    W odróżnieniu od ABCScraper nie pobiera ani nie parsuje HTML samodzielnie –
+    W odróżnieniu od ABCScraper nie pobiera ani nie parsuje HTML samodzielnie -
     deleguje to do podległych scraperów.
 
     Kontrakt:

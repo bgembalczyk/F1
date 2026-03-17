@@ -25,7 +25,8 @@ def find_section_elements(
     """Find elements after a section heading or across the whole document.
 
     When ``section_id`` is provided, the search starts after the heading with
-    the matching id/text/alias. Otherwise, all matching elements in the soup are returned.
+    the matching id/text/alias. Otherwise, all matching elements
+    in the soup are returned.
     Additional ``kwargs`` are forwarded to ``find_all`` / ``find_all_next``.
     """
     if section_id:
