@@ -168,27 +168,43 @@ class WikiElementParserMixin:
     ) -> dict[str, Any] | None:
         for rule in self._parser_rules:
             if rule.predicate(el):
-                return {
-                    "kind": rule.result_type,
-                    "source_section_id": section_context.section_id,
-                    "confidence": 1.0,
-                    "raw_html_fragment": str(el),
-                    "data": rule.parser(el),
-                    # legacy compatibility:
-                    "type": rule.result_type,
-                }
+                return self._build_parsed_payload(
+                    el=el,
+                    rule=rule,
+                    section_context=section_context,
+                )
 
         if el.name in {"div", "span"}:
-            nested = [
-                child
-                for child in el.find_all(recursive=False)
-                if isinstance(child, Tag)
-            ]
-            for nested_el in nested:
+            for nested_el in self._iter_direct_child_tags(el):
                 parsed = self._parse_element(nested_el, section_context=section_context)
                 if parsed is not None:
                     return parsed
         return None
+
+    @staticmethod
+    def _iter_direct_child_tags(element: Tag) -> list[Tag]:
+        return [
+            child
+            for child in element.find_all(recursive=False)
+            if isinstance(child, Tag)
+        ]
+
+    @staticmethod
+    def _build_parsed_payload(
+        *,
+        el: Tag,
+        rule: ParserRule,
+        section_context: SectionExtractionContext,
+    ) -> dict[str, Any]:
+        return {
+            "kind": rule.result_type,
+            "source_section_id": section_context.section_id,
+            "confidence": 1.0,
+            "raw_html_fragment": str(el),
+            "data": rule.parser(el),
+            # legacy compatibility:
+            "type": rule.result_type,
+        }
 
 
 @dataclass(frozen=True)

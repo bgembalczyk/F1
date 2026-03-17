@@ -170,19 +170,31 @@ class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
         return scraper_kwargs
 
 
-def build_layer_one_runner_map() -> dict[str, LayerJobRunner]:
-    explicit_runner_map: dict[str, LayerJobRunner] = {
+
+
+def _build_explicit_layer_one_runner_map() -> dict[str, LayerJobRunner]:
+    return {
         "grands_prix": GrandPrixRunner(),
         "circuits": CircuitsRunner(),
         "drivers": DriversRunner(),
         "seasons": SeasonsRunner(),
         "constructors": ConstructorsRunner(),
     }
-    discovered_runner_map = build_layer_one_runner_map_discovered()
-    merged = dict(discovered_runner_map)
-    for seed_name, runner in explicit_runner_map.items():
+
+
+def _merge_runner_maps(
+    discovered: dict[str, LayerJobRunner],
+    explicit: dict[str, LayerJobRunner],
+) -> dict[str, LayerJobRunner]:
+    merged = dict(discovered)
+    for seed_name, runner in explicit.items():
         merged.setdefault(seed_name, runner)
     return merged
+
+def build_layer_one_runner_map() -> dict[str, LayerJobRunner]:
+    explicit_runner_map = _build_explicit_layer_one_runner_map()
+    discovered_runner_map = build_layer_one_runner_map_discovered()
+    return _merge_runner_maps(discovered_runner_map, explicit_runner_map)
 
 
 def build_layer_zero_run_config_factory_map() -> dict[str, LayerZeroRunConfigFactory]:

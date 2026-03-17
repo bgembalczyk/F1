@@ -98,24 +98,50 @@ def _canonical_sections() -> dict[str, set[str]]:
     }
 
 
+
+
+def _copy_common_aliases() -> dict[str, set[str]]:
+    return {key: set(values) for key, values in BASE_COMMON_ALIASES.items()}
+
+
+def _build_profile_aliases(
+    *,
+    domain: str,
+    domain_aliases: dict[str, dict[str, set[str]]],
+) -> dict[str, frozenset[str]]:
+    aliases = _copy_common_aliases()
+    for key, values in domain_aliases.get(domain, {}).items():
+        aliases.setdefault(key, set()).update(values)
+    return {key: frozenset(values) for key, values in aliases.items()}
+
+
+def _build_domain_profile(
+    *,
+    domain: str,
+    canonical_sections: set[str],
+    domain_aliases: dict[str, dict[str, set[str]]],
+) -> SectionProfile:
+    return SectionProfile(
+        domain=domain,
+        canonical_section_ids=frozenset(canonical_sections),
+        heading_aliases=_build_profile_aliases(
+            domain=domain,
+            domain_aliases=domain_aliases,
+        ),
+        required_sections=frozenset(),
+        optional_sections=frozenset(canonical_sections),
+    )
+
 def _build_profiles() -> dict[str, SectionProfile]:
     canonical = _canonical_sections()
     domain_aliases = _domain_aliases()
     profiles: dict[str, SectionProfile] = {}
 
     for domain, canonical_sections in canonical.items():
-        aliases: dict[str, set[str]] = {
-            key: set(values) for key, values in BASE_COMMON_ALIASES.items()
-        }
-        for key, values in domain_aliases.get(domain, {}).items():
-            aliases.setdefault(key, set()).update(values)
-
-        profiles[domain] = SectionProfile(
+        profiles[domain] = _build_domain_profile(
             domain=domain,
-            canonical_section_ids=frozenset(canonical_sections),
-            heading_aliases={key: frozenset(values) for key, values in aliases.items()},
-            required_sections=frozenset(),
-            optional_sections=frozenset(canonical_sections),
+            canonical_sections=canonical_sections,
+            domain_aliases=domain_aliases,
         )
 
     return profiles

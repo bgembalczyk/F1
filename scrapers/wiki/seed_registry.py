@@ -125,6 +125,45 @@ EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
 )
 
 
+
+
+def _seed_entry_from_component(
+    *,
+    seed_name: str,
+    component: Any,
+    default_output_path: str,
+    legacy_output_path: str,
+) -> SeedRegistryEntry:
+    metadata = component.metadata
+    return SeedRegistryEntry(
+        seed_name=seed_name,
+        wikipedia_url=component.cls.CONFIG.url,
+        output_category=metadata.output_category,
+        list_scraper_cls=component.cls,
+        default_output_path=default_output_path,
+        legacy_output_path=legacy_output_path,
+    )
+
+
+def _validate_registry_entry(
+    *,
+    entry: Any,
+    spec: RegistryValidationSpec,
+    seen_seed_names: set[str],
+) -> None:
+    _validate_unique_seed_name(
+        seed_name=entry.seed_name,
+        seen_seed_names=seen_seed_names,
+        duplicate_message=spec.duplicate_message,
+    )
+    _validate_wikipedia_url(
+        seed_name=entry.seed_name,
+        wikipedia_url=entry.wikipedia_url,
+        message=spec.empty_url_message,
+    )
+    for rule in spec.path_rules:
+        _validate_path_prefix(entry=entry, rule=rule)
+
 def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]:
     discovered = discover_layer_one_seed_components()
     explicit_by_seed = {
@@ -147,11 +186,9 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
             )
             raise ValueError(msg)
         registry.append(
-            SeedRegistryEntry(
+            _seed_entry_from_component(
                 seed_name=metadata.seed_name,
-                wikipedia_url=component.cls.CONFIG.url,
-                output_category=metadata.output_category,
-                list_scraper_cls=component.cls,
+                component=component,
                 default_output_path=metadata.default_output_path
                 or explicit.default_output_path,
                 legacy_output_path=metadata.legacy_output_path
@@ -170,11 +207,9 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
             )
             raise ValueError(msg)
         registry.append(
-            SeedRegistryEntry(
+            _seed_entry_from_component(
                 seed_name=seed_name,
-                wikipedia_url=component.cls.CONFIG.url,
-                output_category=metadata.output_category,
-                list_scraper_cls=component.cls,
+                component=component,
                 default_output_path=metadata.default_output_path,
                 legacy_output_path=metadata.legacy_output_path,
             ),
@@ -456,18 +491,11 @@ def _validate_registry(
     seen_seed_names: set[str] = set()
 
     for entry in registry:
-        _validate_unique_seed_name(
-            seed_name=entry.seed_name,
+        _validate_registry_entry(
+            entry=entry,
+            spec=spec,
             seen_seed_names=seen_seed_names,
-            duplicate_message=spec.duplicate_message,
         )
-        _validate_wikipedia_url(
-            seed_name=entry.seed_name,
-            wikipedia_url=entry.wikipedia_url,
-            message=spec.empty_url_message,
-        )
-        for rule in spec.path_rules:
-            _validate_path_prefix(entry=entry, rule=rule)
 
 
 def validate_seed_registry(

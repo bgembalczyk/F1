@@ -101,6 +101,33 @@ def _extract_sections(article: SectionTree | None) -> list[SectionTree]:
     return []
 
 
+
+
+def _profile_score(
+    profile: object | None,
+    *,
+    exact_id: bool = False,
+    exact_text: bool = False,
+) -> float:
+    if profile is None:
+        if exact_id:
+            return 3.0
+        if exact_text:
+            return 2.0
+        return 1.0
+    if exact_id:
+        return profile.priorities.exact_id_score
+    if exact_text:
+        return profile.priorities.exact_text_score
+    return profile.priorities.fuzzy_base_score
+
+
+def _best_fuzzy_ratio(section_text: str, target_texts: set[str]) -> float:
+    return max(
+        SequenceMatcher(None, section_text, value).ratio()
+        for value in target_texts
+    )
+
 def _find_match(
     sections: list[SectionTree],
     target: str,
@@ -123,35 +150,30 @@ def _find_match(
         section_name = str(section.get("name", ""))
         section_id = str(section.get("section_id") or _normalize_id(section_name))
         if section_id in target_ids:
-            exact_id_score = profile.priorities.exact_id_score if profile else 3.0
             return SectionTreeMatch(
                 section=section,
                 strategy="exact_id",
-                score=exact_id_score,
+                score=_profile_score(profile, exact_id=True),
             )
 
         section_text = normalize_section_text(section_name)
         if section_text in target_texts:
-            exact_text_score = profile.priorities.exact_text_score if profile else 2.0
             return SectionTreeMatch(
                 section=section,
                 strategy="exact_text",
-                score=exact_text_score,
+                score=_profile_score(profile, exact_text=True),
             )
 
         if not target_texts:
             continue
 
-        ratio = max(
-            SequenceMatcher(None, section_text, value).ratio() for value in target_texts
-        )
+        ratio = _best_fuzzy_ratio(section_text, target_texts)
         if ratio >= min_fuzzy_score:
-            fuzzy_base_score = profile.priorities.fuzzy_base_score if profile else 1.0
             fuzzy_candidates.append(
                 SectionTreeMatch(
                     section=section,
                     strategy="fuzzy",
-                    score=fuzzy_base_score + ratio,
+                    score=_profile_score(profile) + ratio,
                 ),
             )
 

@@ -16,6 +16,24 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 
+
+
+def _extract_driver_seed_row(row: dict[str, Any]) -> tuple[str, str] | None:
+    driver_field = row.get("driver")
+    if not isinstance(driver_field, dict):
+        return None
+    url = driver_field.get("url")
+    if not isinstance(url, str) or not url:
+        return None
+    text = driver_field.get("text")
+    name = text if isinstance(text, str) else ""
+    return name, url
+
+
+def _filter_checkpoint_urls(records: list[dict[str, Any]]) -> list[str]:
+    checkpoint_urls = [record.get("url") for record in records]
+    return [url for url in checkpoint_urls if isinstance(url, str) and url]
+
 class DriversCheckpointFlow:
     def __init__(
         self,
@@ -76,16 +94,13 @@ class DriversCheckpointFlow:
         seen_urls: set[str] = set()
 
         for row in source_data:
-            driver_field = row.get("driver")
-            if not isinstance(driver_field, dict):
+            extracted_row = _extract_driver_seed_row(row)
+            if extracted_row is None:
                 continue
-            url = driver_field.get("url")
-            text = driver_field.get("text")
-            if not isinstance(url, str) or not url or url in seen_urls:
+            name, url = extracted_row
+            if url in seen_urls:
                 continue
-            if not isinstance(text, str):
-                text = ""
-            extracted.append({"name": text, "url": url})
+            extracted.append({"name": name, "url": url})
             seen_urls.add(url)
 
         return extracted
@@ -94,8 +109,7 @@ class DriversCheckpointFlow:
         self,
         checkpoint_records: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
-        checkpoint_urls = [record.get("url") for record in checkpoint_records]
-        urls = [url for url in checkpoint_urls if isinstance(url, str) and url]
+        urls = _filter_checkpoint_urls(checkpoint_records)
 
         existing = self._load_existing_layer1_records()
         processed_urls = {
