@@ -3,15 +3,15 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from scrapers.base.orchestration import AuditEntry
-from scrapers.base.orchestration import CheckpointPayloadFactory
-from scrapers.base.orchestration import ExecutedStep
-from scrapers.base.orchestration import JsonCheckpointRepository
-from scrapers.base.orchestration import ParserStepExecutor
-from scrapers.base.orchestration import ResolvedInput
-from scrapers.base.orchestration import SectionSourceAdapter
-from scrapers.base.orchestration import StepDeclaration
-from scrapers.base.orchestration import StepOrchestrator
+from scrapers.base.orchestration.step_orchestrator import AuditEntry
+from scrapers.base.orchestration.step_orchestrator import CheckpointPayloadFactory
+from scrapers.base.orchestration.step_orchestrator import ExecutedStep
+from scrapers.base.orchestration.step_orchestrator import JsonCheckpointRepository
+from scrapers.base.orchestration.step_orchestrator import ParserStepExecutor
+from scrapers.base.orchestration.step_orchestrator import ResolvedInput
+from scrapers.base.orchestration.step_orchestrator import SectionSourceAdapter
+from scrapers.base.orchestration.step_orchestrator import StepDeclaration
+from scrapers.base.orchestration.step_orchestrator import StepOrchestrator
 
 
 class FakeInputResolver:
@@ -106,7 +106,7 @@ def test_checkpoint_repository_contract_writes_payload(tmp_path: Path) -> None:
 
 
 def test_audit_repository_contract_appends_and_reports(tmp_path: Path) -> None:
-    from scrapers.base.orchestration import StepAuditTrail
+    from scrapers.base.orchestration.step_orchestrator import StepAuditTrail
 
     audit = StepAuditTrail(
         json_path=tmp_path / "data" / "checkpoints" / "step_audit.json",

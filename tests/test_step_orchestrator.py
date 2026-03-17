@@ -1,9 +1,9 @@
 import json
 from pathlib import Path
 
-from scrapers.base.orchestration import SectionSourceAdapter
-from scrapers.base.orchestration import StepDeclaration
-from scrapers.base.orchestration import StepOrchestrator
+from scrapers.base.orchestration.step_orchestrator import SectionSourceAdapter
+from scrapers.base.orchestration.step_orchestrator import StepDeclaration
+from scrapers.base.orchestration.step_orchestrator import StepOrchestrator
 
 
 def test_section_source_adapter_fallbacks_to_raw(tmp_path: Path) -> None:

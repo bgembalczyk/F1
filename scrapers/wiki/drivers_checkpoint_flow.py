@@ -9,8 +9,8 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.orchestration import StepDeclaration
-from scrapers.base.orchestration import StepOrchestrator
+from scrapers.base.orchestration.step_orchestrator import StepDeclaration
+from scrapers.base.orchestration.step_orchestrator import StepOrchestrator
 from scrapers.config import default_data_paths
 from scrapers.drivers.single_scraper import SingleDriverScraper
 

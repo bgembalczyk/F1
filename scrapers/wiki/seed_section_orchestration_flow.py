@@ -6,8 +6,8 @@ from pathlib import Path
 from typing import Any
 
 from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.orchestration import StepDeclaration
-from scrapers.base.orchestration import StepOrchestrator
+from scrapers.base.orchestration.step_orchestrator import StepDeclaration
+from scrapers.base.orchestration.step_orchestrator import StepOrchestrator
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
