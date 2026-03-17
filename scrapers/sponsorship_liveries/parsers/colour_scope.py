@@ -29,59 +29,8 @@ class ColourScopeHandler:
 
     @staticmethod
     def _depth_aware_split_on_and_or(text: str) -> list[str]:
-        """Split *text* on ' and ' / ' or ' only at parenthesis depth 0.
-
-        Separators that appear inside parentheses are not treated as split
-        points, so e.g. ``"Blue (1964 United States and Mexican Grands Prix)"``
-        is returned as a single item rather than being broken at the inner
-        'and'.
-
-        When the last split part ends with a possessive parenthetical (one
-        that contains ``'s`` inside the closing parenthesis), the annotation
-        describes the whole "and"-joined colour group, not just the final
-        colour.  In that case the split is suppressed and the original text
-        is returned as a single item, e.g.
-        ``"Green and White (Pescarolo's car)"``
-        -> ``["Green and White (Pescarolo's car)"]``.
-        """
-        parts: list[str] = []
-        current: list[str] = []
-        depth = 0
-        i = 0
-        text_lower = text.lower()
-        while i < len(text):
-            ch = text[i]
-            if ch == "(":
-                depth += 1
-                current.append(ch)
-                i += 1
-            elif ch == ")":
-                depth = max(0, depth - 1)
-                current.append(ch)
-                i += 1
-            elif depth == 0:
-                matched = False
-                for kw in (" and ", " or "):
-                    if text_lower[i : i + len(kw)] == kw:
-                        part = "".join(current).strip()
-                        if part:
-                            parts.append(part)
-                        current = []
-                        i += len(kw)
-                        matched = True
-                        break
-                if not matched:
-                    current.append(ch)
-                    i += 1
-            else:
-                current.append(ch)
-                i += 1
-        part = "".join(current).strip()
-        if part:
-            parts.append(part)
-        if len(parts) > 1 and POSSESSIVE_PAREN_RE.search(parts[-1]):
-            return [text]
-        return parts
+        splitter = _DepthAwareColourSplitter(text)
+        return splitter.split()
 
     @staticmethod
     def filter_colours_for_years(colours: Any, years: set[int]) -> Any:
@@ -266,3 +215,56 @@ class ColourScopeHandler:
             else:
                 result.append((None, [item]))
         return result
+
+
+class _DepthAwareColourSplitter:
+    def __init__(self, text: str) -> None:
+        self._text = text
+        self._text_lower = text.lower()
+        self._parts: list[str] = []
+        self._current: list[str] = []
+        self._depth = 0
+        self._i = 0
+
+    def split(self) -> list[str]:
+        while self._i < len(self._text):
+            char = self._text[self._i]
+            if self._consume_parenthesis(char):
+                continue
+            if self._depth == 0 and self._consume_keyword_split():
+                continue
+            self._current.append(char)
+            self._i += 1
+
+        self._append_current_part()
+        if len(self._parts) > 1 and POSSESSIVE_PAREN_RE.search(self._parts[-1]):
+            return [self._text]
+        return self._parts
+
+    def _consume_parenthesis(self, char: str) -> bool:
+        if char == "(":
+            self._depth += 1
+            self._current.append(char)
+            self._i += 1
+            return True
+        if char == ")":
+            self._depth = max(0, self._depth - 1)
+            self._current.append(char)
+            self._i += 1
+            return True
+        return False
+
+    def _consume_keyword_split(self) -> bool:
+        for keyword in (" and ", " or "):
+            if self._text_lower[self._i : self._i + len(keyword)] != keyword:
+                continue
+            self._append_current_part()
+            self._current = []
+            self._i += len(keyword)
+            return True
+        return False
+
+    def _append_current_part(self) -> None:
+        part = "".join(self._current).strip()
+        if part:
+            self._parts.append(part)

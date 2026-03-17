@@ -218,87 +218,11 @@ class SponsorshipSectionParser:
     def _split_broader_records_by_scope(
         records: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
-        """Split season ranges overlapping GP-scoped entries from season cells.
-
-        When a season cell contains a grand-prix parenthetical such as
-        ``2004-2005 (only Chinese GP)``,
-        :class:`~scrapers.sponsorship_liveries.columns.seasons.SponsorshipSeasonsColumn`
-        marks the resulting record with ``_season_scoped_gp = True``.
-
-        Any other record whose season range *overlaps* with such a scoped record
-        (and does not itself carry a ``driver`` field) is split into:
-
-        * the years *not* covered by the scoped record → no ``grand_prix_scope``
-        * the years *shared* with the scoped record ->
-          ``grand_prix_scope: {type: "other"}``
-
-        The ``_season_scoped_gp`` marker is removed from all records before
-        returning.
-        """
         season_scoped = [r for r in records if r.get("_season_scoped_gp")]
         if not season_scoped:
             return records
 
-        def _years(record: dict[str, Any]) -> set:
-            return {
-                s["year"]
-                for s in (record.get("season") or [])
-                if isinstance(s, dict) and "year" in s
-            }
-
-        result: list[dict[str, Any]] = []
-        for record in records:
-            if record.get("_season_scoped_gp"):
-                result.append(
-                    {k: v for k, v in record.items() if k != "_season_scoped_gp"},
-                )
-                continue
-
-            # Driver-specific records are independent - do not split them.
-            if record.get("driver"):
-                result.append(record)
-                continue
-
-            record_years = _years(record)
-            if not record_years:
-                result.append(record)
-                continue
-
-            overlapping = [s for s in season_scoped if _years(s) & record_years]
-            if not overlapping:
-                result.append(record)
-                continue
-
-            scoped_years: set = set()
-            for s in overlapping:
-                scoped_years |= _years(s)
-
-            non_scoped_years = record_years - scoped_years
-            overlap_years = record_years & scoped_years
-
-            if non_scoped_years:
-                non_scoped_seasons = [
-                    s
-                    for s in record["season"]
-                    if isinstance(s, dict) and s.get("year") in non_scoped_years
-                ]
-                result.append({**record, "season": non_scoped_seasons})
-
-            if overlap_years:
-                overlap_seasons = [
-                    s
-                    for s in record["season"]
-                    if isinstance(s, dict) and s.get("year") in overlap_years
-                ]
-                result.append(
-                    {
-                        **record,
-                        "season": overlap_seasons,
-                        "grand_prix_scope": {"type": "other"},
-                    },
-                )
-
-        return result
+        return _BroaderScopeSplitter(records, season_scoped).split()
 
     @staticmethod
     def _team_name_from_heading(heading: Tag, headline: Tag) -> str:
@@ -377,23 +301,8 @@ class SponsorshipSectionParser:
 
     def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         records: list[dict[str, Any]] = []
-        headings = []
-        for headline in soup.select(".mw-headline"):
-            heading = headline.parent
-            if isinstance(heading, Tag):
-                headings.append((heading, headline))
-        for heading in soup.select(".mw-heading"):
-            headline = heading.find(["h2", "h3", "h4", "h5", "h6"], id=True)
-            if headline:
-                headings.append((heading, headline))
-        if not headings:
-            for headline in soup.select("h2[id], h3[id], h4[id], h5[id], h6[id]"):
-                heading = headline.parent
-                if isinstance(heading, Tag):
-                    headings.append((heading, headline))
-
-        seen_sections = set()
-        for heading, headline in headings:
+        seen_sections: set[str] = set()
+        for heading, headline in self._collect_section_headings(soup):
             section_id = headline.get("id")
             if not section_id or section_id in seen_sections:
                 continue
@@ -403,18 +312,126 @@ class SponsorshipSectionParser:
             if not self._section_has_table(heading, headline):
                 continue
 
-            try:
-                records.append(
-                    {
-                        "team": team,
-                        "liveries": self.parse_section_table(
-                            soup,
-                            section_id=section_id,
-                            team=team,
-                        ),
-                    },
-                )
-            except RuntimeError:
-                continue
+            section_record = self._parse_single_section_record(soup, section_id, team)
+            if section_record:
+                records.append(section_record)
 
         return records
+
+    @staticmethod
+    def _collect_section_headings(soup: BeautifulSoup) -> list[tuple[Tag, Tag]]:
+        headings: list[tuple[Tag, Tag]] = []
+        for headline in soup.select(".mw-headline"):
+            heading = headline.parent
+            if isinstance(heading, Tag):
+                headings.append((heading, headline))
+        for heading in soup.select(".mw-heading"):
+            headline = heading.find(["h2", "h3", "h4", "h5", "h6"], id=True)
+            if headline:
+                headings.append((heading, headline))
+        if headings:
+            return headings
+        for headline in soup.select("h2[id], h3[id], h4[id], h5[id], h6[id]"):
+            heading = headline.parent
+            if isinstance(heading, Tag):
+                headings.append((heading, headline))
+        return headings
+
+    def _parse_single_section_record(
+        self,
+        soup: BeautifulSoup,
+        section_id: str,
+        team: str,
+    ) -> dict[str, Any] | None:
+        try:
+            liveries = self.parse_section_table(soup, section_id=section_id, team=team)
+        except RuntimeError:
+            return None
+        return {"team": team, "liveries": liveries}
+
+
+class _BroaderScopeSplitter:
+    def __init__(
+        self,
+        records: list[dict[str, Any]],
+        season_scoped: list[dict[str, Any]],
+    ) -> None:
+        self._records = records
+        self._season_scoped = season_scoped
+
+    def split(self) -> list[dict[str, Any]]:
+        result: list[dict[str, Any]] = []
+        for record in self._records:
+            if record.get("_season_scoped_gp"):
+                result.append(self._without_marker(record))
+                continue
+            split_records = self._split_non_scoped_record(record)
+            result.extend(split_records)
+        return result
+
+    @staticmethod
+    def _without_marker(record: dict[str, Any]) -> dict[str, Any]:
+        return {k: v for k, v in record.items() if k != "_season_scoped_gp"}
+
+    def _split_non_scoped_record(self, record: dict[str, Any]) -> list[dict[str, Any]]:
+        if record.get("driver"):
+            return [record]
+
+        record_years = self._years(record)
+        if not record_years:
+            return [record]
+
+        scoped_years = self._overlapping_scoped_years(record_years)
+        if not scoped_years:
+            return [record]
+
+        split_result: list[dict[str, Any]] = []
+        self._append_non_scoped_split(split_result, record, record_years - scoped_years)
+        self._append_overlap_split(split_result, record, record_years & scoped_years)
+        return split_result
+
+    def _overlapping_scoped_years(self, record_years: set[int]) -> set[int]:
+        scoped_years: set[int] = set()
+        for scoped in self._season_scoped:
+            years = self._years(scoped)
+            if years & record_years:
+                scoped_years |= years
+        return scoped_years
+
+    def _append_non_scoped_split(
+        self,
+        result: list[dict[str, Any]],
+        record: dict[str, Any],
+        years: set[int],
+    ) -> None:
+        if not years:
+            return
+        seasons = self._seasons_for_years(record, years)
+        result.append({**record, "season": seasons})
+
+    def _append_overlap_split(
+        self,
+        result: list[dict[str, Any]],
+        record: dict[str, Any],
+        years: set[int],
+    ) -> None:
+        if not years:
+            return
+        seasons = self._seasons_for_years(record, years)
+        result.append({**record, "season": seasons, "grand_prix_scope": {"type": "other"}})
+
+    @staticmethod
+    def _years(record: dict[str, Any]) -> set[int]:
+        return {
+            s["year"]
+            for s in (record.get("season") or [])
+            if isinstance(s, dict) and "year" in s
+        }
+
+    @staticmethod
+    def _seasons_for_years(record: dict[str, Any], years: set[int]) -> list[dict[str, Any]]:
+        return [
+            s
+            for s in (record.get("season") or [])
+            if isinstance(s, dict) and s.get("year") in years
+        ]

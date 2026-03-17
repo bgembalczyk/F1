@@ -24,55 +24,61 @@ class GrandPrixScopeParser:
         cls,
         params: list[Any],
     ) -> dict[str, Any] | None:
-        if not params:
+        if not params or not cls.params_contain_only_years_or_grand_prix(params):
             return None
-        if not cls.params_contain_only_years_or_grand_prix(params):
-            return None
-        grand_prix_entries: list[dict[str, Any]] = []
-        has_onwards = False
-        range_scope: dict[str, Any] | None = None
-        for param in params:
-            if SponsorshipRecordText.is_year_param(param):
-                continue
-            text = SponsorshipRecordText.param_text(param)
-            if not re.search(r"grand prix", text, flags=re.IGNORECASE):
-                return None
-            if re.search(r"\bonwards?\b", text, flags=re.IGNORECASE):
-                has_onwards = True
-            range_match = re.search(
-                r"(.+?grand prix)\s+to\s+(.+?grand prix)",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if range_match:
-                start_text = SponsorshipRecordText.clean_grand_prix_text(
-                    range_match.group(1),
-                )
-                end_text = SponsorshipRecordText.clean_grand_prix_text(
-                    range_match.group(2),
-                )
-                range_scope = {
-                    "type": "range",
-                    "from": cls.build_grand_prix_entry(param, start_text),
-                    "to": cls.build_grand_prix_entry(param, end_text),
-                }
-                continue
-            cleaned = SponsorshipRecordText.clean_grand_prix_text(text)
-            if not cleaned:
-                continue
-            grand_prix_entries.append(cls.build_grand_prix_entry(param, cleaned))
 
-        if range_scope:
-            return range_scope
-        if has_onwards and grand_prix_entries:
-            return {
-                "type": "range",
-                "from": grand_prix_entries[0],
-                "to": None,
-            }
-        if grand_prix_entries:
-            return {"type": "only", "grand_prix": grand_prix_entries}
-        return None
+        parsed = _GrandPrixScopeAccumulator()
+        for param in params:
+            cls._consume_scope_param(parsed, param)
+            if parsed.invalid:
+                return None
+
+        return parsed.build_scope()
+
+    @classmethod
+    def _consume_scope_param(
+        cls,
+        parsed: "_GrandPrixScopeAccumulator",
+        param: Any,
+    ) -> None:
+        if SponsorshipRecordText.is_year_param(param):
+            return
+        text = SponsorshipRecordText.param_text(param)
+        if not re.search(r"grand prix", text, flags=re.IGNORECASE):
+            parsed.invalid = True
+            return
+        if re.search(r"\bonwards?\b", text, flags=re.IGNORECASE):
+            parsed.has_onwards = True
+
+        range_scope = cls._build_range_scope_from_text(param, text)
+        if range_scope is not None:
+            parsed.range_scope = range_scope
+            return
+
+        cleaned = SponsorshipRecordText.clean_grand_prix_text(text)
+        if cleaned:
+            parsed.entries.append(cls.build_grand_prix_entry(param, cleaned))
+
+    @classmethod
+    def _build_range_scope_from_text(
+        cls,
+        param: Any,
+        text: str,
+    ) -> dict[str, Any] | None:
+        range_match = re.search(
+            r"(.+?grand prix)\s+to\s+(.+?grand prix)",
+            text,
+            flags=re.IGNORECASE,
+        )
+        if not range_match:
+            return None
+        start_text = SponsorshipRecordText.clean_grand_prix_text(range_match.group(1))
+        end_text = SponsorshipRecordText.clean_grand_prix_text(range_match.group(2))
+        return {
+            "type": "range",
+            "from": cls.build_grand_prix_entry(param, start_text),
+            "to": cls.build_grand_prix_entry(param, end_text),
+        }
 
     @staticmethod
     def build_grand_prix_entry(param: Any, text: str) -> dict[str, Any]:
@@ -115,3 +121,20 @@ class GrandPrixScopeParser:
                 end.get("url"),
             )
         return ("other",)
+
+
+class _GrandPrixScopeAccumulator:
+    def __init__(self) -> None:
+        self.entries: list[dict[str, Any]] = []
+        self.has_onwards = False
+        self.range_scope: dict[str, Any] | None = None
+        self.invalid = False
+
+    def build_scope(self) -> dict[str, Any] | None:
+        if self.range_scope:
+            return self.range_scope
+        if self.has_onwards and self.entries:
+            return {"type": "range", "from": self.entries[0], "to": None}
+        if self.entries:
+            return {"type": "only", "grand_prix": self.entries}
+        return None

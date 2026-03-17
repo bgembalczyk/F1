@@ -202,43 +202,12 @@ class SponsorColumn(BaseColumn):
 
         In addition to the explicit separators, an implicit split is emitted
         after a closing ')' at depth 0 when the next non-whitespace character
-        starts a new token.  This handles Wikipedia entries where consecutive
-        sponsors each carry their own parenthetical (e.g. year range or Grand
-        Prix scope) but are not separated by a comma or semicolon:
-        ``Elf (1983-1986) Goodyear (1984-1986) Olympus (1985)``
+        starts a new token.
         """
         if not text:
             return []
-        parts: list[tuple[str, str]] = []
-        current: list[str] = []
-        depth = 0
-        after_close_paren = False
-        for char in text:
-            if char == "(":
-                depth += 1
-                after_close_paren = False
-            elif char == ")":
-                depth = max(depth - 1, 0)
-                if depth == 0:
-                    after_close_paren = True
-            if depth == 0 and char in {",", ";", "/"}:
-                part = "".join(current).strip()
-                if part:
-                    parts.append((part, char))
-                current = []
-                after_close_paren = False
-                continue
-            if depth == 0 and after_close_paren and not char.isspace() and char != ")":
-                part = "".join(current).strip()
-                if part:
-                    parts.append((part, " "))
-                current = []
-                after_close_paren = False
-            current.append(char)
-        part = "".join(current).strip()
-        if part:
-            parts.append((part, ""))
-        return parts
+        parser = _SponsorPartsParser(text)
+        return parser.parse()
 
     @staticmethod
     def _propagate_slash_group_year_params(
@@ -430,3 +399,53 @@ class SponsorColumn(BaseColumn):
         if remaining:
             parts.append(remaining)
         return ", ".join(parts)
+
+
+class _SponsorPartsParser:
+    def __init__(self, text: str) -> None:
+        self._text = text
+        self._parts: list[tuple[str, str]] = []
+        self._current: list[str] = []
+        self._depth = 0
+        self._after_close_paren = False
+
+    def parse(self) -> list[tuple[str, str]]:
+        for char in self._text:
+            self._update_depth_state(char)
+            if self._try_split_on_separator(char):
+                continue
+            self._try_implicit_split_after_paren(char)
+            self._current.append(char)
+        self._append_current("")
+        return self._parts
+
+    def _update_depth_state(self, char: str) -> None:
+        if char == "(":
+            self._depth += 1
+            self._after_close_paren = False
+        elif char == ")":
+            self._depth = max(self._depth - 1, 0)
+            if self._depth == 0:
+                self._after_close_paren = True
+
+    def _try_split_on_separator(self, char: str) -> bool:
+        if self._depth != 0 or char not in {",", ";", "/"}:
+            return False
+        self._append_current(char)
+        self._current = []
+        self._after_close_paren = False
+        return True
+
+    def _try_implicit_split_after_paren(self, char: str) -> None:
+        if self._depth != 0:
+            return
+        if not self._after_close_paren or char.isspace() or char == ")":
+            return
+        self._append_current(" ")
+        self._current = []
+        self._after_close_paren = False
+
+    def _append_current(self, separator: str) -> None:
+        part = "".join(self._current).strip()
+        if part:
+            self._parts.append((part, separator))
