@@ -2,14 +2,18 @@ from __future__ import annotations
 
 from abc import ABC
 from abc import abstractmethod
+from typing import TYPE_CHECKING
 from typing import Any
-
-from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-from scrapers.base.options import ScraperOptions
-from scrapers.base.post_processors import RecordPostProcessor
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.base.options import ScraperOptions
+    from scrapers.base.post_processors import RecordPostProcessor
+
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.wiki.scraper import WikiScraper
 

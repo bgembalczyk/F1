@@ -228,7 +228,7 @@ DOMAIN_CRITICAL_SECTIONS: dict[str, tuple[CriticalSection, ...]] = {
                 "By_season",
                 "By_Year",
                 "By_year:_the_European_Grand_Prix_as_a_standalone_event",
-                "By_year_–_the_European_Grand_Prix_as_a_standalone_event",
+                "By_year_-_the_European_Grand_Prix_as_a_standalone_event",
                 "Winners_of_the_Caesars_Palace_Grand_Prix",
             ),
         ),
