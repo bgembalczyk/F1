@@ -81,3 +81,11 @@ MODIFIER_ONLY_URLS: frozenset[str] = frozenset(
 # Compiled pattern for detecting a 3-digit CSS hex colour (after lower-casing).
 CSS_3DIGIT_HEX_RE = re.compile(r"^#[0-9a-f]{3}$")
 CC_TO_L_THRESHOLD = 100
+
+# F1 and F2 designate Formula racing classes, not Flat-1 / Flat-2 engine layouts.
+FORMULA_CLASS_TYPE_CODES: frozenset[str] = frozenset({"F1", "F2"})
+
+ENGINE_CONSTRUCTOR_INDEX = 1
+
+# Dash variants that separate chassis from engine constructor in a cell.
+HYPHEN_CHARS: frozenset[str] = frozenset({"-", "\u2013", "\u2014", "\u2212"})

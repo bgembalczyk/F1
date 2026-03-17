@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-from scrapers.base.sections.critical_sections import resolve_section_candidates
+from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.wiki.parsers.section_detection import find_section_heading
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
 

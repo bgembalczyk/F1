@@ -3,8 +3,8 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
-from scrapers.base.sections.critical_sections import resolve_section_candidates
+from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.wiki.parsers.section_detection import find_section_heading
 
 

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
-SECTION_RESULT_KEYS = ("section_id", "section_label", "records", "metadata")
+from scrapers.base.sections.constants import SECTION_RESULT_KEYS
 
 
 def validate_section_result_payload(payload: dict[str, Any]) -> None:

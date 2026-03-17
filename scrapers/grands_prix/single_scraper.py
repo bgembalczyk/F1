@@ -5,8 +5,8 @@ from typing import Any
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperError
-from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
-from scrapers.base.sections.critical_sections import resolve_section_candidates
+from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionByIdBase
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
 from scrapers.grands_prix.postprocess import GrandPrixSectionContractPostProcessor

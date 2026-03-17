@@ -16,11 +16,8 @@ from bs4 import Tag
 from models.records.link import LinkRecord
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.context import ColumnContext
-
-ENGINE_CONSTRUCTOR_INDEX = 1
-
-# Dash variants that separate chassis from engine constructor in a cell.
-_HYPHEN_CHARS: frozenset[str] = frozenset({"-", "\u2013", "\u2014", "\u2212"})
+from scrapers.base.table.columns.helpers.constants import ENGINE_CONSTRUCTOR_INDEX
+from scrapers.base.table.columns.helpers.constants import HYPHEN_CHARS
 
 
 class ConstructorParsingHelpers:
@@ -212,7 +209,7 @@ class ConstructorParsingHelpers:
                         non_empty_a_before += 1
             elif isinstance(child, NavigableString):
                 stripped = str(child).strip()
-                if stripped in _HYPHEN_CHARS and non_empty_a_before > 1:
+                if stripped in HYPHEN_CHARS and non_empty_a_before > 1:
                     hyphen_found = True
 
         return None
