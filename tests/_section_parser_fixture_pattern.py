@@ -39,8 +39,8 @@ def _content_text_fixture(
     """
 
 
-SNAPSHOT_CASES_BY_DOMAIN: dict[str, tuple[SectionFixture, SectionFixture]] = {
-    "drivers": (
+def _snapshot_cases_drivers() -> tuple[SectionFixture, SectionFixture]:
+    return (
         SectionFixture(
             domain="drivers",
             variant="minimal",
@@ -67,8 +67,11 @@ SNAPSHOT_CASES_BY_DOMAIN: dict[str, tuple[SectionFixture, SectionFixture]] = {
             expected_section_id="career_results",
             expected_kind="list",
         ),
-    ),
-    "constructors": (
+    )
+
+
+def _snapshot_cases_constructors() -> tuple[SectionFixture, SectionFixture]:
+    return (
         SectionFixture(
             domain="constructors",
             variant="minimal",
@@ -95,8 +98,11 @@ SNAPSHOT_CASES_BY_DOMAIN: dict[str, tuple[SectionFixture, SectionFixture]] = {
             expected_section_id="constructors_for_the_current_season",
             expected_kind="figure",
         ),
-    ),
-    "circuits": (
+    )
+
+
+def _snapshot_cases_circuits() -> tuple[SectionFixture, SectionFixture]:
+    return (
         SectionFixture(
             domain="circuits",
             variant="minimal",
@@ -123,8 +129,11 @@ SNAPSHOT_CASES_BY_DOMAIN: dict[str, tuple[SectionFixture, SectionFixture]] = {
             expected_section_id="formula_one_circuits",
             expected_kind="table",
         ),
-    ),
-    "seasons": (
+    )
+
+
+def _snapshot_cases_seasons() -> tuple[SectionFixture, SectionFixture]:
+    return (
         SectionFixture(
             domain="seasons",
             variant="minimal",
@@ -151,8 +160,11 @@ SNAPSHOT_CASES_BY_DOMAIN: dict[str, tuple[SectionFixture, SectionFixture]] = {
             expected_section_id="results_and_standings",
             expected_kind="list",
         ),
-    ),
-    "grands_prix": (
+    )
+
+
+def _snapshot_cases_grands_prix() -> tuple[SectionFixture, SectionFixture]:
+    return (
         SectionFixture(
             domain="grands_prix",
             variant="minimal",
@@ -179,7 +191,15 @@ SNAPSHOT_CASES_BY_DOMAIN: dict[str, tuple[SectionFixture, SectionFixture]] = {
             expected_section_id="race",
             expected_kind="table",
         ),
-    ),
+    )
+
+
+SNAPSHOT_CASES_BY_DOMAIN: dict[str, tuple[SectionFixture, SectionFixture]] = {
+    "drivers": _snapshot_cases_drivers(),
+    "constructors": _snapshot_cases_constructors(),
+    "circuits": _snapshot_cases_circuits(),
+    "seasons": _snapshot_cases_seasons(),
+    "grands_prix": _snapshot_cases_grands_prix(),
 }
 
 

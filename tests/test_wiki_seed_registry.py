@@ -11,7 +11,7 @@ from scrapers.wiki.seed_registry import validate_list_job_registry
 from scrapers.wiki.seed_registry import validate_seed_registry
 
 
-def _registry_validation_negative_cases() -> tuple[object, ...]:
+def _seed_registry_validation_negative_cases() -> tuple[object, ...]:
     return (
         pytest.param(
             lambda: (
@@ -58,6 +58,11 @@ def _registry_validation_negative_cases() -> tuple[object, ...]:
             "Seed 'bad-legacy-path' has inconsistent legacy output path 'circuits/a.json' for category 'drivers'",
             id="seed_registry_invalid_legacy_path_prefix",
         ),
+    )
+
+
+def _list_registry_validation_negative_cases() -> tuple[object, ...]:
+    return (
         pytest.param(
             lambda: (
                 ListJobRegistryEntry(
@@ -103,6 +108,13 @@ def _registry_validation_negative_cases() -> tuple[object, ...]:
             "List seed 'bad-legacy-path' has inconsistent legacy output path 'circuits/a.json' for category 'drivers'",
             id="list_registry_invalid_legacy_path_prefix",
         ),
+    )
+
+
+def _registry_validation_negative_cases() -> tuple[object, ...]:
+    return (
+        *_seed_registry_validation_negative_cases(),
+        *_list_registry_validation_negative_cases(),
     )
 
 

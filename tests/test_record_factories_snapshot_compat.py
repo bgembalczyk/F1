@@ -235,10 +235,11 @@ def _legacy_season_summary(record: Mapping[str, Any]) -> dict[str, Any]:
     return payload
 
 
-@pytest.mark.parametrize(
-    ("builder", "legacy", "record"),
-    [
-        (
+
+
+def _factory_snapshot_cases() -> list[object]:
+    return [
+        pytest.param(
             build_driver_record,
             _legacy_driver,
             {
@@ -261,54 +262,38 @@ def _legacy_season_summary(record: Mapping[str, Any]) -> dict[str, Any]:
                 "podiums": "80",
                 "fastest_laps": "19",
             },
+            id='driver',
         ),
-        (
+        pytest.param(
             build_constructor_record,
             _legacy_constructor,
             {
-                "constructor_name": {
-                    "text": "McLaren",
-                    "url": "https://en.wikipedia.org/wiki/McLaren",
-                },
-                "engine": [
-                    {
-                        "text": "Mercedes",
-                        "url": "https://en.wikipedia.org/wiki/Mercedes",
-                    },
-                ],
+                "constructor_name": {"text": "McLaren", "url": "https://en.wikipedia.org/wiki/McLaren"},
+                "engine": [{"text": "Mercedes", "url": "https://en.wikipedia.org/wiki/Mercedes"}],
                 "based_in": [{"text": "Woking", "url": None}],
                 "seasons": [{"year": 1966}],
                 "licensed_in": "United Kingdom",
                 "wcc_titles": "9",
             },
+            id='constructor',
         ),
-        (
+        pytest.param(
             build_circuit_record,
             _legacy_circuit,
             {
-                "circuit": {
-                    "text": "Monza",
-                    "url": "https://en.wikipedia.org/wiki/Monza_Circuit",
-                },
+                "circuit": {"text": "Monza", "url": "https://en.wikipedia.org/wiki/Monza_Circuit"},
                 "circuit_status": "current",
                 "last_length_used_km": "5.793",
                 "last_length_used_mi": "3.600",
                 "turns": "11",
                 "grands_prix_held": "74",
-                "grands_prix": [
-                    {
-                        "text": "Italian Grand Prix",
-                        "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix",
-                    },
-                ],
+                "grands_prix": [{"text": "Italian Grand Prix", "url": "https://en.wikipedia.org/wiki/Italian_Grand_Prix"}],
                 "seasons": [{"year": 1950}],
-                "country": {
-                    "text": "Italy",
-                    "url": "https://en.wikipedia.org/wiki/Italy",
-                },
+                "country": {"text": "Italy", "url": "https://en.wikipedia.org/wiki/Italy"},
             },
+            id='circuit',
         ),
-        (
+        pytest.param(
             build_special_driver_record,
             _legacy_special_driver,
             {
@@ -317,80 +302,53 @@ def _legacy_season_summary(record: Mapping[str, Any]) -> dict[str, Any]:
                     "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg",
                 },
                 "seasons": [{"year": "2010"}, {"year": "2023"}],
-                "teams": [
-                    {
-                        "text": "Williams",
-                        "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
-                    },
-                ],
+                "teams": [{"text": "Williams", "url": "https://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"}],
                 "entries": "220",
                 "starts": "210",
                 "points": {"championship_points": "571", "total_points": "571.0"},
             },
+            id='special_driver',
         ),
-        (
+        pytest.param(
             build_grands_prix_record,
             _legacy_grands_prix,
             {
-                "race_title": {
-                    "text": "Miami Grand Prix",
-                    "url": "https://en.wikipedia.org/wiki/Miami_Grand_Prix",
-                },
+                "race_title": {"text": "Miami Grand Prix", "url": "https://en.wikipedia.org/wiki/Miami_Grand_Prix"},
                 "race_status": " current ",
                 "years_held": [{"year": "2022"}, {"year": "2024"}],
-                "country": [
-                    {
-                        "text": "United States",
-                        "url": "https://en.wikipedia.org/wiki/United_States",
-                    },
-                ],
+                "country": [{"text": "United States", "url": "https://en.wikipedia.org/wiki/United_States"}],
                 "circuits": "1",
                 "total": "3",
             },
+            id='grands_prix',
         ),
-        (
+        pytest.param(
             build_fatality_record,
             _legacy_fatality,
             {
-                "driver": {
-                    "text": "Sample Driver",
-                    "url": "https://en.wikipedia.org/wiki/Sample",
-                },
+                "driver": {"text": "Sample Driver", "url": "https://en.wikipedia.org/wiki/Sample"},
                 "date": "1960-01-01",
                 "age": "29",
                 "event": {
-                    "event": {
-                        "text": "1960 Belgian GP",
-                        "url": "https://en.wikipedia.org/wiki/1960_Belgian_Grand_Prix",
-                    },
+                    "event": {"text": "1960 Belgian GP", "url": "https://en.wikipedia.org/wiki/1960_Belgian_Grand_Prix"},
                     "championship": "yes",
                 },
-                "circuit": {
-                    "text": "Spa",
-                    "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps",
-                },
+                "circuit": {"text": "Spa", "url": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps"},
                 "car": {
-                    "car": {
-                        "text": "Lotus",
-                        "url": "https://en.wikipedia.org/wiki/Lotus",
-                    },
+                    "car": {"text": "Lotus", "url": "https://en.wikipedia.org/wiki/Lotus"},
                     "formula_category": " F1 ",
                 },
                 "session": " Race ",
             },
+            id='fatality',
         ),
-        (
+        pytest.param(
             build_engine_manufacturer_record,
             _legacy_engine,
             {
-                "manufacturer": {
-                    "text": "Honda",
-                    "url": "https://en.wikipedia.org/wiki/Honda",
-                },
+                "manufacturer": {"text": "Honda", "url": "https://en.wikipedia.org/wiki/Honda"},
                 "manufacturer_status": "current",
-                "engines_built_in": [
-                    {"text": "Japan", "url": "https://en.wikipedia.org/wiki/Japan"},
-                ],
+                "engines_built_in": [{"text": "Japan", "url": "https://en.wikipedia.org/wiki/Japan"}],
                 "seasons": [{"year": 1964}, {"year": 2026}],
                 "races_entered": "500",
                 "races_started": "498",
@@ -402,41 +360,29 @@ def _legacy_season_summary(record: Mapping[str, Any]) -> dict[str, Any]:
                 "wdc": "7",
                 "points": "3000.5",
             },
+            id='engine',
         ),
-        (
+        pytest.param(
             build_season_summary_record,
             _legacy_season_summary,
             {
-                "season": {
-                    "text": "2023",
-                    "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
-                },
-                "first": {
-                    "text": "Bahrain GP",
-                    "url": "https://en.wikipedia.org/wiki/2023_Bahrain_Grand_Prix",
-                },
-                "last": {
-                    "text": "Abu Dhabi GP",
-                    "url": "https://en.wikipedia.org/wiki/2023_Abu_Dhabi_Grand_Prix",
-                },
+                "season": {"text": "2023", "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"},
+                "first": {"text": "Bahrain GP", "url": "https://en.wikipedia.org/wiki/2023_Bahrain_Grand_Prix"},
+                "last": {"text": "Abu Dhabi GP", "url": "https://en.wikipedia.org/wiki/2023_Abu_Dhabi_Grand_Prix"},
                 "races": "22",
                 "countries": "20",
-                "drivers_champion_team": [
-                    {
-                        "text": "Red Bull Racing",
-                        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-                    },
-                ],
-                "constructors_champion": [
-                    {
-                        "text": "Red Bull Racing",
-                        "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
-                    },
-                ],
+                "drivers_champion_team": [{"text": "Red Bull Racing", "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"}],
+                "constructors_champion": [{"text": "Red Bull Racing", "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"}],
                 "winners": "4",
             },
+            id='season_summary',
         ),
-    ],
+    ]
+
+
+@pytest.mark.parametrize(
+    ("builder", "legacy", "record"),
+    _factory_snapshot_cases(),
 )
 def test_factories_snapshot_compatibility(
     builder,

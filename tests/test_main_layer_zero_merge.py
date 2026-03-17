@@ -89,488 +89,193 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     )
 
 
+def _seed_domain_raw(
+    base_wiki_dir: Path,
+    domain: str,
+    files_payloads: list[tuple[str, object]],
+) -> None:
+    for filename, payload in files_payloads:
+        _write_json(
+            base_wiki_dir / "layers" / "0_layer" / domain / "raw" / filename,
+            payload,
+        )
+
+
 def _seed_layer_zero_raw_data(base_wiki_dir: Path) -> None:
-    _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "circuits" / "raw" / "a.json",
+    _seed_domain_raw(
+        base_wiki_dir,
+        "circuits",
         [
-            {
-                "circuit": "Monza",
-                "turns": 11,
-                "circuit_status": "active",
-                "grands_prix": ["Italian Grand Prix"],
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "constructors" / "raw" / "a.json",
-        [
-            {
-                "constructor": "Ferrari",
-                "licensed_in": "Italy",
-                "engine": "Ferrari",
-                "wins": 248,
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "constructors"
-        / "raw"
-        / "f1_constructor_standings.json",
-        [
-            {
-                "constructor": "McLaren",
-                "wins": 2,
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "constructors"
-        / "raw"
-        / "f1_former_constructors.json",
-        [
-            {
-                "constructor": {"text": "Team Old", "url": "https://example.com/old"},
-                "wins": 0,
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "constructors"
-        / "raw"
-        / "f1_indianapolis_only_constructors.json",
-        [
-            {
-                "constructor": "Indy Team",
-                "constructor_url": "https://example.com/indy",
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "drivers"
-        / "raw"
-        / "female_drivers.json",
-        [{"driver": {"text": "Maria", "url": "https://example.com/maria"}}],
-    )
-    _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "drivers" / "raw" / "drivers.json",
-        [
-            {"driver": {"text": "Max Verstappen", "url": "https://example.com/max"}},
-            {"driver": {"text": "Lewis Hamilton", "url": "https://example.com/lewis"}},
-            {
-                "driver": {
-                    "text": "Giovanna Amati",
-                    "url": "https://en.wikipedia.org/wiki/Giovanna_Amati",
-                },
-                "race_entries": 3,
-                "nationality": "Italy",
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "drivers"
-        / "raw"
-        / "f1_women_drivers_who_entered_a_formula_one_race.json",
-        [
-            {
-                "driver": {
-                    "text": "Giovanna Amati",
-                    "url": "https://en.wikipedia.org/wiki/Giovanna_Amati",
-                },
-                "entries": 3,
-                "teams": [
-                    {"text": "Brabham", "url": "https://en.wikipedia.org/wiki/Brabham"},
-                ],
-            },
-            {
-                "driver": {
-                    "text": "Bob Anderson",
-                    "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)",
-                },
-                "is_active": False,
-                "race_entries": 29,
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "drivers"
-        / "raw"
-        / "f1_driver_fatalities.json",
-        [
-            {
-                "driver": {"text": "X", "url": "https://example.com/x"},
-                "date": "2000-01-01",
-                "age": 28,
-                "event": "test",
-                "circuit": "Monza",
-                "car": "Car",
-                "session": "Practice",
-            },
-            {
-                "driver": {
-                    "text": "Bob Anderson",
-                    "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)",
-                },
-                "date": "1967-08-14",
-                "age": 36,
-                "event": "Test",
-                "circuit": "Silverstone",
-                "car": "Brabham BT11",
-                "session": "Test",
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "races"
-        / "raw"
-        / "f1_red_flagged_world_championship_races.json",
-        [
-            {
-                "season": 1971,
-                "grand_prix": "Canadian",
-                "lap": 64,
-                "winner": "Stewart",
-                "failed_to_make_restart": {"drivers": ["A"], "reason": "Crash"},
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "races"
-        / "raw"
-        / "f1_red_flagged_non_championship_races.json",
-        [
-            {
-                "season": 1971,
-                "event": "Victory Race",
-                "lap": 15,
-                "incident": "Crash",
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "engines"
-        / "raw"
-        / "f1_engine_manufacturers.json",
-        [
-            {
-                "manufacturer": "Ferrari",
-                "manufacturer_status": "active",
-                "wins": 200,
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "engines"
-        / "raw"
-        / "f1_indianapolis_only_engine_manufacturers.json",
-        [{"manufacturer": "Offy"}],
-    )
-    _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "grands_prix" / "raw" / "a.json",
-        [{"grand_prix": "Italian", "race_status": "active", "total": 74}],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "teams"
-        / "raw"
-        / "f1_sponsorship_liveries.json",
-        [{"team": "Ferrari", "liveries": ["Marlboro"]}],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "teams"
-        / "raw"
-        / "f1_privateer_teams.json",
-        [{"team": "Rob Walker", "seasons": ["1950"]}],
-    )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "teams"
-        / "raw"
-        / "f1_constructors_2026.json",
-        [
-            {
-                "constructor": {"text": "Team X", "url": "https://example.com/team-x"},
-                "engine": {"text": "Engine X", "url": "https://example.com/engine-x"},
-                "wins": 1,
-            },
-            {
-                "constructor": {
-                    "text": "Cadillac",
-                    "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
-                },
-                "engine": [
+            (
+                "a.json",
+                [
                     {
-                        "text": "Ferrari",
-                        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
+                        "circuit": "Monza",
+                        "turns": 11,
+                        "circuit_status": "active",
+                        "grands_prix": ["Italian Grand Prix"],
                     },
                 ],
-                "wins": 0,
-            },
+            ),
         ],
     )
-    _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "teams" / "raw" / "cadillac_livery.json",
+    _seed_domain_raw(
+        base_wiki_dir,
+        "constructors",
         [
-            {
-                "team": {
-                    "text": "Cadillac",
-                    "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
-                },
-                "racing_series": {
-                    "formula_one": {
-                        "liveries": [
-                            {
-                                "main_colours": ["White", "Black"],
-                            },
-                        ],
-                    },
-                },
-            },
+            (
+                "a.json",
+                [{"constructor": "Ferrari", "licensed_in": "Italy", "engine": "Ferrari", "wins": 248}],
+            ),
+            ("f1_constructor_standings.json", [{"constructor": "McLaren", "wins": 2}]),
+            (
+                "f1_former_constructors.json",
+                [{"constructor": {"text": "Team Old", "url": "https://example.com/old"}, "wins": 0}],
+            ),
+            (
+                "f1_indianapolis_only_constructors.json",
+                [{"constructor": "Indy Team", "constructor_url": "https://example.com/indy"}],
+            ),
         ],
     )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "teams"
-        / "raw"
-        / "audi_constructor.json",
+    _seed_domain_raw(
+        base_wiki_dir,
+        "drivers",
         [
-            {
-                "team": {
-                    "text": "Audi",
-                    "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One",
-                },
-                "racing_series": {
-                    "formula_one": {
-                        "wins": 0,
+            ("female_drivers.json", [{"driver": {"text": "Maria", "url": "https://example.com/maria"}}]),
+            (
+                "drivers.json",
+                [
+                    {"driver": {"text": "Max Verstappen", "url": "https://example.com/max"}},
+                    {"driver": {"text": "Lewis Hamilton", "url": "https://example.com/lewis"}},
+                    {
+                        "driver": {"text": "Giovanna Amati", "url": "https://en.wikipedia.org/wiki/Giovanna_Amati"},
+                        "race_entries": 3,
+                        "nationality": "Italy",
                     },
-                },
-            },
+                ],
+            ),
+            (
+                "f1_women_drivers_who_entered_a_formula_one_race.json",
+                [
+                    {
+                        "driver": {"text": "Giovanna Amati", "url": "https://en.wikipedia.org/wiki/Giovanna_Amati"},
+                        "entries": 3,
+                        "teams": [{"text": "Brabham", "url": "https://en.wikipedia.org/wiki/Brabham"}],
+                    },
+                    {
+                        "driver": {"text": "Bob Anderson", "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"},
+                        "is_active": False,
+                        "race_entries": 29,
+                    },
+                ],
+            ),
+            (
+                "f1_driver_fatalities.json",
+                [
+                    {
+                        "driver": {"text": "X", "url": "https://example.com/x"},
+                        "date": "2000-01-01",
+                        "age": 28,
+                        "event": "test",
+                        "circuit": "Monza",
+                        "car": "Car",
+                        "session": "Practice",
+                    },
+                    {
+                        "driver": {"text": "Bob Anderson", "url": "https://en.wikipedia.org/wiki/Bob_Anderson_(racing_driver)"},
+                        "date": "1967-08-14",
+                        "age": 36,
+                        "event": "Test",
+                        "circuit": "Silverstone",
+                        "car": "Brabham BT11",
+                        "session": "Test",
+                    },
+                ],
+            ),
         ],
     )
-    _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "teams" / "raw" / "audi_livery.json",
+    _seed_domain_raw(
+        base_wiki_dir,
+        "races",
         [
-            {
-                "team": "Audi",
-                "racing_series": {
-                    "formula_one": {
-                        "liveries": [
-                            {
-                                "main_colours": ["Silver", "Red", "Black"],
-                            },
-                        ],
-                    },
-                },
-            },
+            (
+                "f1_red_flagged_world_championship_races.json",
+                [{"season": 1971, "grand_prix": "Canadian", "lap": 64, "winner": "Stewart", "failed_to_make_restart": {"drivers": ["A"], "reason": "Crash"}}],
+            ),
+            (
+                "f1_red_flagged_non_championship_races.json",
+                [{"season": 1971, "event": "Victory Race", "lap": 15, "incident": "Crash"}],
+            ),
         ],
     )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "teams"
-        / "raw"
-        / "racing_bulls_constructor.json",
+    _seed_domain_raw(
+        base_wiki_dir,
+        "engines",
         [
-            {
-                "team": {
-                    "text": "Racing Bulls",
-                    "url": "https://en.wikipedia.org/wiki/Racing_Bulls",
-                },
-                "racing_series": {
-                    "formula_one": {
-                        "seasons": [
-                            {
-                                "year": 2024,
-                                "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
-                            },
-                            {
-                                "year": 2025,
-                                "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
-                            },
-                        ],
-                        "wins": 0,
-                    },
-                },
-            },
+            ("f1_engine_manufacturers.json", [{"manufacturer": "Ferrari", "manufacturer_status": "active", "wins": 200}]),
+            ("f1_indianapolis_only_engine_manufacturers.json", [{"manufacturer": "Offy"}]),
         ],
     )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "teams"
-        / "raw"
-        / "racing_bulls_livery.json",
+    _seed_domain_raw(
+        base_wiki_dir,
+        "grands_prix",
+        [("a.json", [{"grand_prix": "Italian", "race_status": "active", "total": 74}])],
+    )
+    _seed_domain_raw(
+        base_wiki_dir,
+        "teams",
         [
-            {
-                "team": {
-                    "text": "Racing Bulls",
-                    "url": "https://en.wikipedia.org/wiki/Racing_Bulls",
-                },
-                "racing_series": {
-                    "formula_one": {
-                        "liveries": [
-                            {
-                                "season": [
-                                    {
-                                        "year": 2024,
-                                        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
-                                    },
-                                ],
-                                "main_colours": ["Blue", "White"],
-                                "special_liveries": "Miami",
-                            },
-                            {
-                                "season": [
-                                    {
-                                        "year": 2025,
-                                        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
-                                    },
-                                ],
-                                "main_colours": ["White"],
-                            },
-                            {
-                                "season": [
-                                    {
-                                        "year": 2024,
-                                        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
-                                    },
-                                ],
-                                "main_colours": ["Red"],
-                            },
-                        ],
-                    },
-                },
-            },
+            ("f1_sponsorship_liveries.json", [{"team": "Ferrari", "liveries": ["Marlboro"]}]),
+            ("f1_privateer_teams.json", [{"team": "Rob Walker", "seasons": ["1950"]}]),
+            (
+                "f1_constructors_2026.json",
+                [
+                    {"constructor": {"text": "Team X", "url": "https://example.com/team-x"}, "engine": {"text": "Engine X", "url": "https://example.com/engine-x"}, "wins": 1},
+                    {"constructor": {"text": "Cadillac", "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One"}, "engine": [{"text": "Ferrari", "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"}], "wins": 0},
+                ],
+            ),
+            (
+                "cadillac_livery.json",
+                [{"team": {"text": "Cadillac", "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One"}, "racing_series": {"formula_one": {"liveries": [{"main_colours": ["White", "Black"]}]}}}],
+            ),
+            (
+                "audi_constructor.json",
+                [{"team": {"text": "Audi", "url": "https://en.wikipedia.org/wiki/Audi_in_Formula_One"}, "racing_series": {"formula_one": {"wins": 0}}}],
+            ),
+            (
+                "audi_livery.json",
+                [{"team": "Audi", "racing_series": {"formula_one": {"liveries": [{"main_colours": ["Silver", "Red", "Black"]}]}}}],
+            ),
+            (
+                "racing_bulls_constructor.json",
+                [{"team": {"text": "Racing Bulls", "url": "https://en.wikipedia.org/wiki/Racing_Bulls"}, "racing_series": {"formula_one": {"seasons": [{"year": 2024, "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"}, {"year": 2025, "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"}], "wins": 0}}}],
+            ),
+            (
+                "racing_bulls_livery.json",
+                [{"team": {"text": "Racing Bulls", "url": "https://en.wikipedia.org/wiki/Racing_Bulls"}, "racing_series": {"formula_one": {"liveries": [{"season": [{"year": 2024, "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"}], "main_colours": ["Blue", "White"], "special_liveries": "Miami"}, {"season": [{"year": 2025, "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"}], "main_colours": ["White"]}, {"season": [{"year": 2024, "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"}], "main_colours": ["Red"]}]}}}],
+            ),
+            (
+                "aston_martin_constructor.json",
+                [{"team": {"text": "Aston Martin", "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"}, "racing_series": {"formula_one": {"seasons": [{"year": 1959, "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"}, {"year": 1960, "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"}]}}}],
+            ),
+            (
+                "aston_martin_livery.json",
+                [{"team": {"text": "Aston Martin", "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"}, "racing_series": {"formula_one": {"liveries": [{"season": [{"year": 1959, "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"}, {"year": 1960, "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"}], "main_colours": ["British racing green"]}]}}}],
+            ),
         ],
     )
-
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "teams"
-        / "raw"
-        / "aston_martin_constructor.json",
-        [
-            {
-                "team": {
-                    "text": "Aston Martin",
-                    "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
-                },
-                "racing_series": {
-                    "formula_one": {
-                        "seasons": [
-                            {
-                                "year": 1959,
-                                "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
-                            },
-                            {
-                                "year": 1960,
-                                "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship",
-                            },
-                        ],
-                    },
-                },
-            },
-        ],
+    _seed_domain_raw(base_wiki_dir, "rules", [("a.json", [{"rule": "X"}])])
+    _seed_domain_raw(base_wiki_dir, "points", [("a.json", [{"points": "X"}])])
+    _seed_domain_raw(
+        base_wiki_dir,
+        "season",
+        [("f1_tyre_manufacturers_by_season.json", [{"seasons": [1950], "manufacturers": ["Pirelli"]}])],
     )
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "teams"
-        / "raw"
-        / "aston_martin_livery.json",
-        [
-            {
-                "team": {
-                    "text": "Aston Martin",
-                    "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
-                },
-                "racing_series": {
-                    "formula_one": {
-                        "liveries": [
-                            {
-                                "season": [
-                                    {
-                                        "year": 1959,
-                                        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship",
-                                    },
-                                    {
-                                        "year": 1960,
-                                        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship",
-                                    },
-                                ],
-                                "main_colours": ["British racing green"],
-                            },
-                        ],
-                    },
-                },
-            },
-        ],
-    )
-    _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "rules" / "raw" / "a.json",
-        [{"rule": "X"}],
-    )
-    _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "points" / "raw" / "a.json",
-        [{"points": "X"}],
-    )
-
-    _write_json(
-        base_wiki_dir
-        / "layers"
-        / "0_layer"
-        / "season"
-        / "raw"
-        / "f1_tyre_manufacturers_by_season.json",
-        [{"seasons": [1950], "manufacturers": ["Pirelli"]}],
-    )
-
-    _write_json(
-        base_wiki_dir / "layers" / "0_layer" / "seasons" / "raw" / "a.json",
-        [{"season": 2026}, {"season": 1950}, {"season": 2005}],
+    _seed_domain_raw(
+        base_wiki_dir,
+        "seasons",
+        [("a.json", [{"season": 2026}, {"season": 1950}, {"season": 2005}])],
     )
 
 
