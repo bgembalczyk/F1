@@ -219,12 +219,12 @@ LEGACY_MODULE_SPECS: dict[str, LegacyModuleSpec] = {
     ),
     "scrapers.grands_prix.red_flagged_races_scraper.world_championship": (
         LegacyModuleSpec(
-        _run_and_export_target(
-            "scrapers.grands_prix.red_flagged_races_scraper.world_championship:RedFlaggedWorldChampionshipRacesScraper",
-            "grands_prix/f1_red_flagged_world_championship_races.json",
-        ),
-        RunConfig(output_dir=Path("../../data/wiki"), include_urls=True),
-        "deprecated_entrypoint",
+            _run_and_export_target(
+                "scrapers.grands_prix.red_flagged_races_scraper.world_championship:RedFlaggedWorldChampionshipRacesScraper",
+                "grands_prix/f1_red_flagged_world_championship_races.json",
+            ),
+            RunConfig(output_dir=Path("../../data/wiki"), include_urls=True),
+            "deprecated_entrypoint",
         )
     ),
     "scrapers.points.sprint_qualifying_points": LegacyModuleSpec(

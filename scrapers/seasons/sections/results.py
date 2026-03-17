@@ -9,6 +9,7 @@ if TYPE_CHECKING:
 
     from scrapers.seasons.parsers.results import SeasonResultsParser
 
+
 class SeasonResultsSectionParser:
     def __init__(self, parser: SeasonResultsParser) -> None:
         self._parser = parser

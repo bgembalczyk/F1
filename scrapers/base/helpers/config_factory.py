@@ -1,5 +1,3 @@
-from dataclasses import dataclass
-
 from scrapers.base.helpers.common_config import ScraperCommonConfig
 from scrapers.base.helpers.constants import COMMON_CONFIG_PROFILES
 from scrapers.base.helpers.constants import DEFAULT_CONFIG_PROFILE
