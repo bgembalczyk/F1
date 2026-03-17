@@ -23,7 +23,8 @@ from models.records.special_driver import SpecialDriverRecord
 def build_record(record_type: str, record: Mapping[str, Any]) -> Any:
     factory = FACTORY_REGISTRY.get(record_type)
     if factory is None:
-        raise ValueError(f"Unsupported record type: {record_type}")
+        msg = f"Unsupported record type: {record_type}"
+        raise ValueError(msg)
     return factory.build(record)
 
 

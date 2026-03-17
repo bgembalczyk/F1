@@ -32,4 +32,4 @@ class CircuitContract(DataContract):
         payload = dict(record)
         payload.setdefault("grands_prix", [])
         payload.setdefault("seasons", [])
-        return super(CircuitContract, cls).from_record(payload)
+        return super().from_record(payload)
