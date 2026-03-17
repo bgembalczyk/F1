@@ -172,6 +172,26 @@ class SeasonSplitStrategy:
         record: dict[str, Any],
         season_entries: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
+        colour_year_sets = SeasonSplitStrategy._extract_colour_year_sets(record)
+        if not colour_year_sets:
+            return [record]
+
+        split_records = SeasonSplitStrategy._build_base_colour_scoped_records(
+            record,
+            season_entries,
+            colour_year_sets,
+        )
+        split_records.extend(
+            SeasonSplitStrategy._build_year_scoped_colour_records(
+                record,
+                season_entries,
+                colour_year_sets,
+            ),
+        )
+        return split_records
+
+    @staticmethod
+    def _extract_colour_year_sets(record: dict[str, Any]) -> list[set[int]]:
         colour_year_sets: list[set[int]] = []
         for key in COLOUR_KEYS:
             colours = record.get(key)
@@ -183,31 +203,37 @@ class SeasonSplitStrategy:
                 years = SponsorshipRecordText.extract_years_from_text(item)
                 if years:
                     colour_year_sets.append(years)
+        return colour_year_sets
 
-        if not colour_year_sets:
-            return [record]
-
+    @staticmethod
+    def _build_base_colour_scoped_records(
+        record: dict[str, Any],
+        season_entries: list[dict[str, Any]],
+        colour_year_sets: list[set[int]],
+    ) -> list[dict[str, Any]]:
         all_years = set().union(*colour_year_sets)
-        split_records: list[dict[str, Any]] = []
-
         base_seasons = [
             season for season in season_entries if season["year"] not in all_years
         ]
-        if base_seasons:
-            base_record = {**record, "season": base_seasons}
-            for key in COLOUR_KEYS:
-                if key in record:
-                    base_record[key] = ColourScopeHandler.remove_year_specific_colours(
-                        record[key],
-                    )
-            split_records.append(base_record)
+        if not base_seasons:
+            return []
 
-        unique_year_sets: list[set[int]] = []
-        for years in colour_year_sets:
-            if not any(years == existing for existing in unique_year_sets):
-                unique_year_sets.append(years)
+        base_record = {**record, "season": base_seasons}
+        for key in COLOUR_KEYS:
+            if key in record:
+                base_record[key] = ColourScopeHandler.remove_year_specific_colours(
+                    record[key],
+                )
+        return [base_record]
 
-        for years in unique_year_sets:
+    @staticmethod
+    def _build_year_scoped_colour_records(
+        record: dict[str, Any],
+        season_entries: list[dict[str, Any]],
+        colour_year_sets: list[set[int]],
+    ) -> list[dict[str, Any]]:
+        scoped_records: list[dict[str, Any]] = []
+        for years in SeasonSplitStrategy._unique_year_sets(colour_year_sets):
             scoped_seasons = [
                 season for season in season_entries if season["year"] in years
             ]
@@ -220,9 +246,16 @@ class SeasonSplitStrategy:
                         record[key],
                         years,
                     )
-            split_records.append(scoped_record)
+            scoped_records.append(scoped_record)
+        return scoped_records
 
-        return split_records
+    @staticmethod
+    def _unique_year_sets(year_sets: list[set[int]]) -> list[set[int]]:
+        unique_year_sets: list[set[int]] = []
+        for years in year_sets:
+            if not any(years == existing for existing in unique_year_sets):
+                unique_year_sets.append(years)
+        return unique_year_sets
 
 
 class GrandPrixSplitStrategy:
@@ -320,94 +353,134 @@ class GrandPrixSplitStrategy:
         gp_item_map: dict[tuple[Any, ...], dict[str, list[Any]]] = {}
         gp_scope_for_key: dict[tuple[Any, ...], dict[str, Any]] = {}
 
-        def _add(
-            gp_key: tuple[Any, ...],
-            gp_scope: dict[str, Any],
-            field_key: str,
-            item: Any,
-        ) -> None:
-            gp_scope_for_key[gp_key] = gp_scope
-            gp_item_map.setdefault(gp_key, {}).setdefault(field_key, []).append(item)
-
-        for key, scoped_list in scoped_items.items():
-            for scope, item in scoped_list:
-                if scope.get("type") == "only":
-                    for gp_entry in scope.get("grand_prix") or []:
-                        gp_key = (gp_entry.get("text"), gp_entry.get("url"))
-                        _add(
-                            gp_key,
-                            {"type": "only", "grand_prix": [gp_entry]},
-                            key,
-                            item,
-                        )
-                else:
-                    scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
-                    _add(scope_key, scope, key, item)
-
-        for key, scoped_list in scoped_colours.items():
-            for scope, colour, replace in scoped_list:
-                colour_entry = {"colour": colour, "replace": replace}
-                if scope.get("type") == "only":
-                    for gp_entry in scope.get("grand_prix") or []:
-                        gp_key = (gp_entry.get("text"), gp_entry.get("url"))
-                        _add(
-                            gp_key,
-                            {"type": "only", "grand_prix": [gp_entry]},
-                            key,
-                            colour_entry,
-                        )
-                else:
-                    scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
-                    _add(scope_key, scope, key, colour_entry)
-
+        GrandPrixSplitStrategy._add_scoped_sponsor_items(
+            gp_item_map,
+            gp_scope_for_key,
+            scoped_items,
+        )
+        GrandPrixSplitStrategy._add_scoped_colour_items(
+            gp_item_map,
+            gp_scope_for_key,
+            scoped_colours,
+        )
         if not gp_item_map:
             return {}
 
-        def _items_key(d: dict[str, list[Any]]) -> tuple[Any, ...]:
-            parts: list[Any] = []
-            for key in sorted(d.keys()):
-                for item in d[key]:
-                    if isinstance(item, dict):
-                        parts.append(
-                            (
-                                key,
-                                tuple(
-                                    sorted(
-                                        (item_key, str(value))
-                                        for item_key, value in item.items()
-                                    ),
-                                ),
-                            ),
-                        )
-                    else:
-                        parts.append((key, str(item)))
-            return tuple(parts)
+        group_to_gps = GrandPrixSplitStrategy._group_keys_by_items(gp_item_map)
+        return GrandPrixSplitStrategy._build_grouped_scope_map(
+            gp_item_map,
+            gp_scope_for_key,
+            group_to_gps,
+        )
 
-        group_to_gps: dict[tuple[Any, ...], list[tuple[Any, ...]]] = {}
+    @staticmethod
+    def _add_scope_item(
+        gp_item_map: dict[tuple[Any, ...], dict[str, list[Any]]],
+        gp_scope_for_key: dict[tuple[Any, ...], dict[str, Any]],
+        gp_key: tuple[Any, ...],
+        gp_scope: dict[str, Any],
+        field_key: str,
+        item: Any,
+    ) -> None:
+        gp_scope_for_key[gp_key] = gp_scope
+        gp_item_map.setdefault(gp_key, {}).setdefault(field_key, []).append(item)
+
+    @staticmethod
+    def _scope_keys(scope: dict[str, Any]) -> list[tuple[tuple[Any, ...], dict[str, Any]]]:
+        if scope.get("type") == "only":
+            return [
+                ((gp_entry.get("text"), gp_entry.get("url")), {"type": "only", "grand_prix": [gp_entry]})
+                for gp_entry in scope.get("grand_prix") or []
+            ]
+        scope_key = GrandPrixScopeParser.grand_prix_scope_key(scope)
+        return [(scope_key, scope)]
+
+    @staticmethod
+    def _add_scoped_sponsor_items(
+        gp_item_map: dict[tuple[Any, ...], dict[str, list[Any]]],
+        gp_scope_for_key: dict[tuple[Any, ...], dict[str, Any]],
+        scoped_items: dict[str, list],
+    ) -> None:
+        for key, scoped_list in scoped_items.items():
+            for scope, item in scoped_list:
+                for gp_key, gp_scope in GrandPrixSplitStrategy._scope_keys(scope):
+                    GrandPrixSplitStrategy._add_scope_item(
+                        gp_item_map,
+                        gp_scope_for_key,
+                        gp_key,
+                        gp_scope,
+                        key,
+                        item,
+                    )
+
+    @staticmethod
+    def _add_scoped_colour_items(
+        gp_item_map: dict[tuple[Any, ...], dict[str, list[Any]]],
+        gp_scope_for_key: dict[tuple[Any, ...], dict[str, Any]],
+        scoped_colours: dict[str, list],
+    ) -> None:
+        for key, scoped_list in scoped_colours.items():
+            for scope, colour, replace in scoped_list:
+                colour_entry = {"colour": colour, "replace": replace}
+                for gp_key, gp_scope in GrandPrixSplitStrategy._scope_keys(scope):
+                    GrandPrixSplitStrategy._add_scope_item(
+                        gp_item_map,
+                        gp_scope_for_key,
+                        gp_key,
+                        gp_scope,
+                        key,
+                        colour_entry,
+                    )
+
+    @staticmethod
+    def _items_key(items: dict[str, list[Any]]) -> tuple[Any, ...]:
+        parts: list[Any] = []
+        for key in sorted(items.keys()):
+            for item in items[key]:
+                if isinstance(item, dict):
+                    parts.append((key, tuple(sorted((item_key, str(value)) for item_key, value in item.items()))))
+                else:
+                    parts.append((key, str(item)))
+        return tuple(parts)
+
+    @staticmethod
+    def _group_keys_by_items(
+        gp_item_map: dict[tuple[Any, ...], dict[str, list[Any]]],
+    ) -> dict[tuple[Any, ...], list[tuple[Any, ...]]]:
+        grouped: dict[tuple[Any, ...], list[tuple[Any, ...]]] = {}
         for gp_key, items_dict in gp_item_map.items():
-            items_key = _items_key(items_dict)
-            group_to_gps.setdefault(items_key, []).append(gp_key)
+            grouped.setdefault(GrandPrixSplitStrategy._items_key(items_dict), []).append(gp_key)
+        return grouped
 
+    @staticmethod
+    def _build_grouped_scope_map(
+        gp_item_map: dict[tuple[Any, ...], dict[str, list[Any]]],
+        gp_scope_for_key: dict[tuple[Any, ...], dict[str, Any]],
+        group_to_gps: dict[tuple[Any, ...], list[tuple[Any, ...]]],
+    ) -> dict[tuple[Any, ...], dict[str, Any]]:
         scope_map: dict[tuple[Any, ...], dict[str, Any]] = {}
         for items_key, gp_keys in group_to_gps.items():
             items_dict = gp_item_map[gp_keys[0]]
-            all_only = all(
-                gp_scope_for_key.get(gp_key, {}).get("type") == "only"
-                for gp_key in gp_keys
-            )
-            if all_only:
-                gp_entries: list[dict[str, Any]] = []
-                for gp_key in gp_keys:
-                    gp_entries.extend(gp_scope_for_key[gp_key].get("grand_prix", []))
-                merged_scope: dict[str, Any] = {
-                    "type": "only",
-                    "grand_prix": gp_entries,
-                }
-            else:
-                merged_scope = gp_scope_for_key[gp_keys[0]]
+            merged_scope = GrandPrixSplitStrategy._merge_group_scope(gp_scope_for_key, gp_keys)
             scope_map[items_key] = {"scope": merged_scope, "items": items_dict}
-
         return scope_map
+
+    @staticmethod
+    def _merge_group_scope(
+        gp_scope_for_key: dict[tuple[Any, ...], dict[str, Any]],
+        gp_keys: list[tuple[Any, ...]],
+    ) -> dict[str, Any]:
+        all_only = all(
+            gp_scope_for_key.get(gp_key, {}).get("type") == "only"
+            for gp_key in gp_keys
+        )
+        if not all_only:
+            return gp_scope_for_key[gp_keys[0]]
+
+        gp_entries: list[dict[str, Any]] = []
+        for gp_key in gp_keys:
+            gp_entries.extend(gp_scope_for_key[gp_key].get("grand_prix", []))
+        return {"type": "only", "grand_prix": gp_entries}
 
     @staticmethod
     def _build_split_records(

@@ -84,48 +84,51 @@ def extract_years(text: str, *, current_year: int) -> list[int]:
 
 
 def parse_year_range(text: str | None) -> dict[str, int | None]:
-    normalized = (text or "").strip()
+    normalized = _normalize_range_text(text)
     if not normalized:
         return {"start": None, "end": None}
 
-    normalized = ONWARDS_PATTERN.sub(r"\1-present", normalized)
+    parsed_match = _parse_explicit_range_match(normalized)
+    if parsed_match is not None:
+        return parsed_match
 
-    range_match = re.search(
+    return _parse_year_range_fallback(normalized)
+
+
+def _normalize_range_text(text: str | None) -> str:
+    return ONWARDS_PATTERN.sub(r"\1-present", (text or "").strip())
+
+
+def _parse_explicit_range_match(text: str) -> dict[str, int | None] | None:
+    patterns = (
         r"\b(\d{4})\s*[\-\u2013\u2014]\s*(\d{2,4}|present)\b",
-        normalized,
-        re.IGNORECASE,
-    )
-    if range_match:
-        start = int(range_match.group(1))
-        end_text = range_match.group(2).lower()
-        if end_text == "present":
-            return {"start": start, "end": None}
-        end = _expand_short_end_year(start, end_text)
-        if end < start:
-            start, end = end, start
-        return {"start": start, "end": end}
-
-    to_match = re.search(
         r"\b(\d{4})\s+to\s+(\d{2,4}|present)\b",
-        normalized,
-        re.IGNORECASE,
     )
-    if to_match:
-        start = int(to_match.group(1))
-        end_text = to_match.group(2).lower()
-        if end_text == "present":
-            return {"start": start, "end": None}
-        end = _expand_short_end_year(start, end_text)
-        if end < start:
-            start, end = end, start
-        return {"start": start, "end": end}
+    for pattern in patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            return _resolve_range_match(match)
+    return None
 
-    years = [int(value) for value in re.findall(r"\d{4}", normalized)]
+
+def _resolve_range_match(match: re.Match[str]) -> dict[str, int | None]:
+    start = int(match.group(1))
+    end_text = match.group(2).lower()
+    if end_text == "present":
+        return {"start": start, "end": None}
+    end = _expand_short_end_year(start, end_text)
+    if end < start:
+        start, end = end, start
+    return {"start": start, "end": end}
+
+
+def _parse_year_range_fallback(text: str) -> dict[str, int | None]:
+    years = [int(value) for value in re.findall(r"\d{4}", text)]
     if not years:
         return {"start": None, "end": None}
 
     start = years[0]
-    if "present" in normalized.lower() and len(years) == 1:
+    if "present" in text.lower() and len(years) == 1:
         return {"start": start, "end": None}
 
     end = years[-1] if len(years) > 1 else start
