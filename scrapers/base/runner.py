@@ -3,23 +3,11 @@ from uuid import uuid4
 
 from models.mappers.serialization import to_dict_list
 from scrapers.base.abc import ABCScraper
-from scrapers.base.helpers.paremeters import supports_param
 from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger
-from scrapers.base.options import ScraperOptions
 from scrapers.base.results import ScrapeResult
 from scrapers.base.run_config import RunConfig
-
-
-RUN_CONFIG_OPTION_FIELD_MAP: tuple[tuple[str, str], ...] = (
-    ("debug_dir", "debug_dir"),
-    ("cache_dir", "cache_dir"),
-    ("cache_ttl", "cache_ttl"),
-    ("cache_adapter", "cache_adapter"),
-    ("http_timeout", "http_timeout"),
-    ("http_retries", "http_retries"),
-    ("http_backoff_seconds", "http_backoff_seconds"),
-)
+from scrapers.base.scraper_factory import ScraperFactory
 
 
 class ScraperRunner:
@@ -28,6 +16,7 @@ class ScraperRunner:
     def __init__(self, run_config: RunConfig, *, supports_urls: bool = True) -> None:
         self._run_config = run_config
         self._supports_urls = supports_urls
+        self._factory = ScraperFactory()
 
     def run_and_export(
         self,
@@ -78,58 +67,9 @@ class ScraperRunner:
         *,
         run_id: str,
     ) -> ABCScraper:
-        """
-        Tworzy instancję scrapera w sposób kompatybilny z różnymi konstruktorami:
-
-        - jeśli scraper wspiera `options`, przekazujemy options
-        - jeśli nie wspiera `options`, ale wspiera `include_urls`,
-          to przekazujemy include_urls
-        - jeśli supports_urls=False -> nie próbujemy ustawiać include_urls w ogóle
-        """
-        kwargs = dict(self._run_config.scraper_kwargs)
-        options = self._build_options(run_id)
-
-        if supports_param(scraper_cls, "options"):
-            self._inject_options_kwargs(kwargs, scraper_cls, options, run_id)
-            return scraper_cls(**kwargs)
-
-        self._inject_legacy_kwargs(kwargs, scraper_cls, run_id)
-        return scraper_cls(**kwargs)
-
-    def _build_options(self, run_id: str) -> ScraperOptions:
-        options = self._run_config.options or ScraperOptions()
-
-        for run_attr, option_attr in RUN_CONFIG_OPTION_FIELD_MAP:
-            value = getattr(self._run_config, run_attr)
-            if value is not None:
-                setattr(options, option_attr, value)
-
-        # Reguły biznesowe specjalne: run_id i raporty jakości/błędów.
-        options.run_id = run_id
-        options.quality_report = self._run_config.quality_report
-        options.error_report = self._run_config.error_report
-        return options
-
-    def _inject_options_kwargs(
-        self,
-        kwargs: dict[str, object],
-        scraper_cls: type[ABCScraper],
-        options: ScraperOptions,
-        run_id: str,
-    ) -> None:
-        if self._supports_urls and hasattr(options, "include_urls"):
-            options.include_urls = self._run_config.include_urls
-        kwargs.setdefault("options", options)
-        if supports_param(scraper_cls, "run_id"):
-            kwargs.setdefault("run_id", run_id)
-
-    def _inject_legacy_kwargs(
-        self,
-        kwargs: dict[str, object],
-        scraper_cls: type[ABCScraper],
-        run_id: str,
-    ) -> None:
-        if supports_param(scraper_cls, "run_id"):
-            kwargs.setdefault("run_id", run_id)
-        if self._supports_urls and supports_param(scraper_cls, "include_urls"):
-            kwargs.setdefault("include_urls", self._run_config.include_urls)
+        return self._factory.create(
+            scraper_cls=scraper_cls,
+            run_config=self._run_config,
+            run_id=run_id,
+            supports_urls=self._supports_urls,
+        )
