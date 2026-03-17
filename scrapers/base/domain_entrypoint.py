@@ -8,37 +8,23 @@ from pathlib import Path
 from scrapers.base.abc import ABCScraper
 from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
-
-DEFAULT_OUTPUT_DIR = Path("../../data/wiki")
-DEFAULT_DEBUG_DIR = Path("../../data/debug")
+from scrapers.base.run_profiles import RunProfileName
+from scrapers.base.run_profiles import build_run_profile
 
 
 def strict_quality_profile() -> RunConfig:
     """Profile with stricter diagnostics enabled."""
-    return RunConfig(
-        output_dir=DEFAULT_OUTPUT_DIR,
-        include_urls=True,
-        debug_dir=DEFAULT_DEBUG_DIR,
-        quality_report=True,
-        error_report=False,
-    )
+    return build_run_profile(RunProfileName.STRICT)
 
 
 def minimal_profile() -> RunConfig:
     """Profile with a minimal production-oriented configuration."""
-    return RunConfig(
-        output_dir=DEFAULT_OUTPUT_DIR,
-        include_urls=True,
-    )
+    return build_run_profile(RunProfileName.MINIMAL)
 
 
 def minimal_debug_profile() -> RunConfig:
     """Profile with minimal checks and debug dumps enabled."""
-    return RunConfig(
-        output_dir=DEFAULT_OUTPUT_DIR,
-        include_urls=True,
-        debug_dir=DEFAULT_DEBUG_DIR,
-    )
+    return build_run_profile(RunProfileName.DEBUG)
 
 
 def build_run_list_scraper(
