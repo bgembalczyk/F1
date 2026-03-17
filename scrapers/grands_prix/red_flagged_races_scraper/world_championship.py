@@ -61,13 +61,7 @@ class RedFlaggedWorldChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
         record_factory=record_from_mapping,
     )
 
-
 if __name__ == "__main__":
-    run_and_export(
-        RedFlaggedWorldChampionshipRacesScraper,
-        "grands_prix/f1_red_flagged_world_championship_races.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.cli import run_legacy_wrapper
+
+    run_legacy_wrapper("scrapers.grands_prix.red_flagged_races_scraper.world_championship")

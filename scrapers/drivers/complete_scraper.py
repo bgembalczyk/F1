@@ -22,17 +22,7 @@ class CompleteDriverDataExtractor(CompleteExtractorBase):
             return driver_link.get("url")
         return None
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_cli_main
-    from scrapers.base.run_config import RunConfig
-    from scrapers.drivers.helpers.export import export_complete_drivers
+    from scrapers.cli import run_legacy_wrapper
 
-    build_cli_main(
-        target=lambda: export_complete_drivers(
-            output_dir=Path("../../data/wiki/drivers/complete_drivers"),
-            include_urls=True,
-        ),
-        base_config=RunConfig(),
-        profile="complete_extractor",
-    )()
+    run_legacy_wrapper("scrapers.drivers.complete_scraper")

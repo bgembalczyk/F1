@@ -41,14 +41,7 @@ class TyreManufacturersBySeasonScraper(F1TableScraper):
         record_factory=record_from_mapping,
     )
 
-
 if __name__ == "__main__":
-    run_and_export(
-        TyreManufacturersBySeasonScraper,
-        "tyres/f1_tyre_manufacturers_by_season.json",
-        "tyres/f1_tyre_manufacturers_by_season.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.cli import run_legacy_wrapper
+
+    run_legacy_wrapper("scrapers.tyres.list_scraper")

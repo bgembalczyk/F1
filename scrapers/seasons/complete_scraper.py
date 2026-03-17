@@ -20,14 +20,7 @@ class CompleteSeasonDataExtractor(CompleteExtractorBase):
         },
     )
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_complete_extractor_main
-    from scrapers.seasons.helpers import export_complete_seasons
+    from scrapers.cli import run_legacy_wrapper
 
-    build_complete_extractor_main(
-        target=lambda: export_complete_seasons(
-            output_dir=Path("../../data/wiki/seasons/complete_seasons"),
-            include_urls=True,
-        ),
-    )()
+    run_legacy_wrapper("scrapers.seasons.complete_scraper")

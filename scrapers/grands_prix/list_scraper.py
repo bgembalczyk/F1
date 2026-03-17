@@ -52,15 +52,7 @@ class GrandsPrixListScraper(F1TableScraper):
     ) -> None:
         super().__init__(options=options, config=config)
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_deprecated_module_main
-    from scrapers.grands_prix.entrypoint import run_list_scraper
+    from scrapers.cli import run_legacy_wrapper
 
-    build_deprecated_module_main(
-        target=run_list_scraper,
-        deprecation_message=(
-            "scrapers.grands_prix.list_scraper is deprecated; use "
-            "scrapers.grands_prix.entrypoint.run_list_scraper."
-        ),
-    )()
+    run_legacy_wrapper("scrapers.grands_prix.list_scraper")

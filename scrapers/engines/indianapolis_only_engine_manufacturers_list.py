@@ -14,14 +14,7 @@ class IndianapolisOnlyEngineManufacturersListScraper(IndianapolisOnlyListScraper
     record_key = "manufacturer"
     url_key = "manufacturer_url"
 
-
 if __name__ == "__main__":
-    run_and_export(
-        IndianapolisOnlyEngineManufacturersListScraper,
-        "engines/f1_indianapolis_only_engine_manufacturers.json",
-        "engines/f1_indianapolis_only_engine_manufacturers.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.cli import run_legacy_wrapper
+
+    run_legacy_wrapper("scrapers.engines.indianapolis_only_engine_manufacturers_list")

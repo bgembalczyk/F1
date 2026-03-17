@@ -23,15 +23,7 @@ class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
         assemble_record_params={"detail_field": "by_year"},
     )
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_complete_extractor_main
-    from scrapers.base.helpers.runner import run_and_export
+    from scrapers.cli import run_legacy_wrapper
 
-    build_complete_extractor_main(
-        target=lambda *, run_config: run_and_export(
-            F1CompleteGrandPrixDataExtractor,
-            "grands_prix/f1_grands_prix_extended.json",
-            run_config=run_config,
-        ),
-    )()
+    run_legacy_wrapper("scrapers.grands_prix.complete_scraper")

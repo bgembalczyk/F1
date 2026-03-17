@@ -91,21 +91,7 @@ class F1DriversListScraper(F1TableScraper):
         ]
         return options
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_cli_main
-    from scrapers.drivers.entrypoint import run_list_scraper
+    from scrapers.cli import run_legacy_wrapper
 
-    build_cli_main(
-        target=run_list_scraper,
-        base_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-        profile="deprecated_entrypoint",
-        deprecation_message=(
-            "scrapers.drivers.list_scraper is deprecated; use "
-            "scrapers.drivers.entrypoint.run_list_scraper."
-        ),
-    )()
+    run_legacy_wrapper("scrapers.drivers.list_scraper")

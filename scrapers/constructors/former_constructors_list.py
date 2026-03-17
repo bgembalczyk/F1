@@ -53,21 +53,7 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
     section_label = "Former constructors"
     section_parser_class = ConstructorsListSectionParser
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import run_cli_entrypoint
-    from scrapers.base.helpers.runner import run_and_export
+    from scrapers.cli import run_legacy_wrapper
 
-    run_cli_entrypoint(
-        target=lambda *, run_config: run_and_export(
-            FormerConstructorsListScraper,
-            "constructors/f1_former_constructors.json",
-            "constructors/f1_former_constructors.csv",
-            run_config=run_config,
-        ),
-        base_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-    )
+    run_legacy_wrapper("scrapers.constructors.former_constructors_list")

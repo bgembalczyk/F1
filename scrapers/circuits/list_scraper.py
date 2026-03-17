@@ -44,15 +44,7 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
     section_label = "Circuits"
     section_parser_class = CircuitsListSectionParser
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_deprecated_module_main
-    from scrapers.circuits.entrypoint import run_list_scraper
+    from scrapers.cli import run_legacy_wrapper
 
-    build_deprecated_module_main(
-        target=run_list_scraper,
-        deprecation_message=(
-            "scrapers.circuits.list_scraper is deprecated; use "
-            "scrapers.circuits.entrypoint.run_list_scraper."
-        ),
-    )()
+    run_legacy_wrapper("scrapers.circuits.list_scraper")
