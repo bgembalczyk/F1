@@ -6,12 +6,9 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
-from scrapers.base.sections.adapter import SectionAdapterEntry
-from scrapers.drivers.sections import DriverCareerSectionParser
-from scrapers.drivers.sections import DriverNonChampionshipSectionParser
-from scrapers.drivers.sections import DriverRacingRecordSectionParser
+from scrapers.base.sections.entry_factory import section_entries_from_specs
 from scrapers.drivers.sections.results import DriverResultsSectionParser
-from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
+from scrapers.drivers.sections.specs import driver_section_specs
 
 
 class DriverSectionExtractionService:
@@ -31,35 +28,10 @@ class DriverSectionExtractionService:
         sections = self._adapter.parse_sections(
             soup=soup,
             domain="drivers",
-            entries=[
-                SectionAdapterEntry(
-                    section_id="Career_results",
-                    aliases=profile_entry_aliases(
-                        "drivers",
-                        "Career_results",
-                        "Karting_record",
-                    ),
-                    parser=DriverCareerSectionParser(parser=raw_parser),
-                ),
-                SectionAdapterEntry(
-                    section_id="Racing_record",
-                    aliases=profile_entry_aliases(
-                        "drivers",
-                        "Racing_record",
-                        "Motorsport_career_results",
-                    ),
-                    parser=DriverRacingRecordSectionParser(parser=raw_parser),
-                ),
-                SectionAdapterEntry(
-                    section_id="Non-championship",
-                    aliases=profile_entry_aliases(
-                        "drivers",
-                        "Non-championship",
-                        "Non-championship_races",
-                    ),
-                    parser=DriverNonChampionshipSectionParser(parser=raw_parser),
-                ),
-            ],
+            entries=section_entries_from_specs(
+                domain="drivers",
+                specs=driver_section_specs(raw_parser=raw_parser),
+            ),
         )
 
         records: list[dict[str, Any]] = []
