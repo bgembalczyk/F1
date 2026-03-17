@@ -40,22 +40,30 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
 
     def _build_post_processor(self) -> DriverSectionContractPostProcessor:
         return DriverSectionContractPostProcessor()
-    def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
-        self.url = url
-        return super().fetch()
 
-    def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
-        return self._infobox_service.extract(soup, url=self.url)
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        return self._scrape_infoboxes(soup)
 
-    def _parse_results_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        return [self._infobox_service.extract(soup, url=self.url)]
+
+    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._sections_service_factory(self._options, self.url).extract(soup)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        sections_service = self._sections_service_factory(self._options, self.url)
-        return [
-            self._assembler.assemble(
-                url=self.url,
-                infobox=self._infobox_service.extract(soup, url=self.url),
-                career_results=sections_service.extract(soup),
-            ),
-        ]
+    def _parse_results_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        return self._build_sections_payload(soup)
+
+    def _assemble_record(
+        self,
+        *,
+        soup: BeautifulSoup,
+        infobox_payload: list[dict[str, Any]],
+        sections_payload: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        _ = soup
+        infobox = infobox_payload[0] if infobox_payload else {}
+        return self._assembler.assemble(
+            url=self.url,
+            infobox=infobox,
+            career_results=sections_payload,
+        )
