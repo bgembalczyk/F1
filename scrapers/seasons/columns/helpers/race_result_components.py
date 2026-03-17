@@ -26,13 +26,7 @@ class RaceResultCellParser:
         cell = ctx.cell
         if cell is None:
             return (ctx.clean_text or "").strip()
-        fragment = BeautifulSoup(str(cell), "html.parser")
-        for span in fragment.find_all("span", style=True):
-            style = "".join(span.get("style", "").split())
-            if "position:absolute" in style:
-                span.decompose()
-        for sup in fragment.find_all("sup"):
-            sup.decompose()
+        fragment = self._prepare_cell_fragment(cell)
         return clean_wiki_text(fragment.get_text(" ", strip=True))
 
     def parse_superscripts(
@@ -42,28 +36,23 @@ class RaceResultCellParser:
     ) -> SuperscriptParseResult:
         cell = ctx.cell
         if cell is None:
-            return SuperscriptParseResult(
-                sprint_position=None,
-                pole_position=False,
-                fastest_lap=False,
-                footnotes=[],
-            )
+            return self._empty_superscript_result()
 
         sup_texts, footnotes = self._collect_superscripts(cell)
         sprint_position, pole_position, fastest_lap = self._parse_superscript_tokens(
             sup_texts,
         )
 
-        if season_year is None or season_year < SPRINT_POINTS_START_YEAR:
-            sprint_position = None
-        elif sprint_position is not None:
-            sprint_str = str(sprint_position)
-            footnotes = [f for f in footnotes if f != sprint_str]
-
-        if not pole_position and cell.find(["b", "strong"]):
-            pole_position = True
-        if not fastest_lap and cell.find(["i", "em"]):
-            fastest_lap = True
+        sprint_position, footnotes = self._normalize_sprint_position(
+            sprint_position,
+            footnotes,
+            season_year,
+        )
+        pole_position, fastest_lap = self._enrich_marks_from_formatting(
+            cell,
+            pole_position,
+            fastest_lap,
+        )
 
         return SuperscriptParseResult(
             sprint_position=sprint_position,
@@ -74,23 +63,77 @@ class RaceResultCellParser:
 
     def parse_results(self, text: str) -> list[dict[str, Any]]:
         results: list[dict[str, Any]] = []
-        for raw_part in SPLIT_RESULTS_RE.split(text):
-            part = raw_part.strip()
-            if not part:
-                continue
-            marks = MARKS_RE.findall(part)
-            cleaned = strip_marks(part).strip()
-            parenthesized = cleaned.startswith("(") and cleaned.endswith(")")
-            if parenthesized:
-                cleaned = cleaned[1:-1].strip()
-            position = self._parse_position(cleaned)
-            result: dict[str, Any] = {"position": position}
-            if marks:
-                result["marks"] = marks
-            if parenthesized:
-                result["points_counted"] = False
-            results.append(result)
+        for part in self._split_result_parts(text):
+            results.append(self._parse_result_part(part))
         return results
+
+    @staticmethod
+    def _prepare_cell_fragment(cell: Any) -> BeautifulSoup:
+        fragment = BeautifulSoup(str(cell), "html.parser")
+        for span in fragment.find_all("span", style=True):
+            style = "".join(span.get("style", "").split())
+            if "position:absolute" in style:
+                span.decompose()
+        for sup in fragment.find_all("sup"):
+            sup.decompose()
+        return fragment
+
+    @staticmethod
+    def _empty_superscript_result() -> SuperscriptParseResult:
+        return SuperscriptParseResult(
+            sprint_position=None,
+            pole_position=False,
+            fastest_lap=False,
+            footnotes=[],
+        )
+
+    @staticmethod
+    def _normalize_sprint_position(
+        sprint_position: int | None,
+        footnotes: list[str],
+        season_year: int | None,
+    ) -> tuple[int | None, list[str]]:
+        if season_year is None or season_year < SPRINT_POINTS_START_YEAR:
+            return None, footnotes
+        if sprint_position is None:
+            return sprint_position, footnotes
+        sprint_str = str(sprint_position)
+        return sprint_position, [note for note in footnotes if note != sprint_str]
+
+    @staticmethod
+    def _enrich_marks_from_formatting(
+        cell: Any,
+        pole_position: bool,
+        fastest_lap: bool,
+    ) -> tuple[bool, bool]:
+        if not pole_position and cell.find(["b", "strong"]):
+            pole_position = True
+        if not fastest_lap and cell.find(["i", "em"]):
+            fastest_lap = True
+        return pole_position, fastest_lap
+
+    @staticmethod
+    def _split_result_parts(text: str) -> list[str]:
+        return [part.strip() for part in SPLIT_RESULTS_RE.split(text) if part.strip()]
+
+    def _parse_result_part(self, part: str) -> dict[str, Any]:
+        marks = MARKS_RE.findall(part)
+        cleaned = strip_marks(part).strip()
+        parenthesized, cleaned = self._unwrap_parenthesized(cleaned)
+
+        result: dict[str, Any] = {"position": self._parse_position(cleaned)}
+        if marks:
+            result["marks"] = marks
+        if parenthesized:
+            result["points_counted"] = False
+        return result
+
+    @staticmethod
+    def _unwrap_parenthesized(cleaned: str) -> tuple[bool, str]:
+        parenthesized = cleaned.startswith("(") and cleaned.endswith(")")
+        if parenthesized:
+            return True, cleaned[1:-1].strip()
+        return False, cleaned
 
     @staticmethod
     def _parse_position(cleaned: str) -> int | str | None:
@@ -138,12 +181,21 @@ class RaceResultBackgroundMapper:
         self._background_to_result = background_to_result
 
     def map(self, background: str | None) -> str | None:
+        normalized = self._normalize_background(background)
+        if normalized is None:
+            return None
+        return self._background_to_result.get(normalized)
+
+    def _normalize_background(self, background: str | None) -> str | None:
         if not background:
             return None
         match = re.search(r"#?([0-9a-f]{6}|[0-9a-f]{3})", background, re.IGNORECASE)
         if not match:
             return None
-        value = match.group(1).lower()
+        return self._expand_short_hex(match.group(1).lower())
+
+    @staticmethod
+    def _expand_short_hex(value: str) -> str:
         if len(value) == SHORT_HEX_COLOR_LENGTH:
-            value = "".join(char * 2 for char in value)
-        return self._background_to_result.get(value)
+            return "".join(char * 2 for char in value)
+        return value

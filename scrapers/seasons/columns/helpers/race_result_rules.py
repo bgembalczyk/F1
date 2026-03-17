@@ -34,16 +34,20 @@ def append_note(result: dict[str, Any], note: str) -> None:
 
 class ClassifiedDnfRule:
     def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None:
+        if self._is_classified_dnf(result, context):
+            append_note(result, CLASSIFIED_DNF_NOTE)
+
+    @staticmethod
+    def _is_classified_dnf(result: dict[str, Any], context: ResultRuleContext) -> bool:
         marks = result.get("marks") or []
         position = result.get("position")
-        if (
+        return (
             context.season_year is not None
             and context.season_year >= CLASSIFIED_DNF_START_YEAR
             and CLASSIFIED_DNF_MARK in marks
             and context.background in CLASSIFIED_DNF_BACKGROUNDS
             and isinstance(position, int)
-        ):
-            append_note(result, CLASSIFIED_DNF_NOTE)
+        )
 
 
 class MarkBasedEligibilityRule:
@@ -66,27 +70,42 @@ class SharedDriveRule:
         if context.season_year is None or "†" not in marks:
             return
 
-        if (
-            SHARED_DRIVE_NO_POINTS_START_YEAR
-            <= context.season_year
-            <= SHARED_DRIVE_NO_POINTS_END_YEAR
-        ):
+        if self._is_shared_drive_without_points(context.season_year):
             result["shared_drive"] = True
             result["points_eligible"] = False
             append_note(result, "shared_drive_no_points")
             return
 
-        if (
-            SHARED_DRIVE_POINTS_START_YEAR
-            <= context.season_year
-            <= SHARED_DRIVE_POINTS_END_YEAR
-        ):
+        if self._is_shared_drive_with_points(context.season_year):
             result["shared_drive"] = True
             result["points_shared"] = True
+
+    @staticmethod
+    def _is_shared_drive_without_points(season_year: int) -> bool:
+        return SHARED_DRIVE_NO_POINTS_START_YEAR <= season_year <= SHARED_DRIVE_NO_POINTS_END_YEAR
+
+    @staticmethod
+    def _is_shared_drive_with_points(season_year: int) -> bool:
+        return SHARED_DRIVE_POINTS_START_YEAR <= season_year <= SHARED_DRIVE_POINTS_END_YEAR
 
 
 class FatalAccidentRule:
     def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None:
+        status, marks = self._status_and_marks(result, context)
+        if status is None:
+            return
+
+        if self._is_before_race_fatality(status, marks):
+            append_note(result, "fatal_accident_before_race")
+            return
+        if self._is_during_race_fatality(status, marks):
+            append_note(result, "fatal_accident_during_race")
+
+    @staticmethod
+    def _status_and_marks(
+        result: dict[str, Any],
+        context: ResultRuleContext,
+    ) -> tuple[str | None, list[str]]:
         marks = result.get("marks") or []
         position = result.get("position")
         if (
@@ -94,14 +113,16 @@ class FatalAccidentRule:
             or context.season_year < FATAL_NOTES_START_YEAR
             or not isinstance(position, str)
         ):
-            return
+            return None, marks
+        return position.lower(), marks
 
-        status = position.lower()
-        if status == "dns" and "†" in marks:
-            append_note(result, "fatal_accident_before_race")
-            return
-        if status.startswith("ret") and ("†" in marks or "‡" in marks):
-            append_note(result, "fatal_accident_during_race")
+    @staticmethod
+    def _is_before_race_fatality(status: str, marks: list[str]) -> bool:
+        return status == "dns" and "†" in marks
+
+    @staticmethod
+    def _is_during_race_fatality(status: str, marks: list[str]) -> bool:
+        return status.startswith("ret") and ("†" in marks or "‡" in marks)
 
 
 class F2EligibilityRule:
