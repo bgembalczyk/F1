@@ -187,47 +187,46 @@ class ABCScraper(ABC):
 
     def _run_parse_pipeline(self, run_id: str, html: str) -> list[ExportRecord]:
         soup = BeautifulSoup(html, "html.parser")
-
-        self.logger.debug("Scrape run %s: start parse", run_id)
-        raw_records = self.parse(soup)
-        self.logger.debug("Scrape run %s: finish parse", run_id)
-        self._write_step_quality_report(
-            step_name="parse",
-            records=list(raw_records),
+        raw_records = self._log_pipeline_step(run_id, "parse", lambda: self.parse(soup))
+        normalized_records = self._log_pipeline_step(
+            run_id,
+            "normalize",
+            lambda: self._record_normalizer.normalize(list(raw_records)),
+            to_dict=True,
+        )
+        transformed_records = self._log_pipeline_step(
+            run_id,
+            "transform",
+            lambda: self._apply_transformers(normalized_records),
+            to_dict=True,
+        )
+        validated_records = self._log_pipeline_step(
+            run_id,
+            "validate",
+            lambda: self.validate_records(transformed_records),
+            to_dict=True,
+        )
+        return self._log_pipeline_step(
+            run_id,
+            "post_process",
+            lambda: self.post_process_records(validated_records),
+            to_dict=True,
         )
 
-        self.logger.debug("Scrape run %s: start normalize", run_id)
-        normalized_records = self._record_normalizer.normalize(list(raw_records))
-        self.logger.debug("Scrape run %s: finish normalize", run_id)
-        self._write_step_quality_report(
-            step_name="normalize",
-            records=to_dict_list(list(normalized_records)),
-        )
-
-        self.logger.debug("Scrape run %s: start transform", run_id)
-        transformed_records = self._apply_transformers(normalized_records)
-        self.logger.debug("Scrape run %s: finish transform", run_id)
-        self._write_step_quality_report(
-            step_name="transform",
-            records=to_dict_list(list(transformed_records)),
-        )
-
-        self.logger.debug("Scrape run %s: start validate", run_id)
-        validated_records = self.validate_records(transformed_records)
-        self.logger.debug("Scrape run %s: finish validate", run_id)
-        self._write_step_quality_report(
-            step_name="validate",
-            records=to_dict_list(list(validated_records)),
-        )
-
-        self.logger.debug("Scrape run %s: start post-process", run_id)
-        post_processed = self.post_process_records(validated_records)
-        self.logger.debug("Scrape run %s: finish post-process", run_id)
-        self._write_step_quality_report(
-            step_name="post_process",
-            records=to_dict_list(list(post_processed)),
-        )
-        return post_processed
+    def _log_pipeline_step(
+        self,
+        run_id: str,
+        step_name: str,
+        run_step: Callable[[], list[ExportRecord] | list[RawRecord] | list[NormalizedRecord]],
+        *,
+        to_dict: bool = False,
+    ) -> list[ExportRecord] | list[RawRecord] | list[NormalizedRecord]:
+        self.logger.debug("Scrape run %s: start %s", run_id, step_name.replace("_", "-"))
+        records = run_step()
+        self.logger.debug("Scrape run %s: finish %s", run_id, step_name.replace("_", "-"))
+        report_records = to_dict_list(list(records)) if to_dict else list(records)
+        self._write_step_quality_report(step_name=step_name, records=report_records)
+        return records
 
     def _handle_fetch_error(self, exc: Exception, error: Exception):
         if self._handle_scraper_error(error):
@@ -337,37 +336,12 @@ class ABCScraper(ABC):
         self.validator.reset_stats()
         valid_records: list[ExportRecord] = []
         for index, record in enumerate(records):
-            errors = self.validator.validate(record)
-            record_factory_errors = self.validator.validate_record_factory(record)
-            errors_for_tracking = list(errors)
-            messages = [error.message for error in errors]
-            if record_factory_errors:
-                errors_for_tracking.extend(record_factory_errors)
-                record_factory_label = (
-                    getattr(self.validator.record_factory, "__name__", None)
-                    if self.validator.record_factory is not None
-                    else None
-                )
-                label = record_factory_label or "record_factory"
-                messages.extend(
-                    [f"{label}: {error.message}" for error in record_factory_errors],
-                )
+            errors_for_tracking, messages = self._collect_validation_errors(record)
             self.validator.record_validation_result(errors_for_tracking)
             if not errors_for_tracking:
                 valid_records.append(record)
                 continue
-
-            model_label = None
-            if self.validator.record_factory is not None:
-                model_label = getattr(self.validator.record_factory, "__name__", None)
-                if model_label is None:
-                    model_label = self.validator.record_factory.__class__.__name__
-
-            message = (
-                f"Validation failed for record #{index}"
-                f"{f' ({model_label})' if model_label else ''} "
-                f"with {len(errors_for_tracking)} error(s): {', '.join(messages)}"
-            )
+            message = self._validation_error_message(index, errors_for_tracking, messages)
             if self.validation_mode == "soft":
                 self.logger.warning(message)
                 continue
@@ -377,21 +351,63 @@ class ABCScraper(ABC):
                 url=getattr(self, "url", None),
             )
 
-        rejected = len(records) - len(valid_records)
-        if rejected:
-            self.logger.info(
-                "Validation rejected %d record(s) out of %d",
-                rejected,
-                len(records),
-            )
-            self.logger.info(
-                "Validation filtered records: %d -> %d",
-                len(records),
-                len(valid_records),
-            )
+        self._log_validation_summary(total=len(records), valid=len(valid_records))
 
         self._write_quality_report()
         return valid_records
+
+    def _collect_validation_errors(self, record: ExportRecord):
+        errors = self.validator.validate(record)
+        record_factory_errors = self.validator.validate_record_factory(record)
+        errors_for_tracking = list(errors)
+        messages = [error.message for error in errors]
+        if not record_factory_errors:
+            return errors_for_tracking, messages
+
+        errors_for_tracking.extend(record_factory_errors)
+        messages.extend(
+            [
+                f"{self._record_factory_label(default='record_factory')}: {error.message}"
+                for error in record_factory_errors
+            ],
+        )
+        return errors_for_tracking, messages
+
+    def _record_factory_label(self, *, default: str | None = None) -> str | None:
+        if self.validator is None or self.validator.record_factory is None:
+            return default
+        model_label = getattr(self.validator.record_factory, "__name__", None)
+        if model_label is not None:
+            return model_label
+        return self.validator.record_factory.__class__.__name__
+
+    def _validation_error_message(
+        self,
+        index: int,
+        errors_for_tracking: list,
+        messages: list[str],
+    ) -> str:
+        model_label = self._record_factory_label()
+        return (
+            f"Validation failed for record #{index}"
+            f"{f' ({model_label})' if model_label else ''} "
+            f"with {len(errors_for_tracking)} error(s): {', '.join(messages)}"
+        )
+
+    def _log_validation_summary(self, *, total: int, valid: int) -> None:
+        rejected = total - valid
+        if not rejected:
+            return
+        self.logger.info(
+            "Validation rejected %d record(s) out of %d",
+            rejected,
+            total,
+        )
+        self.logger.info(
+            "Validation filtered records: %d -> %d",
+            total,
+            valid,
+        )
 
     def _source_metadata(self) -> dict[str, object]:
         return {
