@@ -74,38 +74,53 @@ def _add_places_from_raw_location(
     seen_places: set[str],
 ) -> None:
     if isinstance(location_raw, dict):
-        raw_places = location_raw.get("places")
-        if isinstance(raw_places, list):
-            for place in raw_places:
-                if isinstance(place, dict):
-                    add_place(place.get("text"), place.get("url"), places, seen_places)
-                elif isinstance(place, str):
-                    add_place(place, None, places, seen_places)
-            return
-
-        if "text" in location_raw:
-            add_place(
-                location_raw.get("text"),
-                location_raw.get("url"),
-                places,
-                seen_places,
-            )
-            return
-
-        if "name" in location_raw:
-            add_place(location_raw.get("name"), None, places, seen_places)
+        if _add_places_from_raw_dict(location_raw, places, seen_places):
             return
 
     if isinstance(location_raw, list):
-        for place in location_raw:
-            if isinstance(place, dict):
-                add_place(place.get("text"), place.get("url"), places, seen_places)
-            elif isinstance(place, str):
-                add_place(place, None, places, seen_places)
+        _add_places_from_raw_list(location_raw, places, seen_places)
         return
 
     if isinstance(location_raw, str):
         add_place(location_raw, None, places, seen_places)
+
+
+def _add_places_from_raw_dict(
+    location_raw: dict[str, Any],
+    places: list[dict[str, Any]],
+    seen_places: set[str],
+) -> bool:
+    raw_places = location_raw.get("places")
+    if isinstance(raw_places, list):
+        _add_places_from_raw_list(raw_places, places, seen_places)
+        return True
+
+    if "text" in location_raw:
+        add_place(
+            location_raw.get("text"),
+            location_raw.get("url"),
+            places,
+            seen_places,
+        )
+        return True
+
+    if "name" in location_raw:
+        add_place(location_raw.get("name"), None, places, seen_places)
+        return True
+
+    return False
+
+
+def _add_places_from_raw_list(
+    raw_places: list[Any],
+    places: list[dict[str, Any]],
+    seen_places: set[str],
+) -> None:
+    for place in raw_places:
+        if isinstance(place, dict):
+            add_place(place.get("text"), place.get("url"), places, seen_places)
+        elif isinstance(place, str):
+            add_place(place, None, places, seen_places)
 
 
 def _extract_coordinates_and_loc_norm(

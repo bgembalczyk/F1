@@ -39,44 +39,56 @@ class CollapsibleTableParser:
         if not table:
             return None
 
-        # Extract the title from the first row
-        title_row = table.find("tr")
-        title = None
-        if title_row:
-            title_th = title_row.find("th")
-            if title_th:
-                title = clean_infobox_text(title_th.get_text(" ", strip=True))
-
-        # Parse all label-value rows
-        rows = []
-        for tr in table.find_all("tr"):
-            # Skip the title row
-            th_cells = tr.find_all("th")
-            td_cells = tr.find_all("td")
-
-            # If we have one th and one td, it's a label-value pair
-            if len(th_cells) == 1 and len(td_cells) == 1:
-                label = clean_infobox_text(th_cells[0].get_text(" ", strip=True))
-                value_cell = td_cells[0]
-
-                # Parse value based on label
-                if label in {"Active years", "Years active"}:
-                    value = self._delegate.parse_active_years(value_cell)
-                elif label == "Team":
-                    value = self._delegate.parse_teams(value_cell)
-                elif label in {"Starts", "Wins", "Podiums", "Points"}:
-                    value = self._delegate.parse_int_cell(value_cell)
-                elif label in {"First race", "Last race", "First win", "Last win"}:
-                    value = self._delegate.parse_race_event(value_cell)
-                else:
-                    value = self._delegate.parse_cell(value_cell)
-
-                rows.append({"label": label, "value": value})
-            # If we have a full-width row with colspan=2, it might be a stats table
-            elif len(td_cells) == 1 and td_cells[0].get("colspan") == "2":
-                nested_table = td_cells[0].find("table")
-                if nested_table:
-                    table_data = self._delegate.parse_nested_table(nested_table)
-                    rows.append({"table": table_data})
-
+        title = self._extract_title(table)
+        rows = self._parse_rows(table)
         return {"title": title, "rows": rows} if rows else None
+
+    def _extract_title(self, table: Tag) -> str | None:
+        title_row = table.find("tr")
+        if not title_row:
+            return None
+        title_th = title_row.find("th")
+        if not title_th:
+            return None
+        return clean_infobox_text(title_th.get_text(" ", strip=True))
+
+    def _parse_rows(self, table: Tag) -> list[dict[str, Any]]:
+        rows: list[dict[str, Any]] = []
+        for tr in table.find_all("tr"):
+            parsed = self._parse_table_row(tr)
+            if parsed is not None:
+                rows.append(parsed)
+        return rows
+
+    def _parse_table_row(self, tr: Tag) -> dict[str, Any] | None:
+        th_cells = tr.find_all("th")
+        td_cells = tr.find_all("td")
+
+        if len(th_cells) == 1 and len(td_cells) == 1:
+            return self._parse_label_value_row(th_cells[0], td_cells[0])
+        if len(td_cells) == 1 and td_cells[0].get("colspan") == "2":
+            return self._parse_nested_table_row(td_cells[0])
+        return None
+
+    def _parse_label_value_row(self, th_cell: Tag, value_cell: Tag) -> dict[str, Any]:
+        label = clean_infobox_text(th_cell.get_text(" ", strip=True))
+        value = self._parse_value_for_label(label, value_cell)
+        return {"label": label, "value": value}
+
+    def _parse_value_for_label(self, label: str | None, value_cell: Tag) -> Any:
+        if label in {"Active years", "Years active"}:
+            return self._delegate.parse_active_years(value_cell)
+        if label == "Team":
+            return self._delegate.parse_teams(value_cell)
+        if label in {"Starts", "Wins", "Podiums", "Points"}:
+            return self._delegate.parse_int_cell(value_cell)
+        if label in {"First race", "Last race", "First win", "Last win"}:
+            return self._delegate.parse_race_event(value_cell)
+        return self._delegate.parse_cell(value_cell)
+
+    def _parse_nested_table_row(self, cell: Tag) -> dict[str, Any] | None:
+        nested_table = cell.find("table")
+        if not nested_table:
+            return None
+        table_data = self._delegate.parse_nested_table(nested_table)
+        return {"table": table_data}

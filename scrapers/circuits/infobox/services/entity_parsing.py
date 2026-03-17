@@ -48,21 +48,39 @@ class CircuitEntityParser(CircuitTextProcessing):
         links: list[LinkRecord],
     ) -> list[dict[str, Any]] | dict[str, Any] | str | None:
         if len(links) > 1:
-            entities = self._links_to_entities(links)
-            if entities:
-                return entities
-            fallback = self._strip_lang_markers(", ".join(parts))
-            return fallback or None
+            return self._build_from_multiple_links(parts, links)
 
         if not links:
-            if len(parts) > 1:
-                return [{"text": part, "url": None} for part in parts]
-            return parts[0] if parts else None
+            return self._build_without_links(parts)
 
+        return self._build_from_single_link(parts, links[0])
+
+    def _build_from_multiple_links(
+        self,
+        parts: list[str],
+        links: list[LinkRecord],
+    ) -> list[dict[str, Any]] | str | None:
+        entities = self._links_to_entities(links)
+        if entities:
+            return entities
+        fallback = self._strip_lang_markers(", ".join(parts))
+        return fallback or None
+
+    @staticmethod
+    def _build_without_links(parts: list[str]) -> list[dict[str, Any]] | str | None:
         if len(parts) > 1:
-            return self._parts_to_entities(parts, links)
+            return [{"text": part, "url": None} for part in parts]
+        return parts[0] if parts else None
 
-        single = clean_link_record(links[0])
+    def _build_from_single_link(
+        self,
+        parts: list[str],
+        link: LinkRecord,
+    ) -> list[dict[str, Any]] | dict[str, Any] | str | None:
+        if len(parts) > 1:
+            return self._parts_to_entities(parts, [link])
+
+        single = clean_link_record(link)
         if single:
             result = dict(single)
             if parts:

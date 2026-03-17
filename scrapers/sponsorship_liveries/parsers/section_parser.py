@@ -218,11 +218,14 @@ class SponsorshipSectionParser:
     def _split_broader_records_by_scope(
         records: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
-        season_scoped = [r for r in records if r.get("_season_scoped_gp")]
+        season_scoped = SponsorshipSectionParser._season_scoped_records(records)
         if not season_scoped:
             return records
-
         return _BroaderScopeSplitter(records, season_scoped).split()
+
+    @staticmethod
+    def _season_scoped_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return [r for r in records if r.get("_season_scoped_gp")]
 
     @staticmethod
     def _team_name_from_heading(heading: Tag, headline: Tag) -> str:
@@ -303,20 +306,38 @@ class SponsorshipSectionParser:
         records: list[dict[str, Any]] = []
         seen_sections: set[str] = set()
         for heading, headline in self._collect_section_headings(soup):
-            section_id = headline.get("id")
-            if not section_id or section_id in seen_sections:
+            section_id = self._section_id_if_new(headline, seen_sections)
+            if not section_id:
                 continue
-            seen_sections.add(section_id)
-
-            team = self._team_name_from_heading(heading, headline)
-            if not self._section_has_table(heading, headline):
-                continue
-
-            section_record = self._parse_single_section_record(soup, section_id, team)
+            section_record = self._parse_section_heading_record(
+                soup,
+                heading,
+                headline,
+                section_id,
+            )
             if section_record:
                 records.append(section_record)
-
         return records
+
+    @staticmethod
+    def _section_id_if_new(headline: Tag, seen_sections: set[str]) -> str | None:
+        section_id = headline.get("id")
+        if not section_id or section_id in seen_sections:
+            return None
+        seen_sections.add(section_id)
+        return section_id
+
+    def _parse_section_heading_record(
+        self,
+        soup: BeautifulSoup,
+        heading: Tag,
+        headline: Tag,
+        section_id: str,
+    ) -> dict[str, Any] | None:
+        team = self._team_name_from_heading(heading, headline)
+        if not self._section_has_table(heading, headline):
+            return None
+        return self._parse_single_section_record(soup, section_id, team)
 
     @staticmethod
     def _collect_section_headings(soup: BeautifulSoup) -> list[tuple[Tag, Tag]]:

@@ -149,58 +149,77 @@ class InfoboxTitlesParser:
         <a href="/wiki/24_Hours_of_Le_Mans">24 Hours of Le Mans</a>
         (<a href="/wiki/1934_24_Hours_of_Le_Mans">1934</a>)
         """
-        victories: list[dict[str, Any]] = []
-
-        # Get text and check if it contains "Major victories"
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
         if "major victories" not in text.lower():
-            return victories
+            return []
 
-        # Extract all links from the cell
         all_links = self._link_extractor.extract_links(cell)
+        event_links, year_links = self._split_event_and_year_links(all_links)
+        return self._group_event_links_with_years(text, event_links, year_links)
 
-        # Filter out links that are years (4 digits)
-        event_links = []
-        year_links = []
-
+    @staticmethod
+    def _split_event_and_year_links(
+        all_links: list[dict[str, Any]],
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        event_links: list[dict[str, Any]] = []
+        year_links: list[dict[str, Any]] = []
         for link in all_links:
             link_text = link.get("text", "")
-            # Check if link text is a year
             if re.fullmatch(r"\d{4}", link_text):
                 year_links.append(link)
             else:
                 event_links.append(link)
+        return event_links, year_links
 
-        # Group event links with their associated year links
-        # Strategy: for each event link, find year links that come after it in the text
+    def _group_event_links_with_years(
+        self,
+        text: str,
+        event_links: list[dict[str, Any]],
+        year_links: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        victories: list[dict[str, Any]] = []
         for event_link in event_links:
-            event_text = event_link.get("text", "")
-
-            # Find this event in the text
-            event_index = text.find(event_text)
+            event_index = text.find(event_link.get("text", ""))
             if event_index < 0:
                 continue
-
-            # Find year links that appear after this event
-            associated_years = []
-            for year_link in year_links:
-                year_text = year_link.get("text", "")
-                year_index = text.find(year_text, event_index)
-                if year_index >= event_index:
-                    # Check if this year is before the next event
-                    # Find next event link position
-                    next_event_index = len(text)
-                    for other_event in event_links:
-                        if other_event == event_link:
-                            continue
-                        other_event_text = other_event.get("text", "")
-                        other_index = text.find(other_event_text, event_index + 1)
-                        if event_index < other_index < next_event_index:
-                            next_event_index = other_index
-
-                    if year_index < next_event_index:
-                        associated_years.append(year_link)
-
+            next_event_index = self._next_event_index(text, event_links, event_link, event_index)
+            associated_years = self._find_years_for_event(
+                text,
+                year_links,
+                event_index,
+                next_event_index,
+            )
             victories.append({"title": event_link, "years": associated_years})
-
         return victories
+
+    @staticmethod
+    def _next_event_index(
+        text: str,
+        event_links: list[dict[str, Any]],
+        current_event: dict[str, Any],
+        event_index: int,
+    ) -> int:
+        next_event_index = len(text)
+        for other_event in event_links:
+            if other_event == current_event:
+                continue
+            other_event_text = other_event.get("text", "")
+            other_index = text.find(other_event_text, event_index + 1)
+            if event_index < other_index < next_event_index:
+                next_event_index = other_index
+        return next_event_index
+
+    @staticmethod
+    def _find_years_for_event(
+        text: str,
+        year_links: list[dict[str, Any]],
+        event_index: int,
+        next_event_index: int,
+    ) -> list[dict[str, Any]]:
+        associated_years: list[dict[str, Any]] = []
+        for year_link in year_links:
+            year_text = year_link.get("text", "")
+            year_index = text.find(year_text, event_index)
+            if event_index <= year_index < next_event_index:
+                associated_years.append(year_link)
+        return associated_years
