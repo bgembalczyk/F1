@@ -1,4 +1,3 @@
-import json
 from pathlib import Path
 
 from scrapers.base.run_config import RunConfig
@@ -6,7 +5,6 @@ from scrapers.wiki.application import ConstructorsMirrorService
 from scrapers.wiki.application import LayerOneExecutor
 from scrapers.wiki.application import LayerZeroExecutor
 from scrapers.wiki.application import LayerZeroMergeService
-from scrapers.wiki.seed_contract_adapter import SeedRecordContractAdapter
 from scrapers.wiki.seed_registry import ListJobRegistryEntry
 from scrapers.wiki.seed_registry import SeedRegistryEntry
 
@@ -123,7 +121,7 @@ def test_constructors_mirror_service_mirrors_json_to_targets(tmp_path: Path) -> 
     ]
 
 
-def test_layer_zero_executor_runs_merge_after_jobs(tmp_path: Path) -> None:
+def test_layer_zero_executor_runs_merge_after_jobs() -> None:
     merge_calls: list[Path] = []
     merge_service = LayerZeroMergeService(
         merge_function=lambda base_wiki_dir: merge_calls.append(base_wiki_dir),
@@ -159,34 +157,26 @@ def test_layer_zero_executor_runs_merge_after_jobs(tmp_path: Path) -> None:
         ) -> dict[str, object]:
             return {}
 
-    def _run_and_export(scraper_cls, json_rel, *_args, **_kwargs):
-        run_calls.append(scraper_cls)
-        output_path = base_wiki_dir / json_rel
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_path.write_text(
-            json.dumps([{"name": "A", "url": "https://example.com/a"}]),
-            encoding="utf-8",
-        )
-
     executor = LayerZeroExecutor(
         list_job_registry=(job,),
         validate_list_registry=lambda registry: None,
         run_config_factory_map_builder=dict,
         default_config_factory=_DefaultConfigFactory(),
-        run_and_export_function=_run_and_export,
+        run_and_export_function=lambda scraper_cls, *_args, **_kwargs: run_calls.append(
+            scraper_cls,
+        ),
         constructors_mirror_service=constructors_mirror_service,
         merge_service=merge_service,
         current_constructors_scraper_name="CurrentConstructorsListScraper",
         year_provider=lambda: 2026,
-        seed_record_adapter=SeedRecordContractAdapter(),
     )
 
     run_config = RunConfig(
         output_dir=Path("/tmp"),
         include_urls=True,
-        debug_dir=tmp_path / "debug",
+        debug_dir=Path("/tmp/debug"),
     )
-    base_wiki_dir = tmp_path / "wiki"
+    base_wiki_dir = Path("/tmp/wiki")
     executor.run(run_config, base_wiki_dir)
 
     assert run_calls == [CurrentConstructorsListScraper]
@@ -194,11 +184,6 @@ def test_layer_zero_executor_runs_merge_after_jobs(tmp_path: Path) -> None:
     assert mirror_calls == [
         (
             base_wiki_dir,
-            base_wiki_dir
-            / "layers"
-            / "0_layer"
-            / "constructors"
-            / "raw"
-            / "f1_constructors_2026.json",
+            Path("/tmp/wiki/layers/0_layer/constructors/raw/f1_constructors_2026.json"),
         ),
     ]
