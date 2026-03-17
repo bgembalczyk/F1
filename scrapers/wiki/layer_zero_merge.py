@@ -113,152 +113,216 @@ def _transform_record(domain: str, source_name: str, record: object) -> object:
     if not isinstance(record, dict):
         return record
 
-    transformed = dict(record)
+    transformed = _transform_tyre_manufacturers(source_name, dict(record))
+    transformed = _transform_constructor_domain(domain, source_name, transformed)
+    transformed = _transform_circuits_domain(domain, transformed)
+    transformed = _transform_engines_domain(domain, source_name, transformed)
+    transformed = _transform_grands_prix_domain(domain, transformed)
+    transformed = _transform_teams_domain(domain, source_name, transformed)
+    transformed = _transform_drivers_domain(domain, source_name, transformed)
+    transformed = _transform_races_domain(domain, source_name, transformed)
+    return transformed
 
-    if source_name == TYRE_MANUFACTURERS_SOURCE and "manufacturers" in transformed:
+
+def _transform_tyre_manufacturers(
+    source_name: str,
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    if source_name != TYRE_MANUFACTURERS_SOURCE:
+        return transformed
+
+    if "manufacturers" in transformed:
         transformed["tyre_manufacturers"] = transformed.pop("manufacturers")
-    if (
-        source_name == TYRE_MANUFACTURERS_SOURCE
-        and isinstance(transformed.get("seasons"), list)
-        and len(transformed["seasons"]) == 1
-    ):
+    seasons = transformed.get("seasons")
+    if isinstance(seasons, list) and len(seasons) == 1:
         transformed["season"] = transformed.pop("seasons")[0]
+    return transformed
 
-    if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
-        if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
-            constructor_text = transformed.get("constructor")
-            constructor_url = transformed.get("constructor_url")
-            transformed = {
-                "constructor": {
-                    "text": constructor_text,
-                    "url": constructor_url,
-                },
-                "racing_series": {
-                    "AAA_national_championship": [],
-                    "formula_one": {
-                        "status": "former",
-                        "indianapolis_only": True,
-                    },
-                },
-            }
-        elif source_name == FORMER_CONSTRUCTORS_SOURCE:
-            constructor = transformed.get("constructor")
-            formula_one = {
-                key: value for key, value in transformed.items() if key != "constructor"
-            }
-            formula_one["status"] = "former"
-            transformed = {
-                "constructor": constructor,
-                "racing_series": _build_racing_series(formula_one),
-            }
-        else:
-            constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
-            if domain == "constructors" and re.fullmatch(
-                r"f1_constructors_\d{4}\.json",
-                source_name,
-            ):
-                constructor_fields.discard("engine")
 
-            _move_fields_to_formula_one(transformed, constructor_fields)
-            if "racing_series" not in transformed:
-                transformed["status"] = "active"
-                transformed["series"] = FORMULA_ONE_SERIES.copy()
-            else:
-                racing_series = transformed.get("racing_series")
-                if not isinstance(racing_series, dict):
-                    racing_series = {}
-                    transformed["racing_series"] = racing_series
-                formula_one = racing_series.setdefault("formula_one", {})
-                formula_one.setdefault("status", "active")
+def _transform_constructor_domain(
+    domain: str,
+    source_name: str,
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    if domain not in CHASSIS_CONSTRUCTOR_DOMAINS:
+        return transformed
 
-    if domain == "circuits":
-        _move_fields_to_formula_one(transformed, CIRCUITS_FORMULA_ONE_FIELDS)
-        if "racing_series" not in transformed:
-            transformed["series"] = FORMULA_ONE_SERIES.copy()
+    if source_name == INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE:
+        return _transform_indianapolis_only_constructor(transformed)
+    if source_name == FORMER_CONSTRUCTORS_SOURCE:
+        return _transform_former_constructor(transformed)
 
-    if domain == "engines":
-        if source_name == "f1_indianapolis_only_engine_manufacturers.json":
-            transformed["racing_series"] = {
-                "AAA_national_championship": [],
-                "formula_one": {
-                    "status": "former",
-                    "indianapolis_only": True,
-                },
-            }
-        elif source_name == "f1_engine_manufacturers.json":
-            _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
+    constructor_fields = set(CONSTRUCTORS_FORMULA_ONE_FIELDS)
+    if domain == "constructors" and re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
+        constructor_fields.discard("engine")
 
+    _move_fields_to_formula_one(transformed, constructor_fields)
+    _ensure_constructor_status(transformed)
+    return transformed
+
+
+def _transform_indianapolis_only_constructor(
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    return {
+        "constructor": {
+            "text": transformed.get("constructor"),
+            "url": transformed.get("constructor_url"),
+        },
+        "racing_series": {
+            "AAA_national_championship": [],
+            "formula_one": {
+                "status": "former",
+                "indianapolis_only": True,
+            },
+        },
+    }
+
+
+def _transform_former_constructor(transformed: dict[str, object]) -> dict[str, object]:
+    constructor = transformed.get("constructor")
+    formula_one = {key: value for key, value in transformed.items() if key != "constructor"}
+    formula_one["status"] = "former"
+    return {
+        "constructor": constructor,
+        "racing_series": _build_racing_series(formula_one),
+    }
+
+
+def _ensure_constructor_status(transformed: dict[str, object]) -> None:
+    if "racing_series" not in transformed:
+        transformed["status"] = "active"
+        transformed["series"] = FORMULA_ONE_SERIES.copy()
+        return
+
+    racing_series = transformed.get("racing_series")
+    if not isinstance(racing_series, dict):
+        racing_series = {}
+        transformed["racing_series"] = racing_series
+    formula_one = racing_series.setdefault("formula_one", {})
+    formula_one.setdefault("status", "active")
+
+
+def _transform_circuits_domain(
+    domain: str,
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    if domain != "circuits":
+        return transformed
+    _move_fields_to_formula_one(transformed, CIRCUITS_FORMULA_ONE_FIELDS)
+    if "racing_series" not in transformed:
+        transformed["series"] = FORMULA_ONE_SERIES.copy()
+    return transformed
+
+
+def _transform_engines_domain(
+    domain: str,
+    source_name: str,
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    if domain != "engines":
+        return transformed
+    if source_name == "f1_indianapolis_only_engine_manufacturers.json":
+        transformed["racing_series"] = {
+            "AAA_national_championship": [],
+            "formula_one": {"status": "former", "indianapolis_only": True},
+        }
+    elif source_name == "f1_engine_manufacturers.json":
+        _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)
+    return transformed
+
+
+def _transform_grands_prix_domain(
+    domain: str,
+    transformed: dict[str, object],
+) -> dict[str, object]:
     if domain == "grands_prix":
         _move_fields_to_formula_one(transformed, GRANDS_PRIX_FORMULA_ONE_FIELDS)
+    return transformed
 
-    if domain == "teams":
-        if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
-            transformed = {
-                "team": transformed.get("constructor"),
-                "racing_series": _build_racing_series({**transformed}),
-            }
-        if source_name == "f1_sponsorship_liveries.json" and "liveries" in transformed:
-            transformed["racing_series"] = _build_racing_series(
-                {"liveries": transformed.pop("liveries")},
-            )
-        if source_name == "f1_privateer_teams.json":
-            formula_one = {
-                key: transformed.pop(key) for key in ("seasons",) if key in transformed
-            }
-            formula_one["privateer"] = True
-            transformed["racing_series"] = _build_racing_series(formula_one)
 
-    if domain == "drivers":
-        if source_name == "f1_drivers.json":
-            driver = transformed.pop("driver", None)
-            nationality = transformed.pop("nationality", None)
-            formula_one = _normalize_driver_series_stats(transformed)
-            transformed = {
-                "driver": driver,
-                "nationality": nationality,
-                "racing_series": _build_racing_series(formula_one),
-            }
+def _transform_teams_domain(
+    domain: str,
+    source_name: str,
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    if domain != "teams":
+        return transformed
+    if re.fullmatch(r"f1_constructors_\d{4}\.json", source_name):
+        transformed = {
+            "team": transformed.get("constructor"),
+            "racing_series": _build_racing_series({**transformed}),
+        }
+    if source_name == "f1_sponsorship_liveries.json" and "liveries" in transformed:
+        transformed["racing_series"] = _build_racing_series({"liveries": transformed.pop("liveries")})
+    if source_name == "f1_privateer_teams.json":
+        formula_one = {key: transformed.pop(key) for key in ("seasons",) if key in transformed}
+        formula_one["privateer"] = True
+        transformed["racing_series"] = _build_racing_series(formula_one)
+    return transformed
 
-        if source_name == "female_drivers.json":
-            driver = transformed.pop("driver", None)
-            formula_one = _normalize_driver_series_stats(transformed)
-            transformed = {
-                "driver": driver,
-                "gender": "female",
-                "racing_series": _build_racing_series(formula_one),
-            }
 
-        if source_name == "f1_driver_fatalities.json":
-            death_fields = {
-                key: transformed.pop(key)
-                for key in ("date", "age")
-                if key in transformed
-            }
-            crash_fields = {
-                key: transformed.pop(key)
-                for key in ("event", "circuit", "car", "session")
-                if key in transformed
-            }
-            transformed["death"] = {
-                **death_fields,
-                "crash": crash_fields,
-            }
+def _transform_drivers_domain(
+    domain: str,
+    source_name: str,
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    if domain != "drivers":
+        return transformed
+    if source_name == "f1_drivers.json":
+        return _transform_f1_driver(transformed)
+    if source_name == "female_drivers.json":
+        return _transform_female_driver(transformed)
+    if source_name == "f1_driver_fatalities.json":
+        _attach_driver_death_data(transformed)
+    return transformed
 
-    if domain == "races":
-        if source_name == "f1_red_flagged_world_championship_races.json":
-            transformed["championship"] = True
-        if source_name == "f1_red_flagged_non_championship_races.json":
-            transformed["championship"] = False
-        transformed["red_flag"] = _extract_red_flag(transformed)
-        for key in (
-            "lap",
-            "restart_status",
-            "winner",
-            "incident",
-            "failed_to_make_restart",
-        ):
-            transformed.pop(key, None)
 
+def _transform_f1_driver(transformed: dict[str, object]) -> dict[str, object]:
+    driver = transformed.pop("driver", None)
+    nationality = transformed.pop("nationality", None)
+    formula_one = _normalize_driver_series_stats(transformed)
+    return {
+        "driver": driver,
+        "nationality": nationality,
+        "racing_series": _build_racing_series(formula_one),
+    }
+
+
+def _transform_female_driver(transformed: dict[str, object]) -> dict[str, object]:
+    driver = transformed.pop("driver", None)
+    formula_one = _normalize_driver_series_stats(transformed)
+    return {
+        "driver": driver,
+        "gender": "female",
+        "racing_series": _build_racing_series(formula_one),
+    }
+
+
+def _attach_driver_death_data(transformed: dict[str, object]) -> None:
+    death_fields = {key: transformed.pop(key) for key in ("date", "age") if key in transformed}
+    crash_fields = {
+        key: transformed.pop(key)
+        for key in ("event", "circuit", "car", "session")
+        if key in transformed
+    }
+    transformed["death"] = {**death_fields, "crash": crash_fields}
+
+
+def _transform_races_domain(
+    domain: str,
+    source_name: str,
+    transformed: dict[str, object],
+) -> dict[str, object]:
+    if domain != "races":
+        return transformed
+    if source_name == "f1_red_flagged_world_championship_races.json":
+        transformed["championship"] = True
+    if source_name == "f1_red_flagged_non_championship_races.json":
+        transformed["championship"] = False
+    transformed["red_flag"] = _extract_red_flag(transformed)
+    for key in ("lap", "restart_status", "winner", "incident", "failed_to_make_restart"):
+        transformed.pop(key, None)
     return transformed
 
 
@@ -292,44 +356,52 @@ def _driver_record_key(record: object) -> str | None:
 
 def _merge_driver_values(existing: object, incoming: object) -> object:
     if isinstance(existing, dict) and isinstance(incoming, dict):
-        if "race_entries" not in incoming and "entries" in incoming:
-            incoming = {**incoming, "race_entries": incoming["entries"]}
-        if "race_starts" not in incoming and "starts" in incoming:
-            incoming = {**incoming, "race_starts": incoming["starts"]}
-
-        merged = dict(existing)
-        for key, value in incoming.items():
-            if key in {"entries", "starts"}:
-                continue
-            if key in merged:
-                merged[key] = _merge_driver_values(merged[key], value)
-            else:
-                merged[key] = value
-        return merged
-
+        return _merge_driver_dict_values(existing, incoming)
     if isinstance(existing, list) and isinstance(incoming, list):
-        merged = list(existing)
-        seen = {
-            json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
-            for item in merged
-        }
-        for item in incoming:
-            serialized = json.dumps(
-                item,
-                sort_keys=True,
-                ensure_ascii=False,
-                default=str,
-            )
-            if serialized in seen:
-                continue
-            seen.add(serialized)
-            merged.append(item)
-        return merged
-
+        return _merge_list_values(existing, incoming)
     if existing in (None, "", []):
         return incoming
-
     return existing
+
+
+def _merge_driver_dict_values(
+    existing: dict[str, object],
+    incoming: dict[str, object],
+) -> dict[str, object]:
+    normalized_incoming = _normalize_incoming_driver_stats(incoming)
+    merged = dict(existing)
+    for key, value in normalized_incoming.items():
+        if key in {"entries", "starts"}:
+            continue
+        if key in merged:
+            merged[key] = _merge_driver_values(merged[key], value)
+        else:
+            merged[key] = value
+    return merged
+
+
+def _normalize_incoming_driver_stats(incoming: dict[str, object]) -> dict[str, object]:
+    normalized = dict(incoming)
+    if "race_entries" not in normalized and "entries" in normalized:
+        normalized["race_entries"] = normalized["entries"]
+    if "race_starts" not in normalized and "starts" in normalized:
+        normalized["race_starts"] = normalized["starts"]
+    return normalized
+
+
+def _merge_list_values(existing: list[object], incoming: list[object]) -> list[object]:
+    merged = list(existing)
+    seen = {
+        json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
+        for item in merged
+    }
+    for item in incoming:
+        serialized = json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
+        if serialized in seen:
+            continue
+        seen.add(serialized)
+        merged.append(item)
+    return merged
 
 
 def _merge_values(existing: object, incoming: object) -> object:
@@ -343,23 +415,7 @@ def _merge_values(existing: object, incoming: object) -> object:
         return merged
 
     if isinstance(existing, list) and isinstance(incoming, list):
-        merged = list(existing)
-        seen = {
-            json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
-            for item in merged
-        }
-        for item in incoming:
-            serialized = json.dumps(
-                item,
-                sort_keys=True,
-                ensure_ascii=False,
-                default=str,
-            )
-            if serialized in seen:
-                continue
-            seen.add(serialized)
-            merged.append(item)
-        return merged
+        return _merge_list_values(existing, incoming)
 
     if existing in (None, "", []):
         return incoming
@@ -514,15 +570,8 @@ def _season_years(value: object) -> set[int]:
 
 
 def _nest_team_liveries_in_seasons(record: object) -> object:
-    if not isinstance(record, dict):
-        return record
-
-    racing_series = record.get("racing_series")
-    if not isinstance(racing_series, dict):
-        return record
-
-    formula_one = racing_series.get("formula_one")
-    if not isinstance(formula_one, dict):
+    formula_one = _formula_one_series(record)
+    if formula_one is None:
         return record
 
     seasons = formula_one.get("seasons")
@@ -530,47 +579,73 @@ def _nest_team_liveries_in_seasons(record: object) -> object:
     if not isinstance(seasons, list) or not isinstance(liveries, list):
         return record
 
+    remaining_liveries = _distribute_liveries_across_seasons(seasons, liveries)
+    if remaining_liveries:
+        formula_one["liveries"] = remaining_liveries
+    else:
+        formula_one.pop("liveries", None)
+    return record
+
+
+def _formula_one_series(record: object) -> dict[str, object] | None:
+    if not isinstance(record, dict):
+        return None
+    racing_series = record.get("racing_series")
+    if not isinstance(racing_series, dict):
+        return None
+    formula_one = racing_series.get("formula_one")
+    return formula_one if isinstance(formula_one, dict) else None
+
+
+def _distribute_liveries_across_seasons(
+    seasons: list[object],
+    liveries: list[object],
+) -> list[object]:
     remaining_liveries: list[object] = []
     for livery in liveries:
         if not isinstance(livery, dict):
             remaining_liveries.append(livery)
             continue
-
-        livery_years = _season_years(livery.get("season"))
-        livery_payload = {
-            key: value for key, value in livery.items() if key != "season"
-        }
-        matched = False
-
-        for season in seasons:
-            if not isinstance(season, dict):
-                continue
-            season_year = season.get("year")
-            if not isinstance(season_year, int) or season_year not in livery_years:
-                continue
-
-            matched = True
-            existing_liveries = season.get("liveries")
-            if isinstance(existing_liveries, list):
-                existing_liveries.append(livery_payload)
-                continue
-
-            existing_livery = season.pop("livery", None)
-            season_liveries: list[object] = []
-            if existing_livery is not None:
-                season_liveries.append(existing_livery)
-            season_liveries.append(livery_payload)
-            season["liveries"] = season_liveries
-
-        if not matched:
+        if not _attach_livery_to_matching_seasons(seasons, livery):
             remaining_liveries.append(livery)
+    return remaining_liveries
 
-    if remaining_liveries:
-        formula_one["liveries"] = remaining_liveries
-    else:
-        formula_one.pop("liveries", None)
 
-    return record
+def _attach_livery_to_matching_seasons(
+    seasons: list[object],
+    livery: dict[str, object],
+) -> bool:
+    livery_years = _season_years(livery.get("season"))
+    livery_payload = {key: value for key, value in livery.items() if key != "season"}
+    matched = False
+    for season in seasons:
+        if not _season_matches_livery_years(season, livery_years):
+            continue
+        matched = True
+        _append_livery_to_season(season, livery_payload)
+    return matched
+
+
+def _season_matches_livery_years(season: object, livery_years: set[int]) -> bool:
+    if not isinstance(season, dict):
+        return False
+    season_year = season.get("year")
+    return isinstance(season_year, int) and season_year in livery_years
+
+
+def _append_livery_to_season(season: object, livery_payload: dict[str, object]) -> None:
+    if not isinstance(season, dict):
+        return
+    existing_liveries = season.get("liveries")
+    if isinstance(existing_liveries, list):
+        existing_liveries.append(livery_payload)
+        return
+    existing_livery = season.pop("livery", None)
+    season_liveries: list[object] = []
+    if existing_livery is not None:
+        season_liveries.append(existing_livery)
+    season_liveries.append(livery_payload)
+    season["liveries"] = season_liveries
 
 
 def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
@@ -578,43 +653,54 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
     if not layer_zero_dir.exists():
         return
 
+    for domain_dir in _iter_mergeable_domain_dirs(layer_zero_dir):
+        merged_records = _load_domain_records(domain_dir)
+        if not merged_records:
+            continue
+        merged_records = _post_process_domain_records(domain_dir.name, merged_records)
+        _write_merged_domain_records(domain_dir, merged_records)
+
+
+def _iter_mergeable_domain_dirs(layer_zero_dir: Path) -> list[Path]:
+    domain_dirs: list[Path] = []
     for domain_dir in sorted(p for p in layer_zero_dir.iterdir() if p.is_dir()):
         raw_dir = domain_dir / "raw"
         if not raw_dir.exists() or not raw_dir.is_dir():
             continue
-
         if domain_dir.name in {"points", "rules"}:
             continue
+        domain_dirs.append(domain_dir)
+    return domain_dirs
 
-        merged_records: list[object] = []
-        for json_path in sorted(raw_dir.rglob("*.json")):
-            payload = json.loads(json_path.read_text(encoding="utf-8"))
-            merged_records.extend(
-                _iter_transformed_records(domain_dir.name, json_path.name, payload),
-            )
 
-        if not merged_records:
-            continue
+def _load_domain_records(domain_dir: Path) -> list[object]:
+    merged_records: list[object] = []
+    raw_dir = domain_dir / "raw"
+    for json_path in sorted(raw_dir.rglob("*.json")):
+        payload = json.loads(json_path.read_text(encoding="utf-8"))
+        merged_records.extend(_iter_transformed_records(domain_dir.name, json_path.name, payload))
+    return merged_records
 
-        if domain_dir.name == "drivers":
-            merged_records = _merge_duplicate_drivers(merged_records)
-            merged_records = sorted(merged_records, key=_driver_sort_key)
 
-        if domain_dir.name in CHASSIS_CONSTRUCTOR_DOMAINS:
-            merged_records = sorted(merged_records, key=_constructor_sort_key)
+def _post_process_domain_records(domain: str, records: list[object]) -> list[object]:
+    merged_records = records
+    if domain == "drivers":
+        merged_records = _merge_duplicate_drivers(merged_records)
+        merged_records = sorted(merged_records, key=_driver_sort_key)
+    if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
+        merged_records = sorted(merged_records, key=_constructor_sort_key)
+    if domain == "teams":
+        merged_records = _merge_duplicate_teams(merged_records)
+        merged_records = [_nest_team_liveries_in_seasons(record) for record in merged_records]
+        merged_records = sorted(merged_records, key=_team_sort_key)
+    if domain == "seasons":
+        merged_records = sorted(merged_records, key=_season_sort_key)
+    return merged_records
 
-        if domain_dir.name == "teams":
-            merged_records = _merge_duplicate_teams(merged_records)
-            merged_records = [
-                _nest_team_liveries_in_seasons(record) for record in merged_records
-            ]
-            merged_records = sorted(merged_records, key=_team_sort_key)
 
-        if domain_dir.name == "seasons":
-            merged_records = sorted(merged_records, key=_season_sort_key)
-
-        merged_path = domain_dir / f"{domain_dir.name}.json"
-        merged_path.write_text(
-            json.dumps(merged_records, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
+def _write_merged_domain_records(domain_dir: Path, merged_records: list[object]) -> None:
+    merged_path = domain_dir / f"{domain_dir.name}.json"
+    merged_path.write_text(
+        json.dumps(merged_records, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )

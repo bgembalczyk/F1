@@ -128,85 +128,115 @@ class ABCScraper(ABC):
 
         Zwraca zawsze listę ExportRecord (może być pusta).
         """
-        if not getattr(self, "url", None):
-            msg = "Scraper.url musi być ustawiony przed fetch()."
-            raise ValueError(msg)
+        self._validate_fetch_url()
+        run_id = self._start_run()
 
+        html = self._download_with_error_handling(run_id)
+        if html is None:
+            self._data = []
+            return self._data
+
+        data = self._parse_pipeline_with_error_handling(run_id, html)
+        if data is None:
+            self._data = []
+            return self._data
+
+        self._data = data
+        self.logger.debug("Scrape run %s finished", run_id)
+        return self._data
+
+
+    def _validate_fetch_url(self) -> None:
+        if getattr(self, "url", None):
+            return
+        msg = "Scraper.url musi być ustawiony przed fetch()."
+        raise ValueError(msg)
+
+    def _start_run(self) -> str:
         run_id = self._run_id or uuid4().hex
         self._run_id = run_id
         self._error_handler.set_run_id(run_id)
         self.logger.debug("Scrape run %s started for url=%s", run_id, self.url)
+        return run_id
 
+    def _download_with_error_handling(self, run_id: str) -> str | None:
         try:
             self.logger.debug("Scrape run %s: start download", run_id)
             html = self._download()
             self.logger.debug("Scrape run %s: finish download", run_id)
             self._write_step_quality_report(step_name="download", records=[])
+            return html
         except Exception as exc:
             error: Exception
             if isinstance(exc, ScraperError):
                 error = exc
             else:
                 error = self._wrap_network_error(exc)
-            if self._handle_scraper_error(error):
-                self._data = []
-                return self._data
-            if error is exc:
-                raise
-            raise error from exc
+            return self._handle_fetch_error(exc, error)
 
+    def _parse_pipeline_with_error_handling(
+        self,
+        run_id: str,
+        html: str,
+    ) -> list[ExportRecord] | None:
         try:
-            soup = BeautifulSoup(html, "html.parser")
-
-            self.logger.debug("Scrape run %s: start parse", run_id)
-            raw_records = self.parse(soup)
-            self.logger.debug("Scrape run %s: finish parse", run_id)
-            self._write_step_quality_report(
-                step_name="parse",
-                records=list(raw_records),
-            )
-
-            self.logger.debug("Scrape run %s: start normalize", run_id)
-            normalized_records = self._record_normalizer.normalize(list(raw_records))
-            self.logger.debug("Scrape run %s: finish normalize", run_id)
-            self._write_step_quality_report(
-                step_name="normalize",
-                records=to_dict_list(list(normalized_records)),
-            )
-            self.logger.debug("Scrape run %s: start transform", run_id)
-            transformed_records = self._apply_transformers(normalized_records)
-            self.logger.debug("Scrape run %s: finish transform", run_id)
-            self._write_step_quality_report(
-                step_name="transform",
-                records=to_dict_list(list(transformed_records)),
-            )
-            self.logger.debug("Scrape run %s: start validate", run_id)
-            validated_records = self.validate_records(transformed_records)
-            self.logger.debug("Scrape run %s: finish validate", run_id)
-            self._write_step_quality_report(
-                step_name="validate",
-                records=to_dict_list(list(validated_records)),
-            )
-            self.logger.debug("Scrape run %s: start post-process", run_id)
-            self._data = self.post_process_records(validated_records)
-            self.logger.debug("Scrape run %s: finish post-process", run_id)
-            self._write_step_quality_report(
-                step_name="post_process",
-                records=to_dict_list(list(self._data)),
-            )
+            return self._run_parse_pipeline(run_id, html)
         except Exception as exc:
             error = (
                 exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
             )
-            if self._handle_scraper_error(error):
-                self._data = []
-                return self._data
-            if error is exc:
-                raise
-            raise error from exc
+            return self._handle_fetch_error(exc, error)
 
-        self.logger.debug("Scrape run %s finished", run_id)
-        return self._data
+    def _run_parse_pipeline(self, run_id: str, html: str) -> list[ExportRecord]:
+        soup = BeautifulSoup(html, "html.parser")
+
+        self.logger.debug("Scrape run %s: start parse", run_id)
+        raw_records = self.parse(soup)
+        self.logger.debug("Scrape run %s: finish parse", run_id)
+        self._write_step_quality_report(
+            step_name="parse",
+            records=list(raw_records),
+        )
+
+        self.logger.debug("Scrape run %s: start normalize", run_id)
+        normalized_records = self._record_normalizer.normalize(list(raw_records))
+        self.logger.debug("Scrape run %s: finish normalize", run_id)
+        self._write_step_quality_report(
+            step_name="normalize",
+            records=to_dict_list(list(normalized_records)),
+        )
+
+        self.logger.debug("Scrape run %s: start transform", run_id)
+        transformed_records = self._apply_transformers(normalized_records)
+        self.logger.debug("Scrape run %s: finish transform", run_id)
+        self._write_step_quality_report(
+            step_name="transform",
+            records=to_dict_list(list(transformed_records)),
+        )
+
+        self.logger.debug("Scrape run %s: start validate", run_id)
+        validated_records = self.validate_records(transformed_records)
+        self.logger.debug("Scrape run %s: finish validate", run_id)
+        self._write_step_quality_report(
+            step_name="validate",
+            records=to_dict_list(list(validated_records)),
+        )
+
+        self.logger.debug("Scrape run %s: start post-process", run_id)
+        post_processed = self.post_process_records(validated_records)
+        self.logger.debug("Scrape run %s: finish post-process", run_id)
+        self._write_step_quality_report(
+            step_name="post_process",
+            records=to_dict_list(list(post_processed)),
+        )
+        return post_processed
+
+    def _handle_fetch_error(self, exc: Exception, error: Exception):
+        if self._handle_scraper_error(error):
+            return None
+        if error is exc:
+            raise
+        raise error from exc
 
     def get_data(self) -> list[ExportRecord]:
         """Zwróć dane - jeśli jeszcze nie ma, uruchom fetch()."""

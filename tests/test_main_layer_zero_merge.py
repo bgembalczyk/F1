@@ -22,6 +22,73 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
 ) -> None:
     base_wiki_dir = tmp_path / "data" / "wiki"
 
+    _seed_layer_zero_raw_data(base_wiki_dir)
+
+    merge_layer_zero_raw_outputs(base_wiki_dir)
+
+    circuits_merged = json.loads(
+        (base_wiki_dir / "layers" / "0_layer" / "circuits" / "circuits.json").read_text(
+            encoding="utf-8",
+        ),
+    )
+    constructors_merged = json.loads(
+        (
+            base_wiki_dir / "layers" / "0_layer" / "constructors" / "constructors.json"
+        ).read_text(
+            encoding="utf-8",
+        ),
+    )
+    drivers_merged = json.loads(
+        (base_wiki_dir / "layers" / "0_layer" / "drivers" / "drivers.json").read_text(
+            encoding="utf-8",
+        ),
+    )
+    races_merged = json.loads(
+        (base_wiki_dir / "layers" / "0_layer" / "races" / "races.json").read_text(
+            encoding="utf-8",
+        ),
+    )
+    engines_merged = json.loads(
+        (base_wiki_dir / "layers" / "0_layer" / "engines" / "engines.json").read_text(
+            encoding="utf-8",
+        ),
+    )
+    grands_prix_merged = json.loads(
+        (
+            base_wiki_dir / "layers" / "0_layer" / "grands_prix" / "grands_prix.json"
+        ).read_text(encoding="utf-8"),
+    )
+    teams_merged = json.loads(
+        (base_wiki_dir / "layers" / "0_layer" / "teams" / "teams.json").read_text(
+            encoding="utf-8",
+        ),
+    )
+    seasons_merged = json.loads(
+        (base_wiki_dir / "layers" / "0_layer" / "seasons" / "seasons.json").read_text(
+            encoding="utf-8",
+        ),
+    )
+    season_merged = json.loads(
+        (base_wiki_dir / "layers" / "0_layer" / "season" / "season.json").read_text(
+            encoding="utf-8",
+        ),
+    )
+
+    _assert_merged_outputs(
+        circuits_merged=circuits_merged,
+        constructors_merged=constructors_merged,
+        drivers_merged=drivers_merged,
+        races_merged=races_merged,
+        engines_merged=engines_merged,
+        grands_prix_merged=grands_prix_merged,
+        teams_merged=teams_merged,
+        seasons_merged=seasons_merged,
+        season_merged=season_merged,
+        base_wiki_dir=base_wiki_dir,
+    )
+
+
+def _seed_layer_zero_raw_data(base_wiki_dir: Path) -> None:
     _write_json(
         base_wiki_dir / "layers" / "0_layer" / "circuits" / "raw" / "a.json",
         [
@@ -415,7 +482,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             },
         ],
     )
-
+    
     _write_json(
         base_wiki_dir
         / "layers"
@@ -489,7 +556,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         base_wiki_dir / "layers" / "0_layer" / "points" / "raw" / "a.json",
         [{"points": "X"}],
     )
-
+    
     _write_json(
         base_wiki_dir
         / "layers"
@@ -499,62 +566,27 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         / "f1_tyre_manufacturers_by_season.json",
         [{"seasons": [1950], "manufacturers": ["Pirelli"]}],
     )
-
+    
     _write_json(
         base_wiki_dir / "layers" / "0_layer" / "seasons" / "raw" / "a.json",
         [{"season": 2026}, {"season": 1950}, {"season": 2005}],
     )
+    
+    
 
-    merge_layer_zero_raw_outputs(base_wiki_dir)
-
-    circuits_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "circuits" / "circuits.json").read_text(
-            encoding="utf-8",
-        ),
-    )
-    constructors_merged = json.loads(
-        (
-            base_wiki_dir / "layers" / "0_layer" / "constructors" / "constructors.json"
-        ).read_text(
-            encoding="utf-8",
-        ),
-    )
-    drivers_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "drivers" / "drivers.json").read_text(
-            encoding="utf-8",
-        ),
-    )
-    races_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "races" / "races.json").read_text(
-            encoding="utf-8",
-        ),
-    )
-    engines_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "engines" / "engines.json").read_text(
-            encoding="utf-8",
-        ),
-    )
-    grands_prix_merged = json.loads(
-        (
-            base_wiki_dir / "layers" / "0_layer" / "grands_prix" / "grands_prix.json"
-        ).read_text(encoding="utf-8"),
-    )
-    teams_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "teams" / "teams.json").read_text(
-            encoding="utf-8",
-        ),
-    )
-    seasons_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "seasons" / "seasons.json").read_text(
-            encoding="utf-8",
-        ),
-    )
-    season_merged = json.loads(
-        (base_wiki_dir / "layers" / "0_layer" / "season" / "season.json").read_text(
-            encoding="utf-8",
-        ),
-    )
-
+def _assert_merged_outputs(
+    *,
+    circuits_merged: list[dict[str, object]],
+    constructors_merged: list[dict[str, object]],
+    drivers_merged: list[dict[str, object]],
+    races_merged: list[dict[str, object]],
+    engines_merged: list[dict[str, object]],
+    grands_prix_merged: list[dict[str, object]],
+    teams_merged: list[dict[str, object]],
+    seasons_merged: list[dict[str, object]],
+    season_merged: list[dict[str, object]],
+    base_wiki_dir: Path,
+) -> None:
     assert circuits_merged == [
         {
             "circuit": "Monza",
@@ -608,7 +640,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             },
         },
     ]
-
+    
     female_driver = next(
         item for item in drivers_merged if item["driver"]["text"] == "Maria"
     )
@@ -621,12 +653,12 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
         item for item in drivers_merged if item["driver"]["text"] == "Maria"
     )
     assert female_driver["gender"] == "female"
-
+    
     ordered_driver_names = [item["driver"]["text"] for item in drivers_merged]
     assert ordered_driver_names.index("Lewis Hamilton") < ordered_driver_names.index(
         "Max Verstappen",
     )
-
+    
     fatality_driver = next(
         item for item in drivers_merged if item["driver"]["text"] == "X"
     )
@@ -640,7 +672,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             "session": "Practice",
         },
     }
-
+    
     amati_driver = next(
         item
         for item in drivers_merged
@@ -653,7 +685,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     assert amati_driver["teams"] == [
         {"text": "Brabham", "url": "https://en.wikipedia.org/wiki/Brabham"},
     ]
-
+    
     bob_anderson = next(
         item
         for item in drivers_merged
@@ -662,7 +694,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     )
     assert bob_anderson["death"]["date"] == "1967-08-14"
     assert bob_anderson["race_entries"] == 29
-
+    
     world_race = next(item for item in races_merged if "grand_prix" in item)
     assert world_race["championship"] is True
     assert world_race["red_flag"] == {
@@ -673,13 +705,13 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
     assert "lap" not in world_race
     assert "winner" not in world_race
     assert "failed_to_make_restart" not in world_race
-
+    
     non_champ_race = next(item for item in races_merged if "event" in item)
     assert non_champ_race["championship"] is False
     assert non_champ_race["red_flag"] == {"lap": 15, "incident": "Crash"}
     assert "lap" not in non_champ_race
     assert "incident" not in non_champ_race
-
+    
     assert engines_merged == [
         {
             "manufacturer": "Ferrari",
@@ -701,7 +733,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             },
         },
     ]
-
+    
     assert grands_prix_merged == [
         {
             "grand_prix": "Italian",
@@ -713,14 +745,14 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             },
         },
     ]
-
+    
     ferrari_team = next(item for item in teams_merged if item["team"] == "Ferrari")
     assert ferrari_team["racing_series"] == {
         "formula_one": {
             "liveries": ["Marlboro"],
         },
     }
-
+    
     rob_walker_team = next(
         item for item in teams_merged if item["team"] == "Rob Walker"
     )
@@ -730,7 +762,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             "privateer": True,
         },
     }
-
+    
     team_x = next(
         item
         for item in teams_merged
@@ -749,7 +781,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             "wins": 1,
         },
     }
-
+    
     cadillac_team = next(
         item
         for item in teams_merged
@@ -771,7 +803,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             "liveries": [{"main_colours": ["White", "Black"]}],
         },
     }
-
+    
     audi_team = next(item for item in teams_merged if _team_text(item) == "Audi")
     assert audi_team["team"] == {
         "text": "Audi",
@@ -783,7 +815,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             "liveries": [{"main_colours": ["Silver", "Red", "Black"]}],
         },
     }
-
+    
     racing_bulls = next(
         item for item in teams_merged if _team_text(item) == "Racing Bulls"
     )
@@ -816,7 +848,7 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             "wins": 0,
         },
     }
-
+    
     aston_martin = next(
         item for item in teams_merged if _team_text(item) == "Aston Martin"
     )
@@ -836,12 +868,13 @@ def test_merge_layer_zero_raw_outputs_merges_and_transforms_domain_json_files(
             ],
         },
     }
-
+    
     assert seasons_merged == [{"season": 1950}, {"season": 2005}, {"season": 2026}]
-
+    
     assert season_merged == [{"season": 1950, "tyre_manufacturers": ["Pirelli"]}]
-
+    
     assert not (base_wiki_dir / "layers" / "0_layer" / "rules" / "rules.json").exists()
     assert not (
         base_wiki_dir / "layers" / "0_layer" / "points" / "points.json"
     ).exists()
+    

@@ -25,6 +25,7 @@ from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
 from scrapers.seasons.postprocess import SeasonSectionContractPostProcessor
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
+from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 from scrapers.seasons.sections.calendar import SeasonCalendarSectionParser
 from scrapers.seasons.sections.results import SeasonResultsSectionParser
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
@@ -132,7 +133,7 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
             .records
         )
 
-        return self._assembler.assemble(
+        sections = SeasonRecordSections(
             entries=self._entries_parser.parse(soup, self.season_year),
             free_practice_drivers=self._free_practice_parser.parse(soup),
             calendar=calendar_data,
@@ -174,6 +175,7 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
             regulation_changes=text_payload.get("regulation_changes", []),
             mid_season_changes=text_payload.get("mid_season_changes", []),
         )
+        return self._assembler.assemble(sections)
 
     @staticmethod
     def _extract_year_from_url(url: str) -> int | None:
