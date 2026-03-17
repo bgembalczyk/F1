@@ -164,14 +164,13 @@ class ABCScraper(ABC):
             html = self._download()
             self.logger.debug("Scrape run %s: finish download", run_id)
             self._write_step_quality_report(step_name="download", records=[])
-            return html
-        except Exception as exc:
-            error: Exception
-            if isinstance(exc, ScraperError):
-                error = exc
-            else:
-                error = self._wrap_network_error(exc)
+        except ScraperError as error:
+            return self._handle_fetch_error(error, error)
+        except (RuntimeError, ValueError, OSError) as exc:
+            error = self._wrap_network_error(exc)
             return self._handle_fetch_error(exc, error)
+        else:
+            return html
 
     def _parse_pipeline_with_error_handling(
         self,
@@ -180,10 +179,10 @@ class ABCScraper(ABC):
     ) -> list[ExportRecord] | None:
         try:
             return self._run_parse_pipeline(run_id, html)
-        except Exception as exc:
-            error = (
-                exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
-            )
+        except ScraperError as error:
+            return self._handle_fetch_error(error, error)
+        except (AttributeError, KeyError, RuntimeError, TypeError, ValueError) as exc:
+            error = self._wrap_parse_error(exc)
             return self._handle_fetch_error(exc, error)
 
     def _run_parse_pipeline(self, run_id: str, html: str) -> list[ExportRecord]:
@@ -234,7 +233,7 @@ class ABCScraper(ABC):
         if self._handle_scraper_error(error):
             return
         if error is exc:
-            raise
+            raise exc
         raise error from exc
 
     def get_data(self) -> list[ExportRecord]:

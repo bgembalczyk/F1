@@ -90,7 +90,7 @@ class _OptionsScraperAdapter:
 
 
 class _LegacyScraperAdapter:
-    def supports(self, ctor: _ConstructorIntrospection) -> bool:
+    def supports(self, _ctor: _ConstructorIntrospection) -> bool:
         return True
 
     def create(
