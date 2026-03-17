@@ -460,6 +460,99 @@ def test_section_parser_divides_into_sub_sections():
     assert sub_sections[1]["section_label"] == "Sub A"
 
 
+def test_sub_sub_section_parser_snapshot_structure_regression() -> None:
+    html = """
+    <div>
+      <p>Intro</p>
+      <div class="mw-heading mw-heading5"><h5 id="Sub5_One">Sub5 One</h5></div>
+      <p>Content 5-1</p>
+    </div>
+    """
+    soup = _make_soup(html)
+    parser = SubSubSectionParser()
+
+    assert parser.parse(soup.find("div")) == {
+        "sub_sub_sub_sections": [
+            {
+                "section_label": "(Top)",
+                "section_id": "top",
+                "elements": [
+                    {
+                        "kind": "paragraph",
+                        "source_section_id": "top",
+                        "confidence": 1.0,
+                        "raw_html_fragment": "<p>Intro</p>",
+                        "data": {"text": "Intro"},
+                        "type": "paragraph",
+                    },
+                ],
+            },
+            {
+                "section_label": "Sub5 One",
+                "section_id": "sub5_one",
+                "elements": [
+                    {
+                        "kind": "paragraph",
+                        "source_section_id": "sub5_one",
+                        "confidence": 1.0,
+                        "raw_html_fragment": "<p>Content 5-1</p>",
+                        "data": {"text": "Content 5-1"},
+                        "type": "paragraph",
+                    },
+                ],
+            },
+        ],
+    }
+
+
+def test_sub_section_parser_snapshot_structure_regression() -> None:
+    html = """
+    <div>
+      <p>Intro</p>
+      <div class="mw-heading mw-heading4"><h4 id="Sub4_One">Sub4 One</h4></div>
+      <p>Content 4-1</p>
+      <div class="mw-heading mw-heading5"><h5 id="Sub5_One">Sub5 One</h5></div>
+      <p>Content 5-1</p>
+    </div>
+    """
+    soup = _make_soup(html)
+    parser = SubSectionParser()
+    result = parser.parse(soup.find("div"))
+
+    assert result["sub_sub_sections"][0]["section_id"] == "top"
+    assert result["sub_sub_sections"][0]["sub_sub_sub_sections"][0]["section_id"] == "top__top"
+    assert result["sub_sub_sections"][1]["section_id"] == "sub4_one"
+    assert result["sub_sub_sections"][1]["sub_sub_sub_sections"][1]["section_id"] == "sub5_one"
+
+
+def test_section_parser_snapshot_structure_regression() -> None:
+    html = """
+    <div>
+      <p>Intro</p>
+      <div class="mw-heading mw-heading3"><h3 id="Sub3_One">Sub3 One</h3></div>
+      <p>Content 3-1</p>
+      <div class="mw-heading mw-heading4"><h4 id="Sub4_One">Sub4 One</h4></div>
+      <p>Content 4-1</p>
+      <div class="mw-heading mw-heading5"><h5 id="Sub5_One">Sub5 One</h5></div>
+      <p>Content 5-1</p>
+    </div>
+    """
+    soup = _make_soup(html)
+    parser = SectionParser()
+    result = parser.parse(soup.find("div"))
+
+    assert result["sub_sections"][0]["section_id"] == "top"
+    assert result["sub_sections"][1]["section_id"] == "sub3_one"
+    assert result["sub_sections"][1]["sub_sub_sections"][0]["section_id"] == "sub3_one__top"
+    assert result["sub_sections"][1]["sub_sub_sections"][1]["section_id"] == "sub4_one"
+    assert (
+        result["sub_sections"][1]["sub_sub_sections"][1]["sub_sub_sub_sections"][1][
+            "section_id"
+        ]
+        == "sub5_one"
+    )
+
+
 # ---------------------------------------------------------------------------
 # ContentTextParser
 # ---------------------------------------------------------------------------
