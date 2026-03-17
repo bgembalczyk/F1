@@ -1,3 +1,4 @@
+# ruff: noqa: PLR2004
 from scrapers.base.helpers.config_factory import ScraperCommonConfig
 from scrapers.base.helpers.config_factory import build_list_config
 from scrapers.base.helpers.config_factory import build_list_scraper_options

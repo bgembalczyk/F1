@@ -1,3 +1,4 @@
+# ruff: noqa: F821, PLC0415, RUF001
 import json
 from pathlib import Path
 

@@ -1,3 +1,4 @@
+# ruff: noqa: PLC0415, PLR2004, SLF001
 """Tests for wiki parsers hierarchy."""
 
 import pytest

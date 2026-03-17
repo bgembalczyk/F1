@@ -1,5 +1,5 @@
 """Tests for nationality link extraction and championship titles order preservation."""
-# ruff: noqa: E501
+# ruff: noqa: E501, PT001
 
 import pytest
 from bs4 import BeautifulSoup

@@ -1,3 +1,4 @@
+# ruff: noqa: PLR0915, PLR2004
 import json
 from pathlib import Path
 

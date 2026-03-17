@@ -1,3 +1,4 @@
+# ruff: noqa: E501
 from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.html_utils import find_heading
