@@ -148,8 +148,13 @@ def _same_time_value(small_value: Any, big_value: Any) -> bool:
     return round(float(small_time), 6) == round(float(big_time), 6)
 
 
-def _same_dict_text_value(small_value: dict[str, Any], big_value: dict[str, Any]) -> bool:
-    small_text = (small_value.get("text") or small_value.get("name") or "").strip().lower()
+def _same_dict_text_value(
+    small_value: dict[str, Any],
+    big_value: dict[str, Any],
+) -> bool:
+    small_text = (
+        (small_value.get("text") or small_value.get("name") or "").strip().lower()
+    )
     big_text = (big_value.get("text") or big_value.get("name") or "").strip().lower()
     return not (small_text and big_text and small_text != big_text)
 
@@ -296,8 +301,20 @@ def merge_two_records(
     """Scala dwa rekordy w jeden, preferując bogatsze dane."""
     merged: dict[str, Any] = dict(base)
 
-    _merge_best_entity(merged, base, extra, target_key="driver", source_keys=("driver",))
-    _merge_best_entity(merged, base, extra, target_key="vehicle", source_keys=("vehicle", "car"))
+    _merge_best_entity(
+        merged,
+        base,
+        extra,
+        target_key="driver",
+        source_keys=("driver",),
+    )
+    _merge_best_entity(
+        merged,
+        base,
+        extra,
+        target_key="vehicle",
+        source_keys=("vehicle", "car"),
+    )
     _merge_time(merged, base, extra)
     _merge_date_or_year(merged, base, extra)
     _merge_series(merged, base, extra)
@@ -330,7 +347,11 @@ def _first_present_value(record: dict[str, Any], keys: tuple[str, ...]) -> Any:
     return None
 
 
-def _merge_time(merged: dict[str, Any], base: dict[str, Any], extra: dict[str, Any]) -> None:
+def _merge_time(
+    merged: dict[str, Any],
+    base: dict[str, Any],
+    extra: dict[str, Any],
+) -> None:
     parsed_time = parse_lap_record_time_from_record(base)
     if parsed_time is None:
         parsed_time = parse_lap_record_time_from_record(extra)
@@ -355,7 +376,11 @@ def _merge_date_or_year(
         merged["year"] = best_year
 
 
-def _merge_series(merged: dict[str, Any], base: dict[str, Any], extra: dict[str, Any]) -> None:
+def _merge_series(
+    merged: dict[str, Any],
+    base: dict[str, Any],
+    extra: dict[str, Any],
+) -> None:
     best_series = select_best_series([base, extra])
     if best_series is not None:
         merged["series"] = best_series
@@ -364,7 +389,10 @@ def _merge_series(merged: dict[str, Any], base: dict[str, Any], extra: dict[str,
     merged.pop("class_", None)
 
 
-def _fill_missing_fields_from_extra(merged: dict[str, Any], extra: dict[str, Any]) -> None:
+def _fill_missing_fields_from_extra(
+    merged: dict[str, Any],
+    extra: dict[str, Any],
+) -> None:
     for key, value in extra.items():
         if key in {"time_seconds", "category", "class", "class_"}:
             continue
@@ -386,7 +414,10 @@ def merge_record_group(
     return merged
 
 
-def _set_group_best_entities(merged: dict[str, Any], records: list[dict[str, Any]]) -> None:
+def _set_group_best_entities(
+    merged: dict[str, Any],
+    records: list[dict[str, Any]],
+) -> None:
     best_driver = select_best_field_with_url(records, "driver")
     best_vehicle = select_best_field_with_url(records, "vehicle", "car")
     if best_driver is not None:
@@ -403,7 +434,10 @@ def _set_group_best_time(merged: dict[str, Any], records: list[dict[str, Any]]) 
             return
 
 
-def _set_group_best_date_or_year(merged: dict[str, Any], records: list[dict[str, Any]]) -> None:
+def _set_group_best_date_or_year(
+    merged: dict[str, Any],
+    records: list[dict[str, Any]],
+) -> None:
     best_date, best_year = select_best_date_year(records)
     if best_year is None:
         best_year = _find_first_event_year(records)
@@ -422,7 +456,10 @@ def _find_first_event_year(records: list[dict[str, Any]]) -> int | None:
     return None
 
 
-def _set_group_best_series(merged: dict[str, Any], records: list[dict[str, Any]]) -> None:
+def _set_group_best_series(
+    merged: dict[str, Any],
+    records: list[dict[str, Any]],
+) -> None:
     best_series = select_best_series(records)
     if best_series is not None:
         merged["series"] = best_series

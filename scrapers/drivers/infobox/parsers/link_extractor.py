@@ -151,7 +151,10 @@ class InfoboxLinkExtractor:
         return [
             link
             for link in all_links
-            if re.fullmatch(r"\d{4}(?:\s*[--]\s*\d{2,4})?", (link.get("text") or "").strip())
+            if re.fullmatch(
+                r"\d{4}(?:\s*[--]\s*\d{2,4})?",
+                (link.get("text") or "").strip(),
+            )
         ]
 
     @staticmethod
@@ -179,7 +182,10 @@ class InfoboxLinkExtractor:
         return result
 
     @staticmethod
-    def _extract_li_years(li_text: str, year_to_url: dict[int, str]) -> list[dict[str, Any]]:
+    def _extract_li_years(
+        li_text: str,
+        year_to_url: dict[int, str],
+    ) -> list[dict[str, Any]]:
         if re.search(r"\b\d{4}\s*[--]\s*\d{2,4}\b", li_text):
             years_in_li = YearExtractor.extract_years_from_text(li_text)
             li_year_to_url = YearExtractor.interpolate_urls(years_in_li, year_to_url)
@@ -202,7 +208,9 @@ class InfoboxLinkExtractor:
         year_to_url = YearExtractor.build_year_to_url_map(links)
         years_set = YearExtractor.extract_years_from_text(text)
         year_to_url = YearExtractor.interpolate_urls(years_set, year_to_url)
-        return [{"year": year, "url": year_to_url.get(year)} for year in sorted(years_set)]
+        return [
+            {"year": year, "url": year_to_url.get(year)} for year in sorted(years_set)
+        ]
 
     @staticmethod
     def find_link_by_text(text: str, links: list[LinkRecord]) -> LinkRecord | None:

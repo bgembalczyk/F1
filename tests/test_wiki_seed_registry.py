@@ -110,7 +110,6 @@ def _registry_validation_negative_cases() -> tuple[object, ...]:
     ("registry_factory", "validator", "expected_message"),
     _registry_validation_negative_cases(),
 )
-
 def test_registry_validation_negative_cases(
     registry_factory,
     validator,

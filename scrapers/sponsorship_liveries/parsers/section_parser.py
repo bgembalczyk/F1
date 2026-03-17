@@ -418,7 +418,9 @@ class _BroaderScopeSplitter:
         if not years:
             return
         seasons = self._seasons_for_years(record, years)
-        result.append({**record, "season": seasons, "grand_prix_scope": {"type": "other"}})
+        result.append(
+            {**record, "season": seasons, "grand_prix_scope": {"type": "other"}},
+        )
 
     @staticmethod
     def _years(record: dict[str, Any]) -> set[int]:
@@ -429,7 +431,10 @@ class _BroaderScopeSplitter:
         }
 
     @staticmethod
-    def _seasons_for_years(record: dict[str, Any], years: set[int]) -> list[dict[str, Any]]:
+    def _seasons_for_years(
+        record: dict[str, Any],
+        years: set[int],
+    ) -> list[dict[str, Any]]:
         return [
             s
             for s in (record.get("season") or [])
