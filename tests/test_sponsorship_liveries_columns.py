@@ -982,3 +982,73 @@ def test_split_record_by_season_possessive_with_common_colours() -> None:
     # Each driver gets their colours + the shared "Yellow"
     assert by_driver["Pescarolo"]["additional_colours"] == ["Green", "White", "Yellow"]
     assert by_driver["Beltoise"]["additional_colours"] == ["White", "Red", "Yellow"]
+
+
+def test_split_pipeline_mixed_season_gp_and_possessive_order() -> None:
+    """Pipeline applies possessive -> season -> GP split in deterministic order."""
+    from scrapers.sponsorship_liveries.parsers.record_splitter import (
+        SponsorshipRecordSplitter,
+    )
+
+    record = {
+        "season": [{"year": 2024}, {"year": 2025}],
+        "main_colours": [
+            "Blue (Monaco Grand Prix)",
+            "Green and White (Driver A's car)",
+            "White and Red (Driver B's car)",
+        ],
+        "main_sponsors": [
+            {"text": "Base"},
+            {"text": "Season 2024", "params": ["2024"]},
+            {"text": "Season 2025", "params": ["2025"]},
+        ],
+        "livery_sponsors": [
+            {"text": "Monaco only", "params": ["Monaco Grand Prix"]},
+        ],
+    }
+
+    result = SponsorshipRecordSplitter().split_record_by_season(record)
+
+    assert len(result) == 8
+    signature = [
+        (
+            r["driver"][0]["text"],
+            tuple(s["year"] for s in r["season"]),
+            r.get("grand_prix_scope", {}).get("type"),
+        )
+        for r in result
+    ]
+    assert signature == [
+        ("Driver A", (2024,), "only"),
+        ("Driver A", (2024,), "other"),
+        ("Driver A", (2025,), "only"),
+        ("Driver A", (2025,), "other"),
+        ("Driver B", (2024,), "only"),
+        ("Driver B", (2024,), "other"),
+        ("Driver B", (2025,), "only"),
+        ("Driver B", (2025,), "other"),
+    ]
+
+
+
+def test_split_pipeline_is_deterministic_for_mixed_case() -> None:
+    """Same mixed input produces identical output ordering across repeated runs."""
+    from scrapers.sponsorship_liveries.parsers.record_splitter import (
+        SponsorshipRecordSplitter,
+    )
+
+    record = {
+        "season": [{"year": 2024}, {"year": 2025}],
+        "main_colours": [
+            "Blue (Monaco Grand Prix)",
+            "Green and White (Driver A's car)",
+            "White and Red (Driver B's car)",
+        ],
+        "main_sponsors": [{"text": "Base"}],
+    }
+
+    splitter = SponsorshipRecordSplitter()
+    result_1 = splitter.split_record_by_season(record)
+    result_2 = splitter.split_record_by_season(record)
+
+    assert result_1 == result_2
