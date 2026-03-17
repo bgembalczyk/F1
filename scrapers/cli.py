@@ -257,7 +257,9 @@ def _points_specs() -> dict[str, LegacyModuleSpec]:
             "list_scraper",
         ),
         "scrapers.points.points_scoring_systems_history": LegacyModuleSpec(
-            _lazy_target("scrapers.points.points_scoring_systems_history:run_list_scraper"),
+            _lazy_target(
+                "scrapers.points.points_scoring_systems_history:run_list_scraper",
+            ),
             deprecated_module_base_config(),
             "list_scraper",
         ),

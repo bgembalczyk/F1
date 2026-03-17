@@ -39,14 +39,13 @@ def _path_to_module(path: Path) -> str:
     return ".".join(rel.parts)
 
 
-
-
 def _iter_discovery_module_paths(root: Path) -> set[Path]:
     module_paths: set[Path] = set()
     module_paths.update(root.glob("scrapers/*/entrypoint.py"))
     module_paths.update(root.glob("scrapers/*/list/*.py"))
     module_paths.add(root / "scrapers/wiki/orchestration.py")
     return module_paths
+
 
 def _iter_discovery_module_names() -> tuple[str, ...]:
     root = _repo_root()

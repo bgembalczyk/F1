@@ -98,8 +98,6 @@ def _canonical_sections() -> dict[str, set[str]]:
     }
 
 
-
-
 def _copy_common_aliases() -> dict[str, set[str]]:
     return {key: set(values) for key, values in BASE_COMMON_ALIASES.items()}
 
@@ -131,6 +129,7 @@ def _build_domain_profile(
         required_sections=frozenset(),
         optional_sections=frozenset(canonical_sections),
     )
+
 
 def _build_profiles() -> dict[str, SectionProfile]:
     canonical = _canonical_sections()

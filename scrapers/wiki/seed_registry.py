@@ -125,8 +125,6 @@ EXPLICIT_LAYER_ONE_SEED_REGISTRY: tuple[SeedRegistryEntry, ...] = (
 )
 
 
-
-
 def _seed_entry_from_component(
     *,
     seed_name: str,
@@ -163,6 +161,7 @@ def _validate_registry_entry(
     )
     for rule in spec.path_rules:
         _validate_path_prefix(entry=entry, rule=rule)
+
 
 def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]:
     discovered = discover_layer_one_seed_components()

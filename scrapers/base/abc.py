@@ -217,13 +217,24 @@ class ABCScraper(ABC):
         self,
         run_id: str,
         step_name: str,
-        run_step: Callable[[], list[ExportRecord] | list[RawRecord] | list[NormalizedRecord]],
+        run_step: Callable[
+            [],
+            list[ExportRecord] | list[RawRecord] | list[NormalizedRecord],
+        ],
         *,
         to_dict: bool = False,
     ) -> list[ExportRecord] | list[RawRecord] | list[NormalizedRecord]:
-        self.logger.debug("Scrape run %s: start %s", run_id, step_name.replace("_", "-"))
+        self.logger.debug(
+            "Scrape run %s: start %s",
+            run_id,
+            step_name.replace("_", "-"),
+        )
         records = run_step()
-        self.logger.debug("Scrape run %s: finish %s", run_id, step_name.replace("_", "-"))
+        self.logger.debug(
+            "Scrape run %s: finish %s",
+            run_id,
+            step_name.replace("_", "-"),
+        )
         report_records = to_dict_list(list(records)) if to_dict else list(records)
         self._write_step_quality_report(step_name=step_name, records=report_records)
         return records
@@ -341,7 +352,11 @@ class ABCScraper(ABC):
             if not errors_for_tracking:
                 valid_records.append(record)
                 continue
-            message = self._validation_error_message(index, errors_for_tracking, messages)
+            message = self._validation_error_message(
+                index,
+                errors_for_tracking,
+                messages,
+            )
             if self.validation_mode == "soft":
                 self.logger.warning(message)
                 continue

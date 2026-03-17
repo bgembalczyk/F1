@@ -101,8 +101,6 @@ def _extract_sections(article: SectionTree | None) -> list[SectionTree]:
     return []
 
 
-
-
 def _profile_score(
     profile: object | None,
     *,
@@ -124,9 +122,9 @@ def _profile_score(
 
 def _best_fuzzy_ratio(section_text: str, target_texts: set[str]) -> float:
     return max(
-        SequenceMatcher(None, section_text, value).ratio()
-        for value in target_texts
+        SequenceMatcher(None, section_text, value).ratio() for value in target_texts
     )
+
 
 def _find_match(
     sections: list[SectionTree],

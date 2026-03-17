@@ -180,7 +180,9 @@ class CompleteExtractorBase(CompositeDataExtractor):
         detail_field = params["detail_field"]
         target_key = params.get("target_key", detail_field)
         assembled = dict(record)
-        assembled[target_key] = details.get(detail_field) if isinstance(details, dict) else None
+        assembled[target_key] = (
+            details.get(detail_field) if isinstance(details, dict) else None
+        )
         return assembled
 
     @staticmethod

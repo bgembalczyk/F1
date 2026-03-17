@@ -144,8 +144,6 @@ def compute_seed_quality(
     )
 
 
-
-
 def _resolve_seed_destination(
     *,
     output_root: Any,
@@ -154,10 +152,9 @@ def _resolve_seed_destination(
 ) -> Any:
     if isinstance(output_root, DataPaths):
         return output_root.raw_file(category, f"{seed_name}.json")
-    output_path = (
-        output_root if output_root is not None else default_data_paths().raw
-    )
+    output_path = output_root if output_root is not None else default_data_paths().raw
     return output_path / category / f"{seed_name}.json"
+
 
 def write_seed_l0(
     *,

@@ -1,5 +1,5 @@
+from collections.abc import Callable
 from typing import Any
-from typing import Callable
 
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser

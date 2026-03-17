@@ -280,7 +280,9 @@ class GrandPrixSplitStrategy:
             sponsors = record.get(key)
             if not isinstance(sponsors, list):
                 continue
-            base_list, scoped_list = GrandPrixSplitStrategy._split_sponsor_items(sponsors)
+            base_list, scoped_list = GrandPrixSplitStrategy._split_sponsor_items(
+                sponsors,
+            )
             base_sponsors[key] = base_list
             if scoped_list:
                 scoped_items[key] = scoped_list
@@ -534,7 +536,11 @@ class GrandPrixSplitStrategy:
 
         for scope_entry in scope_map.values():
             new_record = {**record, "grand_prix_scope": scope_entry["scope"]}
-            GrandPrixSplitStrategy._merge_sponsors(new_record, scope_entry, base_sponsors)
+            GrandPrixSplitStrategy._merge_sponsors(
+                new_record,
+                scope_entry,
+                base_sponsors,
+            )
             GrandPrixSplitStrategy._merge_colours(new_record, scope_entry, base_colours)
             split_records.append(new_record)
 
@@ -579,7 +585,6 @@ class GrandPrixSplitStrategy:
         if has_replacement:
             return scoped_colours_list
         return base_colours + scoped_colours_list
-
 
     @staticmethod
     def _build_other_record(

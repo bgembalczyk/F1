@@ -258,7 +258,9 @@ class StepAuditTrail:
         return {
             "steps": len(entries),
             "errors": sum(1 for entry in entries if entry.get("errors")),
-            "duration_ms": sum(float(entry.get("duration_ms", 0.0)) for entry in entries),
+            "duration_ms": sum(
+                float(entry.get("duration_ms", 0.0)) for entry in entries
+            ),
         }
 
     @staticmethod

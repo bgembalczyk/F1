@@ -672,28 +672,33 @@ def _load_domain_records(domain_dir: Path) -> list[object]:
     return merged_records
 
 
-
-
 def _domain_post_processors(
     domain: str,
 ) -> list[Callable[[list[object]], list[object]]]:
     processors: list[Callable[[list[object]], list[object]]] = []
     if domain == "drivers":
-        processors.extend([
-            _merge_duplicate_drivers,
-            lambda items: sorted(items, key=_driver_sort_key),
-        ])
+        processors.extend(
+            [
+                _merge_duplicate_drivers,
+                lambda items: sorted(items, key=_driver_sort_key),
+            ],
+        )
     if domain in CHASSIS_CONSTRUCTOR_DOMAINS:
         processors.append(lambda items: sorted(items, key=_constructor_sort_key))
     if domain == "teams":
-        processors.extend([
-            _merge_duplicate_teams,
-            lambda items: [_nest_team_liveries_in_seasons(record) for record in items],
-            lambda items: sorted(items, key=_team_sort_key),
-        ])
+        processors.extend(
+            [
+                _merge_duplicate_teams,
+                lambda items: [
+                    _nest_team_liveries_in_seasons(record) for record in items
+                ],
+                lambda items: sorted(items, key=_team_sort_key),
+            ],
+        )
     if domain == "seasons":
         processors.append(lambda items: sorted(items, key=_season_sort_key))
     return processors
+
 
 def _post_process_domain_records(domain: str, records: list[object]) -> list[object]:
     merged_records = records

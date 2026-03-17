@@ -561,4 +561,3 @@ def test_livery_principal_sponsor_column_maps_to_livery_principal_sponsors() -> 
         pipeline.column_map["Livery principal sponsor(s)"]
         == "livery_principal_sponsors"
     )
-

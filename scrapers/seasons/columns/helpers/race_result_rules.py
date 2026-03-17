@@ -82,11 +82,19 @@ class SharedDriveRule:
 
     @staticmethod
     def _is_shared_drive_without_points(season_year: int) -> bool:
-        return SHARED_DRIVE_NO_POINTS_START_YEAR <= season_year <= SHARED_DRIVE_NO_POINTS_END_YEAR
+        return (
+            SHARED_DRIVE_NO_POINTS_START_YEAR
+            <= season_year
+            <= SHARED_DRIVE_NO_POINTS_END_YEAR
+        )
 
     @staticmethod
     def _is_shared_drive_with_points(season_year: int) -> bool:
-        return SHARED_DRIVE_POINTS_START_YEAR <= season_year <= SHARED_DRIVE_POINTS_END_YEAR
+        return (
+            SHARED_DRIVE_POINTS_START_YEAR
+            <= season_year
+            <= SHARED_DRIVE_POINTS_END_YEAR
+        )
 
 
 class FatalAccidentRule:

@@ -170,8 +170,6 @@ class SponsorshipLiveriesRunConfigFactory(LayerZeroRunConfigFactory):
         return scraper_kwargs
 
 
-
-
 def _build_explicit_layer_one_runner_map() -> dict[str, LayerJobRunner]:
     return {
         "grands_prix": GrandPrixRunner(),
@@ -190,6 +188,7 @@ def _merge_runner_maps(
     for seed_name, runner in explicit.items():
         merged.setdefault(seed_name, runner)
     return merged
+
 
 def build_layer_one_runner_map() -> dict[str, LayerJobRunner]:
     explicit_runner_map = _build_explicit_layer_one_runner_map()

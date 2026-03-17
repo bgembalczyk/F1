@@ -4,16 +4,12 @@ from datetime import datetime
 from datetime import timezone
 from pathlib import Path
 
-from scrapers.base.orchestration.components import CheckpointPayloadFactory
 from scrapers.base.orchestration.components import JsonCheckpointRepository
 from scrapers.base.orchestration.components import ParserStepExecutor
 from scrapers.base.orchestration.components import SectionSourceAdapter
 from scrapers.base.orchestration.components import StepAuditTrail
 from scrapers.base.orchestration.models import AuditEntry
 from scrapers.base.orchestration.models import AuditRepository
-from scrapers.base.orchestration.models import CheckpointMetadata
-from scrapers.base.orchestration.models import CheckpointMetrics
-from scrapers.base.orchestration.models import CheckpointPayload
 from scrapers.base.orchestration.models import CheckpointRepository
 from scrapers.base.orchestration.models import ExecutedStep
 from scrapers.base.orchestration.models import InputResolver
@@ -37,16 +33,24 @@ class StepOrchestrator:
         audit_trail: StepAuditTrail | None = None,
     ) -> None:
         self.paths = _OrchestrationPaths(base_dir=base_dir)
-        self.input_resolver = input_resolver or source_adapter or SectionSourceAdapter(
-            base_dir=base_dir,
+        self.input_resolver = (
+            input_resolver
+            or source_adapter
+            or SectionSourceAdapter(
+                base_dir=base_dir,
+            )
         )
         self.step_executor = step_executor or ParserStepExecutor()
         self.checkpoint_repository = checkpoint_repository or JsonCheckpointRepository(
             base_dir=base_dir,
         )
-        self.audit_repository = audit_repository or audit_trail or StepAuditTrail(
-            json_path=self.paths.checkpoint_file("step_audit.json"),
-            csv_path=self.paths.checkpoint_file("step_audit.csv"),
+        self.audit_repository = (
+            audit_repository
+            or audit_trail
+            or StepAuditTrail(
+                json_path=self.paths.checkpoint_file("step_audit.json"),
+                csv_path=self.paths.checkpoint_file("step_audit.csv"),
+            )
         )
         self.audit_trail = self.audit_repository
 
@@ -60,7 +64,13 @@ class StepOrchestrator:
             input_records=resolved_input.records,
             execution=execution,
         )
-        result = self._build_result(step, domain, resolved_input, execution, output_path)
+        result = self._build_result(
+            step,
+            domain,
+            resolved_input,
+            execution,
+            output_path,
+        )
         self.audit_repository.append(self._build_audit_entry(step, domain, result))
         if execution.errors:
             msg = f"Błąd parsera kroku {step.step_id}: {execution.errors[0]}"

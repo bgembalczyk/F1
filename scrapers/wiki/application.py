@@ -52,6 +52,7 @@ def _layer_zero_raw_paths(
         )
     return json_path, csv_path
 
+
 class ConstructorsMirrorService:
     def __init__(
         self,

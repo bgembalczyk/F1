@@ -116,8 +116,6 @@ def _resolve_aliases(
     return resolved
 
 
-
-
 def _profile_score(
     profile: object | None,
     *,
@@ -139,9 +137,9 @@ def _profile_score(
 
 def _best_fuzzy_ratio(heading_text: str, target_texts: set[str]) -> float:
     return max(
-        SequenceMatcher(None, heading_text, value).ratio()
-        for value in target_texts
+        SequenceMatcher(None, heading_text, value).ratio() for value in target_texts
     )
+
 
 def find_section_heading(
     soup: BeautifulSoup,

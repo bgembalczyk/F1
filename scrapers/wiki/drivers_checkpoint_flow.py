@@ -16,8 +16,6 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 
-
-
 def _extract_driver_seed_row(row: dict[str, Any]) -> tuple[str, str] | None:
     driver_field = row.get("driver")
     if not isinstance(driver_field, dict):
@@ -33,6 +31,7 @@ def _extract_driver_seed_row(row: dict[str, Any]) -> tuple[str, str] | None:
 def _filter_checkpoint_urls(records: list[dict[str, Any]]) -> list[str]:
     checkpoint_urls = [record.get("url") for record in records]
     return [url for url in checkpoint_urls if isinstance(url, str) and url]
+
 
 class DriversCheckpointFlow:
     def __init__(
