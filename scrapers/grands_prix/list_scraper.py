@@ -14,6 +14,17 @@ from scrapers.grands_prix.validator import GrandsPrixRecordValidator
 
 
 class GrandsPrixListScraper(F1TableScraper):
+    COMPONENT_METADATA = {
+        "domain": "grands_prix",
+        "seed_name": "grands_prix",
+        "layer": "layer_one",
+        "output_category": "grands_prix",
+        "component_type": "list_scraper",
+        "default_output_path": "raw/grands_prix/seeds/f1_grands_prix_extended.json",
+        "legacy_output_path": "grands_prix/f1_grands_prix_extended.json",
+    }
+
+
     """
     Uproszczony scraper np. dla tabeli 'By race title'
     z:
@@ -52,15 +63,7 @@ class GrandsPrixListScraper(F1TableScraper):
     ) -> None:
         super().__init__(options=options, config=config)
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_deprecated_module_main
-    from scrapers.grands_prix.entrypoint import run_list_scraper
+    from scrapers.cli import run_legacy_wrapper
 
-    build_deprecated_module_main(
-        target=run_list_scraper,
-        deprecation_message=(
-            "scrapers.grands_prix.list_scraper is deprecated; use "
-            "scrapers.grands_prix.entrypoint.run_list_scraper."
-        ),
-    )()
+    run_legacy_wrapper("scrapers.grands_prix.list_scraper")

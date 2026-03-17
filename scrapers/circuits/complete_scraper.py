@@ -25,14 +25,7 @@ class F1CompleteCircuitDataExtractor(CompleteExtractorBase):
         record_postprocessor=CircuitService.normalize_record,
     )
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_complete_extractor_main
-    from scrapers.circuits.helpers.export import export_complete_circuits
+    from scrapers.cli import run_legacy_wrapper
 
-    build_complete_extractor_main(
-        target=lambda: export_complete_circuits(
-            output_dir=Path("../../data/wiki/circuits/complete_circuits"),
-            include_urls=True,
-        ),
-    )()
+    run_legacy_wrapper("scrapers.circuits.complete_scraper")

@@ -26,6 +26,17 @@ CURRENT_YEAR = datetime.now(tz=timezone.utc).year
 
 
 class CurrentConstructorsListScraper(BaseConstructorListScraper):
+    COMPONENT_METADATA = {
+        "domain": "constructors",
+        "seed_name": "constructors",
+        "layer": "layer_one",
+        "output_category": "constructors",
+        "component_type": "list_scraper",
+        "default_output_path": "raw/constructors/seeds/complete_constructors",
+        "legacy_output_path": "constructors/complete_constructors",
+    }
+
+
     """
     Aktualni konstruktorzy - sekcja
     'Constructors for the current season' z:
@@ -57,21 +68,7 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
     section_label = "Current constructors"
     section_parser_class = ConstructorsListSectionParser
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_cli_main
-    from scrapers.constructors.entrypoint import run_list_scraper
+    from scrapers.cli import run_legacy_wrapper
 
-    build_cli_main(
-        target=run_list_scraper,
-        base_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-        profile="deprecated_entrypoint",
-        deprecation_message=(
-            "scrapers.constructors.current_constructors_list is deprecated as "
-            "an entrypoint; use scrapers.constructors.entrypoint.run_list_scraper."
-        ),
-    )()
+    run_legacy_wrapper("scrapers.constructors.current_constructors_list")

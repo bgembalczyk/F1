@@ -13,6 +13,17 @@ from scrapers.circuits.validator import CircuitsRecordValidator
 
 
 class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
+    COMPONENT_METADATA = {
+        "domain": "circuits",
+        "seed_name": "circuits",
+        "layer": "layer_one",
+        "output_category": "circuits",
+        "component_type": "list_scraper",
+        "default_output_path": "raw/circuits/seeds/complete_circuits",
+        "legacy_output_path": "circuits/complete_circuits",
+    }
+
+
     """
     Lista torów F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_circuits
@@ -44,15 +55,7 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
     section_label = "Circuits"
     section_parser_class = CircuitsListSectionParser
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_deprecated_module_main
-    from scrapers.circuits.entrypoint import run_list_scraper
+    from scrapers.cli import run_legacy_wrapper
 
-    build_deprecated_module_main(
-        target=run_list_scraper,
-        deprecation_message=(
-            "scrapers.circuits.list_scraper is deprecated; use "
-            "scrapers.circuits.entrypoint.run_list_scraper."
-        ),
-    )()
+    run_legacy_wrapper("scrapers.circuits.list_scraper")

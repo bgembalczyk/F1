@@ -11,6 +11,9 @@ from models.mappers.serialization import to_dict_list
 from scrapers.base.quality.reporter import QualityReporter
 from scrapers.base.run_config import RunConfig
 from scrapers.wiki.seed_contract_adapter import SeedRecordContractAdapter
+from scrapers.base.run_profiles import RunPathConfig
+from scrapers.base.run_profiles import RunProfileName
+from scrapers.base.run_profiles import build_run_profile
 from scrapers.wiki.seed_registry import ListJobRegistryEntry
 from scrapers.wiki.seed_registry import SeedRegistryEntry
 
@@ -234,18 +237,22 @@ class WikiPipelineApplication:
         self._layer_one_executor = layer_one_executor
 
     def run_layer_zero(self) -> None:
-        run_config = RunConfig(
-            output_dir=self._base_wiki_dir,
-            include_urls=True,
-            debug_dir=self._base_debug_dir,
+        run_config = build_run_profile(
+            RunProfileName.DEBUG,
+            paths=RunPathConfig(
+                wiki_output_dir=self._base_wiki_dir,
+                debug_dir=self._base_debug_dir,
+            ),
         )
         self._layer_zero_executor.run(run_config, self._base_wiki_dir)
 
     def run_layer_one(self) -> None:
-        run_config = RunConfig(
-            output_dir=self._base_wiki_dir,
-            include_urls=True,
-            debug_dir=self._base_debug_dir,
+        run_config = build_run_profile(
+            RunProfileName.DEBUG,
+            paths=RunPathConfig(
+                wiki_output_dir=self._base_wiki_dir,
+                debug_dir=self._base_debug_dir,
+            ),
         )
         self._layer_one_executor.run(run_config, self._base_wiki_dir)
 

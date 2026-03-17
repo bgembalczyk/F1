@@ -32,6 +32,17 @@ from scrapers.drivers.validator import DriversRecordValidator
 
 
 class F1DriversListScraper(F1TableScraper):
+    COMPONENT_METADATA = {
+        "domain": "drivers",
+        "seed_name": "drivers",
+        "layer": "layer_one",
+        "output_category": "drivers",
+        "component_type": "list_scraper",
+        "default_output_path": "raw/drivers/seeds/complete_drivers",
+        "legacy_output_path": "drivers/complete_drivers",
+    }
+
+
     """
     Scraper listy kierowców F1 z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_drivers
@@ -91,21 +102,7 @@ class F1DriversListScraper(F1TableScraper):
         ]
         return options
 
-
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_cli_main
-    from scrapers.drivers.entrypoint import run_list_scraper
+    from scrapers.cli import run_legacy_wrapper
 
-    build_cli_main(
-        target=run_list_scraper,
-        base_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-        profile="deprecated_entrypoint",
-        deprecation_message=(
-            "scrapers.drivers.list_scraper is deprecated; use "
-            "scrapers.drivers.entrypoint.run_list_scraper."
-        ),
-    )()
+    run_legacy_wrapper("scrapers.drivers.list_scraper")

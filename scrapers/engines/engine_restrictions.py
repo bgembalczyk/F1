@@ -106,13 +106,7 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
 
         return records
 
-
 if __name__ == "__main__":
-    run_and_export(
-        EngineRestrictionsScraper,
-        "engines/f1_engine_restrictions.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.cli import run_legacy_wrapper
+
+    run_legacy_wrapper("scrapers.engines.engine_restrictions")
