@@ -1,3 +1,4 @@
+# ruff: noqa: ARG002, ARG005, S108
 from pathlib import Path
 
 from scrapers.base.run_config import RunConfig

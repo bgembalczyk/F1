@@ -1,3 +1,4 @@
+# ruff: noqa: E501, RUF002
 """Test refactored base classes to ensure they maintain functionality."""
 
 from scrapers.base.abc import ABCScraper

@@ -1,3 +1,4 @@
+# ruff: noqa: ARG002, ARG005, EM101, N801, SLF001, TRY003
 from types import SimpleNamespace
 
 import pytest

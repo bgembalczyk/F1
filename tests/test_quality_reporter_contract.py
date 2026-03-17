@@ -1,3 +1,4 @@
+# ruff: noqa: PLR2004, TC002, TC003
 from __future__ import annotations
 
 import json
