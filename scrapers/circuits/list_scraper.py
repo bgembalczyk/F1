@@ -1,12 +1,9 @@
 """DEPRECATED ENTRYPOINT: use scrapers.circuits.entrypoint.run_list_scraper."""
 
-from pathlib import Path
-
 from models.records.factories import build_circuit_record
 from models.validation.circuit import Circuit
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
@@ -49,17 +46,11 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.base.cli_entrypoint import build_cli_main
+    from scrapers.base.cli_entrypoint import build_deprecated_module_main
     from scrapers.circuits.entrypoint import run_list_scraper
 
-    build_cli_main(
+    build_deprecated_module_main(
         target=run_list_scraper,
-        base_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-        profile="deprecated_entrypoint",
         deprecation_message=(
             "scrapers.circuits.list_scraper is deprecated; use "
             "scrapers.circuits.entrypoint.run_list_scraper."
