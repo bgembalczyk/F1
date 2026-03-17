@@ -497,6 +497,73 @@ def _merge_duplicate_teams(records: list[object]) -> list[object]:
     return merged_records
 
 
+def _season_years(value: object) -> set[int]:
+    years: set[int] = set()
+    if isinstance(value, dict):
+        year = value.get("year")
+        if isinstance(year, int):
+            years.add(year)
+        return years
+
+    if isinstance(value, list):
+        for item in value:
+            years.update(_season_years(item))
+
+    return years
+
+
+def _nest_team_liveries_in_seasons(record: object) -> object:
+    if not isinstance(record, dict):
+        return record
+
+    racing_series = record.get("racing_series")
+    if not isinstance(racing_series, dict):
+        return record
+
+    formula_one = racing_series.get("formula_one")
+    if not isinstance(formula_one, dict):
+        return record
+
+    seasons = formula_one.get("seasons")
+    liveries = formula_one.get("liveries")
+    if not isinstance(seasons, list) or not isinstance(liveries, list):
+        return record
+
+    remaining_liveries: list[object] = []
+    for livery in liveries:
+        if not isinstance(livery, dict):
+            remaining_liveries.append(livery)
+            continue
+
+        livery_years = _season_years(livery.get("season"))
+        livery_payload = {key: value for key, value in livery.items() if key != "season"}
+        matched = False
+
+        for season in seasons:
+            if not isinstance(season, dict):
+                continue
+            season_year = season.get("year")
+            if not isinstance(season_year, int) or season_year not in livery_years:
+                continue
+
+            matched = True
+            existing_livery = season.get("livery")
+            if existing_livery is None:
+                season["livery"] = livery_payload
+            else:
+                season["livery"] = _merge_values(existing_livery, livery_payload)
+
+        if not matched:
+            remaining_liveries.append(livery)
+
+    if remaining_liveries:
+        formula_one["liveries"] = remaining_liveries
+    else:
+        formula_one.pop("liveries", None)
+
+    return record
+
+
 def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
     layer_zero_dir = base_wiki_dir / "layers" / "0_layer"
     if not layer_zero_dir.exists():
@@ -529,6 +596,9 @@ def merge_layer_zero_raw_outputs(base_wiki_dir: Path) -> None:
 
         if domain_dir.name == "teams":
             merged_records = _merge_duplicate_teams(merged_records)
+            merged_records = [
+                _nest_team_liveries_in_seasons(record) for record in merged_records
+            ]
             merged_records = sorted(merged_records, key=_team_sort_key)
 
         if domain_dir.name == "seasons":
