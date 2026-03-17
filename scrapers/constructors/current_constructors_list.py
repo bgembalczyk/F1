@@ -6,51 +6,24 @@ from pathlib import Path
 
 from models.records.factories import build_constructor_record
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl.column import column
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.constructors.base_constructor_list_scraper import (
-    BaseConstructorListScraper,
-)
-from scrapers.constructors.constants import CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_BASED_IN_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
-from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
+from scrapers.constructors.base_constructor_list_scraper import BaseConstructorListScraper
 from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
+from scrapers.constructors.schemas import build_current_constructors_schema
 from scrapers.constructors.sections import ConstructorsListSectionParser
+from scrapers.constructors.spec import CONSTRUCTORS_LIST_SPEC
+from scrapers.constructors.spec import build_constructors_list_config
 
 CURRENT_YEAR = datetime.now(tz=timezone.utc).year
 
 
 class CurrentConstructorsListScraper(BaseConstructorListScraper):
-    """
-    Aktualni konstruktorzy - sekcja
-    'Constructors for the current season' z:
-    https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
-    """
+    options_domain = CONSTRUCTORS_LIST_SPEC.domain
+    options_profile = CONSTRUCTORS_LIST_SPEC.options_profile
 
-    schema_columns = [
-        column(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn()),
-        column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn()),
-        column(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn()),
-        *BaseConstructorListScraper.build_common_stats_columns(),
-        column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn()),
-        *BaseConstructorListScraper.build_common_metadata_columns(),
-        column(
-            CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
-            "antecedent_teams",
-            LinksListColumn(),
-        ),
-    ]
-
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_constructors",
+    CONFIG = build_constructors_list_config(
         section_id=f"Constructors_for_the_{CURRENT_YEAR}_season",
         expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
-        schema=TableSchemaDSL(columns=schema_columns),
+        schema=build_current_constructors_schema(),
         record_factory=build_constructor_record,
     )
 
