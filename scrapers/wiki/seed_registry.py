@@ -142,7 +142,8 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
         if metadata.output_category != explicit.output_category:
             msg = (
                 f"Conflicting output_category for seed '{seed_name}': "
-                f"explicit='{explicit.output_category}' discovered='{metadata.output_category}'"
+                "explicit='"
+                f"{explicit.output_category}' discovered='{metadata.output_category}'"
             )
             raise ValueError(msg)
         registry.append(
@@ -163,7 +164,10 @@ def _build_discovered_layer_one_seed_registry() -> tuple[SeedRegistryEntry, ...]
             continue
         metadata = component.metadata
         if not metadata.default_output_path or not metadata.legacy_output_path:
-            msg = f"Discovered layer-one seed '{seed_name}' is missing output paths in metadata"
+            msg = (
+                f"Discovered layer-one seed '{seed_name}' "
+                "is missing output paths in metadata"
+            )
             raise ValueError(msg)
         registry.append(
             SeedRegistryEntry(
@@ -383,8 +387,12 @@ SEED_REGISTRY_VALIDATION_SPEC = RegistryValidationSpec(
 
 
 LIST_JOB_REGISTRY_VALIDATION_SPEC = RegistryValidationSpec(
-    duplicate_message=lambda seed_name: f"Duplicate list seed_name found: {seed_name}",
-    empty_url_message=lambda seed_name: f"List seed '{seed_name}' has empty wikipedia_url",
+    duplicate_message=(
+        lambda seed_name: f"Duplicate list seed_name found: {seed_name}"
+    ),
+    empty_url_message=(
+        lambda seed_name: f"List seed '{seed_name}' has empty wikipedia_url"
+    ),
     path_rules=(
         RegistryValidationRule(
             label="json_output_path",
@@ -401,7 +409,8 @@ LIST_JOB_REGISTRY_VALIDATION_SPEC = RegistryValidationSpec(
             expected_prefix=lambda entry: f"{entry.output_category}/",
             message=lambda entry: (
                 f"List seed '{entry.seed_name}' has inconsistent legacy output path "
-                f"'{entry.legacy_json_output_path}' for category '{entry.output_category}'"
+                f"'{entry.legacy_json_output_path}' "
+                f"for category '{entry.output_category}'"
             ),
         ),
     ),

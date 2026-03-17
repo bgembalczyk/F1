@@ -23,7 +23,7 @@ class CompleteConstructorsDataExtractor(CompleteExtractorBase):
 
     url = CurrentConstructorsListScraper.CONFIG.url
 
-    def build_list_scraper(self, options: ScraperOptions) -> Any:
+    def build_list_scraper(self, _options: ScraperOptions) -> Any:
         msg = "CompleteConstructorsDataExtractor używa build_list_scrapers()."
         raise NotImplementedError(msg)
 

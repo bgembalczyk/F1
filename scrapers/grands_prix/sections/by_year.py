@@ -1,10 +1,8 @@
 from __future__ import annotations
 
 import re
+from typing import TYPE_CHECKING
 from typing import Any
-
-from bs4 import BeautifulSoup
-from bs4 import Tag
 
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.records import record_from_mapping
@@ -20,8 +18,13 @@ from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
 from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
 
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+    from bs4 import Tag
+
 
 class GrandPrixByYearSectionParser:
+    _SHORT_HEX_LEN = 3
     _BACKGROUND_HEX = re.compile(r"#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})")
     _BACKGROUND_MAP = {
         "ffffcc": "pre_war_european_championship",
@@ -111,7 +114,7 @@ class GrandPrixByYearSectionParser:
         if not match:
             return None
         normalized = match.group(1).lower()
-        if len(normalized) == 3:
+        if len(normalized) == self._SHORT_HEX_LEN:
             return "".join(ch * 2 for ch in normalized)
         return normalized
 

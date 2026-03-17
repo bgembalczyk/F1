@@ -1,6 +1,9 @@
 from __future__ import annotations
 
-from validation.validator_base import ExportRecord
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from validation.validator_base import ExportRecord
 
 
 class SeasonSectionContractPostProcessor:
@@ -11,7 +14,6 @@ class SeasonSectionContractPostProcessor:
                 if value is None:
                     continue
                 if not isinstance(value, list):
-                    raise ValueError(
-                        f"Season postprocess contract violation: {key} must be list.",
-                    )
+                    msg = f"Season postprocess contract violation: {key} must be list."
+                    raise TypeError(msg)
         return records

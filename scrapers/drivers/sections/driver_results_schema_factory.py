@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.drivers.columns.round import RoundColumn
@@ -25,6 +25,9 @@ from scrapers.drivers.sections.driver_results_constants import (
 from scrapers.drivers.sections.driver_results_constants import (
     COMPLETE_RESULTS_HEADER_TO_KEY,
 )
+
+if TYPE_CHECKING:
+    from scrapers.base.table.columns.types.base import BaseColumn
 
 
 class DriverResultsSchemaFactory:

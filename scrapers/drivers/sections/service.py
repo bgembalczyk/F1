@@ -1,10 +1,8 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Any
 
-from bs4 import BeautifulSoup
-
-from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.drivers.sections.career import CAREER_RESULTS_SECTION
@@ -14,6 +12,11 @@ from scrapers.drivers.sections.non_championship import NON_CHAMPIONSHIP_SECTION
 from scrapers.drivers.sections.racing_record import RACING_RECORD_SECTION
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.base.options import ScraperOptions
 
 
 class DriverSectionExtractionService:

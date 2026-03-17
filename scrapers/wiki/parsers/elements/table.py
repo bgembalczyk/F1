@@ -94,17 +94,17 @@ class TableParser(WikiParser):
         if not first_cells:
             return [], 0
 
-        first_headers = parser._clean_cells(first_cells)
+        first_headers = parser.clean_cells(first_cells)
 
         if len(table_rows) < HEADER_ROWS_WITH_SUBHEADERS:
             return first_headers, 1
 
         second_cells = table_rows[1].find_all(["th", "td"])
-        if not parser._has_multirow_header(first_cells, second_cells):
+        if not parser.has_multirow_header(first_cells, second_cells):
             return first_headers, 1
 
-        second_headers = parser._clean_cells(second_cells)
-        combined, _ = parser._combine_header_rows(
+        second_headers = parser.clean_cells(second_cells)
+        combined, _ = parser.combine_header_rows(
             first_cells,
             first_headers,
             second_cells,

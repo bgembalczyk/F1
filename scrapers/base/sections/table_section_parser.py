@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 from dataclasses import replace
+from typing import TYPE_CHECKING
 from typing import Any
 
-from bs4 import BeautifulSoup
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.base.table.config import ScraperConfig
 
 from scrapers.base.sections.interface import SectionParseResult
-from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 

@@ -4,8 +4,11 @@ import importlib
 import inspect
 from dataclasses import dataclass
 from pathlib import Path
-from types import ModuleType
+from typing import TYPE_CHECKING
 from typing import Any
+
+if TYPE_CHECKING:
+    from types import ModuleType
 
 COMPONENT_METADATA_ATTR = "COMPONENT_METADATA"
 
@@ -56,7 +59,11 @@ def _read_component_metadata(candidate: type[Any]) -> ComponentMetadata | None:
         return raw
     if isinstance(raw, dict):
         return ComponentMetadata(**raw)
-    raise TypeError(f"Unsupported metadata format for {candidate!r}: {type(raw)!r}")
+    message = (
+        "Unsupported metadata format for "
+        f"{candidate!r}: {type(raw)!r}"
+    )
+    raise TypeError(message)
 
 
 def discover_components() -> tuple[DiscoveredComponent, ...]:

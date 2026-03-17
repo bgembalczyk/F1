@@ -39,8 +39,12 @@ class SeasonRecordAssembler:
             "constructors_standings": sections.constructors_standings,
             "jim_clark_trophy": sections.jim_clark_trophy,
             "colin_chapman_trophy": sections.colin_chapman_trophy,
-            "south_african_formula_one_championship": sections.south_african_formula_one_championship,
-            "british_formula_one_championship": sections.british_formula_one_championship,
+            "south_african_formula_one_championship": (
+                sections.south_african_formula_one_championship
+            ),
+            "british_formula_one_championship": (
+                sections.british_formula_one_championship
+            ),
             "regulation_changes": sections.regulation_changes,
             "mid_season_changes": sections.mid_season_changes,
         }

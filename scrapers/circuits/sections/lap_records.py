@@ -1,14 +1,18 @@
 from __future__ import annotations
 
-from bs4 import BeautifulSoup
+from typing import TYPE_CHECKING
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.base.options import ScraperOptions
 
 
 class CircuitLapRecordsSectionParser:

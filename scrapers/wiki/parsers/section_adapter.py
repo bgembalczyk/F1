@@ -1,9 +1,12 @@
 from __future__ import annotations
 
-from collections.abc import Iterable
 from dataclasses import dataclass
 from difflib import SequenceMatcher
+from typing import TYPE_CHECKING
 from typing import Any
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable
 
 from scrapers.wiki.parsers.section_detection import normalize_section_text
 from scrapers.wiki.parsers.section_profiles import get_section_profile
@@ -192,16 +195,11 @@ def collect_section_elements(
 ) -> list[dict[str, Any]]:
     """Collect parsed elements of a given type from section subtree."""
 
-    found: list[dict[str, Any]] = []
+    found: list[dict[str, Any]] = [
+        item
+        for node in _iter_sections([section])
+        for item in node.get("elements", [])
+        if item.get("kind") == element_type or item.get("type") == element_type
+    ]
 
-    def walk(node: SectionTree) -> None:
-        for item in node.get("elements", []):
-            if item.get("kind") == element_type or item.get("type") == element_type:
-                found.append(item)
-        for key in ("sub_sections", "sub_sub_sections", "sub_sub_sub_sections"):
-            for child in node.get(key, []):
-                if isinstance(child, dict):
-                    walk(child)
-
-    walk(section)
     return found

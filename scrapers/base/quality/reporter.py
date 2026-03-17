@@ -2,12 +2,15 @@ from __future__ import annotations
 
 import json
 from collections import Counter
-from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import datetime
 from datetime import timezone
-from pathlib import Path
+from typing import TYPE_CHECKING
 from typing import Any
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
+    from pathlib import Path
 
 SCHEMA_VERSION = "1.0"
 
@@ -98,7 +101,7 @@ class QualityReporter:
     def _normalize_primary_key(value: Any) -> list[str]:
         if isinstance(value, str) and value:
             return [value]
-        if isinstance(value, (list, tuple)):
+        if isinstance(value, list | tuple):
             return [str(item) for item in value if item]
         return []
 

@@ -30,11 +30,13 @@ class MigrationReport:
 
 
 def _build_mappings(paths: DataPaths) -> list[tuple[Path, Path]]:
-    mappings: list[tuple[Path, Path]] = []
-    for entry in WIKI_LIST_JOB_REGISTRY:
-        source = paths.legacy_wiki / entry.legacy_json_output_path
-        destination = paths.base_dir / entry.json_output_path
-        mappings.append((source, destination))
+    mappings: list[tuple[Path, Path]] = [
+        (
+            paths.legacy_wiki / entry.legacy_json_output_path,
+            paths.base_dir / entry.json_output_path,
+        )
+        for entry in WIKI_LIST_JOB_REGISTRY
+    ]
 
     checkpoint_files = (
         "step_0_layer0_drivers.json",
@@ -43,13 +45,15 @@ def _build_mappings(paths: DataPaths) -> list[tuple[Path, Path]]:
         "step_audit.json",
         "step_audit.csv",
     )
-    for filename in checkpoint_files:
-        mappings.append(
+    mappings.extend(
+        [
             (
                 paths.legacy_wiki / "checkpoints" / filename,
                 paths.checkpoint_file(filename),
-            ),
-        )
+            )
+            for filename in checkpoint_files
+        ],
+    )
     return mappings
 
 

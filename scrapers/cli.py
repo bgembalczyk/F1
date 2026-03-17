@@ -4,9 +4,9 @@ import argparse
 import importlib
 import inspect
 import warnings
-from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from scrapers.base.cli_entrypoint import CliMainProfile
 from scrapers.base.cli_entrypoint import build_run_config
@@ -15,6 +15,9 @@ from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.run_config import RunConfig
 from scrapers.wiki.application import create_default_wiki_pipeline_application
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 _PROFILE_DEFAULTS: dict[CliMainProfile, tuple[bool, bool]] = {
     "list_scraper": (True, False),
@@ -63,6 +66,7 @@ def _run_and_export_target(
 def _run_export_complete(
     path: str,
     output_dir: str,
+    *,
     include_urls: bool = True,
 ) -> Callable[..., None]:
     def _target() -> None:
@@ -213,13 +217,15 @@ LEGACY_MODULE_SPECS: dict[str, LegacyModuleSpec] = {
         RunConfig(output_dir=Path("../../data/wiki"), include_urls=True),
         "deprecated_entrypoint",
     ),
-    "scrapers.grands_prix.red_flagged_races_scraper.world_championship": LegacyModuleSpec(
+    "scrapers.grands_prix.red_flagged_races_scraper.world_championship": (
+        LegacyModuleSpec(
         _run_and_export_target(
             "scrapers.grands_prix.red_flagged_races_scraper.world_championship:RedFlaggedWorldChampionshipRacesScraper",
             "grands_prix/f1_red_flagged_world_championship_races.json",
         ),
         RunConfig(output_dir=Path("../../data/wiki"), include_urls=True),
         "deprecated_entrypoint",
+        )
     ),
     "scrapers.points.sprint_qualifying_points": LegacyModuleSpec(
         _lazy_target("scrapers.points.sprint_qualifying_points:run_list_scraper"),

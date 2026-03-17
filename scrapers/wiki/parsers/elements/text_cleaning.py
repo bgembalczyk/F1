@@ -1,8 +1,11 @@
 from __future__ import annotations
 
-from bs4 import Tag
+from typing import TYPE_CHECKING
 
 from scrapers.base.helpers.text import clean_wiki_text
+
+if TYPE_CHECKING:
+    from bs4 import Tag
 
 
 def extract_text(element: Tag | None) -> str | None:

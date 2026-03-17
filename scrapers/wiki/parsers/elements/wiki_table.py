@@ -58,7 +58,7 @@ class StandingsTableParser(WikiTableBaseParser):
     missing_columns_policy = "fail_if_missing_subject_or_points"
     extra_columns_policy = "collect_as_round_columns"
 
-    def matches(self, headers: list[str], table_data: dict[str, Any]) -> bool:
+    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         header_set = set(headers)
         has_position = bool(header_set & {"Pos", "Pos."})
         has_points = bool(header_set & {"Points", "Pts", "Pts."})
@@ -86,7 +86,7 @@ class RaceResultsTableParser(WikiTableBaseParser):
     missing_columns_policy = "require_round_and_winner"
     extra_columns_policy = "ignore"
 
-    def matches(self, headers: list[str], table_data: dict[str, Any]) -> bool:
+    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         header_set = set(headers)
         has_round = "Round" in header_set
         has_winner = "Winning driver" in header_set
@@ -114,7 +114,7 @@ class LapRecordsWikiTableParser(WikiTableBaseParser):
     missing_columns_policy = "require_time_and_driver"
     extra_columns_policy = "ignore"
 
-    def matches(self, headers: list[str], table_data: dict[str, Any]) -> bool:
+    def matches(self, headers: list[str], _table_data: dict[str, Any]) -> bool:
         header_set = set(headers)
         has_time = "Time" in header_set
         has_driver = "Driver" in header_set or "Driver/Rider" in header_set

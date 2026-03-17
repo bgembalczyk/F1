@@ -1,9 +1,12 @@
 from __future__ import annotations
 
-from bs4 import BeautifulSoup
+from typing import TYPE_CHECKING
 
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
 
 
 class CircuitEventsSectionParser:

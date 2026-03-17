@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import re
-from collections.abc import Mapping
 from dataclasses import dataclass
 from difflib import SequenceMatcher
+from typing import TYPE_CHECKING
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -11,6 +11,9 @@ from bs4 import Tag
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.sections.aliases import builtin_aliases_for_target
 from scrapers.wiki.parsers.section_profiles import get_section_profile
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 
 _HEADING_TAGS = ("h1", "h2", "h3", "h4", "h5", "h6")
 

@@ -1,10 +1,13 @@
 from __future__ import annotations
 
-from bs4 import BeautifulSoup
+from typing import TYPE_CHECKING
 
 from scrapers.base.sections.interface import SectionParseResult
-from scrapers.seasons.parsers.results import SeasonResultsParser
 
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.seasons.parsers.results import SeasonResultsParser
 
 class SeasonResultsSectionParser:
     def __init__(self, parser: SeasonResultsParser) -> None:
