@@ -10,9 +10,7 @@ from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.seasons.columns.colin_chapman_race_result import (
-    ColinChapmanRaceResultColumn,
-)
+from scrapers.seasons.columns.race_result import RaceResultColumn
 from scrapers.seasons.parsers.standings import SeasonStandingsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.standings_scraper import F1StandingsScraper
@@ -55,7 +53,10 @@ class ColinChapmanTrophyParser:
             section_id="Colin_Chapman_Trophy",
             expected_headers=["Constructor"],
             schema=TableSchemaDSL(columns=schema_columns),
-            default_column=ColinChapmanRaceResultColumn(season_year=season_year),
+            default_column=RaceResultColumn(
+                season_year=season_year,
+                star_mark_note="single_car_entry_no_points",
+            ),
             record_factory=record_from_mapping,
         )
 

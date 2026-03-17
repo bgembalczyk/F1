@@ -10,7 +10,7 @@ from scrapers.base.table.columns.types.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.seasons.columns.jim_clark_race_result import JimClarkRaceResultColumn
+from scrapers.seasons.columns.race_result import RaceResultColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.standings_scraper import F1StandingsScraper
 
@@ -49,7 +49,10 @@ class JimClarkTrophyParser:
             section_id="Jim_Clark_Trophy",
             expected_headers=["Driver"],
             schema=TableSchemaDSL(columns=schema_columns),
-            default_column=JimClarkRaceResultColumn(season_year=season_year),
+            default_column=RaceResultColumn(
+                season_year=season_year,
+                star_mark_note="insufficient_events_to_be_eligible",
+            ),
             record_factory=record_from_mapping,
         )
 
