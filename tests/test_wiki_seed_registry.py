@@ -17,7 +17,8 @@ from scrapers.wiki.seed_registry import validate_seed_registry
             lambda: (
                 SeedRegistryEntry(
                     seed_name="duplicate",
-                    wikipedia_url="https://example.test/a",
+                    source_slug="wikipedia",
+                    article_path="/a",
                     output_category="drivers",
                     list_scraper_cls=object,
                     default_output_path="raw/drivers/seeds/a",
@@ -25,7 +26,8 @@ from scrapers.wiki.seed_registry import validate_seed_registry
                 ),
                 SeedRegistryEntry(
                     seed_name="duplicate",
-                    wikipedia_url="https://example.test/b",
+                    source_slug="wikipedia",
+                    article_path="/b",
                     output_category="drivers",
                     list_scraper_cls=object,
                     default_output_path="raw/drivers/seeds/b",
@@ -40,7 +42,8 @@ from scrapers.wiki.seed_registry import validate_seed_registry
             lambda: (
                 SeedRegistryEntry(
                     seed_name="empty-url",
-                    wikipedia_url="   ",
+                    source_slug="wikipedia",
+                    article_path="   ",
                     output_category="drivers",
                     list_scraper_cls=object,
                     default_output_path="raw/drivers/seeds/a",
@@ -48,14 +51,15 @@ from scrapers.wiki.seed_registry import validate_seed_registry
                 ),
             ),
             validate_seed_registry,
-            "Seed 'empty-url' has empty wikipedia_url",
+            "Seed 'empty-url' has empty article_path",
             id="seed_registry_empty_url",
         ),
         pytest.param(
             lambda: (
                 SeedRegistryEntry(
                     seed_name="bad-default-path",
-                    wikipedia_url="https://example.test/a",
+                    source_slug="wikipedia",
+                    article_path="/a",
                     output_category="drivers",
                     list_scraper_cls=object,
                     default_output_path="raw/circuits/seeds/a",
@@ -70,7 +74,8 @@ from scrapers.wiki.seed_registry import validate_seed_registry
             lambda: (
                 SeedRegistryEntry(
                     seed_name="bad-legacy-path",
-                    wikipedia_url="https://example.test/a",
+                    source_slug="wikipedia",
+                    article_path="/a",
                     output_category="drivers",
                     list_scraper_cls=object,
                     default_output_path="raw/drivers/seeds/a",
@@ -85,7 +90,8 @@ from scrapers.wiki.seed_registry import validate_seed_registry
             lambda: (
                 ListJobRegistryEntry(
                     seed_name="duplicate",
-                    wikipedia_url="https://example.test/a",
+                    source_slug="wikipedia",
+                    article_path="/a",
                     output_category="drivers",
                     list_scraper_cls=object,
                     json_output_path="raw/drivers/list/a.json",
@@ -93,7 +99,8 @@ from scrapers.wiki.seed_registry import validate_seed_registry
                 ),
                 ListJobRegistryEntry(
                     seed_name="duplicate",
-                    wikipedia_url="https://example.test/b",
+                    source_slug="wikipedia",
+                    article_path="/b",
                     output_category="drivers",
                     list_scraper_cls=object,
                     json_output_path="raw/drivers/list/b.json",
@@ -108,7 +115,8 @@ from scrapers.wiki.seed_registry import validate_seed_registry
             lambda: (
                 ListJobRegistryEntry(
                     seed_name="empty-url",
-                    wikipedia_url=" ",
+                    source_slug="wikipedia",
+                    article_path=" ",
                     output_category="drivers",
                     list_scraper_cls=object,
                     json_output_path="raw/drivers/list/a.json",
@@ -116,14 +124,15 @@ from scrapers.wiki.seed_registry import validate_seed_registry
                 ),
             ),
             validate_list_job_registry,
-            "List seed 'empty-url' has empty wikipedia_url",
+            "List seed 'empty-url' has empty article_path",
             id="list_registry_empty_url",
         ),
         pytest.param(
             lambda: (
                 ListJobRegistryEntry(
                     seed_name="bad-json-path",
-                    wikipedia_url="https://example.test/a",
+                    source_slug="wikipedia",
+                    article_path="/a",
                     output_category="drivers",
                     list_scraper_cls=object,
                     json_output_path="raw/circuits/list/a.json",
@@ -138,7 +147,8 @@ from scrapers.wiki.seed_registry import validate_seed_registry
             lambda: (
                 ListJobRegistryEntry(
                     seed_name="bad-legacy-path",
-                    wikipedia_url="https://example.test/a",
+                    source_slug="wikipedia",
+                    article_path="/a",
                     output_category="drivers",
                     list_scraper_cls=object,
                     json_output_path="raw/drivers/list/a.json",
@@ -172,7 +182,7 @@ def test_seed_registry_entry_serialization() -> None:
 
     assert isinstance(entry, SeedRegistryEntry)
     assert payload["seed_name"] == "drivers"
-    assert payload["wikipedia_url"].startswith("https://")
+    assert payload["source_slug"] == "wikipedia"
     assert payload["output_category"] == "drivers"
     assert payload["default_output_path"].startswith("raw/drivers/")
     assert payload["legacy_output_path"].startswith("drivers/")
@@ -191,7 +201,7 @@ def test_list_job_registry_entry_serialization() -> None:
 
     assert isinstance(entry, ListJobRegistryEntry)
     assert payload["output_category"] == "circuits"
-    assert payload["wikipedia_url"].startswith("https://")
+    assert payload["source_slug"] == "wikipedia"
     assert payload["json_output_path"].startswith("raw/circuits/")
     assert payload["legacy_json_output_path"].startswith("circuits/")
     assert "CircuitsListScraper" in serialized
