@@ -134,81 +134,75 @@ class InfoboxLinkExtractor:
         - List items: preserves document order (e.g., 2022, 2009, 2007)
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        # Keep all year links, including those with "season" in URL
-        all_links = self.extract_links(cell)
+        links = self._extract_year_links(cell)
 
-        # Filter to only links whose text is a year or year range
-        links = []
-        for link in all_links:
-            link_text = link.get("text", "")
-            # Check if text is a year (4 digits) or year range (YYYY-YYYY or YYYY-YY)
-            if re.fullmatch(r"\d{4}(?:\s*[--]\s*\d{2,4})?", link_text.strip()):
-                links.append(link)
-
-        # Check if any link contains a range pattern as its full text
-        # If so, keep it as-is (don't expand the range)
-        range_links = []
-        for link in links:
-            link_text = link.get("text", "")
-            # Check if the link text is a range like "2018-2019" or "2018-2019"
-            if re.fullmatch(r"\d{4}\s*[--]\s*\d{2,4}", link_text):
-                # This is a single link representing a season range, keep it as-is
-                range_links.append(link)
-
-        # If we found links that are ranges themselves, return them as-is
+        range_links = self._extract_range_links(links)
         if range_links:
             return range_links
 
-        # Check if we have list items (<li>) - if so, preserve their document order
+        list_item_result = self._extract_years_from_list_items(cell, links)
+        if list_item_result:
+            return list_item_result
+
+        return self._extract_years_from_plain_text(text, links)
+
+    def _extract_year_links(self, cell: Tag) -> list[LinkRecord]:
+        all_links = self.extract_links(cell)
+        return [
+            link
+            for link in all_links
+            if re.fullmatch(r"\d{4}(?:\s*[--]\s*\d{2,4})?", (link.get("text") or "").strip())
+        ]
+
+    @staticmethod
+    def _extract_range_links(links: list[LinkRecord]) -> list[LinkRecord]:
+        return [
+            link
+            for link in links
+            if re.fullmatch(r"\d{4}\s*[--]\s*\d{2,4}", (link.get("text") or ""))
+        ]
+
+    def _extract_years_from_list_items(
+        self,
+        cell: Tag,
+        links: list[LinkRecord],
+    ) -> list[dict[str, Any]]:
         li_elements = cell.find_all("li", recursive=True)
-        if li_elements:
-            # Extract years in document order from list items
-            result = []
-            year_to_url = YearExtractor.build_year_to_url_map(links)
+        if not li_elements:
+            return []
 
-            for li in li_elements:
-                li_text = clean_infobox_text(li.get_text(" ", strip=True)) or ""
-
-                # Check if this list item contains a range
-                if re.search(r"\b\d{4}\s*[--]\s*\d{2,4}\b", li_text):
-                    # Extract and expand the range
-                    years_in_li = YearExtractor.extract_years_from_text(li_text)
-                    # Interpolate URLs for the range if possible
-                    li_year_to_url = YearExtractor.interpolate_urls(
-                        years_in_li,
-                        year_to_url,
-                    )
-                    # Add years in sorted order (within this range)
-                    result.extend(
-                        {"year": year, "url": li_year_to_url.get(year)}
-                        for year in sorted(years_in_li)
-                    )
-                else:
-                    # Single year in this list item
-                    year_match = re.search(r"\b(\d{4})\b", li_text)
-                    if year_match:
-                        year = int(year_match.group(1))
-                        result.extend([{"year": year, "url": year_to_url.get(year)}])
-
-            if result:  # Only return if we found years in list items
-                return result
-
-        # Otherwise, use the shared logic to expand ranges and sort
-        # Build a map of year -> link
+        result: list[dict[str, Any]] = []
         year_to_url = YearExtractor.build_year_to_url_map(links)
-
-        # Extract all years and ranges from text
-        years_set = YearExtractor.extract_years_from_text(text)
-
-        # Try to interpolate URLs for missing years
-        year_to_url = YearExtractor.interpolate_urls(years_set, year_to_url)
-
-        # Build result list (sorted for non-list cases)
-        result = []
-        for year in sorted(years_set):
-            result.append({"year": year, "url": year_to_url.get(year)})
-
+        for li in li_elements:
+            li_text = clean_infobox_text(li.get_text(" ", strip=True)) or ""
+            result.extend(self._extract_li_years(li_text, year_to_url))
         return result
+
+    @staticmethod
+    def _extract_li_years(li_text: str, year_to_url: dict[int, str]) -> list[dict[str, Any]]:
+        if re.search(r"\b\d{4}\s*[--]\s*\d{2,4}\b", li_text):
+            years_in_li = YearExtractor.extract_years_from_text(li_text)
+            li_year_to_url = YearExtractor.interpolate_urls(years_in_li, year_to_url)
+            return [
+                {"year": year, "url": li_year_to_url.get(year)}
+                for year in sorted(years_in_li)
+            ]
+
+        year_match = re.search(r"\b(\d{4})\b", li_text)
+        if not year_match:
+            return []
+        year = int(year_match.group(1))
+        return [{"year": year, "url": year_to_url.get(year)}]
+
+    @staticmethod
+    def _extract_years_from_plain_text(
+        text: str,
+        links: list[LinkRecord],
+    ) -> list[dict[str, Any]]:
+        year_to_url = YearExtractor.build_year_to_url_map(links)
+        years_set = YearExtractor.extract_years_from_text(text)
+        year_to_url = YearExtractor.interpolate_urls(years_set, year_to_url)
+        return [{"year": year, "url": year_to_url.get(year)} for year in sorted(years_set)]
 
     @staticmethod
     def find_link_by_text(text: str, links: list[LinkRecord]) -> LinkRecord | None:

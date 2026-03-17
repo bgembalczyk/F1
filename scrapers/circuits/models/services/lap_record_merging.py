@@ -111,43 +111,47 @@ def is_record_subset(
     True, jeśli small nie wnosi sprzecznych danych względem big.
     Używamy tylko do bezpiecznego fallback-merge.
     """
-    for k, sv in small.items():
-        if sv is None:
+    for key, small_value in small.items():
+        if _is_empty_or_missing_value(key, small_value, big):
             continue
-        if k not in big or big.get(k) is None:
-            continue
-
-        bv = big.get(k)
-
-        if k == "time":
-            st = parse_time_seconds_from_text(sv)
-            bt = parse_time_seconds_from_text(bv)
-            if st is None or bt is None:
-                continue
-            if round(float(st), 6) != round(float(bt), 6):
-                return False
-            continue
-
-        if k == "driver":
-            if not match_driver_loose(sv, bv):
-                return False
-            continue
-        if k in ("vehicle", "car"):
-            if not match_vehicle_prefix(sv, bv, min_len=6):
-                return False
-            continue
-
-        if isinstance(sv, dict) and isinstance(bv, dict):
-            stxt = (sv.get("text") or sv.get("name") or "").strip().lower()
-            btxt = (bv.get("text") or bv.get("name") or "").strip().lower()
-            if stxt and btxt and stxt != btxt:
-                return False
-            continue
-
-        if sv != bv:
+        big_value = big.get(key)
+        if not _are_subset_values_compatible(key, small_value, big_value):
             return False
-
     return True
+
+
+def _is_empty_or_missing_value(
+    key: str,
+    small_value: Any,
+    big: dict[str, Any],
+) -> bool:
+    return small_value is None or key not in big or big.get(key) is None
+
+
+def _are_subset_values_compatible(key: str, small_value: Any, big_value: Any) -> bool:
+    if key == "time":
+        return _same_time_value(small_value, big_value)
+    if key == "driver":
+        return match_driver_loose(small_value, big_value)
+    if key in ("vehicle", "car"):
+        return match_vehicle_prefix(small_value, big_value, min_len=6)
+    if isinstance(small_value, dict) and isinstance(big_value, dict):
+        return _same_dict_text_value(small_value, big_value)
+    return small_value == big_value
+
+
+def _same_time_value(small_value: Any, big_value: Any) -> bool:
+    small_time = parse_time_seconds_from_text(small_value)
+    big_time = parse_time_seconds_from_text(big_value)
+    if small_time is None or big_time is None:
+        return True
+    return round(float(small_time), 6) == round(float(big_time), 6)
+
+
+def _same_dict_text_value(small_value: dict[str, Any], big_value: dict[str, Any]) -> bool:
+    small_text = (small_value.get("text") or small_value.get("name") or "").strip().lower()
+    big_text = (big_value.get("text") or big_value.get("name") or "").strip().lower()
+    return not (small_text and big_text and small_text != big_text)
 
 
 def select_best_time(records: list[dict[str, Any]]) -> float | None:
@@ -292,28 +296,54 @@ def merge_two_records(
     """Scala dwa rekordy w jeden, preferując bogatsze dane."""
     merged: dict[str, Any] = dict(base)
 
-    for key in ("driver",):
-        a = base.get(key)
-        b = extra.get(key)
-        if isinstance(a, dict) and a.get("url"):
-            merged[key] = a
-        elif b is not None:
-            merged[key] = b
+    _merge_best_entity(merged, base, extra, target_key="driver", source_keys=("driver",))
+    _merge_best_entity(merged, base, extra, target_key="vehicle", source_keys=("vehicle", "car"))
+    _merge_time(merged, base, extra)
+    _merge_date_or_year(merged, base, extra)
+    _merge_series(merged, base, extra)
+    _fill_missing_fields_from_extra(merged, extra)
 
-    a_v = base.get("vehicle") or base.get("car")
-    b_v = extra.get("vehicle") or extra.get("car")
-    if isinstance(a_v, dict) and a_v.get("url"):
-        merged["vehicle"] = a_v
-    elif b_v is not None:
-        merged["vehicle"] = b_v
+    return merged
 
-    t = parse_lap_record_time_from_record(base)
-    if t is None:
-        t = parse_lap_record_time_from_record(extra)
-    if t is not None:
-        merged["time"] = float(t)
+
+def _merge_best_entity(
+    merged: dict[str, Any],
+    base: dict[str, Any],
+    extra: dict[str, Any],
+    *,
+    target_key: str,
+    source_keys: tuple[str, ...],
+) -> None:
+    base_value = _first_present_value(base, source_keys)
+    extra_value = _first_present_value(extra, source_keys)
+    if isinstance(base_value, dict) and base_value.get("url"):
+        merged[target_key] = base_value
+    elif extra_value is not None:
+        merged[target_key] = extra_value
+
+
+def _first_present_value(record: dict[str, Any], keys: tuple[str, ...]) -> Any:
+    for key in keys:
+        value = record.get(key)
+        if value is not None:
+            return value
+    return None
+
+
+def _merge_time(merged: dict[str, Any], base: dict[str, Any], extra: dict[str, Any]) -> None:
+    parsed_time = parse_lap_record_time_from_record(base)
+    if parsed_time is None:
+        parsed_time = parse_lap_record_time_from_record(extra)
+    if parsed_time is not None:
+        merged["time"] = float(parsed_time)
     merged.pop("time_seconds", None)
 
+
+def _merge_date_or_year(
+    merged: dict[str, Any],
+    base: dict[str, Any],
+    extra: dict[str, Any],
+) -> None:
     best_date, best_year = select_best_date_year([base, extra])
     if best_year is None:
         best_year = extract_year_from_event(base) or extract_year_from_event(extra)
@@ -324,6 +354,8 @@ def merge_two_records(
     elif best_year is not None:
         merged["year"] = best_year
 
+
+def _merge_series(merged: dict[str, Any], base: dict[str, Any], extra: dict[str, Any]) -> None:
     best_series = select_best_series([base, extra])
     if best_series is not None:
         merged["series"] = best_series
@@ -331,13 +363,13 @@ def merge_two_records(
     merged.pop("class", None)
     merged.pop("class_", None)
 
-    for k, v in extra.items():
-        if k in {"time_seconds", "category", "class", "class_"}:
-            continue
-        if merged.get(k) is None and v is not None:
-            merged[k] = v
 
-    return merged
+def _fill_missing_fields_from_extra(merged: dict[str, Any], extra: dict[str, Any]) -> None:
+    for key, value in extra.items():
+        if key in {"time_seconds", "category", "class", "class_"}:
+            continue
+        if merged.get(key) is None and value is not None:
+            merged[key] = value
 
 
 def merge_record_group(
@@ -346,40 +378,54 @@ def merge_record_group(
     """Scal grupę rekordów do jednego."""
     merged = collect_other_fields(records)
 
+    _set_group_best_entities(merged, records)
+    _set_group_best_time(merged, records)
+    _set_group_best_date_or_year(merged, records)
+    _set_group_best_series(merged, records)
+
+    return merged
+
+
+def _set_group_best_entities(merged: dict[str, Any], records: list[dict[str, Any]]) -> None:
     best_driver = select_best_field_with_url(records, "driver")
     best_vehicle = select_best_field_with_url(records, "vehicle", "car")
-    best_date, best_year = select_best_date_year(records)
-    best_series = select_best_series(records)
-
-    t = None
-    for r in records:
-        t = parse_lap_record_time_from_record(r)
-        if t is not None:
-            break
-
-    if best_year is None:
-        for r in records:
-            y = extract_year_from_event(r)
-            if y:
-                best_year = y
-                break
-
     if best_driver is not None:
         merged["driver"] = best_driver
     if best_vehicle is not None:
         merged["vehicle"] = best_vehicle
-    if t is not None:
-        merged["time"] = float(t)
+
+
+def _set_group_best_time(merged: dict[str, Any], records: list[dict[str, Any]]) -> None:
+    for record in records:
+        parsed_time = parse_lap_record_time_from_record(record)
+        if parsed_time is not None:
+            merged["time"] = float(parsed_time)
+            return
+
+
+def _set_group_best_date_or_year(merged: dict[str, Any], records: list[dict[str, Any]]) -> None:
+    best_date, best_year = select_best_date_year(records)
+    if best_year is None:
+        best_year = _find_first_event_year(records)
 
     if best_date is not None:
         merged["date"] = best_date
     elif best_year is not None:
         merged["year"] = best_year
 
+
+def _find_first_event_year(records: list[dict[str, Any]]) -> int | None:
+    for record in records:
+        year = extract_year_from_event(record)
+        if year:
+            return year
+    return None
+
+
+def _set_group_best_series(merged: dict[str, Any], records: list[dict[str, Any]]) -> None:
+    best_series = select_best_series(records)
     if best_series is not None:
         merged["series"] = best_series
-
-    return merged
 
 
 def _stage_a_partition_by_record_key(

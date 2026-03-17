@@ -132,10 +132,8 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
 # ---------------------------------------------------------------------------
 
 
-@pytest.mark.parametrize(
-    ("record", "expected"),
-    [
-        # CurrentConstructorsListScraper / FormerConstructorsListScraper style
+def _constructor_url_cases() -> list[tuple[dict[str, Any], str | None]]:
+    return [
         (
             {
                 "constructor": {
@@ -145,7 +143,6 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
             },
             "https://en.wikipedia.org/wiki/Williams",
         ),
-        # IndianapolisOnlyConstructorsListScraper style
         (
             {
                 "constructor": "Kurtis Kraft",
@@ -153,7 +150,6 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
             },
             "https://en.wikipedia.org/wiki/Kurtis_Kraft",
         ),
-        # PrivateerTeamsListScraper style
         (
             {
                 "team": "BMS Scuderia Italia",
@@ -161,17 +157,8 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
             },
             "https://en.wikipedia.org/wiki/BMS_Scuderia_Italia",
         ),
-        # No URL available
-        (
-            {"constructor": "Unknown"},
-            None,
-        ),
-        # constructor dict without url
-        (
-            {"constructor": {"text": "NoUrl"}},
-            None,
-        ),
-        # Red link in constructor dict (LinkRecord style) - must be skipped
+        ({"constructor": "Unknown"}, None),
+        ({"constructor": {"text": "NoUrl"}}, None),
         (
             {
                 "constructor": {
@@ -181,7 +168,6 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
             },
             None,
         ),
-        # Red link as constructor_url - must be skipped
         (
             {
                 "constructor": "Ecurie Bleue",
@@ -189,7 +175,6 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
             },
             None,
         ),
-        # Red link as team_url - must be skipped
         (
             {
                 "team": "Ecurie Bleue",
@@ -197,8 +182,10 @@ def test_parse_soup_returns_url_infoboxes_tables() -> None:
             },
             None,
         ),
-    ],
-)
+    ]
+
+
+@pytest.mark.parametrize(("record", "expected"), _constructor_url_cases())
 def test_get_constructor_url(record: dict[str, Any], expected: str | None) -> None:
     result = CompleteConstructorsDataExtractor._get_constructor_url(record)  # noqa: SLF001
     assert result == expected
