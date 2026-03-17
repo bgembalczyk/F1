@@ -4,9 +4,13 @@ import shutil
 from collections.abc import Callable
 from datetime import datetime
 from datetime import timezone
+import json
 from pathlib import Path
 
+from models.mappers.serialization import to_dict_list
+from scrapers.base.quality.reporter import QualityReporter
 from scrapers.base.run_config import RunConfig
+from scrapers.wiki.seed_contract_adapter import SeedRecordContractAdapter
 from scrapers.wiki.seed_registry import ListJobRegistryEntry
 from scrapers.wiki.seed_registry import SeedRegistryEntry
 
@@ -63,6 +67,7 @@ class LayerZeroExecutor:
         merge_service: LayerZeroMergeService,
         current_constructors_scraper_name: str,
         year_provider: Callable[[], int],
+        seed_record_adapter: SeedRecordContractAdapter,
     ) -> None:
         self._list_job_registry = list_job_registry
         self._validate_list_registry = validate_list_registry
@@ -73,6 +78,7 @@ class LayerZeroExecutor:
         self._merge_service = merge_service
         self._current_constructors_scraper_name = current_constructors_scraper_name
         self._year_provider = year_provider
+        self._seed_record_adapter = seed_record_adapter
 
     def run(self, run_config: RunConfig, base_wiki_dir: Path) -> None:
         self._validate_list_registry(self._list_job_registry)
@@ -120,6 +126,13 @@ class LayerZeroExecutor:
                 run_config=local_run_config if scraper_kwargs else run_config,
             )
 
+            self._validate_contract_and_write_quality_report(
+                job=job,
+                base_wiki_dir=base_wiki_dir,
+                l0_raw_json_path=l0_raw_json_path,
+                run_config=run_config,
+            )
+
             if job.list_scraper_cls.__name__ == self._current_constructors_scraper_name:
                 source_json_path = base_wiki_dir / l0_raw_json_path
                 self._constructors_mirror_service.mirror(
@@ -130,6 +143,45 @@ class LayerZeroExecutor:
             print(f"[list] finished {job.list_scraper_cls.__name__}")
 
         self._merge_service.merge(base_wiki_dir)
+
+    def _validate_contract_and_write_quality_report(
+        self,
+        *,
+        job: ListJobRegistryEntry,
+        base_wiki_dir: Path,
+        l0_raw_json_path: Path,
+        run_config: RunConfig,
+    ) -> None:
+        json_path = base_wiki_dir / l0_raw_json_path
+        records = json.loads(json_path.read_text(encoding="utf-8"))
+        normalized_records = self._seed_record_adapter.adapt(
+            records=to_dict_list(records),
+            source_url=job.wikipedia_url,
+        )
+        json_path.write_text(
+            json.dumps(normalized_records, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+
+        debug_dir = Path(run_config.debug_dir) if run_config.debug_dir else None
+        if debug_dir is None:
+            return
+
+        quality_root = debug_dir / "quality" / "layer0_jobs"
+        reporter = QualityReporter(
+            report_root=quality_root,
+            run_id=f"layer0-{job.seed_name}",
+            source_metadata={
+                "seed_name": job.seed_name,
+                "category": job.output_category,
+                "primary_key": "name",
+                "list_scraper": job.list_scraper_cls.__name__,
+            },
+        )
+        reporter.report_step(
+            step_id=job.seed_name,
+            records=normalized_records,
+        )
 
 
 class LayerOneExecutor:
@@ -240,6 +292,7 @@ def create_default_wiki_pipeline_application(
         ),
         current_constructors_scraper_name="CurrentConstructorsListScraper",
         year_provider=_current_year,
+        seed_record_adapter=SeedRecordContractAdapter(),
     )
 
     layer_one_executor = LayerOneExecutor(
