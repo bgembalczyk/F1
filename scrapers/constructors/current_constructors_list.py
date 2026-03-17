@@ -18,9 +18,8 @@ from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_ENGINE_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
-from scrapers.constructors.sections import ConstructorsListSectionParser
-
-CURRENT_YEAR = datetime.now(tz=timezone.utc).year
+from scrapers.constructors.constants import CURRENT_YEAR
+from scrapers.constructors.sections.list_section import ConstructorsListSectionParser
 
 
 class CurrentConstructorsListScraper(BaseConstructorListScraper):

@@ -5,6 +5,9 @@ from typing import Any
 from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.helpers.constants import RE_COLON
+from scrapers.base.table.columns.helpers.constants import RE_MINSEC
+from scrapers.base.table.columns.helpers.constants import RE_SECONDS
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
@@ -23,17 +26,6 @@ class TimeColumn(BaseColumn):
         NormalizedTime(text=<oryginalny_tekst_bez_refów>, seconds=<float | None>)
     """
 
-    _RE_COLON = re.compile(r"^\s*(?P<min>\d+)\s*:\s*(?P<sec>\d+(?:\.\d+)?)\s*$")
-    _RE_MINSEC = re.compile(
-        r"^\s*(?:(?P<min>\d+)\s*(?:m|min|minutes?)\s*)?"
-        r"(?P<sec>\d+(?:\.\d+)?)\s*(?:s|sec|seconds?)\s*$",
-        re.IGNORECASE,
-    )
-    _RE_SECONDS = re.compile(
-        r"^\s*(?P<sec>\d+(?:\.\d+)?)\s*(?:s|sec|seconds?)?\s*$",
-        re.IGNORECASE,
-    )
-
     def parse(self, ctx: ColumnContext) -> Any:
         text = (ctx.clean_text or "").strip()
         if not text:
@@ -44,13 +36,13 @@ class TimeColumn(BaseColumn):
         base = text.split("(", 1)[0].strip()
 
         # 1) format "M:SS(.sss)"
-        m = self._RE_COLON.match(base)
+        m = RE_COLON.match(base)
         if m:
             seconds = parse_time_seconds_from_text(f"{m.group('min')}:{m.group('sec')}")
             return NormalizedTime(text=text, seconds=seconds)
 
         # 2) format "M min SS(.sss)s" / "M m SS.s s"
-        m = self._RE_MINSEC.match(base)
+        m = RE_MINSEC.match(base)
         if m:
             minutes = m.group("min")
             seconds = m.group("sec")
@@ -61,7 +53,7 @@ class TimeColumn(BaseColumn):
             )
 
         # 3) format tylko z sekundami "SS(.sss)" lub "SS(.sss)s"
-        m = self._RE_SECONDS.match(base)
+        m = RE_SECONDS.match(base)
         if m:
             seconds = parse_time_seconds_from_text(m.group("sec"))
             return NormalizedTime(text=text, seconds=seconds)

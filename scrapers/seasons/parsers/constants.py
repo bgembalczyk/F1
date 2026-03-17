@@ -1,0 +1,16 @@
+TESTING_VENUES_YEARS = {2009, 2011}
+TESTING_VENUES_SWAPPED_COLUMNS_YEAR = 2011
+
+MERGED_ENTRY_BASE_KEYS = {"pos", "constructor", "points", "no"}
+ROUND_LEVEL_RESULT_ATTRIBUTES = {"background", "pole_position", "fastest_lap"}
+
+DRIVER_FIELDS = {"race_drivers", "driver", "drivers", "rounds", "races", "no"}
+
+PRE_2007_NORMALIZATION_CUTOFF = 2007
+ENGINE_V8_YEAR = 2008
+ENGINE_V10_START_YEAR = 1998
+ENGINE_V10_END_YEAR = 2005
+
+EXPECTED_HEADERS = ["Grand Prix", "Circuit"]
+CANCELLED_ROUNDS_TABLE_INDEX = 1
+MIN_TABLES_WITH_CANCELLED = 2

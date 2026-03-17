@@ -14,11 +14,10 @@ from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
+from scrapers.seasons.parsers.constants import CANCELLED_ROUNDS_TABLE_INDEX
+from scrapers.seasons.parsers.constants import EXPECTED_HEADERS
+from scrapers.seasons.parsers.constants import MIN_TABLES_WITH_CANCELLED
 from scrapers.seasons.parsers.table import SeasonTableParser
-
-EXPECTED_HEADERS = ["Grand Prix", "Circuit"]
-CANCELLED_ROUNDS_TABLE_INDEX = 1
-MIN_TABLES_WITH_CANCELLED = 2
 
 
 class CancelledRoundsParser:

@@ -10,12 +10,11 @@ from bs4 import Tag
 
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.sections.aliases import builtin_aliases_for_target
+from scrapers.wiki.parsers.constants import HEADING_TAGS
 from scrapers.wiki.parsers.section_profiles import get_section_profile
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
-
-_HEADING_TAGS = ("h1", "h2", "h3", "h4", "h5", "h6")
 
 
 @dataclass(slots=True)
@@ -143,7 +142,7 @@ def find_section_heading(
 
     fuzzy_candidates: list[SectionMatch] = []
 
-    for heading in soup.find_all(_HEADING_TAGS):
+    for heading in soup.find_all(HEADING_TAGS):
         heading_ids = {_normalize_id(value) for value in _collect_heading_ids(heading)}
         if heading_ids & target_ids:
             exact_id_score = profile.priorities.exact_id_score if profile else 3.0

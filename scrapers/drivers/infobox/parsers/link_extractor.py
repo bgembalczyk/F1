@@ -8,12 +8,10 @@ from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.helpers.year_extraction import YearExtractor
+from scrapers.drivers.infobox.parsers.constants import TWO_DIGIT_YEAR_SUFFIX
 
 
 class InfoboxLinkExtractor:
-    MIN_LINKS_FOR_RANGE = 2
-    TWO_DIGIT_YEAR_SUFFIX = 2
-
     def __init__(self, *, include_urls: bool, wikipedia_base: str) -> None:
         self._include_urls = include_urls
         self._wikipedia_base = wikipedia_base
@@ -83,7 +81,7 @@ class InfoboxLinkExtractor:
         for match in re.finditer(r"\b(\d{4})\s*[--]\s*(\d{2,4})\b", text):
             start = int(match.group(1))
             end_text = match.group(2)
-            if len(end_text) == self.TWO_DIGIT_YEAR_SUFFIX:
+            if len(end_text) == TWO_DIGIT_YEAR_SUFFIX:
                 end = (start // 100) * 100 + int(end_text)
             else:
                 end = int(end_text)

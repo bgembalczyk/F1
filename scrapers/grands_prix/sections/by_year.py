@@ -17,6 +17,11 @@ from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
 from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
+from scrapers.grands_prix.helpers.constants import BACKGROUND_HEX
+from scrapers.grands_prix.helpers.constants import BACKGROUND_MAP
+from scrapers.grands_prix.helpers.constants import DEFAULT_CHAMPIONSHIP
+from scrapers.grands_prix.helpers.constants import SHORT_HEX_LEN
+from scrapers.grands_prix.helpers.constants import UNKNOWN_CHAMPIONSHIP
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -24,16 +29,6 @@ if TYPE_CHECKING:
 
 
 class GrandPrixByYearSectionParser:
-    _SHORT_HEX_LEN = 3
-    _BACKGROUND_HEX = re.compile(r"#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})")
-    _BACKGROUND_MAP = {
-        "ffffcc": "pre_war_european_championship",
-        "d0ffb0": "pre_war_world_manufacturers_championship",
-        "ffcccc": "non_championship",
-    }
-    _DEFAULT_CHAMPIONSHIP = "formula_one_world_championship"
-    _UNKNOWN_CHAMPIONSHIP = "unknown"
-
     def __init__(
         self,
         *,
@@ -92,8 +87,8 @@ class GrandPrixByYearSectionParser:
     def _championship_from_row(self, row: Tag) -> str:
         color = self._background_color(row)
         if color is None:
-            return self._DEFAULT_CHAMPIONSHIP
-        return self._BACKGROUND_MAP.get(color, self._UNKNOWN_CHAMPIONSHIP)
+            return DEFAULT_CHAMPIONSHIP
+        return BACKGROUND_MAP.get(color, UNKNOWN_CHAMPIONSHIP)
 
     def _background_color(self, row: Tag) -> str | None:
         for candidate in [row.get("style"), row.get("bgcolor")]:
@@ -110,11 +105,11 @@ class GrandPrixByYearSectionParser:
     def _extract_color(self, candidate: str | None) -> str | None:
         if not candidate:
             return None
-        match = self._BACKGROUND_HEX.search(candidate)
+        match = BACKGROUND_HEX.search(candidate)
         if not match:
             return None
         normalized = match.group(1).lower()
-        if len(normalized) == self._SHORT_HEX_LEN:
+        if len(normalized) == SHORT_HEX_LEN:
             return "".join(ch * 2 for ch in normalized)
         return normalized
 

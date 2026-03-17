@@ -3,21 +3,12 @@ from __future__ import annotations
 from typing import Any
 from typing import Protocol
 
+from scrapers.sponsorship_liveries.helpers.constants import COLOUR_KEYS
+from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_KEYS
 from scrapers.sponsorship_liveries.parsers.colour_scope import ColourScopeHandler
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 from scrapers.sponsorship_liveries.parsers.sponsor_scope import SponsorScopeHandler
-
-SPONSOR_KEYS = {
-    "main_sponsors",
-    "additional_major_sponsors",
-    "livery_sponsors",
-    "livery_principal_sponsors",
-}
-COLOUR_KEYS = {
-    "main_colours",
-    "additional_colours",
-}
 
 
 class RecordSplitStrategy(Protocol):

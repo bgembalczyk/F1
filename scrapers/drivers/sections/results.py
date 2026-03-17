@@ -12,6 +12,7 @@ from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.drivers.sections.constants import UNKNOWN_VALUE
 from scrapers.drivers.sections.driver_results_schema_factory import (
     DriverResultsSchemaFactory,
 )
@@ -26,8 +27,6 @@ if TYPE_CHECKING:
 
 
 class DriverResultsSectionParser:
-    _UNKNOWN_VALUE = "unknown"
-
     def __init__(
         self,
         *,
@@ -44,7 +43,7 @@ class DriverResultsSectionParser:
         )
         self._classifier = classifier or DriverResultsTableClassifier()
         self._schema_factory = schema_factory or DriverResultsSchemaFactory(
-            unknown_value=self._UNKNOWN_VALUE,
+            unknown_value=UNKNOWN_VALUE,
         )
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:

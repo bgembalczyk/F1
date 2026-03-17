@@ -50,11 +50,3 @@ def build_run_list_scraper(
         )
 
     return run_list_scraper
-
-
-__all__ = [
-    "build_run_list_scraper",
-    "minimal_debug_profile",
-    "minimal_profile",
-    "strict_quality_profile",
-]

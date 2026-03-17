@@ -4,10 +4,9 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
+from scrapers.seasons.parsers.constants import MERGED_ENTRY_BASE_KEYS
+from scrapers.seasons.parsers.constants import ROUND_LEVEL_RESULT_ATTRIBUTES
 from scrapers.seasons.parsers.table import SeasonTableParser
-
-MERGED_ENTRY_BASE_KEYS = {"pos", "constructor", "points", "no"}
-ROUND_LEVEL_RESULT_ATTRIBUTES = {"background", "pole_position", "fastest_lap"}
 
 
 class SeasonStandingsParser:

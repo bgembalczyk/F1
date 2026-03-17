@@ -156,9 +156,3 @@ class F1CircuitInfoboxParser(InfoboxParser):
                     r.decompose()
 
         return soup
-
-    # ------------------------------
-
-
-# Backward-compatible alias
-F1CircuitInfoboxScraper = F1CircuitInfoboxParser

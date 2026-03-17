@@ -2,11 +2,10 @@ from typing import Any
 
 from models.services.rounds_service import parse_rounds
 from scrapers.base.helpers.parsing import parse_int_from_text
+from scrapers.seasons.parsers.constants import DRIVER_FIELDS
 
 
 class EntryMerger:
-    _DRIVER_FIELDS = {"race_drivers", "driver", "drivers", "rounds", "races", "no"}
-
     def merge_entries(self, records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if not records:
             return records
@@ -101,7 +100,7 @@ class EntryMerger:
         seen: set[str] = set()
         for record in records:
             for key in record:
-                if key in cls._DRIVER_FIELDS or key in seen:
+                if key in DRIVER_FIELDS or key in seen:
                     continue
                 seen.add(key)
                 keys.append(key)

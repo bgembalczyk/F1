@@ -22,7 +22,3 @@ class ParagraphParser(WikiParser):
             Słownik z tekstem akapitu.
         """
         return {"text": extract_text(element) or ""}
-
-
-# Alias przejściowy dla kompatybilności wstecznej.
-ParagrafParser = ParagraphParser

@@ -7,12 +7,11 @@ from bs4 import Tag
 
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.drivers.infobox.parsers.constants import MIN_VALID_CAR_NUMBER_YEAR
 from scrapers.drivers.infobox.parsers.year_parser import YearParser
 
 
 class CarNumbersParser:
-    MIN_VALID_CAR_NUMBER_YEAR = 1900
-
     """Handles parsing of car numbers with optional year ranges."""
 
     @staticmethod
@@ -54,7 +53,7 @@ class CarNumbersParser:
                     msg,
                     cause=exc,
                 ) from exc
-            if number >= CarNumbersParser.MIN_VALID_CAR_NUMBER_YEAR and not prefix:
+            if number >= MIN_VALID_CAR_NUMBER_YEAR and not prefix:
                 continue
             years_text = match.group("years") or ""
             years = (

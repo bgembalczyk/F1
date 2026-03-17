@@ -6,11 +6,10 @@ from models.domain_utils.years import parse_year_range as parse_domain_year_rang
 from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.year_extraction import YearExtractor
+from scrapers.drivers.infobox.parsers.constants import MIN_RANGE_YEARS
 
 
 class YearParser:
-    MIN_RANGE_YEARS = 2
-
     """Handles parsing of years and year ranges."""
 
     @staticmethod
@@ -61,7 +60,7 @@ class YearParser:
         # Handle "YEAR-YEAR" or "YEAR-YEAR"
         else:
             all_years = re.findall(r"\b(\d{4})\b", year_text)
-            if len(all_years) >= YearParser.MIN_RANGE_YEARS:
+            if len(all_years) >= MIN_RANGE_YEARS:
                 years["start"] = int(all_years[0])
                 years["end"] = int(all_years[-1])
             elif len(all_years) == 1:

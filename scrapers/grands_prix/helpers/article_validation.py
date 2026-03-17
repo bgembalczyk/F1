@@ -2,9 +2,8 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.article_validation import has_category_keyword
 from scrapers.base.helpers.article_validation import has_navbox_template_link
-
-GRAND_PRIX_KEYWORD = "grand prix"
-GRAND_PRIX_NAVBOX_TEMPLATE = "Template:Formula_One_Grands_Prix"
+from scrapers.grands_prix.helpers.constants import GRAND_PRIX_KEYWORD
+from scrapers.grands_prix.helpers.constants import GRAND_PRIX_NAVBOX_TEMPLATE
 
 
 def has_grand_prix_navbox(soup: BeautifulSoup) -> bool:

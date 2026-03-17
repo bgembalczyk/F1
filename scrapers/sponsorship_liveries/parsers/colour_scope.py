@@ -2,16 +2,13 @@ import re
 from typing import Any
 
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.sponsorship_liveries.helpers.constants import POSSESSIVE_COLOUR_RE
+from scrapers.sponsorship_liveries.helpers.constants import POSSESSIVE_PAREN_RE
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 
 
 class ColourScopeHandler:
-    _POSSESSIVE_PAREN_RE = re.compile(r"\([^)]*'s[^)]*\)\s*$")
-
-    # Regex for possessive colour-note suffixes with driver names.
-    _POSSESSIVE_COLOUR_RE = re.compile(r"^(.*?)\s*\(([^)']*)'s[^)]*\)\s*$")
-
     @staticmethod
     def split_or_colours(colours: Any) -> Any:
         if not isinstance(colours, list):
@@ -82,7 +79,7 @@ class ColourScopeHandler:
         part = "".join(current).strip()
         if part:
             parts.append(part)
-        if len(parts) > 1 and ColourScopeHandler._POSSESSIVE_PAREN_RE.search(parts[-1]):
+        if len(parts) > 1 and POSSESSIVE_PAREN_RE.search(parts[-1]):
             return [text]
         return parts
 
@@ -223,7 +220,7 @@ class ColourScopeHandler:
         if not isinstance(colours, list):
             return False
         return any(
-            isinstance(item, str) and cls._POSSESSIVE_COLOUR_RE.match(item)
+            isinstance(item, str) and POSSESSIVE_COLOUR_RE.match(item)
             for item in colours
         )
 
@@ -256,7 +253,7 @@ class ColourScopeHandler:
             if not isinstance(item, str):
                 result.append((None, [item]))
                 continue
-            m = cls._POSSESSIVE_COLOUR_RE.match(item)
+            m = POSSESSIVE_COLOUR_RE.match(item)
             if m:
                 driver_name = clean_wiki_text(m.group(2).strip())
                 colour_text = m.group(1).strip()

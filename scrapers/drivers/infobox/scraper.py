@@ -20,7 +20,7 @@ from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 
 
 class DriverInfoboxParser(InfoboxParser):
-    _IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
+    IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
 
     def __init__(
         self,
@@ -117,7 +117,7 @@ class DriverInfoboxParser(InfoboxParser):
 
         for section in sections[1:]:
             title = section.get("title") or ""
-            if title in self._IGNORED_SECTIONS:
+            if title in self.IGNORED_SECTIONS:
                 continue
             if title == "Championship titles":
                 # Parse championship titles and inspect full_data for major victories
@@ -165,7 +165,3 @@ class DriverInfoboxParser(InfoboxParser):
         if not caption:
             return None
         return clean_infobox_text(caption.get_text(" ", strip=True))
-
-
-# Backward-compatible alias
-DriverInfoboxScraper = DriverInfoboxParser

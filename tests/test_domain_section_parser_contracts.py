@@ -6,9 +6,9 @@ from dataclasses import asdict
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.circuits.sections import CircuitLayoutHistorySectionParser
-from scrapers.constructors.sections import ConstructorHistorySectionParser
-from scrapers.drivers.sections import DriverCareerSectionParser
+from scrapers.circuits.sections.layout_history import CircuitLayoutHistorySectionParser
+from scrapers.constructors.sections.history import ConstructorHistorySectionParser
+from scrapers.drivers.sections.career import DriverCareerSectionParser
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 from scrapers.seasons.sections.regulation_changes import (

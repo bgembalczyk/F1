@@ -2,61 +2,15 @@ import json
 import re
 from pathlib import Path
 
-FORMULA_ONE_SERIES = ["Formula One"]
-CHASSIS_CONSTRUCTOR_DOMAINS = {"constructors", "chassis_constructors"}
-FORMER_CONSTRUCTORS_SOURCE = "f1_former_constructors.json"
-INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE = "f1_indianapolis_only_constructors.json"
-TYRE_MANUFACTURERS_SOURCE = "f1_tyre_manufacturers_by_season.json"
-
-CIRCUITS_FORMULA_ONE_FIELDS = {
-    "circuit_status",
-    "last_length_used_km",
-    "last_length_used_mi",
-    "turns",
-    "grands_prix",
-    "seasons",
-    "grands_prix_held",
-}
-CONSTRUCTORS_FORMULA_ONE_FIELDS = {
-    "engine",
-    "licensed_in",
-    "based_in",
-    "seasons",
-    "races_entered",
-    "races_started",
-    "drivers",
-    "total_entries",
-    "wins",
-    "points",
-    "poles",
-    "fastest_laps",
-    "podiums",
-    "wcc_titles",
-    "wdc_titles",
-    "antecedent_teams",
-    "status",
-}
-ENGINES_FORMULA_ONE_FIELDS = {
-    "manufacturer_status",
-    "engines_built_in",
-    "seasons",
-    "races_entered",
-    "races_started",
-    "wins",
-    "points",
-    "poles",
-    "fastest_laps",
-    "podiums",
-    "wcc",
-    "wdc",
-}
-GRANDS_PRIX_FORMULA_ONE_FIELDS = {
-    "race_status",
-    "country",
-    "years_held",
-    "circuits",
-    "total",
-}
+from scrapers.wiki.contants import CHASSIS_CONSTRUCTOR_DOMAINS
+from scrapers.wiki.contants import CIRCUITS_FORMULA_ONE_FIELDS
+from scrapers.wiki.contants import CONSTRUCTORS_FORMULA_ONE_FIELDS
+from scrapers.wiki.contants import ENGINES_FORMULA_ONE_FIELDS
+from scrapers.wiki.contants import FORMER_CONSTRUCTORS_SOURCE
+from scrapers.wiki.contants import FORMULA_ONE_SERIES
+from scrapers.wiki.contants import GRANDS_PRIX_FORMULA_ONE_FIELDS
+from scrapers.wiki.contants import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
+from scrapers.wiki.contants import TYRE_MANUFACTURERS_SOURCE
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:

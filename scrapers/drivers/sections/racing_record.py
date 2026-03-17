@@ -4,15 +4,10 @@ from typing import TYPE_CHECKING
 
 from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
 from scrapers.drivers.sections.common import DriverResultsSectionConfig
+from scrapers.drivers.sections.constants import RACING_RECORD_SECTION
 
 if TYPE_CHECKING:
     from scrapers.drivers.sections.results import DriverResultsSectionParser
-
-RACING_RECORD_SECTION = DriverResultsSectionConfig(
-    section_id="Racing_record",
-    section_label="Racing record",
-    header_aliases=("Racing record", "Racing career"),
-)
 
 
 class DriverRacingRecordSectionParser(BaseDriverResultsSectionParser):

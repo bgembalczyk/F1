@@ -5,6 +5,7 @@ from typing import Any
 
 from models.services.helpers import normalize_date_value
 from models.services.helpers import prune_empty
+from scrapers.circuits.models.services.constants import TOP_LEVEL_KEYS
 from scrapers.circuits.models.services.lap_record_merging import merge_race_lap_records
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
 from scrapers.circuits.models.services.normalization import extract_circuit_location
@@ -14,15 +15,6 @@ from scrapers.circuits.models.services.normalization import extract_fia_grade
 from scrapers.circuits.models.services.normalization import extract_history_events
 from scrapers.circuits.models.services.normalization import extract_infobox_layouts
 from scrapers.circuits.models.services.normalization import merge_tables_into_layouts
-
-TOP_LEVEL_KEYS = (
-    "circuit_status",
-    "type",
-    "direction",
-    "grands_prix",
-    "seasons",
-    "grands_prix_held",
-)
 
 
 @dataclass(frozen=True)

@@ -5,7 +5,7 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.drivers.infobox.scraper import DriverInfoboxScraper
+from scrapers.drivers.infobox.scraper import DriverInfoboxParser
 
 EXPECTED_NATIONALITY_COUNT = 1
 EXPECTED_TITLES_IN_LIST = 3
@@ -18,7 +18,7 @@ YEAR_2007 = 2007
 def scraper():
     """Create a scraper instance with URL extraction enabled."""
     options = ScraperOptions(include_urls=True)
-    return DriverInfoboxScraper(options=options)
+    return DriverInfoboxParser(options=options)
 
 
 def test_nationality_with_link(scraper):

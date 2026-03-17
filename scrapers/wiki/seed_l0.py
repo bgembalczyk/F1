@@ -9,26 +9,9 @@ from typing import Any
 
 from scrapers.config import DataPaths
 from scrapers.config import default_data_paths
-
-SEED_RECORD_SCHEMA_VERSION = "1.0"
-NAME_CANDIDATE_KEYS = (
-    "name",
-    "driver",
-    "constructor",
-    "team",
-    "circuit",
-    "race_title",
-    "season",
-    "manufacturer",
-)
-LINK_CANDIDATE_KEYS = (
-    "link",
-    "url",
-    "driver_url",
-    "constructor_url",
-    "team_url",
-    "circuit_url",
-)
+from scrapers.wiki.contants import LINK_CANDIDATE_KEYS
+from scrapers.wiki.contants import NAME_CANDIDATE_KEYS
+from scrapers.wiki.contants import SEED_RECORD_SCHEMA_VERSION
 
 
 @dataclass(frozen=True)

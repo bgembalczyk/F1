@@ -2,7 +2,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
 from scrapers.wiki.parsers.section_detection import find_section_heading
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
 

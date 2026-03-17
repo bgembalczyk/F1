@@ -4,10 +4,10 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.sections.adapter import SectionAdapterEntry
-from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
-from scrapers.circuits.sections import CircuitEventsSectionParser
-from scrapers.circuits.sections import CircuitLapRecordsSectionParser
-from scrapers.circuits.sections import CircuitLayoutHistorySectionParser
+from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
+from scrapers.circuits.sections.events import CircuitEventsSectionParser
+from scrapers.circuits.sections.lap_records import CircuitLapRecordsSectionParser
+from scrapers.circuits.sections.layout_history import CircuitLayoutHistorySectionParser
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper

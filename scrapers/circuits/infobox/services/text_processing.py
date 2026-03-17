@@ -2,18 +2,13 @@ import re
 from typing import Any
 
 from scrapers.base.helpers.text import choose_richer_entity
+from scrapers.circuits.infobox.services.constants import LANG_PAREN_ANYWHERE_RE
+from scrapers.circuits.infobox.services.constants import LANG_PAREN_TAIL_RE
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
 class CircuitTextProcessing(InfoboxTextUtils):
     """Czyszczenie i normalizacja tekstu, konwersja czasów, wybór bogatszych encji."""
-
-    # tylko markery językowe w nawiasie: (es), ( de ), (it)
-    _LANG_PAREN_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)$", flags=re.IGNORECASE)
-    _LANG_PAREN_ANYWHERE_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)", flags=re.IGNORECASE)
-
-    # do czyszczenia uciętych markerów typu "( es" / "( cs"
-    _LANG_PAREN_TAIL_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)?\s*$", flags=re.IGNORECASE)
 
     @staticmethod
     def _entity_text(val: Any) -> str | None:
@@ -60,7 +55,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
         Nie dotyka normalnych nawiasów: '(motorcyclist)'.
         """
         s = (s or "").replace("\xa0", " ").strip()
-        s = self._LANG_PAREN_ANYWHERE_RE.sub("", s)
+        s = LANG_PAREN_ANYWHERE_RE.sub("", s)
         return re.sub(r"\s+", " ", s).strip()
 
     def _strip_lang_marker_tail_only(self, s: str) -> str:
@@ -70,7 +65,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
         - "David Vršecký ( cs" -> "David Vršecký"
         """
         s = (s or "").replace("\xa0", " ").strip()
-        s = self._LANG_PAREN_TAIL_RE.sub("", s).strip()
+        s = LANG_PAREN_TAIL_RE.sub("", s).strip()
         return re.sub(r"\s+", " ", s).strip()
 
     def _norm_text_for_key(self, x: Any) -> str:

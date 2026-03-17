@@ -2,39 +2,28 @@ from typing import Any
 
 from scrapers.base.helpers.background import extract_background
 from scrapers.base.helpers.text import strip_marks
-from scrapers.base.table.columns.constants import MARKS_RE
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.helpers.constants import MARKS_RE
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.seasons.columns.race_result_components import RaceResultBackgroundMapper
-from scrapers.seasons.columns.race_result_components import RaceResultCellParser
-from scrapers.seasons.columns.race_result_components import SuperscriptParseResult
-from scrapers.seasons.columns.race_result_rules import ClassifiedDnfRule
-from scrapers.seasons.columns.race_result_rules import DoublePointsRoundRule
-from scrapers.seasons.columns.race_result_rules import F2EligibilityRule
-from scrapers.seasons.columns.race_result_rules import FatalAccidentRule
-from scrapers.seasons.columns.race_result_rules import HalfPointsRoundRule
-from scrapers.seasons.columns.race_result_rules import MarkBasedEligibilityRule
-from scrapers.seasons.columns.race_result_rules import ResultRule
-from scrapers.seasons.columns.race_result_rules import ResultRuleContext
-from scrapers.seasons.columns.race_result_rules import RoundRule
-from scrapers.seasons.columns.race_result_rules import RoundRuleContext
-from scrapers.seasons.columns.race_result_rules import SharedDriveRule
-from scrapers.seasons.columns.race_result_rules import StarMarkNoteRule
+from scrapers.seasons.columns.helpers.constants import BACKGROUND_TO_RESULT
+from scrapers.seasons.columns.helpers.race_result_components import RaceResultBackgroundMapper
+from scrapers.seasons.columns.helpers.race_result_components import RaceResultCellParser
+from scrapers.seasons.columns.helpers.race_result_components import SuperscriptParseResult
+from scrapers.seasons.columns.helpers.race_result_rules import ClassifiedDnfRule
+from scrapers.seasons.columns.helpers.race_result_rules import DoublePointsRoundRule
+from scrapers.seasons.columns.helpers.race_result_rules import F2EligibilityRule
+from scrapers.seasons.columns.helpers.race_result_rules import FatalAccidentRule
+from scrapers.seasons.columns.helpers.race_result_rules import HalfPointsRoundRule
+from scrapers.seasons.columns.helpers.race_result_rules import MarkBasedEligibilityRule
+from scrapers.seasons.columns.helpers.race_result_rules import ResultRule
+from scrapers.seasons.columns.helpers.race_result_rules import ResultRuleContext
+from scrapers.seasons.columns.helpers.race_result_rules import RoundRule
+from scrapers.seasons.columns.helpers.race_result_rules import RoundRuleContext
+from scrapers.seasons.columns.helpers.race_result_rules import SharedDriveRule
+from scrapers.seasons.columns.helpers.race_result_rules import StarMarkNoteRule
 
 
 class RaceResultColumn(BaseColumn):
-    _BACKGROUND_TO_RESULT = {
-        "ffffbf": "Winner",
-        "dfdfdf": "Second place",
-        "ffdf9f": "Third place",
-        "dfffdf": "Other points position",
-        "cfcfff": "Other classified position",
-        "efcfff": "Not classified, retired",
-        "ffcfcf": "Did not qualify",
-        "000000": "Disqualified",
-        "ffffff": "Did not start",
-    }
-
     def __init__(
         self,
         *,
@@ -45,7 +34,7 @@ class RaceResultColumn(BaseColumn):
     ) -> None:
         self._season_year = season_year
         self._cell_parser = RaceResultCellParser()
-        self._background_mapper = RaceResultBackgroundMapper(self._BACKGROUND_TO_RESULT)
+        self._background_mapper = RaceResultBackgroundMapper(BACKGROUND_TO_RESULT)
 
         default_result_rules: list[ResultRule] = [
             ClassifiedDnfRule(),

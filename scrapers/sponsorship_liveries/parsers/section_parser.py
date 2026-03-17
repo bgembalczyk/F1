@@ -18,6 +18,7 @@ from scrapers.base.table.pipeline import TablePipeline
 from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
+from scrapers.sponsorship_liveries.helpers.constants import season_headers
 from scrapers.sponsorship_liveries.parsers.record_splitter import (
     SponsorshipRecordSplitter,
 )
@@ -27,13 +28,6 @@ if TYPE_CHECKING:
 
 
 class SponsorshipSectionParser:
-    _season_headers = {
-        "year",
-        "years",
-        "season",
-        "seasons",
-    }
-
     def __init__(
         self,
         *,
@@ -375,7 +369,7 @@ class SponsorshipSectionParser:
                 normalize_header(clean_wiki_text(c.get_text(" ", strip=True)))
                 for c in header_cells
             ]
-            if any(h in self._season_headers for h in headers):
+            if any(h in season_headers for h in headers):
                 return element
 
         msg = f"Nie znaleziono tabeli w sekcji {section_id!r}"

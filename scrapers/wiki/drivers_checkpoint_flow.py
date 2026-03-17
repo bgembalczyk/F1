@@ -5,16 +5,15 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 
-if TYPE_CHECKING:
-    from collections.abc import Callable
-
+from scrapers.wiki.contants import PARSER_VERSION
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.orchestration.step_orchestrator import StepDeclaration
 from scrapers.base.orchestration.step_orchestrator import StepOrchestrator
 from scrapers.config import default_data_paths
 from scrapers.drivers.single_scraper import SingleDriverScraper
 
-PARSER_VERSION = "drivers-checkpoint-flow-v1"
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
 class DriversCheckpointFlow:

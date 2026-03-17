@@ -6,9 +6,11 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.text import strip_marks
-from scrapers.base.table.columns.constants import MARKS_RE
-from scrapers.base.table.columns.constants import SPLIT_RESULTS_RE
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.helpers.constants import MARKS_RE
+from scrapers.base.table.columns.helpers.constants import SPLIT_RESULTS_RE
+from scrapers.seasons.columns.helpers.constants import SHORT_HEX_COLOR_LENGTH
+from scrapers.seasons.columns.helpers.constants import SPRINT_POINTS_START_YEAR
 
 
 @dataclass(frozen=True)
@@ -20,8 +22,6 @@ class SuperscriptParseResult:
 
 
 class RaceResultCellParser:
-    _SPRINT_POINTS_START_YEAR = 2021
-
     def extract_result_text(self, ctx: ColumnContext) -> str:
         cell = ctx.cell
         if cell is None:
@@ -54,7 +54,7 @@ class RaceResultCellParser:
             sup_texts,
         )
 
-        if season_year is None or season_year < self._SPRINT_POINTS_START_YEAR:
+        if season_year is None or season_year < SPRINT_POINTS_START_YEAR:
             sprint_position = None
         elif sprint_position is not None:
             sprint_str = str(sprint_position)
@@ -134,8 +134,6 @@ class RaceResultCellParser:
 
 
 class RaceResultBackgroundMapper:
-    _SHORT_HEX_COLOR_LENGTH = 3
-
     def __init__(self, background_to_result: dict[str, str]) -> None:
         self._background_to_result = background_to_result
 
@@ -146,6 +144,6 @@ class RaceResultBackgroundMapper:
         if not match:
             return None
         value = match.group(1).lower()
-        if len(value) == self._SHORT_HEX_COLOR_LENGTH:
+        if len(value) == SHORT_HEX_COLOR_LENGTH:
             value = "".join(char * 2 for char in value)
         return self._background_to_result.get(value)

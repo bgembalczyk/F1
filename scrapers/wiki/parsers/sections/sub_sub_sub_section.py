@@ -4,6 +4,8 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.wiki.parsers.sections.contants import TOP_SECTION_NAME
+
 if TYPE_CHECKING:
     from collections.abc import Callable
 
@@ -19,8 +21,6 @@ from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
-
-TOP_SECTION_NAME = "(Top)"
 
 
 def _split_into_parts(

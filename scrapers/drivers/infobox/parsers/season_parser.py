@@ -4,14 +4,12 @@ import re
 from typing import Any
 
 from models.records.link import LinkRecord
+from scrapers.drivers.infobox.parsers.constants import FOUR_DIGIT_YEAR_PATTERN
+from scrapers.drivers.infobox.parsers.constants import TWO_DIGIT_SUFFIX_PATTERN
 
 
 class SeasonParser:
     """Handles parsing and validation of season-related information."""
-
-    # Regex patterns for year detection (compiled once for performance)
-    _FOUR_DIGIT_YEAR_PATTERN = re.compile(r"^(19|20)\d{2}$")
-    _TWO_DIGIT_SUFFIX_PATTERN = re.compile(r"^\d{2}$")
 
     def is_class_link(self, link: LinkRecord) -> bool:
         """Check if link is a class designation (e.g., LMP1) rather than a season."""
@@ -94,10 +92,10 @@ class SeasonParser:
             if not cleaned_part:
                 continue
 
-            if self._FOUR_DIGIT_YEAR_PATTERN.match(cleaned_part):
+            if FOUR_DIGIT_YEAR_PATTERN.match(cleaned_part):
                 # It's a 4-digit year (1900-2099)
                 has_four_digit_year = True
-            elif self._TWO_DIGIT_SUFFIX_PATTERN.match(cleaned_part):
+            elif TWO_DIGIT_SUFFIX_PATTERN.match(cleaned_part):
                 # It's a 2-digit suffix (00-99)
                 # These are only valid when combined with 4-digit years (like "2019-20")
                 pass

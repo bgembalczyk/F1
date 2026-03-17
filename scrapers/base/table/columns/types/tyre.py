@@ -1,8 +1,8 @@
 import re
 
 from scrapers.base.helpers.links import normalize_links
-from scrapers.base.table.columns.constants import TYRE_NAME_BY_CODE
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.helpers.constants import TYRE_NAME_BY_CODE
 from scrapers.base.table.columns.types.base import BaseColumn
 
 

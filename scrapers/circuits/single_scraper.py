@@ -13,8 +13,8 @@ from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
-from scrapers.circuits.postprocess import CircuitSectionContractPostProcessor
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
+from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
 from scrapers.circuits.sections.service import CircuitSectionExtractionService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 from scrapers.wiki.scraper import WikiScraper

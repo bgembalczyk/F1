@@ -1,6 +1,6 @@
 # ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
-from scrapers.base.helpers.value_objects import NormalizedDate
-from scrapers.base.helpers.value_objects import NormalizedTime
+from models.value_objects.normalized_date import NormalizedDate
+from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.date import DateColumn
 from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn

@@ -4,9 +4,8 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.wiki.parsers.base import WikiParser
-
-_HEADER_CLASS = "mw-body-header"
-_HEADER_TAG = "header"
+from scrapers.wiki.parsers.constants import HEADER_CLASS
+from scrapers.wiki.parsers.constants import HEADER_TAG
 
 
 class HeaderParser(WikiParser):
@@ -47,7 +46,7 @@ class HeaderParser(WikiParser):
             Znaleziony element header lub None.
         """
         return soup.find(
-            _HEADER_TAG,
+            HEADER_TAG,
             class_=lambda x: x
-            and _HEADER_CLASS in (x if isinstance(x, list) else x.split()),
+                             and HEADER_CLASS in (x if isinstance(x, list) else x.split()),
         )

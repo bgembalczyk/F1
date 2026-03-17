@@ -8,8 +8,7 @@ from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.drivers.sections.career import CAREER_RESULTS_SECTION
 from scrapers.drivers.sections.common import BaseDriverResultsSectionParser
 from scrapers.drivers.sections.common import DriverResultsSectionConfig
-from scrapers.drivers.sections.non_championship import NON_CHAMPIONSHIP_SECTION
-from scrapers.drivers.sections.racing_record import RACING_RECORD_SECTION
+from scrapers.drivers.sections.constants import SECTION_CONFIGS
 from scrapers.drivers.sections.results import DriverResultsSectionParser
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
 
@@ -20,12 +19,6 @@ if TYPE_CHECKING:
 
 
 class DriverSectionExtractionService:
-    _SECTION_CONFIGS: tuple[tuple[DriverResultsSectionConfig, tuple[str, ...]], ...] = (
-        (CAREER_RESULTS_SECTION, ("Karting_record",)),
-        (RACING_RECORD_SECTION, ("Motorsport_career_results",)),
-        (NON_CHAMPIONSHIP_SECTION, ("Non-championship_races",)),
-    )
-
     def __init__(
         self,
         *,
@@ -55,7 +48,7 @@ class DriverSectionExtractionService:
                         config=config,
                     ),
                 )
-                for config, aliases in self._SECTION_CONFIGS
+                for config, aliases in SECTION_CONFIGS
             ],
         )
 

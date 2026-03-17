@@ -11,7 +11,7 @@ from scrapers.base.helpers.text_normalization import split_delimited_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
 from scrapers.base.helpers.time import parse_time_text
 from scrapers.base.helpers.url import normalize_url
-from scrapers.base.helpers.value_objects import NormalizedTime
+from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
 
 TIME_IN_SECONDS = 12.5
 

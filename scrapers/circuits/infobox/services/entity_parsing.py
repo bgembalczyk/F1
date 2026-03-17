@@ -4,18 +4,17 @@ from typing import Any
 from models.records.link import LinkRecord
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.wiki import clean_link_record
+from scrapers.circuits.infobox.services.constants import ENTITY_PARTS_RE
 from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
 
 
 class CircuitEntityParser(CircuitTextProcessing):
     """Parsowanie linkowanych encji (architect, owner, website itp.)."""
 
-    _ENTITY_PARTS_RE = re.compile(r"\s*(?:,|&|\band\b)\s*", flags=re.IGNORECASE)
-
     def _split_entity_parts(self, text: str) -> list[str]:
         if not text:
             return []
-        parts = [part.strip() for part in self._ENTITY_PARTS_RE.split(text)]
+        parts = [part.strip() for part in ENTITY_PARTS_RE.split(text)]
         return [part for part in parts if part]
 
     def _links_to_entities(self, links: list[LinkRecord]) -> list[dict[str, Any]]:

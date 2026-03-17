@@ -23,9 +23,9 @@ from scrapers.seasons.parsers.scoring_system import SeasonScoringSystemParser
 from scrapers.seasons.parsers.standings import SeasonStandingsParser
 from scrapers.seasons.parsers.table import SeasonTableParser
 from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
-from scrapers.seasons.postprocess import SeasonSectionContractPostProcessor
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
+from scrapers.seasons.postprocess.contract import SeasonSectionContractPostProcessor
 from scrapers.seasons.sections.calendar import SeasonCalendarSectionParser
 from scrapers.seasons.sections.results import SeasonResultsSectionParser
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService

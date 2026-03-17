@@ -4,7 +4,7 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
-from scrapers.base.sections.critical_sections import DOMAIN_CRITICAL_SECTIONS
+from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
 
 DOMAINS = ("drivers", "constructors", "circuits", "seasons", "grands_prix")
 

@@ -17,9 +17,9 @@ from bs4 import Tag
 
 from scrapers.base.helpers.background import extract_background
 from scrapers.base.helpers.parsing import parse_float_from_text
-from scrapers.base.table.columns.constants import FRACTION_RE
-from scrapers.base.table.columns.constants import SPLIT_RESULTS_RE
 from scrapers.base.table.columns.context import ColumnContext
+from scrapers.base.table.columns.helpers.constants import FRACTION_RE
+from scrapers.base.table.columns.helpers.constants import SPLIT_RESULTS_RE
 
 
 class ResultsParsingHelpers:

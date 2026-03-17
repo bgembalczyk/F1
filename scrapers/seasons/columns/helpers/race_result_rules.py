@@ -2,6 +2,18 @@ from dataclasses import dataclass
 from typing import Any
 from typing import Protocol
 
+from scrapers.seasons.columns.helpers.constants import CLASSIFIED_DNF_BACKGROUNDS
+from scrapers.seasons.columns.helpers.constants import CLASSIFIED_DNF_MARK
+from scrapers.seasons.columns.helpers.constants import CLASSIFIED_DNF_NOTE
+from scrapers.seasons.columns.helpers.constants import CLASSIFIED_DNF_START_YEAR
+from scrapers.seasons.columns.helpers.constants import DOUBLE_POINTS_SEASON_YEAR
+from scrapers.seasons.columns.helpers.constants import F2_INELIGIBLE_YEARS
+from scrapers.seasons.columns.helpers.constants import FATAL_NOTES_START_YEAR
+from scrapers.seasons.columns.helpers.constants import SHARED_DRIVE_NO_POINTS_END_YEAR
+from scrapers.seasons.columns.helpers.constants import SHARED_DRIVE_NO_POINTS_START_YEAR
+from scrapers.seasons.columns.helpers.constants import SHARED_DRIVE_POINTS_END_YEAR
+from scrapers.seasons.columns.helpers.constants import SHARED_DRIVE_POINTS_START_YEAR
+
 
 @dataclass(frozen=True)
 class ResultRuleContext:
@@ -21,28 +33,17 @@ def append_note(result: dict[str, Any], note: str) -> None:
 
 
 class ClassifiedDnfRule:
-    _CLASSIFIED_DNF_MARK = "†"
-    _CLASSIFIED_DNF_NOTE = "classified_after_dnf_90_percent"
-    _CLASSIFIED_DNF_START_YEAR = 1985
-    _CLASSIFIED_DNF_BACKGROUNDS = {
-        "Winner",
-        "Second place",
-        "Third place",
-        "Other points position",
-        "Other classified position",
-    }
-
     def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None:
         marks = result.get("marks") or []
         position = result.get("position")
         if (
             context.season_year is not None
-            and context.season_year >= self._CLASSIFIED_DNF_START_YEAR
-            and self._CLASSIFIED_DNF_MARK in marks
-            and context.background in self._CLASSIFIED_DNF_BACKGROUNDS
+            and context.season_year >= CLASSIFIED_DNF_START_YEAR
+            and CLASSIFIED_DNF_MARK in marks
+            and context.background in CLASSIFIED_DNF_BACKGROUNDS
             and isinstance(position, int)
         ):
-            append_note(result, self._CLASSIFIED_DNF_NOTE)
+            append_note(result, CLASSIFIED_DNF_NOTE)
 
 
 class MarkBasedEligibilityRule:
@@ -60,20 +61,15 @@ class MarkBasedEligibilityRule:
 
 
 class SharedDriveRule:
-    _SHARED_DRIVE_NO_POINTS_START_YEAR = 1960
-    _SHARED_DRIVE_NO_POINTS_END_YEAR = 1964
-    _SHARED_DRIVE_POINTS_START_YEAR = 1950
-    _SHARED_DRIVE_POINTS_END_YEAR = 1957
-
     def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None:
         marks = result.get("marks") or []
         if context.season_year is None or "†" not in marks:
             return
 
         if (
-            self._SHARED_DRIVE_NO_POINTS_START_YEAR
+            SHARED_DRIVE_NO_POINTS_START_YEAR
             <= context.season_year
-            <= self._SHARED_DRIVE_NO_POINTS_END_YEAR
+            <= SHARED_DRIVE_NO_POINTS_END_YEAR
         ):
             result["shared_drive"] = True
             result["points_eligible"] = False
@@ -81,23 +77,21 @@ class SharedDriveRule:
             return
 
         if (
-            self._SHARED_DRIVE_POINTS_START_YEAR
+            SHARED_DRIVE_POINTS_START_YEAR
             <= context.season_year
-            <= self._SHARED_DRIVE_POINTS_END_YEAR
+            <= SHARED_DRIVE_POINTS_END_YEAR
         ):
             result["shared_drive"] = True
             result["points_shared"] = True
 
 
 class FatalAccidentRule:
-    _FATAL_NOTES_START_YEAR = 1965
-
     def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None:
         marks = result.get("marks") or []
         position = result.get("position")
         if (
             context.season_year is None
-            or context.season_year < self._FATAL_NOTES_START_YEAR
+            or context.season_year < FATAL_NOTES_START_YEAR
             or not isinstance(position, str)
         ):
             return
@@ -111,10 +105,9 @@ class FatalAccidentRule:
 
 
 class F2EligibilityRule:
-    _F2_INELIGIBLE_YEARS = {1957, 1958, 1966, 1967, 1969}
-
     def apply(self, result: dict[str, Any], context: ResultRuleContext) -> None:
-        if context.season_year not in self._F2_INELIGIBLE_YEARS:
+        if (context.season_year not in
+                F2_INELIGIBLE_YEARS):
             return
         if "1" in context.footnotes:
             result["points_eligible"] = False
@@ -153,11 +146,9 @@ class HalfPointsRoundRule:
 
 
 class DoublePointsRoundRule:
-    _DOUBLE_POINTS_SEASON_YEAR = 2014
-
     def apply(self, context: RoundRuleContext) -> dict[str, Any] | None:
         if (
-            context.season_year == self._DOUBLE_POINTS_SEASON_YEAR
+            context.season_year == DOUBLE_POINTS_SEASON_YEAR
             and "Abu_Dhabi_Grand_Prix" in context.round_url
             and "‡" in context.marks
         ):

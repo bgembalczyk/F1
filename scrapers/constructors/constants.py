@@ -1,3 +1,6 @@
+from datetime import datetime
+from datetime import timezone
+
 CONSTRUCTOR_NAME_HEADER = "Constructor"
 CONSTRUCTOR_ENGINE_HEADER = "Engine"
 CONSTRUCTOR_LICENSED_IN_HEADER = "Licensed in"
@@ -16,6 +19,8 @@ CONSTRUCTOR_POINTS_HEADER = "Points"
 CONSTRUCTOR_POLES_HEADER = "Poles"
 CONSTRUCTOR_FASTEST_LAPS_HEADER = "FL"  # Fastest laps.
 CONSTRUCTOR_PODIUMS_HEADER = "Podiums"
+
+CURRENT_YEAR = datetime.now(tz=timezone.utc).year
 
 CURRENT_CONSTRUCTORS_EXPECTED_HEADERS = [
     CONSTRUCTOR_NAME_HEADER,

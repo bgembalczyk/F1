@@ -8,7 +8,7 @@ from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
 from scrapers.circuits.schemas import build_circuits_schema
-from scrapers.circuits.sections import CircuitsListSectionParser
+from scrapers.circuits.sections.list_section import CircuitsListSectionParser
 from scrapers.circuits.validator import CircuitsRecordValidator
 
 

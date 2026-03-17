@@ -5,8 +5,8 @@ from typing import Any
 
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
-from scrapers.constructors.postprocess import ConstructorSectionContractPostProcessor
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
+from scrapers.constructors.postprocess.contract import ConstructorSectionContractPostProcessor
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 

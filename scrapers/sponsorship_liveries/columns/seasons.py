@@ -7,6 +7,7 @@ from models.services.season_service import parse_seasons
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.sponsorship_liveries.helpers.constants import YEAR_RE
 
 if TYPE_CHECKING:
     from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier
@@ -39,9 +40,6 @@ class SponsorshipSeasonsColumn(BaseColumn):
     discarded.  When no *classifier* is provided, parenthetical content is
     ignored entirely.
     """
-
-    # Year-only link text - e.g. "2004" or "2005"
-    _YEAR_RE = re.compile(r"^\d{4}$")
 
     def __init__(
         self,
@@ -77,7 +75,7 @@ class SponsorshipSeasonsColumn(BaseColumn):
         non_year_links = [
             lnk
             for lnk in links
-            if not self._YEAR_RE.match((lnk.get("text") or "").strip())
+            if not YEAR_RE.match((lnk.get("text") or "").strip())
         ]
 
         classification = self._classifier.classify(

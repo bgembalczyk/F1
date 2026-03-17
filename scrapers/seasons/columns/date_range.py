@@ -6,6 +6,7 @@ from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.results_parsing import ResultsParsingHelpers
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.seasons.columns.helpers.constants import SEPARATOR_PATTERN
 
 
 class DateRangeColumn(BaseColumn):
@@ -14,10 +15,6 @@ class DateRangeColumn(BaseColumn):
 
     Returns dict: {"start": NormalizedDate, "end": NormalizedDate}
     """
-
-    # Pattern for range separators
-    _SEPARATOR_PATTERN = re.compile(r"\s*[-—]\s*")
-
     def __init__(self, *, year: int | None = None) -> None:
         self.year = year
 
@@ -27,7 +24,7 @@ class DateRangeColumn(BaseColumn):
             return None
 
         # Split text into start and end using separator
-        parts = self._SEPARATOR_PATTERN.split(text, maxsplit=1)
+        parts = SEPARATOR_PATTERN.split(text, maxsplit=1)
 
         if len(parts) == 1:
             # Single date, not a range

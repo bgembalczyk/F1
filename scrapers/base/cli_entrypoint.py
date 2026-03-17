@@ -8,6 +8,9 @@ import inspect
 import warnings
 from typing import TYPE_CHECKING
 
+from scrapers.base.constants import CliMainProfile
+from scrapers.base.constants import LEGACY_PROFILE_ALIASES
+from scrapers.base.constants import PROFILE_DEFAULTS
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
 
@@ -17,28 +20,12 @@ if TYPE_CHECKING:
 
     from scrapers.base.run_config import RunConfig
 
-CliMainProfile = RunProfileName
-
-
-_PROFILE_DEFAULTS: dict[CliMainProfile, tuple[bool, bool]] = {
-    RunProfileName.STRICT: (True, False),
-    RunProfileName.MINIMAL: (False, False),
-    RunProfileName.DEPRECATED: (True, False),
-}
-
-
-_LEGACY_PROFILE_ALIASES: dict[str, RunProfileName] = {
-    "list_scraper": RunProfileName.STRICT,
-    "complete_extractor": RunProfileName.MINIMAL,
-    "deprecated_entrypoint": RunProfileName.DEPRECATED,
-}
-
 
 def _coerce_cli_main_profile(profile: CliMainProfile | str) -> RunProfileName:
     if isinstance(profile, RunProfileName):
         return profile
-    if profile in _LEGACY_PROFILE_ALIASES:
-        return _LEGACY_PROFILE_ALIASES[profile]
+    if profile in LEGACY_PROFILE_ALIASES:
+        return LEGACY_PROFILE_ALIASES[profile]
     return RunProfileName(profile)
 
 
@@ -124,7 +111,7 @@ def build_cli_main(
 ) -> Callable[[], None]:
     """Build reusable ``__main__`` launcher with standardized profile defaults."""
     normalized_profile = _coerce_cli_main_profile(profile)
-    profile_quality_default, profile_error_default = _PROFILE_DEFAULTS[
+    profile_quality_default, profile_error_default = PROFILE_DEFAULTS[
         normalized_profile
     ]
     quality_default = (
@@ -196,16 +183,3 @@ def _invoke_target(*, target: Callable[..., None], run_config: RunConfig) -> Non
         return
 
     target()
-
-
-__all__ = [
-    "CliMainProfile",
-    "build_cli_main",
-    "build_complete_extractor_main",
-    "build_deprecated_module_main",
-    "build_run_config",
-    "build_standard_parser",
-    "complete_extractor_base_config",
-    "deprecated_module_base_config",
-    "run_cli_entrypoint",
-]

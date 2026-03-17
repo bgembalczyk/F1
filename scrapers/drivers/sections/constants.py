@@ -3,6 +3,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.drivers.sections.common import DriverResultsSectionConfig
+
 if TYPE_CHECKING:
     from collections.abc import Callable
 
@@ -21,11 +23,16 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
 from scrapers.drivers.columns.series import SeriesColumn
 
+COMPLETE_RESULTS_REQUIRED_HEADER = "Year"
+
+UNKNOWN_VALUE = "unknown"
+
+
 CAREER_HIGHLIGHTS_REQUIRED_HEADERS = frozenset(
     {"Season", "Series", "Position", "Team", "Car"},
 )
 CAREER_SUMMARY_REQUIRED_HEADERS = frozenset({"Season", "Series", "Position"})
-COMPLETE_RESULTS_REQUIRED_HEADER = "Year"
+
 
 CAREER_HIGHLIGHTS_HEADER_TO_KEY = {
     "Season": "season",
@@ -139,3 +146,28 @@ COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY: dict[str, Callable[[], Any]] = {
     "f": PositionColumn,
     "ref": SkipColumn,
 }
+
+
+CAREER_RESULTS_SECTION = DriverResultsSectionConfig(
+    section_id="Career_results",
+    section_label="Career",
+    header_aliases=("Career results", "Career"),
+)
+
+RACING_RECORD_SECTION = DriverResultsSectionConfig(
+    section_id="Racing_record",
+    section_label="Racing record",
+    header_aliases=("Racing record", "Racing career"),
+)
+
+NON_CHAMPIONSHIP_SECTION = DriverResultsSectionConfig(
+    section_id="Non-championship",
+    section_label="Non-championship",
+    header_aliases=("Non-championship", "Non-championship races"),
+)
+
+SECTION_CONFIGS: tuple[tuple[DriverResultsSectionConfig, tuple[str, ...]], ...] = (
+    (CAREER_RESULTS_SECTION, ("Karting_record",)),
+    (RACING_RECORD_SECTION, ("Motorsport_career_results",)),
+    (NON_CHAMPIONSHIP_SECTION, ("Non-championship_races",)),
+)

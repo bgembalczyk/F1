@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
-from scrapers.drivers.postprocess import DriverSectionContractPostProcessor
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
+from scrapers.drivers.postprocess.contract import DriverSectionContractPostProcessor
 from scrapers.drivers.sections.service import DriverSectionExtractionService
 
 

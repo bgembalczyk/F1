@@ -8,15 +8,11 @@ from scrapers.base.errors import DomainParseError
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.infobox.schema import InfoboxSchema
+from scrapers.drivers.infobox.parsers.constants import DATE_PATTERN
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
 class InfoboxGeneralParser:
-    # Date pattern for matching common date formats
-    _DATE_PATTERN = (
-        r"\b\d{1,2}\s+[A-Za-z]+\s+\d{4}|\b[A-Za-z]+\s+\d{1,2},\s*\d{4}|\b\d{4}\b"
-    )
-
     def __init__(
         self,
         *,
@@ -109,7 +105,7 @@ class InfoboxGeneralParser:
         filtered_parts = []
         for part in parts:
             # Skip parts that look like names (no date pattern and no numbers)
-            if not re.search(self._DATE_PATTERN, part):
+            if not re.search(DATE_PATTERN, part):
                 # This might be the original name, skip it
                 continue
             filtered_parts.append(part)
@@ -166,7 +162,7 @@ class InfoboxGeneralParser:
         # Find the part with the date and take everything after it
         place_text = ""
         for i, part in enumerate(parts):
-            if re.search(self._DATE_PATTERN, part):
+            if re.search(DATE_PATTERN, part):
                 # Found date part, check if place is on same line or next lines
                 match = re.match(
                     r"^(?:[0-9]{1,2}\s+[A-Za-z]+\s+\d{4}|[A-Za-z]+\s+\d{1,2},\s*\d{4}|\d{4})(?:\s*\([^)]*\))?\s*(.*)$",

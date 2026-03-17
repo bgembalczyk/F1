@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.constructors.sections import constructor_section_entries
+from scrapers.constructors.sections.adapter import constructor_section_entries
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

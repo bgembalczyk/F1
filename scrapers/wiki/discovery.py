@@ -7,10 +7,10 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.wiki.contants import COMPONENT_METADATA_ATTR
+
 if TYPE_CHECKING:
     from types import ModuleType
-
-COMPONENT_METADATA_ATTR = "COMPONENT_METADATA"
 
 
 @dataclass(frozen=True)

@@ -5,8 +5,7 @@ import re
 from typing import Any
 
 from scrapers.base.helpers.text_normalization import add_unique_name
-
-LAYOUT_LENGTH_TOLERANCE_KM = 0.01
+from scrapers.circuits.models.services.constants import LAYOUT_LENGTH_TOLERANCE_KM
 
 
 def extract_circuit_names(

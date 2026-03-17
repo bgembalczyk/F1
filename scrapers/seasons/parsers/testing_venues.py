@@ -10,10 +10,9 @@ from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.columns.date_range import DateRangeColumn
+from scrapers.seasons.parsers.constants import TESTING_VENUES_SWAPPED_COLUMNS_YEAR
+from scrapers.seasons.parsers.constants import TESTING_VENUES_YEARS
 from scrapers.seasons.parsers.table import SeasonTableParser
-
-TESTING_VENUES_YEARS = {2009, 2011}
-TESTING_VENUES_SWAPPED_COLUMNS_YEAR = 2011
 
 
 class TestingVenuesParser:

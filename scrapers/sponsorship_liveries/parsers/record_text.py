@@ -2,16 +2,12 @@ import re
 from typing import Any
 
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.sponsorship_liveries.helpers.constants import year_range_abbrev_re
+from scrapers.sponsorship_liveries.helpers.constants import year_range_re
+from scrapers.sponsorship_liveries.helpers.constants import year_re
 
 
 class SponsorshipRecordText:
-    _year_re = re.compile(r"\b\d{4}\b")
-
-    _year_range_re = re.compile(r"\b(\d{4})\s*[-\-]\s*(\d{4})\b")
-
-    # Matches abbreviated end-year ranges like "1979-83" or "1977-82".
-    # The end year is 2 digits and must NOT be followed by another digit.
-    _year_range_abbrev_re = re.compile(r"\b(\d{4})\s*[-\-]\s*(\d{2})(?!\d)")
 
     @classmethod
     def _expand_year_range(cls, start_year: int, end_year: int) -> set[int]:
@@ -44,7 +40,7 @@ class SponsorshipRecordText:
             if text is None:
                 text = str(param)
             # Expand full year ranges like "2021-2023".
-            for range_match in cls._year_range_re.finditer(text):
+            for range_match in year_range_re.finditer(text):
                 start_year = int(range_match.group(1))
                 end_year = int(range_match.group(2))
                 years |= cls._expand_year_range(start_year, end_year)
@@ -53,13 +49,13 @@ class SponsorshipRecordText:
             # the former requires the end token to be exactly 2 digits (not
             # followed by another digit), so "1979-1983" is only matched by
             # the full-range pattern above.
-            for range_match in cls._year_range_abbrev_re.finditer(text):
+            for range_match in year_range_abbrev_re.finditer(text):
                 start_year = int(range_match.group(1))
                 abbrev = int(range_match.group(2))
                 end_year = cls._abbrev_end_year(start_year, abbrev)
                 years |= cls._expand_year_range(start_year, end_year)
             # Also extract standalone years; set deduplication handles any overlap.
-            for match in cls._year_re.findall(text):
+            for match in year_re.findall(text):
                 years.add(int(match))
         return years
 
@@ -72,7 +68,7 @@ class SponsorshipRecordText:
     @classmethod
     def is_year_param(cls, param: Any) -> bool:
         text = cls.param_text(param)
-        if not text or not cls._year_re.search(text):
+        if not text or not year_re.search(text):
             return False
         stripped = re.sub(r"[\d\s\--]", "", text)
         return not stripped
@@ -85,7 +81,7 @@ class SponsorshipRecordText:
 
     @classmethod
     def extract_years_from_text(cls, text: str) -> set[int]:
-        years = {int(match) for match in cls._year_re.findall(text)}
+        years = {int(match) for match in year_re.findall(text)}
         for decade in re.findall(r"\b(\d{3})0s\b", text):
             start = int(decade) * 10
             years.update(range(start, start + 10))
@@ -105,7 +101,7 @@ class SponsorshipRecordText:
 
     @classmethod
     def strip_years_keep_context(cls, text: str) -> str:
-        cleaned = cls._year_re.sub("", text)
+        cleaned = year_re.sub("", text)
         cleaned = re.sub(r"\b\d{3}0s\b", "", cleaned)
         cleaned = re.sub(r"\(\s*\)", "", cleaned)
         return clean_wiki_text(cleaned)

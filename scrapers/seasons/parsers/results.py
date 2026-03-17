@@ -2,7 +2,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.html_utils import DOMAIN_SECTION_ALIASES
+from scrapers.base.sections.constants import DOMAIN_SECTION_ALIASES
 from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.driver import DriverColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn

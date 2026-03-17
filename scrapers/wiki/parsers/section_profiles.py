@@ -5,6 +5,8 @@ from dataclasses import dataclass
 from dataclasses import field
 
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.wiki.parsers.constants import BASE_COMMON_ALIASES
+from scrapers.wiki.parsers.constants import CURRENT_CONSTRUCTORS_ID
 
 
 def normalize_section_profile_key(value: str) -> str:
@@ -46,20 +48,6 @@ class SectionProfile:
             if normalized_target in aliases:
                 return canonical
         return None
-
-
-_CURRENT_CONSTRUCTORS_ID = re.compile(r"^constructors for the (\d{4}) season$")
-
-
-_BASE_COMMON_ALIASES: dict[str, set[str]] = {
-    "results": {"result", "results and standings", "grands prix"},
-    "career results": {
-        "racing record",
-        "career record",
-        "motorsport career results",
-        "racing career",
-    },
-}
 
 
 def _domain_aliases() -> dict[str, dict[str, set[str]]]:
@@ -118,7 +106,7 @@ def _build_profiles() -> dict[str, SectionProfile]:
 
     for domain, canonical_sections in canonical.items():
         aliases: dict[str, set[str]] = {
-            key: set(values) for key, values in _BASE_COMMON_ALIASES.items()
+            key: set(values) for key, values in BASE_COMMON_ALIASES.items()
         }
         for key, values in domain_aliases.get(domain, {}).items():
             aliases.setdefault(key, set()).update(values)
@@ -151,7 +139,7 @@ def profile_aliases_for_target(target: str, *, domain: str | None) -> set[str]:
     normalized_target = normalize_section_profile_key(target)
     aliases = set(profile.aliases_for(normalized_target))
 
-    if domain == "constructors" and _CURRENT_CONSTRUCTORS_ID.match(normalized_target):
+    if domain == "constructors" and CURRENT_CONSTRUCTORS_ID.match(normalized_target):
         aliases.update(
             {
                 "constructors for the current season",

@@ -7,12 +7,11 @@ from bs4 import Tag
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.table.constants import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.row import TableRow
 
 logger = logging.getLogger(__name__)
-
-HEADER_ROWS_WITH_SUBHEADERS = 2
 
 
 class HtmlTableParser:

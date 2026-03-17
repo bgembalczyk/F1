@@ -1,6 +1,6 @@
 import pytest
 
-from infrastructure.http_client.caching import WikipediaCachePolicy
+from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from scrapers.base.options import HttpPolicy
 from scrapers.base.options import default_http_policy
 from scrapers.config import DataPaths
