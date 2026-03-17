@@ -43,7 +43,7 @@ def test_layer0_writes_checkpoint_with_metadata(tmp_path: Path) -> None:
     assert payload["metadata"]["domain"] == "drivers"
     assert payload["metadata"]["parser"] == "_parse_layer0_urls"
     assert payload["records"] == [
-        {"name": "Max Verstappen", "url": "https://example.test/max"},
+        {"name": "Max Verstappen", "source_slug": "example.test", "source_id": "/max"},
     ]
 
 
@@ -92,7 +92,7 @@ def test_layer1_reads_only_checkpoint_urls_and_is_idempotent(tmp_path: Path) -> 
 
     checkpoint_payload = _read_json(checkpoint_file)
     checkpoint_payload["records"].append(
-        {"name": "Only checkpoint", "url": "https://example.test/c"},
+        {"name": "Only checkpoint", "source_slug": "example.test", "source_id": "/c"},
     )
     checkpoint_file.write_text(json.dumps(checkpoint_payload), encoding="utf-8")
 

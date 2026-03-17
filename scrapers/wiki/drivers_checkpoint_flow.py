@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from urllib.parse import urlsplit
 from typing import TYPE_CHECKING
 from typing import Any
 
@@ -13,6 +14,8 @@ from scrapers.base.orchestration import StepDeclaration
 from scrapers.base.orchestration import StepOrchestrator
 from scrapers.config import default_data_paths
 from scrapers.drivers.single_scraper import SingleDriverScraper
+from scrapers.wiki.seed_url_resolver import SeedUrlResolver
+from scrapers.wiki.seed_url_resolver import WIKIPEDIA_SOURCE_SLUG
 
 PARSER_VERSION = "drivers-checkpoint-flow-v1"
 
@@ -28,6 +31,7 @@ class DriversCheckpointFlow:
         source_category: str = "drivers",
         parser_version: str = PARSER_VERSION,
         detail_fetcher: Callable[[str], dict[str, Any]] | None = None,
+        seed_url_resolver: SeedUrlResolver | None = None,
     ) -> None:
         self.source_file = source_file
         self.source_category = source_category
@@ -36,6 +40,7 @@ class DriversCheckpointFlow:
         self.registry_file = registry_file
         self.parser_version = parser_version
         self.detail_fetcher = detail_fetcher or self._fetch_driver_details
+        self.seed_url_resolver = seed_url_resolver or SeedUrlResolver()
 
         self._base_dir = self._resolve_base_data_dir()
         self.orchestrator = StepOrchestrator(base_dir=self._base_dir)
@@ -86,8 +91,12 @@ class DriversCheckpointFlow:
                 continue
             if not isinstance(text, str):
                 text = ""
-            extracted.append({"name": text, "url": url})
-            seen_urls.add(url)
+            source_slug, source_id = self._extract_source_parts(url)
+            dedupe_key = f"{source_slug}:{source_id}" if source_slug and source_id else ""
+            if not dedupe_key or dedupe_key in seen_urls:
+                continue
+            extracted.append({"name": text, "source_slug": source_slug, "source_id": source_id})
+            seen_urls.add(dedupe_key)
 
         return extracted
 
@@ -95,8 +104,7 @@ class DriversCheckpointFlow:
         self,
         checkpoint_records: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
-        checkpoint_urls = [record.get("url") for record in checkpoint_records]
-        urls = [url for url in checkpoint_urls if isinstance(url, str) and url]
+        urls = self._resolve_checkpoint_urls(checkpoint_records)
 
         existing = self._load_existing_layer1_records()
         processed_urls = {
@@ -111,6 +119,42 @@ class DriversCheckpointFlow:
             new_records.append(details)
 
         return existing + new_records
+
+
+    def _resolve_checkpoint_urls(
+        self,
+        checkpoint_records: list[dict[str, Any]],
+    ) -> list[str]:
+        urls: list[str] = []
+        for record in checkpoint_records:
+            source_id = record.get("source_id")
+            source_slug = record.get("source_slug", WIKIPEDIA_SOURCE_SLUG)
+            if not isinstance(source_id, str) or not source_id:
+                legacy_url = record.get("url")
+                if isinstance(legacy_url, str) and legacy_url:
+                    urls.append(legacy_url)
+                continue
+            if not isinstance(source_slug, str) or not source_slug:
+                continue
+            try:
+                resolved = self.seed_url_resolver.resolve_source_url(source_slug, source_id)
+            except ValueError:
+                continue
+            urls.append(resolved)
+        return urls
+
+    @staticmethod
+    def _extract_source_parts(url: str) -> tuple[str, str] | tuple[None, None]:
+        parsed = urlsplit(url.strip())
+        if not parsed.path:
+            return None, None
+
+        source_slug = parsed.netloc.casefold() if parsed.netloc else WIKIPEDIA_SOURCE_SLUG
+        source_id = parsed.path
+        if parsed.fragment:
+            source_id = f"{source_id}#{parsed.fragment}"
+
+        return source_slug, source_id
 
     def _load_existing_layer1_records(self) -> list[dict[str, Any]]:
         if not self.layer1_output_file.exists():

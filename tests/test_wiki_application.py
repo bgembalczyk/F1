@@ -20,7 +20,8 @@ class CurrentConstructorsListScraper:
 def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> None:
     supported_seed = SeedRegistryEntry(
         seed_name="drivers",
-        wikipedia_url="https://example.com",
+        source_slug="wikipedia",
+        article_path="/example",
         output_category="drivers",
         list_scraper_cls=_FakeScraper,
         default_output_path="raw/drivers/seeds/drivers.json",
@@ -28,7 +29,8 @@ def test_layer_one_executor_runs_supported_job_and_skips_unsupported_job() -> No
     )
     unsupported_seed = SeedRegistryEntry(
         seed_name="unsupported",
-        wikipedia_url="https://example.com",
+        source_slug="wikipedia",
+        article_path="/example",
         output_category="unsupported",
         list_scraper_cls=_FakeScraper,
         default_output_path="raw/unsupported/seeds/unsupported.json",
@@ -131,7 +133,8 @@ def test_layer_zero_executor_runs_merge_after_jobs() -> None:
 
     job = ListJobRegistryEntry(
         seed_name="constructors_current",
-        wikipedia_url="https://example.com",
+        source_slug="wikipedia",
+        article_path="/example",
         output_category="constructors",
         list_scraper_cls=CurrentConstructorsListScraper,
         json_output_path="raw/constructors/list/f1_constructors_{year}.json",
