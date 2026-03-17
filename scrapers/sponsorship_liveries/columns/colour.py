@@ -37,7 +37,7 @@ class ColourListColumn(BaseColumn):
         return result
 
     @staticmethod
-    def _extract_segments(cell: Tag) -> list[str]:  # noqa: C901
+    def _extract_segments(cell: Tag) -> list[str]:
         """Return text segments from *cell*.
 
         Treat ``<br>`` and ``<p>`` as separators.

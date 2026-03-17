@@ -103,7 +103,7 @@ def build_core_key(rec: dict[str, Any]) -> tuple | None:
     return driver_txt, vehicle_txt, year
 
 
-def is_record_subset(  # noqa: C901, PLR0912
+def is_record_subset(
     small: dict[str, Any],
     big: dict[str, Any],
 ) -> bool:
@@ -285,7 +285,7 @@ def collect_other_fields(records: list[dict[str, Any]]) -> dict[str, Any]:
     return merged
 
 
-def merge_two_records(  # noqa: C901, PLR0912
+def merge_two_records(
     base: dict[str, Any],
     extra: dict[str, Any],
 ) -> dict[str, Any]:
@@ -340,7 +340,7 @@ def merge_two_records(  # noqa: C901, PLR0912
     return merged
 
 
-def merge_record_group(  # noqa: C901
+def merge_record_group(
     records: list[dict[str, Any]],
 ) -> dict[str, Any]:
     """Scal grupę rekordów do jednego."""

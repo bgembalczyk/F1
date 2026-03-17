@@ -215,7 +215,7 @@ class SponsorshipSectionParser:
         return self._split_broader_records_by_scope(records)
 
     @staticmethod
-    def _split_broader_records_by_scope(  # noqa: C901
+    def _split_broader_records_by_scope(
         records: list[dict[str, Any]],
     ) -> list[dict[str, Any]]:
         """Split season ranges overlapping GP-scoped entries from season cells.
@@ -375,7 +375,7 @@ class SponsorshipSectionParser:
         msg = f"Nie znaleziono tabeli w sekcji {section_id!r}"
         raise RuntimeError(msg)
 
-    def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:  # noqa: C901
+    def parse_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         records: list[dict[str, Any]] = []
         headings = []
         for headline in soup.select(".mw-headline"):

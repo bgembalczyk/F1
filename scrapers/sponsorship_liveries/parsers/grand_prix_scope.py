@@ -20,7 +20,7 @@ class GrandPrixScopeParser:
         return True
 
     @classmethod
-    def parse_grand_prix_scope(  # noqa: C901, PLR0911
+    def parse_grand_prix_scope(
         cls,
         params: list[Any],
     ) -> dict[str, Any] | None:

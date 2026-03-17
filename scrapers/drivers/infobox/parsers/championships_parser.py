@@ -47,7 +47,7 @@ class ChampionshipsParser:
             # Extract links from parentheses - treat as simple list of links
             championships = self._link_extractor.extract_links(cell)
 
-            return {"count": count, "championships": championships}  # noqa: TRY300  # noqa: TRY300
+            return {"count": count, "championships": championships}
         except (TypeError, ValueError) as exc:
             msg = f"Nie udało się sparsować mistrzostw: {text!r}."
             raise DomainParseError(
@@ -102,7 +102,7 @@ class ChampionshipsParser:
                         year = int(year_match.group(1))
                         wins.append({"year": year, "url": year_to_url.get(year)})
 
-            return {"count": count, "wins": wins}  # noqa: TRY300  # noqa: TRY300
+            return {"count": count, "wins": wins}
         except (TypeError, ValueError) as exc:
             msg = f"Nie udało się sparsować zwycięstw klasowych: {text!r}."
             raise DomainParseError(

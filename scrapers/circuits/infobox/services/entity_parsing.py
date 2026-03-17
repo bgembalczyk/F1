@@ -43,7 +43,7 @@ class CircuitEntityParser(CircuitTextProcessing):
             entities.append({"text": part, "url": None})
         return entities
 
-    def _build_entity_from_links(  # noqa: PLR0911
+    def _build_entity_from_links(
         self,
         parts: list[str],
         links: list[LinkRecord],

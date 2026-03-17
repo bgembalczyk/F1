@@ -247,7 +247,7 @@ class ParserStepExecutor:
         started_at = time.perf_counter()
         try:
             output_records = step.parser(input_records)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             output_records = []
             errors.append(str(exc))
 

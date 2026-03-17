@@ -8,7 +8,7 @@ class InfoboxCareerParser:
     def __init__(self, cell_parser: InfoboxCellParser) -> None:
         self._cell_parser = cell_parser
 
-    def parse_section(self, title: str, section: dict[str, Any]) -> dict[str, Any]:  # noqa: C901, PLR0912
+    def parse_section(self, title: str, section: dict[str, Any]) -> dict[str, Any]:
         rows: list[dict[str, Any]] = []
         for row in section.get("rows", []):
             if "label_cell" in row and "value_cell" in row:

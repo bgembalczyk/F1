@@ -59,7 +59,7 @@ class BestFinishParser:
                 # No links - try to extract years from text
                 result["seasons"] = self._extract_seasons_from_text(text)
 
-            return result  # noqa: TRY300
+            return result
         except (TypeError, ValueError) as exc:
             msg = f"Nie udało się sparsować najlepszego wyniku: {text!r}."
             raise DomainParseError(
@@ -171,7 +171,7 @@ class BestFinishParser:
 
         return None
 
-    def _find_class_for_season(  # noqa: C901, PLR0912
+    def _find_class_for_season(
         self,
         season_tag: Tag,
         season_link: dict[str, Any],

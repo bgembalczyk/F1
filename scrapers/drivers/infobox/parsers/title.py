@@ -141,7 +141,7 @@ class InfoboxTitlesParser:
         # Filter out empty parts
         return [p.strip() for p in parts if p.strip()]
 
-    def parse_major_victories_from_full_data(self, cell: Tag) -> list[dict[str, Any]]:  # noqa: C901
+    def parse_major_victories_from_full_data(self, cell: Tag) -> list[dict[str, Any]]:
         """Parse major victories from a full_data cell.
 
         Handles HTML like:

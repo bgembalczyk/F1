@@ -68,7 +68,7 @@ def loc_sort_key(item: tuple[str, Any]) -> int:
     return int(match.group(1)) if match else 0
 
 
-def _add_places_from_raw_location(  # noqa: C901
+def _add_places_from_raw_location(
     location_raw: Any,
     places: list[dict[str, Any]],
     seen_places: set[str],

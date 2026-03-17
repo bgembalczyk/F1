@@ -195,7 +195,7 @@ class SponsorColumn(BaseColumn):
         return re.sub(r"^\s*and\s+", "", text, flags=re.IGNORECASE)
 
     @staticmethod
-    def _split_parts_with_sep(text: str) -> list[tuple[str, str]]:  # noqa: C901
+    def _split_parts_with_sep(text: str) -> list[tuple[str, str]]:
         """Split text into (part, separator_after) tuples.
 
         separator_after is one of ',', ';', '/' or '' for the last part.

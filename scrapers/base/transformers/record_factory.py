@@ -29,7 +29,7 @@ class RecordFactoryTransformer(RecordTransformer):
         try:
             normalized = self.normalize_record(record)
             return self._apply_factory(normalized)
-        except Exception:  # noqa: BLE001
+        except Exception:
             self.logger.warning(
                 "record_factory failed, falling back to raw record",
                 exc_info=True,

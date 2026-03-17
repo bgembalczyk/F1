@@ -28,7 +28,7 @@ class ColourScopeHandler:
         return expanded
 
     @staticmethod
-    def _depth_aware_split_on_and_or(text: str) -> list[str]:  # noqa: C901
+    def _depth_aware_split_on_and_or(text: str) -> list[str]:
         """Split *text* on ' and ' / ' or ' only at parenthesis depth 0.
 
         Separators that appear inside parentheses are not treated as split

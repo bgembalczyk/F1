@@ -120,7 +120,7 @@ class InfoboxLinkExtractor:
         url = (link.get("url") or "").lower()
         return not ("season" in url or "_season" in url)
 
-    def extract_year_list_with_links(self, cell: Tag) -> list[dict[str, Any]]:  # noqa: C901
+    def extract_year_list_with_links(self, cell: Tag) -> list[dict[str, Any]]:
         """Extract years as a list of individual years with links.
 
         Similar to parse_active_years, but returns list in format:
