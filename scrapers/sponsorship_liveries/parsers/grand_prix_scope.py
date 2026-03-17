@@ -2,6 +2,9 @@ import re
 from typing import Any
 
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.sponsorship_liveries.parsers.grand_prix_scope_accumulator import (
+    GrandPrixScopeAccumulator,
+)
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
 
 
@@ -27,7 +30,7 @@ class GrandPrixScopeParser:
         if not params or not cls.params_contain_only_years_or_grand_prix(params):
             return None
 
-        parsed = _GrandPrixScopeAccumulator()
+        parsed = GrandPrixScopeAccumulator()
         for param in params:
             cls._consume_scope_param(parsed, param)
             if parsed.invalid:
@@ -38,7 +41,7 @@ class GrandPrixScopeParser:
     @classmethod
     def _consume_scope_param(
         cls,
-        parsed: "_GrandPrixScopeAccumulator",
+        parsed: GrandPrixScopeAccumulator,
         param: Any,
     ) -> None:
         if SponsorshipRecordText.is_year_param(param):
@@ -61,14 +64,14 @@ class GrandPrixScopeParser:
         return bool(re.search(r"grand prix", text, flags=re.IGNORECASE))
 
     @staticmethod
-    def _update_onwards_flag(parsed: "_GrandPrixScopeAccumulator", text: str) -> None:
+    def _update_onwards_flag(parsed: GrandPrixScopeAccumulator, text: str) -> None:
         if re.search(r"\bonwards?\b", text, flags=re.IGNORECASE):
             parsed.has_onwards = True
 
     @classmethod
     def _append_entry(
         cls,
-        parsed: "_GrandPrixScopeAccumulator",
+        parsed: GrandPrixScopeAccumulator,
         param: Any,
         text: str,
     ) -> None:
@@ -138,20 +141,3 @@ class GrandPrixScopeParser:
                 end.get("url"),
             )
         return ("other",)
-
-
-class _GrandPrixScopeAccumulator:
-    def __init__(self) -> None:
-        self.entries: list[dict[str, Any]] = []
-        self.has_onwards = False
-        self.range_scope: dict[str, Any] | None = None
-        self.invalid = False
-
-    def build_scope(self) -> dict[str, Any] | None:
-        if self.range_scope:
-            return self.range_scope
-        if self.has_onwards and self.entries:
-            return {"type": "range", "from": self.entries[0], "to": None}
-        if self.entries:
-            return {"type": "only", "grand_prix": self.entries}
-        return None
