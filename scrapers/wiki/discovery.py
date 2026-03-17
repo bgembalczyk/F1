@@ -59,10 +59,7 @@ def _read_component_metadata(candidate: type[Any]) -> ComponentMetadata | None:
         return raw
     if isinstance(raw, dict):
         return ComponentMetadata(**raw)
-    message = (
-        "Unsupported metadata format for "
-        f"{candidate!r}: {type(raw)!r}"
-    )
+    message = "Unsupported metadata format for " f"{candidate!r}: {type(raw)!r}"
     raise TypeError(message)
 
 

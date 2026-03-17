@@ -23,7 +23,6 @@ if TYPE_CHECKING:
     from scrapers.wiki.seed_registry import SeedRegistryEntry
 
 
-
 class LayerJobRunner(ABC):
     @abstractmethod
     def run(

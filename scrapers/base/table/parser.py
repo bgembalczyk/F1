@@ -276,7 +276,6 @@ class HtmlTableParser:
 
         return combined, combined_cells
 
-
     def clean_cells(self, cells: Sequence[Tag]) -> list[str]:
         return self._clean_cells(cells)
 
