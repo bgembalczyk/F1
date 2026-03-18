@@ -1,20 +1,30 @@
 """Domain facade for launching the constructors list scraper."""
 
-from scrapers.base.domain_entrypoint import build_run_list_scraper
-from scrapers.base.domain_entrypoint import minimal_debug_profile
-from scrapers.constructors.current_constructors_list import CURRENT_YEAR
-from scrapers.constructors.current_constructors_list import (
-    CurrentConstructorsListScraper,
-)
+from scrapers.base.domain_entrypoint import build_run_list_scraper_for_domain
+from scrapers.base.domain_entrypoint import get_domain_entrypoint_config
 
-LIST_SCRAPER_CLASS = CurrentConstructorsListScraper
-DEFAULT_OUTPUT_JSON = f"constructors/f1_constructors_{CURRENT_YEAR}.json"
-DEFAULT_OUTPUT_CSV = f"constructors/f1_constructors_{CURRENT_YEAR}.csv"
-RUN_CONFIG_PROFILE = minimal_debug_profile
+_DOMAIN = "constructors"
+run_list_scraper = build_run_list_scraper_for_domain(_DOMAIN)
 
-run_list_scraper = build_run_list_scraper(
-    list_scraper_cls=LIST_SCRAPER_CLASS,
-    default_output_json=DEFAULT_OUTPUT_JSON,
-    default_output_csv=DEFAULT_OUTPUT_CSV,
-    default_profile=RUN_CONFIG_PROFILE,
-)
+
+def __getattr__(name: str):
+    exported_names = {
+        "ENTRYPOINT_CONFIG",
+        "LIST_SCRAPER_CLASS",
+        "DEFAULT_OUTPUT_JSON",
+        "DEFAULT_OUTPUT_CSV",
+        "RUN_CONFIG_PROFILE",
+    }
+    if name not in exported_names:
+        msg = f"module {__name__!r} has no attribute {name!r}"
+        raise AttributeError(msg)
+
+    config = get_domain_entrypoint_config(_DOMAIN)
+    aliases = {
+        "ENTRYPOINT_CONFIG": config,
+        "LIST_SCRAPER_CLASS": config.list_scraper_cls,
+        "DEFAULT_OUTPUT_JSON": config.default_output_json,
+        "DEFAULT_OUTPUT_CSV": config.default_output_csv,
+        "RUN_CONFIG_PROFILE": config.run_config_profile,
+    }
+    return aliases[name]
