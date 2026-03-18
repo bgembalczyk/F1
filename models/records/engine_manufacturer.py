@@ -4,12 +4,12 @@ from typing import TypedDict
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
+from models.records.record_definition import RecordDefinition
+from models.records.record_definition import build_validator
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.domain_validator import BaseDomainRecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
-from validation.schemas import RecordSchema
 
 
 class EngineManufacturerRecord(TypedDict, total=False):
@@ -28,7 +28,8 @@ class EngineManufacturerRecord(TypedDict, total=False):
     wdc: int | None
 
 
-ENGINE_MANUFACTURER_SCHEMA = RecordSchema(
+ENGINE_MANUFACTURER_DEFINITION = RecordDefinition(
+    name="engine_manufacturer",
     required=("manufacturer", "manufacturer_status"),
     types={
         "manufacturer": dict,
@@ -43,8 +44,11 @@ ENGINE_MANUFACTURER_SCHEMA = RecordSchema(
     },
 )
 
+ENGINE_MANUFACTURER_SCHEMA = ENGINE_MANUFACTURER_DEFINITION.to_schema()
+_ENGINE_MANUFACTURER_VALIDATOR = build_validator(ENGINE_MANUFACTURER_DEFINITION)
+
 
 def validate_engine_manufacturer_record(
     record: dict[str, Any],
 ) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(record, ENGINE_MANUFACTURER_SCHEMA)
+    return _ENGINE_MANUFACTURER_VALIDATOR(record)

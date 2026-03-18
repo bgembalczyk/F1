@@ -17,6 +17,18 @@ from models.records.driver import DRIVER_DEFINITION
 from models.records.driver import DRIVER_SCHEMA
 from models.records.driver import DriverRecord
 from models.records.driver import validate_driver_record
+from models.records.engine_manufacturer import ENGINE_MANUFACTURER_DEFINITION
+from models.records.engine_manufacturer import EngineManufacturerRecord
+from models.records.engine_manufacturer import validate_engine_manufacturer_record
+from models.records.event import EVENT_DEFINITION
+from models.records.event import EventRecord
+from models.records.event import validate_event_record
+from models.records.fatality import FATALITY_DEFINITION
+from models.records.fatality import FatalityRecord
+from models.records.fatality import validate_fatality_record
+from models.records.grand_prix import GRANDS_PRIX_DEFINITION
+from models.records.grand_prix import GrandsPrixRecord
+from models.records.grand_prix import validate_grands_prix_record
 from models.records.driver_championships import DriversChampionshipsRecord
 from models.records.link import LinkRecord
 from models.records.season import SEASON_SCHEMA
@@ -173,3 +185,39 @@ def test_record_definition_consistency_for_core_typeddicts() -> None:
         assert callable(validator)
         assert validator({})
         assert set(definition.required).issubset(set(typed_dict.__annotations__))
+
+
+def test_additional_record_definitions_use_shared_validation_pattern() -> None:
+    metadata = (
+        (EventRecord, EVENT_DEFINITION, validate_event_record),
+        (
+            EngineManufacturerRecord,
+            ENGINE_MANUFACTURER_DEFINITION,
+            validate_engine_manufacturer_record,
+        ),
+        (FatalityRecord, FATALITY_DEFINITION, validate_fatality_record),
+        (GrandsPrixRecord, GRANDS_PRIX_DEFINITION, validate_grands_prix_record),
+    )
+
+    for typed_dict, definition, validator in metadata:
+        assert definition.name
+        assert callable(validator)
+        assert validator({})
+        assert set(definition.types).issubset(set(typed_dict.__annotations__))
+
+
+def test_event_definition_validates_nested_link_variants() -> None:
+    assert (
+        validate_event_record(
+            {"event": {"text": "Test GP", "url": None}, "championship": False},
+        )
+        == []
+    )
+
+    errors = validate_event_record(
+        {"event": [{"text": " ", "url": None}], "championship": False},
+    )
+
+    assert [error.message for error in errors] == [
+        "event[0].text must be a non-empty string",
+    ]
