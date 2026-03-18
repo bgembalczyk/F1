@@ -3,7 +3,7 @@ from typing import Any
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.constants import SKIP_SENTINEL
+from scrapers.base.table.sentinels import SKIP_SENTINEL
 
 
 class FuncColumn(BaseColumn):

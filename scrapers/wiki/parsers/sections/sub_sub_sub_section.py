@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import Tag
@@ -10,16 +8,7 @@ from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.elements.mixin import WikiElementParserMixin
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
 
-if TYPE_CHECKING:
-    from collections.abc import Callable
-
-
-@dataclass(frozen=True)
-class ParserRule:
-    predicate: Callable[[Tag], bool]
-    parser: Callable[[Tag], Any]
-    result_type: str
-
+from scrapers.wiki.parsers.elements.rules import ParserRule
 
 class SubSubSubSectionParser(WikiElementParserMixin, WikiParser):
     def __init__(self) -> None:

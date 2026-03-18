@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from bs4 import Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.table.constants import SKIP_SENTINEL
+from scrapers.base.table.sentinels import SKIP_SENTINEL
 
 
 @dataclass

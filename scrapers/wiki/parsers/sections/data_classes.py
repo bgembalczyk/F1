@@ -6,7 +6,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.wiki.parsers.sections.helpers import normalize_section_profile_key
+from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
 
 SectionTree = dict[str, Any]
 
