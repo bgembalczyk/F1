@@ -3,25 +3,47 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.options import ScraperOptions
+from bs4 import BeautifulSoup
+
+from scrapers.base.infobox.service import InfoboxExtractionResult
+from scrapers.base.infobox.service import InfoboxExtractor
+from scrapers.base.infobox.service import StrategyInfoboxExtractionService
 from scrapers.circuits.infobox.scraper import F1CircuitInfoboxParser
 
 if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
+    from collections.abc import Iterable
+
+    from scrapers.base.options import ScraperOptions
+    from scrapers.base.parsers.soup import SoupParser
 
 
-class CircuitInfoboxExtractionService:
-    def __init__(self, *, include_urls: bool, debug_dir: str | None) -> None:
-        self._include_urls = include_urls
-        self._debug_dir = debug_dir
+class CircuitInfoboxExtractor(InfoboxExtractor[BeautifulSoup]):
+    def find_infoboxes(self, soup: BeautifulSoup) -> Iterable[BeautifulSoup]:
+        return [soup]
 
-    def extract(self, soup: BeautifulSoup, *, url: str) -> dict[str, Any]:
-        parser = F1CircuitInfoboxParser(
-            options=ScraperOptions(
-                include_urls=self._include_urls,
-                debug_dir=self._debug_dir,
-            ),
+    def build_parser(self, *, options: ScraperOptions, url: str) -> SoupParser:
+        return F1CircuitInfoboxParser(
+            options=options,
             url=url,
         )
-        records = parser.parse(soup)
-        return records[0] if records else {}
+
+    def normalize_result(
+        self,
+        parsed_records: list[dict[str, Any]],
+    ) -> InfoboxExtractionResult:
+        return InfoboxExtractionResult(
+            records=[dict(record) for record in parsed_records],
+        )
+
+
+class CircuitInfoboxExtractionService(StrategyInfoboxExtractionService[BeautifulSoup]):
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions | None = None,
+        extractor: InfoboxExtractor[BeautifulSoup] | None = None,
+    ) -> None:
+        super().__init__(
+            extractor=extractor or CircuitInfoboxExtractor(),
+            options=options,
+        )

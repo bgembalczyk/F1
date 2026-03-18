@@ -21,6 +21,7 @@ if TYPE_CHECKING:
 
     from bs4 import BeautifulSoup
 
+    from scrapers.base.infobox.service import InfoboxExtractionService
     from scrapers.base.sections.adapter import SectionAdapter
 
 
@@ -29,7 +30,7 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         self,
         *,
         options: ScraperOptions | None = None,
-        infobox_service: CircuitInfoboxExtractionService | None = None,
+        infobox_service: InfoboxExtractionService | None = None,
         sections_service_factory: (
             Callable[[SectionAdapter, str], CircuitSectionExtractionService] | None
         ) = None,
@@ -40,8 +41,7 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         self._section_fragment: str | None = None
         self.article_tables_parser = ArticleTablesParser(include_source_table=True)
         self._infobox_service = infobox_service or CircuitInfoboxExtractionService(
-            include_urls=self.include_urls,
-            debug_dir=self.debug_dir,
+            options=self._options,
         )
         self._sections_service_factory = sections_service_factory or (
             lambda adapter, url: CircuitSectionExtractionService(
@@ -79,7 +79,7 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         return self._select_section(soup, self._section_fragment)
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> dict[str, Any]:
-        return self._infobox_service.extract(soup, url=self.url)
+        return self._infobox_service.extract(soup, url=self.url).primary_record
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         lap_scraper = LapRecordsTableScraper(
