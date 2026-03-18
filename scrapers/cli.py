@@ -8,13 +8,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from layers.application import create_default_wiki_pipeline_application
 from scrapers.base.cli_entrypoint import CliMainProfile
 from scrapers.base.cli_entrypoint import build_run_config
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.run_config import RunConfig
-from scrapers.wiki.application import create_default_wiki_pipeline_application
 
 if TYPE_CHECKING:
     from collections.abc import Callable

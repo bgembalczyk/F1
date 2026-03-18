@@ -1,5 +1,5 @@
 from scrapers.base.sections.critical_sections import CriticalSection
-from scrapers.wiki.parsers.section_profiles import DOMAIN_SECTION_PROFILES
+from scrapers.wiki.parsers.sections.helpers import DOMAIN_SECTION_PROFILES
 
 SECTION_RESULT_KEYS = ("section_id", "section_label", "records", "metadata")
 
