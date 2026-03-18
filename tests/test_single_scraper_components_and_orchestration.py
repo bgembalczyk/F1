@@ -1,6 +1,8 @@
 # ruff: noqa: E501
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
@@ -12,11 +14,18 @@ from scrapers.constructors.sections.service import ConstructorSectionExtractionS
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
+from scrapers.drivers.section_service_factory import DriverSectionServiceFactory
 from scrapers.drivers.sections.service import DriverSectionExtractionService
 from scrapers.drivers.single_scraper import SingleDriverScraper
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 from scrapers.seasons.single_scraper import SingleSeasonScraper
+from scrapers.seasons.text_section_service_factory import (
+    SeasonTextSectionServiceFactory,
+)
+
+if TYPE_CHECKING:
+    from scrapers.base.sections.adapter import SectionAdapter
 
 
 def _soup(html: str) -> BeautifulSoup:
@@ -140,16 +149,24 @@ def test_orchestration_integration_single_driver_uses_injected_dependencies() ->
             return {"url": url, "from": "infobox"}
 
     class _SectionsStub:
-        def __init__(self, _options: ScraperOptions, _url: str) -> None:
-            pass
-
         def extract(self, _soup: BeautifulSoup):
             return [{"section_id": "Career_results", "section": "Career"}]
+
+    class _SectionsFactory(DriverSectionServiceFactory):
+        def create(
+            self,
+            *,
+            adapter: SectionAdapter,
+            options: ScraperOptions,
+            url: str,
+        ) -> _SectionsStub:
+            _ = adapter, options, url
+            return _SectionsStub()
 
     scraper = SingleDriverScraper(
         options=ScraperOptions(include_urls=True),
         infobox_service=_InfoboxStub(),
-        sections_service_factory=lambda options, url: _SectionsStub(options, url),
+        sections_service_factory=_SectionsFactory(),
         assembler=DriverRecordAssembler(),
     )
     scraper.url = "https://example.com/driver"
@@ -157,3 +174,37 @@ def test_orchestration_integration_single_driver_uses_injected_dependencies() ->
 
     assert result["infobox"]["from"] == "infobox"
     assert result["career_results"][0]["section"] == "Career"
+
+
+def test_single_season_uses_injected_text_section_factory() -> None:
+    class _TextSectionsStub:
+        def extract(self, _soup: BeautifulSoup):
+            return {
+                "Regulation_changes": [{"text": "Injected regulation"}],
+                "Mid-season_changes": [{"text": "Injected transfer"}],
+            }
+
+    class _TextSectionsFactory(SeasonTextSectionServiceFactory):
+        def create(
+            self,
+            *,
+            adapter: SectionAdapter,
+            options: ScraperOptions,
+            url: str,
+        ) -> _TextSectionsStub:
+            _ = adapter, options, url
+            return _TextSectionsStub()
+
+    scraper = SingleSeasonScraper(
+        options=ScraperOptions(include_urls=True),
+        season_year=2024,
+        text_sections_service_factory=_TextSectionsFactory(),
+        assembler=SeasonRecordAssembler(),
+    )
+    scraper.url = "https://example.com/2024_Formula_One_World_Championship"
+    scraper._configure_pipeline()  # noqa: SLF001
+
+    result = scraper._parse_soup(_soup("<html></html>"))[0]  # noqa: SLF001
+
+    assert result["regulation_changes"] == [{"text": "Injected regulation"}]
+    assert result["mid_season_changes"] == [{"text": "Injected transfer"}]

@@ -23,19 +23,22 @@ from scrapers.seasons.parsers.testing_venues import TestingVenuesParser
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 from scrapers.seasons.sections.calendar import SeasonCalendarSectionParser
 from scrapers.seasons.sections.results import SeasonResultsSectionParser
-from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 from scrapers.seasons.sections.standings import SeasonConstructorsStandingsSectionParser
 from scrapers.seasons.sections.standings import SeasonDriversStandingsSectionParser
+from scrapers.seasons.text_section_service_factory import (
+    SeasonTextSectionServiceFactory,
+)
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
     from typing import Any
 
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.adapter import SectionAdapter
+    from scrapers.base.sections.service_factory import SectionServiceFactory
     from scrapers.seasons.sections.contracts import SeasonSectionParser
+    from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 
 
 class SeasonYearResolver:
@@ -226,15 +229,15 @@ class SeasonSectionPipeline:
         parser_set_builder: SeasonParserSetBuilder,
         section_data_collector: SeasonSectionDataCollector | None = None,
         text_sections_service_factory: (
-            Callable[[SectionAdapter], SeasonTextSectionExtractionService] | None
+            SectionServiceFactory[SeasonTextSectionExtractionService] | None
         ) = None,
     ) -> None:
         self._parser_set_builder = parser_set_builder
         self._section_data_collector = (
             section_data_collector or SeasonSectionDataCollector()
         )
-        self._text_sections_service_factory = text_sections_service_factory or (
-            lambda adapter: SeasonTextSectionExtractionService(adapter=adapter)
+        self._text_sections_service_factory = (
+            text_sections_service_factory or SeasonTextSectionServiceFactory()
         )
         self._parser_set: SeasonParserSet | None = None
         self._url = ""
@@ -261,7 +264,11 @@ class SeasonSectionPipeline:
         adapter: SectionAdapter,
     ) -> SeasonRecordSections:
         parser_set = self._require_parser_set()
-        text_records = self._text_sections_service_factory(adapter).extract(soup)
+        text_records = self._text_sections_service_factory.create(
+            adapter=adapter,
+            options=parser_set.table_parser.options,
+            url=self._url,
+        ).extract(soup)
         section_data = self._section_data_collector.collect(
             soup=soup,
             parser_set=parser_set,

@@ -9,16 +9,19 @@ from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembl
 from scrapers.constructors.postprocess.contract import (
     ConstructorSectionContractPostProcessor,
 )
-from scrapers.constructors.sections.service import ConstructorSectionExtractionService
+from scrapers.constructors.section_service_factory import (
+    ConstructorSectionServiceFactory,
+)
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
-
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
-    from scrapers.base.sections.adapter import SectionAdapter
+    from scrapers.base.sections.service_factory import SectionServiceFactory
+    from scrapers.constructors.sections.service import (
+        ConstructorSectionExtractionService,
+    )
 
 
 class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
@@ -28,14 +31,14 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         options: ScraperOptions | None = None,
         infobox_service: ConstructorInfoboxExtractionService | None = None,
         sections_service_factory: (
-            Callable[[SectionAdapter], ConstructorSectionExtractionService] | None
+            SectionServiceFactory[ConstructorSectionExtractionService] | None
         ) = None,
         assembler: ConstructorRecordAssembler | None = None,
     ) -> None:
         super().__init__(options=options)
         self._infobox_service = infobox_service or ConstructorInfoboxExtractionService()
-        self._sections_service_factory = sections_service_factory or (
-            lambda adapter: ConstructorSectionExtractionService(adapter=adapter)
+        self._sections_service_factory = (
+            sections_service_factory or ConstructorSectionServiceFactory()
         )
         self._assembler = assembler or ConstructorRecordAssembler()
         self.article_tables_parser = ArticleTablesParser()
@@ -50,7 +53,11 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         return self.article_tables_parser.parse(soup)
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        sections_service = self._sections_service_factory(self)
+        sections_service = self._sections_service_factory.create(
+            adapter=self,
+            options=self._options,
+            url=self.url,
+        )
         return sections_service.extract(soup)
 
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:

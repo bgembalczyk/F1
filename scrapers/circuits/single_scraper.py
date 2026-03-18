@@ -13,15 +13,14 @@ from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
-from scrapers.circuits.sections.service import CircuitSectionExtractionService
+from scrapers.circuits.section_service_factory import CircuitSectionServiceFactory
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
-
     from bs4 import BeautifulSoup
 
-    from scrapers.base.sections.adapter import SectionAdapter
+    from scrapers.base.sections.service_factory import SectionServiceFactory
+    from scrapers.circuits.sections.service import CircuitSectionExtractionService
 
 
 class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
@@ -31,7 +30,7 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         options: ScraperOptions | None = None,
         infobox_service: CircuitInfoboxExtractionService | None = None,
         sections_service_factory: (
-            Callable[[SectionAdapter, str], CircuitSectionExtractionService] | None
+            SectionServiceFactory[CircuitSectionExtractionService] | None
         ) = None,
         assembler: CircuitRecordAssembler | None = None,
     ) -> None:
@@ -43,15 +42,8 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
             include_urls=self.include_urls,
             debug_dir=self.debug_dir,
         )
-        self._sections_service_factory = sections_service_factory or (
-            lambda adapter, url: CircuitSectionExtractionService(
-                adapter=adapter,
-                include_urls=self.include_urls,
-                fetcher=self.fetcher,
-                policy=self.policy,
-                debug_dir=self.debug_dir,
-                url=url,
-            )
+        self._sections_service_factory = (
+            sections_service_factory or CircuitSectionServiceFactory()
         )
         self._assembler = assembler or CircuitRecordAssembler()
 
@@ -127,7 +119,11 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         ]
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        sections_service = self._sections_service_factory(self, self.url)
+        sections_service = self._sections_service_factory.create(
+            adapter=self,
+            options=self._options,
+            url=self.url,
+        )
         return sections_service.extract(soup)
 
     def _assemble_record(

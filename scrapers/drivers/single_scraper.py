@@ -1,14 +1,20 @@
-from collections.abc import Callable
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
 from typing import Any
 
-from bs4 import BeautifulSoup
-
-from scrapers.base.options import ScraperOptions
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.postprocess.contract import DriverSectionContractPostProcessor
-from scrapers.drivers.sections.service import DriverSectionExtractionService
+from scrapers.drivers.section_service_factory import DriverSectionServiceFactory
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.base.options import ScraperOptions
+    from scrapers.base.sections.service_factory import SectionServiceFactory
+    from scrapers.drivers.sections.service import DriverSectionExtractionService
 
 
 class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
@@ -18,7 +24,7 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
         options: ScraperOptions | None = None,
         infobox_service: DriverInfoboxExtractionService | None = None,
         sections_service_factory: (
-            Callable[[ScraperOptions, str], DriverSectionExtractionService] | None
+            SectionServiceFactory[DriverSectionExtractionService] | None
         ) = None,
         assembler: DriverRecordAssembler | None = None,
     ) -> None:
@@ -28,12 +34,8 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
             debug_dir=self.debug_dir,
             run_id=getattr(self, "_run_id", None),
         )
-        self._sections_service_factory = sections_service_factory or (
-            lambda opts, url: DriverSectionExtractionService(
-                adapter=self,
-                options=opts,
-                url=url,
-            )
+        self._sections_service_factory = (
+            sections_service_factory or DriverSectionServiceFactory()
         )
         self._assembler = assembler or DriverRecordAssembler()
 
@@ -44,7 +46,12 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
         return self._infobox_service.extract(soup, url=self.url)
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._sections_service_factory(self._options, self.url).extract(soup)
+        sections_service = self._sections_service_factory.create(
+            adapter=self,
+            options=self._options,
+            url=self.url,
+        )
+        return sections_service.extract(soup)
 
     def _parse_results_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._build_sections_payload(soup)
