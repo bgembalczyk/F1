@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 import argparse
+import dataclasses
 import importlib
 import inspect
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 from layers.application import create_default_wiki_pipeline_application
 from scrapers.base.cli_entrypoint import CliMainProfile
@@ -25,12 +26,73 @@ _PROFILE_DEFAULTS: dict[CliMainProfile, tuple[bool, bool]] = {
     "deprecated_entrypoint": (True, False),
 }
 
+BaseConfigFactory = Literal["deprecated", "complete", "default"]
+LegacyTargetFactory = Literal["lazy", "run_and_export", "run_export_complete"]
+
 
 @dataclass(frozen=True)
 class LegacyModuleSpec:
     target: Callable[..., None]
     base_config: RunConfig
     profile: CliMainProfile
+
+
+@dataclass(frozen=True)
+class LegacyModuleDefinition:
+    module_path: str
+    factory: LegacyTargetFactory
+    target_path: str
+    profile: CliMainProfile
+    base_config_factory: BaseConfigFactory = "deprecated"
+    output_json: str | None = None
+    output_csv: str | None = None
+    output_dir: str | None = None
+    include_urls: bool | None = None
+    base_config_overrides: dict[str, object] | None = None
+
+
+@dataclass(frozen=True)
+class LegacyCliRegistry:
+    definitions: tuple[LegacyModuleDefinition, ...]
+
+    def build_specs(self) -> dict[str, LegacyModuleSpec]:
+        return {
+            definition.module_path: LegacyModuleSpec(
+                target=self._build_target(definition),
+                base_config=self._build_base_config(definition),
+                profile=definition.profile,
+            )
+            for definition in self.definitions
+        }
+
+    def _build_target(self, definition: LegacyModuleDefinition) -> Callable[..., None]:
+        if definition.factory == "lazy":
+            return _lazy_target(definition.target_path)
+        if definition.factory == "run_and_export":
+            return _run_and_export_target(
+                definition.target_path,
+                definition.output_json,
+                definition.output_csv,
+            )
+        return _run_export_complete(
+            definition.target_path,
+            definition.output_dir,
+            include_urls=definition.include_urls,
+        )
+
+    def _build_base_config(self, definition: LegacyModuleDefinition) -> RunConfig:
+        base_config = _build_base_config(definition.base_config_factory)
+        if not definition.base_config_overrides:
+            return base_config
+        return dataclasses.replace(base_config, **definition.base_config_overrides)
+
+
+def _build_base_config(factory: BaseConfigFactory) -> RunConfig:
+    if factory == "deprecated":
+        return deprecated_module_base_config()
+    if factory == "complete":
+        return complete_extractor_base_config()
+    return RunConfig()
 
 
 def _import_target(path: str) -> Callable[..., None]:
@@ -49,7 +111,7 @@ def _lazy_target(path: str) -> Callable[..., None]:
 
 def _run_and_export_target(
     class_path: str,
-    output_json: str,
+    output_json: str | None,
     output_csv: str | None = None,
 ) -> Callable[..., None]:
     def _target(*, run_config: RunConfig) -> None:
@@ -65,9 +127,9 @@ def _run_and_export_target(
 
 def _run_export_complete(
     path: str,
-    output_dir: str,
+    output_dir: str | None,
     *,
-    include_urls: bool = True,
+    include_urls: bool | None = True,
 ) -> Callable[..., None]:
     def _target() -> None:
         export_fn = _import_target(path)
@@ -76,248 +138,241 @@ def _run_export_complete(
     return _target
 
 
-def _circuits_specs() -> dict[str, LegacyModuleSpec]:
-    return {
-        "scrapers.circuits.list_scraper": LegacyModuleSpec(
-            _lazy_target("scrapers.circuits.entrypoint:run_list_scraper"),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
+    definitions=(
+        LegacyModuleDefinition(
+            module_path="scrapers.circuits.list_scraper",
+            factory="lazy",
+            target_path="scrapers.circuits.entrypoint:run_list_scraper",
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.circuits.complete_scraper": LegacyModuleSpec(
-            _run_export_complete(
-                "scrapers.circuits.helpers.export:export_complete_circuits",
-                "../../data/wiki/circuits/complete_circuits",
+        LegacyModuleDefinition(
+            module_path="scrapers.circuits.complete_scraper",
+            factory="run_export_complete",
+            target_path="scrapers.circuits.helpers.export:export_complete_circuits",
+            profile="complete_extractor",
+            base_config_factory="complete",
+            output_dir="../../data/wiki/circuits/complete_circuits",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.constructors.current_constructors_list",
+            factory="lazy",
+            target_path="scrapers.constructors.entrypoint:run_list_scraper",
+            profile="deprecated_entrypoint",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.constructors.former_constructors_list",
+            factory="run_and_export",
+            target_path=(
+                "scrapers.constructors.former_constructors_list:"
+                "FormerConstructorsListScraper"
             ),
-            complete_extractor_base_config(),
-            "complete_extractor",
+            profile="deprecated_entrypoint",
+            output_json="constructors/f1_former_constructors.json",
+            output_csv="constructors/f1_former_constructors.csv",
         ),
-    }
+        LegacyModuleDefinition(
+            module_path="scrapers.constructors.indianapolis_only_constructors_list",
+            factory="run_and_export",
+            target_path=(
+                "scrapers.constructors.indianapolis_only_constructors_list:"
+                "IndianapolisOnlyConstructorsListScraper"
+            ),
+            profile="deprecated_entrypoint",
+            output_json="constructors/f1_indianapolis_only_constructors.json",
+            output_csv="constructors/f1_indianapolis_only_constructors.csv",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.constructors.privateer_teams_list",
+            factory="run_and_export",
+            target_path="scrapers.constructors.privateer_teams_list:PrivateerTeamsListScraper",
+            profile="deprecated_entrypoint",
+            output_json="constructors/f1_privateer_teams.json",
+            output_csv="constructors/f1_privateer_teams.csv",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.constructors.complete_scraper",
+            factory="run_export_complete",
+            target_path=(
+                "scrapers.constructors.helpers.export:export_complete_constructors"
+            ),
+            profile="complete_extractor",
+            base_config_factory="default",
+            output_dir="../../data/wiki/constructors/complete_constructors",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.drivers.list_scraper",
+            factory="lazy",
+            target_path="scrapers.drivers.entrypoint:run_list_scraper",
+            profile="deprecated_entrypoint",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.drivers.female_drivers_list",
+            factory="run_and_export",
+            target_path="scrapers.drivers.female_drivers_list:FemaleDriversListScraper",
+            profile="deprecated_entrypoint",
+            output_json="drivers/female_drivers.json",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.drivers.fatalities_list_scraper",
+            factory="run_and_export",
+            target_path="scrapers.drivers.fatalities_list_scraper:F1FatalitiesListScraper",
+            profile="deprecated_entrypoint",
+            output_json="drivers/f1_driver_fatalities.json",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.drivers.complete_scraper",
+            factory="run_export_complete",
+            target_path="scrapers.drivers.helpers.export:export_complete_drivers",
+            profile="complete_extractor",
+            base_config_factory="default",
+            output_dir="../../data/wiki/drivers/complete_drivers",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.engines.engine_manufacturers_list",
+            factory="run_and_export",
+            target_path=(
+                "scrapers.engines.engine_manufacturers_list:"
+                "EngineManufacturersListScraper"
+            ),
+            profile="deprecated_entrypoint",
+            output_json="engines/f1_engine_manufacturers.json",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.engines.indianapolis_only_engine_manufacturers_list",
+            factory="run_and_export",
+            target_path=(
+                "scrapers.engines.indianapolis_only_engine_manufacturers_list:"
+                "IndianapolisOnlyEngineManufacturersListScraper"
+            ),
+            profile="deprecated_entrypoint",
+            output_json="engines/f1_engine_manufacturers_indianapolis_only.json",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.engines.engine_regulation",
+            factory="run_and_export",
+            target_path="scrapers.engines.engine_regulation:EngineRegulationScraper",
+            profile="deprecated_entrypoint",
+            output_json="engines/f1_engine_regulations.json",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.engines.engine_restrictions",
+            factory="run_and_export",
+            target_path="scrapers.engines.engine_restrictions:EngineRestrictionsScraper",
+            profile="deprecated_entrypoint",
+            output_json="engines/f1_engine_restrictions.json",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.engines.complete_scraper",
+            factory="run_and_export",
+            target_path=(
+                "scrapers.engines.complete_scraper:"
+                "F1CompleteEngineManufacturerDataExtractor"
+            ),
+            profile="complete_extractor",
+            base_config_factory="default",
+            output_json="engines/f1_engine_manufacturers_complete.json",
+            base_config_overrides={"output_dir": Path("../../data/wiki")},
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.grands_prix.list_scraper",
+            factory="lazy",
+            target_path="scrapers.grands_prix.entrypoint:run_list_scraper",
+            profile="deprecated_entrypoint",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.grands_prix.complete_scraper",
+            factory="lazy",
+            target_path="scrapers.grands_prix.entrypoint:run_complete_scraper",
+            profile="complete_extractor",
+            base_config_factory="complete",
+        ),
+        LegacyModuleDefinition(
+            module_path=(
+                "scrapers.grands_prix.red_flagged_races_scraper.non_championship"
+            ),
+            factory="run_and_export",
+            target_path=(
+                "scrapers.grands_prix.red_flagged_races_scraper."
+                "non_championship:RedFlaggedNonChampionshipRacesScraper"
+            ),
+            profile="deprecated_entrypoint",
+            output_json="grands_prix/f1_red_flagged_non_championship_races.json",
+            base_config_overrides={
+                "output_dir": Path("../../data/wiki"),
+                "include_urls": True,
+            },
+        ),
+        LegacyModuleDefinition(
+            module_path=(
+                "scrapers.grands_prix.red_flagged_races_scraper.world_championship"
+            ),
+            factory="run_and_export",
+            target_path=(
+                "scrapers.grands_prix.red_flagged_races_scraper."
+                "world_championship:RedFlaggedWorldChampionshipRacesScraper"
+            ),
+            profile="deprecated_entrypoint",
+            output_json="grands_prix/f1_red_flagged_world_championship_races.json",
+            base_config_overrides={
+                "output_dir": Path("../../data/wiki"),
+                "include_urls": True,
+            },
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.points.sprint_qualifying_points",
+            factory="lazy",
+            target_path="scrapers.points.sprint_qualifying_points:run_list_scraper",
+            profile="list_scraper",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.points.points_scoring_systems_history",
+            factory="lazy",
+            target_path=(
+                "scrapers.points.points_scoring_systems_history:run_list_scraper"
+            ),
+            profile="list_scraper",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.points.shortened_race_points",
+            factory="lazy",
+            target_path="scrapers.points.shortened_race_points:run_list_scraper",
+            profile="list_scraper",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.seasons.list_scraper",
+            factory="lazy",
+            target_path="scrapers.seasons.entrypoint:run_list_scraper",
+            profile="deprecated_entrypoint",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.seasons.complete_scraper",
+            factory="run_export_complete",
+            target_path="scrapers.seasons.helpers:export_complete_seasons",
+            profile="complete_extractor",
+            base_config_factory="complete",
+            output_dir="../../data/wiki/seasons/complete_seasons",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.sponsorship_liveries.scraper",
+            factory="run_and_export",
+            target_path=(
+                "scrapers.sponsorship_liveries.scraper:" "SponsorshipAndLiveriesScraper"
+            ),
+            profile="deprecated_entrypoint",
+            output_json="f1_sponsorship_and_livery.json",
+        ),
+        LegacyModuleDefinition(
+            module_path="scrapers.tyres.list_scraper",
+            factory="run_and_export",
+            target_path="scrapers.tyres.list_scraper:TyresListScraper",
+            profile="deprecated_entrypoint",
+            output_json="f1_tyre_manufacturers.json",
+        ),
+    ),
+)
 
-
-def _constructors_specs() -> dict[str, LegacyModuleSpec]:
-    return {
-        "scrapers.constructors.current_constructors_list": LegacyModuleSpec(
-            _lazy_target("scrapers.constructors.entrypoint:run_list_scraper"),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.constructors.former_constructors_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.constructors.former_constructors_list:FormerConstructorsListScraper",
-                "constructors/f1_former_constructors.json",
-                "constructors/f1_former_constructors.csv",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.constructors.indianapolis_only_constructors_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.constructors.indianapolis_only_constructors_list:IndianapolisOnlyConstructorsListScraper",
-                "constructors/f1_indianapolis_only_constructors.json",
-                "constructors/f1_indianapolis_only_constructors.csv",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.constructors.privateer_teams_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.constructors.privateer_teams_list:PrivateerTeamsListScraper",
-                "constructors/f1_privateer_teams.json",
-                "constructors/f1_privateer_teams.csv",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.constructors.complete_scraper": LegacyModuleSpec(
-            _run_export_complete(
-                "scrapers.constructors.helpers.export:export_complete_constructors",
-                "../../data/wiki/constructors/complete_constructors",
-            ),
-            RunConfig(),
-            "complete_extractor",
-        ),
-    }
-
-
-def _drivers_specs() -> dict[str, LegacyModuleSpec]:
-    return {
-        "scrapers.drivers.list_scraper": LegacyModuleSpec(
-            _lazy_target("scrapers.drivers.entrypoint:run_list_scraper"),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.drivers.female_drivers_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.drivers.female_drivers_list:FemaleDriversListScraper",
-                "drivers/female_drivers.json",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.drivers.fatalities_list_scraper": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.drivers.fatalities_list_scraper:F1FatalitiesListScraper",
-                "drivers/f1_driver_fatalities.json",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.drivers.complete_scraper": LegacyModuleSpec(
-            _run_export_complete(
-                "scrapers.drivers.helpers.export:export_complete_drivers",
-                "../../data/wiki/drivers/complete_drivers",
-            ),
-            RunConfig(),
-            "complete_extractor",
-        ),
-    }
-
-
-def _engines_specs() -> dict[str, LegacyModuleSpec]:
-    return {
-        "scrapers.engines.engine_manufacturers_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.engines.engine_manufacturers_list:EngineManufacturersListScraper",
-                "engines/f1_engine_manufacturers.json",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.engines.indianapolis_only_engine_manufacturers_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.engines.indianapolis_only_engine_manufacturers_list:IndianapolisOnlyEngineManufacturersListScraper",
-                "engines/f1_engine_manufacturers_indianapolis_only.json",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.engines.engine_regulation": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.engines.engine_regulation:EngineRegulationScraper",
-                "engines/f1_engine_regulations.json",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.engines.engine_restrictions": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.engines.engine_restrictions:EngineRestrictionsScraper",
-                "engines/f1_engine_restrictions.json",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.engines.complete_scraper": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.engines.complete_scraper:F1CompleteEngineManufacturerDataExtractor",
-                "engines/f1_engine_manufacturers_complete.json",
-            ),
-            RunConfig(output_dir=Path("../../data/wiki")),
-            "complete_extractor",
-        ),
-    }
-
-
-def _grands_prix_specs() -> dict[str, LegacyModuleSpec]:
-    return {
-        "scrapers.grands_prix.list_scraper": LegacyModuleSpec(
-            _lazy_target("scrapers.grands_prix.entrypoint:run_list_scraper"),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.grands_prix.complete_scraper": LegacyModuleSpec(
-            _lazy_target("scrapers.grands_prix.entrypoint:run_complete_scraper"),
-            complete_extractor_base_config(),
-            "complete_extractor",
-        ),
-        "scrapers.grands_prix.red_flagged_races_scraper.non_championship": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.grands_prix.red_flagged_races_scraper.non_championship:RedFlaggedNonChampionshipRacesScraper",
-                "grands_prix/f1_red_flagged_non_championship_races.json",
-            ),
-            RunConfig(output_dir=Path("../../data/wiki"), include_urls=True),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.grands_prix.red_flagged_races_scraper.world_championship": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.grands_prix.red_flagged_races_scraper.world_championship:RedFlaggedWorldChampionshipRacesScraper",
-                "grands_prix/f1_red_flagged_world_championship_races.json",
-            ),
-            RunConfig(output_dir=Path("../../data/wiki"), include_urls=True),
-            "deprecated_entrypoint",
-        ),
-    }
-
-
-def _points_specs() -> dict[str, LegacyModuleSpec]:
-    return {
-        "scrapers.points.sprint_qualifying_points": LegacyModuleSpec(
-            _lazy_target("scrapers.points.sprint_qualifying_points:run_list_scraper"),
-            deprecated_module_base_config(),
-            "list_scraper",
-        ),
-        "scrapers.points.points_scoring_systems_history": LegacyModuleSpec(
-            _lazy_target(
-                "scrapers.points.points_scoring_systems_history:run_list_scraper",
-            ),
-            deprecated_module_base_config(),
-            "list_scraper",
-        ),
-        "scrapers.points.shortened_race_points": LegacyModuleSpec(
-            _lazy_target("scrapers.points.shortened_race_points:run_list_scraper"),
-            deprecated_module_base_config(),
-            "list_scraper",
-        ),
-    }
-
-
-def _remaining_specs() -> dict[str, LegacyModuleSpec]:
-    return {
-        "scrapers.seasons.list_scraper": LegacyModuleSpec(
-            _lazy_target("scrapers.seasons.entrypoint:run_list_scraper"),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.seasons.complete_scraper": LegacyModuleSpec(
-            _run_export_complete(
-                "scrapers.seasons.helpers:export_complete_seasons",
-                "../../data/wiki/seasons/complete_seasons",
-            ),
-            complete_extractor_base_config(),
-            "complete_extractor",
-        ),
-        "scrapers.sponsorship_liveries.scraper": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.sponsorship_liveries.scraper:SponsorshipAndLiveriesScraper",
-                "f1_sponsorship_and_livery.json",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-        "scrapers.tyres.list_scraper": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.tyres.list_scraper:TyresListScraper",
-                "f1_tyre_manufacturers.json",
-            ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
-        ),
-    }
-
-
-def _build_legacy_module_specs() -> dict[str, LegacyModuleSpec]:
-    specs: dict[str, LegacyModuleSpec] = {}
-    specs.update(_circuits_specs())
-    specs.update(_constructors_specs())
-    specs.update(_drivers_specs())
-    specs.update(_engines_specs())
-    specs.update(_grands_prix_specs())
-    specs.update(_points_specs())
-    specs.update(_remaining_specs())
-    return specs
-
-
-LEGACY_MODULE_SPECS: dict[str, LegacyModuleSpec] = _build_legacy_module_specs()
+LEGACY_MODULE_SPECS: dict[str, LegacyModuleSpec] = LEGACY_MODULE_REGISTRY.build_specs()
 
 
 def _invoke_target(target: Callable[..., None], run_config: RunConfig) -> None:
