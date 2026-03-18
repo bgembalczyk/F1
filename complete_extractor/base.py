@@ -4,6 +4,7 @@ from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from scrapers.base.composite_scraper import CompositeDataExtractor
 from scrapers.base.composite_scraper import CompositeDataExtractorChildren
 from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
 from scrapers.base.source_adapter import IterableSourceAdapter
 from scrapers.base.source_adapter import MultiIterableSourceAdapter
@@ -66,19 +67,33 @@ class CompleteExtractorBase(CompositeDataExtractor):
 
     def build_list_scraper(self, options: ScraperOptions) -> Any:
         """Zbuduj scraper listy dla przypadków jedno-listowych."""
-        scraper_cls = self.DOMAIN_CONFIG.list_scraper_cls
+        scraper_classes = self.DOMAIN_CONFIG.get_list_scraper_classes()
+        if len(scraper_classes) > 1:
+            msg = (
+                f"{self.__class__.__name__} definiuje wiele list scraperów; "
+                "użyj build_list_scrapers()."
+            )
+            raise NotImplementedError(msg)
+
+        scraper_cls = scraper_classes[0] if scraper_classes else None
         if scraper_cls is None:
             msg = (
                 f"{self.__class__.__name__} musi ustawić "
-                "DOMAIN_CONFIG.list_scraper_cls "
+                "DOMAIN_CONFIG.list_scraper_cls / list_scraper_clses "
                 "lub nadpisać build_list_scraper()."
             )
             raise NotImplementedError(msg)
         return scraper_cls(options=self.list_scraper_options(options))
 
-    def build_list_scrapers(self, _options: ScraperOptions) -> list[Any] | None:
+    def build_list_scrapers(self, options: ScraperOptions) -> list[Any] | None:
         """Opcjonalny hook dla przypadków wielolistowych."""
-        return None
+        scraper_classes = self.DOMAIN_CONFIG.get_list_scraper_classes()
+        if len(scraper_classes) <= 1:
+            return None
+        return [
+            scraper_cls(options=self.list_scraper_options(options))
+            for scraper_cls in scraper_classes
+        ]
 
     def build_single_scraper(self, options: ScraperOptions) -> Any:
         """Zbuduj scraper szczegółów."""
@@ -94,12 +109,12 @@ class CompleteExtractorBase(CompositeDataExtractor):
 
     def extract_detail_url(self, record: dict[str, Any]) -> str | None:
         """Wyciągnij URL szczegółów z rekordu listy na podstawie field path."""
-        field_path = self.DOMAIN_CONFIG.detail_url_field_path
-        if not field_path:
-            return None
-
-        value = self._get_value_by_path(record, field_path)
-        if isinstance(value, str) and value:
+        for field_path in self.DOMAIN_CONFIG.get_detail_url_field_paths():
+            value = self._get_value_by_path(record, field_path)
+            if not isinstance(value, str) or not value:
+                continue
+            if self.DOMAIN_CONFIG.filter_redlinks and is_wikipedia_redlink(value):
+                continue
             return value
         return None
 
@@ -111,10 +126,14 @@ class CompleteExtractorBase(CompositeDataExtractor):
         record: dict[str, Any],
         details: dict[str, Any] | None,
     ) -> dict[str, Any]:
-        assembled = self.DOMAIN_CONFIG.record_assembly_strategy.assemble(
-            record,
-            details,
-        )
+        assembler = self.DOMAIN_CONFIG.record_assembler
+        if assembler is not None:
+            assembled = assembler(record, details)
+        else:
+            assembled = self.DOMAIN_CONFIG.record_assembly_strategy.assemble(
+                record,
+                details,
+            )
 
         postprocessor = self.DOMAIN_CONFIG.record_postprocessor
         if postprocessor is not None:
@@ -122,7 +141,8 @@ class CompleteExtractorBase(CompositeDataExtractor):
 
         return assembled
 
-    def _get_value_by_path(self, source: dict[str, Any], field_path: str) -> Any:
+    @staticmethod
+    def _get_value_by_path(source: dict[str, Any], field_path: str) -> Any:
         current: Any = source
         for part in field_path.split("."):
             if not isinstance(current, dict):
