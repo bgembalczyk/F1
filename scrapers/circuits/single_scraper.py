@@ -3,11 +3,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.options import ScraperOptions
-from scrapers.base.sections.adapter import SectionAdapter
+from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
@@ -17,15 +15,16 @@ from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
 from scrapers.circuits.sections.service import CircuitSectionExtractionService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
-from scrapers.wiki.scraper import WikiScraper
 
 if TYPE_CHECKING:
     from collections.abc import Callable
 
     from bs4 import BeautifulSoup
 
+    from scrapers.base.sections.adapter import SectionAdapter
 
-class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScraper):
+
+class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
     def __init__(
         self,
         *,
@@ -36,14 +35,7 @@ class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScra
         ) = None,
         assembler: CircuitRecordAssembler | None = None,
     ) -> None:
-        options = init_scraper_options(options, include_urls=True)
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
-        options.post_processors.append(CircuitSectionContractPostProcessor())
         super().__init__(options=options)
-        self.policy = self.http_policy
-        self.url: str = ""
-        self.debug_dir = options.debug_dir
         self._original_url: str | None = None
         self._section_fragment: str | None = None
         self.article_tables_parser = ArticleTablesParser(include_source_table=True)
@@ -63,6 +55,15 @@ class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScra
         )
         self._assembler = assembler or CircuitRecordAssembler()
 
+    def _build_post_processor(self) -> CircuitSectionContractPostProcessor:
+        return CircuitSectionContractPostProcessor()
+
+    def _uses_url_fragment(self) -> bool:
+        return True
+
+    def _should_parse_article(self, soup: BeautifulSoup) -> bool:
+        return is_circuit_like_article(soup)
+
     def _select_section(
         self,
         soup: BeautifulSoup,
@@ -74,29 +75,13 @@ class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScra
         section = self.extract_section_by_id(soup, fragment, domain="circuits")
         return section or soup
 
-    def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        if not is_circuit_like_article(soup):
-            return []
+    def _prepare_article_soup(self, soup: BeautifulSoup) -> BeautifulSoup:
+        return self._select_section(soup, self._section_fragment)
 
-        working_soup = self._select_section(soup, self._section_fragment)
-
-        if self.parser is not None:
-            return self.parser.parse(working_soup)
-
-        sections_service = self._sections_service_factory(self, self.url)
-        return [
-            self._assembler.assemble(
-                url=self._original_url or self.url,
-                infobox=self._scrape_infobox(working_soup),
-                tables=self._scrape_tables(working_soup),
-                sections=sections_service.extract(working_soup),
-            ),
-        ]
-
-    def _scrape_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> dict[str, Any]:
         return self._infobox_service.extract(soup, url=self.url)
 
-    def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _build_tables_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         lap_scraper = LapRecordsTableScraper(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -140,3 +125,23 @@ class F1SingleCircuitScraper(SectionAdapter, WikipediaSectionByIdMixin, WikiScra
             {"layout": layout_name, "lap_records": recs}
             for layout_name, recs in layouts.items()
         ]
+
+    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        sections_service = self._sections_service_factory(self, self.url)
+        return sections_service.extract(soup)
+
+    def _assemble_record(
+        self,
+        *,
+        soup: BeautifulSoup,
+        infobox_payload: dict[str, Any],
+        tables_payload: list[dict[str, Any]],
+        sections_payload: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        _ = soup
+        return self._assembler.assemble(
+            url=self._original_url or self.url,
+            infobox=infobox_payload,
+            tables=tables_payload,
+            sections=sections_payload,
+        )

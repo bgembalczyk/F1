@@ -46,6 +46,9 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
     def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._infobox_service.extract(soup)
 
+    def _build_tables_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        return self.article_tables_parser.parse(soup)
+
     def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         sections_service = self._sections_service_factory(self)
         return sections_service.extract(soup)
@@ -54,18 +57,20 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         return self._build_infobox_payload(soup)
 
     def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self.article_tables_parser.parse(soup)
+        return self._build_tables_payload(soup)
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
         infobox_payload: list[dict[str, Any]],
+        tables_payload: list[dict[str, Any]],
         sections_payload: list[dict[str, Any]],
     ) -> dict[str, Any]:
+        _ = soup
         return self._assembler.assemble(
             url=self.url,
             infoboxes=infobox_payload,
-            tables=self._scrape_tables(soup),
+            tables=tables_payload,
             sections=sections_payload,
         )
