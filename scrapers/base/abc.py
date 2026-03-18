@@ -8,12 +8,10 @@ from uuid import uuid4
 from bs4 import BeautifulSoup
 
 from infrastructure.http_client.policies.http import HttpPolicy
-from models.mappers.serialization import to_dict_list
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
-from scrapers.base.errors import ScraperValidationError
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.helpers.http import resolve_http_policy
 from scrapers.base.helpers.source_adapter import build_source_adapter
@@ -22,12 +20,14 @@ from scrapers.base.helpers.url import normalize_url
 from scrapers.base.logging import get_logger
 from scrapers.base.normalization import RecordNormalizer
 from scrapers.base.options import ScraperOptions
+from scrapers.base.pipeline_runner import ScraperPipelineRunner
 from scrapers.base.post_processors import apply_post_processors
 from scrapers.base.quality.reporter import QualityReporter
 from scrapers.base.records import NormalizedRecord
 from scrapers.base.records import RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.transformers.helpers import apply_transformers
+from scrapers.base.validation_runner import ValidationRunner
 from validation.validator_base import ExportRecord
 from validation.validator_base import RecordValidator
 
@@ -54,11 +54,25 @@ class ABCScraper(ABC):
     def __init__(self, *, options: ScraperOptions) -> None:
         self.include_urls = options.include_urls
         self.normalize_empty_values = options.normalize_empty_values
+        self.logger = get_logger(self.__class__.__name__)
+        self._run_id: str | None = options.run_id
+        self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
+        self._quality_report_enabled = options.quality_report
+        self._quality_reporter: QualityReporter | None = None
 
+        self._configure_http_policy(options)
+        self._initialize_runtime_components(options)
+        self._initialize_quality_reporting()
+        self._initialize_validation(options)
+        self._pipeline_runner = self._build_pipeline_runner()
+        self._data: list[ExportRecord] | None = None
+
+    def _configure_http_policy(self, options: ScraperOptions) -> None:
         self.http_policy = self.get_http_policy(options)
         if self.http_policy is not None:
             options.policy = self.http_policy
 
+    def _initialize_runtime_components(self, options: ScraperOptions) -> None:
         # Preferuj gotowy source_adapter w options.
         # HtmlFetcher jest config-driven, więc jeśli go nie ma,
         # tworzymy go "domyślnie".
@@ -73,25 +87,23 @@ class ABCScraper(ABC):
         )
         self.transformers = build_transformers(options.transformers)
         self.post_processors = list(options.post_processors or [])
-        self.logger = get_logger(self.__class__.__name__)
         self._error_handler = ErrorHandler(
             logger=self.logger,
             debug_dir=options.debug_dir,
             error_report_enabled=options.error_report,
             run_id=options.run_id,
         )
-        self._run_id: str | None = options.run_id
-        self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
-        self._quality_report_enabled = options.quality_report
-        self._quality_reporter: QualityReporter | None = None
 
-        if self._quality_report_enabled:
-            self._quality_reporter = QualityReporter(
-                report_root=self._resolve_quality_report_root(),
-                run_id=self._run_id or "pending",
-                source_metadata=self._source_metadata(),
-            )
+    def _initialize_quality_reporting(self) -> None:
+        if not self._quality_report_enabled:
+            return
+        self._quality_reporter = QualityReporter(
+            report_root=self._resolve_quality_report_root(),
+            run_id=self._run_id or "pending",
+            source_metadata=self._source_metadata(),
+        )
 
+    def _initialize_validation(self, options: ScraperOptions) -> None:
         self.validator: RecordValidator | None = options.validator or getattr(
             self,
             "default_validator",
@@ -100,15 +112,13 @@ class ABCScraper(ABC):
         if self.validator is not None:
             self.validator.set_record_factory(options.record_factory)
         self.validation_mode = options.validation_mode
-        if self.validation_mode not in {"soft", "hard"}:
-            msg = (
-                "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
-            )
-            raise ValueError(
-                msg,
-            )
+        self._validate_validation_mode()
 
-        self._data: list[ExportRecord] | None = None
+    def _validate_validation_mode(self) -> None:
+        if self.validation_mode in {"soft", "hard"}:
+            return
+        msg = "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
+        raise ValueError(msg)
 
     # ---------- API wysokiego poziomu ----------
 
@@ -130,17 +140,25 @@ class ABCScraper(ABC):
         """
         self._validate_fetch_url()
         run_id = self._start_run()
-
         html = self._download_with_error_handling(run_id)
         if html is None:
-            self._data = []
-            return self._data
+            return self._store_empty_data()
 
         data = self._parse_pipeline_with_error_handling(run_id, html)
         if data is None:
-            self._data = []
-            return self._data
+            return self._store_empty_data()
 
+        return self._finalize_fetch(run_id, data)
+
+    def _store_empty_data(self) -> list[ExportRecord]:
+        self._data = []
+        return self._data
+
+    def _finalize_fetch(
+        self,
+        run_id: str,
+        data: list[ExportRecord],
+    ) -> list[ExportRecord]:
         self._data = data
         self.logger.debug("Scrape run %s finished", run_id)
         return self._data
@@ -185,59 +203,32 @@ class ABCScraper(ABC):
             error = self._wrap_parse_error(exc)
             return self._handle_fetch_error(exc, error)
 
-    def _run_parse_pipeline(self, run_id: str, html: str) -> list[ExportRecord]:
-        soup = BeautifulSoup(html, "html.parser")
-        raw_records = self._log_pipeline_step(run_id, "parse", lambda: self.parse(soup))
-        normalized_records = self._log_pipeline_step(
-            run_id,
-            "normalize",
-            lambda: self._record_normalizer.normalize(list(raw_records)),
-            to_dict=True,
-        )
-        transformed_records = self._log_pipeline_step(
-            run_id,
-            "transform",
-            lambda: self._apply_transformers(normalized_records),
-            to_dict=True,
-        )
-        validated_records = self._log_pipeline_step(
-            run_id,
-            "validate",
-            lambda: self.validate_records(transformed_records),
-            to_dict=True,
-        )
-        return self._log_pipeline_step(
-            run_id,
-            "post_process",
-            lambda: self.post_process_records(validated_records),
-            to_dict=True,
+    def _build_pipeline_runner(self) -> ScraperPipelineRunner:
+        return ScraperPipelineRunner(
+            logger=self.logger,
+            write_step_quality_report=self._write_pipeline_quality_report,
+            parse_records=self.parse,
+            normalize_records=self._normalize_pipeline_records,
+            transform_records=self._apply_transformers,
+            validate_records=self.validate_records,
+            post_process_records=self.post_process_records,
         )
 
-    def _log_pipeline_step(
+    def _run_parse_pipeline(self, run_id: str, html: str) -> list[ExportRecord]:
+        return self._pipeline_runner.run(run_id=run_id, html=html)
+
+    def _normalize_pipeline_records(
         self,
-        run_id: str,
+        records: list[RawRecord],
+    ) -> list[NormalizedRecord]:
+        return self._record_normalizer.normalize(records)
+
+    def _write_pipeline_quality_report(
+        self,
         step_name: str,
-        run_step: Callable[
-            [],
-            list[ExportRecord] | list[RawRecord] | list[NormalizedRecord],
-        ],
-        *,
-        to_dict: bool = False,
-    ) -> list[ExportRecord] | list[RawRecord] | list[NormalizedRecord]:
-        self.logger.debug(
-            "Scrape run %s: start %s",
-            run_id,
-            step_name.replace("_", "-"),
-        )
-        records = run_step()
-        self.logger.debug(
-            "Scrape run %s: finish %s",
-            run_id,
-            step_name.replace("_", "-"),
-        )
-        report_records = to_dict_list(list(records)) if to_dict else list(records)
-        self._write_step_quality_report(step_name=step_name, records=report_records)
-        return records
+        records: list[dict[str, object]],
+    ) -> None:
+        self._write_step_quality_report(step_name=step_name, records=records)
 
     def _handle_fetch_error(self, exc: Exception, error: Exception):
         if self._handle_scraper_error(error):
@@ -343,85 +334,15 @@ class ABCScraper(ABC):
     def validate_records(self, records: list[ExportRecord]) -> list[ExportRecord]:
         if self.validator is None:
             return records
+        return self._build_validation_runner().validate(records)
 
-        self.validator.reset_stats()
-        valid_records: list[ExportRecord] = []
-        for index, record in enumerate(records):
-            errors_for_tracking, messages = self._collect_validation_errors(record)
-            self.validator.record_validation_result(errors_for_tracking)
-            if not errors_for_tracking:
-                valid_records.append(record)
-                continue
-            message = self._validation_error_message(
-                index,
-                errors_for_tracking,
-                messages,
-            )
-            if self.validation_mode == "soft":
-                self.logger.warning(message)
-                continue
-            self._write_quality_report()
-            raise ScraperValidationError(
-                message=message,
-                url=getattr(self, "url", None),
-            )
-
-        self._log_validation_summary(total=len(records), valid=len(valid_records))
-
-        self._write_quality_report()
-        return valid_records
-
-    def _collect_validation_errors(self, record: ExportRecord):
-        errors = self.validator.validate(record)
-        record_factory_errors = self.validator.validate_record_factory(record)
-        errors_for_tracking = list(errors)
-        messages = [error.message for error in errors]
-        if not record_factory_errors:
-            return errors_for_tracking, messages
-
-        errors_for_tracking.extend(record_factory_errors)
-        messages.extend(
-            [
-                f"{self._record_factory_label(default='record_factory')}: {error.message}"
-                for error in record_factory_errors
-            ],
-        )
-        return errors_for_tracking, messages
-
-    def _record_factory_label(self, *, default: str | None = None) -> str | None:
-        if self.validator is None or self.validator.record_factory is None:
-            return default
-        model_label = getattr(self.validator.record_factory, "__name__", None)
-        if model_label is not None:
-            return model_label
-        return self.validator.record_factory.__class__.__name__
-
-    def _validation_error_message(
-        self,
-        index: int,
-        errors_for_tracking: list,
-        messages: list[str],
-    ) -> str:
-        model_label = self._record_factory_label()
-        return (
-            f"Validation failed for record #{index}"
-            f"{f' ({model_label})' if model_label else ''} "
-            f"with {len(errors_for_tracking)} error(s): {', '.join(messages)}"
-        )
-
-    def _log_validation_summary(self, *, total: int, valid: int) -> None:
-        rejected = total - valid
-        if not rejected:
-            return
-        self.logger.info(
-            "Validation rejected %d record(s) out of %d",
-            rejected,
-            total,
-        )
-        self.logger.info(
-            "Validation filtered records: %d -> %d",
-            total,
-            valid,
+    def _build_validation_runner(self) -> ValidationRunner:
+        return ValidationRunner(
+            validator=self.validator,
+            validation_mode=self.validation_mode,
+            logger=self.logger,
+            write_quality_report=self._write_quality_report,
+            url=getattr(self, "url", None),
         )
 
     def _source_metadata(self) -> dict[str, object]:
@@ -498,34 +419,63 @@ class ABCScraper(ABC):
         parse_fn: Callable[[BeautifulSoup], T],
         url: str,
     ) -> T | None:
-        try:
-            html = fetch_fn()
-        except Exception as exc:
-            error: Exception
-            if isinstance(exc, ScraperError):
-                error = exc
-            else:
-                error = self._wrap_network_error(exc)
-            self._log_error_debug("network", url, error)
-            if self._handle_scraper_error(error):
-                return None
-            if error is exc:
-                raise
-            raise error from exc
+        html = self._run_fetch_stage(fetch_fn, url)
+        if html is None:
+            return None
+        return self._run_parse_stage(parse_fn, url, html)
 
+    def _run_fetch_stage(self, fetch_fn: Callable[[], str], url: str) -> str | None:
+        try:
+            return fetch_fn()
+        except Exception as exc:  # noqa: BLE001
+            return self._handle_stage_error(
+                stage="network",
+                url=url,
+                exc=exc,
+                error=self._network_stage_error(exc),
+            )
+
+    def _run_parse_stage(
+        self,
+        parse_fn: Callable[[BeautifulSoup], T],
+        url: str,
+        html: str,
+    ) -> T | None:
         try:
             soup = BeautifulSoup(html, "html.parser")
             return parse_fn(soup)
-        except Exception as exc:
-            error = (
-                exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+        except Exception as exc:  # noqa: BLE001
+            return self._handle_stage_error(
+                stage="parse",
+                url=url,
+                exc=exc,
+                error=self._parse_stage_error(exc),
             )
-            self._log_error_debug("parse", url, error)
-            if self._handle_scraper_error(error):
-                return None
-            if error is exc:
-                raise
-            raise error from exc
+
+    def _network_stage_error(self, exc: Exception) -> Exception:
+        if isinstance(exc, ScraperError):
+            return exc
+        return self._wrap_network_error(exc)
+
+    def _parse_stage_error(self, exc: Exception) -> Exception:
+        if isinstance(exc, ScraperError):
+            return exc
+        return self._wrap_parse_error(exc)
+
+    def _handle_stage_error(
+        self,
+        *,
+        stage: str,
+        url: str,
+        exc: Exception,
+        error: Exception,
+    ) -> None:
+        self._log_error_debug(stage, url, error)
+        if self._handle_scraper_error(error):
+            return
+        if error is exc:
+            raise exc
+        raise error from exc
 
     def _log_error_debug(self, stage: str, url: str, error: Exception) -> None:
         self.logger.debug(
