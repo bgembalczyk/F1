@@ -2,7 +2,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import RecordSplitStrategy
+from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import (
+    RecordSplitStrategy,
+)
 
 
 class RecordSplitPipeline:

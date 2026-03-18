@@ -43,4 +43,3 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
         """Pobiera artykuł po URL i zapisuje go w ``self.url`` przed ``fetch()``."""
         self.url = url
         return super().fetch()
-

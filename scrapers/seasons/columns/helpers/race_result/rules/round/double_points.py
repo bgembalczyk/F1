@@ -1,7 +1,9 @@
 from typing import Any
 
 from scrapers.seasons.columns.helpers.constants import DOUBLE_POINTS_SEASON_YEAR
-from scrapers.seasons.columns.helpers.race_result.rules.round.context import RoundRuleContext
+from scrapers.seasons.columns.helpers.race_result.rules.round.context import (
+    RoundRuleContext,
+)
 
 
 class DoublePointsRoundRule:

@@ -7,9 +7,7 @@ from scrapers.drivers.infobox.parsers.active_years import ActiveYearsParser
 from scrapers.drivers.infobox.parsers.best_finish import BestFinishParser
 from scrapers.drivers.infobox.parsers.car_numbers import CarNumbersParser
 from scrapers.drivers.infobox.parsers.championships import ChampionshipsParser
-from scrapers.drivers.infobox.parsers.collapsible_table import (
-    CollapsibleTableParser,
-)
+from scrapers.drivers.infobox.parsers.collapsible_table import CollapsibleTableParser
 from scrapers.drivers.infobox.parsers.finished_season import FinishedSeasonParser
 from scrapers.drivers.infobox.parsers.licence import LicenceParser
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor

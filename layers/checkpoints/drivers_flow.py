@@ -18,7 +18,6 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 
-
 class DriversCheckpointFlow:
     def __init__(
         self,

@@ -2,9 +2,9 @@ import json
 from pathlib import Path
 from typing import Any
 
+from scrapers.base.orchestration.models import OrchestrationPaths
 from scrapers.base.orchestration.models import ResolvedInput
 from scrapers.base.orchestration.models import StepDeclaration
-from scrapers.base.orchestration.models import OrchestrationPaths
 
 
 class SectionSourceAdapter:
@@ -80,5 +80,3 @@ class SectionSourceAdapter:
             if isinstance(records, list):
                 return [item for item in records if isinstance(item, dict)]
         return []
-
-

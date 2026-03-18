@@ -1,7 +1,6 @@
 import datetime
-from typing import Any
-
 from pathlib import Path
+from typing import Any
 
 from scrapers.base.orchestration.models import CheckpointMetadata
 from scrapers.base.orchestration.models import CheckpointMetrics
@@ -28,7 +27,9 @@ class CheckpointPayloadFactory:
                 input_source=str(input_path),
                 output_target=step.output_target,
                 parser=step.parser.__name__,
-                generated_at=datetime.datetime.now(tz=datetime.timezone.utc).isoformat(),
+                generated_at=datetime.datetime.now(
+                    tz=datetime.timezone.utc,
+                ).isoformat(),
                 metrics=CheckpointMetrics(
                     input_records=len(input_records),
                     output_records=len(execution.records),
@@ -39,5 +40,3 @@ class CheckpointPayloadFactory:
             ),
             records=execution.records,
         )
-
-

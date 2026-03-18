@@ -3,9 +3,13 @@ from layers.seed.data_classes import RegistryValidationSpec
 from layers.seed.registry.entries import ListJobRegistryEntry
 from layers.seed.registry.entries import SeedRegistryEntry
 from scrapers.circuits.list_scraper import CircuitsListScraper
-from scrapers.constructors.current_constructors_list import CurrentConstructorsListScraper
+from scrapers.constructors.current_constructors_list import (
+    CurrentConstructorsListScraper,
+)
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
-from scrapers.constructors.indianapolis_only_constructors_list import IndianapolisOnlyConstructorsListScraper
+from scrapers.constructors.indianapolis_only_constructors_list import (
+    IndianapolisOnlyConstructorsListScraper,
+)
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
 from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
@@ -13,11 +17,19 @@ from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
 from scrapers.engines.engine_regulation import EngineRegulationScraper
 from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
-from scrapers.engines.indianapolis_only_engine_manufacturers_list import IndianapolisOnlyEngineManufacturersListScraper
+from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
+    IndianapolisOnlyEngineManufacturersListScraper,
+)
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
-from scrapers.grands_prix.red_flagged_races_scraper.non_championship import RedFlaggedNonChampionshipRacesScraper
-from scrapers.grands_prix.red_flagged_races_scraper.world_championship import RedFlaggedWorldChampionshipRacesScraper
-from scrapers.points.points_scoring_systems_history import PointsScoringSystemsHistoryScraper
+from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
+    RedFlaggedNonChampionshipRacesScraper,
+)
+from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
+    RedFlaggedWorldChampionshipRacesScraper,
+)
+from scrapers.points.points_scoring_systems_history import (
+    PointsScoringSystemsHistoryScraper,
+)
 from scrapers.points.shortened_race_points import ShortenedRacePointsScraper
 from scrapers.points.sprint_qualifying_points import SprintQualifyingPointsScraper
 from scrapers.seasons.list_scraper import SeasonsListScraper

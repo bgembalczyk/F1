@@ -19,4 +19,3 @@ class LegacyScraperAdapter:
         if context.supports_urls and ctor.accepts("include_urls"):
             kwargs.setdefault("include_urls", context.run_config.include_urls)
         return context.scraper_cls(**kwargs)
-

@@ -1,5 +1,4 @@
 from collections.abc import Callable
-
 from pathlib import Path
 
 from layers.constructors_mirror_service import ConstructorsMirrorService

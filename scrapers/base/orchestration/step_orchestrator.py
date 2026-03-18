@@ -13,11 +13,11 @@ from scrapers.base.orchestration.models import AuditRepository
 from scrapers.base.orchestration.models import CheckpointRepository
 from scrapers.base.orchestration.models import ExecutedStep
 from scrapers.base.orchestration.models import InputResolver
+from scrapers.base.orchestration.models import OrchestrationPaths
 from scrapers.base.orchestration.models import ResolvedInput
 from scrapers.base.orchestration.models import StepDeclaration
 from scrapers.base.orchestration.models import StepExecutionResult
 from scrapers.base.orchestration.models import StepExecutor
-from scrapers.base.orchestration.models import OrchestrationPaths
 
 
 class StepOrchestrator:

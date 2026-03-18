@@ -6,12 +6,10 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.wiki.parsers.constants import BASE_COMMON_ALIASES
-from scrapers.wiki.parsers.constants import CURRENT_CONSTRUCTORS_ID
 from scrapers.wiki.parsers.sections.helpers import normalize_section_profile_key
 
 SectionTree = dict[str, Any]
+
 
 @dataclass(slots=True)
 class SectionTreeMatch:

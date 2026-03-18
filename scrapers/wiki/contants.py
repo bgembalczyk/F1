@@ -85,4 +85,3 @@ RED_FLAG_FIELDS = (
     "incident",
     "failed_to_make_restart",
 )
-

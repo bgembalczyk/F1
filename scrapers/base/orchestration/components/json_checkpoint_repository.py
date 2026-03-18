@@ -3,7 +3,9 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 
-from scrapers.base.orchestration.components.checkpoint_payload_factory import CheckpointPayloadFactory
+from scrapers.base.orchestration.components.checkpoint_payload_factory import (
+    CheckpointPayloadFactory,
+)
 from scrapers.base.orchestration.models import ExecutedStep
 from scrapers.base.orchestration.models import OrchestrationPaths
 from scrapers.base.orchestration.models import StepDeclaration
@@ -43,5 +45,3 @@ class JsonCheckpointRepository:
             encoding="utf-8",
         )
         return output_path
-
-

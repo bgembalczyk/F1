@@ -3,12 +3,22 @@ from typing import Any
 from scrapers.sponsorship_liveries.helpers.constants import COLOUR_KEYS
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_KEYS
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
-from scrapers.sponsorship_liveries.parsers.scope_handlers.colour import ColourScopeHandler
-from scrapers.sponsorship_liveries.parsers.scope_handlers.sponsor import SponsorScopeHandler
+from scrapers.sponsorship_liveries.parsers.scope_handlers.colour import (
+    ColourScopeHandler,
+)
+from scrapers.sponsorship_liveries.parsers.scope_handlers.sponsor import (
+    SponsorScopeHandler,
+)
 from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import SplitRule
-from scrapers.sponsorship_liveries.parsers.splitters.record.rules import HasMultipleSeasonsRule
-from scrapers.sponsorship_liveries.parsers.splitters.record.rules import HasYearSpecificColoursRule
-from scrapers.sponsorship_liveries.parsers.splitters.record.rules import HasYearSpecificSponsorsRule
+from scrapers.sponsorship_liveries.parsers.splitters.record.rules import (
+    HasMultipleSeasonsRule,
+)
+from scrapers.sponsorship_liveries.parsers.splitters.record.rules import (
+    HasYearSpecificColoursRule,
+)
+from scrapers.sponsorship_liveries.parsers.splitters.record.rules import (
+    HasYearSpecificSponsorsRule,
+)
 
 
 class SeasonSplitStrategy:
@@ -156,5 +166,3 @@ class SeasonSplitStrategy:
             if not any(years == existing for existing in unique_year_sets):
                 unique_year_sets.append(years)
         return unique_year_sets
-
-

@@ -19,8 +19,12 @@ from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
 from scrapers.sponsorship_liveries.helpers.constants import season_headers
-from scrapers.sponsorship_liveries.parsers.splitters.broader_scope import BroaderScopeSplitter
-from scrapers.sponsorship_liveries.parsers.splitters.record.facade import SponsorshipRecordSplitter
+from scrapers.sponsorship_liveries.parsers.splitters.broader_scope import (
+    BroaderScopeSplitter,
+)
+from scrapers.sponsorship_liveries.parsers.splitters.record.facade import (
+    SponsorshipRecordSplitter,
+)
 
 if TYPE_CHECKING:
     from scrapers.sponsorship_liveries.helpers.paren_classifier import ParenClassifier

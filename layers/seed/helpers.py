@@ -1,8 +1,6 @@
 from __future__ import annotations
 
 import json
-from dataclasses import asdict
-from dataclasses import dataclass
 from datetime import datetime
 from datetime import timezone
 from typing import Any
@@ -13,9 +11,6 @@ from scrapers.data_paths import DataPaths
 from scrapers.data_paths import default_data_paths
 from scrapers.wiki.contants import LINK_CANDIDATE_KEYS
 from scrapers.wiki.contants import NAME_CANDIDATE_KEYS
-from scrapers.wiki.contants import SEED_RECORD_SCHEMA_VERSION
-
-
 
 
 def _extract_name(record: dict[str, Any]) -> str:

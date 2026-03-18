@@ -1,6 +1,9 @@
 """Record splitter focused tests for sponsorship liveries."""
+
 from scrapers.base.helpers.text_normalization import split_delimited_text
-from scrapers.sponsorship_liveries.parsers.splitters.record.facade import SponsorshipRecordSplitter
+from scrapers.sponsorship_liveries.parsers.splitters.record.facade import (
+    SponsorshipRecordSplitter,
+)
 
 
 def test_livery_principal_sponsors_year_filter() -> None:

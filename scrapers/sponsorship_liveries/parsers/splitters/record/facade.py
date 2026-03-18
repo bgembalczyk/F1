@@ -1,11 +1,20 @@
 from typing import Any
 
-from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline import RecordSplitPipeline
-from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.deduplicate import DeduplicateRecordStrategy
-from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.grand_prix import GrandPrixSplitStrategy
-from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.possessive_driver_colour import \
-    PossessiveDriverColourSplitStrategy
-from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.season import SeasonSplitStrategy
+from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline import (
+    RecordSplitPipeline,
+)
+from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.deduplicate import (
+    DeduplicateRecordStrategy,
+)
+from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.grand_prix import (
+    GrandPrixSplitStrategy,
+)
+from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.possessive_driver_colour import (
+    PossessiveDriverColourSplitStrategy,
+)
+from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.season import (
+    SeasonSplitStrategy,
+)
 
 
 class SponsorshipRecordSplitter:

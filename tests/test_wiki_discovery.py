@@ -28,5 +28,3 @@ def test_discovery_validation_fails_for_runner_without_metadata(
 
     with pytest.raises(ValueError, match="Discovery metadata missing"):
         discovery.validate_discovery_metadata_completeness()
-
-

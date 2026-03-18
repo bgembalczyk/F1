@@ -7,7 +7,9 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.sponsorship_liveries.parsers.section import SponsorshipSectionParser
-from scrapers.sponsorship_liveries.parsers.splitters.record.facade import SponsorshipRecordSplitter
+from scrapers.sponsorship_liveries.parsers.splitters.record.facade import (
+    SponsorshipRecordSplitter,
+)
 from scrapers.wiki.scraper import WikiScraper
 
 if TYPE_CHECKING:

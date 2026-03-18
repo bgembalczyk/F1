@@ -1,5 +1,4 @@
 from collections.abc import Callable
-
 from pathlib import Path
 
 from layers.seed.registry.entries import SeedRegistryEntry

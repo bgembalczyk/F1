@@ -1,20 +1,6 @@
 import re
-from dataclasses import dataclass
-from typing import Any
 
-from bs4 import BeautifulSoup
-
-from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.helpers.text import strip_marks
-from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.constants import MARKS_RE
-from scrapers.base.table.columns.helpers.constants import SPLIT_RESULTS_RE
 from scrapers.seasons.columns.helpers.constants import SHORT_HEX_COLOR_LENGTH
-from scrapers.seasons.columns.helpers.constants import SPRINT_POINTS_START_YEAR
-
-
-
-
 
 
 class RaceResultBackgroundMapper:

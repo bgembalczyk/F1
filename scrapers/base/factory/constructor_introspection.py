@@ -15,4 +15,3 @@ class ConstructorIntrospection:
             param.kind == inspect.Parameter.VAR_KEYWORD
             for param in self._parameters.values()
         )
-

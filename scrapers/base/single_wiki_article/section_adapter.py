@@ -48,4 +48,3 @@ class SingleWikiArticleSectionAdapterBase(
         sections_payload: list[dict[str, Any]],
     ) -> dict[str, Any]:
         """Compose final domain record from template-method payload hooks."""
-

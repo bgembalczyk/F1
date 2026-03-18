@@ -4,7 +4,9 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.sponsorship_liveries.parsers.scope_handlers.colour import ColourScopeHandler
+from scrapers.sponsorship_liveries.parsers.scope_handlers.colour import (
+    ColourScopeHandler,
+)
 
 
 def test_split_or_colours_splits_on_and() -> None:

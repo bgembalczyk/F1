@@ -16,4 +16,3 @@ def _extract_driver_seed_row(row: dict[str, Any]) -> tuple[str, str] | None:
 def _filter_checkpoint_urls(records: list[dict[str, Any]]) -> list[str]:
     checkpoint_urls = [record.get("url") for record in records]
     return [url for url in checkpoint_urls if isinstance(url, str) and url]
-

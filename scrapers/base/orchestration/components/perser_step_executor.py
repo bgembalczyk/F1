@@ -1,4 +1,5 @@
 import time
+from typing import Any
 
 from scrapers.base.orchestration.models import ExecutedStep
 from scrapers.base.orchestration.models import StepDeclaration
@@ -22,5 +23,3 @@ class ParserStepExecutor:
             errors=errors,
             duration_ms=(time.perf_counter() - started_at) * 1000,
         )
-
-

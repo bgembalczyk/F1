@@ -1,5 +1,3 @@
-from collections.abc import Callable
-from dataclasses import dataclass
 from typing import Any
 
 from complete_extractor.domain_config import CompleteExtractorDomainConfig

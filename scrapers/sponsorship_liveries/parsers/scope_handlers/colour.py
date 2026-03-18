@@ -5,7 +5,9 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.sponsorship_liveries.helpers.constants import POSSESSIVE_COLOUR_RE
 from scrapers.sponsorship_liveries.parsers.grand_prix_scope import GrandPrixScopeParser
 from scrapers.sponsorship_liveries.parsers.record_text import SponsorshipRecordText
-from scrapers.sponsorship_liveries.parsers.splitters.depth_aware_colour import DepthAwareColourSplitter
+from scrapers.sponsorship_liveries.parsers.splitters.depth_aware_colour import (
+    DepthAwareColourSplitter,
+)
 
 
 class ColourScopeHandler:

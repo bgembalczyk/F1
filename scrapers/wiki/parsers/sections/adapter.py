@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from difflib import SequenceMatcher
 from typing import TYPE_CHECKING
 from typing import Any
@@ -12,12 +11,6 @@ from scrapers.wiki.parsers.sections.helpers import get_section_profile
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
-
-
-
-
-
-
 
 
 def _normalize_id(text: str) -> str:

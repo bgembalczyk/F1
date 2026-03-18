@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from dataclasses import field
-from pathlib import Path
 
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.html_fetcher import HtmlFetcher
@@ -18,12 +17,9 @@ class ScraperConfig:
     policy: HttpPolicy = field(default_factory=default_http_policy)
 
 
-
 def default_scraper_config() -> ScraperConfig:
     return ScraperConfig()
 
 
 def default_config() -> ScraperConfig:
     return default_scraper_config()
-
-

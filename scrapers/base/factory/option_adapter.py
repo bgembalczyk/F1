@@ -39,4 +39,3 @@ class OptionsScraperAdapter:
     @staticmethod
     def _resolve_options(context: ScraperCreationContext) -> ScraperOptions:
         return context.run_config.options or ScraperOptions()
-

@@ -1,7 +1,11 @@
 from scrapers.sponsorship_liveries.helpers.constants import COLOUR_KEYS
 from scrapers.sponsorship_liveries.helpers.constants import SPONSOR_KEYS
-from scrapers.sponsorship_liveries.parsers.scope_handlers.colour import ColourScopeHandler
-from scrapers.sponsorship_liveries.parsers.scope_handlers.sponsor import SponsorScopeHandler
+from scrapers.sponsorship_liveries.parsers.scope_handlers.colour import (
+    ColourScopeHandler,
+)
+from scrapers.sponsorship_liveries.parsers.scope_handlers.sponsor import (
+    SponsorScopeHandler,
+)
 
 
 class HasPossessiveColoursRule:

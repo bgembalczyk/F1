@@ -4,7 +4,6 @@ import shutil
 from datetime import datetime
 from datetime import timezone
 from pathlib import Path
-from typing import TYPE_CHECKING
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.one.executor import LayerOneExecutor
@@ -21,26 +20,6 @@ from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
 from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.run_config import RunConfig
-from scrapers.base.run_profiles import RunPathConfig
-from scrapers.base.run_profiles import RunProfileName
-from scrapers.base.run_profiles import build_run_profile
-
-if TYPE_CHECKING:
-    from collections.abc import Callable
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def _current_year() -> int:
@@ -52,7 +31,6 @@ def create_default_wiki_pipeline_application(
     base_wiki_dir: Path,
     base_debug_dir: Path,
 ) -> WikiPipelineApplication:
-
     constructors_mirror_service = ConstructorsMirrorService(
         mirror_targets=(
             ("chassis_constructors", "f1_constructors_{year}.json"),

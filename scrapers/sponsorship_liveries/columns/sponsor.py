@@ -413,4 +413,3 @@ class SponsorColumn(BaseColumn):
         if remaining:
             parts.append(remaining)
         return ", ".join(parts)
-
