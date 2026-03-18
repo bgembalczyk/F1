@@ -35,7 +35,11 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         super().__init__(options=options)
         self._infobox_service = infobox_service or ConstructorInfoboxExtractionService()
         self._sections_service_factory = sections_service_factory or (
-            lambda adapter: ConstructorSectionExtractionService(adapter=adapter)
+            lambda adapter: ConstructorSectionExtractionService(
+                adapter=adapter,
+                options=self._options,
+                url=self.url,
+            )
         )
         self._assembler = assembler or ConstructorRecordAssembler()
         self.article_tables_parser = ArticleTablesParser()
