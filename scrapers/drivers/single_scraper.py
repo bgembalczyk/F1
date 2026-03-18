@@ -1,14 +1,21 @@
-from collections.abc import Callable
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
 from typing import Any
 
-from bs4 import BeautifulSoup
-
-from scrapers.base.options import ScraperOptions
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.postprocess.contract import DriverSectionContractPostProcessor
 from scrapers.drivers.sections.service import DriverSectionExtractionService
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+    from bs4 import BeautifulSoup
+
+    from scrapers.base.infobox.service import InfoboxExtractionService
+    from scrapers.base.options import ScraperOptions
 
 
 class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
@@ -16,7 +23,7 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
         self,
         *,
         options: ScraperOptions | None = None,
-        infobox_service: DriverInfoboxExtractionService | None = None,
+        infobox_service: InfoboxExtractionService | None = None,
         sections_service_factory: (
             Callable[[ScraperOptions, str], DriverSectionExtractionService] | None
         ) = None,
@@ -24,9 +31,7 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
     ) -> None:
         super().__init__(options=options)
         self._infobox_service = infobox_service or DriverInfoboxExtractionService(
-            include_urls=self.include_urls,
-            debug_dir=self.debug_dir,
-            run_id=getattr(self, "_run_id", None),
+            options=self._options,
         )
         self._sections_service_factory = sections_service_factory or (
             lambda opts, url: DriverSectionExtractionService(
@@ -41,7 +46,7 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
         return DriverSectionContractPostProcessor()
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> dict[str, Any]:
-        return self._infobox_service.extract(soup, url=self.url)
+        return self._infobox_service.extract(soup, url=self.url).primary_record
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._sections_service_factory(self._options, self.url).extract(soup)

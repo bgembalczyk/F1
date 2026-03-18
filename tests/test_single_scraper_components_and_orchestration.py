@@ -25,11 +25,12 @@ def _soup(html: str) -> BeautifulSoup:
 
 def test_driver_infobox_service_returns_empty_without_infobox() -> None:
     service = DriverInfoboxExtractionService(
-        include_urls=True,
-        debug_dir=None,
-        run_id=None,
+        options=ScraperOptions(include_urls=True),
     )
-    assert service.extract(_soup("<div>nope</div>"), url="https://example.com") == {}
+    assert (
+        service.extract(_soup("<div>nope</div>"), url="https://example.com").primary_record
+        == {}
+    )
 
 
 def test_driver_sections_service_extracts_alias_section_id() -> None:
@@ -72,7 +73,7 @@ def test_constructor_component_services_and_assembler() -> None:
         """,
     )
     scraper = SingleConstructorScraper()
-    infoboxes = ConstructorInfoboxExtractionService().extract(soup)
+    infoboxes = ConstructorInfoboxExtractionService().extract(soup).as_list()
     sections = ConstructorSectionExtractionService(adapter=scraper).extract(soup)
     record = ConstructorRecordAssembler().assemble(
         url="x",
@@ -88,9 +89,8 @@ def test_constructor_component_services_and_assembler() -> None:
 def test_circuit_component_services_and_assembler() -> None:
     soup = _soup("<table class='infobox'><caption>Track</caption></table>")
     infobox = CircuitInfoboxExtractionService(
-        include_urls=True,
-        debug_dir=None,
-    ).extract(soup, url="https://example.com/circuit")
+        options=ScraperOptions(include_urls=True),
+    ).extract(soup, url="https://example.com/circuit").primary_record
     record = CircuitRecordAssembler().assemble(
         url="u",
         infobox=infobox,
@@ -135,9 +135,15 @@ def test_season_text_sections_service_and_assembler() -> None:
 
 
 def test_orchestration_integration_single_driver_uses_injected_dependencies() -> None:
+    class _InfoboxResult:
+        @property
+        def primary_record(self) -> dict[str, str]:
+            return {"url": "https://example.com/driver", "from": "infobox"}
+
     class _InfoboxStub:
         def extract(self, _soup: BeautifulSoup, *, url: str):
-            return {"url": url, "from": "infobox"}
+            assert url == "https://example.com/driver"
+            return _InfoboxResult()
 
     class _SectionsStub:
         def __init__(self, _options: ScraperOptions, _url: str) -> None:
