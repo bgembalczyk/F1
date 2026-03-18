@@ -29,20 +29,6 @@ RANGE_RE = re.compile(
 )
 
 
-PROFILE_DEFAULTS: dict[CliMainProfile, tuple[bool, bool]] = {
-    RunProfileName.STRICT: (True, False),
-    RunProfileName.MINIMAL: (False, False),
-    RunProfileName.DEPRECATED: (True, False),
-}
-
-
-LEGACY_PROFILE_ALIASES: dict[str, RunProfileName] = {
-    "list_scraper": RunProfileName.STRICT,
-    "complete_extractor": RunProfileName.MINIMAL,
-    "deprecated_entrypoint": RunProfileName.DEPRECATED,
-}
-
-
 NAMING_CONVENTIONS = {
     "header": {
         "suffix": HEADER_SUFFIX,
