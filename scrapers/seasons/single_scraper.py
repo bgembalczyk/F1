@@ -1,3 +1,4 @@
+import warnings
 from collections.abc import Callable
 from typing import Any
 
@@ -25,20 +26,24 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
             Callable[[SectionAdapter], SeasonTextSectionExtractionService] | None
         ) = None,
         assembler: SeasonRecordAssembler | None = None,
+        season_year_resolver: SeasonYearResolver | None = None,
+        parser_set_builder: SeasonParserSetBuilder | None = None,
+        season_pipeline: SeasonSectionPipeline | None = None,
     ) -> None:
         super().__init__(options=options)
         self.season_year = season_year
-        self._season_year_resolver = SeasonYearResolver()
-        self._season_pipeline = SeasonSectionPipeline(
-            parser_set_builder=SeasonParserSetBuilder(
-                options=self._options,
-                include_urls=self.include_urls,
-            ),
+        self._season_year_resolver = season_year_resolver or SeasonYearResolver()
+        resolved_parser_set_builder = parser_set_builder or SeasonParserSetBuilder(
+            options=self._options,
+            include_urls=self.include_urls,
+        )
+        self._season_pipeline = season_pipeline or SeasonSectionPipeline(
+            parser_set_builder=resolved_parser_set_builder,
             text_sections_service_factory=text_sections_service_factory,
         )
         self._assembler = assembler or SeasonRecordAssembler()
         self._table_parser = None
-        self._configure_pipeline()
+        self._refresh_pipeline_state()
 
     def fetch_by_url(
         self,
@@ -47,12 +52,7 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         season_year: int | None = None,
     ) -> list[dict[str, Any]]:
         self.url = url
-        self.season_year = self._season_year_resolver.resolve(
-            url=url,
-            explicit_year=season_year,
-            current_year=self.season_year,
-        )
-        self._configure_pipeline()
+        self._refresh_pipeline_state(explicit_year=season_year)
         return super().fetch()
 
     def _build_post_processor(self) -> SeasonSectionContractPostProcessor:
@@ -63,12 +63,8 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         return []
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        self._configure_pipeline()
-        return [
-            {
-                "sections": self._season_pipeline.collect(soup=soup, adapter=self),
-            },
-        ]
+        self._refresh_pipeline_state()
+        return [{"sections": self._season_pipeline.collect(soup=soup, adapter=self)}]
 
     def _assemble_record(
         self,
@@ -76,43 +72,32 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         soup: BeautifulSoup,
         infobox_payload: list[dict[str, Any]],
         sections_payload: list[dict[str, Any]],
+        tables_payload: list[dict[str, Any]],
     ) -> dict[str, Any]:
         _ = soup
         _ = infobox_payload
+        _ = tables_payload
         payload = sections_payload[0] if sections_payload else {}
         sections = payload.get("sections")
         if not isinstance(sections, SeasonRecordSections):
-            sections = SeasonRecordSections(
-                entries=[],
-                free_practice_drivers=[],
-                calendar=[],
-                cancelled_rounds=[],
-                testing_venues_and_dates=[],
-                results=[],
-                non_championship_races=[],
-                scoring_system=[],
-                drivers_standings=[],
-                constructors_standings=[],
-                jim_clark_trophy=[],
-                colin_chapman_trophy=[],
-                south_african_formula_one_championship=[],
-                british_formula_one_championship=[],
-                regulation_changes=[],
-                mid_season_changes=[],
-            )
+            sections = SeasonRecordSections.empty()
         return self._assembler.assemble(sections)
 
     @staticmethod
     def _extract_year_from_url(url: str) -> int | None:
+        warnings.warn(
+            "SingleSeasonScraper._extract_year_from_url() is deprecated; use "
+            "SeasonYearResolver.extract_from_url() instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         return SeasonYearResolver.extract_from_url(url)
 
-    def _configure_pipeline(self) -> None:
+    def _refresh_pipeline_state(self, *, explicit_year: int | None = None) -> None:
         self.season_year = self._season_year_resolver.resolve(
             url=self.url,
+            explicit_year=explicit_year,
             current_year=self.season_year,
         )
-        self._season_pipeline.configure(
-            url=self.url,
-            season_year=self.season_year,
-        )
+        self._season_pipeline.configure(url=self.url, season_year=self.season_year)
         self._table_parser = self._season_pipeline.table_parser

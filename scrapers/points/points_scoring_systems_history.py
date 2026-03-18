@@ -82,6 +82,6 @@ def run_list_scraper(*, run_config: RunConfig) -> None:
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_legacy_wrapper
+    from scrapers.cli import run_current_legacy_wrapper
 
-    run_legacy_wrapper("scrapers.points.points_scoring_systems_history")
+    run_current_legacy_wrapper()

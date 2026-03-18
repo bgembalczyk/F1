@@ -17,6 +17,7 @@ if TYPE_CHECKING:
 
     from bs4 import BeautifulSoup
 
+    from scrapers.base.infobox.service import InfoboxExtractionService
     from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.adapter import SectionAdapter
 
@@ -26,16 +27,22 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         self,
         *,
         options: ScraperOptions | None = None,
-        infobox_service: ConstructorInfoboxExtractionService | None = None,
+        infobox_service: InfoboxExtractionService | None = None,
         sections_service_factory: (
             Callable[[SectionAdapter], ConstructorSectionExtractionService] | None
         ) = None,
         assembler: ConstructorRecordAssembler | None = None,
     ) -> None:
         super().__init__(options=options)
-        self._infobox_service = infobox_service or ConstructorInfoboxExtractionService()
+        self._infobox_service = infobox_service or ConstructorInfoboxExtractionService(
+            options=self._options,
+        )
         self._sections_service_factory = sections_service_factory or (
-            lambda adapter: ConstructorSectionExtractionService(adapter=adapter)
+            lambda adapter: ConstructorSectionExtractionService(
+                adapter=adapter,
+                options=self._options,
+                url=self.url,
+            )
         )
         self._assembler = assembler or ConstructorRecordAssembler()
         self.article_tables_parser = ArticleTablesParser()
@@ -44,7 +51,7 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         return ConstructorSectionContractPostProcessor()
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._infobox_service.extract(soup)
+        return self._infobox_service.extract(soup, url=self.url).as_list()
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self.article_tables_parser.parse(soup)

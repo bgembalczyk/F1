@@ -17,18 +17,15 @@ from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
 from scrapers.constructors.constants import CURRENT_YEAR
 from scrapers.constructors.sections.list_section import ConstructorsListSectionParser
+from scrapers.wiki.component_metadata import ComponentMetadata
 
 
 class CurrentConstructorsListScraper(BaseConstructorListScraper):
-    COMPONENT_METADATA = {
-        "domain": "constructors",
-        "seed_name": "constructors",
-        "layer": "layer_one",
-        "output_category": "constructors",
-        "component_type": "list_scraper",
-        "default_output_path": "raw/constructors/seeds/complete_constructors",
-        "legacy_output_path": "constructors/complete_constructors",
-    }
+    COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
+        domain="constructors",
+        default_output_path="raw/constructors/seeds/complete_constructors",
+        legacy_output_path="constructors/complete_constructors",
+    )
 
     """
     Aktualni konstruktorzy - sekcja
@@ -63,6 +60,6 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_legacy_wrapper
+    from scrapers.cli import run_current_legacy_wrapper
 
-    run_legacy_wrapper("scrapers.constructors.current_constructors_list")
+    run_current_legacy_wrapper()

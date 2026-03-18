@@ -27,18 +27,15 @@ from scrapers.drivers.constants import DRIVER_RACE_WINS_HEADER
 from scrapers.drivers.constants import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
 from scrapers.drivers.validator import DriversRecordValidator
+from scrapers.wiki.component_metadata import ComponentMetadata
 
 
 class F1DriversListScraper(F1TableScraper):
-    COMPONENT_METADATA = {
-        "domain": "drivers",
-        "seed_name": "drivers",
-        "layer": "layer_one",
-        "output_category": "drivers",
-        "component_type": "list_scraper",
-        "default_output_path": "raw/drivers/seeds/complete_drivers",
-        "legacy_output_path": "drivers/complete_drivers",
-    }
+    COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
+        domain="drivers",
+        default_output_path="raw/drivers/seeds/complete_drivers",
+        legacy_output_path="drivers/complete_drivers",
+    )
 
     """
     Scraper listy kierowców F1 z:
@@ -122,6 +119,6 @@ class F1DriversListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_legacy_wrapper
+    from scrapers.cli import run_current_legacy_wrapper
 
-    run_legacy_wrapper("scrapers.drivers.list_scraper")
+    run_current_legacy_wrapper()

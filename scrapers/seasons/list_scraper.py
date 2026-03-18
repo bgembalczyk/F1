@@ -8,18 +8,15 @@ from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.wiki.component_metadata import ComponentMetadata
 
 
 class SeasonsListScraper(F1TableScraper):
-    COMPONENT_METADATA = {
-        "domain": "seasons",
-        "seed_name": "seasons",
-        "layer": "layer_one",
-        "output_category": "seasons",
-        "component_type": "list_scraper",
-        "default_output_path": "raw/seasons/seeds/complete_seasons",
-        "legacy_output_path": "seasons/complete_seasons",
-    }
+    COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
+        domain="seasons",
+        default_output_path="raw/seasons/seeds/complete_seasons",
+        legacy_output_path="seasons/complete_seasons",
+    )
 
     """
     Scraper listy sezonów z:
@@ -53,6 +50,6 @@ class SeasonsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_legacy_wrapper
+    from scrapers.cli import run_current_legacy_wrapper
 
-    run_legacy_wrapper("scrapers.seasons.list_scraper")
+    run_current_legacy_wrapper()

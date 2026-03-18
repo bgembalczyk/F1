@@ -97,6 +97,6 @@ class EngineRegulationScraper(BaseEngineTableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_legacy_wrapper
+    from scrapers.cli import run_current_legacy_wrapper
 
-    run_legacy_wrapper("scrapers.engines.engine_regulation")
+    run_current_legacy_wrapper()

@@ -23,6 +23,27 @@ class SeasonRecordSections:
     regulation_changes: list[dict[str, Any]]
     mid_season_changes: list[dict[str, Any]]
 
+    @classmethod
+    def empty(cls) -> SeasonRecordSections:
+        return cls(
+            entries=[],
+            free_practice_drivers=[],
+            calendar=[],
+            cancelled_rounds=[],
+            testing_venues_and_dates=[],
+            results=[],
+            non_championship_races=[],
+            scoring_system=[],
+            drivers_standings=[],
+            constructors_standings=[],
+            jim_clark_trophy=[],
+            colin_chapman_trophy=[],
+            south_african_formula_one_championship=[],
+            british_formula_one_championship=[],
+            regulation_changes=[],
+            mid_season_changes=[],
+        )
+
 
 class SeasonRecordAssembler:
     def assemble(self, sections: SeasonRecordSections) -> dict[str, Any]:

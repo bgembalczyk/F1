@@ -45,6 +45,6 @@ class EngineManufacturersListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_legacy_wrapper
+    from scrapers.cli import run_current_legacy_wrapper
 
-    run_legacy_wrapper("scrapers.engines.engine_manufacturers_list")
+    run_current_legacy_wrapper()
