@@ -1,10 +1,10 @@
 from bs4 import Tag
 
-from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.wiki.parsers.constants import BASE_COMMON_ALIASES
 from scrapers.wiki.parsers.constants import CURRENT_CONSTRUCTORS_ID
 from scrapers.wiki.parsers.sections.contants import TOP_SECTION_NAME
 from scrapers.wiki.parsers.sections.data_classes import SectionProfile
+from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
 
 
 def _split_into_parts(
@@ -37,9 +37,6 @@ def _split_into_parts(
     parts.append((current_name, current_anchor, current_elements))
     return parts
 
-
-def normalize_section_profile_key(value: str) -> str:
-    return clean_wiki_text(value.replace("_", " ")).lower().strip()
 
 
 def _domain_aliases() -> dict[str, dict[str, set[str]]]:

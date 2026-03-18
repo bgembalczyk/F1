@@ -12,7 +12,7 @@ from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
-from scrapers.wiki.parsers.sections.sub_sub_sub_section import ParserRule
+from scrapers.wiki.parsers.elements.rules import ParserRule
 
 
 class WikiElementParserMixin:

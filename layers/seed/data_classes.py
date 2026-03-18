@@ -5,8 +5,6 @@ from datetime import datetime
 from datetime import timezone
 from typing import Any
 
-from layers.seed.helpers import _extract_link
-from layers.seed.helpers import _extract_name
 from scrapers.wiki.contants import SEED_RECORD_SCHEMA_VERSION
 
 
@@ -42,6 +40,9 @@ class SeedRecord:
         scraped_at: datetime,
         schema_version: str = SEED_RECORD_SCHEMA_VERSION,
     ) -> "SeedRecord":
+        from layers.seed.helpers import _extract_link
+        from layers.seed.helpers import _extract_name
+
         return cls(
             schema_version=schema_version,
             name=_extract_name(raw),

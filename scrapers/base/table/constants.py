@@ -1,8 +1,6 @@
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 
-SKIP_SENTINEL = object()
-
 HEADER_ROWS_WITH_SUBHEADERS = 2
 
 BASE_STATS_MAP = {

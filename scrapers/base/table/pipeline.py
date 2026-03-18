@@ -23,7 +23,7 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.constants import SKIP_SENTINEL
+from scrapers.base.table.sentinels import SKIP_SENTINEL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 
