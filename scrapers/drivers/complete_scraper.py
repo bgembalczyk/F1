@@ -1,5 +1,5 @@
-from complete_extractor.base import CompleteExtractorBase
-from complete_extractor.domain_config import CompleteExtractorDomainConfig
+from scrapers.base.complete_extractor import CompleteExtractorBase
+from scrapers.base.complete_extractor import CompleteExtractorDomainConfig
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
 

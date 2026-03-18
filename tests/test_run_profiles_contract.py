@@ -3,7 +3,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from layers.pipeline import WikiPipelineApplication
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
+from scrapers.base.cli_entrypoint import complete_extractor_run_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.domain_entrypoint import minimal_debug_profile
 from scrapers.base.domain_entrypoint import minimal_profile
@@ -12,7 +14,6 @@ from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import RunPathConfig
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
-from scrapers.wiki.application import WikiPipelineApplication
 
 
 class _LayerExecutorSpy:
@@ -33,7 +34,8 @@ def test_cli_entrypoint_profiles_match_central_definitions() -> None:
     assert deprecated_module_base_config() == build_run_profile(
         RunProfileName.DEPRECATED,
     )
-    assert complete_extractor_base_config() == build_run_profile(RunProfileName.MINIMAL)
+    assert complete_extractor_run_config() == build_run_profile(RunProfileName.MINIMAL)
+    assert complete_extractor_base_config() == complete_extractor_run_config()
 
 
 def test_wiki_application_uses_central_debug_profile_for_layer_runs() -> None:

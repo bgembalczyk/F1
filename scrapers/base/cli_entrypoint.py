@@ -34,9 +34,14 @@ def deprecated_module_base_config() -> RunConfig:
     return build_run_profile(RunProfileName.DEPRECATED)
 
 
-def complete_extractor_base_config() -> RunConfig:
-    """Build canonical ``RunConfig`` for complete-extractor CLI modules."""
+def complete_extractor_run_config() -> RunConfig:
+    """Build canonical ``RunConfig`` for complete extractor CLI modules."""
     return build_run_profile(RunProfileName.MINIMAL)
+
+
+def complete_extractor_base_config() -> RunConfig:
+    """Compatibility alias for the historical complete-extractor config helper."""
+    return complete_extractor_run_config()
 
 
 def build_standard_parser(
@@ -165,7 +170,7 @@ def build_complete_extractor_main(
     """Build ``__main__`` launcher for complete extractor modules."""
     return build_cli_main(
         target=target,
-        base_config=base_config or complete_extractor_base_config(),
+        base_config=base_config or complete_extractor_run_config(),
         profile=RunProfileName.MINIMAL,
         argv=argv,
     )

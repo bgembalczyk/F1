@@ -1,6 +1,6 @@
 from typing import Any
 
-from complete_extractor.base import CompleteExtractorBase
+from scrapers.base.complete_extractor import CompleteExtractorBase
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.base.options import ScraperOptions
 from scrapers.constructors.current_constructors_list import (

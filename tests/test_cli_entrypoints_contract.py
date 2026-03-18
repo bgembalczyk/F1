@@ -10,6 +10,7 @@ from scrapers.base.cli_entrypoint import build_complete_extractor_main
 from scrapers.base.cli_entrypoint import build_deprecated_module_main
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
+from scrapers.base.cli_entrypoint import complete_extractor_run_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.cli_entrypoint import run_cli_entrypoint
 from scrapers.base.run_config import RunConfig
@@ -113,10 +114,14 @@ def test_deprecated_module_base_config_has_expected_defaults() -> None:
     )
 
 
-def test_complete_extractor_base_config_has_expected_defaults() -> None:
-    assert complete_extractor_base_config() == RunConfig(
+def test_complete_extractor_run_config_has_expected_defaults() -> None:
+    assert complete_extractor_run_config() == RunConfig(
         output_dir=Path("../../data/wiki"),
     )
+
+
+def test_complete_extractor_base_config_is_compatibility_alias() -> None:
+    assert complete_extractor_base_config() == complete_extractor_run_config()
 
 
 def test_build_deprecated_module_main_warns_and_passes_run_config() -> None:
@@ -145,7 +150,7 @@ def test_build_deprecated_module_main_warns_and_passes_run_config() -> None:
     ]
 
 
-def test_build_complete_extractor_main_passes_default_base_config() -> None:
+def test_build_complete_extractor_main_passes_default_run_config() -> None:
     captured: list[RunConfig] = []
 
     def target(*, run_config: RunConfig) -> None:
