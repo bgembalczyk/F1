@@ -38,7 +38,11 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
             options=self._options,
         )
         self._sections_service_factory = sections_service_factory or (
-            lambda adapter: ConstructorSectionExtractionService(adapter=adapter)
+            lambda adapter: ConstructorSectionExtractionService(
+                adapter=adapter,
+                options=self._options,
+                url=self.url,
+            )
         )
         self._assembler = assembler or ConstructorRecordAssembler()
         self.article_tables_parser = ArticleTablesParser()
