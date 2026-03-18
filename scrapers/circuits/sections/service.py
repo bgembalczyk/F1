@@ -2,44 +2,18 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.base.options import ScraperOptions
-from scrapers.circuits.sections import circuit_section_entries
+from scrapers.base.sections.service import BaseSectionExtractionService
+from scrapers.circuits.sections.adapter import circuit_section_entries
 
 if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
-
-    from scrapers.base.sections.adapter import SectionAdapter
+    from scrapers.base.sections.adapter import SectionAdapterEntry
 
 
-class CircuitSectionExtractionService:
-    def __init__(
-        self,
-        *,
-        adapter: SectionAdapter,
-        include_urls: bool,
-        fetcher: object,
-        policy: object,
-        debug_dir: str | None,
-        url: str,
-    ) -> None:
-        self._adapter = adapter
-        self._include_urls = include_urls
-        self._fetcher = fetcher
-        self._policy = policy
-        self._debug_dir = debug_dir
-        self._url = url
+class CircuitSectionExtractionService(BaseSectionExtractionService):
+    domain = "circuits"
 
-    def extract(self, soup: BeautifulSoup) -> list[dict[str, object]]:
-        return self._adapter.parse_section_dicts(
-            soup=soup,
-            domain="circuits",
-            entries=circuit_section_entries(
-                options=ScraperOptions(
-                    include_urls=self._include_urls,
-                    fetcher=self._fetcher,
-                    policy=self._policy,
-                    debug_dir=self._debug_dir,
-                ),
-                url=self._url,
-            ),
+    def build_entries(self) -> list[SectionAdapterEntry]:
+        return circuit_section_entries(
+            options=self.require_options(),
+            url=self.require_url(),
         )

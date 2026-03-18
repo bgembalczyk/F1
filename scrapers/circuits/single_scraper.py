@@ -46,10 +46,7 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         self._sections_service_factory = sections_service_factory or (
             lambda adapter, url: CircuitSectionExtractionService(
                 adapter=adapter,
-                include_urls=self.include_urls,
-                fetcher=self.fetcher,
-                policy=self.policy,
-                debug_dir=self.debug_dir,
+                options=self._options,
                 url=url,
             )
         )

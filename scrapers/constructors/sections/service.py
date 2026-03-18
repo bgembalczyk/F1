@@ -1,22 +1,12 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
+from scrapers.base.sections.adapter import SectionAdapterEntry
+from scrapers.base.sections.service import BaseSectionExtractionService
 from scrapers.constructors.sections.adapter import constructor_section_entries
 
-if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
 
-    from scrapers.base.sections.adapter import SectionAdapter
+class ConstructorSectionExtractionService(BaseSectionExtractionService):
+    domain = "constructors"
 
-
-class ConstructorSectionExtractionService:
-    def __init__(self, *, adapter: SectionAdapter) -> None:
-        self._adapter = adapter
-
-    def extract(self, soup: BeautifulSoup) -> list[dict[str, object]]:
-        return self._adapter.parse_section_dicts(
-            soup=soup,
-            domain="constructors",
-            entries=constructor_section_entries(),
-        )
+    def build_entries(self) -> list[SectionAdapterEntry]:
+        return constructor_section_entries()
