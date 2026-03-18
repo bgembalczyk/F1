@@ -354,6 +354,19 @@ def _parse_legacy_args(
     return profile_args, args
 
 
+def _module_path_from_file(file_path: str) -> str:
+    path = Path(file_path).resolve()
+    suffixless_parts = path.with_suffix("").parts
+
+    try:
+        scrapers_index = suffixless_parts.index("scrapers")
+    except ValueError as exc:
+        msg = f"Cannot infer scrapers module path from {file_path!r}."
+        raise ValueError(msg) from exc
+
+    return ".".join(suffixless_parts[scrapers_index:])
+
+
 def run_legacy_wrapper(module_path: str, argv: list[str] | None = None) -> None:
     spec = LEGACY_MODULE_SPECS[module_path]
     _, args = _parse_legacy_args(argv, spec.profile)
@@ -368,6 +381,20 @@ def run_legacy_wrapper(module_path: str, argv: list[str] | None = None) -> None:
         stacklevel=2,
     )
     _invoke_target(spec.target, run_config)
+
+
+def run_current_legacy_wrapper(argv: list[str] | None = None) -> None:
+    frame = inspect.currentframe()
+    if frame is None or frame.f_back is None:
+        msg = "Cannot infer caller module for legacy wrapper."
+        raise RuntimeError(msg)
+
+    try:
+        caller_file = frame.f_back.f_code.co_filename
+    finally:
+        del frame
+
+    run_legacy_wrapper(_module_path_from_file(caller_file), argv)
 
 
 def _build_wiki_parser() -> argparse.ArgumentParser:

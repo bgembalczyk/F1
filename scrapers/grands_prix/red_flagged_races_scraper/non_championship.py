@@ -58,8 +58,6 @@ class RedFlaggedNonChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_legacy_wrapper
+    from scrapers.cli import run_current_legacy_wrapper
 
-    run_legacy_wrapper(
-        "scrapers.grands_prix.red_flagged_races_scraper.non_championship",
-    )
+    run_current_legacy_wrapper()
