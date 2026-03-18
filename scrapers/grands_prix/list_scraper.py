@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.grands_prix.entrypoint.run_list_scraper."""
 
-from models.records.factories.build import build_grands_prix_record
+from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_scraper_config
@@ -51,7 +51,7 @@ class GrandsPrixListScraper(F1TableScraper):
             "Years held",
         ],
         columns=schema_columns,
-        record_factory=build_grands_prix_record,
+        record_factory=RECORD_BUILDERS.grands_prix,
     )
 
     def __init__(

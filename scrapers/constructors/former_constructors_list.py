@@ -1,9 +1,8 @@
-from models.records.factories.build import build_constructor_record
+from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.builders import metric_column
-from scrapers.base.table.dsl.column import column
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
@@ -60,7 +59,7 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
         section_id="Former_constructors",
         expected_headers=FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
         columns=schema_columns,
-        record_factory=build_constructor_record,
+        record_factory=RECORD_BUILDERS.constructor,
     )
 
     section_label = "Former constructors"

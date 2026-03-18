@@ -1,6 +1,7 @@
 # ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
 import pytest
 
+from models.records.factories.build import RECORD_BUILDERS
 from models.records.factories.build import build_constructor_record
 from models.records.factories.build import build_driver_record
 from models.records.factories.build import build_fatality_record
@@ -137,3 +138,16 @@ def test_build_record_uses_registry() -> None:
 def test_build_record_raises_for_unsupported_type() -> None:
     with pytest.raises(ValueError, match="Unsupported record type"):
         build_record("unknown", {})
+
+
+def test_record_builders_facade_supports_typed_and_generic_builds() -> None:
+    season_record = RECORD_BUILDERS.season({"year": "2023"})
+    generic_record = RECORD_BUILDERS.build("season", {"year": "2024"})
+
+    assert season_record["year"] == 2023
+    assert generic_record["year"] == 2024
+
+
+def test_record_builders_facade_raises_for_unsupported_type() -> None:
+    with pytest.raises(ValueError, match="Unsupported record type"):
+        RECORD_BUILDERS.build("unknown", {})

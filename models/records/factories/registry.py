@@ -79,6 +79,18 @@ def _validate_factory_classes(factory_classes: list[type[BaseRecordFactory]]) ->
         raise FactoryRegistryError(message)
 
 
+def get_factory(
+    record_type: str,
+    registry: dict[str, BaseRecordFactory] | None = None,
+) -> BaseRecordFactory:
+    factory_registry = registry or FACTORY_REGISTRY
+    factory = factory_registry.get(record_type)
+    if factory is None:
+        msg = f"Unsupported record type: {record_type}"
+        raise ValueError(msg)
+    return factory
+
+
 def build_factory_registry(
     normalizer: FieldNormalizer | None = None,
 ) -> dict[str, BaseRecordFactory]:

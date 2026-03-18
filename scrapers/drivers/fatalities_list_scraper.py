@@ -1,6 +1,6 @@
 from typing import Any
 
-from models.records.factories.build import build_fatality_record
+from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value
@@ -58,7 +58,7 @@ class F1FatalitiesListScraper(F1TableScraper):
                 column(FATALITIES_REF_HEADER, "ref", SkipColumn()),
             ],
         ),
-        record_factory=build_fatality_record,
+        record_factory=RECORD_BUILDERS.fatality,
     )
 
     def __init__(
