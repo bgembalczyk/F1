@@ -1,9 +1,9 @@
 from models.records.factories.build import build_constructor_record
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.builders import build_columns
+from scrapers.base.table.builders import build_metric_columns
+from scrapers.base.table.builders import build_scraper_config
+from scrapers.base.table.builders import metric_column
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
@@ -26,24 +26,40 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
     """
 
-    schema_columns = [
-        *BaseConstructorListScraper.build_common_metadata_columns(),
+    schema_columns = build_columns(
+        BaseConstructorListScraper.build_common_metadata_columns(),
         BaseConstructorListScraper.build_licensed_in_column(),
-        column(CONSTRUCTOR_SEASONS_HEADER, "seasons", SeasonsColumn()),
-        column(CONSTRUCTOR_RACES_ENTERED_HEADER, "races_entered", IntColumn()),
-        column(CONSTRUCTOR_RACES_STARTED_HEADER, "races_started", IntColumn()),
-        column(CONSTRUCTOR_WINS_HEADER, "wins", IntColumn()),
-        column(CONSTRUCTOR_POINTS_HEADER, "points", IntColumn()),
-        column(CONSTRUCTOR_POLES_HEADER, "poles", IntColumn()),
-        column(CONSTRUCTOR_FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
-        column(CONSTRUCTOR_PODIUMS_HEADER, "podiums", IntColumn()),
-    ]
+        build_metric_columns(
+            [
+                metric_column(CONSTRUCTOR_SEASONS_HEADER, "seasons", "seasons"),
+                metric_column(
+                    CONSTRUCTOR_RACES_ENTERED_HEADER,
+                    "races_entered",
+                    "races_entered",
+                ),
+                metric_column(
+                    CONSTRUCTOR_RACES_STARTED_HEADER,
+                    "races_started",
+                    "races_started",
+                ),
+                metric_column(CONSTRUCTOR_WINS_HEADER, "wins", "wins"),
+                metric_column(CONSTRUCTOR_POINTS_HEADER, "points", "points"),
+                metric_column(CONSTRUCTOR_POLES_HEADER, "poles", "poles"),
+                metric_column(
+                    CONSTRUCTOR_FASTEST_LAPS_HEADER,
+                    "fastest_laps",
+                    "fastest_laps",
+                ),
+                metric_column(CONSTRUCTOR_PODIUMS_HEADER, "podiums", "podiums"),
+            ],
+        ),
+    )
 
-    CONFIG = ScraperConfig(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_constructors",
         section_id="Former_constructors",
         expected_headers=FORMER_CONSTRUCTORS_EXPECTED_HEADERS,
-        schema=TableSchemaDSL(columns=schema_columns),
+        columns=schema_columns,
         record_factory=build_constructor_record,
     )
 

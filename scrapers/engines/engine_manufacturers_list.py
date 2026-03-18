@@ -1,12 +1,11 @@
 from models.records.factories.build import build_engine_manufacturer_record
 from models.validation.engine_manufacturer import EngineManufacturer
+from scrapers.base.table.builders import build_base_stats_columns
+from scrapers.base.table.builders import build_columns
+from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.columns.types.float import FloatColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.constants import BASE_STATS_COLUMNS
-from scrapers.base.table.constants import BASE_STATS_MAP
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.engines.columns.manufacturer_name_status import (
     EngineManufacturerNameStatusColumn,
@@ -19,15 +18,13 @@ class EngineManufacturersListScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers#Engine_manufacturers
     """
 
-    schema_columns = [
+    schema_columns = build_columns(
         column("Manufacturer", "manufacturer", EngineManufacturerNameStatusColumn()),
         column("Engines built in", "engines_built_in", LinksListColumn()),
-    ]
-    for header, key in BASE_STATS_MAP.items():
-        column_instance = FloatColumn() if key == "points" else BASE_STATS_COLUMNS[key]
-        schema_columns.append(column(header, key, column_instance))
+        build_base_stats_columns(column_overrides={"points": FloatColumn()}),
+    )
 
-    CONFIG = ScraperConfig(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers",
         # sekcja z główną tabelą
         section_id="Engine_manufacturers",
@@ -43,7 +40,7 @@ class EngineManufacturersListScraper(F1TableScraper):
         ],
         record_factory=build_engine_manufacturer_record,
         model_class=EngineManufacturer,
-        schema=TableSchemaDSL(columns=schema_columns),
+        columns=schema_columns,
     )
 
 

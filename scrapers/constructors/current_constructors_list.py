@@ -1,11 +1,11 @@
 """DEPRECATED ENTRYPOINT: use scrapers.constructors.entrypoint.run_list_scraper."""
 
 from models.records.factories.build import build_constructor_record
+from scrapers.base.table.builders import build_columns
+from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,
 )
@@ -36,25 +36,25 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
     """
 
-    schema_columns = [
+    schema_columns = build_columns(
         column(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn()),
         column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn()),
         column(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn()),
-        *BaseConstructorListScraper.build_common_stats_columns(),
+        BaseConstructorListScraper.build_common_stats_columns(),
         column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn()),
-        *BaseConstructorListScraper.build_common_metadata_columns(),
+        BaseConstructorListScraper.build_common_metadata_columns(),
         column(
             CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
             "antecedent_teams",
             LinksListColumn(),
         ),
-    ]
+    )
 
-    CONFIG = ScraperConfig(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_constructors",
         section_id=f"Constructors_for_the_{CURRENT_YEAR}_season",
         expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
-        schema=TableSchemaDSL(columns=schema_columns),
+        columns=schema_columns,
         record_factory=build_constructor_record,
     )
 
