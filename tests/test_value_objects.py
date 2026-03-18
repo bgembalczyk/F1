@@ -1,7 +1,11 @@
+import pytest
+
 from models.mappers.serialization import to_dict
 from models.mappers.serialization import to_dict_list
+from models.value_objects.drivers_championships import DriversChampionships
 from models.value_objects.link import Link
 from models.value_objects.normalized_date import NormalizedDate
+from models.value_objects.rounds import Rounds
 from models.value_objects.season_ref import SeasonRef
 from models.value_objects.time_types import DateValue
 
@@ -27,6 +31,30 @@ def test_value_object_override_from_dict_for_season_ref():
         "url": "https://example.com",
     }
     assert SeasonRef.from_dict({"url": "https://example.com"}) is None
+
+
+def test_drivers_championships_validates_count_and_seasons():
+    value = DriversChampionships(
+        count=2,
+        seasons=[SeasonRef(year=2005), SeasonRef(year=2006)],
+    )
+
+    assert value.to_dict() == {
+        "count": 2,
+        "seasons": [
+            {"year": 2005},
+            {"year": 2006},
+        ],
+    }
+
+
+def test_drivers_championships_rejects_mismatched_count():
+    with pytest.raises(ValueError, match="Liczba tytułów"):
+        DriversChampionships(count=2, seasons=[SeasonRef(year=2005)])
+
+
+def test_rounds_value_object_normalizes_and_sorts():
+    assert Rounds.from_values([4, 2, 4, 3]).to_list() == [2, 3, 4]
 
 
 def test_to_dict_uses_value_object_interface():

@@ -17,7 +17,7 @@ class DriversChampionshipsTransformer(RecordTransformer):
         - "2\\n2005-2006"
         - "7\\n1994-1995, 2000-2004"
         """
-        return parse_championships(raw)  # type: ignore[return-value]
+        return parse_championships(raw).to_dict()
 
     def transform(self, records: list[ExportRecord]) -> list[ExportRecord]:
         for row in records:

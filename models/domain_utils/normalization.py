@@ -55,13 +55,13 @@ def normalize_season_item(
     value: SeasonRef | Mapping[str, Any] | None,
     *,
     with_default_url: bool = False,
-) -> dict[str, Any] | None:
+) -> SeasonRef | None:
     """Normalize a single season item.
 
     Contract:
     - empty payload -> None,
     - invalid payload -> ValueError,
-    - valid payload -> {"year": int, "url": str?}.
+    - valid payload -> SeasonRef.
     """
     if value is None:
         return None
@@ -76,21 +76,20 @@ def normalize_season_item(
     if season is None:
         return None
 
-    result = season.to_dict()
-    if with_default_url and "url" not in result:
-        result["url"] = WIKI_SEASON_URL.format(year=result["year"])
-    return result
+    if with_default_url and season.url is None:
+        return SeasonRef(year=season.year, url=WIKI_SEASON_URL.format(year=season.year))
+    return season
 
 
 def normalize_season_items(
     values: Iterable[SeasonRef | Mapping[str, Any] | None] | None,
     *,
     with_default_url: bool = False,
-) -> list[dict[str, Any]]:
+) -> list[SeasonRef]:
     if values is None:
         return []
 
-    normalized: list[dict[str, Any]] = []
+    normalized: list[SeasonRef] = []
     for value in values:
         item = normalize_season_item(value, with_default_url=with_default_url)
         if item is not None:

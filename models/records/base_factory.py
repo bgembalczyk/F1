@@ -137,8 +137,8 @@ class BaseRecordFactory:
 
         for field_name, nested_factory in spec.get("nested_factories", {}).items():
             nested_payload = payload.get(field_name)
-            if isinstance(nested_payload, Mapping):
-                payload[field_name] = nested_factory.build(nested_payload)
+            if nested_payload is not None:
+                payload[field_name] = nested_factory.build(nested_payload)  # type: ignore[arg-type]
 
         self.set_defaults(payload, spec.get("defaults", {}))
         return payload

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
@@ -21,7 +23,12 @@ class SeasonRef(ValueObject):
                 raise ValueError(msg)
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any] | None) -> "SeasonRef | None":
+    def from_dict(
+        cls,
+        data: Mapping[str, Any] | "SeasonRef" | None,
+    ) -> "SeasonRef | None":
+        if isinstance(data, cls):
+            return data
         payload = data or {}
         year = payload.get("year")
         if year is None:

@@ -1,20 +1,20 @@
 from datetime import datetime
 from datetime import timezone
-from typing import Any
 
 from models.domain_utils.years import extract_years
+from models.records.constants import WIKI_SEASON_URL
+from models.value_objects.season_ref import SeasonRef
 
 
 def parse_seasons(
     text: str,
     *,
     current_year: int | None = None,
-) -> list[dict[str, Any]]:
+) -> list[SeasonRef]:
     """
     Zamienia tekst w stylu:
         '1973, 1975-1982, 1984' lub '2014-present'
-    na listę:
-        [{"year": 1973, "url": ...}, {"year": 1975, "url": ...}, ...]
+    na listę jawnych obiektów SeasonRef.
 
     'present' (case-insensitive) -> aktualny rok.
     """
@@ -26,12 +26,5 @@ def parse_seasons(
 
     years = extract_years(text, current_year=current_year)
     return [
-        {
-            "year": year,
-            "url": (
-                "https://en.wikipedia.org/wiki/"
-                f"{year}_Formula_One_World_Championship"
-            ),
-        }
-        for year in years
+        SeasonRef(year=year, url=WIKI_SEASON_URL.format(year=year)) for year in years
     ]
