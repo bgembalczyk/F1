@@ -4,6 +4,7 @@ from __future__ import annotations
 import importlib
 import inspect
 
+from scrapers.base.domain_entrypoint import get_domain_entrypoint_config
 from scrapers.base.run_config import RunConfig
 
 ENTRYPOINT_MODULES = (
@@ -20,6 +21,19 @@ def test_entrypoints_expose_uniform_run_list_scraper_signature() -> None:
         module = importlib.import_module(module_name)
         signature = inspect.signature(module.run_list_scraper)
         assert str(signature) == "(*, run_config: 'RunConfig | None' = None) -> 'None'"
+
+
+def test_entrypoints_reuse_centralized_domain_config_registry() -> None:
+    for module_name in ENTRYPOINT_MODULES:
+        module = importlib.import_module(module_name)
+        domain = module_name.split(".")[-2]
+        config = get_domain_entrypoint_config(domain)
+
+        assert config == module.ENTRYPOINT_CONFIG
+        assert module.LIST_SCRAPER_CLASS is config.list_scraper_cls
+        assert config.default_output_json == module.DEFAULT_OUTPUT_JSON
+        assert config.default_output_csv == getattr(module, "DEFAULT_OUTPUT_CSV", None)
+        assert module.RUN_CONFIG_PROFILE is config.run_config_profile
 
 
 def test_entrypoints_delegate_to_run_and_export_with_default_profile(

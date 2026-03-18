@@ -1,15 +1,28 @@
 """Domain facade for launching the drivers list scraper."""
 
-from scrapers.base.domain_entrypoint import build_run_list_scraper
-from scrapers.base.domain_entrypoint import strict_quality_profile
-from scrapers.drivers.list_scraper import F1DriversListScraper
+from scrapers.base.domain_entrypoint import build_run_list_scraper_for_domain
+from scrapers.base.domain_entrypoint import get_domain_entrypoint_config
 
-LIST_SCRAPER_CLASS = F1DriversListScraper
-DEFAULT_OUTPUT_JSON = "drivers/f1_drivers.json"
-RUN_CONFIG_PROFILE = strict_quality_profile
+_DOMAIN = "drivers"
+run_list_scraper = build_run_list_scraper_for_domain(_DOMAIN)
 
-run_list_scraper = build_run_list_scraper(
-    list_scraper_cls=LIST_SCRAPER_CLASS,
-    default_output_json=DEFAULT_OUTPUT_JSON,
-    default_profile=RUN_CONFIG_PROFILE,
-)
+
+def __getattr__(name: str):
+    exported_names = {
+        "ENTRYPOINT_CONFIG",
+        "LIST_SCRAPER_CLASS",
+        "DEFAULT_OUTPUT_JSON",
+        "RUN_CONFIG_PROFILE",
+    }
+    if name not in exported_names:
+        msg = f"module {__name__!r} has no attribute {name!r}"
+        raise AttributeError(msg)
+
+    config = get_domain_entrypoint_config(_DOMAIN)
+    aliases = {
+        "ENTRYPOINT_CONFIG": config,
+        "LIST_SCRAPER_CLASS": config.list_scraper_cls,
+        "DEFAULT_OUTPUT_JSON": config.default_output_json,
+        "RUN_CONFIG_PROFILE": config.run_config_profile,
+    }
+    return aliases[name]
