@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-import re
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+from models.domain_utils.season_urls import extract_season_year_from_url
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.colin_chapman_trophy import ColinChapmanTrophyParser
@@ -54,10 +54,7 @@ class SeasonYearResolver:
 
     @staticmethod
     def extract_from_url(url: str) -> int | None:
-        match = re.search(r"/(\d{4})_Formula_One", url)
-        if match:
-            return int(match.group(1))
-        return None
+        return extract_season_year_from_url(url)
 
 
 @dataclass(frozen=True)

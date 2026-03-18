@@ -2,7 +2,7 @@ from collections.abc import Iterable
 from collections.abc import Mapping
 from typing import Any
 
-from models.records.constants import WIKI_SEASON_URL
+from models.domain_utils.season_urls import build_season_url
 from models.value_objects.link import Link
 from models.value_objects.link_utils import validate_link as validate_link_payload
 from models.value_objects.season_ref import SeasonRef
@@ -77,7 +77,7 @@ def normalize_season_item(
         return None
 
     if with_default_url and season.url is None:
-        return SeasonRef(year=season.year, url=WIKI_SEASON_URL.format(year=season.year))
+        return SeasonRef(year=season.year, url=build_season_url(season.year))
     return season
 
 

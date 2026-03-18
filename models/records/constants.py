@@ -1,3 +1,5 @@
 """Shared constants for record factories and normalization."""
 
-WIKI_SEASON_URL = "https://en.wikipedia.org/wiki/{year}_Formula_One_World_Championship"
+from models.domain_utils.season_urls import FORMULA_ONE_SEASON_URL_TEMPLATE
+
+WIKI_SEASON_URL = FORMULA_ONE_SEASON_URL_TEMPLATE

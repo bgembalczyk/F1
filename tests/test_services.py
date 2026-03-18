@@ -1,7 +1,9 @@
-# ruff: noqa: F821, PLC0415, RUF001
+# ruff: noqa: PLC0415, RUF001
 import json
 from pathlib import Path
 
+from models.domain_utils.season_urls import build_season_url
+from models.domain_utils.season_urls import extract_season_year_from_url
 from models.domain_utils.years import parse_year_range
 from models.services.driver_service import parse_championships
 from models.services.helpers import parse_int_values
@@ -16,6 +18,8 @@ from scrapers.circuits.models.services.circuit_service import CircuitService
 
 CHAMPIONSHIP_SEASON_COUNT = 2
 EXPECTED_LAP_TIME = 80.0
+SEASON_URL_TEST_YEAR = 2024
+ALT_SEASON_URL_TEST_YEAR = 2025
 
 
 def test_season_service_parses_years_and_ranges() -> None:
@@ -25,6 +29,20 @@ def test_season_service_parses_years_and_ranges() -> None:
     assert years == [1973, 1975, 1976, 1984]
     assert seasons[0].url is not None
     assert seasons[0].url.endswith("1973_Formula_One_World_Championship")
+
+
+def test_season_url_domain_helpers_build_and_extract_year() -> None:
+    url = build_season_url(SEASON_URL_TEST_YEAR)
+
+    assert url == "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+    assert extract_season_year_from_url(url) == SEASON_URL_TEST_YEAR
+    assert (
+        extract_season_year_from_url(
+            "https://example.com/wiki/2025_Formula_One_season",
+        )
+        == ALT_SEASON_URL_TEST_YEAR
+    )
+    assert extract_season_year_from_url("https://example.com/wiki/Formula_One") is None
 
 
 def test_season_service_parses_onwards_range() -> None:

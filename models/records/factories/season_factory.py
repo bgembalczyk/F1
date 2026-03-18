@@ -2,8 +2,8 @@ from collections.abc import Mapping
 from typing import Any
 from typing import cast
 
+from models.domain_utils.season_urls import build_season_url
 from models.records.base_factory import BaseRecordFactory
-from models.records.constants import WIKI_SEASON_URL
 from models.records.factories.registry import register_factory
 from models.records.season import SeasonRecord
 
@@ -25,5 +25,5 @@ class SeasonRecordFactory(BaseRecordFactory):
             },
         )
         if payload.get("year") is not None and not payload.get("url"):
-            payload["url"] = WIKI_SEASON_URL.format(year=payload["year"])
+            payload["url"] = build_season_url(payload["year"])
         return cast("SeasonRecord", payload)

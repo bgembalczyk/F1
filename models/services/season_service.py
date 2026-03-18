@@ -1,8 +1,8 @@
 from datetime import datetime
 from datetime import timezone
 
+from models.domain_utils.season_urls import build_season_url
 from models.domain_utils.years import extract_years
-from models.records.constants import WIKI_SEASON_URL
 from models.value_objects.season_ref import SeasonRef
 
 
@@ -25,6 +25,4 @@ def parse_seasons(
         current_year = datetime.now(timezone.utc).year
 
     years = extract_years(text, current_year=current_year)
-    return [
-        SeasonRef(year=year, url=WIKI_SEASON_URL.format(year=year)) for year in years
-    ]
+    return [SeasonRef(year=year, url=build_season_url(year)) for year in years]

@@ -3,6 +3,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from models.domain_utils.season_urls import extract_season_year_from_url
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
@@ -104,7 +105,7 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
 
     @staticmethod
     def _extract_year_from_url(url: str) -> int | None:
-        return SeasonYearResolver.extract_from_url(url)
+        return extract_season_year_from_url(url)
 
     def _configure_pipeline(self) -> None:
         self.season_year = self._season_year_resolver.resolve(
