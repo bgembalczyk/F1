@@ -7,10 +7,10 @@ from models.records.event import EVENT_SCHEMA
 from models.records.event import EventRecord
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
-from validation.domain_validator import BaseDomainRecordValidator
+from models.records.record_definition import RecordDefinition
+from models.records.record_definition import build_validator
 from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
-from validation.schemas import RecordSchema
 
 
 class FatalityRecord(TypedDict, total=False):
@@ -23,7 +23,8 @@ class FatalityRecord(TypedDict, total=False):
     session: str | None
 
 
-FATALITY_SCHEMA = RecordSchema(
+FATALITY_DEFINITION = RecordDefinition(
+    name="fatality",
     types={"date": str, "age": int, "session": str},
     allow_none=("date", "age", "session"),
     nested={
@@ -34,6 +35,9 @@ FATALITY_SCHEMA = RecordSchema(
     },
 )
 
+FATALITY_SCHEMA = FATALITY_DEFINITION.to_schema()
+_FATALITY_VALIDATOR = build_validator(FATALITY_DEFINITION)
+
 
 def validate_fatality_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(record, FATALITY_SCHEMA)
+    return _FATALITY_VALIDATOR(record)
