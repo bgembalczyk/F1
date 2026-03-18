@@ -38,13 +38,14 @@ def validate_links(
 def normalize_season_item(
     item: dict[str, Any] | SeasonRef | None,
 ) -> dict[str, Any] | None:
-    return core_normalize_season_item(item)
+    season = core_normalize_season_item(item)
+    return season.to_dict() if season is not None else None
 
 
 def validate_seasons(
     seasons: Iterable[dict[str, Any] | SeasonRef | None] | None,
 ) -> list[dict[str, Any]]:
-    return core_normalize_season_items(seasons)
+    return [season.to_dict() for season in core_normalize_season_items(seasons)]
 
 
 def model_to_dict(
@@ -71,12 +72,7 @@ def normalize_link_list(
 def normalize_season_list(
     items: list[SeasonRef | dict[str, Any] | None] | None,
 ) -> list[SeasonRef]:
-    result: list[SeasonRef] = []
-    for item in core_normalize_season_items(items):
-        season = SeasonRef.from_dict(item)
-        if season is not None:
-            result.append(season)
-    return result
+    return list(core_normalize_season_items(items))
 
 
 def filter_nonempty(items: Iterable[Any] | None, *, key: Any = None) -> list[Any]:

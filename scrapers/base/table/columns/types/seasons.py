@@ -7,4 +7,4 @@ from scrapers.base.table.columns.types.base import BaseColumn
 
 class SeasonsColumn(BaseColumn):
     def parse(self, ctx: ColumnContext) -> Any:
-        return parse_seasons(ctx.clean_text)
+        return [season.to_dict() for season in parse_seasons(ctx.clean_text)]

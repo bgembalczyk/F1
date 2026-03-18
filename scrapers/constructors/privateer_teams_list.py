@@ -63,7 +63,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
             seasons_raw = clean_wiki_text(m.group(1))
             seasons = parse_seasons(seasons_raw)
             if seasons:
-                record["seasons"] = seasons
+                record["seasons"] = [season.to_dict() for season in seasons]
 
         return record
 

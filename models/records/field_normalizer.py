@@ -9,6 +9,7 @@ from models.records.season import SeasonRecord
 from models.validation.core import validate_float
 from models.validation.core import validate_int
 from models.validation.core import validate_status
+from models.value_objects.season_ref import SeasonRef
 
 
 class FieldNormalizer:
@@ -49,10 +50,22 @@ class FieldNormalizer:
 
     @staticmethod
     def normalize_seasons(value: Any) -> list[SeasonRecord]:
-        items = value if isinstance(value, list) else [value]
+        items: list[SeasonRef | dict[str, Any] | None]
+        if value is None:
+            items = []
+        elif isinstance(value, list):
+            items = value
+        else:
+            items = [value]
         return cast(
             "list[SeasonRecord]",
-            normalize_season_items(items, with_default_url=True),
+            [
+                season.to_dict()
+                for season in normalize_season_items(
+                    items,
+                    with_default_url=True,
+                )
+            ],
         )
 
     @staticmethod

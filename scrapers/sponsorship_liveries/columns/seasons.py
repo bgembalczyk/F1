@@ -53,12 +53,15 @@ class SponsorshipSeasonsColumn(BaseColumn):
         self._table_headers = table_headers or []
 
     def parse(self, ctx: ColumnContext) -> Any:
-        return parse_seasons(self._year_only_text(ctx.clean_text or ""))
+        return [
+            season.to_dict()
+            for season in parse_seasons(self._year_only_text(ctx.clean_text or ""))
+        ]
 
     def apply(self, ctx: ColumnContext, record: dict[str, Any]) -> None:
         text = ctx.clean_text or ""
         year_text = self._year_only_text(text)
-        record[ctx.key] = parse_seasons(year_text)
+        record[ctx.key] = [season.to_dict() for season in parse_seasons(year_text)]
 
         paren_match = re.search(r"\(([^)]*)\)", text)
         if not paren_match:

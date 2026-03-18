@@ -4,19 +4,20 @@ from models.domain_utils.years import expand_inclusive_range
 from models.domain_utils.years import parse_numeric_dash_range
 from models.services.helpers import expand_all
 from models.services.helpers import unique_sorted
+from models.value_objects.rounds import Rounds
 
 
-def parse_rounds(text: str | None, *, total_rounds: int | None = None) -> list[int]:
+def parse_rounds(text: str | None, *, total_rounds: int | None = None) -> Rounds:
     if not text:
-        return []
+        return Rounds()
 
     normalized = text.strip()
     if not normalized:
-        return []
+        return Rounds()
 
     lower = normalized.lower()
     if "all" in lower:
-        return expand_all(total_rounds)
+        return Rounds.from_values(expand_all(total_rounds))
 
     normalized = re.sub(
         r"\b(rounds?|races?)\b",
@@ -45,4 +46,4 @@ def parse_rounds(text: str | None, *, total_rounds: int | None = None) -> list[i
         if match:
             values.append(int(match.group(0)))
 
-    return unique_sorted(values)
+    return Rounds.from_values(unique_sorted(values))

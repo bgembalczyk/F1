@@ -11,4 +11,4 @@ class RoundsColumn(BaseColumn):
         return parse_rounds(
             ctx.clean_text,
             total_rounds=self.total_rounds,
-        )
+        ).to_list()

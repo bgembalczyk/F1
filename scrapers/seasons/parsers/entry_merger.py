@@ -290,5 +290,5 @@ class EntryMerger:
         if isinstance(value, int):
             return [value]
         if isinstance(value, str):
-            return parse_rounds(value)
+            return parse_rounds(value).to_list()
         return []

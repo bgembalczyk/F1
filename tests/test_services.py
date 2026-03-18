@@ -20,23 +20,24 @@ EXPECTED_LAP_TIME = 80.0
 
 def test_season_service_parses_years_and_ranges() -> None:
     seasons = parse_seasons("1973, 1975-1976, 1984", current_year=2024)
-    years = [season["year"] for season in seasons]
+    years = [season.year for season in seasons]
 
     assert years == [1973, 1975, 1976, 1984]
-    assert seasons[0]["url"].endswith("1973_Formula_One_World_Championship")
+    assert seasons[0].url is not None
+    assert seasons[0].url.endswith("1973_Formula_One_World_Championship")
 
 
 def test_season_service_parses_onwards_range() -> None:
     seasons = parse_seasons("2025 onwards", current_year=2027)
 
-    assert [season["year"] for season in seasons] == [2025, 2026, 2027]
+    assert [season.year for season in seasons] == [2025, 2026, 2027]
 
 
 def test_driver_service_parses_championships() -> None:
     result = parse_championships("2\n2005-2006")
 
-    assert result["count"] == CHAMPIONSHIP_SEASON_COUNT
-    assert [season["year"] for season in result["seasons"]] == [2005, 2006]
+    assert result.count == CHAMPIONSHIP_SEASON_COUNT
+    assert [season.year for season in result.seasons] == [2005, 2006]
 
 
 def test_driver_service_parses_championships_variants() -> None:
@@ -49,8 +50,8 @@ def test_driver_service_parses_championships_variants() -> None:
     for raw, expected_count, expected_years in cases:
         result = parse_championships(raw)
 
-        assert result["count"] == expected_count
-        assert [season["year"] for season in result["seasons"]] == expected_years
+        assert result.count == expected_count
+        assert [season.year for season in result.seasons] == expected_years
 
 
 def test_circuit_service_normalizes_record_and_merges_laps() -> None:
@@ -192,7 +193,7 @@ def test_season_service_handles_dash_variants_reversed_ranges_and_duplicates() -
         current_year=2026,
     )
 
-    assert [season["year"] for season in seasons] == [2003, 2004, 2005, 2001, 2002]
+    assert [season.year for season in seasons] == [2003, 2004, 2005, 2001, 2002]
 
 
 def test_parse_year_range_handles_edge_cases() -> None:
