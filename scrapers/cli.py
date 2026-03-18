@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import argparse
 import importlib
-import inspect
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
+from typing import Protocol
 
 from layers.application import create_default_wiki_pipeline_application
 from scrapers.base.cli_entrypoint import CliMainProfile
@@ -14,10 +14,62 @@ from scrapers.base.cli_entrypoint import build_run_config
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
+from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
+from scrapers.circuits.entrypoint import run_list_scraper as run_circuits_list_scraper
+from scrapers.circuits.helpers.export import export_complete_circuits
+from scrapers.constructors.entrypoint import (
+    run_list_scraper as run_constructors_list_scraper,
+)
+from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
+from scrapers.constructors.helpers.export import export_complete_constructors
+from scrapers.constructors.indianapolis_only_constructors_list import (
+    IndianapolisOnlyConstructorsListScraper,
+)
+from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
+from scrapers.drivers.entrypoint import run_list_scraper as run_drivers_list_scraper
+from scrapers.drivers.fatalities_list_scraper import F1FatalitiesListScraper
+from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
+from scrapers.drivers.helpers.export import export_complete_drivers
+from scrapers.engines.complete_scraper import F1CompleteEngineManufacturerDataExtractor
+from scrapers.engines.engine_manufacturers_list import EngineManufacturersListScraper
+from scrapers.engines.engine_regulation import EngineRegulationScraper
+from scrapers.engines.engine_restrictions import EngineRestrictionsScraper
+from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
+    IndianapolisOnlyEngineManufacturersListScraper,
+)
+from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
+from scrapers.grands_prix.entrypoint import (
+    run_list_scraper as run_grands_prix_list_scraper,
+)
+from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
+    RedFlaggedNonChampionshipRacesScraper,
+)
+from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
+    RedFlaggedWorldChampionshipRacesScraper,
+)
+from scrapers.points.points_scoring_systems_history import (
+    run_list_scraper as run_points_scoring_systems_history_scraper,
+)
+from scrapers.points.shortened_race_points import (
+    run_list_scraper as run_shortened_race_points_scraper,
+)
+from scrapers.points.sprint_qualifying_points import (
+    run_list_scraper as run_sprint_qualifying_points_scraper,
+)
+from scrapers.seasons.entrypoint import run_list_scraper as run_seasons_list_scraper
+from scrapers.seasons.helpers import export_complete_seasons
+from scrapers.sponsorship_liveries.scraper import F1SponsorshipLiveriesScraper
+from scrapers.tyres.list_scraper import TyreManufacturersBySeasonScraper
 
 if TYPE_CHECKING:
     from collections.abc import Callable
+
+    from scrapers.base.abc import ABCScraper
+
+    CompleteExportFn = Callable[..., None]
+    ZeroArgTarget = Callable[[], None]
+    RunConfigTarget = Callable[..., None]
 
 _PROFILE_DEFAULTS: dict[CliMainProfile, tuple[bool, bool]] = {
     "list_scraper": (True, False),
@@ -26,287 +78,340 @@ _PROFILE_DEFAULTS: dict[CliMainProfile, tuple[bool, bool]] = {
 }
 
 
+class CliCommandTarget(Protocol):
+    def invoke(self, run_config: RunConfig) -> None:
+        ...
+
+
 @dataclass(frozen=True)
-class LegacyModuleSpec:
-    target: Callable[..., None]
+class CallableCliTarget:
+    target: RunConfigTarget
+
+    def invoke(self, run_config: RunConfig) -> None:
+        self.target(run_config=run_config)
+
+
+@dataclass(frozen=True)
+class ZeroArgCliTarget:
+    target: ZeroArgTarget
+
+    def invoke(self, _run_config: RunConfig) -> None:
+        self.target()
+
+
+@dataclass(frozen=True)
+class RunAndExportCliTarget:
+    scraper_cls: type[ABCScraper]
+    output_json: str
+    output_csv: str | None = None
+    supports_urls: bool = True
+
+    def invoke(self, run_config: RunConfig) -> None:
+        run_and_export(
+            self.scraper_cls,
+            self.output_json,
+            self.output_csv,
+            run_config=run_config,
+            supports_urls=self.supports_urls,
+        )
+
+
+@dataclass(frozen=True)
+class CompleteExportCliTarget:
+    export_fn: CompleteExportFn
+    output_dir: Path
+    include_urls: bool = True
+
+    def invoke(self, _run_config: RunConfig) -> None:
+        self.export_fn(output_dir=self.output_dir, include_urls=self.include_urls)
+
+
+@dataclass(frozen=True)
+class LazyImportCliTarget:
+    import_path: str
+
+    def invoke(self, run_config: RunConfig) -> None:
+        module_name, attr_name = self.import_path.split(":", maxsplit=1)
+        module = importlib.import_module(module_name)
+        target = getattr(module, attr_name)
+        CallableCliTarget(target).invoke(run_config)
+
+
+@dataclass(frozen=True)
+class CliCommandSpec:
+    module_path: str
+    target: CliCommandTarget
     base_config: RunConfig
     profile: CliMainProfile
 
 
-def _import_target(path: str) -> Callable[..., None]:
-    module_name, attr_name = path.split(":", maxsplit=1)
-    module = importlib.import_module(module_name)
-    return getattr(module, attr_name)
-
-
-def _lazy_target(path: str) -> Callable[..., None]:
-    def _target(*args: object, **kwargs: object) -> None:
-        target = _import_target(path)
-        target(*args, **kwargs)
-
-    return _target
-
-
-def _run_and_export_target(
-    class_path: str,
-    output_json: str,
-    output_csv: str | None = None,
-) -> Callable[..., None]:
-    def _target(*, run_config: RunConfig) -> None:
-        scraper_cls = _import_target(class_path)
-        run_and_export = _import_target("scrapers.base.helpers.runner:run_and_export")
-        if output_csv:
-            run_and_export(scraper_cls, output_json, output_csv, run_config=run_config)
-            return
-        run_and_export(scraper_cls, output_json, run_config=run_config)
-
-    return _target
-
-
-def _run_export_complete(
-    path: str,
-    output_dir: str,
-    *,
-    include_urls: bool = True,
-) -> Callable[..., None]:
-    def _target() -> None:
-        export_fn = _import_target(path)
-        export_fn(output_dir=Path(output_dir), include_urls=include_urls)
-
-    return _target
-
-
-def _circuits_specs() -> dict[str, LegacyModuleSpec]:
+def _circuits_specs() -> dict[str, CliCommandSpec]:
     return {
-        "scrapers.circuits.list_scraper": LegacyModuleSpec(
-            _lazy_target("scrapers.circuits.entrypoint:run_list_scraper"),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+        "scrapers.circuits.list_scraper": CliCommandSpec(
+            module_path="scrapers.circuits.list_scraper",
+            target=CallableCliTarget(run_circuits_list_scraper),
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.circuits.complete_scraper": LegacyModuleSpec(
-            _run_export_complete(
-                "scrapers.circuits.helpers.export:export_complete_circuits",
-                "../../data/wiki/circuits/complete_circuits",
+        "scrapers.circuits.complete_scraper": CliCommandSpec(
+            module_path="scrapers.circuits.complete_scraper",
+            target=CompleteExportCliTarget(
+                export_fn=export_complete_circuits,
+                output_dir=Path("../../data/wiki/circuits/complete_circuits"),
             ),
-            complete_extractor_base_config(),
-            "complete_extractor",
+            base_config=complete_extractor_base_config(),
+            profile="complete_extractor",
         ),
     }
 
 
-def _constructors_specs() -> dict[str, LegacyModuleSpec]:
+def _constructors_specs() -> dict[str, CliCommandSpec]:
     return {
-        "scrapers.constructors.current_constructors_list": LegacyModuleSpec(
-            _lazy_target("scrapers.constructors.entrypoint:run_list_scraper"),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+        "scrapers.constructors.current_constructors_list": CliCommandSpec(
+            module_path="scrapers.constructors.current_constructors_list",
+            target=CallableCliTarget(run_constructors_list_scraper),
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.constructors.former_constructors_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.constructors.former_constructors_list:FormerConstructorsListScraper",
-                "constructors/f1_former_constructors.json",
-                "constructors/f1_former_constructors.csv",
+        "scrapers.constructors.former_constructors_list": CliCommandSpec(
+            module_path="scrapers.constructors.former_constructors_list",
+            target=RunAndExportCliTarget(
+                scraper_cls=FormerConstructorsListScraper,
+                output_json="constructors/f1_former_constructors.json",
+                output_csv="constructors/f1_former_constructors.csv",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.constructors.indianapolis_only_constructors_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.constructors.indianapolis_only_constructors_list:IndianapolisOnlyConstructorsListScraper",
-                "constructors/f1_indianapolis_only_constructors.json",
-                "constructors/f1_indianapolis_only_constructors.csv",
+        "scrapers.constructors.indianapolis_only_constructors_list": CliCommandSpec(
+            module_path="scrapers.constructors.indianapolis_only_constructors_list",
+            target=RunAndExportCliTarget(
+                scraper_cls=IndianapolisOnlyConstructorsListScraper,
+                output_json="constructors/f1_indianapolis_only_constructors.json",
+                output_csv="constructors/f1_indianapolis_only_constructors.csv",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.constructors.privateer_teams_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.constructors.privateer_teams_list:PrivateerTeamsListScraper",
-                "constructors/f1_privateer_teams.json",
-                "constructors/f1_privateer_teams.csv",
+        "scrapers.constructors.privateer_teams_list": CliCommandSpec(
+            module_path="scrapers.constructors.privateer_teams_list",
+            target=RunAndExportCliTarget(
+                scraper_cls=PrivateerTeamsListScraper,
+                output_json="constructors/f1_privateer_teams.json",
+                output_csv="constructors/f1_privateer_teams.csv",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.constructors.complete_scraper": LegacyModuleSpec(
-            _run_export_complete(
-                "scrapers.constructors.helpers.export:export_complete_constructors",
-                "../../data/wiki/constructors/complete_constructors",
+        "scrapers.constructors.complete_scraper": CliCommandSpec(
+            module_path="scrapers.constructors.complete_scraper",
+            target=CompleteExportCliTarget(
+                export_fn=export_complete_constructors,
+                output_dir=Path("../../data/wiki/constructors/complete_constructors"),
             ),
-            RunConfig(),
-            "complete_extractor",
+            base_config=RunConfig(),
+            profile="complete_extractor",
         ),
     }
 
 
-def _drivers_specs() -> dict[str, LegacyModuleSpec]:
+def _drivers_specs() -> dict[str, CliCommandSpec]:
     return {
-        "scrapers.drivers.list_scraper": LegacyModuleSpec(
-            _lazy_target("scrapers.drivers.entrypoint:run_list_scraper"),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+        "scrapers.drivers.list_scraper": CliCommandSpec(
+            module_path="scrapers.drivers.list_scraper",
+            target=CallableCliTarget(run_drivers_list_scraper),
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.drivers.female_drivers_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.drivers.female_drivers_list:FemaleDriversListScraper",
-                "drivers/female_drivers.json",
+        "scrapers.drivers.female_drivers_list": CliCommandSpec(
+            module_path="scrapers.drivers.female_drivers_list",
+            target=RunAndExportCliTarget(
+                scraper_cls=FemaleDriversListScraper,
+                output_json="drivers/female_drivers.json",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.drivers.fatalities_list_scraper": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.drivers.fatalities_list_scraper:F1FatalitiesListScraper",
-                "drivers/f1_driver_fatalities.json",
+        "scrapers.drivers.fatalities_list_scraper": CliCommandSpec(
+            module_path="scrapers.drivers.fatalities_list_scraper",
+            target=RunAndExportCliTarget(
+                scraper_cls=F1FatalitiesListScraper,
+                output_json="drivers/f1_driver_fatalities.json",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.drivers.complete_scraper": LegacyModuleSpec(
-            _run_export_complete(
-                "scrapers.drivers.helpers.export:export_complete_drivers",
-                "../../data/wiki/drivers/complete_drivers",
+        "scrapers.drivers.complete_scraper": CliCommandSpec(
+            module_path="scrapers.drivers.complete_scraper",
+            target=CompleteExportCliTarget(
+                export_fn=export_complete_drivers,
+                output_dir=Path("../../data/wiki/drivers/complete_drivers"),
             ),
-            RunConfig(),
-            "complete_extractor",
+            base_config=RunConfig(),
+            profile="complete_extractor",
         ),
     }
 
 
-def _engines_specs() -> dict[str, LegacyModuleSpec]:
+def _engines_specs() -> dict[str, CliCommandSpec]:
     return {
-        "scrapers.engines.engine_manufacturers_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.engines.engine_manufacturers_list:EngineManufacturersListScraper",
-                "engines/f1_engine_manufacturers.json",
+        "scrapers.engines.engine_manufacturers_list": CliCommandSpec(
+            module_path="scrapers.engines.engine_manufacturers_list",
+            target=RunAndExportCliTarget(
+                scraper_cls=EngineManufacturersListScraper,
+                output_json="engines/f1_engine_manufacturers.json",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.engines.indianapolis_only_engine_manufacturers_list": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.engines.indianapolis_only_engine_manufacturers_list:IndianapolisOnlyEngineManufacturersListScraper",
-                "engines/f1_engine_manufacturers_indianapolis_only.json",
+        "scrapers.engines.indianapolis_only_engine_manufacturers_list": CliCommandSpec(
+            module_path="scrapers.engines.indianapolis_only_engine_manufacturers_list",
+            target=RunAndExportCliTarget(
+                scraper_cls=IndianapolisOnlyEngineManufacturersListScraper,
+                output_json="engines/f1_engine_manufacturers_indianapolis_only.json",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.engines.engine_regulation": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.engines.engine_regulation:EngineRegulationScraper",
-                "engines/f1_engine_regulations.json",
+        "scrapers.engines.engine_regulation": CliCommandSpec(
+            module_path="scrapers.engines.engine_regulation",
+            target=RunAndExportCliTarget(
+                scraper_cls=EngineRegulationScraper,
+                output_json="engines/f1_engine_regulations.json",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.engines.engine_restrictions": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.engines.engine_restrictions:EngineRestrictionsScraper",
-                "engines/f1_engine_restrictions.json",
+        "scrapers.engines.engine_restrictions": CliCommandSpec(
+            module_path="scrapers.engines.engine_restrictions",
+            target=RunAndExportCliTarget(
+                scraper_cls=EngineRestrictionsScraper,
+                output_json="engines/f1_engine_restrictions.json",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.engines.complete_scraper": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.engines.complete_scraper:F1CompleteEngineManufacturerDataExtractor",
-                "engines/f1_engine_manufacturers_complete.json",
+        "scrapers.engines.complete_scraper": CliCommandSpec(
+            module_path="scrapers.engines.complete_scraper",
+            target=RunAndExportCliTarget(
+                scraper_cls=F1CompleteEngineManufacturerDataExtractor,
+                output_json="engines/f1_engine_manufacturers_complete.json",
             ),
-            RunConfig(output_dir=Path("../../data/wiki")),
-            "complete_extractor",
+            base_config=RunConfig(output_dir=Path("../../data/wiki")),
+            profile="complete_extractor",
         ),
     }
 
 
-def _grands_prix_specs() -> dict[str, LegacyModuleSpec]:
+def _grands_prix_specs() -> dict[str, CliCommandSpec]:
+    grands_prix_report_config = RunConfig(
+        output_dir=Path("../../data/wiki"),
+        include_urls=True,
+    )
     return {
-        "scrapers.grands_prix.list_scraper": LegacyModuleSpec(
-            _lazy_target("scrapers.grands_prix.entrypoint:run_list_scraper"),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+        "scrapers.grands_prix.list_scraper": CliCommandSpec(
+            module_path="scrapers.grands_prix.list_scraper",
+            target=CallableCliTarget(run_grands_prix_list_scraper),
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.grands_prix.complete_scraper": LegacyModuleSpec(
-            _lazy_target("scrapers.grands_prix.entrypoint:run_complete_scraper"),
-            complete_extractor_base_config(),
-            "complete_extractor",
-        ),
-        "scrapers.grands_prix.red_flagged_races_scraper.non_championship": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.grands_prix.red_flagged_races_scraper.non_championship:RedFlaggedNonChampionshipRacesScraper",
-                "grands_prix/f1_red_flagged_non_championship_races.json",
+        "scrapers.grands_prix.complete_scraper": CliCommandSpec(
+            module_path="scrapers.grands_prix.complete_scraper",
+            target=RunAndExportCliTarget(
+                scraper_cls=F1CompleteGrandPrixDataExtractor,
+                output_json="raw/grands_prix/seeds/f1_grands_prix_extended.json",
             ),
-            RunConfig(output_dir=Path("../../data/wiki"), include_urls=True),
-            "deprecated_entrypoint",
+            base_config=complete_extractor_base_config(),
+            profile="complete_extractor",
         ),
-        "scrapers.grands_prix.red_flagged_races_scraper.world_championship": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.grands_prix.red_flagged_races_scraper.world_championship:RedFlaggedWorldChampionshipRacesScraper",
-                "grands_prix/f1_red_flagged_world_championship_races.json",
+        (
+            "scrapers.grands_prix.red_flagged_races_scraper.non_championship"
+        ): CliCommandSpec(
+            module_path="scrapers.grands_prix.red_flagged_races_scraper.non_championship",
+            target=RunAndExportCliTarget(
+                scraper_cls=RedFlaggedNonChampionshipRacesScraper,
+                output_json="grands_prix/f1_red_flagged_non_championship_races.json",
             ),
-            RunConfig(output_dir=Path("../../data/wiki"), include_urls=True),
-            "deprecated_entrypoint",
+            base_config=grands_prix_report_config,
+            profile="deprecated_entrypoint",
+        ),
+        (
+            "scrapers.grands_prix.red_flagged_races_scraper.world_championship"
+        ): CliCommandSpec(
+            module_path="scrapers.grands_prix.red_flagged_races_scraper.world_championship",
+            target=RunAndExportCliTarget(
+                scraper_cls=RedFlaggedWorldChampionshipRacesScraper,
+                output_json="grands_prix/f1_red_flagged_world_championship_races.json",
+            ),
+            base_config=grands_prix_report_config,
+            profile="deprecated_entrypoint",
         ),
     }
 
 
-def _points_specs() -> dict[str, LegacyModuleSpec]:
+def _points_specs() -> dict[str, CliCommandSpec]:
     return {
-        "scrapers.points.sprint_qualifying_points": LegacyModuleSpec(
-            _lazy_target("scrapers.points.sprint_qualifying_points:run_list_scraper"),
-            deprecated_module_base_config(),
-            "list_scraper",
+        "scrapers.points.sprint_qualifying_points": CliCommandSpec(
+            module_path="scrapers.points.sprint_qualifying_points",
+            target=CallableCliTarget(run_sprint_qualifying_points_scraper),
+            base_config=deprecated_module_base_config(),
+            profile="list_scraper",
         ),
-        "scrapers.points.points_scoring_systems_history": LegacyModuleSpec(
-            _lazy_target(
-                "scrapers.points.points_scoring_systems_history:run_list_scraper",
-            ),
-            deprecated_module_base_config(),
-            "list_scraper",
+        "scrapers.points.points_scoring_systems_history": CliCommandSpec(
+            module_path="scrapers.points.points_scoring_systems_history",
+            target=CallableCliTarget(run_points_scoring_systems_history_scraper),
+            base_config=deprecated_module_base_config(),
+            profile="list_scraper",
         ),
-        "scrapers.points.shortened_race_points": LegacyModuleSpec(
-            _lazy_target("scrapers.points.shortened_race_points:run_list_scraper"),
-            deprecated_module_base_config(),
-            "list_scraper",
+        "scrapers.points.shortened_race_points": CliCommandSpec(
+            module_path="scrapers.points.shortened_race_points",
+            target=CallableCliTarget(run_shortened_race_points_scraper),
+            base_config=deprecated_module_base_config(),
+            profile="list_scraper",
         ),
     }
 
 
-def _remaining_specs() -> dict[str, LegacyModuleSpec]:
+def _remaining_specs() -> dict[str, CliCommandSpec]:
     return {
-        "scrapers.seasons.list_scraper": LegacyModuleSpec(
-            _lazy_target("scrapers.seasons.entrypoint:run_list_scraper"),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+        "scrapers.seasons.list_scraper": CliCommandSpec(
+            module_path="scrapers.seasons.list_scraper",
+            target=CallableCliTarget(run_seasons_list_scraper),
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.seasons.complete_scraper": LegacyModuleSpec(
-            _run_export_complete(
-                "scrapers.seasons.helpers:export_complete_seasons",
-                "../../data/wiki/seasons/complete_seasons",
+        "scrapers.seasons.complete_scraper": CliCommandSpec(
+            module_path="scrapers.seasons.complete_scraper",
+            target=CompleteExportCliTarget(
+                export_fn=export_complete_seasons,
+                output_dir=Path("../../data/wiki/seasons/complete_seasons"),
             ),
-            complete_extractor_base_config(),
-            "complete_extractor",
+            base_config=complete_extractor_base_config(),
+            profile="complete_extractor",
         ),
-        "scrapers.sponsorship_liveries.scraper": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.sponsorship_liveries.scraper:SponsorshipAndLiveriesScraper",
-                "f1_sponsorship_and_livery.json",
+        "scrapers.sponsorship_liveries.scraper": CliCommandSpec(
+            module_path="scrapers.sponsorship_liveries.scraper",
+            target=RunAndExportCliTarget(
+                scraper_cls=F1SponsorshipLiveriesScraper,
+                output_json="f1_sponsorship_and_livery.json",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
-        "scrapers.tyres.list_scraper": LegacyModuleSpec(
-            _run_and_export_target(
-                "scrapers.tyres.list_scraper:TyresListScraper",
-                "f1_tyre_manufacturers.json",
+        "scrapers.tyres.list_scraper": CliCommandSpec(
+            module_path="scrapers.tyres.list_scraper",
+            target=RunAndExportCliTarget(
+                scraper_cls=TyreManufacturersBySeasonScraper,
+                output_json="f1_tyre_manufacturers.json",
             ),
-            deprecated_module_base_config(),
-            "deprecated_entrypoint",
+            base_config=deprecated_module_base_config(),
+            profile="deprecated_entrypoint",
         ),
     }
 
 
-def _build_legacy_module_specs() -> dict[str, LegacyModuleSpec]:
-    specs: dict[str, LegacyModuleSpec] = {}
+def _build_legacy_module_specs() -> dict[str, CliCommandSpec]:
+    specs: dict[str, CliCommandSpec] = {}
     specs.update(_circuits_specs())
     specs.update(_constructors_specs())
     specs.update(_drivers_specs())
@@ -317,15 +422,7 @@ def _build_legacy_module_specs() -> dict[str, LegacyModuleSpec]:
     return specs
 
 
-LEGACY_MODULE_SPECS: dict[str, LegacyModuleSpec] = _build_legacy_module_specs()
-
-
-def _invoke_target(target: Callable[..., None], run_config: RunConfig) -> None:
-    signature = inspect.signature(target)
-    if "run_config" in signature.parameters:
-        target(run_config=run_config)
-        return
-    target()
+LEGACY_MODULE_SPECS: dict[str, CliCommandSpec] = _build_legacy_module_specs()
 
 
 def _build_profile_parser(default_profile: CliMainProfile) -> argparse.ArgumentParser:
@@ -367,7 +464,7 @@ def run_legacy_wrapper(module_path: str, argv: list[str] | None = None) -> None:
         DeprecationWarning,
         stacklevel=2,
     )
-    _invoke_target(spec.target, run_config)
+    spec.target.invoke(run_config)
 
 
 def _build_wiki_parser() -> argparse.ArgumentParser:

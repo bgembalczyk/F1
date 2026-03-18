@@ -13,6 +13,12 @@ from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.cli_entrypoint import run_cli_entrypoint
 from scrapers.base.run_config import RunConfig
+from scrapers.cli import LEGACY_MODULE_SPECS
+from scrapers.cli import CallableCliTarget
+from scrapers.cli import CompleteExportCliTarget
+from scrapers.cli import LazyImportCliTarget
+from scrapers.cli import RunAndExportCliTarget
+from scrapers.grands_prix.complete_scraper import F1CompleteGrandPrixDataExtractor
 
 ENTRYPOINT_DEFAULTS = (
     ("scrapers.drivers.list_scraper", True, False),
@@ -161,3 +167,31 @@ def test_build_complete_extractor_main_passes_default_base_config() -> None:
             error_report=False,
         ),
     ]
+
+
+def test_legacy_cli_specs_use_explicit_target_objects() -> None:
+    explicit_target_types = (
+        CallableCliTarget,
+        CompleteExportCliTarget,
+        RunAndExportCliTarget,
+    )
+
+    assert all(
+        isinstance(spec.target, explicit_target_types)
+        for spec in LEGACY_MODULE_SPECS.values()
+    )
+    assert not any(
+        isinstance(spec.target, LazyImportCliTarget)
+        for spec in LEGACY_MODULE_SPECS.values()
+    )
+
+
+def test_grands_prix_complete_scraper_spec_points_to_domain_class_directly() -> None:
+    spec = LEGACY_MODULE_SPECS["scrapers.grands_prix.complete_scraper"]
+
+    assert isinstance(spec.target, RunAndExportCliTarget)
+    assert spec.target.scraper_cls is F1CompleteGrandPrixDataExtractor
+    assert (
+        spec.target.output_json
+        == "raw/grands_prix/seeds/f1_grands_prix_extended.json"
+    )
