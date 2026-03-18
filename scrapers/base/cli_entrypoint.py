@@ -8,25 +8,17 @@ import inspect
 import warnings
 from typing import TYPE_CHECKING
 
-from scrapers.base.constants import LEGACY_PROFILE_ALIASES
-from scrapers.base.constants import PROFILE_DEFAULTS
 from scrapers.base.constants import CliMainProfile
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
+from scrapers.base.run_profiles import get_cli_profile_defaults
+from scrapers.base.run_profiles import resolve_cli_profile
 
 if TYPE_CHECKING:
     from collections.abc import Callable
     from collections.abc import Sequence
 
     from scrapers.base.run_config import RunConfig
-
-
-def _coerce_cli_main_profile(profile: CliMainProfile | str) -> RunProfileName:
-    if isinstance(profile, RunProfileName):
-        return profile
-    if profile in LEGACY_PROFILE_ALIASES:
-        return LEGACY_PROFILE_ALIASES[profile]
-    return RunProfileName(profile)
 
 
 def deprecated_module_base_config() -> RunConfig:
@@ -110,10 +102,10 @@ def build_cli_main(
     deprecation_stacklevel: int = 2,
 ) -> Callable[[], None]:
     """Build reusable ``__main__`` launcher with standardized profile defaults."""
-    normalized_profile = _coerce_cli_main_profile(profile)
-    profile_quality_default, profile_error_default = PROFILE_DEFAULTS[
+    normalized_profile = resolve_cli_profile(profile)
+    profile_quality_default, profile_error_default = get_cli_profile_defaults(
         normalized_profile
-    ]
+    )
     quality_default = (
         profile_quality_default
         if quality_report_default is None

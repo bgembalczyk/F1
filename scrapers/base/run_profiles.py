@@ -38,6 +38,25 @@ class RunPathName(str, Enum):
     DEBUG_DIR = "debug_dir"
 
 
+LegacyCliProfileName = Literal[
+    "list_scraper",
+    "complete_extractor",
+    "deprecated_entrypoint",
+]
+
+RunProfileSelector = (
+    RunProfileName
+    | Literal[
+        "strict",
+        "minimal",
+        "debug",
+        "deprecated",
+    ]
+)
+
+CliProfileSelector = RunProfileSelector | LegacyCliProfileName
+
+
 @dataclass(frozen=True)
 class RunProfileSpec:
     """Explicit, testable run-profile definition."""
@@ -48,6 +67,7 @@ class RunProfileSpec:
     debug_dir: RunPathName | None = None
     quality_report: bool = False
     error_report: bool = False
+    cli_aliases: tuple[LegacyCliProfileName, ...] = ()
 
     def build_config(self, *, paths: RunPathConfig) -> RunConfig:
         from scrapers.base.run_config import RunConfig  # noqa: PLC0415
@@ -69,8 +89,12 @@ RUN_PROFILE_SPECS: dict[RunProfileName, RunProfileSpec] = {
         debug_dir=RunPathName.DEBUG_DIR,
         quality_report=True,
         error_report=False,
+        cli_aliases=("list_scraper",),
     ),
-    RunProfileName.MINIMAL: RunProfileSpec(name=RunProfileName.MINIMAL),
+    RunProfileName.MINIMAL: RunProfileSpec(
+        name=RunProfileName.MINIMAL,
+        cli_aliases=("complete_extractor",),
+    ),
     RunProfileName.DEBUG: RunProfileSpec(
         name=RunProfileName.DEBUG,
         debug_dir=RunPathName.DEBUG_DIR,
@@ -78,24 +102,34 @@ RUN_PROFILE_SPECS: dict[RunProfileName, RunProfileSpec] = {
     RunProfileName.DEPRECATED: RunProfileSpec(
         name=RunProfileName.DEPRECATED,
         debug_dir=RunPathName.DEBUG_DIR,
+        cli_aliases=("deprecated_entrypoint",),
     ),
 }
 
 
-RunProfileSelector = (
-    RunProfileName
-    | Literal[
-        "strict",
-        "minimal",
-        "debug",
-        "deprecated",
-    ]
+LEGACY_CLI_PROFILE_ALIASES: dict[LegacyCliProfileName, RunProfileName] = {
+    alias: spec.name
+    for spec in RUN_PROFILE_SPECS.values()
+    for alias in spec.cli_aliases
+}
+
+LEGACY_CLI_PROFILE_NAMES: tuple[LegacyCliProfileName, ...] = tuple(
+    LEGACY_CLI_PROFILE_ALIASES,
 )
 
 
 def _coerce_profile(profile: RunProfileSelector) -> RunProfileName:
     if isinstance(profile, RunProfileName):
         return profile
+    return RunProfileName(profile)
+
+
+def resolve_cli_profile(profile: CliProfileSelector) -> RunProfileName:
+    """Resolve canonical and legacy CLI profile names to a run profile."""
+    if isinstance(profile, RunProfileName):
+        return profile
+    if profile in LEGACY_CLI_PROFILE_ALIASES:
+        return LEGACY_CLI_PROFILE_ALIASES[profile]
     return RunProfileName(profile)
 
 
@@ -108,6 +142,12 @@ def get_run_profile_spec(profile: RunProfileSelector) -> RunProfileSpec:
 
     msg = f"Unsupported run profile: {normalized_profile!r}"
     raise ValueError(msg)
+
+
+def get_cli_profile_defaults(profile: CliProfileSelector) -> tuple[bool, bool]:
+    """Return default quality/error flags for canonical or legacy CLI profiles."""
+    spec = get_run_profile_spec(resolve_cli_profile(profile))
+    return spec.quality_report, spec.error_report
 
 
 def build_run_profile(

@@ -10,12 +10,14 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Literal
 
 from layers.application import create_default_wiki_pipeline_application
-from scrapers.base.cli_entrypoint import CliMainProfile
 from scrapers.base.cli_entrypoint import build_run_config
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.run_config import RunConfig
+from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
+from scrapers.base.run_profiles import LegacyCliProfileName
+from scrapers.base.run_profiles import get_cli_profile_defaults
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -34,7 +36,7 @@ LegacyTargetFactory = Literal["lazy", "run_and_export", "run_export_complete"]
 class LegacyModuleSpec:
     target: Callable[..., None]
     base_config: RunConfig
-    profile: CliMainProfile
+    profile: LegacyCliProfileName
 
 
 @dataclass(frozen=True)
@@ -383,11 +385,15 @@ def _invoke_target(target: Callable[..., None], run_config: RunConfig) -> None:
     target()
 
 
-def _build_profile_parser(default_profile: CliMainProfile) -> argparse.ArgumentParser:
+def _legacy_profile_choices() -> tuple[LegacyCliProfileName, ...]:
+    return LEGACY_CLI_PROFILE_NAMES
+
+
+def _build_profile_parser(default_profile: LegacyCliProfileName) -> argparse.ArgumentParser:
     profile_parser = argparse.ArgumentParser(add_help=False)
     profile_parser.add_argument(
         "--profile",
-        choices=tuple(_PROFILE_DEFAULTS),
+        choices=_legacy_profile_choices(),
         default=default_profile,
     )
     return profile_parser
@@ -395,12 +401,12 @@ def _build_profile_parser(default_profile: CliMainProfile) -> argparse.ArgumentP
 
 def _parse_legacy_args(
     argv: list[str] | None,
-    default_profile: CliMainProfile,
+    default_profile: LegacyCliProfileName,
 ) -> tuple[argparse.Namespace, argparse.Namespace]:
     profile_parser = _build_profile_parser(default_profile)
     profile_args, remaining = profile_parser.parse_known_args(argv)
 
-    quality_default, error_default = _PROFILE_DEFAULTS[profile_args.profile]
+    quality_default, error_default = get_cli_profile_defaults(profile_args.profile)
     parser = build_standard_parser(
         quality_report_default=quality_default,
         error_report_default=error_default,

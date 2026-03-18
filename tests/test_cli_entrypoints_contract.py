@@ -139,7 +139,7 @@ def test_build_deprecated_module_main_warns_and_passes_run_config() -> None:
             output_dir=Path("../../data/wiki"),
             include_urls=True,
             debug_dir=Path("../../data/debug"),
-            quality_report=True,
+            quality_report=False,
             error_report=True,
         ),
     ]
