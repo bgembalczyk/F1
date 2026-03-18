@@ -7,21 +7,11 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.wiki.component_metadata import ComponentMetadata
 from scrapers.wiki.contants import COMPONENT_METADATA_ATTR
 
 if TYPE_CHECKING:
     from types import ModuleType
-
-
-@dataclass(frozen=True)
-class ComponentMetadata:
-    domain: str
-    seed_name: str
-    layer: str
-    output_category: str
-    component_type: str
-    default_output_path: str | None = None
-    legacy_output_path: str | None = None
 
 
 @dataclass(frozen=True)

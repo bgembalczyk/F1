@@ -10,18 +10,15 @@ from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
 from scrapers.circuits.schemas import build_circuits_schema
 from scrapers.circuits.sections.list_section import CircuitsListSectionParser
 from scrapers.circuits.validator import CircuitsRecordValidator
+from scrapers.wiki.component_metadata import ComponentMetadata
 
 
 class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
-    COMPONENT_METADATA = {
-        "domain": "circuits",
-        "seed_name": "circuits",
-        "layer": "layer_one",
-        "output_category": "circuits",
-        "component_type": "list_scraper",
-        "default_output_path": "raw/circuits/seeds/complete_circuits",
-        "legacy_output_path": "circuits/complete_circuits",
-    }
+    COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
+        domain="circuits",
+        default_output_path="raw/circuits/seeds/complete_circuits",
+        legacy_output_path="circuits/complete_circuits",
+    )
 
     """
     Lista torów F1:

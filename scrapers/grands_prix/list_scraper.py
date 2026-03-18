@@ -11,18 +11,15 @@ from scrapers.base.table.dsl.column import column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
 from scrapers.grands_prix.validator import GrandsPrixRecordValidator
+from scrapers.wiki.component_metadata import ComponentMetadata
 
 
 class GrandsPrixListScraper(F1TableScraper):
-    COMPONENT_METADATA = {
-        "domain": "grands_prix",
-        "seed_name": "grands_prix",
-        "layer": "layer_one",
-        "output_category": "grands_prix",
-        "component_type": "list_scraper",
-        "default_output_path": "raw/grands_prix/seeds/f1_grands_prix_extended.json",
-        "legacy_output_path": "grands_prix/f1_grands_prix_extended.json",
-    }
+    COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
+        domain="grands_prix",
+        default_output_path="raw/grands_prix/seeds/f1_grands_prix_extended.json",
+        legacy_output_path="grands_prix/f1_grands_prix_extended.json",
+    )
 
     """
     Uproszczony scraper np. dla tabeli 'By race title'
