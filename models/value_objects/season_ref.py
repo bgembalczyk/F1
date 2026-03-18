@@ -25,8 +25,8 @@ class SeasonRef(ValueObject):
     @classmethod
     def from_dict(
         cls,
-        data: Mapping[str, Any] | "SeasonRef" | None,
-    ) -> "SeasonRef | None":
+        data: Mapping[str, Any] | SeasonRef | None,
+    ) -> SeasonRef | None:
         if isinstance(data, cls):
             return data
         payload = data or {}

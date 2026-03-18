@@ -28,7 +28,10 @@ def test_driver_infobox_service_returns_empty_without_infobox() -> None:
         options=ScraperOptions(include_urls=True),
     )
     assert (
-        service.extract(_soup("<div>nope</div>"), url="https://example.com").primary_record
+        service.extract(
+            _soup("<div>nope</div>"),
+            url="https://example.com",
+        ).primary_record
         == {}
     )
 
@@ -88,9 +91,13 @@ def test_constructor_component_services_and_assembler() -> None:
 
 def test_circuit_component_services_and_assembler() -> None:
     soup = _soup("<table class='infobox'><caption>Track</caption></table>")
-    infobox = CircuitInfoboxExtractionService(
-        options=ScraperOptions(include_urls=True),
-    ).extract(soup, url="https://example.com/circuit").primary_record
+    infobox = (
+        CircuitInfoboxExtractionService(
+            options=ScraperOptions(include_urls=True),
+        )
+        .extract(soup, url="https://example.com/circuit")
+        .primary_record
+    )
     record = CircuitRecordAssembler().assemble(
         url="u",
         infobox=infobox,

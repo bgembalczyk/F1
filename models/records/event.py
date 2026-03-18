@@ -3,9 +3,9 @@ from typing import TypedDict
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
-from validation.validator_base import RecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 def validate_event_field(record: dict[str, Any]) -> list[ValidationIssue]:

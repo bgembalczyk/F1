@@ -68,7 +68,6 @@ def test_validated_model_calls_validate():
     assert calls == [1]
 
 
-
 def test_validated_model_exposes_shared_record_contract():
     errors = Circuit.validate_record(
         {"circuit": {"text": "Monza", "url": "https://example.com"}},

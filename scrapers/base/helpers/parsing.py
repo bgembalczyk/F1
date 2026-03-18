@@ -9,6 +9,7 @@ from scrapers.base.constants import ANGLE_RE
 from scrapers.base.constants import CONFIG_TYPE_RE
 from scrapers.base.constants import MAX_CYLINDERS_RE
 from scrapers.base.constants import RANGE_RE
+
 if TYPE_CHECKING:
     from scrapers.base.table.columns.context import ColumnContext
 

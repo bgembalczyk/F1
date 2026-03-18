@@ -51,7 +51,6 @@ class LazyScraperClassProxy:
         return f"LazyScraperClassProxy({self._import_path!r})"
 
 
-
 @dataclass(frozen=True)
 class _DomainEntrypointSpec:
     scraper_path: str

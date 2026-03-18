@@ -104,7 +104,7 @@ def build_cli_main(
     """Build reusable ``__main__`` launcher with standardized profile defaults."""
     normalized_profile = resolve_cli_profile(profile)
     profile_quality_default, profile_error_default = get_cli_profile_defaults(
-        normalized_profile
+        normalized_profile,
     )
     quality_default = (
         profile_quality_default

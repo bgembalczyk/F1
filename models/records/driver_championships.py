@@ -3,10 +3,10 @@ from typing import TypedDict
 
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.validator_base import RecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 DRIVERS_CHAMPIONSHIPS_SCHEMA = RecordSchema(
     required=("count", "seasons"),

@@ -22,7 +22,6 @@ class EngineRestriction(ValidatedModel):
     engine_rpm_limit: dict[str, Any] | None = None
     power_output: dict[str, Any] | None = None
 
-
     def validate(self) -> None:
         self.year = normalize_season_list(self.year)
         self.type_of_engine = [

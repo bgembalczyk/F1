@@ -22,7 +22,7 @@ def build_indianapolis_only_list_scraper(
     *,
     class_name: str,
     config: IndianapolisOnlyListConfig,
-) -> type["IndianapolisOnlyListScraper"]:
+) -> type[IndianapolisOnlyListScraper]:
     """Build a configured Indianapolis-only list scraper class.
 
     Domain modules should only provide the source URL and output field names,

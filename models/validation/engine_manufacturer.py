@@ -31,7 +31,6 @@ class EngineManufacturer(ValidatedModel):
     wcc: int | None = None
     wdc: int | None = None
 
-
     def validate(self) -> None:
         # --- manufacturer (Link | dict -> Link) ---
         self.manufacturer = (

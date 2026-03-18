@@ -100,10 +100,13 @@ class CompleteExtractorDomainConfig:
     record_assembly_strategy: RecordAssemblyStrategy = field(
         default_factory=AttachDetailsStrategy,
     )
-    record_assembler: Callable[
-        [dict[str, Any], dict[str, Any] | None],
-        dict[str, Any],
-    ] | None = None
+    record_assembler: (
+        Callable[
+            [dict[str, Any], dict[str, Any] | None],
+            dict[str, Any],
+        ]
+        | None
+    ) = None
     record_postprocessor: Callable[[dict[str, Any]], dict[str, Any]] | None = None
 
     def get_list_scraper_classes(self) -> tuple[type[Any], ...]:

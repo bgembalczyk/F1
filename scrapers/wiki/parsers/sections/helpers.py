@@ -38,7 +38,6 @@ def _split_into_parts(
     return parts
 
 
-
 def _domain_aliases() -> dict[str, dict[str, set[str]]]:
     return {
         "seasons": {

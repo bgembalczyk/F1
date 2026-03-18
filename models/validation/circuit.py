@@ -30,7 +30,6 @@ class Circuit(ValidatedModel):
     seasons: list[SeasonRef | dict[str, Any]] = field(default_factory=list)
     grands_prix_held: int | None = None
 
-
     def validate(self) -> None:
         # --- circuit ---
         self.circuit = (

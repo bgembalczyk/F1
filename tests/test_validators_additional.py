@@ -114,8 +114,7 @@ def test_record_validator_checks_required_and_type_rules():
     messages = [error.message for error in errors]
     assert "Missing key: missing" in messages
     type_messages = [
-        error.message
-        for error in RecordValidator.require_type(record, "count", int)
+        error.message for error in RecordValidator.require_type(record, "count", int)
     ]
     assert "Invalid type for count: expected int, got str" in type_messages
 

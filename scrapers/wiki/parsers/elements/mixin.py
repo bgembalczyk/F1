@@ -10,9 +10,9 @@ from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.elements.navbox import NavBoxParser
 from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
+from scrapers.wiki.parsers.elements.rules import ParserRule
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
-from scrapers.wiki.parsers.elements.rules import ParserRule
 
 
 class WikiElementParserMixin:

@@ -2,9 +2,9 @@ from typing import Any
 
 from models.records.circuit_base import CIRCUIT_BASE_SCHEMA
 from models.records.circuit_base import CircuitBaseRecord
-from validation.validator_base import RecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 class CircuitDetailsRecord(CircuitBaseRecord):

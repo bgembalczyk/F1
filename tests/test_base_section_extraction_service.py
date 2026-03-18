@@ -58,7 +58,7 @@ def test_base_section_extraction_service_returns_normalized_section_payloads() -
     ]
 
 
-def test_base_section_extraction_service_flattens_records_with_section_metadata() -> None:
+def test_base_section_extraction_service_flattens_records_with_section_metadata():
     adapter = _AdapterStub(
         [
             SectionParseResult(

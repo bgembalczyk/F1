@@ -70,7 +70,7 @@ class RunProfileSpec:
     cli_aliases: tuple[LegacyCliProfileName, ...] = ()
 
     def build_config(self, *, paths: RunPathConfig) -> RunConfig:
-        from scrapers.base.run_config import RunConfig  # noqa: PLC0415
+        from scrapers.base.run_config import RunConfig
 
         return RunConfig(
             output_dir=paths.resolve(self.output_dir),

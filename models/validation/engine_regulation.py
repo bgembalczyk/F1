@@ -21,7 +21,6 @@ class EngineRegulation(ValidatedModel):
     fuel_flow_limit: str | None = None
     fuel_composition: dict[str, Any] | None = None
 
-
     def validate(self) -> None:
         self.seasons = normalize_season_list(self.seasons)
         self.operating_principle = normalize_text(self.operating_principle)

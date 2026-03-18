@@ -6,8 +6,8 @@ from scrapers.wiki.parsers.base import WikiParser
 from scrapers.wiki.parsers.constants import HEADING_CLASS
 from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
 from scrapers.wiki.parsers.section_detection import make_stable_section_id
-from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.helpers import _split_into_parts
+from scrapers.wiki.parsers.sections.section import SectionParser
 
 
 class ContentTextParser(WikiParser):

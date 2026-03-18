@@ -7,7 +7,6 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-
 def _team_text(record: dict[str, object]) -> str:
     team = record.get("team")
     if isinstance(team, dict):
@@ -490,9 +489,7 @@ def _driver_record_by_url(
     drivers_merged: list[dict[str, object]],
     driver_url: str,
 ) -> dict[str, object]:
-    return next(
-        item for item in drivers_merged if item["driver"]["url"] == driver_url
-    )
+    return next(item for item in drivers_merged if item["driver"]["url"] == driver_url)
 
 
 def _team_record_by_name(

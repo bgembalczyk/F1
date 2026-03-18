@@ -1,5 +1,7 @@
 from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListConfig
-from scrapers.base.list.indianapolis_only_scraper import build_indianapolis_only_list_scraper
+from scrapers.base.list.indianapolis_only_scraper import (
+    build_indianapolis_only_list_scraper,
+)
 
 CONFIG = IndianapolisOnlyListConfig(
     url="https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers",

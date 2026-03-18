@@ -3,8 +3,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from scrapers.wiki.application import WikiPipelineApplication
-
+from layers.pipeline import WikiPipelineApplication
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.domain_entrypoint import minimal_debug_profile

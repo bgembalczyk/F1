@@ -7,10 +7,10 @@ from models.records.event import EVENT_SCHEMA
 from models.records.event import EventRecord
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
-from validation.validator_base import RecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 class FatalityRecord(TypedDict, total=False):

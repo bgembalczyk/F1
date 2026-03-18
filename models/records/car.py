@@ -2,9 +2,9 @@ from typing import Any
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
-from validation.validator_base import RecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 class CarRecord(LinkRecord, total=False):

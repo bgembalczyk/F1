@@ -7,13 +7,15 @@ import inspect
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING
+from typing import Literal
 
 from layers.application import create_default_wiki_pipeline_application
 from scrapers.base.cli_entrypoint import build_run_config
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
+from scrapers.base.constants import CliMainProfile
 from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
 from scrapers.base.run_profiles import LegacyCliProfileName
@@ -359,7 +361,7 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
             module_path="scrapers.sponsorship_liveries.scraper",
             factory="run_and_export",
             target_path=(
-                "scrapers.sponsorship_liveries.scraper:" "SponsorshipAndLiveriesScraper"
+                "scrapers.sponsorship_liveries.scraper:SponsorshipAndLiveriesScraper"
             ),
             profile="deprecated_entrypoint",
             output_json="f1_sponsorship_and_livery.json",
@@ -389,7 +391,9 @@ def _legacy_profile_choices() -> tuple[LegacyCliProfileName, ...]:
     return LEGACY_CLI_PROFILE_NAMES
 
 
-def _build_profile_parser(default_profile: LegacyCliProfileName) -> argparse.ArgumentParser:
+def _build_profile_parser(
+    default_profile: LegacyCliProfileName,
+) -> argparse.ArgumentParser:
     profile_parser = argparse.ArgumentParser(add_help=False)
     profile_parser.add_argument(
         "--profile",

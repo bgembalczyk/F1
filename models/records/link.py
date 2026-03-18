@@ -1,9 +1,9 @@
 from typing import Any
 from typing import TypedDict
 
-from validation.validator_base import RecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 def validate_link_text(record: dict[str, Any]) -> list[ValidationIssue]:
