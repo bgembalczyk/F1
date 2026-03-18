@@ -1,8 +1,6 @@
-from typing import Any
-
 from complete_extractor.base import CompleteExtractorBase
+from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
-from scrapers.base.options import ScraperOptions
 from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
 )
@@ -16,45 +14,40 @@ from scrapers.constructors.single_scraper import SingleConstructorScraper
 
 class CompleteConstructorsDataExtractor(CompleteExtractorBase):
     """
-    Uruchamia cztery list scrapery konstruktorów, a następnie dla każdego
+    Uruchamia komplet list scraperów konstruktorów, a następnie dla każdego
     elementu pobiera szczegóły (infoboksy + tabele) za pomocą
     SingleConstructorScraper.
     """
 
     url = CurrentConstructorsListScraper.CONFIG.url
+    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
+        list_scraper_clses=(
+            CurrentConstructorsListScraper,
+            FormerConstructorsListScraper,
+            IndianapolisOnlyConstructorsListScraper,
+            PrivateerTeamsListScraper,
+        ),
+        single_scraper_cls=SingleConstructorScraper,
+        detail_url_field_paths=("constructor.url", "constructor_url", "team_url"),
+        filter_redlinks=True,
+    )
 
-    def build_list_scraper(self, _options: ScraperOptions) -> Any:
-        msg = "CompleteConstructorsDataExtractor używa build_list_scrapers()."
-        raise NotImplementedError(msg)
-
-    def build_list_scrapers(self, options: ScraperOptions) -> list[Any]:
-        list_options = self.list_scraper_options(options)
-        return [
-            CurrentConstructorsListScraper(options=list_options),
-            FormerConstructorsListScraper(options=list_options),
-            IndianapolisOnlyConstructorsListScraper(options=list_options),
-            PrivateerTeamsListScraper(options=list_options),
-        ]
-
-    def build_single_scraper(self, options: ScraperOptions) -> SingleConstructorScraper:
-        return SingleConstructorScraper(options=self.single_scraper_options(options))
-
-    def extract_detail_url(self, record: dict[str, Any]) -> str | None:
-        constructor = record.get("constructor")
-        if isinstance(constructor, dict):
-            url = constructor.get("url")
-            if isinstance(url, str) and url and not is_wikipedia_redlink(url):
-                return url
-
-        url = record.get("constructor_url")
-        if isinstance(url, str) and url and not is_wikipedia_redlink(url):
-            return url
-
-        url = record.get("team_url")
-        if isinstance(url, str) and url and not is_wikipedia_redlink(url):
-            return url
-
+    @staticmethod
+    def _get_constructor_url(record: dict[str, object]) -> str | None:
+        config = CompleteConstructorsDataExtractor.DOMAIN_CONFIG
+        for field_path in config.get_detail_url_field_paths():
+            value = CompleteConstructorsDataExtractor._get_value_by_path(
+                record,
+                field_path,
+            )
+            if isinstance(value, str) and value:
+                if config.filter_redlinks and is_wikipedia_redlink(value):
+                    continue
+                return value
         return None
+
+    def get_detail_url(self, record: dict[str, object]) -> str | None:
+        return self._get_constructor_url(record)
 
 
 if __name__ == "__main__":
