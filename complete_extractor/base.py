@@ -111,72 +111,16 @@ class CompleteExtractorBase(CompositeDataExtractor):
         record: dict[str, Any],
         details: dict[str, Any] | None,
     ) -> dict[str, Any]:
-        assembled = self._assemble_record_by_strategy(record, details)
+        assembled = self.DOMAIN_CONFIG.record_assembly_strategy.assemble(
+            record,
+            details,
+        )
 
         postprocessor = self.DOMAIN_CONFIG.record_postprocessor
         if postprocessor is not None:
             return postprocessor(assembled)
 
         return assembled
-
-    def _assemble_record_by_strategy(
-        self,
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-    ) -> dict[str, Any]:
-        strategy = self.DOMAIN_CONFIG.assemble_record_strategy
-        params = self.DOMAIN_CONFIG.assemble_record_params or {}
-        handlers = {
-            "attach_details": self._assemble_attach_details,
-            "extract_detail_field": self._assemble_extract_detail_field,
-            "bundle": self._assemble_bundle,
-        }
-        handler = handlers.get(strategy)
-        if handler is not None:
-            return handler(record, details, params)
-
-        msg = f"Nieznana strategia składania rekordu: {strategy}"
-        raise ValueError(msg)
-
-    @staticmethod
-    def _assemble_attach_details(
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-        params: dict[str, Any],
-    ) -> dict[str, Any]:
-        details_key = params.get("details_key", "details")
-        assembled = dict(record)
-        assembled[details_key] = details
-        return assembled
-
-    @staticmethod
-    def _assemble_extract_detail_field(
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-        params: dict[str, Any],
-    ) -> dict[str, Any]:
-        detail_field = params["detail_field"]
-        target_key = params.get("target_key", detail_field)
-        assembled = dict(record)
-        assembled[target_key] = (
-            details.get(detail_field) if isinstance(details, dict) else None
-        )
-        return assembled
-
-    @staticmethod
-    def _assemble_bundle(
-        record: dict[str, Any],
-        details: dict[str, Any] | None,
-        params: dict[str, Any],
-    ) -> dict[str, Any]:
-        record_field = params["record_field"]
-        details_key = params.get("details_key", "details")
-        record_value = record.get(record_field)
-        details_default = params.get("details_default", {})
-        return {
-            record_field: record_value if isinstance(record_value, dict) else {},
-            details_key: details if details is not None else details_default,
-        }
 
     def _get_value_by_path(self, source: dict[str, Any], field_path: str) -> Any:
         current: Any = source
