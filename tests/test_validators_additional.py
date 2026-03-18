@@ -2,8 +2,8 @@ from dataclasses import dataclass
 
 import pytest
 
-from models.validation.core import validate_float
-from models.validation.core import validate_int
+from models.validation.helpers import validate_float
+from models.validation.helpers import validate_int
 from models.validation.validators import model_to_dict
 from models.validation.validators import normalize_link_list
 from models.validation.validators import normalize_season_list
@@ -12,7 +12,6 @@ from models.validation.validators import validate_links
 from models.validation.validators import validate_seasons
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
-from validation.domain_validator import BaseDomainRecordValidator
 from validation.issue import ValidationIssue
 from validation.validator_base import RecordValidator
 
@@ -104,10 +103,10 @@ def test_normalize_season_list_filters_none_entries():
     assert seasons == [SeasonRef(year=2020), SeasonRef(year=2021)]
 
 
-def test_base_domain_validator_checks_required_and_type_rules():
+def test_record_validator_checks_required_and_type_rules():
     record = {"name": "Example", "count": "invalid"}
 
-    errors = BaseDomainRecordValidator.require_keys(
+    errors = RecordValidator.require_keys(
         record,
         ["name", "count", "missing"],
     )
@@ -116,13 +115,13 @@ def test_base_domain_validator_checks_required_and_type_rules():
     assert "Missing key: missing" in messages
     type_messages = [
         error.message
-        for error in BaseDomainRecordValidator.require_type(record, "count", int)
+        for error in RecordValidator.require_type(record, "count", int)
     ]
     assert "Invalid type for count: expected int, got str" in type_messages
 
 
-def test_base_domain_validator_link_helpers_report_invalid_entries():
-    errors = BaseDomainRecordValidator.require_link_dict(
+def test_record_validator_link_helpers_report_invalid_entries():
+    errors = RecordValidator.require_link_dict(
         {"text": " ", "url": 123},
         "link",
     )
@@ -130,7 +129,7 @@ def test_base_domain_validator_link_helpers_report_invalid_entries():
     assert "link.text must be a non-empty string" in messages
     assert "link.url must be a string or None" in messages
 
-    list_errors = BaseDomainRecordValidator.require_link_list(
+    list_errors = RecordValidator.require_link_list(
         [{"text": "Ok", "url": None}, "bad"],
         "links",
     )

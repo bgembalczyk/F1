@@ -1,30 +1,9 @@
-from validation.domain_validator import BaseDomainRecordValidator
+from models.records.grand_prix import GRANDS_PRIX_SCHEMA
 from validation.issue import ValidationIssue
 from validation.validator_base import ExportRecord
+from validation.validator_base import RecordValidator
 
 
-class GrandsPrixRecordValidator(BaseDomainRecordValidator):
+class GrandsPrixRecordValidator(RecordValidator):
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
-        errors: list[ValidationIssue] = []
-        errors.extend(
-            self.require_keys(
-                record,
-                ["race_title", "race_status", "years_held", "country", "total"],
-            ),
-        )
-        errors.extend(self.require_type(record, "race_title", dict))
-        errors.extend(self.require_type(record, "race_status", str))
-        errors.extend(self.require_type(record, "years_held", list))
-        errors.extend(self.require_type(record, "country", list))
-        errors.extend(self.require_type(record, "total", int, allow_none=True))
-        errors.extend(self.require_type(record, "circuits", int, allow_none=True))
-
-        race_title = record.get("race_title")
-        if isinstance(race_title, dict):
-            errors.extend(self.require_link_dict(race_title, "race_title"))
-
-        country = record.get("country")
-        if isinstance(country, list):
-            errors.extend(self.require_link_list(country, "country"))
-
-        return errors
+        return self.validate_schema(record, GRANDS_PRIX_SCHEMA)

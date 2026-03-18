@@ -1,10 +1,14 @@
 from typing import Any
 from typing import TypedDict
 
+from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
+from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.domain_validator import BaseDomainRecordValidator
 from validation.issue import ValidationIssue
+from validation.schemas import NestedSchema
+from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 class SpecialDriverRecord(TypedDict, total=False):
@@ -16,27 +20,23 @@ class SpecialDriverRecord(TypedDict, total=False):
     points: float | dict[str, float] | None
 
 
+SPECIAL_DRIVER_SCHEMA = RecordSchema(
+    required=("driver", "seasons", "teams"),
+    types={
+        "driver": dict,
+        "seasons": list,
+        "teams": list,
+        "entries": int,
+        "starts": int,
+    },
+    allow_none=("entries", "starts"),
+    nested={
+        "driver": NestedSchema(LINK_SCHEMA),
+        "seasons": NestedSchema(SEASON_SCHEMA, is_list=True),
+        "teams": NestedSchema(LINK_SCHEMA, is_list=True),
+    },
+)
+
+
 def validate_special_driver_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    errors: list[ValidationIssue] = []
-    errors.extend(
-        BaseDomainRecordValidator.require_keys(record, ["driver", "seasons", "teams"]),
-    )
-    errors.extend(BaseDomainRecordValidator.require_type(record, "driver", dict))
-    errors.extend(BaseDomainRecordValidator.require_type(record, "seasons", list))
-    errors.extend(BaseDomainRecordValidator.require_type(record, "teams", list))
-    errors.extend(
-        BaseDomainRecordValidator.require_type(record, "entries", int, allow_none=True),
-    )
-    errors.extend(
-        BaseDomainRecordValidator.require_type(record, "starts", int, allow_none=True),
-    )
-
-    driver = record.get("driver")
-    if isinstance(driver, dict):
-        errors.extend(BaseDomainRecordValidator.require_link_dict(driver, "driver"))
-
-    teams = record.get("teams")
-    if isinstance(teams, list):
-        errors.extend(BaseDomainRecordValidator.require_link_list(teams, "teams"))
-
-    return errors
+    return RecordValidator.validate_schema(record, SPECIAL_DRIVER_SCHEMA)

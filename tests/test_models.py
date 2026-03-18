@@ -68,6 +68,25 @@ def test_validated_model_calls_validate():
     assert calls == [1]
 
 
+
+def test_validated_model_exposes_shared_record_contract():
+    errors = Circuit.validate_record(
+        {"circuit": {"text": "Monza", "url": "https://example.com"}},
+    )
+
+    messages = [error.message for error in errors]
+    assert "Missing key: circuit_status" in messages
+    assert "Missing key: country" in messages
+    assert "Missing key: seasons" in messages
+
+
+def test_validated_model_model_validate_uses_schema_before_instantiation():
+    with pytest.raises(ValueError, match="Circuit validation failed"):
+        Circuit.model_validate(
+            {"circuit": {"text": "Monza", "url": "https://example.com"}},
+        )
+
+
 def test_scraper_config_validates_on_init():
     with pytest.raises(
         ValueError,

@@ -1,29 +1,9 @@
-from validation.domain_validator import BaseDomainRecordValidator
+from models.records.circuit import CIRCUIT_SCHEMA
 from validation.issue import ValidationIssue
 from validation.validator_base import ExportRecord
+from validation.validator_base import RecordValidator
 
 
-class CircuitsRecordValidator(BaseDomainRecordValidator):
+class CircuitsRecordValidator(RecordValidator):
     def validate(self, record: ExportRecord) -> list[ValidationIssue]:
-        errors: list[ValidationIssue] = []
-        errors.extend(
-            self.require_keys(
-                record,
-                ["circuit", "circuit_status", "country", "seasons"],
-            ),
-        )
-        errors.extend(self.require_type(record, "circuit", dict))
-        errors.extend(self.require_type(record, "circuit_status", str))
-        errors.extend(self.require_type(record, "country", (str, dict)))
-        errors.extend(self.require_type(record, "seasons", list))
-        errors.extend(self.require_type(record, "grands_prix", list, allow_none=True))
-
-        circuit = record.get("circuit")
-        if isinstance(circuit, dict):
-            errors.extend(self.require_link_dict(circuit, "circuit"))
-
-        grands_prix = record.get("grands_prix")
-        if isinstance(grands_prix, list):
-            errors.extend(self.require_link_list(grands_prix, "grands_prix"))
-
-        return errors
+        return self.validate_schema(record, CIRCUIT_SCHEMA)
