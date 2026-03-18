@@ -6,7 +6,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.extractors.table import TableExtractor
-from scrapers.base.helpers.config_factory import build_table_scraper_options
+from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -48,12 +48,12 @@ class F1TableScraper(WikiScraper, ABC):
             if self.options_profile is None:
                 options = ScraperOptions()
             else:
-                options = build_table_scraper_options(
+                options = build_scraper_options(
                     domain=self.options_domain,
                     profile=self.options_profile,
                 )
         elif self.options_profile is not None:
-            options = build_table_scraper_options(
+            options = build_scraper_options(
                 domain=self.options_domain,
                 profile=self.options_profile,
                 options=options,
