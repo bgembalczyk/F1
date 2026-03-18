@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.seasons.entrypoint.run_list_scraper."""
 
-from models.records.factories.build import build_season_summary_record
+from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.columns.types.int import IntColumn
@@ -48,7 +48,7 @@ class SeasonsListScraper(F1TableScraper):
             "Races",
         ],
         columns=schema_columns,
-        record_factory=build_season_summary_record,
+        record_factory=RECORD_BUILDERS.season_summary,
     )
 
 

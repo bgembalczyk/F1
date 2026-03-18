@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
 
-from models.records.factories.build import build_driver_record
+from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
@@ -102,7 +102,7 @@ class F1DriversListScraper(F1TableScraper):
         section_id="Drivers",
         expected_headers=DRIVERS_LIST_HEADERS,
         columns=schema_columns,
-        record_factory=build_driver_record,
+        record_factory=RECORD_BUILDERS.driver,
     )
 
     def __init__(

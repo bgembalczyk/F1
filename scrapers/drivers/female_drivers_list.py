@@ -1,4 +1,4 @@
-from models.records.factories.build import build_special_driver_record
+from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.points import PointsColumn
@@ -45,7 +45,7 @@ class FemaleDriversListScraper(F1TableScraper):
         section_id=FEMALE_DRIVERS_SECTION_ID,
         expected_headers=FEMALE_DRIVERS_HEADERS,
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=build_special_driver_record,
+        record_factory=RECORD_BUILDERS.special_driver,
     )
 
     def __init__(

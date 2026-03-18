@@ -1,4 +1,4 @@
-from models.records.factories.build import build_engine_manufacturer_record
+from models.records.factories.build import RECORD_BUILDERS
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
@@ -38,7 +38,7 @@ class EngineManufacturersListScraper(F1TableScraper):
             "Wins",
             "Points",
         ],
-        record_factory=build_engine_manufacturer_record,
+        record_factory=RECORD_BUILDERS.engine_manufacturer,
         model_class=EngineManufacturer,
         columns=schema_columns,
     )
