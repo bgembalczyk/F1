@@ -3,11 +3,12 @@ from dataclasses import field
 from typing import Any
 
 from models.domain_utils.normalization import normalize_link_items
+from models.records.circuit import CIRCUIT_SCHEMA
 from models.validation.base import ValidatedModel
 from models.validation.constants import ALLOWED_CIRCUIT_STATUSES
-from models.validation.core import validate_float
-from models.validation.core import validate_int
-from models.validation.core import validate_status
+from models.validation.helpers import validate_float
+from models.validation.helpers import validate_int
+from models.validation.helpers import validate_status
 from models.validation.validators import normalize_season_list
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
@@ -15,6 +16,7 @@ from models.value_objects.season_ref import SeasonRef
 
 @dataclass
 class Circuit(ValidatedModel):
+    __schema__ = CIRCUIT_SCHEMA
     circuit: Link | dict[str, Any]
     circuit_status: str
     type: str | None = None
@@ -28,9 +30,6 @@ class Circuit(ValidatedModel):
     seasons: list[SeasonRef | dict[str, Any]] = field(default_factory=list)
     grands_prix_held: int | None = None
 
-    def __post_init__(self) -> None:
-        # Ten hook gwarantuje walidację.
-        self.validate()
 
     def validate(self) -> None:
         # --- circuit ---

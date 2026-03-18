@@ -5,10 +5,10 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
 
-from validation.domain_validator import BaseDomainRecordValidator
 from validation.issue import ValidationIssue
 from validation.schemas import NestedSchema
 from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 @dataclass(frozen=True)
@@ -42,6 +42,6 @@ def build_validator(
     schema = definition.to_schema()
 
     def validate_record(record: dict[str, Any]) -> list[ValidationIssue]:
-        return BaseDomainRecordValidator.validate_schema(record, schema)
+        return RecordValidator.validate_schema(record, schema)
 
     return validate_record

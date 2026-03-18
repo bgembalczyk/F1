@@ -3,11 +3,12 @@ from dataclasses import field
 from typing import Any
 
 from models.domain_utils.normalization import normalize_link_items
+from models.records.engine_manufacturer import ENGINE_MANUFACTURER_SCHEMA
 from models.validation.base import ValidatedModel
 from models.validation.constants import ALLOWED_MANUFACTURER_STATUSES
-from models.validation.core import validate_float
-from models.validation.core import validate_int
-from models.validation.core import validate_status
+from models.validation.helpers import validate_float
+from models.validation.helpers import validate_int
+from models.validation.helpers import validate_status
 from models.validation.validators import normalize_season_list
 from models.value_objects.link import Link
 from models.value_objects.season_ref import SeasonRef
@@ -15,6 +16,7 @@ from models.value_objects.season_ref import SeasonRef
 
 @dataclass
 class EngineManufacturer(ValidatedModel):
+    __schema__ = ENGINE_MANUFACTURER_SCHEMA
     manufacturer: Link | dict[str, Any]
     manufacturer_status: str
     engines_built_in: list[Link | dict[str, Any]] = field(default_factory=list)
@@ -29,9 +31,6 @@ class EngineManufacturer(ValidatedModel):
     wcc: int | None = None
     wdc: int | None = None
 
-    def __post_init__(self) -> None:
-        # Jeśli ValidatedModel nie odpala walidacji sam, ten hook to wymusza
-        self.validate()
 
     def validate(self) -> None:
         # --- manufacturer (Link | dict -> Link) ---

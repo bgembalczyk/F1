@@ -1,15 +1,20 @@
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
 from typing import Any
 from typing import cast
 
 from models.domain_utils.normalization import normalize_link_item
 from models.domain_utils.normalization import normalize_link_items
 from models.domain_utils.normalization import normalize_season_items
-from models.records.link import LinkRecord
-from models.records.season import SeasonRecord
-from models.validation.core import validate_float
-from models.validation.core import validate_int
-from models.validation.core import validate_status
-from models.value_objects.season_ref import SeasonRef
+from models.validation.helpers import validate_float
+from models.validation.helpers import validate_int
+from models.validation.helpers import validate_status
+
+if TYPE_CHECKING:
+    from models.records.link import LinkRecord
+    from models.records.season import SeasonRecord
+    from models.value_objects.season_ref import SeasonRef
 
 
 class FieldNormalizer:
