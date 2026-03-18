@@ -230,7 +230,7 @@ class ABCScraper(ABC):
     ) -> None:
         self._write_step_quality_report(step_name=step_name, records=records)
 
-    def _handle_fetch_error(self, exc: Exception, error: Exception):
+    def _handle_fetch_error(self, exc: Exception, error: ScraperError):
         if self._handle_scraper_error(error):
             return
         if error is exc:
@@ -407,7 +407,7 @@ class ABCScraper(ABC):
     def _wrap_parse_error(self, exc: Exception) -> ScraperParseError:
         return self._error_handler.wrap_parse(exc, url=getattr(self, "url", None))
 
-    def _handle_scraper_error(self, error: Exception) -> bool:
+    def _handle_scraper_error(self, error: ScraperError) -> bool:
         return self._error_handler.handle(error)
 
     # ---------- Wspólne narzędzie do error handling ----------
@@ -452,12 +452,12 @@ class ABCScraper(ABC):
                 error=self._parse_stage_error(exc),
             )
 
-    def _network_stage_error(self, exc: Exception) -> Exception:
+    def _network_stage_error(self, exc: Exception) -> ScraperError:
         if isinstance(exc, ScraperError):
             return exc
         return self._wrap_network_error(exc)
 
-    def _parse_stage_error(self, exc: Exception) -> Exception:
+    def _parse_stage_error(self, exc: Exception) -> ScraperError:
         if isinstance(exc, ScraperError):
             return exc
         return self._wrap_parse_error(exc)
@@ -468,7 +468,7 @@ class ABCScraper(ABC):
         stage: str,
         url: str,
         exc: Exception,
-        error: Exception,
+        error: ScraperError,
     ) -> None:
         self._log_error_debug(stage, url, error)
         if self._handle_scraper_error(error):
@@ -477,7 +477,7 @@ class ABCScraper(ABC):
             raise exc
         raise error from exc
 
-    def _log_error_debug(self, stage: str, url: str, error: Exception) -> None:
+    def _log_error_debug(self, stage: str, url: str, error: ScraperError) -> None:
         self.logger.debug(
             "Scraper error in %s stage for url=%s (type=%s): %s",
             stage,
