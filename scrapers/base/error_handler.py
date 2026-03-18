@@ -2,6 +2,7 @@ import logging
 from pathlib import Path
 
 from scrapers.base.errors import DomainParseError
+from scrapers.base.errors import ScraperError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.errors_report import ErrorReport
@@ -47,24 +48,22 @@ class ErrorHandler:
             cause=exc,
         )
 
-    def handle(self, error: Exception) -> bool:
+    def handle(self, error: ScraperError) -> bool:
         """
         Zwraca True jeśli błąd został obsłużony (soft-skip),
         False jeśli powinien być propagowany.
         """
         self._write_report(error)
-        if isinstance(error, DomainParseError):
-            self._logger.warning("Pomijam dane domenowe ze względu na błąd: %s", error)
-            return True
-
-        critical = bool(getattr(error, "critical", False))
-        if critical:
+        if error.critical:
             return False
 
-        self._logger.warning("Pomijam dane ze względu na błąd: %s", error)
+        message = "Pomijam dane ze względu na błąd: %s"
+        if isinstance(error, DomainParseError):
+            message = "Pomijam dane domenowe ze względu na błąd: %s"
+        self._logger.warning(message, error)
         return True
 
-    def _write_report(self, error: Exception) -> None:
+    def _write_report(self, error: ScraperError) -> None:
         if not self._error_report_enabled or self._debug_dir is None:
             return
         report = ErrorReport.from_exception(error, run_id=self._run_id)

@@ -5,6 +5,8 @@ from datetime import datetime
 from datetime import timezone
 from pathlib import Path
 
+from scrapers.base.errors import ScraperError
+
 
 @dataclass(frozen=True)
 class ErrorReport:
@@ -25,10 +27,14 @@ class ErrorReport:
         run_id: str | None = None,
     ) -> "ErrorReport":
         timestamp = datetime.now(timezone.utc).isoformat()
-        url = getattr(error, "url", None)
-        critical_attr = getattr(error, "critical", None)
-        critical = critical_attr if isinstance(critical_attr, bool) else None
-        cause = getattr(error, "cause", None)
+        if isinstance(error, ScraperError):
+            url = error.url
+            critical = error.critical
+            cause = error.cause
+        else:
+            url = None
+            critical = None
+            cause = None
         return cls(
             timestamp=timestamp,
             error_type=type(error).__name__,
