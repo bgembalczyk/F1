@@ -1,12 +1,12 @@
 """DEPRECATED ENTRYPOINT: use scrapers.seasons.entrypoint.run_list_scraper."""
 
 from models.records.factories.build import build_season_summary_record
+from scrapers.base.table.builders import build_columns
+from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 
 
@@ -27,7 +27,7 @@ class SeasonsListScraper(F1TableScraper):
     (główna tabela World Championship seasons)
     """
 
-    schema_columns = [
+    schema_columns = build_columns(
         column("Season", "season", UrlColumn()),
         column("Races", "races", IntColumn()),
         column("Countries", "countries", IntColumn()),
@@ -36,9 +36,9 @@ class SeasonsListScraper(F1TableScraper):
         column("Drivers' Champion (team)", "drivers_champion_team", LinksListColumn()),
         column("Constructors' Champion", "constructors_champion", LinksListColumn()),
         column("Winners", "winners", IntColumn()),
-    ]
+    )
 
-    CONFIG = ScraperConfig(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_seasons",
         # jeśli id sekcji się kiedyś zmieni - poprawiasz tylko to
         section_id="Seasons",
@@ -47,7 +47,7 @@ class SeasonsListScraper(F1TableScraper):
             "Season",
             "Races",
         ],
-        schema=TableSchemaDSL(columns=schema_columns),
+        columns=schema_columns,
         record_factory=build_season_summary_record,
     )
 

@@ -2,12 +2,13 @@
 
 from models.records.factories.build import build_driver_record
 from scrapers.base.options import ScraperOptions
-from scrapers.base.table.columns.types.int import IntColumn
+from scrapers.base.table.builders import build_columns
+from scrapers.base.table.builders import build_metric_columns
+from scrapers.base.table.builders import build_scraper_config
+from scrapers.base.table.builders import metric_column
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
@@ -53,33 +54,54 @@ class F1DriversListScraper(F1TableScraper):
     options_domain = "drivers"
     options_profile = "strict_seed"
 
-    CONFIG = ScraperConfig(
+    schema_columns = build_columns(
+        column(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn()),
+        column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn()),
+        column(
+            DRIVER_SEASONS_COMPETED_HEADER,
+            "seasons_competed",
+            SeasonsColumn(),
+        ),
+        column(
+            DRIVER_CHAMPIONSHIPS_HEADER,
+            "drivers_championships",
+            TextColumn(),  # zparsujemy ręcznie w fetch()
+        ),
+        build_metric_columns(
+            [
+                metric_column(
+                    DRIVER_RACE_ENTRIES_HEADER,
+                    "race_entries",
+                    "races_entered",
+                ),
+                metric_column(
+                    DRIVER_RACE_STARTS_HEADER,
+                    "race_starts",
+                    "races_started",
+                ),
+                metric_column(
+                    DRIVER_POLE_POSITIONS_HEADER,
+                    "pole_positions",
+                    "poles",
+                ),
+                metric_column(DRIVER_RACE_WINS_HEADER, "race_wins", "wins"),
+                metric_column(DRIVER_PODIUMS_HEADER, "podiums", "podiums"),
+                metric_column(
+                    DRIVER_FASTEST_LAPS_HEADER,
+                    "fastest_laps",
+                    "fastest_laps",
+                ),
+                metric_column(DRIVER_POINTS_HEADER, "points", "points"),
+            ],
+            column_overrides={"points": TextColumn()},
+        ),
+    )
+
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
         section_id="Drivers",
         expected_headers=DRIVERS_LIST_HEADERS,
-        schema=TableSchemaDSL(
-            columns=[
-                column(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn()),
-                column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn()),
-                column(
-                    DRIVER_SEASONS_COMPETED_HEADER,
-                    "seasons_competed",
-                    SeasonsColumn(),
-                ),
-                column(
-                    DRIVER_CHAMPIONSHIPS_HEADER,
-                    "drivers_championships",
-                    TextColumn(),  # zparsujemy ręcznie w fetch()
-                ),
-                column(DRIVER_RACE_ENTRIES_HEADER, "race_entries", IntColumn()),
-                column(DRIVER_RACE_STARTS_HEADER, "race_starts", IntColumn()),
-                column(DRIVER_POLE_POSITIONS_HEADER, "pole_positions", IntColumn()),
-                column(DRIVER_RACE_WINS_HEADER, "race_wins", IntColumn()),
-                column(DRIVER_PODIUMS_HEADER, "podiums", IntColumn()),
-                column(DRIVER_FASTEST_LAPS_HEADER, "fastest_laps", IntColumn()),
-                column(DRIVER_POINTS_HEADER, "points", TextColumn()),
-            ],
-        ),
+        columns=schema_columns,
         record_factory=build_driver_record,
     )
 
@@ -87,7 +109,7 @@ class F1DriversListScraper(F1TableScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+        config=None,
     ) -> None:
         super().__init__(options=options, config=config)
 

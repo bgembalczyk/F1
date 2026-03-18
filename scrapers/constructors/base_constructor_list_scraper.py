@@ -2,11 +2,11 @@
 
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
 from scrapers.base.options import ScraperOptions
+from scrapers.base.table.builders import build_base_stats_columns
+from scrapers.base.table.builders import build_columns
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.constants import BASE_STATS_COLUMNS
-from scrapers.base.table.constants import BASE_STATS_MAP
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
@@ -34,36 +34,21 @@ class BaseConstructorListScraper(DeclarativeSectionTableParseMixin, F1TableScrap
 
     @staticmethod
     def build_common_stats_columns():
-        """
-        Build common statistics columns used across constructor list tables.
-
-        Returns list of column definitions for standard statistics fields
-        like seasons, races, wins, points, etc.
-        """
-        return [
-            column(
-                header,
-                {"wcc": "wcc_titles", "wdc": "wdc_titles"}.get(key, key),
-                BASE_STATS_COLUMNS[key],
-            )
-            for header, key in BASE_STATS_MAP.items()
-        ]
+        """Build common constructor statistics columns."""
+        return build_base_stats_columns(
+            key_aliases={"wcc": "wcc_titles", "wdc": "wdc_titles"},
+        )
 
     @staticmethod
     def build_common_metadata_columns():
-        """
-        Build common metadata columns used across constructor list tables.
-
-        Returns list of column definitions for metadata fields like
-        constructor name, drivers count, total entries, and championship titles.
-        """
-        return [
+        """Build common constructor metadata columns."""
+        return build_columns(
             column(CONSTRUCTOR_NAME_HEADER, "constructor", UrlColumn()),
             column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
             column(CONSTRUCTOR_TOTAL_ENTRIES_HEADER, "total_entries", IntColumn()),
             column(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
             column(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
-        ]
+        )
 
     @staticmethod
     def build_licensed_in_column():
