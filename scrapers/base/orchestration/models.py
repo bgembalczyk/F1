@@ -11,7 +11,7 @@ if TYPE_CHECKING:
 
 
 @dataclass(frozen=True)
-class _OrchestrationPaths:
+class OrchestrationPaths:
     base_dir: Path
 
     @property

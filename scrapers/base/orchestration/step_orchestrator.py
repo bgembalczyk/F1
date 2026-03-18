@@ -17,7 +17,7 @@ from scrapers.base.orchestration.models import ResolvedInput
 from scrapers.base.orchestration.models import StepDeclaration
 from scrapers.base.orchestration.models import StepExecutionResult
 from scrapers.base.orchestration.models import StepExecutor
-from scrapers.base.orchestration.models import _OrchestrationPaths
+from scrapers.base.orchestration.models import OrchestrationPaths
 
 
 class StepOrchestrator:
@@ -32,7 +32,7 @@ class StepOrchestrator:
         source_adapter: SectionSourceAdapter | None = None,
         audit_trail: StepAuditTrail | None = None,
     ) -> None:
-        self.paths = _OrchestrationPaths(base_dir=base_dir)
+        self.paths = OrchestrationPaths(base_dir=base_dir)
         self.input_resolver = (
             input_resolver
             or source_adapter

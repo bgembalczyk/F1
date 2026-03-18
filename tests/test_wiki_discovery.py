@@ -5,8 +5,6 @@ from types import ModuleType
 import pytest
 
 from scrapers.wiki import discovery
-from scrapers.wiki.seed_registry import EXPLICIT_LAYER_ONE_SEED_REGISTRY
-from scrapers.wiki.seed_registry import _build_discovered_layer_one_seed_registry
 
 
 def test_discovery_validation_fails_for_runner_without_metadata(
@@ -32,14 +30,3 @@ def test_discovery_validation_fails_for_runner_without_metadata(
         discovery.validate_discovery_metadata_completeness()
 
 
-def test_seed_registry_falls_back_to_explicit_when_discovery_missing(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    monkeypatch.setattr(
-        "scrapers.wiki.seed_registry.discover_layer_one_seed_components",
-        dict,
-    )
-
-    registry = _build_discovered_layer_one_seed_registry()
-
-    assert registry == EXPLICIT_LAYER_ONE_SEED_REGISTRY

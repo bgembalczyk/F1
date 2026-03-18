@@ -3,11 +3,11 @@ from uuid import uuid4
 
 from models.mappers.serialization import to_dict_list
 from scrapers.base.abc import ABCScraper
+from scrapers.base.factory.factory import ScraperFactory
 from scrapers.base.helpers.path import ensure_parent
 from scrapers.base.logging import get_logger
 from scrapers.base.results import ScrapeResult
 from scrapers.base.run_config import RunConfig
-from scrapers.base.scraper_factory import ScraperFactory
 
 
 class ScraperRunner:

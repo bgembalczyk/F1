@@ -43,7 +43,7 @@ def _iter_discovery_module_paths(root: Path) -> set[Path]:
     module_paths: set[Path] = set()
     module_paths.update(root.glob("scrapers/*/entrypoint.py"))
     module_paths.update(root.glob("scrapers/*/list/*.py"))
-    module_paths.add(root / "scrapers/wiki/orchestration.py")
+    module_paths.add(root / "scrapers/wiki/orchestration/helpers.py")
     return module_paths
 
 

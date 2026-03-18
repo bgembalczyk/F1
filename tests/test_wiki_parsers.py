@@ -10,17 +10,18 @@ from scrapers.wiki.parsers.category_links import CategoryLinksParser
 from scrapers.wiki.parsers.content_text import ContentTextParser
 from scrapers.wiki.parsers.elements.figure import FigureParser
 from scrapers.wiki.parsers.elements.infobox import InfoboxParser
-from scrapers.wiki.parsers.elements.list_parser import ListParser
+from scrapers.wiki.parsers.elements.list import ListParser
 from scrapers.wiki.parsers.elements.navbox import NavBoxParser
 from scrapers.wiki.parsers.elements.paragraph import ParagraphParser
 from scrapers.wiki.parsers.elements.references_wrap import ReferencesWrapParser
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.header import HeaderParser
+from scrapers.wiki.parsers.sections.data_classes import SectionExtractionContext
+from scrapers.wiki.parsers.sections.helpers import _split_into_parts
 from scrapers.wiki.parsers.sections.section import SectionParser
 from scrapers.wiki.parsers.sections.sub_section import SubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_section import SubSubSectionParser
 from scrapers.wiki.parsers.sections.sub_sub_sub_section import SubSubSubSectionParser
-from scrapers.wiki.parsers.sections.sub_sub_sub_section import _split_into_parts
 
 # ---------------------------------------------------------------------------
 # WikiParser is abstract
@@ -333,8 +334,6 @@ def test_wiki_element_parser_mixin_rules_priority_overlapping_table_classes() ->
     soup = _make_soup(html)
     parser = SubSubSubSectionParser()
 
-    from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
-
     result = parser._parse_element(
         soup.find("table"),
         section_context=SectionExtractionContext(),
@@ -345,9 +344,7 @@ def test_wiki_element_parser_mixin_rules_priority_overlapping_table_classes() ->
     assert result["source_section_id"] is None
 
 
-def test_wiki_element_parser_mixin_register_parser_rule_allows_domain_extensions() -> (
-    None
-):
+def test_wiki_element_parser_mixin_register_parser_rule_allows_domain_extensions():
     html = "<blockquote>Domain specific note</blockquote>"
     soup = _make_soup(html)
     parser = SubSubSubSectionParser()
@@ -359,8 +356,6 @@ def test_wiki_element_parser_mixin_register_parser_rule_allows_domain_extensions
         result_type="domain_blockquote",
         priority=0,
     )
-
-    from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
 
     result = parser._parse_element(
         blockquote,
@@ -387,8 +382,6 @@ def test_wiki_element_parser_mixin_default_registry_matches_expected_types() -> 
     soup = _make_soup(html)
     parser = SubSubSubSectionParser()
     root = soup.find("div")
-
-    from scrapers.wiki.parsers.section_adapter import SectionExtractionContext
 
     result = parser.parse_elements(
         list(root.find_all(recursive=False)),

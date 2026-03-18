@@ -6,6 +6,8 @@ from unittest.mock import MagicMock
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
+from scrapers.sponsorship_liveries.parsers.section import SponsorshipSectionParser
+from scrapers.sponsorship_liveries.parsers.splitters.record.facade import SponsorshipRecordSplitter
 
 
 def _ctx(
@@ -541,13 +543,6 @@ def test_gemini_classifier_exception_does_not_propagate() -> None:
 
 def test_livery_principal_sponsor_column_maps_to_livery_principal_sponsors() -> None:
     """Column 'Livery principal sponsor(s)' is mapped to the livery_principal_sponsors key."""
-    from scrapers.sponsorship_liveries.parsers.record_splitter import (
-        SponsorshipRecordSplitter,
-    )
-    from scrapers.sponsorship_liveries.parsers.section_parser import (
-        SponsorshipSectionParser,
-    )
-
     splitter = SponsorshipRecordSplitter()
     parser = SponsorshipSectionParser(
         url="https://en.wikipedia.org",

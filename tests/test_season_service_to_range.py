@@ -1,9 +1,9 @@
 """Focused tests for `to` year-range parsing in season service."""
+from models.services import parse_seasons
 
 
 def test_season_service_to_range() -> None:
     """'1997 to 1999' is parsed as a full year range."""
-    from models.services.season_service import parse_seasons
 
     result = parse_seasons("1997 to 1999")
     years = [e["year"] for e in result]
@@ -12,7 +12,6 @@ def test_season_service_to_range() -> None:
 
 def test_season_service_to_range_mixed_with_comma() -> None:
     """'1997 to 1999, 2001' is parsed correctly."""
-    from models.services.season_service import parse_seasons
 
     result = parse_seasons("1997 to 1999, 2001")
     years = [e["year"] for e in result]
@@ -21,7 +20,6 @@ def test_season_service_to_range_mixed_with_comma() -> None:
 
 def test_season_service_to_range_case_insensitive() -> None:
     """'1997 TO 1999' (uppercase) is also parsed correctly."""
-    from models.services.season_service import parse_seasons
 
     result = parse_seasons("1997 TO 1999")
     years = [e["year"] for e in result]

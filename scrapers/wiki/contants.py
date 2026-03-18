@@ -77,3 +77,12 @@ GRANDS_PRIX_FORMULA_ONE_FIELDS = {
     "circuits",
     "total",
 }
+
+RED_FLAG_FIELDS = (
+    "lap",
+    "restart_status",
+    "winner",
+    "incident",
+    "failed_to_make_restart",
+)
+

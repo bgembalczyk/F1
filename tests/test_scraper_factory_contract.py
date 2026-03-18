@@ -1,7 +1,7 @@
 # ruff: noqa: PLR2004
+from scrapers.base.factory.factory import ScraperFactory
 from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
-from scrapers.base.scraper_factory import ScraperFactory
 
 
 class NewStyleScraper:

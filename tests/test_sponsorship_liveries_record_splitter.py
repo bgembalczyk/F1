@@ -1,12 +1,10 @@
 """Record splitter focused tests for sponsorship liveries."""
+from scrapers.base.helpers.text_normalization import split_delimited_text
+from scrapers.sponsorship_liveries.parsers.splitters.record.facade import SponsorshipRecordSplitter
 
 
 def test_livery_principal_sponsors_year_filter() -> None:
     """livery_principal_sponsors is correctly filtered per expanded season year."""
-    from scrapers.sponsorship_liveries.parsers.record_splitter import (
-        SponsorshipRecordSplitter,
-    )
-
     sponsors = [
         {"text": "OKX", "url": "https://en.wikipedia.org/wiki/OKX"},
         {
@@ -58,10 +56,6 @@ def test_livery_principal_sponsors_year_filter() -> None:
 
 def test_split_record_by_season_matra_case() -> None:
     """Full Matra integration: possessive groups produce two driver records."""
-    from scrapers.base.helpers.text_normalization import split_delimited_text
-    from scrapers.sponsorship_liveries.parsers.record_splitter import (
-        SponsorshipRecordSplitter,
-    )
 
     text = "Green and White (Pescarolo's car), White and Red (Beltoise's car)"
     colour_list = split_delimited_text(text)
@@ -106,9 +100,6 @@ def test_split_record_by_season_matra_case() -> None:
 
 def test_split_record_by_season_possessive_with_common_colours() -> None:
     """Common (non-possessive) colours are shared across all driver records."""
-    from scrapers.sponsorship_liveries.parsers.record_splitter import (
-        SponsorshipRecordSplitter,
-    )
 
     record = {
         "season": [{"year": 1970}],
@@ -131,9 +122,6 @@ def test_split_record_by_season_possessive_with_common_colours() -> None:
 
 def test_split_pipeline_mixed_season_gp_and_possessive_order() -> None:
     """Pipeline applies possessive -> season -> GP split in deterministic order."""
-    from scrapers.sponsorship_liveries.parsers.record_splitter import (
-        SponsorshipRecordSplitter,
-    )
 
     record = {
         "season": [{"year": 2024}, {"year": 2025}],
@@ -177,9 +165,6 @@ def test_split_pipeline_mixed_season_gp_and_possessive_order() -> None:
 
 def test_split_pipeline_is_deterministic_for_mixed_case() -> None:
     """Same mixed input produces identical output ordering across repeated runs."""
-    from scrapers.sponsorship_liveries.parsers.record_splitter import (
-        SponsorshipRecordSplitter,
-    )
 
     record = {
         "season": [{"year": 2024}, {"year": 2025}],
