@@ -6,8 +6,8 @@ from scrapers.base.table.columns.types import BrListColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
+from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.seasons.columns.constructor import ConstructorColumn
-from scrapers.seasons.columns.driver_list import DriverListColumn
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
 from scrapers.seasons.columns.engine import EngineColumn
 from scrapers.seasons.columns.entrant import EntrantColumn

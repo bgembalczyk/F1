@@ -42,9 +42,9 @@ class CircuitLapRecordsSectionParser(SectionTableParserBase):
     def map_table_result(
         self,
         *,
-        table_data: dict[str, Any],
+        _table_data: dict[str, Any],
         table_classification: tuple[Tag, list[str]],
-        table_pipeline: Any,
+        _table_pipeline: Any,
     ) -> dict[str, Any]:
         table, headers = table_classification
         layout = detect_layout_name(table, headers)

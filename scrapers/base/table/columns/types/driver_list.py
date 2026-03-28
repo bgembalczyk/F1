@@ -1,4 +1,4 @@
-"""Seasons domain column rule for driver list parsing."""
+"""Base column rule for driver list parsing."""
 
 from typing import Any
 

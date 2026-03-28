@@ -12,8 +12,8 @@ class CircuitEventsSectionParser(SectionTableParserBase):
     def map_table_result(
         self,
         *,
-        table_data: dict[str, Any],
+        _table_data: dict[str, Any],
         table_classification: dict[str, Any],
-        table_pipeline: Any,
+        _table_pipeline: Any,
     ) -> dict[str, Any]:
         return table_classification

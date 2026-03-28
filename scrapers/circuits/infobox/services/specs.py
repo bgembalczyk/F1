@@ -88,7 +88,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
         vals = ErrorHandler.run_domain_parse(
             lambda: [_to_int(n) for n in numbers],
             message=f"Nie udało się sparsować pojemności: {text!r}.",
-            parser_name=self.__class__.__name__,
+            parser_name=CircuitSpecsParser.__name__,
         )
         result: dict[str, int] = {"total": vals[0]}
         if len(vals) >= MIN_CAPACITY_VALUES_FOR_SEATING:
@@ -165,7 +165,7 @@ class CircuitSpecsParser(InfoboxTextUtils):
             value = ErrorHandler.run_domain_parse(
                 lambda: float(selected_match.group(1).replace(",", ".")),
                 message=f"Nie udało się sparsować nachylenia toru: {text!r}.",
-                parser_name=self.__class__.__name__,
+                parser_name=CircuitSpecsParser.__name__,
             )
         else:
             unit = None

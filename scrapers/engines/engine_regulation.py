@@ -7,7 +7,6 @@ from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.source_catalog import ENGINE_PROGRESS
-from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types import UnitColumn
 from scrapers.base.table.config import build_scraper_config

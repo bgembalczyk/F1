@@ -68,7 +68,7 @@ jobs:
           fi
           echo "base_sha=$BASE_SHA" >> "$GITHUB_OUTPUT"
 
-          mapfile -t PY_FILES < <(git diff --name-only "$BASE_SHA" "${{ github.sha }}" -- '*.py')
+          mapfile -t PY_FILES < <(git diff --name-only --diff-filter=ACMR "$BASE_SHA" "${{ github.sha }}" -- '*.py')
           if [[ ${#PY_FILES[@]} -eq 0 ]]; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
             echo "changed_files=" >> "$GITHUB_OUTPUT"
