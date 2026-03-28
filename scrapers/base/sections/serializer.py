@@ -25,6 +25,29 @@ def build_section_metadata(
     return metadata
 
 
+def build_section_parse_result(
+    *,
+    section_id: str,
+    section_label: str,
+    records: list[dict[str, Any]],
+    parser: str,
+    source: str,
+    heading_path: tuple[str, ...] | None = None,
+    extras: dict[str, Any] | None = None,
+) -> SectionParseResult:
+    return SectionParseResult(
+        section_id=section_id,
+        section_label=section_label,
+        records=records,
+        metadata=build_section_metadata(
+            parser=parser,
+            source=source,
+            heading_path=heading_path,
+            extras=extras,
+        ),
+    )
+
+
 def normalize_section_metadata(
     section: SectionParseResult,
 ) -> dict[str, Any]:

@@ -13,7 +13,7 @@ from scrapers.base.table.columns.types import DateColumn
 from scrapers.base.table.columns.types import DriverColumn
 from scrapers.base.table.columns.types import TimeColumn
 from scrapers.base.table.columns.types import UrlColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.headers import normalize_header
@@ -39,7 +39,7 @@ class LapRecordsTableScraper(F1TableScraper):
         column("Date", "date", DateColumn()),
     ]
 
-    CONFIG = ScraperConfig(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org",
         section_id=None,
         expected_headers=["Time"],

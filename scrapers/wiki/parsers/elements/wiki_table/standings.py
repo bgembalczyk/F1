@@ -1,3 +1,6 @@
+from scrapers.base.table.headers_shared import POINTS_ALIASES
+from scrapers.base.table.headers_shared import POINTS_HEADER
+from scrapers.base.table.headers_shared import POINTS_HEADER_TO_KEY
 from scrapers.wiki.parsers.elements.wiki_table.mapped import MappedWikiTableParser
 
 
@@ -8,7 +11,7 @@ class StandingsTableParser(MappedWikiTableParser):
 
     required_header_groups = (
         frozenset({"Pos", "Pos."}),
-        frozenset({"Points", "Pts", "Pts."}),
+        frozenset({POINTS_HEADER, *POINTS_ALIASES}),
         frozenset({"Driver", "Constructor"}),
     )
     column_mapping = {
@@ -16,9 +19,7 @@ class StandingsTableParser(MappedWikiTableParser):
         "Pos": "pos",
         "Driver": "driver",
         "Constructor": "constructor",
-        "Points": "points",
-        "Pts": "points",
-        "Pts.": "points",
+        **POINTS_HEADER_TO_KEY,
         "No.": "no",
         "No": "no",
         "Car no.": "no",

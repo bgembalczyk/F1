@@ -1,6 +1,5 @@
 from complete_extractor.base import CompleteExtractorBase
 from complete_extractor.domain_config import CompleteExtractorDomainConfig
-from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.constructors.current_constructors_list import (
     CurrentConstructorsListScraper,
 )
@@ -31,23 +30,6 @@ class CompleteConstructorsDataExtractor(CompleteExtractorBase):
         detail_url_field_paths=("constructor.url", "constructor_url", "team_url"),
         filter_redlinks=True,
     )
-
-    @staticmethod
-    def _get_constructor_url(record: dict[str, object]) -> str | None:
-        config = CompleteConstructorsDataExtractor.DOMAIN_CONFIG
-        for field_path in config.get_detail_url_field_paths():
-            value = CompleteConstructorsDataExtractor._get_value_by_path(
-                record,
-                field_path,
-            )
-            if isinstance(value, str) and value:
-                if config.filter_redlinks and is_wikipedia_redlink(value):
-                    continue
-                return value
-        return None
-
-    def get_detail_url(self, record: dict[str, object]) -> str | None:
-        return self._get_constructor_url(record)
 
 
 if __name__ == "__main__":
