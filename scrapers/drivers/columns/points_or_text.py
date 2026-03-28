@@ -1,6 +1,8 @@
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types import PointsColumn
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.drivers.columns.points import PointsColumn
 
 
 class PointsOrTextColumn(BaseColumn):
