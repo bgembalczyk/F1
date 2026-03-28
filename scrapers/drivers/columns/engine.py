@@ -1,4 +1,5 @@
-"""DOMAIN-SPECIFIC: drivers engine parser based on shared engine base logic."""
+"""DOMAIN-SPECIFIC: drivers column rule (engine parsing) localized for drivers domain."""
+# pylint: disable=duplicate-code
 
 from scrapers.base.table.columns.types.engine_base import BaseEngineColumn
 
