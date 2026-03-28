@@ -8,12 +8,11 @@ from scrapers.base.single_wiki_article import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.single_wiki_article import TablesPayloadDTO
+from scrapers.seasons.domain_record_service import DomainRecordService
 from scrapers.seasons.pipeline import SeasonParserSetBuilder
 from scrapers.seasons.pipeline import SeasonSectionPipeline
 from scrapers.seasons.pipeline import SeasonYearResolver
 from scrapers.seasons.postprocess.assembler import SeasonPayloadDTO
-from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
-from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 from scrapers.seasons.postprocess.contract import SeasonSectionContractPostProcessor
 
 if TYPE_CHECKING:
@@ -21,6 +20,7 @@ if TYPE_CHECKING:
 
     from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.interface import SectionServiceFactory
+    from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
     from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 
 
@@ -37,6 +37,7 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         season_year_resolver: SeasonYearResolver | None = None,
         parser_set_builder: SeasonParserSetBuilder | None = None,
         season_pipeline: SeasonSectionPipeline | None = None,
+        domain_record_service: DomainRecordService | None = None,
     ) -> None:
         super().__init__(options=options)
         self.season_year = season_year
@@ -49,7 +50,9 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
             parser_set_builder=resolved_parser_set_builder,
             text_sections_service_factory=text_sections_service_factory,
         )
-        self._assembler = assembler or SeasonRecordAssembler()
+        self._domain_record_service = domain_record_service or DomainRecordService(
+            assembler=assembler,
+        )
         self._table_parser = None
         self._refresh_pipeline_state()
 
@@ -86,12 +89,10 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         _ = soup
         _ = infobox_payload
         _ = tables_payload
-        payload = sections_payload.data
-        if not isinstance(payload, SeasonPayloadDTO):
-            sections = SeasonRecordSections.empty()
-        else:
-            sections = payload.sections
-        return self._assembler.assemble(sections)
+        sections = self._domain_record_service.build_sections_payload(
+            sections_payload.data,
+        )
+        return self._domain_record_service.assemble_record(sections)
 
     @staticmethod
     def _extract_year_from_url(url: str) -> int | None:
