@@ -5,6 +5,7 @@ from typing import Any
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.options import ScraperOptions
+from scrapers.base.sections.factory import ValidatingSectionServiceFactory
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import collect_lap_records
@@ -17,12 +18,35 @@ from scrapers.circuits.sections.service import CircuitSectionExtractionService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
-
     from bs4 import BeautifulSoup
 
     from scrapers.base.infobox.service import InfoboxExtractionService
     from scrapers.base.sections.adapter import SectionAdapter
+    from scrapers.base.sections.interface import SectionServiceFactory
+
+
+class CircuitSectionServiceFactory(
+    ValidatingSectionServiceFactory[CircuitSectionExtractionService],
+):
+    def create(
+        self,
+        *,
+        adapter: SectionAdapter,
+        options: ScraperOptions | None = None,
+        url: str | None = None,
+    ) -> CircuitSectionExtractionService:
+        self._validate_dependencies(
+            adapter=adapter,
+            options=options,
+            url=url,
+            require_options=True,
+            require_url=True,
+        )
+        return CircuitSectionExtractionService(
+            adapter=adapter,
+            options=options,
+            url=url,
+        )
 
 
 class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
@@ -32,7 +56,7 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         options: ScraperOptions | None = None,
         infobox_service: InfoboxExtractionService | None = None,
         sections_service_factory: (
-            Callable[[SectionAdapter, str], CircuitSectionExtractionService] | None
+            SectionServiceFactory[CircuitSectionExtractionService] | None
         ) = None,
         assembler: CircuitRecordAssembler | None = None,
     ) -> None:
@@ -43,12 +67,8 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         self._infobox_service = infobox_service or CircuitInfoboxExtractionService(
             options=self._options,
         )
-        self._sections_service_factory = sections_service_factory or (
-            lambda adapter, url: CircuitSectionExtractionService(
-                adapter=adapter,
-                options=self._options,
-                url=url,
-            )
+        self._sections_service_factory = (
+            sections_service_factory or CircuitSectionServiceFactory()
         )
         self._assembler = assembler or CircuitRecordAssembler()
 
@@ -124,7 +144,11 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         ]
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        sections_service = self._sections_service_factory(self, self.url)
+        sections_service = self._sections_service_factory.create(
+            adapter=self,
+            options=self._options,
+            url=self.url,
+        )
         return sections_service.extract(soup)
 
     def _assemble_record(

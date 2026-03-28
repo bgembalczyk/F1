@@ -1,11 +1,9 @@
+from __future__ import annotations
+
 import warnings
-from collections.abc import Callable
+from typing import TYPE_CHECKING
 from typing import Any
 
-from bs4 import BeautifulSoup
-
-from scrapers.base.options import ScraperOptions
-from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.seasons.pipeline import SeasonParserSetBuilder
 from scrapers.seasons.pipeline import SeasonSectionPipeline
@@ -13,7 +11,13 @@ from scrapers.seasons.pipeline import SeasonYearResolver
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 from scrapers.seasons.postprocess.contract import SeasonSectionContractPostProcessor
-from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.base.options import ScraperOptions
+    from scrapers.base.sections.interface import SectionServiceFactory
+    from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 
 
 class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
@@ -23,7 +27,7 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         options: ScraperOptions | None = None,
         season_year: int | None = None,
         text_sections_service_factory: (
-            Callable[[SectionAdapter], SeasonTextSectionExtractionService] | None
+            SectionServiceFactory[SeasonTextSectionExtractionService] | None
         ) = None,
         assembler: SeasonRecordAssembler | None = None,
         season_year_resolver: SeasonYearResolver | None = None,
