@@ -10,7 +10,6 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Literal
 
-from layers.application import create_default_wiki_pipeline_application
 from scrapers.base.cli_entrypoint import build_run_config
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
@@ -615,6 +614,10 @@ def run_wiki_cli(argv: list[str] | None = None) -> None:
     parser = _build_wiki_parser()
     args = parser.parse_args(argv)
 
+    app_module = importlib.import_module("layers.application")
+    create_default_wiki_pipeline_application = (
+        app_module.create_default_wiki_pipeline_application
+    )
     app = create_default_wiki_pipeline_application(
         base_wiki_dir=Path("data/wiki").resolve(),
         base_debug_dir=Path("data/debug").resolve(),
