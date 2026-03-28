@@ -5,7 +5,9 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
+from scrapers.base.single_wiki_article.section_selection_strategy import (
+    WikipediaSectionByIdSelectionStrategy,
+)
 
 
 class SectionTableParseMixin:
@@ -35,7 +37,7 @@ class SectionTableParseMixin:
         if not section_id:
             return super()._parse_soup(soup)
 
-        section_fragment = WikipediaSectionByIdMixin.extract_section_by_id(
+        section_fragment = WikipediaSectionByIdSelectionStrategy().extract_section_by_id(
             soup,
             section_id,
             domain=domain,

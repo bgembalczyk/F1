@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.sections.interface import SectionParseResult
+from scrapers.base.sections.serializer import build_section_metadata
 from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
@@ -39,5 +40,5 @@ class CircuitLapRecordsSectionParser:
             section_id="lap_records",
             section_label="Lap records",
             records=all_records,
-            metadata={"parser": self.__class__.__name__},
+            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia"),
         )

@@ -2,10 +2,11 @@
 
 from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.table.builders import build_columns
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.dsl.column import column
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
 from scrapers.grands_prix.validator import GrandsPrixRecordValidator
@@ -32,7 +33,7 @@ class GrandsPrixListScraper(SeedListTableScraper):
         column("Total", "total", IntColumn()),
     )
 
-    CONFIG = SeedListTableScraper.build_config(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix",
         section_id="By_race_title",
         # podzbiór nagłówków - do znalezienia właściwej tabeli
@@ -46,6 +47,6 @@ class GrandsPrixListScraper(SeedListTableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_current_legacy_wrapper
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    run_current_legacy_wrapper()
+    run_deprecated_entrypoint()

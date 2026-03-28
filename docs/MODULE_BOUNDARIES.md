@@ -12,8 +12,8 @@ Każda domena (`drivers`, `constructors`, `circuits`, `seasons`, `grands_prix`) 
 
 Legacy pliki typu `list_scraper.py` / `*_constructors_list.py` pozostają tylko jako zgodność wsteczna:
 - mają oznaczenie **deprecated**,
-- emitują `DeprecationWarning`,
-- delegują uruchomienie do `entrypoint.py`.
+- emitują `DeprecationWarning` przez wspólny helper `scrapers.base.deprecated_entrypoint.run_deprecated_entrypoint`,
+- przekierowują uruchomienie do `python -m scrapers.cli run <module>` (rejestr i dispatch są utrzymywane wyłącznie w `scrapers/cli.py`).
 
 ## 2. Reguły zależności między warstwami
 
@@ -45,7 +45,7 @@ Każda domena eksportuje z `entrypoint.py` funkcję:
 
 - `run_list_scraper(*, run_config: RunConfig | None = None) -> None`
 
-To jest docelowy punkt startowy dla CLI/skryptów i automatyzacji.
+To jest stabilny punkt startowy dla integracji kodowych. Dla uruchomień operatorskich rekomendowana ścieżka to wyłącznie `python -m scrapers.cli ...`.
 
 ## 4. Przykładowy flow per domena
 
@@ -137,3 +137,12 @@ Jedynym canonical launcherem jest teraz `python -m scrapers.cli`.
 - `python -m scrapers.tyres.list_scraper` -> `python -m scrapers.cli run scrapers.tyres.list_scraper`
 
 Każdy wrapper legacy emituje `DeprecationWarning` z powyższym mapowaniem.
+
+## ✅ Krótka checklista: jak tworzyć nowy scraper listowy
+
+1. Dziedzicz po `SeedListTableScraper` i ustaw `domain`, `default_output_path`, `legacy_output_path`.
+2. Zdefiniuj schemat kolumn (`build_columns(...)`) albo `schema=...`.
+3. Buduj `CONFIG` wyłącznie przez `scrapers.base.table.config.build_scraper_config(...)`.
+4. Ustaw minimalne `expected_headers` (podzbiór wymaganych nagłówków tabeli).
+5. Podepnij `record_factory` i (opcjonalnie) `default_validator`.
+6. Dla uruchamiania używaj `entrypoint.py`; `list_scraper.py` traktuj jako warstwę kompatybilności.

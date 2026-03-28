@@ -8,18 +8,18 @@ from scrapers.drivers.sections.common import DriverResultsSectionConfig
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.constructor import ConstructorColumn
-from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.engine import EngineColumn
-from scrapers.base.table.columns.types.entrant import EntrantColumn
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.position import PositionColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.tyre import TyreColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import ConstructorColumn
+from scrapers.base.table.columns.types import DriverListColumn
+from scrapers.base.table.columns.types import EngineColumn
+from scrapers.base.table.columns.types import EntrantColumn
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types import PositionColumn
+from scrapers.base.table.columns.types import SkipColumn
+from scrapers.base.table.columns.types import TextColumn
+from scrapers.base.table.columns.types import TyreColumn
+from scrapers.base.table.columns.types import UrlColumn
 from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
 from scrapers.drivers.columns.series import SeriesColumn
 

@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from scrapers.base.sections.interface import SectionParseResult
+from scrapers.base.sections.serializer import build_section_metadata
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -52,5 +53,5 @@ class BaseDriverResultsSectionParser:
             section_id=self._section_id,
             section_label=self._section_label,
             records=parsed.records,
-            metadata={"aliases": self._header_aliases},
+            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia", extras={"aliases": self._header_aliases}),
         )

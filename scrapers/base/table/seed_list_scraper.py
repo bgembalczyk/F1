@@ -2,9 +2,10 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 from typing import ClassVar
+from warnings import warn
 
-from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.table.schema import TableSchema
 from scrapers.base.table.schema import TableSchemaBuilder
@@ -55,6 +56,12 @@ class SeedListTableScraper(F1TableScraper):
         record_factory=None,
         model_class: type | None = None,
     ) -> ScraperConfig:
+        warn(
+            "SeedListTableScraper.build_config is deprecated; "
+            "use scrapers.base.table.config.build_scraper_config.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         return build_scraper_config(
             url=url,
             section_id=section_id,

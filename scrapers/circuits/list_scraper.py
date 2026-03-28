@@ -3,6 +3,7 @@
 from models.records.factories.build import RECORD_BUILDERS
 from models.validation.circuit import Circuit
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
 from scrapers.circuits.schemas import build_circuits_schema
@@ -23,7 +24,7 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScrape
 
     default_validator = CircuitsRecordValidator()
 
-    CONFIG = SeedListTableScraper.build_config(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
         section_id="Circuits",
         expected_headers=CIRCUITS_EXPECTED_HEADERS,
@@ -37,6 +38,6 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScrape
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_current_legacy_wrapper
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    run_current_legacy_wrapper()
+    run_deprecated_entrypoint()

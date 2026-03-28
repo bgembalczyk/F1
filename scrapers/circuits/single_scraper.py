@@ -10,6 +10,9 @@ from scrapers.base.single_wiki_article import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.single_wiki_article import TablesPayloadDTO
+from scrapers.base.single_wiki_article.section_selection_strategy import (
+    WikipediaSectionByIdSelectionStrategy,
+)
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import collect_lap_records
 from scrapers.circuits.helpers.lap_record import is_lap_record_table
@@ -64,9 +67,12 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         ) = None,
         assembler: CircuitRecordAssembler | None = None,
     ) -> None:
-        super().__init__(options=options)
-        self._original_url: str | None = None
-        self._section_fragment: str | None = None
+        super().__init__(
+            options=options,
+            section_selection_strategy=WikipediaSectionByIdSelectionStrategy(
+                domain="circuits",
+            ),
+        )
         self.article_tables_parser = ArticleTablesParser(include_source_table=True)
         self._infobox_service = infobox_service or CircuitInfoboxExtractionService(
             options=self._options,
@@ -78,9 +84,6 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
 
     def _build_post_processor(self) -> CircuitSectionContractPostProcessor:
         return CircuitSectionContractPostProcessor()
-
-    def _uses_url_fragment(self) -> bool:
-        return True
 
     def _should_parse_article(self, soup: BeautifulSoup) -> bool:
         return is_circuit_like_article(soup)
