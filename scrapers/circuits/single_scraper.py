@@ -60,9 +60,7 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         ) = None,
         assembler: CircuitRecordAssembler | None = None,
     ) -> None:
-        super().__init__(options=options)
-        self._original_url: str | None = None
-        self._section_fragment: str | None = None
+        super().__init__(options=options, section_selection_domain="circuits")
         self.article_tables_parser = ArticleTablesParser(include_source_table=True)
         self._infobox_service = infobox_service or CircuitInfoboxExtractionService(
             options=self._options,
@@ -80,20 +78,6 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
 
     def _should_parse_article(self, soup: BeautifulSoup) -> bool:
         return is_circuit_like_article(soup)
-
-    def _select_section(
-        self,
-        soup: BeautifulSoup,
-        fragment: str | None,
-    ) -> BeautifulSoup:
-        if not fragment:
-            return soup
-
-        section = self.extract_section_by_id(soup, fragment, domain="circuits")
-        return section or soup
-
-    def _prepare_article_soup(self, soup: BeautifulSoup) -> BeautifulSoup:
-        return self._select_section(soup, self._section_fragment)
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> dict[str, Any]:
         return self._infobox_service.extract(soup, url=self.url).primary_record

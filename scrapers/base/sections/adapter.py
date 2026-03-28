@@ -3,10 +3,11 @@ from __future__ import annotations
 from dataclasses import asdict
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
+from scrapers.base.sections.strategies import SectionSelectionStrategy
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.wiki.parsers.section_detection import find_section_heading
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
@@ -23,10 +24,14 @@ class SectionAdapterEntry:
     parser: SectionParser
 
 
-class SectionAdapter(WikipediaSectionByIdMixin):
+class SectionAdapter:
+    _section_selection_strategy = SectionSelectionStrategy()
+
     @classmethod
     def _extract_section_from_heading(cls, heading_match) -> BeautifulSoup | None:
-        return cls.extract_section_by_heading(heading_match.heading)
+        return cls._section_selection_strategy.extract_section_by_heading(
+            heading_match.heading,
+        )
 
     def parse_sections(
         self,
