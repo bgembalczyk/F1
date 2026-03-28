@@ -16,6 +16,7 @@ class PipelineProfile:
 @dataclass(frozen=True)
 class ScraperPipelineBinding:
     validator_factory: str | None = None
+    transformer_factories: tuple[str, ...] = ()
     post_processors: tuple[str, ...] = ()
 
 
@@ -66,6 +67,9 @@ SCRAPER_PIPELINE_BINDINGS: dict[str, ScraperPipelineBinding] = {
     ),
     "scrapers.drivers.list_scraper.F1DriversListScraper": ScraperPipelineBinding(
         validator_factory="scrapers.drivers.validator:DriversRecordValidator",
+        transformer_factories=(
+            "scrapers.base.transformers.drivers_championships:DriversChampionshipsTransformer",
+        ),
     ),
     "scrapers.grands_prix.list_scraper.GrandsPrixListScraper": ScraperPipelineBinding(
         validator_factory="scrapers.grands_prix.validator:GrandsPrixRecordValidator",
@@ -98,6 +102,26 @@ SCRAPER_PIPELINE_BINDINGS: dict[str, ScraperPipelineBinding] = {
     "scrapers.grands_prix.single_scraper.F1SingleGrandPrixScraper": ScraperPipelineBinding(
         post_processors=(
             "scrapers.grands_prix.postprocess.contract:GrandPrixSectionContractPostProcessor",
+        ),
+    ),
+    "scrapers.drivers.fatalities_list_scraper.F1FatalitiesListScraper": ScraperPipelineBinding(
+        transformer_factories=(
+            "scrapers.base.transformers.fatalities_car:FatalitiesCarTransformer",
+        ),
+    ),
+    "scrapers.grands_prix.red_flagged_races_scraper.base.RedFlaggedRacesBaseScraper": ScraperPipelineBinding(
+        transformer_factories=(
+            "scrapers.base.transformers.failed_to_make_restart:FailedToMakeRestartTransformer",
+        ),
+    ),
+    "scrapers.points.points_scoring_systems_history.PointsScoringSystemsHistoryScraper": ScraperPipelineBinding(
+        transformer_factories=(
+            "scrapers.base.transformers.points_scoring_systems_history:PointsScoringSystemsHistoryTransformer",
+        ),
+    ),
+    "scrapers.points.shortened_race_points.ShortenedRacePointsScraper": ScraperPipelineBinding(
+        transformer_factories=(
+            "scrapers.base.transformers.shortened_race_points:ShortenedRacePointsTransformer",
         ),
     ),
 }
@@ -149,6 +173,15 @@ def apply_scraper_pipeline_bindings(
     if options.validator is None and binding.validator_factory is not None:
         validator_cls = _resolve_object(binding.validator_factory)
         options.validator = validator_cls()
+
+    for transformer_path in binding.transformer_factories:
+        transformer_cls = _resolve_object(transformer_path)
+        if any(
+            isinstance(transformer, transformer_cls)
+            for transformer in options.transformers
+        ):
+            continue
+        options.transformers.append(transformer_cls())
 
     for post_processor_path in binding.post_processors:
         post_processor_cls = _resolve_object(post_processor_path)

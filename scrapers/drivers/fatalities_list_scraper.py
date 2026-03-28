@@ -4,19 +4,16 @@ from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value
-from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types import UrlColumn
-from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 from scrapers.drivers.columns.fatality_event import FatalityEventColumn
 from scrapers.drivers.constants import FATALITIES_AGE_HEADER
@@ -43,6 +40,9 @@ class F1FatalitiesListScraper(F1TableScraper):
     - championship: znacznik † w kolumnie Event (False)
     """
 
+    options_profile = "seed_soft"
+    options_domain = "drivers"
+
     CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_fatalities#Detail_by_driver",
         section_id=FATALITIES_SECTION_ID,
@@ -61,19 +61,6 @@ class F1FatalitiesListScraper(F1TableScraper):
         ),
         record_factory=RECORD_BUILDERS.fatality,
     )
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
-        options = options or ScraperOptions()
-        options.transformers = [
-            *list(options.transformers or []),
-            FatalitiesCarTransformer(),
-        ]
-        super().__init__(options=options, config=config)
 
     # Methods using shared utilities from date_parsing module
     # Kept here for backward compatibility if they are used elsewhere
