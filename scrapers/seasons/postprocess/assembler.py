@@ -69,3 +69,8 @@ class SeasonRecordAssembler:
             "regulation_changes": sections.regulation_changes,
             "mid_season_changes": sections.mid_season_changes,
         }
+
+
+@dataclass(frozen=True)
+class SeasonPayloadDTO:
+    sections: SeasonRecordSections

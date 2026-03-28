@@ -6,15 +6,20 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
+from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
+from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 from scrapers.constructors.single_scraper import SingleConstructorScraper
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
+from scrapers.drivers.postprocess.assembler import DriverRecordDTO
 from scrapers.drivers.sections.service import DriverSectionExtractionService
 from scrapers.drivers.single_scraper import SingleDriverScraper
+from scrapers.seasons.postprocess.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
+from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 from scrapers.seasons.single_scraper import SingleSeasonScraper
 
@@ -57,9 +62,11 @@ def test_driver_sections_service_extracts_alias_section_id() -> None:
 
 def test_driver_assembler_builds_record_shape() -> None:
     record = DriverRecordAssembler().assemble(
-        url="u",
-        infobox={"title": "A"},
-        career_results=[{"year": "2024"}],
+        payload=DriverRecordDTO(
+            url="u",
+            infobox={"title": "A"},
+            career_results=[{"year": "2024"}],
+        ),
     )
     assert record == {
         "url": "u",
@@ -79,10 +86,12 @@ def test_constructor_component_services_and_assembler() -> None:
     infoboxes = ConstructorInfoboxExtractionService().extract(soup).as_list()
     sections = ConstructorSectionExtractionService(adapter=scraper).extract(soup)
     record = ConstructorRecordAssembler().assemble(
-        url="x",
-        infoboxes=infoboxes,
-        tables=[],
-        sections=sections,
+        payload=ConstructorRecordDTO(
+            url="x",
+            infoboxes=infoboxes,
+            tables=[],
+            sections=sections,
+        ),
     )
     assert record["url"] == "x"
     assert record["infoboxes"][0]["title"] == "Team"
@@ -99,10 +108,12 @@ def test_circuit_component_services_and_assembler() -> None:
         .primary_record
     )
     record = CircuitRecordAssembler().assemble(
-        url="u",
-        infobox=infobox,
-        tables=[],
-        sections=[],
+        payload=CircuitRecordDTO(
+            url="u",
+            infobox=infobox,
+            lap_record_rows=[],
+            sections=[],
+        ),
     )
     assert record["infobox"]["title"] == "Track"
 
@@ -120,24 +131,27 @@ def test_season_text_sections_service_and_assembler() -> None:
             """,
         ),
     )
-    record = SeasonRecordAssembler().assemble(
-        entries=[],
-        free_practice_drivers=[],
-        calendar=[],
-        cancelled_rounds=[],
-        testing_venues_and_dates=[],
-        results=[],
-        non_championship_races=[],
-        scoring_system=[],
-        drivers_standings=[],
-        constructors_standings=[],
-        jim_clark_trophy=[],
-        colin_chapman_trophy=[],
-        south_african_formula_one_championship=[],
-        british_formula_one_championship=[],
-        regulation_changes=text_records.get("Regulation_changes", []),
-        mid_season_changes=[],
+    payload = SeasonPayloadDTO(
+        sections=SeasonRecordSections(
+            entries=[],
+            free_practice_drivers=[],
+            calendar=[],
+            cancelled_rounds=[],
+            testing_venues_and_dates=[],
+            results=[],
+            non_championship_races=[],
+            scoring_system=[],
+            drivers_standings=[],
+            constructors_standings=[],
+            jim_clark_trophy=[],
+            colin_chapman_trophy=[],
+            south_african_formula_one_championship=[],
+            british_formula_one_championship=[],
+            regulation_changes=text_records.get("Regulation_changes", []),
+            mid_season_changes=[],
+        ),
     )
+    record = SeasonRecordAssembler().assemble(payload.sections)
     assert record["regulation_changes"] == [{"text": "New point format"}]
 
 

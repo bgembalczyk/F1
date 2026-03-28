@@ -4,9 +4,13 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.base.sections.factory import ValidatingSectionServiceFactory
+from scrapers.base.single_wiki_article import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
+from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.postprocess.contract import (
     ConstructorSectionContractPostProcessor,
 )
@@ -70,32 +74,35 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
     def _build_post_processor(self) -> ConstructorSectionContractPostProcessor:
         return ConstructorSectionContractPostProcessor()
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._infobox_service.extract(soup, url=self.url).as_list()
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
+        infoboxes = self._infobox_service.extract(soup, url=self.url).as_list()
+        return InfoboxPayloadDTO(infoboxes)
 
-    def _build_tables_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self.article_tables_parser.parse(soup)
+    def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
+        return TablesPayloadDTO(self.article_tables_parser.parse(soup))
 
-    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
         sections_service = self._sections_service_factory.create(
             adapter=self,
             options=self._options,
             url=self.url,
         )
-        return sections_service.extract(soup)
+        return SectionsPayloadDTO(sections_service.extract(soup))
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: list[dict[str, Any]],
-        tables_payload: list[dict[str, Any]],
-        sections_payload: list[dict[str, Any]],
+        infobox_payload: InfoboxPayloadDTO,
+        tables_payload: TablesPayloadDTO,
+        sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
         _ = soup
         return self._assembler.assemble(
-            url=self.url,
-            infoboxes=infobox_payload,
-            tables=tables_payload,
-            sections=sections_payload,
+            payload=ConstructorRecordDTO(
+                url=self.url,
+                infoboxes=infobox_payload.data,
+                tables=tables_payload.data,
+                sections=sections_payload.data,
+            ),
         )
