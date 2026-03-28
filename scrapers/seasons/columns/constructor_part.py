@@ -1,4 +1,4 @@
-"""DOMAIN-SPECIFIC: seasons column rule (constructor part) localized for seasons domain."""
+"""Seasons domain column rule for constructor part parsing."""
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.constructor_parsing import (

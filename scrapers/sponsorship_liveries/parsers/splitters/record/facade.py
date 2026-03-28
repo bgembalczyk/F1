@@ -3,18 +3,14 @@ from typing import Any
 from scrapers.sponsorship_liveries.parsers.splitters.record.pipeline import (
     RecordSplitPipeline,
 )
-from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.deduplicate import (
-    DeduplicateRecordStrategy,
+from scrapers.sponsorship_liveries.parsers.splitters.record.strategies import (
+    deduplicate,
 )
-from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.grand_prix import (
-    GrandPrixSplitStrategy,
+from scrapers.sponsorship_liveries.parsers.splitters.record.strategies import grand_prix
+from scrapers.sponsorship_liveries.parsers.splitters.record.strategies import (
+    possessive_driver_colour,
 )
-from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.possessive_driver_colour import (
-    PossessiveDriverColourSplitStrategy,
-)
-from scrapers.sponsorship_liveries.parsers.splitters.record.strategies.season import (
-    SeasonSplitStrategy,
-)
+from scrapers.sponsorship_liveries.parsers.splitters.record.strategies import season
 
 
 class SponsorshipRecordSplitter:
@@ -23,10 +19,10 @@ class SponsorshipRecordSplitter:
     def __init__(self, pipeline: RecordSplitPipeline | None = None):
         self._pipeline = pipeline or RecordSplitPipeline(
             [
-                PossessiveDriverColourSplitStrategy(),
-                SeasonSplitStrategy(),
-                GrandPrixSplitStrategy(),
-                DeduplicateRecordStrategy(),
+                possessive_driver_colour.PossessiveDriverColourSplitStrategy(),
+                season.SeasonSplitStrategy(),
+                grand_prix.GrandPrixSplitStrategy(),
+                deduplicate.DeduplicateRecordStrategy(),
             ],
         )
 

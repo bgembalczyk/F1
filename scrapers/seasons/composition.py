@@ -6,13 +6,13 @@ from typing import TYPE_CHECKING
 from scrapers.seasons.pipeline import SeasonParserSetBuilder
 from scrapers.seasons.pipeline import SeasonSectionPipeline
 from scrapers.seasons.pipeline import SeasonYearResolver
-from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
 from scrapers.seasons.services.domain_record import DomainRecordService
 
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.interface import SectionServiceFactory
     from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
+    from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
 
 
 @dataclass(frozen=True, slots=True)
