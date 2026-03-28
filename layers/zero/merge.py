@@ -3,6 +3,7 @@ import re
 from collections.abc import Callable
 from pathlib import Path
 
+from models.value_objects.enums import ConstructorStatus
 from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
 from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
 from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
@@ -146,7 +147,7 @@ def _transform_indianapolis_only_constructor(
         "racing_series": {
             "AAA_national_championship": [],
             "formula_one": {
-                "status": "former",
+                "status": ConstructorStatus.FORMER.to_export(),
                 "indianapolis_only": True,
             },
         },
@@ -158,7 +159,7 @@ def _transform_former_constructor(transformed: dict[str, object]) -> dict[str, o
     formula_one = {
         key: value for key, value in transformed.items() if key != "constructor"
     }
-    formula_one["status"] = "former"
+    formula_one["status"] = ConstructorStatus.FORMER.to_export()
     return {
         "constructor": constructor,
         "racing_series": _build_racing_series(formula_one),
@@ -167,7 +168,7 @@ def _transform_former_constructor(transformed: dict[str, object]) -> dict[str, o
 
 def _ensure_constructor_status(transformed: dict[str, object]) -> None:
     if "racing_series" not in transformed:
-        transformed["status"] = "active"
+        transformed["status"] = ConstructorStatus.ACTIVE.to_export()
         transformed["series"] = FORMULA_ONE_SERIES.copy()
         return
 
@@ -176,7 +177,7 @@ def _ensure_constructor_status(transformed: dict[str, object]) -> None:
         racing_series = {}
         transformed["racing_series"] = racing_series
     formula_one = racing_series.setdefault("formula_one", {})
-    formula_one.setdefault("status", "active")
+    formula_one.setdefault("status", ConstructorStatus.ACTIVE.to_export())
 
 
 def _transform_circuits_domain(
@@ -201,7 +202,7 @@ def _transform_engines_domain(
     if source_name == "f1_indianapolis_only_engine_manufacturers.json":
         transformed["racing_series"] = {
             "AAA_national_championship": [],
-            "formula_one": {"status": "former", "indianapolis_only": True},
+            "formula_one": {"status": ConstructorStatus.FORMER.to_export(), "indianapolis_only": True},
         }
     elif source_name == "f1_engine_manufacturers.json":
         _move_fields_to_formula_one(transformed, ENGINES_FORMULA_ONE_FIELDS)

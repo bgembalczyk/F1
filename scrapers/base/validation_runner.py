@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from models.value_objects.enums import ValidationMode
 from scrapers.base.errors import ScraperValidationError
 
 if TYPE_CHECKING:
@@ -17,13 +18,13 @@ class ValidationRunner:
         self,
         *,
         validator: RecordValidator,
-        validation_mode: str,
+        validation_mode: str | ValidationMode,
         logger: Logger,
         write_quality_report: Callable[[], None],
         url: str | None,
     ) -> None:
         self.validator = validator
-        self.validation_mode = validation_mode
+        self.validation_mode = ValidationMode.from_raw(validation_mode)
         self.logger = logger
         self._write_quality_report = write_quality_report
         self.url = url
@@ -51,7 +52,7 @@ class ValidationRunner:
             return True
 
         message = self._validation_error_message(index, errors_for_tracking, messages)
-        if self.validation_mode == "soft":
+        if self.validation_mode is ValidationMode.SOFT:
             self.logger.warning(message)
             return True
 

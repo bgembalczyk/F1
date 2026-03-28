@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from models.value_objects.enums import TableType
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.helpers.lap_record import collect_lap_records
@@ -51,8 +52,10 @@ class DomainRecordService:
                 continue
 
             headers = table_data["headers"]
-            table_type = table_data.get("table_type")
-            if table_type != "lap_records" and not is_lap_record_table(
+            table_type = TableType.from_raw(
+                table_data.get("table_type", TableType.WIKI_TABLE.to_export()),
+            )
+            if table_type is not TableType.LAP_RECORDS and not is_lap_record_table(
                 headers,
                 lap_scraper,
             ):

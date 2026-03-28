@@ -3,6 +3,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from models.value_objects.enums import SectionIdEnum
+from models.value_objects.enums import TableType
 from scrapers.drivers.sections.common import DriverResultsSectionConfig
 
 if TYPE_CHECKING:
@@ -29,6 +31,10 @@ from scrapers.drivers.columns.series import SeriesColumn
 COMPLETE_RESULTS_REQUIRED_HEADER = "Year"
 
 UNKNOWN_VALUE = "unknown"
+
+CAREER_HIGHLIGHTS_TABLE_TYPE = TableType.CAREER_HIGHLIGHTS
+CAREER_SUMMARY_TABLE_TYPE = TableType.CAREER_SUMMARY
+COMPLETE_RESULTS_TABLE_TYPE = TableType.COMPLETE_RESULTS
 
 
 CAREER_HIGHLIGHTS_REQUIRED_HEADERS = frozenset(
@@ -150,25 +156,25 @@ COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY: dict[str, Callable[[], Any]] = {
 
 
 CAREER_RESULTS_SECTION = DriverResultsSectionConfig(
-    section_id="Career_results",
+    section_id=SectionIdEnum.CAREER_RESULTS.to_export(),
     section_label="Career",
     header_aliases=("Career results", "Career"),
 )
 
 RACING_RECORD_SECTION = DriverResultsSectionConfig(
-    section_id="Racing_record",
+    section_id=SectionIdEnum.RACING_RECORD.to_export(),
     section_label="Racing record",
     header_aliases=("Racing record", "Racing career"),
 )
 
 NON_CHAMPIONSHIP_SECTION = DriverResultsSectionConfig(
-    section_id="Non-championship",
+    section_id=SectionIdEnum.NON_CHAMPIONSHIP.to_export(),
     section_label="Non-championship",
     header_aliases=("Non-championship", "Non-championship races"),
 )
 
 SECTION_CONFIGS: tuple[tuple[DriverResultsSectionConfig, tuple[str, ...]], ...] = (
-    (CAREER_RESULTS_SECTION, ("Karting_record",)),
-    (RACING_RECORD_SECTION, ("Motorsport_career_results",)),
-    (NON_CHAMPIONSHIP_SECTION, ("Non-championship_races",)),
+    (CAREER_RESULTS_SECTION, (SectionIdEnum.KARTING_RECORD.to_export(),)),
+    (RACING_RECORD_SECTION, (SectionIdEnum.MOTORSPORT_CAREER_RESULTS.to_export(),)),
+    (NON_CHAMPIONSHIP_SECTION, (SectionIdEnum.NON_CHAMPIONSHIP_RACES.to_export(),)),
 )

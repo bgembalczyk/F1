@@ -5,6 +5,8 @@ from typing import Any
 
 from bs4 import Tag
 
+from models.value_objects.enums import SectionIdEnum
+from models.value_objects.enums import TableType
 from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.records import record_from_mapping
 from scrapers.base.sections.section_table_parser_base import SectionTableParserBase
@@ -34,7 +36,7 @@ class DriverResultsSectionParser(SectionTableParserBase):
         schema_factory: DriverResultsSchemaFactory | None = None,
     ) -> None:
         super().__init__(
-            section_id="driver_results",
+            section_id=SectionIdEnum.DRIVER_RESULTS.to_export(),
             section_label="Driver results",
             include_heading_path=True,
             include_source_table=True,
@@ -46,7 +48,7 @@ class DriverResultsSectionParser(SectionTableParserBase):
             unknown_value=UNKNOWN_VALUE,
         )
 
-    def classify_table(self, table_data: dict[str, Any]) -> str | None:
+    def classify_table(self, table_data: dict[str, Any]) -> TableType | None:
         headers = table_data.get("headers")
         table = table_data.get("_table")
         if not isinstance(headers, list) or not isinstance(table, Tag):
@@ -57,7 +59,7 @@ class DriverResultsSectionParser(SectionTableParserBase):
         self,
         *,
         table_data: dict[str, Any],
-        table_classification: str,
+        table_classification: TableType,
     ) -> TablePipeline:
         schema = self._schema_factory.build(
             table_type=table_classification,
@@ -69,7 +71,7 @@ class DriverResultsSectionParser(SectionTableParserBase):
         self,
         *,
         table_data: dict[str, Any],
-        table_classification: str,
+        table_classification: TableType,
         table_pipeline: TablePipeline,
     ) -> dict[str, Any] | None:
         table = table_data.get("_table")
@@ -78,7 +80,7 @@ class DriverResultsSectionParser(SectionTableParserBase):
             return None
 
         parsed: dict[str, Any] = {
-            "table_type": table_classification,
+            "table_type": table_classification.to_export(),
             "headers": headers,
             "rows": self._parse_table(table, table_pipeline),
         }

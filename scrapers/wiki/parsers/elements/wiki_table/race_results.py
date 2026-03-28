@@ -1,10 +1,13 @@
+from models.value_objects.enums import ExtraColumnsPolicy
+from models.value_objects.enums import MissingColumnsPolicy
+from models.value_objects.enums import TableType
 from scrapers.wiki.parsers.elements.wiki_table.mapped import MappedWikiTableParser
 
 
 class RaceResultsTableParser(MappedWikiTableParser):
-    table_type = "race_results"
-    missing_columns_policy = "require_round_and_winner"
-    extra_columns_policy = "ignore"
+    table_type = TableType.RACE_RESULTS
+    missing_columns_policy = MissingColumnsPolicy.REQUIRE_ROUND_AND_WINNER
+    extra_columns_policy = ExtraColumnsPolicy.IGNORE
 
     required_header_groups = (
         frozenset({"Round"}),

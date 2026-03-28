@@ -9,6 +9,7 @@ from uuid import uuid4
 from bs4 import BeautifulSoup
 
 from infrastructure.http_client.policies.http import HttpPolicy
+from models.value_objects.enums import ValidationMode
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 from scrapers.base.errors import ScraperError
@@ -111,14 +112,11 @@ class ABCScraper(ABC):
         )
         if self.validator is not None:
             self.validator.set_record_factory(options.record_factory)
-        self.validation_mode = options.validation_mode
+        self.validation_mode = ValidationMode.from_raw(options.validation_mode)
         self._validate_validation_mode()
 
     def _validate_validation_mode(self) -> None:
-        if self.validation_mode in {"soft", "hard"}:
-            return
-        msg = "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
-        raise ValueError(msg)
+        self.validation_mode = ValidationMode.from_raw(self.validation_mode)
 
     # ---------- API wysokiego poziomu ----------
 

@@ -4,11 +4,15 @@ from abc import ABC
 from abc import abstractmethod
 from typing import Any
 
+from models.value_objects.enums import ExtraColumnsPolicy
+from models.value_objects.enums import MissingColumnsPolicy
+from models.value_objects.enums import TableType
+
 
 class WikiTableBaseParser(ABC):
-    table_type: str = "wiki_table"
-    missing_columns_policy: str = "skip"
-    extra_columns_policy: str = "ignore"
+    table_type: TableType = TableType.WIKI_TABLE
+    missing_columns_policy: MissingColumnsPolicy = MissingColumnsPolicy.SKIP
+    extra_columns_policy: ExtraColumnsPolicy = ExtraColumnsPolicy.IGNORE
 
     def parse(self, table_data: dict[str, Any]) -> dict[str, Any] | None:
         headers = table_data.get("headers", [])
@@ -21,10 +25,10 @@ class WikiTableBaseParser(ABC):
         ]
 
         return {
-            "table_type": self.table_type,
+            "table_type": self.table_type.to_export(),
             "domain_column_map": column_map,
-            "missing_columns_policy": self.missing_columns_policy,
-            "extra_columns_policy": self.extra_columns_policy,
+            "missing_columns_policy": self.missing_columns_policy.to_export(),
+            "extra_columns_policy": self.extra_columns_policy.to_export(),
             "domain_rows": mapped_rows,
         }
 

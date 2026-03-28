@@ -17,6 +17,7 @@ from scrapers.base.parsers.soup import SoupParser
 from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.transformers.record_transformer import RecordTransformer
+from models.value_objects.enums import ValidationMode
 from validation.validator_base import RecordValidator
 
 OptionValue: TypeAlias = object
@@ -59,7 +60,7 @@ class ScraperOptions:
     source_adapter: SourceAdapter | None = None
     parser: SoupParser | None = None
     validator: RecordValidator | None = None
-    validation_mode: str = "soft"
+    validation_mode: str | ValidationMode = ValidationMode.SOFT
     debug_dir: Path | None = None
     normalize_empty_values: bool = True
     record_factory: RecordFactory | type[object] | None = None
@@ -69,6 +70,9 @@ class ScraperOptions:
     http: HttpOptions = field(default_factory=HttpOptions)
     cache: CacheOptions = field(default_factory=CacheOptions)
     pipeline: PipelineOptions = field(default_factory=PipelineOptions)
+
+    def __post_init__(self) -> None:
+        self.validation_mode = ValidationMode.from_raw(self.validation_mode)
 
     @property
     def policy(self) -> HttpPolicy:

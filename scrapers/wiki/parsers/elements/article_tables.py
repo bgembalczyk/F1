@@ -5,6 +5,8 @@ from typing import Any
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from models.value_objects.enums import TableType
+
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
@@ -83,7 +85,7 @@ class ArticleTablesParser(WikiParser):
             specialized = parser.parse(parsed)
             if specialized is not None:
                 return specialized
-        return {"table_type": "wiki_table"}
+        return {"table_type": TableType.WIKI_TABLE.to_export()}
 
     def _parse_with_html_table_parser(
         self,

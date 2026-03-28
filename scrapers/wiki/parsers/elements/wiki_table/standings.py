@@ -1,3 +1,6 @@
+from models.value_objects.enums import ExtraColumnsPolicy
+from models.value_objects.enums import MissingColumnsPolicy
+from models.value_objects.enums import TableType
 from scrapers.base.table.headers_shared import POINTS_ALIASES
 from scrapers.base.table.headers_shared import POINTS_HEADER
 from scrapers.base.table.headers_shared import POINTS_HEADER_TO_KEY
@@ -5,9 +8,9 @@ from scrapers.wiki.parsers.elements.wiki_table.mapped import MappedWikiTablePars
 
 
 class StandingsTableParser(MappedWikiTableParser):
-    table_type = "standings"
-    missing_columns_policy = "fail_if_missing_subject_or_points"
-    extra_columns_policy = "collect_as_round_columns"
+    table_type = TableType.STANDINGS
+    missing_columns_policy = MissingColumnsPolicy.FAIL_IF_MISSING_SUBJECT_OR_POINTS
+    extra_columns_policy = ExtraColumnsPolicy.COLLECT_AS_ROUND_COLUMNS
 
     required_header_groups = (
         frozenset({"Pos", "Pos."}),
