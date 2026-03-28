@@ -38,4 +38,4 @@ class DriverContract(DataContract):
         payload = dict(record)
         payload.setdefault("seasons_competed", [])
         payload.setdefault("drivers_championships", {"count": 0, "seasons": []})
-        return super().from_record(payload)
+        return DataContract.from_record.__func__(cls, payload)
