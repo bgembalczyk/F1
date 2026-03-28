@@ -195,7 +195,9 @@ def main() -> int:
     count = len(new_duplicates)
     markdown = build_markdown(new_duplicates, args.warn_threshold, args.fail_threshold)
 
-    Path(args.output_md).write_text(markdown, encoding="utf-8")
+    output_md_path = Path(args.output_md)
+    output_md_path.parent.mkdir(parents=True, exist_ok=True)
+    output_md_path.write_text(markdown, encoding="utf-8")
 
     status = "ok"
     if count >= args.fail_threshold:

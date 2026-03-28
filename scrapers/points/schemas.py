@@ -10,7 +10,7 @@ from scrapers.points.constants import POINTS_NOTES_HEADER
 from scrapers.points.constants import POINTS_RACE_LENGTH_COMPLETED_HEADER
 from scrapers.points.constants import POINTS_SEASONS_HEADER
 from scrapers.points.constants import SPRINT_POSITIONS
-from scrapers.seasons.columns.seasons import SeasonsColumn
+from scrapers.base.table.columns.types import SeasonsColumn
 
 
 def build_shortened_race_points_schema() -> TableSchemaDSL:

@@ -1,7 +1,8 @@
-# ruff: noqa: S108, TC001
+# ruff: noqa: S108
 from __future__ import annotations
 
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from layers.pipeline import WikiPipelineApplication
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
@@ -9,12 +10,14 @@ from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.domain_entrypoint import minimal_debug_profile
 from scrapers.base.domain_entrypoint import minimal_profile
 from scrapers.base.domain_entrypoint import strict_quality_profile
-from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import RunPathConfig
 from scrapers.base.run_profiles import RunPathName
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
 from scrapers.base.run_profiles import get_run_profile_spec
+
+if TYPE_CHECKING:
+    from scrapers.base.run_config import RunConfig
 
 
 class _LayerExecutorSpy:
