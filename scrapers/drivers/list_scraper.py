@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
 
-from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
@@ -31,8 +31,6 @@ from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
 
 class F1DriversListScraper(SeedListTableScraper):
     domain = "drivers"
-    default_output_path = "raw/drivers/seeds/complete_drivers"
-    legacy_output_path = "drivers/complete_drivers"
 
     """
     Scraper listy kierowców F1 z:
@@ -102,7 +100,7 @@ class F1DriversListScraper(SeedListTableScraper):
         section_id="Drivers",
         expected_headers=DRIVERS_LIST_HEADERS,
         columns=schema_columns,
-        record_factory=RECORD_BUILDERS.driver,
+        record_factory=RECORD_FACTORIES.builders("driver"),
     )
 
     def extend_options(self, options: ScraperOptions) -> ScraperOptions:

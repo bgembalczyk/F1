@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import RangeColumn
 from scrapers.base.table.columns.types import SeasonsColumn
@@ -53,7 +54,7 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
         url="https://en.wikipedia.org/wiki/Formula_One_regulations#Engine",
         section_id="Engine",
         expected_headers=["Year", "2000-2005", "2006-2013", "2014-2025"],
-        record_factory=EngineRestriction,
+        record_factory=RECORD_FACTORIES.callable(EngineRestriction),
         schema=TableSchemaDSL(columns=schema_columns),
     )
 

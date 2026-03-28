@@ -12,12 +12,9 @@ from scrapers.base.table.columns.types import TyreColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.driver_rounds import DriversWithRoundsColumn
-from scrapers.seasons.parsers.constants import ENGINE_V8_YEAR
-from scrapers.seasons.parsers.constants import ENGINE_V10_END_YEAR
-from scrapers.seasons.parsers.constants import ENGINE_V10_START_YEAR
-from scrapers.seasons.parsers.constants import PRE_2007_NORMALIZATION_CUTOFF
 from scrapers.seasons.parsers.entry_merger import EntryMerger
 from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
 
 
 class SeasonEntriesParser:
@@ -25,16 +22,18 @@ class SeasonEntriesParser:
         self,
         table_parser: SeasonTableParser,
         entry_merger: EntryMerger,
+        policy: DomainParsingPolicy,
     ) -> None:
         self._table_parser = table_parser
         self._entry_merger = entry_merger
+        self._policy = policy
 
     def parse(
         self,
         soup: BeautifulSoup,
         season_year: int | None,
     ) -> list[dict[str, Any]]:
-        engine_config = self._global_engine_config(season_year)
+        engine_config = self._policy.resolve_engine_config(season_year)
         engine_column = EngineColumn(global_config=engine_config)
         records = self._table_parser.parse_table(
             soup,
@@ -69,22 +68,9 @@ class SeasonEntriesParser:
                 ],
             ),
         )
-        if season_year is not None and season_year < PRE_2007_NORMALIZATION_CUTOFF:
+        if self._policy.should_normalize_entry_numbers(season_year):
             records = self._normalize_pre_2007_entry_numbers(records)
         return self._entry_merger.merge_entries(records)
-
-    @staticmethod
-    def _global_engine_config(
-        season_year: int | None,
-    ) -> dict[str, Any] | None:
-        if season_year == ENGINE_V8_YEAR:
-            return {"displacement_l": 2.4, "layout": "V", "cylinders": 8}
-        if (
-            season_year is not None
-            and ENGINE_V10_START_YEAR <= season_year <= ENGINE_V10_END_YEAR
-        ):
-            return {"displacement_l": 3.0, "layout": "V", "cylinders": 10}
-        return None
 
     @staticmethod
     def _normalize_pre_2007_entry_numbers(

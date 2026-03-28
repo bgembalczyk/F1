@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.seasons.entrypoint.run_list_scraper."""
 
-from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.columns.types import IntColumn
@@ -12,8 +12,6 @@ from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 
 class SeasonsListScraper(SeedListTableScraper):
     domain = "seasons"
-    default_output_path = "raw/seasons/seeds/complete_seasons"
-    legacy_output_path = "seasons/complete_seasons"
 
     """
     Scraper listy sezonów z:
@@ -42,7 +40,7 @@ class SeasonsListScraper(SeedListTableScraper):
             "Races",
         ],
         columns=schema_columns,
-        record_factory=RECORD_BUILDERS.season_summary,
+        record_factory=RECORD_FACTORIES.builders("season_summary"),
     )
 
 

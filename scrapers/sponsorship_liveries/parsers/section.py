@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.records import record_from_mapping
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import DriverListColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.config import ScraperConfig
@@ -63,7 +63,7 @@ class SponsorshipSectionParser:
         config = ScraperConfig(
             url=self._url,
             schema=TableSchemaDSL(columns=schema_columns),
-            record_factory=record_from_mapping,
+            record_factory=RECORD_FACTORIES.mapping(),
         )
         return TablePipeline(
             config=config,
