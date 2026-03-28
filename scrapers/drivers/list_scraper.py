@@ -4,6 +4,7 @@ from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
+from scrapers.base.table.builders import build_name_status_fragment
 from scrapers.base.table.builders import metric_column
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn
@@ -48,18 +49,26 @@ class F1DriversListScraper(SeedListTableScraper):
     options_profile = "strict_seed"
 
     schema_columns = build_columns(
-        column(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn()),
-        column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn()),
-        column(
-            DRIVER_SEASONS_COMPETED_HEADER,
-            "seasons_competed",
-            SeasonsColumn(),
+        build_name_status_fragment(
+            header=DRIVER_NAME_HEADER,
+            output_key="driver",
+            column_type=DriverNameStatusColumn(),
         ),
-        column(
-            DRIVER_CHAMPIONSHIPS_HEADER,
-            "drivers_championships",
-            TextColumn(),  # zparsujemy ręcznie w fetch()
-        ),
+        [column(DRIVER_NATIONALITY_HEADER, "nationality", TextColumn())],
+        [
+            column(
+                DRIVER_SEASONS_COMPETED_HEADER,
+                "seasons_competed",
+                SeasonsColumn(),
+            ),
+        ],
+        [
+            column(
+                DRIVER_CHAMPIONSHIPS_HEADER,
+                "drivers_championships",
+                TextColumn(),  # zparsujemy ręcznie w fetch()
+            ),
+        ],
         build_metric_columns(
             [
                 metric_column(

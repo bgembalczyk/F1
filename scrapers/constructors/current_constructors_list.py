@@ -1,6 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.constructors.entrypoint.run_list_scraper."""
 
 from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.columns.types import AutoColumn
@@ -33,18 +34,20 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
     """
 
-    schema_columns = build_columns(
-        column(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn()),
-        column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn()),
-        column(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn()),
+    schema_columns = BaseConstructorListScraper.build_schema_columns(
+        [column(CONSTRUCTOR_ENGINE_HEADER, "engine", LinksListColumn())],
+        [column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", AutoColumn())],
+        [column(CONSTRUCTOR_BASED_IN_HEADER, "based_in", LinksListColumn())],
         BaseConstructorListScraper.build_common_stats_columns(),
-        column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn()),
+        [column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", AutoColumn())],
         BaseConstructorListScraper.build_common_metadata_columns(),
-        column(
-            CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
-            "antecedent_teams",
-            LinksListColumn(),
-        ),
+        [
+            column(
+                CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER,
+                "antecedent_teams",
+                LinksListColumn(),
+            ),
+        ],
     )
 
     CONFIG = build_scraper_config(
