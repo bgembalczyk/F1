@@ -11,7 +11,7 @@ from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
-from scrapers.circuits.domain_record_service import DomainRecordService
+from scrapers.circuits.services.domain_record import DomainRecordService
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import (
     is_lap_record_table as _is_lap_record_table,

@@ -8,7 +8,7 @@ from scrapers.base.single_wiki_article import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.single_wiki_article import TablesPayloadDTO
-from scrapers.constructors.domain_record_service import DomainRecordService
+from scrapers.constructors.services.domain_record import DomainRecordService
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess.contract import (
     ConstructorSectionContractPostProcessor,
