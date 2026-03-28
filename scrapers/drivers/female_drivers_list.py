@@ -6,6 +6,7 @@ from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
@@ -40,7 +41,7 @@ class FemaleDriversListScraper(F1TableScraper):
         column(FEMALE_DRIVER_POINTS_HEADER, "points", PointsColumn()),
     ]
 
-    CONFIG = ScraperConfig(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_female_Formula_One_drivers",
         section_id=FEMALE_DRIVERS_SECTION_ID,
         expected_headers=FEMALE_DRIVERS_HEADERS,
