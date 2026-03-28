@@ -6,6 +6,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pull-requests: write
+
 env:
   NEW_DUPLICATES_WARN_THRESHOLD: "1"
   NEW_DUPLICATES_FAIL_THRESHOLD: "3"
@@ -101,11 +105,16 @@ jobs:
             --github-output "$GITHUB_OUTPUT"
 
       - name: Publish duplicate report as PR comment
-        if: github.event_name == 'pull_request' && always()
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && always()
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           recreate: true
           path: .jscpd-report/pr-comment.md
+
+      - name: Skip PR comment for forked repositories (read-only token)
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository && always()
+        run: |
+          echo "::warning::Pomijam publikację komentarza PR dla forka (GITHUB_TOKEN bez uprawnienia write)."
 
       - name: Enforce duplicate thresholds for new code
         if: always()
