@@ -3,10 +3,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperError
-from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
-from scrapers.base.sections.resolve_candidates import resolve_section_candidates
+from scrapers.base.sections.constants import DOMAIN_SECTION_RESOLVER_CONFIG
+from scrapers.base.sections.section_id_resolver import MissingSectionError
+from scrapers.base.sections.section_id_resolver import SectionIdResolver
 from scrapers.base.single_wiki_article import SingleWikiArticleScraperBase
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
@@ -29,73 +29,58 @@ class F1SingleGrandPrixScraper(SingleWikiArticleScraperBase):
             ),
         )
 
-    def _missing_section_error(
-        self,
-        *,
-        section_id: str,
-        cause: RuntimeError,
-    ) -> DomainParseError:
-        msg = f"Brak sekcji {section_id!r} w artykule."
-        return DomainParseError(msg, url=self.url, cause=cause)
-
-    @staticmethod
-    def _raise_missing_section_error(section_id: str) -> None:
-        msg = f"Missing section: {section_id}"
-        raise RuntimeError(msg)
-
     def _try_parse_section(
         self,
         soup: BeautifulSoup,
         section_id: str,
     ) -> list[dict[str, Any]] | None:
-        try:
-            section_fragment = self.extract_section_by_id(
-                soup,
-                section_id,
+        section_fragment = self.extract_section_by_id(
+            soup,
+            section_id,
+            domain="grands_prix",
+        )
+        if section_fragment is None:
+            missing_error = MissingSectionError(
                 domain="grands_prix",
+                section_id=section_id,
+                candidates=(section_id,),
+            ).as_domain_error(url=self.url)
+            if self._handle_scraper_error(missing_error):
+                return None
+            raise missing_error
+
+        try:
+            parser = GrandPrixByYearSectionParser(
+                url=self.url,
+                include_urls=self.include_urls,
+                normalize_empty_values=self.normalize_empty_values,
             )
-            if section_fragment is None:
-                self._raise_missing_section_error(section_id)
-            else:
-                parser = GrandPrixByYearSectionParser(
-                    url=self.url,
-                    include_urls=self.include_urls,
-                    normalize_empty_values=self.normalize_empty_values,
-                )
-                result = parser.parse(section_fragment)
-                section_records = result.records
-                return [
-                    {
-                        "url": self.url,
-                        "by_year": section_records,
-                        "section_id": section_id,
-                    },
-                ]
+            result = parser.parse(section_fragment)
+            section_records = result.records
         except Exception as exc:
-            if isinstance(exc, RuntimeError):
-                error: Exception = self._missing_section_error(
-                    section_id=section_id,
-                    cause=exc,
-                )
-            else:
-                error = (
-                    exc
-                    if isinstance(exc, ScraperError)
-                    else self._wrap_parse_error(exc)
-                )
+            error: Exception = (
+                exc if isinstance(exc, ScraperError) else self._wrap_parse_error(exc)
+            )
             if self._handle_scraper_error(error):
                 return None
             if error is exc:
                 raise
             raise error from exc
+        return [
+            {
+                "url": self.url,
+                "by_year": section_records,
+                "section_id": section_id,
+            },
+        ]
 
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         if not is_grand_prix_article(soup):
             return []
 
-        by_year = DOMAIN_CRITICAL_SECTIONS["grands_prix"][0]
-        for section_id in resolve_section_candidates(
-            domain="grands_prix",
+        by_year = DOMAIN_SECTION_RESOLVER_CONFIG["grands_prix"][0]
+        resolver = SectionIdResolver(domain="grands_prix")
+        for section_id in resolver.resolve_candidates(
             section_id=by_year.section_id,
             alternative_section_ids=by_year.alternative_section_ids,
         ):
