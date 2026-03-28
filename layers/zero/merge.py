@@ -3,16 +3,16 @@ import re
 from collections.abc import Callable
 from pathlib import Path
 
-from scrapers.wiki.contants import CHASSIS_CONSTRUCTOR_DOMAINS
-from scrapers.wiki.contants import CIRCUITS_FORMULA_ONE_FIELDS
-from scrapers.wiki.contants import CONSTRUCTORS_FORMULA_ONE_FIELDS
-from scrapers.wiki.contants import ENGINES_FORMULA_ONE_FIELDS
-from scrapers.wiki.contants import FORMER_CONSTRUCTORS_SOURCE
-from scrapers.wiki.contants import FORMULA_ONE_SERIES
-from scrapers.wiki.contants import GRANDS_PRIX_FORMULA_ONE_FIELDS
-from scrapers.wiki.contants import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
-from scrapers.wiki.contants import RED_FLAG_FIELDS
-from scrapers.wiki.contants import TYRE_MANUFACTURERS_SOURCE
+from scrapers.wiki.constants import CHASSIS_CONSTRUCTOR_DOMAINS
+from scrapers.wiki.constants import CIRCUITS_FORMULA_ONE_FIELDS
+from scrapers.wiki.constants import CONSTRUCTORS_FORMULA_ONE_FIELDS
+from scrapers.wiki.constants import ENGINES_FORMULA_ONE_FIELDS
+from scrapers.wiki.constants import FORMER_CONSTRUCTORS_SOURCE
+from scrapers.wiki.constants import FORMULA_ONE_SERIES
+from scrapers.wiki.constants import GRANDS_PRIX_FORMULA_ONE_FIELDS
+from scrapers.wiki.constants import INDIANAPOLIS_ONLY_CONSTRUCTORS_SOURCE
+from scrapers.wiki.constants import RED_FLAG_FIELDS
+from scrapers.wiki.constants import TYRE_MANUFACTURERS_SOURCE
 
 
 def _build_racing_series(formula_one: dict[str, object]) -> dict[str, object]:

@@ -9,8 +9,8 @@ from layers.seed.data_classes import SeedQualityReport
 from layers.seed.data_classes import SeedRecord
 from scrapers.data_paths import DataPaths
 from scrapers.data_paths import default_data_paths
-from scrapers.wiki.contants import LINK_CANDIDATE_KEYS
-from scrapers.wiki.contants import NAME_CANDIDATE_KEYS
+from scrapers.wiki.constants import LINK_CANDIDATE_KEYS
+from scrapers.wiki.constants import NAME_CANDIDATE_KEYS
 
 
 def _extract_name(record: dict[str, Any]) -> str:
