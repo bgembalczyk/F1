@@ -6,7 +6,7 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.helpers.constructor_parsing import (
     ConstructorParsingHelpers,
 )
-from scrapers.base.table.columns.types.func import FuncColumn
+from scrapers.base.table.columns.types import FuncColumn
 
 if TYPE_CHECKING:
     from models.records.link import LinkRecord

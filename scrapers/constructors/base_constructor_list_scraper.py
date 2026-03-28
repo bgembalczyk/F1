@@ -4,9 +4,9 @@ from scrapers.base.mixins.section_table_parse import DeclarativeSectionTablePars
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
