@@ -13,16 +13,21 @@ from scrapers.wiki.scraper import WikiScraper
 class SingleWikiArticleScraperBase(WikiScraper, ABC):
     """Wspólna baza dla scraperów pojedynczych artykułów Wikipedii.
 
-    Kontrakt hooków dla podklas:
+    Kontrakt etapów pipeline i hooków domenowych:
+    1. ``_prepare_article_soup(soup)`` — opcjonalne zawężenie/normalizacja HTML.
+    2. ``_before_payload_build(soup)`` — opcjonalny hook wykonywany przed
+       budowaniem payloadów.
+    3. ``_build_infobox_payload(soup)`` / ``_build_tables_payload(soup)`` /
+       ``_build_sections_payload(soup)`` — etapowe budowanie danych.
+    4. ``_assemble_record(...)`` — złożenie finalnego rekordu domenowego.
+    5. ``_after_record_assembled(record, soup)`` — opcjonalny hook końcowy
+       pozwalający uzupełnić/zmodyfikować rekord.
+
+    Pozostałe hooki kontrolne:
     - ``_build_post_processor()``: zwraca wymagany post-processor domenowy
       lub ``None`` gdy domena go nie wymaga.
     - ``_should_parse_article(soup)``: pozwala pominąć artykuły niespełniające
       warunków domenowych.
-    - ``_prepare_article_soup(soup)``: pozwala wybrać część artykułu przed
-      uruchomieniem parsera domenowego.
-    - ``_build_infobox_payload(soup)`` / ``_build_tables_payload(soup)`` /
-      ``_build_sections_payload(soup)``: budują składowe rekordu.
-    - ``_assemble_record(...)``: składa finalny rekord domenowy.
     """
 
     def __init__(
@@ -76,12 +81,31 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
         return soup
 
     def _build_article_record(self, soup: BeautifulSoup) -> dict[str, Any]:
-        return self._assemble_record(
+        return self._run_record_pipeline(soup)
+
+    def _run_record_pipeline(self, soup: BeautifulSoup) -> dict[str, Any]:
+        """Uruchom pełny pipeline budowy rekordu na podstawie jednego ``soup``."""
+        self._before_payload_build(soup)
+        record = self._assemble_record(
             soup=soup,
             infobox_payload=self._build_infobox_payload(soup),
             tables_payload=self._build_tables_payload(soup),
             sections_payload=self._build_sections_payload(soup),
         )
+        return self._after_record_assembled(record, soup)
+
+    def _before_payload_build(self, soup: BeautifulSoup) -> None:
+        """Opcjonalny hook wywoływany przed budowaniem payloadów."""
+        _ = soup
+
+    def _after_record_assembled(
+        self,
+        record: dict[str, Any],
+        soup: BeautifulSoup,
+    ) -> dict[str, Any]:
+        """Opcjonalny hook wywoływany po ``_assemble_record``."""
+        _ = soup
+        return record
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> Any:
         """Build normalized infobox payload used by ``_assemble_record``."""

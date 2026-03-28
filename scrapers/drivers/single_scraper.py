@@ -51,9 +51,6 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
     def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         return self._sections_service_factory(self._options, self.url).extract(soup)
 
-    def _parse_results_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._build_sections_payload(soup)
-
     def _assemble_record(
         self,
         *,

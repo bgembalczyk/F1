@@ -13,18 +13,18 @@ def _make_soup(html: str) -> BeautifulSoup:
 
 
 # ---------------------------------------------------------------------------
-# SingleConstructorScraper - _scrape_infoboxes
+# SingleConstructorScraper - _build_infobox_payload
 # ---------------------------------------------------------------------------
 
 
-def test_scrape_infoboxes_returns_empty_when_no_infobox() -> None:
+def test_build_infobox_payload_returns_empty_when_no_infobox() -> None:
     scraper = SingleConstructorScraper()
     soup = _make_soup("<div><p>No infobox here.</p></div>")
-    result = scraper._scrape_infoboxes(soup)  # noqa: SLF001
+    result = scraper._build_infobox_payload(soup)  # noqa: SLF001
     assert result == []
 
 
-def test_scrape_infoboxes_finds_single_infobox() -> None:
+def test_build_infobox_payload_finds_single_infobox() -> None:
     scraper = SingleConstructorScraper()
     soup = _make_soup(
         """
@@ -34,12 +34,12 @@ def test_scrape_infoboxes_finds_single_infobox() -> None:
         </table>
         """,
     )
-    result = scraper._scrape_infoboxes(soup)  # noqa: SLF001
+    result = scraper._build_infobox_payload(soup)  # noqa: SLF001
     assert len(result) == 1
     assert result[0]["title"] == "Williams Racing"
 
 
-def test_scrape_infoboxes_finds_multiple_infoboxes() -> None:
+def test_build_infobox_payload_finds_multiple_infoboxes() -> None:
     scraper = SingleConstructorScraper()
     soup = _make_soup(
         """
@@ -47,24 +47,24 @@ def test_scrape_infoboxes_finds_multiple_infoboxes() -> None:
         <table class="infobox"><caption>Second</caption></table>
         """,
     )
-    result = scraper._scrape_infoboxes(soup)  # noqa: SLF001
+    result = scraper._build_infobox_payload(soup)  # noqa: SLF001
     _expected_count = 2
     assert len(result) == _expected_count
 
 
 # ---------------------------------------------------------------------------
-# SingleConstructorScraper - _scrape_tables
+# SingleConstructorScraper - _build_tables_payload
 # ---------------------------------------------------------------------------
 
 
-def test_scrape_tables_returns_empty_when_no_wikitable() -> None:
+def test_build_tables_payload_returns_empty_when_no_wikitable() -> None:
     scraper = SingleConstructorScraper()
     soup = _make_soup("<div><p>No tables here.</p></div>")
-    result = scraper._scrape_tables(soup)  # noqa: SLF001
+    result = scraper._build_tables_payload(soup)  # noqa: SLF001
     assert result == []
 
 
-def test_scrape_tables_extracts_headers_and_rows() -> None:
+def test_build_tables_payload_extracts_headers_and_rows() -> None:
     scraper = SingleConstructorScraper()
     soup = _make_soup(
         """
@@ -74,13 +74,13 @@ def test_scrape_tables_extracts_headers_and_rows() -> None:
         </table>
         """,
     )
-    result = scraper._scrape_tables(soup)  # noqa: SLF001
+    result = scraper._build_tables_payload(soup)  # noqa: SLF001
     assert len(result) == 1
     assert result[0]["headers"] == ["Season", "Wins"]
     assert result[0]["rows"] == [{"Season": "2023", "Wins": "3"}]
 
 
-def test_scrape_tables_includes_caption_when_present() -> None:
+def test_build_tables_payload_includes_caption_when_present() -> None:
     scraper = SingleConstructorScraper()
     soup = _make_soup(
         """
@@ -91,14 +91,14 @@ def test_scrape_tables_includes_caption_when_present() -> None:
         </table>
         """,
     )
-    result = scraper._scrape_tables(soup)  # noqa: SLF001
+    result = scraper._build_tables_payload(soup)  # noqa: SLF001
     assert result[0].get("caption") == "Race Results"
 
 
-def test_scrape_tables_skips_table_without_header_row() -> None:
+def test_build_tables_payload_skips_table_without_header_row() -> None:
     scraper = SingleConstructorScraper()
     soup = _make_soup('<table class="wikitable"></table>')
-    result = scraper._scrape_tables(soup)  # noqa: SLF001
+    result = scraper._build_tables_payload(soup)  # noqa: SLF001
     assert result == []
 
 

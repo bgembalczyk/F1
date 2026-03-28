@@ -71,8 +71,8 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         *,
         soup: BeautifulSoup,
         infobox_payload: list[dict[str, Any]],
-        sections_payload: list[dict[str, Any]],
         tables_payload: list[dict[str, Any]],
+        sections_payload: list[dict[str, Any]],
     ) -> dict[str, Any]:
         _ = soup
         _ = infobox_payload
