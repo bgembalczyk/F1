@@ -32,13 +32,9 @@ class ModelState:
         self._rpd_timestamps.append(now)
 
     def _purge_rpm(self, now: float) -> None:
-        while (
-            self._rpm_timestamps and now - self._rpm_timestamps[0] >= RPM_WINDOW
-        ):
+        while self._rpm_timestamps and now - self._rpm_timestamps[0] >= RPM_WINDOW:
             self._rpm_timestamps.popleft()
 
     def _purge_rpd(self, now: float) -> None:
-        while (
-            self._rpd_timestamps and now - self._rpd_timestamps[0] >= RPD_WINDOW
-        ):
+        while self._rpd_timestamps and now - self._rpd_timestamps[0] >= RPD_WINDOW:
             self._rpd_timestamps.popleft()

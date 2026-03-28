@@ -1,7 +1,7 @@
-from infrastructure.http_client.requests_shim.request_exception import RequestException
+from infrastructure.http_client.requests_shim.request_error import RequestError
 
 
-class HTTPError(RequestException):
+class HTTPError(RequestError):
     def __init__(self, url: str, status_code: int, message: str, headers=None):
         super().__init__(message)
         self.url = url

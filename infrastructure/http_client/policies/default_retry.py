@@ -1,14 +1,13 @@
 """Implementacje strategii retry."""
 
+from http.client import FORBIDDEN
+from http.client import TOO_MANY_REQUESTS
 from secrets import SystemRandom
 from typing import Any
 
+from infrastructure.http_client.policies.constants import SERVER_ERROR_END
+from infrastructure.http_client.policies.constants import SERVER_ERROR_START
 from infrastructure.http_client.policies.retry import RetryPolicy
-
-TOO_MANY_REQUESTS = 429
-SERVER_ERROR_START = 500
-SERVER_ERROR_END = 599
-FORBIDDEN = 403
 
 _RANDOM = SystemRandom()
 

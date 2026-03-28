@@ -8,13 +8,13 @@ from bs4 import Tag
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.types import TextColumn
+from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
-from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn

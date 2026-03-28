@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
-DEFAULT_HTTP_TIMEOUT = 10
-DEFAULT_HTTP_RETRIES = 0
-DEFAULT_HTTP_BACKOFF_SECONDS = 0.5
+from infrastructure.http_client.policies.constants import DEFAULT_HTTP_BACKOFF_SECONDS
+from infrastructure.http_client.policies.constants import DEFAULT_HTTP_RETRIES
+from infrastructure.http_client.policies.constants import DEFAULT_HTTP_TIMEOUT
 
 
 @dataclass(frozen=True)

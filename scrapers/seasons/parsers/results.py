@@ -5,9 +5,9 @@ from bs4 import BeautifulSoup
 from scrapers.base.sections.constants import DOMAIN_SECTION_ALIASES
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.seasons.columns.constructor import ConstructorColumn
 from scrapers.seasons.columns.driver import DriverColumn
 from scrapers.seasons.columns.tyre import TyreColumn

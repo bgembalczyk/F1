@@ -1,6 +1,5 @@
+from infrastructure.http_client.requests_shim.constants import HTTP_BAD_REQUEST
 from infrastructure.http_client.requests_shim.http_error import HTTPError
-
-HTTP_BAD_REQUEST = 400
 
 
 class Response:

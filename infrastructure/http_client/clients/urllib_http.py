@@ -3,7 +3,7 @@ from infrastructure.http_client.config import HttpClientConfig
 from infrastructure.http_client.interfaces.http_response_protocol import (
     HttpResponseProtocol,
 )
-from infrastructure.http_client.requests_shim.request_exception import RequestException
+from infrastructure.http_client.requests_shim.request_error import RequestError
 from infrastructure.http_client.requests_shim.session import Session
 
 
@@ -26,7 +26,7 @@ class UrllibHttpClient(BaseHttpClient):
         super().__init__(
             session=session or Session(),
             config=config or HttpClientConfig(),
-            request_exception_cls=RequestException,
+            request_exception_cls=RequestError,
         )
 
     def get(
