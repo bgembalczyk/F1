@@ -1,0 +1,23 @@
+[MASTER]
+ignore-patterns=test_.*\.py
+
+[MESSAGES CONTROL]
+disable=all
+enable=
+    duplicate-code,
+    too-many-instance-attributes,
+    too-many-public-methods,
+    too-many-branches,
+    too-many-statements,
+
+[SIMILARITIES]
+min-similarity-lines=8
+ignore-comments=yes
+ignore-docstrings=yes
+ignore-imports=yes
+
+[DESIGN]
+max-attributes=14
+max-public-methods=20
+max-branches=15
+max-statements=60

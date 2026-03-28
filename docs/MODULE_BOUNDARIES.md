@@ -146,3 +146,28 @@ Każdy wrapper legacy emituje `DeprecationWarning` z powyższym mapowaniem.
 4. Ustaw minimalne `expected_headers` (podzbiór wymaganych nagłówków tabeli).
 5. Podepnij `record_factory` i (opcjonalnie) `default_validator`.
 6. Dla uruchamiania używaj `entrypoint.py`; `list_scraper.py` traktuj jako warstwę kompatybilności.
+
+## 8. Static quality gates (CI)
+
+Dla PR/push do `main` działa workflow `.github/workflows/static-quality-gates.yml` z czterema bramkami:
+
+1. **Complexity warning (radon)** – próg ostrzegawczy: od klasy złożoności `B` wzwyż (`radon cc --min B`, krok typu warning).
+2. **Complexity error (xenon)** – progi blokujące merge:
+   - `--max-absolute C`
+   - `--max-modules B`
+   - `--max-average B`
+3. **Duplicate code + oversized classes/functions (pylint)** – blokada CI przy wykryciu:
+   - duplikacji (`duplicate-code`, `min-similarity-lines=8`),
+   - zbyt dużych klas/funkcji (`too-many-*`) z limitami:
+     - `max-attributes=14`
+     - `max-public-methods=20`
+     - `max-branches=15`
+     - `max-statements=60`
+4. **Reguły architektoniczne (import-linter)** – kontrakty zakazujące importów:
+   - `models|validation -> infrastructure`
+   - `models|validation|layers -> scrapers`
+
+Konfiguracja bramek znajduje się w plikach:
+- `.pylintrc`
+- `importlinter.ini`
+- `.github/workflows/static-quality-gates.yml`
