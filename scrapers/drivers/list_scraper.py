@@ -7,7 +7,7 @@ from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.builders import build_name_status_fragment
 from scrapers.base.table.builders import metric_column
-from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.drivers.columns.seasons import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.config import build_scraper_config

@@ -1,4 +1,5 @@
 from scrapers.base.records import record_from_mapping
+from scrapers.seasons.columns.seasons import SeasonsColumn
 from scrapers.base.source_catalog import TYRES
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import SeasonsColumn
