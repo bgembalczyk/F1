@@ -159,7 +159,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         """
         truncated_soup = self._truncate_infobox_after_full_data(
             soup,
-        )  # TODO: co to robi?
+        )
 
         self.infobox_scraper.run_id = getattr(self, "_run_id", None)
         self.infobox_scraper.url = self.url
