@@ -1,4 +1,7 @@
-"""DOMAIN-SPECIFIC: drivers column rule (tyre semantics) localized for drivers domain."""
+"""DOMAIN-SPECIFIC: drivers column rule.
+
+(tyre semantics) localized for drivers domain.
+"""
 
 import re
 

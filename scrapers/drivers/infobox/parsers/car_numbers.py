@@ -46,7 +46,7 @@ class CarNumbersParser:
         for match in pattern.finditer(normalized):
             prefix = match.group("prefix") or ""
             number = ErrorHandler.run_domain_parse(
-                lambda: int(match.group("number")),
+                lambda current_match=match: int(current_match.group("number")),
                 message=f"Nie udało się sparsować numeru samochodu: {raw_text!r}.",
                 parser_name=CarNumbersParser.__name__,
             )

@@ -1,4 +1,7 @@
-"""DOMAIN-SPECIFIC: grands_prix column rule (seasons parsing) localized for grands_prix domain."""
+"""DOMAIN-SPECIFIC: grands_prix column rule.
+
+(seasons parsing) localized for grands_prix domain.
+"""
 
 from typing import Any
 

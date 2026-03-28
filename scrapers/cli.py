@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 from typing import Literal
 
+from layers.application import create_default_wiki_pipeline_application
 from scrapers.base.cli_entrypoint import build_run_config
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
@@ -26,6 +27,7 @@ if TYPE_CHECKING:
 BaseConfigFactory = Literal["deprecated", "complete", "default"]
 LegacyTargetFactory = Literal["lazy", "run_and_export", "run_export_complete"]
 DEPRECATION_TRANSITION_RELEASES = 2
+SCRAPER_MODULE_PATH_PARTS = 3
 
 
 @dataclass(frozen=True)
@@ -448,7 +450,7 @@ _DOMAIN_SCRAPER_METADATA = get_domain_entrypoint_scraper_metadata()
 DOMAIN_COMMANDS: dict[str, DomainCommand] = {}
 for module_path in MODULE_DEFINITIONS:
     parts = module_path.split(".")
-    if len(parts) < 3 or parts[0] != "scrapers":
+    if len(parts) < SCRAPER_MODULE_PATH_PARTS or parts[0] != "scrapers":
         continue
     if parts[-1] != "entrypoint":
         continue
@@ -471,7 +473,11 @@ def _deprecated_runtime_message(
     replacement_module = replacement_module_path or module_path
     domain_hint = ""
     parts = replacement_module.split(".")
-    if len(parts) >= 3 and parts[0] == "scrapers" and parts[-1] == "entrypoint":
+    if (
+        len(parts) >= SCRAPER_MODULE_PATH_PARTS
+        and parts[0] == "scrapers"
+        and parts[-1] == "entrypoint"
+    ):
         domain_name = parts[1]
         if domain_name in DOMAIN_COMMANDS:
             domain_hint = f" or `python -m scrapers.cli domain {domain_name}`"
@@ -606,8 +612,6 @@ def _build_wiki_parser() -> argparse.ArgumentParser:
 
 
 def run_wiki_cli(argv: list[str] | None = None) -> None:
-    from layers.application import create_default_wiki_pipeline_application
-
     parser = _build_wiki_parser()
     args = parser.parse_args(argv)
 

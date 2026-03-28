@@ -1,4 +1,7 @@
-"""DOMAIN-SPECIFIC: drivers column rule (constructor part) localized for drivers domain."""
+"""DOMAIN-SPECIFIC: drivers column rule.
+
+(constructor part) localized for drivers domain.
+"""
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.constructor_parsing import (

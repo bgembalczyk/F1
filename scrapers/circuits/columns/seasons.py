@@ -1,4 +1,7 @@
-"""DOMAIN-SPECIFIC: circuits column rule (seasons parsing) localized for circuits domain."""
+"""DOMAIN-SPECIFIC: circuits column rule.
+
+(seasons parsing) localized for circuits domain.
+"""
 
 from typing import Any
 

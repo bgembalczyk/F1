@@ -1,4 +1,7 @@
-"""DOMAIN-SPECIFIC: drivers column rule (points semantics) localized for drivers domain."""
+"""DOMAIN-SPECIFIC: drivers column rule.
+
+(points semantics) localized for drivers domain.
+"""
 
 from scrapers.base.parsers.helpers import extract_visible_text
 from scrapers.base.table.columns.context import ColumnContext
