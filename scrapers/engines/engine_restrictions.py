@@ -8,6 +8,7 @@ from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.source_catalog import ENGINE_REGULATIONS
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import RangeColumn
+from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import UnitColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.config import build_scraper_config

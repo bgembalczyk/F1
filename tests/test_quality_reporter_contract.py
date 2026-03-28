@@ -1,15 +1,18 @@
-# ruff: noqa: PLR2004, TC002, TC003
+# ruff: noqa: PLR2004
 from __future__ import annotations
 
 import json
-from pathlib import Path
+from typing import TYPE_CHECKING
 from typing import Any
-
-from bs4 import BeautifulSoup
 
 from scrapers.base.abc import ABCScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.quality.reporter import QualityReporter
+
+if TYPE_CHECKING:
+    from pathlib import Path
+
+    from bs4 import BeautifulSoup
 
 
 class DummySourceAdapter:
