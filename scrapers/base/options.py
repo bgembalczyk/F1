@@ -1,8 +1,9 @@
-from collections.abc import Callable
 from collections.abc import Mapping
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from dataclasses import field
 from pathlib import Path
-from typing import Any
+from typing import Protocol
+from typing import TypeAlias
 
 from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
@@ -17,6 +18,13 @@ from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.source_adapter import SourceAdapter
 from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.validator_base import RecordValidator
+
+OptionValue: TypeAlias = object
+OptionRecord: TypeAlias = Mapping[str, OptionValue]
+
+
+class RecordFactory(Protocol):
+    def __call__(self, payload: OptionRecord) -> object: ...
 
 
 @dataclass(slots=True)
@@ -54,7 +62,7 @@ class ScraperOptions:
     validation_mode: str = "soft"
     debug_dir: Path | None = None
     normalize_empty_values: bool = True
-    record_factory: Callable[[Mapping[str, Any]], Any] | type | None = None
+    record_factory: RecordFactory | type[object] | None = None
     run_id: str | None = None
     quality_report: bool = False
     error_report: bool = False
