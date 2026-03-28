@@ -9,6 +9,7 @@ from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
+from scrapers.wiki.parsers.elements.article_table_model import ensure_article_table_model
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 
@@ -45,7 +46,8 @@ class DomainRecordService:
         lap_scraper.url = url
         all_records: list[dict[str, Any]] = []
 
-        for table_data in self._article_tables_parser.parse(soup):
+        for raw_table_data in self._article_tables_parser.parse(soup):
+            table_data = ensure_article_table_model(raw_table_data)
             table = table_data.get("_table")
             if table is None:
                 continue

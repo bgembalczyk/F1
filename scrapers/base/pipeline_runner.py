@@ -10,6 +10,8 @@ if TYPE_CHECKING:
 from bs4 import BeautifulSoup
 
 from models.mappers.serialization import to_dict_list
+from scrapers.base.pipeline_contracts import PipelineStageName
+from scrapers.base.pipeline_contracts import ensure_records_output
 from scrapers.base.records import NormalizedRecord
 from scrapers.base.records import RawRecord
 from validation.validator_base import ExportRecord
@@ -43,30 +45,39 @@ class ScraperPipelineRunner:
 
     def run(self, *, run_id: str, html: str) -> list[ExportRecord]:
         soup = BeautifulSoup(html, "html.parser")
-        raw_records = self._log_step(run_id, "parse", lambda: self._parse_records(soup))
+        raw_records = self._log_step(
+            run_id,
+            "parse",
+            lambda: self._parse_records(soup),
+            contract_stage="parse",
+        )
         normalized_records = self._log_step(
             run_id,
             "normalize",
             lambda: self._normalize_records(list(raw_records)),
             to_dict=True,
+            contract_stage="normalize",
         )
         transformed_records = self._log_step(
             run_id,
             "transform",
             lambda: self._transform_records(normalized_records),
             to_dict=True,
+            contract_stage="transform",
         )
         validated_records = self._log_step(
             run_id,
             "validate",
             lambda: self._validate_records(transformed_records),
             to_dict=True,
+            contract_stage="validate",
         )
         return self._log_step(
             run_id,
             "post_process",
             lambda: self._post_process_records(validated_records),
             to_dict=True,
+            contract_stage="postprocess",
         )
 
     def _log_step(
@@ -76,10 +87,13 @@ class ScraperPipelineRunner:
         run_step: StepRunner,
         *,
         to_dict: bool = False,
+        contract_stage: PipelineStageName | None = None,
     ) -> PipelineResult:
         step_label = step_name.replace("_", "-")
         self.logger.debug("Scrape run %s: start %s", run_id, step_label)
         records = run_step()
+        if contract_stage is not None:
+            records = ensure_records_output(contract_stage, records)
         self.logger.debug("Scrape run %s: finish %s", run_id, step_label)
         self._write_step_quality_report(
             step_name,

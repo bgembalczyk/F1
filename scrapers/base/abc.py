@@ -20,6 +20,7 @@ from scrapers.base.helpers.url import normalize_url
 from scrapers.base.logging import get_logger
 from scrapers.base.normalization import RecordNormalizer
 from scrapers.base.options import ScraperOptions
+from scrapers.base.pipeline_contracts import ensure_fetch_output
 from scrapers.base.pipeline_runner import ScraperPipelineRunner
 from scrapers.base.post_processors import apply_post_processors
 from scrapers.base.quality.reporter import QualityReporter
@@ -178,7 +179,7 @@ class ABCScraper(ABC):
     def _download_with_error_handling(self, run_id: str) -> str | None:
         try:
             self.logger.debug("Scrape run %s: start download", run_id)
-            html = self._download()
+            html = ensure_fetch_output(self._download())
             self.logger.debug("Scrape run %s: finish download", run_id)
             self._write_step_quality_report(step_name="download", records=[])
         except ScraperError as error:

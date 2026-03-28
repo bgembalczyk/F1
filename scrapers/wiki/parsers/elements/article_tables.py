@@ -8,6 +8,7 @@ from bs4 import Tag
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.wiki.parsers.base import WikiParser
+from scrapers.wiki.parsers.elements.article_table_model import ArticleTableModel
 from scrapers.wiki.parsers.elements.table import TableParser
 from scrapers.wiki.parsers.elements.wiki_table import LapRecordsWikiTableParser
 from scrapers.wiki.parsers.elements.wiki_table import RaceResultsTableParser
@@ -35,15 +36,15 @@ class ArticleTablesParser(WikiParser):
             LapRecordsWikiTableParser(),
         ]
 
-    def parse(self, element: Tag | BeautifulSoup) -> list[dict[str, Any]]:
-        tables: list[dict[str, Any]] = []
+    def parse(self, element: Tag | BeautifulSoup) -> list[ArticleTableModel]:
+        tables: list[ArticleTableModel] = []
         for table in element.find_all("table", class_="wikitable"):
             parsed = self.parse_table(table)
             if parsed is not None:
                 tables.append(parsed)
         return tables
 
-    def parse_table(self, table: Tag) -> dict[str, Any] | None:
+    def parse_table(self, table: Tag) -> ArticleTableModel | None:
         headers, rows = self._parse_with_html_table_parser(table)
         if not headers:
             headers, rows = self._parse_with_legacy_parser(table)
@@ -57,7 +58,7 @@ class ArticleTablesParser(WikiParser):
         if not filtered_rows:
             return None
 
-        parsed: dict[str, Any] = {
+        parsed: ArticleTableModel = {
             "headers": headers,
             "rows": filtered_rows,
         }
