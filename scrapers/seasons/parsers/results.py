@@ -3,11 +3,11 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.sections.constants import DOMAIN_SECTION_ALIASES
-from scrapers.base.table.columns.types import ConstructorColumn
-from scrapers.base.table.columns.types import DriverColumn
-from scrapers.base.table.columns.types import DriverListColumn
+from scrapers.constructors.columns.constructor import ConstructorColumn
+from scrapers.drivers.columns.driver import DriverColumn
+from scrapers.drivers.columns.driver_list import DriverListColumn
 from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import TyreColumn
+from scrapers.seasons.columns.tyre import TyreColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL

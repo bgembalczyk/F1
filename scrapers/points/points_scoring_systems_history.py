@@ -4,7 +4,7 @@ from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.seasons.columns.seasons import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config

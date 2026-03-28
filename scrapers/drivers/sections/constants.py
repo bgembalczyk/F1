@@ -9,16 +9,16 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 from scrapers.base.table.columns.types import AutoColumn
-from scrapers.base.table.columns.types import ConstructorColumn
-from scrapers.base.table.columns.types import DriverListColumn
-from scrapers.base.table.columns.types import EngineColumn
-from scrapers.base.table.columns.types import EntrantColumn
+from scrapers.constructors.columns.constructor import ConstructorColumn
+from scrapers.drivers.columns.driver_list import DriverListColumn
+from scrapers.engines.columns.engine import EngineColumn
+from scrapers.seasons.columns.entrant import EntrantColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.columns.types import PositionColumn
+from scrapers.seasons.columns.position import PositionColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import TextColumn
-from scrapers.base.table.columns.types import TyreColumn
+from scrapers.seasons.columns.tyre import TyreColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
 from scrapers.base.table.headers_shared import POINTS_HEADER

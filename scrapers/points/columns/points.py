@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: points column rule moved out of base layer."""
+
 from scrapers.base.parsers.helpers import extract_visible_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.constants import POINTS_WITH_TOTAL_RE

@@ -1,3 +1,6 @@
+from scrapers.base.records import record_from_mapping
+from scrapers.drivers.columns.driver import DriverColumn
+from scrapers.drivers.columns.driver_list import DriverListColumn
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import DriverColumn
 from scrapers.base.table.columns.types import DriverListColumn
