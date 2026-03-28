@@ -1,3 +1,5 @@
+from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.source_catalog import FEMALE_DRIVERS_LIST
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import PointsColumn
@@ -40,7 +42,7 @@ class FemaleDriversListScraper(F1TableScraper):
     ]
 
     CONFIG = build_scraper_config(
-        url="https://en.wikipedia.org/wiki/List_of_female_Formula_One_drivers",
+        url=FEMALE_DRIVERS_LIST.base_url,
         section_id=FEMALE_DRIVERS_SECTION_ID,
         expected_headers=FEMALE_DRIVERS_HEADERS,
         schema=TableSchemaDSL(columns=schema_columns),

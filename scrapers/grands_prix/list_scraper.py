@@ -1,5 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.grands_prix.entrypoint.run_list_scraper."""
 
+from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.source_catalog import GRANDS_PRIX_LIST
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
@@ -40,8 +42,8 @@ class GrandsPrixListScraper(SeedListTableScraper):
     )
 
     CONFIG = build_scraper_config(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix",
-        section_id="By_race_title",
+        url=GRANDS_PRIX_LIST.base_url,
+        section_id=GRANDS_PRIX_LIST.section_id,
         # podzbiór nagłówków - do znalezienia właściwej tabeli
         expected_headers=[
             "Race title",

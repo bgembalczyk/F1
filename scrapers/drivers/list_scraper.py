@@ -2,6 +2,7 @@
 
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
+from scrapers.base.source_catalog import DRIVERS_LIST
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.builders import build_name_status_fragment
@@ -96,8 +97,8 @@ class F1DriversListScraper(SeedListTableScraper):
     )
 
     CONFIG = build_scraper_config(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
-        section_id="Drivers",
+        url=DRIVERS_LIST.base_url,
+        section_id=DRIVERS_LIST.section_id,
         expected_headers=DRIVERS_LIST_HEADERS,
         columns=schema_columns,
         record_factory=RECORD_FACTORIES.builders("driver"),

@@ -1,5 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.seasons.entrypoint.run_list_scraper."""
 
+from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.source_catalog import SEASONS_LIST
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.config import build_scraper_config
@@ -31,9 +33,9 @@ class SeasonsListScraper(SeedListTableScraper):
     )
 
     CONFIG = build_scraper_config(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_seasons",
+        url=SEASONS_LIST.base_url,
         # jeśli id sekcji się kiedyś zmieni - poprawiasz tylko to
-        section_id="Seasons",
+        section_id=SEASONS_LIST.section_id,
         # nagłówki, które MUSZĄ wystąpić w tabeli
         expected_headers=[
             "Season",

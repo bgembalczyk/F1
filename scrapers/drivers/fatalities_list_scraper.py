@@ -1,5 +1,7 @@
 from typing import Any
 
+from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.source_catalog import DRIVERS_FATALITIES
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
@@ -44,7 +46,7 @@ class F1FatalitiesListScraper(F1TableScraper):
     """
 
     CONFIG = build_scraper_config(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_fatalities#Detail_by_driver",
+        url=DRIVERS_FATALITIES.url(),
         section_id=FATALITIES_SECTION_ID,
         expected_headers=FATALITIES_HEADERS,
         schema=TableSchemaDSL(

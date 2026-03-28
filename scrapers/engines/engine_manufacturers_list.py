@@ -1,5 +1,6 @@
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from models.validation.engine_manufacturer import EngineManufacturer
+from scrapers.base.source_catalog import ENGINES_LIST
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
@@ -36,9 +37,9 @@ class EngineManufacturersListScraper(F1TableScraper):
     )
 
     CONFIG = build_scraper_config(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers",
+        url=ENGINES_LIST.base_url,
         # sekcja z główną tabelą
-        section_id="Engine_manufacturers",
+        section_id=ENGINES_LIST.section_id,
         # wystarczy podzbiór nagłówków żeby znaleźć właściwą tabelę
         expected_headers=[
             "Manufacturer",
