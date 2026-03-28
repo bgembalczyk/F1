@@ -5,12 +5,13 @@ from abc import abstractmethod
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
+
+    from scrapers.base.sections.interface import SectionParseResult
 
 
 class SectionTableParserBase(ABC):
@@ -67,8 +68,8 @@ class SectionTableParserBase(ABC):
     def build_pipeline(
         self,
         *,
-        table_data: dict[str, Any],
-        table_classification: Any,
+        _table_data: dict[str, Any],
+        _table_classification: Any,
     ) -> Any:
         return None
 

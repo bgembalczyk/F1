@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from abc import ABC
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -9,7 +8,7 @@ from bs4 import Tag
 from scrapers.base.helpers.html_utils import find_heading
 
 
-class SectionSelectionStrategy(ABC):
+class SectionSelectionStrategy:
     """Strategia obsługi URL artykułu i opcjonalnej selekcji sekcji."""
 
     def split_url_fragment(self, url: str) -> tuple[str, str | None]:

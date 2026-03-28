@@ -4,14 +4,17 @@ from collections.abc import Mapping
 from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
+from typing import TYPE_CHECKING
 
-from scrapers.base.factory.record_factory import RecordFactory
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.schema import TableSchema
 from scrapers.base.table.schema import TableSchemaBuilder
+
+if TYPE_CHECKING:
+    from scrapers.base.factory.record_factory import RecordFactory
+    from scrapers.base.table.dsl.column import ColumnSpec
 
 
 @dataclass(frozen=True)

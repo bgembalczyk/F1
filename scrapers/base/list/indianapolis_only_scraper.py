@@ -1,6 +1,6 @@
-from __future__ import annotations
-
 """Base scraper and shared factory for Indianapolis 500 only lists."""
+
+from __future__ import annotations
 
 from dataclasses import dataclass
 
@@ -30,9 +30,8 @@ def build_indianapolis_only_list_scraper(
     """
 
     namespace = {
-        "__doc__": (
-            f"Indianapolis 500 only list scraper for {config.domain_name or class_name}."
-        ),
+        "__doc__": f"Indianapolis 500 only list scraper for "
+        f"{config.domain_name or class_name}.",
         "url": config.url,
         "record_key": config.record_key,
         "url_key": config.url_key,
@@ -40,7 +39,11 @@ def build_indianapolis_only_list_scraper(
         "record_type": config.record_type,
         "CONFIG": config,
     }
-    return type(class_name, (IndianapolisOnlyListScraper,), namespace)
+    return type(
+        class_name,
+        (IndianapolisOnlyListScraper,),
+        namespace,
+    )
 
 
 class IndianapolisOnlyListScraper(F1ListScraper):

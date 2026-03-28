@@ -1,13 +1,16 @@
 from __future__ import annotations
 
-from collections.abc import Mapping
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 from typing import Any
 
 from models.value_objects import WikiUrl
 from scrapers.base.mappers import InfoboxRecordMapper
 from scrapers.base.mappers import SectionRecordMapper
 from scrapers.base.mappers import TableRecordMapper
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 
 
 @dataclass(frozen=True)

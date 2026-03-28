@@ -4,6 +4,8 @@ from typing import Any
 from scrapers.base.orchestration.models import ExecutedStep
 from scrapers.base.orchestration.models import StepDeclaration
 
+PARSER_STEP_EXCEPTIONS = (TypeError, ValueError, KeyError, AttributeError)
+
 
 class ParserStepExecutor:
     def execute(
@@ -15,7 +17,7 @@ class ParserStepExecutor:
         errors: list[str] = []
         try:
             output_records = step.parser(input_records)
-        except Exception as exc:
+        except PARSER_STEP_EXCEPTIONS as exc:
             output_records = []
             errors.append(str(exc))
         return ExecutedStep(
