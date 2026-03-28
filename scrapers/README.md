@@ -23,3 +23,10 @@ Reviewer musi potwierdzić:
 - użycie jednolitego kontraktu `SCRAPER_TEMPLATE_CONFIG`,
 - użycie docelowych hooków bazowych (`SingleWikiArticleScraperBase` hooks dla single, `build_scraper_config` + schema DSL dla list),
 - usunięcie placeholderów `TODO` przed mergem.
+
+## Helper modules (capability-first)
+- Unikaj jednego worka `helpers` z funkcjami o mieszanej odpowiedzialności.
+- Grupuj helpery wg capability (np. `text`, `links`, `tables`, `sections`).
+- Funkcje współdzielone między domenami dodawaj **najpierw** do `scrapers/base/helpers/`.
+- Dopiero gdy logika jest domenowa i nie ma sensu jej uogólniać, trzymaj ją lokalnie w domenie.
+- Dla funkcji przenoszonych między modułami utrzymuj jedno źródło prawdy (bez duplikatów).

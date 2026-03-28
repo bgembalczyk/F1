@@ -11,7 +11,7 @@ from scrapers.base.single_wiki_article import SingleWikiArticleScraperBase
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
-from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
+from scrapers.grands_prix.helpers.sections import is_grand_prix_article
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 
 if TYPE_CHECKING:
