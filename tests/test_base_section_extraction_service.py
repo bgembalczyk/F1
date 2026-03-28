@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from bs4 import BeautifulSoup
-
+from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.service import BaseSectionExtractionService
 
@@ -51,6 +51,8 @@ def test_base_section_extraction_service_returns_normalized_section_payloads() -
             "records": [{"year": 1950}],
             "metadata": {
                 "parser": "StubParser",
+                "source": "unknown",
+                "heading_path": [],
                 "section_id": "history",
                 "section_label": "History",
             },
@@ -81,8 +83,65 @@ def test_base_section_extraction_service_flattens_records_with_section_metadata(
             "section_id": "career",
             "section_metadata": {
                 "aliases": ["Career results"],
+                "parser": "unknown",
+                "source": "unknown",
+                "heading_path": [],
                 "section_id": "career",
                 "section_label": "Career",
             },
         },
     ]
+
+
+class _ParserOk:
+    def parse(self, _fragment):
+        return SectionParseResult(
+            section_id="ok",
+            section_label="OK",
+            records=[{"v": 1}],
+            metadata={"parser": "ok"},
+        )
+
+
+class _ParserFail:
+    def parse(self, _fragment):
+        msg = "boom"
+        raise RuntimeError(msg)
+
+
+class _AdapterPerEntryStub:
+    def parse_sections(self, *, soup, domain, entries):
+        _ = soup, domain
+        return [entries[0].parser.parse(None)]
+
+
+class _ErrorTolerantService(BaseSectionExtractionService):
+    domain = "unit"
+
+    def build_entries(self):
+        return [
+            SectionAdapterEntry(section_id="ok", aliases=(), parser=_ParserOk()),
+            SectionAdapterEntry(section_id="fail", aliases=(), parser=_ParserFail()),
+        ]
+
+
+def test_base_section_extraction_service_continues_when_single_parser_fails(caplog):
+    result = _ErrorTolerantService(adapter=_AdapterPerEntryStub()).extract(
+        BeautifulSoup("<div></div>", "html.parser"),
+    )
+
+    assert result == [
+        {
+            "section_id": "ok",
+            "section_label": "OK",
+            "records": [{"v": 1}],
+            "metadata": {
+                "parser": "ok",
+                "source": "unknown",
+                "heading_path": [],
+                "section_id": "ok",
+                "section_label": "OK",
+            },
+        },
+    ]
+    assert "Failed to parse section entry" in caplog.text

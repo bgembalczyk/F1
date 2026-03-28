@@ -72,11 +72,3 @@ def serialize_section_result(section: SectionParseResult) -> dict[str, Any]:
     payload["metadata"] = normalize_section_metadata(section)
     return payload
 
-
-def export_section_records_by_id(
-    sections: list[SectionParseResult],
-) -> dict[str, list[dict[str, Any]]]:
-    return {
-        SectionId.from_raw(section.section_id).to_export(): section.records
-        for section in sections
-    }

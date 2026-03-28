@@ -1,6 +1,7 @@
 from collections.abc import Callable
 from typing import Any
 
+from scrapers.base.factory.record_factory import RecordFactory
 from scrapers.base.logging import get_logger
 from scrapers.base.normalization import EmptyValuePolicy
 from scrapers.base.transformers.record_transformer import RecordTransformer
@@ -10,7 +11,7 @@ from validation.validator_base import ExportRecord
 class RecordFactoryTransformer(RecordTransformer):
     def __init__(
         self,
-        record_factory: Callable[[dict[str, Any]], Any] | type,
+        record_factory: RecordFactory | Callable[[dict[str, Any]], Any] | type,
         *,
         fallback_on_error: bool = False,
         empty_value_policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
@@ -21,6 +22,8 @@ class RecordFactoryTransformer(RecordTransformer):
         self.logger = get_logger(self.__class__.__name__)
 
     def _apply_factory(self, record: ExportRecord) -> ExportRecord | Any:
+        if hasattr(self.record_factory, "create"):
+            return self.record_factory.create(record)
         if isinstance(self.record_factory, type):
             return self.record_factory(**record)
         return self.record_factory(record)

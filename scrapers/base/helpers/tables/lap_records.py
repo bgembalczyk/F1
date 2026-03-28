@@ -7,7 +7,7 @@ from bs4 import Tag
 
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
-from scrapers.base.records import record_from_mapping
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import DateColumn
 from scrapers.base.table.columns.types import DriverColumn
@@ -44,7 +44,7 @@ class LapRecordsTableScraper(F1TableScraper):
         section_id=None,
         expected_headers=["Time"],
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
     def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:

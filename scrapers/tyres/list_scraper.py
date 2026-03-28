@@ -1,5 +1,6 @@
 from scrapers.base.records import record_from_mapping
 from scrapers.base.source_catalog import TYRES
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.config import build_scraper_config
@@ -35,7 +36,7 @@ class TyreManufacturersBySeasonScraper(F1TableScraper):
             "Wins",
         ],
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
 

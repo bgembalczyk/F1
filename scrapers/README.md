@@ -39,3 +39,15 @@ Zasady dodawania nowego źródła:
 3. Nie konkatenować ręcznie `\"...#section\"` w scraperach.
 4. Jeśli sekcja jest dynamiczna (np. zależna od roku), trzymaj tylko artykuł w `SourceRef`,
    a `section_id` buduj w samym `CONFIG`.
+
+## Extension guide
+
+Szczegółowy przewodnik rozszerzania (hooki obowiązkowe, punkty rozszerzeń, antywzorce, minimalne przykłady):
+
+- `docs/architecture/scraper-extension-guide.md`
+## Helper modules (capability-first)
+- Unikaj jednego worka `helpers` z funkcjami o mieszanej odpowiedzialności.
+- Grupuj helpery wg capability (np. `text`, `links`, `tables`, `sections`).
+- Funkcje współdzielone między domenami dodawaj **najpierw** do `scrapers/base/helpers/`.
+- Dopiero gdy logika jest domenowa i nie ma sensu jej uogólniać, trzymaj ją lokalnie w domenie.
+- Dla funkcji przenoszonych między modułami utrzymuj jedno źródło prawdy (bez duplikatów).

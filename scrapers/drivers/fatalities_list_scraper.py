@@ -2,6 +2,7 @@ from typing import Any
 
 from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.source_catalog import DRIVERS_FATALITIES
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value
@@ -60,7 +61,7 @@ class F1FatalitiesListScraper(F1TableScraper):
                 column(FATALITIES_REF_HEADER, "ref", SkipColumn()),
             ],
         ),
-        record_factory=RECORD_BUILDERS.fatality,
+        record_factory=RECORD_FACTORIES.builders("fatality"),
     )
 
     def __init__(

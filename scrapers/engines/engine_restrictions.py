@@ -5,6 +5,7 @@ from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
 from scrapers.base.source_catalog import ENGINE_REGULATIONS
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import RangeColumn
 from scrapers.base.table.columns.types import SeasonsColumn
@@ -54,7 +55,7 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
         url=ENGINE_REGULATIONS.url(),
         section_id=ENGINE_REGULATIONS.section_id,
         expected_headers=["Year", "2000-2005", "2006-2013", "2014-2025"],
-        record_factory=EngineRestriction,
+        record_factory=RECORD_FACTORIES.callable(EngineRestriction),
         schema=TableSchemaDSL(columns=schema_columns),
     )
 

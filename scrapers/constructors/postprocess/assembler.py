@@ -7,6 +7,8 @@ from models.value_objects import WikiUrl
 from scrapers.base.mappers import InfoboxRecordMapper
 from scrapers.base.mappers import SectionRecordMapper
 from scrapers.base.mappers import TableRecordMapper
+from scrapers.base.postprocess import BaseRecordAssembler
+from scrapers.base.postprocess import BaseRecordAssemblerInput
 
 
 @dataclass(frozen=True)
@@ -15,9 +17,10 @@ class ConstructorRecordDTO:
     infoboxes: list[dict[str, Any]]
     tables: list[dict[str, Any]]
     sections: list[dict[str, Any]]
+    metadata: dict[str, Any] | None = None
 
 
-class ConstructorRecordAssembler:
+class ConstructorRecordAssembler(BaseRecordAssembler):
     def __init__(
         self,
         *,
@@ -25,19 +28,23 @@ class ConstructorRecordAssembler:
         table_mapper: TableRecordMapper | None = None,
         section_mapper: SectionRecordMapper | None = None,
     ) -> None:
-        self._infobox_mapper = infobox_mapper or InfoboxRecordMapper()
-        self._table_mapper = table_mapper or TableRecordMapper()
-        self._section_mapper = section_mapper or SectionRecordMapper()
+        super().__init__(
+            infobox_mapper=infobox_mapper,
+            table_mapper=table_mapper,
+            section_mapper=section_mapper,
+        )
 
     def assemble(
         self,
         *,
         payload: ConstructorRecordDTO,
     ) -> dict[str, Any]:
-        url = WikiUrl.from_raw(payload.url)
-        return {
-            "url": url.to_export(),
-            "infoboxes": self._infobox_mapper.map_many(payload.infoboxes),
-            "tables": self._table_mapper.map_many(payload.tables),
-            "sections": self._section_mapper.map_many(payload.sections),
-        }
+        return super().assemble(
+            payload=BaseRecordAssemblerInput(
+                url=payload.url,
+                metadata=payload.metadata,
+                infoboxes=payload.infoboxes,
+                tables=payload.tables,
+                sections=payload.sections,
+            ),
+        )
