@@ -1,22 +1,17 @@
 import re
-from typing import Any, Optional
+from typing import Any
 
 from scrapers.base.helpers.text import choose_richer_entity
+from scrapers.circuits.infobox.services.constants import LANG_PAREN_ANYWHERE_RE
+from scrapers.circuits.infobox.services.constants import LANG_PAREN_TAIL_RE
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 
 class CircuitTextProcessing(InfoboxTextUtils):
     """Czyszczenie i normalizacja tekstu, konwersja czasów, wybór bogatszych encji."""
 
-    # tylko markery językowe w nawiasie: (es), ( de ), (it)
-    _LANG_PAREN_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)$", flags=re.IGNORECASE)
-    _LANG_PAREN_ANYWHERE_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)", flags=re.IGNORECASE)
-
-    # do czyszczenia uciętych markerów typu "( es" / "( cs"
-    _LANG_PAREN_TAIL_RE = re.compile(r"\(\s*[a-z]{2,3}\s*\)?\s*$", flags=re.IGNORECASE)
-
     @staticmethod
-    def _entity_text(val: Any) -> Optional[str]:
+    def _entity_text(val: Any) -> str | None:
         if isinstance(val, dict):
             s = (val.get("text") or "").strip()
             return s or None
@@ -26,20 +21,20 @@ class CircuitTextProcessing(InfoboxTextUtils):
         return s or None
 
     @staticmethod
-    def _entity_url(val: Any) -> Optional[str]:
+    def _entity_url(val: Any) -> str | None:
         if isinstance(val, dict):
             return val.get("url") or None
         return None
 
     @staticmethod
-    def _norm_time(t: Any) -> Optional[str]:
+    def _norm_time(t: Any) -> str | None:
         """
         Normalizuje time do stringa (dla prezentacji).
         Uwaga: do porównań/scalania używamy _time_to_seconds.
         """
         if t is None:
             return None
-        if isinstance(t, (int, float)):
+        if isinstance(t, int | float):
             return f"{float(t):.6f}".rstrip("0").rstrip(".")
         s = str(t).strip()
         return s or None
@@ -60,9 +55,8 @@ class CircuitTextProcessing(InfoboxTextUtils):
         Nie dotyka normalnych nawiasów: '(motorcyclist)'.
         """
         s = (s or "").replace("\xa0", " ").strip()
-        s = self._LANG_PAREN_ANYWHERE_RE.sub("", s)
-        s = re.sub(r"\s+", " ", s).strip()
-        return s
+        s = LANG_PAREN_ANYWHERE_RE.sub("", s)
+        return re.sub(r"\s+", " ", s).strip()
 
     def _strip_lang_marker_tail_only(self, s: str) -> str:
         """
@@ -71,9 +65,8 @@ class CircuitTextProcessing(InfoboxTextUtils):
         - "David Vršecký ( cs" -> "David Vršecký"
         """
         s = (s or "").replace("\xa0", " ").strip()
-        s = self._LANG_PAREN_TAIL_RE.sub("", s).strip()
-        s = re.sub(r"\s+", " ", s).strip()
-        return s
+        s = LANG_PAREN_TAIL_RE.sub("", s).strip()
+        return re.sub(r"\s+", " ", s).strip()
 
     def _norm_text_for_key(self, x: Any) -> str:
         if isinstance(x, dict):
@@ -81,7 +74,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
         return self._strip_lang_marker_tail_only(str(x or "")).strip().lower()
 
     @staticmethod
-    def _extract_outer_parens(text: str) -> Optional[str]:
+    def _extract_outer_parens(text: str) -> str | None:
         """
         Zwraca zawartość pierwszego zewnętrznego nawiasu (...) z uwzględnieniem
         zagnieżdżeń w środku.
@@ -93,7 +86,7 @@ class CircuitTextProcessing(InfoboxTextUtils):
             return None
 
         depth = 0
-        inner_start: Optional[int] = None
+        inner_start: int | None = None
 
         for i in range(start, len(text)):
             ch = text[i]
@@ -109,12 +102,10 @@ class CircuitTextProcessing(InfoboxTextUtils):
         return None
 
     @staticmethod
-    def _is_en_wiki(url: Optional[str]) -> bool:
+    def _is_en_wiki(url: str | None) -> bool:
         if not url:
             return False
-        return url.startswith("https://en.wikipedia.org/") or url.startswith(
-            "http://en.wikipedia.org/"
-        )
+        return url.startswith(("https://en.wikipedia.org/", "http://en.wikipedia.org/"))
 
     def _choose_richer_entity(self, a: Any, b: Any) -> Any:
         return choose_richer_entity(a, b)

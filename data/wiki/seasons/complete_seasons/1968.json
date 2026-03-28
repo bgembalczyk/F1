@@ -2981,15 +2981,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired",
-                "pole_position": true
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -2997,8 +2988,9 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "pole_position": true
               }
             ]
           },
@@ -3009,8 +3001,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -3021,8 +3013,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3033,8 +3025,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3045,8 +3037,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -3057,11 +3049,12 @@
             },
             "results": [
               {
-                "position": 48,
-                "pole_position": true
+                "position": 1,
+                "background": "Winner"
               }
             ]
-          }
+          },
+          "points": 48.0
         },
         {
           "pos": 2,
@@ -3119,14 +3112,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 6,
-                "background": "Other points position"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -3134,9 +3119,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
-                "fastest_lap": true
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -3147,8 +3131,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner",
+                "fastest_lap": true
               }
             ]
           },
@@ -3159,8 +3144,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3171,9 +3156,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
-                "fastest_lap": true
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -3184,8 +3168,9 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": 1,
+                "background": "Winner",
+                "fastest_lap": true
               }
             ]
           },
@@ -3196,11 +3181,12 @@
             },
             "results": [
               {
-                "position": 36,
-                "pole_position": true
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 36.0
         },
         {
           "pos": 3,
@@ -3280,14 +3266,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 4,
-                "background": "Other points position"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -3295,8 +3273,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3307,8 +3285,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3331,8 +3309,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -3355,11 +3333,12 @@
             },
             "results": [
               {
-                "position": 33,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 33.0
         },
         {
           "pos": 4,
@@ -3428,14 +3407,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 3,
-                "background": "Third place"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -3443,9 +3414,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position",
-                "pole_position": true
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -3456,8 +3426,9 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": 4,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -3468,16 +3439,28 @@
             },
             "results": [
               {
+                "position": 3,
+                "background": "Third place"
+              }
+            ]
+          },
+          "can": {
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "DNS",
                 "background": "Did not start"
               }
             ]
           },
-          "can": null,
-          "usa": {
+          "usa": null,
+          "mex": {
             "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
             "results": [
               {
@@ -3486,18 +3469,7 @@
               }
             ]
           },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 27,
-                "pole_position": true
-              }
-            ]
-          }
+          "points": 27.0
         },
         {
           "pos": 5,
@@ -3566,14 +3538,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 7,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -3581,7 +3545,7 @@
             },
             "results": [
               {
-                "position": 13,
+                "position": 7,
                 "background": "Other classified position"
               }
             ]
@@ -3593,8 +3557,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 13,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3605,8 +3569,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3617,8 +3581,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -3629,8 +3593,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -3641,11 +3605,12 @@
             },
             "results": [
               {
-                "position": 22,
-                "pole_position": true
+                "position": 2,
+                "background": "Second place"
               }
             ]
-          }
+          },
+          "points": 22.0
         },
         {
           "pos": 6,
@@ -3726,14 +3691,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -3741,8 +3698,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3753,8 +3710,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -3765,8 +3722,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3777,8 +3734,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -3789,8 +3746,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3801,11 +3758,12 @@
             },
             "results": [
               {
-                "position": 18,
-                "pole_position": true
+                "position": 4,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 18.0
         },
         {
           "pos": 7,
@@ -3885,15 +3843,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 1,
-                "background": "Winner",
-                "fastest_lap": true
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -3901,8 +3850,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner",
+                "fastest_lap": true
               }
             ]
           },
@@ -3926,8 +3876,7 @@
             "results": [
               {
                 "position": "Ret",
-                "background": "Not classified, retired",
-                "fastest_lap": true
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3938,8 +3887,9 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "fastest_lap": true
               }
             ]
           },
@@ -3950,10 +3900,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position",
-                "pole_position": true,
-                "fastest_lap": true
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -3964,11 +3912,14 @@
             },
             "results": [
               {
-                "position": 12,
-                "pole_position": true
+                "position": 6,
+                "background": "Other points position",
+                "pole_position": true,
+                "fastest_lap": true
               }
             ]
-          }
+          },
+          "points": 12.0
         },
         {
           "pos": 8,
@@ -4049,14 +4000,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 5,
-                "background": "Other points position"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -4064,8 +4007,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -4077,8 +4020,7 @@
             "results": [
               {
                 "position": "Ret",
-                "background": "Not classified, retired",
-                "pole_position": true
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4090,7 +4032,8 @@
             "results": [
               {
                 "position": "Ret",
-                "background": "Not classified, retired"
+                "background": "Not classified, retired",
+                "pole_position": true
               }
             ]
           },
@@ -4101,8 +4044,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4113,8 +4056,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -4125,11 +4068,12 @@
             },
             "results": [
               {
-                "position": 12,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 12.0
         },
         {
           "pos": 9,
@@ -4211,14 +4155,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -4238,8 +4174,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4250,8 +4186,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -4286,11 +4222,12 @@
             },
             "results": [
               {
-                "position": 11,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 11.0
         },
         {
           "pos": 10,
@@ -4362,14 +4299,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 2,
-                "background": "Second place"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -4377,8 +4306,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -4437,11 +4366,12 @@
             },
             "results": [
               {
-                "position": 10,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 10.0
         },
         {
           "pos": 11,
@@ -4468,24 +4398,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 9,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 9.0
         },
         {
           "pos": 12,
@@ -4566,14 +4485,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -4581,8 +4492,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4593,8 +4504,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -4606,8 +4517,7 @@
             "results": [
               {
                 "position": "Ret",
-                "background": "Not classified, retired",
-                "pole_position": true
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4619,7 +4529,8 @@
             "results": [
               {
                 "position": "Ret",
-                "background": "Not classified, retired"
+                "background": "Not classified, retired",
+                "pole_position": true
               }
             ]
           },
@@ -4642,11 +4553,12 @@
             },
             "results": [
               {
-                "position": 8,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 8.0
         },
         {
           "pos": 13,
@@ -4705,7 +4617,11 @@
               }
             ]
           },
-          "": {
+          "gbr": {
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -4713,10 +4629,10 @@
               }
             ]
           },
-          "gbr": {
+          "ger": {
             "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
             "results": [
               {
@@ -4725,22 +4641,11 @@
               }
             ]
           },
-          "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 6.0
         },
         {
           "pos": 14,
@@ -4776,12 +4681,12 @@
               }
             ]
           },
-          "": null,
           "gbr": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -4790,10 +4695,10 @@
               }
             ]
           },
-          "ita": {
+          "can": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -4802,19 +4707,7 @@
               }
             ]
           },
-          "can": null,
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "usa": null,
           "mex": {
             "round": {
               "text": "MEX",
@@ -4822,11 +4715,12 @@
             },
             "results": [
               {
-                "position": 6,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 6.0
         },
         {
           "pos": 15,
@@ -4884,14 +4778,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -4899,8 +4785,8 @@
             },
             "results": [
               {
-                "position": 11,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4911,9 +4797,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired",
-                "fastest_lap": true
+                "position": 11,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4925,7 +4810,8 @@
             "results": [
               {
                 "position": "Ret",
-                "background": "Not classified, retired"
+                "background": "Not classified, retired",
+                "fastest_lap": true
               }
             ]
           },
@@ -4936,8 +4822,8 @@
             },
             "results": [
               {
-                "position": "DNS",
-                "background": "Did not start"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4948,8 +4834,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": "DNS",
+                "background": "Did not start"
               }
             ]
           },
@@ -4960,11 +4846,12 @@
             },
             "results": [
               {
-                "position": 6,
-                "pole_position": true
+                "position": 3,
+                "background": "Third place"
               }
             ]
-          }
+          },
+          "points": 6.0
         },
         {
           "pos": 16,
@@ -5011,24 +4898,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 6.0
         },
         {
           "pos": 17,
@@ -5075,11 +4951,11 @@
             ]
           },
           "fra": null,
-          "": null,
-          "gbr": {
+          "gbr": null,
+          "ger": {
             "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
             "results": [
               {
@@ -5088,19 +4964,7 @@
               }
             ]
           },
-          "ger": null,
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "NC",
-                "background": "Not classified, finished"
-              }
-            ]
-          },
+          "ita": null,
           "can": {
             "round": {
               "text": "CAN",
@@ -5120,8 +4984,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -5132,11 +4996,12 @@
             },
             "results": [
               {
-                "position": 5,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 5.0
         },
         {
           "pos": 18,
@@ -5158,14 +5023,6 @@
               {
                 "position": 4,
                 "background": "Other points position"
-              }
-            ]
-          },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
               }
             ]
           },
@@ -5200,8 +5057,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5212,8 +5069,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -5224,8 +5081,8 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5236,11 +5093,12 @@
             },
             "results": [
               {
-                "position": 5,
-                "pole_position": true
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 5.0
         },
         {
           "pos": 19,
@@ -5287,24 +5145,13 @@
           },
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 4,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 4.0
         },
         {
           "pos": 20,
@@ -5373,14 +5220,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 8,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -5400,8 +5239,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5412,8 +5251,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -5448,11 +5287,12 @@
             },
             "results": [
               {
-                "position": 4,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 4.0
         },
         {
           "pos": 21,
@@ -5499,14 +5339,6 @@
             ]
           },
           "fra": null,
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -5514,8 +5346,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5526,8 +5358,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5550,8 +5382,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5562,8 +5394,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -5574,11 +5406,12 @@
             },
             "results": [
               {
-                "position": 3,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 3.0
         },
         {
           "pos": 22,
@@ -5636,7 +5469,11 @@
             ]
           },
           "fra": null,
-          "": {
+          "gbr": {
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -5644,19 +5481,7 @@
               }
             ]
           },
-          "gbr": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "background": "Other points position"
-              }
-            ]
-          },
+          "ger": null,
           "ita": {
             "round": {
               "text": "ITA",
@@ -5664,8 +5489,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -5676,8 +5501,8 @@
             },
             "results": [
               {
-                "position": "NC",
-                "background": "Not classified, finished"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5688,8 +5513,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -5700,11 +5525,12 @@
             },
             "results": [
               {
-                "position": 3,
-                "pole_position": true
+                "position": 5,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 3.0
         },
         {
           "pos": 23,
@@ -5784,14 +5610,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -5799,8 +5617,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5811,8 +5629,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -5847,8 +5665,8 @@
             },
             "results": [
               {
-                "position": 10,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5859,11 +5677,12 @@
             },
             "results": [
               {
-                "position": 2,
-                "pole_position": true
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 2.0
         },
         {
           "pos": 24,
@@ -5899,14 +5718,6 @@
             ]
           },
           "fra": null,
-          "": {
-            "results": [
-              {
-                "position": "NC",
-                "background": "Not classified, finished"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -5914,8 +5725,8 @@
             },
             "results": [
               {
-                "position": "DNS",
-                "background": "Did not start"
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -5926,26 +5737,27 @@
             },
             "results": [
               {
+                "position": "DNS",
+                "background": "Did not start"
+              }
+            ]
+          },
+          "ita": {
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "DNQ",
                 "background": "Did not qualify"
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 2.0
         },
         {
           "pos": null,
@@ -5959,21 +5771,9 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "ita": null,
           "can": {
             "round": {
               "text": "CAN",
@@ -5981,8 +5781,8 @@
             },
             "results": [
               {
-                "position": "DNS",
-                "background": "Did not start"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5993,8 +5793,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": "DNS",
+                "background": "Did not start"
               }
             ]
           },
@@ -6005,11 +5805,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6034,24 +5835,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6065,11 +5855,11 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
-          "gbr": {
+          "gbr": null,
+          "ger": {
             "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
             "results": [
               {
@@ -6078,22 +5868,11 @@
               }
             ]
           },
-          "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6107,11 +5886,11 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
-          "gbr": {
+          "gbr": null,
+          "ger": {
             "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
             },
             "results": [
               {
@@ -6120,22 +5899,11 @@
               }
             ]
           },
-          "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6160,24 +5928,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6191,12 +5948,12 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -6205,11 +5962,11 @@
               }
             ]
           },
-          "ita": null,
-          "can": {
+          "can": null,
+          "usa": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -6218,19 +5975,8 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6244,12 +5990,12 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -6258,11 +6004,11 @@
               }
             ]
           },
-          "ita": null,
-          "can": {
+          "can": null,
+          "usa": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -6272,19 +6018,8 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6298,12 +6033,12 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -6312,11 +6047,11 @@
               }
             ]
           },
-          "ita": null,
-          "can": {
+          "can": null,
+          "usa": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -6325,19 +6060,8 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6362,24 +6086,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6404,24 +6117,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6446,24 +6148,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6488,24 +6179,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6530,24 +6210,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6572,24 +6241,13 @@
               }
             ]
           },
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6603,7 +6261,11 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": {
+          "gbr": {
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -6611,23 +6273,12 @@
               }
             ]
           },
-          "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6641,12 +6292,12 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -6655,21 +6306,10 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6683,13 +6323,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
-          "ita": {
+          "ita": null,
+          "can": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -6698,20 +6338,9 @@
               }
             ]
           },
-          "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6725,15 +6354,15 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "ita": null,
           "can": null,
-          "usa": {
+          "usa": null,
+          "mex": {
             "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
+              "text": "MEX",
+              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
             },
             "results": [
               {
@@ -6742,18 +6371,7 @@
               }
             ]
           },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6767,13 +6385,13 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
-          "ita": {
+          "ita": null,
+          "can": {
             "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
             },
             "results": [
               {
@@ -6782,20 +6400,9 @@
               }
             ]
           },
-          "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6809,12 +6416,12 @@
           "bel": null,
           "ned": null,
           "fra": null,
-          "": null,
           "gbr": null,
-          "ger": {
+          "ger": null,
+          "ita": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -6823,167 +6430,10 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
-        },
-        {
-          "pos": null,
-          "driver": {
-            "text": "Driver",
-            "url": null
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1968_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "RSA"
-              }
-            ]
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1968_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ESP"
-              }
-            ]
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1968_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "MON"
-              }
-            ]
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1968_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "BEL"
-              }
-            ]
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1968_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "NED"
-              }
-            ]
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1968_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "FRA"
-              }
-            ]
-          },
-          "": {
-            "results": [
-              {
-                "position": "GBR"
-              }
-            ]
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1968_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "GER"
-              }
-            ]
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1968_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ITA"
-              }
-            ]
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "CAN"
-              }
-            ]
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1968_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "USA"
-              }
-            ]
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1968_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "MEX"
-              }
-            ]
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Pts."
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         }
       ],
       "constructors_standings": null,

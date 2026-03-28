@@ -1,76 +1,59 @@
-from pathlib import Path
+"""DEPRECATED ENTRYPOINT: use scrapers.grands_prix.entrypoint.run_list_scraper."""
 
-from scrapers.base.helpers.config_factory import (
-    ScraperCommonConfig,
-    build_table_config,
-)
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.options import ScraperOptions
-from models.records.factories import build_grands_prix_record
-from scrapers.base.runner import RunConfig
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.source_catalog import GRANDS_PRIX_LIST
+from scrapers.base.table.builders import build_columns
+from scrapers.base.table.builders import build_entity_metadata_columns
+from scrapers.base.table.builders import build_name_status_fragment
+from scrapers.base.table.builders import entity_column
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
-from scrapers.grands_prix.validator import GrandsPrixRecordValidator
+from scrapers.grands_prix.columns.seasons import SeasonsColumn
 
 
-class GrandsPrixListScraper(F1TableScraper):
+class GrandsPrixListScraper(SeedListTableScraper):
+    domain = "grands_prix"
+    output_basename = "f1_grands_prix_extended.json"
+
     """
     Uproszczony scraper np. dla tabeli 'By race title'
     z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix
     """
 
-    default_validator = GrandsPrixRecordValidator()
+    schema_columns = build_columns(
+        build_name_status_fragment(
+            header="Race title",
+            output_key="race_title",
+            column_type=RaceTitleStatusColumn(),
+        ),
+        build_entity_metadata_columns(
+            [
+                entity_column("Country", "country", LinksListColumn()),
+                entity_column("Years held", "years_held", SeasonsColumn()),
+                entity_column("Circuits", "circuits", IntColumn()),
+                entity_column("Total", "total", IntColumn()),
+            ],
+        ),
+    )
 
-    schema_columns = [
-        column("Race title", "race_title", RaceTitleStatusColumn()),
-        column("Country", "country", LinksListColumn()),
-        column("Years held", "years_held", SeasonsColumn()),
-        column("Circuits", "circuits", IntColumn()),
-        column("Total", "total", IntColumn()),
-    ]
-
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix",
-        section_id="By_race_title",
-        # podzbiór nagłówków – do znalezienia właściwej tabeli
+    CONFIG = build_scraper_config(
+        url=GRANDS_PRIX_LIST.base_url,
+        section_id=GRANDS_PRIX_LIST.section_id,
+        # podzbiór nagłówków - do znalezienia właściwej tabeli
         expected_headers=[
             "Race title",
             "Years held",
         ],
-        schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=build_grands_prix_record,
+        columns=schema_columns,
+        record_factory=RECORD_FACTORIES.builders("grands_prix"),
     )
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
-        options = build_table_config(
-            options,
-            config=ScraperCommonConfig(
-                include_urls=True,
-                normalize_empty_values=True,
-                validation_mode="soft",
-            ),
-        )
-        super().__init__(options=options, config=config)
 
 
 if __name__ == "__main__":
-    run_and_export(
-        GrandsPrixListScraper,
-        "grands_prix/f1_grands_prix_by_title.json",
-        "grands_prix/f1_grands_prix_by_title.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

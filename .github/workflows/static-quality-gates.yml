@@ -1,0 +1,149 @@
+name: Static quality gates
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  NEW_DUPLICATES_WARN_THRESHOLD: "1"
+  NEW_DUPLICATES_FAIL_THRESHOLD: "3"
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Setup Node.js (jscpd)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Complexity warning threshold (radon)
+        continue-on-error: true
+        run: |
+          radon cc scrapers layers models validation infrastructure \
+            --show-complexity \
+            --min B
+
+      - name: Complexity error threshold (xenon)
+        run: |
+          xenon scrapers layers models validation infrastructure \
+            --max-absolute C \
+            --max-modules C \
+            --max-average B
+
+      - name: Duplicate code and oversized units gate (pylint)
+        run: |
+          pylint scrapers layers models validation infrastructure --rcfile=.pylintrc
+
+      - name: Detect changed Python files
+        id: changed-py
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+          fi
+          echo "base_sha=$BASE_SHA" >> "$GITHUB_OUTPUT"
+
+          mapfile -t PY_FILES < <(git diff --name-only "$BASE_SHA" "${{ github.sha }}" -- '*.py')
+          if [[ ${#PY_FILES[@]} -eq 0 ]]; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "changed_files=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          printf 'Zmodyfikowane pliki Python:\n%s\n' "${PY_FILES[*]}"
+          CHANGED_FILES=$(printf '%s\n' "${PY_FILES[@]}" | paste -sd, -)
+          echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          echo "changed_files=$CHANGED_FILES" >> "$GITHUB_OUTPUT"
+
+      - name: Scan changed Python files for duplicate fragments (jscpd)
+        if: steps.changed-py.outputs.has_changes == 'true'
+        run: |
+          mkdir -p .jscpd-report
+          npx jscpd \
+            --pattern "**/*.py" \
+            --min-lines 5 \
+            --min-tokens 50 \
+            --threshold 100 \
+            --reporters json \
+            --output .jscpd-report \
+            $(echo "${{ steps.changed-py.outputs.changed_files }}" | tr ',' ' ')
+
+      - name: Build duplicate report and evaluate thresholds
+        if: always()
+        id: dup-report
+        shell: bash
+        run: |
+          python scripts/ci/duplicate_report.py \
+            --report-json .jscpd-report/jscpd-report.json \
+            --output-md .jscpd-report/pr-comment.md \
+            --warn-threshold "$NEW_DUPLICATES_WARN_THRESHOLD" \
+            --fail-threshold "$NEW_DUPLICATES_FAIL_THRESHOLD" \
+            --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
+            --head-sha "${{ github.sha }}" \
+            --changed-files "${{ steps.changed-py.outputs.changed_files }}" \
+            --github-output "$GITHUB_OUTPUT"
+
+      - name: Publish duplicate report as PR comment
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && always()
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          recreate: true
+          path: .jscpd-report/pr-comment.md
+
+      - name: Skip PR comment for forked repositories (read-only token)
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository && always()
+        run: |
+          echo "::warning::Pomijam publikację komentarza PR dla forka (GITHUB_TOKEN bez uprawnienia write)."
+
+      - name: Enforce duplicate thresholds for new code
+        if: always()
+        shell: bash
+        run: |
+          echo "Nowe duplikaty: ${{ steps.dup-report.outputs.duplicate_count }}"
+          echo "Status: ${{ steps.dup-report.outputs.duplicate_status }}"
+
+          if [[ "${{ steps.dup-report.outputs.duplicate_status }}" == "warn" ]]; then
+            echo "::warning::Przekroczono próg ostrzegawczy nowych duplikatów (${NEW_DUPLICATES_WARN_THRESHOLD})."
+          fi
+
+          if [[ "${{ steps.dup-report.outputs.duplicate_status }}" == "fail" ]]; then
+            echo "::error::Przekroczono próg blokujący nowych duplikatów (${NEW_DUPLICATES_FAIL_THRESHOLD})."
+            exit 1
+          fi
+
+      - name: Architectural import rules (import-linter)
+        run: |
+          lint-imports --config importlinter.ini
+
+      - name: Strict typing regression gate (mypy)
+        run: |
+          mypy --config-file mypy.ini
+
+      - name: Domain contracts gate (pytest)
+        run: |
+          pytest -q tests/test_domain_role_contracts.py tests/test_domain_role_contracts_ci_meta.py

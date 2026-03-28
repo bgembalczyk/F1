@@ -1,0 +1,178 @@
+[
+  {
+    "name": {
+      "list": [
+        "Fuji Speedway"
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Fuji_Speedway",
+    "circuit_status": "former",
+    "type": "Race circuit",
+    "direction": "Clockwise",
+    "grands_prix": [
+      {
+        "text": "Japanese Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Japanese_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1976,
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+      },
+      {
+        "year": 1977,
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      },
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 4,
+    "location": {
+      "places": [
+        {
+          "text": "Oyama",
+          "url": "https://en.wikipedia.org/wiki/Oyama,_Shizuoka"
+        },
+        {
+          "text": "Suntō District",
+          "url": "https://en.wikipedia.org/wiki/Sunt%C5%8D_District,_Shizuoka"
+        },
+        {
+          "text": "Shizuoka",
+          "url": "https://en.wikipedia.org/wiki/Shizuoka_Prefecture"
+        },
+        {
+          "text": "Japan"
+        }
+      ],
+      "coordinates": {
+        "lat": 35.37167,
+        "lon": 138.92667
+      }
+    },
+    "fia_grade": 1,
+    "history": [
+      {
+        "event": "opened",
+        "date": "1966-01"
+      },
+      {
+        "event": "closed",
+        "date": "2003-09"
+      },
+      {
+        "event": "reopened",
+        "date": "2005-04"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "4th and current configuration",
+        "years": "2005–present",
+        "length_km": 4.563,
+        "length_mi": 2.835,
+        "turns": 16,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Felipe Massa",
+              "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
+            },
+            "vehicle": {
+              "text": "Ferrari F2008",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_F2008"
+            },
+            "time": 78.426,
+            "year": "2008",
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "3rd configuration",
+        "years": "September 1987–2003",
+        "length_km": 4.4,
+        "length_mi": 2.734,
+        "turns": 12,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Andrew Gilbert-Scott",
+              "url": "https://en.wikipedia.org/wiki/Andrew_Gilbert-Scott"
+            },
+            "vehicle": {
+              "text": "Lola T93/50",
+              "url": "https://en.wikipedia.org/wiki/Lola_Cars"
+            },
+            "time": 77.025,
+            "year": "1994",
+            "series": {
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "2nd configuration",
+        "years": "1975–August 1987",
+        "length_km": 4.359,
+        "length_mi": 2.709,
+        "turns": 8,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Jody Scheckter",
+              "url": "https://en.wikipedia.org/wiki/Jody_Scheckter"
+            },
+            "vehicle": {
+              "text": "Wolf WR1",
+              "url": "https://en.wikipedia.org/wiki/Wolf_WR1"
+            },
+            "time": 74.3,
+            "year": "1977",
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Original Circuit",
+        "years": "1965–1974",
+        "length_km": 5.999,
+        "length_mi": 3.728,
+        "turns": 15,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Vern Schuppan",
+              "url": "https://en.wikipedia.org/wiki/Vern_Schuppan"
+            },
+            "vehicle": {
+              "text": "March 722",
+              "url": "https://en.wikipedia.org/wiki/March_722"
+            },
+            "time": 92.57,
+            "year": "1973",
+            "series": {
+              "text": "F2000",
+              "url": "https://en.wikipedia.org/wiki/Super_Formula_Championship#Formula_2000_(1973–1977)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

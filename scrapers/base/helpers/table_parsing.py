@@ -1,6 +1,6 @@
 """Shared utility for parsing HTML tables with pipeline."""
 
-from typing import Any, Dict, List
+from typing import Any
 
 from bs4 import Tag
 
@@ -15,7 +15,7 @@ class TableParsingHelper:
     def parse_table_with_pipeline(
         table: Tag,
         pipeline: TablePipeline,
-    ) -> List[Dict[str, Any]]:
+    ) -> list[dict[str, Any]]:
         """Parse a table using the provided pipeline.
 
         Args:
@@ -26,7 +26,7 @@ class TableParsingHelper:
             List of parsed records
         """
         parser = HtmlTableParser()
-        records: List[Dict[str, Any]] = []
+        records: list[dict[str, Any]] = []
         for row_index, row in enumerate(parser.parse_table(table)):
             record = pipeline.parse_cells(
                 row.headers,

@@ -1,12 +1,9 @@
-from pathlib import Path
-
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.records import record_from_mapping
-from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.source_catalog import TYRES
+from scrapers.base.table.columns.types import SkipColumn
+from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.tyres.columns.append_links import AppendLinksColumn
 
@@ -28,26 +25,20 @@ class TyreManufacturersBySeasonScraper(F1TableScraper):
         column("Wins", "wins", SkipColumn()),
     ]
 
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/Formula_One_tyres#Tyre_manufacturers_by_season",
-        section_id="Tyre_manufacturers_by_season",
+    CONFIG = build_scraper_config(
+        url=TYRES.url(),
+        section_id=TYRES.section_id,
         expected_headers=[
             "Season",
             "Manufacturer 1",
             "Wins",
         ],
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
 
 if __name__ == "__main__":
-    run_and_export(
-        TyreManufacturersBySeasonScraper,
-        "tyres/f1_tyre_manufacturers_by_season.json",
-        "tyres/f1_tyre_manufacturers_by_season.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

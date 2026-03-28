@@ -25,20 +25,20 @@ database "JSON/CSV\nFiles" as Files
 
 == Initialization ==
 User -> Main: run main()
-Main -> Main: run_list_scrapers()
+Main -> Main: run_layer_zero()
 
 == List Scraper Execution ==
 loop For each list scraper
     Main -> Runner: run_and_export(scraper_cls)
     Runner -> List: __init__(options)
     List --> Runner: scraper instance
-    
+
     Runner -> List: fetch()
-    
+
     == Download Phase ==
     List -> Base: _download()
     Base -> Cache: get(url)
-    
+
     alt Cache Hit
         Cache -> FileCache: read cached HTML
         FileCache --> Cache: HTML content
@@ -49,13 +49,13 @@ loop For each list scraper
         Http --> Cache: HTML content
         Cache -> FileCache: save to cache
     end
-    
+
     Cache --> Base: HTML content
-    
+
     == Parse Phase ==
     Base -> Base: BeautifulSoup(html)
     Base -> Parser: parse(soup)
-    
+
     alt Table Scraper
         Parser -> Parser: find table by section_id
         Parser -> Parser: extract headers
@@ -72,9 +72,9 @@ loop For each list scraper
             Parser -> Parser: parse_item()
         end
     end
-    
+
     Parser --> Base: raw_records[]
-    
+
     == Normalize Phase ==
     Base -> Norm: normalize(raw_records)
     loop For each record
@@ -82,20 +82,20 @@ loop For each list scraper
         Norm -> Norm: trim whitespace
     end
     Norm --> Base: normalized_records[]
-    
+
     == Transform Phase ==
     Base -> Trans: apply_transformers(records)
     loop For each transformer
         Trans -> Trans: transform(record)
     end
     Trans --> Base: transformed_records[]
-    
+
     == Validation Phase ==
     Base -> Valid: validate_records(records)
     loop For each record
         Valid -> Valid: validate(record)
         Valid -> Valid: validate_record_factory(record)
-        
+
         alt Validation Failed & Hard Mode
             Valid --> Base: raise ScraperValidationError
         else Validation Failed & Soft Mode
@@ -105,58 +105,58 @@ loop For each list scraper
         end
     end
     Valid --> Base: valid_records[]
-    
+
     == Post-Process Phase ==
     Base -> Base: post_process_records(records)
     Base --> List: export_records[]
-    
+
     == Export Phase ==
     List -> Export: to_json(path)
     Export -> Files: write JSON file
-    
+
     List -> Export: to_csv(path)
     Export -> Files: write CSV file
 end
 
 == Complete Scraper Execution ==
-Main -> Main: run_complete_scrapers()
+Main -> Main: run_layer_one() [currently disabled in main]
 
 loop For each complete scraper
     Main -> Runner: run_and_export(scraper_cls)
     Runner -> Complete: __init__(options)
     Complete --> Runner: scraper instance
-    
+
     Runner -> Complete: fetch()
-    
+
     == List Phase ==
     Complete -> List: fetch()
     Note right: Reuses list scraper\nto get all items
     List --> Complete: list_records[]
-    
+
     == Detail Phase ==
     loop For each record in list
         Complete -> Complete: get_detail_url(record)
-        
+
         alt Has detail URL
             Complete -> Complete: single_scraper.fetch_by_url(url)
-            
+
             == Single Item Scraping ==
             Note right: Uses Infobox + Tables\nfor detailed data
             Complete -> Cache: get(detail_url)
             Cache --> Complete: HTML
-            
+
             Complete -> Parser: parse infobox
             Complete -> Parser: parse tables
             Parser --> Complete: detail_record
-            
+
             Complete -> Complete: assemble_record(list, details)
         else No detail URL
             Complete -> Complete: assemble_record(list, None)
         end
     end
-    
+
     Complete --> Runner: complete_records[]
-    
+
     Runner -> Export: export(records)
     Export -> Files: write JSON/CSV
 end

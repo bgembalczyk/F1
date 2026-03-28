@@ -1,10 +1,9 @@
 from typing import Any
-from typing import Dict
 
 from scrapers.base.table.columns.context import ColumnContext
 
 
-def restart_status(ctx: ColumnContext) -> Dict[str, Any] | None:
+def restart_status(ctx: ColumnContext) -> dict[str, Any] | None:
     text = (ctx.clean_text or "").strip()
     if not text:
         return None

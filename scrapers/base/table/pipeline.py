@@ -1,32 +1,35 @@
+from collections.abc import Mapping
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import TypeAlias
 from urllib.parse import urlsplit
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from models.records.link import LinkRecord
+from scrapers.base.debug_dumps import TablePipelineDebugContext
+from scrapers.base.debug_dumps import write_table_pipeline_dump
+from scrapers.base.errors import ScraperParseError
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.url import normalize_url
-from scrapers.base.errors import ScraperParseError
-from scrapers.base.debug_dumps import (
-    TablePipelineDebugContext,
-    write_table_pipeline_dump,
-)
 from scrapers.base.logging import get_logger
-from scrapers.base.normalization import (
-    EmptyValuePolicy,
-    normalize_empty,
-    normalize_record_values,
-)
+from scrapers.base.normalization import EmptyValuePolicy
+from scrapers.base.normalization import normalize_record_values
+from scrapers.base.normalization_utils import normalize_empty
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.constants import SKIP_SENTINEL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
+from scrapers.base.table.row import TableRow
+from scrapers.base.table.sentinels import SKIP_SENTINEL
+
+RecordValue: TypeAlias = object
+TableRecord: TypeAlias = dict[str, RecordValue]
 
 
 class TablePipeline:
@@ -55,7 +58,9 @@ class TablePipeline:
         self.model_fields = model_fields
         self.run_id = run_id
         self.normalize_empty_values = normalize_empty_values
-        self.empty_value_policy = EmptyValuePolicy.from_flag(normalize_empty_values)
+        self.empty_value_policy = EmptyValuePolicy.from_flag(
+            normalize_empty_values=normalize_empty_values,
+        )
 
         self.section_id = config.section_id
         self.expected_headers = config.expected_headers
@@ -76,7 +81,7 @@ class TablePipeline:
     def set_run_id(self, run_id: str | None) -> None:
         self.run_id = run_id
 
-    def parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def parse_soup(self, soup: BeautifulSoup) -> list[TableRecord]:
         self._normalized_empty_cells = 0
         section_hint = self.section_id or self.fragment
         candidate_tables = find_section_elements(
@@ -99,16 +104,7 @@ class TablePipeline:
             table_css_class=self.table_css_class,
         )
 
-        records: list[dict[str, Any]] = []
-        for row_index, row in enumerate(parser.parse(soup)):
-            record = self.parse_cells(
-                row.headers,
-                row.cells,
-                row_index=row_index,
-                header_cells=row.header_cells,
-            )
-            if record:
-                records.append(record)
+        records = self.parse_rows(parser.parse(soup))
 
         self.logger.debug(
             "TablePipeline parsed %d row(s) from %d table(s) (section_id=%s run_id=%s)",
@@ -127,13 +123,26 @@ class TablePipeline:
 
         return records
 
+    def parse_rows(self, rows: Sequence[TableRow]) -> list[TableRecord]:
+        records: list[TableRecord] = []
+        for row_index, row in enumerate(rows):
+            record = self.parse_cells(
+                row.headers,
+                row.cells,
+                row_index=row_index,
+                header_cells=row.header_cells,
+            )
+            if record:
+                records.append(record)
+        return records
+
     def parse_row(
         self,
         row: Mapping[str, Tag],
         *,
         row_index: int | None = None,
-    ) -> Any:
-        record: dict[str, Any] = {}
+    ) -> TableRecord:
+        record: TableRecord = {}
 
         for header, cell in row.items():
             if not isinstance(header, str):
@@ -151,9 +160,9 @@ class TablePipeline:
         *,
         row_index: int | None = None,
         header_cells: Sequence[Tag] | None = None,
-    ) -> Any:
-        record: dict[str, Any] = {}
-        for index, (header, cell) in enumerate(zip(headers, cells)):
+    ) -> TableRecord:
+        record: TableRecord = {}
+        for index, (header, cell) in enumerate(zip(headers, cells, strict=False)):
             header_cell = None
             if header_cells and index < len(header_cells):
                 header_cell = header_cells[index]
@@ -166,24 +175,20 @@ class TablePipeline:
             )
         return self._finalize_record(record)
 
-    def _finalize_record(self, record: dict[str, Any]) -> Any:
+    def _finalize_record(self, record: TableRecord) -> TableRecord:
         if not record or self.record_factory is None:
             return record
         normalized_record, _ = normalize_record_values(
             record,
             policy=self.empty_value_policy,
         )
-        if isinstance(self.record_factory, type):
-            payload = normalized_record
-            if self.model_fields:
-                payload = {
-                    key: value
-                    for key, value in payload.items()
-                    if key in self.model_fields
-                }
-            instance = self.record_factory(**payload)
-            return instance
-        return self.record_factory(normalized_record)
+        payload = normalized_record
+        if self.model_fields:
+            payload = {
+                key: value for key, value in payload.items() if key in self.model_fields
+            }
+        created = self.record_factory.create(payload)
+        return dict(created) if isinstance(created, Mapping) else record
 
     @staticmethod
     def _cell_html(cell: Tag | None) -> str | None:
@@ -217,7 +222,9 @@ class TablePipeline:
         self.logger.warning("Saved table pipeline debug dump: %s", dump_path)
 
     def _normalize_cell(
-        self, header: str, cell: Tag
+        self,
+        header: str,
+        cell: Tag,
     ) -> tuple[str, str | None, str | None]:
         key = self.column_map.get(header, normalize_header(header))
         raw_text = cell.get_text(" ", strip=True)
@@ -252,7 +259,7 @@ class TablePipeline:
 
     def _apply_cell(
         self,
-        record: dict[str, Any],
+        record: TableRecord,
         header: str,
         cell: Tag,
         *,
@@ -303,7 +310,10 @@ class TablePipeline:
                 error=exc,
             )
             self.logger.exception(
-                "Failed parsing column (header=%s key=%s row_index=%s base_url=%s raw_text=%s)",
+                (
+                    "Failed parsing column (header=%s key=%s row_index=%s "
+                    "base_url=%s raw_text=%s)"
+                ),
                 header,
                 key,
                 row_index,
@@ -311,8 +321,9 @@ class TablePipeline:
                 raw_text,
             )
             row_label = row_index if row_index is not None else "unknown"
+            msg = f"Failed parsing column {header} in row {row_label}"
             raise ScraperParseError(
-                f"Failed parsing column {header} in row {row_label}",
+                msg,
                 url=self.base_url,
                 cause=exc,
             ) from exc

@@ -1,0 +1,2460 @@
+[
+  {
+    "manufacturer": {
+      "text": "Ferrari",
+      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+    },
+    "manufacturer_status": "current",
+    "engines_built_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      },
+      {
+        "year": 1956,
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+      },
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      },
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      },
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      },
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      },
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      },
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      },
+      {
+        "year": 1970,
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+      },
+      {
+        "year": 1971,
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
+      },
+      {
+        "year": 1972,
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
+      },
+      {
+        "year": 1973,
+        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
+      },
+      {
+        "year": 1974,
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
+      },
+      {
+        "year": 1975,
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
+      },
+      {
+        "year": 1976,
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+      },
+      {
+        "year": 1977,
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
+      },
+      {
+        "year": 1978,
+        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+      },
+      {
+        "year": 1979,
+        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
+      },
+      {
+        "year": 1980,
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
+      },
+      {
+        "year": 1981,
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+      },
+      {
+        "year": 1982,
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+      },
+      {
+        "year": 1983,
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+      },
+      {
+        "year": 1984,
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+      },
+      {
+        "year": 1985,
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+      },
+      {
+        "year": 1986,
+        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+      },
+      {
+        "year": 1987,
+        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+      },
+      {
+        "year": 1988,
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+      },
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      },
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      },
+      {
+        "year": 1995,
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+      },
+      {
+        "year": 1996,
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+      },
+      {
+        "year": 1997,
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+      },
+      {
+        "year": 1998,
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+      },
+      {
+        "year": 1999,
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+      },
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      },
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      },
+      {
+        "year": 2002,
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      },
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      },
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      },
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      },
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      },
+      {
+        "year": 2014,
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+      },
+      {
+        "year": 2015,
+        "url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship"
+      },
+      {
+        "year": 2016,
+        "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
+      },
+      {
+        "year": 2017,
+        "url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship"
+      },
+      {
+        "year": 2018,
+        "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
+      },
+      {
+        "year": 2019,
+        "url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship"
+      },
+      {
+        "year": 2020,
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+      },
+      {
+        "year": 2021,
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+      },
+      {
+        "year": 2022,
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+      },
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 1129,
+    "races_started": 1125,
+    "wins": 249,
+    "points": 11984.0,
+    "poles": 256,
+    "fastest_laps": 274,
+    "podiums": 844,
+    "wcc": 16,
+    "wdc": 15,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari",
+      "infoboxes": [
+        {
+          "title": "Ferrari",
+          "rows": {
+            "Full name": {
+              "text": "Scuderia Ferrari HP",
+              "links": [
+                {
+                  "text": "HP",
+                  "url": "https://en.wikipedia.org/wiki/HP_inc."
+                }
+              ]
+            },
+            "Base": {
+              "text": "Maranello , Modena, Italy 44°31′59″N 10°51′47″E ﻿ / ﻿ 44.533124°N 10.863097°E ﻿ / 44.533124; 10.863097 ﻿ ( Ferrari's facilities at Maranello )",
+              "links": [
+                {
+                  "text": "Maranello",
+                  "url": "https://en.wikipedia.org/wiki/Maranello"
+                },
+                {
+                  "text": "44°31′59″N10°51′47″E﻿ / ﻿44.533124°N 10.863097°E﻿ /44.533124; 10.863097﻿ (Ferrari's facilities at Maranello)",
+                  "url": "https://geohack.toolforge.org/geohack.php?pagename=Scuderia_Ferrari&params=44.533124_N_10.863097_E_type:landmark_region:IT-MO&title=Ferrari%27s+facilities+at+Maranello"
+                }
+              ]
+            },
+            "Team principal(s)": {
+              "text": "Frédéric Vasseur [ 1 ] Jérôme d'Ambrosio (Deputy Team Principal)",
+              "links": [
+                {
+                  "text": "Frédéric Vasseur",
+                  "url": "https://en.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Vasseur"
+                },
+                {
+                  "text": "Jérôme d'Ambrosio",
+                  "url": "https://en.wikipedia.org/wiki/J%C3%A9r%C3%B4me_d%27Ambrosio"
+                }
+              ]
+            },
+            "Technical Director(s)": {
+              "text": "Loïc Serra (Technical Director - Chassis) Enrico Gualtieri (Technical Director - Power Unit)",
+              "links": [
+                {
+                  "text": "Loïc Serra",
+                  "url": "https://en.wikipedia.org/wiki/Lo%C3%AFc_Serra"
+                },
+                {
+                  "text": "Enrico Gualtieri",
+                  "url": "https://en.wikipedia.org/wiki/Enrico_Gualtieri"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Enzo Ferrari",
+              "links": [
+                {
+                  "text": "Enzo Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Enzo_Ferrari"
+                }
+              ]
+            },
+            "Website": {
+              "text": "ferrari .com /formula1",
+              "links": [
+                {
+                  "text": "ferrari.com/formula1",
+                  "url": "https://ferrari.com/formula1"
+                }
+              ]
+            },
+            "Race drivers": {
+              "text": "16. Charles Leclerc [ 2 ] 44. Lewis Hamilton [ 3 ]",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Monaco"
+                },
+                {
+                  "text": "Charles Leclerc",
+                  "url": "https://en.wikipedia.org/wiki/Charles_Leclerc"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "Lewis Hamilton",
+                  "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+                }
+              ]
+            },
+            "Test driver(s)": {
+              "text": "99. Antonio Giovinazzi [ 4 ]",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Antonio Giovinazzi",
+                  "url": "https://en.wikipedia.org/wiki/Antonio_Giovinazzi"
+                }
+              ]
+            },
+            "Chassis": {
+              "text": "SF-26 [ 5 ]",
+              "links": [
+                {
+                  "text": "SF-26",
+                  "url": "https://en.wikipedia.org/wiki/Ferrari_SF-26"
+                }
+              ]
+            },
+            "Engine": {
+              "text": "Ferrari [ 6 ]",
+              "links": []
+            },
+            "Tyres": {
+              "text": "Pirelli",
+              "links": [
+                {
+                  "text": "Pirelli",
+                  "url": "https://en.wikipedia.org/wiki/Pirelli"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1950 Monaco Grand Prix",
+              "links": [
+                {
+                  "text": "1950 Monaco Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1950_Monaco_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "2026 Chinese Grand Prix",
+              "links": [
+                {
+                  "text": "2026 Chinese Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "1126 [ a ] (1122 starts [ b ] )",
+              "links": []
+            },
+            "Engines": {
+              "text": "Ferrari",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "16 ( 1961 , 1964 , 1975 , 1976 , 1977 , 1979 , 1982 , 1983 , 1999 , 2000 , 2001 , 2002 , 2003 , 2004 , 2007 , 2008 )",
+              "links": [
+                {
+                  "text": "1961",
+                  "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                },
+                {
+                  "text": "1964",
+                  "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+                },
+                {
+                  "text": "1975",
+                  "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                },
+                {
+                  "text": "1976",
+                  "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                },
+                {
+                  "text": "1977",
+                  "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                },
+                {
+                  "text": "1979",
+                  "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
+                },
+                {
+                  "text": "1982",
+                  "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+                },
+                {
+                  "text": "1983",
+                  "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+                },
+                {
+                  "text": "1999",
+                  "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2000",
+                  "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2001",
+                  "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2002",
+                  "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2003",
+                  "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2004",
+                  "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2007",
+                  "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2008",
+                  "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Drivers' Championships": {
+              "text": "15 ( 1952 , 1953 , 1956 , 1958 , 1961 , 1964 , 1975 , 1977 , 1979 , 2000 , 2001 , 2002 , 2003 , 2004 , 2007 )",
+              "links": [
+                {
+                  "text": "1952",
+                  "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                },
+                {
+                  "text": "1953",
+                  "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                },
+                {
+                  "text": "1956",
+                  "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                },
+                {
+                  "text": "1958",
+                  "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+                },
+                {
+                  "text": "1961",
+                  "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                },
+                {
+                  "text": "1964",
+                  "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+                },
+                {
+                  "text": "1975",
+                  "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                },
+                {
+                  "text": "1977",
+                  "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                },
+                {
+                  "text": "1979",
+                  "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
+                },
+                {
+                  "text": "2000",
+                  "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2001",
+                  "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2002",
+                  "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2003",
+                  "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2004",
+                  "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2007",
+                  "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Race victories": {
+              "text": "247 [ c ]",
+              "links": []
+            },
+            "Podiums": {
+              "text": "832 [ d ]",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "254",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "264 [ e ]",
+              "links": []
+            },
+            "2025 position": {
+              "text": "4th (398 pts)",
+              "links": []
+            }
+          }
+        },
+        {
+          "title": "Ferrari as a Formula One chassis constructor",
+          "rows": {
+            "Engines": {
+              "text": "Ferrari, Jaguar [ 7 ]",
+              "links": [
+                {
+                  "text": "Jaguar",
+                  "url": "https://en.wikipedia.org/wiki/Jaguar_Cars"
+                }
+              ]
+            },
+            "Entrants": {
+              "text": "Scuderia Ferrari, NART , numerous minor teams and privateers between 1950 and 1966",
+              "links": [
+                {
+                  "text": "NART",
+                  "url": "https://en.wikipedia.org/wiki/North_American_Racing_Team"
+                },
+                {
+                  "text": "1950",
+                  "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
+                },
+                {
+                  "text": "1966",
+                  "url": "https://en.wikipedia.org/wiki/1966_Formula_One_season"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1950 Monaco Grand Prix",
+              "links": [
+                {
+                  "text": "1950 Monaco Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1950_Monaco_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "2026 Chinese Grand Prix",
+              "links": [
+                {
+                  "text": "2026 Chinese Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "1126 (1123 starts [ f ] )",
+              "links": []
+            },
+            "Race victories": {
+              "text": "248 [ g ]",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "16 ( 1961 , 1964 , 1975 , 1976 , 1977 , 1979 , 1982 , 1983 , 1999 , 2000 , 2001 , 2002 , 2003 , 2004 , 2007 , 2008 )",
+              "links": [
+                {
+                  "text": "1961",
+                  "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                },
+                {
+                  "text": "1964",
+                  "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+                },
+                {
+                  "text": "1975",
+                  "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                },
+                {
+                  "text": "1976",
+                  "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                },
+                {
+                  "text": "1977",
+                  "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                },
+                {
+                  "text": "1979",
+                  "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
+                },
+                {
+                  "text": "1982",
+                  "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+                },
+                {
+                  "text": "1983",
+                  "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+                },
+                {
+                  "text": "1999",
+                  "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2000",
+                  "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2001",
+                  "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2002",
+                  "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2003",
+                  "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2004",
+                  "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2007",
+                  "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2008",
+                  "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Drivers' Championships": {
+              "text": "15 ( 1952 , 1953 , 1956 , 1958 , 1961 , 1964 , 1975 , 1977 , 1979 , 2000 , 2001 , 2002 , 2003 , 2004 , 2007 )",
+              "links": [
+                {
+                  "text": "1952",
+                  "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                },
+                {
+                  "text": "1953",
+                  "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                },
+                {
+                  "text": "1956",
+                  "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                },
+                {
+                  "text": "1958",
+                  "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+                },
+                {
+                  "text": "1961",
+                  "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                },
+                {
+                  "text": "1964",
+                  "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+                },
+                {
+                  "text": "1975",
+                  "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                },
+                {
+                  "text": "1977",
+                  "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                },
+                {
+                  "text": "1979",
+                  "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
+                },
+                {
+                  "text": "2000",
+                  "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2001",
+                  "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2002",
+                  "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2003",
+                  "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2004",
+                  "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2007",
+                  "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Podiums": {
+              "text": "837",
+              "links": []
+            },
+            "Points": {
+              "text": "WCC : 10762 WDC : 11663.77 [ i ]",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "254",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "265 [ h ]",
+              "links": []
+            }
+          }
+        },
+        {
+          "title": "Ferrari as a Formula One engine manufacturer",
+          "rows": {
+            "First entry": {
+              "text": "1950 Monaco Grand Prix",
+              "links": [
+                {
+                  "text": "1950 Monaco Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1950_Monaco_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "2026 Chinese Grand Prix",
+              "links": [
+                {
+                  "text": "2026 Chinese Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "1130 (1125 starts)",
+              "links": []
+            },
+            "Chassis": {
+              "text": "Ferrari, Kurtis Kraft , Cooper , De Tomaso , Minardi , Dallara , Lola , Red Bull , Toro Rosso , Spyker , Force India , Sauber , Marussia , Haas , Alfa Romeo , Cadillac",
+              "links": [
+                {
+                  "text": "Kurtis Kraft",
+                  "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+                },
+                {
+                  "text": "Cooper",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                },
+                {
+                  "text": "De Tomaso",
+                  "url": "https://en.wikipedia.org/wiki/De_Tomaso"
+                },
+                {
+                  "text": "Minardi",
+                  "url": "https://en.wikipedia.org/wiki/Minardi"
+                },
+                {
+                  "text": "Dallara",
+                  "url": "https://en.wikipedia.org/wiki/Dallara"
+                },
+                {
+                  "text": "Lola",
+                  "url": "https://en.wikipedia.org/wiki/Lola_Cars"
+                },
+                {
+                  "text": "Red Bull",
+                  "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing"
+                },
+                {
+                  "text": "Toro Rosso",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Toro_Rosso"
+                },
+                {
+                  "text": "Spyker",
+                  "url": "https://en.wikipedia.org/wiki/Spyker_F1"
+                },
+                {
+                  "text": "Force India",
+                  "url": "https://en.wikipedia.org/wiki/Force_India"
+                },
+                {
+                  "text": "Sauber",
+                  "url": "https://en.wikipedia.org/wiki/Sauber_Motorsport"
+                },
+                {
+                  "text": "Marussia",
+                  "url": "https://en.wikipedia.org/wiki/Marussia_F1"
+                },
+                {
+                  "text": "Haas",
+                  "url": "https://en.wikipedia.org/wiki/Haas_F1_Team"
+                },
+                {
+                  "text": "Alfa Romeo",
+                  "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+                },
+                {
+                  "text": "Cadillac",
+                  "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "16 ( 1961 , 1964 , 1975 , 1976 , 1977 , 1979 , 1982 , 1983 , 1999 , 2000 , 2001 , 2002 , 2003 , 2004 , 2007 , 2008 )",
+              "links": [
+                {
+                  "text": "1961",
+                  "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                },
+                {
+                  "text": "1964",
+                  "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+                },
+                {
+                  "text": "1975",
+                  "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                },
+                {
+                  "text": "1976",
+                  "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                },
+                {
+                  "text": "1977",
+                  "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                },
+                {
+                  "text": "1979",
+                  "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
+                },
+                {
+                  "text": "1982",
+                  "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+                },
+                {
+                  "text": "1983",
+                  "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+                },
+                {
+                  "text": "1999",
+                  "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2000",
+                  "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2001",
+                  "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2002",
+                  "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2003",
+                  "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2004",
+                  "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2007",
+                  "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2008",
+                  "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Drivers' Championships": {
+              "text": "15 ( 1952 , 1953 , 1956 , 1958 , 1961 , 1964 , 1975 , 1977 , 1979 , 2000 , 2001 , 2002 , 2003 , 2004 , 2007 )",
+              "links": [
+                {
+                  "text": "1952",
+                  "url": "https://en.wikipedia.org/wiki/1952_Formula_One_season"
+                },
+                {
+                  "text": "1953",
+                  "url": "https://en.wikipedia.org/wiki/1953_Formula_One_season"
+                },
+                {
+                  "text": "1956",
+                  "url": "https://en.wikipedia.org/wiki/1956_Formula_One_season"
+                },
+                {
+                  "text": "1958",
+                  "url": "https://en.wikipedia.org/wiki/1958_Formula_One_season"
+                },
+                {
+                  "text": "1961",
+                  "url": "https://en.wikipedia.org/wiki/1961_Formula_One_season"
+                },
+                {
+                  "text": "1964",
+                  "url": "https://en.wikipedia.org/wiki/1964_Formula_One_season"
+                },
+                {
+                  "text": "1975",
+                  "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+                },
+                {
+                  "text": "1977",
+                  "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
+                },
+                {
+                  "text": "1979",
+                  "url": "https://en.wikipedia.org/wiki/1979_Formula_One_season"
+                },
+                {
+                  "text": "2000",
+                  "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2001",
+                  "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2002",
+                  "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2003",
+                  "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2004",
+                  "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+                },
+                {
+                  "text": "2007",
+                  "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Race victories": {
+              "text": "249",
+              "links": []
+            },
+            "Podiums": {
+              "text": "844",
+              "links": []
+            },
+            "Points": {
+              "text": "WCC : 11998 WDC : 12590.79",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "256",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "274",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Record",
+            "As a team",
+            "As a constructor"
+          ],
+          "rows": [
+            {
+              "Record": "Most Constructors' Championships",
+              "As a team": "16",
+              "As a constructor": "16"
+            },
+            {
+              "Record": "Most Drivers' Championships",
+              "As a team": "15",
+              "As a constructor": "15"
+            },
+            {
+              "Record": "Most Grands Prix participated",
+              "As a team": "1126",
+              "As a constructor": "1126"
+            },
+            {
+              "Record": "Most Grands Prix started",
+              "As a team": "1122",
+              "As a constructor": "1123"
+            },
+            {
+              "Record": "Most wins",
+              "As a team": "247",
+              "As a constructor": "248"
+            },
+            {
+              "Record": "Most podium finishes",
+              "As a team": "832 (in 637 races)",
+              "As a constructor": "837 (in 640 races)"
+            },
+            {
+              "Record": "Most 1-2 finishes",
+              "As a team": "86",
+              "As a constructor": "87"
+            },
+            {
+              "Record": "Most pole positions",
+              "As a team": "254",
+              "As a constructor": "254"
+            },
+            {
+              "Record": "Most fastest laps",
+              "As a team": "264",
+              "As a constructor": "265"
+            },
+            {
+              "Record": "Most laps led",
+              "As a team": "16070",
+              "As a constructor": "16077"
+            },
+            {
+              "Record": "Most Constructors' Championship points",
+              "As a team": "",
+              "As a constructor": "10762"
+            },
+            {
+              "Record": "Most Drivers' Championship points",
+              "As a team": "",
+              "As a constructor": "11663.77"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Driver",
+            "Nationality",
+            "Place of birth",
+            "Championships with Ferrari"
+          ],
+          "rows": [
+            {
+              "Driver": "Alberto Ascari",
+              "Nationality": "Italy",
+              "Place of birth": "Milan , Italy",
+              "Championships with Ferrari": "2 ( 1952 , 1953 )"
+            },
+            {
+              "Driver": "Juan Manuel Fangio",
+              "Nationality": "Argentina",
+              "Place of birth": "Balcarce , Buenos Aires, Argentina",
+              "Championships with Ferrari": "1 ( 1956 )"
+            },
+            {
+              "Driver": "Mike Hawthorn",
+              "Nationality": "United Kingdom",
+              "Place of birth": "Doncaster , Yorkshire , England",
+              "Championships with Ferrari": "1 ( 1958 )"
+            },
+            {
+              "Driver": "Phil Hill",
+              "Nationality": "United States",
+              "Place of birth": "Miami , Florida, U.S.",
+              "Championships with Ferrari": "1 ( 1961 )"
+            },
+            {
+              "Driver": "John Surtees",
+              "Nationality": "United Kingdom",
+              "Place of birth": "Tatsfield , England",
+              "Championships with Ferrari": "1 ( 1964 )"
+            },
+            {
+              "Driver": "Niki Lauda",
+              "Nationality": "Austria",
+              "Place of birth": "Vienna , Austria",
+              "Championships with Ferrari": "2 ( 1975 , 1977 )"
+            },
+            {
+              "Driver": "Jody Scheckter",
+              "Nationality": "South Africa",
+              "Place of birth": "East London, Eastern Cape , South Africa",
+              "Championships with Ferrari": "1 ( 1979 )"
+            },
+            {
+              "Driver": "Michael Schumacher",
+              "Nationality": "Germany",
+              "Place of birth": "Hürth , North Rhine-Westphalia, Germany",
+              "Championships with Ferrari": "5 ( 2000 , 2001 , 2002 , 2003 , 2004 )"
+            },
+            {
+              "Driver": "Kimi Räikkönen",
+              "Nationality": "Finland",
+              "Place of birth": "Espoo , Finland",
+              "Championships with Ferrari": "1 ( 2007 )"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Constructor",
+            "Season(s)",
+            "Win(s)",
+            "Pole position(s)",
+            "Fastest lap(s)",
+            "First win",
+            "Last win"
+          ],
+          "rows": [
+            {
+              "Constructor": "Ferrari",
+              "Season(s)": "1950-present",
+              "Win(s)": "248",
+              "Pole position(s)": "254",
+              "Fastest lap(s)": "265",
+              "First win": "1951 British Grand Prix",
+              "Last win": "2024 Mexico City Grand Prix"
+            },
+            {
+              "Constructor": "Kurtis Kraft",
+              "Season(s)": "1956",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "0",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Cooper",
+              "Season(s)": "1960 , 1966",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "0",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "De Tomaso",
+              "Season(s)": "1963",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "0",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Minardi",
+              "Season(s)": "1991",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "0",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Scuderia Italia",
+              "Season(s)": "1992-1993",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "0",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Red Bull Racing",
+              "Season(s)": "2006",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "0",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Spyker",
+              "Season(s)": "2007",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "0",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Toro Rosso",
+              "Season(s)": "2007-2013 , 2016",
+              "Win(s)": "1",
+              "Pole position(s)": "1",
+              "Fastest lap(s)": "1",
+              "First win": "2008 Italian Grand Prix",
+              "Last win": "2008 Italian Grand Prix"
+            },
+            {
+              "Constructor": "Force India",
+              "Season(s)": "2008",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "0",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Sauber",
+              "Season(s)": "2010-2018 , 2024-2025",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "3",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Marussia",
+              "Season(s)": "2014-2015",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "0",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Haas",
+              "Season(s)": "2016-present",
+              "Win(s)": "0",
+              "Pole position(s)": "1",
+              "Fastest lap(s)": "3",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Alfa Romeo",
+              "Season(s)": "2019-2023",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "2",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Cadillac",
+              "Season(s)": "2026-present",
+              "Win(s)": "0",
+              "Pole position(s)": "0",
+              "Fastest lap(s)": "0",
+              "First win": "-",
+              "Last win": "-"
+            },
+            {
+              "Constructor": "Total",
+              "Season(s)": "1950-present",
+              "Win(s)": "249",
+              "Pole position(s)": "256",
+              "Fastest lap(s)": "274",
+              "First win": "",
+              "Last win": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Achievements"
+          ],
+          "rows": [
+            {
+              "Achievements": "Preceded by Cooper"
+            },
+            {
+              "Achievements": "Preceded by Lotus"
+            },
+            {
+              "Achievements": "Preceded by McLaren"
+            },
+            {
+              "Achievements": "Preceded by Lotus"
+            },
+            {
+              "Achievements": "Preceded by Williams"
+            },
+            {
+              "Achievements": "Preceded by McLaren"
+            },
+            {
+              "Achievements": "Preceded by Renault"
+            },
+            {
+              "Achievements": "Awards"
+            },
+            {
+              "Achievements": "Preceded by Max Verstappen"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Fiat",
+      "url": "https://en.wikipedia.org/wiki/Fiat"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 1,
+    "races_started": 0,
+    "wins": 0,
+    "points": null,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": null,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Fiat",
+      "infoboxes": [
+        {
+          "title": "Fiat Automobiles S.p.A.",
+          "rows": {
+            "Company type": {
+              "text": "Subsidiary",
+              "links": [
+                {
+                  "text": "Subsidiary",
+                  "url": "https://en.wikipedia.org/wiki/Subsidiary_company"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive_industry"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "July 11, 1899 ; 126 years ago ( 1899-07-11 )",
+              "links": []
+            },
+            "Founder": {
+              "text": "Giovanni Agnelli",
+              "links": [
+                {
+                  "text": "Giovanni Agnelli",
+                  "url": "https://en.wikipedia.org/wiki/Giovanni_Agnelli"
+                }
+              ]
+            },
+            "Headquarters": {
+              "text": "Lingotto , Turin , Italy",
+              "links": [
+                {
+                  "text": "Lingotto",
+                  "url": "https://en.wikipedia.org/wiki/Lingotto"
+                },
+                {
+                  "text": "Turin",
+                  "url": "https://en.wikipedia.org/wiki/Turin"
+                }
+              ]
+            },
+            "Area served": {
+              "text": "Worldwide",
+              "links": []
+            },
+            "Key people": {
+              "text": "John Elkann (acting president ) Olivier François ( CEO )",
+              "links": [
+                {
+                  "text": "John Elkann",
+                  "url": "https://en.wikipedia.org/wiki/John_Elkann"
+                },
+                {
+                  "text": "president",
+                  "url": "https://en.wikipedia.org/wiki/President_(corporate_title)"
+                },
+                {
+                  "text": "Olivier François",
+                  "url": "https://en.wikipedia.org/wiki/Olivier_Fran%C3%A7ois"
+                },
+                {
+                  "text": "CEO",
+                  "url": "https://en.wikipedia.org/wiki/Chief_executive_officer"
+                }
+              ]
+            },
+            "Products": {
+              "text": "Automobiles",
+              "links": [
+                {
+                  "text": "Automobiles",
+                  "url": "https://en.wikipedia.org/wiki/Automobile"
+                }
+              ]
+            },
+            "Production output": {
+              "text": "1,350,000 units (2023)",
+              "links": []
+            },
+            "Owner": {
+              "text": "Stellantis",
+              "links": [
+                {
+                  "text": "Stellantis",
+                  "url": "https://en.wikipedia.org/wiki/Stellantis"
+                }
+              ]
+            },
+            "Parent": {
+              "text": "Stellantis Europe",
+              "links": [
+                {
+                  "text": "Stellantis Europe",
+                  "url": "https://en.wikipedia.org/wiki/Stellantis_Europe"
+                }
+              ]
+            },
+            "Website": {
+              "text": "www .fiat .com",
+              "links": [
+                {
+                  "text": "www.fiat.com",
+                  "url": "http://www.fiat.com"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Model",
+            "2011 sales"
+          ],
+          "rows": [
+            {
+              "Model": "Fiat Punto",
+              "2011 sales": "220,343"
+            },
+            {
+              "Model": "Fiat Panda",
+              "2011 sales": "189,527"
+            },
+            {
+              "Model": "Fiat 500",
+              "2011 sales": "156,301"
+            },
+            {
+              "Model": "Fiat Linea",
+              "2011 sales": "35,499"
+            },
+            {
+              "Model": "Fiat Bravo",
+              "2011 sales": "31,673"
+            },
+            {
+              "Model": "Fiat Sedici",
+              "2011 sales": "14,777"
+            },
+            {
+              "Model": "Fiat Freemont",
+              "2011 sales": "13,651"
+            },
+            {
+              "Model": "Fiat Albea",
+              "2011 sales": "8,951"
+            },
+            {
+              "Model": "Fiat Idea",
+              "2011 sales": "5,982"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Fondmetal",
+      "url": "https://en.wikipedia.org/wiki/Fondmetal"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 17,
+    "races_started": 17,
+    "wins": 0,
+    "points": 0.0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": 0,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Fondmetal",
+      "infoboxes": [
+        {
+          "title": "Fondmetal",
+          "rows": {
+            "Full name": {
+              "text": "Fondmetal Corse",
+              "links": []
+            },
+            "Base": {
+              "text": "Bergamo , Italy",
+              "links": [
+                {
+                  "text": "Bergamo",
+                  "url": "https://en.wikipedia.org/wiki/Bergamo"
+                },
+                {
+                  "text": "Italy",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Gabriele Rumi",
+              "links": [
+                {
+                  "text": "Gabriele Rumi",
+                  "url": "https://en.wikipedia.org/wiki/Gabriele_Rumi"
+                }
+              ]
+            },
+            "Noted staff": {
+              "text": "Tino Belli Sergio Rinland",
+              "links": [
+                {
+                  "text": "Tino Belli",
+                  "url": null
+                },
+                {
+                  "text": "Sergio Rinland",
+                  "url": "https://en.wikipedia.org/wiki/Sergio_Rinland"
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Olivier Grouillard Gabriele Tarquini Andrea Chiesa Eric van de Poele",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/France"
+                },
+                {
+                  "text": "Olivier Grouillard",
+                  "url": "https://en.wikipedia.org/wiki/Olivier_Grouillard"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Gabriele Tarquini",
+                  "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Switzerland"
+                },
+                {
+                  "text": "Andrea Chiesa",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Chiesa"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Belgium"
+                },
+                {
+                  "text": "Eric van de Poele",
+                  "url": "https://en.wikipedia.org/wiki/Eric_van_de_Poele"
+                }
+              ]
+            },
+            "Previous name": {
+              "text": "Osella Squadra Corse",
+              "links": [
+                {
+                  "text": "Osella Squadra Corse",
+                  "url": "https://en.wikipedia.org/wiki/Osella"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1991 United States Grand Prix",
+              "links": [
+                {
+                  "text": "1991 United States Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1991_United_States_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "29 (19 starts)",
+              "links": []
+            },
+            "Engines": {
+              "text": "Ford",
+              "links": [
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1992 Italian Grand Prix",
+              "links": [
+                {
+                  "text": "1992 Italian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1992_Italian_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1991",
+              "Chassis": "Fondmetal FA1M-E Fomet-1",
+              "Engine": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Chassis": "Fondmetal FA1M-E Fomet-1",
+              "Engine": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Olivier Grouillard",
+              "1": "DNPQ",
+              "2": "DNPQ",
+              "3": "DNPQ",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "DNPQ",
+              "9": "DNPQ",
+              "10": "DNQ",
+              "11": "10",
+              "12": "Ret",
+              "13": "DNPQ",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Chassis": "Fondmetal FA1M-E Fomet-1",
+              "Engine": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Gabriele Tarquini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "12",
+              "15": "11",
+              "16": "DNPQ",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1992",
+              "Chassis": "Fondmetal GR01 Fondmetal GR02",
+              "Engine": "Ford HBA5 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MEX",
+              "3": "BRA",
+              "4": "ESP",
+              "5": "SMR",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1992",
+              "Chassis": "Fondmetal GR01 Fondmetal GR02",
+              "Engine": "Ford HBA5 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Gabriele Tarquini",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "14",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1992",
+              "Chassis": "Fondmetal GR01 Fondmetal GR02",
+              "Engine": "Ford HBA5 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Andrea Chiesa",
+              "1": "DNQ",
+              "2": "Ret",
+              "3": "DNQ",
+              "4": "Ret",
+              "5": "DNQ",
+              "6": "DNQ",
+              "7": "DNQ",
+              "8": "Ret",
+              "9": "DNQ",
+              "10": "DNQ",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1992",
+              "Chassis": "Fondmetal GR01 Fondmetal GR02",
+              "Engine": "Ford HBA5 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Eric van de Poele",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "Ret",
+              "12": "10",
+              "13": "Ret",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "2000",
+              "Entrant": "Telefónica Minardi Fondmetal",
+              "Chassis": "Minardi M02",
+              "Engine": "Fondmetal RV10 3.0 V10",
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "GBR",
+              "5": "ESP",
+              "6": "EUR",
+              "7": "MON",
+              "8": "CAN",
+              "9": "FRA",
+              "10": "AUT",
+              "11": "GER",
+              "12": "HUN",
+              "13": "BEL",
+              "14": "ITA",
+              "15": "USA",
+              "16": "JPN",
+              "17": "MAL",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "2000",
+              "Entrant": "Telefónica Minardi Fondmetal",
+              "Chassis": "Minardi M02",
+              "Engine": "Fondmetal RV10 3.0 V10",
+              "Tyres": "B",
+              "Drivers": "Marc Gené",
+              "1": "8",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "14",
+              "5": "14",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "16 †",
+              "9": "15",
+              "10": "8",
+              "11": "Ret",
+              "12": "15",
+              "13": "14",
+              "14": "9",
+              "15": "12",
+              "16": "Ret",
+              "17": "Ret",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "2000",
+              "Entrant": "Telefónica Minardi Fondmetal",
+              "Chassis": "Minardi M02",
+              "Engine": "Fondmetal RV10 3.0 V10",
+              "Tyres": "B",
+              "Drivers": "Gastón Mazzacane",
+              "1": "Ret",
+              "2": "10",
+              "3": "13",
+              "4": "15",
+              "5": "15",
+              "6": "8",
+              "7": "Ret",
+              "8": "12",
+              "9": "Ret",
+              "10": "12",
+              "11": "11",
+              "12": "Ret",
+              "13": "17",
+              "14": "10",
+              "15": "Ret",
+              "16": "15",
+              "17": "13 †",
+              "Points": "0",
+              "WCC": "NC"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Ford",
+      "url": "https://en.wikipedia.org/wiki/Ford_in_Formula_One"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      },
+      {
+        "text": "United States",
+        "url": "https://en.wikipedia.org/wiki/United_States"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      },
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      },
+      {
+        "year": 1970,
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+      },
+      {
+        "year": 1971,
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
+      },
+      {
+        "year": 1972,
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
+      },
+      {
+        "year": 1973,
+        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
+      },
+      {
+        "year": 1974,
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
+      },
+      {
+        "year": 1975,
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
+      },
+      {
+        "year": 1976,
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+      },
+      {
+        "year": 1977,
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
+      },
+      {
+        "year": 1978,
+        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+      },
+      {
+        "year": 1979,
+        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
+      },
+      {
+        "year": 1980,
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
+      },
+      {
+        "year": 1981,
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+      },
+      {
+        "year": 1982,
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+      },
+      {
+        "year": 1983,
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+      },
+      {
+        "year": 1984,
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+      },
+      {
+        "year": 1985,
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+      },
+      {
+        "year": 1986,
+        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+      },
+      {
+        "year": 1987,
+        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+      },
+      {
+        "year": 1988,
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+      },
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      },
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      },
+      {
+        "year": 1995,
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+      },
+      {
+        "year": 1996,
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+      },
+      {
+        "year": 1997,
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+      },
+      {
+        "year": 1998,
+        "url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship"
+      },
+      {
+        "year": 1999,
+        "url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 528,
+    "races_started": 523,
+    "wins": 176,
+    "points": 4286.5,
+    "poles": 139,
+    "fastest_laps": 159,
+    "podiums": 533,
+    "wcc": 10,
+    "wdc": 13,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Ford_in_Formula_One",
+      "infoboxes": [
+        {
+          "title": "Ford as a Formula One engine manufacturer",
+          "rows": {
+            "First entry": {
+              "text": "1951 German Grand Prix",
+              "links": [
+                {
+                  "text": "1951 German Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1951_German_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "2004 Brazilian Grand Prix",
+              "links": [
+                {
+                  "text": "2004 Brazilian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/2004_Brazilian_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "528 (523 starts)",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "10 ( 1968 , 1969 , 1970 , 1971 , 1972 , 1973 , 1974 , 1978 , 1980 , 1981 )",
+              "links": [
+                {
+                  "text": "1968",
+                  "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+                },
+                {
+                  "text": "1969",
+                  "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
+                },
+                {
+                  "text": "1970",
+                  "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+                },
+                {
+                  "text": "1971",
+                  "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season"
+                },
+                {
+                  "text": "1972",
+                  "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
+                },
+                {
+                  "text": "1973",
+                  "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
+                },
+                {
+                  "text": "1974",
+                  "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                },
+                {
+                  "text": "1978",
+                  "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+                },
+                {
+                  "text": "1980",
+                  "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
+                },
+                {
+                  "text": "1981",
+                  "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Drivers' Championships": {
+              "text": "13 ( 1968 , 1969 , 1970 , 1971 , 1972 , 1973 , 1974 , 1976 , 1978 , 1980 , 1981 , 1982 , 1994 )",
+              "links": [
+                {
+                  "text": "1968",
+                  "url": "https://en.wikipedia.org/wiki/1968_Formula_One_season"
+                },
+                {
+                  "text": "1969",
+                  "url": "https://en.wikipedia.org/wiki/1969_Formula_One_season"
+                },
+                {
+                  "text": "1970",
+                  "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
+                },
+                {
+                  "text": "1971",
+                  "url": "https://en.wikipedia.org/wiki/1971_Formula_One_season"
+                },
+                {
+                  "text": "1972",
+                  "url": "https://en.wikipedia.org/wiki/1972_Formula_One_season"
+                },
+                {
+                  "text": "1973",
+                  "url": "https://en.wikipedia.org/wiki/1973_Formula_One_season"
+                },
+                {
+                  "text": "1974",
+                  "url": "https://en.wikipedia.org/wiki/1974_Formula_One_season"
+                },
+                {
+                  "text": "1976",
+                  "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
+                },
+                {
+                  "text": "1978",
+                  "url": "https://en.wikipedia.org/wiki/1978_Formula_One_season"
+                },
+                {
+                  "text": "1980",
+                  "url": "https://en.wikipedia.org/wiki/1980_Formula_One_season"
+                },
+                {
+                  "text": "1981",
+                  "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+                },
+                {
+                  "text": "1982",
+                  "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+                },
+                {
+                  "text": "1994",
+                  "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Race victories": {
+              "text": "176",
+              "links": []
+            },
+            "Podiums": {
+              "text": "533",
+              "links": []
+            },
+            "Points": {
+              "text": "4286.5",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "139",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "159",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": null
+    }
+  }
+]

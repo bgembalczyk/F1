@@ -1,8 +1,9 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.parsing import parse_int_from_text, parse_float_from_text
 from scrapers.base.helpers.html_utils import find_section_elements
+from scrapers.base.helpers.parsing import parse_float_from_text
+from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.helpers.wiki import is_reference_link
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 
@@ -38,7 +39,7 @@ def test_local_anchor_with_text_respects_allow_local_anchors():
 
 
 @pytest.mark.parametrize(
-    "allow_local_anchors, expected",
+    ("allow_local_anchors", "expected"),
     [
         (True, False),
         (False, True),
@@ -57,7 +58,7 @@ def test_regular_link_is_not_reference():
 
 
 @pytest.mark.parametrize(
-    "text, expected",
+    ("text", "expected"),
     [
         ("Population 1,234 people", 1234),
         ("+42 points", 42),
@@ -70,7 +71,7 @@ def test_parse_int_from_text(text, expected):
 
 
 @pytest.mark.parametrize(
-    "text, expected",
+    ("text", "expected"),
     [
         ("Lap time +3.5s", 3.5),
         ("1,234.5 meters", 1234.5),
@@ -122,7 +123,7 @@ def test_split_url_fragment_returns_base_and_fragment():
     mixin = WikipediaSectionByIdMixin()
 
     base_url, fragment = mixin.split_url_fragment(
-        "https://en.wikipedia.org/wiki/Foo#Bar_Baz"
+        "https://en.wikipedia.org/wiki/Foo#Bar_Baz",
     )
 
     assert base_url == "https://en.wikipedia.org/wiki/Foo"
@@ -136,3 +137,23 @@ def test_split_url_fragment_handles_missing_fragment():
 
     assert base_url == "https://en.wikipedia.org/wiki/Foo"
     assert fragment is None
+
+
+def test_extract_section_by_id_with_text_alias_and_modern_heading_wrapper():
+    html = """
+    <div class="mw-heading mw-heading2"><h2 id="Career_results">Career result</h2></div>
+    <table class="wikitable" id="t1"></table>
+    <div class="mw-heading mw-heading2"><h2 id="Other">Other</h2></div>
+    <table class="wikitable" id="t2"></table>
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    section = WikipediaSectionByIdMixin.extract_section_by_id(
+        soup,
+        "Career_results",
+        domain="drivers",
+    )
+
+    assert section is not None
+    assert section.find(id="t1") is not None
+    assert section.find(id="t2") is None

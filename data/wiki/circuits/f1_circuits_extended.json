@@ -105,7 +105,7 @@
     "layouts": [
       {
         "layout": "Supercars Circuit",
-        "years": "1999–2020, 2022–present",
+        "years": "1999–2026",
         "length_km": 3.219,
         "length_mi": 2.0,
         "turns": 14,
@@ -192,7 +192,8 @@
           },
           {
             "driver": {
-              "text": "Bayley Hall"
+              "text": "Bayley Hall",
+              "url": "https://en.wikipedia.org/wiki/Bayley_Hall"
             },
             "vehicle": {
               "text": "Porsche 911 (992) GT3 Cup",
@@ -211,8 +212,8 @@
               "url": "https://en.wikipedia.org/wiki/Ryan_Wood_(racing_driver)"
             },
             "vehicle": {
-              "text": "Holden ZB Commodore",
-              "url": "https://en.wikipedia.org/wiki/Holden_Commodore_(ZB)"
+              "text": "Holden Commodore ZB",
+              "url": "https://en.wikipedia.org/wiki/Holden_Commodore_ZB"
             },
             "time": 80.5121,
             "date": "2023-11-25",
@@ -353,8 +354,8 @@
               "text": "Ray Hislop"
             },
             "vehicle": {
-              "text": "Ford BF Falcon",
-              "url": "https://en.wikipedia.org/wiki/Ford_Falcon_(BF)"
+              "text": "Ford Falcon BF",
+              "url": "https://en.wikipedia.org/wiki/Ford_Falcon_BF"
             },
             "time": 89.4477,
             "date": "2018-03-04",
@@ -389,7 +390,7 @@
             "time": 90.96,
             "date": "2000-04-08",
             "series": {
-              "text": "Formula One",
+              "text": "Historic F1 (1966-69)",
               "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
@@ -431,8 +432,8 @@
               "url": "https://en.wikipedia.org/wiki/Ryal_Harris"
             },
             "vehicle": {
-              "text": "Ford FG Falcon Ute",
-              "url": "https://en.wikipedia.org/wiki/Ford_Falcon_(FG)"
+              "text": "Ford Falcon FG Ute",
+              "url": "https://en.wikipedia.org/wiki/Ford_Falcon_FG"
             },
             "time": 95.3306,
             "date": "2015-03-01",
@@ -491,8 +492,8 @@
               "text": "Bruce Heinrich"
             },
             "vehicle": {
-              "text": "Ford EA Falcon",
-              "url": "https://en.wikipedia.org/wiki/Ford_Falcon_(EA)#Motorsport"
+              "text": "Ford Falcon EA",
+              "url": "https://en.wikipedia.org/wiki/Ford_Falcon_EA"
             },
             "time": 99.7741,
             "date": "2003-03-20",
@@ -536,20 +537,20 @@
               "text": "Philip Collier"
             },
             "vehicle": {
-              "text": "Holden HQ Kingswood",
+              "text": "Holden Kingswood HQ",
               "url": "https://en.wikipedia.org/wiki/Holden_Kingswood#HQ"
             },
             "time": 109.6988,
             "date": "1999-04-10",
             "series": {
-              "text": "HQ Holdens",
+              "text": "Holden HQs",
               "url": "https://en.wikipedia.org/wiki/Holden_HQ"
             }
           }
         ]
       },
       {
-        "layout": "Grand Prix Circuit",
+        "layout": "Formula One Grand Prix Circuit",
         "years": "1985–1995, 2000",
         "length_km": 3.78,
         "length_mi": 2.349,
@@ -625,7 +626,8 @@
               "url": "https://en.wikipedia.org/wiki/John_Bowe_(racing_driver)"
             },
             "vehicle": {
-              "text": "Ralt RT4 Cosworth"
+              "text": "Ralt RT4",
+              "url": "https://en.wikipedia.org/wiki/Ralt_RT4"
             },
             "time": 93.2,
             "date": "1986-10-25",
@@ -656,7 +658,8 @@
               "url": "https://en.wikipedia.org/wiki/David_Brabham"
             },
             "vehicle": {
-              "text": "Ralt RT30 Volkswagen"
+              "text": "Ralt RT30 Volkswagen",
+              "url": "https://en.wikipedia.org/wiki/Ralt"
             },
             "time": 95.9,
             "date": "1987-11-15",
@@ -702,8 +705,8 @@
               "url": "https://en.wikipedia.org/wiki/John_Bowe_(racing_driver)"
             },
             "vehicle": {
-              "text": "Ford EF Falcon",
-              "url": "https://en.wikipedia.org/wiki/Ford_EF_Falcon"
+              "text": "Ford Falcon EF",
+              "url": "https://en.wikipedia.org/wiki/Ford_Falcon_EF"
             },
             "time": 97.72,
             "date": "1995-11-12",
@@ -731,8 +734,8 @@
               "url": "https://en.wikipedia.org/wiki/Glenn_Seton"
             },
             "vehicle": {
-              "text": "Ford Sierra RS500 Cosworth",
-              "url": "https://en.wikipedia.org/wiki/Ford_Sierra_RS_Cosworth#Touring_car_racing"
+              "text": "Ford Sierra RS500",
+              "url": "https://en.wikipedia.org/wiki/Ford_Sierra_RS500"
             },
             "time": 102.47,
             "date": "1990-11-04",
@@ -793,8 +796,8 @@
               "text": "Kent Youlden"
             },
             "vehicle": {
-              "text": "Ford EA Falcon",
-              "url": "https://en.wikipedia.org/wiki/Ford_EA_Falcon"
+              "text": "Ford Falcon EA",
+              "url": "https://en.wikipedia.org/wiki/Ford_Falcon_EA"
             },
             "time": 122.14,
             "date": "1990-11-03",
@@ -808,13 +811,13 @@
               "text": "Peter Holmes"
             },
             "vehicle": {
-              "text": "Holden HQ Kingswood",
+              "text": "Holden Kingswood HQ",
               "url": "https://en.wikipedia.org/wiki/Holden_Kingswood#HQ"
             },
             "time": 126.05,
             "date": "1995-11-11",
             "series": {
-              "text": "HQ Holdens",
+              "text": "Holden HQs",
               "url": "https://en.wikipedia.org/wiki/Holden_HQ"
             }
           }
@@ -1676,7 +1679,7 @@
       ]
     },
     "url": "https://en.wikipedia.org/wiki/Algarve_International_Circuit",
-    "circuit_status": "former",
+    "circuit_status": "future",
     "type": "Race circuit",
     "direction": "Clockwise",
     "grands_prix": [
@@ -1967,6 +1970,25 @@
             "series": {
               "text": "F2 (2009-2012)",
               "url": "https://en.wikipedia.org/wiki/FIA_Formula_Two_Championship_(2009%E2%80%932012)"
+            }
+          },
+          {
+            "event": {
+              "text": "2026 Portimão Eurocup-3 Spanish Winter Championship round",
+              "url": "https://en.wikipedia.org/wiki/2026_Eurocup-3_season#Winter_series"
+            },
+            "driver": {
+              "text": "Keanu Al Azhari",
+              "url": "https://en.wikipedia.org/wiki/Keanu_Al_Azhari"
+            },
+            "vehicle": {
+              "text": "Dallara 326"
+            },
+            "time": 96.102,
+            "year": "2026",
+            "series": {
+              "text": "Eurocup-3",
+              "url": "https://en.wikipedia.org/wiki/Eurocup-3"
             }
           },
           {
@@ -2455,7 +2477,7 @@
             },
             "driver": {
               "text": "Pedro Acosta",
-              "url": "https://en.wikipedia.org/wiki/Pedro_Acosta_(motorcyclist)"
+              "url": "https://en.wikipedia.org/wiki/Pedro_Acosta"
             },
             "vehicle": {
               "text": "KTM RC16",
@@ -3353,7 +3375,8 @@
               "url": "https://en.wikipedia.org/wiki/2023_Ferrari_Challenge_Europe"
             },
             "driver": {
-              "text": "Thomas Fleming"
+              "text": "Thomas Fleming",
+              "url": "https://en.wikipedia.org/wiki/Tom_Fleming_(racing_driver)"
             },
             "vehicle": {
               "text": "Ferrari 488 Challenge Evo",
@@ -4326,6 +4349,12 @@
         "length_km": 4.304,
         "length_mi": 2.674,
         "turns": 17,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
         "race_lap_records": [
           {
             "driver": {
@@ -4505,29 +4534,150 @@
       },
       {
         "layout": "Formula E Circuit",
-        "years": "2023–present",
-        "length_km": 2.628,
-        "length_mi": 1.633,
-        "turns": 19,
+        "years": "2020–2022, 2026",
+        "length_km": 2.606,
+        "length_mi": 1.619,
+        "turns": 16,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
         "race_lap_records": [
           {
             "event": {
-              "text": "2025 Mexico City ePrix",
-              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_ePrix"
+              "text": "2026 Mexico City ePrix",
+              "url": "https://en.wikipedia.org/wiki/2026_Mexico_City_ePrix"
             },
             "driver": {
-              "text": "Sébastien Buemi",
-              "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Buemi"
+              "text": "Jake Dennis",
+              "url": "https://en.wikipedia.org/wiki/Jake_Dennis"
             },
             "vehicle": {
-              "text": "Jaguar I-Type 7",
-              "url": "https://en.wikipedia.org/wiki/Formula_E_Gen3"
+              "text": "Porsche 99X Electric",
+              "url": "https://en.wikipedia.org/wiki/Formula_E_Gen3#Gen_3_Evo"
             },
-            "time": 72.547,
-            "year": "2025",
+            "time": 67.474,
+            "year": "2026",
             "series": {
               "text": "Formula E",
               "url": "https://en.wikipedia.org/wiki/Formula_E"
+            }
+          },
+          {
+            "event": {
+              "text": "2020 Mexico City Jaguar I-Pace eTrophy round",
+              "url": "https://en.wikipedia.org/wiki/2019-20_Jaguar_I-Pace_eTrophy"
+            },
+            "driver": {
+              "text": "Cacá Bueno",
+              "url": "https://en.wikipedia.org/wiki/Cac%C3%A1_Bueno"
+            },
+            "vehicle": {
+              "text": "Jaguar I-Pace eTrophy (racecar)",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_I-Pace_eTrophy_(racecar)"
+            },
+            "time": 85.045,
+            "year": "2020",
+            "series": {
+              "text": "Jaguar I-Pace eTrophy",
+              "url": "https://en.wikipedia.org/wiki/Jaguar_I-Pace_eTrophy"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "National Circuit",
+        "years": "2015–present",
+        "length_km": 3.909,
+        "length_mi": 2.429,
+        "turns": 15,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2016 1st Mexico City NACAM F4 round",
+              "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_NACAM_Formula_4_Championship"
+            },
+            "driver": {
+              "text": "Axel Matus",
+              "url": "https://en.wikipedia.org/wiki/Axel_Matus"
+            },
+            "vehicle": {
+              "text": "Mygale M14-F4",
+              "url": "https://en.wikipedia.org/wiki/Mygale_M14-F4"
+            },
+            "time": 93.01,
+            "year": "2016",
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 The Chilango 150",
+              "url": "https://en.wikipedia.org/wiki/2025_The_Chilango_150"
+            },
+            "driver": {
+              "text": "Ty Gibbs",
+              "url": "https://en.wikipedia.org/wiki/Ty_Gibbs"
+            },
+            "vehicle": {
+              "text": "Toyota GR Supra NASCAR",
+              "url": "https://en.wikipedia.org/wiki/Toyota_GR_Supra#NASCAR"
+            },
+            "time": 93.565,
+            "year": "2025",
+            "series": {
+              "text": "NASCAR Xfinity",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_Xfinity_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Viva México 250",
+              "url": "https://en.wikipedia.org/wiki/2025_Viva_M%C3%A9xico_250"
+            },
+            "driver": {
+              "text": "Kyle Larson",
+              "url": "https://en.wikipedia.org/wiki/Kyle_Larson"
+            },
+            "vehicle": {
+              "text": "Chevrolet Camaro ZL1",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(sixth_generation)#NASCAR"
+            },
+            "time": 93.782,
+            "year": "2025",
+            "series": {
+              "text": "NASCAR Cup",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_Cup_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Mexico City TCR World Tour round",
+              "url": "https://en.wikipedia.org/wiki/2025_TCR_World_Tour"
+            },
+            "driver": {
+              "text": "Esteban Guerrieri",
+              "url": "https://en.wikipedia.org/wiki/Esteban_Guerrieri"
+            },
+            "vehicle": {
+              "text": "Honda Civic Type R TCR",
+              "url": "https://en.wikipedia.org/wiki/Honda_Civic_Type_R_TCR#FL5_(2023)"
+            },
+            "time": 94.842,
+            "year": "2025",
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
             }
           }
         ]
@@ -4569,49 +4719,35 @@
       },
       {
         "layout": "Formula E Circuit",
-        "years": "2020–2022",
-        "length_km": 2.606,
-        "length_mi": 1.619,
-        "turns": 16,
+        "years": "2023–2025",
+        "length_km": 2.628,
+        "length_mi": 1.633,
+        "turns": 19,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
         "race_lap_records": [
           {
             "event": {
-              "text": "2022 Mexico City ePrix",
-              "url": "https://en.wikipedia.org/wiki/2022_Mexico_City_ePrix"
+              "text": "2025 Mexico City ePrix",
+              "url": "https://en.wikipedia.org/wiki/2025_Mexico_City_ePrix"
             },
             "driver": {
-              "text": "Lucas di Grassi",
-              "url": "https://en.wikipedia.org/wiki/Lucas_di_Grassi"
+              "text": "Sébastien Buemi",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Buemi"
             },
             "vehicle": {
-              "text": "Mercedes-EQ Silver Arrow 02",
-              "url": "https://en.wikipedia.org/wiki/Spark_SRT05e"
+              "text": "Jaguar I-Type 7",
+              "url": "https://en.wikipedia.org/wiki/Formula_E_Gen3#Gen_3_Evo"
             },
-            "time": 69.487,
-            "year": "2022",
+            "time": 72.547,
+            "year": "2025",
             "series": {
               "text": "Formula E",
               "url": "https://en.wikipedia.org/wiki/Formula_E"
-            }
-          },
-          {
-            "event": {
-              "text": "2020 Mexico City Jaguar I-Pace eTrophy round",
-              "url": "https://en.wikipedia.org/wiki/2019-20_Jaguar_I-Pace_eTrophy"
-            },
-            "driver": {
-              "text": "Cacá Bueno",
-              "url": "https://en.wikipedia.org/wiki/Cac%C3%A1_Bueno"
-            },
-            "vehicle": {
-              "text": "Jaguar I-Pace eTrophy (racecar)",
-              "url": "https://en.wikipedia.org/wiki/Jaguar_I-Pace_eTrophy_(racecar)"
-            },
-            "time": 85.045,
-            "year": "2020",
-            "series": {
-              "text": "Jaguar I-Pace eTrophy",
-              "url": "https://en.wikipedia.org/wiki/Jaguar_I-Pace_eTrophy"
             }
           }
         ]
@@ -4622,6 +4758,12 @@
         "length_km": 2.093,
         "length_mi": 1.301,
         "turns": 17,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
         "race_lap_records": [
           {
             "event": {
@@ -4691,6 +4833,12 @@
         "length_km": 2.091,
         "length_mi": 1.299,
         "turns": 18,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
         "race_lap_records": [
           {
             "driver": {
@@ -7308,7 +7456,7 @@
       ]
     },
     "url": "https://en.wikipedia.org/wiki/Imola_Circuit",
-    "circuit_status": "current",
+    "circuit_status": "former",
     "type": "Race circuit",
     "direction": "Anti-clockwise",
     "grands_prix": [
@@ -9990,7 +10138,7 @@
           {
             "event": {
               "text": "2025 Interlagos TCR South America round",
-              "url": "https://es.wikipedia.org/wiki/Temporada_2025_de_TCR_South_America"
+              "url": "https://en.wikipedia.org/wiki/2025_TCR_South_America_Touring_Car_Championship"
             },
             "driver": {
               "text": "Pedro Cardoso"
@@ -12093,7 +12241,8 @@
               "url": "https://en.wikipedia.org/wiki/2022_Ligier_European_Series"
             },
             "driver": {
-              "text": "Horst Felix Felbermayr"
+              "text": "Horst Felix Felbermayr",
+              "url": "https://en.wikipedia.org/wiki/Horst_Felix_Felbermayr"
             },
             "vehicle": {
               "text": "Ligier JS2 R",
@@ -12871,8 +13020,7 @@
               "url": "https://en.wikipedia.org/wiki/1999_Supersport_World_Championship"
             },
             "driver": {
-              "text": "Christian Kellner",
-              "url": "https://en.wikipedia.org/wiki/Christian_Kellner"
+              "text": "Christian Kellner"
             },
             "vehicle": {
               "text": "Yamaha YZF-R6",
@@ -14185,7 +14333,7 @@
     "layouts": [
       {
         "layout": "No. 6 circuit with Senna S",
-        "years": "1995–present",
+        "years": "1995–2026",
         "length_km": 4.259,
         "length_mi": 2.646,
         "turns": 19,
@@ -14234,7 +14382,7 @@
       },
       {
         "layout": "No. 6 circuit",
-        "years": "1972–present",
+        "years": "1972–2026",
         "length_km": 4.101,
         "length_mi": 2.548,
         "turns": 16,
@@ -14360,7 +14508,7 @@
       },
       {
         "layout": "No. 15 circuit",
-        "years": "1972–present",
+        "years": "1972–2026",
         "length_km": 5.968,
         "length_mi": 3.708,
         "turns": 16,
@@ -14428,7 +14576,7 @@
       },
       {
         "layout": "No. 12 circuit",
-        "years": "1972–present",
+        "years": "1972–2026",
         "length_km": 5.651,
         "length_mi": 3.511,
         "turns": 8,
@@ -14534,7 +14682,7 @@
       },
       {
         "layout": "No. 9 circuit",
-        "years": "1972–present",
+        "years": "1972–2026",
         "length_km": 3.353,
         "length_mi": 2.083,
         "turns": 14,
@@ -14737,7 +14885,7 @@
       },
       {
         "layout": "No. 8 circuit",
-        "years": "1972–present",
+        "years": "1972–2026",
         "length_km": 3.38,
         "length_mi": 2.1,
         "turns": 9,
@@ -14940,7 +15088,7 @@
       },
       {
         "layout": "No. 5 circuit",
-        "years": "1972–present",
+        "years": "1972–2026",
         "length_km": 2.115,
         "length_mi": 1.314,
         "turns": 8,
@@ -14964,7 +15112,7 @@
       },
       {
         "layout": "No. 7 circuit",
-        "years": "1972–present",
+        "years": "1972–2026",
         "length_km": 2.607,
         "length_mi": 1.62,
         "turns": 4,
@@ -16921,18 +17069,18 @@
           },
           {
             "event": {
-              "text": "2025 6th Sakhir Bahrain Motorcycle Championship round"
+              "text": "2026 1st Sakhir Bahrain Motorcycle Championship round"
             },
             "driver": {
               "text": "Saeed Al Sulaiti",
               "url": "https://en.wikipedia.org/wiki/Saeed_Al_Sulaiti"
             },
             "vehicle": {
-              "text": "Yamaha YZF-R1",
-              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
+              "text": "BMW M1000RR",
+              "url": "https://en.wikipedia.org/wiki/BMW_S1000RR#M1000RR_2021_(K_66)"
             },
-            "time": 66.982,
-            "date": "2025-10-24",
+            "time": 66.04,
+            "date": "2026-02-06",
             "series": {
               "text": "Superbike",
               "url": "https://en.wikipedia.org/wiki/Superbike_racing"
@@ -16940,17 +17088,17 @@
           },
           {
             "event": {
-              "text": "2025 5th Sakhir Bahrain Motorcycle Championship round"
+              "text": "2026 1st Sakhir Bahrain Motorcycle Championship round"
             },
             "driver": {
-              "text": "Mohamad Alzaidan"
+              "text": "Marcos Ludeña"
             },
             "vehicle": {
-              "text": "Kawasaki Ninja ZX-6R",
-              "url": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_ZX-6R"
+              "text": "Yamaha YZF-R6",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R6"
             },
-            "time": 69.192,
-            "date": "2025-10-24",
+            "time": 68.553,
+            "date": "2026-02-06",
             "series": {
               "text": "Supersport",
               "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
@@ -18134,7 +18282,8 @@
               "url": "https://en.wikipedia.org/wiki/2006_Formula_BMW_UK_season"
             },
             "driver": {
-              "text": "Euan Hankey"
+              "text": "Euan Hankey",
+              "url": "https://en.wikipedia.org/wiki/Euan_Hankey"
             },
             "vehicle": {
               "text": "Mygale FB02",
@@ -19707,7 +19856,7 @@
             },
             "driver": {
               "text": "Pedro Acosta",
-              "url": "https://en.wikipedia.org/wiki/Pedro_Acosta_(motorcyclist)"
+              "url": "https://en.wikipedia.org/wiki/Pedro_Acosta"
             },
             "vehicle": {
               "text": "Kalex Moto2",
@@ -22179,7 +22328,7 @@
             },
             "driver": {
               "text": "Pedro Acosta",
-              "url": "https://en.wikipedia.org/wiki/Pedro_Acosta_(motorcyclist)"
+              "url": "https://en.wikipedia.org/wiki/Pedro_Acosta"
             },
             "vehicle": {
               "text": "KTM RC16",
@@ -22332,6 +22481,25 @@
           },
           {
             "event": {
+              "text": "2026 Barcelona Porsche Sprint Challenge Southern Europe round",
+              "url": "https://en.wikipedia.org/wiki/2026_Porsche_Sprint_Challenge_Southern_Europe"
+            },
+            "driver": {
+              "text": "Hjelte Hoffner"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (992) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
+            },
+            "time": 103.233,
+            "year": "2026",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            }
+          },
+          {
+            "event": {
               "text": "2024 Barcelona Ligier European Series round",
               "url": "https://en.wikipedia.org/wiki/2024_Ligier_European_Series"
             },
@@ -22347,25 +22515,6 @@
             "series": {
               "text": "JS P4",
               "url": "https://en.wikipedia.org/wiki/Ligier_European_Series#JS_P4"
-            }
-          },
-          {
-            "event": {
-              "text": "2025 Barcelona Porsche Sprint Challenge Southern Europe round"
-            },
-            "driver": {
-              "text": "Theo Oeverhaus",
-              "url": "https://en.wikipedia.org/wiki/Theo_Oeverhaus"
-            },
-            "vehicle": {
-              "text": "Porsche 911 (992) GT3 Cup",
-              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
-            },
-            "time": 103.928,
-            "year": "2025",
-            "series": {
-              "text": "Porsche Carrera Cup",
-              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
             }
           },
           {
@@ -22512,7 +22661,7 @@
             },
             "vehicle": {
               "text": "Alpine A110 Cup",
-              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#Motorsport"
+              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#A110_Cup"
             },
             "time": 111.54,
             "year": "2024",
@@ -23127,7 +23276,7 @@
             },
             "vehicle": {
               "text": "Alpine A110 Cup",
-              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#Motorsport"
+              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#A110_Cup"
             },
             "time": 117.051,
             "year": "2018",
@@ -23511,7 +23660,7 @@
             },
             "vehicle": {
               "text": "Alpine A110 Cup",
-              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#Motorsport"
+              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#A110_Cup"
             },
             "time": 117.512,
             "year": "2021",
@@ -30868,7 +31017,7 @@
             },
             "vehicle": {
               "text": "Chevrolet SS NASCAR",
-              "url": "https://en.wikipedia.org/wiki/Holden_Commodore_(VF)#NASCAR"
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_SS#NASCAR"
             },
             "time": 83.958,
             "year": "2013",
@@ -32534,7 +32683,7 @@
           {
             "event": {
               "text": "2015 Lone Star Le Mans",
-              "url": "https://en.wikipedia.org/wiki/2015_United_SportsCar_Championship"
+              "url": "https://en.wikipedia.org/wiki/2015_Lone_Star_Le_Mans"
             },
             "driver": {
               "text": "Joey Hand",
@@ -32554,7 +32703,7 @@
           {
             "event": {
               "text": "2015 Lone Star Le Mans",
-              "url": "https://en.wikipedia.org/wiki/2015_United_SportsCar_Championship"
+              "url": "https://en.wikipedia.org/wiki/2015_Lone_Star_Le_Mans"
             },
             "driver": {
               "text": "Renger van der Zande",
@@ -32653,19 +32802,17 @@
           },
           {
             "event": {
-              "text": "2025 Austin GT World Challenge America round",
-              "url": "https://en.wikipedia.org/wiki/2025_GT_World_Challenge_America"
+              "text": "2026 Austin Apex Focus Sprint round"
             },
             "driver": {
-              "text": "Matt Bell",
-              "url": "https://en.wikipedia.org/wiki/Matt_Bell_(British_racing_driver)"
+              "text": "Scott Blind"
             },
             "vehicle": {
-              "text": "Chevrolet Corvette Z06 GT3.R",
-              "url": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_Z06_GT3.R"
+              "text": "Porsche 911 (992) GT3 R",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_R_(2023–)"
             },
-            "time": 124.381,
-            "year": "2025",
+            "time": 123.65,
+            "year": "2026",
             "series": {
               "text": "GT3",
               "url": "https://en.wikipedia.org/wiki/Group_GT3"
@@ -32722,13 +32869,32 @@
             },
             "vehicle": {
               "text": "SRT Viper GTS-R",
-              "url": "https://en.wikipedia.org/wiki/SRT_Viper#SRT_Viper_GTS-R"
+              "url": "https://en.wikipedia.org/wiki/Dodge_Viper#SRT_Viper_GTS-R"
             },
             "time": 125.053,
             "year": "2013",
             "series": {
               "text": "GT",
               "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            }
+          },
+          {
+            "event": {
+              "text": "2026 Austin Apex Focus Sprint round"
+            },
+            "driver": {
+              "text": "Alan Metni",
+              "url": "https://en.wikipedia.org/wiki/Alan_Metni"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (992 II) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
+            },
+            "time": 126.061,
+            "year": "2026",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
             }
           },
           {
@@ -32791,25 +32957,6 @@
           },
           {
             "event": {
-              "text": "2025 Austin Porsche Carrera Cup North America round",
-              "url": "https://en.wikipedia.org/wiki/2025_Porsche_Carrera_Cup_North_America"
-            },
-            "driver": {
-              "text": "Ryan Yardley"
-            },
-            "vehicle": {
-              "text": "Porsche 911 (992) GT3 Cup",
-              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
-            },
-            "time": 127.951,
-            "year": "2025",
-            "series": {
-              "text": "Porsche Carrera Cup",
-              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
-            }
-          },
-          {
-            "event": {
               "text": "2023 Austin F1 Academy round",
               "url": "https://en.wikipedia.org/wiki/2023_F1_Academy_season"
             },
@@ -32850,7 +32997,8 @@
           },
           {
             "event": {
-              "text": "2025 Austin McLaren Trophy America round"
+              "text": "2025 Austin McLaren Trophy America round",
+              "url": "https://en.wikipedia.org/wiki/2025_McLaren_Trophy_America"
             },
             "driver": {
               "text": "John Capestro-Dubets"
@@ -32862,7 +33010,8 @@
             "time": 128.343,
             "year": "2025",
             "series": {
-              "text": "McLaren Trophy"
+              "text": "McLaren Trophy",
+              "url": "https://en.wikipedia.org/wiki/McLaren_Artura#Trophy"
             }
           },
           {
@@ -33036,25 +33185,24 @@
             "time": 133.985,
             "year": "2024",
             "series": {
-              "text": "NASCAR Xfinity",
-              "url": "https://en.wikipedia.org/wiki/NASCAR_Xfinity_Series"
+              "text": "NASCAR O'Reilly Auto Parts",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_O%27Reilly_Auto_Parts_Series"
             }
           },
           {
             "event": {
-              "text": "2025 Austin GT4 America round",
-              "url": "https://en.wikipedia.org/wiki/2025_GT4_America_Series"
+              "text": "2026 Austin Apex Focus Sprint round"
             },
             "driver": {
-              "text": "Marc Miller",
-              "url": "https://en.wikipedia.org/wiki/Marc_Miller_(racing_driver)"
+              "text": "Josh Green",
+              "url": "https://en.wikipedia.org/wiki/Josh_Green_(racing_driver)"
             },
             "vehicle": {
-              "text": "Mercedes-AMG GT4",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_GT#AMG_GT4_(2017–present)"
+              "text": "Porsche 718 Cayman GT4 RS Clubsport",
+              "url": "https://en.wikipedia.org/wiki/Porsche_718_Boxster_and_Cayman_(982)#718_Cayman_GT4_RS_Clubsport"
             },
-            "time": 134.782,
-            "year": "2025",
+            "time": 134.539,
+            "year": "2026",
             "series": {
               "text": "GT4",
               "url": "https://en.wikipedia.org/wiki/SRO_GT4"
@@ -33196,7 +33344,7 @@
           {
             "event": {
               "text": "2019 Austin Mazda MX-5 Cup round",
-              "url": "https://en.wikipedia.org/wiki/Global_MX-5_Cup"
+              "url": "https://en.wikipedia.org/wiki/Mazda_MX-5_Cup"
             },
             "driver": {
               "text": "Selin Rollan"
@@ -33209,7 +33357,7 @@
             "year": "2019",
             "series": {
               "text": "Mazda MX-5 Cup",
-              "url": "https://en.wikipedia.org/wiki/Global_MX-5_Cup"
+              "url": "https://en.wikipedia.org/wiki/Mazda_MX-5_Cup"
             }
           },
           {
@@ -33235,26 +33383,26 @@
       },
       {
         "layout": "NASCAR Circuit",
-        "years": "2025",
+        "years": "2025–present",
         "length_km": 3.862,
         "length_mi": 2.4,
         "turns": 17,
         "race_lap_records": [
           {
             "event": {
-              "text": "2025 Austin IMSA VP Racing SportsCar Challenge round",
-              "url": "https://en.wikipedia.org/wiki/2025_IMSA_VP_Racing_SportsCar_Challenge"
+              "text": "2026 1st Austin IMSA VP Racing SportsCar Challenge round",
+              "url": "https://en.wikipedia.org/wiki/2026_IMSA_VP_Racing_SportsCar_Challenge"
             },
             "driver": {
-              "text": "Valentino Catalano",
-              "url": "https://en.wikipedia.org/wiki/Valentino_Catalano"
+              "text": "Wyatt Brichacek",
+              "url": "https://en.wikipedia.org/wiki/Wyatt_Brichacek"
             },
             "vehicle": {
-              "text": "Duqueine D08",
-              "url": "https://en.wikipedia.org/wiki/Duqueine_D08"
+              "text": "Ligier JS P325",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS_P325"
             },
-            "time": 90.042,
-            "year": "2025",
+            "time": 89.216,
+            "year": "2026",
             "series": {
               "text": "LMP3",
               "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP3"
@@ -33322,22 +33470,22 @@
           },
           {
             "event": {
-              "text": "2025 Focused Health 250",
-              "url": "https://en.wikipedia.org/wiki/2025_Focused_Health_250_(COTA)"
+              "text": "2026 Focused Health 250",
+              "url": "https://en.wikipedia.org/wiki/2026_Focused_Health_250_(COTA)"
             },
             "driver": {
-              "text": "Carson Kvapil",
-              "url": "https://en.wikipedia.org/wiki/Carson_Kvapil"
+              "text": "Shane van Gisbergen",
+              "url": "https://en.wikipedia.org/wiki/Shane_van_Gisbergen"
             },
             "vehicle": {
               "text": "Chevrolet Camaro SS NASCAR",
               "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(sixth_generation)#NASCAR"
             },
-            "time": 99.728,
-            "year": "2025",
+            "time": 99.452,
+            "year": "2026",
             "series": {
-              "text": "NASCAR Xfinity",
-              "url": "https://en.wikipedia.org/wiki/NASCAR_Xfinity_Series"
+              "text": "NASCAR O'Reilly Auto Parts",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_O%27Reilly_Auto_Parts_Series"
             }
           }
         ]
@@ -35415,6 +35563,15 @@
       ],
       "former_names": [
         {
+          "name": "CM.com Circuit Zandvoort",
+          "periods": [
+            {
+              "from": "2020",
+              "to": "2025-06"
+            }
+          ]
+        },
+        {
           "name": "Circuit Zandvoort",
           "periods": [
             {
@@ -35953,12 +36110,12 @@
             },
             "vehicle": {
               "text": "Alpine A110 Cup",
-              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#Motorsport"
+              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#A110_Cup"
             },
             "time": 105.164,
             "date": "2022-06-19",
             "series": {
-              "text": "Alpine Elf Europa Cup",
+              "text": "Alpine Elf Cup",
               "url": "https://en.wikipedia.org/wiki/Alpine_Elf_Europa_Cup"
             }
           },
@@ -37959,7 +38116,8 @@
               "url": "https://en.wikipedia.org/wiki/Belcar"
             },
             "driver": {
-              "text": "Bert Longin"
+              "text": "Bert Longin",
+              "url": "https://en.wikipedia.org/wiki/Bert_Longin"
             },
             "vehicle": {
               "text": "Dauer 962 LM",
@@ -39196,7 +39354,8 @@
           },
           {
             "event": {
-              "text": "1995 BPR 4 Hours of Jerez"
+              "text": "1995 BPR 4 Hours of Jerez",
+              "url": "https://en.wikipedia.org/wiki/1995_BPR_4_Hours_of_Jerez"
             },
             "driver": {
               "text": "John Nielsen",
@@ -39963,6 +40122,25 @@
           },
           {
             "event": {
+              "text": "2026 Jarama Eurocup-3 Spanish Winter Championship round",
+              "url": "https://en.wikipedia.org/wiki/2026_Eurocup-3_season#Winter_series"
+            },
+            "driver": {
+              "text": "Keanu Al Azhari",
+              "url": "https://en.wikipedia.org/wiki/Keanu_Al_Azhari"
+            },
+            "vehicle": {
+              "text": "Dallara 326"
+            },
+            "time": 85.391,
+            "year": "2026",
+            "series": {
+              "text": "Eurocup-3",
+              "url": "https://en.wikipedia.org/wiki/Eurocup-3"
+            }
+          },
+          {
+            "event": {
               "text": "1995 Jarama Interserie round",
               "url": "https://en.wikipedia.org/wiki/Interserie"
             },
@@ -40379,7 +40557,8 @@
               "url": "https://es.wikipedia.org/wiki/Temporada_2022_del_Campeonato_de_Espa%C3%B1a_de_Turismos"
             },
             "driver": {
-              "text": "Isidro Callejas"
+              "text": "Isidro Callejas",
+              "url": "https://en.wikipedia.org/wiki/Isidro_Callejas"
             },
             "vehicle": {
               "text": "Cupra Leon Competición TCR",
@@ -40473,6 +40652,24 @@
           },
           {
             "event": {
+              "text": "2026 Jarama Toyota GR Cup Spain round"
+            },
+            "driver": {
+              "text": "Marco Aguilera"
+            },
+            "vehicle": {
+              "text": "Toyota GR86",
+              "url": "https://en.wikipedia.org/wiki/Toyota_86#Motorsport"
+            },
+            "time": 108.64,
+            "year": "2026",
+            "series": {
+              "text": "Toyota GR Cup",
+              "url": "https://en.wikipedia.org/wiki/Toyota_86#Toyota_Gazoo_Racing_GR86/BRZ_Cup"
+            }
+          },
+          {
+            "event": {
               "text": "2018 Jarama ETRC round",
               "url": "https://en.wikipedia.org/wiki/2018_European_Truck_Racing_Championship"
             },
@@ -40492,6 +40689,13 @@
             }
           }
         ]
+      },
+      {
+        "layout": "Formula E Circuit",
+        "years": "2026",
+        "length_km": 3.934,
+        "length_mi": 2.444,
+        "turns": 14
       },
       {
         "layout": "Grand Prix Circuit",
@@ -41885,7 +42089,8 @@
               "url": "https://en.wikipedia.org/wiki/2023_British_GT_Championship"
             },
             "driver": {
-              "text": "Euan Hankey"
+              "text": "Euan Hankey",
+              "url": "https://en.wikipedia.org/wiki/Euan_Hankey"
             },
             "vehicle": {
               "text": "McLaren 720S GT3 Evo",
@@ -41983,7 +42188,8 @@
               "url": "https://en.wikipedia.org/wiki/2025_GB4_Championship"
             },
             "driver": {
-              "text": "Ary Bansal"
+              "text": "Ary Bansal",
+              "url": "https://en.wikipedia.org/wiki/Ary_Bansal"
             },
             "vehicle": {
               "text": "Tatuus MSV GB4-025",
@@ -43761,7 +43967,7 @@
     "history": [
       {
         "event": "opened",
-        "date": "1965-12"
+        "date": "1966-01"
       },
       {
         "event": "closed",
@@ -44370,18 +44576,19 @@
           },
           {
             "event": {
-              "text": "2022 Hockenheim DTM round",
-              "url": "https://en.wikipedia.org/wiki/2022_Deutsche_Tourenwagen_Masters"
+              "text": "2025 Hockenheim DTM round",
+              "url": "https://en.wikipedia.org/wiki/2025_Deutsche_Tourenwagen_Masters"
             },
             "driver": {
-              "text": "Lucas Auer",
-              "url": "https://en.wikipedia.org/wiki/Lucas_Auer"
+              "text": "Ayhancan Güven",
+              "url": "https://en.wikipedia.org/wiki/Ayhancan_G%C3%BCven"
             },
             "vehicle": {
-              "text": "Mercedes AMG GT3 EVO"
+              "text": "Porsche 911 (992) GT3 R",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_R_(2023–)"
             },
-            "time": 96.479,
-            "year": "2022",
+            "time": 97.529,
+            "year": "2025",
             "series": {
               "text": "GT3",
               "url": "https://en.wikipedia.org/wiki/Group_GT3"
@@ -44669,7 +44876,8 @@
               "url": "https://en.wikipedia.org/wiki/2019_TCR_Europe_Touring_Car_Series"
             },
             "driver": {
-              "text": "Andreas Bäckman"
+              "text": "Andreas Bäckman",
+              "url": "https://en.wikipedia.org/wiki/Andreas_B%C3%A4ckman"
             },
             "vehicle": {
               "text": "Hyundai i30 N TCR",
@@ -45467,7 +45675,7 @@
             },
             "vehicle": {
               "text": "Mercedes-Benz CLK LM",
-              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_CLK_GTR#CLK_LM"
+              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_CLK_LM"
             },
             "time": 120.333,
             "year": "1998",
@@ -46043,8 +46251,7 @@
               "url": "https://en.wikipedia.org/wiki/Supersport_World_Championship"
             },
             "driver": {
-              "text": "Christian Kellner",
-              "url": "https://en.wikipedia.org/wiki/Christian_Kellner"
+              "text": "Christian Kellner"
             },
             "vehicle": {
               "text": "Yamaha YZF-R6",
@@ -46649,20 +46856,6 @@
           ],
           "text": "Asphalt"
         }
-      },
-      {
-        "race_lap_records": [
-          {
-            "time": 133.3,
-            "driver": {
-              "text": "Bob McIntyre",
-              "url": "https://en.wikipedia.org/wiki/Bob_McIntyre_(motorcyclist)"
-            },
-            "vehicle": {
-              "text": "Gilera Saturno"
-            }
-          }
-        ]
       }
     ]
   },
@@ -48852,7 +49045,8 @@
           },
           {
             "event": {
-              "text": "2025 Indianapolis McLaren Trophy America round"
+              "text": "2025 Indianapolis McLaren Trophy America round",
+              "url": "https://en.wikipedia.org/wiki/2025_McLaren_Trophy_America"
             },
             "driver": {
               "text": "Jesse Lazare"
@@ -48864,7 +49058,8 @@
             "time": 86.643,
             "year": "2025",
             "series": {
-              "text": "McLaren Trophy"
+              "text": "McLaren Trophy",
+              "url": "https://en.wikipedia.org/wiki/McLaren_Artura#Trophy"
             }
           },
           {
@@ -50564,26 +50759,26 @@
       },
       {
         "layout": "Formula E Circuit",
-        "years": "2025",
+        "years": "2025–present",
         "length_km": 3.001,
         "length_mi": 1.865,
         "turns": 19,
         "race_lap_records": [
           {
             "event": {
-              "text": "2025 Jeddah ePrix",
-              "url": "https://en.wikipedia.org/wiki/2025_Jeddah_ePrix"
+              "text": "2026 Jeddah ePrix",
+              "url": "https://en.wikipedia.org/wiki/2026_Jeddah_ePrix"
             },
             "driver": {
-              "text": "Maximilian Günther",
-              "url": "https://en.wikipedia.org/wiki/Maximilian_G%C3%BCnther"
+              "text": "Jake Dennis",
+              "url": "https://en.wikipedia.org/wiki/Jake_Dennis"
             },
             "vehicle": {
-              "text": "DS E-Tense FE25",
-              "url": "https://en.wikipedia.org/wiki/Formula_E_Gen3"
+              "text": "Porsche 99X Electric",
+              "url": "https://en.wikipedia.org/wiki/Formula_E_Gen3#Gen_3_Evo"
             },
-            "time": 77.179,
-            "year": "2025",
+            "time": 75.653,
+            "year": "2026",
             "series": {
               "text": "Formula E",
               "url": "https://en.wikipedia.org/wiki/Formula_E"
@@ -50605,7 +50800,7 @@
             },
             "vehicle": {
               "text": "Audi RS 3 LMS TCR",
-              "url": "https://en.wikipedia.org/wiki/Audi_RS_3_LMS_TCR#Audi_RS_3_LMS_TCR_(2021)"
+              "url": "https://en.wikipedia.org/wiki/Audi_RS_3_LMS_TCR#Typ_8Y_(2021)"
             },
             "time": 76.986,
             "year": "2022",
@@ -50625,7 +50820,7 @@
             },
             "vehicle": {
               "text": "Audi RS 3 LMS TCR (2021)",
-              "url": "https://en.wikipedia.org/wiki/Audi_RS_3_LMS_TCR#Audi_RS_3_LMS_TCR_(2021)"
+              "url": "https://en.wikipedia.org/wiki/Audi_RS_3_LMS_TCR#Typ_8Y_(2021)"
             },
             "time": 76.986,
             "year": "2022",
@@ -52169,19 +52364,19 @@
           },
           {
             "event": {
-              "text": "2025 Lusail Formula Regional Middle East round",
-              "url": "https://en.wikipedia.org/wiki/2025_Formula_Regional_Middle_East_Championship"
+              "text": "2026 Lusail Formula Regional Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2026_Formula_Regional_Middle_East_Trophy"
             },
             "driver": {
-              "text": "Nikita Bedrin",
-              "url": "https://en.wikipedia.org/wiki/Nikita_Bedrin"
+              "text": "Emanuele Olivieri",
+              "url": "https://en.wikipedia.org/wiki/Emanuele_Olivieri"
             },
             "vehicle": {
-              "text": "Tatuus F3 T-318",
-              "url": "https://en.wikipedia.org/wiki/Tatuus_F3_T-318"
+              "text": "Tatuus T-326",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
             },
-            "time": 110.541,
-            "year": "2025",
+            "time": 108.18,
+            "year": "2026",
             "series": {
               "text": "Formula Regional",
               "url": "https://en.wikipedia.org/wiki/Formula_Regional"
@@ -52245,6 +52440,24 @@
             "series": {
               "text": "Formula 4",
               "url": "https://en.wikipedia.org/wiki/Formula_4"
+            }
+          },
+          {
+            "event": {
+              "text": "2026 Ferrari Challenge Middle East Prologue"
+            },
+            "driver": {
+              "text": "Fouad Alghanim"
+            },
+            "vehicle": {
+              "text": "Ferrari 296 Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_Challenge"
+            },
+            "time": 116.741,
+            "year": "2026",
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
             }
           },
           {
@@ -52326,7 +52539,7 @@
           },
           {
             "event": {
-              "text": "2025 4th Lusail QSSP 300 round"
+              "text": "2026 1st Lusail QSSP 300 round"
             },
             "driver": {
               "text": "Nolann Macary"
@@ -52335,8 +52548,8 @@
               "text": "Kawasaki Ninja 300",
               "url": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_300"
             },
-            "time": 136.952,
-            "year": "2025",
+            "time": 136.725,
+            "year": "2026",
             "series": {
               "text": "Supersport 300",
               "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
@@ -52732,7 +52945,7 @@
       ]
     },
     "url": "https://en.wikipedia.org/wiki/Madring",
-    "circuit_status": "future",
+    "circuit_status": "current",
     "type": "Street circuit",
     "direction": "Clockwise",
     "grands_prix": [
@@ -52773,8 +52986,8 @@
       {
         "layout": "Grand Prix Circuit",
         "years": "2026",
-        "length_km": 5.474,
-        "length_mi": 3.401,
+        "length_km": 5.416,
+        "length_mi": 3.365,
         "turns": 22
       }
     ]
@@ -53699,15 +53912,37 @@
       {
         "layout": "MIA Loop",
         "years": "2024–present",
-        "length_km": 2.301,
-        "length_mi": 1.43,
+        "length_km": 2.32,
+        "length_mi": 1.442,
         "turns": 13,
         "surface": {
           "values": [
             "Asphalt"
           ],
           "text": "Asphalt"
-        }
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2026 Miami ePrix",
+              "url": "https://en.wikipedia.org/wiki/2026_Miami_ePrix"
+            },
+            "driver": {
+              "text": "Oliver Rowland",
+              "url": "https://en.wikipedia.org/wiki/Oliver_Rowland"
+            },
+            "vehicle": {
+              "text": "Nissan e-4ORCE 05",
+              "url": "https://en.wikipedia.org/wiki/Formula_E_Gen3#Gen_3_Evo"
+            },
+            "time": 62.316,
+            "year": "2026",
+            "series": {
+              "text": "Formula E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
+            }
+          }
+        ]
       }
     ]
   },
@@ -54100,20 +54335,6 @@
             "series": {
               "text": "125cc",
               "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
-            }
-          }
-        ]
-      },
-      {
-        "race_lap_records": [
-          {
-            "time": 225.0,
-            "driver": {
-              "text": "Enrico Lorenzetti",
-              "url": "https://en.wikipedia.org/wiki/Enrico_Lorenzetti"
-            },
-            "vehicle": {
-              "text": "Moto Guzzi 500 Bicilindrica"
             }
           }
         ]
@@ -56714,7 +56935,7 @@
             },
             "vehicle": {
               "text": "Chevrolet SS NASCAR",
-              "url": "https://en.wikipedia.org/wiki/Holden_Commodore_(VF)#NASCAR"
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_SS#NASCAR"
             },
             "time": 93.268,
             "year": "2014",
@@ -62346,13 +62567,7 @@
       ],
       "former_names": [
         {
-          "name": "Riverside International Motor Raceway",
-          "periods": [
-            {
-              "from": "1957",
-              "to": "1960"
-            }
-          ]
+          "name": "Riverside International Motor Raceway (early years)"
         }
       ]
     },
@@ -62380,7 +62595,7 @@
           "url": "https://en.wikipedia.org/wiki/Moreno_Valley,_California"
         },
         {
-          "text": "California 60 and Day Street 22255 Eucalyptus Ave"
+          "text": "22255 Eucalyptus Avenue"
         },
         {
           "text": "Moreno Valley, California",
@@ -62402,11 +62617,11 @@
     "history": [
       {
         "event": "broke_ground",
-        "date": "1957-01"
+        "date": "1956-12"
       },
       {
         "event": "opened",
-        "date": "1957-09-22"
+        "date": "1957-09-21"
       },
       {
         "event": "closed",
@@ -62784,26 +62999,6 @@
             "series": {
               "text": "Can-Am",
               "url": "https://en.wikipedia.org/wiki/Can-Am"
-            }
-          },
-          {
-            "event": {
-              "text": "1960 United States Grand Prix",
-              "url": "https://en.wikipedia.org/wiki/1960_United_States_Grand_Prix"
-            },
-            "driver": {
-              "text": "Jack Brabham",
-              "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
-            },
-            "vehicle": {
-              "text": "Cooper T53",
-              "url": "https://en.wikipedia.org/wiki/Cooper_T53"
-            },
-            "time": 116.3,
-            "year": "1960",
-            "series": {
-              "text": "Formula One",
-              "url": "https://en.wikipedia.org/wiki/Formula_One"
             }
           },
           {
@@ -64793,6 +64988,25 @@
           },
           {
             "event": {
+              "text": "2025 Apex One Endurance-10 Hours of Sebring"
+            },
+            "driver": {
+              "text": "Aaron Telitz",
+              "url": "https://en.wikipedia.org/wiki/Aaron_Telitz"
+            },
+            "vehicle": {
+              "text": "McLaren 720S GT3 Evo",
+              "url": "https://en.wikipedia.org/wiki/McLaren_720S#720S_GT3_Evo"
+            },
+            "time": 118.448,
+            "year": "2025",
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            }
+          },
+          {
+            "event": {
               "text": "2025 Sebring Trans-Am round",
               "url": "https://en.wikipedia.org/wiki/2025_Trans-Am_Series"
             },
@@ -64829,25 +65043,6 @@
             "series": {
               "text": "USF Pro 2000",
               "url": "https://en.wikipedia.org/wiki/USF_Pro_2000_Championship"
-            }
-          },
-          {
-            "event": {
-              "text": "2025 Apex One Endurance-10 Hours of Sebring"
-            },
-            "driver": {
-              "text": "Aaron Telitz",
-              "url": "https://en.wikipedia.org/wiki/Aaron_Telitz"
-            },
-            "vehicle": {
-              "text": "McLaren 720S GT3 Evo",
-              "url": "https://en.wikipedia.org/wiki/McLaren_720S#720S_GT3_Evo"
-            },
-            "time": 118.448,
-            "year": "2025",
-            "series": {
-              "text": "GT3",
-              "url": "https://en.wikipedia.org/wiki/Group_GT3"
             }
           },
           {
@@ -65208,14 +65403,75 @@
         "years": "1998–present",
         "length_km": 3.219,
         "length_mi": 2.0,
-        "turns": 9
+        "turns": 9,
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2023 Sebring Yacademy Winter Series USF Juniors round"
+            },
+            "driver": {
+              "text": "Jacob Douglas",
+              "url": "https://en.wikipedia.org/wiki/Jacob_Douglas"
+            },
+            "vehicle": {
+              "text": "Tatuus JR-23",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014#Road_to_Indy"
+            },
+            "time": 89.153,
+            "year": "2023",
+            "series": {
+              "text": "USF Juniors",
+              "url": "https://en.wikipedia.org/wiki/USF_Juniors"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Sebring Yacademy Winter Series F4 round"
+            },
+            "driver": {
+              "text": "Michael Costello",
+              "url": "https://en.wikipedia.org/wiki/Michael_Costello_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Crawford F4-16",
+              "url": "https://en.wikipedia.org/wiki/Ligier_Automotive#Models"
+            },
+            "time": 91.068,
+            "year": "2023",
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            }
+          }
+        ]
       },
       {
         "layout": "Johnson Club Circuit",
         "years": "1998–present",
         "length_km": 2.736,
         "length_mi": 1.7,
-        "turns": 13
+        "turns": 13,
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2024 Sebring Yacademy Winter Series USF Juniors round"
+            },
+            "driver": {
+              "text": "Jack Jeffers",
+              "url": "https://en.wikipedia.org/wiki/Jack_Jeffers"
+            },
+            "vehicle": {
+              "text": "Tatuus JR-23",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014#Road_to_Indy"
+            },
+            "time": 66.358,
+            "year": "2024",
+            "series": {
+              "text": "USF Juniors",
+              "url": "https://en.wikipedia.org/wiki/USF_Juniors"
+            }
+          }
+        ]
       },
       {
         "layout": "7th variation",
@@ -65589,7 +65845,7 @@
             },
             "driver": {
               "text": "Jack Baldwin",
-              "url": "https://en.wikipedia.org/wiki/Jack_Baldwin_(racing_driver)"
+              "url": "https://en.wikipedia.org/wiki/Jack_Baldwin_(racing_driver,_born_1948)"
             },
             "vehicle": {
               "text": "Chevrolet Camaro",
@@ -69266,7 +69522,7 @@
             "year": "1995",
             "series": {
               "text": "GT2",
-              "url": "https://en.wikipedia.org/wiki/Group_GT1#1995–1999_Group_GT2"
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
             }
           },
           {
@@ -69958,7 +70214,7 @@
             "year": "1996",
             "series": {
               "text": "GT2",
-              "url": "https://en.wikipedia.org/wiki/Group_GT1#1995–1999_Group_GT2"
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
             }
           },
           {
@@ -71200,7 +71456,7 @@
     "layouts": [
       {
         "layout": "Permanent Circuit",
-        "years": "2014–present",
+        "years": "2024–present",
         "length_km": 2.313,
         "length_mi": 1.437,
         "turns": 11,
@@ -71790,19 +72046,19 @@
           },
           {
             "event": {
-              "text": "2025 2nd Suzuka FRJC round",
-              "url": "https://en.wikipedia.org/wiki/2025_Formula_Regional_Japanese_Championship"
+              "text": "2026 1st Suzuka FRJC round",
+              "url": "https://en.wikipedia.org/wiki/2026_Formula_Regional_Japanese_Championship"
             },
             "driver": {
-              "text": "Tokiya Suzuki",
-              "url": "https://en.wikipedia.org/wiki/Tokiya_Suzuki"
+              "text": "Ryota Horachi",
+              "url": "https://en.wikipedia.org/wiki/Ryota_Horachi"
             },
             "vehicle": {
               "text": "Dome F111/3",
               "url": "https://en.wikipedia.org/wiki/Formula_Regional_Japanese_Championship#Car"
             },
-            "time": 116.949,
-            "year": "2025",
+            "time": 114.401,
+            "year": "2026",
             "series": {
               "text": "Formula Regional",
               "url": "https://en.wikipedia.org/wiki/Formula_Regional"
@@ -76891,19 +77147,19 @@
           },
           {
             "event": {
-              "text": "2025 1st Abu Dhabi Formula Regional Middle East round",
-              "url": "https://en.wikipedia.org/wiki/2025_Formula_Regional_Middle_East_Championship"
+              "text": "2026 1st Abu Dhabi Formula Regional Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2026_Formula_Regional_Middle_East_Trophy"
             },
             "driver": {
-              "text": "Freddie Slater",
-              "url": "https://en.wikipedia.org/wiki/Freddie_Slater_(racing_driver)"
+              "text": "Rashid Al Dhaheri",
+              "url": "https://en.wikipedia.org/wiki/Rashid_Al_Dhaheri"
             },
             "vehicle": {
-              "text": "Tatuus F3 T-318",
-              "url": "https://en.wikipedia.org/wiki/Tatuus_F3_T-318"
+              "text": "Tatuus T-326",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
             },
-            "time": 110.078,
-            "year": "2025",
+            "time": 108.779,
+            "year": "2026",
             "series": {
               "text": "Formula Regional",
               "url": "https://en.wikipedia.org/wiki/Formula_Regional"
@@ -76927,6 +77183,26 @@
             "series": {
               "text": "GT3",
               "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            }
+          },
+          {
+            "event": {
+              "text": "2026 6 Hours of Abu Dhabi",
+              "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_24H_Series_Middle_East"
+            },
+            "driver": {
+              "text": "Jack Mitchell",
+              "url": "https://en.wikipedia.org/wiki/Jack_Mitchell_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Ginetta G56 GT2",
+              "url": "https://en.wikipedia.org/wiki/Ginetta_G56#GT2"
+            },
+            "time": 114.182,
+            "year": "2026",
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT2"
             }
           },
           {
@@ -77048,18 +77324,18 @@
           },
           {
             "event": {
-              "text": "2025 6 Hours of Abu Dhabi",
-              "url": "https://en.wikipedia.org/wiki/2025_6_Hours_of_Abu_Dhabi"
+              "text": "2026 6 Hours of Abu Dhabi",
+              "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_24H_Series_Middle_East"
             },
             "driver": {
-              "text": "Ivan Ovsienko"
+              "text": "Loic Labeda"
             },
             "vehicle": {
               "text": "Alpine A110 Cup",
-              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#Motorsport"
+              "url": "https://en.wikipedia.org/wiki/Alpine_A110_(2017)#A110_Cup"
             },
-            "time": 129.368,
-            "year": "2025",
+            "time": 127.073,
+            "year": "2026",
             "series": {
               "text": "Alpine Cup",
               "url": "https://en.wikipedia.org/wiki/Alpine_Elf_Europa_Cup"
@@ -77104,18 +77380,18 @@
             }
           },
           {
-            "time": "1.55.503",
+            "time": "1.54.751",
             "driver": {
-              "text": "Janne Stiak",
-              "url": "https://en.wikipedia.org/wiki/Janne_Stiak"
+              "text": "Robert de Haan",
+              "url": "https://en.wikipedia.org/wiki/Robert_de_Haan"
             },
             "vehicle": {
               "text": "Porsche 911 (992) GT3 Cup",
               "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
             },
             "event": {
-              "text": "2025 Abu Dhabi Porsche Carrera Cup Middle East round",
-              "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Porsche_Carrera_Cup_Middle_East"
+              "text": "2026 Abu Dhabi Porsche Carrera Cup Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_Porsche_Carrera_Cup_Middle_East"
             },
             "series": {
               "text": "Porsche Carrera Cup",
@@ -77133,19 +77409,19 @@
         "race_lap_records": [
           {
             "event": {
-              "text": "2025 2nd Abu Dhabi Formula Regional Middle East round",
-              "url": "https://en.wikipedia.org/wiki/2025_Formula_Regional_Middle_East_Championship"
+              "text": "2026 2nd Abu Dhabi Formula Regional Middle East round",
+              "url": "https://en.wikipedia.org/wiki/2026_Formula_Regional_Middle_East_Trophy"
             },
             "driver": {
-              "text": "Théophile Naël",
-              "url": "https://en.wikipedia.org/wiki/Th%C3%A9ophile_Na%C3%ABl"
+              "text": "Rashid Al Dhaheri",
+              "url": "https://en.wikipedia.org/wiki/Rashid_Al_Dhaheri"
             },
             "vehicle": {
-              "text": "Tatuus F3 T-318",
-              "url": "https://en.wikipedia.org/wiki/Tatuus_F3_T-318"
+              "text": "Tatuus T-326",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
             },
-            "time": 102.189,
-            "year": "2025",
+            "time": 100.48,
+            "year": "2026",
             "series": {
               "text": "Formula Regional",
               "url": "https://en.wikipedia.org/wiki/Formula_Regional"
@@ -77235,8 +77511,7 @@
               "url": "https://en.wikipedia.org/wiki/Renault_Clio_Cup"
             },
             "driver": {
-              "text": "Stanislav Novikov",
-              "url": "https://en.wikipedia.org/wiki/Stanislav_Novikov"
+              "text": "Stanislav Novikov"
             },
             "vehicle": {
               "text": "Renault Clio R.S. V",

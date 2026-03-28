@@ -1,14 +1,16 @@
-import json
-
 import importlib.util
+import json
 
 import pytest
 
+from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.format.csv_formatter import CsvFormatter
 from scrapers.base.format.json_formatter import JsonFormatter
 from scrapers.base.format.pandas_formatter import PandasDataFrameFormatter
-from scrapers.base.helpers.value_objects import NormalizedDate, NormalizedTime
+from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
 from scrapers.base.results import ScrapeResult
+
+EXPECTED_TWO_RECORDS = 2
 
 
 def test_json_formatter_without_metadata() -> None:
@@ -60,7 +62,7 @@ def test_csv_formatter_builds_union_of_fields() -> None:
     lines = payload.strip().splitlines()
     metadata = json.loads(lines[0].replace("# meta: ", ""))
     assert metadata["source_url"] == "https://example.com"
-    assert metadata["records_count"] == 2
+    assert metadata["records_count"] == EXPECTED_TWO_RECORDS
     assert lines[1].split(",") == ["name", "wins", "titles"]
     assert "Lewis,103," in lines[2]
     assert "Michael,,7" in lines[3]
@@ -98,11 +100,9 @@ def test_dataframe_formatter_handles_optional_dependency() -> None:
             fallback = formatter.format(data)
         assert fallback == data
     else:
-        import pandas as pd  # noqa: F401
-
-        df = formatter.format(data)
-        assert list(df.columns) == ["name", "wins"]
-        assert df.iloc[0].to_dict() == data[0]
+        result_df = formatter.format(data)
+        assert list(result_df.columns) == ["name", "wins"]
+        assert result_df.iloc[0].to_dict() == data[0]
 
 
 def test_json_formatter_serializes_normalized_value_objects() -> None:
@@ -112,7 +112,7 @@ def test_json_formatter_serializes_normalized_value_objects() -> None:
             {
                 "date": NormalizedDate(text=" 7 June 2019 ", iso=["2019-06-07"]),
                 "time": NormalizedTime(text=" 1:23.456 ", seconds="83.456"),
-            }
+            },
         ],
         source_url="https://example.com",
     )
@@ -125,5 +125,5 @@ def test_json_formatter_serializes_normalized_value_objects() -> None:
         {
             "date": {"text": "7 June 2019", "iso": "2019-06-07"},
             "time": {"text": "1:23.456", "seconds": 83.456},
-        }
+        },
     ]

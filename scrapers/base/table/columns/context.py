@@ -1,10 +1,9 @@
 from dataclasses import dataclass
-from typing import Optional, Set
 
 from bs4 import Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.table.constants import SKIP_SENTINEL
+from scrapers.base.table.sentinels import SKIP_SENTINEL
 
 
 @dataclass
@@ -24,8 +23,8 @@ class ColumnContext:
     raw_text: str | None
     clean_text: str | None
     links: list[LinkRecord]
-    cell: Optional[Tag]
+    cell: Tag | None
     base_url: str
     skip_sentinel: object = SKIP_SENTINEL
-    model_fields: Optional[Set[str]] = None
+    model_fields: set[str] | None = None
     header_link: LinkRecord | None = None

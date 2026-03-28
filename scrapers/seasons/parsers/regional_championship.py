@@ -1,15 +1,14 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.types.constructor import ConstructorColumn
-from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.columns.types import TextColumn
+from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
+from scrapers.seasons.columns.constructor import ConstructorColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
+from scrapers.seasons.columns.driver import DriverColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 
 
@@ -18,8 +17,12 @@ class SeasonRegionalChampionshipParser:
         self._table_parser = table_parser
 
     def parse(
-        self, soup: BeautifulSoup, *, section_ids: list[str], season_year: int | None
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        *,
+        section_ids: list[str],
+        season_year: int | None,
+    ) -> list[dict[str, Any]]:
         return self._table_parser.parse_table(
             soup,
             section_ids=section_ids,
@@ -39,6 +42,6 @@ class SeasonRegionalChampionshipParser:
                     column("Winning driver", "winning_driver", DriverColumn()),
                     column("Constructor", "constructor", ConstructorColumn()),
                     column("Report", "report", UrlColumn()),
-                ]
+                ],
             ),
         )

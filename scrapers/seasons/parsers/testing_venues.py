@@ -1,38 +1,46 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.time_range import TimeRangeColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import TextColumn
+from scrapers.base.table.columns.types import TimeRangeColumn
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.columns.date_range import DateRangeColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
+from scrapers.seasons.services.domain_parsing_policy import TestingVenuesLayout
 
 
 class TestingVenuesParser:
-    def __init__(self, table_parser: SeasonTableParser) -> None:
+    def __init__(
+        self,
+        table_parser: SeasonTableParser,
+        policy: DomainParsingPolicy,
+    ) -> None:
         self._table_parser = table_parser
+        self._policy = policy
 
     def parse(
-        self, soup: BeautifulSoup, season_year: int | None
-    ) -> List[Dict[str, Any]]:
-        # This table only exists in 2011 and 2009
-        if season_year not in {2009, 2011}:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None,
+    ) -> list[dict[str, Any]]:
+        layout = self._policy.resolve_testing_venues_layout(season_year)
+        if layout is None:
             return []
-
-        if season_year == 2011:
+        if layout is TestingVenuesLayout.SWAPPED_CIRCUIT_EVENT:
             return self._parse_2011(soup, season_year)
-        else:  # 2009
-            return self._parse_2009(soup, season_year)
+        return self._parse_2009(soup, season_year)
 
     def _parse_2011(
-        self, soup: BeautifulSoup, season_year: int | None
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None,
+    ) -> list[dict[str, Any]]:
         """
         Parses the testing table for 2011.
 
@@ -72,8 +80,10 @@ class TestingVenuesParser:
         return records
 
     def _parse_2009(
-        self, soup: BeautifulSoup, season_year: int | None
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None,
+    ) -> list[dict[str, Any]]:
         """
         Parses the testing table for 2009.
         """

@@ -1,0 +1,125 @@
+[
+  {
+    "manufacturer": {
+      "text": "Weslake",
+      "url": "https://en.wikipedia.org/wiki/Weslake"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 18,
+    "races_started": 18,
+    "wins": 1,
+    "points": 13.0,
+    "poles": 0,
+    "fastest_laps": 2,
+    "podiums": 2,
+    "wcc": 0,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Weslake",
+      "infoboxes": [
+        {
+          "title": "Weslake as a Formula One engine manufacturer",
+          "rows": {
+            "Base": {
+              "text": "Rye, East Sussex , England",
+              "links": [
+                {
+                  "text": "Rye, East Sussex",
+                  "url": "https://en.wikipedia.org/wiki/Rye,_East_Sussex"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Harry Weslake",
+              "links": []
+            },
+            "First entry": {
+              "text": "1966 Italian Grand Prix",
+              "links": [
+                {
+                  "text": "1966 Italian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1966_Italian_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "1968 Italian Grand Prix",
+              "links": [
+                {
+                  "text": "1968 Italian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1968_Italian_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "18",
+              "links": []
+            },
+            "Chassis": {
+              "text": "Eagle",
+              "links": [
+                {
+                  "text": "Eagle",
+                  "url": "https://en.wikipedia.org/wiki/All_American_Racers"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "1",
+              "links": []
+            },
+            "Podiums": {
+              "text": "2",
+              "links": []
+            },
+            "Points": {
+              "text": "13",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "1",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": null
+    }
+  },
+  {
+    "manufacturer": "Wayne",
+    "details": null
+  }
+]

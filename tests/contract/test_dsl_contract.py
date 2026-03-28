@@ -1,8 +1,8 @@
 from scrapers.base.infobox.dsl import InfoboxSchemaDSL
 from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.dsl import TableSchemaDSL
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
+from scrapers.seasons.columns.seasons import SeasonsColumn
 
 
 def test_table_schema_dsl_reads_schema_and_maps_columns() -> None:
@@ -12,7 +12,7 @@ def test_table_schema_dsl_reads_schema_and_maps_columns() -> None:
                 "header": "Season",
                 "key": "season",
                 "column": {
-                    "class_path": "scrapers.base.table.columns.types.seasons.SeasonsColumn",
+                    "class_path": ("scrapers.seasons.columns.seasons.SeasonsColumn"),
                     "kwargs": {},
                 },
             },
@@ -24,7 +24,7 @@ def test_table_schema_dsl_reads_schema_and_maps_columns() -> None:
                     "kwargs": {},
                 },
             },
-        ]
+        ],
     }
 
     schema = TableSchemaDSL.from_dict(data).build()
@@ -53,7 +53,7 @@ def test_table_schema_dsl_handles_header_specific_columns() -> None:
                     "kwargs": {},
                 },
             },
-        ]
+        ],
     }
 
     schema = TableSchemaDSL.from_dict(data).build()
@@ -73,7 +73,7 @@ def test_infobox_schema_dsl_reads_schema() -> None:
                 "key": "born",
                 "labels": ["Born"],
                 "parser": "date_place",
-            }
+            },
         ],
     }
 

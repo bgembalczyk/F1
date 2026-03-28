@@ -17,11 +17,14 @@ def coerce_number(
     if value is None:
         if allow_none:
             return None
-        raise ValueError(f"Pole {field_name} jest wymagane")
+        msg = f"Pole {field_name} jest wymagane"
+        raise ValueError(msg)
     try:
         number = type_(value)
     except (TypeError, ValueError):
-        raise ValueError(f"Pole {field_name} musi być liczbą") from None
+        msg = f"Pole {field_name} musi być liczbą"
+        raise ValueError(msg) from None
     if number < 0:
-        raise ValueError(f"Pole {field_name} nie może być ujemne")
+        msg = f"Pole {field_name} nie może być ujemne"
+        raise ValueError(msg)
     return number

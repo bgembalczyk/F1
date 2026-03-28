@@ -1,4 +1,4 @@
-from validation.records import ExportRecord
+from validation.validator_base import ExportRecord
 
 
 class EntriesStartsPointsPostProcessor:

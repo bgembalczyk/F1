@@ -1,5 +1,8 @@
+from collections.abc import Callable
+from collections.abc import Iterable
+from collections.abc import Sequence
 from dataclasses import dataclass
-from typing import Any, Callable, Dict, Iterable, Sequence
+from typing import Any
 
 from scrapers.base.helpers.text_normalization import to_snake_case
 from scrapers.base.logging import get_logger
@@ -28,14 +31,14 @@ class InfoboxSchema:
         self.name = name or "infobox"
         self.normalize_unknown = normalize_unknown
         self.fields = list(fields)
-        self._label_map: Dict[str, InfoboxSchemaField] = {}
+        self._label_map: dict[str, InfoboxSchemaField] = {}
         for field in self.fields:
             for label in field.labels:
                 key = self._normalize_label(label)
                 if key:
                     self._label_map[key] = field
         self.required_keys = (
-            {key for key in required_keys}
+            set(required_keys)
             if required_keys is not None
             else {field.key for field in self.fields}
         )
@@ -62,12 +65,12 @@ class InfoboxSchema:
 
     def normalize_rows(
         self,
-        rows: Dict[str, Any],
+        rows: dict[str, Any],
         *,
         logger=None,
         context: str | None = None,
-    ) -> Dict[str, Any]:
-        normalized_rows: Dict[str, Any] = {}
+    ) -> dict[str, Any]:
+        normalized_rows: dict[str, Any] = {}
         for label, row in rows.items():
             key = self.normalize_label(label)
             if not key:

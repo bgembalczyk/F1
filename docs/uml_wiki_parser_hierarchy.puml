@@ -1,0 +1,243 @@
+@startuml Wiki Parser Class Hierarchy
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam handwritten false
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+title WikiScraper i WikiParser - Hierarchia Klas
+
+note as N1
+**Zasady architektury:**
+1. Klasa pobierająca HTML z URL = **Scraper**
+   (używa http_client; cache jest obsługiwany po stronie klienta)
+2. Klasa zarządzająca kilkoma scraperami = **DataExtractor**
+3. WikiParsery są dopasowane do klas HTML Wikipedii
+   i dziedziczą po wspólnym WikiParser
+end note
+
+package "WikiScraper" {
+    class WikiScraper {
+        - http_client
+        - header_parser: HeaderParser
+        - body_content_parser: BodyContentParser
+        --
+        + scrape(url: str): dict
+        # _fetch(url: str): str
+        # _parse(url: str, soup): dict
+    }
+}
+
+package "WikiParser - Warstwa Bazowa" {
+    abstract class WikiParser {
+        + {abstract} parse(element: Tag): Any
+    }
+}
+
+package "WikiParser - Poziom Strony" {
+    class HeaderParser {
+        **HTML:** <header class="mw-body-header ...">
+        --
+        + parse(element: Tag): dict
+        + {static} find_header(soup): Tag | None
+    }
+
+    class BodyContentParser {
+        **HTML:** <div id="bodyContent">
+        - category_links_parser: CategoryLinksParser
+        - content_text_parser: ContentTextParser
+        --
+        + parse(element: Tag): dict
+        + {static} find_body_content(soup): Tag | None
+    }
+
+    class CategoryLinksParser {
+        **HTML:** <div id="catlinks">
+        --
+        + parse(element: Tag): dict
+    }
+
+    class ContentTextParser {
+        **HTML:** <div id="..content-text.." class="..body-content..">
+        - section_parser: SectionParser
+        --
+        + parse(element: Tag): dict
+    }
+}
+
+package "WikiParser - Sekcje" {
+    abstract class WikiElementParserMixin {
+        + infobox_parser: InfoboxParser
+        + paragraph_parser: ParagraphParser
+        + figure_parser: FigureParser
+        + list_parser: ListParser
+        + table_parser: TableParser
+        + navbox_parser: NavBoxParser
+        + references_wrap_parser: ReferencesWrapParser
+        --
+        + parse_elements(elements: list): list
+        # _parse_element(el: Tag): dict | None
+    }
+
+    class SectionParser {
+        **Otwierany przez:**
+        <div class="mw-heading mw-heading2"><h2 id=...>
+        - sub_section_parser: SubSectionParser
+        --
+        + parse(element: Tag): dict
+        # _parse_group(elements: list): dict
+    }
+
+    class SubSectionParser {
+        **Otwierany przez:**
+        <div class="mw-heading mw-heading3"><h3 id=...>
+        - sub_sub_section_parser: SubSubSectionParser
+        --
+        + parse(element: Tag): dict
+        # _parse_group(elements: list): dict
+    }
+
+    class SubSubSectionParser {
+        **Otwierany przez:**
+        <div class="mw-heading mw-heading4"><h4 id=...>
+        - sub_sub_sub_section_parser: SubSubSubSectionParser
+        --
+        + parse(element: Tag): dict
+        # _parse_group(elements: list): dict
+    }
+
+    class SubSubSubSectionParser {
+        **Otwierany przez:**
+        <div class="mw-heading mw-heading5"><h5 id=...>
+        (brak głębszego parsera)
+        --
+        + parse(element: Tag): dict
+        # _parse_group(elements: list): dict
+    }
+
+    note bottom of SubSubSubSectionParser
+        Pierwsza sekcja/podsekcja bez nagłówka = "(Top)"
+        Pozostałe = id z nagłówka
+    end note
+}
+
+package "WikiParser - Elementy HTML" {
+    class InfoboxParser {
+        **HTML:** <table class="infobox vcard">
+        --
+        + parse(element: Tag): dict
+    }
+
+    class ParagraphParser {
+        **HTML:** <p>
+        --
+        + parse(element: Tag): dict
+    }
+
+    class FigureParser {
+        **HTML:** <figure>
+        --
+        + parse(element: Tag): dict
+    }
+
+    class ListParser {
+        **HTML:** <ul>
+        --
+        + parse(element: Tag): dict
+    }
+
+    class TableParser {
+        **HTML:** <table class="wikitable">
+        --
+        + parse(element: Tag): dict
+    }
+
+    class NavBoxParser {
+        **HTML:** <div role="navigation" class="navbox">
+        --
+        + parse(element: Tag): dict
+    }
+
+    class ReferencesWrapParser {
+        **HTML:** <div class="...references-wrap...">
+        --
+        + parse(element: Tag): dict
+    }
+}
+
+' WikiScraper uses page-level parsers
+WikiScraper --> HeaderParser: uses
+WikiScraper --> BodyContentParser: uses
+
+' Page-level parser inheritance
+WikiParser <|-- HeaderParser
+WikiParser <|-- BodyContentParser
+WikiParser <|-- CategoryLinksParser
+WikiParser <|-- ContentTextParser
+
+' BodyContentParser composition
+BodyContentParser --> CategoryLinksParser: uses
+BodyContentParser --> ContentTextParser: uses
+ContentTextParser --> SectionParser: uses
+
+' Section parser inheritance
+WikiParser <|-- SectionParser
+WikiParser <|-- SubSectionParser
+WikiParser <|-- SubSubSectionParser
+WikiParser <|-- SubSubSubSectionParser
+
+WikiElementParserMixin <|-- SectionParser
+WikiElementParserMixin <|-- SubSectionParser
+WikiElementParserMixin <|-- SubSubSectionParser
+WikiElementParserMixin <|-- SubSubSubSectionParser
+
+' Section parser chaining
+SectionParser --> SubSectionParser: uses
+SubSectionParser --> SubSubSectionParser: uses
+SubSubSectionParser --> SubSubSubSectionParser: uses
+
+' Element parser inheritance
+WikiParser <|-- InfoboxParser
+WikiParser <|-- ParagraphParser
+WikiParser <|-- FigureParser
+WikiParser <|-- ListParser
+WikiParser <|-- TableParser
+WikiParser <|-- NavBoxParser
+WikiParser <|-- ReferencesWrapParser
+
+' WikiElementParserMixin uses element parsers
+WikiElementParserMixin --> InfoboxParser: uses
+WikiElementParserMixin --> ParagraphParser: uses
+WikiElementParserMixin --> FigureParser: uses
+WikiElementParserMixin --> ListParser: uses
+WikiElementParserMixin --> TableParser: uses
+WikiElementParserMixin --> NavBoxParser: uses
+WikiElementParserMixin --> ReferencesWrapParser: uses
+
+
+package "Domain Layer (drivers/constructors/circuits/seasons/grands_prix)" {
+    class DomainListScraper
+    class DomainInfoboxParser
+    class DomainSectionParser
+    class DomainPostProcessor
+
+    note right of DomainSectionParser
+      Wspólny kontrakt:
+      parse(section_fragment) -> SectionParseResult
+      SectionParseResult = {section_id, section_label, records, metadata}
+    end note
+
+    class CriticalSectionsMap {
+      DOMAIN_CRITICAL_SECTIONS
+      + section_id
+      + alternative_section_ids
+    }
+}
+
+WikiScraper --> DomainListScraper: entrypoint list/
+WikiScraper --> DomainInfoboxParser: infobox/
+WikiScraper --> DomainSectionParser: sections/
+DomainSectionParser --> CriticalSectionsMap: fallback section IDs
+DomainPostProcessor ..> DomainSectionParser: consumes records
+
+@enduml

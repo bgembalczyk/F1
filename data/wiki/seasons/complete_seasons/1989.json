@@ -2854,7 +2854,10 @@
               }
             ]
           },
-          "points": 76.0
+          "points": {
+            "championship_points": 76.0,
+            "total_points": 81.0
+          }
         },
         {
           "pos": 2,
@@ -16048,16 +16051,7 @@
         },
         {
           "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Constructor",
-              "url": null
-            },
-            "engine_constructor": {
-              "text": "Constructor",
-              "url": null
-            }
-          },
+          "constructor": null,
           "no": null,
           "bra": {
             "round": {

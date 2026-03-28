@@ -828,6 +828,28 @@
       },
       {
         "year": {
+          "text": "1959",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1960",
           "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
         },
@@ -857,6 +879,28 @@
           "url": "https://en.wikipedia.org/wiki/1960_Argentine_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1961-1970",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -1020,6 +1064,28 @@
       },
       {
         "year": {
+          "text": "1976",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1977",
           "url": "https://en.wikipedia.org/wiki/1977_Formula_One_season"
         },
@@ -1177,6 +1243,28 @@
           "url": "https://en.wikipedia.org/wiki/1981_Argentine_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1982-1994",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -1476,10 +1564,14 @@
       {
         "year": 2025,
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
     "circuits": 2,
-    "total": 39,
+    "total": 40,
     "by_year": [
       {
         "year": {
@@ -1728,6 +1820,28 @@
           "url": "https://en.wikipedia.org/wiki/1935_Australian_Grand_Prix"
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1936",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -4212,6 +4326,37 @@
           "url": "https://en.wikipedia.org/wiki/2025_Australian_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "2026",
+          "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "George Russell",
+            "url": "https://en.wikipedia.org/wiki/George_Russell_(racing_driver)"
+          }
+        ],
+        "chassis_constructor": {
+          "text": "Mercedes",
+          "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+        },
+        "engine_constructor": {
+          "text": "Mercedes",
+          "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+        },
+        "location": {
+          "circuit": {
+            "text": "Albert Park",
+            "url": "https://en.wikipedia.org/wiki/Albert_Park_Circuit"
+          }
+        },
+        "report": {
+          "text": "Report",
+          "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
+        },
+        "championship": "formula_one_world_championship"
       }
     ]
   },
@@ -5383,6 +5528,28 @@
           "url": "https://en.wikipedia.org/wiki/2003_Austrian_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "2004-2013",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -7116,6 +7283,28 @@
       },
       {
         "year": {
+          "text": "1926-1929",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1930",
           "url": "https://en.wikipedia.org/wiki/1930_Grand_Prix_season"
         },
@@ -7179,6 +7368,28 @@
           "url": "https://en.wikipedia.org/wiki/1931_Belgian_Grand_Prix"
         },
         "championship": "pre_war_european_championship"
+      },
+      {
+        "year": {
+          "text": "1932",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -7275,6 +7486,28 @@
       },
       {
         "year": {
+          "text": "1936",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1937",
           "url": "https://en.wikipedia.org/wiki/1937_Grand_Prix_season"
         },
@@ -7303,6 +7536,28 @@
           "url": "https://en.wikipedia.org/wiki/1937_Belgian_Grand_Prix"
         },
         "championship": "pre_war_european_championship"
+      },
+      {
+        "year": {
+          "text": "1938",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -7396,6 +7651,28 @@
           "url": "https://en.wikipedia.org/wiki/1947_Belgian_Grand_Prix"
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1948",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -7678,6 +7955,28 @@
       },
       {
         "year": {
+          "text": "1959",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1960",
           "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
         },
@@ -7957,6 +8256,28 @@
       },
       {
         "year": {
+          "text": "1969",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held due to safety concerns",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held due to safety concerns",
+            "url": null
+          }
+        },
+        "report": "Not held due to safety concerns",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1970",
           "url": "https://en.wikipedia.org/wiki/1970_Formula_One_season"
         },
@@ -7985,6 +8306,28 @@
           "url": "https://en.wikipedia.org/wiki/1970_Belgian_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1971",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held due to safety concerns",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held due to safety concerns",
+            "url": null
+          }
+        },
+        "report": "Not held due to safety concerns",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -8949,6 +9292,28 @@
       },
       {
         "year": {
+          "text": "2003",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held due to Belgium's tobacco advertising laws",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held due to Belgium's tobacco advertising laws",
+            "url": null
+          }
+        },
+        "report": "Not held due to Belgium's tobacco advertising laws",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "2004",
           "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
         },
@@ -9008,6 +9373,28 @@
           "url": "https://en.wikipedia.org/wiki/2005_Belgian_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "2006",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held due to circuit refurbishments",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held due to circuit refurbishments",
+            "url": null
+          }
+        },
+        "report": "Not held due to circuit refurbishments",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -11836,6 +12223,28 @@
           "url": "https://en.wikipedia.org/wiki/1927_British_Grand_Prix"
         },
         "championship": "pre_war_world_manufacturers_championship"
+      },
+      {
+        "year": {
+          "text": "1928-1947",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -15019,6 +15428,28 @@
       },
       {
         "year": {
+          "text": "1975",
+          "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1976",
           "url": "https://en.wikipedia.org/wiki/1976_Formula_One_season"
         },
@@ -16041,6 +16472,28 @@
           "url": "https://en.wikipedia.org/wiki/2008_Canadian_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "2009",
+          "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -17099,6 +17552,29 @@
       },
       {
         "year": {
+          "text": "1985-1987",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "class": "Not held",
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1988",
           "url": null
         },
@@ -17230,6 +17706,29 @@
       },
       {
         "year": {
+          "text": "1992",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "class": "Not held",
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1993",
           "url": null
         },
@@ -17291,6 +17790,29 @@
           "url": null
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1995",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "class": "Not held",
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -17816,14 +18338,8 @@
             "url": null
           }
         ],
-        "chassis_constructor": {
-          "text": "Not held due to budgetary reasons",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "Not held due to budgetary reasons",
-          "url": null
-        },
+        "chassis_constructor": null,
+        "engine_constructor": null,
         "report": "Not held due to budgetary reasons",
         "championship": "unknown"
       },
@@ -18235,14 +18751,8 @@
             "url": null
           }
         ],
-        "chassis_constructor": {
-          "text": "Not held due to out",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "of-date facilities and circuit conditions",
-          "url": null
-        },
+        "chassis_constructor": null,
+        "engine_constructor": null,
         "report": "Not held due to out-of-date facilities and circuit conditions",
         "championship": "unknown"
       },
@@ -18582,14 +19092,8 @@
             "url": null
           }
         ],
-        "chassis_constructor": {
-          "text": "Not held due to no race contract",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "Not held due to no race contract",
-          "url": null
-        },
+        "chassis_constructor": null,
+        "engine_constructor": null,
         "report": "Not held due to no race contract",
         "championship": "unknown"
       },
@@ -19169,6 +19673,28 @@
       },
       {
         "year": {
+          "text": "1986-1992",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1993",
           "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
         },
@@ -19321,6 +19847,28 @@
           "url": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1998",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -19758,6 +20306,28 @@
       },
       {
         "year": {
+          "text": "2013-2015",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "2016",
           "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
         },
@@ -20146,6 +20716,28 @@
           "url": "https://en.wikipedia.org/wiki/1908_French_Grand_Prix"
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1909-1911",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -22769,6 +23361,28 @@
       },
       {
         "year": {
+          "text": "2009-2017",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "2018",
           "url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship"
         },
@@ -23296,6 +23910,28 @@
       },
       {
         "year": {
+          "text": "1930",
+          "url": "https://en.wikipedia.org/wiki/1930_Grand_Prix_season"
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1931",
           "url": "https://en.wikipedia.org/wiki/1931_Grand_Prix_season"
         },
@@ -23355,6 +23991,28 @@
           "url": "https://en.wikipedia.org/wiki/1932_German_Grand_Prix"
         },
         "championship": "pre_war_european_championship"
+      },
+      {
+        "year": {
+          "text": "1933",
+          "url": "https://en.wikipedia.org/wiki/1933_Grand_Prix_season"
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -23544,6 +24202,28 @@
       },
       {
         "year": {
+          "text": "1940-1949",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1950",
           "url": "https://en.wikipedia.org/wiki/1950_Formula_One_season"
         },
@@ -23696,6 +24376,28 @@
           "url": "https://en.wikipedia.org/wiki/1954_German_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1955",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -25526,6 +26228,28 @@
       },
       {
         "year": {
+          "text": "2015",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "2016",
           "url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship"
         },
@@ -25554,6 +26278,28 @@
           "url": "https://en.wikipedia.org/wiki/2016_German_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "2017",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -25826,6 +26572,28 @@
           "url": "https://en.wikipedia.org/wiki/1936_Hungarian_Grand_Prix"
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1937-1985",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -30795,7 +31563,7 @@
         },
         "engine_constructor": {
           "text": "Renault",
-          "url": "https://en.wikipedia.org/wiki/Renault_F1"
+          "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
         },
         "report": {
           "text": "Report",
@@ -30820,7 +31588,7 @@
         },
         "engine_constructor": {
           "text": "Renault",
-          "url": "https://en.wikipedia.org/wiki/Renault_F1"
+          "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
         },
         "report": {
           "text": "Report",
@@ -30845,7 +31613,7 @@
         },
         "engine_constructor": {
           "text": "Renault",
-          "url": "https://en.wikipedia.org/wiki/Renault_F1"
+          "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
         },
         "report": {
           "text": "Report",
@@ -31109,6 +31877,28 @@
           "url": null
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1953-1996",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -31679,6 +32469,28 @@
       },
       {
         "year": {
+          "text": "1971-1985",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1986",
           "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
         },
@@ -31893,6 +32705,28 @@
           "url": "https://en.wikipedia.org/wiki/1992_Mexican_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1993-2014",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -32528,6 +33362,28 @@
       },
       {
         "year": {
+          "text": "1971-1985",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1986",
           "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
         },
@@ -32742,6 +33598,28 @@
           "url": "https://en.wikipedia.org/wiki/1992_Mexican_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1993-2014",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -33821,14 +34699,8 @@
             "url": null
           }
         ],
-        "chassis_constructor": {
-          "text": "Not held due to budgetary concerns and a lack of regulations in Formula One",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "Not held due to budgetary concerns and a lack of regulations in Formula One",
-          "url": null
-        },
+        "chassis_constructor": null,
+        "engine_constructor": null,
         "report": "Not held due to budgetary concerns and a lack of regulations in Formula One",
         "championship": "unknown"
       },
@@ -33868,14 +34740,8 @@
             "url": null
           }
         ],
-        "chassis_constructor": {
-          "text": "Not held due to the fact that car regulations were not finalized in Formula One",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "Not held due to the fact that car regulations were not finalized in Formula One",
-          "url": null
-        },
+        "chassis_constructor": null,
+        "engine_constructor": null,
         "report": "Not held due to the fact that car regulations were not finalized in Formula One",
         "championship": "unknown"
       },
@@ -35816,6 +36682,29 @@
       },
       {
         "year": {
+          "text": "1929",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "category": "Not held",
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1930",
           "url": "https://en.wikipedia.org/wiki/1930_Grand_Prix_season"
         },
@@ -35921,6 +36810,29 @@
       },
       {
         "year": {
+          "text": "1933",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "category": "Not held",
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1934",
           "url": "https://en.wikipedia.org/wiki/1934_Grand_Prix_season"
         },
@@ -35953,6 +36865,29 @@
           "url": "https://en.wikipedia.org/wiki/1934_Moroccan_Grand_Prix"
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1935-1953",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "category": "Not held",
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -36279,6 +37214,28 @@
           "url": null
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1964-1993",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -36622,6 +37579,30 @@
       },
       {
         "year": {
+          "text": "1956",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "model": "Not held",
+        "category": "Not held",
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1957",
           "url": null
         },
@@ -36757,6 +37738,30 @@
       },
       {
         "year": {
+          "text": "1961-1963",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "model": "Not held",
+        "category": "Not held",
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1964",
           "url": null
         },
@@ -36853,6 +37858,30 @@
           "url": null
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1967-1983",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "model": "Not held",
+        "category": "Not held",
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -37455,14 +38484,8 @@
             "url": null
           }
         ],
-        "chassis_constructor": {
-          "text": "Not held",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "Not held",
-          "url": null
-        },
+        "chassis_constructor": null,
+        "engine_constructor": null,
         "report": "Not held",
         "championship": "unknown"
       },
@@ -37653,6 +38676,28 @@
           "url": null
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1915-2013",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -40908,6 +41953,29 @@
       },
       {
         "year": {
+          "text": "1974-2007",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "class": "Not held",
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "2008",
           "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
         },
@@ -41610,6 +42678,28 @@
       },
       {
         "year": {
+          "text": "1935",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1936",
           "url": null
         },
@@ -41731,6 +42821,28 @@
           "url": "https://en.wikipedia.org/wiki/1939_South_African_Grand_Prix"
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1940-1959",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -41886,6 +42998,28 @@
           "url": "https://en.wikipedia.org/wiki/1963_South_African_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1964",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -42869,6 +44003,28 @@
       },
       {
         "year": {
+          "text": "1914-1922",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1923",
           "url": "https://en.wikipedia.org/wiki/1923_Grand_Prix_season"
         },
@@ -42897,6 +44053,28 @@
           "url": null
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1924-1925",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -43049,6 +44227,28 @@
       },
       {
         "year": {
+          "text": "1931-1932",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1933",
           "url": "https://en.wikipedia.org/wiki/1933_Grand_Prix_season"
         },
@@ -43142,6 +44342,28 @@
       },
       {
         "year": {
+          "text": "1936-1950",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1951",
           "url": "https://en.wikipedia.org/wiki/1951_Formula_One_season"
         },
@@ -43173,6 +44395,28 @@
       },
       {
         "year": {
+          "text": "1952-1953",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1954",
           "url": "https://en.wikipedia.org/wiki/1954_Formula_One_season"
         },
@@ -43201,6 +44445,28 @@
           "url": "https://en.wikipedia.org/wiki/1954_Spanish_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1955-1966",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -43666,6 +44932,28 @@
           "url": "https://en.wikipedia.org/wiki/1981_Spanish_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1982-1985",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -45060,6 +46348,28 @@
       },
       {
         "year": {
+          "text": "1934-1948",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1949",
           "url": "https://en.wikipedia.org/wiki/1949_Grand_Prix_season"
         },
@@ -45088,6 +46398,28 @@
           "url": null
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1950-1954",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -45192,6 +46524,28 @@
       },
       {
         "year": {
+          "text": "1958-1966",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1967",
           "url": "https://en.wikipedia.org/wiki/1967_European_Formula_Two_Championship"
         },
@@ -45220,6 +46574,28 @@
           "url": null
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1968-1972",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -45642,6 +47018,28 @@
       },
       {
         "year": {
+          "text": "1940-1946",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1947",
           "url": "https://en.wikipedia.org/wiki/1947_Grand_Prix_season"
         },
@@ -45890,6 +47288,28 @@
       },
       {
         "year": {
+          "text": "1955-1974",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1975",
           "url": "https://en.wikipedia.org/wiki/1975_Formula_One_season"
         },
@@ -45919,6 +47339,28 @@
           "url": "https://en.wikipedia.org/wiki/1975_Swiss_Grand_Prix"
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1976-1981",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -46193,14 +47635,8 @@
             "url": null
           }
         ],
-        "chassis_constructor": {
-          "text": "Not held",
-          "url": null
-        },
-        "engine_constructor": {
-          "text": "Not held",
-          "url": null
-        },
+        "chassis_constructor": null,
+        "engine_constructor": null,
         "report": "Not held",
         "championship": "unknown"
       },
@@ -46512,6 +47948,28 @@
       },
       {
         "year": {
+          "text": "1909",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1910",
           "url": "https://en.wikipedia.org/wiki/1910_Grand_Prix_season"
         },
@@ -46602,6 +48060,28 @@
           "url": "https://en.wikipedia.org/wiki/1912_American_Grand_Prize"
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1913",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -46699,6 +48179,28 @@
           "url": "https://en.wikipedia.org/wiki/1916_American_Grand_Prize"
         },
         "championship": "non_championship"
+      },
+      {
+        "year": {
+          "text": "1917-1957",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -47415,6 +48917,28 @@
       },
       {
         "year": {
+          "text": "1981-1988",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
+      },
+      {
+        "year": {
           "text": "1989",
           "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
         },
@@ -47505,6 +49029,28 @@
           "url": "https://en.wikipedia.org/wiki/1991_United_States_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "1992-1999",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {
@@ -47753,6 +49299,28 @@
           "url": "https://en.wikipedia.org/wiki/2007_United_States_Grand_Prix"
         },
         "championship": "formula_one_world_championship"
+      },
+      {
+        "year": {
+          "text": "2008-2011",
+          "url": null
+        },
+        "driver": [
+          {
+            "text": "Not held",
+            "url": null
+          }
+        ],
+        "chassis_constructor": null,
+        "engine_constructor": null,
+        "location": {
+          "circuit": {
+            "text": "Not held",
+            "url": null
+          }
+        },
+        "report": "Not held",
+        "championship": "unknown"
       },
       {
         "year": {

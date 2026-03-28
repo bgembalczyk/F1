@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any
 
 from bs4 import BeautifulSoup
 
@@ -27,7 +27,7 @@ class InfoboxExtractor:
         self.run_id = run_id
         self.url = url
 
-    def extract(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def extract(self, soup: BeautifulSoup) -> dict[str, Any]:
         self.logger.debug("InfoboxExtractor start (run_id=%s)", self.run_id)
         try:
             raw = self.parser.parse(soup)

@@ -1,0 +1,713 @@
+[
+  {
+    "name": {
+      "list": [
+        "TI Circuit Aida",
+        "Okayama International Circuit"
+      ],
+      "former_names": [
+        {
+          "name": "TI Circuit Aida",
+          "periods": [
+            {
+              "from": "1990-11",
+              "to": "2005-04"
+            }
+          ]
+        }
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Okayama_International_Circuit",
+    "circuit_status": "former",
+    "type": "Race circuit",
+    "direction": "Clockwise",
+    "grands_prix": [
+      {
+        "text": "Pacific Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Pacific_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      },
+      {
+        "year": 1995,
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 2,
+    "location": {
+      "places": [
+        {
+          "text": "Mimasaka",
+          "url": "https://en.wikipedia.org/wiki/Mimasaka,_Okayama"
+        },
+        {
+          "text": "Okayama Prefecture",
+          "url": "https://en.wikipedia.org/wiki/Okayama_Prefecture"
+        },
+        {
+          "text": "Japan",
+          "url": "https://en.wikipedia.org/wiki/Japan"
+        }
+      ],
+      "coordinates": {
+        "lat": 34.915,
+        "lon": 134.22111
+      }
+    },
+    "fia_grade": 2,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "1989"
+      },
+      {
+        "event": "opened",
+        "date": "1990-11-18"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "1990–present",
+        "length_km": 3.703,
+        "length_mi": 2.301,
+        "turns": 13,
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "1994 Pacific Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1994_Pacific_Grand_Prix"
+            },
+            "driver": {
+              "text": "Michael Schumacher",
+              "url": "https://en.wikipedia.org/wiki/Michael_Schumacher"
+            },
+            "vehicle": {
+              "text": "Benetton B194",
+              "url": "https://en.wikipedia.org/wiki/Benetton_B194"
+            },
+            "time": 74.023,
+            "year": "1994",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "2020 Okayama Super Formula round",
+              "url": "https://en.wikipedia.org/wiki/2020_Super_Formula_Championship"
+            },
+            "driver": {
+              "text": "Nick Cassidy",
+              "url": "https://en.wikipedia.org/wiki/Nick_Cassidy"
+            },
+            "vehicle": {
+              "text": "Dallara SF19",
+              "url": "https://en.wikipedia.org/wiki/Dallara_SF19"
+            },
+            "time": 75.237,
+            "year": "2020",
+            "series": {
+              "text": "Super Formula",
+              "url": "https://en.wikipedia.org/wiki/Super_Formula"
+            }
+          },
+          {
+            "event": {
+              "text": "2008 Okayama Formula Nippon round",
+              "url": "https://en.wikipedia.org/wiki/2008_Formula_Nippon_Championship"
+            },
+            "driver": {
+              "text": "Satoshi Motoyama",
+              "url": "https://en.wikipedia.org/wiki/Satoshi_Motoyama"
+            },
+            "vehicle": {
+              "text": "Lola FN06",
+              "url": "https://en.wikipedia.org/wiki/Lola_B06/51"
+            },
+            "time": 79.345,
+            "year": "2008",
+            "series": {
+              "text": "Formula Nippon",
+              "url": "https://en.wikipedia.org/wiki/Formula_Nippon"
+            }
+          },
+          {
+            "event": {
+              "text": "2018 Okayama GT 300 km Race",
+              "url": "https://en.wikipedia.org/wiki/2018_Super_GT_Series"
+            },
+            "driver": {
+              "text": "Takashi Kogure",
+              "url": "https://en.wikipedia.org/wiki/Takashi_Kogure"
+            },
+            "vehicle": {
+              "text": "Honda NSX-GT",
+              "url": "https://en.wikipedia.org/wiki/Honda_NSX_(second_generation)#Super_GT"
+            },
+            "time": 79.71,
+            "year": "2018",
+            "series": {
+              "text": "Super GT (GT500)",
+              "url": "https://en.wikipedia.org/wiki/Super_GT#GT500"
+            }
+          },
+          {
+            "event": {
+              "text": "2009 1000 km of Okayama",
+              "url": "https://en.wikipedia.org/wiki/2009_1000_km_of_Okayama"
+            },
+            "driver": {
+              "text": "Jonny Cocker",
+              "url": "https://en.wikipedia.org/wiki/Jonny_Cocker"
+            },
+            "vehicle": {
+              "text": "Lola-Aston Martin B09/60",
+              "url": "https://en.wikipedia.org/wiki/Lola-Aston_Martin_B09/60"
+            },
+            "time": 80.561,
+            "year": "2009",
+            "series": {
+              "text": "LMP1",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP1"
+            }
+          },
+          {
+            "event": {
+              "text": "2006 Okayama JLMC round",
+              "url": "https://en.wikipedia.org/wiki/Japan_Le_Mans_Challenge"
+            },
+            "driver": {
+              "text": "Hiroki Katoh",
+              "url": "https://en.wikipedia.org/wiki/Hiroki_Katoh"
+            },
+            "vehicle": {
+              "text": "Zytek 04S",
+              "url": "https://en.wikipedia.org/wiki/Reynard_02S"
+            },
+            "time": 81.298,
+            "year": "2006",
+            "series": {
+              "text": "LMP900",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 1st Okayama Japanese F3 round",
+              "url": "https://en.wikipedia.org/wiki/2017_Japanese_Formula_3_Championship"
+            },
+            "driver": {
+              "text": "Álex Palou",
+              "url": "https://en.wikipedia.org/wiki/%C3%81lex_Palou"
+            },
+            "vehicle": {
+              "text": "Dallara F314",
+              "url": "https://en.wikipedia.org/wiki/Dallara_F3_cars#F312"
+            },
+            "time": 81.38,
+            "year": "2017",
+            "series": {
+              "text": "Formula Three",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
+            }
+          },
+          {
+            "event": {
+              "text": "2022 Okayama Super Formula Lights round",
+              "url": "https://en.wikipedia.org/wiki/2022_Super_Formula_Lights"
+            },
+            "driver": {
+              "text": "Iori Kimura",
+              "url": "https://en.wikipedia.org/wiki/Iori_Kimura"
+            },
+            "vehicle": {
+              "text": "Dallara 320",
+              "url": "https://en.wikipedia.org/wiki/Dallara_320"
+            },
+            "time": 82.281,
+            "year": "2022",
+            "series": {
+              "text": "Super Formula Lights",
+              "url": "https://en.wikipedia.org/wiki/Super_Formula_Lights"
+            }
+          },
+          {
+            "event": {
+              "text": "2009 1000 km of Okayama",
+              "url": "https://en.wikipedia.org/wiki/2009_1000_km_of_Okayama"
+            },
+            "driver": {
+              "text": "Matthieu Lahaye",
+              "url": "https://en.wikipedia.org/wiki/Matthieu_Lahaye"
+            },
+            "vehicle": {
+              "text": "Pescarolo 01",
+              "url": "https://en.wikipedia.org/wiki/Pescarolo_01"
+            },
+            "time": 84.948,
+            "year": "2009",
+            "series": {
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 Okayama GT 300 km Race",
+              "url": "https://en.wikipedia.org/wiki/2017_Super_GT_Series"
+            },
+            "driver": {
+              "text": "Naoya Gamou",
+              "url": "https://en.wikipedia.org/wiki/Naoya_Gamou"
+            },
+            "vehicle": {
+              "text": "Mercedes-AMG GT3",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_GT#AMG_GT3_(2015–2019)"
+            },
+            "time": 86.304,
+            "year": "2017",
+            "series": {
+              "text": "Super GT (GT300)",
+              "url": "https://en.wikipedia.org/wiki/Super_GT#GT300"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Okayama FRJC round",
+              "url": "https://en.wikipedia.org/wiki/2025_Formula_Regional_Japanese_Championship"
+            },
+            "driver": {
+              "text": "Tokiya Suzuki",
+              "url": "https://en.wikipedia.org/wiki/Tokiya_Suzuki"
+            },
+            "vehicle": {
+              "text": "Dome F111/3",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional_Japanese_Championship#Car"
+            },
+            "time": 86.315,
+            "year": "2025",
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 Okayama All Japan Road Race Championship Superbike round",
+              "url": "https://en.wikipedia.org/wiki/All_Japan_Road_Race_Championship"
+            },
+            "driver": {
+              "text": "Katsuyuki Nakasuga",
+              "url": "https://en.wikipedia.org/wiki/Katsuyuki_Nakasuga"
+            },
+            "vehicle": {
+              "text": "Yamaha YZF-R1",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
+            },
+            "time": 88.153,
+            "year": "2017",
+            "series": {
+              "text": "Superbike",
+              "url": "https://en.wikipedia.org/wiki/Superbike_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Okayama GT World Challenge Asia round",
+              "url": "https://en.wikipedia.org/wiki/2025_GT_World_Challenge_Asia"
+            },
+            "driver": {
+              "text": "Luo Kailuo"
+            },
+            "vehicle": {
+              "text": "Ferrari 296 GT3",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_GT3"
+            },
+            "time": 88.513,
+            "year": "2025",
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            }
+          },
+          {
+            "event": {
+              "text": "2022 Okayama Porsche Carrera Cup Japan round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            },
+            "driver": {
+              "text": "Tsubasa Kondo",
+              "url": "https://en.wikipedia.org/wiki/Tsubasa_Kondo"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (992) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
+            },
+            "time": 89.161,
+            "year": "2022",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2008 Okayama Formula V6 Asia round",
+              "url": "https://en.wikipedia.org/wiki/2008_Formula_V6_Asia_Championship"
+            },
+            "driver": {
+              "text": "Earl Bamber",
+              "url": "https://en.wikipedia.org/wiki/Earl_Bamber"
+            },
+            "vehicle": {
+              "text": "Tatuus FRV6",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
+            },
+            "time": 89.311,
+            "year": "2008",
+            "series": {
+              "text": "Formula Renault 3.5",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_3.5L"
+            }
+          },
+          {
+            "event": {
+              "text": "2009 1000 km of Okayama",
+              "url": "https://en.wikipedia.org/wiki/2009_1000_km_of_Okayama"
+            },
+            "driver": {
+              "text": "Carlo van Dam",
+              "url": "https://en.wikipedia.org/wiki/Carlo_van_Dam"
+            },
+            "vehicle": {
+              "text": "Saleen S7-R",
+              "url": "https://en.wikipedia.org/wiki/Saleen_S7#S7R"
+            },
+            "time": 90.359,
+            "year": "2009",
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Okayama Ferrari Challenge Japan round",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge#Ferrari_Challenge_Japan"
+            },
+            "driver": {
+              "text": "Anna Inotsume",
+              "url": "https://en.wikipedia.org/wiki/Anna_Inotsume"
+            },
+            "vehicle": {
+              "text": "Ferrari 296 Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_Challenge"
+            },
+            "time": 90.438,
+            "year": "2025",
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            }
+          },
+          {
+            "event": {
+              "text": "2009 1000 km of Okayama",
+              "url": "https://en.wikipedia.org/wiki/2009_1000_km_of_Okayama"
+            },
+            "driver": {
+              "text": "Dirk Müller",
+              "url": "https://en.wikipedia.org/wiki/Dirk_M%C3%BCller_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "BMW M3 GT2",
+              "url": "https://en.wikipedia.org/wiki/BMW_M3_GT2"
+            },
+            "time": 92.136,
+            "year": "2009",
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 Okayama Japanese F4 round",
+              "url": "https://en.wikipedia.org/wiki/2017_F4_Japanese_Championship"
+            },
+            "driver": {
+              "text": "Ritomo Miyata",
+              "url": "https://en.wikipedia.org/wiki/Ritomo_Miyata"
+            },
+            "vehicle": {
+              "text": "Dome F110",
+              "url": "https://en.wikipedia.org/wiki/Dome_F110"
+            },
+            "time": 92.202,
+            "year": "2017",
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 Okayama All Japan Road Race Championship Supersport round",
+              "url": "https://en.wikipedia.org/wiki/All_Japan_Road_Race_Championship"
+            },
+            "driver": {
+              "text": "Keisuke Maeda"
+            },
+            "vehicle": {
+              "text": "Yamaha YZF-R6",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R6"
+            },
+            "time": 92.794,
+            "year": "2017",
+            "series": {
+              "text": "Supersport",
+              "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
+            }
+          },
+          {
+            "event": {
+              "text": "2005 1st Okayama Formula Toyota round",
+              "url": "https://en.wikipedia.org/wiki/Formula_Toyota"
+            },
+            "driver": {
+              "text": "Tsubasa Abe"
+            },
+            "vehicle": {
+              "text": "Tom's FT30",
+              "url": "https://en.wikipedia.org/wiki/TOM%27S"
+            },
+            "time": 94.021,
+            "year": "2005",
+            "series": {
+              "text": "Formula Toyota",
+              "url": "https://en.wikipedia.org/wiki/Formula_Toyota"
+            }
+          },
+          {
+            "event": {
+              "text": "2003 Aida JGTC round",
+              "url": "https://en.wikipedia.org/wiki/2003_All_Japan_Grand_Touring_Car_Championship"
+            },
+            "driver": {
+              "text": "Atsushi Yogou"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (996) GT3-R",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#996_GT3_R_(1999–2001)"
+            },
+            "time": 94.335,
+            "year": "2003",
+            "series": {
+              "text": "GT",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            }
+          },
+          {
+            "event": {
+              "text": "2009 Okayama Formula BMW Pacific round",
+              "url": "https://en.wikipedia.org/wiki/2009_Formula_BMW_Pacific_season"
+            },
+            "driver": {
+              "text": "Facu Regalia",
+              "url": "https://en.wikipedia.org/wiki/Facu_Regalia"
+            },
+            "vehicle": {
+              "text": "Mygale FB02",
+              "url": "https://en.wikipedia.org/wiki/Mygale_FB02"
+            },
+            "time": 94.388,
+            "year": "2009",
+            "series": {
+              "text": "Formula BMW",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+            }
+          },
+          {
+            "event": {
+              "text": "1993 Okayama JTCC round",
+              "url": "https://en.wikipedia.org/wiki/1993_Japanese_Touring_Car_Championship"
+            },
+            "driver": {
+              "text": "Kazuyoshi Hoshino",
+              "url": "https://en.wikipedia.org/wiki/Kazuyoshi_Hoshino"
+            },
+            "vehicle": {
+              "text": "Nissan Skyline GT-R BNR32",
+              "url": "https://en.wikipedia.org/wiki/Nissan_Skyline_GT-R#Motorsports"
+            },
+            "time": 96.281,
+            "year": "1993",
+            "series": {
+              "text": "Group A",
+              "url": "https://en.wikipedia.org/wiki/Group_A#Touring_car_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Okayama TCR Japan round",
+              "url": "https://en.wikipedia.org/wiki/2023_TCR_Japan_Touring_Car_Series"
+            },
+            "driver": {
+              "text": "Anna Inotsume",
+              "url": "https://en.wikipedia.org/wiki/Anna_Inotsume"
+            },
+            "vehicle": {
+              "text": "Honda Civic Type R TCR",
+              "url": "https://en.wikipedia.org/wiki/Honda_Civic_Type_R_TCR"
+            },
+            "time": 96.706,
+            "year": "2023",
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 Okayama Japan Cup Series round",
+              "url": "https://en.wikipedia.org/wiki/2024_Japan_Cup_Series"
+            },
+            "driver": {
+              "text": "Daiki Fujiwara"
+            },
+            "vehicle": {
+              "text": "Porsche 718 Cayman GT4 RS Clubsport",
+              "url": "https://en.wikipedia.org/wiki/Porsche_718_Boxster_and_Cayman_(982)#718_Cayman_GT4_RS_Clubsport"
+            },
+            "time": 96.732,
+            "year": "2024",
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            }
+          },
+          {
+            "event": {
+              "text": "1997 Okayama JTCC round",
+              "url": "https://en.wikipedia.org/wiki/1997_Japanese_Touring_Car_Championship"
+            },
+            "driver": {
+              "text": "Osamu Nakako",
+              "url": "https://en.wikipedia.org/wiki/Osamu_Nakako"
+            },
+            "vehicle": {
+              "text": "Honda Accord",
+              "url": "https://en.wikipedia.org/wiki/Honda_Accord#Motorsport"
+            },
+            "time": 96.807,
+            "year": "1997",
+            "series": {
+              "text": "Super Touring",
+              "url": "https://en.wikipedia.org/wiki/Super_Touring"
+            }
+          },
+          {
+            "event": {
+              "text": "2008 FIA WTCC Race of Japan",
+              "url": "https://en.wikipedia.org/wiki/2008_World_Touring_Car_Championship"
+            },
+            "driver": {
+              "text": "James Thompson",
+              "url": "https://en.wikipedia.org/wiki/James_Thompson_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Honda Accord Euro R",
+              "url": "https://en.wikipedia.org/wiki/Honda_Accord#Motorsport"
+            },
+            "time": 108.767,
+            "year": "2008",
+            "series": {
+              "text": "Super 2000",
+              "url": "https://en.wikipedia.org/wiki/Super_2000#Touring_cars"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Motorcycle Circuit",
+        "years": "2020–present",
+        "length_km": 3.747,
+        "length_mi": 2.328,
+        "turns": 17,
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2024 Okayama All Japan Road Race Championship Superbike round",
+              "url": "https://en.wikipedia.org/wiki/All_Japan_Road_Race_Championship"
+            },
+            "driver": {
+              "text": "Yuki Okamoto"
+            },
+            "vehicle": {
+              "text": "Yamaha YZF-R1",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
+            },
+            "time": 89.889,
+            "year": "2024",
+            "series": {
+              "text": "Superbike",
+              "url": "https://en.wikipedia.org/wiki/Superbike_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Okayama All Japan Road Race Championship Supersport round",
+              "url": "https://en.wikipedia.org/wiki/All_Japan_Road_Race_Championship"
+            },
+            "driver": {
+              "text": "Kengo Nagao"
+            },
+            "vehicle": {
+              "text": "Yamaha YZF-R6",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R6"
+            },
+            "time": 95.235,
+            "year": "2023",
+            "series": {
+              "text": "Supersport",
+              "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 Okayama All Japan Road Race Championship J-GP3 round",
+              "url": "https://en.wikipedia.org/wiki/All_Japan_Road_Race_Championship"
+            },
+            "driver": {
+              "text": "Hiroki Ono",
+              "url": "https://en.wikipedia.org/wiki/Hiroki_Ono"
+            },
+            "vehicle": {
+              "text": "Honda NSF250R",
+              "url": "https://en.wikipedia.org/wiki/Honda_NSF250R"
+            },
+            "time": 99.74,
+            "year": "2024",
+            "series": {
+              "text": "Moto3",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Moto3_class"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Piper Circuit",
+        "years": "1990–present",
+        "length_km": 1.956,
+        "length_mi": 1.215,
+        "turns": 8
+      }
+    ]
+  }
+]

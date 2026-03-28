@@ -1,19 +1,16 @@
-from dataclasses import dataclass
 import logging
-from pathlib import Path
 import sys
+from dataclasses import dataclass
+from pathlib import Path
 
 import pytest
 
-
 from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.transformers import (
-    NormalizeLinksTransformer,
-    RecordFactoryTransformer,
-    RecordTransformer,
-    TransformersPipeline,
-)
-from validation.records import ExportRecord
+from scrapers.base.transformers.normalize_links import NormalizeLinksTransformer
+from scrapers.base.transformers.pipeline import TransformersPipeline
+from scrapers.base.transformers.record_factory import RecordFactoryTransformer
+from scrapers.base.transformers.record_transformer import RecordTransformer
+from validation.validator_base import ExportRecord
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -74,13 +71,13 @@ def test_normalize_links_transformer_normalizes_link_values() -> None:
             {
                 "driver": {"text": " Lewis ", "url": "https://example.com/lewis"},
                 "seasons": [2020, 2021],
-            }
-        ]
+            },
+        ],
     )
 
     assert records == [
         {
             "driver": {"text": "Lewis", "url": "https://example.com/lewis"},
             "seasons": [2020, 2021],
-        }
+        },
     ]

@@ -2,8 +2,12 @@
 
 import json
 import time
-from abc import ABC, abstractmethod
-from typing import Any, Callable, Dict, Optional, cast
+from abc import ABC
+from abc import abstractmethod
+from collections.abc import Callable
+from typing import TYPE_CHECKING
+from typing import Any
+from typing import cast
 
 from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
 from infrastructure.http_client.config import HttpClientConfig
@@ -14,15 +18,17 @@ from infrastructure.http_client.policies.default_retry import DefaultRetryPolicy
 from infrastructure.http_client.policies.min_delay_rate_limiter import (
     MinDelayRateLimiter,
 )
-from infrastructure.http_client.policies.rate_limiter import RateLimiter
-from infrastructure.http_client.policies.response_cache import ResponseCache
-from infrastructure.http_client.policies.retry import RetryPolicy
+
+if TYPE_CHECKING:
+    from infrastructure.http_client.policies.rate_limiter import RateLimiter
+    from infrastructure.http_client.policies.response_cache import ResponseCache
+    from infrastructure.http_client.policies.retry import RetryPolicy
 
 
 class BaseHttpClient(ABC):
     """Wspólna klasa bazowa dla klientów HTTP."""
 
-    DEFAULT_HEADERS: Dict[str, str] = {
+    DEFAULT_HEADERS: dict[str, str] = {
         "User-Agent": "F1Scrapers/1.0 contact: bartosz.gembalczyk.stud@pw.edu.pl ",
         "Accept-Language": "en-US,en;q=0.9",
     }
@@ -89,8 +95,8 @@ class BaseHttpClient(ABC):
         self,
         url: str,
         *,
-        headers: Optional[Dict[str, str]],
-        timeout: Optional[int],
+        headers: dict[str, str] | None,
+        timeout: int | None,
         request_func: Callable[..., Any],
     ):
         attempts = self.retry_policy.max_retries + 1
@@ -133,17 +139,18 @@ class BaseHttpClient(ABC):
                 continue
 
             response.raise_for_status()
-            return cast(Any, response)
+            return cast("Any", response)
 
-        assert False, "Unreachable code"
+        msg = "Unreachable code"
+        raise AssertionError(msg)
 
     @abstractmethod
     def get(
         self,
         url: str,
         *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> HttpResponseProtocol:
         """Pobiera URL i zwraca response."""
         ...
@@ -152,8 +159,8 @@ class BaseHttpClient(ABC):
         self,
         url: str,
         *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> str:
         """
         Zwraca response.text z obsługą cache.
@@ -177,8 +184,8 @@ class BaseHttpClient(ABC):
         self,
         url: str,
         *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> Any:
         """
         Parsuje JSON z odpowiedzi.

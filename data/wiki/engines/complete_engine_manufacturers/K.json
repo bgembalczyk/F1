@@ -1,0 +1,31 @@
+[
+  {
+    "manufacturer": {
+      "text": "Küchen",
+      "url": null
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "Germany",
+        "url": "https://en.wikipedia.org/wiki/Germany"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 1,
+    "races_started": 1,
+    "wins": 0,
+    "points": null,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": null,
+    "wdc": 0,
+    "details": null
+  }
+]

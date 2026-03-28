@@ -2,11 +2,9 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
-from scrapers.circuits.single_scraper import (
-    F1SingleCircuitScraper,
-    detect_layout_name,
-    is_lap_record_table,
-)
+from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.circuits.single_scraper import detect_layout_name
+from scrapers.circuits.single_scraper import is_lap_record_table
 
 
 def test_is_circuit_like_article_true_when_category_matches() -> None:
@@ -40,7 +38,7 @@ def test_select_section_returns_fragment_section_only() -> None:
         "html.parser",
     )
 
-    section = scraper._select_section(soup, "History")
+    section = scraper._select_section(soup, "History")  # noqa: SLF001
 
     assert "Some history text." in section.get_text(" ")
     assert "Legacy text." not in section.get_text(" ")
@@ -58,7 +56,7 @@ def test_select_section_returns_full_soup_when_missing_fragment() -> None:
         "html.parser",
     )
 
-    section = scraper._select_section(soup, "Unknown")
+    section = scraper._select_section(soup, "Unknown")  # noqa: SLF001
 
     assert "Some history text." in section.get_text(" ")
     assert "Legacy text." in section.get_text(" ")
