@@ -8,12 +8,15 @@ import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.base.sections.service import BaseSectionExtractionService
-from scrapers.base.single_wiki_article.base import SingleWikiArticleScraperBase
-from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
-from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
-from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
+
+_single_wiki_base = pytest.importorskip("scrapers.base.single_wiki_article.base")
+_single_wiki_dto = pytest.importorskip("scrapers.base.single_wiki_article.dto")
+SingleWikiArticleScraperBase = _single_wiki_base.SingleWikiArticleScraperBase
+InfoboxPayloadDTO = _single_wiki_dto.InfoboxPayloadDTO
+SectionsPayloadDTO = _single_wiki_dto.SectionsPayloadDTO
+TablesPayloadDTO = _single_wiki_dto.TablesPayloadDTO
 
 if TYPE_CHECKING:
     from scrapers.base.layers.interfaces import Assembler
