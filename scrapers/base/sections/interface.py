@@ -6,6 +6,10 @@ from typing import Any
 from typing import Protocol
 from typing import TypeVar
 
+from models.value_objects import EntityName
+from models.value_objects import SectionId
+from models.value_objects import WikiUrl
+
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
@@ -17,10 +21,14 @@ if TYPE_CHECKING:
 class SectionParseResult:
     """Unified output for domain section parsers."""
 
-    section_id: str
-    section_label: str
+    section_id: SectionId
+    section_label: EntityName
     records: list[dict[str, Any]]
     metadata: dict[str, Any]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "section_id", SectionId.from_raw(self.section_id))
+        object.__setattr__(self, "section_label", EntityName.from_raw(self.section_label))
 
 
 class SectionParser(Protocol):
@@ -56,5 +64,5 @@ class SectionServiceFactory(Protocol[ServiceT]):
         *,
         adapter: SectionAdapter,
         options: ScraperOptions | None = None,
-        url: str | None = None,
+        url: WikiUrl | str | None = None,
     ) -> ServiceT: ...

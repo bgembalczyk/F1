@@ -4,6 +4,8 @@ import re
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+from models.value_objects import SeasonYear
+from models.value_objects import WikiUrl
 from scrapers.base.sections.factory import ValidatingSectionServiceFactory
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
@@ -63,21 +65,22 @@ class SeasonYearResolver:
     def resolve(
         self,
         *,
-        url: str,
-        explicit_year: int | None = None,
-        current_year: int | None = None,
-    ) -> int | None:
+        url: WikiUrl | str,
+        explicit_year: int | SeasonYear | None = None,
+        current_year: int | SeasonYear | None = None,
+    ) -> SeasonYear | None:
         if explicit_year is not None:
-            return explicit_year
+            return SeasonYear.from_raw(explicit_year)
         if current_year is not None:
-            return current_year
+            return SeasonYear.from_raw(current_year)
         return self.extract_from_url(url)
 
     @staticmethod
-    def extract_from_url(url: str) -> int | None:
-        match = re.search(r"/(\d{4})_Formula_One", url)
+    def extract_from_url(url: WikiUrl | str) -> SeasonYear | None:
+        resolved_url = WikiUrl.from_raw(url).to_export()
+        match = re.search(r"/(\d{4})_Formula_One", resolved_url)
         if match:
-            return int(match.group(1))
+            return SeasonYear(match.group(1))
         return None
 
 

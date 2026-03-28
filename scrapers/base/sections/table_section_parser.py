@@ -3,6 +3,9 @@ from __future__ import annotations
 from dataclasses import replace
 from typing import TYPE_CHECKING
 
+from models.value_objects import EntityName
+from models.value_objects import SectionId
+
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
@@ -21,15 +24,15 @@ class TableSectionParser:
         self,
         *,
         config: ScraperConfig,
-        section_id: str,
-        section_label: str,
+        section_id: SectionId | str,
+        section_label: EntityName | str,
         domain: str,
         include_urls: bool,
         normalize_empty_values: bool,
     ) -> None:
         self._config = config
-        self._section_id = section_id
-        self._section_label = section_label
+        self._section_id = SectionId.from_raw(section_id)
+        self._section_label = EntityName.from_raw(section_label)
         self._domain = domain
         self._include_urls = include_urls
         self._normalize_empty_values = normalize_empty_values

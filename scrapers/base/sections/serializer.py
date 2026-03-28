@@ -3,6 +3,8 @@ from __future__ import annotations
 from dataclasses import asdict
 from typing import Any
 
+from models.value_objects import EntityName
+from models.value_objects import SectionId
 from scrapers.base.sections.interface import SectionParseResult
 
 SECTION_METADATA_CONTRACT_KEYS = ("parser", "source", "heading_path")
@@ -32,13 +34,18 @@ def normalize_section_metadata(
     metadata.setdefault("parser", "unknown")
     metadata.setdefault("source", "unknown")
     metadata.setdefault("heading_path", [])
-    metadata.setdefault("section_id", section.section_id)
-    metadata.setdefault("section_label", section.section_label)
+    metadata.setdefault("section_id", SectionId.from_raw(section.section_id).to_export())
+    metadata.setdefault(
+        "section_label",
+        EntityName.from_raw(section.section_label).to_export(),
+    )
     return metadata
 
 
 def serialize_section_result(section: SectionParseResult) -> dict[str, Any]:
     payload = asdict(section)
+    payload["section_id"] = SectionId.from_raw(section.section_id).to_export()
+    payload["section_label"] = EntityName.from_raw(section.section_label).to_export()
     payload["metadata"] = normalize_section_metadata(section)
     return payload
 
@@ -46,4 +53,7 @@ def serialize_section_result(section: SectionParseResult) -> dict[str, Any]:
 def export_section_records_by_id(
     sections: list[SectionParseResult],
 ) -> dict[str, list[dict[str, Any]]]:
-    return {section.section_id: section.records for section in sections}
+    return {
+        SectionId.from_raw(section.section_id).to_export(): section.records
+        for section in sections
+    }
