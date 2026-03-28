@@ -13,6 +13,8 @@ from scrapers.seasons.columns.helpers.race_result.superscript import (
     SuperscriptParseResult,
 )
 
+FOOTNOTE_RE = re.compile(r"\d+")
+
 
 class RaceResultCellParser:
     def extract_result_text(self, ctx: ColumnContext) -> str:
@@ -56,8 +58,7 @@ class RaceResultCellParser:
 
     def parse_results(self, text: str) -> list[dict[str, Any]]:
         return [
-            self._parse_result_part(part)
-            for part in self._split_result_parts(text)
+            self._parse_result_part(part) for part in self._split_result_parts(text)
         ]
 
     @staticmethod
@@ -146,7 +147,7 @@ class RaceResultCellParser:
             if not sup_text:
                 continue
             sup_texts.append(sup_text)
-            footnotes.extend(re.findall(r"\d+", sup_text))
+            footnotes.extend(FOOTNOTE_RE.findall(sup_text))
         return sup_texts, footnotes
 
     @staticmethod
