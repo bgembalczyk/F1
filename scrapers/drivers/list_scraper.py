@@ -26,7 +26,6 @@ from scrapers.drivers.constants import DRIVER_RACE_STARTS_HEADER
 from scrapers.drivers.constants import DRIVER_RACE_WINS_HEADER
 from scrapers.drivers.constants import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
-from scrapers.drivers.validator import DriversRecordValidator
 
 
 class F1DriversListScraper(SeedListTableScraper):
@@ -44,8 +43,7 @@ class F1DriversListScraper(SeedListTableScraper):
     - drivers_championships: parsowane do dict {count, seasons}
     """
 
-    default_validator = DriversRecordValidator()
-    options_profile = "strict_seed"
+    options_profile = "seed_strict"
 
     schema_columns = build_columns(
         column(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn()),

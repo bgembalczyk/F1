@@ -12,9 +12,6 @@ from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
-from scrapers.grands_prix.postprocess.contract import (
-    GrandPrixSectionContractPostProcessor,
-)
 from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 
 if TYPE_CHECKING:
@@ -31,9 +28,6 @@ class F1SingleGrandPrixScraper(SingleWikiArticleScraperBase):
                 domain="grands_prix",
             ),
         )
-
-    def _build_post_processor(self) -> GrandPrixSectionContractPostProcessor:
-        return GrandPrixSectionContractPostProcessor()
 
     def _missing_section_error(
         self,

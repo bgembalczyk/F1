@@ -20,7 +20,6 @@ from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
-from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
 from scrapers.circuits.sections.service import CircuitSectionExtractionService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
@@ -81,9 +80,6 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
             sections_service_factory or CircuitSectionServiceFactory()
         )
         self._assembler = assembler or CircuitRecordAssembler()
-
-    def _build_post_processor(self) -> CircuitSectionContractPostProcessor:
-        return CircuitSectionContractPostProcessor()
 
     def _should_parse_article(self, soup: BeautifulSoup) -> bool:
         return is_circuit_like_article(soup)

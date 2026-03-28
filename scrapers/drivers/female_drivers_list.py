@@ -1,5 +1,4 @@
 from models.records.factories.build import RECORD_BUILDERS
-from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import PointsColumn
 from scrapers.base.table.columns.types import SeasonsColumn
@@ -18,7 +17,6 @@ from scrapers.drivers.constants import FEMALE_DRIVER_TEAMS_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVERS_HEADERS
 from scrapers.drivers.constants import FEMALE_DRIVERS_INDEX_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVERS_SECTION_ID
-from scrapers.drivers.post_processors import EntriesStartsPointsPostProcessor
 
 
 class FemaleDriversListScraper(F1TableScraper):
@@ -47,20 +45,6 @@ class FemaleDriversListScraper(F1TableScraper):
         schema=TableSchemaDSL(columns=schema_columns),
         record_factory=RECORD_BUILDERS.special_driver,
     )
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
-        resolved_options = options or ScraperOptions()
-        if not any(
-            isinstance(post_processor, EntriesStartsPointsPostProcessor)
-            for post_processor in resolved_options.post_processors or []
-        ):
-            resolved_options.post_processors.append(EntriesStartsPointsPostProcessor())
-        super().__init__(options=resolved_options, config=config)
 
 
 if __name__ == "__main__":

@@ -14,7 +14,6 @@ from scrapers.seasons.pipeline import SeasonYearResolver
 from scrapers.seasons.postprocess.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
-from scrapers.seasons.postprocess.contract import SeasonSectionContractPostProcessor
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -62,9 +61,6 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         self.url = url
         self._refresh_pipeline_state(explicit_year=season_year)
         return super().fetch()
-
-    def _build_post_processor(self) -> SeasonSectionContractPostProcessor:
-        return SeasonSectionContractPostProcessor()
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         _ = soup

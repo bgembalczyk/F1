@@ -5,9 +5,9 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
+from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
 from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
@@ -16,6 +16,9 @@ from scrapers.wiki.scraper import WikiScraper
 
 
 class SingleWikiArticleScraperBase(WikiScraper, ABC):
+    options_domain: str | None = None
+    options_profile: str = "article_strict"
+
     """Wspólna baza dla scraperów pojedynczych artykułów Wikipedii.
 
     Kontrakt etapów pipeline i hooków domenowych:
@@ -29,8 +32,6 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
        pozwalający uzupełnić/zmodyfikować rekord.
 
     Pozostałe hooki kontrolne:
-    - ``_build_post_processor()``: zwraca wymagany post-processor domenowy
-      lub ``None`` gdy domena go nie wymaga.
     - ``_should_parse_article(soup)``: pozwala pominąć artykuły niespełniające
       warunków domenowych.
     """
@@ -43,14 +44,16 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
         section_selection_strategy: SectionSelectionStrategy | None = None,
     ) -> None:
         resolved_options = init_scraper_options(options, include_urls=include_urls)
+        resolved_options = build_scraper_options(
+            domain=self.options_domain,
+            profile=self.options_profile,
+            options=resolved_options,
+            scraper_cls=type(self),
+        )
         policy = self.get_http_policy(resolved_options)
         runtime = ScraperRuntimeFactory().build(options=resolved_options, policy=policy)
         resolved_options.fetcher = runtime.fetcher
         resolved_options.source_adapter = runtime.source_adapter
-
-        post_processor = self._build_post_processor()
-        if post_processor is not None:
-            resolved_options.post_processors.append(post_processor)
 
         super().__init__(options=resolved_options)
         self.url: str = ""
@@ -60,10 +63,6 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
         self._options = resolved_options
         self.policy = self.http_policy
         self.debug_dir = resolved_options.debug_dir
-
-    def _build_post_processor(self) -> RecordPostProcessor | None:
-        """Zwróć post-processor domenowy dodawany podczas inicjalizacji."""
-        return None
 
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         """Pobiera artykuł po URL i zapisuje go w ``self.url`` przed ``fetch()``."""

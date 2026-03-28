@@ -10,7 +10,6 @@ from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.postprocess.assembler import DriverRecordDTO
-from scrapers.drivers.postprocess.contract import DriverSectionContractPostProcessor
 from scrapers.drivers.sections.service import DriverSectionExtractionService
 
 if TYPE_CHECKING:
@@ -65,9 +64,6 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
             sections_service_factory or DriverSectionServiceFactory()
         )
         self._assembler = assembler or DriverRecordAssembler()
-
-    def _build_post_processor(self) -> DriverSectionContractPostProcessor:
-        return DriverSectionContractPostProcessor()
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         return InfoboxPayloadDTO(
