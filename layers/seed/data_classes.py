@@ -5,7 +5,7 @@ from datetime import datetime
 from datetime import timezone
 from typing import Any
 
-from scrapers.wiki.contants import SEED_RECORD_SCHEMA_VERSION
+from scrapers.wiki.constants import SEED_RECORD_SCHEMA_VERSION
 
 
 @dataclass(frozen=True)
