@@ -6,8 +6,12 @@ from typing import Protocol
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
+    from scrapers.base.sections.contracts import SectionParserInput
     from scrapers.base.sections.interface import SectionParseResult
 
 
 class SeasonSectionParser(Protocol):
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
+    def parse(
+        self,
+        section_fragment: BeautifulSoup | SectionParserInput,
+    ) -> SectionParseResult: ...

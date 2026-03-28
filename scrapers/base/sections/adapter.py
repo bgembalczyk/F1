@@ -6,6 +6,8 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.sections.contracts import SectionParserInput
+from scrapers.base.sections.contracts import parse_with_contract
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
@@ -70,7 +72,12 @@ class SectionAdapter:
             section_fragment = self._extract_section_from_heading(heading_match)
             if section_fragment is None:
                 continue
-            parsed.append(entry.parser.parse(section_fragment))
+            parsed.append(
+                parse_with_contract(
+                    entry.parser,
+                    SectionParserInput(section_fragment=section_fragment),
+                ),
+            )
         return parsed
 
     def parse_section_dicts(
