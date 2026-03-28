@@ -55,9 +55,6 @@ class ABCScraper(ABC):
         self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
         self._quality_report_enabled = options.quality_report
         self._validation_mode = "soft"
-        self._runtime_initializer = RuntimeInitializer(
-            resolve_http_policy=self.get_http_policy,
-        )
         self._initialize_runtime(options)
         self._validate_validation_mode()
         self._initialize_quality_report_service()
@@ -65,7 +62,9 @@ class ABCScraper(ABC):
         self._data: list[ExportRecord] | None = None
 
     def _initialize_runtime(self, options: ScraperOptions) -> None:
-        runtime = self._runtime_initializer.initialize(
+        runtime = RuntimeInitializer(
+            resolve_http_policy=self.get_http_policy,
+        ).initialize(
             options=options,
             logger=self.logger,
             normalize_empty_values=self.normalize_empty_values,
