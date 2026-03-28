@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.constructors.entrypoint.run_list_scraper."""
 
-from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.config import build_scraper_config
@@ -55,7 +55,7 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
         section_id=f"Constructors_for_the_{CURRENT_YEAR}_season",
         expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
         columns=schema_columns,
-        record_factory=RECORD_BUILDERS.constructor,
+        record_factory=RECORD_FACTORIES.builders("constructor"),
     )
 
     section_label = "Current constructors"

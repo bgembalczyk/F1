@@ -12,7 +12,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import ClassVar
 
-from scrapers.base.records import record_from_mapping
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
@@ -54,7 +54,7 @@ class TODOListScraper(F1TableScraper):
         section_id=SCRAPER_TEMPLATE_CONFIG.section_id,
         expected_headers=list(SCRAPER_TEMPLATE_CONFIG.expected_headers),
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
 

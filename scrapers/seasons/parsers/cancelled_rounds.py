@@ -5,7 +5,7 @@ from bs4 import Tag
 
 from scrapers.base.helpers.html_utils import find_section_tables
 from scrapers.base.helpers.table_parsing import TableParsingHelper
-from scrapers.base.records import record_from_mapping
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
@@ -135,7 +135,7 @@ class CancelledRoundsParser:
             expected_headers=EXPECTED_HEADERS,
             schema=schema,
             default_column=None,
-            record_factory=record_from_mapping,
+            record_factory=RECORD_FACTORIES.mapping(),
         )
         pipeline = TablePipeline(
             config=config,
