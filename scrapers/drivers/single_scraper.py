@@ -3,6 +3,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.payloads import InfoboxPayload
+from scrapers.base.payloads import SectionsPayload
+from scrapers.base.payloads import TablesPayload
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
@@ -45,22 +48,26 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
     def _build_post_processor(self) -> DriverSectionContractPostProcessor:
         return DriverSectionContractPostProcessor()
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> dict[str, Any]:
-        return self._infobox_service.extract(soup, url=self.url).primary_record
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayload:
+        return InfoboxPayload(
+            data=self._infobox_service.extract(soup, url=self.url).primary_record,
+        )
 
-    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._sections_service_factory(self._options, self.url).extract(soup)
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayload:
+        return SectionsPayload(
+            data=self._sections_service_factory(self._options, self.url).extract(soup),
+        )
 
     def _parse_results_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._build_sections_payload(soup)
+        return self._build_sections_payload(soup).to_export()
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: dict[str, Any],
-        tables_payload: list[dict[str, Any]],
-        sections_payload: list[dict[str, Any]],
+        infobox_payload: InfoboxPayload,
+        tables_payload: TablesPayload,
+        sections_payload: SectionsPayload,
     ) -> dict[str, Any]:
         _ = soup, tables_payload
         return self._assembler.assemble(

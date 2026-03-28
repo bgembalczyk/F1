@@ -3,6 +3,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.payloads import InfoboxPayload
+from scrapers.base.payloads import SectionsPayload
+from scrapers.base.payloads import TablesPayload
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
@@ -50,29 +53,29 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
     def _build_post_processor(self) -> ConstructorSectionContractPostProcessor:
         return ConstructorSectionContractPostProcessor()
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._infobox_service.extract(soup, url=self.url).as_list()
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayload:
+        return InfoboxPayload(data=self._infobox_service.extract(soup, url=self.url).as_list())
 
-    def _build_tables_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self.article_tables_parser.parse(soup)
+    def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayload:
+        return TablesPayload(data=self.article_tables_parser.parse(soup))
 
-    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayload:
         sections_service = self._sections_service_factory(self)
-        return sections_service.extract(soup)
+        return SectionsPayload(data=sections_service.extract(soup))
 
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._build_infobox_payload(soup)
+        return self._build_infobox_payload(soup).to_export()
 
     def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._build_tables_payload(soup)
+        return self._build_tables_payload(soup).to_export()
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: list[dict[str, Any]],
-        tables_payload: list[dict[str, Any]],
-        sections_payload: list[dict[str, Any]],
+        infobox_payload: InfoboxPayload,
+        tables_payload: TablesPayload,
+        sections_payload: SectionsPayload,
     ) -> dict[str, Any]:
         _ = soup
         return self._assembler.assemble(

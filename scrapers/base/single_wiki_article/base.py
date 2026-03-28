@@ -2,6 +2,10 @@ from abc import ABC
 from abc import abstractmethod
 from typing import Any
 
+from scrapers.base.payloads import InfoboxPayload
+from scrapers.base.payloads import SectionsPayload
+from scrapers.base.payloads import TablesPayload
+
 from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.http import init_scraper_options
@@ -83,28 +87,28 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
             sections_payload=self._build_sections_payload(soup),
         )
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> Any:
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayload:
         """Build normalized infobox payload used by ``_assemble_record``."""
         _ = soup
-        return []
+        return InfoboxPayload(data=[])
 
-    def _build_tables_payload(self, soup: BeautifulSoup) -> Any:
+    def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayload:
         """Build normalized table payload used by ``_assemble_record``."""
         _ = soup
-        return []
+        return TablesPayload(data=[])
 
-    def _build_sections_payload(self, soup: BeautifulSoup) -> Any:
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayload:
         """Build normalized section payload used by ``_assemble_record``."""
         _ = soup
-        return []
+        return SectionsPayload(data=[])
 
     @abstractmethod
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: Any,
-        tables_payload: Any,
-        sections_payload: Any,
+        infobox_payload: InfoboxPayload,
+        tables_payload: TablesPayload,
+        sections_payload: SectionsPayload,
     ) -> dict[str, Any]:
         """Compose final domain record from template-method payload hooks."""

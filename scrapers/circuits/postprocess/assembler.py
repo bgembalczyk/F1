@@ -2,19 +2,23 @@ from __future__ import annotations
 
 from typing import Any
 
+from scrapers.base.payloads import InfoboxPayload
+from scrapers.base.payloads import SectionsPayload
+from scrapers.circuits.postprocess.payloads import CircuitTablesPayload
+
 
 class CircuitRecordAssembler:
     def assemble(
         self,
         *,
         url: str,
-        infobox: dict[str, Any],
-        tables: list[dict[str, Any]],
-        sections: list[dict[str, Any]],
+        infobox: InfoboxPayload,
+        tables: CircuitTablesPayload,
+        sections: SectionsPayload,
     ) -> dict[str, Any]:
         return {
             "url": url,
-            "infobox": infobox,
-            "tables": tables,
-            "sections": sections,
+            "infobox": infobox.to_export(),
+            "tables": tables.to_export(),
+            "sections": sections.to_export(),
         }

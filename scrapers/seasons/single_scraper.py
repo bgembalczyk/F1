@@ -4,6 +4,9 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.payloads import InfoboxPayload
+from scrapers.base.payloads import SectionsPayload
+from scrapers.base.payloads import TablesPayload
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
@@ -13,6 +16,7 @@ from scrapers.seasons.pipeline import SeasonYearResolver
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 from scrapers.seasons.postprocess.contract import SeasonSectionContractPostProcessor
+from scrapers.seasons.postprocess.payloads import SeasonSectionsPayload
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 
 
@@ -58,27 +62,28 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
     def _build_post_processor(self) -> SeasonSectionContractPostProcessor:
         return SeasonSectionContractPostProcessor()
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayload:
         _ = soup
-        return []
+        return InfoboxPayload(data=[])
 
-    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SeasonSectionsPayload:
         self._refresh_pipeline_state()
-        return [{"sections": self._season_pipeline.collect(soup=soup, adapter=self)}]
+        return SeasonSectionsPayload(
+            sections=self._season_pipeline.collect(soup=soup, adapter=self),
+        )
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: list[dict[str, Any]],
-        sections_payload: list[dict[str, Any]],
-        tables_payload: list[dict[str, Any]],
+        infobox_payload: InfoboxPayload,
+        sections_payload: SeasonSectionsPayload,
+        tables_payload: TablesPayload,
     ) -> dict[str, Any]:
         _ = soup
         _ = infobox_payload
         _ = tables_payload
-        payload = sections_payload[0] if sections_payload else {}
-        sections = payload.get("sections")
+        sections = sections_payload.sections
         if not isinstance(sections, SeasonRecordSections):
             sections = SeasonRecordSections.empty()
         return self._assembler.assemble(sections)

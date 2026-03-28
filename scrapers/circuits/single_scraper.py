@@ -3,6 +3,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.payloads import InfoboxPayload
+from scrapers.base.payloads import SectionsPayload
+from scrapers.base.payloads import TablesPayload
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
@@ -12,6 +15,8 @@ from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
+from scrapers.circuits.postprocess.payloads import CircuitTablePayload
+from scrapers.circuits.postprocess.payloads import CircuitTablesPayload
 from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
 from scrapers.circuits.sections.service import CircuitSectionExtractionService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
@@ -75,10 +80,12 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
     def _prepare_article_soup(self, soup: BeautifulSoup) -> BeautifulSoup:
         return self._select_section(soup, self._section_fragment)
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> dict[str, Any]:
-        return self._infobox_service.extract(soup, url=self.url).primary_record
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayload:
+        return InfoboxPayload(
+            data=self._infobox_service.extract(soup, url=self.url).primary_record,
+        )
 
-    def _build_tables_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _build_tables_payload(self, soup: BeautifulSoup) -> CircuitTablesPayload:
         lap_scraper = LapRecordsTableScraper(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -118,22 +125,24 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
             rec_copy.pop("layout", None)
             layouts.setdefault(layout_name, []).append(rec_copy)
 
-        return [
-            {"layout": layout_name, "lap_records": recs}
-            for layout_name, recs in layouts.items()
-        ]
+        return CircuitTablesPayload(
+            tables=[
+                CircuitTablePayload(layout=layout_name, lap_records=recs)
+                for layout_name, recs in layouts.items()
+            ],
+        )
 
-    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayload:
         sections_service = self._sections_service_factory(self, self.url)
-        return sections_service.extract(soup)
+        return SectionsPayload(data=sections_service.extract(soup))
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: dict[str, Any],
-        tables_payload: list[dict[str, Any]],
-        sections_payload: list[dict[str, Any]],
+        infobox_payload: InfoboxPayload,
+        tables_payload: CircuitTablesPayload,
+        sections_payload: SectionsPayload,
     ) -> dict[str, Any]:
         _ = soup
         return self._assembler.assemble(
