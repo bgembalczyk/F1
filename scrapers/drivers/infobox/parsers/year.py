@@ -3,7 +3,7 @@
 import re
 
 from models.domain_utils.years import parse_year_range as parse_domain_year_range
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.year_extraction import YearExtractor
 from scrapers.drivers.infobox.parsers.constants import MIN_RANGE_YEARS
@@ -15,15 +15,12 @@ class YearParser:
     @staticmethod
     def parse_year_range(text: str) -> dict[str, int | None]:
         """Parse year range from text."""
-        try:
-            normalized = clean_infobox_text(text) or ""
-            return parse_domain_year_range(normalized)
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować zakresu lat: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
+        normalized = clean_infobox_text(text) or ""
+        return ErrorHandler.run_domain_parse(
+            lambda: parse_domain_year_range(normalized),
+            message=f"Nie udało się sparsować zakresu lat: {text!r}.",
+            parser_name=YearParser.__name__,
+        )
 
     @staticmethod
     def detect_url_pattern(year_to_link: dict[int, str | None]) -> str | None:

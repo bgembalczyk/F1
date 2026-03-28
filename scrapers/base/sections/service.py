@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from abc import ABC
 from abc import abstractmethod
+import logging
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Protocol
@@ -21,6 +22,9 @@ if TYPE_CHECKING:
     from scrapers.base.sections.adapter import SectionAdapterEntry
 
 
+logger = logging.getLogger(__name__)
+
+
 class SectionExtractionService(Protocol):
     def extract(self, soup: BeautifulSoup) -> list[dict[str, Any]]: ...
 
@@ -28,6 +32,7 @@ class SectionExtractionService(Protocol):
 class BaseSectionExtractionService(ABC):
     domain: str
     flatten_records = False
+    aggregate_records_by_section_id = False
 
     def __init__(
         self,
@@ -40,23 +45,52 @@ class BaseSectionExtractionService(ABC):
         self._options = options
         self._url = WikiUrl.from_raw(url) if url is not None else None
 
-    def extract(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        sections = self._adapter.parse_sections(
-            soup=soup,
-            domain=self.domain,
-            entries=self.build_entries(),
-        )
+    def extract(self, soup: BeautifulSoup) -> list[dict[str, Any]] | dict[str, list[dict[str, Any]]]:
+        sections = self._parse_sections(soup)
+        return self._aggregate_sections(sections)
+
+    @abstractmethod
+    def build_entries(self) -> list[SectionAdapterEntry]:
+        """Build domain-specific section adapter entries."""
+
+    def _parse_sections(self, soup: BeautifulSoup) -> list[SectionParseResult]:
+        sections: list[SectionParseResult] = []
+        for entry in self.build_entries():
+            try:
+                sections.extend(
+                    self._adapter.parse_sections(
+                        soup=soup,
+                        domain=self.domain,
+                        entries=[entry],
+                    ),
+                )
+            except Exception:  # pragma: no cover - defensive branch
+                logger.exception(
+                    "Failed to parse section entry",
+                    extra={
+                        "domain": self.domain,
+                        "section_id": SectionId.from_raw(entry.section_id).to_export(),
+                        "parser": entry.parser.__class__.__name__,
+                    },
+                )
+        return sections
+
+    def _aggregate_sections(
+        self,
+        sections: list[SectionParseResult],
+    ) -> list[dict[str, Any]] | dict[str, list[dict[str, Any]]]:
         if self.flatten_records:
             return [
                 record
                 for section in sections
                 for record in self._build_section_records(section)
             ]
+        if self.aggregate_records_by_section_id:
+            return {
+                SectionId.from_raw(section.section_id).to_export(): section.records
+                for section in sections
+            }
         return [self._build_section_payload(section) for section in sections]
-
-    @abstractmethod
-    def build_entries(self) -> list[SectionAdapterEntry]:
-        """Build domain-specific section adapter entries."""
 
     def _build_section_payload(
         self,

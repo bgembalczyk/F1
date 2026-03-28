@@ -5,7 +5,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.season import SeasonParser
@@ -29,7 +29,13 @@ class BestFinishParser:
         Extracts result position and associated seasons with optional class information.
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        try:
+        return ErrorHandler.run_domain_parse(
+            lambda: self._parse_best_finish_payload(cell, text),
+            message=f"Nie udało się sparsować najlepszego wyniku: {text!r}.",
+            parser_name=self.__class__.__name__,
+        )
+
+    def _parse_best_finish_payload(self, cell: Tag, text: str) -> dict[str, Any]:
             result: dict[str, Any] = {"result": None, "seasons": None}
 
             # Extract result position
@@ -60,12 +66,6 @@ class BestFinishParser:
                 result["seasons"] = self._extract_seasons_from_text(text)
 
             return result
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować najlepszego wyniku: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
 
     def _extract_result_position(self, text: str) -> str | None:
         """Extract result position from text."""

@@ -4,7 +4,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.year import YearParser
@@ -27,7 +27,14 @@ class LicenceParser:
         Example: "FIA Gold (until 2019)" and "FIA Platinum (2020-)"
         -> [{licence: {...}, years: {...}}, {licence: {...}, years: {...}}]
         """
-        try:
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        return ErrorHandler.run_domain_parse(
+            lambda: self._parse_racing_licence_payload(cell),
+            message=f"Nie udało się sparsować licencji wyścigowej: {text!r}.",
+            parser_name=self.__class__.__name__,
+        )
+
+    def _parse_racing_licence_payload(self, cell: Tag) -> list[dict[str, Any]]:
             licence_links = self._extract_licence_links(cell)
             if not licence_links:
                 return []
@@ -59,13 +66,6 @@ class LicenceParser:
                 licences.append(licence_entry)
 
             return licences
-        except (TypeError, ValueError) as exc:
-            text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-            msg = f"Nie udało się sparsować licencji wyścigowej: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
 
     def _extract_licence_links(self, cell: Tag) -> list[dict[str, Any]]:
         """Extract and return licence links, excluding file/image links.

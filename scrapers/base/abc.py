@@ -9,29 +9,25 @@ from uuid import uuid4
 from bs4 import BeautifulSoup
 
 from infrastructure.http_client.policies.http import HttpPolicy
-from scrapers.base.error_handler import ErrorHandler
-from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 from scrapers.base.errors import ScraperError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
-from scrapers.base.export.exporters import DataExporter
 from scrapers.base.helpers.http import resolve_http_policy
-from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.logging import get_logger
-from scrapers.base.normalization import RecordNormalizer
 from scrapers.base.options import ScraperOptions
-from scrapers.base.pipeline_runner import ScraperPipelineRunner
 from scrapers.base.post_processors import apply_post_processors
-from scrapers.base.quality.reporter import QualityReporter
 from scrapers.base.records import NormalizedRecord
 from scrapers.base.records import RawRecord
 from scrapers.base.results import ScrapeResult
+from scrapers.base.scraper_components import ErrorPolicy
+from scrapers.base.scraper_components import PipelineOrchestrator
+from scrapers.base.scraper_components import QualityReportService
+from scrapers.base.scraper_components import RuntimeInitializer
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.stages import TransformerStage
 from scrapers.base.validation_runner import ValidationRunner
 from validation.validator_base import ExportRecord
-from validation.validator_base import RecordValidator
 
 T = TypeVar("T")
 
@@ -60,66 +56,73 @@ class ABCScraper(ABC):
         self._run_id: str | None = options.run_id
         self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
         self._quality_report_enabled = options.quality_report
-        self._quality_reporter: QualityReporter | None = None
-
-        self._configure_http_policy(options)
-        self._initialize_runtime_components(options)
-        self._initialize_quality_reporting()
-        self._initialize_validation(options)
-        self._pipeline_runner = self._build_pipeline_runner()
+        self._validation_mode = "soft"
+        self._initialize_runtime(options)
+        self._validate_validation_mode()
+        self._initialize_quality_report_service()
+        self._initialize_pipeline_orchestrator()
         self._data: list[ExportRecord] | None = None
 
-    def _configure_http_policy(self, options: ScraperOptions) -> None:
-        self.http_policy = self.get_http_policy(options)
-
-    def _initialize_runtime_components(self, options: ScraperOptions) -> None:
-        runtime = ScraperRuntimeFactory().build(
+    def _initialize_runtime(self, options: ScraperOptions) -> None:
+        runtime = RuntimeInitializer(
+            resolve_http_policy=self.get_http_policy,
+        ).initialize(
             options=options,
-            policy=self.http_policy,
+            logger=self.logger,
+            normalize_empty_values=self.normalize_empty_values,
+            default_validator=getattr(self, "default_validator", None),
         )
+        self.http_policy = runtime.http_policy
         self.source_adapter = runtime.source_adapter
         self.fetcher = runtime.fetcher
-
-        # Parser może być zewnętrzny (np. mixin/adapter).
-        self.parser = options.parser
-        self.exporter = options.exporter or DataExporter()
-        self._record_normalizer = RecordNormalizer(
-            normalize_empty_values=self.normalize_empty_values,
-        )
-        self.transformers = build_transformers(options.transformers)
-        self.post_processors = list(options.post_processors or [])
-        self._error_handler = ErrorHandler(
+        self.parser = runtime.parser
+        self.exporter = runtime.exporter
+        self._record_normalizer = runtime.record_normalizer
+        self.transformers = runtime.transformers
+        self.post_processors = runtime.post_processors
+        self.validator = runtime.validator
+        self._validation_mode = runtime.validation_mode
+        self._error_policy = ErrorPolicy(
+            error_handler=runtime.error_handler,
             logger=self.logger,
-            debug_dir=options.debug_dir,
-            error_report_enabled=options.error_report,
-            run_id=options.run_id,
+            get_url=lambda: getattr(self, "url", None),
         )
 
-    def _initialize_quality_reporting(self) -> None:
-        if not self._quality_report_enabled:
-            return
-        self._quality_reporter = QualityReporter(
-            report_root=self._resolve_quality_report_root(),
-            run_id=self._run_id or "pending",
-            source_metadata=self._source_metadata(),
+    def _initialize_quality_report_service(self) -> None:
+        self._quality_report_service = QualityReportService(
+            enabled=self._quality_report_enabled,
+            debug_dir=self.debug_dir,
+            run_id=self._run_id,
+            source_metadata_provider=self._source_metadata,
+            logger=self.logger,
+            validator_provider=lambda: self.validator,
         )
 
-    def _initialize_validation(self, options: ScraperOptions) -> None:
-        self.validator: RecordValidator | None = options.validator or getattr(
-            self,
-            "default_validator",
-            None,
+    def _initialize_pipeline_orchestrator(self) -> None:
+        self._pipeline_orchestrator = PipelineOrchestrator(
+            logger=self.logger,
+            quality_report_service=self._quality_report_service,
+            error_policy=self._error_policy,
+            parse_records=self.parse,
+            normalize_records=self._normalize_pipeline_records,
+            transform_records=self._apply_transformers,
+            validate_records=self.validate_records,
+            post_process_records=self.post_process_records,
         )
-        if self.validator is not None:
-            self.validator.set_record_factory(options.record_factory)
-        self.validation_mode = options.validation_mode
-        self._validate_validation_mode()
 
     def _validate_validation_mode(self) -> None:
-        if self.validation_mode in {"soft", "hard"}:
+        if self._validation_mode in {"soft", "hard"}:
             return
         msg = "validation_mode must be 'soft' (drop record + warn) or 'hard' (raise)"
         raise ValueError(msg)
+
+    @property
+    def validation_mode(self) -> str:
+        return self._validation_mode
+
+    @validation_mode.setter
+    def validation_mode(self, value: str) -> None:
+        self._validation_mode = value
 
     # ---------- API wysokiego poziomu ----------
 
@@ -141,11 +144,10 @@ class ABCScraper(ABC):
         """
         self._validate_fetch_url()
         run_id = self._start_run()
-        html = self._download_with_error_handling(run_id)
-        if html is None:
-            return self._store_empty_data()
-
-        data = self._parse_pipeline_with_error_handling(run_id, html)
+        data = self._pipeline_orchestrator.run_fetch(
+            run_id=run_id,
+            download_html=self._download,
+        )
         if data is None:
             return self._store_empty_data()
 
@@ -186,7 +188,8 @@ class ABCScraper(ABC):
     def _start_run(self) -> str:
         run_id = self._run_id or uuid4().hex
         self._run_id = run_id
-        self._error_handler.set_run_id(run_id)
+        self._error_policy.set_run_id(run_id)
+        self._quality_report_service.set_run_id(run_id)
         self.logger.debug("Scrape run %s started for url=%s", run_id, self.url)
         return run_id
 
@@ -376,7 +379,7 @@ class ABCScraper(ABC):
         return self._build_validation_runner().validate(records)
 
     def _build_validation_runner(self) -> ValidationRunner:
-        return ValidationRunner(
+        return PipelineOrchestrator.build_validation_runner(
             validator=self.validator,
             validation_mode=self.validation_mode,
             logger=self.logger,
@@ -394,38 +397,16 @@ class ABCScraper(ABC):
             "url": getattr(self, "url", ""),
         }
 
-    def _resolve_quality_report_root(self) -> Path:
-        if self.debug_dir is not None:
-            return self.debug_dir
-        return Path("data/checkpoints")
-
     def _write_step_quality_report(
         self,
         *,
         step_name: str,
         records: list[dict[str, object]],
     ) -> None:
-        if not self._quality_report_enabled or self._quality_reporter is None:
-            return
-        run_id = self._run_id or "no_run_id"
-        self._quality_reporter.run_id = run_id
-        step_id = f"{run_id}_{step_name}"
-        report_path = self._quality_reporter.report_step(
-            step_id=step_id,
-            records=records,
-            source_metadata=self._source_metadata(),
-        )
-        self.logger.debug("Saved step quality report: %s", report_path)
+        self._quality_report_service.write_step(step_name=step_name, records=records)
 
     def _write_quality_report(self) -> None:
-        if (
-            not self._quality_report_enabled
-            or self.debug_dir is None
-            or self.validator is None
-        ):
-            return
-        report_path = self.validator.write_quality_report(self.debug_dir)
-        self.logger.info("Saved quality report: %s", report_path)
+        self._quality_report_service.write_validation_report()
 
     def _apply_transformers(self, records: list[ExportRecord]) -> list[ExportRecord]:
         return apply_transformers(self.transformers, records, logger=self.logger)
@@ -441,13 +422,13 @@ class ABCScraper(ABC):
     # ---------- Error handling ----------
 
     def _wrap_network_error(self, exc: Exception) -> ScraperNetworkError:
-        return self._error_handler.wrap_network(exc, url=getattr(self, "url", None))
+        return self._error_policy.wrap_network(exc)
 
     def _wrap_parse_error(self, exc: Exception) -> ScraperParseError:
-        return self._error_handler.wrap_parse(exc, url=getattr(self, "url", None))
+        return self._error_policy.wrap_parse(exc)
 
     def _handle_scraper_error(self, error: ScraperError) -> bool:
-        return self._error_handler.handle(error)
+        return self._error_policy.handle(error)
 
     # ---------- Wspólne narzędzie do error handling ----------
     # Używane poza fetch(), np. w mixinach/infobox.
@@ -509,18 +490,8 @@ class ABCScraper(ABC):
         exc: Exception,
         error: ScraperError,
     ) -> None:
-        self._log_error_debug(stage, url, error)
         if self._handle_scraper_error(error):
             return
         if error is exc:
             raise exc
         raise error from exc
-
-    def _log_error_debug(self, stage: str, url: str, error: ScraperError) -> None:
-        self.logger.debug(
-            "Scraper error in %s stage for url=%s (type=%s): %s",
-            stage,
-            url,
-            type(error).__name__,
-            error,
-        )

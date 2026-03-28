@@ -13,7 +13,7 @@ from scrapers.base.single_wiki_article.section_selection_strategy import (
 from scrapers.circuits.services.domain_record import DomainRecordService
 from scrapers.circuits.composition import CircuitScraperCompositionFactory
 from scrapers.circuits.composition import CircuitScraperDependencies
-from scrapers.circuits.helpers.article_validation import is_circuit_like_article
+from scrapers.circuits.helpers.sections import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import (
     is_lap_record_table as _is_lap_record_table,
 )
