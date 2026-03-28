@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.circuits.entrypoint.run_list_scraper."""
 
-from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from models.validation.circuit import Circuit
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
 from scrapers.base.table.config import build_scraper_config
@@ -28,7 +28,7 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScrape
         expected_headers=CIRCUITS_EXPECTED_HEADERS,
         model_class=Circuit,
         schema=build_circuits_schema(),
-        record_factory=RECORD_BUILDERS.circuit,
+        record_factory=RECORD_FACTORIES.builders("circuit"),
     )
 
     section_label = "Circuits"

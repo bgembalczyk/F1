@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.records import record_from_mapping
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import build_section_metadata
 from scrapers.base.table.columns.types import AutoColumn
@@ -83,7 +83,7 @@ class GrandPrixByYearSectionParser:
             section_id=section_id,
             expected_headers=["Year", "Driver", "Constructor", "Report"],
             schema=schema,
-            record_factory=record_from_mapping,
+            record_factory=RECORD_FACTORIES.mapping(),
         )
         return TablePipeline(
             config=config,

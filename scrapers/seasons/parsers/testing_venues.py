@@ -10,27 +10,30 @@ from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.columns.date_range import DateRangeColumn
-from scrapers.seasons.parsers.constants import TESTING_VENUES_SWAPPED_COLUMNS_YEAR
-from scrapers.seasons.parsers.constants import TESTING_VENUES_YEARS
 from scrapers.seasons.parsers.table import SeasonTableParser
+from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
+from scrapers.seasons.services.domain_parsing_policy import TestingVenuesLayout
 
 
 class TestingVenuesParser:
-    def __init__(self, table_parser: SeasonTableParser) -> None:
+    def __init__(
+        self,
+        table_parser: SeasonTableParser,
+        policy: DomainParsingPolicy,
+    ) -> None:
         self._table_parser = table_parser
+        self._policy = policy
 
     def parse(
         self,
         soup: BeautifulSoup,
         season_year: int | None,
     ) -> list[dict[str, Any]]:
-        # This table only exists in 2011 and 2009
-        if season_year not in TESTING_VENUES_YEARS:
+        layout = self._policy.resolve_testing_venues_layout(season_year)
+        if layout is None:
             return []
-
-        if season_year == TESTING_VENUES_SWAPPED_COLUMNS_YEAR:
+        if layout is TestingVenuesLayout.SWAPPED_CIRCUIT_EVENT:
             return self._parse_2011(soup, season_year)
-        # 2009
         return self._parse_2009(soup, season_year)
 
     def _parse_2011(

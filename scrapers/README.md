@@ -30,3 +30,9 @@ Reviewer musi potwierdzić:
 Szczegółowy przewodnik rozszerzania (hooki obowiązkowe, punkty rozszerzeń, antywzorce, minimalne przykłady):
 
 - `docs/architecture/scraper-extension-guide.md`
+## Helper modules (capability-first)
+- Unikaj jednego worka `helpers` z funkcjami o mieszanej odpowiedzialności.
+- Grupuj helpery wg capability (np. `text`, `links`, `tables`, `sections`).
+- Funkcje współdzielone między domenami dodawaj **najpierw** do `scrapers/base/helpers/`.
+- Dopiero gdy logika jest domenowa i nie ma sensu jej uogólniać, trzymaj ją lokalnie w domenie.
+- Dla funkcji przenoszonych między modułami utrzymuj jedno źródło prawdy (bez duplikatów).
