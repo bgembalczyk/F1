@@ -1,12 +1,18 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import logging
 from typing import Any
 
+from models.records.schemas import CircuitExportRecord
+from models.records.schemas import serialize_for_json
+from models.records.schemas import validate_model_contract
 from models.value_objects import WikiUrl
 from scrapers.base.mappers import InfoboxRecordMapper
 from scrapers.base.mappers import LayoutTableRecordMapper
 from scrapers.base.mappers import SectionRecordMapper
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -35,9 +41,11 @@ class CircuitRecordAssembler:
         payload: CircuitRecordDTO,
     ) -> dict[str, Any]:
         url = WikiUrl.from_raw(payload.url)
-        return {
-            "url": url.to_export(),
-            "infobox": self._infobox_mapper.map(payload.infobox),
-            "tables": self._table_mapper.map(payload.lap_record_rows),
-            "sections": self._section_mapper.map_many(payload.sections),
-        }
+        model = CircuitExportRecord(
+            url=url.to_export(),
+            infobox=self._infobox_mapper.map(payload.infobox),
+            tables=self._table_mapper.map(payload.lap_record_rows),
+            sections=self._section_mapper.map_many(payload.sections),
+        )
+        validate_model_contract(model, logger=logger)
+        return serialize_for_json(model)

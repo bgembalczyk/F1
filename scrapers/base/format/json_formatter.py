@@ -1,6 +1,7 @@
 import json
 from typing import Any
 
+from models.records.schemas import serialize_for_json
 from scrapers.base.export.metadata import ExportMetadata
 from scrapers.base.format.formatter_helpers import extract_data
 from scrapers.base.results import ScrapeResult
@@ -23,11 +24,11 @@ class JsonFormatter:
         *,
         include_metadata: bool = False,
     ) -> Any:
-        data = extract_data(result)
+        data = serialize_for_json(extract_data(result))
         if include_metadata:
             metadata = ExportMetadata.from_result(result)
             return {
-                "meta": metadata.to_dict(),
+                "meta": serialize_for_json(metadata.to_dict()),
                 "data": data,
             }
         return data
