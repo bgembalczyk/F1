@@ -7,7 +7,10 @@ from scrapers.base.errors import DomainParseError
 from scrapers.base.errors import ScraperError
 from scrapers.base.sections.constants import DOMAIN_CRITICAL_SECTIONS
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
-from scrapers.base.single_wiki_article import SingleWikiArticleSectionByIdBase
+from scrapers.base.single_wiki_article import SingleWikiArticleScraperBase
+from scrapers.base.single_wiki_article.section_selection_strategy import (
+    WikipediaSectionByIdSelectionStrategy,
+)
 from scrapers.grands_prix.helpers.article_validation import is_grand_prix_article
 from scrapers.grands_prix.postprocess.contract import (
     GrandPrixSectionContractPostProcessor,
@@ -20,9 +23,14 @@ if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
 
 
-class F1SingleGrandPrixScraper(SingleWikiArticleSectionByIdBase):
+class F1SingleGrandPrixScraper(SingleWikiArticleScraperBase):
     def __init__(self, *, options: ScraperOptions | None = None) -> None:
-        super().__init__(options=options)
+        super().__init__(
+            options=options,
+            section_selection_strategy=WikipediaSectionByIdSelectionStrategy(
+                domain="grands_prix",
+            ),
+        )
 
     def _build_post_processor(self) -> GrandPrixSectionContractPostProcessor:
         return GrandPrixSectionContractPostProcessor()
