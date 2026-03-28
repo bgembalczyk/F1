@@ -37,3 +37,16 @@ jest zabronione, chyba że w kodzie dodano jawne uzasadnienie komentarzem
 Reguła jest automatycznie egzekwowana przez skrypt:
 
 - `python scripts/check_single_wiki_hook_names.py`
+
+## Konwencja nazw etapów pipeline
+
+Dodatkowo obowiązuje konwencja etapów:
+
+- `extract` → pobranie surowych danych,
+- `parse` → strukturyzacja,
+- `build` → tworzenie payloadów,
+- `assemble` → rekord końcowy.
+
+Szczegóły migracji i aliasów przejściowych opisano w:
+
+- `docs/pipeline_naming_rule.md`

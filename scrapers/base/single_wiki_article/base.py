@@ -2,6 +2,7 @@ from abc import ABC
 from abc import abstractmethod
 from typing import Any
 from typing import ClassVar
+import warnings
 
 from bs4 import BeautifulSoup
 
@@ -74,7 +75,7 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
         self.policy = self.http_policy
         self.debug_dir = resolved_options.debug_dir
 
-    def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
+    def extract_by_url(self, url: str) -> list[dict[str, Any]]:
         """Pobiera artykuł po URL i zapisuje go w ``self.url`` przed ``fetch()``."""
         self._original_url = url
         if self.section_selection_strategy is not None:
@@ -85,6 +86,15 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
             self.url = url
             self._section_fragment = None
         return super().fetch()
+
+    def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
+        warnings.warn(
+            "SingleWikiArticleScraperBase.fetch_by_url() is deprecated; use "
+            "extract_by_url() instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.extract_by_url(url)
 
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         if not self._should_parse_article(soup):

@@ -58,7 +58,7 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         self._table_parser = None
         self._refresh_pipeline_state()
 
-    def fetch_by_url(
+    def extract_by_url(
         self,
         url: str,
         *,
@@ -67,6 +67,20 @@ class SingleSeasonScraper(SingleWikiArticleSectionAdapterBase):
         self.url = url
         self._refresh_pipeline_state(explicit_year=season_year)
         return super().fetch()
+
+    def fetch_by_url(
+        self,
+        url: str,
+        *,
+        season_year: int | None = None,
+    ) -> list[dict[str, Any]]:
+        warnings.warn(
+            "SingleSeasonScraper.fetch_by_url() is deprecated; use "
+            "extract_by_url() instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.extract_by_url(url, season_year=season_year)
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         _ = soup

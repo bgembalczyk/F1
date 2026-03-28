@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
+import warnings
 
 from bs4 import BeautifulSoup
 from models.value_objects import SectionId
@@ -75,7 +76,7 @@ class SectionAdapter:
             parsed.append(entry.parser.parse(section_fragment))
         return parsed
 
-    def parse_section_dicts(
+    def assemble_section_dicts(
         self,
         *,
         soup: BeautifulSoup,
@@ -86,3 +87,18 @@ class SectionAdapter:
             serialize_section_result(result)
             for result in self.parse_sections(soup=soup, domain=domain, entries=entries)
         ]
+
+    def parse_section_dicts(
+        self,
+        *,
+        soup: BeautifulSoup,
+        domain: str,
+        entries: list[SectionAdapterEntry],
+    ) -> list[dict[str, Any]]:
+        warnings.warn(
+            "SectionAdapter.parse_section_dicts() is deprecated; use "
+            "assemble_section_dicts() instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.assemble_section_dicts(soup=soup, domain=domain, entries=entries)
