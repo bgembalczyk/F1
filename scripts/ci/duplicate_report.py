@@ -206,6 +206,7 @@ def main() -> int:
         status = "warn"
 
     output_path = Path(args.github_output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("a", encoding="utf-8") as fh:
         fh.write(f"duplicate_count={count}\n")
         fh.write(f"duplicate_status={status}\n")

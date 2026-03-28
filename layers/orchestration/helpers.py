@@ -8,13 +8,14 @@ from layers.orchestration.runners.circuits import CircuitsRunner
 from layers.orchestration.runners.constructors import ConstructorsRunner
 from layers.orchestration.runners.drivers import DriversRunner
 from layers.orchestration.runners.grand_prix import GrandPrixRunner
-from layers.orchestration.runners.layer_job import LayerJobRunner
 from layers.orchestration.runners.seasons import SeasonsRunner
 from scrapers.engines.helpers.export import export_complete_engine_manufacturers
 from scrapers.wiki.discovery import build_layer_one_runner_map_discovered
 
 if TYPE_CHECKING:
     from pathlib import Path
+
+    from layers.orchestration.runners.layer_job import LayerJobRunner
 
 
 def _build_explicit_layer_one_runner_map() -> dict[str, LayerJobRunner]:
