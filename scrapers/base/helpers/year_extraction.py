@@ -6,6 +6,9 @@ from typing import Any
 from scrapers.base.helpers.constants import MIN_URLS_FOR_PATTERN
 from scrapers.base.helpers.constants import SHORT_YEAR_LEN
 
+YEAR_RANGE_RE = re.compile(r"\b(\d{4})\s*[-\u2013]\s*(\d{2,4})\b")
+YEAR_RE = re.compile(r"\b(\d{4})\b")
+
 
 class YearExtractor:
     """Handles extraction of years and year ranges from text."""
@@ -28,7 +31,7 @@ class YearExtractor:
         years_set: set[int] = set()
 
         # Find ranges like "2007-2008"
-        for match in re.finditer(r"\b(\d{4})\s*[-\u2013]\s*(\d{2,4})\b", text):
+        for match in YEAR_RANGE_RE.finditer(text):
             start = int(match.group(1))
             end_text = match.group(2)
             if len(end_text) == SHORT_YEAR_LEN:
@@ -40,7 +43,7 @@ class YearExtractor:
                 years_set.add(year)
 
         # Find individual years
-        for match in re.finditer(r"\b(\d{4})\b", text):
+        for match in YEAR_RE.finditer(text):
             year = int(match.group(1))
             years_set.add(year)
 
@@ -65,7 +68,7 @@ class YearExtractor:
         year_to_url: dict[int, str | None] = {}
         for link in links:
             link_text = link.get(text_key, "")
-            year_match = re.search(r"\b(\d{4})\b", link_text)
+            year_match = YEAR_RE.search(link_text)
             if year_match:
                 year = int(year_match.group(1))
                 year_to_url[year] = link.get(url_key)
