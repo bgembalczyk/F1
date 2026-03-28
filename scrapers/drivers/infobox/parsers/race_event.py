@@ -4,7 +4,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
@@ -35,7 +35,14 @@ class RaceEventParser:
         Raises:
             DomainParseError: If parsing fails
         """
-        try:
+        text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
+        return ErrorHandler.run_domain_parse(
+            lambda: self._parse_race_event_payload(cell, text),
+            message=f"Nie udało się sparsować wydarzenia wyścigowego: {text!r}.",
+            parser_name=self.__class__.__name__,
+        )
+
+    def _parse_race_event_payload(self, cell: Tag, text: str) -> list[dict[str, Any]]:
             links = self._link_extractor.extract_links(cell)
 
             # If we have links, return them
@@ -43,15 +50,7 @@ class RaceEventParser:
                 return links
 
             # If no links, return the text
-            text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
             if text:
                 return [{"text": text, "url": None}]
 
             return []
-        except (TypeError, ValueError) as exc:
-            text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-            msg = f"Nie udało się sparsować wydarzenia wyścigowego: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc

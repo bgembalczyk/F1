@@ -1,7 +1,7 @@
 import re
 from typing import Any
 
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.constants import MATERIAL_PATTERNS
 from scrapers.circuits.infobox.services.constants import MIN_CAPACITY_VALUES_FOR_SEATING
@@ -85,14 +85,11 @@ class CircuitSpecsParser(InfoboxTextUtils):
         def _to_int(s: str) -> int:
             return int(s.replace(",", "").replace(" ", ""))
 
-        try:
-            vals = [_to_int(n) for n in numbers]
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować pojemności: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
+        vals = ErrorHandler.run_domain_parse(
+            lambda: [_to_int(n) for n in numbers],
+            message=f"Nie udało się sparsować pojemności: {text!r}.",
+            parser_name=self.__class__.__name__,
+        )
         result: dict[str, int] = {"total": vals[0]}
         if len(vals) >= MIN_CAPACITY_VALUES_FOR_SEATING:
             result["seating"] = vals[1]
@@ -126,14 +123,11 @@ class CircuitSpecsParser(InfoboxTextUtils):
 
         amount: float | None = None
         if amount_match:
-            try:
-                amount = float(amount_match.group(1).replace(",", ""))
-            except (TypeError, ValueError) as exc:
-                msg = f"Nie udało się sparsować kosztu budowy: {text_clean!r}."
-                raise DomainParseError(
-                    msg,
-                    cause=exc,
-                ) from exc
+            amount = ErrorHandler.run_domain_parse(
+                lambda: float(amount_match.group(1).replace(",", "")),
+                message=f"Nie udało się sparsować kosztu budowy: {text_clean!r}.",
+                parser_name=self.__class__.__name__,
+            )
 
         scale_match = re.search(
             r"\b(million|billion|thousand|mln|bn|k)\b",
@@ -168,14 +162,11 @@ class CircuitSpecsParser(InfoboxTextUtils):
         value: float | None = None
 
         if selected_match:
-            try:
-                value = float(selected_match.group(1).replace(",", "."))
-            except (TypeError, ValueError) as exc:
-                msg = f"Nie udało się sparsować nachylenia toru: {text!r}."
-                raise DomainParseError(
-                    msg,
-                    cause=exc,
-                ) from exc
+            value = ErrorHandler.run_domain_parse(
+                lambda: float(selected_match.group(1).replace(",", ".")),
+                message=f"Nie udało się sparsować nachylenia toru: {text!r}.",
+                parser_name=self.__class__.__name__,
+            )
         else:
             unit = None
 

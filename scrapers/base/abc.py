@@ -483,18 +483,8 @@ class ABCScraper(ABC):
         exc: Exception,
         error: ScraperError,
     ) -> None:
-        self._log_error_debug(stage, url, error)
         if self._handle_scraper_error(error):
             return
         if error is exc:
             raise exc
         raise error from exc
-
-    def _log_error_debug(self, stage: str, url: str, error: ScraperError) -> None:
-        self.logger.debug(
-            "Scraper error in %s stage for url=%s (type=%s): %s",
-            stage,
-            url,
-            type(error).__name__,
-            error,
-        )

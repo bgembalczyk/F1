@@ -4,7 +4,7 @@ from typing import Any
 from bs4 import Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.infobox.schema import InfoboxSchema
@@ -194,14 +194,11 @@ class InfoboxGeneralParser:
 
     def _normalize_date_value(self, date_text: str) -> str | None:
         """Normalize date text to standard format."""
-        try:
-            parsed_date = parse_date_text(date_text or "")
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować daty miejsca: {date_text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
+        parsed_date = ErrorHandler.run_domain_parse(
+            lambda: parse_date_text(date_text or ""),
+            message=f"Nie udało się sparsować daty miejsca: {date_text!r}.",
+            parser_name=self.__class__.__name__,
+        )
 
         iso = parsed_date.iso
         if isinstance(iso, list):

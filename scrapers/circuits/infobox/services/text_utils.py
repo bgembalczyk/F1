@@ -3,7 +3,7 @@ from typing import Any
 
 from models.records.link import LinkRecord
 from models.services.helpers import prune_empty
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.helpers.parsing import parse_number_with_unit
 from scrapers.base.helpers.text_normalization import clean_infobox_text
@@ -34,14 +34,11 @@ class InfoboxTextUtils:
         if not row:
             return None
         text = clean_infobox_text(row.get("text")) or ""
-        try:
-            return parse_int_from_text(text)
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować liczby całkowitej: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
+        return ErrorHandler.run_domain_parse(
+            lambda: parse_int_from_text(text),
+            message=f"Nie udało się sparsować liczby całkowitej: {text!r}.",
+            parser_name=self.__class__.__name__,
+        )
 
     def parse_length(
         self,
@@ -52,14 +49,11 @@ class InfoboxTextUtils:
         if not row:
             return None
         text = clean_infobox_text(row.get("text")) or ""
-        try:
-            return parse_number_with_unit(text, unit=unit)
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować długości ({unit}): {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
+        return ErrorHandler.run_domain_parse(
+            lambda: parse_number_with_unit(text, unit=unit),
+            message=f"Nie udało się sparsować długości ({unit}): {text!r}.",
+            parser_name=self.__class__.__name__,
+        )
 
     def _parse_dates(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
         """Parsyje daty typu YYYY-MM-DD, YYYY-MM, YYYY i zwraca też listę lat."""
@@ -68,14 +62,11 @@ class InfoboxTextUtils:
         text = clean_infobox_text(row.get("text")) or ""
         if not text:
             return None
-        try:
-            parsed = parse_date_text(text)
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować daty: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
+        parsed = ErrorHandler.run_domain_parse(
+            lambda: parse_date_text(text),
+            message=f"Nie udało się sparsować daty: {text!r}.",
+            parser_name=self.__class__.__name__,
+        )
         iso = parsed.iso
         if isinstance(iso, list):
             iso_dates = iso or None
