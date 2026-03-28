@@ -376,7 +376,8 @@ LEGACY_MODULE_REGISTRY = LegacyCliRegistry(
     ),
 )
 
-LEGACY_MODULE_SPECS: dict[str, LegacyModuleSpec] = LEGACY_MODULE_REGISTRY.build_specs()
+SCRAPER_REGISTRY: dict[str, LegacyModuleSpec] = LEGACY_MODULE_REGISTRY.build_specs()
+LEGACY_MODULE_SPECS = SCRAPER_REGISTRY
 
 
 def _invoke_target(target: Callable[..., None], run_config: RunConfig) -> None:
@@ -433,7 +434,7 @@ def _module_path_from_file(file_path: str) -> str:
 
 
 def run_legacy_wrapper(module_path: str, argv: list[str] | None = None) -> None:
-    spec = LEGACY_MODULE_SPECS[module_path]
+    spec = SCRAPER_REGISTRY[module_path]
     _, args = _parse_legacy_args(argv, spec.profile)
     run_config = build_run_config(base_config=spec.base_config, args=args)
 
@@ -498,7 +499,7 @@ def _build_main_parser() -> argparse.ArgumentParser:
     )
 
     run_parser = subparsers.add_parser("run")
-    run_parser.add_argument("module", choices=tuple(sorted(LEGACY_MODULE_SPECS.keys())))
+    run_parser.add_argument("module", choices=tuple(sorted(SCRAPER_REGISTRY.keys())))
     run_parser.add_argument("args", nargs=argparse.REMAINDER)
     return parser
 
