@@ -60,8 +60,6 @@ class WikiScraper(WikiElementParserMixin, ABCScraper):
         """
         WikiElementParserMixin.__init__(self)
         options = init_scraper_options(options)
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
         ABCScraper.__init__(self, options=options)
 
         self.header_parser = header_parser or HeaderParser()
