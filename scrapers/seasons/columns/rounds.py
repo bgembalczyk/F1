@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: seasons column rule moved out of base layer."""
+
 from models.services.rounds_service import parse_rounds
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn

@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: seasons column rule moved out of base layer."""
+
 from typing import Any
 
 from models.services.season_service import parse_seasons

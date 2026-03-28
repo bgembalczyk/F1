@@ -1,6 +1,6 @@
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.seasons.columns.seasons import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.dsl.column import column
