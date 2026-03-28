@@ -4,12 +4,9 @@ from dataclasses import dataclass
 from typing import Any
 
 from models.value_objects import WikiUrl
-
-
-@dataclass(frozen=True)
-class CircuitLapRecordLayoutDTO:
-    layout: str
-    lap_records: list[dict[str, Any]]
+from scrapers.base.mappers import InfoboxRecordMapper
+from scrapers.base.mappers import LayoutTableRecordMapper
+from scrapers.base.mappers import SectionRecordMapper
 
 
 @dataclass(frozen=True)
@@ -21,22 +18,16 @@ class CircuitRecordDTO:
 
 
 class CircuitRecordAssembler:
-    def assemble_tables(
+    def __init__(
         self,
         *,
-        lap_record_rows: list[dict[str, Any]],
-    ) -> list[dict[str, Any]]:
-        grouped: dict[str, list[dict[str, Any]]] = {}
-        for row in lap_record_rows:
-            layout_name = row.get("layout")
-            if not isinstance(layout_name, str) or not layout_name:
-                continue
-            row_export = {k: v for k, v in row.items() if k != "layout"}
-            grouped.setdefault(layout_name, []).append(row_export)
-        return [
-            CircuitLapRecordLayoutDTO(layout=name, lap_records=records).__dict__
-            for name, records in grouped.items()
-        ]
+        infobox_mapper: InfoboxRecordMapper | None = None,
+        section_mapper: SectionRecordMapper | None = None,
+        table_mapper: LayoutTableRecordMapper | None = None,
+    ) -> None:
+        self._infobox_mapper = infobox_mapper or InfoboxRecordMapper()
+        self._section_mapper = section_mapper or SectionRecordMapper()
+        self._table_mapper = table_mapper or LayoutTableRecordMapper()
 
     def assemble(
         self,
@@ -46,7 +37,7 @@ class CircuitRecordAssembler:
         url = WikiUrl.from_raw(payload.url)
         return {
             "url": url.to_export(),
-            "infobox": payload.infobox,
-            "tables": self.assemble_tables(lap_record_rows=payload.lap_record_rows),
-            "sections": payload.sections,
+            "infobox": self._infobox_mapper.map(payload.infobox),
+            "tables": self._table_mapper.map(payload.lap_record_rows),
+            "sections": self._section_mapper.map_many(payload.sections),
         }
