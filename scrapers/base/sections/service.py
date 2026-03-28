@@ -6,6 +6,9 @@ from typing import TYPE_CHECKING
 from typing import Any
 from typing import Protocol
 
+from models.value_objects import EntityName
+from models.value_objects import SectionId
+from models.value_objects import WikiUrl
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import normalize_section_metadata
@@ -31,11 +34,11 @@ class BaseSectionExtractionService(ABC):
         *,
         adapter: SectionAdapter,
         options: ScraperOptions | None = None,
-        url: str | None = None,
+        url: WikiUrl | str | None = None,
     ) -> None:
         self._adapter = adapter
         self._options = options
-        self._url = url
+        self._url = WikiUrl.from_raw(url) if url is not None else None
 
     def extract(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         sections = self._adapter.parse_sections(
@@ -84,8 +87,8 @@ class BaseSectionExtractionService(ABC):
         section_metadata: dict[str, Any],
     ) -> dict[str, Any]:
         return {
-            "section": section.section_label,
-            "section_id": section.section_id,
+            "section": EntityName.from_raw(section.section_label).to_export(),
+            "section_id": SectionId.from_raw(section.section_id).to_export(),
             "section_metadata": section_metadata,
         }
 
@@ -104,7 +107,7 @@ class BaseSectionExtractionService(ABC):
             raise ValueError(msg)
         return self._options
 
-    def require_url(self) -> str:
+    def require_url(self) -> WikiUrl:
         if self._url is None:
             msg = f"{self.__class__.__name__} requires a URL to build section entries."
             raise ValueError(msg)

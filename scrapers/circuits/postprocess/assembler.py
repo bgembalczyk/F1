@@ -3,6 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from models.value_objects import WikiUrl
+
 
 @dataclass(frozen=True)
 class CircuitLapRecordLayoutDTO:
@@ -12,7 +14,7 @@ class CircuitLapRecordLayoutDTO:
 
 @dataclass(frozen=True)
 class CircuitRecordDTO:
-    url: str
+    url: WikiUrl | str
     infobox: dict[str, Any]
     lap_record_rows: list[dict[str, Any]]
     sections: list[dict[str, Any]]
@@ -41,8 +43,9 @@ class CircuitRecordAssembler:
         *,
         payload: CircuitRecordDTO,
     ) -> dict[str, Any]:
+        url = WikiUrl.from_raw(payload.url)
         return {
-            "url": payload.url,
+            "url": url.to_export(),
             "infobox": payload.infobox,
             "tables": self.assemble_tables(lap_record_rows=payload.lap_record_rows),
             "sections": payload.sections,
