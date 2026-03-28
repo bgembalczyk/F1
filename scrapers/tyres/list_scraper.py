@@ -1,6 +1,3 @@
-from scrapers.base.records import record_from_mapping
-from scrapers.seasons.columns.seasons import SeasonsColumn
-from scrapers.base.source_catalog import TYRES
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.source_catalog import TYRES
 from scrapers.base.table.columns.types import SeasonsColumn
@@ -9,6 +6,7 @@ from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.seasons.columns.seasons import SeasonsColumn
 from scrapers.tyres.columns.append_links import AppendLinksColumn
 
 

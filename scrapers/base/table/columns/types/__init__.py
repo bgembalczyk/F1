@@ -11,7 +11,6 @@ from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.engine import EngineColumn
 from scrapers.base.table.columns.types.entrant import EntrantColumn
 from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
-from scrapers.base.table.columns.types.enum_marks import EnumMarksColumn
 from scrapers.base.table.columns.types.func import FuncColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.list import ListColumn

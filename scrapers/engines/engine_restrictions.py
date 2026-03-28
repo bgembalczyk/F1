@@ -8,7 +8,6 @@ from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.source_catalog import ENGINE_REGULATIONS
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import RangeColumn
-from scrapers.seasons.columns.seasons import SeasonsColumn
 from scrapers.base.table.columns.types import UnitColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
@@ -20,6 +19,7 @@ from scrapers.engines.columns.fuel_injection_pressure_limit import (
     FuelInjectionPressureLimitColumn,
 )
 from scrapers.engines.columns.fuel_limit_per_race import FuelLimitPerRaceColumn
+from scrapers.seasons.columns.seasons import SeasonsColumn
 
 
 class EngineRestrictionsScraper(BaseEngineTableScraper):

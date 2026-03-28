@@ -5,7 +5,6 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
-from scrapers.seasons.columns.seasons import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
@@ -23,6 +22,7 @@ from scrapers.points.constants import POINTS_FASTEST_LAP_HEADER
 from scrapers.points.constants import POINTS_NOTES_HEADER
 from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
 from scrapers.points.constants import POINTS_SEASONS_HEADER
+from scrapers.seasons.columns.seasons import SeasonsColumn
 
 
 class PointsScoringSystemsHistoryScraper(BasePointsScraper):

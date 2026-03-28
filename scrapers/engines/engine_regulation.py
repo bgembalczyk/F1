@@ -7,9 +7,6 @@ from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.source_catalog import ENGINE_PROGRESS
-from scrapers.base.records import record_from_mapping
-from scrapers.seasons.columns.seasons import SeasonsColumn
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types import UnitColumn
@@ -20,6 +17,7 @@ from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.configuration import EngineConfigurationColumn
 from scrapers.engines.columns.nested_text import NestedTextColumn
 from scrapers.engines.columns.nested_unit_list import NestedUnitListColumn
+from scrapers.seasons.columns.seasons import SeasonsColumn
 
 
 class EngineRegulationScraper(BaseEngineTableScraper):

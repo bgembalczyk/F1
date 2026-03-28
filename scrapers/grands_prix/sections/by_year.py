@@ -7,7 +7,6 @@ from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import build_section_metadata
 from scrapers.base.table.columns.types import AutoColumn
-from scrapers.grands_prix.columns.driver_list import DriverListColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
@@ -17,6 +16,7 @@ from scrapers.base.table.pipeline import TablePipeline
 from scrapers.grands_prix.assemblers.by_year import GrandPrixByYearRecordAssembler
 from scrapers.grands_prix.columns.circuit_location import LocationColumn
 from scrapers.grands_prix.columns.constructor_split import ConstructorSplitColumn
+from scrapers.grands_prix.columns.driver_list import DriverListColumn
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

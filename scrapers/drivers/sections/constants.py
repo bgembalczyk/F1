@@ -9,22 +9,22 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 from scrapers.base.table.columns.types import AutoColumn
-from scrapers.drivers.columns.constructor import ConstructorColumn
-from scrapers.drivers.columns.driver_list import DriverListColumn
-from scrapers.drivers.columns.engine import EngineColumn
-from scrapers.drivers.columns.entrant import EntrantColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.drivers.columns.position import PositionColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import TextColumn
-from scrapers.drivers.columns.tyre import TyreColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
 from scrapers.base.table.headers_shared import POINTS_HEADER
 from scrapers.base.table.headers_shared import POINTS_HEADER_TO_KEY
+from scrapers.drivers.columns.constructor import ConstructorColumn
+from scrapers.drivers.columns.driver_list import DriverListColumn
+from scrapers.drivers.columns.engine import EngineColumn
+from scrapers.drivers.columns.entrant import EntrantColumn
 from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
+from scrapers.drivers.columns.position import PositionColumn
 from scrapers.drivers.columns.series import SeriesColumn
+from scrapers.drivers.columns.tyre import TyreColumn
 
 COMPLETE_RESULTS_REQUIRED_HEADER = "Year"
 

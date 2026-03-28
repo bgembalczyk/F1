@@ -1,8 +1,6 @@
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.source_catalog import FEMALE_DRIVERS_LIST
 from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.drivers.columns.points import PointsColumn
-from scrapers.drivers.columns.seasons import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config
@@ -10,6 +8,8 @@ from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
+from scrapers.drivers.columns.points import PointsColumn
+from scrapers.drivers.columns.seasons import SeasonsColumn
 from scrapers.drivers.constants import FEMALE_DRIVER_ENTRIES_STARTS_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVER_NAME_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVER_POINTS_HEADER

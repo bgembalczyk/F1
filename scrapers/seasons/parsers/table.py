@@ -5,13 +5,13 @@ from bs4 import BeautifulSoup
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types import IntColumn
-from scrapers.seasons.columns.points import PointsColumn
-from scrapers.seasons.columns.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.seasons.columns.points import PointsColumn
+from scrapers.seasons.columns.position import PositionColumn
 from scrapers.seasons.columns.race_result import RaceResultColumn
 from scrapers.seasons.standings_scraper import F1StandingsScraper
 
