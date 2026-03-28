@@ -1,5 +1,6 @@
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.base.table.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
 
 HEADER_ROWS_WITH_SUBHEADERS = 2
 
@@ -7,11 +8,7 @@ BASE_STATS_MAP = {
     "Seasons": "seasons",
     "Races Entered": "races_entered",
     "Races Started": "races_started",
-    "Wins": "wins",
-    "Points": "points",
-    "Poles": "poles",
-    "FL": "fastest_laps",
-    "Podiums": "podiums",
+    **BASE_METRIC_HEADERS_TO_KEYS,
     "WCC": "wcc",
     "WDC": "wdc",
 }

@@ -1,6 +1,7 @@
 from abc import ABC
 from abc import abstractmethod
 from typing import Any
+from typing import ClassVar
 
 from bs4 import BeautifulSoup
 
@@ -11,7 +12,9 @@ from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
 from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
-from scrapers.base.single_wiki_article.section_selection_strategy import SectionSelectionStrategy
+from scrapers.base.single_wiki_article.section_selection_strategy import (
+    SectionSelectionStrategy,
+)
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -34,6 +37,13 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
     - ``_should_parse_article(soup)``: pozwala pominąć artykuły niespełniające
       warunków domenowych.
     """
+
+    STANDARD_HOOKS: ClassVar[dict[str, str]] = {
+        "_build_infobox_payload": "Build normalized infobox payload.",
+        "_build_tables_payload": "Build normalized table payload.",
+        "_build_sections_payload": "Build normalized section payload.",
+        "_assemble_record": "Compose final domain record from payload hooks.",
+    }
 
     def __init__(
         self,
