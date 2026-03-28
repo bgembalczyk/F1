@@ -106,7 +106,7 @@ def test_driver_sections_include_non_championship_alias() -> None:
         "html.parser",
     )
 
-    records = scraper._parse_results_sections(soup)  # noqa: SLF001
+    records = scraper._build_sections_payload(soup)  # noqa: SLF001
 
     assert records
     assert all(record["section_id"] == "Non-championship" for record in records)

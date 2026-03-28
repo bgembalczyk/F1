@@ -60,12 +60,6 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         sections_service = self._sections_service_factory(self)
         return sections_service.extract(soup)
 
-    def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._build_infobox_payload(soup)
-
-    def _scrape_tables(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._build_tables_payload(soup)
-
     def _assemble_record(
         self,
         *,
