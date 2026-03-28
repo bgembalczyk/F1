@@ -1,23 +1,29 @@
 """Base scraper for constructor list pages."""
 
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
-from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.seed_list_scraper import BaseSeedListScraper
 from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
+from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
 
 
-class BaseConstructorListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
+class BaseConstructorListScraper(
+    DeclarativeSectionTableParseMixin,
+    BaseSeedListScraper,
+):
     domain = "constructors"
+    default_output_path = "raw/constructors/seeds/complete_constructors"
+    legacy_output_path = "constructors/complete_constructors"
+    normalize_empty_values = False
     """
     Base class for constructor list scrapers.
 
@@ -53,16 +59,4 @@ class BaseConstructorListScraper(DeclarativeSectionTableParseMixin, F1TableScrap
     @staticmethod
     def build_licensed_in_column():
         """Build the licensed_in column definition."""
-        from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
-
         return column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", LinksListColumn())
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config=None,
-    ) -> None:
-        options = options or ScraperOptions()
-        options.normalize_empty_values = False
-        super().__init__(options=options, config=config)

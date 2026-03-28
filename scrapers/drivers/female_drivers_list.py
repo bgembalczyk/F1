@@ -1,5 +1,4 @@
 from models.records.factories.build import RECORD_BUILDERS
-from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
@@ -8,7 +7,7 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.seed_list_scraper import BaseSeedListScraper
 from scrapers.drivers.columns.entries_starts import EntriesStartsColumn
 from scrapers.drivers.constants import FEMALE_DRIVER_ENTRIES_STARTS_HEADER
 from scrapers.drivers.constants import FEMALE_DRIVER_NAME_HEADER
@@ -21,7 +20,7 @@ from scrapers.drivers.constants import FEMALE_DRIVERS_SECTION_ID
 from scrapers.drivers.post_processors import EntriesStartsPointsPostProcessor
 
 
-class FemaleDriversListScraper(F1TableScraper):
+class FemaleDriversListScraper(BaseSeedListScraper):
     """
     Scraper listy oficjalnych kobiet-kierowców F1 z:
     https://en.wikipedia.org/wiki/List_of_female_Formula_One_drivers
@@ -40,6 +39,8 @@ class FemaleDriversListScraper(F1TableScraper):
         column(FEMALE_DRIVER_POINTS_HEADER, "points", PointsColumn()),
     ]
 
+    default_post_processors = (EntriesStartsPointsPostProcessor(),)
+
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_female_Formula_One_drivers",
         section_id=FEMALE_DRIVERS_SECTION_ID,
@@ -48,19 +49,6 @@ class FemaleDriversListScraper(F1TableScraper):
         record_factory=RECORD_BUILDERS.special_driver,
     )
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
-        resolved_options = options or ScraperOptions()
-        if not any(
-            isinstance(post_processor, EntriesStartsPointsPostProcessor)
-            for post_processor in resolved_options.post_processors or []
-        ):
-            resolved_options.post_processors.append(EntriesStartsPointsPostProcessor())
-        super().__init__(options=resolved_options, config=config)
 
 
 if __name__ == "__main__":

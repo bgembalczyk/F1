@@ -4,7 +4,6 @@ from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.helpers.date_parsing import parse_date_with_category_marker
 from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value
-from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.int import IntColumn
@@ -14,7 +13,7 @@ from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.seed_list_scraper import BaseSeedListScraper
 from scrapers.base.transformers.fatalities_car import FatalitiesCarTransformer
 from scrapers.drivers.columns.fatality_date import FatalityDateColumn
 from scrapers.drivers.columns.fatality_event import FatalityEventColumn
@@ -32,7 +31,7 @@ from scrapers.drivers.constants import MARK_F2_CATEGORY
 from scrapers.drivers.constants import MARK_NON_CHAMPIONSHIP_EVENT
 
 
-class F1FatalitiesListScraper(F1TableScraper):
+class F1FatalitiesListScraper(BaseSeedListScraper):
     """
     Lista ofiar śmiertelnych F1 z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_fatalities#Detail_by_driver
@@ -41,6 +40,8 @@ class F1FatalitiesListScraper(F1TableScraper):
     - formula_category: znacznik # przy dacie (F2) lub domyślnie F1
     - championship: znacznik † w kolumnie Event (False)
     """
+
+    default_transformers = (FatalitiesCarTransformer(),)
 
     CONFIG = ScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_fatalities#Detail_by_driver",
@@ -61,18 +62,6 @@ class F1FatalitiesListScraper(F1TableScraper):
         record_factory=RECORD_BUILDERS.fatality,
     )
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
-        options = options or ScraperOptions()
-        options.transformers = [
-            *list(options.transformers or []),
-            FatalitiesCarTransformer(),
-        ]
-        super().__init__(options=options, config=config)
 
     # Methods using shared utilities from date_parsing module
     # Kept here for backward compatibility if they are used elsewhere

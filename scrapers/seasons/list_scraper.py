@@ -2,21 +2,17 @@
 
 from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.table.builders import build_columns
-from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.wiki.component_metadata import ComponentMetadata
+from scrapers.base.table.seed_list_scraper import BaseSeedListScraper
 
 
-class SeasonsListScraper(F1TableScraper):
-    COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
-        domain="seasons",
-        default_output_path="raw/seasons/seeds/complete_seasons",
-        legacy_output_path="seasons/complete_seasons",
-    )
+class SeasonsListScraper(BaseSeedListScraper):
+    domain = "seasons"
+    default_output_path = "raw/seasons/seeds/complete_seasons"
+    legacy_output_path = "seasons/complete_seasons"
 
     """
     Scraper listy sezonów z:
@@ -35,11 +31,9 @@ class SeasonsListScraper(F1TableScraper):
         column("Winners", "winners", IntColumn()),
     )
 
-    CONFIG = build_scraper_config(
+    CONFIG = BaseSeedListScraper.build_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_seasons",
-        # jeśli id sekcji się kiedyś zmieni - poprawiasz tylko to
         section_id="Seasons",
-        # nagłówki, które MUSZĄ wystąpić w tabeli
         expected_headers=[
             "Season",
             "Races",

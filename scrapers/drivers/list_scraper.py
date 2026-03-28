@@ -1,14 +1,13 @@
 """DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
 
 from models.records.factories.build import RECORD_BUILDERS
-from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.builders import metric_column
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.seed_list_scraper import SeedListTableScraper
+from scrapers.base.table.seed_list_scraper import BaseSeedListScraper
 from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
 )
@@ -28,7 +27,7 @@ from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
 from scrapers.drivers.validator import DriversRecordValidator
 
 
-class F1DriversListScraper(SeedListTableScraper):
+class F1DriversListScraper(BaseSeedListScraper):
     domain = "drivers"
     default_output_path = "raw/drivers/seeds/complete_drivers"
     legacy_output_path = "drivers/complete_drivers"
@@ -45,6 +44,7 @@ class F1DriversListScraper(SeedListTableScraper):
 
     default_validator = DriversRecordValidator()
     options_profile = "strict_seed"
+    default_transformers = (DriversChampionshipsTransformer(),)
 
     schema_columns = build_columns(
         column(DRIVER_NAME_HEADER, "driver", DriverNameStatusColumn()),
@@ -89,7 +89,7 @@ class F1DriversListScraper(SeedListTableScraper):
         ),
     )
 
-    CONFIG = SeedListTableScraper.build_config(
+    CONFIG = BaseSeedListScraper.build_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
         section_id="Drivers",
         expected_headers=DRIVERS_LIST_HEADERS,
@@ -97,12 +97,6 @@ class F1DriversListScraper(SeedListTableScraper):
         record_factory=RECORD_BUILDERS.driver,
     )
 
-    def extend_options(self, options: ScraperOptions) -> ScraperOptions:
-        options.transformers = [
-            *list(options.transformers or []),
-            DriversChampionshipsTransformer(),
-        ]
-        return options
 
 
 if __name__ == "__main__":
