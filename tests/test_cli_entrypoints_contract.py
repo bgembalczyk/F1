@@ -1,8 +1,8 @@
-# ruff: noqa: FBT001, SLF001, TC003
+# ruff: noqa: FBT001, SLF001
 from __future__ import annotations
 
-import argparse
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 
@@ -13,6 +13,9 @@ from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.cli_entrypoint import run_cli_entrypoint
 from scrapers.base.run_config import RunConfig
+
+if TYPE_CHECKING:
+    import argparse
 
 ENTRYPOINT_DEFAULTS = (
     ("scrapers.drivers.list_scraper", True, False),

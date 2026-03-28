@@ -1,4 +1,4 @@
-"""DOMAIN-SPECIFIC: drivers engine-column rule localized for this domain."""
+"""DOMAIN-SPECIFIC: drivers column rule (engine parsing) localized for drivers domain."""
 # pylint: disable=duplicate-code
 
 from typing import Any
