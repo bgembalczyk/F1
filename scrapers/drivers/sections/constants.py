@@ -20,6 +20,9 @@ from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types import TyreColumn
 from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.headers_shared import BASE_METRIC_HEADERS_TO_KEYS
+from scrapers.base.table.headers_shared import POINTS_HEADER
+from scrapers.base.table.headers_shared import POINTS_HEADER_TO_KEY
 from scrapers.drivers.columns.points_or_text import PointsOrTextColumn
 from scrapers.drivers.columns.series import SeriesColumn
 
@@ -56,12 +59,12 @@ CAREER_SUMMARY_HEADER_TO_KEY = {
     "Position": "position",
     "Team": "team",
     "Races": "races",
-    "Wins": "wins",
-    "Poles": "poles",
+    "Wins": BASE_METRIC_HEADERS_TO_KEYS["Wins"],
+    "Poles": BASE_METRIC_HEADERS_TO_KEYS["Poles"],
     "F/Laps": "fastest_laps",
     "F/Lap": "fastest_laps",
-    "Podiums": "podiums",
-    "Points": "points",
+    "Podiums": BASE_METRIC_HEADERS_TO_KEYS["Podiums"],
+    POINTS_HEADER: POINTS_HEADER_TO_KEY[POINTS_HEADER],
 }
 
 CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY: dict[str, Callable[[], Any]] = {
@@ -93,7 +96,7 @@ COMPLETE_RESULTS_HEADER_TO_KEY = {
     "Chassis": "chassis",
     "Engine": "engine",
     "WDC": "wdc",
-    "Points": "points",
+    **POINTS_HEADER_TO_KEY,
     "Rank": "rank",
     "DC": "dc",
     "Qualifying": "qualifying",
@@ -105,8 +108,6 @@ COMPLETE_RESULTS_HEADER_TO_KEY = {
     "Start": "start",
     "Finish": "finish",
     "Stages won": "stages_won",
-    "Pts": "points",
-    "Pts.": "points",
     "Ref": "ref",
     "Make": "make",
     "Manufacturer": "manufacturer",
