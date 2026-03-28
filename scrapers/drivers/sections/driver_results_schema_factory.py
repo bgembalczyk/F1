@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.table.table_parser_registry import TableParserRegistry
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.drivers.columns.round import RoundColumn
@@ -21,31 +22,40 @@ if TYPE_CHECKING:
 class DriverResultsSchemaFactory:
     def __init__(self, *, unknown_value: str) -> None:
         self._unknown_value = unknown_value
-
-    def build(self, *, table_type: str, headers: list[str]) -> TableSchemaDSL:
-        if table_type == "career_highlights":
-            return self._build_from_maps(
+        self._registry = TableParserRegistry()
+        self._registry.register(
+            "career_highlights",
+            lambda *, headers: self._build_from_maps(
                 header_to_key=CAREER_HIGHLIGHTS_HEADER_TO_KEY,
                 column_factory_by_key=CAREER_HIGHLIGHTS_COLUMN_FACTORY_BY_KEY,
-            )
-        if table_type == "career_summary":
-            return self._build_from_maps(
+            ),
+        )
+        self._registry.register(
+            "career_summary",
+            lambda *, headers: self._build_from_maps(
                 header_to_key=CAREER_SUMMARY_HEADER_TO_KEY,
                 column_factory_by_key=CAREER_SUMMARY_COLUMN_FACTORY_BY_KEY,
-            )
-        if table_type == "complete_results":
-            schema_columns = self._build_from_maps(
-                header_to_key=COMPLETE_RESULTS_HEADER_TO_KEY,
-                column_factory_by_key=COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY,
-            ).columns
-            schema_columns.extend(
-                column(header, header, self._unknown(RoundColumn()))
-                for header in headers
-                if header.isdigit()
-            )
-            return TableSchemaDSL(columns=schema_columns)
-        msg = f"Unsupported table_type: {table_type}"
-        raise ValueError(msg)
+            ),
+        )
+        self._registry.register(
+            "complete_results",
+            self._build_complete_results_schema,
+        )
+
+    def build(self, *, table_type: str, headers: list[str]) -> TableSchemaDSL:
+        return self._registry.parse(table_type, headers=headers)
+
+    def _build_complete_results_schema(self, *, headers: list[str]) -> TableSchemaDSL:
+        schema_columns = self._build_from_maps(
+            header_to_key=COMPLETE_RESULTS_HEADER_TO_KEY,
+            column_factory_by_key=COMPLETE_RESULTS_COLUMN_FACTORY_BY_KEY,
+        ).columns
+        schema_columns.extend(
+            column(header, header, self._unknown(RoundColumn()))
+            for header in headers
+            if header.isdigit()
+        )
+        return TableSchemaDSL(columns=schema_columns)
 
     def _build_from_maps(
         self,

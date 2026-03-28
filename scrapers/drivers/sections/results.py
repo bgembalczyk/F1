@@ -11,6 +11,7 @@ from scrapers.base.sections.section_table_parser_base import SectionTableParserB
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
+from scrapers.base.table.table_parser_registry import TableParserRegistry
 from scrapers.drivers.sections.constants import UNKNOWN_VALUE
 from scrapers.drivers.sections.driver_results_schema_factory import (
     DriverResultsSchemaFactory,
@@ -45,6 +46,9 @@ class DriverResultsSectionParser(SectionTableParserBase):
         self._schema_factory = schema_factory or DriverResultsSchemaFactory(
             unknown_value=UNKNOWN_VALUE,
         )
+        self._parser_registry = TableParserRegistry()
+        for table_type in ("career_highlights", "career_summary", "complete_results"):
+            self._parser_registry.register(table_type, self._parse_classified_table)
 
     def classify_table(self, table_data: dict[str, Any]) -> str | None:
         headers = table_data.get("headers")
@@ -66,6 +70,20 @@ class DriverResultsSectionParser(SectionTableParserBase):
         return self._build_pipeline(schema=schema)
 
     def map_table_result(
+        self,
+        *,
+        table_data: dict[str, Any],
+        table_classification: str,
+        table_pipeline: TablePipeline,
+    ) -> dict[str, Any] | None:
+        return self._parser_registry.parse(
+            table_classification,
+            table_data=table_data,
+            table_classification=table_classification,
+            table_pipeline=table_pipeline,
+        )
+
+    def _parse_classified_table(
         self,
         *,
         table_data: dict[str, Any],
