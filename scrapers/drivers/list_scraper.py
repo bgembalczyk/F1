@@ -31,8 +31,6 @@ from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
 
 class F1DriversListScraper(SeedListTableScraper):
     domain = "drivers"
-    default_output_path = "raw/drivers/seeds/complete_drivers"
-    legacy_output_path = "drivers/complete_drivers"
 
     """
     Scraper listy kierowców F1 z:

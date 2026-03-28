@@ -10,7 +10,9 @@ from scrapers.base.table.scraper import F1TableScraper
 from scrapers.base.table.schema import TableSchema
 from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
+from scrapers.wiki.component_metadata import build_component_metadata
 from scrapers.wiki.component_metadata import ComponentMetadata
+from scrapers.wiki.component_metadata import LIST_SCRAPER_KIND
 
 
 class SeedListTableScraper(F1TableScraper):
@@ -22,6 +24,7 @@ class SeedListTableScraper(F1TableScraper):
     domain: ClassVar[str | None] = None
     default_output_path: ClassVar[str | None] = None
     legacy_output_path: ClassVar[str | None] = None
+    output_basename: ClassVar[str | None] = None
 
     COMPONENT_METADATA: ClassVar[ComponentMetadata | None] = None
 
@@ -31,17 +34,22 @@ class SeedListTableScraper(F1TableScraper):
         if cls.options_domain is None:
             cls.options_domain = cls.domain
 
-        if (
-            cls.COMPONENT_METADATA is None
-            and cls.domain
-            and cls.default_output_path
-            and cls.legacy_output_path
-        ):
-            cls.COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
-                domain=cls.domain,
-                default_output_path=cls.default_output_path,
-                legacy_output_path=cls.legacy_output_path,
+        if cls.COMPONENT_METADATA is not None or not cls.domain:
+            return
+
+        if cls.default_output_path is None or cls.legacy_output_path is None:
+            basename = cls.output_basename or f"complete_{cls.domain}"
+            cls.default_output_path = cls.default_output_path or (
+                f"raw/{cls.domain}/seeds/{basename}"
             )
+            cls.legacy_output_path = cls.legacy_output_path or f"{cls.domain}/{basename}"
+
+        cls.COMPONENT_METADATA = build_component_metadata(
+            domain=cls.domain,
+            kind=LIST_SCRAPER_KIND,
+            default_output_path=cls.default_output_path,
+            legacy_output_path=cls.legacy_output_path,
+        )
 
     @classmethod
     def build_config(

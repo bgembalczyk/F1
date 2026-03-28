@@ -26,6 +26,7 @@ from scrapers.base.scraper_components import QualityReportService
 from scrapers.base.scraper_components import RuntimeInitializer
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.validation_runner import ValidationRunner
+from scrapers.wiki.component_metadata import validate_metadata_for_component_class
 from validation.validator_base import ExportRecord
 
 T = TypeVar("T")
@@ -49,6 +50,7 @@ class ABCScraper(ABC):
     url: str
 
     def __init__(self, *, options: ScraperOptions) -> None:
+        validate_metadata_for_component_class(type(self))
         self.include_urls = options.include_urls
         self.normalize_empty_values = options.normalize_empty_values
         self.logger = get_logger(self.__class__.__name__)

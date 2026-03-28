@@ -12,8 +12,6 @@ from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 
 class SeasonsListScraper(SeedListTableScraper):
     domain = "seasons"
-    default_output_path = "raw/seasons/seeds/complete_seasons"
-    legacy_output_path = "seasons/complete_seasons"
 
     """
     Scraper listy sezonów z:
