@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 from typing import Any
 
 from bs4 import BeautifulSoup
+from models.value_objects import SectionId
 
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
@@ -21,7 +22,7 @@ if TYPE_CHECKING:
 
 @dataclass(frozen=True)
 class SectionAdapterEntry:
-    section_id: str
+    section_id: SectionId | str
     aliases: tuple[str, ...]
     parser: SectionParser
 
@@ -42,14 +43,15 @@ class SectionAdapter:
     ) -> list[SectionParseResult]:
         parsed: list[SectionParseResult] = []
         for entry in entries:
+            section_id = SectionId.from_raw(entry.section_id)
             entry_aliases = profile_entry_aliases(
                 domain,
-                entry.section_id,
+                section_id.to_export(),
                 *entry.aliases,
             )
             section_candidates = resolve_section_candidates(
                 domain=domain,
-                section_id=entry.section_id,
+                section_id=section_id,
                 alternative_section_ids=entry_aliases,
             )
             heading_match = None
@@ -58,7 +60,7 @@ class SectionAdapter:
                     soup,
                     candidate,
                     aliases={
-                        entry.section_id.lower().replace("_", " "): set(entry_aliases),
+                        section_id.to_export().replace("_", " "): set(entry_aliases),
                     },
                     domain=domain,
                 )

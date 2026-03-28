@@ -6,6 +6,7 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.list_scraper import CircuitsListScraper
+from scrapers.drivers.female_drivers_list import FemaleDriversListScraper
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 
@@ -25,7 +26,7 @@ class DummyTableScraper(F1TableScraper):
 
 class DummyStrictTableScraper(F1TableScraper):
     options_domain = "drivers"
-    options_profile = "strict_seed"
+    options_profile = "seed_strict"
 
     def _parse_soup(self, _soup):
         return []
@@ -91,7 +92,7 @@ def test_build_config_overrides_existing_options():
 def test_build_scraper_options_uses_profile_and_domain_override():
     circuits_options = build_scraper_options(
         domain="circuits",
-        profile="soft_seed",
+        profile="seed_soft",
     )
     assert circuits_options.include_urls is True
     assert circuits_options.normalize_empty_values is False
@@ -99,7 +100,7 @@ def test_build_scraper_options_uses_profile_and_domain_override():
 
     drivers_options = build_scraper_options(
         domain="drivers",
-        profile="strict_seed",
+        profile="seed_strict",
     )
     assert drivers_options.include_urls is True
     assert drivers_options.normalize_empty_values is False
@@ -132,11 +133,25 @@ def test_list_scraper_profiles_keep_existing_defaults():
     assert circuits.include_urls is True
     assert circuits.normalize_empty_values is False
     assert circuits.validation_mode == "soft"
+    assert circuits.validator is not None
+    assert circuits.validator.__class__.__name__ == "CircuitsRecordValidator"
 
     grands_prix = GrandsPrixListScraper(options=ScraperOptions(source_adapter=source))
     assert grands_prix.include_urls is True
     assert grands_prix.normalize_empty_values is True
     assert grands_prix.validation_mode == "soft"
+    assert grands_prix.validator is not None
+    assert grands_prix.validator.__class__.__name__ == "GrandsPrixRecordValidator"
+
+
+def test_pipeline_profile_attaches_domain_post_processors():
+    source = DummySourceAdapter("<html></html>")
+    scraper = FemaleDriversListScraper(options=ScraperOptions(source_adapter=source))
+
+    assert [
+        post_processor.__class__.__name__
+        for post_processor in scraper.post_processors
+    ] == ["EntriesStartsPointsPostProcessor"]
 
 
 def test_extend_options_hook_keeps_custom_transformers_behavior():

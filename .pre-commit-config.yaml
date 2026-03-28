@@ -1,6 +1,15 @@
 exclude: '^data/'
 
 repos:
+  - repo: local
+    hooks:
+      - id: check-single-wiki-hook-names
+        name: check-single-wiki-hook-names
+        entry: python scripts/check_single_wiki_hook_names.py
+        language: system
+        pass_filenames: true
+        files: ^scrapers/.*\.py$
+
   # Python lint + autofix + format
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.4.7

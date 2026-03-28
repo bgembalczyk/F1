@@ -1,23 +1,19 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Any
 
-from scrapers.base.sections.interface import SectionParseResult
-from scrapers.base.sections.serializer import build_section_metadata
-from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
-
-if TYPE_CHECKING:
-    from bs4 import BeautifulSoup
+from scrapers.base.sections.section_table_parser_base import SectionTableParserBase
 
 
-class CircuitEventsSectionParser:
+class CircuitEventsSectionParser(SectionTableParserBase):
     def __init__(self) -> None:
-        self._tables = ArticleTablesParser()
+        super().__init__(section_id="events", section_label="Events")
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        return SectionParseResult(
-            section_id="events",
-            section_label="Events",
-            records=self._tables.parse(section_fragment),
-            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia"),
-        )
+    def map_table_result(
+        self,
+        *,
+        table_data: dict[str, Any],
+        table_classification: dict[str, Any],
+        table_pipeline: Any,
+    ) -> dict[str, Any]:
+        return table_classification

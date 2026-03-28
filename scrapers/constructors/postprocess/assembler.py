@@ -3,10 +3,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from models.value_objects import WikiUrl
+
 
 @dataclass(frozen=True)
 class ConstructorRecordDTO:
-    url: str
+    url: WikiUrl | str
     infoboxes: list[dict[str, Any]]
     tables: list[dict[str, Any]]
     sections: list[dict[str, Any]]
@@ -18,8 +20,9 @@ class ConstructorRecordAssembler:
         *,
         payload: ConstructorRecordDTO,
     ) -> dict[str, Any]:
+        url = WikiUrl.from_raw(payload.url)
         return {
-            "url": payload.url,
+            "url": url.to_export(),
             "infoboxes": payload.infoboxes,
             "tables": payload.tables,
             "sections": payload.sections,

@@ -20,12 +20,27 @@ if TYPE_CHECKING:
 @dataclass(frozen=True)
 class MetricColumnSpec:
     header: str
-    key: str
+    output_key: str
     metric_key: str
 
 
-def metric_column(header: str, key: str, metric_key: str) -> MetricColumnSpec:
-    return MetricColumnSpec(header=header, key=key, metric_key=metric_key)
+@dataclass(frozen=True)
+class EntityColumnSpec:
+    header: str
+    output_key: str
+    column_type: BaseColumn
+
+
+def metric_column(header: str, output_key: str, metric_key: str) -> MetricColumnSpec:
+    return MetricColumnSpec(header=header, output_key=output_key, metric_key=metric_key)
+
+
+def entity_column(header: str, output_key: str, column_type: BaseColumn) -> EntityColumnSpec:
+    return EntityColumnSpec(
+        header=header,
+        output_key=output_key,
+        column_type=column_type,
+    )
 
 
 SchemaPart = ColumnSpec | Sequence[ColumnSpec]
@@ -41,6 +56,13 @@ def build_columns(*parts: SchemaPart) -> list[ColumnSpec]:
     return columns
 
 
+def build_entity_metadata_columns(specs: Sequence[EntityColumnSpec]) -> list[ColumnSpec]:
+    return [
+        column(spec.header, spec.output_key, spec.column_type)
+        for spec in specs
+    ]
+
+
 def build_metric_columns(
     specs: Sequence[MetricColumnSpec],
     *,
@@ -52,7 +74,7 @@ def build_metric_columns(
     return [
         column(
             spec.header,
-            spec.key,
+            spec.output_key,
             column_overrides.get(spec.metric_key, BASE_STATS_COLUMNS[spec.metric_key]),
         )
         for spec in specs
@@ -83,6 +105,15 @@ def build_base_stats_columns(
         and metric_key not in exclude_set
     ]
     return build_metric_columns(specs, column_overrides=column_overrides)
+
+
+def build_name_status_fragment(
+    *,
+    header: str,
+    output_key: str,
+    column_type: BaseColumn,
+) -> list[ColumnSpec]:
+    return [column(header, output_key, column_type)]
 
 
 def build_table_schema(*parts: SchemaPart) -> TableSchemaDSL:

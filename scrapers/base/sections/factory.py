@@ -5,6 +5,7 @@ from typing import Generic
 from typing import TypeVar
 
 if TYPE_CHECKING:
+    from models.value_objects import WikiUrl
     from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.adapter import SectionAdapter
 
@@ -20,7 +21,7 @@ class ValidatingSectionServiceFactory(Generic[ServiceT]):
         *,
         adapter: SectionAdapter,
         options: ScraperOptions | None,
-        url: str | None,
+        url: WikiUrl | str | None,
         require_options: bool,
         require_url: bool,
     ) -> None:
@@ -35,4 +36,3 @@ class ValidatingSectionServiceFactory(Generic[ServiceT]):
         if require_url and not url:
             msg = "Article URL dependency is required for this section service."
             raise ValueError(msg)
-

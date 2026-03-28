@@ -13,6 +13,8 @@ from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionSe
 from scrapers.constructors.postprocess.contract import (
     ConstructorSectionContractPostProcessor,
 )
+from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
+from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 
 if TYPE_CHECKING:
@@ -71,9 +73,6 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         self._domain_record_service = domain_record_service or DomainRecordService(
             assembler=assembler,
         )
-
-    def _build_post_processor(self) -> ConstructorSectionContractPostProcessor:
-        return ConstructorSectionContractPostProcessor()
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         infoboxes = self._infobox_service.extract(soup, url=self.url).as_list()
