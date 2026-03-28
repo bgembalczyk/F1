@@ -2,8 +2,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from scrapers.base.sections.contracts import SectionParserConfig
+from scrapers.base.sections.contracts import SectionParserInput
+from scrapers.base.sections.contracts import map_to_section_result
 from scrapers.base.sections.interface import SectionParseResult
-from scrapers.base.sections.serializer import build_section_metadata
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -16,13 +18,27 @@ class SeasonDriversStandingsSectionParser:
         self._parser = parser
         self._season_year = season_year
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        records = self._parser.parse_drivers(section_fragment, self._season_year)
-        return SectionParseResult(
-            section_id="World_Drivers'_Championship_standings",
-            section_label="Drivers standings",
+    def parse(
+        self,
+        section_fragment: BeautifulSoup | SectionParserInput,
+    ) -> SectionParseResult:
+        parser_input = (
+            section_fragment
+            if isinstance(section_fragment, SectionParserInput)
+            else SectionParserInput(section_fragment=section_fragment)
+        )
+        records = self._parser.parse_drivers(
+            parser_input.section_fragment,
+            self._season_year,
+        )
+        return map_to_section_result(
+            config=SectionParserConfig(
+                section_id="World_Drivers'_Championship_standings",
+                section_label="Drivers standings",
+                parser_name=self.__class__.__name__,
+                metadata_extras={"season_year": self._season_year, "kind": "table"},
+            ),
             records=records,
-            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia", extras={"season_year": self._season_year, "kind": "table"}),
         )
 
 
@@ -30,11 +46,22 @@ class SeasonConstructorsStandingsSectionParser:
     def __init__(self, parser: SeasonStandingsParser) -> None:
         self._parser = parser
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
-        records = self._parser.parse_constructors(section_fragment)
-        return SectionParseResult(
-            section_id="World_Constructors'_Championship_standings",
-            section_label="Constructors standings",
+    def parse(
+        self,
+        section_fragment: BeautifulSoup | SectionParserInput,
+    ) -> SectionParseResult:
+        parser_input = (
+            section_fragment
+            if isinstance(section_fragment, SectionParserInput)
+            else SectionParserInput(section_fragment=section_fragment)
+        )
+        records = self._parser.parse_constructors(parser_input.section_fragment)
+        return map_to_section_result(
+            config=SectionParserConfig(
+                section_id="World_Constructors'_Championship_standings",
+                section_label="Constructors standings",
+                parser_name=self.__class__.__name__,
+                metadata_extras={"kind": "table"},
+            ),
             records=records,
-            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia", extras={"kind": "table"}),
         )

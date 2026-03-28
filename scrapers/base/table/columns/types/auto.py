@@ -1,6 +1,5 @@
 # scrapers/base/table/columns/types/auto.py
 import re
-from typing import Any
 
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.text import clean_wiki_text
@@ -50,7 +49,7 @@ class AutoColumn(BaseColumn):
             normalize_dashes=self.normalize_dashes,
         )
 
-    def parse(self, ctx: ColumnContext) -> Any:
+    def parse(self, ctx: ColumnContext) -> object:
         value = self._cell_text(ctx)
 
         # usuń linki “językowe” zanim podejmiesz decyzję o zwróceniu dict-a / listy

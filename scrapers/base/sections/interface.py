@@ -10,6 +10,7 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
+    from scrapers.base.sections.contracts import SectionParserInput
     from scrapers.base.sections.adapter import SectionAdapter
 
 
@@ -30,7 +31,10 @@ class SectionParser(Protocol):
     Output: parsed records with section-level metadata.
     """
 
-    def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult: ...
+    def parse(
+        self,
+        section_fragment: BeautifulSoup | SectionParserInput,
+    ) -> SectionParseResult: ...
 
 
 class SectionTextParser(Protocol):
