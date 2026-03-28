@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
+from scrapers.base.sections.factory import ValidatingSectionServiceFactory
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
@@ -13,13 +14,36 @@ from scrapers.constructors.sections.service import ConstructorSectionExtractionS
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
-
     from bs4 import BeautifulSoup
 
     from scrapers.base.infobox.service import InfoboxExtractionService
     from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.adapter import SectionAdapter
+    from scrapers.base.sections.interface import SectionServiceFactory
+
+
+class ConstructorSectionServiceFactory(
+    ValidatingSectionServiceFactory[ConstructorSectionExtractionService],
+):
+    def create(
+        self,
+        *,
+        adapter: SectionAdapter,
+        options: ScraperOptions | None = None,
+        url: str | None = None,
+    ) -> ConstructorSectionExtractionService:
+        self._validate_dependencies(
+            adapter=adapter,
+            options=options,
+            url=url,
+            require_options=True,
+            require_url=True,
+        )
+        return ConstructorSectionExtractionService(
+            adapter=adapter,
+            options=options,
+            url=url,
+        )
 
 
 class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
@@ -29,7 +53,7 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         options: ScraperOptions | None = None,
         infobox_service: InfoboxExtractionService | None = None,
         sections_service_factory: (
-            Callable[[SectionAdapter], ConstructorSectionExtractionService] | None
+            SectionServiceFactory[ConstructorSectionExtractionService] | None
         ) = None,
         assembler: ConstructorRecordAssembler | None = None,
     ) -> None:
@@ -37,12 +61,8 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         self._infobox_service = infobox_service or ConstructorInfoboxExtractionService(
             options=self._options,
         )
-        self._sections_service_factory = sections_service_factory or (
-            lambda adapter: ConstructorSectionExtractionService(
-                adapter=adapter,
-                options=self._options,
-                url=self.url,
-            )
+        self._sections_service_factory = (
+            sections_service_factory or ConstructorSectionServiceFactory()
         )
         self._assembler = assembler or ConstructorRecordAssembler()
         self.article_tables_parser = ArticleTablesParser()
@@ -57,7 +77,11 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         return self.article_tables_parser.parse(soup)
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        sections_service = self._sections_service_factory(self)
+        sections_service = self._sections_service_factory.create(
+            adapter=self,
+            options=self._options,
+            url=self.url,
+        )
         return sections_service.extract(soup)
 
     def _scrape_infoboxes(self, soup: BeautifulSoup) -> list[dict[str, Any]]:

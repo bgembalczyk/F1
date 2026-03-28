@@ -4,6 +4,7 @@ import re
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+from scrapers.base.sections.factory import ValidatingSectionServiceFactory
 from scrapers.seasons.parsers.calendar import SeasonCalendarParser
 from scrapers.seasons.parsers.cancelled_rounds import CancelledRoundsParser
 from scrapers.seasons.parsers.colin_chapman_trophy import ColinChapmanTrophyParser
@@ -28,14 +29,34 @@ from scrapers.seasons.sections.standings import SeasonConstructorsStandingsSecti
 from scrapers.seasons.sections.standings import SeasonDriversStandingsSectionParser
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
     from typing import Any
 
     from bs4 import BeautifulSoup
 
     from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.adapter import SectionAdapter
+    from scrapers.base.sections.interface import SectionServiceFactory
     from scrapers.seasons.sections.contracts import SeasonSectionParser
+
+
+class SeasonTextSectionServiceFactory(
+    ValidatingSectionServiceFactory[SeasonTextSectionExtractionService],
+):
+    def create(
+        self,
+        *,
+        adapter: SectionAdapter,
+        options: ScraperOptions | None = None,
+        url: str | None = None,
+    ) -> SeasonTextSectionExtractionService:
+        self._validate_dependencies(
+            adapter=adapter,
+            options=options,
+            url=url,
+            require_options=False,
+            require_url=False,
+        )
+        return SeasonTextSectionExtractionService(adapter=adapter)
 
 
 class SeasonYearResolver:
@@ -226,7 +247,7 @@ class SeasonSectionPipeline:
         parser_set_builder: SeasonParserSetBuilder,
         section_data_collector: SeasonSectionDataCollector | None = None,
         text_sections_service_factory: (
-            Callable[[SectionAdapter], SeasonTextSectionExtractionService] | None
+            SectionServiceFactory[SeasonTextSectionExtractionService] | None
         ) = None,
     ) -> None:
         self._parser_set_builder = parser_set_builder
@@ -234,7 +255,7 @@ class SeasonSectionPipeline:
             section_data_collector or SeasonSectionDataCollector()
         )
         self._text_sections_service_factory = text_sections_service_factory or (
-            lambda adapter: SeasonTextSectionExtractionService(adapter=adapter)
+            SeasonTextSectionServiceFactory()
         )
         self._parser_set: SeasonParserSet | None = None
         self._url = ""
@@ -261,7 +282,11 @@ class SeasonSectionPipeline:
         adapter: SectionAdapter,
     ) -> SeasonRecordSections:
         parser_set = self._require_parser_set()
-        text_records = self._text_sections_service_factory(adapter).extract(soup)
+        text_records = self._text_sections_service_factory.create(
+            adapter=adapter,
+            options=parser_set.table_parser.options,
+            url=self._url,
+        ).extract(soup)
         section_data = self._section_data_collector.collect(
             soup=soup,
             parser_set=parser_set,
