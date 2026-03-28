@@ -9,7 +9,7 @@ if TYPE_CHECKING:
     from scrapers.base.table.config import ScraperConfig
 
 from scrapers.base.sections.interface import SectionParseResult
-from scrapers.base.sections.serializer import build_section_metadata
+from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 
@@ -49,13 +49,11 @@ class TableSectionParser:
         )
         records = pipeline.parse_rows(parser.parse(section_fragment))
 
-        return SectionParseResult(
+        return build_section_parse_result(
             section_id=self._section_id,
             section_label=self._section_label,
             records=records,
-            metadata=build_section_metadata(
-                parser=self.__class__.__name__,
-                source="wikipedia",
-                extras={"domain": self._domain},
-            ),
+            parser=self.__class__.__name__,
+            source="wikipedia",
+            extras={"domain": self._domain},
         )

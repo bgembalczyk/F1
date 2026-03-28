@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.base.sections.interface import SectionParseResult
-from scrapers.base.sections.serializer import build_section_metadata
+from scrapers.base.sections.serializer import build_section_parse_result
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -18,9 +18,11 @@ class SeasonCalendarSectionParser:
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         records = self._parser.parse(section_fragment, self._season_year)
-        return SectionParseResult(
+        return build_section_parse_result(
             section_id="Calendar",
             section_label="Calendar",
             records=records,
-            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia", extras={"season_year": self._season_year, "kind": "table"}),
+            parser=self.__class__.__name__,
+            source="wikipedia",
+            extras={"season_year": self._season_year, "kind": "table"},
         )
