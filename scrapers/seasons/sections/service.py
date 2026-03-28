@@ -5,6 +5,7 @@ from typing import Any
 
 from scrapers.base.sections.adapter import SectionAdapter
 from scrapers.base.sections.adapter import SectionAdapterEntry
+from scrapers.base.sections.serializer import export_section_records_by_id
 from scrapers.seasons.sections.mid_season_changes import (
     SeasonMidSeasonChangesSectionParser,
 )
@@ -46,4 +47,4 @@ class SeasonTextSectionExtractionService:
                 ),
             ],
         )
-        return {result.section_id: result.records for result in text_sections}
+        return export_section_records_by_id(text_sections)

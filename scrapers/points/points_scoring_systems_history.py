@@ -2,10 +2,10 @@ from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
+from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL

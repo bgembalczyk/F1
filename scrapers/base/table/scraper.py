@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.row import TableRow

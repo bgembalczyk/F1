@@ -12,8 +12,8 @@ Każda domena (`drivers`, `constructors`, `circuits`, `seasons`, `grands_prix`) 
 
 Legacy pliki typu `list_scraper.py` / `*_constructors_list.py` pozostają tylko jako zgodność wsteczna:
 - mają oznaczenie **deprecated**,
-- emitują `DeprecationWarning`,
-- delegują uruchomienie do `entrypoint.py`.
+- emitują `DeprecationWarning` przez wspólny helper `scrapers.base.deprecated_entrypoint.run_deprecated_entrypoint`,
+- przekierowują uruchomienie do `python -m scrapers.cli run <module>` (rejestr i dispatch są utrzymywane wyłącznie w `scrapers/cli.py`).
 
 ## 2. Reguły zależności między warstwami
 
@@ -45,7 +45,7 @@ Każda domena eksportuje z `entrypoint.py` funkcję:
 
 - `run_list_scraper(*, run_config: RunConfig | None = None) -> None`
 
-To jest docelowy punkt startowy dla CLI/skryptów i automatyzacji.
+To jest stabilny punkt startowy dla integracji kodowych. Dla uruchomień operatorskich rekomendowana ścieżka to wyłącznie `python -m scrapers.cli ...`.
 
 ## 4. Przykładowy flow per domena
 

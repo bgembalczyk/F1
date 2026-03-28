@@ -5,8 +5,8 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.builders import metric_column
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.text import TextColumn
+from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
@@ -107,6 +107,6 @@ class F1DriversListScraper(SeedListTableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_current_legacy_wrapper
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    run_current_legacy_wrapper()
+    run_deprecated_entrypoint()

@@ -2,7 +2,7 @@ from typing import Any
 
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.drivers.constants import MARK_NON_CHAMPIONSHIP_EVENT
 

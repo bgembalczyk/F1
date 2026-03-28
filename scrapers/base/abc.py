@@ -9,12 +9,12 @@ from bs4 import BeautifulSoup
 
 from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 from scrapers.base.errors import ScraperError
 from scrapers.base.errors import ScraperNetworkError
 from scrapers.base.errors import ScraperParseError
 from scrapers.base.export.exporters import DataExporter
 from scrapers.base.helpers.http import resolve_http_policy
-from scrapers.base.helpers.source_adapter import build_source_adapter
 from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.helpers.url import normalize_url
 from scrapers.base.logging import get_logger
@@ -69,15 +69,14 @@ class ABCScraper(ABC):
 
     def _configure_http_policy(self, options: ScraperOptions) -> None:
         self.http_policy = self.get_http_policy(options)
-        if self.http_policy is not None:
-            options.policy = self.http_policy
 
     def _initialize_runtime_components(self, options: ScraperOptions) -> None:
-        # Preferuj gotowy source_adapter w options.
-        # HtmlFetcher jest config-driven, więc jeśli go nie ma,
-        # tworzymy go "domyślnie".
-        self.source_adapter = build_source_adapter(options, policy=self.http_policy)
-        self.fetcher = options.fetcher
+        runtime = ScraperRuntimeFactory().build(
+            options=options,
+            policy=self.http_policy,
+        )
+        self.source_adapter = runtime.source_adapter
+        self.fetcher = runtime.fetcher
 
         # Parser może być zewnętrzny (np. mixin/adapter).
         self.parser = options.parser

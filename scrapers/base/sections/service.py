@@ -2,13 +2,14 @@ from __future__ import annotations
 
 from abc import ABC
 from abc import abstractmethod
-from dataclasses import asdict
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Protocol
 
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.interface import SectionParseResult
+from scrapers.base.sections.serializer import normalize_section_metadata
+from scrapers.base.sections.serializer import serialize_section_result
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -58,9 +59,7 @@ class BaseSectionExtractionService(ABC):
         self,
         section: SectionParseResult,
     ) -> dict[str, Any]:
-        payload = asdict(section)
-        payload["metadata"] = self._build_section_metadata(section)
-        return payload
+        return serialize_section_result(section)
 
     def _build_section_records(
         self,
@@ -94,10 +93,7 @@ class BaseSectionExtractionService(ABC):
         self,
         section: SectionParseResult,
     ) -> dict[str, Any]:
-        metadata = dict(section.metadata)
-        metadata.setdefault("section_id", section.section_id)
-        metadata.setdefault("section_label", section.section_label)
-        return metadata
+        return normalize_section_metadata(section)
 
     def require_options(self) -> ScraperOptions:
         if self._options is None:

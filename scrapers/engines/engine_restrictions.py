@@ -4,10 +4,10 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.range import RangeColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.unit import UnitColumn
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types import RangeColumn
+from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.base.table.columns.types import UnitColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
