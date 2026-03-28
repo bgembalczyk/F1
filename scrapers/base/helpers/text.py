@@ -1,12 +1,14 @@
 """Text helper utilities shared across scrapers."""
 
 import re
-from typing import Callable
+from collections.abc import Callable
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.helpers.constants import LANG_CODES, REF_RE
+from scrapers.base.helpers.constants import LANG_CODES
+from scrapers.base.helpers.constants import REF_RE
 
 
 def coerce_text(text: str | Tag | None) -> str:
@@ -67,7 +69,7 @@ def strip_wiki_refs(text: str) -> str:
 
 def normalize_dashes(text: str) -> str:
     """Ujednolić warianty myślników i usuń spacje wokół '-'."""
-    t = text.replace("–", "-").replace("—", "-").replace("−", "-")
+    t = text.replace("\u2013", "-").replace("\u2014", "-").replace("\u2212", "-")
     return re.sub(r"(?<=\w)\s*-\s*(?=\w)", "-", t)
 
 
@@ -147,7 +149,8 @@ def extract_links_from_cell(
     else:
         search_root = BeautifulSoup(cell or "", "html.parser")
 
-    from scrapers.base.helpers.wiki import clean_link_record, is_reference_link
+    from scrapers.base.helpers.wiki import clean_link_record
+    from scrapers.base.helpers.wiki import is_reference_link
 
     links: list[LinkRecord] = []
 

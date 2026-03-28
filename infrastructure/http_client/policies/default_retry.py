@@ -1,9 +1,16 @@
 """Implementacje strategii retry."""
 
-import random
+from secrets import SystemRandom
 from typing import Any
 
 from infrastructure.http_client.policies.retry import RetryPolicy
+
+TOO_MANY_REQUESTS = 429
+SERVER_ERROR_START = 500
+SERVER_ERROR_END = 599
+FORBIDDEN = 403
+
+_RANDOM = SystemRandom()
 
 
 class DefaultRetryPolicy(RetryPolicy):
@@ -24,17 +31,20 @@ class DefaultRetryPolicy(RetryPolicy):
         exception: Exception | None,
         attempt: int,
     ) -> bool:
+        _ = attempt
         if exception is not None:
             return True
         if response is None:
             return False
 
         status = int(getattr(response, "status_code", 0) or 0)
-        if status == 429 or 500 <= status <= 599:
+        if status == TOO_MANY_REQUESTS or (
+            SERVER_ERROR_START <= status <= SERVER_ERROR_END
+        ):
             return True
 
         # Wikipedia czasem zwraca 403 z treścią o robot policy / rate limit.
-        if status == 403:
+        if status == FORBIDDEN:
             body_text = (getattr(response, "text", "") or "").lower()
             if (
                 "too many requests" in body_text
@@ -48,4 +58,4 @@ class DefaultRetryPolicy(RetryPolicy):
     def backoff_seconds(self, attempt: int) -> float:
         # Exponential backoff + jitter
         base = self._backoff_seconds * (2**attempt)
-        return base + random.random()
+        return base + _RANDOM.random()

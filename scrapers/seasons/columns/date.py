@@ -1,7 +1,7 @@
 from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.results_parsing import has_year
+from scrapers.base.table.columns.helpers.results_parsing import ResultsParsingHelpers
 from scrapers.base.table.columns.types.base import BaseColumn
 
 
@@ -14,7 +14,7 @@ class SeasonDateColumn(BaseColumn):
         if not text:
             return NormalizedDate(text=None, iso=None)
 
-        if self.year and not has_year(text):
+        if self.year and not ResultsParsingHelpers.has_year(text):
             text = f"{text} {self.year}"
 
         parsed = parse_date_text(text)

@@ -1,29 +1,30 @@
 """Helper table scraper for lap record tables."""
 
-from typing import Any, Dict, List
+from typing import Any
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
-from scrapers.base.records import record_from_mapping
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.date import DateColumn
-from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.time import TimeColumn
-from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import DateColumn
+from scrapers.base.table.columns.types import TimeColumn
+from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.scraper import F1TableScraper
+from scrapers.drivers.columns.driver import DriverColumn
 
 
 class LapRecordsTableScraper(F1TableScraper):
     """
     Lekki scraper pojedynczej tabeli z rekordami okrążeń.
 
-    Używany tylko jako helper w F1SingleCircuitScraper – korzystamy z całej
+    Używany tylko jako helper w F1SingleCircuitScraper - korzystamy z całej
     logiki kolumn / ColumnContext / extract_links_from_cell itd.
     """
 
@@ -38,35 +39,36 @@ class LapRecordsTableScraper(F1TableScraper):
         column("Date", "date", DateColumn()),
     ]
 
-    CONFIG = ScraperConfig(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org",
         section_id=None,
         expected_headers=["Time"],
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
         """
-        LapRecordsTableScraper nie jest używany bezpośrednio – w
+        LapRecordsTableScraper nie jest używany bezpośrednio - w
         F1SingleCircuitScraper sami podajemy konkretne tabele i nagłówki
         i wołamy parse_row().
         """
-        raise NotImplementedError(
-            "LapRecordsTableScraper nie jest używany bezpośrednio – "
+        msg = (
+            "LapRecordsTableScraper nie jest używany bezpośrednio - "
             "korzystaj z parse_row()/parse_multi_row() na konkretnych tabelach."
         )
-
-
+        raise NotImplementedError(
+            msg,
+        )
 
     def parse_multi_row(
         self,
         row: Tag,
-        cells: List[Tag],
-        headers: List[str],
+        cells: list[Tag],
+        headers: list[str],
         *,
         as_value_objects: bool = False,
-    ) -> List[Any]:
+    ) -> list[Any]:
         """
         Z jednego <tr> zwraca 1..N rekordów.
 
@@ -75,7 +77,7 @@ class LapRecordsTableScraper(F1TableScraper):
         """
         _ = row  # API zgodne z innymi helperami; tu nie jest potrzebne
 
-        per_cell_segments: List[List[Tag]] = []
+        per_cell_segments: list[list[Tag]] = []
         max_segments = 1
 
         for cell in cells:
@@ -83,7 +85,7 @@ class LapRecordsTableScraper(F1TableScraper):
             per_cell_segments.append(segs)
             max_segments = max(max_segments, len(segs))
 
-        out_records: List[Any] = []
+        out_records: list[Any] = []
 
         for idx in range(max_segments):
             seg_cells = [
@@ -93,8 +95,12 @@ class LapRecordsTableScraper(F1TableScraper):
 
             if as_value_objects:
                 if LapRecord is None:
+                    msg = (
+                        "as_value_objects=True, ale LapRecord "
+                        "nie jest dostępny w projekcie."
+                    )
                     raise RuntimeError(
-                        "as_value_objects=True, ale LapRecord nie jest dostępny w projekcie."
+                        msg,
                     )
                 out_records.append(LapRecord.from_dict(record))
             else:
@@ -103,7 +109,10 @@ class LapRecordsTableScraper(F1TableScraper):
         return out_records
 
     def headers_match(self, headers: list[str]) -> bool:
-        """Sprawdza czy nagłówki zawierają wymagane expected_headers (po normalizacji)."""
+        """Sprawdza, czy nagłówki zawierają wymagane expected_headers.
+
+        Dopasowanie odbywa się po normalizacji.
+        """
         if not self.expected_headers:
             return True
         normalized = {normalize_header(h) for h in headers}

@@ -1,0 +1,706 @@
+[
+  {
+    "manufacturer": {
+      "text": "EMW",
+      "url": "https://en.wikipedia.org/wiki/Eisenacher_Motorenwerk"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "East Germany",
+        "url": "https://en.wikipedia.org/wiki/East_Germany"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 1,
+    "races_started": 1,
+    "wins": 0,
+    "points": null,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": null,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Eisenacher_Motorenwerk",
+      "infoboxes": [
+        {
+          "title": "Eisenacher Motorenwerk",
+          "rows": {
+            "Formerly": {
+              "text": "BMW",
+              "links": [
+                {
+                  "text": "BMW",
+                  "url": "https://en.wikipedia.org/wiki/BMW"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automobile and motorcycle manufacture",
+              "links": [
+                {
+                  "text": "motorcycle",
+                  "url": "https://en.wikipedia.org/wiki/Motorcycle"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "c. 1945 Eisenach , East Germany",
+              "links": [
+                {
+                  "text": "Eisenach",
+                  "url": "https://en.wikipedia.org/wiki/Eisenach"
+                },
+                {
+                  "text": "East Germany",
+                  "url": "https://en.wikipedia.org/wiki/East_Germany"
+                }
+              ]
+            },
+            "Defunct": {
+              "text": "During the 1950s",
+              "links": []
+            },
+            "Successor": {
+              "text": "BMW Opel Eisenach (factory)",
+              "links": [
+                {
+                  "text": "BMW",
+                  "url": "https://en.wikipedia.org/wiki/BMW"
+                },
+                {
+                  "text": "Opel Eisenach",
+                  "url": "https://en.wikipedia.org/wiki/Opel_Eisenach"
+                }
+              ]
+            },
+            "Headquarters": {
+              "text": "Eisenach",
+              "links": [
+                {
+                  "text": "Eisenach",
+                  "url": "https://en.wikipedia.org/wiki/Eisenach"
+                }
+              ]
+            },
+            "Products": {
+              "text": "Automobiles Motorcycles",
+              "links": []
+            }
+          }
+        },
+        {
+          "title": "EMW as a Formula One chassis constructor",
+          "rows": {
+            "Official name(s)": {
+              "text": "Eisenacher Motorenwerk",
+              "links": []
+            },
+            "Base": {
+              "text": "Eisenach , East Germany",
+              "links": [
+                {
+                  "text": "Eisenach",
+                  "url": "https://en.wikipedia.org/wiki/Eisenach"
+                }
+              ]
+            },
+            "Engines": {
+              "text": "EMW 2.0l L6",
+              "links": [
+                {
+                  "text": "L6",
+                  "url": "https://en.wikipedia.org/wiki/Straight-six_engine"
+                }
+              ]
+            },
+            "Entrants": {
+              "text": "Rennkollektiv EMW",
+              "links": []
+            },
+            "First entry": {
+              "text": "1953 German Grand Prix",
+              "links": [
+                {
+                  "text": "1953 German Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "1953 German Grand Prix",
+              "links": [
+                {
+                  "text": "1953 German Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1953_German_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "1",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Driver",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1953",
+              "Chassis": "EMW R2",
+              "Engine": "EMW L6",
+              "Tyres": "D",
+              "Driver": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "NED",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "SUI",
+              "9": "ITA",
+              "Points": "n/a *",
+              "WCC": "n/a *"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "EMW R2",
+              "Engine": "EMW L6",
+              "Tyres": "D",
+              "Driver": "Edgar Barth",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "Points": "n/a *",
+              "WCC": "n/a *"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "ERA",
+      "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 4,
+    "races_started": 4,
+    "wins": 0,
+    "points": null,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": null,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles",
+      "infoboxes": null,
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Driver",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "rows": [
+            {
+              "Year": "1950",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Driver": "",
+              "1": "GBR",
+              "2": "MON",
+              "3": "500",
+              "4": "SUI",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "ITA",
+              "8": ""
+            },
+            {
+              "Year": "1950",
+              "Chassis": "ERA E-Type",
+              "Engine": "ERA 1.5 L6 s",
+              "Tyres": "D",
+              "Driver": "Leslie Johnson",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": ""
+            },
+            {
+              "Year": "1950",
+              "Chassis": "ERA E-Type",
+              "Engine": "ERA 1.5 L6 s",
+              "Tyres": "D",
+              "Driver": "Peter Walker",
+              "1": "Ret*",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": ""
+            },
+            {
+              "Year": "1950",
+              "Chassis": "ERA E-Type",
+              "Engine": "ERA 1.5 L6 s",
+              "Tyres": "D",
+              "Driver": "Tony Rolt",
+              "1": "Ret*",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": ""
+            },
+            {
+              "Year": "1950",
+              "Chassis": "ERA B-Type ERA C-Type",
+              "Engine": "ERA 1.5 L6 s",
+              "Tyres": "D",
+              "Driver": "Cuth Harrison",
+              "1": "7",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": ""
+            },
+            {
+              "Year": "1950",
+              "Chassis": "ERA C-Type ERA A-Type",
+              "Engine": "ERA 1.5 L6 s",
+              "Tyres": "D",
+              "Driver": "Bob Gerard",
+              "1": "6",
+              "2": "6",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": ""
+            },
+            {
+              "Year": "1951",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "ESP"
+            },
+            {
+              "Year": "1951",
+              "Chassis": "ERA B-Type",
+              "Engine": "ERA 1.5 L6 s",
+              "Tyres": "D",
+              "Driver": "Bob Gerard",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "11",
+              "6": "",
+              "7": "",
+              "8": ""
+            },
+            {
+              "Year": "1951",
+              "Chassis": "ERA B-Type",
+              "Engine": "ERA 1.5 L6 s",
+              "Tyres": "D",
+              "Driver": "Brian Shawe-Taylor",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "8",
+              "6": "",
+              "7": "",
+              "8": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA"
+            },
+            {
+              "Year": "1952",
+              "Chassis": "ERA G-Type",
+              "Engine": "Bristol BS1 2.0 L6",
+              "Tyres": "D",
+              "Driver": "Stirling Moss",
+              "1": "",
+              "2": "",
+              "3": "Ret",
+              "4": "",
+              "5": "Ret",
+              "6": "",
+              "7": "Ret",
+              "8": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "European",
+      "url": "https://en.wikipedia.org/wiki/European_(engine)"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 17,
+    "races_started": 17,
+    "wins": 0,
+    "points": 0.0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": 0,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/European_(engine)",
+      "infoboxes": [
+        {
+          "title": "European as a Formula One engine manufacturer",
+          "rows": {
+            "Founder(s)": {
+              "text": "Paul Stoddart",
+              "links": [
+                {
+                  "text": "Paul Stoddart",
+                  "url": "https://en.wikipedia.org/wiki/Paul_Stoddart"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "2001 Australian Grand Prix",
+              "links": [
+                {
+                  "text": "2001 Australian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/2001_Australian_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "2001 Japanese Grand Prix",
+              "links": [
+                {
+                  "text": "2001 Japanese Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/2001_Japanese_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "17 (17 starts)",
+              "links": []
+            },
+            "Chassis": {
+              "text": "Minardi",
+              "links": [
+                {
+                  "text": "Minardi",
+                  "url": "https://en.wikipedia.org/wiki/Minardi"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "0",
+              "links": []
+            },
+            "Points": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Team",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "2001",
+              "Team": "European Minardi F1",
+              "Chassis": "Minardi PS01",
+              "Engine": "European 3.0 V10",
+              "Tyres": "M",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "MAL",
+              "3": "BRA",
+              "4": "SMR",
+              "5": "ESP",
+              "6": "AUT",
+              "7": "MON",
+              "8": "CAN",
+              "9": "EUR",
+              "10": "FRA",
+              "11": "GBR",
+              "12": "GER",
+              "13": "HUN",
+              "14": "BEL",
+              "15": "ITA",
+              "16": "USA",
+              "17": "JPN",
+              "Points": "0",
+              "WCC": "11th"
+            },
+            {
+              "Year": "2001",
+              "Team": "European Minardi F1",
+              "Chassis": "Minardi PS01",
+              "Engine": "European 3.0 V10",
+              "Tyres": "M",
+              "Drivers": "Tarso Marques",
+              "1": "Ret",
+              "2": "14",
+              "3": "9",
+              "4": "Ret",
+              "5": "16",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "9",
+              "9": "Ret",
+              "10": "15",
+              "11": "DNQ",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "13",
+              "15": "",
+              "16": "",
+              "17": "",
+              "Points": "0",
+              "WCC": "11th"
+            },
+            {
+              "Year": "2001",
+              "Team": "European Minardi F1",
+              "Chassis": "Minardi PS01",
+              "Engine": "European 3.0 V10",
+              "Tyres": "M",
+              "Drivers": "Alex Yoong",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "Ret",
+              "16": "Ret",
+              "17": "16",
+              "Points": "0",
+              "WCC": "11th"
+            },
+            {
+              "Year": "2001",
+              "Team": "European Minardi F1",
+              "Chassis": "Minardi PS01",
+              "Engine": "European 3.0 V10",
+              "Tyres": "M",
+              "Drivers": "Fernando Alonso",
+              "1": "12",
+              "2": "13",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "13",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "14",
+              "10": "17 †",
+              "11": "16",
+              "12": "10",
+              "13": "Ret",
+              "14": "DNS",
+              "15": "13",
+              "16": "Ret",
+              "17": "11",
+              "Points": "0",
+              "WCC": "11th"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  }
+]

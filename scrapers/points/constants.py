@@ -1,3 +1,20 @@
+import re
+
+from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER
+
+POINTS_SEASONS_HEADER = SHARED_SEASONS_HEADER
+POINTS_RACE_LENGTH_COMPLETED_HEADER = (
+    "Race length completed"  # Kryterium skróconego wyścigu.
+)
+POINTS_FASTEST_LAP_HEADER = "Fastest lap"
+POINTS_DRIVERS_CHAMPIONSHIP_HEADER = "Towards WDC"
+POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER = "Towards WCC"
+POINTS_NOTES_HEADER = "Notes"
+
+
+ROLE_PATTERN = re.compile(r"\(\s*([dc])\s*\)", re.IGNORECASE)
+
+
 HISTORICAL_POSITIONS = [
     "1st",
     "2nd",
@@ -21,15 +38,6 @@ SPRINT_POSITIONS = [
     "7th",
     "8th",
 ]
-
-POINTS_SEASONS_HEADER = "Seasons"
-POINTS_RACE_LENGTH_COMPLETED_HEADER = (
-    "Race length completed"  # Kryterium skróconego wyścigu.
-)
-POINTS_FASTEST_LAP_HEADER = "Fastest lap"
-POINTS_DRIVERS_CHAMPIONSHIP_HEADER = "Drivers' Championship"
-POINTS_CONSTRUCTORS_CHAMPIONSHIP_HEADER = "Constructors' Championship"
-POINTS_NOTES_HEADER = "Notes"
 
 SHORTENED_RACE_EXPECTED_HEADERS = [
     POINTS_SEASONS_HEADER,

@@ -1,33 +1,31 @@
-from dataclasses import dataclass, field
-from typing import Any, Dict, List
+from dataclasses import dataclass
+from dataclasses import field
+from typing import Any
 
 from models.validation.base import ValidatedModel
 from models.validation.helpers import normalize_unit_list
 from models.validation.helpers import normalize_unit_value
+from models.validation.helpers import validate_int
 from models.validation.validators import normalize_season_list
-from models.validation.core import validate_int
 from models.value_objects.helpers import normalize_text
 from models.value_objects.season_ref import SeasonRef
 
 
 @dataclass
 class EngineRegulation(ValidatedModel):
-    seasons: List[SeasonRef | dict[str, Any]] = field(default_factory=list)
+    seasons: list[SeasonRef | dict[str, Any]] = field(default_factory=list)
     operating_principle: str | None = None
-    maximum_displacement: Dict[str, Any] | None = None
-    configuration: Dict[str, Any] | None = None
-    rpm_limit: Dict[str, Any] | None = None
+    maximum_displacement: dict[str, Any] | None = None
+    configuration: dict[str, Any] | None = None
+    rpm_limit: dict[str, Any] | None = None
     fuel_flow_limit: str | None = None
-    fuel_composition: Dict[str, Any] | None = None
-
-    def __post_init__(self) -> None:
-        self.validate()
+    fuel_composition: dict[str, Any] | None = None
 
     def validate(self) -> None:
         self.seasons = normalize_season_list(self.seasons)
         self.operating_principle = normalize_text(self.operating_principle)
         self.maximum_displacement = self._normalize_displacement(
-            self.maximum_displacement
+            self.maximum_displacement,
         )
         self.configuration = self._normalize_configuration(self.configuration)
         self.rpm_limit = normalize_unit_value(self.rpm_limit, "rpm_limit")
@@ -35,12 +33,13 @@ class EngineRegulation(ValidatedModel):
         self.fuel_composition = self._normalize_fuel_composition(self.fuel_composition)
 
     @staticmethod
-    def _normalize_displacement(value: Dict[str, Any] | None) -> Dict[str, Any] | None:
+    def _normalize_displacement(value: dict[str, Any] | None) -> dict[str, Any] | None:
         if value is None:
             return None
         if not isinstance(value, dict):
-            raise ValueError("Pole maximum_displacement musi być słownikiem")
-        result: Dict[str, Any] = dict(value)
+            msg = "Pole maximum_displacement musi być słownikiem"
+            raise TypeError(msg)
+        result: dict[str, Any] = dict(value)
         if "naturally_aspirated" in result:
             naturally_aspirated = result.get("naturally_aspirated")
             if isinstance(naturally_aspirated, dict) and (
@@ -73,28 +72,32 @@ class EngineRegulation(ValidatedModel):
         return result
 
     @staticmethod
-    def _normalize_configuration(value: Dict[str, Any] | None) -> Dict[str, Any] | None:
+    def _normalize_configuration(value: dict[str, Any] | None) -> dict[str, Any] | None:
         if value is None:
             return None
         if not isinstance(value, dict):
-            raise ValueError("Pole configuration musi być słownikiem")
-        result: Dict[str, Any] = dict(value)
+            msg = "Pole configuration musi być słownikiem"
+            raise TypeError(msg)
+        result: dict[str, Any] = dict(value)
         result["text"] = normalize_text(result.get("text"))
         if "angle" in result:
             result["angle"] = normalize_unit_value(
-                result.get("angle"), "configuration.angle"
+                result.get("angle"),
+                "configuration.angle",
             )
         if "type" in result:
             result["type"] = normalize_text(result.get("type"))
         if "max_cylinders" in result:
             result["max_cylinders"] = validate_int(
-                result.get("max_cylinders"), "configuration.max_cylinders"
+                result.get("max_cylinders"),
+                "configuration.max_cylinders",
             )
         extras = result.get("extras")
         if extras is None:
             result["extras"] = []
         elif not isinstance(extras, list):
-            raise ValueError("Pole configuration.extras musi być listą")
+            msg = "Pole configuration.extras musi być listą"
+            raise TypeError(msg)
         else:
             result["extras"] = [
                 item.strip()
@@ -105,13 +108,14 @@ class EngineRegulation(ValidatedModel):
 
     @staticmethod
     def _normalize_fuel_composition(
-        value: Dict[str, Any] | None,
-    ) -> Dict[str, Any] | None:
+        value: dict[str, Any] | None,
+    ) -> dict[str, Any] | None:
         if value is None:
             return None
         if not isinstance(value, dict):
-            raise ValueError("Pole fuel_composition musi być słownikiem")
-        result: Dict[str, Any] = dict(value)
+            msg = "Pole fuel_composition musi być słownikiem"
+            raise TypeError(msg)
+        result: dict[str, Any] = dict(value)
         if "alcohol" in result:
             result["alcohol"] = normalize_text(result.get("alcohol"))
         if "petrol" in result:

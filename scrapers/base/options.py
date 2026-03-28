@@ -1,179 +1,147 @@
+from collections.abc import Mapping
 from dataclasses import dataclass
-from dataclasses import replace
+from dataclasses import field
 from pathlib import Path
-from typing import Any, Callable, Mapping, Optional, cast
+from typing import TypeAlias
 
-from infrastructure.http_client.clients.urllib_http import UrllibHttpClient
-from infrastructure.http_client.config import HttpClientConfig
-from infrastructure.http_client.policies.defaults import (
-    DEFAULT_HTTP_BACKOFF_SECONDS,
-)
 from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
 )
 from infrastructure.http_client.policies.http import HttpPolicy
+from scrapers.base.cache_adapter import CacheBackend
 from scrapers.base.export.exporters import DataExporter
+from scrapers.base.factory.record_factory import RecordFactory
 from scrapers.base.helpers.http import default_http_policy
 from scrapers.base.html_fetcher import HtmlFetcher
-from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.parsers.soup import SoupParser
+from scrapers.base.post_processors import RecordPostProcessor
 from scrapers.base.source_adapter import SourceAdapter
-from scrapers.base.cache_adapter import (
-    CacheAdapter,
-    CacheBackend,
-    FileCacheBackend,
-)
 from scrapers.base.transformers.record_transformer import RecordTransformer
-from validation.records import RecordValidator
+from validation.validator_base import RecordValidator
+
+OptionValue: TypeAlias = object
+OptionRecord: TypeAlias = Mapping[str, OptionValue]
+
+
+@dataclass(slots=True)
+class HttpOptions:
+    policy: HttpPolicy = field(default_factory=default_http_policy)
+    http_client: HttpClientProtocol | None = None
+    timeout: int | None = None
+    retries: int | None = None
+    backoff_seconds: float | None = None
+
+
+@dataclass(slots=True)
+class CacheOptions:
+    cache_dir: Path | str | None = None
+    cache_ttl: int | None = None
+    cache_adapter: CacheBackend | None = None
+
+
+@dataclass(slots=True)
+class PipelineOptions:
+    transformers: list[RecordTransformer] = field(default_factory=list)
+    post_processors: list[RecordPostProcessor] = field(default_factory=list)
 
 
 @dataclass(slots=True)
 class ScraperOptions:
-    """
-    Konfiguracja scrapera.
-    """
+    """Lekki kontener danych wejściowych konfiguracji scrapera."""
 
     include_urls: bool = True
-    exporter: Optional[DataExporter] = None
+    exporter: DataExporter | None = None
     fetcher: HtmlFetcher | None = None
     source_adapter: SourceAdapter | None = None
     parser: SoupParser | None = None
-    policy: HttpPolicy | None = None
-    http_client: Optional[HttpClientProtocol] = None
     validator: RecordValidator | None = None
     validation_mode: str = "soft"
     debug_dir: Path | None = None
-    cache_dir: Path | str | None = None
-    cache_ttl: int | None = None
-    cache_adapter: CacheBackend | None = None
-    http_timeout: int | None = None
-    http_retries: int | None = None
-    http_backoff_seconds: float | None = None
     normalize_empty_values: bool = True
-    record_factory: Callable[[Mapping[str, Any]], Any] | type | None = None
+    record_factory: RecordFactory | None = None
     run_id: str | None = None
-    transformers: list[RecordTransformer] | None = None
-    post_processors: list[RecordPostProcessor] | None = None
     quality_report: bool = False
     error_report: bool = False
+    http: HttpOptions = field(default_factory=HttpOptions)
+    cache: CacheOptions = field(default_factory=CacheOptions)
+    pipeline: PipelineOptions = field(default_factory=PipelineOptions)
 
-    def __post_init__(self) -> None:
-        if self.policy is None:
-            self.policy = default_http_policy()
-        if self.transformers is None:
-            self.transformers = []
-        if self.post_processors is None:
-            self.post_processors = []
+    @property
+    def policy(self) -> HttpPolicy:
+        return self.http.policy
 
-    def to_http_policy(self) -> HttpPolicy:
-        if self.policy is None:
-            self.policy = default_http_policy()
-        policy = self.policy
-        resolved_timeout = (
-            self.http_timeout if self.http_timeout is not None else policy.timeout
-        )
-        resolved_retries = (
-            self.http_retries if self.http_retries is not None else policy.retries
-        )
-        if resolved_timeout != policy.timeout or resolved_retries != policy.retries:
-            policy = replace(
-                policy,
-                timeout=resolved_timeout,
-                retries=resolved_retries,
-            )
-            self.policy = policy
-        return policy
+    @policy.setter
+    def policy(self, value: HttpPolicy) -> None:
+        self.http.policy = value
 
-    def _ensure_http_client(self, policy: HttpPolicy) -> HttpClientProtocol:
-        if self.http_client is None:
-            backoff_seconds = (
-                self.http_backoff_seconds
-                if self.http_backoff_seconds is not None
-                else DEFAULT_HTTP_BACKOFF_SECONDS
-            )
-            client_config = HttpClientConfig(
-                timeout=policy.timeout,
-                retries=policy.retries,
-                backoff_seconds=backoff_seconds,
-                cache=policy.cache,
-            )
-            self.http_client = cast(
-                HttpClientProtocol,
-                UrllibHttpClient(
-                    config=client_config,
-                ),
-            )
-        return self.http_client
+    @property
+    def http_client(self) -> HttpClientProtocol | None:
+        return self.http.http_client
 
-    def _resolve_cache_adapter(self) -> CacheBackend | None:
-        if self.cache_adapter is not None:
-            return self.cache_adapter
-        if self.cache_dir is not None:
-            ttl_seconds = self.cache_ttl or 0
-            self.cache_adapter = FileCacheBackend(
-                cache_dir=self.cache_dir,
-                ttl_seconds=ttl_seconds,
-            )
-        return self.cache_adapter
+    @http_client.setter
+    def http_client(self, value: HttpClientProtocol | None) -> None:
+        self.http.http_client = value
 
-    def with_fetcher(self, *, policy: HttpPolicy | None = None) -> HtmlFetcher:
-        if policy is not None:
-            self.policy = policy
+    @property
+    def http_timeout(self) -> int | None:
+        return self.http.timeout
 
-        from scrapers.base.html_fetcher import HtmlFetcher
+    @http_timeout.setter
+    def http_timeout(self, value: int | None) -> None:
+        self.http.timeout = value
 
-        cache_adapter = self._resolve_cache_adapter()
+    @property
+    def http_retries(self) -> int | None:
+        return self.http.retries
 
-        if self.fetcher is None:
-            if isinstance(self.source_adapter, HtmlFetcher):
-                self.fetcher = self.source_adapter
-            else:
-                resolved_policy = self.to_http_policy()
-                http_client = self._ensure_http_client(resolved_policy)
-                self.fetcher = HtmlFetcher(
-                    policy=resolved_policy,
-                    http_client=http_client,
-                    cache_adapter=cache_adapter,
-                )
-                if self.source_adapter is None:
-                    self.source_adapter = self.fetcher
-        elif cache_adapter is not None:
-            self.fetcher.set_cache(cache_adapter)
-        return self.fetcher
+    @http_retries.setter
+    def http_retries(self, value: int | None) -> None:
+        self.http.retries = value
 
-    def with_source_adapter(
-        self,
-        *,
-        policy: HttpPolicy | None = None,
-    ) -> SourceAdapter:
-        from scrapers.base.html_fetcher import HtmlFetcher
+    @property
+    def http_backoff_seconds(self) -> float | None:
+        return self.http.backoff_seconds
 
-        if policy is not None:
-            self.policy = policy
+    @http_backoff_seconds.setter
+    def http_backoff_seconds(self, value: float | None) -> None:
+        self.http.backoff_seconds = value
 
-        if self.source_adapter is None:
-            if self.fetcher is not None:
-                self.source_adapter = self.fetcher
-            else:
-                resolved_policy = self.to_http_policy()
-                http_client = self._ensure_http_client(resolved_policy)
-                self.fetcher = HtmlFetcher(
-                    policy=resolved_policy,
-                    http_client=http_client,
-                    cache_adapter=self._resolve_cache_adapter(),
-                )
-                self.source_adapter = self.fetcher
-        elif isinstance(self.source_adapter, HtmlFetcher):
-            self.fetcher = self.source_adapter
+    @property
+    def cache_dir(self) -> Path | str | None:
+        return self.cache.cache_dir
 
-        cache_adapter = self._resolve_cache_adapter()
-        if cache_adapter is not None:
-            if isinstance(self.source_adapter, HtmlFetcher):
-                self.source_adapter.set_cache(cache_adapter)
-            elif not isinstance(self.source_adapter, CacheAdapter):
-                self.source_adapter = CacheAdapter(
-                    source_adapter=self.source_adapter,
-                    cache_adapter=cache_adapter,
-                )
+    @cache_dir.setter
+    def cache_dir(self, value: Path | str | None) -> None:
+        self.cache.cache_dir = value
 
-        return self.source_adapter
+    @property
+    def cache_ttl(self) -> int | None:
+        return self.cache.cache_ttl
+
+    @cache_ttl.setter
+    def cache_ttl(self, value: int | None) -> None:
+        self.cache.cache_ttl = value
+
+    @property
+    def cache_adapter(self) -> CacheBackend | None:
+        return self.cache.cache_adapter
+
+    @cache_adapter.setter
+    def cache_adapter(self, value: CacheBackend | None) -> None:
+        self.cache.cache_adapter = value
+
+    @property
+    def transformers(self) -> list[RecordTransformer]:
+        return self.pipeline.transformers
+
+    @transformers.setter
+    def transformers(self, value: list[RecordTransformer] | None) -> None:
+        self.pipeline.transformers = list(value or [])
+
+    @property
+    def post_processors(self) -> list[RecordPostProcessor]:
+        return self.pipeline.post_processors
+
+    @post_processors.setter
+    def post_processors(self, value: list[RecordPostProcessor] | None) -> None:
+        self.pipeline.post_processors = list(value or [])

@@ -1,0 +1,2988 @@
+[
+  {
+    "constructor": {
+      "text": "Onyx",
+      "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix"
+    },
+    "licensed_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 26,
+    "races_started": 17,
+    "drivers": 6,
+    "total_entries": 52,
+    "wins": 0,
+    "points": 6,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 1,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Onyx_Grand_Prix",
+      "infoboxes": [
+        {
+          "title": "Onyx",
+          "rows": {
+            "Full name": {
+              "text": "Onyx Grand Prix",
+              "links": []
+            },
+            "Base": {
+              "text": "Westergate House, West Sussex , United Kingdom",
+              "links": [
+                {
+                  "text": "West Sussex",
+                  "url": "https://en.wikipedia.org/wiki/West_Sussex"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Mike Earle Greg Field",
+              "links": []
+            },
+            "Noted staff": {
+              "text": "Mike Earle Greg Field Jo Chamberlain Paul Shakespeare Jean-Pierre Van Rossem Martin Dickson Alan Jenkins Peter Rheinhardt Peter Monteverdi",
+              "links": [
+                {
+                  "text": "Jean-Pierre Van Rossem",
+                  "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Van_Rossem"
+                },
+                {
+                  "text": "Alan Jenkins",
+                  "url": "https://en.wikipedia.org/wiki/Alan_Jenkins_(engineer)"
+                },
+                {
+                  "text": "Peter Monteverdi",
+                  "url": "https://en.wikipedia.org/wiki/Peter_Monteverdi"
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Stefan Johansson Bertrand Gachot JJ Lehto Gregor Foitek",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Sweden"
+                },
+                {
+                  "text": "Stefan Johansson",
+                  "url": "https://en.wikipedia.org/wiki/Stefan_Johansson"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Belgium"
+                },
+                {
+                  "text": "Bertrand Gachot",
+                  "url": "https://en.wikipedia.org/wiki/Bertrand_Gachot"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Finland"
+                },
+                {
+                  "text": "JJ Lehto",
+                  "url": "https://en.wikipedia.org/wiki/JJ_Lehto"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Switzerland"
+                },
+                {
+                  "text": "Gregor Foitek",
+                  "url": "https://en.wikipedia.org/wiki/Gregor_Foitek"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1989 Brazilian Grand Prix",
+              "links": [
+                {
+                  "text": "1989 Brazilian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "26 (17 starts)",
+              "links": []
+            },
+            "Engines": {
+              "text": "Ford",
+              "links": [
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1990 Hungarian Grand Prix",
+              "links": [
+                {
+                  "text": "1990 Hungarian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1990_Hungarian_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Driver(s)",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "Points",
+            "TC"
+          ],
+          "rows": [
+            {
+              "Year": "1985",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "",
+              "1": "SIL",
+              "2": "THR",
+              "3": "EST",
+              "4": "VAL",
+              "5": "PAU",
+              "6": "SPA",
+              "7": "DIJ",
+              "8": "PER",
+              "9": "ZEL",
+              "10": "ZAN",
+              "11": "DON",
+              "Points": "47",
+              "TC": "n/a"
+            },
+            {
+              "Year": "1985",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "Emanuele Pirro",
+              "1": "7",
+              "2": "1",
+              "3": "4",
+              "4": "1",
+              "5": "2",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "2",
+              "9": "4",
+              "10": "5",
+              "11": "Ret",
+              "Points": "47",
+              "TC": "n/a"
+            },
+            {
+              "Year": "1985",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "Johnny Dumfries",
+              "1": "Ret",
+              "2": "7",
+              "3": "Ret",
+              "4": "6",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "Points": "47",
+              "TC": "n/a"
+            },
+            {
+              "Year": "1985",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "Mario Hytten",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "12",
+              "8": "5",
+              "9": "10",
+              "10": "Ret",
+              "11": "2",
+              "Points": "47",
+              "TC": "n/a"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "",
+              "1": "SIL",
+              "2": "VAL",
+              "3": "PAU",
+              "4": "SPA",
+              "5": "IMO",
+              "6": "MUG",
+              "7": "PER",
+              "8": "ZEL",
+              "9": "BIR",
+              "10": "BUG",
+              "11": "JAR",
+              "Points": "33.5",
+              "TC": "n/a"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "Emanuele Pirro",
+              "1": "2",
+              "2": "3",
+              "3": "2",
+              "4": "19",
+              "5": "Ret",
+              "6": "6",
+              "7": "13",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "1",
+              "11": "1",
+              "Points": "33.5",
+              "TC": "n/a"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "John Jones",
+              "1": "20",
+              "2": "DNQ",
+              "3": "6",
+              "4": "Ret",
+              "5": "DNQ",
+              "6": "12",
+              "7": "11",
+              "8": "14",
+              "9": "7",
+              "10": "15",
+              "11": "10",
+              "Points": "33.5",
+              "TC": "n/a"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "Cary Bren",
+              "1": "21",
+              "2": "DNQ",
+              "3": "DNQ",
+              "4": "DNQ",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "Points": "33.5",
+              "TC": "n/a"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "Wayne Taylor",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "Points": "33.5",
+              "TC": "n/a"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "Russell Spence",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "11",
+              "9": "6",
+              "10": "10",
+              "11": "Ret",
+              "Points": "33.5",
+              "TC": "n/a"
+            },
+            {
+              "Year": "1987",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "",
+              "1": "SIL",
+              "2": "VAL",
+              "3": "SPA",
+              "4": "PAU",
+              "5": "DON",
+              "6": "PER",
+              "7": "BRH",
+              "8": "BIR",
+              "9": "IMO",
+              "10": "BUG",
+              "11": "JAR",
+              "Points": "47",
+              "TC": "2"
+            },
+            {
+              "Year": "1987",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "Stefano Modena",
+              "1": "4",
+              "2": "1",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "2",
+              "6": "6",
+              "7": "4",
+              "8": "1",
+              "9": "1",
+              "10": "Ret",
+              "11": "6",
+              "Points": "47",
+              "TC": "2"
+            },
+            {
+              "Year": "1987",
+              "Chassis": "March",
+              "Engine": "Cosworth V8",
+              "Tyres": "?",
+              "Driver(s)": "Pierre-Henri Raphanel",
+              "1": "16",
+              "2": "4",
+              "3": "8",
+              "4": "Ret",
+              "5": "3",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "14",
+              "11": "Ret",
+              "Points": "47",
+              "TC": "2"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engines",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1989",
+              "Entrant": "Onyx Moneytron Formula One Team",
+              "Chassis": "Onyx ORE-1",
+              "Engines": "Ford DFR V8",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "USA",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "6",
+              "WCC": "10th"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "Onyx Moneytron Formula One Team",
+              "Chassis": "Onyx ORE-1",
+              "Engines": "Ford DFR V8",
+              "Tyres": "G",
+              "Drivers": "Stefan Johansson",
+              "1": "DNPQ",
+              "2": "DNPQ",
+              "3": "DNPQ",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "DSQ",
+              "7": "5",
+              "8": "DNPQ",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "8",
+              "12": "DNPQ",
+              "13": "3",
+              "14": "DNPQ",
+              "15": "DNPQ",
+              "16": "DNPQ",
+              "Points": "6",
+              "WCC": "10th"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "Onyx Moneytron Formula One Team",
+              "Chassis": "Onyx ORE-1",
+              "Engines": "Ford DFR V8",
+              "Tyres": "G",
+              "Drivers": "Bertrand Gachot",
+              "1": "DNPQ",
+              "2": "DNPQ",
+              "3": "DNPQ",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "13",
+              "8": "12",
+              "9": "DNQ",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "6",
+              "WCC": "10th"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "Onyx Moneytron Formula One Team",
+              "Chassis": "Onyx ORE-1",
+              "Engines": "Ford DFR V8",
+              "Tyres": "G",
+              "Drivers": "JJ Lehto",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "DNPQ",
+              "14": "Ret",
+              "15": "DNPQ",
+              "16": "Ret",
+              "Points": "6",
+              "WCC": "10th"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "Monteverdi Onyx Formula One",
+              "Chassis": "Onyx ORE-1 Onyx ORE-1B",
+              "Engines": "Ford DFR V8",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "Monteverdi Onyx Formula One",
+              "Chassis": "Onyx ORE-1 Onyx ORE-1B",
+              "Engines": "Ford DFR V8",
+              "Tyres": "G",
+              "Drivers": "Stefan Johansson",
+              "1": "DNQ",
+              "2": "DNQ",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "Monteverdi Onyx Formula One",
+              "Chassis": "Onyx ORE-1 Onyx ORE-1B",
+              "Engines": "Ford DFR V8",
+              "Tyres": "G",
+              "Drivers": "Gregor Foitek",
+              "1": "",
+              "2": "",
+              "3": "Ret",
+              "4": "7",
+              "5": "Ret",
+              "6": "15",
+              "7": "DNQ",
+              "8": "DNQ",
+              "9": "Ret",
+              "10": "DNQ",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "Monteverdi Onyx Formula One",
+              "Chassis": "Onyx ORE-1 Onyx ORE-1B",
+              "Engines": "Ford DFR V8",
+              "Tyres": "G",
+              "Drivers": "JJ Lehto",
+              "1": "DNQ",
+              "2": "DNQ",
+              "3": "12",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "DNQ",
+              "8": "DNQ",
+              "9": "NC",
+              "10": "DNQ",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "O.S.C.A.",
+      "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+    },
+    "licensed_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 7,
+    "races_started": 4,
+    "drivers": 5,
+    "total_entries": 11,
+    "wins": 0,
+    "points": 0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": 0,
+    "wdc_titles": null,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/O.S.C.A.",
+      "infoboxes": [
+        {
+          "title": "O.S.C.A.",
+          "rows": {
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "1947",
+              "links": []
+            },
+            "Defunct": {
+              "text": "1967",
+              "links": []
+            },
+            "Fate": {
+              "text": "Ceased production",
+              "links": []
+            },
+            "Headquarters": {
+              "text": "San Lazzaro di Savena , Bologna , Italy",
+              "links": [
+                {
+                  "text": "San Lazzaro di Savena",
+                  "url": "https://en.wikipedia.org/wiki/San_Lazzaro_di_Savena"
+                },
+                {
+                  "text": "Bologna",
+                  "url": "https://en.wikipedia.org/wiki/Province_of_Bologna"
+                }
+              ]
+            },
+            "Key people": {
+              "text": "Ettore , Ernesto and Bindo Maserati",
+              "links": [
+                {
+                  "text": "Ettore",
+                  "url": "https://en.wikipedia.org/wiki/Ettore_Maserati"
+                },
+                {
+                  "text": "Ernesto",
+                  "url": "https://en.wikipedia.org/wiki/Ernesto_Maserati"
+                },
+                {
+                  "text": "Bindo Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Bindo_Maserati"
+                }
+              ]
+            },
+            "Products": {
+              "text": "Automobiles",
+              "links": [
+                {
+                  "text": "Automobiles",
+                  "url": "https://en.wikipedia.org/wiki/Automobile"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "OSCA as a Formula One chassis constructor",
+          "rows": {
+            "Engines": {
+              "text": "OSCA",
+              "links": []
+            },
+            "Entrants": {
+              "text": "OSCA, Élie Bayol , Louis Chiron",
+              "links": [
+                {
+                  "text": "Élie Bayol",
+                  "url": "https://en.wikipedia.org/wiki/%C3%89lie_Bayol"
+                },
+                {
+                  "text": "Louis Chiron",
+                  "url": "https://en.wikipedia.org/wiki/Louis_Chiron"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1951 Italian Grand Prix",
+              "links": [
+                {
+                  "text": "1951 Italian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "1958 Monaco Grand Prix",
+              "links": [
+                {
+                  "text": "1958 Monaco Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1958_Monaco_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "7 (4 starts)",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Points": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        },
+        {
+          "title": "OSCA as a Formula One engine manufacturer",
+          "rows": {
+            "First entry": {
+              "text": "1951 Italian Grand Prix",
+              "links": [
+                {
+                  "text": "1951 Italian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1951_Italian_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "1962 Italian Grand Prix",
+              "links": [
+                {
+                  "text": "1962 Italian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "12 (8 starts)",
+              "links": []
+            },
+            "Chassis": {
+              "text": "OSCA, Maserati , Cooper , De Tomaso",
+              "links": [
+                {
+                  "text": "Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+                },
+                {
+                  "text": "Cooper",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                },
+                {
+                  "text": "De Tomaso",
+                  "url": "https://en.wikipedia.org/wiki/De_Tomaso"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "0",
+              "links": []
+            },
+            "Points": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Driver",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "WCC",
+            "Points"
+          ],
+          "rows": [
+            {
+              "Year": "1951",
+              "Entrant": "OSCA Automobili",
+              "Chassis": "4500G",
+              "Engine": "4500 4.5 V12",
+              "Tyres": "P",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "ESP",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "- N/a 1",
+              "Points": "- N/a 1"
+            },
+            {
+              "Year": "1951",
+              "Entrant": "OSCA Automobili",
+              "Chassis": "4500G",
+              "Engine": "4500 4.5 V12",
+              "Tyres": "P",
+              "Driver": "Franco Rol",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "9",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "- N/a 1",
+              "Points": "- N/a 1"
+            },
+            {
+              "Year": "1952",
+              "Entrant": "Élie Bayol",
+              "Chassis": "20",
+              "Engine": "2000 2.0 L6",
+              "Tyres": "P",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "- N/a 1",
+              "Points": "- N/a 1"
+            },
+            {
+              "Year": "1952",
+              "Entrant": "Élie Bayol",
+              "Chassis": "20",
+              "Engine": "2000 2.0 L6",
+              "Tyres": "P",
+              "Driver": "Élie Bayol",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "Ret",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "- N/a 1",
+              "Points": "- N/a 1"
+            },
+            {
+              "Year": "1953",
+              "Entrant": "Louis Chiron",
+              "Chassis": "20",
+              "Engine": "2000 2.0 L6",
+              "Tyres": "P",
+              "Driver": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "NED",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "SUI",
+              "9": "ITA",
+              "10": "",
+              "11": "",
+              "WCC": "- N/a 1",
+              "Points": "- N/a 1"
+            },
+            {
+              "Year": "1953",
+              "Entrant": "Louis Chiron",
+              "Chassis": "20",
+              "Engine": "2000 2.0 L6",
+              "Tyres": "P",
+              "Driver": "Louis Chiron",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "15",
+              "6": "DNS",
+              "7": "",
+              "8": "DNS",
+              "9": "10",
+              "10": "",
+              "11": "",
+              "WCC": "- N/a 1",
+              "Points": "- N/a 1"
+            },
+            {
+              "Year": "1953",
+              "Entrant": "Élie Bayol",
+              "Chassis": "20",
+              "Engine": "2000 2.0 L6",
+              "Tyres": "P",
+              "Driver": "Élie Bayol",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "",
+              "7": "",
+              "8": "DNS",
+              "9": "Ret",
+              "10": "",
+              "11": "",
+              "WCC": "- N/a 1",
+              "Points": "- N/a 1"
+            },
+            {
+              "Year": "1958",
+              "Entrant": "OSCA Automobili",
+              "Chassis": "F2/S",
+              "Engine": "372 1.5 L4",
+              "Tyres": "P",
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "NED",
+              "4": "500",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "POR",
+              "10": "ITA",
+              "11": "MOR",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1958",
+              "Entrant": "OSCA Automobili",
+              "Chassis": "F2/S",
+              "Engine": "372 1.5 L4",
+              "Tyres": "P",
+              "Driver": "Giulio Cabianca",
+              "1": "",
+              "2": "DNQ",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1958",
+              "Entrant": "OSCA Automobili",
+              "Chassis": "F2/S",
+              "Engine": "372 1.5 L4",
+              "Tyres": "P",
+              "Driver": "Luigi Piotti",
+              "1": "",
+              "2": "DNQ",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "NC",
+              "Points": "0"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "WCC",
+            "Points"
+          ],
+          "rows": [
+            {
+              "Year": "1951",
+              "Entrant": "Prince Bira",
+              "Chassis": "Maserati 4CLT/48",
+              "Engine": "4500 4.5 V12",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "ESP",
+              "9": "",
+              "WCC": "- N/a 1",
+              "Points": "- N/a 1"
+            },
+            {
+              "Year": "1951",
+              "Entrant": "Prince Bira",
+              "Chassis": "Maserati 4CLT/48",
+              "Engine": "4500 4.5 V12",
+              "Tyres": "P",
+              "Drivers": "B. Bira",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "Ret",
+              "9": "",
+              "WCC": "- N/a 1",
+              "Points": "- N/a 1"
+            },
+            {
+              "Year": "1959",
+              "Entrant": "OSCA Automobili",
+              "Chassis": "Cooper T43",
+              "Engine": "2.0 L4",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "MON",
+              "2": "500",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "POR",
+              "8": "ITA",
+              "9": "USA",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1959",
+              "Entrant": "OSCA Automobili",
+              "Chassis": "Cooper T43",
+              "Engine": "2.0 L4",
+              "Tyres": "D",
+              "Drivers": "Alejandro de Tomaso",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "Ret",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Scuderia Serenissima",
+              "Chassis": "De Tomaso F1",
+              "Engine": "372 1.5 L4",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "MON",
+              "2": "NED",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Scuderia Serenissima",
+              "Chassis": "De Tomaso F1",
+              "Engine": "372 1.5 L4",
+              "Tyres": "D",
+              "Drivers": "Giorgio Scarlatti",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": "De Tomaso F1",
+              "Engine": "372 1.5 L4",
+              "Tyres": "D",
+              "Drivers": "Roberto Lippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1962",
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": "De Tomaso F1",
+              "Engine": "372 1.5 L4",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "NED",
+              "2": "MON",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "RSA",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1962",
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": "De Tomaso F1",
+              "Engine": "372 1.5 L4",
+              "Tyres": "D",
+              "Drivers": "Roberto Lippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "WCC": "NC",
+              "Points": "0"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Osella",
+      "url": "https://en.wikipedia.org/wiki/Osella"
+    },
+    "licensed_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1980,
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
+      },
+      {
+        "year": 1981,
+        "url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship"
+      },
+      {
+        "year": 1982,
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+      },
+      {
+        "year": 1983,
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+      },
+      {
+        "year": 1984,
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+      },
+      {
+        "year": 1985,
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+      },
+      {
+        "year": 1986,
+        "url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship"
+      },
+      {
+        "year": 1987,
+        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+      },
+      {
+        "year": 1988,
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+      },
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 172,
+    "races_started": 132,
+    "drivers": 17,
+    "total_entries": 253,
+    "wins": 0,
+    "points": 5,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Osella",
+      "infoboxes": [
+        {
+          "title": "Osella",
+          "rows": {
+            "Full name": {
+              "text": "Osella Squadra Corse",
+              "links": []
+            },
+            "Base": {
+              "text": "Verolengo , Italy [ 1 ]",
+              "links": [
+                {
+                  "text": "Verolengo",
+                  "url": "https://en.wikipedia.org/wiki/Verolengo"
+                },
+                {
+                  "text": "Italy",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Enzo Osella",
+              "links": [
+                {
+                  "text": "Enzo Osella",
+                  "url": "https://en.wikipedia.org/wiki/Enzo_Osella"
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Eddie Cheever Piercarlo Ghinzani Jean-Pierre Jarier Jo Gartner Huub Rothengatter Nicola Larini Riccardo Paletti",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_States"
+                },
+                {
+                  "text": "Eddie Cheever",
+                  "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Piercarlo Ghinzani",
+                  "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/France"
+                },
+                {
+                  "text": "Jean-Pierre Jarier",
+                  "url": "https://en.wikipedia.org/wiki/Jean-Pierre_Jarier"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Austria"
+                },
+                {
+                  "text": "Jo Gartner",
+                  "url": "https://en.wikipedia.org/wiki/Jo_Gartner"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Netherlands"
+                },
+                {
+                  "text": "Huub Rothengatter",
+                  "url": "https://en.wikipedia.org/wiki/Huub_Rothengatter"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Nicola Larini",
+                  "url": "https://en.wikipedia.org/wiki/Nicola_Larini"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Riccardo Paletti",
+                  "url": "https://en.wikipedia.org/wiki/Riccardo_Paletti"
+                }
+              ]
+            },
+            "Next name": {
+              "text": "Fondmetal",
+              "links": [
+                {
+                  "text": "Fondmetal",
+                  "url": "https://en.wikipedia.org/wiki/Fondmetal"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1980 Argentine Grand Prix",
+              "links": [
+                {
+                  "text": "1980 Argentine Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1980_Argentine_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "172 (132 starts)",
+              "links": []
+            },
+            "Engines": {
+              "text": "Ford-Cosworth , Alfa Romeo , Osella",
+              "links": [
+                {
+                  "text": "Ford-Cosworth",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth"
+                },
+                {
+                  "text": "Alfa Romeo",
+                  "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0 (best finish: 12th, 1984 )",
+              "links": [
+                {
+                  "text": "1984",
+                  "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Drivers' Championships": {
+              "text": "0 (best finish: 19th, Piercarlo Ghinzani , 1984 )",
+              "links": [
+                {
+                  "text": "Piercarlo Ghinzani",
+                  "url": "https://en.wikipedia.org/wiki/Piercarlo_Ghinzani"
+                },
+                {
+                  "text": "1984",
+                  "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Race victories": {
+              "text": "0 (best finish: 4th, 1982 San Marino Grand Prix )",
+              "links": [
+                {
+                  "text": "1982 San Marino Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1982_San_Marino_Grand_Prix"
+                }
+              ]
+            },
+            "Points": {
+              "text": "5",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0 (best grid position: 8th, 1990 United States Grand Prix )",
+              "links": [
+                {
+                  "text": "1990 United States Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1990_United_States_Grand_Prix"
+                }
+              ]
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1990 Australian Grand Prix",
+              "links": [
+                {
+                  "text": "1990 Australian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1990_Australian_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ],
+          "rows": [
+            {
+              "Year": "1974",
+              "Chassis": "Osella PA2",
+              "Engine": "BMW",
+              "Drivers": "",
+              "1": "BAR",
+              "2": "HOC",
+              "3": "PAU",
+              "4": "SAL",
+              "5": "HOC",
+              "6": "MUG",
+              "7": "KAR",
+              "8": "PER",
+              "9": "HOC",
+              "10": "VAL",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1974",
+              "Chassis": "Osella PA2",
+              "Engine": "BMW",
+              "Drivers": "Arturo Merzario",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "Ret",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1975",
+              "Chassis": "Osella FA2 March 742",
+              "Engine": "BMW",
+              "Drivers": "",
+              "1": "EST",
+              "2": "THR",
+              "3": "HOC",
+              "4": "NÜR",
+              "5": "PAU",
+              "6": "HOC",
+              "7": "SAL",
+              "8": "ROU",
+              "9": "MUG",
+              "10": "PER",
+              "11": "SIL",
+              "12": "ZOL",
+              "13": "NOG",
+              "14": "VAL"
+            },
+            {
+              "Year": "1975",
+              "Chassis": "Osella FA2 March 742",
+              "Engine": "BMW",
+              "Drivers": "Giorgio Francia",
+              "1": "4",
+              "2": "10",
+              "3": "5",
+              "4": "6",
+              "5": "Ret",
+              "6": "5",
+              "7": "5",
+              "8": "DNS",
+              "9": "",
+              "10": "4",
+              "11": "9",
+              "12": "5",
+              "13": "Ret",
+              "14": "Ret"
+            },
+            {
+              "Year": "1975",
+              "Chassis": "Osella FA2 March 742",
+              "Engine": "BMW",
+              "Drivers": "Diulio Truffo",
+              "1": "5",
+              "2": "6",
+              "3": "8",
+              "4": "Ret",
+              "5": "6",
+              "6": "6",
+              "7": "Ret",
+              "8": "",
+              "9": "5",
+              "10": "5",
+              "11": "Ret",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1975",
+              "Chassis": "Osella FA2 March 742",
+              "Engine": "BMW",
+              "Drivers": "Roberto Filannino",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "15",
+              "13": "Ret",
+              "14": "DNQ"
+            },
+            {
+              "Year": "1975",
+              "Chassis": "Osella FA2 March 742",
+              "Engine": "BMW",
+              "Drivers": "Arturo Merzario",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "Ret",
+              "12": "",
+              "13": "",
+              "14": "Ret"
+            },
+            {
+              "Year": "1976",
+              "Chassis": "Osella FA2",
+              "Engine": "BMW",
+              "Drivers": "",
+              "1": "HOC",
+              "2": "THR",
+              "3": "VAL",
+              "4": "SAL",
+              "5": "PAU",
+              "6": "HOC",
+              "7": "ROU",
+              "8": "MUG",
+              "9": "PER",
+              "10": "EST",
+              "11": "NOG",
+              "12": "HOC",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1976",
+              "Chassis": "Osella FA2",
+              "Engine": "BMW",
+              "Drivers": "Giorgio Francia",
+              "1": "DNQ",
+              "2": "Ret",
+              "3": "11",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1976",
+              "Chassis": "Osella FA2",
+              "Engine": "BMW",
+              "Drivers": "Gianfranco Trombetti",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "DNQ",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1976",
+              "Chassis": "Osella FA2",
+              "Engine": "BMW",
+              "Drivers": "Arturo Merzario",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "DNQ",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1979",
+              "Chassis": "Osella FA2/79",
+              "Engine": "BMW",
+              "Drivers": "",
+              "1": "SIL",
+              "2": "HOC",
+              "3": "THR",
+              "4": "NÜR",
+              "5": "VAL",
+              "6": "MUG",
+              "7": "PAU",
+              "8": "HOC",
+              "9": "ZAN",
+              "10": "PER",
+              "11": "MIS",
+              "12": "DON",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1979",
+              "Chassis": "Osella FA2/79",
+              "Engine": "BMW",
+              "Drivers": "Eddie Cheever",
+              "1": "1",
+              "2": "5",
+              "3": "Ret",
+              "4": "8",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "1",
+              "8": "Ret",
+              "9": "1",
+              "10": "5",
+              "11": "6",
+              "12": "7",
+              "13": "",
+              "14": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engines",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "WCC",
+            "Points"
+          ],
+          "rows": [
+            {
+              "Year": "1980",
+              "Chassis": "FA1",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "BRA",
+              "3": "RSA",
+              "4": "USW",
+              "5": "BEL",
+              "6": "MON",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "AUT",
+              "11": "NED",
+              "12": "ITA",
+              "13": "CAN",
+              "14": "USA",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1980",
+              "Chassis": "FA1",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "G",
+              "Drivers": "Eddie Cheever",
+              "1": "DNQ",
+              "2": "DNQ",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "DNQ",
+              "6": "DNQ",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "12",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1981",
+              "Chassis": "FA1B FA1C",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "M",
+              "Drivers": "",
+              "1": "USW",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "SMR",
+              "5": "BEL",
+              "6": "MON",
+              "7": "ESP",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "AUT",
+              "12": "NED",
+              "13": "ITA",
+              "14": "CAN",
+              "15": "CPL",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1981",
+              "Chassis": "FA1B FA1C",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "M",
+              "Drivers": "Miguel Ángel Guerra",
+              "1": "DNQ",
+              "2": "DNQ",
+              "3": "DNQ",
+              "4": "Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1981",
+              "Chassis": "FA1B FA1C",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "M",
+              "Drivers": "Piercarlo Ghinzani",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "13",
+              "6": "DNQ",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1981",
+              "Chassis": "FA1B FA1C",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "M",
+              "Drivers": "Giorgio Francia",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1981",
+              "Chassis": "FA1B FA1C",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "M",
+              "Drivers": "Jean-Pierre Jarier",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "8",
+              "10": "8",
+              "11": "10",
+              "12": "Ret",
+              "13": "9",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1981",
+              "Chassis": "FA1B FA1C",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "M",
+              "Drivers": "Beppe Gabbiani",
+              "1": "Ret",
+              "2": "DNQ",
+              "3": "DNQ",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "DNQ",
+              "7": "DNQ",
+              "8": "DNQ",
+              "9": "DNQ",
+              "10": "DNQ",
+              "11": "DNQ",
+              "12": "DNQ",
+              "13": "DNQ",
+              "14": "DNQ",
+              "15": "DNQ",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1982",
+              "Chassis": "FA1C",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "BRA",
+              "3": "USW",
+              "4": "SMR",
+              "5": "BEL",
+              "6": "MON",
+              "7": "DET",
+              "8": "CAN",
+              "9": "NED",
+              "10": "GBR",
+              "11": "FRA",
+              "12": "GER",
+              "13": "AUT",
+              "14": "SUI",
+              "15": "ITA",
+              "16": "CPL",
+              "WCC": "13th",
+              "Points": "3"
+            },
+            {
+              "Year": "1982",
+              "Chassis": "FA1C",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "P",
+              "Drivers": "Jean-Pierre Jarier",
+              "1": "Ret",
+              "2": "9",
+              "3": "Ret",
+              "4": "4",
+              "5": "Ret",
+              "6": "DNQ",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "14",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "DNQ",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "DNS",
+              "WCC": "13th",
+              "Points": "3"
+            },
+            {
+              "Year": "1982",
+              "Chassis": "FA1C",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "P",
+              "Drivers": "Riccardo Paletti",
+              "1": "DNQ",
+              "2": "DNPQ",
+              "3": "DNQ",
+              "4": "Ret",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "DNS",
+              "8": "Ret",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "13th",
+              "Points": "3"
+            },
+            {
+              "Year": "1983",
+              "Chassis": "FA1D",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "M",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "USW",
+              "3": "FRA",
+              "4": "SMR",
+              "5": "MON",
+              "6": "BEL",
+              "7": "DET",
+              "8": "CAN",
+              "9": "GBR",
+              "10": "GER",
+              "11": "AUT",
+              "12": "NED",
+              "13": "ITA",
+              "14": "EUR",
+              "15": "RSA",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1983",
+              "Chassis": "FA1D",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "M",
+              "Drivers": "Corrado Fabi",
+              "1": "Ret",
+              "2": "DNQ",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "DNQ",
+              "6": "Ret",
+              "7": "DNQ",
+              "8": "Ret",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1983",
+              "Chassis": "FA1D",
+              "Engines": "Cosworth DFV 3.0 V8",
+              "Tyres": "M",
+              "Drivers": "Piercarlo Ghinzani",
+              "1": "DNQ",
+              "2": "DNQ",
+              "3": "DNQ",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1983",
+              "Chassis": "FA1E",
+              "Engines": "Alfa Romeo 1260 3.0 V12",
+              "Tyres": "M",
+              "Drivers": "Corrado Fabi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "DNQ",
+              "10": "DNQ",
+              "11": "10",
+              "12": "11",
+              "13": "Ret",
+              "14": "DNQ",
+              "15": "Ret",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1983",
+              "Chassis": "FA1E",
+              "Engines": "Alfa Romeo 1260 3.0 V12",
+              "Tyres": "M",
+              "Drivers": "Piercarlo Ghinzani",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "DNQ",
+              "5": "DNQ",
+              "6": "DNQ",
+              "7": "Ret",
+              "8": "DNQ",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "11",
+              "12": "DNQ",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1984",
+              "Chassis": "FA1F",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "RSA",
+              "3": "BEL",
+              "4": "SMR",
+              "5": "FRA",
+              "6": "MON",
+              "7": "CAN",
+              "8": "DET",
+              "9": "DAL",
+              "10": "GBR",
+              "11": "GER",
+              "12": "AUT",
+              "13": "NED",
+              "14": "ITA",
+              "15": "EUR",
+              "16": "POR",
+              "WCC": "12th",
+              "Points": "2"
+            },
+            {
+              "Year": "1984",
+              "Chassis": "FA1F",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "Piercarlo Ghinzani",
+              "1": "Ret",
+              "2": "DNS",
+              "3": "Ret",
+              "4": "DNQ",
+              "5": "12",
+              "6": "7",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "5",
+              "10": "9",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "7",
+              "15": "Ret",
+              "16": "Ret",
+              "WCC": "12th",
+              "Points": "2"
+            },
+            {
+              "Year": "1984",
+              "Chassis": "FA1F",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "Jo Gartner",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "12",
+              "14": "5 ‡",
+              "15": "Ret",
+              "16": "16",
+              "WCC": "12th",
+              "Points": "2"
+            },
+            {
+              "Year": "1984",
+              "Chassis": "FA1E",
+              "Engines": "Alfa Romeo 1260 3.0 V12",
+              "Tyres": "P",
+              "Drivers": "Jo Gartner",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "12th",
+              "Points": "2"
+            },
+            {
+              "Year": "1985",
+              "Chassis": "FA1F FA1G",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "POR",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "DET",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "AUT",
+              "11": "NED",
+              "12": "ITA",
+              "13": "BEL",
+              "14": "EUR",
+              "15": "RSA",
+              "16": "AUS",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1985",
+              "Chassis": "FA1F FA1G",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "Piercarlo Ghinzani",
+              "1": "12",
+              "2": "9",
+              "3": "NC",
+              "4": "DNQ",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "15",
+              "8": "Ret",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1985",
+              "Chassis": "FA1F FA1G",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "Huub Rothengatter",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "Ret",
+              "10": "9",
+              "11": "NC",
+              "12": "Ret",
+              "13": "NC",
+              "14": "DNQ",
+              "15": "Ret",
+              "16": "7",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "FA1G FA1F FA1H",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "ESP",
+              "3": "SMR",
+              "4": "MON",
+              "5": "BEL",
+              "6": "CAN",
+              "7": "DET",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "AUT",
+              "13": "ITA",
+              "14": "POR",
+              "15": "MEX",
+              "16": "AUS",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "FA1G FA1F FA1H",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "Piercarlo Ghinzani",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "DNQ",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "11",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "Ret",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "FA1G FA1F FA1H",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "Christian Danner",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "DNQ",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "FA1G FA1F FA1H",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "Allen Berg",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "12",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "",
+              "14": "13",
+              "15": "16",
+              "16": "NC",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1986",
+              "Chassis": "FA1G FA1F FA1H",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "P",
+              "Drivers": "Alex Caffi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "NC",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1987",
+              "Chassis": "FA1I FA1G",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "BEL",
+              "4": "MON",
+              "5": "DET",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "HUN",
+              "10": "AUT",
+              "11": "ITA",
+              "12": "POR",
+              "13": "ESP",
+              "14": "MEX",
+              "15": "JPN",
+              "16": "AUS",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1987",
+              "Chassis": "FA1I FA1G",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "G",
+              "Drivers": "Alex Caffi",
+              "1": "Ret",
+              "2": "12",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "DNQ",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "DNQ",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1987",
+              "Chassis": "FA1I FA1G",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "G",
+              "Drivers": "Gabriele Tarquini",
+              "1": "",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1987",
+              "Chassis": "FA1I FA1G",
+              "Engines": "Alfa Romeo 890T 1.5 V8 t",
+              "Tyres": "G",
+              "Drivers": "Franco Forini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "DNQ",
+              "14": "",
+              "15": "",
+              "16": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1988",
+              "Chassis": "FA1I FA1L",
+              "Engines": "Osella 890T 1.5 V8 t",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "CAN",
+              "6": "DET",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1988",
+              "Chassis": "FA1I FA1L",
+              "Engines": "Osella 890T 1.5 V8 t",
+              "Tyres": "G",
+              "Drivers": "Nicola Larini",
+              "1": "DNQ",
+              "2": "EX",
+              "3": "9",
+              "4": "DNQ",
+              "5": "DNQ",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "19",
+              "9": "Ret",
+              "10": "DNPQ",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "12",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "DNPQ",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1989",
+              "Chassis": "FA1M",
+              "Engines": "Cosworth DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "USA",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1989",
+              "Chassis": "FA1M",
+              "Engines": "Cosworth DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Nicola Larini",
+              "1": "DSQ",
+              "2": "12",
+              "3": "DNPQ",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "Ret",
+              "7": "DNPQ",
+              "8": "Ret",
+              "9": "DNPQ",
+              "10": "DNPQ",
+              "11": "DNPQ",
+              "12": "Ret",
+              "13": "DNPQ",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "Ret",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1989",
+              "Chassis": "FA1M",
+              "Engines": "Cosworth DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Piercarlo Ghinzani",
+              "1": "DNPQ",
+              "2": "DNPQ",
+              "3": "DNPQ",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "DNPQ",
+              "9": "DNPQ",
+              "10": "Ret",
+              "11": "DNPQ",
+              "12": "DNPQ",
+              "13": "DNPQ",
+              "14": "Ret",
+              "15": "DNPQ",
+              "16": "Ret",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1990",
+              "Chassis": "FA1M-E",
+              "Engines": "Cosworth DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1990",
+              "Chassis": "FA1M-E",
+              "Engines": "Cosworth DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Olivier Grouillard",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "DNQ",
+              "5": "13",
+              "6": "19",
+              "7": "DNPQ",
+              "8": "DNQ",
+              "9": "DNQ",
+              "10": "DNPQ",
+              "11": "16",
+              "12": "Ret",
+              "13": "DNQ",
+              "14": "Ret",
+              "15": "DNQ",
+              "16": "13",
+              "WCC": "NC",
+              "Points": "0"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": "Olson",
+    "constructor_url": "https://en.wikipedia.org/wiki/Olson_(constructor)",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Olson_(constructor)",
+      "infoboxes": null,
+      "tables": [
+        {
+          "headers": [
+            "Season",
+            "Driver",
+            "Grid",
+            "Classification",
+            "Points",
+            "Note",
+            "Race Report"
+          ],
+          "rows": [
+            {
+              "Season": "1950",
+              "Driver": "Jackie Holmes",
+              "Grid": "30",
+              "Classification": "23",
+              "Points": "",
+              "Note": "Spun Off",
+              "Race Report": "Report"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "team": "Otelle Nucci",
+    "team_url": "https://en.wikipedia.org/w/index.php?title=Otelle_Nucci&action=edit&redlink=1",
+    "seasons": [
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      }
+    ],
+    "details": null
+  }
+]

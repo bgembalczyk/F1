@@ -1,7 +1,9 @@
 import re
-from typing import List, Dict, Any, Optional, Callable
+from collections.abc import Callable
+from typing import Any
 
 from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
@@ -14,7 +16,6 @@ from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 
 class CircuitLayoutsParser(SafeParserMixin):
     """Logika parsowania sekcji layoutów z infoboksa toru."""
-    """Logika parsowania sekcji layoutów z infoboksa toru."""
 
     def __init__(
         self,
@@ -24,7 +25,7 @@ class CircuitLayoutsParser(SafeParserMixin):
         lap_record_parser: CircuitLapRecordParser,
         specs_parser: CircuitSpecsParser,
         error_handler: ErrorHandler,
-        url_provider: Callable[[], Optional[str]] | None = None,
+        url_provider: Callable[[], str | None] | None = None,
     ) -> None:
         self.infobox_scraper = infobox_scraper
         self.text_utils = text_utils
@@ -34,13 +35,61 @@ class CircuitLayoutsParser(SafeParserMixin):
         self.error_handler = error_handler
         self._url_provider = url_provider
 
-    def parse_layout_sections(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    @staticmethod
+    def _is_layout_header(row_header: Tag) -> bool:
+        classes = row_header.get("class", [])
+        return bool(row_header.get("colspan") and "infobox-header" in classes)
+
+    def _apply_layout_field(
+        self,
+        current: dict[str, Any],
+        label: str,
+        cell_row: dict[str, Any],
+    ) -> None:
+        if label == "length":
+            current["length_km"] = self._safe_parse(
+                self.text_utils.parse_length,
+                cell_row,
+                unit="km",
+            )
+            current["length_mi"] = self._safe_parse(
+                self.text_utils.parse_length,
+                cell_row,
+                unit="mi",
+            )
+            return
+
+        if label == "turns":
+            current["turns"] = self._safe_parse(self.text_utils.parse_int, cell_row)
+            return
+
+        if label == "race_lap_record":
+            current["race_lap_record"] = self._safe_parse(
+                self.lap_record_parser.parse_lap_record,
+                cell_row,
+            )
+            return
+
+        if label == "surface":
+            current["surface"] = self._safe_parse(
+                self.specs_parser.parse_surface,
+                cell_row,
+            )
+            return
+
+        if label == "banking":
+            current["banking"] = self._safe_parse(
+                self.specs_parser.parse_banking,
+                cell_row,
+            )
+
+    def parse_layout_sections(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         table = self.infobox_scraper.parser.find_infobox(soup)
         if table is None:
             return []
 
-        layouts: List[Dict[str, Any]] = []
-        current: Optional[Dict[str, Any]] = None
+        layouts: list[dict[str, Any]] = []
+        current: dict[str, Any] | None = None
 
         for tr in table.find_all("tr"):
             if tr.find_parent("table") is not table:
@@ -49,23 +98,21 @@ class CircuitLayoutsParser(SafeParserMixin):
             header = tr.find("th", recursive=False)
             data = tr.find("td", recursive=False)
 
-            if header and header.get("colspan"):
-                classes = header.get("class", [])
-                if "infobox-header" in classes:
-                    layout_name, years = self._parse_layout_header(
-                        header.get_text(" ", strip=True),
-                    )
-                    current = {
-                        "layout": layout_name,
-                        "years": years,
-                        "length_km": None,
-                        "length_mi": None,
-                        "turns": None,
-                        "race_lap_record": None,
-                        "surface": None,
-                        "banking": None,
-                    }
-                    layouts.append(current)
+            if header and self._is_layout_header(header):
+                layout_name, years = self._parse_layout_header(
+                    header.get_text(" ", strip=True),
+                )
+                current = {
+                    "layout": layout_name,
+                    "years": years,
+                    "length_km": None,
+                    "length_mi": None,
+                    "turns": None,
+                    "race_lap_record": None,
+                    "surface": None,
+                    "banking": None,
+                }
+                layouts.append(current)
                 continue
 
             if current is None or not header or not data:
@@ -76,33 +123,12 @@ class CircuitLayoutsParser(SafeParserMixin):
                 "text": data.get_text(" ", strip=True),
                 "links": self.infobox_scraper.parser.extract_links(data),
             }
-
-            if label == "length":
-                current["length_km"] = self._safe_parse(
-                    self.text_utils.parse_length, cell_row, unit="km"
-                )
-                current["length_mi"] = self._safe_parse(
-                    self.text_utils.parse_length, cell_row, unit="mi"
-                )
-            elif label == "turns":
-                current["turns"] = self._safe_parse(self.text_utils.parse_int, cell_row)
-            elif label == "race_lap_record":
-                current["race_lap_record"] = self._safe_parse(
-                    self.lap_record_parser.parse_lap_record, cell_row
-                )
-            elif label == "surface":
-                current["surface"] = self._safe_parse(
-                    self.specs_parser.parse_surface, cell_row
-                )
-            elif label == "banking":
-                current["banking"] = self._safe_parse(
-                    self.specs_parser.parse_banking, cell_row
-                )
+            self._apply_layout_field(current, label, cell_row)
 
         return layouts
 
     @staticmethod
-    def _parse_layout_header(text: str) -> tuple[str, Optional[str]]:
+    def _parse_layout_header(text: str) -> tuple[str, str | None]:
         match = re.match(r"^(.*?)(?:\((.*?)\))?$", text)
         if not match:
             return text, None

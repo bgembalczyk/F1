@@ -1,19 +1,18 @@
-from pathlib import Path
-from typing import Any, List
+from typing import Any
 
 from bs4 import BeautifulSoup
 
 from models.validation.engine_regulation import EngineRegulation
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.helpers.tables.header import is_repeated_header_row
-from scrapers.base.records import record_from_mapping
-from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.unit import UnitColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.source_catalog import ENGINE_PROGRESS
+from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.base.table.columns.types import TextColumn
+from scrapers.base.table.columns.types import UnitColumn
+from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.configuration import EngineConfigurationColumn
 from scrapers.engines.columns.nested_text import NestedTextColumn
@@ -54,13 +53,13 @@ class EngineRegulationScraper(BaseEngineTableScraper):
         ),
     ]
 
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/Formula_One_engines#Engine_regulation_progression_by_era",
-        section_id="Engine_regulation_progression_by_era",
+    CONFIG = build_scraper_config(
+        url=ENGINE_PROGRESS.url(),
+        section_id=ENGINE_PROGRESS.section_id,
         expected_headers=["Years", "Operating principle"],
         model_class=EngineRegulation,
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
     def _parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
@@ -72,11 +71,11 @@ class EngineRegulationScraper(BaseEngineTableScraper):
         pending_rowspans: dict[int, dict[str, object]] = {}
         rows = table.find_all("tr")[header_rows:]
         parser = self._create_parser()
-        
+
         for row_index, tr in enumerate(rows):
             cells = tr.find_all(["td", "th"])
             cleaned_cells = self._clean_cells(cells)
-            
+
             # Validate row
             if not self._is_valid_row(cells, cleaned_cells, headers):
                 continue
@@ -84,12 +83,12 @@ class EngineRegulationScraper(BaseEngineTableScraper):
                 continue
 
             # Expand cells with rowspan handling
-            expanded_cells = parser._expand_row_cells(
+            expanded_cells = parser.expand_row_cells(
                 cells,
                 headers,
                 pending_rowspans,
             )
-            
+
             # Parse record
             record = self._parse_record(headers, expanded_cells, row_index)
             if record:
@@ -99,11 +98,6 @@ class EngineRegulationScraper(BaseEngineTableScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        EngineRegulationScraper,
-        "engines/f1_engine_regulations.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

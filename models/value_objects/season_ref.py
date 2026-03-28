@@ -1,27 +1,37 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 from typing import Any
-from typing import Mapping
-from typing import Optional
 
 from models.validation.utils import coerce_number
 from models.validation.utils import is_valid_url
 from models.value_objects.base import ValueObject
 
+if TYPE_CHECKING:
+    from collections.abc import Mapping
+
 
 @dataclass
 class SeasonRef(ValueObject):
     year: int
-    url: Optional[str] = None
+    url: str | None = None
 
     def __post_init__(self) -> None:
         self.year = coerce_number(self.year, int, "year")
         self.url = self.url or None
         if self.url:
             if not isinstance(self.url, str) or not is_valid_url(self.url):
-                raise ValueError("Pole seasons zawiera nieprawidłowy URL")
+                msg = "Pole seasons zawiera nieprawidłowy URL"
+                raise ValueError(msg)
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any] | None) -> "SeasonRef | None":
+    def from_dict(
+        cls,
+        data: Mapping[str, Any] | SeasonRef | None,
+    ) -> SeasonRef | None:
+        if isinstance(data, cls):
+            return data
         payload = data or {}
         year = payload.get("year")
         if year is None:

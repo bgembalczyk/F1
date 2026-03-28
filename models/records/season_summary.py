@@ -1,7 +1,12 @@
-from typing import Any, TypedDict
+from typing import Any
+from typing import TypedDict
 
+from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
-from validation.records import BaseDomainRecordValidator, ValidationIssue
+from validation.issue import ValidationIssue
+from validation.schemas import NestedSchema
+from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 class SeasonSummaryRecord(TypedDict, total=False):
@@ -15,69 +20,35 @@ class SeasonSummaryRecord(TypedDict, total=False):
     winners: int | None
 
 
+SEASON_SUMMARY_SCHEMA = RecordSchema(
+    required=("season", "races", "countries", "drivers_champion_team"),
+    types={
+        "season": dict,
+        "races": int,
+        "countries": int,
+        "first": dict,
+        "last": dict,
+        "drivers_champion_team": list,
+        "constructors_champion": list,
+        "winners": int,
+    },
+    allow_none=(
+        "races",
+        "countries",
+        "first",
+        "last",
+        "constructors_champion",
+        "winners",
+    ),
+    nested={
+        "season": NestedSchema(LINK_SCHEMA),
+        "first": NestedSchema(LINK_SCHEMA),
+        "last": NestedSchema(LINK_SCHEMA),
+        "drivers_champion_team": NestedSchema(LINK_SCHEMA, is_list=True),
+        "constructors_champion": NestedSchema(LINK_SCHEMA, is_list=True),
+    },
+)
+
+
 def validate_season_summary_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    errors: list[ValidationIssue] = []
-    errors.extend(
-        BaseDomainRecordValidator.require_keys(
-            record,
-            ["season", "races", "countries", "drivers_champion_team"],
-        )
-    )
-    errors.extend(BaseDomainRecordValidator.require_type(record, "season", dict))
-    errors.extend(
-        BaseDomainRecordValidator.require_type(record, "races", int, allow_none=True)
-    )
-    errors.extend(
-        BaseDomainRecordValidator.require_type(
-            record, "countries", int, allow_none=True
-        )
-    )
-    errors.extend(
-        BaseDomainRecordValidator.require_type(
-            record,
-            "drivers_champion_team",
-            list,
-        )
-    )
-    errors.extend(
-        BaseDomainRecordValidator.require_type(
-            record,
-            "constructors_champion",
-            list,
-            allow_none=True,
-        )
-    )
-    errors.extend(
-        BaseDomainRecordValidator.require_type(record, "winners", int, allow_none=True)
-    )
-
-    season = record.get("season")
-    if isinstance(season, dict):
-        errors.extend(BaseDomainRecordValidator.require_link_dict(season, "season"))
-
-    drivers = record.get("drivers_champion_team")
-    if isinstance(drivers, list):
-        errors.extend(
-            BaseDomainRecordValidator.require_link_list(
-                drivers, "drivers_champion_team"
-            )
-        )
-
-    constructors = record.get("constructors_champion")
-    if isinstance(constructors, list):
-        errors.extend(
-            BaseDomainRecordValidator.require_link_list(
-                constructors,
-                "constructors_champion",
-            )
-        )
-
-    first = record.get("first")
-    if isinstance(first, dict):
-        errors.extend(BaseDomainRecordValidator.require_link_dict(first, "first"))
-
-    last = record.get("last")
-    if isinstance(last, dict):
-        errors.extend(BaseDomainRecordValidator.require_link_dict(last, "last"))
-
-    return errors
+    return RecordValidator.validate_schema(record, SEASON_SUMMARY_SCHEMA)

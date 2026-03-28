@@ -1,10 +1,10 @@
-from typing import Any, Dict, List
+from typing import Any
 
 from models.mappers.serialization import to_dict_list
 from scrapers.base.results import ScrapeResult
 
 
-def extract_data(result: ScrapeResult) -> List[Dict[str, Any]]:
+def extract_data(result: ScrapeResult) -> list[dict[str, Any]]:
     """
     Główna, spójna ścieżka ekstrakcji danych:
     - zawsze zwracamy list[dict[str,Any]]

@@ -1,10 +1,11 @@
-from typing import Any, Dict, TYPE_CHECKING
+from typing import TYPE_CHECKING
+from typing import Any
 
 from bs4 import BeautifulSoup
 
 from scrapers.base.extractors.infobox import InfoboxExtractor
 
-# Unikamy cyklicznego importu – import tylko dla typowania
+# Unikamy cyklicznego importu - import tylko dla typowania
 if TYPE_CHECKING:
     from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 
@@ -12,7 +13,7 @@ if TYPE_CHECKING:
 def parse_infobox_from_soup(
     infobox_scraper: "WikipediaInfoboxScraper",
     soup: BeautifulSoup,
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     extractor = InfoboxExtractor(
         parser=infobox_scraper.parser,
         mapper=infobox_scraper.mapper,

@@ -5,8 +5,10 @@ from typing import Any
 
 from models.services.helpers import prune_empty
 from scrapers.base.helpers.constants import LANG_CODES
+from scrapers.base.helpers.constants import NON_ALPHANUM_PATTERN
+from scrapers.base.helpers.constants import UNDERSCORE_PATTERN
 from scrapers.base.helpers.text import clean_wiki_text
-from validation.records import ExportRecord
+from validation.validator_base import ExportRecord
 
 
 def clean_infobox_text(text: Any) -> str | None:
@@ -36,10 +38,7 @@ def is_language_link(text: str | None, url: str | None) -> bool:
     if f"wikipedia.org/{txt}/" in url_l:
         return True
 
-    if ".wikipedia.org/" in url_l or ".wikimedia.org/" in url_l:
-        return True
-
-    return False
+    return bool(".wikipedia.org/" in url_l or ".wikimedia.org/" in url_l)
 
 
 def normalize_text(obj: Any) -> str:
@@ -52,7 +51,9 @@ def normalize_text(obj: Any) -> str:
 
 
 def add_unique_name(
-    names_set: set[str], name_list: list[str], value: str | None
+    names_set: set[str],
+    name_list: list[str],
+    value: str | None,
 ) -> None:
     """Dodaje nazwę do listy nazw, unikając duplikatów."""
     if not value:
@@ -113,14 +114,18 @@ def match_vehicle_prefix(a: Any, b: Any, *, min_len: int = 10) -> bool:
 # Text Parsing
 # ============================================================================
 
-_NON_ALPHANUM_PATTERN = re.compile(r"[^0-9a-zA-Z]+")
-_UNDERSCORE_PATTERN = re.compile(r"_+")
-
 
 def split_delimited_text(
-    text: str | None, *, separators: str = r";|,|/", min_parts: int = 1
+    text: str | None,
+    *,
+    separators: str = r";|,|/",
+    min_parts: int = 1,
 ) -> list[str]:
     """Split text by common delimiters and trim whitespace.
+
+    Splitting respects parenthesis depth: delimiters inside parentheses are
+    not treated as separators.  For example ``"White, Red (1982, 1984)"``
+    yields ``["White", "Red (1982, 1984)"]``.
 
     Returns an empty list for falsy input or when the number of non-empty parts is
     below ``min_parts``.
@@ -128,7 +133,38 @@ def split_delimited_text(
     if not text:
         return []
 
-    parts = [p.strip() for p in re.split(separators, text) if p.strip()]
+    sep_re = re.compile(separators)
+    parts: list[str] = []
+    current: list[str] = []
+    depth = 0
+    i = 0
+    while i < len(text):
+        char = text[i]
+        if char == "(":
+            depth += 1
+            current.append(char)
+            i += 1
+        elif char == ")":
+            depth = max(depth - 1, 0)
+            current.append(char)
+            i += 1
+        elif depth == 0:
+            m = sep_re.match(text, i)
+            if m:
+                part = "".join(current).strip()
+                if part:
+                    parts.append(part)
+                current = []
+                i = m.end()
+            else:
+                current.append(char)
+                i += 1
+        else:
+            current.append(char)
+            i += 1
+    part = "".join(current).strip()
+    if part:
+        parts.append(part)
     return parts if len(parts) >= min_parts else []
 
 
@@ -157,6 +193,6 @@ def drop_empty_fields(record: ExportRecord) -> ExportRecord:
 
 
 def to_snake_case(value: str) -> str:
-    cleaned = _NON_ALPHANUM_PATTERN.sub("_", value)
-    cleaned = _UNDERSCORE_PATTERN.sub("_", cleaned).strip("_")
+    cleaned = NON_ALPHANUM_PATTERN.sub("_", value)
+    cleaned = UNDERSCORE_PATTERN.sub("_", cleaned).strip("_")
     return cleaned.lower()

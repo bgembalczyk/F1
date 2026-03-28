@@ -1,8 +1,6 @@
-from scrapers.base.cache_adapter import (
-    CacheAdapter,
-    FileCacheBackend,
-    MemoryCache,
-)
+from scrapers.base.cache_adapter import CacheAdapter
+from scrapers.base.cache_adapter import FileCacheBackend
+from scrapers.base.cache_adapter import MemoryCache
 from scrapers.base.html_fetcher import HtmlFetcher
 from scrapers.base.options import HttpPolicy
 from scrapers.base.source_adapter import SourceAdapter
@@ -25,7 +23,7 @@ class _StubHttpClient:
     def __init__(self) -> None:
         self.calls: list[str] = []
 
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+    def get_text(self, url: str, *, _timeout: int | None = None) -> str:
         self.calls.append(url)
         return f"html-{url}"
 

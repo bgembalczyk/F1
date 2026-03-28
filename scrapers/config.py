@@ -1,12 +1,11 @@
-from dataclasses import dataclass, field
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from dataclasses import field
 
-from scrapers.base.options import HttpPolicy, default_http_policy
-
-if TYPE_CHECKING:
-    from scrapers.base.export.exporters import DataExporter
-    from scrapers.base.html_fetcher import HtmlFetcher
-    from scrapers.base.parsers import SoupParser
+from scrapers.base.export.exporters import DataExporter
+from scrapers.base.html_fetcher import HtmlFetcher
+from scrapers.base.options import HttpPolicy
+from scrapers.base.options import default_http_policy
+from scrapers.base.parsers.soup import SoupParser
 
 
 @dataclass(frozen=True)

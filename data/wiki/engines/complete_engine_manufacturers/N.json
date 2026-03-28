@@ -1,0 +1,135 @@
+[
+  {
+    "manufacturer": "Novi",
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Novi_engine",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Novi_engine",
+      "infoboxes": [
+        {
+          "title": null,
+          "rows": {
+            "Production": {
+              "text": "1941–1966 [ 2 ]",
+              "links": []
+            },
+            "Configuration": {
+              "text": "V8 , supercharged , 90° cylinder angle",
+              "links": [
+                {
+                  "text": "V8",
+                  "url": "https://en.wikipedia.org/wiki/V8_engine"
+                },
+                {
+                  "text": "supercharged",
+                  "url": "https://en.wikipedia.org/wiki/Supercharged"
+                }
+              ]
+            },
+            "Displacement": {
+              "text": "181 cu in (2.966 L )",
+              "links": [
+                {
+                  "text": "cu in",
+                  "url": "https://en.wikipedia.org/wiki/Cubic_inch"
+                },
+                {
+                  "text": "L",
+                  "url": "https://en.wikipedia.org/wiki/Litre"
+                }
+              ]
+            },
+            "Cylinder bore": {
+              "text": "3.185 in (80.9 mm)",
+              "links": []
+            },
+            "Piston stroke": {
+              "text": "2.84 in (72.1 mm)",
+              "links": []
+            },
+            "Cylinder block material": {
+              "text": "Cast iron",
+              "links": [
+                {
+                  "text": "Cast iron",
+                  "url": "https://en.wikipedia.org/wiki/Cast_iron"
+                }
+              ]
+            },
+            "Cylinder head material": {
+              "text": "Cast iron",
+              "links": [
+                {
+                  "text": "Cast iron",
+                  "url": "https://en.wikipedia.org/wiki/Cast_iron"
+                }
+              ]
+            },
+            "Valvetrain": {
+              "text": "16-valve, DOHC , two-valves per cylinder",
+              "links": [
+                {
+                  "text": "DOHC",
+                  "url": "https://en.wikipedia.org/wiki/DOHC"
+                }
+              ]
+            },
+            "Fuel system": {
+              "text": "Carburetors",
+              "links": [
+                {
+                  "text": "Carburetors",
+                  "url": "https://en.wikipedia.org/wiki/Carburetor"
+                }
+              ]
+            },
+            "Fuel type": {
+              "text": "Gasoline",
+              "links": [
+                {
+                  "text": "Gasoline",
+                  "url": "https://en.wikipedia.org/wiki/Gasoline"
+                }
+              ]
+            },
+            "Oil system": {
+              "text": "Dry sump",
+              "links": [
+                {
+                  "text": "Dry sump",
+                  "url": "https://en.wikipedia.org/wiki/Dry_sump"
+                }
+              ]
+            },
+            "Power output": {
+              "text": "550–837 hp (410–624 kW )",
+              "links": [
+                {
+                  "text": "hp",
+                  "url": "https://en.wikipedia.org/wiki/Horsepower"
+                },
+                {
+                  "text": "kW",
+                  "url": "https://en.wikipedia.org/wiki/Kilowatt"
+                }
+              ]
+            },
+            "Dry weight": {
+              "text": "470–585 lb (213–265 kg )",
+              "links": [
+                {
+                  "text": "lb",
+                  "url": "https://en.wikipedia.org/wiki/Pound_(mass)"
+                },
+                {
+                  "text": "kg",
+                  "url": "https://en.wikipedia.org/wiki/Kilogram"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": null
+    }
+  }
+]

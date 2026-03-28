@@ -1,5 +1,5 @@
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Optional, Sequence
 
 from scrapers.base.format.csv_formatter import CsvFormatter
 from scrapers.base.format.json_formatter import JsonFormatter
@@ -25,7 +25,9 @@ class DataExporter:
         include_metadata: bool = False,
     ) -> None:
         payload = self._json_formatter.format(
-            result, indent=indent, include_metadata=include_metadata
+            result,
+            indent=indent,
+            include_metadata=include_metadata,
         )
         Path(path).write_text(payload, encoding="utf-8")
 
@@ -34,11 +36,13 @@ class DataExporter:
         result: ScrapeResult,
         path: str | Path,
         *,
-        fieldnames: Optional[Sequence[str]] = None,
+        fieldnames: Sequence[str] | None = None,
         include_metadata: bool = False,
     ) -> None:
         payload = self._csv_formatter.format(
-            result, fieldnames=fieldnames, include_metadata=include_metadata
+            result,
+            fieldnames=fieldnames,
+            include_metadata=include_metadata,
         )
         Path(path).write_text(payload, encoding="utf-8")
 
@@ -47,14 +51,15 @@ def export_result(
     result: ScrapeResult,
     path: str | Path,
     *,
-    format: str = "json",
+    output_format: str = "json",
     **kwargs,
 ) -> None:
     exporter = DataExporter()
-    if format == "json":
+    if output_format == "json":
         exporter.to_json(result, path, **kwargs)
         return
-    if format == "csv":
+    if output_format == "csv":
         exporter.to_csv(result, path, **kwargs)
         return
-    raise ValueError("Nieznany format eksportu. Dostępne: 'json', 'csv'.")
+    msg = "Nieznany format eksportu. Dostępne: 'json', 'csv'."
+    raise ValueError(msg)

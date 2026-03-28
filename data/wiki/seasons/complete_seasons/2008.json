@@ -40,17 +40,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Kimi Räikkönen",
-                "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen"
-              },
+              "text": "Kimi Räikkönen",
+              "url": "https://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen",
               "no": 1
             },
             {
-              "driver": {
-                "text": "Felipe Massa",
-                "url": "https://en.wikipedia.org/wiki/Felipe_Massa"
-              },
+              "text": "Felipe Massa",
+              "url": "https://en.wikipedia.org/wiki/Felipe_Massa",
               "no": 2
             }
           ]
@@ -89,17 +85,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Nick Heidfeld",
-                "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld"
-              },
+              "text": "Nick Heidfeld",
+              "url": "https://en.wikipedia.org/wiki/Nick_Heidfeld",
               "no": 3
             },
             {
-              "driver": {
-                "text": "Robert Kubica",
-                "url": "https://en.wikipedia.org/wiki/Robert_Kubica"
-              },
+              "text": "Robert Kubica",
+              "url": "https://en.wikipedia.org/wiki/Robert_Kubica",
               "no": 4
             }
           ]
@@ -143,17 +135,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Fernando Alonso",
-                "url": "https://en.wikipedia.org/wiki/Fernando_Alonso"
-              },
+              "text": "Fernando Alonso",
+              "url": "https://en.wikipedia.org/wiki/Fernando_Alonso",
               "no": 5
             },
             {
-              "driver": {
-                "text": "Nelson Piquet Jr.",
-                "url": "https://en.wikipedia.org/wiki/Nelson_Piquet_Jr."
-              },
+              "text": "Nelson Piquet Jr.",
+              "url": "https://en.wikipedia.org/wiki/Nelson_Piquet_Jr.",
               "no": 6
             }
           ]
@@ -197,17 +185,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Nico Rosberg",
-                "url": "https://en.wikipedia.org/wiki/Nico_Rosberg"
-              },
+              "text": "Nico Rosberg",
+              "url": "https://en.wikipedia.org/wiki/Nico_Rosberg",
               "no": 7
             },
             {
-              "driver": {
-                "text": "Kazuki Nakajima",
-                "url": "https://en.wikipedia.org/wiki/Kazuki_Nakajima"
-              },
+              "text": "Kazuki Nakajima",
+              "url": "https://en.wikipedia.org/wiki/Kazuki_Nakajima",
               "no": 8
             }
           ]
@@ -246,17 +230,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "David Coulthard",
-                "url": "https://en.wikipedia.org/wiki/David_Coulthard"
-              },
+              "text": "David Coulthard",
+              "url": "https://en.wikipedia.org/wiki/David_Coulthard",
               "no": 9
             },
             {
-              "driver": {
-                "text": "Mark Webber",
-                "url": "https://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)"
-              },
+              "text": "Mark Webber",
+              "url": "https://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)",
               "no": 10
             }
           ]
@@ -300,17 +280,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Jarno Trulli",
-                "url": "https://en.wikipedia.org/wiki/Jarno_Trulli"
-              },
+              "text": "Jarno Trulli",
+              "url": "https://en.wikipedia.org/wiki/Jarno_Trulli",
               "no": 11
             },
             {
-              "driver": {
-                "text": "Timo Glock",
-                "url": "https://en.wikipedia.org/wiki/Timo_Glock"
-              },
+              "text": "Timo Glock",
+              "url": "https://en.wikipedia.org/wiki/Timo_Glock",
               "no": 12
             }
           ]
@@ -353,17 +329,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Sébastien Bourdais",
-                "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Bourdais"
-              },
+              "text": "Sébastien Bourdais",
+              "url": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Bourdais",
               "no": 14
             },
             {
-              "driver": {
-                "text": "Sebastian Vettel",
-                "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
-              },
+              "text": "Sebastian Vettel",
+              "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel",
               "no": 15
             }
           ]
@@ -402,17 +374,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Jenson Button",
-                "url": "https://en.wikipedia.org/wiki/Jenson_Button"
-              },
+              "text": "Jenson Button",
+              "url": "https://en.wikipedia.org/wiki/Jenson_Button",
               "no": 16
             },
             {
-              "driver": {
-                "text": "Rubens Barrichello",
-                "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
-              },
+              "text": "Rubens Barrichello",
+              "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello",
               "no": 17
             }
           ]
@@ -451,10 +419,8 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Takuma Sato",
-                "url": "https://en.wikipedia.org/wiki/Takuma_Sato"
-              },
+              "text": "Takuma Sato",
+              "url": "https://en.wikipedia.org/wiki/Takuma_Sato",
               "no": 18,
               "rounds": [
                 1,
@@ -464,10 +430,8 @@
               ]
             },
             {
-              "driver": {
-                "text": "Anthony Davidson",
-                "url": "https://en.wikipedia.org/wiki/Anthony_Davidson"
-              },
+              "text": "Anthony Davidson",
+              "url": "https://en.wikipedia.org/wiki/Anthony_Davidson",
               "no": 19,
               "rounds": [
                 1,
@@ -512,17 +476,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Adrian Sutil",
-                "url": "https://en.wikipedia.org/wiki/Adrian_Sutil"
-              },
+              "text": "Adrian Sutil",
+              "url": "https://en.wikipedia.org/wiki/Adrian_Sutil",
               "no": 20
             },
             {
-              "driver": {
-                "text": "Giancarlo Fisichella",
-                "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
-              },
+              "text": "Giancarlo Fisichella",
+              "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella",
               "no": 21
             }
           ]
@@ -566,17 +526,13 @@
           },
           "race_drivers": [
             {
-              "driver": {
-                "text": "Lewis Hamilton",
-                "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
-              },
+              "text": "Lewis Hamilton",
+              "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton",
               "no": 22
             },
             {
-              "driver": {
-                "text": "Heikki Kovalainen",
-                "url": "https://en.wikipedia.org/wiki/Heikki_Kovalainen"
-              },
+              "text": "Heikki Kovalainen",
+              "url": "https://en.wikipedia.org/wiki/Heikki_Kovalainen",
               "no": 23
             }
           ]

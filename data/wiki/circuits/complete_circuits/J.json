@@ -1,0 +1,294 @@
+[
+  {
+    "name": {
+      "list": [
+        "Jeddah Corniche Circuit"
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Jeddah_Corniche_Circuit",
+    "circuit_status": "current",
+    "type": "Street circuit",
+    "direction": "Anti-clockwise",
+    "grands_prix": [
+      {
+        "text": "Saudi Arabian Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Saudi_Arabian_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 2021,
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+      },
+      {
+        "year": 2022,
+        "url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship"
+      },
+      {
+        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship"
+      },
+      {
+        "year": 2024,
+        "url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship"
+      },
+      {
+        "year": 2025,
+        "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 5,
+    "location": {
+      "places": [
+        {
+          "text": "Jeddah",
+          "url": "https://en.wikipedia.org/wiki/Jeddah"
+        },
+        {
+          "text": "Saudi Arabia",
+          "url": "https://en.wikipedia.org/wiki/Saudi_Arabia"
+        }
+      ],
+      "coordinates": {
+        "lat": 21.63194,
+        "lon": 39.10444
+      }
+    },
+    "fia_grade": 1,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "2021-03"
+      },
+      {
+        "event": "opened",
+        "date": "2021-12-03"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "2021–present",
+        "length_km": 6.174,
+        "length_mi": 3.836,
+        "turns": 27,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Lewis Hamilton",
+              "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+            },
+            "vehicle": {
+              "text": "Mercedes W12",
+              "url": "https://en.wikipedia.org/wiki/Mercedes_W12"
+            },
+            "time": 90.734,
+            "year": "2021",
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Saudi Arabian Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2025_Saudi_Arabian_Grand_Prix"
+            },
+            "driver": {
+              "text": "Max Verstappen",
+              "url": "https://en.wikipedia.org/wiki/Max_Verstappen"
+            },
+            "vehicle": {
+              "text": "Red Bull Racing RB21",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing_RB21"
+            },
+            "time": 87.294,
+            "year": "2025",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "2022 Jeddah Formula 2 round",
+              "url": "https://en.wikipedia.org/wiki/2022_Jeddah_Formula_2_round"
+            },
+            "driver": {
+              "text": "Jack Doohan",
+              "url": "https://en.wikipedia.org/wiki/Jack_Doohan_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Dallara F2 2018",
+              "url": "https://en.wikipedia.org/wiki/Dallara_F2_2018"
+            },
+            "time": 103.098,
+            "year": "2022",
+            "series": {
+              "text": "FIA F2",
+              "url": "https://en.wikipedia.org/wiki/FIA_Formula_2_Championship"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 6 Hours of Jeddah",
+              "url": "https://en.wikipedia.org/wiki/2024_GT_World_Challenge_Europe_Endurance_Cup"
+            },
+            "driver": {
+              "text": "Franck Perera",
+              "url": "https://en.wikipedia.org/wiki/Franck_Perera"
+            },
+            "vehicle": {
+              "text": "Lamborghini Huracán GT3 Evo 2",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Hurac%C3%A1n_GT3_Evo_2#Huracán_GT3_Evo_2_(2023–present)"
+            },
+            "time": 119.772,
+            "year": "2024",
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            }
+          },
+          {
+            "event": {
+              "text": "2022 Jeddah Porsche Sprint Challenge Middle East round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Sprint_Challenge_Middle_East"
+            },
+            "driver": {
+              "text": "Bandar Alesayi"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (992) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
+            },
+            "time": 123.645,
+            "year": "2022",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 Jeddah F1 Academy round",
+              "url": "https://en.wikipedia.org/wiki/2024_F1_Academy_season"
+            },
+            "driver": {
+              "text": "Doriane Pin",
+              "url": "https://en.wikipedia.org/wiki/Doriane_Pin"
+            },
+            "vehicle": {
+              "text": "Tatuus F4-T421",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T421"
+            },
+            "time": 124.259,
+            "year": "2024",
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            }
+          },
+          {
+            "event": {
+              "text": "2022 Jeddah Porsche Sprint Challenge Middle East round",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Sprint_Challenge_Middle_East"
+            },
+            "driver": {
+              "text": "Freddy Fast"
+            },
+            "vehicle": {
+              "text": "Porsche 718 Cayman GT4 Clubsport",
+              "url": "https://en.wikipedia.org/wiki/Porsche_982#718_Cayman_GT4_Clubsport"
+            },
+            "time": 129.82,
+            "year": "2022",
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Formula E Circuit",
+        "years": "2025–present",
+        "length_km": 3.001,
+        "length_mi": 1.865,
+        "turns": 19,
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2026 Jeddah ePrix",
+              "url": "https://en.wikipedia.org/wiki/2026_Jeddah_ePrix"
+            },
+            "driver": {
+              "text": "Jake Dennis",
+              "url": "https://en.wikipedia.org/wiki/Jake_Dennis"
+            },
+            "vehicle": {
+              "text": "Porsche 99X Electric",
+              "url": "https://en.wikipedia.org/wiki/Formula_E_Gen3#Gen_3_Evo"
+            },
+            "time": 75.653,
+            "year": "2026",
+            "series": {
+              "text": "Formula E",
+              "url": "https://en.wikipedia.org/wiki/Formula_E"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Short Circuit",
+        "years": "2022–present",
+        "length_km": 3.45,
+        "length_mi": 2.144,
+        "turns": 12,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Gilles Magnus",
+              "url": "https://en.wikipedia.org/wiki/Gilles_Magnus"
+            },
+            "vehicle": {
+              "text": "Audi RS 3 LMS TCR",
+              "url": "https://en.wikipedia.org/wiki/Audi_RS_3_LMS_TCR#Typ_8Y_(2021)"
+            },
+            "time": 76.986,
+            "year": "2022",
+            "series": {
+              "text": "TCR",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            }
+          },
+          {
+            "event": {
+              "text": "2022 WTCR Race of Saudi Arabia",
+              "url": "https://en.wikipedia.org/wiki/2022_World_Touring_Car_Cup"
+            },
+            "driver": {
+              "text": "Gilles Magnus",
+              "url": "https://en.wikipedia.org/wiki/Gilles_Magnus"
+            },
+            "vehicle": {
+              "text": "Audi RS 3 LMS TCR (2021)",
+              "url": "https://en.wikipedia.org/wiki/Audi_RS_3_LMS_TCR#Typ_8Y_(2021)"
+            },
+            "time": 76.986,
+            "year": "2022",
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,32 +1,38 @@
-import urllib.request
 import urllib.error
-from typing import Dict
-from typing import Optional
+import urllib.request
+from urllib.parse import urlsplit
 
+from infrastructure.http_client.requests_shim.constants import SSL_CONTEXT
 from infrastructure.http_client.requests_shim.request_exception import RequestException
 from infrastructure.http_client.requests_shim.response import Response
-from infrastructure.http_client.requests_shim.constants import SSL_CONTEXT
 from infrastructure.http_client.requests_shim.timeout import Timeout
+
+ALLOWED_URL_SCHEMES = {"http", "https"}
 
 
 class Session:
     def __init__(self) -> None:
-        self.headers: Dict[str, str] = {}
+        self.headers: dict[str, str] = {}
 
     def get(
         self,
         url: str,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> Response:
         merged_headers = dict(self.headers)
         if headers:
             merged_headers.update(headers)
 
-        request = urllib.request.Request(url, headers=merged_headers)
+        parsed_url = urlsplit(url)
+        if parsed_url.scheme not in ALLOWED_URL_SCHEMES:
+            msg = f"Unsupported URL scheme: {parsed_url.scheme!r}"
+            raise RequestException(msg)
+
+        request = urllib.request.Request(url, headers=merged_headers)  # noqa: S310
 
         try:
-            with urllib.request.urlopen(
+            with urllib.request.urlopen(  # noqa: S310
                 request,
                 timeout=timeout,
                 context=SSL_CONTEXT,

@@ -21,23 +21,23 @@ package "Core Abstractions" {
     interface IDataSource {
         + fetch(url: str): str
     }
-    
+
     interface IParser {
         + parse(html: str): List[Dict]
     }
-    
+
     interface IValidator {
         + validate(record: Dict): ValidationResult
     }
-    
+
     interface ITransformer {
         + transform(record: Dict): Dict
     }
-    
+
     interface IExporter {
         + export(records: List[Dict], path: Path): None
     }
-    
+
     interface IRecordFactory {
         + create(data: Dict): Record
     }
@@ -55,31 +55,31 @@ package "Scraper Framework - Core" {
         + export(path: Path): None
         # execute_pipeline(data): List[Record]
     }
-    
+
     class ProcessingPipeline {
         - stages: List[IPipelineStage]
         --
         + add_stage(stage: IPipelineStage): void
         + execute(data: Any): Any
     }
-    
+
     interface IPipelineStage {
         + process(data: Any): Any
     }
-    
+
     class ValidationStage {
         - validator: IValidator
         - mode: ValidationMode
         --
         + process(records): List[Record]
     }
-    
+
     class TransformationStage {
         - transformers: List[ITransformer]
         --
         + process(records): List[Record]
     }
-    
+
     class NormalizationStage {
         - normalizers: List[IFieldNormalizer]
         --
@@ -93,14 +93,14 @@ package "Scraper Types - Specialized" {
         --
         + fetch(): List[Record]
     }
-    
+
     class TableBasedScraper {
         - table_parser: TableParser
         - schema: TableSchema
         --
         + fetch(): List[Record]
     }
-    
+
     class CompositeDataScraper {
         - list_scraper: BaseScraper
         - detail_scraper: BaseScraper
@@ -109,7 +109,7 @@ package "Scraper Types - Specialized" {
         + fetch(): List[Record]
         # merge_records(list, details): List[Record]
     }
-    
+
     class InfoboxBasedScraper {
         - infobox_parser: InfoboxParser
         --
@@ -126,14 +126,14 @@ package "Parsing Strategy" {
         # extract_content(html): Element
         # parse_content(element): List[Dict]
     }
-    
+
     class ListParser {
         - item_parser: IItemParser
         --
         + parse(html): List[Dict]
         # parse_list_items(ul_element): List[Dict]
     }
-    
+
     class TableParser {
         - schema: TableSchema
         - column_parsers: Dict[str, IColumnParser]
@@ -142,22 +142,22 @@ package "Parsing Strategy" {
         # parse_table_rows(table): List[Dict]
         # parse_row(row, schema): Dict
     }
-    
+
     class InfoboxParser {
         - field_mapping: Dict[str, str]
         --
         + parse(html): Dict
         # parse_infobox_fields(infobox): Dict
     }
-    
+
     interface ISectionSelector {
         + select(html: str, section_id: str): Element
     }
-    
+
     interface IItemParser {
         + parse_item(element: Element): Dict
     }
-    
+
     interface IColumnParser {
         + parse_column(cell: Element, context: ColumnContext): Any
     }
@@ -169,36 +169,36 @@ package "Column Parsing - Improved" {
         # extract_text(cell): str
         # extract_links(cell): List[str]
     }
-    
+
     class TextColumnParser {
         + parse(cell, context): str
     }
-    
+
     class NumericColumnParser {
         - numeric_type: Type
         --
         + parse(cell, context): int | float
     }
-    
+
     class LinkColumnParser {
         - include_text: bool
         --
         + parse(cell, context): LinkRecord
     }
-    
+
     class ListColumnParser {
         - item_parser: IColumnParser
         - separator: str
         --
         + parse(cell, context): List[Any]
     }
-    
+
     class CompositeColumnParser {
         - parsers: List[IColumnParser]
         --
         + parse(cell, context): Dict
     }
-    
+
     class ColumnParserFactory {
         + {static} create(column_type: str, config: Dict): IColumnParser
     }
@@ -211,7 +211,7 @@ package "Data Access Layer" {
         --
         + fetch(url): str
     }
-    
+
     class CachedDataSource {
         - inner_source: IDataSource
         - cache: ICache
@@ -220,31 +220,31 @@ package "Data Access Layer" {
         # get_from_cache(url): str | None
         # save_to_cache(url, content): void
     }
-    
+
     interface IHttpClient {
         + get(url: str, options: HttpOptions): HttpResponse
     }
-    
+
     interface ICache {
         + get(key: str): str | None
         + set(key: str, value: str): void
         + has(key: str): bool
     }
-    
+
     class FileCache {
         - cache_dir: Path
         --
         + get(key): str | None
         + set(key, value): void
     }
-    
+
     class PolicyBasedHttpClient {
         - policies: List[IHttpPolicy]
         --
         + get(url, options): HttpResponse
         # apply_policies(request): HttpResponse
     }
-    
+
     interface IHttpPolicy {
         + apply(request: HttpRequest, next: Callable): HttpResponse
     }
@@ -258,23 +258,23 @@ package "Record Management" {
         # normalize_fields(data): Dict
         # validate_required_fields(data): void
     }
-    
+
     class CircuitRecordFactory {
         + create(data): Circuit
     }
-    
+
     class DriverRecordFactory {
         + create(data): Driver
     }
-    
+
     class ConstructorRecordFactory {
         + create(data): Constructor
     }
-    
+
     class SeasonRecordFactory {
         + create(data): Season
     }
-    
+
     class RecordFactoryRegistry {
         - factories: Dict[str, IRecordFactory]
         --
@@ -291,27 +291,27 @@ package "Field Normalization - Improved" {
         + normalize(field: str, value: Any): Any
         + register_strategy(field: str, strategy: INormalizationStrategy): void
     }
-    
+
     interface INormalizationStrategy {
         + normalize(value: Any): Any
     }
-    
+
     class IntNormalizationStrategy {
         + normalize(value): int | None
     }
-    
+
     class FloatNormalizationStrategy {
         + normalize(value): float | None
     }
-    
+
     class LinkNormalizationStrategy {
         + normalize(value): LinkRecord | None
     }
-    
+
     class SeasonListNormalizationStrategy {
         + normalize(value): List[SeasonRecord]
     }
-    
+
     class DateNormalizationStrategy {
         + normalize(value): NormalizedDate | None
     }
@@ -326,24 +326,24 @@ package "Validation Framework - Improved" {
         + add_rule(rule: IValidationRule): void
         # collect_stats(result: ValidationResult): void
     }
-    
+
     interface IValidationRule {
         + validate(record: Dict): ValidationIssue | None
     }
-    
+
     class RequiredFieldRule {
         - field_name: str
         --
         + validate(record): ValidationIssue | None
     }
-    
+
     class TypeCheckRule {
         - field_name: str
         - expected_type: Type
         --
         + validate(record): ValidationIssue | None
     }
-    
+
     class RangeValidationRule {
         - field_name: str
         - min_value: Any
@@ -351,14 +351,14 @@ package "Validation Framework - Improved" {
         --
         + validate(record): ValidationIssue | None
     }
-    
+
     class CustomValidationRule {
         - field_name: str
         - validator_func: Callable
         --
         + validate(record): ValidationIssue | None
     }
-    
+
     class ValidationResult {
         + is_valid: bool
         + issues: List[ValidationIssue]
@@ -366,7 +366,7 @@ package "Validation Framework - Improved" {
         + add_issue(issue: ValidationIssue): void
         + has_errors(): bool
     }
-    
+
     class ValidationStatsCollector {
         - stats: Dict[str, int]
         --
@@ -385,31 +385,31 @@ package "Export System - Improved" {
         # format_data(records): Any
         # write_to_file(data, path): void
     }
-    
+
     class JsonExporter {
         - indent: int
         - include_metadata: bool
         --
         + export(records, path): void
     }
-    
+
     class CsvExporter {
         - fieldnames: List[str]
         - include_headers: bool
         --
         + export(records, path): void
     }
-    
+
     class MultiFormatExporter {
         - exporters: List[IExporter]
         --
         + export(records, path): void
     }
-    
+
     interface IDataFormatter {
         + format(records: List[Dict]): Any
     }
-    
+
     interface IFileWriter {
         + write(data: Any, path: Path): void
     }
@@ -425,26 +425,26 @@ package "Configuration - Improved" {
         + {static} from_dict(config: Dict): ScraperConfiguration
         + to_dict(): Dict
     }
-    
+
     class ParserConfig {
         + section_id: str
         + expected_headers: List[str]
         + column_mapping: Dict[str, str]
         + schema: TableSchema | None
     }
-    
+
     class ValidationConfig {
         + mode: ValidationMode
         + rules: List[Dict]
         + record_factory: str
     }
-    
+
     class ExportConfig {
         + formats: List[str]
         + output_dir: Path
         + include_metadata: bool
     }
-    
+
     enum ValidationMode {
         STRICT
         SOFT
@@ -457,7 +457,7 @@ package "Domain Models - Enhanced" {
         + {abstract} to_dict(): Dict
         + {abstract} validate(): void
     }
-    
+
     class Circuit {
         + circuit_name: str
         + location: str
@@ -470,7 +470,7 @@ package "Domain Models - Enhanced" {
         + to_dict(): Dict
         + validate(): void
     }
-    
+
     class Driver {
         + driver: str
         + nationality: str
@@ -485,7 +485,7 @@ package "Domain Models - Enhanced" {
         + is_active(): bool
         + is_world_champion(): bool
     }
-    
+
     class Constructor {
         + constructor_name: str
         + nationality: str

@@ -1,82 +1,39 @@
-from pathlib import Path
+"""DEPRECATED ENTRYPOINT: use scrapers.circuits.entrypoint.run_list_scraper."""
 
-from models.records.factories import build_circuit_record
 from models.validation.circuit import Circuit
-from scrapers.base.helpers.config_factory import (
-    ScraperCommonConfig,
-    build_table_config,
-)
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.circuits.schemas import build_circuits_schema
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
+from scrapers.base.source_catalog import CIRCUITS_LIST
+from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
-from scrapers.circuits.validator import CircuitsRecordValidator
+from scrapers.circuits.schemas import build_circuits_schema
+from scrapers.circuits.sections.list_section import CircuitsListSectionParser
 
 
-class CircuitsListScraper(F1TableScraper):
+class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScraper):
+    domain = "circuits"
+
     """
     Lista torów F1:
     https://en.wikipedia.org/wiki/List_of_Formula_One_circuits
     (duża tabela 'Circuits')
     """
 
-    default_validator = CircuitsRecordValidator()
-
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
-        section_id="Circuits",
+    CONFIG = build_scraper_config(
+        url=CIRCUITS_LIST.base_url,
+        section_id=CIRCUITS_LIST.section_id,
         expected_headers=CIRCUITS_EXPECTED_HEADERS,
         model_class=Circuit,
         schema=build_circuits_schema(),
-        record_factory=build_circuit_record,
+        record_factory=RECORD_FACTORIES.builders("circuit"),
     )
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
-        options = build_table_config(
-            options,
-            config=ScraperCommonConfig(
-                include_urls=True,
-                normalize_empty_values=False,
-                validation_mode="soft",
-            ),
-        )
-        super().__init__(options=options, config=config)
+    section_label = "Circuits"
+    section_parser_class = CircuitsListSectionParser
 
 
 if __name__ == "__main__":
-    import argparse
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--quality-report",
-        action=argparse.BooleanOptionalAction,
-        default=True,
-        help="Zapisz raport jakości do debug_dir/quality_report.json.",
-    )
-    parser.add_argument(
-        "--error-report",
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help="Zapisz raporty błędów do debug_dir/errors.jsonl.",
-    )
-    args = parser.parse_args()
-    run_and_export(
-        CircuitsListScraper,
-        "circuits/f1_circuits.json",
-        "circuits/f1_circuits.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-            quality_report=args.quality_report,
-            error_report=args.error_report,
-        ),
-    )
+    run_deprecated_entrypoint()

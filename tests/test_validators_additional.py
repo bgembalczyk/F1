@@ -2,21 +2,21 @@ from dataclasses import dataclass
 
 import pytest
 
-from models.validation.core import validate_float, validate_int
-from models.validation.validators import (
-    validate_link,
-    validate_links,
-    validate_seasons,
-    model_to_dict,
-    normalize_link_list,
-    normalize_season_list,
-)
-from models.value_objects import Link, SeasonRef
-from validation.records import (
-    BaseDomainRecordValidator,
-    RecordValidator,
-    ValidationIssue,
-)
+from models.validation.helpers import validate_float
+from models.validation.helpers import validate_int
+from models.validation.validators import model_to_dict
+from models.validation.validators import normalize_link_list
+from models.validation.validators import normalize_season_list
+from models.validation.validators import validate_link
+from models.validation.validators import validate_links
+from models.validation.validators import validate_seasons
+from models.value_objects.link import Link
+from models.value_objects.season_ref import SeasonRef
+from validation.issue import ValidationIssue
+from validation.validator_base import RecordValidator
+
+VALID_FLOAT_STRING = "3.5"
+EXPECTED_FLOAT_VALUE = 3.5
 
 
 def test_validate_int_allows_none_and_rejects_invalid_values():
@@ -30,7 +30,7 @@ def test_validate_int_allows_none_and_rejects_invalid_values():
 
 
 def test_validate_float_coerces_and_rejects_negative_values():
-    assert validate_float("3.5", "value") == 3.5
+    assert validate_float(VALID_FLOAT_STRING, "value") == EXPECTED_FLOAT_VALUE
 
     with pytest.raises(ValueError, match="nie może być ujemne"):
         validate_float(-1.0, "value")
@@ -85,7 +85,7 @@ def test_normalize_link_list_filters_empty_links():
         [
             {"text": "", "url": None},
             {"text": "Example", "url": None},
-        ]
+        ],
     )
 
     assert links == [Link(text="Example", url=None)]
@@ -97,30 +97,30 @@ def test_normalize_season_list_filters_none_entries():
             {"year": 2020},
             {"url": "https://example.com"},
             SeasonRef(year=2021),
-        ]
+        ],
     )
 
     assert seasons == [SeasonRef(year=2020), SeasonRef(year=2021)]
 
 
-def test_base_domain_validator_checks_required_and_type_rules():
+def test_record_validator_checks_required_and_type_rules():
     record = {"name": "Example", "count": "invalid"}
 
-    errors = BaseDomainRecordValidator.require_keys(
-        record, ["name", "count", "missing"]
+    errors = RecordValidator.require_keys(
+        record,
+        ["name", "count", "missing"],
     )
 
     messages = [error.message for error in errors]
     assert "Missing key: missing" in messages
     type_messages = [
-        error.message
-        for error in BaseDomainRecordValidator.require_type(record, "count", int)
+        error.message for error in RecordValidator.require_type(record, "count", int)
     ]
     assert "Invalid type for count: expected int, got str" in type_messages
 
 
-def test_base_domain_validator_link_helpers_report_invalid_entries():
-    errors = BaseDomainRecordValidator.require_link_dict(
+def test_record_validator_link_helpers_report_invalid_entries():
+    errors = RecordValidator.require_link_dict(
         {"text": " ", "url": 123},
         "link",
     )
@@ -128,7 +128,7 @@ def test_base_domain_validator_link_helpers_report_invalid_entries():
     assert "link.text must be a non-empty string" in messages
     assert "link.url must be a string or None" in messages
 
-    list_errors = BaseDomainRecordValidator.require_link_list(
+    list_errors = RecordValidator.require_link_list(
         [{"text": "Ok", "url": None}, "bad"],
         "links",
     )
@@ -138,7 +138,7 @@ def test_base_domain_validator_link_helpers_report_invalid_entries():
 
 def test_quality_report_tracks_structured_issues():
     class DummyValidator(RecordValidator):
-        def validate(self, record):  # type: ignore[override]
+        def validate(self, _record):  # type: ignore[override]
             return []
 
     validator = DummyValidator()
@@ -147,7 +147,7 @@ def test_quality_report_tracks_structured_issues():
             ValidationIssue.missing("name"),
             ValidationIssue.type_error("age", "int", "str"),
             ValidationIssue.custom("other issue"),
-        ]
+        ],
     )
 
     report = validator.build_quality_report()

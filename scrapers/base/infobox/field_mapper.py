@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any
 
 from scrapers.base.infobox.schema import InfoboxSchema
 
@@ -17,7 +17,7 @@ class InfoboxFieldMapper:
         self._logger = logger
         self._context = context
 
-    def map(self, raw: Dict[str, Any] | None) -> Dict[str, Any]:
+    def map(self, raw: dict[str, Any] | None) -> dict[str, Any]:
         if not raw:
             return {"title": None, "rows": {}}
 

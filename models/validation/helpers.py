@@ -1,9 +1,34 @@
-from typing import Any, Dict, List
+from collections.abc import Iterable
+from typing import Any
 
-from models.validation.core import validate_float
+from models.validation.utils import coerce_number
 
 
-def normalize_unit_value(value: Any, field_name: str) -> Dict[str, Any] | None:
+def validate_int(value: Any, field_name: str) -> int | None:
+    return coerce_number(value, int, field_name, allow_none=True)
+
+
+def validate_float(value: Any, field_name: str) -> float | None:
+    return coerce_number(value, float, field_name, allow_none=True)
+
+
+def validate_status(value: Any, allowed: Iterable[str], field_name: str) -> str:
+    status_normalized = (value or "").strip().lower()
+    allowed_normalized: list[str] = []
+    allowed_set: set[str] = set()
+    for option in allowed:
+        normalized = str(option).strip().lower()
+        if normalized and normalized not in allowed_set:
+            allowed_set.add(normalized)
+            allowed_normalized.append(normalized)
+    if status_normalized not in allowed_set:
+        allowed_display = ", ".join(allowed_normalized)
+        msg = f"Pole {field_name} musi mieć jedną z wartości: {allowed_display}"
+        raise ValueError(msg)
+    return status_normalized
+
+
+def normalize_unit_value(value: Any, field_name: str) -> dict[str, Any] | None:
     if value is None:
         return None
     if isinstance(value, dict):
@@ -16,17 +41,19 @@ def normalize_unit_value(value: Any, field_name: str) -> Dict[str, Any] | None:
         )
         normalized_unit = str(unit).strip() if unit is not None else None
         return {"value": normalized_value, "unit": normalized_unit}
-    if isinstance(value, (int, float)):
+    if isinstance(value, int | float):
         return {"value": validate_float(value, f"{field_name}.value"), "unit": None}
-    raise ValueError(f"Pole {field_name} musi być słownikiem lub liczbą")
+    msg = f"Pole {field_name} musi być słownikiem lub liczbą"
+    raise TypeError(msg)
 
 
-def normalize_unit_list(value: Any, field_name: str) -> List[Dict[str, Any]]:
+def normalize_unit_list(value: Any, field_name: str) -> list[dict[str, Any]]:
     if value is None:
         return []
     if not isinstance(value, list):
-        raise ValueError(f"Pole {field_name} musi być listą")
-    normalized: List[Dict[str, Any]] = []
+        msg = f"Pole {field_name} musi być listą"
+        raise TypeError(msg)
+    normalized: list[dict[str, Any]] = []
     for index, item in enumerate(value):
         normalized_item = normalize_unit_value(item, f"{field_name}[{index}]")
         if normalized_item is not None:
@@ -34,11 +61,12 @@ def normalize_unit_list(value: Any, field_name: str) -> List[Dict[str, Any]]:
     return normalized
 
 
-def normalize_range_value(value: Any, field_name: str) -> Dict[str, Any] | None:
+def normalize_range_value(value: Any, field_name: str) -> dict[str, Any] | None:
     if value is None:
         return None
     if not isinstance(value, dict):
-        raise ValueError(f"Pole {field_name} musi być słownikiem")
+        msg = f"Pole {field_name} musi być słownikiem"
+        raise TypeError(msg)
 
     lower = value.get("min")
     upper = value.get("max")
@@ -54,6 +82,7 @@ def normalize_range_item(value: Any, field_name: str) -> Any:
         return None
     if isinstance(value, dict) and "unit" in value:
         return normalize_unit_value(value, field_name)
-    if isinstance(value, (int, float, dict)):
+    if isinstance(value, int | float | dict):
         return normalize_unit_value(value, field_name)
-    raise ValueError(f"Pole {field_name} ma nieprawidłowy typ")
+    msg = f"Pole {field_name} ma nieprawidłowy typ"
+    raise ValueError(msg)

@@ -173,8 +173,8 @@
               "car": "Ferrari 250 GT SWB",
               "class": "GT 3.0",
               "laps": 162,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -204,8 +204,8 @@
               },
               "class": "E 3.0",
               "laps": 30,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -235,8 +235,8 @@
               },
               "class": "GT 3.0",
               "laps": 105,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Career results",
@@ -276,7 +276,7 @@
                   "name": "Scuderia SSS Republica di Venezia",
                   "title_sponsors": [
                     {
-                      "text": "Scuderia SSSRepublica di Venezia",
+                      "text": "Scuderia SSS Republica di Venezia",
                       "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
                     }
                   ]
@@ -440,8 +440,8 @@
                   "text": "Porsche",
                   "url": "https://en.wikipedia.org/wiki/Porsche_in_motorsport"
                 },
-                "type": "Flat4",
-                "layout": "FLAT",
+                "type": "F4",
+                "layout": "F",
                 "cylinders": 4
               },
               "1": {
@@ -775,7 +775,12 @@
                 "url": "https://en.wikipedia.org/wiki/Aston_Clinton_Hillclimb"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Austin 7 \"Einsitzer\"",
                 "url": "https://en.wikipedia.org/wiki/Austin_7"
@@ -788,7 +793,12 @@
                 "url": null
               },
               "position": null,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "1934 Wolseley Hornet Special AXK 777",
                 "url": "https://en.wikipedia.org/wiki/Wolseley_Motors"
@@ -801,7 +811,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 2.0 s/c",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -814,7 +829,12 @@
                 "url": "https://en.wikipedia.org/wiki/Lewes_Speed_Trials"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta S",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -827,7 +847,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta S",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -840,7 +865,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta S",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -853,7 +883,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 12/50",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -866,7 +901,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 2.0 s/c",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -879,7 +919,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 12/50",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -892,7 +937,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 2.0 s/c",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -905,7 +955,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta 12/50",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -954,7 +1009,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta S",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -967,7 +1027,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alta",
                 "url": "https://en.wikipedia.org/wiki/Alta_Car_and_Engineering_Company"
@@ -980,7 +1045,12 @@
                 "url": "https://en.wikipedia.org/wiki/Bo%27ness_Hill_Climb"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Bugatti Type 59",
                 "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51#Type_59"
@@ -993,7 +1063,12 @@
                 "url": "https://en.wikipedia.org/wiki/British_Hill_Climb_Championship"
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Bugatti Type 59",
                 "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51#Type_59"
@@ -1006,7 +1081,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "ERA A-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -1019,7 +1099,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Cisitalia-Fiat D46",
                 "url": "https://en.wikipedia.org/wiki/Cisitalia"
@@ -1032,7 +1117,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Bugatti Type 59",
                 "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51#Type_59"
@@ -1045,7 +1135,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Bugatti Type 59",
                 "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51#Type_59"
@@ -1058,7 +1153,12 @@
                 "url": "https://en.wikipedia.org/wiki/Swedish_Winter_Grand_Prix"
               },
               "position": 3,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "ERA A-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -1071,7 +1171,12 @@
                 "url": null
               },
               "position": 3,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "ERA A-Type",
                 "url": "https://en.wikipedia.org/wiki/English_Racing_Automobiles"
@@ -1084,7 +1189,12 @@
                 "url": null
               },
               "position": 3,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Bugatti Type 59",
                 "url": "https://en.wikipedia.org/wiki/Bugatti_Type_51#Type_59"
@@ -1097,7 +1207,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Maserati 6CM",
                 "url": "https://en.wikipedia.org/wiki/Maserati_6CM"
@@ -2084,7 +2199,12 @@
           "rows": [
             {
               "year": "1948",
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "co_drivers": [
                 {
                   "text": "John Heath",
@@ -3071,7 +3191,7 @@
               "9": null,
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -3562,7 +3682,7 @@
               "9": null,
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -3692,7 +3812,7 @@
               "9": null,
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -3850,7 +3970,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             }
           ],
@@ -4814,7 +4934,7 @@
               "9": null,
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -4915,7 +5035,7 @@
               "9": null,
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -4980,7 +5100,7 @@
                 "superscript": null
               },
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -5117,7 +5237,7 @@
               },
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -5268,7 +5388,7 @@
                 "superscript": null
               },
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -5435,7 +5555,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -5930,7 +6050,7 @@
               },
               "engine": {
                 "model": {
-                  "text": "Toyota R",
+                  "text": "Toyota RV10",
                   "url": "https://en.wikipedia.org/wiki/Toyota"
                 },
                 "displacement_l": 3.5,
@@ -6075,8 +6195,8 @@
               },
               "class": "C1",
               "laps": null,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNQ",
+              "class_pos": "DNQ"
             },
             {
               "year": {
@@ -6107,8 +6227,8 @@
               "car": "Sauber C9-Mercedes",
               "class": "C1",
               "laps": null,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNS",
+              "class_pos": "DNS"
             },
             {
               "year": {
@@ -6178,8 +6298,8 @@
               },
               "class": "C1",
               "laps": 0,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -6304,8 +6424,8 @@
               },
               "class": "C1",
               "laps": 212,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -6336,8 +6456,8 @@
               "car": "SARD MC8-R-Toyota",
               "class": "GT1",
               "laps": 14,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -6534,7 +6654,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             }
           ],
@@ -6922,7 +7042,7 @@
               "15": null,
               "16": null,
               "17": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -7193,7 +7313,7 @@
               "15": null,
               "16": null,
               "17": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -7333,7 +7453,7 @@
               "15": null,
               "16": null,
               "17": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -7765,7 +7885,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             }
           ],
@@ -9590,8 +9710,8 @@
               },
               "class": "P 3.0",
               "laps": 222,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -14869,7 +14989,7 @@
               },
               {
                 "label": "Starts",
-                "value": 21
+                "value": 22
               },
               {
                 "label": "Championships",
@@ -14884,7 +15004,7 @@
               },
               {
                 "label": "Podiums",
-                "value": 7
+                "value": 8
               },
               {
                 "label": "Poles",
@@ -15329,7 +15449,12 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "WTP Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "12th"
             },
             {
@@ -15338,7 +15463,12 @@
                 "series": "Bayford Kart Club Summer Sprint Championship",
                 "class": "Honda Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "3rd"
             },
             {
@@ -15350,7 +15480,12 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "4th"
             },
             {
@@ -15359,7 +15494,12 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "Rotax Mini Max"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "14th"
             },
             {
@@ -15396,7 +15536,12 @@
                 "series": "Super One Series ABkC Championship",
                 "class": "MiniMax"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "13th"
             },
             {
@@ -15405,7 +15550,12 @@
                 "series": "Shenington Kart Club",
                 "class": "Rotax Mini Max"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "9th"
             },
             {
@@ -15414,7 +15564,12 @@
                 "series": "Rotax Max Euro Challenge",
                 "class": "Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "2nd"
             },
             {
@@ -15426,7 +15581,12 @@
                 },
                 "class": "Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "16th"
             },
             {
@@ -15438,7 +15598,12 @@
                 },
                 "class": "Rotax Mini Max"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "3rd"
             },
             {
@@ -15447,7 +15612,12 @@
                 "series": "Trent Valley Kart Club",
                 "class": "Senior Rotax"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "24th"
             },
             {
@@ -15456,7 +15626,12 @@
                 "series": "Trent Valley Kart Club",
                 "class": "Junior Rotax"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "46th"
             },
             {
@@ -15465,7 +15640,12 @@
                 "series": "Shenington Kart Club",
                 "class": "Rotax Mini Max"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "6th"
             },
             {
@@ -15474,7 +15654,12 @@
                 "series": "BNL Karting Series",
                 "class": "Rotax Max Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "2nd"
             },
             {
@@ -15483,7 +15668,12 @@
                 "series": "Rotax Max Euro Challenge",
                 "class": "Senior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "35th"
             }
           ],
@@ -16697,6 +16887,34 @@
               "season": 2025,
               "series": {
                 "series": {
+                  "text": "24 Hours of Le Mans-Hypercar",
+                  "url": "https://en.wikipedia.org/wiki/2025_24_Hours_of_Le_Mans"
+                },
+                "class": "Hypercar"
+              },
+              "team": [
+                {
+                  "name": "Cadillac Whelen",
+                  "title_sponsors": [
+                    {
+                      "text": "Cadillac Whelen",
+                      "url": "https://en.wikipedia.org/wiki/Action_Express_Racing"
+                    }
+                  ]
+                }
+              ],
+              "races": 1,
+              "wins": 0,
+              "poles": 0,
+              "fastest_laps": 0,
+              "podiums": 0,
+              "points": 0.0,
+              "position": "DNF"
+            },
+            {
+              "season": 2025,
+              "series": {
+                "series": {
                   "text": "Deutsche Tourenwagen Masters",
                   "url": "https://en.wikipedia.org/wiki/2025_Deutsche_Tourenwagen_Masters"
                 }
@@ -16719,6 +16937,34 @@
               "podiums": 4,
               "points": 162.0,
               "position": "8th"
+            },
+            {
+              "season": 2026,
+              "series": {
+                "series": {
+                  "text": "IMSA SportsCar Championship-GTP",
+                  "url": "https://en.wikipedia.org/wiki/2026_IMSA_SportsCar_Championship"
+                },
+                "class": "GTP"
+              },
+              "team": [
+                {
+                  "name": "Cadillac Whelen",
+                  "title_sponsors": [
+                    {
+                      "text": "Cadillac Whelen",
+                      "url": "https://en.wikipedia.org/wiki/Action_Express_Racing"
+                    }
+                  ]
+                }
+              ],
+              "races": 1,
+              "wins": 0,
+              "poles": 0,
+              "fastest_laps": 0,
+              "podiums": 1,
+              "points": 340.0,
+              "position": "2nd*"
             }
           ],
           "section": "Racing record",
@@ -17135,7 +17381,7 @@
               "15": null,
               "16": null,
               "17": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -17237,7 +17483,7 @@
               "15": null,
               "16": null,
               "17": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -18123,7 +18369,7 @@
             {
               "year": {
                 "text": "2014",
-                "url": "https://en.wikipedia.org/wiki/2014_Pro_Mazda_Championship_season"
+                "url": "https://en.wikipedia.org/wiki/2014_Pro_Mazda_Championship"
               },
               "team": [
                 {
@@ -19084,7 +19330,7 @@
             {
               "year": {
                 "text": "2016",
-                "url": "https://en.wikipedia.org/wiki/2016_Formula_V8_3.5_Championship"
+                "url": "https://en.wikipedia.org/wiki/2016_Formula_V8_3.5_Series"
               },
               "team": [
                 {
@@ -22233,8 +22479,8 @@
               },
               "class": "Hypercar",
               "laps": 247,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -22275,7 +22521,8 @@
             "8",
             "9",
             "Rank",
-            "Points"
+            "Points",
+            "Ref"
           ],
           "rows": [
             {
@@ -22703,6 +22950,148 @@
               },
               "rank": 2,
               "points": 2720.0
+            },
+            {
+              "year": {
+                "text": "2026",
+                "url": "https://en.wikipedia.org/wiki/2026_IMSA_SportsCar_Championship"
+              },
+              "entrant": [
+                {
+                  "name": "Cadillac Whelen",
+                  "title_sponsors": [
+                    {
+                      "text": "Cadillac Whelen",
+                      "url": "https://en.wikipedia.org/wiki/Action_Express_Racing"
+                    }
+                  ]
+                }
+              ],
+              "class": "GTP",
+              "car": {
+                "text": "Cadillac V-Series.R",
+                "url": "https://en.wikipedia.org/wiki/Cadillac_V-Series.R"
+              },
+              "engine": {
+                "model": {
+                  "text": "Cadillac LMC55R",
+                  "url": "https://en.wikipedia.org/wiki/Cadillac"
+                },
+                "displacement_l": 5.5,
+                "type": "V8",
+                "layout": "V",
+                "cylinders": 8
+              },
+              "1": {
+                "round": {
+                  "text": "DAY",
+                  "url": "https://en.wikipedia.org/wiki/2026_24_Hours_of_Daytona"
+                },
+                "code": "DAY",
+                "result": 2,
+                "background": "#DFDFDF",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "2": {
+                "round": {
+                  "text": "SEB",
+                  "url": "https://en.wikipedia.org/wiki/2026_12_Hours_of_Sebring"
+                },
+                "code": "SEB",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "3": {
+                "round": {
+                  "text": "LBH",
+                  "url": null
+                },
+                "code": "LBH",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "4": {
+                "round": {
+                  "text": "LGA",
+                  "url": null
+                },
+                "code": "LGA",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "5": {
+                "round": {
+                  "text": "DET",
+                  "url": null
+                },
+                "code": "DET",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "6": {
+                "round": {
+                  "text": "WGL",
+                  "url": null
+                },
+                "code": "WGL",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "7": {
+                "round": {
+                  "text": "ELK",
+                  "url": null
+                },
+                "code": "ELK",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "8": {
+                "round": {
+                  "text": "IMS",
+                  "url": null
+                },
+                "code": "IMS",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "9": {
+                "round": {
+                  "text": "PET",
+                  "url": null
+                },
+                "code": "PET",
+                "result": null,
+                "background": "#",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "rank": 2,
+              "points": 340.0
             }
           ],
           "section": "Racing record",
@@ -24186,7 +24575,7 @@
               "races": 1,
               "poles": 0,
               "wins": 0,
-              "points": 5.0,
+              "points": 0.5,
               "position": "87th"
             }
           ],
@@ -26918,25 +27307,18 @@
                   "url": "https://en.wikipedia.org/wiki/Audi_R10_TDI"
                 }
               ],
-              "engine": [
-                {
-                  "model": {
-                    "text": "Audi",
-                    "url": "https://en.wikipedia.org/wiki/Audi"
-                  },
-                  "displacement_l": 5.5,
-                  "type": "V12",
-                  "layout": "V",
-                  "cylinders": 12,
-                  "turbocharged": true
+              "engine": {
+                "model": {
+                  "text": "Audi",
+                  "url": "https://en.wikipedia.org/wiki/Audi"
                 },
-                {
-                  "model": {
-                    "text": "( Diesel )",
-                    "url": "https://en.wikipedia.org/wiki/Diesel_engine"
-                  }
-                }
-              ],
+                "displacement_l": 5.5,
+                "type": "V12",
+                "layout": "V",
+                "cylinders": 12,
+                "turbocharged": true,
+                "fuel_type": "diesel"
+              },
               "1": {
                 "round": {
                   "text": "SEB",
@@ -27164,8 +27546,8 @@
               },
               "class": "LMP1",
               "laps": 331,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -27222,14 +27604,15 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Audi TDI ( Diesel )",
+                  "text": "Audi TDI",
                   "url": "https://en.wikipedia.org/wiki/Audi"
                 },
                 "displacement_l": 5.5,
                 "type": "V12",
                 "layout": "V",
                 "cylinders": 12,
-                "turbocharged": true
+                "turbocharged": true,
+                "fuel_type": "diesel"
               },
               "1": {
                 "round": {
@@ -27510,14 +27893,18 @@
       {
         "year": 2025,
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
     "drivers_championships": {
       "count": 0,
       "seasons": []
     },
-    "race_entries": 130,
-    "race_starts": 128,
+    "race_entries": 131,
+    "race_starts": 129,
     "pole_positions": 0,
     "race_wins": 0,
     "podiums": 2,
@@ -27532,10 +27919,9 @@
             "date": "1996-03-23",
             "place": [
               {
-                "text": "Westminster",
-                "url": "https://en.wikipedia.org/wiki/City_of_Westminster"
+                "text": "London",
+                "url": "https://en.wikipedia.org/wiki/London"
               },
-              "London",
               "England"
             ]
           },
@@ -27604,8 +27990,8 @@
               {
                 "label": "Entries",
                 "value": {
-                  "entries": 130,
-                  "starts": 128
+                  "entries": 131,
+                  "starts": 129
                 }
               },
               {
@@ -27648,8 +28034,8 @@
                 "label": "Last entry",
                 "value": [
                   {
-                    "text": "2025 Abu Dhabi Grand Prix",
-                    "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
+                    "text": "2026 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
                   }
                 ]
               },
@@ -27788,7 +28174,12 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "Comer Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -27800,7 +28191,12 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "17th"
             },
             {
@@ -27812,7 +28208,12 @@
                 },
                 "class": "Honda Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -27821,7 +28222,12 @@
                 "series": "Kartmasters British Grand Prix",
                 "class": "Comer Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "6th"
             },
             {
@@ -27830,7 +28236,12 @@
                 "series": "British Open Championship",
                 "class": "Honda Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "3rd"
             },
             {
@@ -27842,7 +28253,12 @@
                 },
                 "class": "Comer Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "2nd"
             },
             {
@@ -27851,7 +28267,12 @@
                 "series": "MSA British Championship",
                 "class": "Cadet"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "4th"
             },
             {
@@ -27863,7 +28284,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -27875,7 +28301,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "2nd"
             },
             {
@@ -27887,7 +28318,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "3rd"
             },
             {
@@ -27899,7 +28335,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -27911,7 +28352,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -27923,7 +28369,12 @@
                 },
                 "class": "KF3"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -27964,8 +28415,8 @@
               "season": 2010,
               "series": {
                 "series": {
-                  "text": "KF3",
-                  "url": "https://en.wikipedia.org/wiki/KF3"
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
                 },
                 "class": "KF3"
               },
@@ -28732,6 +29183,33 @@
               "podiums": 0,
               "points": 73.0,
               "position": "8th"
+            },
+            {
+              "season": 2026,
+              "series": {
+                "series": {
+                  "text": "Formula One",
+                  "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+                }
+              },
+              "team": [
+                {
+                  "name": "Atlassian Williams F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Atlassian Williams F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                    }
+                  ]
+                }
+              ],
+              "races": 1,
+              "wins": 0,
+              "poles": 0,
+              "fastest_laps": 0,
+              "podiums": 0,
+              "points": 0.0,
+              "position": "12th*"
             }
           ],
           "section": "Racing record",
@@ -30533,7 +31011,7 @@
                 "url": "https://en.wikipedia.org/wiki/Dallara_F312"
               },
               "qualifying": 15,
-              "quali_race": null,
+              "quali_race": "DNF",
               "main_race": 13
             }
           ],
@@ -33360,6 +33838,333 @@
               },
               "wdc": 8,
               "points": 73.0
+            },
+            {
+              "year": {
+                "text": "2026",
+                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+              },
+              "entrant": [
+                {
+                  "name": "Atlassian Williams F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Atlassian Williams F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                    }
+                  ]
+                }
+              ],
+              "chassis": [
+                {
+                  "text": "Williams",
+                  "url": "https://en.wikipedia.org/wiki/Williams_Racing"
+                },
+                {
+                  "text": "FW48",
+                  "url": "https://en.wikipedia.org/wiki/Williams_FW48"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Mercedes-AMG F1 M17",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+                },
+                "type": "V6",
+                "layout": "V",
+                "cylinders": 6,
+                "turbocharged": true
+              },
+              "1": {
+                "round": {
+                  "text": "AUS",
+                  "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
+                },
+                "code": "AUS",
+                "result": 12,
+                "background": "#CFCFFF",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "2": {
+                "round": {
+                  "text": "CHN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix"
+                },
+                "code": "CHN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "3": {
+                "round": {
+                  "text": "JPN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Japanese_Grand_Prix"
+                },
+                "code": "JPN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "4": {
+                "round": {
+                  "text": "BHR",
+                  "url": "https://en.wikipedia.org/wiki/2026_Bahrain_Grand_Prix"
+                },
+                "code": "BHR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "5": {
+                "round": {
+                  "text": "SAU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Saudi_Arabian_Grand_Prix"
+                },
+                "code": "SAU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "6": {
+                "round": {
+                  "text": "MIA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Miami_Grand_Prix"
+                },
+                "code": "MIA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "7": {
+                "round": {
+                  "text": "CAN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Canadian_Grand_Prix"
+                },
+                "code": "CAN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "8": {
+                "round": {
+                  "text": "MON",
+                  "url": "https://en.wikipedia.org/wiki/2026_Monaco_Grand_Prix"
+                },
+                "code": "MON",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "9": {
+                "round": {
+                  "text": "BCN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Barcelona-Catalunya_Grand_Prix"
+                },
+                "code": "BCN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "10": {
+                "round": {
+                  "text": "AUT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Austrian_Grand_Prix"
+                },
+                "code": "AUT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "11": {
+                "round": {
+                  "text": "GBR",
+                  "url": "https://en.wikipedia.org/wiki/2026_British_Grand_Prix"
+                },
+                "code": "GBR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "12": {
+                "round": {
+                  "text": "BEL",
+                  "url": "https://en.wikipedia.org/wiki/2026_Belgian_Grand_Prix"
+                },
+                "code": "BEL",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "13": {
+                "round": {
+                  "text": "HUN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Hungarian_Grand_Prix"
+                },
+                "code": "HUN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "14": {
+                "round": {
+                  "text": "NED",
+                  "url": "https://en.wikipedia.org/wiki/2026_Dutch_Grand_Prix"
+                },
+                "code": "NED",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "15": {
+                "round": {
+                  "text": "ITA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Italian_Grand_Prix"
+                },
+                "code": "ITA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "16": {
+                "round": {
+                  "text": "ESP",
+                  "url": "https://en.wikipedia.org/wiki/2026_Spanish_Grand_Prix"
+                },
+                "code": "ESP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "17": {
+                "round": {
+                  "text": "AZE",
+                  "url": "https://en.wikipedia.org/wiki/2026_Azerbaijan_Grand_Prix"
+                },
+                "code": "AZE",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "18": {
+                "round": {
+                  "text": "SIN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Singapore_Grand_Prix"
+                },
+                "code": "SIN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "19": {
+                "round": {
+                  "text": "USA",
+                  "url": "https://en.wikipedia.org/wiki/2026_United_States_Grand_Prix"
+                },
+                "code": "USA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "20": {
+                "round": {
+                  "text": "MXC",
+                  "url": "https://en.wikipedia.org/wiki/2026_Mexico_City_Grand_Prix"
+                },
+                "code": "MXC",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "21": {
+                "round": {
+                  "text": "SAP",
+                  "url": "https://en.wikipedia.org/wiki/2026_S%C3%A3o_Paulo_Grand_Prix"
+                },
+                "code": "SAP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "22": {
+                "round": {
+                  "text": "LVG",
+                  "url": "https://en.wikipedia.org/wiki/2026_Las_Vegas_Grand_Prix"
+                },
+                "code": "LVG",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "23": {
+                "round": {
+                  "text": "QAT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Qatar_Grand_Prix"
+                },
+                "code": "QAT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "24": {
+                "round": {
+                  "text": "ABU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix"
+                },
+                "code": "ABU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "wdc": 12,
+              "points": 0.0
             }
           ],
           "section": "Racing record",
@@ -39435,8 +40240,8 @@
               "car": "Porsche 962 C",
               "class": "C1",
               "laps": 69,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -41816,7 +42621,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -44831,6 +45636,44 @@
   },
   {
     "driver": {
+      "text": "Ray Allen",
+      "url": "https://en.wikipedia.org/wiki/Ray_Allen"
+    },
+    "is_active": false,
+    "is_world_champion": false,
+    "nationality": "United Kingdom",
+    "seasons_competed": [
+      {
+        "year": 1972,
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
+      }
+    ],
+    "drivers_championships": {
+      "count": 0,
+      "seasons": []
+    },
+    "race_entries": 1,
+    "race_starts": 0,
+    "pole_positions": 0,
+    "race_wins": 0,
+    "podiums": 0,
+    "fastest_laps": 0,
+    "points": "0",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Ray_Allen",
+      "infobox": {
+        "title": "Ray Allen",
+        "general": {},
+        "championship_titles": [],
+        "major_victories": [],
+        "career": [],
+        "previous_series": []
+      },
+      "career_results": null
+    }
+  },
+  {
+    "driver": {
       "text": "Philippe Alliot",
       "url": "https://en.wikipedia.org/wiki/Philippe_Alliot"
     },
@@ -45331,7 +46174,12 @@
                   "url": "https://en.wikipedia.org/wiki/French_Formula_Three_Championship"
                 }
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "races": "unknown",
               "wins": "unknown",
               "poles": "unknown",
@@ -47433,8 +48281,8 @@
               },
               "class": "C1",
               "laps": 22,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -47538,8 +48386,8 @@
               },
               "class": "GT1",
               "laps": 77,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -47570,8 +48418,8 @@
               "car": "Courage C36-Porsche",
               "class": "LMP1",
               "laps": 215,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -47602,8 +48450,8 @@
               "car": "Courage C65-JPX",
               "class": "LMP675",
               "laps": 41,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -50986,6 +51834,10 @@
       {
         "year": 2025,
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
     "drivers_championships": {
@@ -51001,8 +51853,8 @@
         }
       ]
     },
-    "race_entries": 428,
-    "race_starts": 425,
+    "race_entries": 429,
+    "race_starts": 426,
     "pole_positions": 22,
     "race_wins": 32,
     "podiums": 106,
@@ -51096,8 +51948,8 @@
               {
                 "label": "Entries",
                 "value": {
-                  "entries": 428,
-                  "starts": 425
+                  "entries": 429,
+                  "starts": 426
                 }
               },
               {
@@ -51167,8 +52019,8 @@
                 "label": "Last entry",
                 "value": [
                   {
-                    "text": "2025 Abu Dhabi Grand Prix",
-                    "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
+                    "text": "2026 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
                   }
                 ]
               },
@@ -51502,7 +52354,10 @@
             {
               "season": 1995,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "100 Junior"
               },
               "position": "19th"
@@ -51545,7 +52400,10 @@
             {
               "season": 1996,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "100 Junior"
               },
               "position": "15th"
@@ -51553,7 +52411,10 @@
             {
               "season": 1997,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "ICA"
               },
               "position": "4th"
@@ -51561,7 +52422,10 @@
             {
               "season": 1998,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "Formula A"
               },
               "position": "7th"
@@ -51591,7 +52455,10 @@
             {
               "season": 1999,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "Formula A"
               },
               "position": "5th"
@@ -52638,6 +53505,33 @@
               "podiums": 0,
               "points": 56.0,
               "position": "10th"
+            },
+            {
+              "season": 2026,
+              "series": {
+                "series": {
+                  "text": "Formula One",
+                  "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+                }
+              },
+              "team": [
+                {
+                  "name": "Aston Martin Aramco F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Aston Martin Aramco F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Aston_Martin_Aramco_F1_Team"
+                    }
+                  ]
+                }
+              ],
+              "races": 1,
+              "wins": 0,
+              "poles": 0,
+              "flaps": "0",
+              "podiums": 0,
+              "points": 0.0,
+              "position": "20th*"
             }
           ],
           "section": "Racing record",
@@ -59480,6 +60374,334 @@
               },
               "wdc": 10,
               "points": 56.0
+            },
+            {
+              "year": {
+                "text": "2026",
+                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+              },
+              "entrant": [
+                {
+                  "name": "Aston Martin Aramco F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Aston Martin Aramco F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Aston_Martin_Aramco_F1_Team"
+                    }
+                  ]
+                }
+              ],
+              "chassis": [
+                {
+                  "text": "Aston Martin",
+                  "url": "https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One"
+                },
+                {
+                  "text": "AMR26",
+                  "url": "https://en.wikipedia.org/wiki/Aston_Martin_AMR26"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Honda RA626H",
+                  "url": "https://en.wikipedia.org/wiki/Honda_in_Formula_One"
+                },
+                "displacement_l": 1.6,
+                "type": "V6",
+                "layout": "V",
+                "cylinders": 6,
+                "turbocharged": true
+              },
+              "1": {
+                "round": {
+                  "text": "AUS",
+                  "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
+                },
+                "code": "AUS",
+                "result": "Ret",
+                "background": "#EFCFFF",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "2": {
+                "round": {
+                  "text": "CHN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix"
+                },
+                "code": "CHN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "3": {
+                "round": {
+                  "text": "JPN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Japanese_Grand_Prix"
+                },
+                "code": "JPN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "4": {
+                "round": {
+                  "text": "BHR",
+                  "url": "https://en.wikipedia.org/wiki/2026_Bahrain_Grand_Prix"
+                },
+                "code": "BHR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "5": {
+                "round": {
+                  "text": "SAU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Saudi_Arabian_Grand_Prix"
+                },
+                "code": "SAU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "6": {
+                "round": {
+                  "text": "MIA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Miami_Grand_Prix"
+                },
+                "code": "MIA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "7": {
+                "round": {
+                  "text": "CAN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Canadian_Grand_Prix"
+                },
+                "code": "CAN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "8": {
+                "round": {
+                  "text": "MON",
+                  "url": "https://en.wikipedia.org/wiki/2026_Monaco_Grand_Prix"
+                },
+                "code": "MON",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "9": {
+                "round": {
+                  "text": "BCN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Barcelona-Catalunya_Grand_Prix"
+                },
+                "code": "BCN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "10": {
+                "round": {
+                  "text": "AUT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Austrian_Grand_Prix"
+                },
+                "code": "AUT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "11": {
+                "round": {
+                  "text": "GBR",
+                  "url": "https://en.wikipedia.org/wiki/2026_British_Grand_Prix"
+                },
+                "code": "GBR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "12": {
+                "round": {
+                  "text": "BEL",
+                  "url": "https://en.wikipedia.org/wiki/2026_Belgian_Grand_Prix"
+                },
+                "code": "BEL",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "13": {
+                "round": {
+                  "text": "HUN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Hungarian_Grand_Prix"
+                },
+                "code": "HUN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "14": {
+                "round": {
+                  "text": "NED",
+                  "url": "https://en.wikipedia.org/wiki/2026_Dutch_Grand_Prix"
+                },
+                "code": "NED",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "15": {
+                "round": {
+                  "text": "ITA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Italian_Grand_Prix"
+                },
+                "code": "ITA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "16": {
+                "round": {
+                  "text": "ESP",
+                  "url": "https://en.wikipedia.org/wiki/2026_Spanish_Grand_Prix"
+                },
+                "code": "ESP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "17": {
+                "round": {
+                  "text": "AZE",
+                  "url": "https://en.wikipedia.org/wiki/2026_Azerbaijan_Grand_Prix"
+                },
+                "code": "AZE",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "18": {
+                "round": {
+                  "text": "SIN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Singapore_Grand_Prix"
+                },
+                "code": "SIN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "19": {
+                "round": {
+                  "text": "USA",
+                  "url": "https://en.wikipedia.org/wiki/2026_United_States_Grand_Prix"
+                },
+                "code": "USA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "20": {
+                "round": {
+                  "text": "MXC",
+                  "url": "https://en.wikipedia.org/wiki/2026_Mexico_City_Grand_Prix"
+                },
+                "code": "MXC",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "21": {
+                "round": {
+                  "text": "SAP",
+                  "url": "https://en.wikipedia.org/wiki/2026_S%C3%A3o_Paulo_Grand_Prix"
+                },
+                "code": "SAP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "22": {
+                "round": {
+                  "text": "LVG",
+                  "url": "https://en.wikipedia.org/wiki/2026_Las_Vegas_Grand_Prix"
+                },
+                "code": "LVG",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "23": {
+                "round": {
+                  "text": "QAT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Qatar_Grand_Prix"
+                },
+                "code": "QAT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "24": {
+                "round": {
+                  "text": "ABU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix"
+                },
+                "code": "ABU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "wdc": 20,
+              "points": 0.0
             }
           ],
           "section": "Racing record",
@@ -60261,8 +61483,8 @@
                   "url": "https://en.wikipedia.org/wiki/Chevrolet"
                 }
               },
-              "start": null,
-              "finish": null,
+              "start": "DNQ",
+              "finish": "DNQ",
               "team": [
                 {
                   "name": "McLaren Racing",
@@ -66750,7 +67972,7 @@
                   "text": "Tecno",
                   "url": "https://en.wikipedia.org/wiki/Tecno_(motorsport)"
                 },
-                "PA123B"
+                "PA123-006"
               ],
               "engine": {
                 "model": {
@@ -70244,7 +71466,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -70378,7 +71600,7 @@
               },
               "10": null,
               "11": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             }
           ],
@@ -70430,7 +71652,7 @@
               "car": "Shelby Cobra Daytona-Ford",
               "class": "GT +3.0",
               "laps": 131,
-              "pos": null,
+              "pos": "DSQ",
               "class_pos.": "DSQ"
             },
             {
@@ -70458,7 +71680,7 @@
               "car": "Ford GT40 Mk.II",
               "class": "P +5.0",
               "laps": 89,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -70514,7 +71736,7 @@
               "car": "Ferrari 330 P3 Spyder",
               "class": "P +5.0",
               "laps": 105,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -70542,7 +71764,7 @@
               "car": "Ferrari 312P Coupe",
               "class": "P 3.0",
               "laps": 0,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -70574,7 +71796,7 @@
               "car": "Matra-Simca MS660",
               "class": "P 3.0",
               "laps": null,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -70610,7 +71832,7 @@
               "car": "Matra-Simca MS670",
               "class": "S 3.0",
               "laps": 1,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -70641,7 +71863,7 @@
               },
               "class": "T 5.0",
               "laps": 160,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             }
           ],
@@ -77363,8 +78585,8 @@
               "car": "Ford GT40 Mk.II",
               "class": "P +5.0",
               "laps": 97,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -77391,8 +78613,8 @@
               "car": "Ford GT40 Mk.IV",
               "class": "P +5.0",
               "laps": 188,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -77414,8 +78636,8 @@
               "car": "Mirage M12-Ford Cosworth",
               "class": "C",
               "laps": null,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNS",
+              "class_pos": "DNS"
             },
             {
               "year": {
@@ -77584,8 +78806,8 @@
               "car": "Courage C36-Porsche",
               "class": "LMP",
               "laps": 197,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -82028,7 +83250,12 @@
                     "url": "https://en.wikipedia.org/wiki/1993_Italian_Grand_Prix"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "title": "British Formula One Championship career",
+            "rows": [
               {
                 "full_data": {
                   "text": null,
@@ -82311,8 +83538,8 @@
               },
               "class": "LMP",
               "laps": 197,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -91573,19 +92800,23 @@
       {
         "year": 2025,
         "url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship"
+      },
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
       }
     ],
     "drivers_championships": {
       "count": 0,
       "seasons": []
     },
-    "race_entries": 24,
-    "race_starts": 24,
+    "race_entries": 25,
+    "race_starts": 25,
     "pole_positions": 0,
     "race_wins": 0,
-    "podiums": 3,
+    "podiums": 4,
     "fastest_laps": 3,
-    "points": "150",
+    "points": "168",
     "details": {
       "url": "https://en.wikipedia.org/wiki/Kimi_Antonelli",
       "infobox": {
@@ -91703,8 +92934,8 @@
               {
                 "label": "Entries",
                 "value": {
-                  "entries": 24,
-                  "starts": 24
+                  "entries": 25,
+                  "starts": 25
                 }
               },
               {
@@ -91720,11 +92951,11 @@
               },
               {
                 "label": "Podiums",
-                "value": 3
+                "value": 4
               },
               {
                 "label": "Career points",
-                "value": 150.0
+                "value": 168.0
               },
               {
                 "label": "Pole positions",
@@ -91747,8 +92978,8 @@
                 "label": "Last entry",
                 "value": [
                   {
-                    "text": "2025 Abu Dhabi Grand Prix",
-                    "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Grand_Prix"
+                    "text": "2026 Australian Grand Prix",
+                    "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
                   }
                 ]
               },
@@ -91882,7 +93113,12 @@
                 "series": "Italian Cup Central Zone",
                 "class": "60 Baby"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "14th"
             },
             {
@@ -91891,13 +93127,18 @@
                 "series": "Academy Champion Kart",
                 "class": "Baby Academy"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": null
             },
             {
               "season": 2014,
               "series": {
-                "series": "Academy Champion Kart International Final",
+                "series": "ACK International Final",
                 "class": "Baby Academy"
               },
               "team": [
@@ -92002,7 +93243,10 @@
             {
               "season": 2016,
               "series": {
-                "series": "Trofeo Andrea Margutti",
+                "series": {
+                  "text": "Andrea Margutti Trophy",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Margutti_Trophy"
+                },
                 "class": "60 Mini"
               },
               "team": [
@@ -92153,7 +93397,12 @@
                 "series": "South Garda Winter Cup",
                 "class": "60 Mini"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "19th"
             },
             {
@@ -92196,7 +93445,12 @@
                 "series": "ROK Cup Italy Nord Region",
                 "class": "Mini ROK"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "116th"
             },
             {
@@ -92205,7 +93459,12 @@
                 "series": "ROK Cup Italy",
                 "class": "Mini ROK"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "8th"
             },
             {
@@ -92633,7 +93892,12 @@
                 },
                 "class": "KA100 Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "2nd"
             },
             {
@@ -92645,7 +93909,12 @@
                 },
                 "class": "X30 Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "36th"
             },
             {
@@ -92654,7 +93923,12 @@
                 "series": "SKUSA Winter Series",
                 "class": "KA100 Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -92663,7 +93937,12 @@
                 "series": "SKUSA Winter Series",
                 "class": "X30 Junior"
               },
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "position": "1st"
             },
             {
@@ -92688,7 +93967,7 @@
               "series": {
                 "series": {
                   "text": "OK",
-                  "url": "https://en.wikipedia.org/wiki/KF2"
+                  "url": "https://en.wikipedia.org/wiki/Original_Kart"
                 },
                 "class": "OK"
               },
@@ -93007,7 +94286,7 @@
               ],
               "class": {
                 "text": "OK",
-                "url": "https://en.wikipedia.org/wiki/KF2"
+                "url": "https://en.wikipedia.org/wiki/Original_Kart"
               },
               "circuit": {
                 "text": "Portimão",
@@ -93173,7 +94452,7 @@
               ],
               "class": {
                 "text": "OK",
-                "url": "https://en.wikipedia.org/wiki/KF2"
+                "url": "https://en.wikipedia.org/wiki/Original_Kart"
               },
               "1": {
                 "round": null,
@@ -93244,7 +94523,7 @@
               ],
               "class": {
                 "text": "OK",
-                "url": "https://en.wikipedia.org/wiki/KF2"
+                "url": "https://en.wikipedia.org/wiki/Original_Kart"
               },
               "1": {
                 "round": {
@@ -93759,6 +95038,33 @@
               "podiums": 3,
               "points": 150.0,
               "position": "7th"
+            },
+            {
+              "season": 2026,
+              "series": {
+                "series": {
+                  "text": "Formula One",
+                  "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+                }
+              },
+              "team": [
+                {
+                  "name": "Mercedes-AMG Petronas F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Mercedes-AMG Petronas F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_Petronas_F1_Team"
+                    }
+                  ]
+                }
+              ],
+              "races": 1,
+              "wins": 0,
+              "poles": 0,
+              "fastest_laps": 0,
+              "podiums": 1,
+              "points": 18.0,
+              "position": "2nd*"
             }
           ],
           "section": "Racing record",
@@ -96751,6 +98057,334 @@
               },
               "wdc": 7,
               "points": 150.0
+            },
+            {
+              "year": {
+                "text": "2026",
+                "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+              },
+              "entrant": [
+                {
+                  "name": "Mercedes-AMG Petronas F1 Team",
+                  "title_sponsors": [
+                    {
+                      "text": "Mercedes-AMG Petronas F1 Team",
+                      "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_Petronas_F1_Team"
+                    }
+                  ]
+                }
+              ],
+              "chassis": [
+                {
+                  "text": "Mercedes-AMG",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
+                },
+                {
+                  "text": "F1 W17",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes_W17"
+                }
+              ],
+              "engine": {
+                "model": {
+                  "text": "Mercedes-AMG M17 E Performance",
+                  "url": "https://en.wikipedia.org/wiki/Mercedes_AMG_High_Performance_Powertrains"
+                },
+                "displacement_l": 1.6,
+                "type": "V6",
+                "layout": "V",
+                "cylinders": 6,
+                "turbocharged": true
+              },
+              "1": {
+                "round": {
+                  "text": "AUS",
+                  "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
+                },
+                "code": "AUS",
+                "result": 2,
+                "background": "#DFDFDF",
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "2": {
+                "round": {
+                  "text": "CHN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix"
+                },
+                "code": "CHN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "3": {
+                "round": {
+                  "text": "JPN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Japanese_Grand_Prix"
+                },
+                "code": "JPN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "4": {
+                "round": {
+                  "text": "BHR",
+                  "url": "https://en.wikipedia.org/wiki/2026_Bahrain_Grand_Prix"
+                },
+                "code": "BHR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "5": {
+                "round": {
+                  "text": "SAU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Saudi_Arabian_Grand_Prix"
+                },
+                "code": "SAU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "6": {
+                "round": {
+                  "text": "MIA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Miami_Grand_Prix"
+                },
+                "code": "MIA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "7": {
+                "round": {
+                  "text": "CAN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Canadian_Grand_Prix"
+                },
+                "code": "CAN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "8": {
+                "round": {
+                  "text": "MON",
+                  "url": "https://en.wikipedia.org/wiki/2026_Monaco_Grand_Prix"
+                },
+                "code": "MON",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "9": {
+                "round": {
+                  "text": "BCN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Barcelona-Catalunya_Grand_Prix"
+                },
+                "code": "BCN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "10": {
+                "round": {
+                  "text": "AUT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Austrian_Grand_Prix"
+                },
+                "code": "AUT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "11": {
+                "round": {
+                  "text": "GBR",
+                  "url": "https://en.wikipedia.org/wiki/2026_British_Grand_Prix"
+                },
+                "code": "GBR",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "12": {
+                "round": {
+                  "text": "BEL",
+                  "url": "https://en.wikipedia.org/wiki/2026_Belgian_Grand_Prix"
+                },
+                "code": "BEL",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "13": {
+                "round": {
+                  "text": "HUN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Hungarian_Grand_Prix"
+                },
+                "code": "HUN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "14": {
+                "round": {
+                  "text": "NED",
+                  "url": "https://en.wikipedia.org/wiki/2026_Dutch_Grand_Prix"
+                },
+                "code": "NED",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "15": {
+                "round": {
+                  "text": "ITA",
+                  "url": "https://en.wikipedia.org/wiki/2026_Italian_Grand_Prix"
+                },
+                "code": "ITA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "16": {
+                "round": {
+                  "text": "ESP",
+                  "url": "https://en.wikipedia.org/wiki/2026_Spanish_Grand_Prix"
+                },
+                "code": "ESP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "17": {
+                "round": {
+                  "text": "AZE",
+                  "url": "https://en.wikipedia.org/wiki/2026_Azerbaijan_Grand_Prix"
+                },
+                "code": "AZE",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "18": {
+                "round": {
+                  "text": "SIN",
+                  "url": "https://en.wikipedia.org/wiki/2026_Singapore_Grand_Prix"
+                },
+                "code": "SIN",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "19": {
+                "round": {
+                  "text": "USA",
+                  "url": "https://en.wikipedia.org/wiki/2026_United_States_Grand_Prix"
+                },
+                "code": "USA",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "20": {
+                "round": {
+                  "text": "MXC",
+                  "url": "https://en.wikipedia.org/wiki/2026_Mexico_City_Grand_Prix"
+                },
+                "code": "MXC",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "21": {
+                "round": {
+                  "text": "SAP",
+                  "url": "https://en.wikipedia.org/wiki/2026_S%C3%A3o_Paulo_Grand_Prix"
+                },
+                "code": "SAP",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "22": {
+                "round": {
+                  "text": "LVG",
+                  "url": "https://en.wikipedia.org/wiki/2026_Las_Vegas_Grand_Prix"
+                },
+                "code": "LVG",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "23": {
+                "round": {
+                  "text": "QAT",
+                  "url": "https://en.wikipedia.org/wiki/2026_Qatar_Grand_Prix"
+                },
+                "code": "QAT",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "24": {
+                "round": {
+                  "text": "ABU",
+                  "url": "https://en.wikipedia.org/wiki/2026_Abu_Dhabi_Grand_Prix"
+                },
+                "code": "ABU",
+                "result": null,
+                "background": null,
+                "pole_position": false,
+                "fastest_lap": false,
+                "superscript": null
+              },
+              "wdc": 2,
+              "points": 18.0
             }
           ],
           "section": "Racing record",
@@ -99046,8 +100680,8 @@
               "car": "Riley & Scott Mk III /2-Ford",
               "class": "LMP",
               "laps": 67,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -99078,8 +100712,8 @@
               "car": "Lamborghini Murciélago RG-1LM",
               "class": "GT1",
               "laps": 283,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -99106,8 +100740,8 @@
               "car": "Lamborghini Murciélago RG-1LM",
               "class": "GT1",
               "laps": 1,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -99134,8 +100768,8 @@
               "car": "Lamborghini Murciélago RG-1LM",
               "class": "GT1",
               "laps": 1,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -101840,7 +103474,7 @@
                 "fastest_lap": false,
                 "superscript": null
               },
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             }
           ],
@@ -102026,7 +103660,7 @@
               "11": null,
               "12": null,
               "13": null,
-              "pos": null,
+              "pos": "NC",
               "points": 0.0
             },
             {
@@ -105680,8 +107314,8 @@
               },
               "class": "S +2.0",
               "laps": 0,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -105734,8 +107368,8 @@
               },
               "class": "WSC",
               "laps": 7,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -108440,7 +110074,12 @@
                 "url": "https://en.wikipedia.org/wiki/Aerautodromo_di_Modena#Modena_Grand_Prix"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Maserati A6GCS",
                 "url": "https://en.wikipedia.org/wiki/Maserati_A6"
@@ -108453,7 +110092,12 @@
                 "url": null
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Cisitalia-Fiat D46",
                 "url": "https://en.wikipedia.org/wiki/Cisitalia"
@@ -108466,7 +110110,12 @@
                 "url": "https://en.wikipedia.org/wiki/1948_San_Remo_Grand_Prix"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -108479,7 +110128,12 @@
                 "url": "https://en.wikipedia.org/wiki/Coppa_Acerbo"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Maserati A6GCS",
                 "url": "https://en.wikipedia.org/wiki/Maserati_A6"
@@ -108492,7 +110146,12 @@
                 "url": "https://en.wikipedia.org/wiki/1948_British_Grand_Prix"
               },
               "position": 2,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Maserati 4CLT/48",
                 "url": "https://en.wikipedia.org/wiki/Maserati_4CL_and_4CLT"
@@ -108505,7 +110164,12 @@
                 "url": "https://en.wikipedia.org/wiki/1948_French_Grand_Prix"
               },
               "position": 3,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Alfa Romeo 158",
                 "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
@@ -108564,7 +110228,12 @@
                 "url": "https://en.wikipedia.org/wiki/1949_Swiss_Grand_Prix"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -108623,7 +110292,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -108636,7 +110310,12 @@
                 "url": "https://en.wikipedia.org/wiki/1949_Italian_Grand_Prix"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Ferrari 125",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_125_F1"
@@ -109086,7 +110765,12 @@
                 "url": null
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Lancia Aurelia",
                 "url": "https://en.wikipedia.org/wiki/Lancia_Aurelia"
@@ -109099,7 +110783,12 @@
                 "url": "https://en.wikipedia.org/wiki/1951_San_Remo_Grand_Prix"
               },
               "position": 1,
-              "team": null,
+              "team": [
+                {
+                  "name": "",
+                  "title_sponsors": []
+                }
+              ],
               "car": {
                 "text": "Ferrari 375",
                 "url": "https://en.wikipedia.org/wiki/Ferrari_375_F1"
@@ -113083,8 +114772,8 @@
               },
               "class": "S3.0",
               "laps": null,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -113114,8 +114803,8 @@
               },
               "class": "S5.0",
               "laps": 229,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -113168,8 +114857,8 @@
               },
               "class": "S5.0",
               "laps": 87,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -113223,8 +114912,8 @@
               },
               "class": "S",
               "laps": 216,
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -113272,8 +114961,8 @@
                 "url": "https://en.wikipedia.org/wiki/Auto_Avio_Costruzioni_815"
               },
               "class": "1.5",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -113302,8 +114991,8 @@
                 "url": "https://en.wikipedia.org/wiki/Maserati_A6"
               },
               "class": "S2./+2.0",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -113332,8 +115021,8 @@
                 "url": "https://en.wikipedia.org/wiki/Ferrari_275"
               },
               "class": "S+2.0",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -113362,8 +115051,8 @@
                 "url": "https://en.wikipedia.org/wiki/Ferrari_America"
               },
               "class": "S/GT+2.0",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             },
             {
               "year": {
@@ -113462,8 +115151,8 @@
                 "url": "https://en.wikipedia.org/wiki/Ferrari_340"
               },
               "class": "S",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNF",
+              "class_pos": "DNF"
             }
           ],
           "section": "Racing record",
@@ -113518,8 +115207,8 @@
                 "url": "https://en.wikipedia.org/wiki/Ferrari_375_MM"
               },
               "class": "S+2.0",
-              "pos": null,
-              "class_pos": null
+              "pos": "DNS",
+              "class_pos": "DNS"
             },
             {
               "year": {
@@ -113666,8 +115355,7 @@
                 "url": "https://en.wikipedia.org/wiki/Danbury,_Essex"
               },
               "Essex",
-              "England",
-              "UK"
+              "England"
             ]
           }
         },
@@ -115907,7 +117595,14 @@
           },
           "died": {
             "date": "2021-08-25",
-            "place": null
+            "place": [
+              {
+                "text": "Leamington Spa",
+                "url": "https://en.wikipedia.org/wiki/Leamington_Spa"
+              },
+              "Warwickshire",
+              "England"
+            ]
           }
         },
         "championship_titles": [],
@@ -116038,12 +117733,8 @@
             "date": "1900-03-29",
             "place": [
               {
-                "text": "Hopton",
+                "text": "Hopton, Staffordshire",
                 "url": "https://en.wikipedia.org/wiki/Hopton,_Staffordshire"
-              },
-              {
-                "text": "Staffordshire",
-                "url": "https://en.wikipedia.org/wiki/Staffordshire"
               },
               "England",
               "UK"
@@ -116053,12 +117744,8 @@
             "date": "1974-03-04",
             "place": [
               {
-                "text": "Lingfield",
+                "text": "Lingfield, Surrey",
                 "url": "https://en.wikipedia.org/wiki/Lingfield,_Surrey"
-              },
-              {
-                "text": "Surrey",
-                "url": "https://en.wikipedia.org/wiki/Surrey"
               },
               "England",
               "UK"
@@ -118684,7 +120371,7 @@
               "car": "Lola Mk6 GT",
               "class": "P +3.0",
               "laps": 151,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -118715,7 +120402,7 @@
               },
               "class": "P 5.0",
               "laps": 58,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -118741,7 +120428,7 @@
               },
               "class": "P 5.0",
               "laps": 33,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -118767,7 +120454,7 @@
               },
               "class": "P 5.0",
               "laps": 208,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -118829,7 +120516,7 @@
               },
               "class": "S 5.0",
               "laps": 327,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             },
             {
@@ -118924,7 +120611,7 @@
               },
               "class": "C1",
               "laps": 92,
-              "pos": null,
+              "pos": "DNF",
               "class_pos.": "DNF"
             }
           ],

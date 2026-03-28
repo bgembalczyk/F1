@@ -1,7 +1,6 @@
 import logging
-from typing import Union
 
-LOGGER_NAME = "f1.scrapers"
+from scrapers.base.constants import LOGGER_NAME
 
 logger = logging.getLogger(LOGGER_NAME)
 
@@ -11,7 +10,7 @@ def get_logger(scraper_name: str) -> logging.LoggerAdapter:
     return logging.LoggerAdapter(base_logger, {"scraper": scraper_name})
 
 
-def configure_logging(level: Union[int, str] = logging.INFO) -> None:
+def configure_logging(level: int | str = logging.INFO) -> None:
     if isinstance(level, str):
         level = logging.getLevelName(level.upper())
         if not isinstance(level, int):

@@ -1,17 +1,14 @@
-from pathlib import Path
-from typing import Dict, Any, Optional
 import re
+from typing import Any
 
 from bs4 import Tag
 
 from infrastructure.http_client.policies.http import HttpPolicy
-from models.services.season_service import SeasonService
-from scrapers.base.helpers.text import clean_wiki_text
+from models.services.season_service import parse_seasons
 from scrapers.base.helpers.http import build_http_policy
-from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.base.run_config import RunConfig
 
 
 class PrivateerTeamsListScraper(F1ListScraper):
@@ -22,9 +19,9 @@ class PrivateerTeamsListScraper(F1ListScraper):
         [flagi kraju] <a>NAZWA ZESPOŁU</a> (lata aktywności)
 
     Flagi ignorujemy całkowicie, zapisujemy:
-        - team       – tekst linka z nazwą zespołu,
-        - team_url   – pełny URL do strony zespołu (opcjonalnie),
-        - seasons    – lista słowników {"year": YYYY, "url": "..."}.
+        - team       - tekst linka z nazwą zespołu,
+        - team_url   - pełny URL do strony zespołu (opcjonalnie),
+        - seasons    - lista słowników {"year": YYYY, "url": "..."}.
     """
 
     url = "https://en.wikipedia.org/wiki/List_of_Formula_One_constructors"
@@ -38,7 +35,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
             cache=base_policy.cache,
         )
 
-    def parse_item(self, li: Tag) -> Optional[Dict[str, Any]]:
+    def parse_item(self, li: Tag) -> dict[str, Any] | None:
         # 1) wywalamy wszystkie flagi, żeby nie przeszkadzały w szukaniu linka zespołu
         for span in li.find_all("span", class_="flagicon"):
             span.decompose()
@@ -52,7 +49,7 @@ class PrivateerTeamsListScraper(F1ListScraper):
         if not team_name:
             return None
 
-        record: Dict[str, Any] = {"team": team_name}
+        record: dict[str, Any] = {"team": team_name}
 
         # 3) URL zespołu (opcjonalnie)
         if self.include_urls and team_a.has_attr("href"):
@@ -60,25 +57,18 @@ class PrivateerTeamsListScraper(F1ListScraper):
 
         # 4) wyciągamy tekst z nawiasu i zamieniamy na seasons
         full_text = li.get_text(" ", strip=True)
-        # np. "BMS Scuderia Italia (1988–1993)"
+        # np. "BMS Scuderia Italia (1988-1993)"
         m = re.search(r"\((.+?)\)", full_text)
         if m:
             seasons_raw = clean_wiki_text(m.group(1))
-            seasons = SeasonService.parse_seasons(seasons_raw)
+            seasons = parse_seasons(seasons_raw)
             if seasons:
-                record["seasons"] = seasons
+                record["seasons"] = [season.to_dict() for season in seasons]
 
         return record
 
 
 if __name__ == "__main__":
-    run_and_export(
-        PrivateerTeamsListScraper,
-        "constructors/f1_privateer_teams.json",
-        "constructors/f1_privateer_teams.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-            debug_dir=Path("../../data/debug"),
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

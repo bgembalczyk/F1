@@ -1,7 +1,9 @@
-from typing import Any, TypedDict
+from typing import Any
+from typing import TypedDict
 
-from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, ValidationIssue
+from validation.issue import ValidationIssue
+from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 def validate_link_text(record: dict[str, Any]) -> list[ValidationIssue]:
@@ -25,4 +27,4 @@ class LinkRecord(TypedDict):
 
 
 def validate_link_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(record, LINK_SCHEMA)
+    return RecordValidator.validate_schema(record, LINK_SCHEMA)

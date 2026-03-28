@@ -1,19 +1,22 @@
 """Utility for extracting years and year ranges from text."""
 
 import re
-from typing import Any, Dict, List, Set
+from typing import Any
+
+from scrapers.base.helpers.constants import MIN_URLS_FOR_PATTERN
+from scrapers.base.helpers.constants import SHORT_YEAR_LEN
 
 
 class YearExtractor:
     """Handles extraction of years and year ranges from text."""
 
     @staticmethod
-    def extract_years_from_text(text: str) -> Set[int]:
+    def extract_years_from_text(text: str) -> set[int]:
         """Extract all years from text, expanding ranges.
 
         Handles cases like:
         - Individual years: 2002, 2005, 2007
-        - Ranges: 2007-2008 or 2007–2008 (expands to all years in range)
+        - Ranges: 2007-2008 or 2007-2008 (expands to all years in range)
         - Short ranges: 2018-19 (expands to 2018, 2019)
 
         Args:
@@ -22,13 +25,13 @@ class YearExtractor:
         Returns:
             Set of years found in the text
         """
-        years_set: Set[int] = set()
+        years_set: set[int] = set()
 
-        # Find ranges like "2007-2008" or "2007–2008"
-        for match in re.finditer(r"\b(\d{4})\s*[-–]\s*(\d{2,4})\b", text):
+        # Find ranges like "2007-2008"
+        for match in re.finditer(r"\b(\d{4})\s*[-\u2013]\s*(\d{2,4})\b", text):
             start = int(match.group(1))
             end_text = match.group(2)
-            if len(end_text) == 2:
+            if len(end_text) == SHORT_YEAR_LEN:
                 # Handle short form like "2018-19"
                 end = (start // 100) * 100 + int(end_text)
             else:
@@ -45,10 +48,10 @@ class YearExtractor:
 
     @staticmethod
     def build_year_to_url_map(
-        links: List[Dict[str, Any]],
+        links: list[dict[str, Any]],
         url_key: str = "url",
         text_key: str = "text",
-    ) -> Dict[int, str | None]:
+    ) -> dict[int, str | None]:
         """Build a mapping from year to URL from a list of links.
 
         Args:
@@ -59,7 +62,7 @@ class YearExtractor:
         Returns:
             Dictionary mapping year to URL
         """
-        year_to_url: Dict[int, str | None] = {}
+        year_to_url: dict[int, str | None] = {}
         for link in links:
             link_text = link.get(text_key, "")
             year_match = re.search(r"\b(\d{4})\b", link_text)
@@ -69,7 +72,7 @@ class YearExtractor:
         return year_to_url
 
     @staticmethod
-    def detect_url_pattern(year_to_url: Dict[int, str | None]) -> str | None:
+    def detect_url_pattern(year_to_url: dict[int, str | None]) -> str | None:
         """Detect a predictable URL pattern from available year links.
 
         Returns a pattern string with {year} placeholder if pattern is predictable.
@@ -81,7 +84,7 @@ class YearExtractor:
             Pattern string with {year} placeholder, or None if no pattern found
         """
         urls = [(year, url) for year, url in year_to_url.items() if url]
-        if len(urls) < 2:
+        if len(urls) < MIN_URLS_FOR_PATTERN:
             return None
 
         # Check if all URLs follow the same pattern
@@ -99,9 +102,9 @@ class YearExtractor:
 
     @staticmethod
     def interpolate_urls(
-        years_set: Set[int],
-        year_to_url: Dict[int, str | None]
-    ) -> Dict[int, str | None]:
+        years_set: set[int],
+        year_to_url: dict[int, str | None],
+    ) -> dict[int, str | None]:
         """Interpolate missing URLs using detected pattern.
 
         Args:
@@ -113,7 +116,7 @@ class YearExtractor:
         """
         result = dict(year_to_url)
 
-        if len(year_to_url) >= 2:
+        if len(year_to_url) >= MIN_URLS_FOR_PATTERN:
             url_pattern = YearExtractor.detect_url_pattern(year_to_url)
             if url_pattern:
                 for year in years_set:

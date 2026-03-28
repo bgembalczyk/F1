@@ -1,4 +1,5 @@
-from scrapers.base.infobox.dsl import InfoboxSchemaDSL, field
+from scrapers.base.infobox.dsl import InfoboxSchemaDSL
+from scrapers.base.infobox.dsl import field
 
 CIRCUIT_INFOBOX_SCHEMA = InfoboxSchemaDSL(
     name="circuit.infobox",

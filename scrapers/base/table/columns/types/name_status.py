@@ -8,8 +8,9 @@ Follows SOLID principles:
 - Open/Closed: Extensible through configuration without modification
 - DRY: Eliminates duplicate code across driver/circuit name columns
 """
+
 from abc import ABC
-from typing import Callable
+from collections.abc import Callable
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.bool import BoolColumn
@@ -20,24 +21,24 @@ from scrapers.base.table.columns.types.url import UrlColumn
 class NameStatusColumn(MultiColumn, ABC):
     """
     Base class for columns that parse entity name with status markers.
-    
+
     Common pattern:
     - Entity name with URL (e.g., "Lewis Hamilton", "Monaco")
     - Status indicated by suffix markers (e.g., "†", "*", "~")
-    
+
     Subclasses define:
     - entity_key: The key for the entity name (e.g., "driver", "circuit")
     - status_extractors: Dict mapping status keys to extractor functions
     """
 
     def __init__(
-        self, 
-        entity_key: str, 
-        status_extractors: dict[str, Callable[[ColumnContext], bool]]
+        self,
+        entity_key: str,
+        status_extractors: dict[str, Callable[[ColumnContext], bool]],
     ) -> None:
         """
         Initialize name+status column.
-        
+
         Args:
             entity_key: Key for the entity name field
             status_extractors: Mapping of status field names to extractor functions
@@ -45,7 +46,7 @@ class NameStatusColumn(MultiColumn, ABC):
         columns = {entity_key: UrlColumn()}
         for status_key, extractor in status_extractors.items():
             columns[status_key] = BoolColumn(extractor)
-        
+
         super().__init__(columns)
         self.entity_key = entity_key
         self.status_extractors = status_extractors
@@ -54,16 +55,18 @@ class NameStatusColumn(MultiColumn, ABC):
 def create_suffix_checker(*markers: str) -> Callable[[ColumnContext], bool]:
     """
     Create a function that checks if raw text ends with any of the given markers.
-    
+
     This is a factory function following the Factory pattern to create
     marker-checking predicates.
-    
+
     Args:
         *markers: Suffix markers to check for
-        
+
     Returns:
         Function that returns True if context raw_text ends with any marker
     """
+
     def checker(ctx: ColumnContext) -> bool:
         return (ctx.raw_text or "").strip().endswith(markers)
+
     return checker

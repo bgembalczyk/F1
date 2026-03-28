@@ -1,72 +1,41 @@
-import importlib.util
 import logging
 import sys
-from pathlib import Path
 import types
-from typing import Any, Dict, List
+from pathlib import Path
+from typing import Any
+
 import pytest
 from bs4 import BeautifulSoup
 
+from scrapers.base.abc import ABCScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
+from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
+from tests.support.dependency_stubs import ensure_optional_deps
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
-if importlib.util.find_spec("requests") is None:
-    requests_stub = types.ModuleType("requests")
-
-    class _RequestException(Exception):
-        pass
-
-    class _Session:
-        def get(self, *_args, **_kwargs):
-            raise _RequestException("requests stub")
-
-    requests_stub.RequestException = _RequestException
-    requests_stub.Session = _Session
-    sys.modules["requests"] = requests_stub
-
-if importlib.util.find_spec("certifi") is None:
-    certifi_stub = types.ModuleType("certifi")
-
-    def _where():
-        return ""
-
-    certifi_stub.where = _where
-    sys.modules["certifi"] = certifi_stub
-
-if importlib.util.find_spec("pandas") is None:
-    pandas_stub = types.ModuleType("pandas")
-
-    class _StubDataFrame:
-        def __init__(self, *_args, **_kwargs):
-            pass
-
-    pandas_stub.DataFrame = _StubDataFrame
-    sys.modules["pandas"] = pandas_stub
-
-if importlib.util.find_spec("bs4") is None:
-    pytest.skip("bs4 is required for scraper contract tests", allow_module_level=True)
-
+ensure_optional_deps(
+    require_bs4=True,
+    bs4_skip_reason="bs4 is required for scraper contract tests",
+)
 
 try:
     import scrapers.base.infobox.circuits.scraper  # noqa: F401
-except Exception:
+except ImportError:
     infobox_stub = types.ModuleType("scrapers.base.infobox.circuits.scraper")
 
     class _StubF1CircuitInfoboxScraper:
         def __init__(self, *_, **__):
             pass
 
-        def parse(self, soup):
+        def parse(self, _soup):
             return {}
 
     infobox_stub.F1CircuitInfoboxScraper = _StubF1CircuitInfoboxScraper
@@ -78,16 +47,16 @@ class StubFetcher:
         self.html = html
         self.calls = 0
 
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
         self.calls += 1
         return self.html
 
-    def get(self, url: str) -> str:
-        return self.get_text(url)
+    def get(self, _url: str) -> str:
+        return self.get_text(_url)
 
 
 class DummyTableScraper(F1TableScraper):
-    def _parse_soup(self, soup):
+    def _parse_soup(self, _soup):
         return []
 
 
@@ -95,14 +64,14 @@ class DummySourceAdapter:
     def __init__(self, html: str) -> None:
         self.html = html
 
-    def get(self, url: str) -> str:
+    def get(self, _url: str) -> str:
         return self.html
 
 
-class DummyScraper(F1Scraper):
+class DummyScraper(ABCScraper):
     url = "https://example.com"
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _parse_soup(self, _soup: BeautifulSoup) -> list[dict[str, Any]]:
         return [{"id": 1}]
 
 
@@ -110,23 +79,23 @@ class DummyFetcher:
     def __init__(self, html: str) -> None:
         self.html = html
 
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
         return self.html
 
-    def get(self, url: str) -> str:
-        return self.get_text(url)
+    def get(self, _url: str) -> str:
+        return self.get_text(_url)
 
 
 class DummySingleCircuitScraper(F1SingleCircuitScraper):
-    def __init__(self, *, is_circuit: bool, details: Dict[str, Any] | None) -> None:
+    def __init__(self, *, is_circuit: bool, details: dict[str, Any] | None) -> None:
         super().__init__(options=ScraperOptions(fetcher=DummyFetcher("")))
         self._is_circuit = is_circuit
         self._details = details
 
-    def _is_circuit_like_article(self, soup: BeautifulSoup) -> bool:
+    def _is_circuit_like_article(self, _soup: BeautifulSoup) -> bool:
         return self._is_circuit
 
-    def _parse_details(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _parse_details(self, _soup: BeautifulSoup) -> dict[str, Any]:
         return self._details or {}
 
 
@@ -138,10 +107,10 @@ def test_privateer_scraper_contract_builds_consistent_result() -> None:
         <ul>
           <li>
             <span class="flagicon">flag</span>
-            <a href="/wiki/BMS_Scuderia_Italia">BMS Scuderia Italia</a> (1988–1993)
+            <a href="/wiki/BMS_Scuderia_Italia">BMS Scuderia Italia</a> (1988-1993)
           </li>
           <li>
-            <a href="/wiki/Tyrrell_Racing">Tyrrell</a> (1970, 1973–1974)
+            <a href="/wiki/Tyrrell_Racing">Tyrrell</a> (1970, 1973-1974)
           </li>
         </ul>
       </body>
@@ -150,7 +119,7 @@ def test_privateer_scraper_contract_builds_consistent_result() -> None:
 
     fetcher = StubFetcher(html)
     scraper = PrivateerTeamsListScraper(
-        options=ScraperOptions(fetcher=fetcher, include_urls=True)
+        options=ScraperOptions(fetcher=fetcher, include_urls=True),
     )
 
     data = scraper.get_data()
@@ -227,7 +196,7 @@ def test_scraper_propagates_parsing_errors() -> None:
     """
 
     scraper = PrivateerTeamsListScraper(
-        options=ScraperOptions(fetcher=StubFetcher(html))
+        options=ScraperOptions(fetcher=StubFetcher(html)),
     )
 
     with pytest.raises(RuntimeError, match="Nie znaleziono sekcji"):
@@ -249,7 +218,7 @@ def test_list_scraper_returns_dict_records() -> None:
     """
 
     scraper = PrivateerTeamsListScraper(
-        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True)
+        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True),
     )
     data = scraper.get_data()
 
@@ -281,7 +250,7 @@ def test_table_scraper_returns_dict_records() -> None:
     """
 
     scraper = CircuitsListScraper(
-        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True)
+        options=ScraperOptions(fetcher=StubFetcher(html), include_urls=True),
     )
     data = scraper.get_data()
 
@@ -291,7 +260,7 @@ def test_table_scraper_returns_dict_records() -> None:
 
 def test_scraper_sets_logger_adapter() -> None:
     scraper = PrivateerTeamsListScraper(
-        options=ScraperOptions(fetcher=StubFetcher("<html></html>"))
+        options=ScraperOptions(fetcher=StubFetcher("<html></html>")),
     )
 
     assert scraper.logger is not None
@@ -314,7 +283,8 @@ def test_scraper_config_rejects_invalid_column_map() -> None:
 
 def test_scraper_config_rejects_invalid_columns() -> None:
     with pytest.raises(
-        ValueError, match="columns must map str keys to BaseColumn values"
+        ValueError,
+        match="columns must map str keys to BaseColumn values",
     ):
         ScraperConfig(
             url="https://example.com",
@@ -334,7 +304,8 @@ def test_table_scraper_validates_config_in_init() -> None:
     object.__setattr__(config, "default_column", AutoColumn())
 
     with pytest.raises(
-        ValueError, match="columns must map str keys to BaseColumn values"
+        ValueError,
+        match="columns must map str keys to BaseColumn values",
     ):
         DummyTableScraper(
             options=ScraperOptions(fetcher=StubFetcher("<html></html>")),
@@ -344,7 +315,7 @@ def test_table_scraper_validates_config_in_init() -> None:
 
 def test_f1scraper_fetch_always_returns_list() -> None:
     scraper = DummyScraper(
-        options=ScraperOptions(source_adapter=DummySourceAdapter("<html></html>"))
+        options=ScraperOptions(source_adapter=DummySourceAdapter("<html></html>")),
     )
 
     result = scraper.fetch()
@@ -355,7 +326,8 @@ def test_f1scraper_fetch_always_returns_list() -> None:
 
 def test_single_scraper_returns_single_item_list() -> None:
     scraper = DummySingleCircuitScraper(
-        is_circuit=True, details={"infobox": {"name": "Test"}, "tables": []}
+        is_circuit=True,
+        details={"infobox": {"name": "Test"}, "tables": []},
     )
 
     result = scraper.fetch_by_url("https://example.com/wiki/Test")

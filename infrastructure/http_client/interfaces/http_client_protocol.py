@@ -1,6 +1,4 @@
 from typing import Any
-from typing import Dict
-from typing import Optional
 from typing import Protocol
 from typing import runtime_checkable
 
@@ -19,8 +17,8 @@ class HttpClientProtocol(Protocol):
         self,
         url: str,
         *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> HttpResponseProtocol:
         """Wykonuje GET i zwraca obiekt odpowiedzi; wyjątek dla błędów HTTP."""
         ...
@@ -29,8 +27,8 @@ class HttpClientProtocol(Protocol):
         self,
         url: str,
         *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> str:
         """Zwraca tekst (str) odpowiedzi po wywołaniu GET."""
         ...
@@ -39,8 +37,8 @@ class HttpClientProtocol(Protocol):
         self,
         url: str,
         *,
-        headers: Optional[Dict[str, str]] = None,
-        timeout: Optional[int] = None,
+        headers: dict[str, str] | None = None,
+        timeout: int | None = None,
     ) -> Any:
         """Zwraca JSON (dict/list/etc.) parsując treść odpowiedzi jako JSON."""
         ...

@@ -1,13 +1,12 @@
 from abc import ABC
 from abc import abstractmethod
-from typing import Optional
 
 
 class ResponseCache(ABC):
     """Interfejs cache dla odpowiedzi."""
 
     @abstractmethod
-    def get(self, url: str) -> Optional[str]:
+    def get(self, url: str) -> str | None:
         """Zwraca tekst z cache lub None."""
 
     @abstractmethod

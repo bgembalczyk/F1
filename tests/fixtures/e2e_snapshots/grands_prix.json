@@ -1,0 +1,26 @@
+{
+  "domain": "grands_prix",
+  "seed_record": {
+    "name": "Bahrain Grand Prix",
+    "link": "https://example.test/wiki/Bahrain_Grand_Prix",
+    "source_url": "https://example.test/grands_prix",
+    "scraped_at": "2026-01-01T00:00:00"
+  },
+  "section_record": {
+    "section_id": "race",
+    "section_label": "Race"
+  },
+  "infobox_record": {
+    "title": "Bahrain Grand Prix",
+    "rows": {
+      "First held": "2004"
+    }
+  },
+  "postprocess_record": {
+    "domain": "grands_prix",
+    "url": "https://example.test/grands_prix",
+    "source_url": "https://example.test/grands_prix",
+    "section_id": "race",
+    "scraped_at": "2026-01-01T00:00:00"
+  }
+}

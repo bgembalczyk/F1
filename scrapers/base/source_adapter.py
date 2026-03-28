@@ -1,5 +1,11 @@
-from abc import ABC, abstractmethod
-from typing import Any, Callable, Generic, Iterable, List, Mapping, TypeVar
+from abc import ABC
+from abc import abstractmethod
+from collections.abc import Callable
+from collections.abc import Iterable
+from collections.abc import Mapping
+from typing import Any
+from typing import Generic
+from typing import TypeVar
 
 T = TypeVar("T")
 
@@ -25,7 +31,26 @@ class IterableSourceAdapter(Generic[T]):
     def __init__(self, iterable: Iterable[T] | Callable[[], Iterable[T]]) -> None:
         self._iterable = iterable
 
-    def get(self) -> List[T]:
+    def get(self) -> list[T]:
         if callable(self._iterable):
             return list(self._iterable())
         return list(self._iterable)
+
+
+class MultiIterableSourceAdapter(Generic[T]):
+    """Adapter łączący rekordy z wielu iterable/fabryk iterable."""
+
+    def __init__(
+        self,
+        iterables: Iterable[Iterable[T] | Callable[[], Iterable[T]]],
+    ) -> None:
+        self._iterables = list(iterables)
+
+    def get(self) -> list[T]:
+        records: list[T] = []
+        for iterable in self._iterables:
+            if callable(iterable):
+                records.extend(iterable())
+                continue
+            records.extend(iterable)
+        return records

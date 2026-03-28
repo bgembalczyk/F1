@@ -1,0 +1,1625 @@
+[
+  {
+    "constructor": {
+      "text": "Dallara",
+      "url": "https://en.wikipedia.org/wiki/Dallara"
+    },
+    "licensed_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1988,
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+      },
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 80,
+    "races_started": 78,
+    "drivers": 6,
+    "total_entries": 144,
+    "wins": 0,
+    "points": 15,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 2,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Dallara",
+      "infoboxes": [
+        {
+          "title": "Dallara Group S.r.l.",
+          "rows": {
+            "Company type": {
+              "text": "Private",
+              "links": [
+                {
+                  "text": "Private",
+                  "url": "https://en.wikipedia.org/wiki/Private_company"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive_industry"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "1972",
+              "links": []
+            },
+            "Founder": {
+              "text": "Giampaolo Dallara",
+              "links": [
+                {
+                  "text": "Giampaolo Dallara",
+                  "url": "https://en.wikipedia.org/wiki/Giampaolo_Dallara"
+                }
+              ]
+            },
+            "Headquarters": {
+              "text": "Varano de' Melegari , Italy",
+              "links": [
+                {
+                  "text": "Varano de' Melegari",
+                  "url": "https://en.wikipedia.org/wiki/Varano_de%27_Melegari"
+                },
+                {
+                  "text": "Italy",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                }
+              ]
+            },
+            "Key people": {
+              "text": "Giampaolo Dallara (President) Andrea Pontremoli (CEO) Aldo Costa (Chief Technical Officer)",
+              "links": [
+                {
+                  "text": "Aldo Costa",
+                  "url": "https://en.wikipedia.org/wiki/Aldo_Costa"
+                }
+              ]
+            },
+            "Website": {
+              "text": "www.dallara.it",
+              "links": [
+                {
+                  "text": "www.dallara.it",
+                  "url": "https://www.dallara.it/en"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1988",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "3087 F188",
+              "Engine": "Ford DFR 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "CAN",
+              "6": "DET",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1988",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "3087 F188",
+              "Engine": "Ford DFR 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Alex Caffi",
+              "1": "DNPQ",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "DNPQ",
+              "6": "8",
+              "7": "12",
+              "8": "11",
+              "9": "15",
+              "10": "Ret",
+              "11": "8",
+              "12": "Ret",
+              "13": "7",
+              "14": "10",
+              "15": "Ret",
+              "16": "Ret",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F189",
+              "Engine": "Ford DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "USA",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "8",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F189",
+              "Engine": "Ford DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Alex Caffi",
+              "1": "DNPQ",
+              "2": "7",
+              "3": "4",
+              "4": "13",
+              "5": "Ret",
+              "6": "6",
+              "7": "Ret",
+              "8": "DNPQ",
+              "9": "Ret",
+              "10": "7",
+              "11": "Ret",
+              "12": "11",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "9",
+              "16": "Ret",
+              "Points": "8",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F189",
+              "Engine": "Ford DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Andrea de Cesaris",
+              "1": "13",
+              "2": "10",
+              "3": "13",
+              "4": "Ret",
+              "5": "8",
+              "6": "3",
+              "7": "DNQ",
+              "8": "Ret",
+              "9": "7",
+              "10": "Ret",
+              "11": "11",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "7",
+              "15": "10",
+              "16": "Ret",
+              "Points": "8",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F190",
+              "Engine": "Ford DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F190",
+              "Engine": "Ford DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Emanuele Pirro",
+              "1": "",
+              "2": "",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "11",
+              "9": "Ret",
+              "10": "10",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "15",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "Ret",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F190",
+              "Engine": "Ford DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Andrea de Cesaris",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "13",
+              "7": "DSQ",
+              "8": "Ret",
+              "9": "DNQ",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "10",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "Ret",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F190",
+              "Engine": "Ford DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Gianni Morbidelli",
+              "1": "DNQ",
+              "2": "14",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F191",
+              "Engine": "Judd GV 3.5 V10",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "5",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F191",
+              "Engine": "Judd GV 3.5 V10",
+              "Tyres": "P",
+              "Drivers": "Emanuele Pirro",
+              "1": "Ret",
+              "2": "11",
+              "3": "DNPQ",
+              "4": "6",
+              "5": "9",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "10",
+              "9": "10",
+              "10": "Ret",
+              "11": "8",
+              "12": "10",
+              "13": "Ret",
+              "14": "15",
+              "15": "Ret",
+              "16": "7",
+              "Points": "5",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F191",
+              "Engine": "Judd GV 3.5 V10",
+              "Tyres": "P",
+              "Drivers": "JJ Lehto",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "3",
+              "4": "11",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "13",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "8",
+              "15": "Ret",
+              "16": "12",
+              "Points": "5",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F192",
+              "Engine": "Ferrari 037 3.5 V12",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MEX",
+              "3": "BRA",
+              "4": "ESP",
+              "5": "SMR",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "2",
+              "WCC": "10th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F192",
+              "Engine": "Ferrari 037 3.5 V12",
+              "Tyres": "G",
+              "Drivers": "JJ Lehto",
+              "1": "Ret",
+              "2": "8",
+              "3": "8",
+              "4": "Ret",
+              "5": "11",
+              "6": "9",
+              "7": "9",
+              "8": "9",
+              "9": "13",
+              "10": "10",
+              "11": "DNQ",
+              "12": "7",
+              "13": "11",
+              "14": "Ret",
+              "15": "9",
+              "16": "Ret",
+              "Points": "2",
+              "WCC": "10th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "BMS Scuderia Italia",
+              "Chassis": "F192",
+              "Engine": "Ferrari 037 3.5 V12",
+              "Tyres": "G",
+              "Drivers": "Pierluigi Martini",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "6",
+              "5": "6",
+              "6": "Ret",
+              "7": "8",
+              "8": "10",
+              "9": "15",
+              "10": "11",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "8",
+              "14": "Ret",
+              "15": "10",
+              "16": "Ret",
+              "Points": "2",
+              "WCC": "10th"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "De Tomaso",
+      "url": "https://en.wikipedia.org/wiki/De_Tomaso"
+    },
+    "licensed_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      },
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1970,
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 15,
+    "races_started": 10,
+    "drivers": 8,
+    "total_entries": 18,
+    "wins": 0,
+    "points": 0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/De_Tomaso",
+      "infoboxes": [
+        {
+          "title": "De Tomaso Automobili Ltd.",
+          "rows": {
+            "Formerly": {
+              "text": "De Tomaso Modena SpA",
+              "links": []
+            },
+            "Company type": {
+              "text": "Private",
+              "links": [
+                {
+                  "text": "Private",
+                  "url": "https://en.wikipedia.org/wiki/Privately_held_company"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive_industry"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "1959 ; 67 years ago ( 1959 )",
+              "links": []
+            },
+            "Founder": {
+              "text": "Alejandro de Tomaso",
+              "links": [
+                {
+                  "text": "Alejandro de Tomaso",
+                  "url": "https://en.wikipedia.org/wiki/Alejandro_de_Tomaso"
+                }
+              ]
+            },
+            "Fate": {
+              "text": "Filed for bankruptcy in 2012; [ 1 ] Company sold to Ideal Team Ventures in 2014 [ 2 ]",
+              "links": []
+            },
+            "Headquarters": {
+              "text": "Modena , Italy (1959–2004)",
+              "links": [
+                {
+                  "text": "Modena",
+                  "url": "https://en.wikipedia.org/wiki/Modena"
+                }
+              ]
+            },
+            "Area served": {
+              "text": "Worldwide",
+              "links": []
+            },
+            "Key people": {
+              "text": "Norman Choi (Chairman) [ 3 ] [ 4 ]",
+              "links": []
+            },
+            "Products": {
+              "text": "Supercars",
+              "links": [
+                {
+                  "text": "Supercars",
+                  "url": "https://en.wikipedia.org/wiki/Supercar"
+                }
+              ]
+            },
+            "Owner": {
+              "text": "Ideal Team Ventures Limited",
+              "links": []
+            },
+            "Parent": {
+              "text": "Ford (1971–1974)",
+              "links": [
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
+            },
+            "Subsidiaries": {
+              "text": "Maserati (1976–1993) Innocenti (1976–1993) Moto Guzzi (1973–2000) Benelli (1972–1995)",
+              "links": [
+                {
+                  "text": "Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati"
+                },
+                {
+                  "text": "Innocenti",
+                  "url": "https://en.wikipedia.org/wiki/Innocenti"
+                },
+                {
+                  "text": "Moto Guzzi",
+                  "url": "https://en.wikipedia.org/wiki/Moto_Guzzi"
+                },
+                {
+                  "text": "Benelli",
+                  "url": "https://en.wikipedia.org/wiki/Benelli_(motorcycles)"
+                }
+              ]
+            },
+            "Website": {
+              "text": "detomaso-automobili.com",
+              "links": [
+                {
+                  "text": "detomaso-automobili.com",
+                  "url": "https://detomaso-automobili.com/"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "De Tomaso as a Formula One chassis constructor",
+          "rows": {
+            "Engines": {
+              "text": "OSCA , Alfa Romeo , De Tomaso, Ferrari , Ford",
+              "links": [
+                {
+                  "text": "OSCA",
+                  "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+                },
+                {
+                  "text": "Alfa Romeo",
+                  "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+                },
+                {
+                  "text": "Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                },
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
+            },
+            "Entrants": {
+              "text": "Scuderia Serenissima , Scuderia Settecolli, Frank Williams Racing Cars",
+              "links": [
+                {
+                  "text": "Scuderia Serenissima",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
+                },
+                {
+                  "text": "Frank Williams Racing Cars",
+                  "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1961 French Grand Prix",
+              "links": [
+                {
+                  "text": "1961 French Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1961_French_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "1970 United States Grand Prix",
+              "links": [
+                {
+                  "text": "1970 United States Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "15 (10 starts)",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Points": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1961",
+              "Entrant": "",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "MON",
+              "2": "NED",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": "De Tomaso F1/002",
+              "Engine": "O.S.C.A. S4",
+              "Tyres": "D",
+              "Drivers": "Roberto Lippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Scuderia Serenissima",
+              "Chassis": "De Tomaso F1/001",
+              "Engine": "O.S.C.A. S4",
+              "Tyres": "D",
+              "Drivers": "Giorgio Scarlatti",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Scuderia Serenissima",
+              "Chassis": "De Tomaso F1/003",
+              "Engine": "Alfa Romeo I4",
+              "Tyres": "D",
+              "Drivers": "Nino Vaccarella",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Isobele de Tomaso",
+              "Chassis": "De Tomaso F1/004",
+              "Engine": "Alfa Romeo I4",
+              "Tyres": "D",
+              "Drivers": "Roberto Bussinello",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1962",
+              "Entrant": "",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "NED",
+              "2": "MON",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "RSA",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1962",
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": "De Tomaso F1/002",
+              "Engine": "O.S.C.A. I4",
+              "Tyres": "D",
+              "Drivers": "Roberto Lippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1962",
+              "Entrant": "Scuderia de Tomaso",
+              "Chassis": "De Tomaso 801",
+              "Engine": "De Tomaso Flat-8",
+              "Tyres": "D",
+              "Drivers": "Nasif Estéfano",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1963",
+              "Entrant": "",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "MON",
+              "2": "BEL",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "MEX",
+              "10": "RSA",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1963",
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": "De Tomaso F1/002",
+              "Engine": "Ferrari V6",
+              "Tyres": "D",
+              "Drivers": "Roberto Lippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1970",
+              "Entrant": "Frank Williams Racing Cars",
+              "Chassis": "De Tomaso 505/38",
+              "Engine": "Cosworth V8",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "ESP",
+              "3": "MON",
+              "4": "BEL",
+              "5": "NED",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "AUT",
+              "10": "ITA",
+              "11": "CAN",
+              "12": "USA",
+              "13": "MEX",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1970",
+              "Entrant": "Frank Williams Racing Cars",
+              "Chassis": "De Tomaso 505/38",
+              "Engine": "Cosworth V8",
+              "Tyres": "D",
+              "Drivers": "Piers Courage",
+              "1": "Ret",
+              "2": "DNS",
+              "3": "NC",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1970",
+              "Entrant": "Frank Williams Racing Cars",
+              "Chassis": "De Tomaso 505/38",
+              "Engine": "Cosworth V8",
+              "Tyres": "D",
+              "Drivers": "Brian Redman",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNS",
+              "8": "DNQ",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1970",
+              "Entrant": "Frank Williams Racing Cars",
+              "Chassis": "De Tomaso 505/38",
+              "Engine": "Cosworth V8",
+              "Tyres": "D",
+              "Drivers": "Tim Schenken",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "NC",
+              "12": "Ret",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": "Dunn",
+    "constructor_url": "https://en.wikipedia.org/wiki/Dunn_Engineering",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Dunn_Engineering",
+      "infoboxes": null,
+      "tables": null
+    }
+  },
+  {
+    "team": "DW Racing Enterprises",
+    "team_url": "https://en.wikipedia.org/wiki/DW_Racing_Enterprises",
+    "seasons": [
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      },
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      }
+    ],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/DW_Racing_Enterprises",
+      "infoboxes": [
+        {
+          "title": null,
+          "rows": {
+            "Born": {
+              "text": "( 1931-05-19 ) 19 May 1931 Hendon , London, UK",
+              "links": [
+                {
+                  "text": "Hendon",
+                  "url": "https://en.wikipedia.org/wiki/Hendon"
+                }
+              ]
+            },
+            "Died": {
+              "text": "14 August 1967 (1967-08-14) (aged 36) Northampton , UK",
+              "links": [
+                {
+                  "text": "Northampton",
+                  "url": "https://en.wikipedia.org/wiki/Northampton"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Position",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "rows": [
+            {
+              "Position": "Points",
+              "1": "8",
+              "2": "6",
+              "3": "4",
+              "4": "3",
+              "5": "2",
+              "6": "1"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Class",
+            "Team",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "Points",
+            "Rank",
+            "Wins"
+          ],
+          "rows": [
+            {
+              "Year": "1958",
+              "Class": "350cc",
+              "Team": "Norton",
+              "1": "IOM 8",
+              "2": "NED",
+              "3": "BEL",
+              "4": "GER 5",
+              "5": "SWE 2",
+              "6": "ULS",
+              "7": "NAT 4",
+              "8": "",
+              "Points": "11",
+              "Rank": "5th",
+              "Wins": "0"
+            },
+            {
+              "Year": "1958",
+              "Class": "500cc",
+              "Team": "Norton",
+              "1": "IOM 2",
+              "2": "NED",
+              "3": "BEL 6",
+              "4": "GER",
+              "5": "SWE",
+              "6": "ULS",
+              "7": "NAT",
+              "8": "",
+              "Points": "7",
+              "Rank": "8th",
+              "Wins": "0"
+            },
+            {
+              "Year": "1959",
+              "Class": "350cc",
+              "Team": "Norton",
+              "1": "FRA 4",
+              "2": "IOM 5",
+              "3": "GER",
+              "4": "",
+              "5": "",
+              "6": "SWE",
+              "7": "ULS",
+              "8": "NAT",
+              "Points": "5",
+              "Rank": "9th",
+              "Wins": "0"
+            },
+            {
+              "Year": "1959",
+              "Class": "500cc",
+              "Team": "Norton",
+              "1": "FRA",
+              "2": "IOM NC",
+              "3": "GER",
+              "4": "NED",
+              "5": "BEL 6",
+              "6": "",
+              "7": "ULS",
+              "8": "NAT",
+              "Points": "1",
+              "Rank": "15th",
+              "Wins": "0"
+            },
+            {
+              "Year": "1960",
+              "Class": "125cc",
+              "Team": "MZ",
+              "1": "",
+              "2": "IOM 5",
+              "3": "NED",
+              "4": "BEL",
+              "5": "",
+              "6": "ULS",
+              "7": "NAT",
+              "8": "",
+              "Points": "2",
+              "Rank": "9th",
+              "Wins": "0"
+            },
+            {
+              "Year": "1960",
+              "Class": "250cc",
+              "Team": "MZ",
+              "1": "",
+              "2": "IOM NC",
+              "3": "NED",
+              "4": "BEL",
+              "5": "GER",
+              "6": "ULS",
+              "7": "NAT",
+              "8": "",
+              "Points": "0",
+              "Rank": "-",
+              "Wins": "0"
+            },
+            {
+              "Year": "1960",
+              "Class": "350cc",
+              "Team": "Norton",
+              "1": "FRA",
+              "2": "IOM 6",
+              "3": "NED 3",
+              "4": "",
+              "5": "",
+              "6": "ULS 4",
+              "7": "NAT 5",
+              "8": "",
+              "Points": "9",
+              "Rank": "5th",
+              "Wins": "0"
+            },
+            {
+              "Year": "1960",
+              "Class": "500cc",
+              "Team": "Norton",
+              "1": "FRA",
+              "2": "IOM 8",
+              "3": "NED",
+              "4": "BEL",
+              "5": "GER",
+              "6": "ULS",
+              "7": "NAT",
+              "8": "",
+              "Points": "0",
+              "Rank": "-",
+              "Wins": "0"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "WDC",
+            "Pts"
+          ],
+          "rows": [
+            {
+              "Year": "1963",
+              "Entrant": "DW Racing Enterprises",
+              "Chassis": "Lola Mk4",
+              "Engine": "Climax FWMV 1.5 V8",
+              "1": "MON",
+              "2": "BEL",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR 12",
+              "6": "GER",
+              "7": "ITA 12",
+              "8": "USA",
+              "9": "MEX",
+              "10": "RSA",
+              "11": "",
+              "WDC": "NC",
+              "Pts": "0"
+            },
+            {
+              "Year": "1964",
+              "Entrant": "DW Racing Enterprises",
+              "Chassis": "Brabham BT11",
+              "Engine": "Climax FWMV 1.5 V8",
+              "1": "MON 7",
+              "2": "NED 6",
+              "3": "BEL DNS",
+              "4": "FRA 12",
+              "5": "GBR 7",
+              "6": "GER Ret",
+              "7": "AUT 3",
+              "8": "ITA 11",
+              "9": "USA",
+              "10": "MEX",
+              "11": "",
+              "WDC": "11th",
+              "Pts": "5"
+            },
+            {
+              "Year": "1965",
+              "Entrant": "DW Racing Enterprises",
+              "Chassis": "Brabham BT11",
+              "Engine": "Climax FWMV 1.5 V8",
+              "1": "RSA NC",
+              "2": "MON 9",
+              "3": "BEL DNS",
+              "4": "FRA 9",
+              "5": "GBR Ret",
+              "6": "NED Ret",
+              "7": "GER DNS",
+              "8": "ITA",
+              "9": "USA",
+              "10": "MEX",
+              "11": "",
+              "WDC": "NC",
+              "Pts": "0"
+            },
+            {
+              "Year": "1966",
+              "Entrant": "DW Racing Enterprises",
+              "Chassis": "Brabham BT11",
+              "Engine": "Climax FPF 2.8 L4",
+              "1": "MON Ret",
+              "2": "BEL",
+              "3": "FRA 7",
+              "4": "GBR NC",
+              "5": "NED Ret",
+              "6": "GER Ret",
+              "7": "ITA 6",
+              "8": "USA",
+              "9": "MEX",
+              "10": "",
+              "11": "",
+              "WDC": "17th",
+              "Pts": "1"
+            },
+            {
+              "Year": "1967",
+              "Entrant": "DW Racing Enterprises",
+              "Chassis": "Brabham BT11",
+              "Engine": "Climax FPF 2.8 L4",
+              "1": "RSA 5",
+              "2": "MON DNQ",
+              "3": "NED 9",
+              "4": "BEL 8",
+              "5": "FRA Ret",
+              "6": "GBR Ret",
+              "7": "GER",
+              "8": "CAN",
+              "9": "ITA",
+              "10": "USA",
+              "11": "MEX",
+              "WDC": "16th",
+              "Pts": "2"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ],
+          "rows": [
+            {
+              "Year": "1963",
+              "Entrant": "DW Racing Enterprises",
+              "Chassis": "Lola Mk4",
+              "Engine": "Climax FWMV 1.5 V8",
+              "1": "LOM Ret",
+              "2": "GLV",
+              "3": "PAU Ret",
+              "4": "IMO 3",
+              "5": "SYR 4",
+              "6": "AIN",
+              "7": "INT",
+              "8": "ROM 1",
+              "9": "SOL 8",
+              "10": "KAN 8",
+              "11": "MED 6",
+              "12": "AUT",
+              "13": "OUL Ret",
+              "14": "RAN"
+            },
+            {
+              "Year": "1964",
+              "Entrant": "DW Racing Enterprises",
+              "Chassis": "Brabham BT11",
+              "Engine": "Climax FWMV 1.5 V8",
+              "1": "DMT",
+              "2": "NWT",
+              "3": "SYR",
+              "4": "AIN",
+              "5": "INT Ret",
+              "6": "SOL 3",
+              "7": "MED",
+              "8": "RAN 3",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1965",
+              "Entrant": "DW Racing Enterprises",
+              "Chassis": "Brabham BT11",
+              "Engine": "Climax FWMV 1.5 V8",
+              "1": "ROC Ret",
+              "2": "SYR 6",
+              "3": "SMT DSQ",
+              "4": "INT NC",
+              "5": "MED",
+              "6": "RAN",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1966",
+              "Entrant": "DW Racing Enterprises",
+              "Chassis": "Brabham BT11",
+              "Engine": "Climax FPF 2.8 L4",
+              "1": "RSA DSQ",
+              "2": "SYR DNS",
+              "3": "INT 7",
+              "4": "OUL Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1967",
+              "Entrant": "DW Racing Enterprises",
+              "Chassis": "Brabham BT11",
+              "Engine": "Climax FPF 2.8 L4",
+              "1": "ROC Ret",
+              "2": "SPR 7",
+              "3": "INT 8",
+              "4": "SYR",
+              "5": "OUL",
+              "6": "ESP",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  }
+]

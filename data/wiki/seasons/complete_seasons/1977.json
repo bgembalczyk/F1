@@ -30,7 +30,7 @@
           },
           "chassis": [
             {
-              "text": "M23",
+              "text": "M23E",
               "url": "https://en.wikipedia.org/wiki/McLaren_M23"
             },
             {
@@ -746,7 +746,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Renault-Gordini EF1",
+              "text": "Renault -Gordini EF1",
               "url": "https://en.wikipedia.org/wiki/Renault"
             },
             "displacement_l": 1.5,
@@ -10486,15 +10486,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 2,
-                "background": "Second place",
-                "pole_position": true
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -10502,8 +10493,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
+                "position": 2,
+                "background": "Second place",
                 "pole_position": true
               }
             ]
@@ -10515,8 +10506,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
+                "position": 1,
+                "background": "Winner",
                 "pole_position": true
               }
             ]
@@ -10528,8 +10519,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
+                "position": 2,
+                "background": "Second place",
                 "pole_position": true
               }
             ]
@@ -10541,8 +10532,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
+                "position": 1,
+                "background": "Winner",
                 "pole_position": true
               }
             ]
@@ -10554,8 +10545,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position",
+                "position": 2,
+                "background": "Second place",
                 "pole_position": true
               }
             ]
@@ -10567,8 +10558,9 @@
             },
             "results": [
               {
-                "position": 12,
-                "background": "Other classified position"
+                "position": 4,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -10579,9 +10571,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
-                "pole_position": true
+                "position": 12,
+                "background": "Other classified position"
               }
             ]
           },
@@ -10592,10 +10583,15 @@
             },
             "results": [
               {
-                "position": "95 (97)",
+                "position": 2,
+                "background": "Second place",
                 "pole_position": true
               }
             ]
+          },
+          "points": {
+            "championship_points": 95.0,
+            "total_points": 97.0
           }
         },
         {
@@ -10726,15 +10722,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 3,
-                "background": "Third place",
-                "pole_position": true
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -10742,8 +10729,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 3,
+                "background": "Third place",
+                "pole_position": true
               }
             ]
           },
@@ -10778,9 +10766,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -10791,8 +10778,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
+                "position": 1,
+                "background": "Winner",
                 "pole_position": true
               }
             ]
@@ -10804,8 +10791,9 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": 2,
+                "background": "Second place",
+                "pole_position": true
               }
             ]
           },
@@ -10816,8 +10804,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -10828,11 +10816,12 @@
             },
             "results": [
               {
-                "position": 62,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 62.0
         },
         {
           "pos": 3,
@@ -10960,15 +10949,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 1,
-                "background": "Winner",
-                "pole_position": true
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -10976,8 +10956,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner",
+                "pole_position": true
               }
             ]
           },
@@ -10988,9 +10969,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -11001,8 +10981,9 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -11013,9 +10994,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position",
-                "pole_position": true
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -11026,8 +11006,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
+                "position": 4,
+                "background": "Other points position",
                 "pole_position": true
               }
             ]
@@ -11039,8 +11019,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
+                "position": 1,
+                "background": "Winner",
                 "pole_position": true
               }
             ]
@@ -11052,8 +11032,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
+                "position": 3,
+                "background": "Third place",
                 "pole_position": true
               }
             ]
@@ -11065,11 +11045,13 @@
             },
             "results": [
               {
-                "position": 60,
+                "position": 1,
+                "background": "Winner",
                 "pole_position": true
               }
             ]
-          }
+          },
+          "points": 60.0
         },
         {
           "pos": 4,
@@ -11196,14 +11178,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -11211,9 +11185,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -11224,8 +11197,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 2,
+                "background": "Second place",
+                "pole_position": true
               }
             ]
           },
@@ -11236,9 +11210,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -11249,8 +11222,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 3,
+                "background": "Third place",
+                "pole_position": true
               }
             ]
           },
@@ -11261,9 +11235,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -11274,8 +11247,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
+                "position": 3,
+                "background": "Third place",
                 "pole_position": true
               }
             ]
@@ -11287,8 +11260,9 @@
             },
             "results": [
               {
-                "position": 10,
-                "background": "Other classified position"
+                "position": 1,
+                "background": "Winner",
+                "pole_position": true
               }
             ]
           },
@@ -11299,11 +11273,12 @@
             },
             "results": [
               {
-                "position": 55,
-                "pole_position": true
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 55.0
         },
         {
           "pos": 5,
@@ -11431,15 +11406,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 5,
-                "background": "Other points position",
-                "pole_position": true
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -11447,8 +11413,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
+                "position": 5,
+                "background": "Other points position",
                 "pole_position": true
               }
             ]
@@ -11473,8 +11439,9 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": 3,
+                "background": "Third place",
+                "pole_position": true
               }
             ]
           },
@@ -11485,8 +11452,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -11497,8 +11464,8 @@
             },
             "results": [
               {
-                "position": 12,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -11509,8 +11476,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 12,
+                "background": "Other classified position"
               }
             ]
           },
@@ -11521,8 +11488,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -11533,11 +11500,12 @@
             },
             "results": [
               {
-                "position": 27,
-                "pole_position": true
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 27.0
         },
         {
           "pos": 6,
@@ -11663,14 +11631,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -11678,8 +11638,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -11690,9 +11650,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position",
-                "pole_position": true
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -11703,8 +11662,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -11715,9 +11675,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -11728,8 +11687,9 @@
             },
             "results": [
               {
-                "position": 14,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -11740,9 +11700,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
-                "pole_position": true
+                "position": 14,
+                "background": "Other classified position"
               }
             ]
           },
@@ -11753,8 +11712,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
+                "position": 2,
+                "background": "Second place",
                 "pole_position": true
               }
             ]
@@ -11766,11 +11725,13 @@
             },
             "results": [
               {
-                "position": 27,
+                "position": 3,
+                "background": "Third place",
                 "pole_position": true
               }
             ]
-          }
+          },
+          "points": 27.0
         },
         {
           "pos": 7,
@@ -11895,14 +11856,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 7,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -11910,7 +11863,7 @@
             },
             "results": [
               {
-                "position": 10,
+                "position": 7,
                 "background": "Other classified position"
               }
             ]
@@ -11922,9 +11875,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
-                "pole_position": true
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
           },
@@ -11935,8 +11887,9 @@
             },
             "results": [
               {
-                "position": 13,
-                "background": "Other classified position"
+                "position": 1,
+                "background": "Winner",
+                "pole_position": true
               }
             ]
           },
@@ -11947,9 +11900,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place",
-                "pole_position": true
+                "position": 13,
+                "background": "Other classified position"
               }
             ]
           },
@@ -11960,8 +11912,9 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": 3,
+                "background": "Third place",
+                "pole_position": true
               }
             ]
           },
@@ -11972,9 +11925,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position",
-                "pole_position": true
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -11998,11 +11950,13 @@
             },
             "results": [
               {
-                "position": 23,
+                "position": 4,
+                "background": "Other points position",
                 "pole_position": true
               }
             ]
-          }
+          },
+          "points": 23.0
         },
         {
           "pos": 8,
@@ -12125,15 +12079,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 6,
-                "background": "Other points position",
-                "pole_position": true
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -12141,8 +12086,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 6,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -12165,9 +12111,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -12178,8 +12123,9 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": 2,
+                "background": "Second place",
+                "pole_position": true
               }
             ]
           },
@@ -12190,7 +12136,7 @@
             },
             "results": [
               {
-                "position": 7,
+                "position": 8,
                 "background": "Other classified position"
               }
             ]
@@ -12202,8 +12148,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -12214,9 +12160,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -12227,11 +12172,13 @@
             },
             "results": [
               {
-                "position": 18,
+                "position": 5,
+                "background": "Other points position",
                 "pole_position": true
               }
             ]
-          }
+          },
+          "points": 18.0
         },
         {
           "pos": 9,
@@ -12356,14 +12303,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -12371,8 +12310,8 @@
             },
             "results": [
               {
-                "position": "DNQ",
-                "background": "Did not qualify"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -12383,8 +12322,8 @@
             },
             "results": [
               {
-                "position": 11,
-                "background": "Other classified position"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
             ]
           },
@@ -12395,9 +12334,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position",
-                "pole_position": true
+                "position": 11,
+                "background": "Other classified position"
               }
             ]
           },
@@ -12408,8 +12346,9 @@
             },
             "results": [
               {
-                "position": "DNQ",
-                "background": "Did not qualify"
+                "position": 4,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -12420,8 +12359,8 @@
             },
             "results": [
               {
-                "position": 13,
-                "background": "Other classified position"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
             ]
           },
@@ -12432,24 +12371,25 @@
             },
             "results": [
               {
+                "position": 13,
+                "background": "Other classified position"
+              }
+            ]
+          },
+          "can": {
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1977_Canadian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "Ret",
                 "background": "Not classified, retired"
               }
             ]
           },
-          "can": null,
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11,
-                "pole_position": true
-              }
-            ]
-          }
+          "jpn": null,
+          "points": 11.0
         },
         {
           "pos": 10,
@@ -12572,14 +12512,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -12587,9 +12519,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -12600,8 +12531,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 6,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -12612,9 +12544,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position",
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -12664,8 +12595,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -12676,11 +12608,12 @@
             },
             "results": [
               {
-                "position": 10,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 10.0
         },
         {
           "pos": 11,
@@ -12803,14 +12736,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 8,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -12818,9 +12743,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position",
-                "pole_position": true
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -12831,8 +12755,9 @@
             },
             "results": [
               {
-                "position": 15,
-                "background": "Other classified position"
+                "position": 5,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -12843,7 +12768,7 @@
             },
             "results": [
               {
-                "position": 12,
+                "position": 15,
                 "background": "Other classified position"
               }
             ]
@@ -12855,8 +12780,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 12,
+                "background": "Other classified position"
               }
             ]
           },
@@ -12867,8 +12792,8 @@
             },
             "results": [
               {
-                "position": 11,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -12879,9 +12804,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position",
-                "pole_position": true
+                "position": 11,
+                "background": "Other classified position"
               }
             ]
           },
@@ -12892,8 +12816,9 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position",
+                "pole_position": true
               }
             ]
           },
@@ -12904,11 +12829,12 @@
             },
             "results": [
               {
-                "position": 6,
-                "pole_position": true
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 6.0
         },
         {
           "pos": 12,
@@ -12998,14 +12924,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 9,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -13013,8 +12931,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -13025,8 +12943,8 @@
             },
             "results": [
               {
-                "position": 12,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -13037,7 +12955,7 @@
             },
             "results": [
               {
-                "position": 8,
+                "position": 12,
                 "background": "Other classified position"
               }
             ]
@@ -13049,8 +12967,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -13073,24 +12991,25 @@
             },
             "results": [
               {
+                "position": "Ret",
+                "background": "Not classified, retired"
+              }
+            ]
+          },
+          "can": {
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1977_Canadian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": 7,
                 "background": "Other classified position"
               }
             ]
           },
-          "can": null,
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "pole_position": true
-              }
-            ]
-          }
+          "jpn": null,
+          "points": 1.0
         },
         {
           "pos": null,
@@ -13212,14 +13131,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 10,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -13227,7 +13138,7 @@
             },
             "results": [
               {
-                "position": 8,
+                "position": 10,
                 "background": "Other classified position"
               }
             ]
@@ -13239,7 +13150,7 @@
             },
             "results": [
               {
-                "position": 9,
+                "position": 8,
                 "background": "Other classified position"
               }
             ]
@@ -13251,7 +13162,7 @@
             },
             "results": [
               {
-                "position": 10,
+                "position": 9,
                 "background": "Other classified position"
               }
             ]
@@ -13263,7 +13174,7 @@
             },
             "results": [
               {
-                "position": 7,
+                "position": 10,
                 "background": "Other classified position"
               }
             ]
@@ -13275,7 +13186,7 @@
             },
             "results": [
               {
-                "position": 15,
+                "position": 7,
                 "background": "Other classified position"
               }
             ]
@@ -13287,7 +13198,7 @@
             },
             "results": [
               {
-                "position": 8,
+                "position": 15,
                 "background": "Other classified position"
               }
             ]
@@ -13299,7 +13210,7 @@
             },
             "results": [
               {
-                "position": 12,
+                "position": 8,
                 "background": "Other classified position"
               }
             ]
@@ -13311,11 +13222,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": 12,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -13403,14 +13315,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -13430,8 +13334,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -13442,8 +13346,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -13454,8 +13358,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -13466,7 +13370,7 @@
             },
             "results": [
               {
-                "position": 8,
+                "position": 9,
                 "background": "Other classified position"
               }
             ]
@@ -13478,24 +13382,25 @@
             },
             "results": [
               {
+                "position": 8,
+                "background": "Other classified position"
+              }
+            ]
+          },
+          "can": {
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1977_Canadian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "Ret",
                 "background": "Not classified, retired"
               }
             ]
           },
-          "can": null,
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "jpn": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -13518,17 +13423,17 @@
           "bel": null,
           "swe": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
           "aut": null,
           "ned": null,
           "ita": null,
           "usa": null,
-          "can": {
+          "can": null,
+          "jpn": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1977_Canadian_Grand_Prix"
+              "text": "JPN",
+              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
             },
             "results": [
               {
@@ -13537,18 +13442,7 @@
               }
             ]
           },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "points": 0.0
         },
         {
           "pos": null,
@@ -13625,7 +13519,11 @@
               }
             ]
           },
-          "": {
+          "gbr": {
+            "round": {
+              "text": "GBR",
+              "url": "https://en.wikipedia.org/wiki/1977_British_Grand_Prix"
+            },
             "results": [
               {
                 "position": "DNPQ",
@@ -13633,25 +13531,14 @@
               }
             ]
           },
-          "gbr": null,
           "ger": null,
           "aut": null,
           "ned": null,
           "ita": null,
           "usa": null,
           "can": null,
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "jpn": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -13760,14 +13647,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "DNPQ",
-                "background": "Did not qualify"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -13775,7 +13654,7 @@
             },
             "results": [
               {
-                "position": "DNQ",
+                "position": "DNPQ",
                 "background": "Did not qualify"
               }
             ]
@@ -13787,7 +13666,8 @@
             },
             "results": [
               {
-                "position": "WD"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
             ]
           },
@@ -13798,8 +13678,7 @@
             },
             "results": [
               {
-                "position": "DNQ",
-                "background": "Did not qualify"
+                "position": "WD"
               }
             ]
           },
@@ -13815,21 +13694,22 @@
               }
             ]
           },
-          "ita": null,
-          "usa": null,
-          "can": null,
-          "jpn": {
+          "ita": {
             "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1977_Italian_Grand_Prix"
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
             ]
-          }
+          },
+          "usa": null,
+          "can": null,
+          "jpn": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -13862,14 +13742,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -13877,7 +13749,8 @@
             },
             "results": [
               {
-                "position": "WD"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -13899,8 +13772,7 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": "WD"
               }
             ]
           },
@@ -13935,24 +13807,25 @@
             },
             "results": [
               {
+                "position": "Ret",
+                "background": "Not classified, retired"
+              }
+            ]
+          },
+          "can": {
+            "round": {
+              "text": "CAN",
+              "url": "https://en.wikipedia.org/wiki/1977_Canadian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "DNQ",
                 "background": "Did not qualify"
               }
             ]
           },
-          "can": null,
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "jpn": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -13975,13 +13848,13 @@
           "bel": null,
           "swe": null,
           "fra": null,
-          "": null,
           "gbr": null,
           "ger": null,
-          "aut": {
+          "aut": null,
+          "ned": {
             "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1977_Austrian_Grand_Prix"
+              "text": "NED",
+              "url": "https://en.wikipedia.org/wiki/1977_Dutch_Grand_Prix"
             },
             "results": [
               {
@@ -13990,10 +13863,10 @@
               }
             ]
           },
-          "ned": {
+          "ita": {
             "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1977_Dutch_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1977_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -14002,21 +13875,10 @@
               }
             ]
           },
-          "ita": null,
           "usa": null,
           "can": null,
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "jpn": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -14059,19 +13921,8 @@
               }
             ]
           },
-          "": null,
           "gbr": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1977_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "WD"
-              }
-            ]
-          },
+          "ger": null,
           "aut": {
             "round": {
               "text": "AUT",
@@ -14090,26 +13941,26 @@
             },
             "results": [
               {
+                "position": "WD"
+              }
+            ]
+          },
+          "ita": {
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1977_Italian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "DNQ",
                 "background": "Did not qualify"
               }
             ]
           },
-          "ita": null,
           "usa": null,
           "can": null,
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "jpn": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -14132,152 +13983,6 @@
           "bel": null,
           "swe": null,
           "fra": null,
-          "": {
-            "results": [
-              {
-                "position": "DNPQ",
-                "background": "Did not qualify"
-              }
-            ]
-          },
-          "gbr": null,
-          "ger": null,
-          "aut": null,
-          "ned": null,
-          "ita": null,
-          "usa": null,
-          "can": null,
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
-        },
-        {
-          "pos": null,
-          "constructor": {
-            "chassis_constructor": {
-              "text": "Constructor",
-              "url": null
-            },
-            "engine_constructor": {
-              "text": "Constructor",
-              "url": null
-            }
-          },
-          "arg": {
-            "round": {
-              "text": "ARG",
-              "url": "https://en.wikipedia.org/wiki/1977_Argentine_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ARG"
-              }
-            ]
-          },
-          "bra": {
-            "round": {
-              "text": "BRA",
-              "url": "https://en.wikipedia.org/wiki/1977_Brazilian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "BRA"
-              }
-            ]
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1977_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "RSA"
-              }
-            ]
-          },
-          "usw": {
-            "round": {
-              "text": "USW",
-              "url": "https://en.wikipedia.org/wiki/1977_United_States_Grand_Prix_West"
-            },
-            "results": [
-              {
-                "position": "USW"
-              }
-            ]
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1977_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ESP"
-              }
-            ]
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1977_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "MON"
-              }
-            ]
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1977_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "BEL"
-              }
-            ]
-          },
-          "swe": {
-            "round": {
-              "text": "SWE",
-              "url": "https://en.wikipedia.org/wiki/1977_Swedish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "SWE"
-              }
-            ]
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1977_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "FRA"
-              }
-            ]
-          },
-          "": {
-            "results": [
-              {
-                "position": "GBR"
-              }
-            ]
-          },
           "gbr": {
             "round": {
               "text": "GBR",
@@ -14285,87 +13990,19 @@
             },
             "results": [
               {
-                "position": "GER"
+                "position": "DNPQ",
+                "background": "Did not qualify"
               }
             ]
           },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1977_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "AUT"
-              }
-            ]
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1977_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "NED"
-              }
-            ]
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1977_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ITA"
-              }
-            ]
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1977_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "USA"
-              }
-            ]
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1977_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "CAN"
-              }
-            ]
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1977_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "JPN"
-              }
-            ]
-          },
-          "jpn": {
-            "round": {
-              "text": "JPN",
-              "url": "https://en.wikipedia.org/wiki/1977_Japanese_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Pts"
-              }
-            ]
-          }
+          "ger": null,
+          "aut": null,
+          "ned": null,
+          "ita": null,
+          "usa": null,
+          "can": null,
+          "jpn": null,
+          "points": 0.0
         }
       ],
       "jim_clark_trophy": null,

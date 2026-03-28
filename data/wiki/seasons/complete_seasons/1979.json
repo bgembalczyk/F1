@@ -2689,7 +2689,10 @@
               }
             ]
           },
-          "points": 51.0
+          "points": {
+            "championship_points": 51.0,
+            "total_points": 60.0
+          }
         },
         {
           "pos": 2,
@@ -2885,7 +2888,10 @@
               }
             ]
           },
-          "points": 47.0
+          "points": {
+            "championship_points": 47.0,
+            "total_points": 53.0
+          }
         },
         {
           "pos": 3,
@@ -3078,7 +3084,10 @@
               }
             ]
           },
-          "points": 40.0
+          "points": {
+            "championship_points": 40.0,
+            "total_points": 43.0
+          }
         },
         {
           "pos": 4,
@@ -3464,7 +3473,10 @@
               }
             ]
           },
-          "points": 29.0
+          "points": {
+            "championship_points": 29.0,
+            "total_points": 32.0
+          }
         },
         {
           "pos": 6,
@@ -3566,7 +3578,10 @@
           "ita": null,
           "can": null,
           "usa": null,
-          "points": 20.0
+          "points": {
+            "championship_points": 20.0,
+            "total_points": 22.0
+          }
         },
         {
           "pos": 7,
@@ -3756,7 +3771,10 @@
               }
             ]
           },
-          "points": 20.0
+          "points": {
+            "championship_points": 20.0,
+            "total_points": 25.0
+          }
         },
         {
           "pos": 8,
@@ -8328,7 +8346,7 @@
           "constructor": {
             "chassis_constructor": {
               "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
+              "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
             },
             "engine_constructor": {
               "text": "Ford",
@@ -10397,7 +10415,7 @@
           "constructor": {
             "chassis_constructor": {
               "text": "ATS",
-              "url": "https://en.wikipedia.org/wiki/ATS_(wheels)"
+              "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
             },
             "engine_constructor": {
               "text": "Ford",

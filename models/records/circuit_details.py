@@ -1,8 +1,10 @@
 from typing import Any
 
-from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, ValidationIssue
-from models.records.circuit_base import CIRCUIT_BASE_SCHEMA, CircuitBaseRecord
+from models.records.circuit_base import CIRCUIT_BASE_SCHEMA
+from models.records.circuit_base import CircuitBaseRecord
+from validation.issue import ValidationIssue
+from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 class CircuitDetailsRecord(CircuitBaseRecord):
@@ -18,4 +20,4 @@ CIRCUIT_DETAILS_SCHEMA = RecordSchema(
 
 
 def validate_circuit_details_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(record, CIRCUIT_DETAILS_SCHEMA)
+    return RecordValidator.validate_schema(record, CIRCUIT_DETAILS_SCHEMA)

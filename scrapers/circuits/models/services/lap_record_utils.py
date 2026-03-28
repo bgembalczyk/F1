@@ -1,7 +1,10 @@
 """Wspólne narzędzia do obsługi rekordów lap record."""
 
 import re
-from typing import Any, Callable, Iterable, Mapping
+from collections.abc import Callable
+from collections.abc import Iterable
+from collections.abc import Mapping
+from typing import Any
 
 from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.text import choose_richer_entity
@@ -55,7 +58,9 @@ def extract_year(rec: dict[str, Any]) -> str | None:
 
 
 def normalize_lap_record_entity(
-    value: Any, *, sanitizer: Callable[[str], str] | None = None
+    value: Any,
+    *,
+    sanitizer: Callable[[str], str] | None = None,
 ) -> str:
     """Normalizuje tekst encji (driver/vehicle) z opcjonalnym czyszczeniem."""
     text = normalize_text(value)
@@ -79,7 +84,7 @@ def parse_lap_record_time_from_record(rec: Mapping[str, Any]) -> float | None:
     - rec["time"] jako NormalizedTime
     """
     ts = rec.get("time_seconds")
-    if isinstance(ts, (int, float)):
+    if isinstance(ts, int | float):
         return float(ts)
 
     t = rec.get("time")
@@ -99,7 +104,8 @@ def has_meaningful_value(candidate: Any) -> bool:
 
 
 def select_best_field_with_url(
-    records: Iterable[Mapping[str, Any]], *field_names: str
+    records: Iterable[Mapping[str, Any]],
+    *field_names: str,
 ) -> Any:
     """Wybiera najlepszą wartość pola (preferuje bogatszą encję)."""
     best = None

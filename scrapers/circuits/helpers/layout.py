@@ -1,5 +1,3 @@
-from typing import Optional
-
 from bs4 import Tag
 
 from scrapers.base.helpers.text import clean_wiki_text
@@ -8,7 +6,7 @@ from scrapers.base.helpers.text import clean_wiki_text
 def layout_from_spanning_header(
     cells: list[Tag],
     headers: list[str],
-) -> Optional[str]:
+) -> str | None:
     if len(cells) != 1 or cells[0].name != "th":
         return None
 
@@ -38,7 +36,7 @@ def layout_from_spanning_header(
     return None
 
 
-def detect_layout_name(table: Tag, headers: list[str]) -> Optional[str]:
+def detect_layout_name(table: Tag, headers: list[str]) -> str | None:
     caption = table.find("caption")
     if caption:
         txt = clean_wiki_text(caption.get_text(strip=True))

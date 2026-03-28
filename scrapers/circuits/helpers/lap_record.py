@@ -1,6 +1,5 @@
 import re
 from typing import Any
-from typing import Optional
 
 from bs4 import Tag
 
@@ -9,12 +8,19 @@ from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.helpers.time import parse_time_seconds_from_text
-from scrapers.circuits.helpers.logger import logger
+from scrapers.circuits.helpers.constants import DETAILS_MIN_SCORE_WITHOUT_COMMA
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_BONUS_2
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_BONUS_3
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_BONUS_4
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_COUNT_FEW
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_COUNT_MANY
+from scrapers.circuits.helpers.constants import DETAILS_PARTS_COUNT_MEDIUM
 from scrapers.circuits.helpers.layout import layout_from_spanning_header
+from scrapers.circuits.helpers.logger import logger
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
 
 
-def extract_time(text: str) -> Optional[float]:
+def extract_time(text: str) -> float | None:
     if not text:
         return None
 
@@ -48,19 +54,19 @@ def score_details_candidate(s: str) -> int:
     parts = split_delimited_text(s, pattern=r",")
     score = 0
 
-    if len(parts) >= 4:
-        score += 5
-    elif len(parts) == 3:
-        score += 2
-    elif len(parts) == 2:
-        score += 1
+    if len(parts) >= DETAILS_PARTS_COUNT_MANY:
+        score += DETAILS_PARTS_BONUS_4
+    elif len(parts) == DETAILS_PARTS_COUNT_MEDIUM:
+        score += DETAILS_PARTS_BONUS_3
+    elif len(parts) == DETAILS_PARTS_COUNT_FEW:
+        score += DETAILS_PARTS_BONUS_2
     else:
         score -= 2
 
     if any(re.fullmatch(r"\d{4}", p) for p in parts):
         score += 5
 
-    if "," not in s and score < 3:
+    if "," not in s and score < DETAILS_MIN_SCORE_WITHOUT_COMMA:
         score -= 3
 
     return score
@@ -94,7 +100,7 @@ def is_lap_record_table(
 def collect_lap_records(
     table: Tag,
     headers: list[str],
-    base_layout: Optional[str],
+    base_layout: str | None,
     lap_scraper: LapRecordsTableScraper,
 ) -> list[dict[str, Any]]:
     all_records: list[dict[str, Any]] = []

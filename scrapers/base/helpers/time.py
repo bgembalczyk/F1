@@ -2,7 +2,9 @@
 
 import re
 from datetime import datetime
-from decimal import Decimal, ROUND_HALF_UP
+from datetime import timezone
+from decimal import ROUND_HALF_UP
+from decimal import Decimal
 from typing import Any
 
 from models.value_objects.time_types import DateValue
@@ -33,11 +35,11 @@ def extract_time_value(value: Any) -> tuple[str | None, float | None]:
     if isinstance(value, dict):
         text = value.get("text")
         seconds = value.get("seconds")
-        sec = float(seconds) if isinstance(seconds, (int, float)) else None
+        sec = float(seconds) if isinstance(seconds, int | float) else None
         txt = str(text).strip() if text is not None else None
         return (txt or None), sec
 
-    if isinstance(value, (int, float)):
+    if isinstance(value, int | float):
         return None, float(value)
 
     if value is not None:
@@ -109,20 +111,26 @@ def clean_date_base(text: str) -> str:
     return base
 
 
-def parse_date_iso(base: str) -> str | None:
-    for fmt in DATE_FORMATS:
+def _parse_with_formats(base: str, formats: tuple[str, ...]) -> datetime | None:
+    for fmt in formats:
+        parsed = None
         try:
-            dt = datetime.strptime(base, fmt)
-            return dt.date().isoformat()
+            parsed = datetime.strptime(base, fmt).replace(tzinfo=timezone.utc)
         except ValueError:
             continue
+        if parsed is not None:
+            return parsed
+    return None
 
-    for fmt in ("%B %Y", "%b %Y"):
-        try:
-            dt = datetime.strptime(base, fmt)
-            return dt.strftime("%Y-%m")
-        except ValueError:
-            continue
+
+def parse_date_iso(base: str) -> str | None:
+    parsed_date = _parse_with_formats(base, tuple(DATE_FORMATS))
+    if parsed_date is not None:
+        return parsed_date.date().isoformat()
+
+    parsed_month = _parse_with_formats(base, ("%B %Y", "%b %Y"))
+    if parsed_month is not None:
+        return parsed_month.strftime("%Y-%m")
 
     if DATE_ISO_YEAR_RE.fullmatch(base):
         return base
@@ -217,7 +225,7 @@ def parse_time_seconds(rec: dict[str, Any]) -> float | None:
     - rec["time"] jako NormalizedTime
     """
     ts = rec.get("time_seconds")
-    if isinstance(ts, (int, float)):
+    if isinstance(ts, int | float):
         return float(ts)
 
     t = rec.get("time")

@@ -1,28 +1,7 @@
-from validation.records import BaseDomainRecordValidator, ExportRecord, ValidationIssue
+from models.records.grand_prix import GRANDS_PRIX_SCHEMA
+from scrapers.base.composite_validator import SchemaCompositeRecordValidator
 
 
-class GrandsPrixRecordValidator(BaseDomainRecordValidator):
-    def validate(self, record: ExportRecord) -> list[ValidationIssue]:
-        errors: list[ValidationIssue] = []
-        errors.extend(
-            self.require_keys(
-                record,
-                ["race_title", "race_status", "years_held", "country", "total"],
-            )
-        )
-        errors.extend(self.require_type(record, "race_title", dict))
-        errors.extend(self.require_type(record, "race_status", str))
-        errors.extend(self.require_type(record, "years_held", list))
-        errors.extend(self.require_type(record, "country", list))
-        errors.extend(self.require_type(record, "total", int, allow_none=True))
-        errors.extend(self.require_type(record, "circuits", int, allow_none=True))
-
-        race_title = record.get("race_title")
-        if isinstance(race_title, dict):
-            errors.extend(self.require_link_dict(race_title, "race_title"))
-
-        country = record.get("country")
-        if isinstance(country, list):
-            errors.extend(self.require_link_list(country, "country"))
-
-        return errors
+class GrandsPrixRecordValidator(SchemaCompositeRecordValidator):
+    def __init__(self, record_factory=None) -> None:
+        super().__init__(schema=GRANDS_PRIX_SCHEMA, record_factory=record_factory)
