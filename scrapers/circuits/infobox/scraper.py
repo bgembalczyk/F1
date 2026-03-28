@@ -101,9 +101,7 @@ class F1CircuitInfoboxParser(InfoboxParser):
         infoboksa ignorujemy resztę wierszy (wycinamy je z DOM-u),
         żeby nie mieszać danych z pełnotabelarycznymi statystykami.
         """
-        truncated_soup = self._truncate_infobox_after_full_data(
-            soup,
-        )  # TODO: co to robi?
+        truncated_soup = self._truncate_infobox_after_full_data(soup)
 
         self.infobox_scraper.run_id = self._run_id
         self.infobox_scraper.url = self.url
@@ -120,10 +118,12 @@ class F1CircuitInfoboxParser(InfoboxParser):
     @staticmethod
     def _truncate_infobox_after_full_data(soup: BeautifulSoup) -> BeautifulSoup:
         """
-        W każdej tabeli infoboksa usuwamy:
-        - pierwszy wiersz, który ma klasę `infobox-full-data`
-          LUB zawiera komórkę (td/th) z tą klasą,
-        - wszystkie kolejne wiersze poniżej.
+        W każdej tabeli infoboksa usuwamy pierwszy wiersz z klasą `infobox-full-data`
+        (lub zawierający taką komórkę) oraz wszystkie kolejne wiersze poniżej.
+
+        Zapobiega to mieszaniu głównych danych toru z pełnymi tabelami statystycznymi
+        (np. rekordami okrążeń dla różnych serii), które często znajdują się
+        w dolnej części infoboksa Wikipedii.
         """
 
         def _has_infobox_class(classes: Any) -> bool:
