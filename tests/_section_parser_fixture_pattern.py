@@ -62,7 +62,10 @@ def _snapshot_cases_drivers() -> tuple[SectionFixture, SectionFixture]:
                 h2_text="Career results",
                 h3_id="Racing_record",
                 h3_text="Racing record",
-                body_html="<span><ul><li><a href='/wiki/2007_Formula_One_World_Championship'>2007</a></li></ul></span>",
+                body_html=(
+                    "<span><ul><li><a href='/wiki/2007_Formula_One_World_"
+                    "Championship'>2007</a></li></ul></span>"
+                ),
             ),
             expected_section_id="career_results",
             expected_kind="list",
@@ -80,7 +83,10 @@ def _snapshot_cases_constructors() -> tuple[SectionFixture, SectionFixture]:
                 h2_text="Results",
                 h3_id="Championship_results",
                 h3_text="Championship results",
-                body_html="<div><table class='wikitable'><tr><th>Year</th></tr><tr><td>2024</td></tr></table></div>",
+                body_html=(
+                    "<div><table class='wikitable'><tr><th>Year</th></tr><tr>"
+                    "<td>2024</td></tr></table></div>"
+                ),
             ),
             expected_section_id="results",
             expected_kind="table",
@@ -124,7 +130,10 @@ def _snapshot_cases_circuits() -> tuple[SectionFixture, SectionFixture]:
                 h2_text="Formula One circuits",
                 h3_id="List",
                 h3_text="List",
-                body_html="<div><table class='wikitable'><tr><th>Circuit</th></tr><tr><td>Monza</td></tr></table></div>",
+                body_html=(
+                    "<div><table class='wikitable'><tr><th>Circuit</th></tr><tr>"
+                    "<td>Monza</td></tr></table></div>"
+                ),
             ),
             expected_section_id="formula_one_circuits",
             expected_kind="table",
@@ -186,7 +195,10 @@ def _snapshot_cases_grands_prix() -> tuple[SectionFixture, SectionFixture]:
                 h2_text="Race",
                 h3_id="Fastest_lap",
                 h3_text="Fastest lap",
-                body_html="<div><table class='wikitable'><tr><th>Driver</th></tr><tr><td>Max Verstappen</td></tr></table></div>",
+                body_html=(
+                    "<div><table class='wikitable'><tr><th>Driver</th></tr><tr>"
+                    "<td>Max Verstappen</td></tr></table></div>"
+                ),
             ),
             expected_section_id="race",
             expected_kind="table",
@@ -258,7 +270,9 @@ CONTRACT_COVERED_SECTION_MODULES: tuple[str, ...] = SNAPSHOT_COVERED_SECTION_MOD
 ALIAS_FIXTURES: dict[str, str] = {
     "constructors": """
     <html><body>
-    <h2><span id=\"Constructors_for_the_current_season\">Constructors for the current season</span></h2>
+    <h2><span id=\"Constructors_for_the_current_season\">
+    Constructors for the current season
+    </span></h2>
     <table class=\"wikitable\">
     <tr><th>Constructor</th><th>Engine</th><th>Licensed in</th><th>Based in</th></tr>
     <tr>
@@ -287,10 +301,15 @@ ALIAS_FIXTURES: dict[str, str] = {
     "seasons": """
     <div id=\"bodyContent\">
       <div id=\"mw-content-text\" class=\"mw-body-content\">
-        <div class=\"mw-heading mw-heading2\"><h2 id=\"Results_and_standings\">Results and standings</h2></div>
+        <div class=\"mw-heading mw-heading2\">
+          <h2 id=\"Results_and_standings\">Results and standings</h2>
+        </div>
         <div class=\"mw-heading mw-heading3\"><h3 id=\"Rounds\">Rounds</h3></div>
         <table class=\"wikitable\">
-          <tr><th>Round</th><th>Grand Prix</th><th>Fastest lap</th><th>Winning driver</th><th>Report</th></tr>
+          <tr>
+            <th>Round</th><th>Grand Prix</th><th>Fastest lap</th>
+            <th>Winning driver</th><th>Report</th>
+          </tr>
           <tr>
             <td>1</td>
             <td><a href=\"/wiki/Bahrain_Grand_Prix\">Bahrain Grand Prix</a></td>

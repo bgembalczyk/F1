@@ -1,3 +1,4 @@
+# ruff: noqa: INP001, S603
 from __future__ import annotations
 
 import argparse

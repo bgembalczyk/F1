@@ -14,6 +14,7 @@ DOMAINS = (
     "sponsorship_liveries",
     "tyres",
 )
+MIN_IMPORT_PARTS = 3
 
 
 def _iter_cross_domain_imports(py_file: Path, domain: str) -> list[str]:
@@ -24,7 +25,7 @@ def _iter_cross_domain_imports(py_file: Path, domain: str) -> list[str]:
         if isinstance(node, ast.Import):
             for alias in node.names:
                 parts = alias.name.split(".")
-                if len(parts) < 3 or parts[0] != "scrapers":
+                if len(parts) < MIN_IMPORT_PARTS or parts[0] != "scrapers":
                     continue
                 imported_domain = parts[1]
                 if imported_domain in DOMAINS and imported_domain != domain:
@@ -34,7 +35,7 @@ def _iter_cross_domain_imports(py_file: Path, domain: str) -> list[str]:
             if node.level != 0 or node.module is None:
                 continue
             parts = node.module.split(".")
-            if len(parts) < 3 or parts[0] != "scrapers":
+            if len(parts) < MIN_IMPORT_PARTS or parts[0] != "scrapers":
                 continue
             imported_domain = parts[1]
             if imported_domain in DOMAINS and imported_domain != domain:

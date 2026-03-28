@@ -9,11 +9,11 @@ def test_key_package_file_names_do_not_contain_contants_typo():
     )
     typo_file_name = "contants.py"
 
-    typo_paths = []
-    for package in key_packages:
-        typo_path = package / typo_file_name
-        if typo_path.exists():
-            typo_paths.append(typo_path)
+    typo_paths = [
+        typo_path
+        for package in key_packages
+        if (typo_path := package / typo_file_name).exists()
+    ]
     assert not typo_paths, f"Found typo filename(s): {typo_paths}"
 
 
@@ -45,9 +45,11 @@ def test_no_typo_import_path_remains():
         root = project_root / source_dir
         if not root.exists():
             continue
-        for py_path in root.rglob("*.py"):
-            if disallowed_import in py_path.read_text(encoding="utf-8"):
-                matches.append(py_path.relative_to(project_root))
+        matches.extend(
+            py_path.relative_to(project_root)
+            for py_path in root.rglob("*.py")
+            if disallowed_import in py_path.read_text(encoding="utf-8")
+        )
 
     assert not matches, f"Found typo import path(s): {matches}"
 

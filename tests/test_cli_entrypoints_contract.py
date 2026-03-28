@@ -46,14 +46,15 @@ def _flags(parser: argparse.ArgumentParser) -> set[str]:
 
 
 @pytest.mark.parametrize(
-    ("_module", "quality_default", "error_default"),
+    ("module", "quality_default", "error_default"),
     ENTRYPOINT_DEFAULTS,
 )
 def test_entrypoint_parsers_expose_consistent_flag_contract(
-    _module: str,
+    module: str,
     quality_default: bool,
     error_default: bool,
 ) -> None:
+    assert module.startswith("scrapers.")
     parser = build_standard_parser(
         quality_report_default=quality_default,
         error_report_default=error_default,
