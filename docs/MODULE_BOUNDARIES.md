@@ -193,8 +193,32 @@ Każdy wrapper legacy emituje `DeprecationWarning` z powyższym mapowaniem.
 5. Podepnij `record_factory` i (opcjonalnie) `default_validator`.
 6. Dla uruchamiania używaj `entrypoint.py`; `list_scraper.py` traktuj jako warstwę kompatybilności.
 
+## 8. Static quality gates (CI)
 
-## 8. Standard deklaracji konfiguracji scraperów (build_scraper_config + schema DSL)
+Dla PR/push do `main` działa workflow `.github/workflows/static-quality-gates.yml` z czterema bramkami:
+
+1. **Complexity warning (radon)** – próg ostrzegawczy: od klasy złożoności `B` wzwyż (`radon cc --min B`, krok typu warning).
+2. **Complexity error (xenon)** – progi blokujące merge:
+   - `--max-absolute C`
+   - `--max-modules C`
+   - `--max-average B`
+3. **Duplicate code + oversized classes/functions (pylint)** – blokada CI przy wykryciu:
+   - duplikacji (`duplicate-code`, `min-similarity-lines=30`),
+   - zbyt dużych klas/funkcji (`too-many-*`) z limitami:
+     - `max-attributes=20`
+     - `max-public-methods=20`
+     - `max-branches=15`
+     - `max-statements=60`
+4. **Reguły architektoniczne (import-linter)** – kontrakty zakazujące importów:
+   - `models|validation -> infrastructure`
+   - `models|validation|layers -> scrapers`
+
+Konfiguracja bramek znajduje się w plikach:
+- `.pylintrc`
+- `importlinter.ini`
+- `.github/workflows/static-quality-gates.yml`
+
+## 9. Standard deklaracji konfiguracji scraperów (build_scraper_config + schema DSL)
 
 Ujednolicamy jeden standard dla deklaracji `CONFIG` w scraperach tabelowych:
 
@@ -226,7 +250,7 @@ Nowa reguła CI (`tests/test_scraper_config_ci_meta.py`) blokuje merge gdy:
 - nowy scraper deklaruje klasowe `CONFIG = ScraperConfig(...)` zamiast `build_scraper_config(...)`,
 - nowy scraper importuje `build_scraper_config` z deprecated aliasu `scrapers.base.table.builders`.
 
-## 9. Szablon „new scraper” (gotowy przykład DSL: lista + sekcja)
+## 10. Szablon „new scraper” (gotowy przykład DSL: lista + sekcja)
 
 ```python
 from scrapers.base.records import record_from_mapping
