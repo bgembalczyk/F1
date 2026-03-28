@@ -1,5 +1,5 @@
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.constructor import ConstructorColumn
+from scrapers.constructors.columns.constructor import ConstructorColumn
 
 
 def _ctx_with_links(links: list[dict]) -> ColumnContext:

@@ -2,8 +2,8 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.types import ConstructorColumn
-from scrapers.base.table.columns.types import DriverColumn
+from scrapers.constructors.columns.constructor import ConstructorColumn
+from scrapers.drivers.columns.driver import DriverColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.dsl.column import column
