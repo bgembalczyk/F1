@@ -4,6 +4,7 @@ from collections.abc import Sequence
 
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
 from scrapers.base.options import ScraperOptions
+from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
@@ -13,7 +14,6 @@ from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.scraper import F1TableScraper
 from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_NAME_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_TOTAL_ENTRIES_HEADER
@@ -21,8 +21,12 @@ from scrapers.constructors.constants import CONSTRUCTOR_WCC_HEADER
 from scrapers.constructors.constants import CONSTRUCTOR_WDC_HEADER
 
 
-class BaseConstructorListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
+class BaseConstructorListScraper(
+    DeclarativeSectionTableParseMixin,
+    SeedListTableScraper,
+):
     domain = "constructors"
+    output_basename = "complete_constructors"
     """
     Base class for constructor list scrapers.
 

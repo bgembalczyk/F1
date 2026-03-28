@@ -1,6 +1,7 @@
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
-from scrapers.base.records import record_from_mapping
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
@@ -23,7 +24,7 @@ class ShortenedRacePointsScraper(BasePointsScraper):
         section_id="Shortened_races",
         expected_headers=SHORTENED_RACE_EXPECTED_HEADERS,
         schema=build_shortened_race_points_schema(),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
     def __init__(
@@ -32,12 +33,10 @@ class ShortenedRacePointsScraper(BasePointsScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = options or ScraperOptions()
-        options.transformers = [
-            *list(options.transformers or []),
-            ShortenedRacePointsTransformer(),
-        ]
-        super().__init__(options=options, config=config)
+        super().__init__(
+            options=append_transformer(options, ShortenedRacePointsTransformer()),
+            config=config,
+        )
 
 
 def run_list_scraper(*, run_config: RunConfig) -> None:

@@ -1,9 +1,7 @@
 from models.records.grand_prix import GRANDS_PRIX_SCHEMA
-from validation.issue import ValidationIssue
-from validation.validator_base import ExportRecord
-from validation.validator_base import RecordValidator
+from scrapers.base.composite_validator import SchemaCompositeRecordValidator
 
 
-class GrandsPrixRecordValidator(RecordValidator):
-    def validate(self, record: ExportRecord) -> list[ValidationIssue]:
-        return self.validate_schema(record, GRANDS_PRIX_SCHEMA)
+class GrandsPrixRecordValidator(SchemaCompositeRecordValidator):
+    def __init__(self, record_factory=None) -> None:
+        super().__init__(schema=GRANDS_PRIX_SCHEMA, record_factory=record_factory)

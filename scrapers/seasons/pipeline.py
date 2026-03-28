@@ -29,6 +29,7 @@ from scrapers.seasons.sections.results import SeasonResultsSectionParser
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 from scrapers.seasons.sections.standings import SeasonConstructorsStandingsSectionParser
 from scrapers.seasons.sections.standings import SeasonDriversStandingsSectionParser
+from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
 
 if TYPE_CHECKING:
     from typing import Any
@@ -105,28 +106,17 @@ class SeasonParserSet:
     section_parsers: tuple[SeasonSectionParserBinding, ...]
 
 
-@dataclass(frozen=True)
-class SeasonCollectedData:
-    entries: list[dict[str, Any]]
-    free_practice_drivers: list[dict[str, Any]]
-    calendar: list[dict[str, Any]]
-    cancelled_rounds: list[dict[str, Any]]
-    testing_venues_and_dates: list[dict[str, Any]]
-    results: list[dict[str, Any]]
-    non_championship_races: list[dict[str, Any]]
-    scoring_system: list[dict[str, Any]]
-    drivers_standings: list[dict[str, Any]]
-    constructors_standings: list[dict[str, Any]]
-    jim_clark_trophy: list[dict[str, Any]]
-    colin_chapman_trophy: list[dict[str, Any]]
-    south_african_formula_one_championship: list[dict[str, Any]]
-    british_formula_one_championship: list[dict[str, Any]]
-
-
 class SeasonParserSetBuilder:
-    def __init__(self, *, options: ScraperOptions, include_urls: bool) -> None:
+    def __init__(
+        self,
+        *,
+        options: ScraperOptions,
+        include_urls: bool,
+        policy: DomainParsingPolicy | None = None,
+    ) -> None:
         self._options = options
         self._include_urls = include_urls
+        self._policy = policy or DomainParsingPolicy()
 
     def build(self, *, url: str, season_year: int | None) -> SeasonParserSet:
         table_parser = SeasonTableParser(
@@ -137,10 +127,17 @@ class SeasonParserSetBuilder:
         standings_parser = SeasonStandingsParser(table_parser)
         return SeasonParserSet(
             table_parser=table_parser,
-            entries_parser=SeasonEntriesParser(table_parser, EntryMerger()),
+            entries_parser=SeasonEntriesParser(
+                table_parser,
+                EntryMerger(),
+                policy=self._policy,
+            ),
             free_practice_parser=SeasonFreePracticeParser(table_parser),
             cancelled_rounds_parser=CancelledRoundsParser(table_parser),
-            testing_venues_parser=TestingVenuesParser(table_parser),
+            testing_venues_parser=TestingVenuesParser(
+                table_parser,
+                policy=self._policy,
+            ),
             non_championship_parser=SeasonNonChampionshipParser(table_parser),
             scoring_system_parser=SeasonScoringSystemParser(table_parser),
             jim_clark_trophy_parser=JimClarkTrophyParser(table_parser),
@@ -184,13 +181,13 @@ class SeasonSectionDataCollector:
         soup: BeautifulSoup,
         parser_set: SeasonParserSet,
         season_year: int | None,
-    ) -> SeasonCollectedData:
+    ) -> SeasonRecordSections:
         section_records = self._collect_section_records(
             soup=soup,
             section_parsers=parser_set.section_parsers,
         )
         calendar_data = section_records["calendar"]
-        return SeasonCollectedData(
+        return SeasonRecordSections(
             entries=parser_set.entries_parser.parse(soup, season_year),
             free_practice_drivers=parser_set.free_practice_parser.parse(soup),
             calendar=calendar_data,
@@ -229,6 +226,8 @@ class SeasonSectionDataCollector:
                 section_ids=["British_Formula_One_Championship"],
                 season_year=season_year,
             ),
+            regulation_changes=[],
+            mid_season_changes=[],
         )
 
     def _collect_section_records(

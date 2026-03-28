@@ -1,11 +1,12 @@
 from __future__ import annotations
 
-from collections.abc import Callable
 from collections.abc import Mapping
 from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
+
+from scrapers.base.factory.record_factory import RecordFactory
 
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -24,7 +25,7 @@ class ScraperConfig:
     columns: Mapping[str, BaseColumn] = field(default_factory=dict)
     schema: TableSchema | TableSchemaBuilder | TableSchemaDSL | None = None
     table_css_class: str = "wikitable"
-    record_factory: Callable[[dict[str, Any]], Any] | type | None = None
+    record_factory: RecordFactory | None = None
     model_class: type | None = None
     default_column: BaseColumn = field(default_factory=AutoColumn)
 
@@ -71,8 +72,8 @@ class ScraperConfig:
                     msg,
                 )
 
-        if self.record_factory is not None and not callable(self.record_factory):
-            msg = "ScraperConfig.record_factory must be callable."
+        if self.record_factory is not None and not hasattr(self.record_factory, "create"):
+            msg = "ScraperConfig.record_factory must implement RecordFactory.create()."
             raise TypeError(msg)
 
 

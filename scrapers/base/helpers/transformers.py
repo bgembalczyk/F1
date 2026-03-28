@@ -1,5 +1,6 @@
 from collections.abc import Sequence
 
+from scrapers.base.options import ScraperOptions
 from scrapers.base.transformers.normalize_links import NormalizeLinksTransformer
 from scrapers.base.transformers.record_transformer import RecordTransformer
 
@@ -14,4 +15,16 @@ def build_transformers(
         isinstance(transformer, NormalizeLinksTransformer) for transformer in resolved
     ):
         resolved.insert(0, NormalizeLinksTransformer())
+    return resolved
+
+
+def append_transformer(
+    options: ScraperOptions | None,
+    transformer: RecordTransformer,
+) -> ScraperOptions:
+    resolved = options or ScraperOptions()
+    resolved.transformers = [
+        *list(resolved.transformers or []),
+        transformer,
+    ]
     return resolved

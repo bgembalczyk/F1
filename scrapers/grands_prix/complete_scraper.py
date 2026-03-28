@@ -3,6 +3,8 @@ from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from complete_extractor.domain_config import ExtractDetailFieldStrategy
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
+from scrapers.wiki.component_metadata import build_component_metadata
+from scrapers.wiki.component_metadata import COMPLETE_SCRAPER_KIND
 
 
 class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
@@ -13,6 +15,10 @@ class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):
     Jeżeli artykuł nie wygląda na Grand Prix, pole `by_year` będzie None.
     """
 
+    COMPONENT_METADATA = build_component_metadata(
+        domain="grands_prix",
+        kind=COMPLETE_SCRAPER_KIND,
+    )
     url = GrandsPrixListScraper.CONFIG.url
     DOMAIN_CONFIG = CompleteExtractorDomainConfig(
         list_scraper_cls=GrandsPrixListScraper,

@@ -1,9 +1,7 @@
 from models.records.driver import DRIVER_SCHEMA
-from validation.issue import ValidationIssue
-from validation.validator_base import ExportRecord
-from validation.validator_base import RecordValidator
+from scrapers.base.composite_validator import SchemaCompositeRecordValidator
 
 
-class DriversRecordValidator(RecordValidator):
-    def validate(self, record: ExportRecord) -> list[ValidationIssue]:
-        return self.validate_schema(record, DRIVER_SCHEMA)
+class DriversRecordValidator(SchemaCompositeRecordValidator):
+    def __init__(self, record_factory=None) -> None:
+        super().__init__(schema=DRIVER_SCHEMA, record_factory=record_factory)
