@@ -1,5 +1,4 @@
 from models.records.factories.build import RECORD_BUILDERS
-from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.builders import metric_column
@@ -25,9 +24,9 @@ class FormerConstructorsListScraper(BaseConstructorListScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_constructors
     """
 
-    schema_columns = build_columns(
+    schema_columns = BaseConstructorListScraper.build_schema_columns(
         BaseConstructorListScraper.build_common_metadata_columns(),
-        BaseConstructorListScraper.build_licensed_in_column(),
+        [BaseConstructorListScraper.build_licensed_in_column()],
         build_metric_columns(
             [
                 metric_column(CONSTRUCTOR_SEASONS_HEADER, "seasons", "seasons"),

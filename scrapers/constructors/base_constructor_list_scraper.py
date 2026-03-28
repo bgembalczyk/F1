@@ -1,12 +1,17 @@
 """Base scraper for constructor list pages."""
 
+from collections.abc import Sequence
+
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
+from scrapers.base.table.builders import build_entity_metadata_columns
+from scrapers.base.table.builders import entity_column
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.constructors.constants import CONSTRUCTOR_DRIVERS_HEADER
@@ -42,12 +47,18 @@ class BaseConstructorListScraper(DeclarativeSectionTableParseMixin, F1TableScrap
     @staticmethod
     def build_common_metadata_columns():
         """Build common constructor metadata columns."""
-        return build_columns(
-            column(CONSTRUCTOR_NAME_HEADER, "constructor", UrlColumn()),
-            column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
-            column(CONSTRUCTOR_TOTAL_ENTRIES_HEADER, "total_entries", IntColumn()),
-            column(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
-            column(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
+        return build_entity_metadata_columns(
+            [
+                entity_column(CONSTRUCTOR_NAME_HEADER, "constructor", UrlColumn()),
+                entity_column(CONSTRUCTOR_DRIVERS_HEADER, "drivers", IntColumn()),
+                entity_column(
+                    CONSTRUCTOR_TOTAL_ENTRIES_HEADER,
+                    "total_entries",
+                    IntColumn(),
+                ),
+                entity_column(CONSTRUCTOR_WCC_HEADER, "wcc_titles", IntColumn()),
+                entity_column(CONSTRUCTOR_WDC_HEADER, "wdc_titles", IntColumn()),
+            ],
         )
 
     @staticmethod
@@ -56,6 +67,22 @@ class BaseConstructorListScraper(DeclarativeSectionTableParseMixin, F1TableScrap
         from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 
         return column(CONSTRUCTOR_LICENSED_IN_HEADER, "licensed_in", LinksListColumn())
+
+    @classmethod
+    def extend_schema_fragments(
+        cls,
+        fragments: Sequence[Sequence[ColumnSpec]],
+    ) -> Sequence[Sequence[ColumnSpec]]:
+        """Hook for domain-specific schema fragment customization."""
+        return fragments
+
+    @classmethod
+    def build_schema_columns(
+        cls,
+        *fragments: Sequence[ColumnSpec],
+    ) -> list[ColumnSpec]:
+        resolved_fragments = cls.extend_schema_fragments(list(fragments))
+        return build_columns(*resolved_fragments)
 
     def __init__(
         self,
