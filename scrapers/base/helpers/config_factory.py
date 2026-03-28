@@ -1,23 +1,11 @@
+from typing import Any
+
 from scrapers.base.helpers.common_config import ScraperCommonConfig
-from scrapers.base.helpers.constants import COMMON_CONFIG_PROFILES
-from scrapers.base.helpers.constants import DEFAULT_CONFIG_PROFILE
-from scrapers.base.helpers.constants import DOMAIN_CONFIG_PROFILE_OVERRIDES
 from scrapers.base.options import ScraperOptions
+from scrapers.base.pipeline_profiles import apply_scraper_pipeline_bindings
+from scrapers.base.pipeline_profiles import resolve_profile_config
 
-
-def _resolve_common_config(*, domain: str | None, profile: str) -> ScraperCommonConfig:
-    normalized_profile = profile.strip().lower()
-    if normalized_profile not in COMMON_CONFIG_PROFILES:
-        msg = f"Unknown scraper config profile: {profile}"
-        raise ValueError(msg)
-
-    normalized_domain = domain.strip().lower() if domain else None
-    if normalized_domain:
-        domain_overrides = DOMAIN_CONFIG_PROFILE_OVERRIDES.get(normalized_domain, {})
-        if normalized_profile in domain_overrides:
-            return domain_overrides[normalized_profile]
-
-    return COMMON_CONFIG_PROFILES[normalized_profile]
+DEFAULT_CONFIG_PROFILE = "seed_soft"
 
 
 def apply_common_config(
@@ -38,7 +26,7 @@ def build_config(
     profile: str = DEFAULT_CONFIG_PROFILE,
 ) -> ScraperOptions:
     resolved = options or ScraperOptions()
-    resolved_config = config or _resolve_common_config(domain=domain, profile=profile)
+    resolved_config = config or resolve_profile_config(domain=domain, profile=profile)
     return apply_common_config(resolved, resolved_config)
 
 
@@ -47,5 +35,9 @@ def build_scraper_options(
     domain: str | None,
     profile: str,
     options: ScraperOptions | None = None,
+    scraper_cls: type[Any] | None = None,
 ) -> ScraperOptions:
-    return build_config(options=options, domain=domain, profile=profile)
+    resolved = build_config(options=options, domain=domain, profile=profile)
+    if scraper_cls is None:
+        return resolved
+    return apply_scraper_pipeline_bindings(resolved, scraper_cls=scraper_cls)

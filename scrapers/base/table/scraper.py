@@ -51,12 +51,14 @@ class F1TableScraper(WikiScraper, ABC):
                 options = build_scraper_options(
                     domain=self.options_domain,
                     profile=self.options_profile,
+                    scraper_cls=type(self),
                 )
         elif self.options_profile is not None:
             options = build_scraper_options(
                 domain=self.options_domain,
                 profile=self.options_profile,
                 options=options,
+                scraper_cls=type(self),
             )
         options = self.extend_options(options)
 

@@ -16,7 +16,7 @@ from scrapers.wiki.component_metadata import ComponentMetadata
 class SeedListTableScraper(F1TableScraper):
     """Wspólna baza dla scraperów seed/list opartych o tabelę."""
 
-    options_profile: ClassVar[str | None] = "soft_seed"
+    options_profile: ClassVar[str | None] = "seed_soft"
     options_domain: ClassVar[str | None] = None
 
     domain: ClassVar[str | None] = None

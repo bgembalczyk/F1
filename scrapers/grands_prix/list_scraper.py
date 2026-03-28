@@ -11,7 +11,6 @@ from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
-from scrapers.grands_prix.validator import GrandsPrixRecordValidator
 
 
 class GrandsPrixListScraper(SeedListTableScraper):
@@ -25,7 +24,6 @@ class GrandsPrixListScraper(SeedListTableScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix
     """
 
-    default_validator = GrandsPrixRecordValidator()
 
     schema_columns = build_columns(
         build_name_status_fragment(

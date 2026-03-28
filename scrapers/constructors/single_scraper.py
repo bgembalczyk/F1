@@ -11,9 +11,6 @@ from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
 from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
-from scrapers.constructors.postprocess.contract import (
-    ConstructorSectionContractPostProcessor,
-)
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
@@ -70,9 +67,6 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         )
         self._assembler = assembler or ConstructorRecordAssembler()
         self.article_tables_parser = ArticleTablesParser()
-
-    def _build_post_processor(self) -> ConstructorSectionContractPostProcessor:
-        return ConstructorSectionContractPostProcessor()
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         infoboxes = self._infobox_service.extract(soup, url=self.url).as_list()

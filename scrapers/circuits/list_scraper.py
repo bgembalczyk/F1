@@ -8,7 +8,6 @@ from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
 from scrapers.circuits.schemas import build_circuits_schema
 from scrapers.circuits.sections.list_section import CircuitsListSectionParser
-from scrapers.circuits.validator import CircuitsRecordValidator
 
 
 class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScraper):
@@ -22,7 +21,6 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScrape
     (duża tabela 'Circuits')
     """
 
-    default_validator = CircuitsRecordValidator()
 
     CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
