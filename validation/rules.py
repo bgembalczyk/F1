@@ -45,7 +45,9 @@ def type_rule(
             return [] if allow_none else [ValidationIssue.null(field)]
         if isinstance(value, expected_types):
             return []
-        expected = expected_types if isinstance(expected_types, tuple) else (expected_types,)
+        expected = (
+            expected_types if isinstance(expected_types, tuple) else (expected_types,)
+        )
         expected_names = ", ".join(value_type.__name__ for value_type in expected)
         return [
             ValidationIssue.type_error(

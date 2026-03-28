@@ -11,7 +11,9 @@ from validation.schemas import RecordSchema
 from validation.validator_base import RecordValidator
 
 
-def build_domain_rules(schema: RecordSchema | Mapping[str, Any]) -> list[ValidationRule]:
+def build_domain_rules(
+    schema: RecordSchema | Mapping[str, Any],
+) -> list[ValidationRule]:
     normalized = RecordValidator._coerce_schema(schema)
 
     def _nested_rule(record: Mapping[str, Any]) -> list[ValidationIssue]:
@@ -22,13 +24,17 @@ def build_domain_rules(schema: RecordSchema | Mapping[str, Any]) -> list[Validat
             value = record[key]
             if value is None:
                 continue
-            errors.extend(RecordValidator._validate_nested_value(key, value, nested_schema))
+            errors.extend(
+                RecordValidator._validate_nested_value(key, value, nested_schema),
+            )
         return errors
 
     def _custom_rule(record: Mapping[str, Any]) -> list[ValidationIssue]:
         errors: list[ValidationIssue] = []
         for validator in normalized.custom_validators:
-            errors.extend(RecordValidator._coerce_issue(error) for error in validator(record))
+            errors.extend(
+                RecordValidator._coerce_issue(error) for error in validator(record)
+            )
         return errors
 
     return [_nested_rule, _custom_rule]

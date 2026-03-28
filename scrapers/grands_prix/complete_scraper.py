@@ -3,8 +3,8 @@ from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from complete_extractor.domain_config import ExtractDetailFieldStrategy
 from scrapers.grands_prix.list_scraper import GrandsPrixListScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
-from scrapers.wiki.component_metadata import build_component_metadata
 from scrapers.wiki.component_metadata import COMPLETE_SCRAPER_KIND
+from scrapers.wiki.component_metadata import build_component_metadata
 
 
 class F1CompleteGrandPrixDataExtractor(CompleteExtractorBase):

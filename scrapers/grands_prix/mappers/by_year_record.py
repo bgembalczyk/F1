@@ -33,7 +33,11 @@ class GrandPrixByYearRecordMapper:
         self,
         payload: GrandPrixByYearRecordInput | dict[str, Any],
     ) -> dict[str, Any] | None:
-        record = payload.record if isinstance(payload, GrandPrixByYearRecordInput) else payload
+        record = (
+            payload.record
+            if isinstance(payload, GrandPrixByYearRecordInput)
+            else payload
+        )
         if self._is_not_held_record(record):
             return None
         return dict(record)

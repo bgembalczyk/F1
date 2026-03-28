@@ -11,7 +11,11 @@ from scrapers.drivers.postprocess.assembler import DriverRecordDTO
 
 
 class DomainRecordService:
-    def __init__(self, *, assembler: RecordAssembler[DriverRecordDTO] | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        assembler: RecordAssembler[DriverRecordDTO] | None = None,
+    ) -> None:
         self._assembler = assembler or DriverRecordAssembler()
 
     def assemble_record(

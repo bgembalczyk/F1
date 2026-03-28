@@ -46,14 +46,14 @@ class ChampionshipsParser:
         )
 
     def _parse_championships_payload(self, cell: Tag, text: str) -> dict[str, Any]:
-            # Extract count
-            count_match = re.search(r"^(\d+)", text)
-            count = int(count_match.group(1)) if count_match else 0
+        # Extract count
+        count_match = re.search(r"^(\d+)", text)
+        count = int(count_match.group(1)) if count_match else 0
 
-            # Extract links from parentheses - treat as simple list of links
-            championships = self._link_extractor.extract_links(cell)
+        # Extract links from parentheses - treat as simple list of links
+        championships = self._link_extractor.extract_links(cell)
 
-            return {"count": count, "championships": championships}
+        return {"count": count, "championships": championships}
 
     def parse_class_wins(self, cell: Tag) -> dict[str, Any]:
         """Parse class wins count with year and link information.
@@ -78,34 +78,32 @@ class ChampionshipsParser:
         )
 
     def _parse_class_wins_payload(self, cell: Tag, text: str) -> dict[str, Any]:
-            # Extract count
-            count_match = re.search(r"^(\d+)", text)
-            count = int(count_match.group(1)) if count_match else 0
+        # Extract count
+        count_match = re.search(r"^(\d+)", text)
+        count = int(count_match.group(1)) if count_match else 0
 
-            # Extract year links
-            wins = []
-            links = self._link_extractor.extract_links(cell)
+        # Extract year links
+        wins = []
+        links = self._link_extractor.extract_links(cell)
 
-            # Build year -> url mapping using shared utility
-            year_to_url = YearExtractor.build_year_to_url_map(links)
+        # Build year -> url mapping using shared utility
+        year_to_url = YearExtractor.build_year_to_url_map(links)
 
-            # Extract all years from text (typically in parentheses or <small> tag)
-            # Check <small> tag first
-            small_tag = cell.find("small")
-            if small_tag:
-                small_text = (
-                    clean_infobox_text(small_tag.get_text(" ", strip=True)) or ""
-                )
-                for year_match in re.finditer(r"\b(\d{4})\b", small_text):
+        # Extract all years from text (typically in parentheses or <small> tag)
+        # Check <small> tag first
+        small_tag = cell.find("small")
+        if small_tag:
+            small_text = clean_infobox_text(small_tag.get_text(" ", strip=True)) or ""
+            for year_match in re.finditer(r"\b(\d{4})\b", small_text):
+                year = int(year_match.group(1))
+                wins.append({"year": year, "url": year_to_url.get(year)})
+        else:
+            # Fallback to extracting from parentheses in main text
+            paren_match = re.search(r"\(([^)]+)\)", text)
+            if paren_match:
+                paren_content = paren_match.group(1)
+                for year_match in re.finditer(r"\b(\d{4})\b", paren_content):
                     year = int(year_match.group(1))
                     wins.append({"year": year, "url": year_to_url.get(year)})
-            else:
-                # Fallback to extracting from parentheses in main text
-                paren_match = re.search(r"\(([^)]+)\)", text)
-                if paren_match:
-                    paren_content = paren_match.group(1)
-                    for year_match in re.finditer(r"\b(\d{4})\b", paren_content):
-                        year = int(year_match.group(1))
-                        wins.append({"year": year, "url": year_to_url.get(year)})
 
-            return {"count": count, "wins": wins}
+        return {"count": count, "wins": wins}

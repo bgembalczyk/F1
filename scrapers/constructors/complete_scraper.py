@@ -9,8 +9,8 @@ from scrapers.constructors.indianapolis_only_constructors_list import (
 )
 from scrapers.constructors.privateer_teams_list import PrivateerTeamsListScraper
 from scrapers.constructors.single_scraper import SingleConstructorScraper
-from scrapers.wiki.component_metadata import build_component_metadata
 from scrapers.wiki.component_metadata import COMPLETE_SCRAPER_KIND
+from scrapers.wiki.component_metadata import build_component_metadata
 
 
 class CompleteConstructorsDataExtractor(CompleteExtractorBase):

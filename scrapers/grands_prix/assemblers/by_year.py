@@ -19,7 +19,9 @@ class GrandPrixByYearRecordAssembler:
         championship_resolver: GrandPrixChampionshipResolver | None = None,
         record_mapper: GrandPrixByYearRecordMapper | None = None,
     ) -> None:
-        self._championship_resolver = championship_resolver or GrandPrixChampionshipResolver()
+        self._championship_resolver = (
+            championship_resolver or GrandPrixChampionshipResolver()
+        )
         self._record_mapper = record_mapper or GrandPrixByYearRecordMapper()
 
     def assemble(self, *, record: dict[str, Any], row: Tag) -> dict[str, Any] | None:

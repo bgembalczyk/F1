@@ -149,8 +149,7 @@ def test_pipeline_profile_attaches_domain_post_processors():
     scraper = FemaleDriversListScraper(options=ScraperOptions(source_adapter=source))
 
     assert [
-        post_processor.__class__.__name__
-        for post_processor in scraper.post_processors
+        post_processor.__class__.__name__ for post_processor in scraper.post_processors
     ] == ["EntriesStartsPointsPostProcessor"]
 
 

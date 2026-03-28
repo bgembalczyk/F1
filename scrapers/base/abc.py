@@ -1,8 +1,8 @@
+import warnings
 from abc import ABC
 from collections.abc import Callable
 from collections.abc import Sequence
 from pathlib import Path
-import warnings
 from typing import TypeVar
 from uuid import uuid4
 

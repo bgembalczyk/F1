@@ -5,7 +5,6 @@ from collections.abc import Sequence
 from typing import Any
 from typing import Protocol
 
-from models.records.link import LinkRecord
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.links import normalize_single_link
 from scrapers.base.helpers.text import strip_marks as strip_wiki_marks

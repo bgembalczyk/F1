@@ -57,7 +57,10 @@ def normalize_section_metadata(
     metadata.setdefault("parser", "unknown")
     metadata.setdefault("source", "unknown")
     metadata.setdefault("heading_path", [])
-    metadata.setdefault("section_id", SectionId.from_raw(section.section_id).to_export())
+    metadata.setdefault(
+        "section_id",
+        SectionId.from_raw(section.section_id).to_export(),
+    )
     metadata.setdefault(
         "section_label",
         EntityName.from_raw(section.section_label).to_export(),
@@ -71,4 +74,3 @@ def serialize_section_result(section: SectionParseResult) -> dict[str, Any]:
     payload["section_label"] = EntityName.from_raw(section.section_label).to_export()
     payload["metadata"] = normalize_section_metadata(section)
     return payload
-

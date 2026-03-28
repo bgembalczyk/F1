@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from abc import ABC
-from abc import abstractmethod
 from typing import Any
 
 from bs4 import BeautifulSoup
@@ -104,7 +103,9 @@ class WikipediaSectionByIdSelectionStrategy(SectionSelectionStrategy):
         for sib in heading_block.next_siblings:
             if isinstance(sib, Tag):
                 same_level_header_tag = (
-                    WikipediaSectionByIdSelectionStrategy._extract_same_level_header(sib)
+                    WikipediaSectionByIdSelectionStrategy._extract_same_level_header(
+                        sib,
+                    )
                 )
                 if same_level_header_tag is not None and header_level is not None:
                     sib_level = WikipediaSectionByIdSelectionStrategy._get_header_level(

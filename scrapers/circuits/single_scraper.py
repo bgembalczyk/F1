@@ -10,17 +10,13 @@ from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
-from scrapers.circuits.services.domain_record import DomainRecordService
 from scrapers.circuits.composition import CircuitScraperCompositionFactory
 from scrapers.circuits.composition import CircuitScraperDependencies
-from scrapers.circuits.helpers.sections import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import (
     is_lap_record_table as _is_lap_record_table,
 )
 from scrapers.circuits.helpers.layout import detect_layout_name as _detect_layout_name
-from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
-from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
-from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
+from scrapers.circuits.helpers.sections import is_circuit_like_article
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

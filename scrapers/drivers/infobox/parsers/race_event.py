@@ -43,14 +43,14 @@ class RaceEventParser:
         )
 
     def _parse_race_event_payload(self, cell: Tag, text: str) -> list[dict[str, Any]]:
-            links = self._link_extractor.extract_links(cell)
+        links = self._link_extractor.extract_links(cell)
 
-            # If we have links, return them
-            if links:
-                return links
+        # If we have links, return them
+        if links:
+            return links
 
-            # If no links, return the text
-            if text:
-                return [{"text": text, "url": None}]
+        # If no links, return the text
+        if text:
+            return [{"text": text, "url": None}]
 
-            return []
+        return []

@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+import logging
 from abc import ABC
 from abc import abstractmethod
-import logging
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Protocol
@@ -45,7 +45,10 @@ class BaseSectionExtractionService(ABC):
         self._options = options
         self._url = WikiUrl.from_raw(url) if url is not None else None
 
-    def extract(self, soup: BeautifulSoup) -> list[dict[str, Any]] | dict[str, list[dict[str, Any]]]:
+    def extract(
+        self,
+        soup: BeautifulSoup,
+    ) -> list[dict[str, Any]] | dict[str, list[dict[str, Any]]]:
         sections = self._parse_sections(soup)
         return self._aggregate_sections(sections)
 

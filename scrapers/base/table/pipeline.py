@@ -185,9 +185,7 @@ class TablePipeline:
         payload = normalized_record
         if self.model_fields:
             payload = {
-                key: value
-                for key, value in payload.items()
-                if key in self.model_fields
+                key: value for key, value in payload.items() if key in self.model_fields
             }
         created = self.record_factory.create(payload)
         return dict(created) if isinstance(created, Mapping) else record

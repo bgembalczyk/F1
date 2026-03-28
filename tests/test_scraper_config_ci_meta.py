@@ -8,9 +8,7 @@ SCRAPERS_ROOT = Path("scrapers")
 
 def _iter_scraper_python_files() -> list[Path]:
     return sorted(
-        path
-        for path in SCRAPERS_ROOT.rglob("*.py")
-        if "__pycache__" not in path.parts
+        path for path in SCRAPERS_ROOT.rglob("*.py") if "__pycache__" not in path.parts
     )
 
 

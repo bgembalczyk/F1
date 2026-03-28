@@ -42,7 +42,11 @@ def _as_int(value: Any) -> int:
         return 0
 
 
-def _build_added_lines_map(base_sha: str, head_sha: str, changed_files: list[str]) -> dict[str, set[int]]:
+def _build_added_lines_map(
+    base_sha: str,
+    head_sha: str,
+    changed_files: list[str],
+) -> dict[str, set[int]]:
     if not base_sha or not head_sha or not changed_files:
         return {}
 
@@ -88,7 +92,10 @@ def _build_added_lines_map(base_sha: str, head_sha: str, changed_files: list[str
     return added
 
 
-def _is_new_duplicate(duplicate: dict[str, Any], added_lines: dict[str, set[int]]) -> bool:
+def _is_new_duplicate(
+    duplicate: dict[str, Any],
+    added_lines: dict[str, set[int]],
+) -> bool:
     for side in ("first", "second"):
         file_meta = duplicate[side]
         file_name = str(file_meta.get("name", ""))
@@ -107,17 +114,17 @@ def _is_new_duplicate(duplicate: dict[str, Any], added_lines: dict[str, set[int]
     return False
 
 
-def build_markdown(duplicates: list[dict[str, Any]], warn_threshold: int, fail_threshold: int) -> str:
+def build_markdown(
+    duplicates: list[dict[str, Any]],
+    warn_threshold: int,
+    fail_threshold: int,
+) -> str:
     count = len(duplicates)
     status = "✅ Brak nowych duplikatów w zmienionych plikach."
     if count >= fail_threshold:
-        status = (
-            f"❌ Wykryto **{count}** nowych duplikatów (próg blokujący: {fail_threshold})."
-        )
+        status = f"❌ Wykryto **{count}** nowych duplikatów (próg blokujący: {fail_threshold})."
     elif count >= warn_threshold:
-        status = (
-            f"⚠️ Wykryto **{count}** nowych duplikatów (próg ostrzegawczy: {warn_threshold})."
-        )
+        status = f"⚠️ Wykryto **{count}** nowych duplikatów (próg ostrzegawczy: {warn_threshold})."
 
     lines = [
         "## Raport duplikatów (jscpd)",
@@ -141,7 +148,7 @@ def build_markdown(duplicates: list[dict[str, Any]], warn_threshold: int, fail_t
         first = dup["first"]
         second = dup["second"]
         lines.append(
-            f"{idx}. `{first['name']}` ({_line_range(first)}) ↔ `{second['name']}` ({_line_range(second)})"
+            f"{idx}. `{first['name']}` ({_line_range(first)}) ↔ `{second['name']}` ({_line_range(second)})",
         )
         if dup["fragment"]:
             snippet = dup["fragment"][:400]
@@ -173,11 +180,17 @@ def main() -> int:
         duplicates = [_normalize_dup(item) for item in raw_duplicates]
 
     changed_files = [part for part in args.changed_files.split(",") if part]
-    added_lines_map = _build_added_lines_map(args.base_sha, args.head_sha, changed_files)
+    added_lines_map = _build_added_lines_map(
+        args.base_sha,
+        args.head_sha,
+        changed_files,
+    )
     if changed_files and not added_lines_map:
         new_duplicates = duplicates
     else:
-        new_duplicates = [dup for dup in duplicates if _is_new_duplicate(dup, added_lines_map)]
+        new_duplicates = [
+            dup for dup in duplicates if _is_new_duplicate(dup, added_lines_map)
+        ]
 
     count = len(new_duplicates)
     markdown = build_markdown(new_duplicates, args.warn_threshold, args.fail_threshold)

@@ -64,7 +64,12 @@ class SectionTableParserBase(ABC):
     def classify_table(self, table_data: dict[str, Any]) -> Any | None:
         return table_data
 
-    def build_pipeline(self, *, table_data: dict[str, Any], table_classification: Any) -> Any:
+    def build_pipeline(
+        self,
+        *,
+        table_data: dict[str, Any],
+        table_classification: Any,
+    ) -> Any:
         return None
 
     @abstractmethod

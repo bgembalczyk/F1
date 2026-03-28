@@ -4,9 +4,9 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any
 
+from scrapers.seasons.parsers.constants import ENGINE_V8_YEAR
 from scrapers.seasons.parsers.constants import ENGINE_V10_END_YEAR
 from scrapers.seasons.parsers.constants import ENGINE_V10_START_YEAR
-from scrapers.seasons.parsers.constants import ENGINE_V8_YEAR
 from scrapers.seasons.parsers.constants import PRE_2007_NORMALIZATION_CUTOFF
 from scrapers.seasons.parsers.constants import TESTING_VENUES_SWAPPED_COLUMNS_YEAR
 from scrapers.seasons.parsers.constants import TESTING_VENUES_YEARS

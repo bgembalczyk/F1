@@ -165,4 +165,4 @@ def validate_metadata_for_component_class(component_cls: type[Any]) -> None:
     if raw is None:
         return
     metadata = parse_component_metadata(raw)
-    setattr(component_cls, "COMPONENT_METADATA", metadata)
+    component_cls.COMPONENT_METADATA = metadata

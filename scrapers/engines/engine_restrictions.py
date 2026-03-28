@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
-from scrapers.base.source_catalog import ENGINE_REGULATIONS
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.source_catalog import ENGINE_REGULATIONS
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import RangeColumn
 from scrapers.base.table.columns.types import SeasonsColumn

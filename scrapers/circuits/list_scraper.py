@@ -1,7 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.circuits.entrypoint.run_list_scraper."""
 
-from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from models.validation.circuit import Circuit
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
 from scrapers.base.source_catalog import CIRCUITS_LIST
 from scrapers.base.table.config import build_scraper_config

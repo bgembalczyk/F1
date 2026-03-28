@@ -5,8 +5,8 @@ from scrapers.engines.indianapolis_only_engine_manufacturers_list import (
     IndianapolisOnlyEngineManufacturersListScraper,
 )
 from scrapers.engines.single_scraper import SingleEngineManufacturerScraper
-from scrapers.wiki.component_metadata import build_component_metadata
 from scrapers.wiki.component_metadata import COMPLETE_SCRAPER_KIND
+from scrapers.wiki.component_metadata import build_component_metadata
 
 
 class F1CompleteEngineManufacturerDataExtractor(CompleteExtractorBase):

@@ -6,13 +6,13 @@ from warnings import warn
 
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.schema import TableSchema
 from scrapers.base.table.schema import TableSchemaBuilder
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.wiki.component_metadata import build_component_metadata
-from scrapers.wiki.component_metadata import ComponentMetadata
+from scrapers.base.table.scraper import F1TableScraper
 from scrapers.wiki.component_metadata import LIST_SCRAPER_KIND
+from scrapers.wiki.component_metadata import ComponentMetadata
+from scrapers.wiki.component_metadata import build_component_metadata
 
 
 class SeedListTableScraper(F1TableScraper):
@@ -42,7 +42,9 @@ class SeedListTableScraper(F1TableScraper):
             cls.default_output_path = cls.default_output_path or (
                 f"raw/{cls.domain}/seeds/{basename}"
             )
-            cls.legacy_output_path = cls.legacy_output_path or f"{cls.domain}/{basename}"
+            cls.legacy_output_path = (
+                cls.legacy_output_path or f"{cls.domain}/{basename}"
+            )
 
         cls.COMPONENT_METADATA = build_component_metadata(
             domain=cls.domain,

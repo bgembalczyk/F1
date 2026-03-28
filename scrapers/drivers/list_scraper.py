@@ -9,8 +9,8 @@ from scrapers.base.table.builders import build_name_status_fragment
 from scrapers.base.table.builders import metric_column
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn
-from scrapers.base.table.dsl.column import column
 from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.dsl.column import column
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,

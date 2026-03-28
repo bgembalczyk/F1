@@ -5,8 +5,8 @@ from typing import Optional
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.table.columns.types import DriverListColumn
 from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.config import ScraperConfig

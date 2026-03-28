@@ -37,7 +37,9 @@ class WikipediaSectionByIdMixin:
         *,
         domain: str | None = None,
     ) -> BeautifulSoup | None:
-        return WikipediaSectionByIdSelectionStrategy(domain=domain).extract_section_by_id(
+        return WikipediaSectionByIdSelectionStrategy(
+            domain=domain,
+        ).extract_section_by_id(
             soup,
             fragment,
             domain=domain,

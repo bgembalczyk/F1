@@ -6,14 +6,8 @@ from scrapers.base.single_wiki_article import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.single_wiki_article import TablesPayloadDTO
-from scrapers.drivers.services.domain_record import DomainRecordService
-from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
-from scrapers.drivers.postprocess.contract import DriverSectionContractPostProcessor
 from scrapers.drivers.composition import DriverScraperCompositionFactory
 from scrapers.drivers.composition import DriverScraperDependencies
-from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
-from scrapers.drivers.postprocess.contract import DriverSectionContractPostProcessor
-from scrapers.drivers.postprocess.assembler import DriverRecordDTO
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup

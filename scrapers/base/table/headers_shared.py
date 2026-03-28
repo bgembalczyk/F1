@@ -22,4 +22,3 @@ BASE_METRIC_HEADERS_TO_KEYS = {
     FASTEST_LAPS_HEADER: "fastest_laps",
     PODIUMS_HEADER: "podiums",
 }
-

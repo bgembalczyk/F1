@@ -37,10 +37,12 @@ class SectionTableParseMixin:
         if not section_id:
             return super()._parse_soup(soup)
 
-        section_fragment = WikipediaSectionByIdSelectionStrategy().extract_section_by_id(
-            soup,
-            section_id,
-            domain=domain,
+        section_fragment = (
+            WikipediaSectionByIdSelectionStrategy().extract_section_by_id(
+                soup,
+                section_id,
+                domain=domain,
+            )
         )
         if section_fragment is None:
             context = self._diagnostic_context(

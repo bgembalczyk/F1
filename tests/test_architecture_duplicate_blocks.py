@@ -20,7 +20,10 @@ def _collect_config_assignment_fingerprints() -> dict[str, list[str]]:
         for node in ast.walk(tree):
             if not isinstance(node, ast.Assign):
                 continue
-            if not any(isinstance(target, ast.Name) and target.id == "CONFIG" for target in node.targets):
+            if not any(
+                isinstance(target, ast.Name) and target.id == "CONFIG"
+                for target in node.targets
+            ):
                 continue
             normalized = ast.dump(node.value, include_attributes=False)
             fingerprints[normalized].append(f"{py_file}:{node.lineno}")
@@ -51,7 +54,8 @@ def test_domain_entrypoints_use_shared_factory_builders() -> None:
         local_dups = [
             node.name
             for node in tree.body
-            if isinstance(node, ast.FunctionDef) and node.name in {"run_list_scraper", "__getattr__"}
+            if isinstance(node, ast.FunctionDef)
+            and node.name in {"run_list_scraper", "__getattr__"}
         ]
         assert not local_dups, (
             "Entrypoint should not duplicate local wrappers. "

@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
-from typing import Mapping
 
 
 @dataclass(frozen=True)
@@ -51,10 +51,7 @@ class TableRecordMapper:
 
     def _normalize_value(self, value: Any) -> Any:
         if isinstance(value, Mapping):
-            return {
-                str(k).strip(): self._normalize_value(v)
-                for k, v in value.items()
-            }
+            return {str(k).strip(): self._normalize_value(v) for k, v in value.items()}
         if isinstance(value, list):
             return [self._normalize_value(item) for item in value]
         return value
@@ -72,7 +69,10 @@ class LayoutTableRecordMapper:
     def __init__(self, *, row_mapper: TableRecordMapper | None = None) -> None:
         self._row_mapper = row_mapper or TableRecordMapper()
 
-    def map(self, payload: LayoutTableRowsInput | list[dict[str, Any]]) -> list[dict[str, Any]]:
+    def map(
+        self,
+        payload: LayoutTableRowsInput | list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
         rows = payload.rows if isinstance(payload, LayoutTableRowsInput) else payload
         grouped: dict[str, list[dict[str, Any]]] = {}
         for row in rows:
@@ -81,9 +81,7 @@ class LayoutTableRecordMapper:
             if not isinstance(layout_name, str) or not layout_name.strip():
                 continue
             row_export = {
-                key: value
-                for key, value in normalized_row.items()
-                if key != "layout"
+                key: value for key, value in normalized_row.items() if key != "layout"
             }
             grouped.setdefault(layout_name.strip(), []).append(row_export)
         return [

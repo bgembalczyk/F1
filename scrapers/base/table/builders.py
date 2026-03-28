@@ -35,7 +35,11 @@ def metric_column(header: str, output_key: str, metric_key: str) -> MetricColumn
     return MetricColumnSpec(header=header, output_key=output_key, metric_key=metric_key)
 
 
-def entity_column(header: str, output_key: str, column_type: BaseColumn) -> EntityColumnSpec:
+def entity_column(
+    header: str,
+    output_key: str,
+    column_type: BaseColumn,
+) -> EntityColumnSpec:
     return EntityColumnSpec(
         header=header,
         output_key=output_key,
@@ -56,11 +60,10 @@ def build_columns(*parts: SchemaPart) -> list[ColumnSpec]:
     return columns
 
 
-def build_entity_metadata_columns(specs: Sequence[EntityColumnSpec]) -> list[ColumnSpec]:
-    return [
-        column(spec.header, spec.output_key, spec.column_type)
-        for spec in specs
-    ]
+def build_entity_metadata_columns(
+    specs: Sequence[EntityColumnSpec],
+) -> list[ColumnSpec]:
+    return [column(spec.header, spec.output_key, spec.column_type) for spec in specs]
 
 
 def build_metric_columns(

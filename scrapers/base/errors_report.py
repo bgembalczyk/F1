@@ -59,7 +59,8 @@ class ErrorReport:
             critical=critical,
             cause_type=type(cause).__name__ if cause is not None else None,
             cause_message=str(cause) if cause is not None else None,
-            run_id=run_id or (error.run_id if isinstance(error, ScraperError) else None),
+            run_id=run_id
+            or (error.run_id if isinstance(error, ScraperError) else None),
         )
 
 

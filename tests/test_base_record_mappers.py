@@ -28,7 +28,7 @@ def test_infobox_record_mapper_normalizes_keys_recursively() -> None:
             " Name ": "Driver",
             " stats ": {" Titles ": 2},
             "teams": [{" Name ": "Ferrari"}],
-        }
+        },
     )
 
     assert mapped == {

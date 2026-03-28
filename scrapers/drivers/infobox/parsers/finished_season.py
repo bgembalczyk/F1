@@ -36,22 +36,22 @@ class FinishedSeasonParser:
 
     @staticmethod
     def _parse_finished_last_season_payload(text: str) -> dict[str, Any]:
-            result: dict[str, Any] = {"position": None, "points": None}
+        result: dict[str, Any] = {"position": None, "points": None}
 
-            # Extract position (before parentheses)
-            pos_match = re.match(r"^([^(]+)", text)
-            if pos_match:
-                result["position"] = pos_match.group(1).strip() or None
+        # Extract position (before parentheses)
+        pos_match = re.match(r"^([^(]+)", text)
+        if pos_match:
+            result["position"] = pos_match.group(1).strip() or None
 
-            # Extract points from parentheses
-            pts_match = re.search(r"\((\d+(?:\.\d+)?)\s*pts?\)", text)
-            if pts_match:
-                points_str = pts_match.group(1)
-                try:
-                    # Try parsing as int first
-                    result["points"] = int(points_str)
-                except ValueError:
-                    # Fall back to float
-                    result["points"] = float(points_str)
+        # Extract points from parentheses
+        pts_match = re.search(r"\((\d+(?:\.\d+)?)\s*pts?\)", text)
+        if pts_match:
+            points_str = pts_match.group(1)
+            try:
+                # Try parsing as int first
+                result["points"] = int(points_str)
+            except ValueError:
+                # Fall back to float
+                result["points"] = float(points_str)
 
-            return result
+        return result

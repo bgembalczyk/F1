@@ -14,23 +14,23 @@ from scrapers.base.sections.interface import SectionParser
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
 from scrapers.circuits.sections.layout_history import CircuitLayoutHistorySectionParser
+from scrapers.circuits.sections.service import CircuitSectionExtractionService
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
 from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.sections.history import ConstructorHistorySectionParser
+from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.postprocess.assembler import DriverRecordDTO
 from scrapers.drivers.sections.career import DriverCareerSectionParser
 from scrapers.drivers.sections.results import DriverResultsSectionParser
-from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
-from scrapers.circuits.sections.service import CircuitSectionExtractionService
-from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 from scrapers.drivers.sections.service import DriverSectionExtractionService
-from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
+from scrapers.grands_prix.sections.by_year import GrandPrixByYearSectionParser
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 from scrapers.seasons.sections.regulation_changes import (
     SeasonRegulationChangesSectionParser,
 )
+from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
 
 SECTION_RESULT_KEYS = ("section_id", "section_label", "records", "metadata")
 

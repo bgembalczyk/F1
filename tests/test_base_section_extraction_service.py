@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from bs4 import BeautifulSoup
+
 from scrapers.base.sections.adapter import SectionAdapterEntry
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.service import BaseSectionExtractionService

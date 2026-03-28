@@ -35,7 +35,10 @@ class BaseDataExtractor(ABC):
         self.exporter = options.exporter or DataExporter()
 
         self.http_policy = self.get_http_policy(options)
-        runtime = ScraperRuntimeFactory().build(options=options, policy=self.http_policy)
+        runtime = ScraperRuntimeFactory().build(
+            options=options,
+            policy=self.http_policy,
+        )
         self.source_adapter = runtime.source_adapter
         self.debug_dir = Path(options.debug_dir) if options.debug_dir else None
 

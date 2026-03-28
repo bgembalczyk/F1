@@ -2,8 +2,8 @@ import re
 from typing import Any
 
 from scrapers.base.constants import UNIT_RE
-from scrapers.base.parsers.helpers import normalize_unit
 from scrapers.base.helpers.parsing import parse_numeric_value
+from scrapers.base.parsers.helpers import normalize_unit
 from scrapers.base.parsers.helpers import parse_unit_list
 from scrapers.base.parsers.unit_value import UnitValue
 from scrapers.base.table.columns.context import ColumnContext

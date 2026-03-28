@@ -3,8 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from scrapers.base.sections.contract_validation import validate_section_result_payload
 from scrapers.base.sections.constants import SECTION_RESULT_KEYS
+from scrapers.base.sections.contract_validation import validate_section_result_payload
 
 
 @dataclass(frozen=True)

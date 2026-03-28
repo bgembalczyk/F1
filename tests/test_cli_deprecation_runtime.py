@@ -10,7 +10,7 @@ from scrapers import cli
 def test_run_legacy_wrapper_warns_for_deprecated_module(monkeypatch) -> None:
     calls: list[object] = []
 
-    def fake_invoke_target(target, run_config):  # noqa: ANN001
+    def fake_invoke_target(target, run_config):
         calls.append((target, run_config))
 
     monkeypatch.setattr(cli, "_invoke_target", fake_invoke_target)
@@ -24,7 +24,7 @@ def test_run_legacy_wrapper_warns_for_deprecated_module(monkeypatch) -> None:
 def test_run_legacy_wrapper_does_not_warn_for_new_entrypoint(monkeypatch) -> None:
     calls: list[object] = []
 
-    def fake_invoke_target(target, run_config):  # noqa: ANN001
+    def fake_invoke_target(target, run_config):
         calls.append((target, run_config))
 
     monkeypatch.setattr(cli, "_invoke_target", fake_invoke_target)
@@ -74,7 +74,9 @@ def test_get_deprecated_module_migrations_points_to_new_domain_entrypoints() -> 
     migrations = dict(cli.get_deprecated_module_migrations())
 
     assert migrations["scrapers.drivers.list_scraper"] == "scrapers.drivers.entrypoint"
-    assert migrations["scrapers.circuits.list_scraper"] == "scrapers.circuits.entrypoint"
+    assert (
+        migrations["scrapers.circuits.list_scraper"] == "scrapers.circuits.entrypoint"
+    )
     assert (
         migrations["scrapers.constructors.current_constructors_list"]
         == "scrapers.constructors.entrypoint"
@@ -82,7 +84,7 @@ def test_get_deprecated_module_migrations_points_to_new_domain_entrypoints() -> 
 
 
 def test_deprecation_message_has_domain_migration_hint(monkeypatch) -> None:
-    def fake_invoke_target(*_args, **_kwargs):  # noqa: ANN001
+    def fake_invoke_target(*_args, **_kwargs):
         return None
 
     monkeypatch.setattr(cli, "_invoke_target", fake_invoke_target)

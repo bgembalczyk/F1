@@ -1,13 +1,11 @@
 """DEPRECATED ENTRYPOINT: use scrapers.constructors.entrypoint.run_list_scraper."""
 
-from models.records.factories.build import RECORD_BUILDERS
-from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.base.table.builders import build_scraper_config
-from scrapers.base.table.builders import build_columns
-from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,

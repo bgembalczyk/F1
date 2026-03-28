@@ -3,11 +3,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from scrapers.seasons.services.domain_record import DomainRecordService
 from scrapers.seasons.pipeline import SeasonParserSetBuilder
 from scrapers.seasons.pipeline import SeasonSectionPipeline
 from scrapers.seasons.pipeline import SeasonYearResolver
 from scrapers.seasons.services.domain_parsing_policy import DomainParsingPolicy
+from scrapers.seasons.services.domain_record import DomainRecordService
 
 if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions

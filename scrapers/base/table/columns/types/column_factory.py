@@ -7,7 +7,10 @@ from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
 class ColumnFactory:
     """Factory for creating parsed-value columns from types or parser functions."""
 
-    def parse_with(self, type_or_func: type[Any] | Callable[[str], Any]) -> ParsedValueColumn:
+    def parse_with(
+        self,
+        type_or_func: type[Any] | Callable[[str], Any],
+    ) -> ParsedValueColumn:
         if isinstance(type_or_func, type):
             return ParsedValueColumn(type_or_func)
 

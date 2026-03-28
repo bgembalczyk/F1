@@ -19,7 +19,9 @@ class GrandPrixChampionshipResolver:
         *,
         row_background_adapter: HtmlRowBackgroundColorAdapter | None = None,
     ) -> None:
-        self._row_background_adapter = row_background_adapter or HtmlRowBackgroundColorAdapter()
+        self._row_background_adapter = (
+            row_background_adapter or HtmlRowBackgroundColorAdapter()
+        )
 
     def resolve(self, row: Tag) -> str:
         color = self._row_background_adapter.extract(row)

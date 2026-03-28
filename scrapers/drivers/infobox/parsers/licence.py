@@ -35,37 +35,37 @@ class LicenceParser:
         )
 
     def _parse_racing_licence_payload(self, cell: Tag) -> list[dict[str, Any]]:
-            licence_links = self._extract_licence_links(cell)
-            if not licence_links:
-                return []
+        licence_links = self._extract_licence_links(cell)
+        if not licence_links:
+            return []
 
-            year_spans = cell.find_all("span", style=lambda x: x and "font-size" in x)
+        year_spans = cell.find_all("span", style=lambda x: x and "font-size" in x)
 
-            licences = []
-            for licence_link in licence_links:
-                licence_entry: dict[str, Any] = {
-                    "licence": licence_link,
-                    "years": {"start": None, "end": None},
-                }
+        licences = []
+        for licence_link in licence_links:
+            licence_entry: dict[str, Any] = {
+                "licence": licence_link,
+                "years": {"start": None, "end": None},
+            }
 
-                licence_tag = self._find_licence_tag(cell, licence_link)
-                if licence_tag and year_spans:
-                    licence_tag_map = self._build_licence_tag_map(
-                        cell,
-                        licence_links,
-                        licence_link,
-                    )
-                    years = self._find_year_for_licence(
-                        licence_tag,
-                        year_spans,
-                        licence_tag_map,
-                    )
-                    if years is not None:
-                        licence_entry["years"] = years
+            licence_tag = self._find_licence_tag(cell, licence_link)
+            if licence_tag and year_spans:
+                licence_tag_map = self._build_licence_tag_map(
+                    cell,
+                    licence_links,
+                    licence_link,
+                )
+                years = self._find_year_for_licence(
+                    licence_tag,
+                    year_spans,
+                    licence_tag_map,
+                )
+                if years is not None:
+                    licence_entry["years"] = years
 
-                licences.append(licence_entry)
+            licences.append(licence_entry)
 
-            return licences
+        return licences
 
     def _extract_licence_links(self, cell: Tag) -> list[dict[str, Any]]:
         """Extract and return licence links, excluding file/image links.

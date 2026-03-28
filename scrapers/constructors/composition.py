@@ -4,9 +4,9 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from scrapers.base.sections.factory import ValidatingSectionServiceFactory
-from scrapers.constructors.services.domain_record import DomainRecordService
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
+from scrapers.constructors.services.domain_record import DomainRecordService
 
 if TYPE_CHECKING:
     from scrapers.base.infobox.service import InfoboxExtractionService
@@ -42,9 +42,7 @@ class ConstructorSectionServiceFactory(
 @dataclass(frozen=True, slots=True)
 class ConstructorScraperDependencies:
     infobox_service: InfoboxExtractionService
-    sections_service_factory: (
-        SectionServiceFactory[ConstructorSectionExtractionService]
-    )
+    sections_service_factory: SectionServiceFactory[ConstructorSectionExtractionService]
     domain_record_service: DomainRecordService
 
 

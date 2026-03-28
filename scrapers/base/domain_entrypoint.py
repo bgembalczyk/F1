@@ -113,8 +113,7 @@ _DOMAIN_ENTRYPOINT_SPECS: dict[str, _DomainEntrypointSpec] = {
 def get_domain_entrypoint_scraper_metadata() -> dict[str, str]:
     """Return static domain-to-scraper-path metadata for command generation."""
     return {
-        domain: spec.scraper_path
-        for domain, spec in _DOMAIN_ENTRYPOINT_SPECS.items()
+        domain: spec.scraper_path for domain, spec in _DOMAIN_ENTRYPOINT_SPECS.items()
     }
 
 
@@ -156,8 +155,6 @@ def get_domain_entrypoint_config(domain: str) -> DomainEntrypointConfig:
     return _resolve_domain_entrypoint_config(domain)
 
 
-
-
 def build_entrypoint_alias_getattr_for_domain(domain: str) -> Callable[[str], object]:
     """Build ``__getattr__`` that exposes standardized domain entrypoint aliases."""
 
@@ -178,6 +175,8 @@ def build_entrypoint_alias_getattr_for_domain(domain: str) -> Callable[[str], ob
         return aliases[name]
 
     return _module_getattr
+
+
 def build_run_list_scraper(
     *,
     list_scraper_cls: type[ABCScraper],

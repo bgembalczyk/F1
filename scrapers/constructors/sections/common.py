@@ -21,5 +21,8 @@ class ConstructorTablesSectionParser:
             section_id=self._section_id,
             section_label=self._section_label,
             records=self._tables.parse(section_fragment),
-            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia"),
+            metadata=build_section_metadata(
+                parser=self.__class__.__name__,
+                source="wikipedia",
+            ),
         )

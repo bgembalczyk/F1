@@ -36,36 +36,36 @@ class BestFinishParser:
         )
 
     def _parse_best_finish_payload(self, cell: Tag, text: str) -> dict[str, Any]:
-            result: dict[str, Any] = {"result": None, "seasons": None}
+        result: dict[str, Any] = {"result": None, "seasons": None}
 
-            # Extract result position
-            result["result"] = self._extract_result_position(text)
+        # Extract result position
+        result["result"] = self._extract_result_position(text)
 
-            # Extract season links and class information
-            links = self._link_extractor.extract_links(cell)
-            season_links = [
-                link for link in links if not self._season_parser.is_class_link(link)
-            ]
+        # Extract season links and class information
+        links = self._link_extractor.extract_links(cell)
+        season_links = [
+            link for link in links if not self._season_parser.is_class_link(link)
+        ]
 
-            if season_links:
-                small_tags = cell.find_all("small")
-                if small_tags:
-                    result["seasons"] = self._parse_seasons_with_classes(
-                        cell,
-                        season_links,
-                        small_tags,
-                    )
-                else:
-                    # No small tags, just return seasons
-                    result["seasons"] = [
-                        {"text": link.get("text", ""), "url": link.get("url")}
-                        for link in season_links
-                    ]
+        if season_links:
+            small_tags = cell.find_all("small")
+            if small_tags:
+                result["seasons"] = self._parse_seasons_with_classes(
+                    cell,
+                    season_links,
+                    small_tags,
+                )
             else:
-                # No links - try to extract years from text
-                result["seasons"] = self._extract_seasons_from_text(text)
+                # No small tags, just return seasons
+                result["seasons"] = [
+                    {"text": link.get("text", ""), "url": link.get("url")}
+                    for link in season_links
+                ]
+        else:
+            # No links - try to extract years from text
+            result["seasons"] = self._extract_seasons_from_text(text)
 
-            return result
+        return result
 
     def _extract_result_position(self, text: str) -> str | None:
         """Extract result position from text."""

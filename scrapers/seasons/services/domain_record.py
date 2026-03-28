@@ -13,7 +13,11 @@ if TYPE_CHECKING:
 
 
 class DomainRecordService:
-    def __init__(self, *, assembler: RecordAssembler[SeasonRecordSections] | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        assembler: RecordAssembler[SeasonRecordSections] | None = None,
+    ) -> None:
         self._assembler = assembler or SeasonRecordAssembler()
 
     def build_payload(

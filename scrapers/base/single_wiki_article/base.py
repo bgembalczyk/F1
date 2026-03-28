@@ -1,8 +1,8 @@
+import warnings
 from abc import ABC
 from abc import abstractmethod
 from typing import Any
 from typing import ClassVar
-import warnings
 
 from bs4 import BeautifulSoup
 

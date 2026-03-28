@@ -14,11 +14,11 @@ from scrapers.base.cli_entrypoint import build_run_config
 from scrapers.base.cli_entrypoint import build_standard_parser
 from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
+from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
 from scrapers.base.run_profiles import LegacyCliProfileName
 from scrapers.base.run_profiles import get_cli_profile_defaults
-from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -488,7 +488,9 @@ def get_deprecated_module_migrations() -> tuple[tuple[str, str], ...]:
     for definition in LEGACY_MODULE_REGISTRY.definitions:
         if not definition.deprecated:
             continue
-        replacement_module = definition.replacement_module_path or definition.module_path
+        replacement_module = (
+            definition.replacement_module_path or definition.module_path
+        )
         migrations.append((definition.module_path, replacement_module))
     return tuple(migrations)
 

@@ -4,10 +4,8 @@ from collections.abc import Mapping
 from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
-from typing import Any
 
 from scrapers.base.factory.record_factory import RecordFactory
-
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.dsl.column import ColumnSpec
@@ -72,7 +70,10 @@ class ScraperConfig:
                     msg,
                 )
 
-        if self.record_factory is not None and not hasattr(self.record_factory, "create"):
+        if self.record_factory is not None and not hasattr(
+            self.record_factory,
+            "create",
+        ):
             msg = "ScraperConfig.record_factory must implement RecordFactory.create()."
             raise TypeError(msg)
 
@@ -97,7 +98,11 @@ def build_scraper_config(
         msg = "Provide only one of columns or schema."
         raise ValueError(msg)
 
-    resolved_schema = TableSchemaDSL(columns=list(columns or [])).build() if columns is not None else schema
+    resolved_schema = (
+        TableSchemaDSL(columns=list(columns or [])).build()
+        if columns is not None
+        else schema
+    )
 
     return ScraperConfig(
         url=url,

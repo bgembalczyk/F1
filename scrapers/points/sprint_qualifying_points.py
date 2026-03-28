@@ -1,5 +1,5 @@
-from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.points.base_points_scraper import BasePointsScraper

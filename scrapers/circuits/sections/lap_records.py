@@ -25,7 +25,10 @@ class CircuitLapRecordsSectionParser(SectionTableParserBase):
         self._options = options
         self._url = url
 
-    def classify_table(self, table_data: dict[str, Any]) -> tuple[Tag, list[str]] | None:
+    def classify_table(
+        self,
+        table_data: dict[str, Any],
+    ) -> tuple[Tag, list[str]] | None:
         table = table_data.get("_table")
         headers = table_data.get("headers")
         if not isinstance(table, Tag) or not isinstance(headers, list):

@@ -3,8 +3,8 @@
 from collections.abc import Callable
 from collections.abc import Mapping
 from typing import Any
-from typing import TypedDict
 from typing import Protocol
+from typing import TypedDict
 from typing import TypeVar
 from typing import runtime_checkable
 
@@ -21,8 +21,6 @@ class FactorySpec(TypedDict, total=False):
     list_field_normalizers: dict[str, list[str]]
     defaults: dict[str, Any]
     nested_factories: dict[str, "BaseRecordFactory"]
-
-
 
 
 @runtime_checkable

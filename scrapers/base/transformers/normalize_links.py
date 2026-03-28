@@ -7,8 +7,6 @@ from scrapers.base.normalization_pipeline import normalize_value
 from scrapers.base.transformers.record_transformer import RecordTransformer
 
 if TYPE_CHECKING:
-    from collections.abc import Iterable
-
     from validation.validator_base import ExportRecord
 
 

@@ -78,7 +78,11 @@ class SeasonRecordAssembler(BaseRecordAssembler):
         self,
         payload: SeasonPayloadDTO | SeasonRecordSections,
     ) -> dict[str, Any]:
-        dto = payload if isinstance(payload, SeasonPayloadDTO) else SeasonPayloadDTO(sections=payload)
+        dto = (
+            payload
+            if isinstance(payload, SeasonPayloadDTO)
+            else SeasonPayloadDTO(sections=payload)
+        )
         record = super().assemble(payload=dto.base)
         record.update(self._map_sections(dto.sections))
         return record
