@@ -1,8 +1,8 @@
-# ruff: noqa: FBT001, SLF001, TC003
+# ruff: noqa: FBT001, SLF001
 from __future__ import annotations
 
-import argparse
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 
@@ -13,6 +13,9 @@ from scrapers.base.cli_entrypoint import complete_extractor_base_config
 from scrapers.base.cli_entrypoint import deprecated_module_base_config
 from scrapers.base.cli_entrypoint import run_cli_entrypoint
 from scrapers.base.run_config import RunConfig
+
+if TYPE_CHECKING:
+    import argparse
 
 ENTRYPOINT_DEFAULTS = (
     ("scrapers.drivers.list_scraper", True, False),
@@ -43,14 +46,15 @@ def _flags(parser: argparse.ArgumentParser) -> set[str]:
 
 
 @pytest.mark.parametrize(
-    ("_module", "quality_default", "error_default"),
+    ("module", "quality_default", "error_default"),
     ENTRYPOINT_DEFAULTS,
 )
 def test_entrypoint_parsers_expose_consistent_flag_contract(
-    _module: str,
+    module: str,
     quality_default: bool,
     error_default: bool,
 ) -> None:
+    assert module.startswith("scrapers.")
     parser = build_standard_parser(
         quality_report_default=quality_default,
         error_report_default=error_default,

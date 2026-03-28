@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 from scrapers.base.orchestration.step_orchestrator import SectionSourceAdapter
 from scrapers.base.orchestration.step_orchestrator import StepDeclaration
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 def assert_section_source_adapter_falls_back_to_raw(tmp_path: Path) -> None:

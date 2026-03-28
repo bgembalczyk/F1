@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 from typing import Any
 
+import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.layers.interfaces import Assembler
-from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.service import BaseSectionExtractionService
 from scrapers.base.single_wiki_article.base import SingleWikiArticleScraperBase
 from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
@@ -14,6 +14,10 @@ from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
 from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
+
+if TYPE_CHECKING:
+    from scrapers.base.layers.interfaces import Assembler
+    from scrapers.base.sections.interface import SectionParseResult
 
 
 class _ContractSingleScraper(SingleWikiArticleScraperBase):
@@ -111,20 +115,11 @@ def test_single_wiki_article_scraper_base_pipeline_contract() -> None:
 
 def test_base_section_service_contract_requires_optional_dependencies() -> None:
     service = _SectionServiceContractStub(adapter=_AdapterStub(sections=[]))
-
-    try:
+    with pytest.raises(ValueError, match="requires ScraperOptions"):
         service.require_options()
-    except ValueError as exc:
-        assert "requires ScraperOptions" in str(exc)
-    else:
-        raise AssertionError("require_options() should raise without options")
 
-    try:
+    with pytest.raises(ValueError, match="requires a URL"):
         service.require_url()
-    except ValueError as exc:
-        assert "requires a URL" in str(exc)
-    else:
-        raise AssertionError("require_url() should raise without URL")
 
 
 def test_assembler_contract_returns_domain_record_dict() -> None:

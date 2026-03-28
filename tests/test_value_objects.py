@@ -13,6 +13,8 @@ from models.value_objects.rounds import Rounds
 from models.value_objects.season_ref import SeasonRef
 from models.value_objects.time_types import DateValue
 
+SUPPORTED_SEASON_YEAR = 2026
+
 
 def test_value_object_base_from_dict_for_date_value():
     value = DateValue.from_dict({"iso": "2024-01-01", "year": 2024})
@@ -77,7 +79,7 @@ def test_common_value_objects_normalize_input_values() -> None:
     assert WikiUrl(" https://en.wikipedia.org/wiki/Monza ") == (
         "https://en.wikipedia.org/wiki/Monza"
     )
-    assert SeasonYear("2026") == 2026
+    assert SeasonYear(str(SUPPORTED_SEASON_YEAR)) == SUPPORTED_SEASON_YEAR
     assert SectionId("  Career Results ") == "career_results"
     assert EntityName("  Max   Verstappen ") == "Max Verstappen"
 
