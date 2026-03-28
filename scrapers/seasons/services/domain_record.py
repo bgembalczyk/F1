@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.base.postprocess import BaseRecordAssemblerInput
@@ -7,9 +8,12 @@ from scrapers.seasons.postprocess.assembler import SeasonPayloadDTO
 from scrapers.seasons.postprocess.assembler import SeasonRecordAssembler
 from scrapers.seasons.postprocess.assembler import SeasonRecordSections
 
+if TYPE_CHECKING:
+    from scrapers.base.contracts import RecordAssembler
+
 
 class DomainRecordService:
-    def __init__(self, *, assembler: SeasonRecordAssembler | None = None) -> None:
+    def __init__(self, *, assembler: RecordAssembler[SeasonRecordSections] | None = None) -> None:
         self._assembler = assembler or SeasonRecordAssembler()
 
     def build_payload(

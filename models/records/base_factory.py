@@ -4,7 +4,9 @@ from collections.abc import Callable
 from collections.abc import Mapping
 from typing import Any
 from typing import TypedDict
+from typing import Protocol
 from typing import TypeVar
+from typing import runtime_checkable
 
 from models.mappers.field_aliases import apply_field_aliases
 from models.records.field_normalizer import FieldNormalizer
@@ -19,6 +21,17 @@ class FactorySpec(TypedDict, total=False):
     list_field_normalizers: dict[str, list[str]]
     defaults: dict[str, Any]
     nested_factories: dict[str, "BaseRecordFactory"]
+
+
+
+
+@runtime_checkable
+class RecordFactoryProtocol(Protocol[T]):
+    """Structural contract for record factories."""
+
+    record_type: str
+
+    def build(self, record: Mapping[str, Any]) -> T: ...
 
 
 class BaseRecordFactory:
