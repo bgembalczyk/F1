@@ -8,12 +8,26 @@ Każda domena (`drivers`, `constructors`, `circuits`, `seasons`, `grands_prix`) 
 - `list/` — seed scrape (lista encji i linków do szczegółów).
 - `sections/` — parsowanie sekcji artykułu (`bodyContent`) i mapowanie tabel/treści.
 - `infobox/` — mapowanie pól strukturalnych (`table.infobox`).
+- `services/` — usługi domenowe i orkiestracja pomocnicza (np. składanie rekordów).
 - `postprocess/` — normalizacja końcowa i domknięcie kontraktu danych.
+- `validators.py` — opcjonalny punkt walidacji domenowej (lub `validator.py` tylko przejściowo).
 
 Legacy pliki typu `list_scraper.py` / `*_constructors_list.py` pozostają tylko jako zgodność wsteczna:
 - mają oznaczenie **deprecated**,
 - emitują `DeprecationWarning` przez wspólny helper `scrapers.base.deprecated_entrypoint.run_deprecated_entrypoint`,
 - przekierowują uruchomienie do `python -m scrapers.cli run <module>` (rejestr i dispatch są utrzymywane wyłącznie w `scrapers/cli.py`).
+
+## 1.1 Mapa migracji nazw/ścieżek (standaryzacja `services/`)
+
+W ramach refaktoru domenowego przeniesiono usługi składania rekordów do katalogów `services/`.
+Faza przejściowa z aliasami importów została domknięta — aliasy usunięto po aktualizacji importów.
+
+| Domena | Stara ścieżka | Nowa ścieżka |
+|---|---|---|
+| `circuits` | `scrapers.circuits.domain_record_service` | `scrapers.circuits.services.domain_record` |
+| `constructors` | `scrapers.constructors.domain_record_service` | `scrapers.constructors.services.domain_record` |
+| `drivers` | `scrapers.drivers.domain_record_service` | `scrapers.drivers.services.domain_record` |
+| `seasons` | `scrapers.seasons.domain_record_service` | `scrapers.seasons.services.domain_record` |
 
 ## 2. Reguły zależności między warstwami
 

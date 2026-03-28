@@ -10,6 +10,7 @@ from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
+from scrapers.circuits.services.domain_record import DomainRecordService
 from scrapers.circuits.composition import CircuitScraperCompositionFactory
 from scrapers.circuits.composition import CircuitScraperDependencies
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article

@@ -8,6 +8,10 @@ from scrapers.base.single_wiki_article import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.single_wiki_article import TablesPayloadDTO
+from scrapers.seasons.services.domain_record import DomainRecordService
+from scrapers.seasons.pipeline import SeasonParserSetBuilder
+from scrapers.seasons.pipeline import SeasonSectionPipeline
+from scrapers.seasons.pipeline import SeasonYearResolver
 from scrapers.seasons.composition import SeasonScraperCompositionFactory
 from scrapers.seasons.composition import SeasonScraperDependencies
 from scrapers.seasons.postprocess.assembler import SeasonPayloadDTO
