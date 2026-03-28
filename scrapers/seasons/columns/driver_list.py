@@ -1,4 +1,4 @@
-"""DOMAIN-SPECIFIC: seasons column rule (driver list parsing) localized for seasons domain."""
+"""Seasons domain column rule for driver list parsing."""
 
 from typing import Any
 

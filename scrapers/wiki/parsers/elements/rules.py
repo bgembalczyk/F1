@@ -4,10 +4,10 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 
-from bs4 import Tag
-
 if TYPE_CHECKING:
     from collections.abc import Callable
+
+    from bs4 import Tag
 
 
 @dataclass(frozen=True)

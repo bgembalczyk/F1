@@ -2,11 +2,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from dataclasses import field
+from typing import TYPE_CHECKING
 from typing import Any
 
-from bs4 import Tag
-
 from scrapers.wiki.parsers.sections.normalization import normalize_section_profile_key
+
+if TYPE_CHECKING:
+    from bs4 import Tag
 
 SectionTree = dict[str, Any]
 

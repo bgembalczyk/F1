@@ -1,4 +1,4 @@
-"""DOMAIN-SPECIFIC: seasons column rule (engine parsing) localized for seasons domain."""
+"""Seasons domain column rule for engine parsing."""
 
 from typing import Any
 

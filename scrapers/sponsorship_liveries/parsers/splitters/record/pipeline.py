@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import (
-    RecordSplitStrategy,
-)
+if TYPE_CHECKING:
+    from scrapers.sponsorship_liveries.parsers.splitters.record.protocols import (
+        RecordSplitStrategy,
+    )
 
 
 class RecordSplitPipeline:

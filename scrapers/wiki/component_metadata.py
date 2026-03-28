@@ -134,11 +134,17 @@ def parse_component_metadata(raw: Any) -> ComponentMetadata:
 
 def validate_component_metadata(metadata: ComponentMetadata) -> None:
     if not metadata.domain:
-        raise ValueError("metadata.domain cannot be empty")
+        msg = "metadata.domain cannot be empty"
+        err = ValueError(msg)
+        raise err
     if not metadata.component_type:
-        raise ValueError("metadata.component_type cannot be empty")
+        msg = "metadata.component_type cannot be empty"
+        err = ValueError(msg)
+        raise err
     if not metadata.layer:
-        raise ValueError("metadata.layer cannot be empty")
+        msg = "metadata.layer cannot be empty"
+        err = ValueError(msg)
+        raise err
     if metadata.component_type in {LIST_SCRAPER_KIND, COMPLETE_SCRAPER_KIND}:
         if not metadata.default_output_path or not metadata.legacy_output_path:
             msg = (
@@ -151,13 +157,15 @@ def validate_component_metadata(metadata: ComponentMetadata) -> None:
                 "metadata.default_output_path must use raw/<domain>/... convention, "
                 f"got: {metadata.default_output_path!r}"
             )
-            raise ValueError(msg)
+            err = ValueError(msg)
+            raise err
         if not metadata.legacy_output_path.startswith(f"{metadata.domain}/"):
             msg = (
                 "metadata.legacy_output_path must use <domain>/... convention, "
                 f"got: {metadata.legacy_output_path!r}"
             )
-            raise ValueError(msg)
+            err = ValueError(msg)
+            raise err
 
 
 def validate_metadata_for_component_class(component_cls: type[Any]) -> None:

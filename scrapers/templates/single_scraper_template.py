@@ -12,15 +12,17 @@ Usage (copy + rename + fill hooks):
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 from typing import Any
 from typing import ClassVar
-
-from bs4 import BeautifulSoup
 
 from scrapers.base.single_wiki_article import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleScraperBase
 from scrapers.base.single_wiki_article import TablesPayloadDTO
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
 
 
 @dataclass(frozen=True, slots=True)
