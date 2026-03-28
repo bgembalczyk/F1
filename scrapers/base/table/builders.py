@@ -4,6 +4,7 @@ from collections.abc import Iterable
 from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+from warnings import warn
 
 from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.column import column
@@ -99,24 +100,22 @@ def build_scraper_config(
     record_factory=None,
     model_class: type | None = None,
 ) -> ScraperConfig:
-    from scrapers.base.table.config import ScraperConfig
+    """Deprecated compatibility wrapper for legacy imports."""
+    from scrapers.base.table.config import build_scraper_config as _build_scraper_config
 
-    if columns is None and schema is None:
-        msg = "Either columns or schema must be provided."
-        raise ValueError(msg)
-
-    if columns is not None and schema is not None:
-        msg = "Provide only one of columns or schema."
-        raise ValueError(msg)
-
-    resolved_schema = build_table_schema(columns) if columns is not None else schema
-
-    return ScraperConfig(
+    warn(
+        "scrapers.base.table.builders.build_scraper_config is deprecated; "
+        "use scrapers.base.table.config.build_scraper_config.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return _build_scraper_config(
         url=url,
+        columns=columns,
+        schema=schema,
         section_id=section_id,
         expected_headers=expected_headers,
+        table_css_class=table_css_class,
         record_factory=record_factory,
         model_class=model_class,
-        table_css_class=table_css_class,
-        schema=resolved_schema,
     )

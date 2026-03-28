@@ -137,3 +137,12 @@ Jedynym canonical launcherem jest teraz `python -m scrapers.cli`.
 - `python -m scrapers.tyres.list_scraper` -> `python -m scrapers.cli run scrapers.tyres.list_scraper`
 
 Każdy wrapper legacy emituje `DeprecationWarning` z powyższym mapowaniem.
+
+## ✅ Krótka checklista: jak tworzyć nowy scraper listowy
+
+1. Dziedzicz po `SeedListTableScraper` i ustaw `domain`, `default_output_path`, `legacy_output_path`.
+2. Zdefiniuj schemat kolumn (`build_columns(...)`) albo `schema=...`.
+3. Buduj `CONFIG` wyłącznie przez `scrapers.base.table.config.build_scraper_config(...)`.
+4. Ustaw minimalne `expected_headers` (podzbiór wymaganych nagłówków tabeli).
+5. Podepnij `record_factory` i (opcjonalnie) `default_validator`.
+6. Dla uruchamiania używaj `entrypoint.py`; `list_scraper.py` traktuj jako warstwę kompatybilności.
