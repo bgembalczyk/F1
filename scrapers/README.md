@@ -24,6 +24,12 @@ Reviewer musi potwierdzić:
 - użycie docelowych hooków bazowych (`SingleWikiArticleScraperBase` hooks dla single, `build_scraper_config` + schema DSL dla list),
 - usunięcie placeholderów `TODO` przed mergem.
 
+
+## Extension guide
+
+Szczegółowy przewodnik rozszerzania (hooki obowiązkowe, punkty rozszerzeń, antywzorce, minimalne przykłady):
+
+- `docs/architecture/scraper-extension-guide.md`
 ## Helper modules (capability-first)
 - Unikaj jednego worka `helpers` z funkcjami o mieszanej odpowiedzialności.
 - Grupuj helpery wg capability (np. `text`, `links`, `tables`, `sections`).
