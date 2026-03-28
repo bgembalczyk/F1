@@ -4,7 +4,6 @@ from abc import ABC
 from abc import abstractmethod
 from typing import TYPE_CHECKING
 from typing import Any
-from typing import Protocol
 
 from models.value_objects import EntityName
 from models.value_objects import SectionId
@@ -19,11 +18,6 @@ if TYPE_CHECKING:
 
     from scrapers.base.sections.adapter import SectionAdapter
     from scrapers.base.sections.adapter import SectionAdapterEntry
-
-
-class SectionExtractionService(Protocol):
-    def extract(self, soup: BeautifulSoup) -> list[dict[str, Any]]: ...
-
 
 class BaseSectionExtractionService(ABC):
     domain: str

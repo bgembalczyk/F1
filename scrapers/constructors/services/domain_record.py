@@ -1,6 +1,10 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from typing import Any
+
+if TYPE_CHECKING:
+    from scrapers.base.contracts import RecordAssembler
 
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
 from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
@@ -11,7 +15,7 @@ class DomainRecordService:
     def __init__(
         self,
         *,
-        assembler: ConstructorRecordAssembler | None = None,
+        assembler: RecordAssembler[ConstructorRecordDTO] | None = None,
         article_tables_parser: ArticleTablesParser | None = None,
     ) -> None:
         self._assembler = assembler or ConstructorRecordAssembler()

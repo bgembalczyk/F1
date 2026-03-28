@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 from typing import Protocol
 from typing import TypeAlias
 from typing import TypeVar
+from typing import runtime_checkable
 
 from models.value_objects import EntityName
 from models.value_objects import SectionId
@@ -39,6 +40,7 @@ class SectionParseResult:
         )
 
 
+@runtime_checkable
 class SectionParser(Protocol):
     """Common section parser interface.
 
