@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.post_processors import RecordPostProcessor
+from scrapers.base.single_wiki_article.strategies import SectionSelectionStrategy
+from scrapers.base.single_wiki_article.strategies import UrlFragmentStrategy
 from scrapers.wiki.scraper import WikiScraper
 
 
@@ -35,6 +37,9 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
         *,
         options: ScraperOptions | None = None,
         include_urls: bool = True,
+        url_fragment_strategy: UrlFragmentStrategy | None = None,
+        section_selection_strategy: SectionSelectionStrategy | None = None,
+        section_selection_domain: str | None = None,
     ) -> None:
         resolved_options = init_scraper_options(options, include_urls=include_urls)
         policy = self.get_http_policy(resolved_options)
@@ -46,9 +51,14 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
 
         super().__init__(options=resolved_options)
         self.url: str = ""
+        self._original_url: str | None = None
+        self._section_fragment: str | None = None
         self._options = resolved_options
         self.policy = self.http_policy
         self.debug_dir = resolved_options.debug_dir
+        self._url_fragment_strategy = url_fragment_strategy
+        self._section_selection_strategy = section_selection_strategy
+        self._section_selection_domain = section_selection_domain
 
     def _build_post_processor(self) -> RecordPostProcessor | None:
         """Zwróć post-processor domenowy dodawany podczas inicjalizacji."""
@@ -56,8 +66,17 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
 
     def fetch_by_url(self, url: str) -> list[dict[str, Any]]:
         """Pobiera artykuł po URL i zapisuje go w ``self.url`` przed ``fetch()``."""
-        self.url = url
+        self._apply_fetch_url(url)
         return super().fetch()
+
+    def _apply_fetch_url(self, url: str) -> None:
+        if self._uses_url_fragment() and self._url_fragment_strategy is not None:
+            self._url_fragment_strategy.apply(self, url)
+            return
+        self.url = url
+
+    def _uses_url_fragment(self) -> bool:
+        return False
 
     def parse(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         if not self._should_parse_article(soup):
@@ -78,7 +97,30 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
 
     def _prepare_article_soup(self, soup: BeautifulSoup) -> BeautifulSoup:
         """Pozwala przygotować wycinek artykułu używany dalej przez hooki."""
+        if self._section_selection_strategy is not None:
+            return self._section_selection_strategy.select(
+                soup,
+                fragment=self._section_fragment,
+                domain=self._section_selection_domain,
+            )
         return soup
+
+    @staticmethod
+    def split_url_fragment(url: str) -> tuple[str, str | None]:
+        return UrlFragmentStrategy.split_url_fragment(url)
+
+    @staticmethod
+    def extract_section_by_id(
+        soup: BeautifulSoup,
+        fragment: str,
+        *,
+        domain: str | None = None,
+    ) -> BeautifulSoup | None:
+        return SectionSelectionStrategy.extract_section_by_id(
+            soup,
+            fragment,
+            domain=domain,
+        )
 
     def _build_article_record(self, soup: BeautifulSoup) -> dict[str, Any]:
         return self._run_record_pipeline(soup)
