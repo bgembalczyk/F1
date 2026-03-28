@@ -146,3 +146,76 @@ Każdy wrapper legacy emituje `DeprecationWarning` z powyższym mapowaniem.
 4. Ustaw minimalne `expected_headers` (podzbiór wymaganych nagłówków tabeli).
 5. Podepnij `record_factory` i (opcjonalnie) `default_validator`.
 6. Dla uruchamiania używaj `entrypoint.py`; `list_scraper.py` traktuj jako warstwę kompatybilności.
+
+
+## 8. Standard deklaracji konfiguracji scraperów (build_scraper_config + schema DSL)
+
+Ujednolicamy jeden standard dla deklaracji `CONFIG` w scraperach tabelowych:
+
+- `CONFIG` budujemy przez `build_scraper_config(...)`.
+- Schemat deklarujemy przez DSL (`column(...)` + `TableSchemaDSL(...)`) albo przez helper zwracający schema DSL.
+- Nie deklarujemy już ręcznie `CONFIG = ScraperConfig(...)` na poziomie klasy.
+- Nie używamy aliasu `build_scraper_config` z `scrapers.base.table.builders` (deprecated).
+
+### Moduły zmanualizowane wcześniej (`CONFIG = ScraperConfig(...)`) i zmigrowane do standardu
+
+- `scrapers/drivers/female_drivers_list.py`
+- `scrapers/drivers/fatalities_list_scraper.py`
+- `scrapers/engines/engine_regulation.py`
+- `scrapers/engines/engine_restrictions.py`
+- `scrapers/grands_prix/red_flagged_races_scraper/non_championship.py`
+- `scrapers/grands_prix/red_flagged_races_scraper/world_championship.py`
+- `scrapers/points/sprint_qualifying_points.py`
+- `scrapers/points/shortened_race_points.py`
+- `scrapers/points/points_scoring_systems_history.py`
+- `scrapers/tyres/list_scraper.py`
+- `scrapers/base/helpers/tables/lap_records.py`
+
+Dodatkowo import `build_scraper_config` został ujednolicony do canonical path (`scrapers.base.table.config`) także w modułach używających wcześniej aliasu z `builders`.
+
+### Wymuszenie review/CI
+
+Nowa reguła CI (`tests/test_scraper_config_ci_meta.py`) blokuje merge gdy:
+
+- nowy scraper deklaruje klasowe `CONFIG = ScraperConfig(...)` zamiast `build_scraper_config(...)`,
+- nowy scraper importuje `build_scraper_config` z deprecated aliasu `scrapers.base.table.builders`.
+
+## 9. Szablon „new scraper” (gotowy przykład DSL: lista + sekcja)
+
+```python
+from scrapers.base.records import record_from_mapping
+from scrapers.base.table.columns.types import IntColumn, UrlColumn, AutoColumn
+from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
+
+# --- wariant list scraper (SeedListTableScraper/F1TableScraper) ---
+schema_columns = [
+    column("Season", "season", UrlColumn()),
+    column("Races", "races", IntColumn()),
+    column("Notes", "notes", AutoColumn()),
+]
+
+CONFIG = build_scraper_config(
+    url="https://en.wikipedia.org/wiki/Example",
+    section_id="Example_section",
+    expected_headers=["Season", "Races"],
+    schema=TableSchemaDSL(columns=schema_columns),
+    record_factory=record_from_mapping,
+)
+
+# --- wariant parsera sekcji (lokalna konfiguracja parse_table) ---
+section_schema = TableSchemaDSL(
+    columns=[
+        column("Grand Prix", "grand_prix", UrlColumn()),
+        column("Winner", "winner", AutoColumn()),
+    ]
+)
+
+section_config = build_scraper_config(
+    url="https://en.wikipedia.org/wiki/Example_section",
+    expected_headers=["Grand Prix", "Winner"],
+    schema=section_schema,
+    record_factory=record_from_mapping,
+)
+```

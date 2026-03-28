@@ -8,7 +8,7 @@ from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import RangeColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import UnitColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
@@ -49,7 +49,7 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
         ),
     ]
 
-    CONFIG = ScraperConfig(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/Formula_One_regulations#Engine",
         section_id="Engine",
         expected_headers=["Year", "2000-2005", "2006-2013", "2014-2025"],

@@ -2,7 +2,7 @@ from models.records.factories.build import RECORD_BUILDERS
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
-from scrapers.base.table.builders import build_scraper_config
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.columns.types import FloatColumn
 from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.dsl.column import column

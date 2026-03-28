@@ -7,6 +7,7 @@ from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.transformers.points_scoring_systems_history import (
@@ -51,7 +52,7 @@ class PointsScoringSystemsHistoryScraper(BasePointsScraper):
         ],
     )
 
-    CONFIG = ScraperConfig(
+    CONFIG = build_scraper_config(
         url=BasePointsScraper.BASE_URL,
         section_id="Points_scoring_systems",
         expected_headers=POINTS_SCORING_HISTORY_EXPECTED_HEADERS,
