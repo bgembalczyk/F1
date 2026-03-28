@@ -182,17 +182,14 @@ class TablePipeline:
             record,
             policy=self.empty_value_policy,
         )
-        if isinstance(self.record_factory, type):
-            payload = normalized_record
-            if self.model_fields:
-                payload = {
-                    key: value
-                    for key, value in payload.items()
-                    if key in self.model_fields
-                }
-            created = self.record_factory(**payload)
-            return dict(created) if isinstance(created, Mapping) else record
-        created = self.record_factory(normalized_record)
+        payload = normalized_record
+        if self.model_fields:
+            payload = {
+                key: value
+                for key, value in payload.items()
+                if key in self.model_fields
+            }
+        created = self.record_factory.create(payload)
         return dict(created) if isinstance(created, Mapping) else record
 
     @staticmethod
