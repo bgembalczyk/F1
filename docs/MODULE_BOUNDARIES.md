@@ -250,6 +250,32 @@ Nowa reguła CI (`tests/test_scraper_config_ci_meta.py`) blokuje merge gdy:
 - nowy scraper deklaruje klasowe `CONFIG = ScraperConfig(...)` zamiast `build_scraper_config(...)`,
 - nowy scraper importuje `build_scraper_config` z deprecated aliasu `scrapers.base.table.builders`.
 
+
+## 9. Rejestr decyzji architektonicznych (ADR)
+
+Źródłem prawdy dla zatwierdzonych zasad architektonicznych jest katalog `docs/adr/`.
+
+### Obowiązkowe ADR dla kluczowych kontraktów
+
+- `ADR-0001` — kontrakt konfiguracji scraperów.
+- `ADR-0002` — kontrakt parserów sekcji.
+- `ADR-0003` — strategia Dependency Injection.
+- `ADR-0004` — zasady nazewnictwa hooków.
+
+### Wymóg powiązania zmian z ADR
+
+Każda większa zmiana architektoniczna w PR musi:
+- wskazywać numer ADR (`ADR-XXXX`) w opisie PR i/lub commit message,
+- wskazywać, czy zmiana **stosuje** istniejącą decyzję, czy ją **modyfikuje**.
+
+### Wymóg review
+
+Jeżeli PR zmienia wcześniej zatwierdzoną zasadę, review wymaga:
+- aktualizacji istniejącego ADR (zmiana statusu/konsekwencji), **lub**
+- dodania nowego ADR, który zastępuje poprzedni (`Superseded by`).
+
+Brak aktualizacji ADR w takim przypadku jest blockerem review.
+
 ## 10. Szablon „new scraper” (gotowy przykład DSL: lista + sekcja)
 
 ```python

@@ -121,3 +121,15 @@ Poniższa lista jest checklistą jakości dla każdego merge'a, który dodaje/zm
 
 ### Zasada aktualizacji statusu
 - Przy każdym merge'u parsera sekcji zaktualizuj status tej listy (`[ ]` / `[x]`) oraz dodaj krótką notkę, co zostało objęte zmianą.
+
+## 🔗 Governance ADR dla zmian architektonicznych
+
+- [x] Każda większa zmiana architektoniczna ma referencję do ADR (`ADR-XXXX`) w PR/commicie.
+- [x] Zmiana zasady już zaakceptowanej wymaga aktualizacji ADR (lub nowego ADR zastępującego poprzedni).
+- [x] Brak aktualizacji ADR przy zmianie zatwierdzonej zasady traktowany jako blocker review.
+
+### Aktywne ADR bazowe
+- `ADR-0001` — kontrakt konfiguracji scraperów.
+- `ADR-0002` — kontrakt parserów sekcji.
+- `ADR-0003` — strategia DI.
+- `ADR-0004` — nazewnictwo hooków.
