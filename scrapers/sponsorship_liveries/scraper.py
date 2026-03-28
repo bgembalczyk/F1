@@ -41,8 +41,6 @@ class F1SponsorshipLiveriesScraper(WikiScraper):
         classifier: Optional["ParenClassifier"] = None,
     ) -> None:
         options = init_scraper_options(options, include_urls=True)
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
         super().__init__(options=options)
         self._splitter = SponsorshipRecordSplitter()
         self._section_parser = SponsorshipSectionParser(

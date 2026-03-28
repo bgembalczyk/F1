@@ -4,6 +4,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.post_processors import RecordPostProcessor
@@ -38,7 +39,9 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
     ) -> None:
         resolved_options = init_scraper_options(options, include_urls=include_urls)
         policy = self.get_http_policy(resolved_options)
-        resolved_options.with_fetcher(policy=policy)
+        runtime = ScraperRuntimeFactory().build(options=resolved_options, policy=policy)
+        resolved_options.fetcher = runtime.fetcher
+        resolved_options.source_adapter = runtime.source_adapter
 
         post_processor = self._build_post_processor()
         if post_processor is not None:
