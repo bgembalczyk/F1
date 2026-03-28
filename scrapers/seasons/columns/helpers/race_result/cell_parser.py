@@ -13,6 +13,9 @@ from scrapers.seasons.columns.helpers.race_result.superscript import (
     SuperscriptParseResult,
 )
 
+FOOTNOTE_RE = re.compile(r"\d+")
+ALPHA_RE = re.compile(r"[A-Za-z]")
+
 
 class RaceResultCellParser:
     def extract_result_text(self, ctx: ColumnContext) -> str:
@@ -146,7 +149,7 @@ class RaceResultCellParser:
             if not sup_text:
                 continue
             sup_texts.append(sup_text)
-            footnotes.extend(re.findall(r"\d+", sup_text))
+            footnotes.extend(FOOTNOTE_RE.findall(sup_text))
         return sup_texts, footnotes
 
     @staticmethod
@@ -158,7 +161,7 @@ class RaceResultCellParser:
         fastest_lap = False
 
         for token in " ".join(sup_texts).split():
-            for letter in re.findall(r"[A-Za-z]", token):
+            for letter in ALPHA_RE.findall(token):
                 upper = letter.upper()
                 if upper == "P":
                     pole_position = True
