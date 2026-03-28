@@ -1,13 +1,12 @@
 from collections import deque
 
+from infrastructure.gemini.constants import RPD_WINDOW
+from infrastructure.gemini.constants import RPM_WINDOW
 from infrastructure.gemini.model_config import ModelConfig
 
 
 class ModelState:
     """Wewnętrzny stan rate-limitera dla jednego modelu (sliding window)."""
-
-    _RPM_WINDOW = 60.0  # okno dla RPM w sekundach
-    _RPD_WINDOW = 86400.0  # okno dla RPD w sekundach (24 h)
 
     def __init__(self, config: ModelConfig) -> None:
         self.config = config
@@ -34,12 +33,12 @@ class ModelState:
 
     def _purge_rpm(self, now: float) -> None:
         while (
-            self._rpm_timestamps and now - self._rpm_timestamps[0] >= self._RPM_WINDOW
+            self._rpm_timestamps and now - self._rpm_timestamps[0] >= RPM_WINDOW
         ):
             self._rpm_timestamps.popleft()
 
     def _purge_rpd(self, now: float) -> None:
         while (
-            self._rpd_timestamps and now - self._rpd_timestamps[0] >= self._RPD_WINDOW
+            self._rpd_timestamps and now - self._rpd_timestamps[0] >= RPD_WINDOW
         ):
             self._rpd_timestamps.popleft()

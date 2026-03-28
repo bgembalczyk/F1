@@ -3,6 +3,8 @@ from pathlib import Path
 from infrastructure.gemini.model_config import ModelConfig
 
 ONE_YEAR_SECONDS = 365 * 24 * 60 * 60
+RPM_WINDOW = 60.0  # okno dla RPM w sekundach
+RPD_WINDOW = 86400.0  # okno dla RPD w sekundach (24 h)
 
 API_URL_TEMPLATE = (
     "https://generativelanguage.googleapis.com/v1beta/models/"

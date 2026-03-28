@@ -1,14 +1,9 @@
-from __future__ import annotations
-
 from abc import ABC
 from abc import abstractmethod
+from collections.abc import Callable
 from dataclasses import dataclass
 from dataclasses import field
-from typing import TYPE_CHECKING
 from typing import Any
-
-if TYPE_CHECKING:
-    from collections.abc import Callable
 
 
 class RecordAssemblyStrategy(ABC):
