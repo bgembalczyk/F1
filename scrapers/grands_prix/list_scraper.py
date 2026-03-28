@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.grands_prix.entrypoint.run_list_scraper."""
 
-from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_entity_metadata_columns
 from scrapers.base.table.builders import build_name_status_fragment
@@ -15,15 +15,13 @@ from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
 
 class GrandsPrixListScraper(SeedListTableScraper):
     domain = "grands_prix"
-    default_output_path = "raw/grands_prix/seeds/f1_grands_prix_extended.json"
-    legacy_output_path = "grands_prix/f1_grands_prix_extended.json"
+    output_basename = "f1_grands_prix_extended.json"
 
     """
     Uproszczony scraper np. dla tabeli 'By race title'
     z:
     https://en.wikipedia.org/wiki/List_of_Formula_One_Grands_Prix
     """
-
 
     schema_columns = build_columns(
         build_name_status_fragment(
@@ -50,7 +48,7 @@ class GrandsPrixListScraper(SeedListTableScraper):
             "Years held",
         ],
         columns=schema_columns,
-        record_factory=RECORD_BUILDERS.grands_prix,
+        record_factory=RECORD_FACTORIES.builders("grands_prix"),
     )
 
 

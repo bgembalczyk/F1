@@ -122,6 +122,7 @@ Każdy PR obejmujący kod scraperów przechodzi przez poniższą checklistę arc
 - [ ] **Brak duplikacji logiki:** logika nie jest kopiowana pomiędzy domenami i modułami.
 - [ ] **Użycie wspólnych abstrakcji:** preferowane są istniejące komponenty bazowe (`scrapers/base/*`) lub rozszerzenie wspólnego API.
 - [ ] **Brak nowych `Any` w domenie:** nowe adnotacje typów w kodzie domenowym nie wprowadzają kolejnych `Any` (chyba że istnieje formalnie udokumentowany wyjątek techniczny).
+- [ ] **Zgodność z extension guide:** nowy scraper spełnia kontrakt i antywzorce opisane w `docs/architecture/scraper-extension-guide.md`.
 
 ### 6.2 „Architecture impact” dla zmian w `scrapers/base/`
 

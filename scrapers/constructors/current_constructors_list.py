@@ -1,6 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.constructors.entrypoint.run_list_scraper."""
 
-from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.config import build_scraper_config
@@ -18,16 +18,9 @@ from scrapers.constructors.constants import CONSTRUCTOR_LICENSED_IN_HEADER
 from scrapers.constructors.constants import CURRENT_CONSTRUCTORS_EXPECTED_HEADERS
 from scrapers.constructors.constants import CURRENT_YEAR
 from scrapers.constructors.sections.list_section import ConstructorsListSectionParser
-from scrapers.wiki.component_metadata import ComponentMetadata
 
 
 class CurrentConstructorsListScraper(BaseConstructorListScraper):
-    COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
-        domain="constructors",
-        default_output_path="raw/constructors/seeds/complete_constructors",
-        legacy_output_path="constructors/complete_constructors",
-    )
-
     """
     Aktualni konstruktorzy - sekcja
     'Constructors for the current season' z:
@@ -55,7 +48,7 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
         section_id=f"Constructors_for_the_{CURRENT_YEAR}_season",
         expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
         columns=schema_columns,
-        record_factory=RECORD_BUILDERS.constructor,
+        record_factory=RECORD_FACTORIES.builders("constructor"),
     )
 
     section_label = "Current constructors"

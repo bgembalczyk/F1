@@ -1,22 +1,21 @@
 from __future__ import annotations
 
+import warnings
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
-import warnings
 
-from bs4 import BeautifulSoup
 from models.value_objects import SectionId
-
+from scrapers.base.sections.section_id_resolver import SectionIdResolver
+from scrapers.base.sections.serializer import serialize_section_result
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
-from scrapers.base.sections.resolve_candidates import resolve_section_candidates
-from scrapers.base.sections.serializer import serialize_section_result
-from scrapers.wiki.parsers.section_detection import find_section_heading
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
 
 if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
     from scrapers.base.sections.interface import SectionParser
     from scrapers.base.sections.interface import SectionParseResult
 
@@ -43,6 +42,7 @@ class SectionAdapter:
         entries: list[SectionAdapterEntry],
     ) -> list[SectionParseResult]:
         parsed: list[SectionParseResult] = []
+        resolver = SectionIdResolver(domain=domain)
         for entry in entries:
             section_id = SectionId.from_raw(entry.section_id)
             entry_aliases = profile_entry_aliases(
@@ -50,27 +50,20 @@ class SectionAdapter:
                 section_id.to_export(),
                 *entry.aliases,
             )
-            section_candidates = resolve_section_candidates(
-                domain=domain,
+            resolution = resolver.resolve_heading(
+                soup=soup,
                 section_id=section_id,
                 alternative_section_ids=entry_aliases,
+                aliases={
+                    section_id.to_export().replace("_", " "): set(entry_aliases),
+                },
             )
-            heading_match = None
-            for candidate in section_candidates:
-                heading_match = find_section_heading(
-                    soup,
-                    candidate,
-                    aliases={
-                        section_id.to_export().replace("_", " "): set(entry_aliases),
-                    },
-                    domain=domain,
-                )
-                if heading_match is not None:
-                    break
-            if heading_match is None:
+            if resolution.heading_match is None:
                 continue
 
-            section_fragment = self._extract_section_from_heading(heading_match)
+            section_fragment = self._extract_section_from_heading(
+                resolution.heading_match,
+            )
             if section_fragment is None:
                 continue
             parsed.append(entry.parser.parse(section_fragment))

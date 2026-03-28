@@ -156,6 +156,28 @@ def get_domain_entrypoint_config(domain: str) -> DomainEntrypointConfig:
     return _resolve_domain_entrypoint_config(domain)
 
 
+
+
+def build_entrypoint_alias_getattr_for_domain(domain: str) -> Callable[[str], object]:
+    """Build ``__getattr__`` that exposes standardized domain entrypoint aliases."""
+
+    def _module_getattr(name: str) -> object:
+        config = get_domain_entrypoint_config(domain)
+        aliases: dict[str, object] = {
+            "ENTRYPOINT_CONFIG": config,
+            "LIST_SCRAPER_CLASS": config.list_scraper_cls,
+            "DEFAULT_OUTPUT_JSON": config.default_output_json,
+            "RUN_CONFIG_PROFILE": config.run_config_profile,
+        }
+        if config.default_output_csv is not None:
+            aliases["DEFAULT_OUTPUT_CSV"] = config.default_output_csv
+
+        if name not in aliases:
+            msg = f"module {__name__!r} has no attribute {name!r}"
+            raise AttributeError(msg)
+        return aliases[name]
+
+    return _module_getattr
 def build_run_list_scraper(
     *,
     list_scraper_cls: type[ABCScraper],
