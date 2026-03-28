@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from scrapers.base.sections.interface import SectionParseResult
-from scrapers.base.sections.serializer import build_section_metadata
+from scrapers.base.sections.serializer import build_section_parse_result
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -49,9 +49,11 @@ class BaseDriverResultsSectionParser:
 
     def parse(self, section_fragment: BeautifulSoup) -> SectionParseResult:
         parsed = self._parser.parse(section_fragment)
-        return SectionParseResult(
+        return build_section_parse_result(
             section_id=self._section_id,
             section_label=self._section_label,
             records=parsed.records,
-            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia", extras={"aliases": self._header_aliases}),
+            parser=self.__class__.__name__,
+            source="wikipedia",
+            extras={"aliases": self._header_aliases},
         )
