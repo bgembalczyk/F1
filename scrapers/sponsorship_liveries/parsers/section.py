@@ -15,6 +15,7 @@ from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.sponsorship_liveries.columns.colour import ColourListColumn
+from scrapers.sponsorship_liveries.columns.driver_list import DriverListColumn
 from scrapers.sponsorship_liveries.columns.seasons import SponsorshipSeasonsColumn
 from scrapers.sponsorship_liveries.columns.sponsor import SponsorColumn
 from scrapers.sponsorship_liveries.helpers.constants import season_headers
