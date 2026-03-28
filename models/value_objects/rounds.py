@@ -53,7 +53,10 @@ class Rounds:
 
     def __eq__(self, other: object) -> bool:
         if isinstance(other, Rounds):
-            return self.values == other.values
+            return self.values == tuple(other)
         if isinstance(other, list | tuple):
             return list(self.values) == list(other)
         return NotImplemented
+
+    def __hash__(self) -> int:
+        return hash(self.values)

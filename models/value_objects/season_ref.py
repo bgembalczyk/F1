@@ -1,12 +1,15 @@
 from __future__ import annotations
 
-from collections.abc import Mapping
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 from typing import Any
 
 from models.validation.utils import coerce_number
 from models.validation.utils import is_valid_url
 from models.value_objects.base import ValueObject
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 
 
 @dataclass
