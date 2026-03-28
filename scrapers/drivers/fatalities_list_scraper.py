@@ -6,11 +6,11 @@ from scrapers.base.helpers.date_parsing import parse_formula_category
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.skip import SkipColumn
-from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import SkipColumn
+from scrapers.base.table.columns.types import TextColumn
+from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL

@@ -8,11 +8,11 @@ from bs4 import Tag
 from scrapers.base.helpers.cell_splitting import split_cell_on_br
 from scrapers.base.helpers.value_objects.lap_record import LapRecord
 from scrapers.base.records import record_from_mapping
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.date import DateColumn
-from scrapers.base.table.columns.types.driver import DriverColumn
-from scrapers.base.table.columns.types.time import TimeColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import DateColumn
+from scrapers.base.table.columns.types import DriverColumn
+from scrapers.base.table.columns.types import TimeColumn
+from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL

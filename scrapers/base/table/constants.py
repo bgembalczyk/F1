@@ -1,5 +1,5 @@
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import SeasonsColumn
 
 HEADER_ROWS_WITH_SUBHEADERS = 2
 

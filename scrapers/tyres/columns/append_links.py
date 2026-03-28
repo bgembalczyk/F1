@@ -1,7 +1,7 @@
 from typing import Any
 
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.types.links_list import LinksListColumn
+from scrapers.base.table.columns.types import LinksListColumn
 
 
 class AppendLinksColumn(LinksListColumn):

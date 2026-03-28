@@ -10,7 +10,7 @@ from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.records import record_from_mapping
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import build_section_metadata
-from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.drivers.sections.constants import UNKNOWN_VALUE

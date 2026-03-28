@@ -3,9 +3,9 @@
 from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_scraper_config
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.wiki.component_metadata import ComponentMetadata
@@ -50,6 +50,6 @@ class SeasonsListScraper(F1TableScraper):
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_current_legacy_wrapper
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    run_current_legacy_wrapper()
+    run_deprecated_entrypoint()

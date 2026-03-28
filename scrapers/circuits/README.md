@@ -19,4 +19,5 @@
   - `deprecated_entrypoint` gdy moduł ma tylko przekierowywać i emitować `DeprecationWarning`.
 - Komunikaty deprecacji przekazuj jako `deprecation_message` do helpera zamiast duplikować logikę `warnings.warn(...)`.
 
-- Preferowaną ścieżką uruchamiania są moduły `entrypoint.py`; moduły typu `list_scraper.py`/`complete_scraper.py` traktuj jako kompatybilnościowe.
+- **Rekomendowana ścieżka uruchamiania:** `python -m scrapers.cli ...` (jedyny canonical launcher).
+- `entrypoint.py` traktuj jako API do wywołań z kodu; moduły typu `list_scraper.py`/`complete_scraper.py` są wyłącznie kompatybilnościowe i deprecated.

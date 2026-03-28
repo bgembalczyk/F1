@@ -4,9 +4,13 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 from typing import Any
 from typing import Protocol
+from typing import TypeVar
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
+
+    from scrapers.base.options import ScraperOptions
+    from scrapers.base.sections.adapter import SectionAdapter
 
 
 @dataclass(frozen=True)
@@ -39,3 +43,18 @@ class SectionTableParser(Protocol):
     """Common parser interface for table-oriented section content."""
 
     def parse(self, section_fragment: BeautifulSoup) -> list[dict[str, Any]]: ...
+
+
+ServiceT = TypeVar("ServiceT")
+
+
+class SectionServiceFactory(Protocol[ServiceT]):
+    """Factory contract for building section services in single-article scrapers."""
+
+    def create(
+        self,
+        *,
+        adapter: SectionAdapter,
+        options: ScraperOptions | None = None,
+        url: str | None = None,
+    ) -> ServiceT: ...

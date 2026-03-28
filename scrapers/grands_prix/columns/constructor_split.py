@@ -1,5 +1,5 @@
-from scrapers.base.table.columns.types.constructor_part import ConstructorPartColumn
-from scrapers.base.table.columns.types.multi import MultiColumn
+from scrapers.base.table.columns.types import ConstructorPartColumn
+from scrapers.base.table.columns.types import MultiColumn
 
 
 class ConstructorSplitColumn(MultiColumn):

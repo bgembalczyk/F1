@@ -7,9 +7,9 @@ from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.records import record_from_mapping
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import build_section_metadata
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.driver_list import DriverListColumn
-from scrapers.base.table.columns.types.url import UrlColumn
+from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import DriverListColumn
+from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
