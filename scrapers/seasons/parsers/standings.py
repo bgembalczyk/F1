@@ -2,8 +2,8 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.types import ConstructorColumn
-from scrapers.base.table.columns.types import DriverColumn
+from scrapers.seasons.columns.constructor import ConstructorColumn
+from scrapers.seasons.columns.driver import DriverColumn
 from scrapers.seasons.parsers.constants import MERGED_ENTRY_BASE_KEYS
 from scrapers.seasons.parsers.constants import ROUND_LEVEL_RESULT_ATTRIBUTES
 from scrapers.seasons.parsers.table import SeasonTableParser

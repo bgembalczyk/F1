@@ -8,8 +8,8 @@ from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
-from scrapers.base.table.columns.types import DriverColumn
-from scrapers.base.table.columns.types import DriverListColumn
+from scrapers.grands_prix.columns.driver import DriverColumn
+from scrapers.grands_prix.columns.driver_list import DriverListColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import TextColumn
