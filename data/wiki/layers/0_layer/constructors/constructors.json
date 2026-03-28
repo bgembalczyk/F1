@@ -12,24 +12,12 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 0,
-        "based_in": [
-          {
-            "text": "United Kingdom",
-            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-          }
-        ],
-        "fastest_laps": 1,
         "licensed_in": {
           "text": "France",
           "url": "https://en.wikipedia.org/wiki/France"
         },
-        "wins": 1,
-        "races_entered": 115,
-        "podiums": 6,
         "drivers": 5,
-        "points": 536,
-        "races_started": 115,
+        "fastest_laps": 1,
         "antecedent_teams": [
           {
             "text": "Toleman",
@@ -48,7 +36,21 @@
             "url": "https://en.wikipedia.org/wiki/Lotus_F1"
           }
         ],
+        "poles": 0,
+        "races_entered": 115,
+        "based_in": [
+          {
+            "text": "United Kingdom",
+            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+          }
+        ],
+        "podiums": 6,
         "total_entries": 230,
+        "wdc_titles": 0,
+        "races_started": 115,
+        "wins": 1,
+        "wcc_titles": 0,
+        "points": 536,
         "seasons": [
           {
             "year": 2021,
@@ -75,8 +77,6 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 0,
-        "wcc_titles": 0,
         "status": "active"
       }
     }
@@ -94,24 +94,12 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 0,
-        "based_in": [
-          {
-            "text": "United Kingdom",
-            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-          }
-        ],
-        "fastest_laps": 3,
         "licensed_in": {
           "text": "United Kingdom",
           "url": "https://en.wikipedia.org/wiki/United_Kingdom"
         },
-        "wins": 0,
-        "races_entered": 121,
-        "podiums": 9,
         "drivers": 7,
-        "points": 597,
-        "races_started": 120,
+        "fastest_laps": 3,
         "antecedent_teams": [
           {
             "text": "Jordan",
@@ -138,7 +126,21 @@
             "url": "https://en.wikipedia.org/wiki/Racing_Point_F1_Team"
           }
         ],
+        "poles": 0,
+        "races_entered": 121,
+        "based_in": [
+          {
+            "text": "United Kingdom",
+            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+          }
+        ],
+        "podiums": 9,
         "total_entries": 241,
+        "wdc_titles": 0,
+        "races_started": 120,
+        "wins": 0,
+        "wcc_titles": 0,
+        "points": 597,
         "seasons": [
           {
             "year": 1959,
@@ -173,8 +175,6 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 0,
-        "wcc_titles": 0,
         "status": "active"
       }
     }
@@ -192,32 +192,12 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 0,
-        "based_in": [
-          {
-            "text": "Switzerland",
-            "url": "https://en.wikipedia.org/wiki/Switzerland"
-          },
-          {
-            "text": "United Kingdom",
-            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-          },
-          {
-            "text": "Germany",
-            "url": "https://en.wikipedia.org/wiki/Germany"
-          }
-        ],
-        "fastest_laps": 0,
         "licensed_in": {
           "text": "Germany",
           "url": "https://en.wikipedia.org/wiki/Germany"
         },
-        "wins": 0,
-        "races_entered": 1,
-        "podiums": 0,
         "drivers": 2,
-        "points": 2,
-        "races_started": 1,
+        "fastest_laps": 0,
         "antecedent_teams": [
           {
             "text": "Sauber",
@@ -236,15 +216,35 @@
             "url": "https://en.wikipedia.org/wiki/Sauber"
           }
         ],
+        "poles": 0,
+        "races_entered": 1,
+        "based_in": [
+          {
+            "text": "Switzerland",
+            "url": "https://en.wikipedia.org/wiki/Switzerland"
+          },
+          {
+            "text": "United Kingdom",
+            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+          },
+          {
+            "text": "Germany",
+            "url": "https://en.wikipedia.org/wiki/Germany"
+          }
+        ],
+        "podiums": 0,
         "total_entries": 2,
+        "wdc_titles": 0,
+        "races_started": 1,
+        "wins": 0,
+        "wcc_titles": 0,
+        "points": 2,
         "seasons": [
           {
             "year": 2026,
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 0,
-        "wcc_titles": 0,
         "status": "active"
       }
     }
@@ -262,7 +262,15 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 0,
+        "licensed_in": {
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        },
+        "drivers": 2,
+        "fastest_laps": 0,
+        "antecedent_teams": [],
+        "poles": 0,
+        "races_entered": 1,
         "based_in": [
           {
             "text": "United States",
@@ -273,27 +281,19 @@
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "fastest_laps": 0,
-        "licensed_in": {
-          "text": "United States",
-          "url": "https://en.wikipedia.org/wiki/United_States"
-        },
-        "wins": 0,
-        "races_entered": 1,
         "podiums": 0,
-        "drivers": 2,
-        "points": 0,
-        "races_started": 1,
-        "antecedent_teams": [],
         "total_entries": 2,
+        "wdc_titles": 0,
+        "races_started": 1,
+        "wins": 0,
+        "wcc_titles": 0,
+        "points": 0,
         "seasons": [
           {
             "year": 2026,
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 0,
-        "wcc_titles": 0,
         "status": "active"
       }
     }
@@ -311,26 +311,28 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 15,
+        "licensed_in": {
+          "text": "Italy",
+          "url": "https://en.wikipedia.org/wiki/Italy"
+        },
+        "drivers": 83,
+        "fastest_laps": 265,
+        "antecedent_teams": [],
+        "poles": 254,
+        "races_entered": 1125,
         "based_in": [
           {
             "text": "Italy",
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "fastest_laps": 265,
-        "licensed_in": {
-          "text": "Italy",
-          "url": "https://en.wikipedia.org/wiki/Italy"
-        },
-        "wins": 248,
-        "races_entered": 1125,
         "podiums": 837,
-        "drivers": 83,
-        "points": 10749,
-        "races_started": 1123,
-        "antecedent_teams": [],
         "total_entries": 2376,
+        "wdc_titles": 15,
+        "races_started": 1123,
+        "wins": 248,
+        "wcc_titles": 16,
+        "points": 10749,
         "seasons": [
           {
             "year": 1950,
@@ -641,8 +643,6 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 254,
-        "wcc_titles": 16,
         "status": "active"
       }
     }
@@ -660,7 +660,15 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 0,
+        "licensed_in": {
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        },
+        "drivers": 9,
+        "fastest_laps": 3,
+        "antecedent_teams": [],
+        "poles": 1,
+        "races_entered": 215,
         "based_in": [
           {
             "text": "United States",
@@ -675,19 +683,13 @@
             "url": "https://en.wikipedia.org/wiki/Italy"
           }
         ],
-        "fastest_laps": 3,
-        "licensed_in": {
-          "text": "United States",
-          "url": "https://en.wikipedia.org/wiki/United_States"
-        },
-        "wins": 0,
-        "races_entered": 215,
         "podiums": 0,
-        "drivers": 9,
-        "points": 392,
-        "races_started": 215,
-        "antecedent_teams": [],
         "total_entries": 430,
+        "wdc_titles": 0,
+        "races_started": 215,
+        "wins": 0,
+        "wcc_titles": 0,
+        "points": 392,
         "seasons": [
           {
             "year": 2016,
@@ -734,8 +736,6 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 1,
-        "wcc_titles": 0,
         "status": "active"
       }
     }
@@ -753,26 +753,28 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 13,
+        "licensed_in": {
+          "text": "United Kingdom",
+          "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+        },
+        "drivers": 52,
+        "fastest_laps": 183,
+        "antecedent_teams": [],
+        "poles": 177,
+        "races_entered": 999,
         "based_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "fastest_laps": 183,
-        "licensed_in": {
-          "text": "United Kingdom",
-          "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-        },
-        "wins": 203,
-        "races_entered": 999,
         "podiums": 558,
-        "drivers": 52,
-        "points": 7800,
-        "races_started": 995,
-        "antecedent_teams": [],
         "total_entries": 2067,
+        "wdc_titles": 13,
+        "races_started": 995,
+        "wins": 203,
+        "wcc_titles": 10,
+        "points": 7800,
         "seasons": [
           {
             "year": 1966,
@@ -1019,8 +1021,6 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 177,
-        "wcc_titles": 10,
         "status": "active"
       }
     }
@@ -1038,24 +1038,12 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 9,
-        "based_in": [
-          {
-            "text": "United Kingdom",
-            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-          }
-        ],
-        "fastest_laps": 115,
         "licensed_in": {
           "text": "Germany",
           "url": "https://en.wikipedia.org/wiki/Germany"
         },
-        "wins": 132,
-        "races_entered": 342,
-        "podiums": 312,
         "drivers": 13,
-        "points": 8202,
-        "races_started": 342,
+        "fastest_laps": 115,
         "antecedent_teams": [
           {
             "text": "Tyrrell",
@@ -1074,7 +1062,21 @@
             "url": "https://en.wikipedia.org/wiki/Brawn_GP"
           }
         ],
+        "poles": 144,
+        "races_entered": 342,
+        "based_in": [
+          {
+            "text": "United Kingdom",
+            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+          }
+        ],
+        "podiums": 312,
         "total_entries": 696,
+        "wdc_titles": 9,
+        "races_started": 342,
+        "wins": 132,
+        "wcc_titles": 8,
+        "points": 8202,
         "seasons": [
           {
             "year": 1954,
@@ -1153,8 +1155,6 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 144,
-        "wcc_titles": 8,
         "status": "active"
       }
     }
@@ -1172,28 +1172,12 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 0,
-        "based_in": [
-          {
-            "text": "Italy",
-            "url": "https://en.wikipedia.org/wiki/Italy"
-          },
-          {
-            "text": "United Kingdom",
-            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-          }
-        ],
-        "fastest_laps": 1,
         "licensed_in": {
           "text": "Italy",
           "url": "https://en.wikipedia.org/wiki/Italy"
         },
-        "wins": 0,
-        "races_entered": 49,
-        "podiums": 1,
         "drivers": 5,
-        "points": 142,
-        "races_started": 49,
+        "fastest_laps": 1,
         "antecedent_teams": [
           {
             "text": "Minardi",
@@ -1208,7 +1192,25 @@
             "url": "https://en.wikipedia.org/wiki/Scuderia_AlphaTauri"
           }
         ],
+        "poles": 0,
+        "races_entered": 49,
+        "based_in": [
+          {
+            "text": "Italy",
+            "url": "https://en.wikipedia.org/wiki/Italy"
+          },
+          {
+            "text": "United Kingdom",
+            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+          }
+        ],
+        "podiums": 1,
         "total_entries": 98,
+        "wdc_titles": 0,
+        "races_started": 49,
+        "wins": 0,
+        "wcc_titles": 0,
+        "points": 142,
         "seasons": [
           {
             "year": 2024,
@@ -1223,8 +1225,6 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 0,
-        "wcc_titles": 0,
         "status": "active"
       }
     }
@@ -1242,24 +1242,12 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 8,
-        "based_in": [
-          {
-            "text": "United Kingdom",
-            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-          }
-        ],
-        "fastest_laps": 103,
         "licensed_in": {
           "text": "Austria",
           "url": "https://en.wikipedia.org/wiki/Austria"
         },
-        "wins": 130,
-        "races_entered": 419,
-        "podiums": 297,
         "drivers": 14,
-        "points": 8296,
-        "races_started": 418,
+        "fastest_laps": 103,
         "antecedent_teams": [
           {
             "text": "Stewart",
@@ -1270,7 +1258,21 @@
             "url": "https://en.wikipedia.org/wiki/Jaguar_Racing"
           }
         ],
+        "poles": 111,
+        "races_entered": 419,
+        "based_in": [
+          {
+            "text": "United Kingdom",
+            "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+          }
+        ],
+        "podiums": 297,
         "total_entries": 838,
+        "wdc_titles": 8,
+        "races_started": 418,
+        "wins": 130,
+        "wcc_titles": 6,
+        "points": 8296,
         "seasons": [
           {
             "year": 2005,
@@ -1361,8 +1363,6 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 111,
-        "wcc_titles": 6,
         "status": "active"
       }
     }
@@ -1380,26 +1380,28 @@
     ],
     "racing_series": {
       "formula_one": {
-        "wdc_titles": 7,
+        "licensed_in": {
+          "text": "United Kingdom",
+          "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+        },
+        "drivers": 49,
+        "fastest_laps": 134,
+        "antecedent_teams": [],
+        "poles": 128,
+        "races_entered": 852,
         "based_in": [
           {
             "text": "United Kingdom",
             "url": "https://en.wikipedia.org/wiki/United_Kingdom"
           }
         ],
-        "fastest_laps": 134,
-        "licensed_in": {
-          "text": "United Kingdom",
-          "url": "https://en.wikipedia.org/wiki/United_Kingdom"
-        },
-        "wins": 114,
-        "races_entered": 852,
         "podiums": 315,
-        "drivers": 49,
-        "points": 3774,
-        "races_started": 851,
-        "antecedent_teams": [],
         "total_entries": 1621,
+        "wdc_titles": 7,
+        "races_started": 851,
+        "wins": 114,
+        "wcc_titles": 9,
+        "points": 3774,
         "seasons": [
           {
             "year": 1978,
@@ -1598,8 +1600,6 @@
             "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
           }
         ],
-        "poles": 128,
-        "wcc_titles": 9,
         "status": "active"
       }
     }
