@@ -1,12 +1,15 @@
 from __future__ import annotations
 
-from collections.abc import Callable
-from collections.abc import Mapping
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 from typing import Any
 from typing import Protocol
 
 from models.records.factories.build import RECORD_BUILDERS
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+    from collections.abc import Mapping
 
 
 class RecordFactory(Protocol):

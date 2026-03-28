@@ -7,6 +7,8 @@ from scrapers.base.normalization import EmptyValuePolicy
 from scrapers.base.transformers.record_transformer import RecordTransformer
 from validation.validator_base import ExportRecord
 
+FACTORY_FALLBACK_EXCEPTIONS = (TypeError, ValueError, KeyError, AttributeError)
+
 
 class RecordFactoryTransformer(RecordTransformer):
     def __init__(
@@ -32,7 +34,7 @@ class RecordFactoryTransformer(RecordTransformer):
         try:
             normalized = self.normalize_record(record)
             return self._apply_factory(normalized)
-        except Exception:
+        except FACTORY_FALLBACK_EXCEPTIONS:
             self.logger.warning(
                 "record_factory failed, falling back to raw record",
                 exc_info=True,

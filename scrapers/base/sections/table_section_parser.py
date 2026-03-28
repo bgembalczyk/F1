@@ -9,9 +9,9 @@ from models.value_objects import SectionId
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
+    from scrapers.base.sections.interface import SectionParseResult
     from scrapers.base.table.config import ScraperConfig
 
-from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import build_section_parse_result
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.pipeline import TablePipeline

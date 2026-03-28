@@ -1,18 +1,22 @@
 from __future__ import annotations
 
-from collections.abc import Sequence
+from typing import TYPE_CHECKING
 from typing import ClassVar
 from warnings import warn
 
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
-from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.table.schema import TableSchema
-from scrapers.base.table.schema import TableSchemaBuilder
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.wiki.component_metadata import LIST_SCRAPER_KIND
 from scrapers.wiki.component_metadata import ComponentMetadata
 from scrapers.wiki.component_metadata import build_component_metadata
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
+
+    from scrapers.base.table.dsl.table_schema import TableSchemaDSL
+    from scrapers.base.table.schema import TableSchema
+    from scrapers.base.table.schema import TableSchemaBuilder
 
 
 class SeedListTableScraper(F1TableScraper):
