@@ -12,6 +12,8 @@ from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 if TYPE_CHECKING:
     from scrapers.base.table.columns.types.base import BaseColumn
     from scrapers.base.table.config import ScraperConfig
+    from scrapers.base.table.schema import TableSchema
+    from scrapers.base.table.schema import TableSchemaBuilder
 
 
 @dataclass(frozen=True)
@@ -89,7 +91,8 @@ def build_table_schema(*parts: SchemaPart) -> TableSchemaDSL:
 def build_scraper_config(
     *,
     url: str,
-    columns: Sequence[ColumnSpec],
+    columns: Sequence[ColumnSpec] | None = None,
+    schema: TableSchema | TableSchemaBuilder | TableSchemaDSL | None = None,
     section_id: str | None = None,
     expected_headers: Sequence[str] | None = None,
     table_css_class: str = "wikitable",
@@ -98,6 +101,16 @@ def build_scraper_config(
 ) -> ScraperConfig:
     from scrapers.base.table.config import ScraperConfig
 
+    if columns is None and schema is None:
+        msg = "Either columns or schema must be provided."
+        raise ValueError(msg)
+
+    if columns is not None and schema is not None:
+        msg = "Provide only one of columns or schema."
+        raise ValueError(msg)
+
+    resolved_schema = build_table_schema(columns) if columns is not None else schema
+
     return ScraperConfig(
         url=url,
         section_id=section_id,
@@ -105,5 +118,5 @@ def build_scraper_config(
         record_factory=record_factory,
         model_class=model_class,
         table_css_class=table_css_class,
-        schema=build_table_schema(columns),
+        schema=resolved_schema,
     )

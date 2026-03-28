@@ -3,22 +3,17 @@
 from models.records.factories.build import RECORD_BUILDERS
 from models.validation.circuit import Circuit
 from scrapers.base.mixins.section_table_parse import DeclarativeSectionTableParseMixin
-from scrapers.base.options import ScraperOptions
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.circuits.constants import CIRCUITS_EXPECTED_HEADERS
 from scrapers.circuits.schemas import build_circuits_schema
 from scrapers.circuits.sections.list_section import CircuitsListSectionParser
 from scrapers.circuits.validator import CircuitsRecordValidator
-from scrapers.wiki.component_metadata import ComponentMetadata
 
 
-class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
-    COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
-        domain="circuits",
-        default_output_path="raw/circuits/seeds/complete_circuits",
-        legacy_output_path="circuits/complete_circuits",
-    )
+class CircuitsListScraper(DeclarativeSectionTableParseMixin, SeedListTableScraper):
+    domain = "circuits"
+    default_output_path = "raw/circuits/seeds/complete_circuits"
+    legacy_output_path = "circuits/complete_circuits"
 
     """
     Lista torów F1:
@@ -27,10 +22,8 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
     """
 
     default_validator = CircuitsRecordValidator()
-    options_domain = "circuits"
-    options_profile = "soft_seed"
 
-    CONFIG = ScraperConfig(
+    CONFIG = SeedListTableScraper.build_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
         section_id="Circuits",
         expected_headers=CIRCUITS_EXPECTED_HEADERS,
@@ -39,15 +32,6 @@ class CircuitsListScraper(DeclarativeSectionTableParseMixin, F1TableScraper):
         record_factory=RECORD_BUILDERS.circuit,
     )
 
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
-        super().__init__(options=options, config=config)
-
-    domain = "circuits"
     section_label = "Circuits"
     section_parser_class = CircuitsListSectionParser
 

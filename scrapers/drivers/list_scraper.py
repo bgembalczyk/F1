@@ -4,12 +4,11 @@ from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
-from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.builders import metric_column
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.scraper import F1TableScraper
+from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
 )
@@ -27,15 +26,12 @@ from scrapers.drivers.constants import DRIVER_RACE_WINS_HEADER
 from scrapers.drivers.constants import DRIVER_SEASONS_COMPETED_HEADER
 from scrapers.drivers.constants import DRIVERS_LIST_HEADERS
 from scrapers.drivers.validator import DriversRecordValidator
-from scrapers.wiki.component_metadata import ComponentMetadata
 
 
-class F1DriversListScraper(F1TableScraper):
-    COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
-        domain="drivers",
-        default_output_path="raw/drivers/seeds/complete_drivers",
-        legacy_output_path="drivers/complete_drivers",
-    )
+class F1DriversListScraper(SeedListTableScraper):
+    domain = "drivers"
+    default_output_path = "raw/drivers/seeds/complete_drivers"
+    legacy_output_path = "drivers/complete_drivers"
 
     """
     Scraper listy kierowców F1 z:
@@ -48,7 +44,6 @@ class F1DriversListScraper(F1TableScraper):
     """
 
     default_validator = DriversRecordValidator()
-    options_domain = "drivers"
     options_profile = "strict_seed"
 
     schema_columns = build_columns(
@@ -94,21 +89,13 @@ class F1DriversListScraper(F1TableScraper):
         ),
     )
 
-    CONFIG = build_scraper_config(
+    CONFIG = SeedListTableScraper.build_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
         section_id="Drivers",
         expected_headers=DRIVERS_LIST_HEADERS,
         columns=schema_columns,
         record_factory=RECORD_BUILDERS.driver,
     )
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config=None,
-    ) -> None:
-        super().__init__(options=options, config=config)
 
     def extend_options(self, options: ScraperOptions) -> ScraperOptions:
         options.transformers = [
