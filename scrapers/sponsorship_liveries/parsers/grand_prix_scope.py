@@ -17,7 +17,7 @@ class GrandPrixScopeParser:
             text = SponsorshipRecordText.param_text(param)
             if SponsorshipRecordText.is_year_param(param):
                 continue
-            if re.search(r"grand prix", text, flags=re.IGNORECASE):
+            if "grand prix" in text.lower():
                 continue
             return False
         return True
@@ -61,7 +61,7 @@ class GrandPrixScopeParser:
 
     @staticmethod
     def _is_grand_prix_text(text: str) -> bool:
-        return bool(re.search(r"grand prix", text, flags=re.IGNORECASE))
+        return "grand prix" in text.lower()
 
     @staticmethod
     def _update_onwards_flag(parsed: GrandPrixScopeAccumulator, text: str) -> None:
