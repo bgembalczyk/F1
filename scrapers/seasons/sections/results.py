@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from scrapers.base.sections.interface import SectionParseResult
+from scrapers.base.sections.serializer import build_section_metadata
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -20,5 +21,5 @@ class SeasonResultsSectionParser:
             section_id="Results",
             section_label="Results",
             records=records,
-            metadata={"kind": "table"},
+            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia", extras={"kind": "table"}),
         )
