@@ -44,7 +44,7 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG-Porsche TTE PO1",
+              "text": "TAG -Porsche TTE PO1",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
             "displacement_l": 1.5,
@@ -538,7 +538,7 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ford-TEC",
+                  "text": "Ford -TEC",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "displacement_l": 1.5,

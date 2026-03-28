@@ -1,38 +1,37 @@
 import re
-from typing import Optional, Dict, Any, List
+from typing import TYPE_CHECKING
+from typing import Any
 
-from models.records.link import LinkRecord
 from models.services.helpers import split_delimited_text
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.circuits.infobox.services.constants import LOCATION_STOPWORDS
+from scrapers.circuits.infobox.services.constants import MIN_COORD_PARTS
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+
+if TYPE_CHECKING:
+    from models.records.link import LinkRecord
 
 
 class CircuitGeoParser(InfoboxTextUtils):
     """Parsowanie lokalizacji, współrzędnych, powierzchni."""
 
     @staticmethod
-    def _split_plain_segment(segment: str) -> List[str]:
+    def _split_plain_segment(segment: str) -> list[str]:
         """Dzieli segment tekstu na części rozdzielone przecinkami, ukośnikami itp."""
-        segment_parts: List[str] = []
-        for part in split_delimited_text(segment, pattern=r"[,·/;]"):
-            cleaned_part = part.strip(" ,")
-            if not cleaned_part:
-                continue
-            if cleaned_part.lower() in LOCATION_STOPWORDS:
-                continue
-            segment_parts.append(cleaned_part)
-        return segment_parts
+        return [
+            cleaned_part
+            for part in split_delimited_text(segment, pattern=r"[,·/;]")
+            if (cleaned_part := part.strip(" ,"))
+            and cleaned_part.lower() not in LOCATION_STOPWORDS
+        ]
 
-    def parse_location(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
-        if not row:
-            return None
-
-        text = clean_infobox_text(row.get("text")) or ""
-        links: List[LinkRecord] = row.get("links") or []
-
-        components: List[Dict[str, Any]] = []
+    def _components_from_links(
+        self,
+        text: str,
+        links: list["LinkRecord"],
+    ) -> list[dict[str, Any]]:
+        components: list[dict[str, Any]] = []
         cursor = 0
 
         for link in links:
@@ -45,9 +44,9 @@ class CircuitGeoParser(InfoboxTextUtils):
                 continue
 
             before = text[cursor:idx]
-            for part in self._split_plain_segment(before):
-                components.append({"text": part})
-
+            components.extend(
+                {"text": part} for part in self._split_plain_segment(before)
+            )
             components.append(
                 {
                     "text": link_text,
@@ -55,75 +54,84 @@ class CircuitGeoParser(InfoboxTextUtils):
                         "text": link_text,
                         "url": link.get("url"),
                     },
-                }
+                },
             )
             cursor = idx + len(link_text)
 
         tail = text[cursor:]
-        for part in self._split_plain_segment(tail):
-            components.append({"text": part})
+        components.extend({"text": part} for part in self._split_plain_segment(tail))
+        return components
 
-        if not components:
+    @staticmethod
+    def _filter_components(components: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return [
+            comp
+            for comp in components
+            if (txt := (comp.get("text") or "").strip())
+            and txt.lower() not in LOCATION_STOPWORDS
+        ]
+
+    def parse_location(self, row: dict[str, Any] | None) -> dict[str, Any] | None:
+        if not row:
             return None
 
-        filtered_components: List[Dict[str, Any]] = []
-        for comp in components:
-            txt = (comp.get("text") or "").strip()
-            if not txt or txt.lower() in LOCATION_STOPWORDS:
-                continue
-            filtered_components.append(comp)
+        text = clean_infobox_text(row.get("text")) or ""
+        links: list[LinkRecord] = row.get("links") or []
+        components = self._components_from_links(text, links)
+        filtered_components = self._filter_components(components)
 
         if not filtered_components:
             return None
 
-        result: Dict[str, Any] = {}
-        for idx, comp in enumerate(filtered_components, start=1):
-            key = f"localisation{idx}"
-            result[key] = comp
-
-        return result or None
+        return {
+            f"localisation{idx}": comp
+            for idx, comp in enumerate(filtered_components, start=1)
+        }
 
     def parse_coordinates(
-        self, row: Optional[Dict[str, Any]]
-    ) -> Optional[Dict[str, Any]]:
+        self,
+        row: dict[str, Any] | None,
+    ) -> dict[str, Any] | None:
         if not row:
             return None
         text = clean_infobox_text(row.get("text")) or ""
         return self._parse_position(text)
 
     @staticmethod
-    def _parse_position(text: str) -> Optional[Dict[str, float]]:
+    def _parse_position(text: str) -> dict[str, float] | None:
         if not text:
             return None
-        try:
-            decimal_match = re.search(r"(-?\d+(?:\.\d+)?);\s*(-?\d+(?:\.\d+)?)", text)
-            if decimal_match:
-                return {
-                    "lat": float(decimal_match.group(1)),
-                    "lon": float(decimal_match.group(2)),
-                }
+        return ErrorHandler.run_domain_parse(
+            lambda: CircuitGeoParser._parse_position_payload(text),
+            message=f"Nie udało się sparsować współrzędnych: {text!r}.",
+            parser_name=CircuitGeoParser.__name__,
+        )
 
-            parts = re.findall(r"([NSWE]?)(-?\d+(?:\.\d+)?)", text)
-            if len(parts) >= 2:
-                lat_dir, lat_val = parts[0]
-                lon_dir, lon_val = parts[1]
-                lat = float(lat_val)
-                lon = float(lon_val)
-                if lat_dir.upper() == "S":
-                    lat = -lat
-                if lon_dir.upper() == "W":
-                    lon = -lon
-                return {"lat": lat, "lon": lon}
-        except (TypeError, ValueError) as exc:
-            raise DomainParseError(
-                f"Nie udało się sparsować współrzędnych: {text!r}.",
-                cause=exc,
-            ) from exc
+    @staticmethod
+    def _parse_position_payload(text: str) -> dict[str, float] | None:
+        decimal_match = re.search(r"(-?\d+(?:\.\d+)?);\s*(-?\d+(?:\.\d+)?)", text)
+        if decimal_match:
+            return {
+                "lat": float(decimal_match.group(1)),
+                "lon": float(decimal_match.group(2)),
+            }
+
+        parts = re.findall(r"([NSWE]?)(-?\d+(?:\.\d+)?)", text)
+        if len(parts) >= MIN_COORD_PARTS:
+            lat_dir, lat_val = parts[0]
+            lon_dir, lon_val = parts[1]
+            lat = float(lat_val)
+            lon = float(lon_val)
+            if lat_dir.upper() == "S":
+                lat = -lat
+            if lon_dir.upper() == "W":
+                lon = -lon
+            return {"lat": lat, "lon": lon}
 
         return None
 
     @staticmethod
-    def _parse_area(self, row: Optional[Dict[str, Any]]) -> Optional[Dict[str, float]]:
+    def _parse_area(row: dict[str, Any] | None) -> dict[str, float] | None:
         """Area: np. '277 acres (112 ha)' -> acres + hectares."""
         if not row:
             return None
@@ -137,16 +145,29 @@ class CircuitGeoParser(InfoboxTextUtils):
         def _to_float(s: str) -> float:
             return float(s.replace(",", "."))
 
-        result: Dict[str, float] = {}
-        try:
-            if acres_match:
-                result["acres"] = _to_float(acres_match.group(1))
-            if ha_match:
-                result["hectares"] = _to_float(ha_match.group(1))
-        except (TypeError, ValueError) as exc:
-            raise DomainParseError(
-                f"Nie udało się sparsować powierzchni: {text!r}.",
-                cause=exc,
-            ) from exc
+        result: dict[str, float] = {}
+        ErrorHandler.run_domain_parse(
+            lambda: CircuitGeoParser._populate_area_result(
+                result=result,
+                acres_match=acres_match,
+                ha_match=ha_match,
+                to_float=_to_float,
+            ),
+            message=f"Nie udało się sparsować powierzchni: {text!r}.",
+            parser_name=CircuitGeoParser.__name__,
+        )
 
         return result or None
+
+    @staticmethod
+    def _populate_area_result(
+        *,
+        result: dict[str, float],
+        acres_match: re.Match[str] | None,
+        ha_match: re.Match[str] | None,
+        to_float,
+    ) -> None:
+        if acres_match:
+            result["acres"] = to_float(acres_match.group(1))
+        if ha_match:
+            result["hectares"] = to_float(ha_match.group(1))

@@ -1,9 +1,9 @@
+from collections.abc import Callable
+from collections.abc import Mapping
+from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
-from typing import Callable
-from typing import Mapping
-from typing import Sequence
 
 from validation.issue import ValidationIssue
 

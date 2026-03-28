@@ -2210,7 +2210,10 @@
               }
             ]
           },
-          "points": 73.0
+          "points": {
+            "championship_points": 73.0,
+            "total_points": 76.0
+          }
         },
         {
           "pos": 2,

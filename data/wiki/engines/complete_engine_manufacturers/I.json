@@ -1,0 +1,828 @@
+[
+  {
+    "manufacturer": {
+      "text": "Ilmor",
+      "url": "https://en.wikipedia.org/wiki/Ilmor"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 48,
+    "races_started": 37,
+    "wins": 0,
+    "points": 12.0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": 0,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Ilmor",
+      "infoboxes": [
+        {
+          "title": "Ilmor Engineering Limited",
+          "rows": {
+            "Company type": {
+              "text": "Private Limited Company",
+              "links": []
+            },
+            "Founded": {
+              "text": "1983",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://www.wikidata.org/wiki/Q173259?uselang=en#P571"
+                }
+              ]
+            },
+            "Founder": {
+              "text": "Mario Illien and Paul Morgan",
+              "links": []
+            },
+            "Headquarters": {
+              "text": "Brixworth , Northamptonshire , United Kingdom",
+              "links": [
+                {
+                  "text": "Brixworth",
+                  "url": "https://en.wikipedia.org/wiki/Brixworth"
+                }
+              ]
+            },
+            "Website": {
+              "text": "www .ilmor .co .uk",
+              "links": [
+                {
+                  "text": "www.ilmor.co.uk",
+                  "url": "http://www.ilmor.co.uk"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": null,
+          "rows": {
+            "Manufacturer": {
+              "text": "/ Ilmor- Chevrolet",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_States"
+                },
+                {
+                  "text": "Chevrolet",
+                  "url": "https://en.wikipedia.org/wiki/Chevrolet"
+                }
+              ]
+            },
+            "Production": {
+              "text": "1984–1993",
+              "links": []
+            },
+            "Configuration": {
+              "text": "90° V8",
+              "links": [
+                {
+                  "text": "V8",
+                  "url": "https://en.wikipedia.org/wiki/V8_engine"
+                }
+              ]
+            },
+            "Displacement": {
+              "text": "2.65 L (162 cu in )",
+              "links": [
+                {
+                  "text": "L",
+                  "url": "https://en.wikipedia.org/wiki/Litre"
+                },
+                {
+                  "text": "cu in",
+                  "url": "https://en.wikipedia.org/wiki/Cubic_inch"
+                }
+              ]
+            },
+            "Cylinder bore": {
+              "text": "3.465 in (88.0 mm )",
+              "links": [
+                {
+                  "text": "in",
+                  "url": "https://en.wikipedia.org/wiki/Inch"
+                },
+                {
+                  "text": "mm",
+                  "url": "https://en.wikipedia.org/wiki/Millimetre"
+                }
+              ]
+            },
+            "Piston stroke": {
+              "text": "2.142 in (54.4 mm )",
+              "links": [
+                {
+                  "text": "in",
+                  "url": "https://en.wikipedia.org/wiki/Inch"
+                },
+                {
+                  "text": "mm",
+                  "url": "https://en.wikipedia.org/wiki/Millimetre"
+                }
+              ]
+            },
+            "Valvetrain": {
+              "text": "32-valve, DOHC , four-valves per cylinder",
+              "links": [
+                {
+                  "text": "DOHC",
+                  "url": "https://en.wikipedia.org/wiki/DOHC"
+                }
+              ]
+            },
+            "Compression ratio": {
+              "text": "11:1",
+              "links": []
+            },
+            "Fuel system": {
+              "text": "Mechanical multi-point fuel injection",
+              "links": [
+                {
+                  "text": "Mechanical multi-point fuel injection",
+                  "url": "https://en.wikipedia.org/wiki/Fuel_injection#Multi-point_injection"
+                }
+              ]
+            },
+            "Fuel type": {
+              "text": "Gasoline",
+              "links": [
+                {
+                  "text": "Gasoline",
+                  "url": "https://en.wikipedia.org/wiki/Gasoline"
+                }
+              ]
+            },
+            "Oil system": {
+              "text": "Dry sump",
+              "links": [
+                {
+                  "text": "Dry sump",
+                  "url": "https://en.wikipedia.org/wiki/Dry_sump"
+                }
+              ]
+            },
+            "Power output": {
+              "text": "720–850 hp (537–634 kW )",
+              "links": [
+                {
+                  "text": "hp",
+                  "url": "https://en.wikipedia.org/wiki/Horsepower"
+                },
+                {
+                  "text": "kW",
+                  "url": "https://en.wikipedia.org/wiki/Kilowatt"
+                }
+              ]
+            },
+            "Torque output": {
+              "text": "350–415 lb⋅ft (475–563 N⋅m )",
+              "links": [
+                {
+                  "text": "lb⋅ft",
+                  "url": "https://en.wikipedia.org/wiki/Pound-foot_(torque)"
+                },
+                {
+                  "text": "N⋅m",
+                  "url": "https://en.wikipedia.org/wiki/Newton-metre"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1991",
+              "Entrant": "Leyton House Racing",
+              "Chassis": "Leyton House CG911",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "1",
+              "WCC": "12th"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Leyton House Racing",
+              "Chassis": "Leyton House CG911",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Maurício Gugelmin",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "12",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "7",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "11",
+              "11": "Ret",
+              "12": "15",
+              "13": "7",
+              "14": "7",
+              "15": "8",
+              "16": "14",
+              "Points": "1",
+              "WCC": "12th"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Leyton House Racing",
+              "Chassis": "Leyton House CG911",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Ivan Capelli",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "6",
+              "11": "Ret",
+              "12": "8",
+              "13": "17",
+              "14": "Ret",
+              "15": "",
+              "16": "",
+              "Points": "1",
+              "WCC": "12th"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Leyton House Racing",
+              "Chassis": "Leyton House CG911",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Karl Wendlinger",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "Ret",
+              "16": "20",
+              "Points": "1",
+              "WCC": "12th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "March F1",
+              "Chassis": "March CG911",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MEX",
+              "3": "BRA",
+              "4": "ESP",
+              "5": "SMR",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "3",
+              "WCC": "9th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "March F1",
+              "Chassis": "March CG911",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Paul Belmondo",
+              "1": "DNQ",
+              "2": "DNQ",
+              "3": "DNQ",
+              "4": "12",
+              "5": "13",
+              "6": "DNQ",
+              "7": "14",
+              "8": "DNQ",
+              "9": "DNQ",
+              "10": "13",
+              "11": "9",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "3",
+              "WCC": "9th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "March F1",
+              "Chassis": "March CG911",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Emanuele Naspetti",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "12",
+              "13": "Ret",
+              "14": "11",
+              "15": "13",
+              "16": "Ret",
+              "Points": "3",
+              "WCC": "9th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "March F1",
+              "Chassis": "March CG911",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Karl Wendlinger",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "8",
+              "5": "12",
+              "6": "Ret",
+              "7": "4",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "16",
+              "11": "Ret",
+              "12": "11",
+              "13": "10",
+              "14": "Ret",
+              "15": "",
+              "16": "",
+              "Points": "3",
+              "WCC": "9th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "March F1",
+              "Chassis": "March CG911",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Jan Lammers",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "Ret",
+              "16": "12",
+              "Points": "3",
+              "WCC": "9th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Tyrrell Racing Organisation",
+              "Chassis": "Tyrrell 020 B",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Olivier Grouillard",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "8",
+              "6": "Ret",
+              "7": "12",
+              "8": "11",
+              "9": "11",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "Ret",
+              "Points": "8",
+              "WCC": "6th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Tyrrell Racing Organisation",
+              "Chassis": "Tyrrell 020 B",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Andrea de Cesaris",
+              "1": "Ret",
+              "2": "5",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "14",
+              "6": "Ret",
+              "7": "5",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "8",
+              "12": "8",
+              "13": "6",
+              "14": "9",
+              "15": "4",
+              "16": "Ret",
+              "Points": "8",
+              "WCC": "6th"
+            },
+            {
+              "Year": "1993",
+              "Entrant": "Team Sauber Formula 1",
+              "Chassis": "Sauber C12",
+              "Engine": "Sauber (Ilmor) 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "BRA",
+              "3": "EUR",
+              "4": "SMR",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "12",
+              "WCC": "7th"
+            },
+            {
+              "Year": "1993",
+              "Entrant": "Team Sauber Formula 1",
+              "Chassis": "Sauber C12",
+              "Engine": "Sauber (Ilmor) 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Karl Wendlinger",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "13",
+              "7": "6",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "9",
+              "11": "6",
+              "12": "Ret",
+              "13": "4",
+              "14": "5",
+              "15": "Ret",
+              "16": "15",
+              "Points": "12",
+              "WCC": "7th"
+            },
+            {
+              "Year": "1993",
+              "Entrant": "Team Sauber Formula 1",
+              "Chassis": "Sauber C12",
+              "Engine": "Sauber (Ilmor) 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "JJ Lehto",
+              "1": "5",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "4",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "7",
+              "8": "Ret",
+              "9": "8",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "9",
+              "13": "Ret",
+              "14": "7",
+              "15": "8",
+              "16": "Ret",
+              "Points": "12",
+              "WCC": "7th"
+            },
+            {
+              "Year": "1994",
+              "Entrant": "Broker Sauber Mercedes",
+              "Chassis": "Sauber C13",
+              "Engine": "Mercedes (Ilmor) 2175B 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "PAC",
+              "3": "SMR",
+              "4": "MON",
+              "5": "ESP",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "EUR",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "12",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1994",
+              "Entrant": "Broker Sauber Mercedes",
+              "Chassis": "Sauber C13",
+              "Engine": "Mercedes (Ilmor) 2175B 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Karl Wendlinger",
+              "1": "6",
+              "2": "Ret",
+              "3": "4",
+              "4": "WD",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "12",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1994",
+              "Entrant": "Broker Sauber Mercedes",
+              "Chassis": "Sauber C13",
+              "Engine": "Mercedes (Ilmor) 2175B 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Andrea de Cesaris",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "6",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "",
+              "16": "",
+              "Points": "12",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1994",
+              "Entrant": "Broker Sauber Mercedes",
+              "Chassis": "Sauber C13",
+              "Engine": "Mercedes (Ilmor) 2175B 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "JJ Lehto",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "Ret",
+              "16": "10",
+              "Points": "12",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1994",
+              "Entrant": "Broker Sauber Mercedes",
+              "Chassis": "Sauber C13",
+              "Engine": "Mercedes (Ilmor) 2175B 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Heinz-Harald Frentzen",
+              "1": "Ret",
+              "2": "5",
+              "3": "7",
+              "4": "WD",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "4",
+              "8": "7",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "6",
+              "15": "6",
+              "16": "7",
+              "Points": "12",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1994",
+              "Entrant": "Pacific Grand Prix",
+              "Chassis": "Pacific PR01",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Paul Belmondo",
+              "1": "DNQ",
+              "2": "DNQ",
+              "3": "DNQ",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "DNQ",
+              "7": "DNQ",
+              "8": "DNQ",
+              "9": "DNQ",
+              "10": "DNQ",
+              "11": "DNQ",
+              "12": "DNQ",
+              "13": "DNQ",
+              "14": "DNQ",
+              "15": "DNQ",
+              "16": "DNQ",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1994",
+              "Entrant": "Pacific Grand Prix",
+              "Chassis": "Pacific PR01",
+              "Engine": "Ilmor 2175A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Bertrand Gachot",
+              "1": "Ret",
+              "2": "DNQ",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "DNQ",
+              "8": "DNQ",
+              "9": "DNQ",
+              "10": "DNQ",
+              "11": "DNQ",
+              "12": "DNQ",
+              "13": "DNQ",
+              "14": "DNQ",
+              "15": "DNQ",
+              "16": "DNQ",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "Entrant": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "Chassis": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "Engine": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "Tyres": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "Drivers": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "1": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "2": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "3": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "4": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "5": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "6": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "7": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "8": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "9": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "10": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "11": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "12": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "13": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "14": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "15": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "16": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "Points": "For results after 1994, please see Mercedes-Benz Grand Prix results",
+              "WCC": "For results after 1994, please see Mercedes-Benz Grand Prix results"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  }
+]

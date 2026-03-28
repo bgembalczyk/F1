@@ -1,8 +1,9 @@
-from typing import Any, TypedDict
+from typing import Any
+from typing import TypedDict
 
-from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, ValidationIssue
-
+from validation.issue import ValidationIssue
+from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 SEASON_SCHEMA = RecordSchema(
     required=("year", "url"),
@@ -16,4 +17,4 @@ class SeasonRecord(TypedDict):
 
 
 def validate_season_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(record, SEASON_SCHEMA)
+    return RecordValidator.validate_schema(record, SEASON_SCHEMA)

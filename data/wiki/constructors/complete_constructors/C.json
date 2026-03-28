@@ -1,0 +1,6002 @@
+[
+  {
+    "constructor": {
+      "text": "Cadillac",
+      "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One"
+    },
+    "engine": [
+      {
+        "text": "Ferrari",
+        "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+      }
+    ],
+    "licensed_in": {
+      "text": "United States",
+      "url": "https://en.wikipedia.org/wiki/United_States"
+    },
+    "based_in": [
+      {
+        "text": "United States",
+        "url": "https://en.wikipedia.org/wiki/United_States"
+      },
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 2026,
+        "url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 1,
+    "races_started": 1,
+    "drivers": 2,
+    "total_entries": 2,
+    "wins": 0,
+    "points": 0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Cadillac_in_Formula_One",
+      "infoboxes": [
+        {
+          "title": "Cadillac-Ferrari",
+          "rows": {
+            "Full name": {
+              "text": "Cadillac Formula 1 Team [ 1 ]",
+              "links": []
+            },
+            "Base": {
+              "text": "Fishers, Indiana , U.S. Concord, North Carolina , U.S. Warren, Michigan , U.S. Silverstone , England",
+              "links": [
+                {
+                  "text": "Fishers, Indiana",
+                  "url": "https://en.wikipedia.org/wiki/Fishers,_Indiana"
+                },
+                {
+                  "text": "Concord, North Carolina",
+                  "url": "https://en.wikipedia.org/wiki/Concord,_North_Carolina"
+                },
+                {
+                  "text": "Warren, Michigan",
+                  "url": "https://en.wikipedia.org/wiki/Warren,_Michigan"
+                },
+                {
+                  "text": "Silverstone",
+                  "url": "https://en.wikipedia.org/wiki/Silverstone"
+                }
+              ]
+            },
+            "Team principal(s)": {
+              "text": "Graeme Lowdon [ 2 ] (Team Principal) Dan Towriss [ 3 ] (CEO) Rob White (COO)",
+              "links": [
+                {
+                  "text": "Graeme Lowdon",
+                  "url": "https://en.wikipedia.org/wiki/Graeme_Lowdon"
+                },
+                {
+                  "text": "Dan Towriss",
+                  "url": "https://en.wikipedia.org/wiki/Dan_Towriss"
+                },
+                {
+                  "text": "Rob White",
+                  "url": "https://en.wikipedia.org/wiki/Rob_White_(Formula_One)"
+                }
+              ]
+            },
+            "Chief Technical Officer": {
+              "text": "Nick Chester [ 4 ]",
+              "links": [
+                {
+                  "text": "Nick Chester",
+                  "url": "https://en.wikipedia.org/wiki/Nick_Chester"
+                }
+              ]
+            },
+            "Website": {
+              "text": "cadillacf1team.com",
+              "links": [
+                {
+                  "text": "cadillacf1team.com",
+                  "url": "https://www.cadillacf1team.com"
+                }
+              ]
+            },
+            "Race drivers": {
+              "text": "11. Sergio Pérez [ 5 ] 77. Valtteri Bottas [ 5 ]",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Mexico"
+                },
+                {
+                  "text": "Sergio Pérez",
+                  "url": "https://en.wikipedia.org/wiki/Sergio_P%C3%A9rez"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Finland"
+                },
+                {
+                  "text": "Valtteri Bottas",
+                  "url": "https://en.wikipedia.org/wiki/Valtteri_Bottas"
+                }
+              ]
+            },
+            "Test driver(s)": {
+              "text": "24. Zhou Guanyu Colton Herta",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/China"
+                },
+                {
+                  "text": "Zhou Guanyu",
+                  "url": "https://en.wikipedia.org/wiki/Zhou_Guanyu"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_States"
+                },
+                {
+                  "text": "Colton Herta",
+                  "url": "https://en.wikipedia.org/wiki/Colton_Herta"
+                }
+              ]
+            },
+            "Chassis": {
+              "text": "MAC-26 [ 6 ]",
+              "links": [
+                {
+                  "text": "MAC-26",
+                  "url": "https://en.wikipedia.org/wiki/Cadillac_MAC-26"
+                }
+              ]
+            },
+            "Engine": {
+              "text": "Ferrari 067/6 [ 7 ]",
+              "links": [
+                {
+                  "text": "Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
+            },
+            "Tyres": {
+              "text": "Pirelli",
+              "links": [
+                {
+                  "text": "Pirelli",
+                  "url": "https://en.wikipedia.org/wiki/Pirelli"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "2026 Australian Grand Prix",
+              "links": [
+                {
+                  "text": "2026 Australian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/2026_Australian_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "2026 Chinese Grand Prix",
+              "links": [
+                {
+                  "text": "2026 Chinese Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/2026_Chinese_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "2 (1 starts)",
+              "links": []
+            },
+            "Engines": {
+              "text": "Ferrari",
+              "links": [
+                {
+                  "text": "Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "0",
+              "links": []
+            },
+            "Points": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        },
+        {
+          "title": "Cadillac as a Formula One engine manufacturer",
+          "rows": {
+            "Official name(s)": {
+              "text": "GM Performance Power Units LLC",
+              "links": []
+            },
+            "Base": {
+              "text": "Concord, North Carolina , U.S. (2027–)",
+              "links": [
+                {
+                  "text": "Concord, North Carolina",
+                  "url": "https://en.wikipedia.org/wiki/Concord,_North_Carolina"
+                }
+              ]
+            },
+            "Notable staff": {
+              "text": "Russ O'Blenes [ 8 ] (chief executive officer)",
+              "links": []
+            },
+            "First entry": {
+              "text": "1952 Indianapolis 500",
+              "links": [
+                {
+                  "text": "1952 Indianapolis 500",
+                  "url": "https://en.wikipedia.org/wiki/1952_Indianapolis_500"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "1953 Indianapolis 500",
+              "links": [
+                {
+                  "text": "1953 Indianapolis 500",
+                  "url": "https://en.wikipedia.org/wiki/1953_Indianapolis_500"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "2 (0 starts)",
+              "links": []
+            },
+            "Chassis": {
+              "text": "Kurtis Kraft",
+              "links": [
+                {
+                  "text": "Kurtis Kraft",
+                  "url": "https://en.wikipedia.org/wiki/Kurtis_Kraft"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Colour",
+            "Result"
+          ],
+          "rows": [
+            {
+              "Colour": "Gold",
+              "Result": "Winner"
+            },
+            {
+              "Colour": "Silver",
+              "Result": "Second place"
+            },
+            {
+              "Colour": "Bronze",
+              "Result": "Third place"
+            },
+            {
+              "Colour": "Green",
+              "Result": "Other points position"
+            },
+            {
+              "Colour": "Blue",
+              "Result": "Other classified position"
+            },
+            {
+              "Colour": "Blue",
+              "Result": "Not classified, finished (NC)"
+            },
+            {
+              "Colour": "Purple",
+              "Result": "Not classified, retired (Ret)"
+            },
+            {
+              "Colour": "Red",
+              "Result": "Did not qualify (DNQ)"
+            },
+            {
+              "Colour": "Black",
+              "Result": "Disqualified (DSQ)"
+            },
+            {
+              "Colour": "White",
+              "Result": "Did not start (DNS)"
+            },
+            {
+              "Colour": "White",
+              "Result": "Race cancelled (C)"
+            },
+            {
+              "Colour": "Blank",
+              "Result": "Did not practice (DNP)"
+            },
+            {
+              "Colour": "Blank",
+              "Result": "Excluded (EX)"
+            },
+            {
+              "Colour": "Blank",
+              "Result": "Did not arrive (DNA)"
+            },
+            {
+              "Colour": "Blank",
+              "Result": "Withdrawn (WD)"
+            },
+            {
+              "Colour": "Blank",
+              "Result": "Did not enter (empty cell)"
+            },
+            {
+              "Colour": "Annotation",
+              "Result": "Meaning"
+            },
+            {
+              "Colour": "P",
+              "Result": "Pole position"
+            },
+            {
+              "Colour": "F",
+              "Result": "Fastest lap"
+            },
+            {
+              "Colour": "Superscript number",
+              "Result": "Points-scoring position in sprint"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "2026",
+              "Chassis": "MAC-26",
+              "Engine": "Ferrari 067/6 1.6 V6 t",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "CHN",
+              "3": "JPN",
+              "4": "BHR",
+              "5": "SAU",
+              "6": "MIA",
+              "7": "CAN",
+              "8": "MON",
+              "9": "BCN",
+              "10": "AUT",
+              "11": "GBR",
+              "12": "BEL",
+              "13": "HUN",
+              "14": "NED",
+              "15": "ITA",
+              "16": "ESP",
+              "17": "AZE",
+              "18": "SIN",
+              "19": "USA",
+              "20": "MXC",
+              "21": "SAP",
+              "22": "LVG",
+              "23": "QAT",
+              "24": "ABU",
+              "Points": "0*",
+              "WCC": "10th*"
+            },
+            {
+              "Year": "2026",
+              "Chassis": "MAC-26",
+              "Engine": "Ferrari 067/6 1.6 V6 t",
+              "Tyres": "P",
+              "Drivers": "Valtteri Bottas",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "Points": "0*",
+              "WCC": "10th*"
+            },
+            {
+              "Year": "2026",
+              "Chassis": "MAC-26",
+              "Engine": "Ferrari 067/6 1.6 V6 t",
+              "Tyres": "P",
+              "Drivers": "Sergio Pérez",
+              "1": "16",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "Points": "0*",
+              "WCC": "10th*"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyre",
+            "Driver",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "rows": [
+            {
+              "Year": "1952",
+              "Entrant": "Calvin Connell",
+              "Chassis": "Kurtis Kraft",
+              "Engine": "Cadillac 4.5 V8",
+              "Tyre": "F",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Entrant": "Calvin Connell",
+              "Chassis": "Kurtis Kraft",
+              "Engine": "Cadillac 4.5 V8",
+              "Tyre": "F",
+              "Driver": "Johnny Fedricks",
+              "1": "",
+              "2": "DNQ",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1953",
+              "Entrant": "Calvin Connell",
+              "Chassis": "Kurtis Kraft",
+              "Engine": "Cadillac 4.5 V8",
+              "Tyre": "F",
+              "Driver": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "NED",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "SUI",
+              "9": "ITA"
+            },
+            {
+              "Year": "1953",
+              "Entrant": "Calvin Connell",
+              "Chassis": "Kurtis Kraft",
+              "Engine": "Cadillac 4.5 V8",
+              "Tyre": "F",
+              "Driver": "Bill Homeier",
+              "1": "",
+              "2": "DNQ",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Caterham",
+      "url": "https://en.wikipedia.org/wiki/Caterham_F1"
+    },
+    "licensed_in": [
+      {
+        "text": "Malaysia",
+        "url": "https://en.wikipedia.org/wiki/Malaysia"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      },
+      {
+        "year": 2014,
+        "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 56,
+    "races_started": 56,
+    "drivers": 8,
+    "total_entries": 112,
+    "wins": 0,
+    "points": 0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Caterham_F1",
+      "infoboxes": [
+        {
+          "title": "Caterham",
+          "rows": {
+            "Full name": {
+              "text": "Caterham F1 Team",
+              "links": []
+            },
+            "Base": {
+              "text": "Leafield Technical Centre Leafield , Oxfordshire , United Kingdom",
+              "links": [
+                {
+                  "text": "Leafield Technical Centre",
+                  "url": "https://en.wikipedia.org/wiki/Leafield_Technical_Centre"
+                },
+                {
+                  "text": "Leafield",
+                  "url": "https://en.wikipedia.org/wiki/Leafield"
+                },
+                {
+                  "text": "Oxfordshire",
+                  "url": "https://en.wikipedia.org/wiki/Oxfordshire"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Tony Fernandes",
+              "links": [
+                {
+                  "text": "Tony Fernandes",
+                  "url": "https://en.wikipedia.org/wiki/Tony_Fernandes"
+                }
+              ]
+            },
+            "Noted staff": {
+              "text": "Tony Fernandes Cyril Abiteboul Mike Gascoyne John Iley Mark Smith",
+              "links": [
+                {
+                  "text": "Cyril Abiteboul",
+                  "url": "https://en.wikipedia.org/wiki/Cyril_Abiteboul"
+                },
+                {
+                  "text": "Mike Gascoyne",
+                  "url": "https://en.wikipedia.org/wiki/Mike_Gascoyne"
+                },
+                {
+                  "text": "John Iley",
+                  "url": "https://en.wikipedia.org/wiki/John_Iley"
+                },
+                {
+                  "text": "Mark Smith",
+                  "url": "https://en.wikipedia.org/wiki/Mark_Smith_(racing_engineer)"
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Marcus Ericsson Giedo van der Garde Kamui Kobayashi Heikki Kovalainen Vitaly Petrov Charles Pic Will Stevens André Lotterer",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Sweden"
+                },
+                {
+                  "text": "Marcus Ericsson",
+                  "url": "https://en.wikipedia.org/wiki/Marcus_Ericsson"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Netherlands"
+                },
+                {
+                  "text": "Giedo van der Garde",
+                  "url": "https://en.wikipedia.org/wiki/Giedo_van_der_Garde"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Japan"
+                },
+                {
+                  "text": "Kamui Kobayashi",
+                  "url": "https://en.wikipedia.org/wiki/Kamui_Kobayashi"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Finland"
+                },
+                {
+                  "text": "Heikki Kovalainen",
+                  "url": "https://en.wikipedia.org/wiki/Heikki_Kovalainen"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Russia"
+                },
+                {
+                  "text": "Vitaly Petrov",
+                  "url": "https://en.wikipedia.org/wiki/Vitaly_Petrov"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/France"
+                },
+                {
+                  "text": "Charles Pic",
+                  "url": "https://en.wikipedia.org/wiki/Charles_Pic"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "Will Stevens",
+                  "url": "https://en.wikipedia.org/wiki/Will_Stevens"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Germany"
+                },
+                {
+                  "text": "André Lotterer",
+                  "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Lotterer"
+                }
+              ]
+            },
+            "Previous name": {
+              "text": "Lotus Racing/Team Lotus",
+              "links": [
+                {
+                  "text": "Lotus Racing/Team Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus_(2010%E2%80%932011)"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "2012 Australian Grand Prix",
+              "links": [
+                {
+                  "text": "2012 Australian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/2012_Australian_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "56",
+              "links": []
+            },
+            "Engines": {
+              "text": "Renault",
+              "links": [
+                {
+                  "text": "Renault",
+                  "url": "https://en.wikipedia.org/wiki/Renault_in_Formula_One"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0 (best result: 10th, 2012 )",
+              "links": [
+                {
+                  "text": "2012",
+                  "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Drivers' Championships": {
+              "text": "0 (best result: 19th, Vitaly Petrov , 2012 and Marcus Ericsson , 2014 )",
+              "links": [
+                {
+                  "text": "Vitaly Petrov",
+                  "url": "https://en.wikipedia.org/wiki/Vitaly_Petrov"
+                },
+                {
+                  "text": "Marcus Ericsson",
+                  "url": "https://en.wikipedia.org/wiki/Marcus_Ericsson"
+                },
+                {
+                  "text": "2014",
+                  "url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship"
+                }
+              ]
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "0",
+              "links": []
+            },
+            "Points": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            },
+            "Final entry": {
+              "text": "2014 Abu Dhabi Grand Prix",
+              "links": [
+                {
+                  "text": "2014 Abu Dhabi Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/2014_Abu_Dhabi_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "2012",
+              "Chassis": "CT01",
+              "Engine": "Renault RS27-2012 2.4 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "MAL",
+              "3": "CHN",
+              "4": "BHR",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "EUR",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "SIN",
+              "15": "JPN",
+              "16": "KOR",
+              "17": "IND",
+              "18": "ABU",
+              "19": "USA",
+              "20": "BRA",
+              "Points": "0",
+              "WCC": "10th"
+            },
+            {
+              "Year": "2012",
+              "Chassis": "CT01",
+              "Engine": "Renault RS27-2012 2.4 V8",
+              "Tyres": "P",
+              "Drivers": "Heikki Kovalainen",
+              "1": "Ret",
+              "2": "18",
+              "3": "23",
+              "4": "17",
+              "5": "16",
+              "6": "13",
+              "7": "18",
+              "8": "14",
+              "9": "17",
+              "10": "19",
+              "11": "17",
+              "12": "17",
+              "13": "14",
+              "14": "15",
+              "15": "15",
+              "16": "17",
+              "17": "18",
+              "18": "13",
+              "19": "18",
+              "20": "14",
+              "Points": "0",
+              "WCC": "10th"
+            },
+            {
+              "Year": "2012",
+              "Chassis": "CT01",
+              "Engine": "Renault RS27-2012 2.4 V8",
+              "Tyres": "P",
+              "Drivers": "Vitaly Petrov",
+              "1": "Ret",
+              "2": "16",
+              "3": "18",
+              "4": "16",
+              "5": "17",
+              "6": "Ret",
+              "7": "19",
+              "8": "13",
+              "9": "DNS",
+              "10": "16",
+              "11": "19",
+              "12": "14",
+              "13": "15",
+              "14": "19",
+              "15": "17",
+              "16": "16",
+              "17": "17",
+              "18": "16",
+              "19": "17",
+              "20": "11",
+              "Points": "0",
+              "WCC": "10th"
+            },
+            {
+              "Year": "2013",
+              "Chassis": "CT03",
+              "Engine": "Renault RS27-2013 2.4 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "MAL",
+              "3": "CHN",
+              "4": "BHR",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "SIN",
+              "14": "KOR",
+              "15": "JPN",
+              "16": "IND",
+              "17": "ABU",
+              "18": "USA",
+              "19": "BRA",
+              "20": "",
+              "Points": "0",
+              "WCC": "11th"
+            },
+            {
+              "Year": "2013",
+              "Chassis": "CT03",
+              "Engine": "Renault RS27-2013 2.4 V8",
+              "Tyres": "P",
+              "Drivers": "Charles Pic",
+              "1": "16",
+              "2": "14",
+              "3": "16",
+              "4": "17",
+              "5": "17",
+              "6": "Ret",
+              "7": "18",
+              "8": "15",
+              "9": "17",
+              "10": "15",
+              "11": "Ret",
+              "12": "17",
+              "13": "19",
+              "14": "14",
+              "15": "18",
+              "16": "Ret",
+              "17": "19",
+              "18": "20",
+              "19": "Ret",
+              "20": "",
+              "Points": "0",
+              "WCC": "11th"
+            },
+            {
+              "Year": "2013",
+              "Chassis": "CT03",
+              "Engine": "Renault RS27-2013 2.4 V8",
+              "Tyres": "P",
+              "Drivers": "Giedo van der Garde",
+              "1": "18",
+              "2": "15",
+              "3": "18",
+              "4": "21",
+              "5": "Ret",
+              "6": "15",
+              "7": "Ret",
+              "8": "18",
+              "9": "18",
+              "10": "14",
+              "11": "16",
+              "12": "18",
+              "13": "16",
+              "14": "15",
+              "15": "Ret",
+              "16": "Ret",
+              "17": "18",
+              "18": "19",
+              "19": "18",
+              "20": "",
+              "Points": "0",
+              "WCC": "11th"
+            },
+            {
+              "Year": "2014",
+              "Chassis": "CT05",
+              "Engine": "Renault Energy F1-2014 1.6 V6 t",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "MAL",
+              "3": "BHR",
+              "4": "CHN",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "AUT",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "SIN",
+              "15": "JPN",
+              "16": "RUS",
+              "17": "USA",
+              "18": "BRA",
+              "19": "ABU",
+              "20": "",
+              "Points": "0",
+              "WCC": "11th"
+            },
+            {
+              "Year": "2014",
+              "Chassis": "CT05",
+              "Engine": "Renault Energy F1-2014 1.6 V6 t",
+              "Tyres": "P",
+              "Drivers": "Marcus Ericsson",
+              "1": "Ret",
+              "2": "14",
+              "3": "Ret",
+              "4": "20",
+              "5": "20",
+              "6": "11",
+              "7": "Ret",
+              "8": "18",
+              "9": "Ret",
+              "10": "18",
+              "11": "Ret",
+              "12": "17",
+              "13": "19",
+              "14": "15",
+              "15": "17",
+              "16": "19",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "Points": "0",
+              "WCC": "11th"
+            },
+            {
+              "Year": "2014",
+              "Chassis": "CT05",
+              "Engine": "Renault Energy F1-2014 1.6 V6 t",
+              "Tyres": "P",
+              "Drivers": "Will Stevens",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "17",
+              "20": "",
+              "Points": "0",
+              "WCC": "11th"
+            },
+            {
+              "Year": "2014",
+              "Chassis": "CT05",
+              "Engine": "Renault Energy F1-2014 1.6 V6 t",
+              "Tyres": "P",
+              "Drivers": "Kamui Kobayashi",
+              "1": "Ret",
+              "2": "13",
+              "3": "15",
+              "4": "18",
+              "5": "Ret",
+              "6": "13",
+              "7": "Ret",
+              "8": "16",
+              "9": "15",
+              "10": "16",
+              "11": "Ret",
+              "12": "",
+              "13": "17",
+              "14": "DNS",
+              "15": "19",
+              "16": "Ret",
+              "17": "",
+              "18": "",
+              "19": "Ret",
+              "20": "",
+              "Points": "0",
+              "WCC": "11th"
+            },
+            {
+              "Year": "2014",
+              "Chassis": "CT05",
+              "Engine": "Renault Energy F1-2014 1.6 V6 t",
+              "Tyres": "P",
+              "Drivers": "André Lotterer",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "Ret",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "Points": "0",
+              "WCC": "11th"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Driver",
+            "Years",
+            "Current series",
+            "Titles achieved as Caterham driver"
+          ],
+          "rows": [
+            {
+              "Driver": "Giedo van der Garde",
+              "Years": "2012",
+              "Current series": "None",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            },
+            {
+              "Driver": "Alexander Rossi",
+              "Years": "2012-2014",
+              "Current series": "IndyCar Series",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            },
+            {
+              "Driver": "Matt Parry",
+              "Years": "2012-2014",
+              "Current series": "None",
+              "Titles achieved as Caterham driver": "InterSteps Championship Formula Renault 2.0 NEC"
+            },
+            {
+              "Driver": "Weiron Tan",
+              "Years": "2012-2014",
+              "Current series": "None",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            },
+            {
+              "Driver": "Daim Hishamuddin",
+              "Years": "2012-2014",
+              "Current series": "None",
+              "Titles achieved as Caterham driver": "Rotax Max Challenge Asia-Junior RMC Asia Championship-Rotax Junior"
+            },
+            {
+              "Driver": "Sergio Canamasas",
+              "Years": "2013",
+              "Current series": "None",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            },
+            {
+              "Driver": "Ma Qinghua",
+              "Years": "2013",
+              "Current series": "World Touring Car Cup",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            },
+            {
+              "Driver": "Aurélien Panis",
+              "Years": "2013",
+              "Current series": "GT World Challenge Europe Endurance Cup GT World Challenge Europe Sprint Cup",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            },
+            {
+              "Driver": "Will Stevens",
+              "Years": "2013-2014",
+              "Current series": "FIA World Endurance Championship",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            },
+            {
+              "Driver": "Seb Morris",
+              "Years": "2014",
+              "Current series": "GT Cup Championship",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            },
+            {
+              "Driver": "Robin Frijns",
+              "Years": "2014",
+              "Current series": "Formula E World Championship FIA World Endurance Championship",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            },
+            {
+              "Driver": "Nathanaël Berthon",
+              "Years": "2014",
+              "Current series": "European Le Mans Series FIA World Endurance Championship",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            },
+            {
+              "Driver": "Kevin Giovesi",
+              "Years": "2014",
+              "Current series": "None",
+              "Titles achieved as Caterham driver": "none as Caterham F1 development program member"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Cisitalia",
+      "url": "https://en.wikipedia.org/wiki/Cisitalia"
+    },
+    "licensed_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 1,
+    "races_started": 0,
+    "drivers": 1,
+    "total_entries": 1,
+    "wins": 0,
+    "points": null,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": null,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Cisitalia",
+      "infoboxes": [
+        {
+          "title": "Cisitalia",
+          "rows": {
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "1946",
+              "links": []
+            },
+            "Defunct": {
+              "text": "1963",
+              "links": []
+            },
+            "Fate": {
+              "text": "Bankrupt",
+              "links": []
+            },
+            "Headquarters": {
+              "text": "Turin , Italy",
+              "links": [
+                {
+                  "text": "Turin",
+                  "url": "https://en.wikipedia.org/wiki/Turin"
+                },
+                {
+                  "text": "Italy",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                }
+              ]
+            },
+            "Key people": {
+              "text": "Piero Dusio , founder",
+              "links": [
+                {
+                  "text": "Piero Dusio",
+                  "url": "https://en.wikipedia.org/wiki/Piero_Dusio"
+                }
+              ]
+            },
+            "Products": {
+              "text": "Automobiles",
+              "links": [
+                {
+                  "text": "Automobiles",
+                  "url": "https://en.wikipedia.org/wiki/Automobiles"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Driver",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "rows": [
+            {
+              "Year": "1952",
+              "Chassis": "Cisitalia D46",
+              "Engine": "BPM",
+              "Tyres": "?",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA"
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Cisitalia D46",
+              "Engine": "BPM",
+              "Tyres": "?",
+              "Driver": "Piero Dusio",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "DNQ"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Coloni",
+      "url": "https://en.wikipedia.org/wiki/Enzo_Coloni_Racing_Car_Systems"
+    },
+    "licensed_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1987,
+        "url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship"
+      },
+      {
+        "year": 1988,
+        "url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship"
+      },
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 65,
+    "races_started": 13,
+    "drivers": 8,
+    "total_entries": 81,
+    "wins": 0,
+    "points": 0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Enzo_Coloni_Racing_Car_Systems",
+      "infoboxes": [
+        {
+          "title": "Scuderia Coloni",
+          "rows": {
+            "Founded": {
+              "text": "1983",
+              "links": []
+            },
+            "Folded": {
+              "text": "2015",
+              "links": []
+            },
+            "Team principal(s)": {
+              "text": "Paolo Coloni",
+              "links": [
+                {
+                  "text": "Paolo Coloni",
+                  "url": "https://en.wikipedia.org/wiki/Paolo_Coloni"
+                }
+              ]
+            },
+            "Former series": {
+              "text": "Formula 3000 Italian F3 Formula One Euroseries 3000 Formula BMW Europe GP2 Asia Series GP2 Series Auto GP",
+              "links": [
+                {
+                  "text": "Formula 3000",
+                  "url": "https://en.wikipedia.org/wiki/International_Formula_3000"
+                },
+                {
+                  "text": "Italian F3",
+                  "url": "https://en.wikipedia.org/wiki/Italian_Formula_Three_Championship"
+                },
+                {
+                  "text": "Formula One",
+                  "url": "https://en.wikipedia.org/wiki/Formula_One"
+                },
+                {
+                  "text": "Euroseries 3000",
+                  "url": "https://en.wikipedia.org/wiki/Auto_GP"
+                },
+                {
+                  "text": "Formula BMW Europe",
+                  "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+                },
+                {
+                  "text": "GP2 Asia Series",
+                  "url": "https://en.wikipedia.org/wiki/GP2_Asia_Series"
+                },
+                {
+                  "text": "GP2 Series",
+                  "url": "https://en.wikipedia.org/wiki/GP2_Series"
+                },
+                {
+                  "text": "Auto GP",
+                  "url": "https://en.wikipedia.org/wiki/Auto_GP"
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Pedro Bianchini Marco Bonanomi Gianmaria Bruni Alex Ciompi Luca Filippi Michael Herck Fabio Onidi Giorgio Pantano",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Brazil"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Marco Bonanomi",
+                  "url": "https://en.wikipedia.org/wiki/Marco_Bonanomi"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Gianmaria Bruni",
+                  "url": "https://en.wikipedia.org/wiki/Gianmaria_Bruni"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Alex Ciompi",
+                  "url": "https://en.wikipedia.org/wiki/Alex_Ciompi"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Luca Filippi",
+                  "url": "https://en.wikipedia.org/wiki/Luca_Filippi"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Romania"
+                },
+                {
+                  "text": "Michael Herck",
+                  "url": "https://en.wikipedia.org/wiki/Michael_Herck"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Fabio Onidi",
+                  "url": "https://en.wikipedia.org/wiki/Fabio_Onidi"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Giorgio Pantano",
+                  "url": "https://en.wikipedia.org/wiki/Giorgio_Pantano"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engines",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1987",
+              "Chassis": "FC187",
+              "Engines": "Ford Cosworth DFZ 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "BEL",
+              "4": "MON",
+              "5": "DET",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "HUN",
+              "10": "AUT",
+              "11": "ITA",
+              "12": "POR",
+              "13": "ESP",
+              "14": "MEX",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1987",
+              "Chassis": "FC187",
+              "Engines": "Ford Cosworth DFZ 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Nicola Larini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "DNQ",
+              "12": "",
+              "13": "Ret",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1988",
+              "Chassis": "FC188 FC188B",
+              "Engines": "Ford Cosworth DFZ 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "CAN",
+              "6": "DET",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1988",
+              "Chassis": "FC188 FC188B",
+              "Engines": "Ford Cosworth DFZ 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Gabriele Tarquini",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "14",
+              "5": "8",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "DNPQ",
+              "9": "DNPQ",
+              "10": "13",
+              "11": "Ret",
+              "12": "DNQ",
+              "13": "11",
+              "14": "DNPQ",
+              "15": "DNPQ",
+              "16": "DNQ",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1989",
+              "Chassis": "FC188B C3",
+              "Engines": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "USA",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1989",
+              "Chassis": "FC188B C3",
+              "Engines": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Roberto Moreno",
+              "1": "DNQ",
+              "2": "DNQ",
+              "3": "Ret",
+              "4": "DNQ",
+              "5": "DNQ",
+              "6": "Ret",
+              "7": "DNQ",
+              "8": "Ret",
+              "9": "DNPQ",
+              "10": "DNPQ",
+              "11": "DNPQ",
+              "12": "DNPQ",
+              "13": "Ret",
+              "14": "DNPQ",
+              "15": "DNPQ",
+              "16": "DNPQ",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1989",
+              "Chassis": "FC188B C3",
+              "Engines": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Pierre-Henri Raphanel",
+              "1": "DNPQ",
+              "2": "DNPQ",
+              "3": "Ret",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "DNPQ",
+              "9": "DNPQ",
+              "10": "DNPQ",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1989",
+              "Chassis": "FC188B C3",
+              "Engines": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Enrico Bertaggia",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "DNPQ",
+              "12": "DNPQ",
+              "13": "DNPQ",
+              "14": "DNPQ",
+              "15": "DNPQ",
+              "16": "DNPQ",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Chassis": "C3B",
+              "Engines": "Subaru 1235 3.5 F12",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Chassis": "C3B",
+              "Engines": "Subaru 1235 3.5 F12",
+              "Tyres": "G",
+              "Drivers": "Bertrand Gachot",
+              "1": "DNPQ",
+              "2": "DNPQ",
+              "3": "DNPQ",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "DNPQ",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Chassis": "C3C",
+              "Engines": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Bertrand Gachot",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "DNPQ",
+              "10": "DNPQ",
+              "11": "DNQ",
+              "12": "DNQ",
+              "13": "DNQ",
+              "14": "DNQ",
+              "15": "DNQ",
+              "16": "DNQ",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Chassis": "C4",
+              "Engines": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Chassis": "C4",
+              "Engines": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Pedro Chaves",
+              "1": "DNPQ",
+              "2": "DNPQ",
+              "3": "DNPQ",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "DNPQ",
+              "9": "DNPQ",
+              "10": "DNPQ",
+              "11": "DNPQ",
+              "12": "DNPQ",
+              "13": "DNPQ",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Chassis": "C4",
+              "Engines": "Ford Cosworth DFR 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Naoki Hattori",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "DNPQ",
+              "16": "DNPQ",
+              "Points": "0",
+              "WCC": "NC"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Team",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "Races",
+            "Wins",
+            "Poles",
+            "F.L.",
+            "Points",
+            "D.C.",
+            "T.C."
+          ],
+          "rows": [
+            {
+              "Year": "2005",
+              "Team": "Coloni Motorsport",
+              "Chassis": "Dallara GP2/05",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "B",
+              "Drivers": "Mathias Lauda",
+              "Races": "23",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "3",
+              "D.C.": "21st",
+              "T.C.": "9th"
+            },
+            {
+              "Year": "2005",
+              "Team": "Coloni Motorsport",
+              "Chassis": "Dallara GP2/05",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "B",
+              "Drivers": "Gianmaria Bruni",
+              "Races": "17",
+              "Wins": "1",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "35†",
+              "D.C.": "10th",
+              "T.C.": "9th"
+            },
+            {
+              "Year": "2005",
+              "Team": "Coloni Motorsport",
+              "Chassis": "Dallara GP2/05",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "B",
+              "Drivers": "Toni Vilander",
+              "Races": "4",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "0",
+              "D.C.": "25th",
+              "T.C.": "9th"
+            },
+            {
+              "Year": "2005",
+              "Team": "Coloni Motorsport",
+              "Chassis": "Dallara GP2/05",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "B",
+              "Drivers": "Ferdinando Monfardini",
+              "Races": "2",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "5†",
+              "D.C.": "17th",
+              "T.C.": "9th"
+            },
+            {
+              "Year": "2006-2009 : \"Coloni\" did not compete.",
+              "Team": "2006-2009 : \"Coloni\" did not compete.",
+              "Chassis": "2006-2009 : \"Coloni\" did not compete.",
+              "Engine": "2006-2009 : \"Coloni\" did not compete.",
+              "Tyres": "2006-2009 : \"Coloni\" did not compete.",
+              "Drivers": "2006-2009 : \"Coloni\" did not compete.",
+              "Races": "2006-2009 : \"Coloni\" did not compete.",
+              "Wins": "2006-2009 : \"Coloni\" did not compete.",
+              "Poles": "2006-2009 : \"Coloni\" did not compete.",
+              "F.L.": "2006-2009 : \"Coloni\" did not compete.",
+              "Points": "2006-2009 : \"Coloni\" did not compete.",
+              "D.C.": "2006-2009 : \"Coloni\" did not compete.",
+              "T.C.": "2006-2009 : \"Coloni\" did not compete."
+            },
+            {
+              "Year": "2010",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/08",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "B",
+              "Drivers": "Alberto Valerio",
+              "Races": "14",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "4",
+              "D.C.": "22nd",
+              "T.C.": "10th"
+            },
+            {
+              "Year": "2010",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/08",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "B",
+              "Drivers": "Álvaro Parente",
+              "Races": "4",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "1",
+              "Points": "13",
+              "D.C.": "15th",
+              "T.C.": "10th"
+            },
+            {
+              "Year": "2010",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/08",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "B",
+              "Drivers": "James Jakes",
+              "Races": "2",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "0",
+              "D.C.": "31st",
+              "T.C.": "10th"
+            },
+            {
+              "Year": "2010",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/08",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "B",
+              "Drivers": "Vladimir Arabadzhiev",
+              "Races": "16",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "0",
+              "D.C.": "29th",
+              "T.C.": "10th"
+            },
+            {
+              "Year": "2010",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/08",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "B",
+              "Drivers": "Brendon Hartley",
+              "Races": "4",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "1",
+              "D.C.": "27th",
+              "T.C.": "10th"
+            },
+            {
+              "Year": "2011",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/11",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "P",
+              "Drivers": "Michael Herck",
+              "Races": "18",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "1",
+              "D.C.": "21st",
+              "T.C.": "7th"
+            },
+            {
+              "Year": "2011",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/11",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "P",
+              "Drivers": "Davide Rigon",
+              "Races": "2",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "0",
+              "D.C.": "29th",
+              "T.C.": "7th"
+            },
+            {
+              "Year": "2011",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/11",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "P",
+              "Drivers": "Kevin Ceccon",
+              "Races": "8",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "0",
+              "D.C.": "30th",
+              "T.C.": "7th"
+            },
+            {
+              "Year": "2011",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/11",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "P",
+              "Drivers": "Luca Filippi",
+              "Races": "8",
+              "Wins": "3",
+              "Poles": "0",
+              "F.L.": "5",
+              "Points": "54†",
+              "D.C.": "2nd",
+              "T.C.": "7th"
+            },
+            {
+              "Year": "2012",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/11",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "P",
+              "Drivers": "Stefano Coletti",
+              "Races": "20",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "1",
+              "Points": "28",
+              "D.C.": "13th†",
+              "T.C.": "EX"
+            },
+            {
+              "Year": "2012",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/11",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "P",
+              "Drivers": "Luca Filippi",
+              "Races": "4",
+              "Wins": "1",
+              "Poles": "1",
+              "F.L.": "0",
+              "Points": "29",
+              "D.C.": "15th",
+              "T.C.": "EX"
+            },
+            {
+              "Year": "2012",
+              "Team": "Scuderia Coloni",
+              "Chassis": "Dallara GP2/11",
+              "Engine": "Mecachrome V8108 V8",
+              "Tyres": "P",
+              "Drivers": "Fabio Onidi",
+              "Races": "24",
+              "Wins": "0",
+              "Poles": "0",
+              "F.L.": "0",
+              "Points": "13",
+              "D.C.": "20th",
+              "T.C.": "EX"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Chassis Engine Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "T.C.",
+            "Points"
+          ],
+          "rows": [
+            {
+              "Year": "2005",
+              "Chassis Engine Tyres": "GP2/05 Renault B",
+              "Drivers": "",
+              "1": "SMR FEA",
+              "2": "SMR SPR",
+              "3": "CAT FEA",
+              "4": "CAT SPR",
+              "5": "MON FEA",
+              "6": "NÜR FEA",
+              "7": "NÜR SPR",
+              "8": "MAG FEA",
+              "9": "MAG SPR",
+              "10": "SIL FEA",
+              "11": "SIL SPR",
+              "12": "HOC FEA",
+              "13": "HOC SPR",
+              "14": "HUN FEA",
+              "15": "HUN SPR",
+              "16": "IST FEA",
+              "17": "IST SPR",
+              "18": "MNZ FEA",
+              "19": "MNZ SPR",
+              "20": "SPA FEA",
+              "21": "SPA SPR",
+              "22": "BHR FEA",
+              "23": "BHR SPR",
+              "24": "",
+              "T.C.": "8th",
+              "Points": "36"
+            },
+            {
+              "Year": "2005",
+              "Chassis Engine Tyres": "GP2/05 Renault B",
+              "Drivers": "Mathias Lauda",
+              "1": "12",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "13",
+              "5": "6",
+              "6": "10",
+              "7": "Ret",
+              "8": "16",
+              "9": "15",
+              "10": "20",
+              "11": "15",
+              "12": "14",
+              "13": "21",
+              "14": "Ret",
+              "15": "14",
+              "16": "16",
+              "17": "18",
+              "18": "13",
+              "19": "12",
+              "20": "9",
+              "21": "24 †",
+              "22": "14",
+              "23": "21",
+              "24": "",
+              "T.C.": "8th",
+              "Points": "36"
+            },
+            {
+              "Year": "2005",
+              "Chassis Engine Tyres": "GP2/05 Renault B",
+              "Drivers": "Gianmaria Bruni",
+              "1": "4",
+              "2": "4",
+              "3": "1",
+              "4": "Ret",
+              "5": "2",
+              "6": "8",
+              "7": "Ret",
+              "8": "18",
+              "9": "11",
+              "10": "7",
+              "11": "11",
+              "12": "NC",
+              "13": "14",
+              "14": "10",
+              "15": "8",
+              "16": "Ret",
+              "17": "9",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "8th",
+              "Points": "36"
+            },
+            {
+              "Year": "2005",
+              "Chassis Engine Tyres": "GP2/05 Renault B",
+              "Drivers": "Toni Vilander",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "15",
+              "19": "8",
+              "20": "14",
+              "21": "13",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "8th",
+              "Points": "36"
+            },
+            {
+              "Year": "2005",
+              "Chassis Engine Tyres": "GP2/05 Renault B",
+              "Drivers": "Ferdinando Monfardini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "Ret",
+              "23": "11",
+              "24": "",
+              "T.C.": "8th",
+              "Points": "36"
+            },
+            {
+              "Year": "2006-2009 : \"Coloni\" did not compete.",
+              "Chassis Engine Tyres": "2006-2009 : \"Coloni\" did not compete.",
+              "Drivers": "2006-2009 : \"Coloni\" did not compete.",
+              "1": "2006-2009 : \"Coloni\" did not compete.",
+              "2": "2006-2009 : \"Coloni\" did not compete.",
+              "3": "2006-2009 : \"Coloni\" did not compete.",
+              "4": "2006-2009 : \"Coloni\" did not compete.",
+              "5": "2006-2009 : \"Coloni\" did not compete.",
+              "6": "2006-2009 : \"Coloni\" did not compete.",
+              "7": "2006-2009 : \"Coloni\" did not compete.",
+              "8": "2006-2009 : \"Coloni\" did not compete.",
+              "9": "2006-2009 : \"Coloni\" did not compete.",
+              "10": "2006-2009 : \"Coloni\" did not compete.",
+              "11": "2006-2009 : \"Coloni\" did not compete.",
+              "12": "2006-2009 : \"Coloni\" did not compete.",
+              "13": "2006-2009 : \"Coloni\" did not compete.",
+              "14": "2006-2009 : \"Coloni\" did not compete.",
+              "15": "2006-2009 : \"Coloni\" did not compete.",
+              "16": "2006-2009 : \"Coloni\" did not compete.",
+              "17": "2006-2009 : \"Coloni\" did not compete.",
+              "18": "2006-2009 : \"Coloni\" did not compete.",
+              "19": "2006-2009 : \"Coloni\" did not compete.",
+              "20": "2006-2009 : \"Coloni\" did not compete.",
+              "21": "2006-2009 : \"Coloni\" did not compete.",
+              "22": "2006-2009 : \"Coloni\" did not compete.",
+              "23": "2006-2009 : \"Coloni\" did not compete.",
+              "24": "2006-2009 : \"Coloni\" did not compete.",
+              "T.C.": "2006-2009 : \"Coloni\" did not compete.",
+              "Points": "2006-2009 : \"Coloni\" did not compete."
+            },
+            {
+              "Year": "2010",
+              "Chassis Engine Tyres": "GP2/08 Renault B",
+              "Drivers": "",
+              "1": "CAT FEA",
+              "2": "CAT SPR",
+              "3": "MON FEA",
+              "4": "MON SPR",
+              "5": "IST FEA",
+              "6": "IST SPR",
+              "7": "VAL FEA",
+              "8": "VAL SPR",
+              "9": "SIL FEA",
+              "10": "SIL SPR",
+              "11": "HOC FEA",
+              "12": "HOC SPR",
+              "13": "HUN FEA",
+              "14": "HUN SPR",
+              "15": "SPA FEA",
+              "16": "SPA SPR",
+              "17": "MNZ FEA",
+              "18": "MNZ SPR",
+              "19": "YMC FEA",
+              "20": "YMC SPR",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "10th",
+              "Points": "18"
+            },
+            {
+              "Year": "2010",
+              "Chassis Engine Tyres": "GP2/08 Renault B",
+              "Drivers": "Alberto Valerio",
+              "1": "14",
+              "2": "Ret",
+              "3": "5",
+              "4": "Ret",
+              "5": "17 †",
+              "6": "19",
+              "7": "9",
+              "8": "Ret",
+              "9": "14",
+              "10": "22",
+              "11": "11",
+              "12": "12",
+              "13": "Ret",
+              "14": "12",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "10th",
+              "Points": "18"
+            },
+            {
+              "Year": "2010",
+              "Chassis Engine Tyres": "GP2/08 Renault B",
+              "Drivers": "Alvaro Parente",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "2",
+              "16": "3",
+              "17": "12",
+              "18": "9",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "10th",
+              "Points": "18"
+            },
+            {
+              "Year": "2010",
+              "Chassis Engine Tyres": "GP2/08 Renault B",
+              "Drivers": "James Jakes",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "15",
+              "20": "18",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "10th",
+              "Points": "18"
+            },
+            {
+              "Year": "2010",
+              "Chassis Engine Tyres": "GP2/08 Renault B",
+              "Drivers": "Vladimir Arabadzhiev",
+              "1": "19",
+              "2": "20",
+              "3": "Ret",
+              "4": "13",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "13 †",
+              "8": "9",
+              "9": "21",
+              "10": "17",
+              "11": "15",
+              "12": "15",
+              "13": "18",
+              "14": "14",
+              "15": "19",
+              "16": "Ret",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "10th",
+              "Points": "18"
+            },
+            {
+              "Year": "2010",
+              "Chassis Engine Tyres": "GP2/08 Renault B",
+              "Drivers": "Brendon Hartley",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "Ret",
+              "18": "Ret",
+              "19": "9",
+              "20": "6",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "10th",
+              "Points": "18"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "",
+              "1": "IST FEA",
+              "2": "IST SPR",
+              "3": "CAT FEA",
+              "4": "CAT SPR",
+              "5": "MON FEA",
+              "6": "MON SPR",
+              "7": "VAL FEA",
+              "8": "VAL SPR",
+              "9": "SIL FEA",
+              "10": "SIL SPR",
+              "11": "NÜR FEA",
+              "12": "NÜR SPR",
+              "13": "HUN FEA",
+              "14": "HUN SPR",
+              "15": "SPA FEA",
+              "16": "SPA SPR",
+              "17": "MNZ FEA",
+              "18": "MNZ SPR",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "7th",
+              "Points": "46"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Michael Herck",
+              "1": "14",
+              "2": "12",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "13",
+              "6": "15",
+              "7": "10",
+              "8": "6",
+              "9": "24",
+              "10": "18",
+              "11": "11",
+              "12": "10",
+              "13": "12",
+              "14": "Ret",
+              "15": "16",
+              "16": "15",
+              "17": "Ret",
+              "18": "DNS",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "7th",
+              "Points": "46"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Davide Rigon",
+              "1": "10",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "7th",
+              "Points": "46"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Kevin Ceccon",
+              "1": "",
+              "2": "",
+              "3": "19",
+              "4": "15",
+              "5": "11",
+              "6": "12",
+              "7": "18",
+              "8": "20 †",
+              "9": "19",
+              "10": "Ret",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "7th",
+              "Points": "46"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Luca Filippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "1",
+              "12": "3",
+              "13": "6",
+              "14": "Ret",
+              "15": "4",
+              "16": "1",
+              "17": "1",
+              "18": "5",
+              "19": "",
+              "20": "",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "7th",
+              "Points": "46"
+            },
+            {
+              "Year": "2012",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "",
+              "1": "SEP FEA",
+              "2": "SEP SPR",
+              "3": "BHR1 FEA",
+              "4": "BHR1 SPR",
+              "5": "BHR2 FEA",
+              "6": "BHR2 SPR",
+              "7": "CAT FEA",
+              "8": "CAT SPR",
+              "9": "MON FEA",
+              "10": "MON SPR",
+              "11": "VAL FEA",
+              "12": "VAL SPR",
+              "13": "SIL FEA",
+              "14": "SIL SPR",
+              "15": "HOC FEA",
+              "16": "HOC SPR",
+              "17": "HUN FEA",
+              "18": "HUN SPR",
+              "19": "SPA FEA",
+              "20": "SPA SPR",
+              "21": "MNZ FEA",
+              "22": "MNZ SPR",
+              "23": "MRN FEA",
+              "24": "MRN SPR",
+              "T.C.": "EX",
+              "Points": "0"
+            },
+            {
+              "Year": "2012",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Stefano Coletti",
+              "1": "5",
+              "2": "23 †",
+              "3": "Ret",
+              "4": "23 †",
+              "5": "21",
+              "6": "18",
+              "7": "3",
+              "8": "8",
+              "9": "10",
+              "10": "Ret",
+              "11": "9",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "20",
+              "16": "19",
+              "17": "10",
+              "18": "9",
+              "19": "20 †",
+              "20": "8",
+              "21": "",
+              "22": "",
+              "23": "",
+              "24": "",
+              "T.C.": "EX",
+              "Points": "0"
+            },
+            {
+              "Year": "2012",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Luca Filippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "",
+              "19": "",
+              "20": "",
+              "21": "1",
+              "22": "22",
+              "23": "Ret",
+              "24": "DNS",
+              "T.C.": "EX",
+              "Points": "0"
+            },
+            {
+              "Year": "2012",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Fabio Onidi",
+              "1": "20",
+              "2": "13",
+              "3": "8",
+              "4": "14",
+              "5": "20",
+              "6": "9",
+              "7": "6",
+              "8": "18",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "13",
+              "12": "17",
+              "13": "22",
+              "14": "8",
+              "15": "19",
+              "16": "22",
+              "17": "11",
+              "18": "24",
+              "19": "16",
+              "20": "12",
+              "21": "21",
+              "22": "Ret",
+              "23": "Ret",
+              "24": "20",
+              "T.C.": "EX",
+              "Points": "0"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Chassis Engine Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "T.C.",
+            "Points"
+          ],
+          "rows": [
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "",
+              "1": "YMC FEA",
+              "2": "YMC SPR",
+              "T.C.": "6th",
+              "Points": "5"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Kevin Ceccon",
+              "1": "5",
+              "2": "6",
+              "T.C.": "6th",
+              "Points": "5"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Stefano Coletti",
+              "1": "10",
+              "2": "25 †",
+              "T.C.": "6th",
+              "Points": "5"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Chassis Engine Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "T.C.",
+            "Points"
+          ],
+          "rows": [
+            {
+              "Year": "2009-10",
+              "Chassis Engine Tyres": "GP2/05 Renault B",
+              "Drivers": "",
+              "1": "YMC1 FEA",
+              "2": "YMC1 SPR",
+              "3": "YMC2 FEA",
+              "4": "YMC2 SPR",
+              "5": "BHR1 FEA",
+              "6": "BHR1 SPR",
+              "7": "BHR2 FEA",
+              "8": "BHR2 SPR",
+              "T.C.": "8th",
+              "Points": "12"
+            },
+            {
+              "Year": "2009-10",
+              "Chassis Engine Tyres": "GP2/05 Renault B",
+              "Drivers": "Roldán Rodríguez",
+              "1": "10",
+              "2": "14",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "T.C.": "8th",
+              "Points": "12"
+            },
+            {
+              "Year": "2009-10",
+              "Chassis Engine Tyres": "GP2/05 Renault B",
+              "Drivers": "Alberto Valerio",
+              "1": "",
+              "2": "",
+              "3": "15",
+              "4": "18",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "T.C.": "8th",
+              "Points": "12"
+            },
+            {
+              "Year": "2009-10",
+              "Chassis Engine Tyres": "GP2/05 Renault B",
+              "Drivers": "Álvaro Parente",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "6",
+              "6": "Ret",
+              "7": "4",
+              "8": "3",
+              "T.C.": "8th",
+              "Points": "12"
+            },
+            {
+              "Year": "2009-10",
+              "Chassis Engine Tyres": "GP2/05 Renault B",
+              "Drivers": "Will Bratt",
+              "1": "12",
+              "2": "Ret",
+              "3": "11",
+              "4": "21†",
+              "5": "16",
+              "6": "Ret",
+              "7": "15",
+              "8": "16",
+              "T.C.": "8th",
+              "Points": "12"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "",
+              "1": "YMC FEA",
+              "2": "YMC SPR",
+              "3": "IMO FEA",
+              "4": "IMO SPR",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "T.C.": "8th",
+              "Points": "9"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Michael Herck",
+              "1": "13",
+              "2": "5",
+              "3": "4",
+              "4": "5",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "T.C.": "8th",
+              "Points": "9"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "James Jakes",
+              "1": "17†",
+              "2": "13",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "T.C.": "8th",
+              "Points": "9"
+            },
+            {
+              "Year": "2011",
+              "Chassis Engine Tyres": "GP2/11 Mecachrome P",
+              "Drivers": "Luca Filippi",
+              "1": "",
+              "2": "",
+              "3": "22",
+              "4": "10",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "T.C.": "8th",
+              "Points": "9"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Connaught",
+      "url": "https://en.wikipedia.org/wiki/Connaught_Engineering"
+    },
+    "licensed_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      },
+      {
+        "year": 1956,
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+      },
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      },
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      },
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 18,
+    "races_started": 17,
+    "drivers": 29,
+    "total_entries": 52,
+    "wins": 0,
+    "points": 0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 1,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Connaught_Engineering",
+      "infoboxes": [
+        {
+          "title": "Connaught",
+          "rows": {
+            "Full name": {
+              "text": "Connaught Engineering",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                }
+              ]
+            },
+            "Base": {
+              "text": "Send, Surrey , United Kingdom",
+              "links": [
+                {
+                  "text": "Send, Surrey",
+                  "url": "https://en.wikipedia.org/wiki/Send,_Surrey"
+                },
+                {
+                  "text": "United Kingdom",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Rodney Clarke Mike Oliver",
+              "links": [
+                {
+                  "text": "Rodney Clarke",
+                  "url": null
+                },
+                {
+                  "text": "Mike Oliver",
+                  "url": null
+                }
+              ]
+            },
+            "Noted staff": {
+              "text": "Kenneth McAlpine",
+              "links": [
+                {
+                  "text": "Kenneth McAlpine",
+                  "url": "https://en.wikipedia.org/wiki/Kenneth_McAlpine"
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Stuart Lewis-Evans Stirling Moss Prince Bira Kenneth McAlpine",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "Stuart Lewis-Evans",
+                  "url": "https://en.wikipedia.org/wiki/Stuart_Lewis-Evans"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "Stirling Moss",
+                  "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Thailand"
+                },
+                {
+                  "text": "Prince Bira",
+                  "url": "https://en.wikipedia.org/wiki/Prince_Bira"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "Kenneth McAlpine",
+                  "url": "https://en.wikipedia.org/wiki/Kenneth_McAlpine"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1952 British Grand Prix",
+              "links": [
+                {
+                  "text": "1952 British Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1952_British_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "18",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1959 United States Grand Prix",
+              "links": [
+                {
+                  "text": "1959 United States Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1959_United_States_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Driver",
+            "Entrant",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "WCC",
+            "Points"
+          ],
+          "rows": [
+            {
+              "Year": "1952",
+              "Chassis": "",
+              "Engine": "",
+              "Driver": "",
+              "Entrant": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Ken Downing",
+              "Entrant": "Ken Downing",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Ken Downing",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "9",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Eric Thompson",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "5",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Kenneth McAlpine",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "16",
+              "6": "",
+              "7": "",
+              "8": "Ret",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Stirling Moss",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "Ret",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Dennis Poore",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "4",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Dennis Poore",
+              "Entrant": "Connaught Racing Syndicate",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "12",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "",
+              "Engine": "",
+              "Driver": "",
+              "Entrant": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "NED",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "SUI",
+              "9": "ITA",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Kenneth McAlpine",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "Ret",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "13",
+              "8": "",
+              "9": "NC",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Stirling Moss",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "9",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Roy Salvadori",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "Ret",
+              "4": "",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "",
+              "9": "Ret",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Prince Bira",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "7",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Jack Fairman",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "NC",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Johnny Claes",
+              "Entrant": "Ecurie Belge",
+              "1": "",
+              "2": "",
+              "3": "Ret",
+              "4": "",
+              "5": "12",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "Ret",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "André Pilette",
+              "Entrant": "Ecurie Belge",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "NC",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Ian Stewart",
+              "Entrant": "Ecurie Ecosse",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Tony Rolt",
+              "Entrant": "Rob Walker Racing Team",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1954",
+              "Chassis": "",
+              "Engine": "",
+              "Driver": "",
+              "Entrant": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "SUI",
+              "8": "ITA",
+              "9": "ESP",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Leslie Marr",
+              "Entrant": "Leslie Marr",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "13",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Bill Whitehouse",
+              "Entrant": "Bill Whitehouse",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Don Beauman",
+              "Entrant": "Sir Jeremy Boles",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "11",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "Leslie Thorne",
+              "Entrant": "Ecurie Ecosse",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "14",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Connaught Type A",
+              "Engine": "Lea-Francis Straight-4",
+              "Driver": "John Riseley-Prichard",
+              "Entrant": "Rob Walker Racing Team",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1955",
+              "Chassis": "",
+              "Engine": "",
+              "Driver": "",
+              "Entrant": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "NED",
+              "6": "GBR",
+              "7": "ITA",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Kenneth McAlpine",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Jack Fairman",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "DNS",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Tony Rolt",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret ±",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Peter Walker",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret ±",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Leslie Marr",
+              "Entrant": "Leslie Marr",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1956",
+              "Chassis": "",
+              "Engine": "",
+              "Driver": "",
+              "Entrant": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "ITA",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Archie Scott Brown",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Desmond Titterington",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Jack Fairman",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "4",
+              "7": "",
+              "8": "5",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Ron Flockhart",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "3",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Les Leston",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "Ret",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Piero Scotti",
+              "Entrant": "Piero Scotti",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1957",
+              "Chassis": "",
+              "Engine": "",
+              "Driver": "",
+              "Entrant": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "PSC",
+              "8": "ITA",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1957",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Stuart Lewis-Evans",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "4",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1957",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Ivor Bueb",
+              "Entrant": "Connaught Engineering",
+              "1": "",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "-*",
+              "Points": "-*"
+            },
+            {
+              "Year": "1958",
+              "Chassis": "",
+              "Engine": "",
+              "Driver": "",
+              "Entrant": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "NED",
+              "4": "500",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "POR",
+              "10": "ITA",
+              "11": "MOR",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1958",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Ivor Bueb",
+              "Entrant": "Bernie Ecclestone",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1958",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Bruce Kessler",
+              "Entrant": "Bernie Ecclestone",
+              "1": "",
+              "2": "DNQ",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1958",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Paul Emery",
+              "Entrant": "Bernie Ecclestone",
+              "1": "",
+              "2": "DNQ",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1958",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Jack Fairman",
+              "Entrant": "Bernie Ecclestone",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1958",
+              "Chassis": "Connaught Type B",
+              "Engine": "Alta Straight-4",
+              "Driver": "Bernie Ecclestone",
+              "Entrant": "Bernie Ecclestone",
+              "1": "",
+              "2": "DNQ",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNP",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1959",
+              "Chassis": "",
+              "Engine": "",
+              "Driver": "",
+              "Entrant": "",
+              "1": "MON",
+              "2": "500",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "POR",
+              "8": "ITA",
+              "9": "USA",
+              "10": "",
+              "11": "",
+              "WCC": "NC",
+              "Points": "0"
+            },
+            {
+              "Year": "1959",
+              "Chassis": "Connaught Type C",
+              "Engine": "Alta Straight-4",
+              "Driver": "Bob Said",
+              "Entrant": "Connaught Cars / Paul Emery",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "Ret",
+              "10": "",
+              "11": "",
+              "WCC": "NC",
+              "Points": "0"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Connew",
+      "url": "https://en.wikipedia.org/wiki/Connew"
+    },
+    "licensed_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1972,
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 2,
+    "races_started": 1,
+    "drivers": 1,
+    "total_entries": 2,
+    "wins": 0,
+    "points": 0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Connew",
+      "infoboxes": [
+        {
+          "title": null,
+          "rows": {
+            "Full name": {
+              "text": "Connew Racing Team",
+              "links": []
+            },
+            "Base": {
+              "text": "Chadwell Heath , UK",
+              "links": [
+                {
+                  "text": "Chadwell Heath",
+                  "url": "https://en.wikipedia.org/wiki/Chadwell_Heath"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Peter Connew",
+              "links": []
+            },
+            "Noted staff": {
+              "text": "Roger Doran Barry Boor",
+              "links": []
+            },
+            "Noted drivers": {
+              "text": "François Migault David Purley",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/France"
+                },
+                {
+                  "text": "François Migault",
+                  "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Migault"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "David Purley",
+                  "url": "https://en.wikipedia.org/wiki/David_Purley"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1972 British Grand Prix",
+              "links": [
+                {
+                  "text": "1972 British Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1972_British_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "2 (1 start)",
+              "links": []
+            },
+            "Engines": {
+              "text": "Cosworth DFV",
+              "links": [
+                {
+                  "text": "Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                }
+              ]
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1972 Austrian Grand Prix",
+              "links": [
+                {
+                  "text": "1972 Austrian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1972_Austrian_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine(s)",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1972",
+              "Chassis": "Connew PC1",
+              "Engine(s)": "Ford V8",
+              "Tyres": "F",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "RSA",
+              "3": "ESP",
+              "4": "MON",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "AUT",
+              "10": "ITA",
+              "11": "CAN",
+              "12": "USA",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1972",
+              "Chassis": "Connew PC1",
+              "Engine(s)": "Ford V8",
+              "Tyres": "F",
+              "Drivers": "François Migault",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNS",
+              "8": "",
+              "9": "Ret",
+              "10": "",
+              "11": "",
+              "12": "",
+              "Points": "0",
+              "WCC": "NC"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Event",
+            "Venue",
+            "Driver",
+            "Result",
+            "Category",
+            "Report"
+          ],
+          "rows": [
+            {
+              "Year": "1972",
+              "Event": "Rothmans 50,000",
+              "Venue": "Brands Hatch",
+              "Driver": "François Migault",
+              "Result": "DNQ",
+              "Category": "Formula Libre",
+              "Report": "Report"
+            },
+            {
+              "Year": "1972",
+              "Event": "John Player Challenge Trophy",
+              "Venue": "Brands Hatch",
+              "Driver": "David Purley",
+              "Result": "DNS",
+              "Category": "Formula One",
+              "Report": "Report"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine(s)",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18"
+          ],
+          "rows": [
+            {
+              "Year": "1973",
+              "Chassis": "Connew PC1",
+              "Engine(s)": "Chevrolet V8",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "MAL",
+              "3": "SIL",
+              "4": "SNE",
+              "5": "BRA",
+              "6": "OUL",
+              "7": "MAL",
+              "8": "MIS",
+              "9": "ZAN",
+              "10": "MAL",
+              "11": "MON",
+              "12": "SIL",
+              "13": "BRA",
+              "14": "OUL",
+              "15": "JYL",
+              "16": "ZAN",
+              "17": "SNE",
+              "18": "BRA"
+            },
+            {
+              "Year": "1973",
+              "Chassis": "Connew PC1",
+              "Engine(s)": "Chevrolet V8",
+              "Drivers": "Pierre Soukry",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "DNS",
+              "11": "",
+              "12": "",
+              "13": "DNQ",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1973",
+              "Chassis": "Connew PC1",
+              "Engine(s)": "Chevrolet V8",
+              "Drivers": "Tony Trimmer",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": "Ret"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Cooper Car Company",
+      "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+    },
+    "licensed_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      },
+      {
+        "year": 1956,
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+      },
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      },
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      },
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      },
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      },
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1964,
+        "url": "https://en.wikipedia.org/wiki/1964_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      },
+      {
+        "year": 1966,
+        "url": "https://en.wikipedia.org/wiki/1966_Formula_One_World_Championship"
+      },
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 129,
+    "races_started": 129,
+    "drivers": 111,
+    "total_entries": 528,
+    "wins": 16,
+    "points": 301,
+    "poles": 11,
+    "fastest_laps": 14,
+    "podiums": 58,
+    "wcc_titles": 2,
+    "wdc_titles": 2,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company",
+      "infoboxes": [
+        {
+          "title": "Cooper",
+          "rows": {
+            "Full name": {
+              "text": "Cooper Car Company",
+              "links": []
+            },
+            "Base": {
+              "text": "Surbiton , Surrey , United Kingdom",
+              "links": [
+                {
+                  "text": "Surbiton",
+                  "url": "https://en.wikipedia.org/wiki/Surbiton"
+                },
+                {
+                  "text": "Surrey",
+                  "url": "https://en.wikipedia.org/wiki/Surrey"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Charles Cooper John Cooper",
+              "links": [
+                {
+                  "text": "Charles Cooper",
+                  "url": "https://en.wikipedia.org/wiki/Charles_Cooper_(motor_manufacturer)"
+                },
+                {
+                  "text": "John Cooper",
+                  "url": "https://en.wikipedia.org/wiki/John_Cooper_(car_maker)"
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Stirling Moss Maurice Trintignant Jack Brabham Bruce McLaren John Surtees Jochen Rindt Pedro Rodríguez",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "Stirling Moss",
+                  "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/France"
+                },
+                {
+                  "text": "Maurice Trintignant",
+                  "url": "https://en.wikipedia.org/wiki/Maurice_Trintignant"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Australia"
+                },
+                {
+                  "text": "Jack Brabham",
+                  "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/New_Zealand"
+                },
+                {
+                  "text": "Bruce McLaren",
+                  "url": "https://en.wikipedia.org/wiki/Bruce_McLaren"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "John Surtees",
+                  "url": "https://en.wikipedia.org/wiki/John_Surtees"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Austria"
+                },
+                {
+                  "text": "Jochen Rindt",
+                  "url": "https://en.wikipedia.org/wiki/Jochen_Rindt"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Mexico"
+                },
+                {
+                  "text": "Pedro Rodríguez",
+                  "url": "https://en.wikipedia.org/wiki/Pedro_Rodr%C3%ADguez_(racing_driver)"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1950 Monaco Grand Prix",
+              "links": [
+                {
+                  "text": "1950 Monaco Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1950_Monaco_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "129",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "2 ( 1959 , 1960 )",
+              "links": [
+                {
+                  "text": "1959",
+                  "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+                },
+                {
+                  "text": "1960",
+                  "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
+                }
+              ]
+            },
+            "Drivers' Championships": {
+              "text": "2 ( 1959 , 1960 )",
+              "links": [
+                {
+                  "text": "1959",
+                  "url": "https://en.wikipedia.org/wiki/1959_Formula_One_season"
+                },
+                {
+                  "text": "1960",
+                  "url": "https://en.wikipedia.org/wiki/1960_Formula_One_season"
+                }
+              ]
+            },
+            "Race victories": {
+              "text": "16",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "11",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "14",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1969 Monaco Grand Prix",
+              "links": [
+                {
+                  "text": "1969 Monaco Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1969_Monaco_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Sporting positions"
+          ],
+          "rows": [
+            {
+              "Sporting positions": "Preceded by Vanwall"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": "Christensen",
+    "constructor_url": "https://en.wikipedia.org/wiki/Christensen_(constructor)",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Christensen_(constructor)",
+      "infoboxes": null,
+      "tables": [
+        {
+          "headers": [
+            "Season",
+            "Driver",
+            "Grid",
+            "Classification",
+            "Points",
+            "Note",
+            "Race Report",
+            "Reference"
+          ],
+          "rows": [
+            {
+              "Season": "1959",
+              "Driver": "Jack Turner",
+              "Grid": "14",
+              "Classification": "Ret",
+              "Points": "",
+              "Note": "Fuel Leak",
+              "Race Report": "Report",
+              "Reference": ""
+            },
+            {
+              "Season": "1960",
+              "Driver": "Jim Hurtubise",
+              "Grid": "23",
+              "Classification": "Ret",
+              "Points": "",
+              "Note": "Engine",
+              "Race Report": "Report",
+              "Reference": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": "Carl Marchese",
+    "constructor_url": "https://en.wikipedia.org/wiki/Carl_Marchese",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Carl_Marchese",
+      "infoboxes": [
+        {
+          "title": null,
+          "rows": {
+            "Born": {
+              "text": "( 1905-11-17 ) November 17, 1905 Milwaukee, Wisconsin , U.S.",
+              "links": [
+                {
+                  "text": "Milwaukee, Wisconsin",
+                  "url": "https://en.wikipedia.org/wiki/Milwaukee,_Wisconsin"
+                }
+              ]
+            },
+            "Died": {
+              "text": "June 26, 1984 (1984-06-26) (aged 78) Valrico, Florida , U.S.",
+              "links": [
+                {
+                  "text": "Valrico, Florida",
+                  "url": "https://en.wikipedia.org/wiki/Valrico,_Florida"
+                }
+              ]
+            },
+            "First race": {
+              "text": "1929 Indianapolis 500 ( Indianapolis )",
+              "links": [
+                {
+                  "text": "1929",
+                  "url": "https://en.wikipedia.org/wiki/1929_AAA_Championship_Car_season"
+                },
+                {
+                  "text": "Indianapolis 500",
+                  "url": "https://en.wikipedia.org/wiki/1929_Indianapolis_500"
+                },
+                {
+                  "text": "Indianapolis",
+                  "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Car",
+            "Start",
+            "Qual",
+            "Rank",
+            "Finish",
+            "Laps",
+            "Led",
+            "Retired"
+          ],
+          "rows": [
+            {
+              "Year": "1929",
+              "Car": "43",
+              "Start": "25",
+              "Qual": "108.440",
+              "Rank": "23",
+              "Finish": "4",
+              "Laps": "200",
+              "Led": "0",
+              "Retired": "Running"
+            },
+            {
+              "Year": "Totals",
+              "Car": "Totals",
+              "Start": "Totals",
+              "Qual": "Totals",
+              "Rank": "Totals",
+              "Finish": "Totals",
+              "Laps": "200",
+              "Led": "0",
+              "Retired": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Starts",
+            "1"
+          ],
+          "rows": [
+            {
+              "Starts": "Poles",
+              "1": "0"
+            },
+            {
+              "Starts": "Front Row",
+              "1": "0"
+            },
+            {
+              "Starts": "Wins",
+              "1": "0"
+            },
+            {
+              "Starts": "Top 5",
+              "1": "1"
+            },
+            {
+              "Starts": "Top 10",
+              "1": "1"
+            },
+            {
+              "Starts": "Retired",
+              "1": "0"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Season",
+            "Driver",
+            "Grid",
+            "Classification",
+            "Points",
+            "Note",
+            "Race Report"
+          ],
+          "rows": [
+            {
+              "Season": "1950",
+              "Driver": "Myron Fohr",
+              "Grid": "16",
+              "Classification": "11",
+              "Points": "",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1951",
+              "Driver": "Chuck Stevenson",
+              "Grid": "19",
+              "Classification": "20",
+              "Points": "",
+              "Note": "Fire",
+              "Race Report": "Report"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "team": "Camoradi International",
+    "team_url": "https://en.wikipedia.org/wiki/Camoradi_International",
+    "seasons": [
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      },
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      }
+    ],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Camoradi_International",
+      "infoboxes": null,
+      "tables": [
+        {
+          "headers": [
+            "Date",
+            "Race",
+            "Car",
+            "Results",
+            "Drivers"
+          ],
+          "rows": [
+            {
+              "Date": "1959-May",
+              "Race": "San Salvador GP",
+              "Car": "Porsche RSK 547/3 1.5 F4",
+              "Results": "1st"
+            },
+            {
+              "Date": "1959-May",
+              "Race": "San Salvador GP",
+              "Car": "Porsche RSK 547/3 1.5 F4",
+              "Results": "1st",
+              "Drivers": "David Lane"
+            },
+            {
+              "Date": "1959-June",
+              "Race": "USAC Formula Libre, Lime Rock",
+              "Car": "Maserati 250F1 2.5 L6",
+              "Results": "1st",
+              "Drivers": "Chuck Daigh"
+            },
+            {
+              "Date": "1959-June",
+              "Race": "USAC Formula Libre, Lime Rock",
+              "Car": "Maserati 250F1 2.5 L6",
+              "Results": "2nd",
+              "Drivers": "Chuck Daigh"
+            },
+            {
+              "Date": "1959-July",
+              "Race": "USAC Formula Libre, Meadowdale",
+              "Car": "Maserati 250F1 2.5 L6",
+              "Results": "DNF (Accident)",
+              "Drivers": "Chuck Daigh"
+            },
+            {
+              "Date": "1959-July",
+              "Race": "USAC Formula Libre, Meadowdale",
+              "Car": "Maserati 250F1 2.5 L6",
+              "Results": "DNF (Accident)",
+              "Drivers": "Zora Duntov, Paul O'Shea"
+            },
+            {
+              "Date": "1959-December",
+              "Race": "Nassau Speed Weeks",
+              "Car": "Maserati T61",
+              "Results": "DNF (Accident)",
+              "Drivers": "Carroll Shelby"
+            },
+            {
+              "Date": "1959-December",
+              "Race": "Nassau Speed Weeks",
+              "Car": "Maserati T61",
+              "Results": "DNF (Mechanical)",
+              "Drivers": "Carroll Shelby"
+            },
+            {
+              "Date": "1959-December",
+              "Race": "Nassau Speed Weeks",
+              "Car": "Porsche RSK 547/3 1.5 F4",
+              "Results": "1st (2 litre)",
+              "Drivers": "Carroll Shelby"
+            },
+            {
+              "Date": "1959-December",
+              "Race": "Nassau Speed Weeks",
+              "Car": "Porsche RSK 547/3 1.5 F4",
+              "Results": "1st (2 litre)",
+              "Drivers": "Jo Bonnier"
+            },
+            {
+              "Date": "1959-December",
+              "Race": "Nassau Speed Weeks",
+              "Car": "Porsche RSK 547/3 1.5 F4",
+              "Results": "1st (2 litre)",
+              "Drivers": "Jack McAfee"
+            },
+            {
+              "Date": "1959-December",
+              "Race": "Nassau Speed Weeks",
+              "Car": "Porsche RSK 547/3 1.5 F4",
+              "Results": "2nd (2 litre)",
+              "Drivers": "Jack McAfee"
+            },
+            {
+              "Date": "1959-December",
+              "Race": "Nassau Speed Weeks",
+              "Car": "Porsche Carrera",
+              "Results": "1st (GT Race)",
+              "Drivers": "Jack McAfee"
+            },
+            {
+              "Date": "1959-December",
+              "Race": "Nassau Speed Weeks",
+              "Car": "Porsche Carrera",
+              "Results": "1st (GT Race)",
+              "Drivers": "Johnny Cuevas"
+            },
+            {
+              "Date": "1959-December",
+              "Race": "United States GP, Sebring",
+              "Car": "Maserati TecMec",
+              "Results": "1st (GT Race)",
+              "Drivers": "Jim Rathmann"
+            },
+            {
+              "Date": "1959-December",
+              "Race": "United States GP, Sebring",
+              "Car": "Maserati TecMec",
+              "Results": "DNF (Mechanical)",
+              "Drivers": "Jim Rathmann"
+            },
+            {
+              "Date": "1960-January",
+              "Race": "1,000 km of Argentina, Buenos Aires",
+              "Car": "Maserati T61",
+              "Results": "DNF(Accident)",
+              "Drivers": "Jim Rathmann"
+            },
+            {
+              "Date": "1960-January",
+              "Race": "1,000 km of Argentina, Buenos Aires",
+              "Car": "Maserati T61",
+              "Results": "DNF(Accident)",
+              "Drivers": "Dan Gurney , Masten Gregory"
+            },
+            {
+              "Date": "1960-January",
+              "Race": "GP of Argentina",
+              "Car": "Porsche F2",
+              "Results": "DNF(Accident)",
+              "Drivers": "Masten Gregory"
+            },
+            {
+              "Date": "1960-January",
+              "Race": "GP of Argentina",
+              "Car": "Porsche F2",
+              "Results": "12th",
+              "Drivers": "Masten Gregory"
+            },
+            {
+              "Date": "1960-January",
+              "Race": "Cordova Formula Libre",
+              "Car": "Behra-Porsche F2",
+              "Results": "DNF(Accident)",
+              "Drivers": "Masten Gregory"
+            },
+            {
+              "Date": "1960-January",
+              "Race": "Cordova Formula Libre",
+              "Car": "Behra-Porsche F2",
+              "Results": "DNF(Accident)",
+              "Drivers": "Masten Gregory"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana GT Race",
+              "Car": "Corvette",
+              "Results": "DNF(Accident)",
+              "Drivers": "Jim Jeffords"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana GT Race",
+              "Car": "Corvette",
+              "Results": "1st",
+              "Drivers": "Jim Jeffords"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana GT Race",
+              "Car": "Corvette",
+              "Results": "5th",
+              "Drivers": "Jim Jeffords"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana GT Race",
+              "Car": "Corvette",
+              "Results": "5th",
+              "Drivers": "George Constantine"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana GT Race",
+              "Car": "Porsche Carrera",
+              "Results": "5th",
+              "Drivers": "Johnny Cuevas"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana GT Race",
+              "Car": "Porsche Carrera",
+              "Results": "1st(2 litre)",
+              "Drivers": "Johnny Cuevas"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Maserati T61",
+              "Results": "1st",
+              "Drivers": "Johnny Cuevas"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Maserati T61",
+              "Results": "1st",
+              "Drivers": "Stirling Moss"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Porsche RSK 547/3 1.5 F4",
+              "Results": "1st",
+              "Drivers": "Masten Gregory"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Porsche RSK 547/3 1.5 F4",
+              "Results": "3rd",
+              "Drivers": "Masten Gregory"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Corvette",
+              "Results": "1st GT (8th overall)",
+              "Drivers": "Masten Gregory"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Corvette",
+              "Results": "1st GT (8th overall)",
+              "Drivers": "Jim Jeffords"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Porsche Carrera",
+              "Results": "1st GT (8th overall)",
+              "Drivers": "Johnny Cuevas"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Porsche Carrera",
+              "Results": "1st (2 litre)",
+              "Drivers": "Johnny Cuevas"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Ferrari 250TR",
+              "Results": "13th",
+              "Drivers": "Johnny Cuevas"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Ferrari 250TR",
+              "Results": "13th",
+              "Drivers": "Rodger Ward , Dan Gurney"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Maserati",
+              "Results": "13th",
+              "Drivers": "Dan Gurney"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Maserati",
+              "Results": "DNF",
+              "Drivers": "Dan Gurney"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Porsche",
+              "Results": "DNF",
+              "Drivers": "Dan Gurney"
+            },
+            {
+              "Date": "1960-February",
+              "Race": "Havana Grand Prix",
+              "Car": "Porsche",
+              "Results": "DNF",
+              "Drivers": "Carroll Shelby"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Maserati T61",
+              "Results": "DNF",
+              "Drivers": "Dan Gurney , Stirling Moss"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Maserati T61",
+              "Results": "DNF",
+              "Drivers": "Dan Gurney , Stirling Moss"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Maserati T61",
+              "Results": "DNF",
+              "Drivers": "Dan Gurney , Stirling Moss"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Maserati T61",
+              "Results": "DNF",
+              "Drivers": "Carroll Shelby , Masten Gregory"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Maserati T61",
+              "Results": "DNF",
+              "Drivers": "Jim Rathmann , George Koehne"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Maserati T61",
+              "Results": "DNS",
+              "Drivers": "Jim Rathmann , George Koehne"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Porsche Carrera",
+              "Results": "1st (2 litre), 9th Overall",
+              "Drivers": "Jim Rathmann , George Koehne"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Porsche Carrera",
+              "Results": "1st (2 litre), 9th Overall",
+              "Drivers": "Joe Sheppard, Dick Dungan"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Corvette",
+              "Results": "1st (2 litre), 9th Overall",
+              "Drivers": "Jim Jeffords, Bill Weustoff, Fred Gamble"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Corvette",
+              "Results": "2nd+ 3rd Class 14GT",
+              "Drivers": "Jim Jeffords, Bill Weustoff, Fred Gamble"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Porsche Carrera",
+              "Results": "DNF",
+              "Drivers": "Jim Jeffords, Bill Weustoff, Fred Gamble"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "Porsche Carrera",
+              "Results": "DNF",
+              "Drivers": "Johnny Cuevas, Ulf Norinder"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "OSCA 750",
+              "Results": "DNF",
+              "Drivers": "Denise McCluggage , Pinkie Windridge"
+            },
+            {
+              "Date": "1960-March",
+              "Race": "12 Hours of Sebring",
+              "Car": "OSCA 750",
+              "Results": "DNF",
+              "Drivers": "Denise McCluggage , Pinkie Windridge"
+            },
+            {
+              "Date": "1960-April",
+              "Race": "LA Times GP, Riverside",
+              "Car": "Maserati T61",
+              "Results": "1st",
+              "Drivers": "Denise McCluggage , Pinkie Windridge"
+            },
+            {
+              "Date": "1960-April",
+              "Race": "LA Times GP, Riverside",
+              "Car": "Maserati T61",
+              "Results": "1st",
+              "Drivers": "Carroll Shelby"
+            },
+            {
+              "Date": "1960-May",
+              "Race": "Targa Florio, Sicily",
+              "Car": "Maserati T61",
+              "Results": "1st",
+              "Drivers": "Umberto Maglioli , Nino Vaccarella"
+            },
+            {
+              "Date": "1960-May",
+              "Race": "Targa Florio, Sicily",
+              "Car": "Maserati T61",
+              "Results": "DNF (Accident)",
+              "Drivers": "Umberto Maglioli , Nino Vaccarella"
+            },
+            {
+              "Date": "1960-May",
+              "Race": "Targa Florio, Sicily",
+              "Car": "Porsche Carrera",
+              "Results": "22nd",
+              "Drivers": "Umberto Maglioli , Nino Vaccarella"
+            },
+            {
+              "Date": "1960-May",
+              "Race": "Targa Florio, Sicily",
+              "Car": "Porsche Carrera",
+              "Results": "22nd",
+              "Drivers": "Lloyd Casner , Nino Todaro"
+            },
+            {
+              "Date": "1960-May",
+              "Race": "1,000 km Nurburgring, Germany",
+              "Car": "Maserati T61",
+              "Results": "22nd",
+              "Drivers": "Dan Gurney , Stirling Moss"
+            },
+            {
+              "Date": "1960-May",
+              "Race": "1,000 km Nurburgring, Germany",
+              "Car": "Maserati T61",
+              "Results": "1st",
+              "Drivers": "Dan Gurney , Stirling Moss"
+            },
+            {
+              "Date": "1960-May",
+              "Race": "1,000 km Nurburgring, Germany",
+              "Car": "Maserati T61",
+              "Results": "5th",
+              "Drivers": "Dan Gurney , Stirling Moss"
+            },
+            {
+              "Date": "1960-May",
+              "Race": "1,000 km Nurburgring, Germany",
+              "Car": "Maserati T61",
+              "Results": "5th",
+              "Drivers": "Masten Gregory , Gino Munaron"
+            },
+            {
+              "Date": "1960-May",
+              "Race": "1,000 km Nurburgring, Germany",
+              "Car": "Corvette",
+              "Results": "5th",
+              "Drivers": "Fred Gamble , Lee Lilley"
+            },
+            {
+              "Date": "1960-May",
+              "Race": "1,000 km Nurburgring, Germany",
+              "Car": "Corvette",
+              "Results": "DNF (Mechanical)",
+              "Drivers": "Fred Gamble , Lee Lilley"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Le Mans 24 Hours, France",
+              "Car": "Corvette",
+              "Results": "10th",
+              "Drivers": "Fred Gamble , Lee Lilley"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Le Mans 24 Hours, France",
+              "Car": "Corvette",
+              "Results": "10th",
+              "Drivers": "Fred Gamble , Lee Lilley"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Le Mans 24 Hours, France",
+              "Car": "Maserati T61",
+              "Results": "10th",
+              "Drivers": "Masten Gregory , Chuck Daigh"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Le Mans 24 Hours, France",
+              "Car": "Maserati T61",
+              "Results": "DNF (Mechanical)",
+              "Drivers": "Masten Gregory , Chuck Daigh"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Le Mans 24 Hours, France",
+              "Car": "Maserati T61",
+              "Results": "DNF (Mechanical)",
+              "Drivers": "Masten Gregory , Chuck Daigh"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Le Mans 24 Hours, France",
+              "Car": "Maserati T61",
+              "Results": "DNF (Mechanical)",
+              "Drivers": "Lloyd Casner , Jim Jeffords"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Le Mans 24 Hours, France",
+              "Car": "Maserati T61",
+              "Results": "DNF (Mechanical)",
+              "Drivers": "Georgio Scarlatti, Gino Munaron"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Le Mans 24 Hours, France",
+              "Car": "Maserati T61",
+              "Results": "DNF (Mechanical)",
+              "Drivers": "Georgio Scarlatti, Gino Munaron"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Road America 500, U.S.A.",
+              "Car": "Maserati T61",
+              "Results": "1st",
+              "Drivers": "Georgio Scarlatti, Gino Munaron"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Road America 500, U.S.A.",
+              "Car": "Maserati T61",
+              "Results": "1st",
+              "Drivers": "Jim Jeffords"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Solitude GP F2, Germany",
+              "Car": "Behra-Porsche F2",
+              "Results": "1st",
+              "Drivers": "Lloyd Casner"
+            },
+            {
+              "Date": "1960-June",
+              "Race": "Solitude GP F2, Germany",
+              "Car": "Behra-Porsche F2",
+              "Results": "DNF (Mechanical)",
+              "Drivers": "Lloyd Casner"
+            },
+            {
+              "Date": "1960-July",
+              "Race": "German GP Nurburgring, Germany",
+              "Car": "Porsche F2",
+              "Results": "5th",
+              "Drivers": "Lloyd Casner"
+            },
+            {
+              "Date": "1960-July",
+              "Race": "German GP Nurburgring, Germany",
+              "Car": "Porsche F2",
+              "Results": "5th",
+              "Drivers": "Hans Hermann"
+            },
+            {
+              "Date": "1960-July",
+              "Race": "German GP Nurburgring, Germany",
+              "Car": "Behra-Porsche F2",
+              "Results": "5th",
+              "Drivers": "Fred Gamble"
+            },
+            {
+              "Date": "1960-July",
+              "Race": "German GP Nurburgring, Germany",
+              "Car": "Behra-Porsche F2",
+              "Results": "DNS",
+              "Drivers": "Fred Gamble"
+            },
+            {
+              "Date": "1960-August",
+              "Race": "Swedish GP, Sweden",
+              "Car": "Maserati T61",
+              "Results": "2nd",
+              "Drivers": "Fred Gamble"
+            },
+            {
+              "Date": "1960-August",
+              "Race": "Swedish GP, Sweden",
+              "Car": "Maserati T61",
+              "Results": "2nd",
+              "Drivers": "Jo Bonnier"
+            },
+            {
+              "Date": "1960-August",
+              "Race": "Swedish GP, Sweden",
+              "Car": "Corvette",
+              "Results": "2nd",
+              "Drivers": "Lloyd Casner"
+            },
+            {
+              "Date": "1960-August",
+              "Race": "Swedish GP, Sweden",
+              "Car": "Corvette",
+              "Results": "1st",
+              "Drivers": "Lloyd Casner"
+            },
+            {
+              "Date": "1960-August",
+              "Race": "Goodwood TT, England",
+              "Car": "Corvette",
+              "Results": "DNS (Road Accident)",
+              "Drivers": "Lloyd Casner"
+            },
+            {
+              "Date": "1960-August",
+              "Race": "Goodwood TT, England",
+              "Car": "Corvette",
+              "Results": "DNS (Road Accident)",
+              "Drivers": "Fred Gamble"
+            },
+            {
+              "Date": "1960-September",
+              "Race": "Grand Prix of Europe, Monza, Italy",
+              "Car": "Behra-Porsche F2",
+              "Results": "DNS (Road Accident)",
+              "Drivers": "Fred Gamble"
+            },
+            {
+              "Date": "1960-September",
+              "Race": "Grand Prix of Europe, Monza, Italy",
+              "Car": "Behra-Porsche F2",
+              "Results": "10th",
+              "Drivers": "Fred Gamble"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine(s)",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "rows": [
+            {
+              "Year": "1959",
+              "Chassis": "Tec-Mec F415",
+              "Engine(s)": "Maserati 250F1 2.5 L6",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "MON",
+              "2": "500",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "POR",
+              "8": "ITA",
+              "9": "USA",
+              "10": ""
+            },
+            {
+              "Year": "1959",
+              "Chassis": "Tec-Mec F415",
+              "Engine(s)": "Maserati 250F1 2.5 L6",
+              "Tyres": "D",
+              "Drivers": "Fritz d'Orey",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "Ret",
+              "10": ""
+            },
+            {
+              "Year": "1960",
+              "Chassis": "Behra-Porsche Porsche",
+              "Engine(s)": "Porsche 547/3 1.5 F4",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "NED",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "POR",
+              "9": "ITA",
+              "10": "USA"
+            },
+            {
+              "Year": "1960",
+              "Chassis": "Behra-Porsche Porsche",
+              "Engine(s)": "Porsche 547/3 1.5 F4",
+              "Tyres": "G",
+              "Drivers": "Masten Gregory",
+              "1": "12",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": ""
+            },
+            {
+              "Year": "1960",
+              "Chassis": "Behra-Porsche Porsche",
+              "Engine(s)": "Porsche 547/3 1.5 F4",
+              "Tyres": "G",
+              "Drivers": "Fred Gamble",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "10",
+              "10": ""
+            },
+            {
+              "Year": "1961",
+              "Chassis": "Cooper T53 Lotus 18",
+              "Engine(s)": "Climax FPF 1.5 L4",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "MON",
+              "2": "NED",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "",
+              "10": ""
+            },
+            {
+              "Year": "1961",
+              "Chassis": "Cooper T53 Lotus 18",
+              "Engine(s)": "Climax FPF 1.5 L4",
+              "Tyres": "D",
+              "Drivers": "Masten Gregory",
+              "1": "DNQ",
+              "2": "DNS",
+              "3": "10",
+              "4": "12",
+              "5": "11",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": ""
+            },
+            {
+              "Year": "1961",
+              "Chassis": "Cooper T53 Lotus 18",
+              "Engine(s)": "Climax FPF 1.5 L4",
+              "Tyres": "D",
+              "Drivers": "Ian Burgess",
+              "1": "",
+              "2": "DNS",
+              "3": "DNS",
+              "4": "14",
+              "5": "14",
+              "6": "12",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  }
+]

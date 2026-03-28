@@ -1,13 +1,15 @@
-from pathlib import Path
-
 from models.validation.engine_manufacturer import EngineManufacturer
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.float import FloatColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
-from scrapers.base.table.presets import BASE_STATS_COLUMNS, BASE_STATS_MAP
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.source_catalog import ENGINES_LIST
+from scrapers.base.table.builders import build_base_stats_columns
+from scrapers.base.table.builders import build_columns
+from scrapers.base.table.builders import build_entity_metadata_columns
+from scrapers.base.table.builders import build_name_status_fragment
+from scrapers.base.table.builders import build_scraper_config
+from scrapers.base.table.builders import entity_column
+from scrapers.base.table.columns.types import FloatColumn
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.engines.columns.manufacturer_name_status import (
     EngineManufacturerNameStatusColumn,
@@ -20,18 +22,28 @@ class EngineManufacturersListScraper(F1TableScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers#Engine_manufacturers
     """
 
-    schema_columns = [
-        column("Manufacturer", "manufacturer", EngineManufacturerNameStatusColumn()),
-        column("Engines built in", "engines_built_in", LinksListColumn()),
-    ]
-    for header, key in BASE_STATS_MAP.items():
-        column_instance = FloatColumn() if key == "points" else BASE_STATS_COLUMNS[key]
-        schema_columns.append(column(header, key, column_instance))
+    schema_columns = build_columns(
+        build_name_status_fragment(
+            header="Manufacturer",
+            output_key="manufacturer",
+            column_type=EngineManufacturerNameStatusColumn(),
+        ),
+        build_entity_metadata_columns(
+            [
+                entity_column(
+                    "Engines built in",
+                    "engines_built_in",
+                    LinksListColumn(),
+                ),
+            ],
+        ),
+        build_base_stats_columns(column_overrides={"points": FloatColumn()}),
+    )
 
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_engine_manufacturers",
+    CONFIG = build_scraper_config(
+        url=ENGINES_LIST.base_url,
         # sekcja z główną tabelą
-        section_id="Engine_manufacturers",
+        section_id=ENGINES_LIST.section_id,
         # wystarczy podzbiór nagłówków żeby znaleźć właściwą tabelę
         expected_headers=[
             "Manufacturer",
@@ -42,18 +54,13 @@ class EngineManufacturersListScraper(F1TableScraper):
             "Wins",
             "Points",
         ],
-        record_factory=EngineManufacturer,
-        schema=TableSchemaDSL(columns=schema_columns),
+        record_factory=RECORD_FACTORIES.builders("engine_manufacturer"),
+        model_class=EngineManufacturer,
+        columns=schema_columns,
     )
 
 
 if __name__ == "__main__":
-    run_and_export(
-        EngineManufacturersListScraper,
-        "engines/f1_engine_manufacturers.json",
-        "engines/f1_engine_manufacturers.csv",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

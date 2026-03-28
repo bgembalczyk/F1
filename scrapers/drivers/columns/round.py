@@ -1,4 +1,3 @@
-import re
 from typing import Any
 
 from scrapers.base.helpers.background import extract_background

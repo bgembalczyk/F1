@@ -1,0 +1,502 @@
+[
+  {
+    "name": {
+      "list": [
+        "Pescara Circuit"
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Pescara_Circuit",
+    "circuit_status": "former",
+    "type": "Road circuit",
+    "direction": "Clockwise",
+    "grands_prix": [
+      {
+        "text": "Pescara Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Pescara_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 1,
+    "location": {
+      "places": [
+        {
+          "text": "Pescara",
+          "url": "https://en.wikipedia.org/wiki/Pescara"
+        },
+        {
+          "text": "Abruzzo",
+          "url": "https://en.wikipedia.org/wiki/Abruzzo"
+        },
+        {
+          "text": "Italy"
+        }
+      ],
+      "coordinates": {
+        "lat": 42.475,
+        "lon": 14.15083
+      }
+    },
+    "history": [
+      {
+        "event": "opened",
+        "date": "1924-07-13"
+      },
+      {
+        "event": "closed",
+        "date": "1961-08-15"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "1934–1961",
+        "length_km": 25.801,
+        "length_mi": 16.032,
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "1957 Pescara Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1957_Pescara_Grand_Prix"
+            },
+            "driver": {
+              "text": "Stirling Moss",
+              "url": "https://en.wikipedia.org/wiki/Stirling_Moss"
+            },
+            "vehicle": {
+              "text": "Vanwall VW 5",
+              "url": "https://en.wikipedia.org/wiki/Vanwall_Grand_Prix"
+            },
+            "time": 584.6,
+            "year": "1957",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "1961 4 Hours of Pescara",
+              "url": "https://en.wikipedia.org/wiki/1961_World_Sportscar_Championship"
+            },
+            "driver": {
+              "text": "Richie Ginther",
+              "url": "https://en.wikipedia.org/wiki/Richie_Ginther"
+            },
+            "vehicle": {
+              "text": "Ferrari Dino 246 SP",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_SP#246_SP"
+            },
+            "time": 595.5,
+            "year": "1961",
+            "series": {
+              "text": "Sports car racing",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "1935 Coppa Acerbo",
+              "url": "https://en.wikipedia.org/wiki/1935_Grand_Prix_season#Major_Non-championship_Races"
+            },
+            "driver": {
+              "text": "Achille Varzi",
+              "url": "https://en.wikipedia.org/wiki/Achille_Varzi"
+            },
+            "vehicle": {
+              "text": "Auto Union B",
+              "url": "https://en.wikipedia.org/wiki/Auto_Union_racing_cars#Racing"
+            },
+            "time": 635.0,
+            "year": "1935",
+            "series": {
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "1939 Coppa Acerbo",
+              "url": "https://en.wikipedia.org/wiki/Coppa_Acerbo#By_year"
+            },
+            "driver": {
+              "text": "Giuseppe Farina",
+              "url": "https://en.wikipedia.org/wiki/Giuseppe_Farina"
+            },
+            "vehicle": {
+              "text": "Alfa Romeo 158",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta"
+            },
+            "time": 666.8,
+            "year": "1939",
+            "series": {
+              "text": "Voiturette",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two#Pre-war"
+            }
+          },
+          {
+            "event": {
+              "text": "1960 Pescara Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/Coppa_Acerbo#By_year"
+            },
+            "driver": {
+              "text": "Denny Hulme",
+              "url": "https://en.wikipedia.org/wiki/Denny_Hulme"
+            },
+            "vehicle": {
+              "text": "Cooper T52",
+              "url": "https://en.wikipedia.org/wiki/Cooper_T52"
+            },
+            "time": 670.4,
+            "year": "1960",
+            "series": {
+              "text": "Formula Junior",
+              "url": "https://en.wikipedia.org/wiki/Formula_Junior"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Original Road Course",
+        "years": "1924–1933",
+        "length_km": 25.578,
+        "length_mi": 15.893,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Alfa Romeo P3",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_P3"
+            },
+            "vehicle": {
+              "text": "Tazio Nuvolari",
+              "url": "https://en.wikipedia.org/wiki/Tazio_Nuvolari"
+            },
+            "time": 625.4,
+            "year": "1932",
+            "series": {
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "1932 Coppa Acerbo",
+              "url": "https://en.wikipedia.org/wiki/1932_Grand_Prix_season#Major_Races"
+            },
+            "driver": {
+              "text": "Tazio Nuvolari",
+              "url": "https://en.wikipedia.org/wiki/Tazio_Nuvolari"
+            },
+            "vehicle": {
+              "text": "Alfa Romeo P3",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_P3"
+            },
+            "time": 625.4,
+            "year": "1932",
+            "series": {
+              "text": "GP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motor_racing"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": {
+      "list": [
+        "Phoenix Street Circuit",
+        "Phoenix Grand Prix Circuit"
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Phoenix_Street_Circuit",
+    "circuit_status": "former",
+    "type": "Street circuit",
+    "direction": "Anti-clockwise",
+    "grands_prix": [
+      {
+        "text": "United States Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 3,
+    "location": {
+      "places": [
+        {
+          "text": "Phoenix",
+          "url": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+        },
+        {
+          "text": "Phoenix, Arizona",
+          "url": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+        },
+        {
+          "text": "United States"
+        }
+      ],
+      "coordinates": {
+        "lat": 33.447917,
+        "lon": -112.074583
+      }
+    },
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "1989-02"
+      },
+      {
+        "event": "opened",
+        "date": "1989-06-02"
+      },
+      {
+        "event": "closed",
+        "date": "1991-03-10"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "1991",
+        "length_km": 3.721,
+        "length_mi": 2.312,
+        "turns": 15,
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "1991 United States Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1991_United_States_Grand_Prix"
+            },
+            "driver": {
+              "text": "Ayrton Senna",
+              "url": "https://en.wikipedia.org/wiki/Ayrton_Senna"
+            },
+            "vehicle": {
+              "text": "McLaren MP4/6",
+              "url": "https://en.wikipedia.org/wiki/McLaren_MP4/6"
+            },
+            "time": 81.434,
+            "year": "1991",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "1989–1990",
+        "length_km": 3.8,
+        "length_mi": 2.361,
+        "turns": 15,
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "1990 United States Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1990_United_States_Grand_Prix"
+            },
+            "driver": {
+              "text": "Gerhard Berger",
+              "url": "https://en.wikipedia.org/wiki/Gerhard_Berger"
+            },
+            "vehicle": {
+              "text": "McLaren MP4/5B",
+              "url": "https://en.wikipedia.org/wiki/McLaren_MP4/5"
+            },
+            "time": 91.05,
+            "year": "1990",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "1990 Phoenix Trans-Am round",
+              "url": "https://en.wikipedia.org/wiki/1990_Trans-Am_Series"
+            },
+            "driver": {
+              "text": "Robert Lappalainen"
+            },
+            "vehicle": {
+              "text": "Ford Mustang Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang#Circuit_racing"
+            },
+            "time": 108.785,
+            "year": "1990",
+            "series": {
+              "text": "Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": {
+      "list": [
+        "Prince George Circuit"
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Prince_George_Circuit",
+    "circuit_status": "former",
+    "type": "Race circuit",
+    "direction": "Clockwise",
+    "grands_prix": [
+      {
+        "text": "South African Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      },
+      {
+        "year": 1965,
+        "url": "https://en.wikipedia.org/wiki/1965_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 3,
+    "location": {
+      "places": [
+        {
+          "text": "East London",
+          "url": "https://en.wikipedia.org/wiki/East_London,_Eastern_Cape"
+        },
+        {
+          "text": "South Africa"
+        }
+      ],
+      "coordinates": {
+        "lat": -33.04861,
+        "lon": 27.87361
+      }
+    },
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "1959–present",
+        "length_km": 3.92,
+        "length_mi": 2.436,
+        "turns": 9,
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "1968 Border 100",
+              "url": "https://en.wikipedia.org/wiki/South_African_Formula_One_Championship"
+            },
+            "driver": {
+              "text": "John Love",
+              "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Lotus 49",
+              "url": "https://en.wikipedia.org/wiki/Lotus_49"
+            },
+            "time": 84.3,
+            "year": "1968",
+            "series": {
+              "text": "South Africa F1",
+              "url": "https://en.wikipedia.org/wiki/South_African_Formula_One_Championship"
+            }
+          },
+          {
+            "event": {
+              "text": "1966 South African Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1966_South_African_Grand_Prix"
+            },
+            "driver": {
+              "text": "Jack Brabham",
+              "url": "https://en.wikipedia.org/wiki/Jack_Brabham"
+            },
+            "vehicle": {
+              "text": "Brabham BT19",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT19"
+            },
+            "time": 85.2,
+            "year": "1966",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "2022 East London Global Touring Car Championship round",
+              "url": "https://en.wikipedia.org/wiki/2022_Global_Touring_Car_Championship"
+            },
+            "driver": {
+              "text": "Saood Wariawa"
+            },
+            "vehicle": {
+              "text": "Toyota Corolla (E210)",
+              "url": "https://en.wikipedia.org/wiki/Toyota_Corolla_(E210)"
+            },
+            "time": 85.502,
+            "year": "2022",
+            "series": {
+              "text": "GTC",
+              "url": "https://en.wikipedia.org/wiki/Global_Touring_Car_Championship#GTC"
+            }
+          },
+          {
+            "event": {
+              "text": "2022 East London Global Touring Car Championship round",
+              "url": "https://en.wikipedia.org/wiki/2022_Global_Touring_Car_Championship"
+            },
+            "driver": {
+              "text": "Jeffrey Kruger"
+            },
+            "vehicle": {
+              "text": "Volkswagen Polo",
+              "url": "https://en.wikipedia.org/wiki/Volkswagen_Polo#Sixth_generation_(AW/BZ;_2017)"
+            },
+            "time": 88.462,
+            "year": "2022",
+            "series": {
+              "text": "SupaCup",
+              "url": "https://en.wikipedia.org/wiki/Global_Touring_Car_Championship#GTC2/GTC_Supacup"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Modified Circuit",
+        "years": "1936–1939",
+        "length_km": 18.619,
+        "length_mi": 11.569
+      },
+      {
+        "layout": "Original Circuit",
+        "years": "1934",
+        "length_km": 24.461,
+        "length_mi": 15.199
+      }
+    ]
+  }
+]

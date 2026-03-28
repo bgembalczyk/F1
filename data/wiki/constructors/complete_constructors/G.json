@@ -1,0 +1,2310 @@
+[
+  {
+    "constructor": {
+      "text": "Gilby Engineering",
+      "url": "https://en.wikipedia.org/wiki/Gilby_Engineering"
+    },
+    "licensed_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1961,
+        "url": "https://en.wikipedia.org/wiki/1961_Formula_One_World_Championship"
+      },
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      },
+      {
+        "year": 1963,
+        "url": "https://en.wikipedia.org/wiki/1963_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 6,
+    "races_started": 3,
+    "drivers": 2,
+    "total_entries": 6,
+    "wins": 0,
+    "points": 0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": 0,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Gilby_Engineering",
+      "infoboxes": [
+        {
+          "title": "Gilby",
+          "rows": {
+            "Full name": {
+              "text": "Gilby Engineering",
+              "links": []
+            },
+            "Founder(s)": {
+              "text": "Syd Greene",
+              "links": []
+            },
+            "Noted staff": {
+              "text": "Len Terry",
+              "links": [
+                {
+                  "text": "Len Terry",
+                  "url": "https://en.wikipedia.org/wiki/Len_Terry"
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Roy Salvadori Ivor Bueb Keith Greene",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "Roy Salvadori",
+                  "url": "https://en.wikipedia.org/wiki/Roy_Salvadori"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "Ivor Bueb",
+                  "url": "https://en.wikipedia.org/wiki/Ivor_Bueb"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "Keith Greene",
+                  "url": "https://en.wikipedia.org/wiki/Keith_Greene"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1954 French Grand Prix",
+              "links": [
+                {
+                  "text": "1954 French Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1954_French_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "12 (10 starts)",
+              "links": []
+            },
+            "Constructors": {
+              "text": "Maserati , Cooper , Gilby",
+              "links": [
+                {
+                  "text": "Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_Motorsport"
+                },
+                {
+                  "text": "Cooper",
+                  "url": "https://en.wikipedia.org/wiki/Cooper_Car_Company"
+                }
+              ]
+            },
+            "Engines": {
+              "text": "Maserati I6 , Climax I4 , Maserati I4, BRM V8",
+              "links": [
+                {
+                  "text": "Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_Motorsport"
+                },
+                {
+                  "text": "I6",
+                  "url": "https://en.wikipedia.org/wiki/Straight-six_engine"
+                },
+                {
+                  "text": "Climax",
+                  "url": "https://en.wikipedia.org/wiki/Coventry_Climax"
+                },
+                {
+                  "text": "I4",
+                  "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
+                },
+                {
+                  "text": "Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati_in_Motorsport"
+                },
+                {
+                  "text": "BRM",
+                  "url": "https://en.wikipedia.org/wiki/British_Racing_Motors"
+                },
+                {
+                  "text": "V8",
+                  "url": "https://en.wikipedia.org/wiki/V8_engine"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "0",
+              "links": []
+            },
+            "Points": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1962 Italian Grand Prix",
+              "links": [
+                {
+                  "text": "1962 Italian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1962_Italian_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1954",
+              "Chassis": "Maserati 250F",
+              "Engine": "Maserati I6",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "SUI",
+              "8": "ITA",
+              "9": "ESP",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Maserati 250F",
+              "Engine": "Maserati I6",
+              "Tyres": "D",
+              "Drivers": "Roy Salvadori",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Maserati 250F",
+              "Engine": "Maserati I6",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "NED",
+              "6": "GBR",
+              "7": "ITA",
+              "8": "",
+              "9": "",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Maserati 250F",
+              "Engine": "Maserati I6",
+              "Tyres": "D",
+              "Drivers": "Roy Salvadori",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Maserati 250F",
+              "Engine": "Maserati I6",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "ITA",
+              "9": "",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Maserati 250F",
+              "Engine": "Maserati I6",
+              "Tyres": "D",
+              "Drivers": "Roy Salvadori",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "11",
+              "9": "",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1957",
+              "Chassis": "Maserati 250F",
+              "Engine": "Maserati I6",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "PES",
+              "8": "ITA",
+              "9": "",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1957",
+              "Chassis": "Maserati 250F",
+              "Engine": "Maserati I6",
+              "Tyres": "D",
+              "Drivers": "Ivor Bueb",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "NC",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1959",
+              "Chassis": "Cooper T43",
+              "Engine": "Climax I4",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "MON",
+              "2": "500",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "POR",
+              "8": "ITA",
+              "9": "USA",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1959",
+              "Chassis": "Cooper T43",
+              "Engine": "Climax I4",
+              "Tyres": "D",
+              "Drivers": "Keith Greene",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "DNQ",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1960",
+              "Chassis": "Cooper T45",
+              "Engine": "Maserati I4",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "NED",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "POR",
+              "9": "ITA",
+              "10": "USA",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1960",
+              "Chassis": "Cooper T45",
+              "Engine": "Maserati I4",
+              "Tyres": "D",
+              "Drivers": "Keith Greene",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "Points": "-*",
+              "WCC": "n/a*"
+            },
+            {
+              "Year": "1961",
+              "Chassis": "Gilby 61",
+              "Engine": "Climax I4",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "MON",
+              "2": "NED",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "",
+              "10": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1961",
+              "Chassis": "Gilby 61",
+              "Engine": "Climax I4",
+              "Tyres": "D",
+              "Drivers": "Keith Greene",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "15",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1962",
+              "Chassis": "Gilby 62",
+              "Engine": "BRM V8",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "NED",
+              "2": "MON",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "RSA",
+              "10": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1962",
+              "Chassis": "Gilby 62",
+              "Engine": "BRM V8",
+              "Tyres": "D",
+              "Drivers": "Keith Greene",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "10": "",
+              "Points": "0",
+              "WCC": "NC"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "rows": [
+            {
+              "Year": "1963",
+              "Entrant": "Ian Raby",
+              "Chassis": "Gilby 62",
+              "Engine": "BRM V8",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "MON",
+              "2": "BEL",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "MEX",
+              "10": "RSA"
+            },
+            {
+              "Year": "1963",
+              "Entrant": "Ian Raby",
+              "Chassis": "Gilby 62",
+              "Engine": "BRM V8",
+              "Tyres": "D",
+              "Drivers": "Ian Raby",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "DNQ",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "10": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Gordini",
+      "url": "https://en.wikipedia.org/wiki/Gordini"
+    },
+    "licensed_in": [
+      {
+        "text": "France",
+        "url": "https://en.wikipedia.org/wiki/France"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      },
+      {
+        "year": 1956,
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 33,
+    "races_started": 33,
+    "drivers": 23,
+    "total_entries": 101,
+    "wins": 0,
+    "points": null,
+    "poles": 0,
+    "fastest_laps": 1,
+    "podiums": 2,
+    "wcc_titles": null,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Gordini",
+      "infoboxes": [
+        {
+          "title": "Gordini",
+          "rows": {
+            "Company type": {
+              "text": "Division",
+              "links": [
+                {
+                  "text": "Division",
+                  "url": "https://en.wikipedia.org/wiki/Division_(business)"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "1946",
+              "links": []
+            },
+            "Headquarters": {
+              "text": "Les Ulis , France",
+              "links": [
+                {
+                  "text": "Les Ulis",
+                  "url": "https://en.wikipedia.org/wiki/Les_Ulis"
+                },
+                {
+                  "text": "France",
+                  "url": "https://en.wikipedia.org/wiki/France"
+                }
+              ]
+            },
+            "Parent": {
+              "text": "Renault Sport",
+              "links": [
+                {
+                  "text": "Renault Sport",
+                  "url": "https://en.wikipedia.org/wiki/Renault_Sport"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Gordini",
+          "rows": {
+            "First entry": {
+              "text": "1950 Monaco Grand Prix",
+              "links": [
+                {
+                  "text": "1950 Monaco Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1950_Monaco_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "33",
+              "links": []
+            },
+            "Engines": {
+              "text": "Gordini, Simca",
+              "links": [
+                {
+                  "text": "Simca",
+                  "url": "https://en.wikipedia.org/wiki/Simca"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "2",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "1",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1956 Italian Grand Prix",
+              "links": [
+                {
+                  "text": "1956 Italian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1956_Italian_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine",
+            "Driver",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "rows": [
+            {
+              "Year": "1950",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "",
+              "1": "GBR",
+              "2": "MON",
+              "3": "500",
+              "4": "SUI",
+              "5": "BEL",
+              "6": "FRA",
+              "7": "ITA",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1950",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "Robert Manzon",
+              "1": "",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "4",
+              "7": "Ret",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1950",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "Maurice Trintignant",
+              "1": "",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "ESP",
+              "9": ""
+            },
+            {
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "André Simon",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "Ret",
+              "7": "6",
+              "8": "Ret",
+              "9": ""
+            },
+            {
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "Robert Manzon",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "7",
+              "7": "Ret",
+              "8": "9",
+              "9": ""
+            },
+            {
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "Maurice Trintignant",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "Ret",
+              "7": "DNS",
+              "8": "Ret",
+              "9": ""
+            },
+            {
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "Aldo Gordini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1951",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "Jean Behra",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "",
+              "1": "SUI",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "NED",
+              "8": "ITA",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Robert Manzon",
+              "1": "Ret",
+              "2": "",
+              "3": "3",
+              "4": "4",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "5",
+              "8": "14",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Jean Behra",
+              "1": "3",
+              "2": "",
+              "3": "Ret",
+              "4": "7",
+              "5": "",
+              "6": "5",
+              "7": "Ret",
+              "8": "Ret",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Johnny Claes",
+              "1": "",
+              "2": "",
+              "3": "8",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Prince Bira",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "11",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Maurice Trintignant",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "6",
+              "8": "Ret",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 11",
+              "Engine": "Simca straight-4",
+              "Driver": "Max de Terra",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini Straight-4",
+              "Driver": "Prince Bira",
+              "1": "Ret",
+              "2": "",
+              "3": "10",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini Straight-4",
+              "Driver": "Johnny Claes",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "14",
+              "6": "",
+              "7": "",
+              "8": "DNQ",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini Straight-4",
+              "Driver": "Robert O'Brien",
+              "1": "",
+              "2": "",
+              "3": "NC",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini Straight-4",
+              "Driver": "Maurice Trintignant",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "5",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1952",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini Straight-4",
+              "Driver": "Paul Frère",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "NED",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "SUI",
+              "9": "ITA"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Jean Behra",
+              "1": "6",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "10",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": ""
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Maurice Trintignant",
+              "1": "7†",
+              "2": "",
+              "3": "6",
+              "4": "5",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "5"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Harry Schell",
+              "1": "7†",
+              "2": "",
+              "3": "Ret",
+              "4": "7",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "",
+              "9": "9"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Robert Manzon",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Carlos Menditeguy",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Roberto Mieres",
+              "1": "",
+              "2": "",
+              "3": "NC",
+              "4": "",
+              "5": "Ret",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "6"
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Fred Wacker",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "9",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "Pablo Birger",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1953",
+              "Chassis": "Simca-Gordini Type 15",
+              "Engine": "Gordini straight-4",
+              "Driver": "Georges Berger",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "SUI",
+              "8": "ITA",
+              "9": "ESP"
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Jean Behra",
+              "1": "DSQ",
+              "2": "",
+              "3": "Ret",
+              "4": "6",
+              "5": "Ret F",
+              "6": "10",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret"
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Élie Bayol",
+              "1": "5",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Roger Loyer",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Paul Frère",
+              "1": "",
+              "2": "",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "André Pilette",
+              "1": "",
+              "2": "",
+              "3": "5",
+              "4": "",
+              "5": "9",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Jacques Pollet",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "Ret"
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Georges Berger",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Clemar Bucci",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": ""
+            },
+            {
+              "Year": "1954",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Fred Wacker",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "6",
+              "9": ""
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "NED",
+              "6": "GBR",
+              "7": "ITA",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Élie Bayol",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Jesús Iglesias",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Pablo Birger",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Robert Manzon",
+              "1": "",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Jacques Pollet",
+              "1": "",
+              "2": "7",
+              "3": "",
+              "4": "",
+              "5": "10",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Hermano da Silva Ramos",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "8",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Mike Sparken",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "7",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1955",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Jean Lucas",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
+              "Engine": "Gordini straight-8",
+              "Driver": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "ITA",
+              "9": ""
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
+              "Engine": "Gordini straight-8",
+              "Driver": "André Pilette",
+              "1": "",
+              "2": "6†",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNS",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
+              "Engine": "Gordini straight-8",
+              "Driver": "Élie Bayol",
+              "1": "",
+              "2": "6†",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
+              "Engine": "Gordini straight-8",
+              "Driver": "Robert Manzon",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "9",
+              "6": "9",
+              "7": "Ret",
+              "8": "Ret",
+              "9": ""
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
+              "Engine": "Gordini straight-8",
+              "Driver": "Hermano da Silva Ramos",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "8",
+              "6": "Ret",
+              "7": "",
+              "8": "Ret",
+              "9": ""
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Gordini Type 32",
+              "Engine": "Gordini straight-8",
+              "Driver": "André Milhoux",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Hermano da Silva Ramos",
+              "1": "",
+              "2": "5",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "Robert Manzon",
+              "1": "",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "André Pilette",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "11",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": ""
+            },
+            {
+              "Year": "1956",
+              "Chassis": "Gordini Type 16",
+              "Engine": "Gordini straight-6",
+              "Driver": "André Simon",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "9",
+              "9": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "constructor": {
+      "text": "Greifzu",
+      "url": "https://en.wikipedia.org/wiki/Paul_Greifzu"
+    },
+    "licensed_in": [
+      {
+        "text": "East Germany",
+        "url": "https://en.wikipedia.org/wiki/East_Germany"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 1,
+    "races_started": 1,
+    "drivers": 1,
+    "total_entries": 1,
+    "wins": 0,
+    "points": null,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc_titles": null,
+    "wdc_titles": 0,
+    "engine": [],
+    "based_in": [],
+    "antecedent_teams": [],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Paul_Greifzu",
+      "infoboxes": null,
+      "tables": null
+    }
+  },
+  {
+    "constructor": "George Salih",
+    "constructor_url": "https://en.wikipedia.org/wiki/George_Salih",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/George_Salih",
+      "infoboxes": [
+        {
+          "title": null,
+          "rows": {
+            "Born": {
+              "text": "George Frank Salih ( 1914-05-12 ) May 12, 1914 San Francisco, California , U.S.",
+              "links": [
+                {
+                  "text": "San Francisco, California",
+                  "url": "https://en.wikipedia.org/wiki/San_Francisco,_California"
+                }
+              ]
+            },
+            "Died": {
+              "text": "February 8, 1984 (1984-02-08) (aged 69) Los Angeles, California , U.S.",
+              "links": [
+                {
+                  "text": "Los Angeles, California",
+                  "url": "https://en.wikipedia.org/wiki/Los_Angeles,_California"
+                }
+              ]
+            },
+            "Occupation": {
+              "text": "Auto racing builder",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Season",
+            "Driver",
+            "Grid",
+            "Classification",
+            "Note",
+            "Race Report"
+          ],
+          "rows": [
+            {
+              "Season": "1957",
+              "Driver": "Sam Hanks",
+              "Grid": "13",
+              "Classification": "1",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1958",
+              "Driver": "Jimmy Bryan",
+              "Grid": "7",
+              "Classification": "1",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1959",
+              "Driver": "Jimmy Bryan",
+              "Grid": "20",
+              "Classification": "33",
+              "Note": "Engine",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1960",
+              "Driver": "Jimmy Bryan",
+              "Grid": "10",
+              "Classification": "19",
+              "Note": "Fuel system",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1961",
+              "Driver": "Chuck Stevenson",
+              "Grid": "28",
+              "Classification": "6",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1962",
+              "Driver": "Johnny Boyd",
+              "Grid": "28",
+              "Classification": "10",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1963",
+              "Driver": "Johnny Boyd",
+              "Grid": "27",
+              "Classification": "32",
+              "Note": "Oil leak",
+              "Race Report": "Report"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "team": "Goldie Hexagon Racing",
+    "team_url": "https://en.wikipedia.org/wiki/Goldie_Hexagon_Racing",
+    "seasons": [
+      {
+        "year": 1974,
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
+      }
+    ],
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Goldie_Hexagon_Racing",
+      "infoboxes": [
+        {
+          "title": "Goldie Hexagon Racing",
+          "rows": {
+            "Full name": {
+              "text": "John Goldie Racing with Hexagon",
+              "links": []
+            },
+            "Base": {
+              "text": "United Kingdom",
+              "links": [
+                {
+                  "text": "United Kingdom",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Paul Michaels",
+              "links": []
+            },
+            "Noted staff": {
+              "text": "Paul Michaels",
+              "links": []
+            },
+            "Noted drivers": {
+              "text": "John Watson Carlos Pace",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+                },
+                {
+                  "text": "John Watson",
+                  "url": "https://en.wikipedia.org/wiki/John_Watson_(racing_driver)"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Brazil"
+                },
+                {
+                  "text": "Carlos Pace",
+                  "url": "https://en.wikipedia.org/wiki/Carlos_Pace"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1974 Argentine Grand Prix",
+              "links": [
+                {
+                  "text": "1974 Argentine Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1974_Argentine_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "15 [ 1 ]",
+              "links": []
+            },
+            "Constructors": {
+              "text": "Brabham",
+              "links": [
+                {
+                  "text": "Brabham",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                }
+              ]
+            },
+            "Engines": {
+              "text": "Cosworth DFV",
+              "links": [
+                {
+                  "text": "Cosworth DFV",
+                  "url": "https://en.wikipedia.org/wiki/Cosworth_DFV"
+                }
+              ]
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1974 United States Grand Prix",
+              "links": [
+                {
+                  "text": "1974 United States Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1974_United_States_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engine(s)",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"
+          ],
+          "rows": [
+            {
+              "Year": "1974",
+              "Chassis": "Brabham BT42",
+              "Engine(s)": "Ford Cosworth DFV 3.0 V8",
+              "Tyres": "F",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "BRA",
+              "3": "RSA",
+              "4": "ESP",
+              "5": "BEL",
+              "6": "MON",
+              "7": "SWE",
+              "8": "NED",
+              "9": "FRA",
+              "10": "GBR",
+              "11": "GER",
+              "12": "AUT",
+              "13": "ITA",
+              "14": "CAN",
+              "15": "USA"
+            },
+            {
+              "Year": "1974",
+              "Chassis": "Brabham BT42",
+              "Engine(s)": "Ford Cosworth DFV 3.0 V8",
+              "Tyres": "F",
+              "Drivers": "John Watson",
+              "1": "12",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "11",
+              "5": "11",
+              "6": "6",
+              "7": "11",
+              "8": "7",
+              "9": "16",
+              "10": "11",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": ""
+            },
+            {
+              "Year": "1974",
+              "Chassis": "Brabham BT42",
+              "Engine(s)": "Ford Cosworth DFV 3.0 V8",
+              "Tyres": "F",
+              "Drivers": "Carlos Pace",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "DNQ",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": ""
+            },
+            {
+              "Year": "1974",
+              "Chassis": "Brabham BT44",
+              "Engine(s)": "Ford Cosworth DFV 3.0 V8",
+              "Tyres": "F",
+              "Drivers": "John Watson",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "Ret",
+              "12": "4",
+              "13": "7",
+              "14": "Ret",
+              "15": "5"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Driver",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "rows": [
+            {
+              "Year": "1972",
+              "Entrant": "Hexagon of Highgate",
+              "Chassis": "March 721",
+              "Engine": "Ford Cosworth DFV V8",
+              "Driver": "",
+              "1": "ROC",
+              "2": "BRA",
+              "3": "INT",
+              "4": "OUL",
+              "5": "REP",
+              "6": "VIC"
+            },
+            {
+              "Year": "1972",
+              "Entrant": "Hexagon of Highgate",
+              "Chassis": "March 721",
+              "Engine": "Ford Cosworth DFV V8",
+              "Driver": "John Watson",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "6"
+            },
+            {
+              "Year": "1977",
+              "Entrant": "Hexagon of Highgate",
+              "Chassis": "Penske PC3",
+              "Engine": "Ford Cosworth DFV V8",
+              "Driver": "",
+              "1": "ROC",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": ""
+            },
+            {
+              "Year": "1977",
+              "Entrant": "Hexagon of Highgate",
+              "Chassis": "Penske PC3",
+              "Engine": "Ford Cosworth DFV V8",
+              "Driver": "Bob Evans",
+              "1": "11",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine(s)",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ],
+          "rows": [
+            {
+              "Year": "1976",
+              "Entrant": "Hexagon Racing",
+              "Chassis": "March 75A",
+              "Engine(s)": "Ford GAA 3.4 V6",
+              "Drivers": "",
+              "1": "MAL",
+              "2": "SNE",
+              "3": "OUL",
+              "4": "BRH",
+              "5": "THR",
+              "6": "BRH",
+              "7": "MAL",
+              "8": "SNE",
+              "9": "BRH",
+              "10": "THR",
+              "11": "OUL",
+              "12": "BRH",
+              "13": "BRH",
+              "14": ""
+            },
+            {
+              "Year": "1976",
+              "Entrant": "Hexagon Racing",
+              "Chassis": "March 75A",
+              "Engine(s)": "Ford GAA 3.4 V6",
+              "Drivers": "Damien Magee",
+              "1": "2",
+              "2": "1",
+              "3": "1",
+              "4": "3",
+              "5": "NC",
+              "6": "2",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1976",
+              "Entrant": "Hexagon Racing",
+              "Chassis": "Penske PC3",
+              "Engine(s)": "Ford Cosworth DFV 3.0 V8",
+              "Drivers": "Damien Magee",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "4",
+              "10": "2",
+              "11": "Ret",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1976",
+              "Entrant": "Hexagon Racing",
+              "Chassis": "Penske PC3",
+              "Engine(s)": "Ford Cosworth DFV 3.0 V8",
+              "Drivers": "Derek Bell",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "4",
+              "13": "2",
+              "14": ""
+            },
+            {
+              "Year": "1977",
+              "Entrant": "Hexagon Racing",
+              "Chassis": "Penske PC3",
+              "Engine(s)": "Ford Cosworth DFV 3.0 V8",
+              "Drivers": "",
+              "1": "MAL",
+              "2": "SNE",
+              "3": "OUL",
+              "4": "BRH",
+              "5": "MAL",
+              "6": "THR",
+              "7": "BRH",
+              "8": "OUL",
+              "9": "MAL",
+              "10": "DON",
+              "11": "BRH",
+              "12": "THR",
+              "13": "SNE",
+              "14": "BRH"
+            },
+            {
+              "Year": "1977",
+              "Entrant": "Hexagon Racing",
+              "Chassis": "Penske PC3",
+              "Engine(s)": "Ford Cosworth DFV 3.0 V8",
+              "Drivers": "Nick May",
+              "1": "",
+              "2": "DNS",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1977",
+              "Entrant": "Hexagon Racing",
+              "Chassis": "Penske PC3",
+              "Engine(s)": "Ford Cosworth DFV 3.0 V8",
+              "Drivers": "Derek Bell",
+              "1": "",
+              "2": "",
+              "3": "1",
+              "4": "4",
+              "5": "",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "DSQ",
+              "10": "4",
+              "11": "DNS",
+              "12": "",
+              "13": "",
+              "14": ""
+            },
+            {
+              "Year": "1977",
+              "Entrant": "Hexagon Racing",
+              "Chassis": "Penske PC3",
+              "Engine(s)": "Ford Cosworth DFV 3.0 V8",
+              "Drivers": "Brian Henton",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "3"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  }
+]

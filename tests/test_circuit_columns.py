@@ -2,6 +2,9 @@ from scrapers.base.table.columns.context import ColumnContext
 from scrapers.circuits.columns.circuit_name_status import CircuitNameStatusColumn
 from scrapers.circuits.columns.last_length_used import LastLengthUsedColumn
 
+EXPECTED_LAST_LENGTH_USED_KM = 3.78
+EXPECTED_LAST_LENGTH_USED_MI = 2.349
+
 
 def _ctx(raw_text: str, *, clean_text: str | None = None) -> ColumnContext:
     return ColumnContext(
@@ -30,5 +33,5 @@ def test_last_length_used_column_apply() -> None:
     record: dict[str, object] = {}
     column.apply(_ctx("3.780 km (2.349 mi)"), record)
 
-    assert record["last_length_used_km"] == 3.78
-    assert record["last_length_used_mi"] == 2.349
+    assert record["last_length_used_km"] == EXPECTED_LAST_LENGTH_USED_KM
+    assert record["last_length_used_mi"] == EXPECTED_LAST_LENGTH_USED_MI

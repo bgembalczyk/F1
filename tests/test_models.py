@@ -1,78 +1,22 @@
-import pytest
+# ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
 from dataclasses import dataclass
-import re
-import sys
-import types
+
+import pytest
 
 from models.validation.base import ValidatedModel
 from models.validation.circuit import Circuit
-from models.validation.constants import (
-    CIRCUIT_STATUS_CURRENT,
-    MANUFACTURER_STATUS_FORMER,
-)
+from models.validation.constants import CIRCUIT_STATUS_CURRENT
+from models.validation.constants import MANUFACTURER_STATUS_FORMER
 from models.validation.engine_manufacturer import EngineManufacturer
 from models.value_objects.link_utils import normalize_link
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
+from tests.support.compat_stubs import ensure_bs4_stub
+from tests.support.compat_stubs import ensure_certifi_stub
 
-if "bs4" not in sys.modules:
-    bs4_stub = types.ModuleType("bs4")
-
-    class _StubTag:
-        def __init__(self, attrs=None, text: str = ""):
-            self.attrs = attrs or {}
-            self.text = text
-
-        def get(self, key, default=None):
-            return self.attrs.get(key, default)
-
-        def get_text(self, *_, **__):
-            return self.text
-
-        def find_all(self, *_, **__):
-            return []
-
-        def find_all_next(self, *_, **__):
-            return []
-
-        @property
-        def contents(self):
-            return [self.text]
-
-    class _StubBeautifulSoup:
-        def __init__(self, html: str, *_):
-            self.html = html
-
-        def find(self, name: str | None = None, *_, **__):
-            if name == "a":
-                return self._parse_a(self.html)
-            return _StubTag()
-
-        def find_all(self, *_, **__):
-            return []
-
-        def _parse_a(self, html: str) -> _StubTag:
-            href_match = re.search(r'href="([^"]*)"', html)
-            class_match = re.search(r'class="([^"]*)"', html)
-            text_match = re.search(r">([^<]*)<", html)
-
-            attrs = {}
-            if href_match:
-                attrs["href"] = href_match.group(1)
-            if class_match:
-                attrs["class"] = class_match.group(1).split()
-
-            return _StubTag(attrs, text_match.group(1) if text_match else "")
-
-    bs4_stub.Tag = _StubTag
-    bs4_stub.BeautifulSoup = _StubBeautifulSoup
-    sys.modules["bs4"] = bs4_stub
-
-if "certifi" not in sys.modules:
-    certifi_stub = types.ModuleType("certifi")
-    certifi_stub.where = lambda: ""
-    sys.modules["certifi"] = certifi_stub
+ensure_bs4_stub()
+ensure_certifi_stub()
 
 
 def test_circuit_rejects_invalid_url():
@@ -124,9 +68,28 @@ def test_validated_model_calls_validate():
     assert calls == [1]
 
 
+def test_validated_model_exposes_shared_record_contract():
+    errors = Circuit.validate_record(
+        {"circuit": {"text": "Monza", "url": "https://example.com"}},
+    )
+
+    messages = [error.message for error in errors]
+    assert "Missing key: circuit_status" in messages
+    assert "Missing key: country" in messages
+    assert "Missing key: seasons" in messages
+
+
+def test_validated_model_model_validate_uses_schema_before_instantiation():
+    with pytest.raises(ValueError, match="Circuit validation failed"):
+        Circuit.model_validate(
+            {"circuit": {"text": "Monza", "url": "https://example.com"}},
+        )
+
+
 def test_scraper_config_validates_on_init():
     with pytest.raises(
-        ValueError, match="ScraperConfig.url must be a non-empty string."
+        ValueError,
+        match=r"ScraperConfig\.url must be a non-empty string\.",
     ):
         ScraperConfig(url="")
 

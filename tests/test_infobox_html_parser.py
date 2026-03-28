@@ -38,7 +38,7 @@ def test_parser_extracts_title_rows_and_links():
     assert result["title"] == "Test Circuit"
     assert result["rows"]["Location"]["text"] == "Test Link [1]"
     assert result["rows"]["Location"]["links"] == [
-        {"text": "Test Link", "url": "https://en.wikipedia.org/wiki/Test"}
+        {"text": "Test Link", "url": "https://en.wikipedia.org/wiki/Test"},
     ]
     assert result["rows"]["Owner"]["text"] == "Example Owner"
     assert "Nested" not in result["rows"]

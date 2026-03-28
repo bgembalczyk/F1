@@ -2,9 +2,9 @@
 from typing import Any
 
 from models.value_objects.normalized_date import NormalizedDate
+from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.helpers.time import parse_date_text
 
 
 class DateColumn(BaseColumn):
@@ -16,7 +16,7 @@ class DateColumn(BaseColumn):
     - "7 Jun 2019"
     - "June 7, 2019"
     - "Jun 7, 2019"
-    - "7–8 June 2019"  -> bierze pierwszą datę
+    - "7-8 June 2019"  -> bierze pierwszą datę
     - "7 June 2019 (race 1)" -> ignoruje część w nawiasie
 
     Zwraca NormalizedDate:

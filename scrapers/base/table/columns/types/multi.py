@@ -1,4 +1,4 @@
-from typing import Dict, Any
+from typing import Any
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -15,12 +15,12 @@ class MultiColumn(BaseColumn):
         })
     """
 
-    def __init__(self, subcolumns: Dict[str, BaseColumn]) -> None:
+    def __init__(self, subcolumns: dict[str, BaseColumn]) -> None:
         self.subcolumns = subcolumns
 
     def parse(self, ctx: ColumnContext) -> Any:
-        # opcjonalnie – zwraca dict; niekoniecznie używane
-        result: Dict[str, Any] = {}
+        # opcjonalnie - zwraca dict; niekoniecznie używane
+        result: dict[str, Any] = {}
         for new_key, col in self.subcolumns.items():
             subctx = ColumnContext(
                 header=ctx.header,
@@ -39,7 +39,7 @@ class MultiColumn(BaseColumn):
                 result[new_key] = val
         return result
 
-    def apply(self, ctx: ColumnContext, record: Dict[str, Any]) -> None:
+    def apply(self, ctx: ColumnContext, record: dict[str, Any]) -> None:
         for new_key, col in self.subcolumns.items():
             subctx = ColumnContext(
                 header=ctx.header,

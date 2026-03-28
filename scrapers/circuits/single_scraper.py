@@ -1,139 +1,110 @@
-from typing import Any, Dict, List, Optional
+from __future__ import annotations
 
-from bs4 import BeautifulSoup
+from typing import TYPE_CHECKING
+from typing import Any
 
-from scrapers.base.helpers.http import init_scraper_options
-from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
-from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
-from scrapers.circuits.helpers.article_validation import is_circuit_like_article
-from scrapers.circuits.helpers.lap_record import collect_lap_records
-from scrapers.circuits.helpers.lap_record import is_lap_record_table
-from scrapers.circuits.helpers.layout import detect_layout_name
-from scrapers.circuits.infobox.scraper import F1CircuitInfoboxScraper
+from scrapers.base.single_wiki_article import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article import SectionsPayloadDTO
+from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.base.single_wiki_article import TablesPayloadDTO
+from scrapers.base.single_wiki_article.section_selection_strategy import (
+    WikipediaSectionByIdSelectionStrategy,
+)
+from scrapers.circuits.composition import CircuitScraperCompositionFactory
+from scrapers.circuits.composition import CircuitScraperDependencies
+from scrapers.circuits.helpers.lap_record import (
+    is_lap_record_table as _is_lap_record_table,
+)
+from scrapers.circuits.helpers.layout import detect_layout_name as _detect_layout_name
+from scrapers.circuits.helpers.sections import is_circuit_like_article
+
+if TYPE_CHECKING:
+    from bs4 import BeautifulSoup
+
+    from scrapers.base.options import ScraperOptions
+
+is_lap_record_table = _is_lap_record_table
+detect_layout_name = _detect_layout_name
 
 
-class F1SingleCircuitScraper(WikipediaSectionByIdMixin, F1Scraper):
-    """
-    Scraper pojedynczego toru – pobiera infobox i wszystkie tabele z artykułu Wikipedii.
-
-    Dodatkowe heurystyki:
-    - jeżeli artykuł nie ma kategorii typu '... circuit / racetrack / speedway ...'
-      → zwracamy None (nie zbieramy dodatkowych informacji),
-    - jeżeli URL ma fragment (#Bugatti_Circuit) → szukamy infoboksa i tabel tylko
-      wewnątrz tej sekcji.
-    """
-
+class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
     def __init__(
         self,
         *,
         options: ScraperOptions | None = None,
+        dependencies: CircuitScraperDependencies | None = None,
+        composition_factory: CircuitScraperCompositionFactory | None = None,
     ) -> None:
-        # Ten scraper zawsze potrzebuje URL-i (lap records, encje itd.)
-        options = init_scraper_options(options, include_urls=True)
+        super().__init__(
+            options=options,
+            section_selection_strategy=WikipediaSectionByIdSelectionStrategy(
+                domain="circuits",
+            ),
+        )
+        resolved_dependencies = dependencies
+        if resolved_dependencies is None:
+            resolved_dependencies = (
+                composition_factory or CircuitScraperCompositionFactory()
+            ).build(options=self._options)
 
-        # HtmlFetcher jest config-driven — jeśli nie ma fetchera w options,
-        # tworzymy domyślny.
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
+        self._infobox_service = resolved_dependencies.infobox_service
+        self._sections_service_factory = resolved_dependencies.sections_service_factory
+        self._domain_record_service = resolved_dependencies.domain_record_service
 
-        super().__init__(options=options)
-        self.policy = self.http_policy
-        self.url: str = ""
-        self.debug_dir = options.debug_dir
-        self._original_url: Optional[str] = None
-        self._section_fragment: Optional[str] = None
+    def _should_parse_article(self, soup: BeautifulSoup) -> bool:
+        return is_circuit_like_article(soup)
 
     def _select_section(
         self,
         soup: BeautifulSoup,
-        fragment: Optional[str],
+        fragment: str | None,
     ) -> BeautifulSoup:
         if not fragment:
             return soup
 
-        section = self.extract_section_by_id(soup, fragment)
+        section = self.extract_section_by_id(soup, fragment, domain="circuits")
         return section or soup
 
-    def _parse_details(self, soup: BeautifulSoup) -> Dict[str, Any]:
-        return {
-            "infobox": self._scrape_infobox(soup),
-            "tables": self._scrape_tables(soup),
-        }
+    def _prepare_article_soup(self, soup: BeautifulSoup) -> BeautifulSoup:
+        return self._select_section(soup, self._section_fragment)
 
-    def parse(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        if not is_circuit_like_article(soup):
-            return []
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
+        return InfoboxPayloadDTO(
+            self._infobox_service.extract(soup, url=self.url).primary_record,
+        )
 
-        working_soup = self._select_section(soup, self._section_fragment)
-
-        if self.parser is not None:
-            return self.parser.parse(working_soup)
-
-        parsed = self._parse_details(working_soup)
-        if not parsed:
-            return []
-
-        return [
-            {
-                "url": self._original_url or self.url,
-                **parsed,
-            }
-        ]
-
-    def _scrape_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
-        infobox_scraper = F1CircuitInfoboxScraper(
-            options=ScraperOptions(
+    def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
+        return TablesPayloadDTO(
+            self._domain_record_service.collect_lap_record_rows(
+                soup=soup,
+                url=self.url,
                 include_urls=self.include_urls,
                 fetcher=self.fetcher,
                 policy=self.policy,
                 debug_dir=self.debug_dir,
             ),
         )
-        records = infobox_scraper.parse(soup)
-        return records[0] if records else {}
 
-    def _scrape_tables(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        lap_scraper = LapRecordsTableScraper(
-            options=ScraperOptions(
-                include_urls=self.include_urls,
-                fetcher=self.fetcher,
-                policy=self.policy,
-                debug_dir=self.debug_dir,
-            ),
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
+        sections_service = self._sections_service_factory.create(
+            adapter=self,
+            options=self._options,
+            url=self.url,
         )
-        lap_scraper.url = self.url  # żeby _full_url działało poprawnie
-        all_records: List[Dict[str, Any]] = []
+        return SectionsPayloadDTO(sections_service.extract(soup))
 
-        for table in soup.find_all("table", class_="wikitable"):
-            header_row = table.find("tr")
-            if not header_row:
-                continue
-
-            header_cells = header_row.find_all(["th", "td"])
-            headers = [clean_wiki_text(c.get_text(strip=True)) for c in header_cells]
-
-            if not is_lap_record_table(headers, lap_scraper):
-                continue
-
-            base_layout = detect_layout_name(table, headers)
-            all_records.extend(
-                collect_lap_records(table, headers, base_layout, lap_scraper)
-            )
-
-        layouts: Dict[str, List[Dict[str, Any]]] = {}
-        for rec in all_records:
-            layout_name = rec.get("layout")
-            if not layout_name:
-                continue
-
-            rec_copy = dict(rec)
-            rec_copy.pop("layout", None)
-            layouts.setdefault(layout_name, []).append(rec_copy)
-
-        return [
-            {"layout": layout_name, "lap_records": recs}
-            for layout_name, recs in layouts.items()
-        ]
+    def _assemble_record(
+        self,
+        *,
+        soup: BeautifulSoup,
+        infobox_payload: InfoboxPayloadDTO,
+        tables_payload: TablesPayloadDTO,
+        sections_payload: SectionsPayloadDTO,
+    ) -> dict[str, Any]:
+        _ = soup
+        return self._domain_record_service.assemble_record(
+            source_url=self._original_url or self.url,
+            infobox=infobox_payload.data,
+            lap_record_rows=tables_payload.data,
+            sections=sections_payload.data,
+        )

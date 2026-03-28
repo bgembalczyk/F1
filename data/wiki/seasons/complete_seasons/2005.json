@@ -734,15 +734,26 @@
               "url": "https://en.wikipedia.org/wiki/Minardi_PS05"
             }
           ],
-          "engine": {
-            "model": {
-              "text": "Cosworth TJ2005",
-              "url": "https://en.wikipedia.org/wiki/Cosworth_TJ_/_CA_engine"
+          "engine": [
+            {
+              "model": {
+                "text": "Cosworth CK2004",
+                "url": null
+              },
+              "displacement_l": 3.0,
+              "layout": "V",
+              "cylinders": 10
             },
-            "displacement_l": 3.0,
-            "layout": "V",
-            "cylinders": 10
-          },
+            {
+              "model": {
+                "text": "Cosworth TJ2005",
+                "url": "https://en.wikipedia.org/wiki/Cosworth_TJ_/_CA_engine"
+              },
+              "displacement_l": 3.0,
+              "layout": "V",
+              "cylinders": 10
+            }
+          ],
           "tyre": [
             {
               "text": "Bridgestone",

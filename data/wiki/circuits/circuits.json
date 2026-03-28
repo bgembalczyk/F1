@@ -1,0 +1,548 @@
+[
+  {
+    "schema_version": "1.0",
+    "name": "Adelaide Street Circuit",
+    "link": "https://en.wikipedia.org/wiki/Adelaide_Street_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Ain-Diab Circuit",
+    "link": "https://en.wikipedia.org/wiki/Ain-Diab_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Aintree Motor Racing Circuit",
+    "link": "https://en.wikipedia.org/wiki/Aintree_Motor_Racing_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Albert Park Circuit",
+    "link": "https://en.wikipedia.org/wiki/Albert_Park_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Algarve International Circuit",
+    "link": "https://en.wikipedia.org/wiki/Algarve_International_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Autódromo do Estoril",
+    "link": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Autódromo Hermanos Rodríguez",
+    "link": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Autódromo Internacional do Rio de Janeiro",
+    "link": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Internacional_Nelson_Piquet",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Autodromo Internazionale del Mugello",
+    "link": "https://en.wikipedia.org/wiki/Autodromo_Internazionale_del_Mugello",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Autodromo Internazionale Enzo e Dino Ferrari",
+    "link": "https://en.wikipedia.org/wiki/Imola_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Autodromo José Carlos Pace",
+    "link": "https://en.wikipedia.org/wiki/Interlagos_circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Autodromo Nazionale di Monza",
+    "link": "https://en.wikipedia.org/wiki/Autodromo_Nazionale_di_Monza",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Autódromo Oscar y Juan Gálvez",
+    "link": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_Oscar_y_Juan_G%C3%A1lvez",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "AVUS",
+    "link": "https://en.wikipedia.org/wiki/AVUS",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Bahrain International Circuit",
+    "link": "https://en.wikipedia.org/wiki/Bahrain_International_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Baku City Circuit",
+    "link": "https://en.wikipedia.org/wiki/Baku_City_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Brands Hatch Circuit",
+    "link": "https://en.wikipedia.org/wiki/Brands_Hatch",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Buddh International Circuit",
+    "link": "https://en.wikipedia.org/wiki/Buddh_International_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Bugatti Au Mans",
+    "link": "https://en.wikipedia.org/wiki/Circuit_de_la_Sarthe#Bugatti_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Caesars Palace Grand Prix Circuit",
+    "link": "https://en.wikipedia.org/wiki/Caesars_Palace_Grand_Prix",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Charade Circuit",
+    "link": "https://en.wikipedia.org/wiki/Circuit_de_Charade",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit Bremgarten",
+    "link": "https://en.wikipedia.org/wiki/Circuit_Bremgarten",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit de Barcelona-Catalunya",
+    "link": "https://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit de Monaco",
+    "link": "https://en.wikipedia.org/wiki/Circuit_de_Monaco",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit de Nevers Magny-Cours",
+    "link": "https://en.wikipedia.org/wiki/Circuit_de_Nevers_Magny-Cours",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit de Pedralbes",
+    "link": "https://en.wikipedia.org/wiki/Pedralbes_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit de Reims-Gueux",
+    "link": "https://en.wikipedia.org/wiki/Reims-Gueux",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit de Spa-Francorchamps",
+    "link": "https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit Dijon-Prenois",
+    "link": "https://en.wikipedia.org/wiki/Dijon-Prenois",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit Gilles-Villeneuve",
+    "link": "https://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit Mont-Tremblant",
+    "link": "https://en.wikipedia.org/wiki/Circuit_Mont-Tremblant",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit of the Americas",
+    "link": "https://en.wikipedia.org/wiki/Circuit_of_the_Americas",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit Paul Ricard",
+    "link": "https://en.wikipedia.org/wiki/Circuit_Paul_Ricard",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit Zandvoort",
+    "link": "https://en.wikipedia.org/wiki/Circuit_Zandvoort",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuit Zolder",
+    "link": "https://en.wikipedia.org/wiki/Circuit_Zolder",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuito da Boavista",
+    "link": "https://en.wikipedia.org/wiki/Circuito_da_Boavista",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuito de Monsanto",
+    "link": "https://en.wikipedia.org/wiki/Circuito_de_Monsanto",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuito Permanente de Jerez",
+    "link": "https://en.wikipedia.org/wiki/Circuito_de_Jerez",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Circuito Permanente del Jarama",
+    "link": "https://en.wikipedia.org/wiki/Circuito_del_Jarama",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Dallas Fair Park",
+    "link": "https://en.wikipedia.org/wiki/Fair_Park#Other_notable_events",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Detroit Street Circuit",
+    "link": "https://en.wikipedia.org/wiki/Detroit_Street_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Donington Park",
+    "link": "https://en.wikipedia.org/wiki/Donington_Park",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Fuji Speedway",
+    "link": "https://en.wikipedia.org/wiki/Fuji_Speedway",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Hockenheimring",
+    "link": "https://en.wikipedia.org/wiki/Hockenheimring",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Hungaroring",
+    "link": "https://en.wikipedia.org/wiki/Hungaroring",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Indianapolis Motor Speedway",
+    "link": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Intercity Istanbul Park",
+    "link": "https://en.wikipedia.org/wiki/Istanbul_Park",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Jeddah Corniche Circuit",
+    "link": "https://en.wikipedia.org/wiki/Jeddah_Corniche_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Korea International Circuit",
+    "link": "https://en.wikipedia.org/wiki/Korea_International_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Kyalami Grand Prix Circuit",
+    "link": "https://en.wikipedia.org/wiki/Kyalami_Racing_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Las Vegas Strip Circuit",
+    "link": "https://en.wikipedia.org/wiki/Las_Vegas_Strip_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Long Beach Street Circuit",
+    "link": "https://en.wikipedia.org/wiki/Long_Beach_Street_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Lusail International Circuit",
+    "link": "https://en.wikipedia.org/wiki/Lusail_International_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Madring",
+    "link": "https://en.wikipedia.org/wiki/Madring",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Marina Bay Street Circuit",
+    "link": "https://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Miami International Autodrome",
+    "link": "https://en.wikipedia.org/wiki/Miami_International_Autodrome",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Montjuïc circuit",
+    "link": "https://en.wikipedia.org/wiki/Montju%C3%AFc_circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Mosport International Raceway",
+    "link": "https://en.wikipedia.org/wiki/Canadian_Tire_Motorsport_Park",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Nivelles-Baulers",
+    "link": "https://en.wikipedia.org/wiki/Nivelles-Baulers",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Nürburgring",
+    "link": "https://en.wikipedia.org/wiki/N%C3%BCrburgring",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Pescara Circuit",
+    "link": "https://en.wikipedia.org/wiki/Pescara_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Phoenix Street Circuit",
+    "link": "https://en.wikipedia.org/wiki/Phoenix_Street_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Prince George Circuit",
+    "link": "https://en.wikipedia.org/wiki/Prince_George_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Red Bull Ring",
+    "link": "https://en.wikipedia.org/wiki/Red_Bull_Ring",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Riverside International Raceway",
+    "link": "https://en.wikipedia.org/wiki/Riverside_International_Raceway",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Rouen-Les-Essarts",
+    "link": "https://en.wikipedia.org/wiki/Rouen-Les-Essarts",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Scandinavian Raceway",
+    "link": "https://en.wikipedia.org/wiki/Anderstorp_Raceway",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Sebring Raceway",
+    "link": "https://en.wikipedia.org/wiki/Sebring_International_Raceway",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Sepang International Circuit",
+    "link": "https://en.wikipedia.org/wiki/Sepang_International_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Shanghai International Circuit",
+    "link": "https://en.wikipedia.org/wiki/Shanghai_International_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Silverstone Circuit",
+    "link": "https://en.wikipedia.org/wiki/Silverstone_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Sochi Autodrom",
+    "link": "https://en.wikipedia.org/wiki/Sochi_Autodrom",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Suzuka International Racing Course",
+    "link": "https://en.wikipedia.org/wiki/Suzuka_International_Racing_Course",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "TI Circuit Aida",
+    "link": "https://en.wikipedia.org/wiki/Okayama_International_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Valencia Street Circuit",
+    "link": "https://en.wikipedia.org/wiki/Valencia_Street_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Watkins Glen International",
+    "link": "https://en.wikipedia.org/wiki/Watkins_Glen_International",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Yas Marina Circuit",
+    "link": "https://en.wikipedia.org/wiki/Yas_Marina_Circuit",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  },
+  {
+    "schema_version": "1.0",
+    "name": "Zeltweg Airfield",
+    "link": "https://en.wikipedia.org/wiki/Zeltweg_Airfield",
+    "source_url": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits",
+    "scraped_at": "2026-03-16T15:13:09.342827+00:00"
+  }
+]

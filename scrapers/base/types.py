@@ -1,4 +1,6 @@
-from typing import Any, Iterable, Protocol
+from collections.abc import Iterable
+from typing import Any
+from typing import Protocol
 
 
 class ExportableRecord(Protocol):

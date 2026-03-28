@@ -1,3 +1,4 @@
+# ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
 """
 Unit tests for red-flagged races scraper improvements.
 
@@ -5,26 +6,20 @@ These tests verify that the scraper can handle various Wikipedia page structures
 including cases where section headings are missing or malformed.
 """
 
-from bs4 import BeautifulSoup
-from unittest.mock import Mock
 import sys
 from pathlib import Path
+
+from bs4 import BeautifulSoup
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
-    RedFlaggedWorldChampionshipRacesScraper,
-)
 from scrapers.grands_prix.red_flagged_races_scraper.non_championship import (
     RedFlaggedNonChampionshipRacesScraper,
 )
-
-try:
-    import pytest
-    PYTEST_AVAILABLE = True
-except ImportError:
-    PYTEST_AVAILABLE = False
+from scrapers.grands_prix.red_flagged_races_scraper.world_championship import (
+    RedFlaggedWorldChampionshipRacesScraper,
+)
 
 
 class TestRedFlaggedRacesScraperRobustness:
@@ -32,7 +27,7 @@ class TestRedFlaggedRacesScraperRobustness:
 
     def test_with_proper_section_headings(self):
         """Test scraper works with proper Wikipedia section structure."""
-        html = '''
+        html = """
         <html><body>
         <h2><span class="mw-headline" id="Red-flagged_races">Red-flagged races</span></h2>
         <table class="wikitable">
@@ -51,17 +46,17 @@ class TestRedFlaggedRacesScraperRobustness:
           </tr>
         </table>
         </body></html>
-        '''
-        soup = BeautifulSoup(html, 'html.parser')
+        """
+        soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedWorldChampionshipRacesScraper()
         records = scraper._parse_soup(soup)
-        
+
         assert len(records) == 1
-        assert records[0]['season'] == 2024
+        assert records[0]["season"] == 2024
 
     def test_with_missing_section_headings(self):
         """Test scraper works even when section headings are missing (uses whole document fallback)."""
-        html = '''
+        html = """
         <html><body>
         <!-- NO proper h2 heading, just a div -->
         <div>Red-flagged races</div>
@@ -81,17 +76,17 @@ class TestRedFlaggedRacesScraperRobustness:
           </tr>
         </table>
         </body></html>
-        '''
-        soup = BeautifulSoup(html, 'html.parser')
+        """
+        soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedWorldChampionshipRacesScraper()
         records = scraper._parse_soup(soup)
-        
+
         assert len(records) == 1
-        assert records[0]['season'] == 2024
+        assert records[0]["season"] == 2024
 
     def test_non_championship_scraper_differentiates_tables(self):
         """Test that non-championship scraper finds the correct table based on headers."""
-        html = '''
+        html = """
         <html><body>
         <!-- Two tables, first is championship, second is non-championship -->
         <table class="wikitable">
@@ -123,31 +118,32 @@ class TestRedFlaggedRacesScraperRobustness:
           </tr>
         </table>
         </body></html>
-        '''
-        soup = BeautifulSoup(html, 'html.parser')
+        """
+        soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedNonChampionshipRacesScraper()
         records = scraper._parse_soup(soup)
-        
+
         # Should find the non-championship table (with "Event" column)
         assert len(records) == 1
-        assert records[0]['season'] == 1971
+        assert records[0]["season"] == 1971
 
     def test_error_message_with_no_matching_table(self):
         """Test that error message includes diagnostic information."""
-        html = '''
+        html = """
         <html><body>
         <table class="wikitable">
           <tr><th>Wrong</th><th>Headers</th></tr>
           <tr><td>1</td><td>2</td></tr>
         </table>
         </body></html>
-        '''
-        soup = BeautifulSoup(html, 'html.parser')
+        """
+        soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedWorldChampionshipRacesScraper()
-        
+
         try:
             scraper._parse_soup(soup)
-            assert False, "Should have raised RuntimeError"
+            msg = "Should have raised RuntimeError"
+            raise AssertionError(msg)
         except RuntimeError as e:
             error_msg = str(e)
             # Should mention that 1 table was found (in Polish)
@@ -155,7 +151,7 @@ class TestRedFlaggedRacesScraperRobustness:
 
     def test_toc_warning_when_section_missing(self, caplog):
         """Test that a warning is logged when TOC exists but section heading doesn't."""
-        html = '''
+        html = """
         <html><body>
         <div id="toc-Red-flagged_races">
           <a href="#Red-flagged_races">Red-flagged races</a>
@@ -176,42 +172,43 @@ class TestRedFlaggedRacesScraperRobustness:
           </tr>
         </table>
         </body></html>
-        '''
-        soup = BeautifulSoup(html, 'html.parser')
+        """
+        soup = BeautifulSoup(html, "html.parser")
         scraper = RedFlaggedWorldChampionshipRacesScraper()
-        
+
         import logging
+
         logging.basicConfig(level=logging.WARNING)
         records = scraper._parse_soup(soup)
-        
+
         # Should still parse successfully via fallback
         assert len(records) == 1
         # Note: caplog verification would require pytest, which may not be run in this context
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Run tests manually for verification
     test = TestRedFlaggedRacesScraperRobustness()
-    
+
     print("Test 1: Proper section headings...")
     test.test_with_proper_section_headings()
     print("✓ PASSED")
-    
+
     print("\nTest 2: Missing section headings...")
     test.test_with_missing_section_headings()
     print("✓ PASSED")
-    
+
     print("\nTest 3: Non-championship scraper differentiates tables...")
     test.test_non_championship_scraper_differentiates_tables()
     print("✓ PASSED")
-    
+
     print("\nTest 4: Error message with no matching table...")
     test.test_error_message_with_no_matching_table()
     print("✓ PASSED")
-    
+
     print("\nTest 5: TOC warning when section missing...")
     test.test_toc_warning_when_section_missing(None)
     print("✓ PASSED")
-    
-    print("\n" + "="*50)
+
+    print("\n" + "=" * 50)
     print("All tests passed!")

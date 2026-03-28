@@ -1,4 +1,5 @@
-from typing import Any, Mapping
+from collections.abc import Mapping
+from typing import Any
 
 from models.validation.utils import is_valid_url
 
@@ -17,5 +18,6 @@ def validate_link(link: Mapping[str, Any] | None, *, field_name: str) -> dict[st
     url = normalized.get("url")
     if url is not None:
         if not isinstance(url, str) or not is_valid_url(url):
-            raise ValueError(f"Pole {field_name} zawiera nieprawidłowy URL")
+            msg = f"Pole {field_name} zawiera nieprawidłowy URL"
+            raise ValueError(msg)
     return normalized

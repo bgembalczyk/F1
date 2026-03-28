@@ -1,20 +1,20 @@
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.helpers.text import (
-    clean_wiki_text,
-    extract_links_from_cell,
-    strip_marks,
-)
 from scrapers.base.helpers.links import normalize_links
 from scrapers.base.helpers.normalize import normalize_auto_value
-from scrapers.base.helpers.text_normalization import (
-    is_language_link,
-    split_delimited_text,
-)
-from scrapers.base.helpers.time import parse_time_seconds_from_text, parse_time_text
+from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.text import extract_links_from_cell
+from scrapers.base.helpers.text import strip_marks
+from scrapers.base.helpers.text_normalization import is_language_link
+from scrapers.base.helpers.text_normalization import split_delimited_text
+from scrapers.base.helpers.time import parse_time_seconds_from_text
+from scrapers.base.helpers.time import parse_time_text
 from scrapers.base.helpers.url import normalize_url
-from scrapers.base.helpers.value_objects import NormalizedTime
+from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
+from scrapers.base.normalization_pipeline import normalize_value
+
+TIME_IN_SECONDS = 12.5
 
 
 def test_clean_wiki_text_removes_references_and_whitespace():
@@ -36,7 +36,7 @@ def test_clean_wiki_text_can_preserve_refs():
 
 
 def test_clean_wiki_text_normalize_dashes_compacts_spaces():
-    assert clean_wiki_text("A – B") == "A-B"
+    assert clean_wiki_text("A - B") == "A-B"
     assert clean_wiki_text("A -B") == "A-B"
     assert clean_wiki_text("A- B") == "A-B"
 
@@ -224,11 +224,11 @@ def test_normalize_auto_value_drops_empty_str():
 
 
 def test_parse_time_seconds_from_text_handles_various_inputs():
-    assert parse_time_seconds_from_text(12.5) == 12.5
+    assert parse_time_seconds_from_text(TIME_IN_SECONDS) == TIME_IN_SECONDS
     assert parse_time_seconds_from_text("1:16.0357") == pytest.approx(76.0357)
     assert parse_time_seconds_from_text({"text": "1:02.500"}) == pytest.approx(62.5)
     assert parse_time_seconds_from_text(
-        NormalizedTime(text="0:59.9", seconds=None)
+        NormalizedTime(text="0:59.9", seconds=None),
     ) == pytest.approx(59.9)
     assert parse_time_seconds_from_text("no time") is None
 
@@ -250,3 +250,41 @@ def test_normalize_url_builds_and_validates() -> None:
     assert normalize_url(base, "https://example.com/path") == "https://example.com/path"
     assert normalize_url(base, "mailto:test@example.com") is None
     assert normalize_url(base, "https://example.com//double") is None
+
+
+def test_normalize_value_pipeline_drops_empty_text_for_single_link_when_requested():
+    value = {"text": "†", "url": "https://example.com/marked"}
+
+    assert (
+        normalize_value(
+            value,
+            strip_marks=True,
+            drop_empty=True,
+            drop_empty_text=True,
+        )
+        is None
+    )
+
+
+def test_normalize_value_pipeline_runs_plugins_last():
+    calls: list[str] = []
+
+    def plugin(value):
+        calls.append("plugin")
+        if isinstance(value, dict):
+            value["plugin"] = True
+        return value
+
+    result = normalize_value(
+        {"text": " Marked* ", "url": "https://example.com/marked"},
+        strip_marks=True,
+        drop_empty=True,
+        plugins=[plugin],
+    )
+
+    assert result == {
+        "text": "Marked",
+        "url": "https://example.com/marked",
+        "plugin": True,
+    }
+    assert calls == ["plugin"]

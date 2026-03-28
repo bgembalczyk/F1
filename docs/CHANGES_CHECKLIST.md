@@ -108,3 +108,36 @@ All modules tested and verified:
 - ✅ This checklist created: `CHANGES_CHECKLIST.md`
 - ✅ All new modules include docstrings
 - ✅ All functions include parameter and return documentation
+
+## 🔁 DoD merge gate (Section Parser)
+
+Poniższa lista jest checklistą jakości dla każdego merge'a, który dodaje/zmienia parser sekcji.
+
+- [x] Snapshot HTML: pokrycie `minimal + edge` dla domen `drivers/constructors/circuits/seasons/grands_prix` w `tests/test_section_parser_snapshots.py`.
+- [x] Kontrakt `SectionParseResult`: testy kontraktowe w `tests/test_section_parser_contract.py`.
+- [x] Aliasy sekcji: testy aliasów dla parserów domenowych (co najmniej `constructors/circuits/seasons`) w `tests/test_section_parser_regressions.py`.
+- [x] Wpis dokumentacyjny domeny: aktualizacja `scrapers/<domain>/README.md` przy zmianie parsera sekcji.
+- [x] Meta-check CI: wymuszenie obecności trzech warstw testów oraz coverage nowych modułów `scrapers/*/sections/*.py` w `tests/test_section_parser_ci_meta.py`.
+- [x] Rozszerzalność kontraktów: każda nowa implementacja `SectionParser` / `SectionService` / `RecordAssembler` / `RecordFactory` musi przejść `tests/test_domain_role_contracts.py` (blokujący gate CI).
+
+### Zasada aktualizacji statusu
+- Przy każdym merge'u parsera sekcji zaktualizuj status tej listy (`[ ]` / `[x]`) oraz dodaj krótką notkę, co zostało objęte zmianą.
+
+## 🔗 Governance ADR dla zmian architektonicznych
+
+- [x] Każda większa zmiana architektoniczna ma referencję do ADR (`ADR-XXXX`) w PR/commicie.
+- [x] Zmiana zasady już zaakceptowanej wymaga aktualizacji ADR (lub nowego ADR zastępującego poprzedni).
+- [x] Brak aktualizacji ADR przy zmianie zatwierdzonej zasady traktowany jako blocker review.
+
+### Aktywne ADR bazowe
+- `ADR-0001` — kontrakt konfiguracji scraperów.
+- `ADR-0002` — kontrakt parserów sekcji.
+- `ADR-0003` — strategia DI.
+- `ADR-0004` — nazewnictwo hooków.
+
+
+## 📘 Extension guide (nowe scrapery)
+
+- [x] W repo dostępny jest przewodnik rozszerzania scraperów: `docs/architecture/scraper-extension-guide.md`.
+- [x] README scraperów linkuje do przewodnika (`scrapers/README.md`).
+- [x] Checklista PR zawiera odwołanie do przewodnika (`docs/MODULE_BOUNDARIES.md`, sekcja 6.1).

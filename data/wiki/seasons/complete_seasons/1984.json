@@ -132,7 +132,7 @@
           ],
           "engine": {
             "model": {
-              "text": "Ford-Cosworth DFY",
+              "text": "Ford -Cosworth DFY",
               "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
             },
             "displacement_l": 3.0,
@@ -324,7 +324,7 @@
           ],
           "engine": {
             "model": {
-              "text": "TAG-Porsche TTE PO1",
+              "text": "TAG -Porsche TTE PO1",
               "url": "https://en.wikipedia.org/wiki/Techniques_d%27Avant_Garde"
             },
             "displacement_l": 1.5,
@@ -716,7 +716,7 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ford-Cosworth DFV",
+                  "text": "Ford -Cosworth DFV",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "displacement_l": 3.0,
@@ -1051,7 +1051,7 @@
               ],
               "engine": {
                 "model": {
-                  "text": "Ford-Cosworth DFV",
+                  "text": "Ford -Cosworth DFV",
                   "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
                 },
                 "displacement_l": 3.0,
@@ -11781,7 +11781,7 @@
           "points": 0.0
         },
         {
-          "pos": null,
+          "pos": "DSQ",
           "constructor": {
             "chassis_constructor": {
               "text": "Tyrrell",

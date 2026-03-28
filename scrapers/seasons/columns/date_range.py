@@ -4,19 +4,17 @@ from typing import Any
 from models.value_objects.normalized_date import NormalizedDate
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.table.columns.context import ColumnContext
-from scrapers.base.table.columns.helpers.results_parsing import has_year
+from scrapers.base.table.columns.helpers.results_parsing import ResultsParsingHelpers
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.seasons.columns.helpers.constants import SEPARATOR_PATTERN
 
 
 class DateRangeColumn(BaseColumn):
     """
-    Parses date ranges from formats like "15–17 March" or "March 15–17".
+    Parses date ranges from formats like "15-17 March" or "March 15-17".
 
     Returns dict: {"start": NormalizedDate, "end": NormalizedDate}
     """
-
-    # Pattern for range separators
-    _SEPARATOR_PATTERN = re.compile(r"\s*[–—-]\s*")
 
     def __init__(self, *, year: int | None = None) -> None:
         self.year = year
@@ -27,7 +25,7 @@ class DateRangeColumn(BaseColumn):
             return None
 
         # Split text into start and end using separator
-        parts = self._SEPARATOR_PATTERN.split(text, maxsplit=1)
+        parts = SEPARATOR_PATTERN.split(text, maxsplit=1)
 
         if len(parts) == 1:
             # Single date, not a range
@@ -40,24 +38,30 @@ class DateRangeColumn(BaseColumn):
         start_str = start_str.strip()
         end_str = end_str.strip()
 
-        # If start is just a number (day), extract month/year from end and prepend to start
+        # If start is just a day number, infer month/year from end
         if start_str.isdigit():
             # Extract month and year from end_str
             # Add year if not present in end_str
             full_end = end_str
-            if self.year and not has_year(full_end):
+            if self.year and not ResultsParsingHelpers.has_year(full_end):
                 full_end = f"{full_end} {self.year}"
 
             # Try to extract month name from end_str for start
             month_match = re.search(
-                r"\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\b",
+                (
+                    r"\b("
+                    r"January|February|March|April|May|June|July|August|"
+                    r"September|October|November|December|Jan|Feb|Mar|Apr|"
+                    r"May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec"
+                    r")\b"
+                ),
                 end_str,
-                re.I,
+                re.IGNORECASE,
             )
             if month_match:
                 month_name = month_match.group(1)
                 start_str = f"{start_str} {month_name}"
-                if self.year and not has_year(start_str):
+                if self.year and not ResultsParsingHelpers.has_year(start_str):
                     start_str = f"{start_str} {self.year}"
 
         # Parse dates
@@ -77,7 +81,7 @@ class DateRangeColumn(BaseColumn):
             return None
 
         # Add year if not present
-        if self.year and not has_year(text):
+        if self.year and not ResultsParsingHelpers.has_year(text):
             text = f"{text} {self.year}"
 
         parsed = parse_date_text(text)

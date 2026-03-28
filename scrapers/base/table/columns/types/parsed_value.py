@@ -1,6 +1,9 @@
-from typing import Any, Callable, Mapping
+from collections.abc import Callable
+from collections.abc import Mapping
+from typing import Any
 
-from scrapers.base.helpers.parsing import parse_int_from_text, parse_float_from_text
+from scrapers.base.helpers.parsing import parse_float_from_text
+from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
 

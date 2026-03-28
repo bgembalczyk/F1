@@ -1,5 +1,5 @@
-from scrapers.base.table.columns.types.parsed_value import ParsedValueColumn
+"""Compatibility layer for legacy imports of IntColumn."""
 
+from scrapers.base.table.columns.types.column_factory import IntColumn
 
-def IntColumn() -> ParsedValueColumn:
-    return ParsedValueColumn(int)
+__all__ = ["IntColumn"]

@@ -1,33 +1,36 @@
-from typing import Any, Optional, TypedDict
+from typing import Any
+from typing import TypedDict
 
 from models.records.driver_championships import DRIVERS_CHAMPIONSHIPS_SCHEMA
 from models.records.driver_championships import DriversChampionshipsRecord
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
+from models.records.record_definition import RecordDefinition
+from models.records.record_definition import build_validator
 from models.records.season import SEASON_SCHEMA
 from models.records.season import SeasonRecord
-from validation.records import NestedSchema
-from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, ValidationIssue
+from validation.issue import ValidationIssue
+from validation.schemas import NestedSchema
 
 
 class DriverRecord(TypedDict, total=False):
     driver: LinkRecord
     is_active: bool
     is_world_champion: bool
-    nationality: Optional[str]
+    nationality: str | None
     seasons_competed: list[SeasonRecord]
     drivers_championships: DriversChampionshipsRecord
-    race_entries: Optional[int]
-    race_starts: Optional[int]
-    pole_positions: Optional[int]
-    race_wins: Optional[int]
-    podiums: Optional[int]
-    fastest_laps: Optional[int]
-    points: Optional[str]
+    race_entries: int | None
+    race_starts: int | None
+    pole_positions: int | None
+    race_wins: int | None
+    podiums: int | None
+    fastest_laps: int | None
+    points: str | None
 
 
-DRIVER_SCHEMA = RecordSchema(
+DRIVER_DEFINITION = RecordDefinition(
+    name="driver",
     required=(
         "driver",
         "nationality",
@@ -51,6 +54,9 @@ DRIVER_SCHEMA = RecordSchema(
     },
 )
 
+DRIVER_SCHEMA = DRIVER_DEFINITION.to_schema()
+_DRIVER_VALIDATOR = build_validator(DRIVER_DEFINITION)
+
 
 def validate_driver_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(record, DRIVER_SCHEMA)
+    return _DRIVER_VALIDATOR(record)

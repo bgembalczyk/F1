@@ -2711,7 +2711,10 @@
               }
             ]
           },
-          "points": 67.0
+          "points": {
+            "championship_points": 67.0,
+            "total_points": 71.0
+          }
         },
         {
           "pos": 2,
@@ -3069,7 +3072,10 @@
               }
             ]
           },
-          "points": 42.0
+          "points": {
+            "championship_points": 42.0,
+            "total_points": 49.0
+          }
         },
         {
           "pos": 4,
@@ -7957,7 +7963,7 @@
           "constructor": {
             "chassis_constructor": {
               "text": "Ligier",
-              "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
+              "url": "https://en.wikipedia.org/wiki/%C3%89quipe_Ligier"
             },
             "engine_constructor": {
               "text": "Ford",
@@ -10364,7 +10370,7 @@
           "constructor": {
             "chassis_constructor": {
               "text": "ATS",
-              "url": "https://en.wikipedia.org/wiki/ATS_(wheels)"
+              "url": "https://en.wikipedia.org/wiki/ATS_Wheels"
             },
             "engine_constructor": {
               "text": "Ford",

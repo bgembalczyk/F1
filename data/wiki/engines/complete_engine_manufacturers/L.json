@@ -1,0 +1,5041 @@
+[
+  {
+    "manufacturer": {
+      "text": "Lamborghini",
+      "url": "https://en.wikipedia.org/wiki/Lamborghini"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 80,
+    "races_started": 80,
+    "wins": 0,
+    "points": 20.0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 1,
+    "wcc": 0,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Lamborghini",
+      "infoboxes": [
+        {
+          "title": "Automobili Lamborghini S.p.A.",
+          "rows": {
+            "Company type": {
+              "text": "Subsidiary",
+              "links": [
+                {
+                  "text": "Subsidiary",
+                  "url": "https://en.wikipedia.org/wiki/Subsidiary"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive_industry"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "1963 ; 63 years ago ( 1963 )",
+              "links": []
+            },
+            "Founder": {
+              "text": "Ferruccio Lamborghini",
+              "links": [
+                {
+                  "text": "Ferruccio Lamborghini",
+                  "url": "https://en.wikipedia.org/wiki/Ferruccio_Lamborghini"
+                }
+              ]
+            },
+            "Headquarters": {
+              "text": "Sant'Agata Bolognese , Emilia-Romagna , Italy",
+              "links": [
+                {
+                  "text": "Sant'Agata Bolognese",
+                  "url": "https://en.wikipedia.org/wiki/Sant%27Agata_Bolognese"
+                },
+                {
+                  "text": "Emilia-Romagna",
+                  "url": "https://en.wikipedia.org/wiki/Emilia-Romagna"
+                }
+              ]
+            },
+            "Number of locations": {
+              "text": "135 dealerships",
+              "links": []
+            },
+            "Area served": {
+              "text": "Worldwide",
+              "links": []
+            },
+            "Key people": {
+              "text": "Stephan Winkelmann ( CEO ) [ 1 ]",
+              "links": [
+                {
+                  "text": "Stephan Winkelmann",
+                  "url": "https://en.wikipedia.org/wiki/Stephan_Winkelmann"
+                },
+                {
+                  "text": "CEO",
+                  "url": "https://en.wikipedia.org/wiki/Chief_executive_officer"
+                }
+              ]
+            },
+            "Production output": {
+              "text": "10,687 vehicles (2024) [ 2 ]",
+              "links": []
+            },
+            "Revenue": {
+              "text": "€3.10 billion (2024) [ 2 ]",
+              "links": []
+            },
+            "Operating income": {
+              "text": "€835 million (2024) [ 2 ]",
+              "links": []
+            },
+            "Net income": {
+              "text": "€10.1 million (2014) [ 3 ]",
+              "links": []
+            },
+            "Total equity": {
+              "text": "€1.832 billion (2014) [ 3 ]",
+              "links": []
+            },
+            "Number of employees": {
+              "text": "1,779 (December 2020) [ 4 ]",
+              "links": []
+            },
+            "Parent": {
+              "text": "Audi AG",
+              "links": [
+                {
+                  "text": "Audi AG",
+                  "url": "https://en.wikipedia.org/wiki/Audi"
+                }
+              ]
+            },
+            "Subsidiaries": {
+              "text": "Ducati Motor Holding S.p.A. Italdesign Giugiaro",
+              "links": [
+                {
+                  "text": "Ducati Motor Holding S.p.A.",
+                  "url": "https://en.wikipedia.org/wiki/Ducati_Motor_Holding_S.p.A."
+                },
+                {
+                  "text": "Italdesign Giugiaro",
+                  "url": "https://en.wikipedia.org/wiki/Italdesign_Giugiaro"
+                }
+              ]
+            },
+            "Website": {
+              "text": "lamborghini.com",
+              "links": [
+                {
+                  "text": "lamborghini.com",
+                  "url": "https://www.lamborghini.com/"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Lamborghini Motorsport Division, Squadra Corse",
+          "rows": {
+            "Trade name": {
+              "text": "Squadra Corse",
+              "links": []
+            },
+            "Company type": {
+              "text": "Subsidiary",
+              "links": []
+            },
+            "Industry": {
+              "text": "Automobile Motorsports",
+              "links": []
+            },
+            "Headquarters": {
+              "text": "Sant'Agata Bolognese , Italy",
+              "links": []
+            },
+            "Area served": {
+              "text": "Worldwide",
+              "links": []
+            },
+            "Key people": {
+              "text": "Stephan Winkelmann (CEO of Automobili Lamborghini)",
+              "links": [
+                {
+                  "text": "Stephan Winkelmann",
+                  "url": "https://en.wikipedia.org/wiki/Stephan_Winkelmann"
+                }
+              ]
+            },
+            "Owner": {
+              "text": "Automobili Lamborghini",
+              "links": []
+            },
+            "Parent": {
+              "text": "Audi AG",
+              "links": [
+                {
+                  "text": "Audi AG",
+                  "url": "https://en.wikipedia.org/wiki/Audi_AG"
+                }
+              ]
+            },
+            "Website": {
+              "text": "lamborghini .com /en-en /motorsport",
+              "links": [
+                {
+                  "text": "lamborghini.com/en-en/motorsport",
+                  "url": "http://lamborghini.com/en-en/motorsport"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Lamborghini as a Formula One engine manufacturer",
+          "rows": {
+            "Notable staff": {
+              "text": "Mauro Forghieri",
+              "links": [
+                {
+                  "text": "Mauro Forghieri",
+                  "url": "https://en.wikipedia.org/wiki/Mauro_Forghieri"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1989 Brazilian Grand Prix",
+              "links": [
+                {
+                  "text": "1989 Brazilian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "1993 Australian Grand Prix",
+              "links": [
+                {
+                  "text": "1993 Australian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1993_Australian_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "80",
+              "links": []
+            },
+            "Chassis": {
+              "text": "Lola , Lotus , Lambo , Ligier , Minardi , Venturi , Larrousse",
+              "links": [
+                {
+                  "text": "Lola",
+                  "url": "https://en.wikipedia.org/wiki/Lola_Cars"
+                },
+                {
+                  "text": "Lotus",
+                  "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+                },
+                {
+                  "text": "Lambo",
+                  "url": "https://en.wikipedia.org/wiki/Modena_(racing_team)"
+                },
+                {
+                  "text": "Ligier",
+                  "url": "https://en.wikipedia.org/wiki/Equipe_Ligier"
+                },
+                {
+                  "text": "Minardi",
+                  "url": "https://en.wikipedia.org/wiki/Minardi"
+                },
+                {
+                  "text": "Venturi",
+                  "url": "https://en.wikipedia.org/wiki/Venturi_Automobiles"
+                },
+                {
+                  "text": "Larrousse",
+                  "url": "https://en.wikipedia.org/wiki/Larrousse"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "1",
+              "links": []
+            },
+            "Points": {
+              "text": "20",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Years",
+            "Owner"
+          ],
+          "rows": [
+            {
+              "Years": "1963-1972",
+              "Owner": "Ferruccio Lamborghini"
+            },
+            {
+              "Years": "1972-1977",
+              "Owner": "Georges-Henri Rossetti and René Leimer"
+            },
+            {
+              "Years": "1977-1984",
+              "Owner": "Receivership"
+            },
+            {
+              "Years": "1984-1987",
+              "Owner": "Patrick Mimran"
+            },
+            {
+              "Years": "1987-1994",
+              "Owner": "Chrysler Corporation"
+            },
+            {
+              "Years": "1994-1995",
+              "Owner": "MegaTech"
+            },
+            {
+              "Years": "1995-1998",
+              "Owner": "V'Power and Mycom Sedtco"
+            },
+            {
+              "Years": "1998-present",
+              "Owner": "Audi AG"
+            }
+          ],
+          "caption": "Lamborghini ownership",
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Car",
+            "Image",
+            "Category"
+          ],
+          "rows": [
+            {
+              "Year": "1967",
+              "Car": "Lamborghini 350 GT",
+              "Image": "",
+              "Category": "Group 4"
+            },
+            {
+              "Year": "1967",
+              "Car": "Lamborghini 400 GT 2+2",
+              "Image": "",
+              "Category": "Group 4"
+            },
+            {
+              "Year": "1968",
+              "Car": "Lamborghini P400 Miura",
+              "Image": "",
+              "Category": "Group 4"
+            },
+            {
+              "Year": "1975",
+              "Car": "Lamborghini Urraco P250",
+              "Image": "",
+              "Category": "Group 4"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lamborghini Countach QVX",
+              "Image": "",
+              "Category": "Group C1"
+            },
+            {
+              "Year": "1988",
+              "Car": "Lamborghini Countach 5000QV",
+              "Image": "",
+              "Category": "Group B"
+            },
+            {
+              "Year": "1991",
+              "Car": "Lambo 291",
+              "Image": "",
+              "Category": "Formula 1"
+            },
+            {
+              "Year": "1998",
+              "Car": "Lamborghini Diablo 132 GT1",
+              "Image": "",
+              "Category": "Group GT1"
+            },
+            {
+              "Year": "2004",
+              "Car": "Lamborghini Murciélago R-GT",
+              "Image": "",
+              "Category": "Group GT"
+            },
+            {
+              "Year": "2005",
+              "Car": "Lamborghini Murciélago RG-1",
+              "Image": "",
+              "Category": "GT500 GT300"
+            },
+            {
+              "Year": "2006",
+              "Car": "Lamborghini Gallardo LP520 GT3",
+              "Image": "",
+              "Category": "Group GT3"
+            },
+            {
+              "Year": "2007",
+              "Car": "Lamborghini Gallardo",
+              "Image": "",
+              "Category": "GT300"
+            },
+            {
+              "Year": "2009",
+              "Car": "Lamborghini Gallardo LP 560 GT2",
+              "Image": "",
+              "Category": "LM GTE"
+            },
+            {
+              "Year": "2010",
+              "Car": "Lamborghini Gallardo LP600+ GT3",
+              "Image": "",
+              "Category": "Group GT3"
+            },
+            {
+              "Year": "2010",
+              "Car": "Lamborghini Murciélago LP 670 R-SV",
+              "Image": "",
+              "Category": "Group GT1"
+            },
+            {
+              "Year": "2014",
+              "Car": "Lamborghini Huracán LP 620-2 Super Trofeo",
+              "Image": "",
+              "Category": "Lamborghini Super Trofeo"
+            },
+            {
+              "Year": "2015",
+              "Car": "Lamborghini Huracán GT3",
+              "Image": "",
+              "Category": "Group GT3"
+            },
+            {
+              "Year": "2019",
+              "Car": "Lamborghini Huracán GT3 Evo",
+              "Image": "",
+              "Category": "Group GT3"
+            },
+            {
+              "Year": "2019",
+              "Car": "Lamborghini Huracán LP 620-2 Super Trofeo EVO",
+              "Image": "",
+              "Category": "Lamborghini Super Trofeo"
+            },
+            {
+              "Year": "2020",
+              "Car": "Lamborghini Huracán Super Trofeo GT2",
+              "Image": "",
+              "Category": "SRO GT2"
+            },
+            {
+              "Year": "2022",
+              "Car": "Lamborghini Huracán GT3 Evo 2",
+              "Image": "",
+              "Category": "Group GT3"
+            },
+            {
+              "Year": "2022",
+              "Car": "Lamborghini Huracán LP 620-2 Super Trofeo EVO2",
+              "Image": "",
+              "Category": "Lamborghini Super Trofeo"
+            },
+            {
+              "Year": "2024",
+              "Car": "Lamborghini SC63",
+              "Image": "",
+              "Category": "LMDh"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine(s)",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1989",
+              "Entrant": "Larrousse Calmels",
+              "Chassis": "Lola LC88 B Lola LC89",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "US",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "1",
+              "WCC": "15th"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "Larrousse Calmels",
+              "Chassis": "Lola LC88 B Lola LC89",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Yannick Dalmas",
+              "1": "DNQ",
+              "2": "Ret",
+              "3": "DNQ",
+              "4": "DNQ",
+              "5": "DNQ",
+              "6": "DNQ",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "1",
+              "WCC": "15th"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "Larrousse Calmels",
+              "Chassis": "Lola LC88 B Lola LC89",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Éric Bernard",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "11",
+              "8": "Ret",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "1",
+              "WCC": "15th"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "Larrousse Calmels",
+              "Chassis": "Lola LC88 B Lola LC89",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Michele Alboreto",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "11",
+              "14": "DNPQ",
+              "15": "DNQ",
+              "16": "DNPQ",
+              "Points": "1",
+              "WCC": "15th"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "Larrousse Calmels",
+              "Chassis": "Lola LC88 B Lola LC89",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Philippe Alliot",
+              "1": "12",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "DNPQ",
+              "11": "16",
+              "12": "Ret",
+              "13": "9",
+              "14": "6",
+              "15": "Ret",
+              "16": "Ret",
+              "Points": "1",
+              "WCC": "15th"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "ESPO Larrousse F1",
+              "Chassis": "Lola LC89 B Lola LC90",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "US",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "11",
+              "WCC": "6th"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "ESPO Larrousse F1",
+              "Chassis": "Lola LC89 B Lola LC90",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Éric Bernard",
+              "1": "8",
+              "2": "Ret",
+              "3": "13",
+              "4": "6",
+              "5": "9",
+              "6": "Ret",
+              "7": "8",
+              "8": "4",
+              "9": "Ret",
+              "10": "6",
+              "11": "9",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "Ret",
+              "Points": "11",
+              "WCC": "6th"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "ESPO Larrousse F1",
+              "Chassis": "Lola LC89 B Lola LC90",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Aguri Suzuki",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "12",
+              "6": "Ret",
+              "7": "7",
+              "8": "6",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "14",
+              "14": "6",
+              "15": "3",
+              "16": "Ret",
+              "Points": "11",
+              "WCC": "6th"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "Camel Team Lotus",
+              "Chassis": "Lotus 102",
+              "Engine(s)": "Lamborghini V12",
+              "Tyres": "G"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "Camel Team Lotus",
+              "Chassis": "Lotus 102",
+              "Engine(s)": "Lamborghini V12",
+              "Tyres": "G",
+              "Drivers": "Derek Warwick",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "7",
+              "4": "Ret",
+              "5": "6",
+              "6": "10",
+              "7": "11",
+              "8": "Ret",
+              "9": "8",
+              "10": "5",
+              "11": "11",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "Ret",
+              "Points": "3",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "Camel Team Lotus",
+              "Chassis": "Lotus 102",
+              "Engine(s)": "Lamborghini V12",
+              "Tyres": "G",
+              "Drivers": "Martin Donnelly",
+              "1": "DNS",
+              "2": "Ret",
+              "3": "8",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "8",
+              "7": "12",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "7",
+              "11": "12",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "DNS",
+              "15": "",
+              "16": "",
+              "Points": "3",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1990",
+              "Entrant": "Camel Team Lotus",
+              "Chassis": "Lotus 102",
+              "Engine(s)": "Lamborghini V12",
+              "Tyres": "G",
+              "Drivers": "Johnny Herbert",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "Ret",
+              "16": "Ret",
+              "Points": "3",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Equipe Ligier Gitanes",
+              "Chassis": "Ligier JS35 Ligier JS35 B",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "US",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Equipe Ligier Gitanes",
+              "Chassis": "Ligier JS35 Ligier JS35 B",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Thierry Boutsen",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "7",
+              "4": "7",
+              "5": "Ret",
+              "6": "8",
+              "7": "12",
+              "8": "Ret",
+              "9": "9",
+              "10": "17",
+              "11": "11",
+              "12": "Ret",
+              "13": "16",
+              "14": "Ret",
+              "15": "9",
+              "16": "Ret",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Equipe Ligier Gitanes",
+              "Chassis": "Ligier JS35 Ligier JS35 B",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Érik Comas",
+              "1": "DNQ",
+              "2": "Ret",
+              "3": "10",
+              "4": "10",
+              "5": "8",
+              "6": "DNQ",
+              "7": "11",
+              "8": "DNQ",
+              "9": "Ret",
+              "10": "10",
+              "11": "Ret",
+              "12": "11",
+              "13": "11",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "18",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Modena Team SpA",
+              "Chassis": "Lambo 291",
+              "Engine(s)": "Lamborghini L3512 V12",
+              "Tyres": "G",
+              "Drivers": "Nicola Larini",
+              "1": "7",
+              "2": "DNPQ",
+              "3": "DNPQ",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "DNPQ",
+              "9": "Ret",
+              "10": "16",
+              "11": "DNQ",
+              "12": "16",
+              "13": "DNQ",
+              "14": "DNQ",
+              "15": "DNQ",
+              "16": "Ret",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Modena Team SpA",
+              "Chassis": "Lambo 291",
+              "Engine(s)": "Lamborghini L3512 V12",
+              "Tyres": "G",
+              "Drivers": "Eric van de Poele",
+              "1": "DNPQ",
+              "2": "DNPQ",
+              "3": "9",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "DNPQ",
+              "9": "DNQ",
+              "10": "DNQ",
+              "11": "DNQ",
+              "12": "DNQ",
+              "13": "DNQ",
+              "14": "DNQ",
+              "15": "DNQ",
+              "16": "DNQ",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Central Park Venturi Larrousse",
+              "Chassis": "Venturi LC92",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MEX",
+              "3": "BRA",
+              "4": "ESP",
+              "5": "SMR",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "1",
+              "WCC": "11th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Central Park Venturi Larrousse",
+              "Chassis": "Venturi LC92",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Bertrand Gachot",
+              "1": "Ret",
+              "2": "11",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "6",
+              "7": "DSQ",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "14",
+              "11": "Ret",
+              "12": "18",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "Ret",
+              "Points": "1",
+              "WCC": "11th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Central Park Venturi Larrousse",
+              "Chassis": "Venturi LC92",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
+              "1": "12",
+              "2": "12",
+              "3": "9",
+              "4": "DNQ",
+              "5": "Ret",
+              "6": "DNPQ",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "17",
+              "13": "9",
+              "14": "Ret",
+              "15": "11",
+              "16": "Ret",
+              "Points": "1",
+              "WCC": "11th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Minardi Team",
+              "Chassis": "M191B M191L M192",
+              "Engine(s)": "Lamborghini 3512 3.5 V12",
+              "Tyres": "G",
+              "Drivers": "Christian Fittipaldi",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "11",
+              "5": "Ret",
+              "6": "8",
+              "7": "13",
+              "8": "DNQ",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "DNQ",
+              "13": "DNQ",
+              "14": "12",
+              "15": "6",
+              "16": "9",
+              "Points": "1",
+              "WCC": "12th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Minardi Team",
+              "Chassis": "M191B M191L M192",
+              "Engine(s)": "Lamborghini 3512 3.5 V12",
+              "Tyres": "G",
+              "Drivers": "Alessandro Zanardi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "DNQ",
+              "10": "Ret",
+              "11": "DNQ",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "1",
+              "WCC": "12th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Minardi Team",
+              "Chassis": "M191B M191L M192",
+              "Engine(s)": "Lamborghini 3512 3.5 V12",
+              "Tyres": "G",
+              "Drivers": "Gianni Morbidelli",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "7",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "11",
+              "8": "8",
+              "9": "17",
+              "10": "12",
+              "11": "DNQ",
+              "12": "16",
+              "13": "Ret",
+              "14": "14",
+              "15": "14",
+              "16": "10",
+              "Points": "1",
+              "WCC": "12th"
+            },
+            {
+              "Year": "1993",
+              "Entrant": "Larrousse F1",
+              "Chassis": "Larrousse LH93",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "BRA",
+              "3": "EUR",
+              "4": "SMR",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "3",
+              "WCC": "10th"
+            },
+            {
+              "Year": "1993",
+              "Entrant": "Larrousse F1",
+              "Chassis": "Larrousse LH93",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Philippe Alliot",
+              "1": "Ret",
+              "2": "7",
+              "3": "Ret",
+              "4": "5",
+              "5": "Ret",
+              "6": "12",
+              "7": "Ret",
+              "8": "9",
+              "9": "11",
+              "10": "12",
+              "11": "8",
+              "12": "12",
+              "13": "9",
+              "14": "10",
+              "15": "",
+              "16": "",
+              "Points": "3",
+              "WCC": "10th"
+            },
+            {
+              "Year": "1993",
+              "Entrant": "Larrousse F1",
+              "Chassis": "Larrousse LH93",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Toshio Suzuki",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "12",
+              "16": "14",
+              "Points": "3",
+              "WCC": "10th"
+            },
+            {
+              "Year": "1993",
+              "Entrant": "Larrousse F1",
+              "Chassis": "Larrousse LH93",
+              "Engine(s)": "Lamborghini 3512 V12",
+              "Tyres": "G",
+              "Drivers": "Érik Comas",
+              "1": "Ret",
+              "2": "10",
+              "3": "9",
+              "4": "Ret",
+              "5": "9",
+              "6": "Ret",
+              "7": "8",
+              "8": "16",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "6",
+              "14": "11",
+              "15": "Ret",
+              "16": "12",
+              "Points": "3",
+              "WCC": "10th"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Sales"
+          ],
+          "rows": [
+            {
+              "Year": "1968",
+              "Sales": "353"
+            },
+            {
+              "Year": "",
+              "Sales": "Data missing"
+            },
+            {
+              "Year": "1991",
+              "Sales": "673"
+            },
+            {
+              "Year": "1992",
+              "Sales": "166"
+            },
+            {
+              "Year": "1993",
+              "Sales": "215"
+            },
+            {
+              "Year": "",
+              "Sales": "Data missing"
+            },
+            {
+              "Year": "1996",
+              "Sales": "211"
+            },
+            {
+              "Year": "1997",
+              "Sales": "209"
+            },
+            {
+              "Year": "",
+              "Sales": "Data missing"
+            },
+            {
+              "Year": "1999",
+              "Sales": "265"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Sales"
+          ],
+          "rows": [
+            {
+              "Year": "2000",
+              "Sales": "296"
+            },
+            {
+              "Year": "2001",
+              "Sales": "297"
+            },
+            {
+              "Year": "2002",
+              "Sales": "424"
+            },
+            {
+              "Year": "2003",
+              "Sales": "1,305"
+            },
+            {
+              "Year": "2004",
+              "Sales": "1,592"
+            },
+            {
+              "Year": "2005",
+              "Sales": "1,600"
+            },
+            {
+              "Year": "2006",
+              "Sales": "2,087"
+            },
+            {
+              "Year": "2007",
+              "Sales": "2,406"
+            },
+            {
+              "Year": "2008",
+              "Sales": "2,430"
+            },
+            {
+              "Year": "2009",
+              "Sales": "1,515"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Sales"
+          ],
+          "rows": [
+            {
+              "Year": "2010",
+              "Sales": "1,302"
+            },
+            {
+              "Year": "2011",
+              "Sales": "1,602"
+            },
+            {
+              "Year": "2012",
+              "Sales": "2,083"
+            },
+            {
+              "Year": "2013",
+              "Sales": "2,121"
+            },
+            {
+              "Year": "2014",
+              "Sales": "2,530"
+            },
+            {
+              "Year": "2015",
+              "Sales": "3,245"
+            },
+            {
+              "Year": "2016",
+              "Sales": "3,457"
+            },
+            {
+              "Year": "2017",
+              "Sales": "3,815"
+            },
+            {
+              "Year": "2018",
+              "Sales": "5,750"
+            },
+            {
+              "Year": "2019",
+              "Sales": "9,233"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Sales"
+          ],
+          "rows": [
+            {
+              "Year": "2020",
+              "Sales": "7,430"
+            },
+            {
+              "Year": "2021",
+              "Sales": "8,405"
+            },
+            {
+              "Year": "2022",
+              "Sales": "9,233"
+            },
+            {
+              "Year": "2023",
+              "Sales": "10,112"
+            },
+            {
+              "Year": "2024",
+              "Sales": "10,687"
+            },
+            {
+              "Year": "2025",
+              "Sales": "10,747"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Lancia",
+      "url": "https://en.wikipedia.org/wiki/Lancia_in_Formula_One"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 6,
+    "races_started": 4,
+    "wins": 0,
+    "points": null,
+    "poles": 2,
+    "fastest_laps": 1,
+    "podiums": 1,
+    "wcc": null,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Lancia_in_Formula_One",
+      "infoboxes": [
+        {
+          "title": "Lancia",
+          "rows": {
+            "Full name": {
+              "text": "Scuderia Lancia",
+              "links": []
+            },
+            "First entry": {
+              "text": "1954 Spanish Grand Prix",
+              "links": [
+                {
+                  "text": "1954 Spanish Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1954_Spanish_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "4",
+              "links": []
+            },
+            "Engines": {
+              "text": "Lancia",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "1",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "2",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "1",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1955 Belgian Grand Prix",
+              "links": [
+                {
+                  "text": "1955 Belgian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1955_Belgian_Grand_Prix"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Lancia HF Squadra Corse",
+          "rows": {
+            "Full name": {
+              "text": "LANCIA HF SQUADRA CORSE [ 1 ] [ 2 ]",
+              "links": []
+            },
+            "Team principal(s)": {
+              "text": "Cesare Fiorio",
+              "links": [
+                {
+                  "text": "Cesare Fiorio",
+                  "url": "https://en.wikipedia.org/wiki/Cesare_Fiorio"
+                }
+              ]
+            },
+            "Debut": {
+              "text": "1973 Monte Carlo Rally",
+              "links": [
+                {
+                  "text": "1973 Monte Carlo Rally",
+                  "url": "https://en.wikipedia.org/wiki/1973_Monte_Carlo_Rally"
+                }
+              ]
+            },
+            "Last event": {
+              "text": "1992 RAC Rally",
+              "links": [
+                {
+                  "text": "1992 RAC Rally",
+                  "url": "https://en.wikipedia.org/wiki/Wales_Rally_GB"
+                }
+              ]
+            },
+            "Manufacturers' Championships": {
+              "text": "10 ( 1974 , 1975 , 1976 , 1983 , 1987 , 1988 , 1989 , 1990 , 1991 , 1992 )",
+              "links": [
+                {
+                  "text": "1974",
+                  "url": "https://en.wikipedia.org/wiki/1974_World_Rally_Championship"
+                },
+                {
+                  "text": "1975",
+                  "url": "https://en.wikipedia.org/wiki/1975_World_Rally_Championship"
+                },
+                {
+                  "text": "1976",
+                  "url": "https://en.wikipedia.org/wiki/1976_World_Rally_Championship"
+                },
+                {
+                  "text": "1983",
+                  "url": "https://en.wikipedia.org/wiki/1983_World_Rally_Championship"
+                },
+                {
+                  "text": "1987",
+                  "url": "https://en.wikipedia.org/wiki/1987_World_Rally_Championship"
+                },
+                {
+                  "text": "1988",
+                  "url": "https://en.wikipedia.org/wiki/1988_World_Rally_Championship"
+                },
+                {
+                  "text": "1989",
+                  "url": "https://en.wikipedia.org/wiki/1989_World_Rally_Championship"
+                },
+                {
+                  "text": "1990",
+                  "url": "https://en.wikipedia.org/wiki/1990_World_Rally_Championship"
+                },
+                {
+                  "text": "1991",
+                  "url": "https://en.wikipedia.org/wiki/1991_World_Rally_Championship"
+                },
+                {
+                  "text": "1992",
+                  "url": "https://en.wikipedia.org/wiki/1992_World_Rally_Championship"
+                }
+              ]
+            },
+            "Drivers' Championships": {
+              "text": "5 ( 1977 , 1987 , 1988 , 1989 , 1991 )",
+              "links": [
+                {
+                  "text": "1977",
+                  "url": "https://en.wikipedia.org/wiki/1977_World_Rally_Championship"
+                },
+                {
+                  "text": "1987",
+                  "url": "https://en.wikipedia.org/wiki/1987_World_Rally_Championship"
+                },
+                {
+                  "text": "1988",
+                  "url": "https://en.wikipedia.org/wiki/1988_World_Rally_Championship"
+                },
+                {
+                  "text": "1989",
+                  "url": "https://en.wikipedia.org/wiki/1989_World_Rally_Championship"
+                },
+                {
+                  "text": "1991",
+                  "url": "https://en.wikipedia.org/wiki/1991_World_Rally_Championship"
+                }
+              ]
+            },
+            "Rally wins": {
+              "text": "73",
+              "links": []
+            }
+          }
+        },
+        {
+          "title": "Lancia Corse HF",
+          "rows": {
+            "Team principal(s)": {
+              "text": "Eugenio Franzetti",
+              "links": []
+            },
+            "Debut": {
+              "text": "2026 Monte Carlo Rally",
+              "links": [
+                {
+                  "text": "2026 Monte Carlo Rally",
+                  "url": "https://en.wikipedia.org/wiki/2026_Monte_Carlo_Rally"
+                }
+              ]
+            },
+            "Manufacturers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Rally wins": {
+              "text": "0",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Car",
+            "Image",
+            "Category"
+          ],
+          "rows": [
+            {
+              "Year": "1953",
+              "Car": "Lancia D20",
+              "Image": "",
+              "Category": "Sports Car"
+            },
+            {
+              "Year": "1953",
+              "Car": "Lancia D23",
+              "Image": "",
+              "Category": "Sports Car"
+            },
+            {
+              "Year": "1953",
+              "Car": "Lancia D24",
+              "Image": "",
+              "Category": "Sports Car"
+            },
+            {
+              "Year": "1954",
+              "Car": "Lancia D25",
+              "Image": "",
+              "Category": "Sports Car"
+            },
+            {
+              "Year": "2026",
+              "Car": "Lancia D26",
+              "Image": "",
+              "Category": "Sports Car"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Car",
+            "Image",
+            "Category"
+          ],
+          "rows": [
+            {
+              "Year": "1954",
+              "Car": "Lancia D50",
+              "Image": "",
+              "Category": "Formula One"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Car",
+            "Image",
+            "Category"
+          ],
+          "rows": [
+            {
+              "Year": "1965",
+              "Car": "Lancia Fulvia",
+              "Image": "",
+              "Category": "Rallying"
+            },
+            {
+              "Year": "1972",
+              "Car": "Lancia Beta Coupe",
+              "Image": "",
+              "Category": "Group 3"
+            },
+            {
+              "Year": "1973",
+              "Car": "Lancia Stratos",
+              "Image": "",
+              "Category": "Group 5"
+            },
+            {
+              "Year": "1974",
+              "Car": "Lancia Stratos",
+              "Image": "",
+              "Category": "Group 4"
+            },
+            {
+              "Year": "1979",
+              "Car": "Lancia Montecarlo Turbo",
+              "Image": "",
+              "Category": "Group 5"
+            },
+            {
+              "Year": "1982",
+              "Car": "Lancia Rally 037",
+              "Image": "",
+              "Category": "Group B"
+            },
+            {
+              "Year": "1985",
+              "Car": "Lancia Delta S4",
+              "Image": "",
+              "Category": "Group B"
+            },
+            {
+              "Year": "1987",
+              "Car": "Lancia Delta HF 4WD",
+              "Image": "",
+              "Category": "Group A"
+            },
+            {
+              "Year": "1988",
+              "Car": "Lancia Delta HF integrale 8v",
+              "Image": "",
+              "Category": "Group A"
+            },
+            {
+              "Year": "1989",
+              "Car": "Lancia Delta HF integrale 16v",
+              "Image": "",
+              "Category": "Group A"
+            },
+            {
+              "Year": "1992",
+              "Car": "Lancia Delta HF integrale Evo",
+              "Image": "",
+              "Category": "Group A"
+            },
+            {
+              "Year": "2025",
+              "Car": "Lancia Ypsilon Rally4 HF",
+              "Image": "",
+              "Category": "Group Rally4"
+            },
+            {
+              "Year": "2026",
+              "Car": "Lancia Ypsilon Rally2 HF Integrale",
+              "Image": "",
+              "Category": "Group Rally2"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Car",
+            "Image",
+            "Category"
+          ],
+          "rows": [
+            {
+              "Year": "1986",
+              "Car": "Lancia ECV",
+              "Image": "",
+              "Category": "Group S"
+            },
+            {
+              "Year": "1988",
+              "Car": "Lancia ECV 2",
+              "Image": "",
+              "Category": "Group S"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Car",
+            "Image",
+            "Category"
+          ],
+          "rows": [
+            {
+              "Year": "1982",
+              "Car": "Lancia LC1",
+              "Image": "",
+              "Category": "Group 6"
+            },
+            {
+              "Year": "1983",
+              "Car": "Lancia LC1 Coupé",
+              "Image": "",
+              "Category": "Group C"
+            },
+            {
+              "Year": "1983",
+              "Car": "Lancia LC2",
+              "Image": "",
+              "Category": "Group C1"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1954",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "500",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "SUI",
+              "8": "ITA",
+              "9": "ESP",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1954",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P",
+              "Drivers": "Alberto Ascari",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "Ret P F",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1954",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P",
+              "Drivers": "Luigi Villoresi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "Ret",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "NED",
+              "6": "GBR",
+              "7": "ITA",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P",
+              "Drivers": "Alberto Ascari",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P",
+              "Drivers": "Luigi Villoresi",
+              "1": "Ret/ Ret †",
+              "2": "5",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P",
+              "Drivers": "Louis Chiron",
+              "1": "",
+              "2": "6",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P",
+              "Drivers": "Eugenio Castellotti",
+              "1": "Ret †",
+              "2": "2",
+              "3": "",
+              "4": "Ret P",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "E",
+              "Drivers": "Eugenio Castellotti",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNS",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "E",
+              "Drivers": "Giuseppe Farina",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNS",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "BEL",
+              "5": "FRA",
+              "6": "GBR",
+              "7": "GER",
+              "8": "ITA",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Juan Manuel Fangio",
+              "1": "Ret P / 1 F †",
+              "2": "4 P † / 2 F †",
+              "3": "",
+              "4": "Ret P",
+              "5": "4 P F",
+              "6": "1",
+              "7": "1 P F",
+              "8": "9 P † / 2 †",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Luigi Musso",
+              "1": "1 †",
+              "2": "Ret",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret †",
+              "8": "5",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Eugenio Castellotti",
+              "1": "Ret",
+              "2": "Ret/ 4 †",
+              "3": "",
+              "4": "Ret",
+              "5": "2",
+              "6": "11 †",
+              "7": "Ret/ Ret †",
+              "8": "Ret/ 9 †",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Olivier Gendebien",
+              "1": "DNS",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "DNA",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Peter Collins",
+              "1": "",
+              "2": "2 †",
+              "3": "",
+              "4": "1",
+              "5": "1",
+              "6": "Ret/ 2 †",
+              "7": "Ret/ Ret †",
+              "8": "2 †",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Paul Frère",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "2",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "André Pilette",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "6",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Alfonso de Portago",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "Ret",
+              "6": "2 † / 11 †",
+              "7": "Ret †",
+              "8": "Ret",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Wolfgang von Trips",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "DNS",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "",
+              "1": "ARG",
+              "2": "MON",
+              "3": "500",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "PES",
+              "8": "ITA",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Peter Collins",
+              "1": "Ret/ 6 †",
+              "2": "Ret",
+              "3": "",
+              "4": "3",
+              "5": "Ret/ 4 †",
+              "6": "3",
+              "7": "",
+              "8": "Ret",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Luigi Musso",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "2 P F",
+              "5": "2",
+              "6": "4",
+              "7": "Ret",
+              "8": "8",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Eugenio Castellotti",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Mike Hawthorn",
+              "1": "Ret",
+              "2": "Ret/ Ret †",
+              "3": "",
+              "4": "4",
+              "5": "3",
+              "6": "2",
+              "7": "",
+              "8": "6",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "José Froilán González",
+              "1": "5 †",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Alfonso de Portago",
+              "1": "5 †",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Wolfgang von Trips",
+              "1": "6 †",
+              "2": "Ret †",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "3",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Cesare Perdisa",
+              "1": "6 †",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia 2.5 V8",
+              "Tyres": "P / E",
+              "Drivers": "Maurice Trintignant",
+              "1": "",
+              "2": "5",
+              "3": "",
+              "4": "Ret",
+              "5": "4 †",
+              "6": "DNA",
+              "7": "",
+              "8": "",
+              "9": "",
+              "Points": "-*",
+              "WCC": "-*"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Driver",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18"
+          ],
+          "rows": [
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "",
+              "1": "NZL",
+              "2": "BUE",
+              "3": "VAL",
+              "4": "PAU",
+              "5": "GLO",
+              "6": "BOR",
+              "7": "INT",
+              "8": "NAP",
+              "9": "ALB",
+              "10": "CUR",
+              "11": "COR",
+              "12": "LON",
+              "13": "DRT",
+              "14": "RED",
+              "15": "DTT",
+              "16": "OUL",
+              "17": "AVO",
+              "18": "SYR"
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Alberto Ascari",
+              "1": "",
+              "2": "",
+              "3": "1 P",
+              "4": "5 P F",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "1 P",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Luigi Villoresi",
+              "1": "",
+              "2": "",
+              "3": "3",
+              "4": "4",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "3",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Lancia",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Eugenio Castellotti",
+              "1": "",
+              "2": "",
+              "3": "4",
+              "4": "2",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Eugenio Castellotti",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "7",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1955",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Mike Hawthorn",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "2 P",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "",
+              "1": "BUE",
+              "2": "GLV",
+              "3": "SYR",
+              "4": "AIN",
+              "5": "INT",
+              "6": "NAP",
+              "7": "100",
+              "8": "VNW",
+              "9": "CAE",
+              "10": "SUS",
+              "11": "BRH",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Juan Manuel Fangio",
+              "1": "1 P F",
+              "2": "",
+              "3": "1 P F",
+              "4": "",
+              "5": "Ret",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Eugenio Castellotti",
+              "1": "Ret",
+              "2": "",
+              "3": "Ret",
+              "4": "",
+              "5": "",
+              "6": "Ret P",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Luigi Musso",
+              "1": "Ret",
+              "2": "",
+              "3": "2",
+              "4": "",
+              "5": "",
+              "6": "Ret F",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1956",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Peter Collins",
+              "1": "",
+              "2": "",
+              "3": "3",
+              "4": "",
+              "5": "Ret",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "",
+              "1": "BUE",
+              "2": "SYR",
+              "3": "PAU",
+              "4": "GLV",
+              "5": "NAP",
+              "6": "RMS",
+              "7": "CAE",
+              "8": "INT",
+              "9": "MOD",
+              "10": "MOR",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Peter Collins",
+              "1": "3 F † / 8 F †",
+              "2": "1 P",
+              "3": "",
+              "4": "",
+              "5": "1",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Eugenio Castellotti",
+              "1": "5 †",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Luigi Musso",
+              "1": "3 † / 5 †",
+              "2": "2",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "1",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Cesare Perdisa",
+              "1": "7",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Wolfgang von Trips",
+              "1": "8 †",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Masten Gregory",
+              "1": "Ret",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Mike Hawthorn",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "2 P F",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            },
+            {
+              "Year": "1957",
+              "Entrant": "Scuderia Ferrari",
+              "Chassis": "Lancia D50",
+              "Engine": "Lancia DS50 2.5 V8",
+              "Driver": "Olivier Gendebien",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "Ret",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "17": "",
+              "18": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Car",
+            "Driver",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "WDC",
+            "Points",
+            "WMC",
+            "Points"
+          ],
+          "rows": [
+            {
+              "Year": "1982",
+              "Car": "Lancia 037",
+              "Driver": "Markku Alén",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA 9",
+              "6": "GRE Ret",
+              "7": "NZL",
+              "8": "BRA",
+              "9": "FIN Ret",
+              "10": "ITA Ret",
+              "11": "CIV",
+              "12": "GBR 4",
+              "13": "",
+              "WDC": "21st",
+              "Points": "25",
+              "WMC": "9th"
+            },
+            {
+              "Year": "1982",
+              "Car": "Lancia 037",
+              "Driver": "Attilio Bettega",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA Ret",
+              "6": "GRE",
+              "7": "NZL",
+              "8": "BRA",
+              "9": "FIN",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "-",
+              "Points": "25",
+              "WMC": "9th"
+            },
+            {
+              "Year": "1982",
+              "Car": "Lancia 037",
+              "Driver": "Adartico Vudafieri",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRE Ret",
+              "7": "NZL",
+              "8": "BRA",
+              "9": "FIN",
+              "10": "ITA",
+              "11": "CIV Ret",
+              "12": "GBR",
+              "13": "",
+              "WDC": "-",
+              "Points": "25",
+              "WMC": "9th"
+            },
+            {
+              "Year": "1982",
+              "Car": "Lancia 037",
+              "Driver": "Fabrizio Tabaton",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRE",
+              "7": "NZL",
+              "8": "BRA",
+              "9": "FIN",
+              "10": "ITA Ret",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "-",
+              "Points": "25",
+              "WMC": "9th"
+            },
+            {
+              "Year": "1983",
+              "Car": "Lancia 037",
+              "Driver": "Walter Röhrl",
+              "1": "MON 1",
+              "2": "SWE",
+              "3": "POR 3",
+              "4": "KEN",
+              "5": "FRA 2",
+              "6": "GRC 1",
+              "7": "NZL 1",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "ITA 2",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "2nd",
+              "Points": "118",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1983",
+              "Car": "Lancia 037",
+              "Driver": "Markku Alén",
+              "1": "MON 2",
+              "2": "SWE",
+              "3": "POR 4",
+              "4": "KEN",
+              "5": "FRA 1",
+              "6": "GRC 2",
+              "7": "NZL",
+              "8": "ARG 5",
+              "9": "FIN 3",
+              "10": "ITA 1",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "3rd",
+              "Points": "118",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1983",
+              "Car": "Lancia 037",
+              "Driver": "Jean-Claude Andruet",
+              "1": "MON 8",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA Ret",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "41st",
+              "Points": "118",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1983",
+              "Car": "Lancia 037",
+              "Driver": "Adartico Vudafieri",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR 5",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG Ret",
+              "9": "FIN",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "12th*",
+              "Points": "118",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1983",
+              "Car": "Lancia 037",
+              "Driver": "Attilio Bettega",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA 4",
+              "6": "GRC 5",
+              "7": "NZL 3",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "ITA 3",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "7th",
+              "Points": "118",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1983",
+              "Car": "Lancia 037",
+              "Driver": "Francisco Mayorga",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG Ret",
+              "9": "FIN",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "-",
+              "Points": "118",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1983",
+              "Car": "Lancia 037",
+              "Driver": "Pentti Airikkala",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN 5",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "21st",
+              "Points": "118",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1984",
+              "Car": "Lancia 037",
+              "Driver": "Markku Alén",
+              "1": "MON 8",
+              "2": "SWE",
+              "3": "POR 2",
+              "4": "KEN 4",
+              "5": "FRA 1",
+              "6": "GRC 3",
+              "7": "NZL 2",
+              "8": "ARG",
+              "9": "FIN 2",
+              "10": "ITA Ret",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "3rd",
+              "Points": "108",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1984",
+              "Car": "Lancia 037",
+              "Driver": "Jean-Claude Andruet",
+              "1": "MON Ret",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA 6",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "30th",
+              "Points": "108",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1984",
+              "Car": "Lancia 037",
+              "Driver": "Attilio Bettega",
+              "1": "MON 5",
+              "2": "SWE",
+              "3": "POR 3",
+              "4": "KEN",
+              "5": "FRA 7",
+              "6": "GRC 4",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "ITA 2",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "5th",
+              "Points": "108",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1984",
+              "Car": "Lancia 037",
+              "Driver": "Henri Toivonen",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR Ret",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC Ret",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN 3",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "16th",
+              "Points": "108",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1984",
+              "Car": "Lancia 037",
+              "Driver": "Vic Preston Jr",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN 6",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "30th",
+              "Points": "108",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1985",
+              "Car": "Lancia 037",
+              "Driver": "Markku Alén",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN Ret",
+              "5": "FRA Ret",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN 3",
+              "10": "ITA 4",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "7th",
+              "Points": "70",
+              "WMC": "3rd"
+            },
+            {
+              "Year": "1985",
+              "Car": "Lancia 037",
+              "Driver": "Henri Toivonen",
+              "1": "MON 6",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN 4",
+              "10": "ITA 3",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "6th",
+              "Points": "70",
+              "WMC": "3rd"
+            },
+            {
+              "Year": "1985",
+              "Car": "Lancia 037",
+              "Driver": "Attilio Bettega",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN Ret",
+              "5": "FRA Ret",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "-",
+              "Points": "70",
+              "WMC": "3rd"
+            },
+            {
+              "Year": "1985",
+              "Car": "Lancia 037",
+              "Driver": "Vic Preston Jr",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN Ret",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "WDC": "-",
+              "Points": "70",
+              "WMC": "3rd"
+            },
+            {
+              "Year": "1985",
+              "Car": "Lancia Delta S4",
+              "Driver": "Markku Alén",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "GBR 2",
+              "13": "",
+              "WDC": "-",
+              "Points": "70",
+              "WMC": "3rd"
+            },
+            {
+              "Year": "1985",
+              "Car": "Lancia Delta S4",
+              "Driver": "Henri Toivonen",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "GBR 1",
+              "13": "",
+              "WDC": "-",
+              "Points": "70",
+              "WMC": "3rd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia Delta S4",
+              "Driver": "Markku Alén",
+              "1": "MON Ret",
+              "2": "SWE 2",
+              "3": "POR Ret",
+              "4": "",
+              "5": "FRA Ret",
+              "6": "GRC Ret",
+              "7": "NZL 2",
+              "8": "ARG 2",
+              "9": "FIN 3",
+              "10": "CIV",
+              "11": "ITA 1",
+              "12": "GBR 2",
+              "13": "USA 1",
+              "WDC": "2nd",
+              "Points": "122",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia Delta S4",
+              "Driver": "Henri Toivonen",
+              "1": "MON 1",
+              "2": "SWE Ret",
+              "3": "POR Ret",
+              "4": "KEN",
+              "5": "FRA Ret",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "CIV",
+              "11": "ITA",
+              "12": "GBR",
+              "13": "USA",
+              "WDC": "13th",
+              "Points": "122",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia Delta S4",
+              "Driver": "Miki Biasion",
+              "1": "MON 68",
+              "2": "SWE",
+              "3": "POR Ret",
+              "4": "",
+              "5": "FRA Ret",
+              "6": "GRC 2",
+              "7": "NZL 3",
+              "8": "ARG 1",
+              "9": "FIN",
+              "10": "CIV",
+              "11": "ITA 3",
+              "12": "GBR",
+              "13": "USA",
+              "WDC": "5th",
+              "Points": "122",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia Delta S4",
+              "Driver": "Mikael Ericsson",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC Ret",
+              "7": "NZL 4",
+              "8": "ARG",
+              "9": "FIN 5",
+              "10": "CIV",
+              "11": "ITA",
+              "12": "GBR Ret",
+              "13": "USA",
+              "WDC": "-",
+              "Points": "122",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia Delta S4",
+              "Driver": "Jorge Recalde",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG 4",
+              "9": "FIN",
+              "10": "CIV",
+              "11": "ITA",
+              "12": "GBR",
+              "13": "USA",
+              "WDC": "22nd",
+              "Points": "122",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia Delta S4",
+              "Driver": "Kalle Grundel",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN 6",
+              "10": "CIV",
+              "11": "ITA",
+              "12": "GBR",
+              "13": "USA",
+              "WDC": "9th*",
+              "Points": "122",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia 037",
+              "Driver": "Markku Alén",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "KEN 3",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "WDC": "",
+              "Points": "122",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia 037",
+              "Driver": "Miki Biasion",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "KEN Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "WDC": "",
+              "Points": "122",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia 037",
+              "Driver": "Greg Criticos",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN 9",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "CIV",
+              "11": "ITA",
+              "12": "GBR",
+              "13": "USA",
+              "WDC": "60th",
+              "Points": "122",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia 037",
+              "Driver": "Johnny Hellier",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN 10",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "CIV",
+              "11": "ITA",
+              "12": "GBR",
+              "13": "USA",
+              "WDC": "70th",
+              "Points": "122",
+              "WMC": "2nd"
+            },
+            {
+              "Year": "1986",
+              "Car": "Lancia 037",
+              "Driver": "Vic Preston Jr",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN Ret",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "CIV",
+              "11": "ITA",
+              "12": "GBR",
+              "13": "USA",
+              "WDC": "-",
+              "Points": "122",
+              "WMC": "2nd"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Car",
+            "Driver",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "WDC",
+            "Points",
+            "WMC",
+            "Points"
+          ],
+          "rows": [
+            {
+              "Year": "1987",
+              "Car": "Lancia Delta HF 4WD",
+              "Driver": "Juha Kankkunen",
+              "1": "MON 2",
+              "2": "SWE 3",
+              "3": "POR 4",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC 2",
+              "7": "USA 1",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN 5",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR 1",
+              "14": "",
+              "WDC": "1st",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1987",
+              "Car": "Lancia Delta HF 4WD",
+              "Driver": "Miki Biasion",
+              "1": "MON 1",
+              "2": "SWE",
+              "3": "POR 8",
+              "4": "KEN",
+              "5": "FRA 3",
+              "6": "GRC 7",
+              "7": "USA 2",
+              "8": "NZL",
+              "9": "ARG 1",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA 1",
+              "13": "GBR",
+              "14": "",
+              "WDC": "2nd",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1987",
+              "Car": "Lancia Delta HF 4WD",
+              "Driver": "Markku Alén",
+              "1": "MON",
+              "2": "SWE 5",
+              "3": "POR 1",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRE 1",
+              "7": "USA 3",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN 1",
+              "11": "CIV",
+              "12": "ITA Ret",
+              "13": "GBR 5",
+              "14": "",
+              "WDC": "3rd",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1987",
+              "Car": "Lancia Delta HF 4WD",
+              "Driver": "Bruno Saby",
+              "1": "MON Ret",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA Ret",
+              "6": "GRE",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR",
+              "14": "",
+              "WDC": "-",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1987",
+              "Car": "Lancia Delta HF 4WD",
+              "Driver": "Mikael Ericsson",
+              "1": "MON",
+              "2": "SWE 2",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRE",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR 4",
+              "14": "",
+              "WDC": "10th",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1987",
+              "Car": "Lancia Delta HF 4WD",
+              "Driver": "Vic Preston Jr",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN 14",
+              "5": "FRA",
+              "6": "GRE",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR",
+              "14": "",
+              "WDC": "-",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1987",
+              "Car": "Lancia Delta HF 4WD",
+              "Driver": "Yves Loubet",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA 2",
+              "6": "GRE",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR",
+              "14": "",
+              "WDC": "20th",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1987",
+              "Car": "Lancia Delta HF 4WD",
+              "Driver": "Jorge Recalde",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRE",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG 2",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR",
+              "14": "",
+              "WDC": "9th*",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1988",
+              "Car": "Lancia Delta HF 4WD Lancia Delta Integrale",
+              "Driver": "Miki Biasion",
+              "1": "MON Ret",
+              "2": "SWE",
+              "3": "POR 1",
+              "4": "KEN 1",
+              "5": "FRA",
+              "6": "GRC 1",
+              "7": "USA 1",
+              "8": "NZL",
+              "9": "ARG 2",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA 1",
+              "13": "GBR",
+              "14": "",
+              "WDC": "1st",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1988",
+              "Car": "Lancia Delta HF 4WD Lancia Delta Integrale",
+              "Driver": "Bruno Saby",
+              "1": "MON 1",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA 3",
+              "6": "GRC",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR",
+              "14": "",
+              "WDC": "6th",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1988",
+              "Car": "Lancia Delta HF 4WD Lancia Delta Integrale",
+              "Driver": "Yves Loubet",
+              "1": "MON Ret",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA 2",
+              "6": "GRC",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR",
+              "14": "",
+              "WDC": "10th*",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1988",
+              "Car": "Lancia Delta HF 4WD Lancia Delta Integrale",
+              "Driver": "Mikael Ericsson",
+              "1": "MON",
+              "2": "SWE Ret",
+              "3": "POR Ret",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC 2",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN 2",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR Ret",
+              "14": "",
+              "WDC": "8th",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1988",
+              "Car": "Lancia Delta HF 4WD Lancia Delta Integrale",
+              "Driver": "Markku Alén",
+              "1": "MON",
+              "2": "SWE 1",
+              "3": "POR 6",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRE 4",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN 1",
+              "11": "CIV",
+              "12": "ITA 4",
+              "13": "GBR 1",
+              "14": "",
+              "WDC": "2nd",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1988",
+              "Car": "Lancia Delta HF 4WD Lancia Delta Integrale",
+              "Driver": "Vic Preston Jr",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN Ret",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR",
+              "14": "",
+              "WDC": "-",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1988",
+              "Car": "Lancia Delta HF 4WD Lancia Delta Integrale",
+              "Driver": "Jorge Recalde",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "USA",
+              "8": "NZL",
+              "9": "ARG 1",
+              "10": "FIN",
+              "11": "CIV",
+              "12": "ITA",
+              "13": "GBR",
+              "14": "",
+              "WDC": "9th*",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1989",
+              "Car": "Lancia Delta Integrale Lancia Delta Integrale 16V",
+              "Driver": "Miki Biasion",
+              "1": "SWE",
+              "2": "MON 1",
+              "3": "POR 1",
+              "4": "KEN 1",
+              "5": "FRA",
+              "6": "GRC 1",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN 6",
+              "10": "AUS",
+              "11": "ITA 1",
+              "12": "CIV",
+              "13": "GBR",
+              "14": "",
+              "WDC": "1st",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1989",
+              "Car": "Lancia Delta Integrale Lancia Delta Integrale 16V",
+              "Driver": "Didier Auriol",
+              "1": "SWE",
+              "2": "MON 2",
+              "3": "POR Ret",
+              "4": "KEN",
+              "5": "FRA 1",
+              "6": "GRC 2",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN Ret",
+              "10": "AUS",
+              "11": "ITA Ret",
+              "12": "CIV",
+              "13": "GBR",
+              "14": "",
+              "WDC": "5th",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1989",
+              "Car": "Lancia Delta Integrale Lancia Delta Integrale 16V",
+              "Driver": "Bruno Saby",
+              "1": "SWE",
+              "2": "MON 3",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA Ret",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "AUS",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "GBR",
+              "14": "",
+              "WDC": "25th",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1989",
+              "Car": "Lancia Delta Integrale Lancia Delta Integrale 16V",
+              "Driver": "Markku Alén",
+              "1": "SWE",
+              "2": "MON",
+              "3": "POR 2",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRE",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN Ret",
+              "10": "AUS 3",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "GBR",
+              "14": "",
+              "WDC": "9th",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1989",
+              "Car": "Lancia Delta Integrale Lancia Delta Integrale 16V",
+              "Driver": "Jorge Recalde",
+              "1": "SWE",
+              "2": "MON",
+              "3": "POR",
+              "4": "KEN Ret",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG 3",
+              "9": "FIN",
+              "10": "AUS",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "GBR",
+              "14": "",
+              "WDC": "15th*",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1989",
+              "Car": "Lancia Delta Integrale Lancia Delta Integrale 16V",
+              "Driver": "Yves Loubet",
+              "1": "SWE",
+              "2": "MON",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA 4",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "AUS",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "GBR",
+              "14": "",
+              "WDC": "29th",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1989",
+              "Car": "Lancia Delta Integrale Lancia Delta Integrale 16V",
+              "Driver": "Mikael Ericsson",
+              "1": "SWE",
+              "2": "MON",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG 1",
+              "9": "FIN",
+              "10": "AUS",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "GBR",
+              "14": "",
+              "WDC": "4th*",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1990",
+              "Car": "Lancia Delta Integrale 16V",
+              "Driver": "Miki Biasion",
+              "1": "MON 3",
+              "2": "POR 1",
+              "3": "KEN Ret",
+              "4": "FRA",
+              "5": "GRC 3",
+              "6": "NZL",
+              "7": "ARG 1",
+              "8": "FIN",
+              "9": "AUS",
+              "10": "ITA Ret",
+              "11": "CIV",
+              "12": "GBR 3",
+              "13": "",
+              "14": "",
+              "WDC": "4th",
+              "Points": "137",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1990",
+              "Car": "Lancia Delta Integrale 16V",
+              "Driver": "Juha Kankkunen",
+              "1": "MON Ret",
+              "2": "POR 3",
+              "3": "KEN 2",
+              "4": "FRA",
+              "5": "GRC 2",
+              "6": "NZL",
+              "7": "ARG Ret",
+              "8": "FIN 5",
+              "9": "AUS 1",
+              "10": "ITA 2",
+              "11": "CIV",
+              "12": "GBR Ret",
+              "13": "",
+              "14": "",
+              "WDC": "3rd",
+              "Points": "137",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1990",
+              "Car": "Lancia Delta Integrale 16V",
+              "Driver": "Didier Auriol",
+              "1": "MON 1",
+              "2": "POR 2",
+              "3": "KEN",
+              "4": "FRA 1",
+              "5": "GRC Ret",
+              "6": "NZL",
+              "7": "ARG 3",
+              "8": "FIN Ret",
+              "9": "AUS Ret",
+              "10": "ITA 1",
+              "11": "CIV",
+              "12": "GBR 5",
+              "13": "",
+              "14": "",
+              "WDC": "2nd",
+              "Points": "137",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1990",
+              "Car": "Lancia Delta Integrale 16V",
+              "Driver": "Alex Fiorio",
+              "1": "MON",
+              "2": "POR",
+              "3": "KEN Ret",
+              "4": "FRA",
+              "5": "GRC",
+              "6": "NZL",
+              "7": "ARG",
+              "8": "FIN",
+              "9": "AUS 3",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "14": "",
+              "WDC": "9th*",
+              "Points": "137",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1990",
+              "Car": "Lancia Delta Integrale 16V",
+              "Driver": "Yves Loubet",
+              "1": "MON",
+              "2": "POR",
+              "3": "KEN",
+              "4": "FRA Ret",
+              "5": "GRC",
+              "6": "NZL",
+              "7": "ARG",
+              "8": "FIN",
+              "9": "AUS",
+              "10": "ITA",
+              "11": "CIV",
+              "12": "GBR",
+              "13": "",
+              "14": "",
+              "WDC": "-",
+              "Points": "137",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1991",
+              "Car": "Lancia Delta Integrale 16V",
+              "Driver": "Miki Biasion",
+              "1": "MON 2",
+              "2": "SWE",
+              "3": "POR 3",
+              "4": "KEN Ret",
+              "5": "FRA",
+              "6": "GRC 3",
+              "7": "NZL",
+              "8": "ARG 2",
+              "9": "FIN",
+              "10": "AUS",
+              "11": "ITA 2",
+              "12": "CIV",
+              "13": "ESP",
+              "14": "GBR Ret",
+              "WDC": "4th",
+              "Points": "137",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1991",
+              "Car": "Lancia Delta Integrale 16V",
+              "Driver": "Juha Kankkunen",
+              "1": "MON 5",
+              "2": "SWE",
+              "3": "POR 4",
+              "4": "KEN 1",
+              "5": "FRA",
+              "6": "GRC 1",
+              "7": "NZL 2",
+              "8": "ARG 4",
+              "9": "FIN 1",
+              "10": "AUS 1",
+              "11": "ITA Ret",
+              "12": "CIV",
+              "13": "ESP 2",
+              "14": "GBR 1",
+              "WDC": "1st",
+              "Points": "137",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1991",
+              "Car": "Lancia Delta Integrale 16V",
+              "Driver": "Jorge Recalde",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN 3",
+              "5": "FRA",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG 5",
+              "9": "FIN",
+              "10": "AUS 8",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "ESP",
+              "14": "GBR",
+              "WDC": "9th*",
+              "Points": "137",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1991",
+              "Car": "Lancia Delta Integrale 16V",
+              "Driver": "Bruno Saby",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA Ret",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "AUS",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "ESP",
+              "14": "GBR",
+              "WDC": "33rd*",
+              "Points": "137",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1991",
+              "Car": "Lancia Delta Integrale 16V",
+              "Driver": "Yves Loubet",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA 6",
+              "6": "GRC",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "AUS",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "ESP",
+              "14": "GBR",
+              "WDC": "33rd*",
+              "Points": "137",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1992",
+              "Car": "Lancia Delta Integrale HF",
+              "Driver": "Juha Kankkunen",
+              "1": "MON 3",
+              "2": "SWE",
+              "3": "POR 1",
+              "4": "KEN 2",
+              "5": "FRA",
+              "6": "GRC 2",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN 2",
+              "10": "AUS 2",
+              "11": "ITA 2",
+              "12": "CIV",
+              "13": "ESP 2",
+              "14": "GBR 3",
+              "WDC": "2nd",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1992",
+              "Car": "Lancia Delta Integrale HF",
+              "Driver": "Didier Auriol",
+              "1": "MON 1",
+              "2": "SWE",
+              "3": "POR Ret",
+              "4": "KEN",
+              "5": "FRA 1",
+              "6": "GRC 1",
+              "7": "NZL",
+              "8": "ARG 1",
+              "9": "FIN 1",
+              "10": "AUS 1",
+              "11": "ITA Ret",
+              "12": "CIV",
+              "13": "ESP 10",
+              "14": "GBR Ret",
+              "WDC": "3rd",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1992",
+              "Car": "Lancia Delta Integrale HF",
+              "Driver": "Andrea Aghini",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR Ret",
+              "4": "KEN",
+              "5": "FRA 6",
+              "6": "GRE",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "AUS",
+              "11": "ITA 1",
+              "12": "CIV",
+              "13": "ESP 3",
+              "14": "GBR 10",
+              "WDC": "7th",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1992",
+              "Car": "Lancia Delta Integrale HF",
+              "Driver": "Björn Waldegård",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN Ret",
+              "5": "FRA",
+              "6": "GRE",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN",
+              "10": "AUS",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "ESP",
+              "14": "GBR",
+              "WDC": "-",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1992",
+              "Car": "Lancia Delta Integrale HF",
+              "Driver": "Jorge Recalde",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN 3",
+              "5": "FRA",
+              "6": "GRE",
+              "7": "NZL",
+              "8": "ARG Ret",
+              "9": "FIN",
+              "10": "AUS",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "ESP",
+              "14": "GBR",
+              "WDC": "10th*",
+              "Points": "140",
+              "WMC": "1st"
+            },
+            {
+              "Year": "1992",
+              "Car": "Lancia Delta Integrale HF",
+              "Driver": "Philippe Bugalski",
+              "1": "MON",
+              "2": "SWE",
+              "3": "POR",
+              "4": "KEN",
+              "5": "FRA 3",
+              "6": "GRE",
+              "7": "NZL",
+              "8": "ARG",
+              "9": "FIN 9",
+              "10": "AUS",
+              "11": "ITA",
+              "12": "CIV",
+              "13": "ESP",
+              "14": "GBR",
+              "WDC": "13th*",
+              "Points": "140",
+              "WMC": "1st"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Lea-Francis",
+      "url": "https://en.wikipedia.org/wiki/Lea-Francis"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "United Kingdom",
+        "url": "https://en.wikipedia.org/wiki/United_Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 10,
+    "races_started": 10,
+    "wins": 0,
+    "points": null,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": null,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Lea-Francis",
+      "infoboxes": [
+        {
+          "title": "Lea & Francis Limited 1904-1935\n Lea-Francis Cars Limited 1937-1960\n A.B.Price Limited (Lea Francis Cars Limited) 1980-1990s",
+          "rows": {
+            "Founded": {
+              "text": "1895 ; 131 years ago ( 1895 ) in Coventry , Warwickshire , England",
+              "links": [
+                {
+                  "text": "Coventry",
+                  "url": "https://en.wikipedia.org/wiki/Coventry"
+                },
+                {
+                  "text": "Warwickshire",
+                  "url": "https://en.wikipedia.org/wiki/Warwickshire"
+                }
+              ]
+            },
+            "Headquarters": {
+              "text": "Coventry later Studley, Warwickshire , England",
+              "links": []
+            },
+            "Key people": {
+              "text": "Richard Henry Lea and Graham Francis",
+              "links": []
+            },
+            "Products": {
+              "text": "Bicycles, cars and motorcycles",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Model Name",
+            "Engine",
+            "Year",
+            "Production"
+          ],
+          "rows": [
+            {
+              "Model Name": "15",
+              "Engine": "3,500 cc 3-cylinder",
+              "Year": "1905-06",
+              "Production": "3"
+            },
+            {
+              "Model Name": "13.9",
+              "Engine": "2,297 cc inline-4",
+              "Year": "1920",
+              "Production": ""
+            },
+            {
+              "Model Name": "11.9",
+              "Engine": "1,944 cc inline-4",
+              "Year": "1920-22",
+              "Production": ""
+            },
+            {
+              "Model Name": "Nine (Type C)",
+              "Engine": "1,075 cc inline-4",
+              "Year": "1920-23",
+              "Production": "90"
+            },
+            {
+              "Model Name": "10 and 12 (Types D to O)",
+              "Engine": "1,247 or 1,496 cc inline-4",
+              "Year": "1923-30",
+              "Production": "2350"
+            },
+            {
+              "Model Name": "12 (Types P to W)",
+              "Engine": "1,496 cc inline-4",
+              "Year": "1927-35",
+              "Production": "1700"
+            },
+            {
+              "Model Name": "14/40 (and Type T)",
+              "Engine": "1,696 cc inline-6",
+              "Year": "1927-29",
+              "Production": "350"
+            },
+            {
+              "Model Name": "16/60",
+              "Engine": "1,990 cc inline-6",
+              "Year": "1928-29",
+              "Production": "67"
+            },
+            {
+              "Model Name": "Hyper 1.5 Litre Supercharged (Type S)",
+              "Engine": "1,496 cc inline-4",
+              "Year": "1928-31",
+              "Production": "185"
+            },
+            {
+              "Model Name": "2 Litre Ace of Spades",
+              "Engine": "1,991/2,244 cc inline-6",
+              "Year": "1930-36",
+              "Production": "67"
+            },
+            {
+              "Model Name": "12 and 14",
+              "Engine": "1,496/1,629 cc inline-4",
+              "Year": "1938-40",
+              "Production": "83"
+            },
+            {
+              "Model Name": "12",
+              "Engine": "1,496 cc inline-4",
+              "Year": "1946-47",
+              "Production": "13"
+            },
+            {
+              "Model Name": "14",
+              "Engine": "1,767 cc inline-4",
+              "Year": "1946-54",
+              "Production": "2133"
+            },
+            {
+              "Model Name": "14 estate",
+              "Engine": "1,767 cc inline-4",
+              "Year": "1946-53",
+              "Production": "916"
+            },
+            {
+              "Model Name": "14 Sport",
+              "Engine": "1,767 cc inline-4",
+              "Year": "1947-49",
+              "Production": "118"
+            },
+            {
+              "Model Name": "14/70",
+              "Engine": "1,767 cc inline-4",
+              "Year": "1948-51",
+              "Production": "162"
+            },
+            {
+              "Model Name": "18",
+              "Engine": "2,496 cc inline-4",
+              "Year": "1949-54",
+              "Production": "69"
+            },
+            {
+              "Model Name": "2½ Litre",
+              "Engine": "2,496 cc inline-4",
+              "Year": "1949-53",
+              "Production": "89"
+            },
+            {
+              "Model Name": "Lynx",
+              "Engine": "2,553 cc inline-6",
+              "Year": "1960",
+              "Production": "3"
+            },
+            {
+              "Model Name": "Ace of Spades",
+              "Engine": "3442 inline-6 4196 inline-6",
+              "Year": "1980-92",
+              "Production": "4"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": {
+      "text": "Life",
+      "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1990,
+        "url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 12,
+    "races_started": 0,
+    "wins": 0,
+    "points": 0.0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": 0,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Life_Racing_Engines",
+      "infoboxes": [
+        {
+          "title": "Life",
+          "rows": {
+            "Full name": {
+              "text": "Life Racing Engines",
+              "links": []
+            },
+            "Base": {
+              "text": "Formigine , Italy",
+              "links": [
+                {
+                  "text": "Formigine",
+                  "url": "https://en.wikipedia.org/wiki/Formigine"
+                }
+              ]
+            },
+            "Founder(s)": {
+              "text": "Ernesto Vita",
+              "links": [
+                {
+                  "text": "Ernesto Vita",
+                  "url": null
+                }
+              ]
+            },
+            "Noted staff": {
+              "text": "Oliver Piazzi",
+              "links": [
+                {
+                  "text": "Oliver Piazzi",
+                  "url": null
+                }
+              ]
+            },
+            "Noted drivers": {
+              "text": "Gary Brabham Bruno Giacomelli Franco Scapini",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Australia"
+                },
+                {
+                  "text": "Gary Brabham",
+                  "url": "https://en.wikipedia.org/wiki/Gary_Brabham"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Bruno Giacomelli",
+                  "url": "https://en.wikipedia.org/wiki/Bruno_Giacomelli"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Franco Scapini",
+                  "url": "https://en.wikipedia.org/wiki/Franco_Scapini"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1990 United States Grand Prix",
+              "links": [
+                {
+                  "text": "1990 United States Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1990_United_States_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "14 (0 starts)",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            },
+            "Final entry": {
+              "text": "1990 Spanish Grand Prix",
+              "links": [
+                {
+                  "text": "1990 Spanish Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1990_Spanish_Grand_Prix"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Chassis",
+            "Engines",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1990",
+              "Chassis": "L190",
+              "Engines": "F35 3.5 W12",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Chassis": "L190",
+              "Engines": "F35 3.5 W12",
+              "Tyres": "G",
+              "Drivers": "Gary Brabham",
+              "1": "DNPQ",
+              "2": "DNPQ",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Chassis": "L190",
+              "Engines": "F35 3.5 W12",
+              "Tyres": "G",
+              "Drivers": "Bruno Giacomelli",
+              "1": "",
+              "2": "",
+              "3": "DNPQ",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "DNPQ",
+              "9": "DNPQ",
+              "10": "DNPQ",
+              "11": "DNPQ",
+              "12": "DNPQ",
+              "13": "",
+              "14": "",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1990",
+              "Chassis": "L190",
+              "Engines": "Judd CV 3.5 V8",
+              "Tyres": "G",
+              "Drivers": "Bruno Giacomelli",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "DNPQ",
+              "14": "DNPQ",
+              "15": "",
+              "16": "",
+              "Points": "0",
+              "WCC": "NC"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  }
+]

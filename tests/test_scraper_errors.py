@@ -1,17 +1,18 @@
 import sys
-from pathlib import Path
 import types
+from pathlib import Path
+
 import pytest
-from scrapers.base.errors import (
-    ScraperNetworkError,
-    ScraperNotFoundError,
-    ScraperParseError,
-)
+
+from scrapers.base.abc import ABCScraper
 from scrapers.base.error_handler import ErrorHandler
+from scrapers.base.errors import DomainParseError
+from scrapers.base.errors import ScraperNetworkError
+from scrapers.base.errors import ScraperNotFoundError
+from scrapers.base.errors import ScraperParseError
 from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
 from scrapers.base.list.scraper import F1ListScraper
 from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
 from scrapers.circuits.infobox.services.additional_info import (
     CircuitAdditionalInfoParser,
 )
@@ -24,7 +25,6 @@ from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
 from scrapers.circuits.single_scraper import F1SingleCircuitScraper
 from scrapers.grands_prix.single_scraper import F1SingleGrandPrixScraper
-
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -60,14 +60,15 @@ if "bs4" not in sys.modules:
 if "requests" not in sys.modules:
     requests_stub = types.ModuleType("requests")
 
-    class _RequestException(Exception):
+    class _RequestError(Exception):
         pass
 
     class _Session:
         def get(self, *_args, **_kwargs):
-            raise _RequestException("requests stub")
+            msg = "requests stub"
+            raise _RequestError(msg)
 
-    requests_stub.RequestException = _RequestException
+    requests_stub.RequestException = _RequestError
     requests_stub.Session = _Session
     sys.modules["requests"] = requests_stub
 
@@ -93,33 +94,37 @@ if "pandas" not in sys.modules:
 
 class DummyFetcher:
     def __init__(
-        self, *, html: str | None = None, exc: Exception | None = None
+        self,
+        *,
+        html: str | None = None,
+        exc: Exception | None = None,
     ) -> None:
         self.html = html
         self.exc = exc
 
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
         if self.exc:
             raise self.exc
         assert self.html is not None
         return self.html
 
-    def get(self, url: str) -> str:
-        return self.get_text(url)
+    def get(self, _url: str) -> str:
+        return self.get_text(_url)
 
 
-class DummyScraper(F1Scraper):
+class DummyScraper(ABCScraper):
     url = "https://example.com"
 
-    def _parse_soup(self, soup):
+    def _parse_soup(self, _soup):
         return []
 
 
-class DummyParseScraper(F1Scraper):
+class DummyParseScraper(ABCScraper):
     url = "https://example.com"
 
-    def _parse_soup(self, soup):
-        raise ValueError("boom")
+    def _parse_soup(self, _soup):
+        msg = "boom"
+        raise ValueError(msg)
 
 
 class DummyListScraper(F1ListScraper):
@@ -129,21 +134,39 @@ class DummyListScraper(F1ListScraper):
 
 
 class DummyInfoboxParser:
-    def parse(self, soup):
-        raise ScraperNotFoundError("Brak infoboksu")
+    def parse(self, _soup):
+        msg = "Brak infoboksu"
+        raise ScraperNotFoundError(msg)
 
 
 class DummySingleCircuitScraper(F1SingleCircuitScraper):
-    def _is_circuit_like_article(self, soup) -> bool:
+    def _is_circuit_like_article(self, _soup) -> bool:
         return True
 
-    def _parse_details(self, soup):
-        raise ScraperNotFoundError("Brak danych")
+    def _parse_details(self, _soup):
+        msg = "Brak danych"
+        raise ScraperNotFoundError(msg)
+
+
+def test_scraper_error_contract_is_consistent() -> None:
+    cause = ValueError("boom")
+
+    error = DomainParseError(
+        "Brak sekcji",
+        url="https://example.com/wiki/Test",
+        cause=cause,
+    )
+
+    assert error.message == "Brak sekcji"
+    assert error.url == "https://example.com/wiki/Test"
+    assert error.cause is cause
+    assert error.critical is False
+    assert error.args == ("Brak sekcji",)
 
 
 def test_fetch_maps_network_errors_to_domain_exception():
     scraper = DummyScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(exc=RuntimeError("offline")))
+        options=ScraperOptions(fetcher=DummyFetcher(exc=RuntimeError("offline"))),
     )
 
     with pytest.raises(ScraperNetworkError):
@@ -152,7 +175,7 @@ def test_fetch_maps_network_errors_to_domain_exception():
 
 def test_fetch_maps_parse_errors_to_domain_exception():
     scraper = DummyParseScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
     )
 
     with pytest.raises(ScraperParseError):
@@ -161,7 +184,7 @@ def test_fetch_maps_parse_errors_to_domain_exception():
 
 def test_list_scraper_skips_missing_list_with_log():
     scraper = DummyListScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
     )
 
     assert scraper.fetch() == []
@@ -169,7 +192,7 @@ def test_list_scraper_skips_missing_list_with_log():
 
 def test_single_circuit_scraper_wraps_network_errors():
     scraper = F1SingleCircuitScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(exc=RuntimeError("offline")))
+        options=ScraperOptions(fetcher=DummyFetcher(exc=RuntimeError("offline"))),
     )
 
     with pytest.raises(ScraperNetworkError):
@@ -178,7 +201,7 @@ def test_single_circuit_scraper_wraps_network_errors():
 
 def test_single_circuit_scraper_soft_skips_not_found():
     scraper = DummySingleCircuitScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
     )
 
     assert scraper.fetch_by_url("https://example.com/wiki/Test") == []
@@ -199,7 +222,7 @@ def test_single_grand_prix_scraper_soft_skips_missing_section(monkeypatch):
         lambda _soup: True,
     )
     scraper = F1SingleGrandPrixScraper(
-        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>"))
+        options=ScraperOptions(fetcher=DummyFetcher(html="<html></html>")),
     )
 
     result = scraper.fetch_by_url("https://example.com/wiki/Test")

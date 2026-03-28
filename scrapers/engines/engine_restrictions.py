@@ -1,17 +1,19 @@
-from pathlib import Path
 from typing import Any
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from models.validation.engine_restriction import EngineRestriction
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.run_config import RunConfig
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.range import RangeColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.unit import UnitColumn
-from scrapers.base.table.config import ScraperConfig
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.source_catalog import ENGINE_REGULATIONS
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types import RangeColumn
+from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.base.table.columns.types import UnitColumn
+from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.engine_rpm_limit import EngineRpmLimitColumn
 from scrapers.engines.columns.fuel_flow_rate import FuelFlowRateColumn
@@ -50,11 +52,11 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
         ),
     ]
 
-    CONFIG = ScraperConfig(
-        url="https://en.wikipedia.org/wiki/Formula_One_regulations#Engine",
-        section_id="Engine",
+    CONFIG = build_scraper_config(
+        url=ENGINE_REGULATIONS.url(),
+        section_id=ENGINE_REGULATIONS.section_id,
         expected_headers=["Year", "2000-2005", "2006-2013", "2014-2025"],
-        record_factory=EngineRestriction,
+        record_factory=RECORD_FACTORIES.callable(EngineRestriction),
         schema=TableSchemaDSL(columns=schema_columns),
     )
 
@@ -63,11 +65,14 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
         table = self._find_table(soup)
         header_row = table.find("tr")
         if not header_row:
-            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
+            msg = "Nie znaleziono wiersza nagłówkowego w tabeli."
+            raise RuntimeError(msg)
 
         header_cells = header_row.find_all(["th", "td"])
-        if len(header_cells) < 2:
-            raise RuntimeError("Nagłówek tabeli jest niekompletny.")
+        min_header_cells = 2
+        if len(header_cells) < min_header_cells:
+            msg = "Nagłówek tabeli jest niekompletny."
+            raise RuntimeError(msg)
 
         year_cells = header_cells[1:]
 
@@ -103,11 +108,6 @@ class EngineRestrictionsScraper(BaseEngineTableScraper):
 
 
 if __name__ == "__main__":
-    run_and_export(
-        EngineRestrictionsScraper,
-        "engines/f1_engine_restrictions.json",
-        run_config=RunConfig(
-            output_dir=Path("../../data/wiki"),
-            include_urls=True,
-        ),
-    )
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
+
+    run_deprecated_entrypoint()

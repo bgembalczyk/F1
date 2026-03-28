@@ -1,14 +1,18 @@
 """Helper utilities for link normalization."""
 
-from typing import Callable, Iterable
+from collections.abc import Callable
+from collections.abc import Iterable
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from models.records.link import LinkRecord
 from models.value_objects.link_utils import validate_link
-from scrapers.base.helpers.text import clean_wiki_text, strip_marks
+from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.text import strip_marks
 from scrapers.base.helpers.text_normalization import is_language_link
-from scrapers.base.helpers.wiki import is_reference_link, is_wikipedia_redlink
+from scrapers.base.helpers.wiki import is_reference_link
+from scrapers.base.helpers.wiki import is_wikipedia_redlink
 
 
 def empty_link_record(*, drop_empty: bool) -> LinkRecord | None:
@@ -57,7 +61,7 @@ def normalize_links(
     drop_empty_text: bool = False,
     strip_lang_suffix: bool = True,
 ) -> list[LinkRecord]:
-    if isinstance(links, Tag) or isinstance(links, str):
+    if isinstance(links, Tag | str):
         if isinstance(links, Tag):
             search_root = links
         else:

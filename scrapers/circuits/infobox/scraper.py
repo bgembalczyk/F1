@@ -1,23 +1,19 @@
-from typing import Any, Dict, Optional
+from typing import Any
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
-from scrapers.base.helpers.http import init_scraper_options
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.infobox.field_mapper import InfoboxFieldMapper
-from scrapers.base.infobox.scraper import (
-    WikipediaInfoboxScraper,
-    parse_infobox_from_soup,
-)
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
+from scrapers.base.infobox.scraper import WikipediaInfoboxScraper
+from scrapers.base.infobox.scraper import parse_infobox_from_soup
+from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
 from scrapers.base.types import ExportableRecord
-from scrapers.base.errors import ScraperParseError
-from scrapers.circuits.helpers.article_validation import is_circuit_like_article
+from scrapers.circuits.infobox.schema import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.circuits.infobox.services.additional_info import (
     CircuitAdditionalInfoParser,
 )
-from scrapers.circuits.infobox.schema import CIRCUIT_INFOBOX_SCHEMA
 from scrapers.circuits.infobox.services.entities import CircuitEntitiesParser
 from scrapers.circuits.infobox.services.entity_parsing import CircuitEntityParser
 from scrapers.circuits.infobox.services.geo import CircuitGeoParser
@@ -26,36 +22,31 @@ from scrapers.circuits.infobox.services.lap_record import CircuitLapRecordParser
 from scrapers.circuits.infobox.services.layouts import CircuitLayoutsParser
 from scrapers.circuits.infobox.services.specs import CircuitSpecsParser
 from scrapers.circuits.infobox.services.text_utils import InfoboxTextUtils
+from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 
 
-class F1CircuitInfoboxScraper(F1Scraper):
+class F1CircuitInfoboxParser(InfoboxParser):
     """Parser infoboksów torów F1 z heurystykami pod typowe pola."""
 
     def __init__(
         self,
         *,
         options: ScraperOptions | None = None,
+        url: str = "",
     ) -> None:
-        options = init_scraper_options(options)
+        options = options or ScraperOptions()
 
-        # Zapewniamy fetcher (spójnie z resztą repo).
-        policy = self.get_http_policy(options)
-        options.with_fetcher(policy=policy)
+        self.logger = get_logger(self.__class__.__name__)
+        self._error_handler = ErrorHandler(
+            logger=self.logger,
+            debug_dir=options.debug_dir,
+            error_report_enabled=options.error_report,
+            run_id=options.run_id,
+        )
+        self._run_id = options.run_id
 
-        super().__init__(options=options)
-
-        # Dla czytelności (F1Scraper i tak to trzyma)
-        self.fetcher = options.fetcher
-        self.policy = self.http_policy
-        self.timeout = self.policy.timeout
-
-        # WikipediaInfoboxScraper w stylu "main": przez ScraperOptions + fetcher
+        # WikipediaInfoboxScraper: używamy tylko parsera i mappera (bez HTTP)
         self.infobox_scraper = WikipediaInfoboxScraper(
-            options=ScraperOptions(
-                fetcher=self.fetcher,
-                policy=self.policy,
-                debug_dir=options.debug_dir,
-            ),
             mapper=InfoboxFieldMapper(
                 schema=CIRCUIT_INFOBOX_SCHEMA,
                 logger=self.logger,
@@ -64,7 +55,6 @@ class F1CircuitInfoboxScraper(F1Scraper):
         )
 
         # --- Serwisy ---
-        self.section_extractor = WikipediaSectionByIdMixin()
         self.text_utils = InfoboxTextUtils()
         self.geo_parser = CircuitGeoParser()
         self.history_parser = CircuitHistoryParser()
@@ -94,61 +84,16 @@ class F1CircuitInfoboxScraper(F1Scraper):
             url_provider=lambda: self.url,
         )
 
-        self.url: str = ""
+        self.url: str = url
 
     # ------------------------------
     # Publiczne API
     # ------------------------------
 
-    def scrape_url(self, url: str) -> ExportableRecord:
-        """
-        Główne API – pobiera i parsuje infobox z podanego URL.
-        Obsługuje #fragment (sekcje), przycina infoboksy po infobox-full-data itd.
-
-        Merge:
-        - serwisy z main,
-        - osłona błędów w stylu nowego F1Scraper (network/parse + soft-skip jeśli _handle_scraper_error).
-        """
-        self.url = url
-        base_url, fragment = self.section_extractor.split_url_fragment(url)
-        self.url = base_url
-
-        def _parse_full(full_soup: BeautifulSoup) -> ExportableRecord:
-            if not is_circuit_like_article(full_soup):
-                title = (
-                    full_soup.title.get_text(strip=True) if full_soup.title else None
-                )
-                return self.text_utils.prune_nulls(
-                    {
-                        "url": url,
-                        "title": title,
-                    }
-                )
-
-            soup = full_soup
-            if fragment:
-                section = self.section_extractor.extract_section_by_id(
-                    full_soup, fragment
-                )
-                if section is not None:
-                    soup = section
-
-            records = self.parse(soup)
-            return records[0] if records else {}
-
-        result = self.run_with_error_handling(
-            lambda: self._download(),
-            _parse_full,
-            base_url,
-        )
-        return result or {"url": url}
-
     def parse(self, soup: BeautifulSoup) -> list[ExportableRecord]:
-        if self.parser is None:
-            return [self._parse_infobox(soup)]
-        return self.parser.parse(soup)
+        return [self._parse_infobox(soup)]
 
-    def _parse_infobox(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _parse_infobox(self, soup: BeautifulSoup) -> dict[str, Any]:
         """
         Zwraca znormalizowany infobox + layouts (bez surowego `rows`).
 
@@ -158,7 +103,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         """
         truncated_soup = self._truncate_infobox_after_full_data(soup)
 
-        self.infobox_scraper.run_id = getattr(self, "_run_id", None)
+        self.infobox_scraper.run_id = self._run_id
         self.infobox_scraper.url = self.url
         raw = parse_infobox_from_soup(self.infobox_scraper, truncated_soup)
 
@@ -189,7 +134,7 @@ class F1CircuitInfoboxScraper(F1Scraper):
         for table in soup.find_all("table", class_=_has_infobox_class):
             rows: list[Tag] = table.find_all("tr")
 
-            cut_index: Optional[int] = None
+            cut_index: int | None = None
             for idx, row in enumerate(rows):
                 row_classes = row.get("class") or []
                 if isinstance(row_classes, str):
@@ -209,14 +154,3 @@ class F1CircuitInfoboxScraper(F1Scraper):
                     r.decompose()
 
         return soup
-
-    # ------------------------------
-    # Pobieranie / sekcje / kategorie
-    # ------------------------------
-
-    def _download(self) -> str:
-        if not self.url:
-            raise ScraperParseError("URL must be set before downloading")
-        return self.fetcher.get_text(self.url, timeout=self.timeout)
-
-    # ------------------------------

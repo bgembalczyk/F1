@@ -1,12 +1,11 @@
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.dsl import TableSchemaDSL, column
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import UrlColumn
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.calendar_circuit import CalendarCircuitColumn
 from scrapers.seasons.columns.date import SeasonDateColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
@@ -17,8 +16,10 @@ class SeasonCalendarParser:
         self._table_parser = table_parser
 
     def parse(
-        self, soup: BeautifulSoup, season_year: int | None
-    ) -> List[Dict[str, Any]]:
+        self,
+        soup: BeautifulSoup,
+        season_year: int | None,
+    ) -> list[dict[str, Any]]:
         schema_columns = [
             column("Round", "round", IntColumn()),
             column("Grand Prix", "grand_prix", UrlColumn()),

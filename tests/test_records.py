@@ -1,20 +1,27 @@
+# ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
+from models.mappers.field_aliases import FIELD_ALIASES
+from models.mappers.field_aliases import apply_field_aliases
 from models.mappers.serialization import to_circuit_record_dict
-from models.records import (
-    CircuitBaseRecord,
-    CircuitCompleteRecord,
-    CircuitDetailsRecord,
-    CircuitRecord,
-    DriverRecord,
-    DriversChampionshipsRecord,
-    LinkRecord,
-    SeasonRecord,
-)
+from models.records.circuit import CIRCUIT_DEFINITION
+from models.records.circuit import CircuitRecord
+from models.records.circuit import validate_circuit_record
+from models.records.circuit_base import CircuitBaseRecord
+from models.records.circuit_complete import CircuitCompleteRecord
 from models.records.circuit_complete import validate_circuit_complete_record
+from models.records.circuit_details import CircuitDetailsRecord
 from models.records.circuit_details import validate_circuit_details_record
-from models.mappers.field_aliases import apply_field_aliases, FIELD_ALIASES
+from models.records.constructor import CONSTRUCTOR_DEFINITION
+from models.records.constructor import ConstructorRecord
+from models.records.constructor import validate_constructor_record
+from models.records.driver import DRIVER_DEFINITION
 from models.records.driver import DRIVER_SCHEMA
+from models.records.driver import DriverRecord
+from models.records.driver import validate_driver_record
+from models.records.driver_championships import DriversChampionshipsRecord
+from models.records.link import LinkRecord
 from models.records.season import SEASON_SCHEMA
-from validation.records import RecordValidator
+from models.records.season import SeasonRecord
+from validation.validator_base import RecordValidator
 
 
 def test_link_and_season_records_have_expected_keys() -> None:
@@ -82,7 +89,7 @@ def test_circuit_details_and_complete_records() -> None:
 
 def test_validate_circuit_base_in_details_and_complete() -> None:
     details_errors = validate_circuit_details_record(
-        {"url": None, "infobox": {}, "tables": []}
+        {"url": None, "infobox": {}, "tables": []},
     )
     complete_errors = validate_circuit_complete_record({"url": None})
 
@@ -149,4 +156,20 @@ def test_apply_field_aliases_raises_on_conflict() -> None:
     except ValueError as exc:
         assert "Konflikt aliasów" in str(exc)
     else:
-        raise AssertionError("Expected conflict error for alias mapping")
+        msg = "Expected conflict error for alias mapping"
+        raise AssertionError(msg)
+
+
+def test_record_definition_consistency_for_core_typeddicts() -> None:
+    metadata = (
+        (DriverRecord, DRIVER_DEFINITION, validate_driver_record),
+        (ConstructorRecord, CONSTRUCTOR_DEFINITION, validate_constructor_record),
+        (CircuitRecord, CIRCUIT_DEFINITION, validate_circuit_record),
+    )
+
+    for typed_dict, definition, validator in metadata:
+        assert definition.name
+        assert definition.to_schema().required
+        assert callable(validator)
+        assert validator({})
+        assert set(definition.required).issubset(set(typed_dict.__annotations__))

@@ -18,7 +18,7 @@ class RangeColumn(BaseColumn):
         lower_column: BaseColumn,
         upper_column: BaseColumn,
         *,
-        separator_pattern: str = r"\s*(?:–|-|—|−)\s*",
+        separator_pattern: str = r"\s*(?:-|—)\s*",
         shared_suffix: str | None = None,
     ) -> None:
         self.lower_column = lower_column

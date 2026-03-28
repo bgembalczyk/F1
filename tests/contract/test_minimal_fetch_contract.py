@@ -1,7 +1,5 @@
 import pytest
 
-pytest.importorskip("bs4")
-
 from scrapers.base.options import ScraperOptions
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.constructors.former_constructors_list import FormerConstructorsListScraper
@@ -16,12 +14,15 @@ class StubFetcher:
         self.html = html
         self.calls = 0
 
-    def get_text(self, url: str, *, timeout: int | None = None) -> str:
+    def get_text(self, _url: str, *, _timeout: int | None = None) -> str:
         self.calls += 1
         return self.html
 
     def get(self, url: str) -> str:
         return self.get_text(url)
+
+
+pytest.importorskip("bs4")
 
 
 @pytest.mark.parametrize(
