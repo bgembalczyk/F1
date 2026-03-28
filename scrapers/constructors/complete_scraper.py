@@ -33,6 +33,6 @@ class CompleteConstructorsDataExtractor(CompleteExtractorBase):
 
 
 if __name__ == "__main__":
-    from scrapers.cli import run_current_legacy_wrapper
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    run_current_legacy_wrapper()
+    run_deprecated_entrypoint()

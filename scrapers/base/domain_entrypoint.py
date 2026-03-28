@@ -110,6 +110,14 @@ _DOMAIN_ENTRYPOINT_SPECS: dict[str, _DomainEntrypointSpec] = {
 }
 
 
+def get_domain_entrypoint_scraper_metadata() -> dict[str, str]:
+    """Return static domain-to-scraper-path metadata for command generation."""
+    return {
+        domain: spec.scraper_path
+        for domain, spec in _DOMAIN_ENTRYPOINT_SPECS.items()
+    }
+
+
 def _import_target(path: str) -> object:
     module_name, attr_name = path.split(":", maxsplit=1)
     module = import_module(module_name)

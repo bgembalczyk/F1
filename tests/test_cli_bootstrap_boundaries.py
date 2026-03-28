@@ -53,5 +53,5 @@ def test_all_legacy_cli_wrappers_delegate_to_canonical_launcher() -> None:
             assert "main()" in source
             continue
 
-        assert "run_legacy_wrapper(" in source
+        assert "run_deprecated_entrypoint(" in source
         assert "argparse.ArgumentParser(" not in source

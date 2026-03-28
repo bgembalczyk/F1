@@ -54,6 +54,22 @@ def test_cli_exposes_domain_entrypoints_in_run_choices() -> None:
     assert "scrapers.circuits.entrypoint" in choices
 
 
+def test_cli_exposes_domain_registry_choices() -> None:
+    parser = cli._build_main_parser()
+    domain_parser = next(
+        action
+        for action in parser._actions
+        if getattr(action, "dest", None) == "command"
+    ).choices["domain"]
+    choices = next(
+        action.choices
+        for action in domain_parser._actions
+        if getattr(action, "dest", None) == "name"
+    )
+    assert "drivers" in choices
+    assert "circuits" in choices
+
+
 def test_get_deprecated_module_migrations_points_to_new_domain_entrypoints() -> None:
     migrations = dict(cli.get_deprecated_module_migrations())
 
@@ -63,3 +79,12 @@ def test_get_deprecated_module_migrations_points_to_new_domain_entrypoints() -> 
         migrations["scrapers.constructors.current_constructors_list"]
         == "scrapers.constructors.entrypoint"
     )
+
+
+def test_deprecation_message_has_domain_migration_hint(monkeypatch) -> None:
+    def fake_invoke_target(*_args, **_kwargs):  # noqa: ANN001
+        return None
+
+    monkeypatch.setattr(cli, "_invoke_target", fake_invoke_target)
+    with pytest.warns(DeprecationWarning, match="scrapers\\.cli domain drivers"):
+        cli.run_legacy_wrapper("scrapers.drivers.list_scraper", [])

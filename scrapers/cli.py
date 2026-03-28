@@ -18,6 +18,7 @@ from scrapers.base.run_config import RunConfig
 from scrapers.base.run_profiles import LEGACY_CLI_PROFILE_NAMES
 from scrapers.base.run_profiles import LegacyCliProfileName
 from scrapers.base.run_profiles import get_cli_profile_defaults
+from scrapers.base.domain_entrypoint import get_domain_entrypoint_scraper_metadata
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -84,6 +85,13 @@ class LegacyCliRegistry:
         if not definition.base_config_overrides:
             return base_config
         return dataclasses.replace(base_config, **definition.base_config_overrides)
+
+
+@dataclass(frozen=True)
+class DomainCommand:
+    name: str
+    module_path: str
+    scraper_path: str
 
 
 def _build_base_config(factory: BaseConfigFactory) -> RunConfig:
@@ -436,6 +444,24 @@ MODULE_DEFINITIONS: dict[str, LegacyModuleDefinition] = {
     for definition in LEGACY_MODULE_REGISTRY.definitions
 }
 
+_DOMAIN_SCRAPER_METADATA = get_domain_entrypoint_scraper_metadata()
+DOMAIN_COMMANDS: dict[str, DomainCommand] = {}
+for module_path in MODULE_DEFINITIONS:
+    parts = module_path.split(".")
+    if len(parts) < 3 or parts[0] != "scrapers":
+        continue
+    if parts[-1] != "entrypoint":
+        continue
+    domain = parts[1]
+    scraper_path = _DOMAIN_SCRAPER_METADATA.get(domain)
+    if scraper_path is None:
+        continue
+    DOMAIN_COMMANDS[domain] = DomainCommand(
+        name=domain,
+        module_path=module_path,
+        scraper_path=scraper_path,
+    )
+
 
 def _deprecated_runtime_message(
     module_path: str,
@@ -443,10 +469,16 @@ def _deprecated_runtime_message(
     replacement_module_path: str | None,
 ) -> str:
     replacement_module = replacement_module_path or module_path
+    domain_hint = ""
+    parts = replacement_module.split(".")
+    if len(parts) >= 3 and parts[0] == "scrapers" and parts[-1] == "entrypoint":
+        domain_name = parts[1]
+        if domain_name in DOMAIN_COMMANDS:
+            domain_hint = f" or `python -m scrapers.cli domain {domain_name}`"
     return (
         f"{module_path} is deprecated and scheduled for removal after "
         f"{DEPRECATION_TRANSITION_RELEASES} transitional releases; "
-        f"use `python -m scrapers.cli run {replacement_module}`."
+        f"use `python -m scrapers.cli run {replacement_module}`{domain_hint}."
     )
 
 
@@ -532,6 +564,22 @@ def run_legacy_wrapper(module_path: str, argv: list[str] | None = None) -> None:
 
 
 def run_current_legacy_wrapper(argv: list[str] | None = None) -> None:
+    run_registered_module_for_caller(argv)
+
+
+def run_registered_module(module_path: str, argv: list[str] | None = None) -> None:
+    """Run a legacy-compatible registered module command."""
+    run_legacy_wrapper(module_path, argv)
+
+
+def run_domain_command(domain: str, argv: list[str] | None = None) -> None:
+    """Run a domain command generated from scraper metadata."""
+    command = DOMAIN_COMMANDS[domain]
+    run_registered_module(command.module_path, argv)
+
+
+def run_registered_module_for_caller(argv: list[str] | None = None) -> None:
+    """Resolve caller module path and execute via command registry."""
     frame = inspect.currentframe()
     if frame is None or frame.f_back is None:
         msg = "Cannot infer caller module for legacy wrapper."
@@ -542,7 +590,7 @@ def run_current_legacy_wrapper(argv: list[str] | None = None) -> None:
     finally:
         del frame
 
-    run_legacy_wrapper(_module_path_from_file(caller_file), argv)
+    run_registered_module(_module_path_from_file(caller_file), argv)
 
 
 def _build_wiki_parser() -> argparse.ArgumentParser:
@@ -585,6 +633,10 @@ def _build_main_parser() -> argparse.ArgumentParser:
     run_parser = subparsers.add_parser("run")
     run_parser.add_argument("module", choices=tuple(sorted(SCRAPER_REGISTRY.keys())))
     run_parser.add_argument("args", nargs=argparse.REMAINDER)
+
+    domain_parser = subparsers.add_parser("domain")
+    domain_parser.add_argument("name", choices=tuple(sorted(DOMAIN_COMMANDS.keys())))
+    domain_parser.add_argument("args", nargs=argparse.REMAINDER)
     return parser
 
 
@@ -600,8 +652,10 @@ def main(argv: list[str] | None = None) -> None:
     if args.command == "wiki":
         run_wiki_cli(["--mode", args.mode])
         return
-
-    run_legacy_wrapper(args.module, _normalize_passthrough_args(args.args))
+    if args.command == "domain":
+        run_domain_command(args.name, _normalize_passthrough_args(args.args))
+        return
+    run_registered_module(args.module, _normalize_passthrough_args(args.args))
 
 
 if __name__ == "__main__":
