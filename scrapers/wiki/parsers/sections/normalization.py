@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.wiki.parsers.sections.detection import normalize_section_text
 
 
 def normalize_section_profile_key(value: str) -> str:
-    return clean_wiki_text(value.replace("_", " ")).lower().strip()
+    return normalize_section_text(value)
