@@ -29,16 +29,26 @@ class ScraperPipelineRunner:
         write_step_quality_report: StepQualityWriter,
         parse_records: Callable[[BeautifulSoup], list[RawRecord]],
         normalize_records: Callable[[list[RawRecord]], list[NormalizedRecord]],
-        transform_records: Callable[[list[NormalizedRecord]], list[ExportRecord]],
+        pre_validate_transform_records: Callable[
+            [list[NormalizedRecord]],
+            list[ExportRecord],
+        ],
+        enrich_records: Callable[[list[ExportRecord]], list[ExportRecord]],
         validate_records: Callable[[list[ExportRecord]], list[ExportRecord]],
+        post_validate_transform_records: Callable[
+            [list[ExportRecord]],
+            list[ExportRecord],
+        ],
         post_process_records: Callable[[list[ExportRecord]], list[ExportRecord]],
     ) -> None:
         self.logger = logger
         self._write_step_quality_report = write_step_quality_report
         self._parse_records = parse_records
         self._normalize_records = normalize_records
-        self._transform_records = transform_records
+        self._pre_validate_transform_records = pre_validate_transform_records
+        self._enrich_records = enrich_records
         self._validate_records = validate_records
+        self._post_validate_transform_records = post_validate_transform_records
         self._post_process_records = post_process_records
 
     def run(self, *, run_id: str, html: str) -> list[ExportRecord]:
@@ -50,22 +60,34 @@ class ScraperPipelineRunner:
             lambda: self._normalize_records(list(raw_records)),
             to_dict=True,
         )
-        transformed_records = self._log_step(
+        pre_validated_records = self._log_step(
             run_id,
-            "transform",
-            lambda: self._transform_records(normalized_records),
+            "transform_pre_validate",
+            lambda: self._pre_validate_transform_records(normalized_records),
+            to_dict=True,
+        )
+        enriched_records = self._log_step(
+            run_id,
+            "transform_enrich",
+            lambda: self._enrich_records(pre_validated_records),
             to_dict=True,
         )
         validated_records = self._log_step(
             run_id,
             "validate",
-            lambda: self._validate_records(transformed_records),
+            lambda: self._validate_records(enriched_records),
+            to_dict=True,
+        )
+        post_validated_records = self._log_step(
+            run_id,
+            "transform_post_validate",
+            lambda: self._post_validate_transform_records(validated_records),
             to_dict=True,
         )
         return self._log_step(
             run_id,
             "post_process",
-            lambda: self._post_process_records(validated_records),
+            lambda: self._post_process_records(post_validated_records),
             to_dict=True,
         )
 

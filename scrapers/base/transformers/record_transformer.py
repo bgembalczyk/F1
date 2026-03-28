@@ -4,10 +4,13 @@ from typing import Any
 
 from scrapers.base.normalization import EmptyValuePolicy
 from scrapers.base.normalization import normalize_record_values
+from scrapers.base.transformers.stages import TransformerStage
 from validation.validator_base import ExportRecord
 
 
 class RecordTransformer(ABC):
+    stage: TransformerStage = TransformerStage.ENRICH
+
     def __init__(
         self,
         *,

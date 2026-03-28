@@ -1,18 +1,13 @@
 from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
-from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
-from scrapers.base.transformers.points_scoring_systems_history import (
-    PointsScoringSystemsHistoryTransformer,
-)
 from scrapers.points.base_points_scraper import BasePointsScraper
 from scrapers.points.columns.first_place import FirstPlaceColumn
 from scrapers.points.constants import HISTORICAL_POSITIONS
@@ -30,6 +25,9 @@ class PointsScoringSystemsHistoryScraper(BasePointsScraper):
     used throughout history.
     https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems
     """
+
+    options_profile = "seed_soft"
+    options_domain = "points"
 
     schema_columns = [column(POINTS_SEASONS_HEADER, "seasons", SeasonsColumn())]
     for index, position in enumerate(HISTORICAL_POSITIONS):
@@ -59,20 +57,6 @@ class PointsScoringSystemsHistoryScraper(BasePointsScraper):
         schema=TableSchemaDSL(columns=schema_columns),
         record_factory=record_from_mapping,
     )
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
-    ) -> None:
-        options = options or ScraperOptions()
-        options.transformers = [
-            *list(options.transformers or []),
-            PointsScoringSystemsHistoryTransformer(),
-        ]
-        super().__init__(options=options, config=config)
-
 
 def run_list_scraper(*, run_config: RunConfig) -> None:
     run_and_export(

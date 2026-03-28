@@ -1,6 +1,6 @@
 from collections.abc import Sequence
 
-from scrapers.base.transformers.normalize_links import NormalizeLinksTransformer
+from scrapers.base.transformers.common.normalize_links import NormalizeLinksTransformer
 from scrapers.base.transformers.record_transformer import RecordTransformer
 
 
