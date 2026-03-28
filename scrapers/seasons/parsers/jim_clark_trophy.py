@@ -2,7 +2,6 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.table.columns.types import DriverColumn
 from scrapers.seasons.columns.driver import DriverColumn
 from scrapers.seasons.parsers.table import SeasonTableParser
 

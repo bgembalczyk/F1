@@ -3,9 +3,13 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from typing_extensions import Self
+
 
 class WikiUrl(str):
-    def __new__(cls, value: str) -> WikiUrl:
+    __slots__ = ()
+
+    def __new__(cls, value: str) -> Self:
         cleaned = " ".join(str(value).strip().split())
         if not cleaned:
             msg = "WikiUrl cannot be empty."
@@ -24,7 +28,7 @@ class SeasonYear(int):
     _MIN_YEAR = 1900
     _MAX_YEAR = 3000
 
-    def __new__(cls, value: int | str | SeasonYear) -> SeasonYear:
+    def __new__(cls, value: int | str | SeasonYear) -> Self:
         year = int(value)
         if year < cls._MIN_YEAR or year > cls._MAX_YEAR:
             msg = (
@@ -45,7 +49,9 @@ class SeasonYear(int):
 
 
 class SectionId(str):
-    def __new__(cls, value: str) -> SectionId:
+    __slots__ = ()
+
+    def __new__(cls, value: str) -> Self:
         text = str(value).strip()
         if not text:
             msg = "SectionId cannot be empty."
@@ -66,7 +72,9 @@ class SectionId(str):
 
 
 class EntityName(str):
-    def __new__(cls, value: Any) -> EntityName:
+    __slots__ = ()
+
+    def __new__(cls, value: Any) -> Self:
         text = " ".join(str(value).strip().split())
         if not text:
             msg = "EntityName cannot be empty."

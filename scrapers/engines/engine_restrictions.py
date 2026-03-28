@@ -10,6 +10,7 @@ from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.columns.types import RangeColumn
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import UnitColumn
+from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL

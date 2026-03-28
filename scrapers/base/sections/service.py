@@ -10,16 +10,16 @@ from typing import Protocol
 from models.value_objects import EntityName
 from models.value_objects import SectionId
 from models.value_objects import WikiUrl
-from scrapers.base.options import ScraperOptions
-from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import normalize_section_metadata
 from scrapers.base.sections.serializer import serialize_section_result
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
+    from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.adapter import SectionAdapter
     from scrapers.base.sections.adapter import SectionAdapterEntry
+    from scrapers.base.sections.interface import SectionParseResult
 
 
 logger = logging.getLogger(__name__)
@@ -59,24 +59,31 @@ class BaseSectionExtractionService(ABC):
     def _parse_sections(self, soup: BeautifulSoup) -> list[SectionParseResult]:
         sections: list[SectionParseResult] = []
         for entry in self.build_entries():
-            try:
-                sections.extend(
-                    self._adapter.parse_sections(
-                        soup=soup,
-                        domain=self.domain,
-                        entries=[entry],
-                    ),
-                )
-            except Exception:  # pragma: no cover - defensive branch
-                logger.exception(
-                    "Failed to parse section entry",
-                    extra={
-                        "domain": self.domain,
-                        "section_id": SectionId.from_raw(entry.section_id).to_export(),
-                        "parser": entry.parser.__class__.__name__,
-                    },
-                )
+            sections.extend(self._parse_single_entry(soup=soup, entry=entry))
         return sections
+
+    def _parse_single_entry(
+        self,
+        *,
+        soup: BeautifulSoup,
+        entry: SectionAdapterEntry,
+    ) -> list[SectionParseResult]:
+        try:
+            return self._adapter.parse_sections(
+                soup=soup,
+                domain=self.domain,
+                entries=[entry],
+            )
+        except Exception:  # pragma: no cover - defensive branch
+            logger.exception(
+                "Failed to parse section entry",
+                extra={
+                    "domain": self.domain,
+                    "section_id": SectionId.from_raw(entry.section_id).to_export(),
+                    "parser": entry.parser.__class__.__name__,
+                },
+            )
+            return []
 
     def _aggregate_sections(
         self,

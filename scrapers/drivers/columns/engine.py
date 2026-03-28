@@ -3,8 +3,8 @@
 (engine parsing) localized for drivers domain.
 """
 
-from scrapers.base.table.columns.types.base_engine import BaseEngineColumn
+from scrapers.base.table.columns.types.engine_base import BaseEngineColumn
 
 
 class EngineColumn(BaseEngineColumn):
-    pass
+    """Drivers engine parser."""

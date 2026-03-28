@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict
+from typing import TYPE_CHECKING
 
 import pytest
 from bs4 import BeautifulSoup
@@ -10,7 +11,6 @@ from models.records.base_factory import RecordFactoryProtocol
 from models.records.factories.registry import FACTORY_REGISTRY
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.adapter import SectionAdapter
-from scrapers.base.sections.interface import SectionParser
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
 from scrapers.circuits.sections.layout_history import CircuitLayoutHistorySectionParser
@@ -31,6 +31,9 @@ from scrapers.seasons.sections.regulation_changes import (
     SeasonRegulationChangesSectionParser,
 )
 from scrapers.seasons.sections.service import SeasonTextSectionExtractionService
+
+if TYPE_CHECKING:
+    from scrapers.base.sections.interface import SectionParser
 
 SECTION_RESULT_KEYS = ("section_id", "section_label", "records", "metadata")
 
@@ -168,7 +171,7 @@ def test_section_service_contract_for_each_domain_implementation(
     html: str,
 ) -> None:
     result = service.extract(_soup(html))
-    assert isinstance(result, (list, dict))
+    assert isinstance(result, list | dict)
     assert result
 
 

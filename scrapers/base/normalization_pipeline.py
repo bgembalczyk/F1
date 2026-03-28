@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-from collections.abc import Iterable
-from collections.abc import Sequence
+from typing import TYPE_CHECKING
 from typing import Any
 from typing import Protocol
 
@@ -12,6 +11,10 @@ from scrapers.base.normalization_utils import EmptyValuePolicy
 from scrapers.base.normalization_utils import normalize_empty
 
 LINK_KEYS = {"text", "url"}
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable
+    from collections.abc import Sequence
 
 
 class NormalizationPlugin(Protocol):
@@ -93,8 +96,7 @@ class ValueNormalizationPipeline:
     def _normalize_text(self, value: Any) -> Any:
         if not isinstance(value, str):
             return value
-        text = strip_wiki_marks(value) if self.strip_marks else value
-        return text
+        return strip_wiki_marks(value) if self.strip_marks else value
 
     def _normalize_empty(self, value: Any) -> Any:
         policy = self.empty_value_policy

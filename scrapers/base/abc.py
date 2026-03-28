@@ -358,20 +358,17 @@ class ABCScraper(ABC):
         self,
         fetch_fn: Callable[[], str],
         parse_fn: Callable[[BeautifulSoup], T],
-        url: str,
     ) -> T | None:
-        html = self._run_fetch_stage(fetch_fn, url)
+        html = self._run_fetch_stage(fetch_fn)
         if html is None:
             return None
-        return self._run_parse_stage(parse_fn, url, html)
+        return self._run_parse_stage(parse_fn, html)
 
-    def _run_fetch_stage(self, fetch_fn: Callable[[], str], url: str) -> str | None:
+    def _run_fetch_stage(self, fetch_fn: Callable[[], str]) -> str | None:
         try:
             return fetch_fn()
         except Exception as exc:  # noqa: BLE001
             return self._handle_stage_error(
-                stage="network",
-                url=url,
                 exc=exc,
                 error=self._network_stage_error(exc),
             )
@@ -379,7 +376,6 @@ class ABCScraper(ABC):
     def _run_parse_stage(
         self,
         parse_fn: Callable[[BeautifulSoup], T],
-        url: str,
         html: str,
     ) -> T | None:
         try:
@@ -387,8 +383,6 @@ class ABCScraper(ABC):
             return parse_fn(soup)
         except Exception as exc:  # noqa: BLE001
             return self._handle_stage_error(
-                stage="parse",
-                url=url,
                 exc=exc,
                 error=self._parse_stage_error(exc),
             )
@@ -406,8 +400,6 @@ class ABCScraper(ABC):
     def _handle_stage_error(
         self,
         *,
-        stage: str,
-        url: str,
         exc: Exception,
         error: ScraperError,
     ) -> None:

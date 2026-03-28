@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from dataclasses import field
 from typing import Any
 
 from scrapers.base.postprocess import BaseRecordAssembler
@@ -51,7 +52,7 @@ class SeasonRecordSections:
 @dataclass(frozen=True)
 class SeasonPayloadDTO:
     sections: SeasonRecordSections
-    base: BaseRecordAssemblerInput = BaseRecordAssemblerInput()
+    base: BaseRecordAssemblerInput = field(default_factory=BaseRecordAssemblerInput)
 
 
 class SeasonRecordAssembler(BaseRecordAssembler):

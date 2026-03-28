@@ -5,6 +5,10 @@ from scrapers.sponsorship_liveries.parsers.splitters.record.facade import (
     SponsorshipRecordSplitter,
 )
 
+THREE_RECORDS = 3
+TWO_RECORDS = 2
+EIGHT_RECORDS = 8
+
 
 def test_livery_principal_sponsors_year_filter() -> None:
     """livery_principal_sponsors is correctly filtered per expanded season year."""
@@ -43,7 +47,7 @@ def test_livery_principal_sponsors_year_filter() -> None:
     splitter = SponsorshipRecordSplitter()
     result = splitter.split_record_by_season(record)
 
-    assert len(result) == 3
+    assert len(result) == THREE_RECORDS
 
     by_year = {r["season"][0]["year"]: r for r in result}
 
@@ -86,19 +90,19 @@ def test_split_record_by_season_matra_case() -> None:
     splitter = SponsorshipRecordSplitter()
     result = splitter.split_record_by_season(record)
 
-    assert len(result) == 2
+    assert len(result) == TWO_RECORDS
 
     by_driver = {r["driver"][0]["text"]: r for r in result}
 
     pescarolo = by_driver["Pescarolo"]
     assert pescarolo["main_colours"] == ["Blue"]
     assert pescarolo["additional_colours"] == ["Green", "White"]
-    assert len(pescarolo["season"]) == 3
+    assert len(pescarolo["season"]) == THREE_RECORDS
 
     beltoise = by_driver["Beltoise"]
     assert beltoise["main_colours"] == ["Blue"]
     assert beltoise["additional_colours"] == ["White", "Red"]
-    assert len(beltoise["season"]) == 3
+    assert len(beltoise["season"]) == THREE_RECORDS
 
 
 def test_split_record_by_season_possessive_with_common_colours() -> None:
@@ -117,7 +121,7 @@ def test_split_record_by_season_possessive_with_common_colours() -> None:
     splitter = SponsorshipRecordSplitter()
     result = splitter.split_record_by_season(record)
 
-    assert len(result) == 2
+    assert len(result) == TWO_RECORDS
     by_driver = {r["driver"][0]["text"]: r for r in result}
     assert by_driver["Pescarolo"]["additional_colours"] == ["Green", "White", "Yellow"]
     assert by_driver["Beltoise"]["additional_colours"] == ["White", "Red", "Yellow"]
@@ -145,7 +149,7 @@ def test_split_pipeline_mixed_season_gp_and_possessive_order() -> None:
 
     result = SponsorshipRecordSplitter().split_record_by_season(record)
 
-    assert len(result) == 8
+    assert len(result) == EIGHT_RECORDS
     signature = [
         (
             r["driver"][0]["text"],

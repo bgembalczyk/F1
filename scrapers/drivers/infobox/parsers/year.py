@@ -8,6 +8,9 @@ from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.year_extraction import YearExtractor
 from scrapers.drivers.infobox.parsers.constants import MIN_RANGE_YEARS
 
+_YEAR_RE = re.compile(r"\b(\d{4})\b")
+_OPEN_ENDED_RE = re.compile(r"\b(\d{4})\s*[-\u2013]\s*(?:present)?$")
+
 
 class YearParser:
     """Handles parsing of years and year ranges."""
@@ -44,19 +47,19 @@ class YearParser:
         # Remove parentheses if present
         year_text = year_text.strip("()")
 
+        # Extract all years upfront
+        all_years = _YEAR_RE.findall(year_text)
+
         # Handle "until YEAR"
         if "until" in year_text.lower():
-            year_match = re.search(r"\b(\d{4})\b", year_text)
-            if year_match:
-                years["end"] = int(year_match.group(1))
+            if all_years:
+                years["end"] = int(all_years[0])
         # Handle open-ended values like "YEAR-" (optionally with "present")
-        elif re.search(r"\b(\d{4})\s*[-\u2013]\s*(?:present)?$", year_text.strip()):
-            year_match = re.search(r"\b(\d{4})\b", year_text)
-            if year_match:
-                years["start"] = int(year_match.group(1))
+        elif _OPEN_ENDED_RE.search(year_text.strip()):
+            if all_years:
+                years["start"] = int(all_years[0])
         # Handle "YEAR-YEAR" or "YEAR-YEAR"
         else:
-            all_years = re.findall(r"\b(\d{4})\b", year_text)
             if len(all_years) >= MIN_RANGE_YEARS:
                 years["start"] = int(all_years[0])
                 years["end"] = int(all_years[-1])

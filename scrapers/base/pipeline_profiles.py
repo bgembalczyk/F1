@@ -2,10 +2,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from importlib import import_module
+from typing import TYPE_CHECKING
 from typing import Any
 
 from scrapers.base.helpers.common_config import ScraperCommonConfig
-from scrapers.base.options import ScraperOptions
+
+if TYPE_CHECKING:
+    from scrapers.base.options import ScraperOptions
 
 
 @dataclass(frozen=True)
@@ -70,7 +73,10 @@ SCRAPER_PIPELINE_BINDINGS: dict[str, ScraperPipelineBinding] = {
     "scrapers.grands_prix.list_scraper.GrandsPrixListScraper": ScraperPipelineBinding(
         validator_factory="scrapers.grands_prix.validator:GrandsPrixRecordValidator",
     ),
-    "scrapers.drivers.female_drivers_list.FemaleDriversListScraper": ScraperPipelineBinding(
+    (
+        "scrapers.drivers.female_drivers_list."
+        "FemaleDriversListScraper"
+    ): ScraperPipelineBinding(
         post_processors=(
             "scrapers.drivers.post_processors:EntriesStartsPointsPostProcessor",
         ),
@@ -80,7 +86,10 @@ SCRAPER_PIPELINE_BINDINGS: dict[str, ScraperPipelineBinding] = {
             "scrapers.drivers.postprocess.contract:DriverSectionContractPostProcessor",
         ),
     ),
-    "scrapers.constructors.single_scraper.SingleConstructorScraper": ScraperPipelineBinding(
+    (
+        "scrapers.constructors.single_scraper."
+        "SingleConstructorScraper"
+    ): ScraperPipelineBinding(
         post_processors=(
             "scrapers.constructors.postprocess.contract:ConstructorSectionContractPostProcessor",
         ),
@@ -95,7 +104,10 @@ SCRAPER_PIPELINE_BINDINGS: dict[str, ScraperPipelineBinding] = {
             "scrapers.seasons.postprocess.contract:SeasonSectionContractPostProcessor",
         ),
     ),
-    "scrapers.grands_prix.single_scraper.F1SingleGrandPrixScraper": ScraperPipelineBinding(
+    (
+        "scrapers.grands_prix.single_scraper."
+        "F1SingleGrandPrixScraper"
+    ): ScraperPipelineBinding(
         post_processors=(
             "scrapers.grands_prix.postprocess.contract:GrandPrixSectionContractPostProcessor",
         ),

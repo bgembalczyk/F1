@@ -1,3 +1,4 @@
+# ruff: noqa: INP001, S603
 from __future__ import annotations
 
 import argparse
@@ -60,7 +61,12 @@ def _build_added_lines_map(
         "--",
         *changed_files,
     ]
-    proc = subprocess.run(diff_cmd, check=False, capture_output=True, text=True)
+    proc = subprocess.run(  # noqa: S603
+        diff_cmd,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
     if proc.returncode != 0:
         return {}
 
@@ -122,9 +128,15 @@ def build_markdown(
     count = len(duplicates)
     status = "✅ Brak nowych duplikatów w zmienionych plikach."
     if count >= fail_threshold:
-        status = f"❌ Wykryto **{count}** nowych duplikatów (próg blokujący: {fail_threshold})."
+        status = (
+            f"❌ Wykryto **{count}** nowych duplikatów "
+            f"(próg blokujący: {fail_threshold})."
+        )
     elif count >= warn_threshold:
-        status = f"⚠️ Wykryto **{count}** nowych duplikatów (próg ostrzegawczy: {warn_threshold})."
+        status = (
+            f"⚠️ Wykryto **{count}** nowych duplikatów "
+            f"(próg ostrzegawczy: {warn_threshold})."
+        )
 
     lines = [
         "## Raport duplikatów (jscpd)",
@@ -148,7 +160,8 @@ def build_markdown(
         first = dup["first"]
         second = dup["second"]
         lines.append(
-            f"{idx}. `{first['name']}` ({_line_range(first)}) ↔ `{second['name']}` ({_line_range(second)})",
+            f"{idx}. `{first['name']}` ({_line_range(first)}) "
+            f"↔ `{second['name']}` ({_line_range(second)})",
         )
         if dup["fragment"]:
             snippet = dup["fragment"][:400]
@@ -206,6 +219,7 @@ def main() -> int:
         status = "warn"
 
     output_path = Path(args.github_output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("a", encoding="utf-8") as fh:
         fh.write(f"duplicate_count={count}\n")
         fh.write(f"duplicate_status={status}\n")

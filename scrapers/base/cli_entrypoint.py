@@ -8,7 +8,6 @@ import inspect
 import warnings
 from typing import TYPE_CHECKING
 
-from scrapers.base.constants import CliMainProfile
 from scrapers.base.run_profiles import RunProfileName
 from scrapers.base.run_profiles import build_run_profile
 from scrapers.base.run_profiles import get_cli_profile_defaults
@@ -18,6 +17,7 @@ if TYPE_CHECKING:
     from collections.abc import Callable
     from collections.abc import Sequence
 
+    from scrapers.base.constants import CliMainProfile
     from scrapers.base.run_config import RunConfig
 
 

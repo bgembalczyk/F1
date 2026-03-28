@@ -2,9 +2,9 @@
 
 (constructor split) localized for drivers domain.
 """
-
-from scrapers.base.table.columns.types.base_constructor import BaseConstructorColumn
+from scrapers.base.table.columns.types.constructor_base import BaseConstructorColumn
+from scrapers.drivers.columns.constructor_part import ConstructorPartColumn
 
 
 class ConstructorColumn(BaseConstructorColumn):
-    pass
+    part_parser_cls = ConstructorPartColumn

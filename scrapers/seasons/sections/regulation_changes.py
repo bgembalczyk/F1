@@ -2,11 +2,12 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.serializer import build_section_parse_result
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
+
+    from scrapers.base.sections.interface import SectionParseResult
 
 
 class SeasonRegulationChangesSectionParser:

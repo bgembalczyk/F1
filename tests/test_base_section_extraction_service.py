@@ -13,6 +13,7 @@ class _AdapterStub:
         self.calls: list[tuple[str, list[object]]] = []
 
     def parse_sections(self, *, soup, domain, entries):
+        _ = soup
         self.calls.append((domain, entries))
         return self.sections
 

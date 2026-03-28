@@ -1,4 +1,4 @@
-"""DOMAIN-SPECIFIC: seasons column rule (points semantics) localized for seasons domain."""
+"""Seasons domain column rule for points semantics parsing."""
 
 from scrapers.base.parsers.helpers import extract_visible_text
 from scrapers.base.table.columns.context import ColumnContext

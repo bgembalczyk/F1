@@ -59,5 +59,6 @@ def test_domain_entrypoints_use_shared_factory_builders() -> None:
         ]
         assert not local_dups, (
             "Entrypoint should not duplicate local wrappers. "
-            f"Use shared builders from scrapers.base.domain_entrypoint instead: {py_file}"
+            "Use shared builders from scrapers.base.domain_entrypoint instead: "
+            f"{py_file}"
         )

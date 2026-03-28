@@ -13,6 +13,9 @@ from scrapers.seasons.columns.helpers.race_result.superscript import (
     SuperscriptParseResult,
 )
 
+FOOTNOTE_RE = re.compile(r"\d+")
+LETTER_RE = re.compile(r"[A-Za-z]")
+
 
 class RaceResultCellParser:
     def extract_result_text(self, ctx: ColumnContext) -> str:
@@ -43,8 +46,8 @@ class RaceResultCellParser:
         )
         pole_position, fastest_lap = self._enrich_marks_from_formatting(
             cell,
-            pole_position,
-            fastest_lap,
+            pole_position=pole_position,
+            fastest_lap=fastest_lap,
         )
 
         return SuperscriptParseResult(
@@ -55,10 +58,9 @@ class RaceResultCellParser:
         )
 
     def parse_results(self, text: str) -> list[dict[str, Any]]:
-        results: list[dict[str, Any]] = []
-        for part in self._split_result_parts(text):
-            results.append(self._parse_result_part(part))
-        return results
+        return [
+            self._parse_result_part(part) for part in self._split_result_parts(text)
+        ]
 
     @staticmethod
     def _prepare_cell_fragment(cell: Any) -> BeautifulSoup:
@@ -96,6 +98,7 @@ class RaceResultCellParser:
     @staticmethod
     def _enrich_marks_from_formatting(
         cell: Any,
+        *,
         pole_position: bool,
         fastest_lap: bool,
     ) -> tuple[bool, bool]:
@@ -145,7 +148,7 @@ class RaceResultCellParser:
             if not sup_text:
                 continue
             sup_texts.append(sup_text)
-            footnotes.extend(re.findall(r"\d+", sup_text))
+            footnotes.extend(FOOTNOTE_RE.findall(sup_text))
         return sup_texts, footnotes
 
     @staticmethod
@@ -157,7 +160,7 @@ class RaceResultCellParser:
         fastest_lap = False
 
         for token in " ".join(sup_texts).split():
-            for letter in re.findall(r"[A-Za-z]", token):
+            for letter in LETTER_RE.findall(token):
                 upper = letter.upper()
                 if upper == "P":
                     pole_position = True

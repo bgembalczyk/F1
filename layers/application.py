@@ -3,7 +3,7 @@ from __future__ import annotations
 import shutil
 from datetime import datetime
 from datetime import timezone
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 from layers.constructors_mirror_service import ConstructorsMirrorService
 from layers.one.executor import LayerOneExecutor
@@ -20,6 +20,9 @@ from layers.zero.executor import LayerZeroExecutor
 from layers.zero.merge import merge_layer_zero_raw_outputs
 from layers.zero.merge_service import LayerZeroMergeService
 from scrapers.base.helpers.runner import run_and_export
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 def _current_year() -> int:
