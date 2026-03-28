@@ -13,6 +13,8 @@ from scrapers.seasons.columns.helpers.race_result.superscript import (
     SuperscriptParseResult,
 )
 
+LETTER_RE = re.compile(r"[A-Za-z]")
+
 
 class RaceResultCellParser:
     def extract_result_text(self, ctx: ColumnContext) -> str:
@@ -158,7 +160,7 @@ class RaceResultCellParser:
         fastest_lap = False
 
         for token in " ".join(sup_texts).split():
-            for letter in re.findall(r"[A-Za-z]", token):
+            for letter in LETTER_RE.findall(token):
                 upper = letter.upper()
                 if upper == "P":
                     pole_position = True

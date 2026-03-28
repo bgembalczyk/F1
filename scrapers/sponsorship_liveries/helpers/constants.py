@@ -11,6 +11,8 @@ year_range_re = re.compile(r"\b(\d{4})\s*[-\-]\s*(\d{4})\b")
 # The end year is 2 digits and must NOT be followed by another digit.
 year_range_abbrev_re = re.compile(r"\b(\d{4})\s*[-\-]\s*(\d{2})(?!\d)")
 
+decade_re = re.compile(r"\b(\d{3})0s\b")
+
 POSSESSIVE_PAREN_RE = re.compile(r"\([^)]*'s[^)]*\)\s*$")
 
 # Regex for possessive colour-note suffixes with driver names.
