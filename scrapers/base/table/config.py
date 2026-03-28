@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from collections.abc import Callable
 from collections.abc import Mapping
 from collections.abc import Sequence
@@ -7,6 +9,7 @@ from typing import Any
 
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
+from scrapers.base.table.dsl.column import ColumnSpec
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.schema import TableSchema
 from scrapers.base.table.schema import TableSchemaBuilder
@@ -71,3 +74,36 @@ class ScraperConfig:
         if self.record_factory is not None and not callable(self.record_factory):
             msg = "ScraperConfig.record_factory must be callable."
             raise TypeError(msg)
+
+
+def build_scraper_config(
+    *,
+    url: str,
+    columns: Sequence[ColumnSpec] | None = None,
+    schema: TableSchema | TableSchemaBuilder | TableSchemaDSL | None = None,
+    section_id: str | None = None,
+    expected_headers: Sequence[str] | None = None,
+    table_css_class: str = "wikitable",
+    record_factory=None,
+    model_class: type | None = None,
+) -> ScraperConfig:
+    """Canonical builder for table-based scraper configuration."""
+    if columns is None and schema is None:
+        msg = "Either columns or schema must be provided."
+        raise ValueError(msg)
+
+    if columns is not None and schema is not None:
+        msg = "Provide only one of columns or schema."
+        raise ValueError(msg)
+
+    resolved_schema = TableSchemaDSL(columns=list(columns or [])).build() if columns is not None else schema
+
+    return ScraperConfig(
+        url=url,
+        section_id=section_id,
+        expected_headers=expected_headers,
+        record_factory=record_factory,
+        model_class=model_class,
+        table_css_class=table_css_class,
+        schema=resolved_schema,
+    )

@@ -8,6 +8,7 @@ from scrapers.base.table.builders import metric_column
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.dsl.column import column
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.base.transformers.drivers_championships import (
     DriversChampionshipsTransformer,
@@ -89,7 +90,7 @@ class F1DriversListScraper(SeedListTableScraper):
         ),
     )
 
-    CONFIG = SeedListTableScraper.build_config(
+    CONFIG = build_scraper_config(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_drivers",
         section_id="Drivers",
         expected_headers=DRIVERS_LIST_HEADERS,

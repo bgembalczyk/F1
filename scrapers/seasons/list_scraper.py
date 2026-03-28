@@ -2,21 +2,18 @@
 
 from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.table.builders import build_columns
-from scrapers.base.table.builders import build_scraper_config
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.links_list import LinksListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
 from scrapers.base.table.dsl.column import column
-from scrapers.base.table.scraper import F1TableScraper
-from scrapers.wiki.component_metadata import ComponentMetadata
+from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 
 
-class SeasonsListScraper(F1TableScraper):
-    COMPONENT_METADATA = ComponentMetadata.build_layer_one_list_scraper(
-        domain="seasons",
-        default_output_path="raw/seasons/seeds/complete_seasons",
-        legacy_output_path="seasons/complete_seasons",
-    )
+class SeasonsListScraper(SeedListTableScraper):
+    domain = "seasons"
+    default_output_path = "raw/seasons/seeds/complete_seasons"
+    legacy_output_path = "seasons/complete_seasons"
 
     """
     Scraper listy sezonów z:
