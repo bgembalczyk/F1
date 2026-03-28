@@ -1,7 +1,7 @@
 from collections.abc import Mapping
 from collections.abc import Sequence
 from pathlib import Path
-from typing import Any
+from typing import TypeAlias
 from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup
@@ -25,7 +25,11 @@ from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
+from scrapers.base.table.row import TableRow
 from scrapers.base.table.sentinels import SKIP_SENTINEL
+
+RecordValue: TypeAlias = object
+TableRecord: TypeAlias = dict[str, RecordValue]
 
 
 class TablePipeline:
@@ -77,7 +81,7 @@ class TablePipeline:
     def set_run_id(self, run_id: str | None) -> None:
         self.run_id = run_id
 
-    def parse_soup(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def parse_soup(self, soup: BeautifulSoup) -> list[TableRecord]:
         self._normalized_empty_cells = 0
         section_hint = self.section_id or self.fragment
         candidate_tables = find_section_elements(
@@ -119,8 +123,8 @@ class TablePipeline:
 
         return records
 
-    def parse_rows(self, rows: Sequence[Any]) -> list[dict[str, Any]]:
-        records: list[dict[str, Any]] = []
+    def parse_rows(self, rows: Sequence[TableRow]) -> list[TableRecord]:
+        records: list[TableRecord] = []
         for row_index, row in enumerate(rows):
             record = self.parse_cells(
                 row.headers,
@@ -137,8 +141,8 @@ class TablePipeline:
         row: Mapping[str, Tag],
         *,
         row_index: int | None = None,
-    ) -> Any:
-        record: dict[str, Any] = {}
+    ) -> TableRecord:
+        record: TableRecord = {}
 
         for header, cell in row.items():
             if not isinstance(header, str):
@@ -156,8 +160,8 @@ class TablePipeline:
         *,
         row_index: int | None = None,
         header_cells: Sequence[Tag] | None = None,
-    ) -> Any:
-        record: dict[str, Any] = {}
+    ) -> TableRecord:
+        record: TableRecord = {}
         for index, (header, cell) in enumerate(zip(headers, cells, strict=False)):
             header_cell = None
             if header_cells and index < len(header_cells):
@@ -171,7 +175,7 @@ class TablePipeline:
             )
         return self._finalize_record(record)
 
-    def _finalize_record(self, record: dict[str, Any]) -> Any:
+    def _finalize_record(self, record: TableRecord) -> TableRecord:
         if not record or self.record_factory is None:
             return record
         normalized_record, _ = normalize_record_values(
@@ -186,8 +190,10 @@ class TablePipeline:
                     for key, value in payload.items()
                     if key in self.model_fields
                 }
-            return self.record_factory(**payload)
-        return self.record_factory(normalized_record)
+            created = self.record_factory(**payload)
+            return dict(created) if isinstance(created, Mapping) else record
+        created = self.record_factory(normalized_record)
+        return dict(created) if isinstance(created, Mapping) else record
 
     @staticmethod
     def _cell_html(cell: Tag | None) -> str | None:
@@ -258,7 +264,7 @@ class TablePipeline:
 
     def _apply_cell(
         self,
-        record: dict[str, Any],
+        record: TableRecord,
         header: str,
         cell: Tag,
         *,

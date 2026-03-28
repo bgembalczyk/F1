@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
-from typing import Any
 from typing import Protocol
+from typing import TypeAlias
 from typing import TypeVar
 
 from models.value_objects import EntityName
@@ -16,6 +16,10 @@ if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.adapter import SectionAdapter
 
+SectionValue: TypeAlias = object
+SectionRecord: TypeAlias = dict[str, SectionValue]
+SectionMetadata: TypeAlias = dict[str, SectionValue]
+
 
 @dataclass(frozen=True)
 class SectionParseResult:
@@ -23,12 +27,16 @@ class SectionParseResult:
 
     section_id: SectionId
     section_label: EntityName
-    records: list[dict[str, Any]]
-    metadata: dict[str, Any]
+    records: list[SectionRecord]
+    metadata: SectionMetadata
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "section_id", SectionId.from_raw(self.section_id))
-        object.__setattr__(self, "section_label", EntityName.from_raw(self.section_label))
+        object.__setattr__(
+            self,
+            "section_label",
+            EntityName.from_raw(self.section_label),
+        )
 
 
 class SectionParser(Protocol):
@@ -44,19 +52,19 @@ class SectionParser(Protocol):
 class SectionTextParser(Protocol):
     """Common parser interface for narrative/text section content."""
 
-    def parse(self, section_fragment: BeautifulSoup) -> list[dict[str, Any]]: ...
+    def parse(self, section_fragment: BeautifulSoup) -> list[SectionRecord]: ...
 
 
 class SectionTableParser(Protocol):
     """Common parser interface for table-oriented section content."""
 
-    def parse(self, section_fragment: BeautifulSoup) -> list[dict[str, Any]]: ...
+    def parse(self, section_fragment: BeautifulSoup) -> list[SectionRecord]: ...
 
 
-ServiceT = TypeVar("ServiceT")
+ServiceT_co = TypeVar("ServiceT_co", covariant=True)
 
 
-class SectionServiceFactory(Protocol[ServiceT]):
+class SectionServiceFactory(Protocol[ServiceT_co]):
     """Factory contract for building section services in single-article scrapers."""
 
     def create(
@@ -65,4 +73,4 @@ class SectionServiceFactory(Protocol[ServiceT]):
         adapter: SectionAdapter,
         options: ScraperOptions | None = None,
         url: WikiUrl | str | None = None,
-    ) -> ServiceT: ...
+    ) -> ServiceT_co: ...

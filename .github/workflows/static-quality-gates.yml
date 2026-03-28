@@ -45,3 +45,7 @@ jobs:
       - name: Architectural import rules (import-linter)
         run: |
           lint-imports --config importlinter.ini
+
+      - name: Strict typing regression gate (mypy)
+        run: |
+          mypy --config-file mypy.ini
