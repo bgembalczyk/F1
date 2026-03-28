@@ -2,10 +2,13 @@ from models.records.factories.build import RECORD_BUILDERS
 from models.validation.engine_manufacturer import EngineManufacturer
 from scrapers.base.table.builders import build_base_stats_columns
 from scrapers.base.table.builders import build_columns
+from scrapers.base.table.builders import build_entity_metadata_columns
+from scrapers.base.table.builders import build_name_status_fragment
+from scrapers.base.table.builders import entity_column
 from scrapers.base.table.builders import build_scraper_config
+from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.columns.types import FloatColumn
 from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.dsl.column import column
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.engines.columns.manufacturer_name_status import (
     EngineManufacturerNameStatusColumn,
@@ -19,8 +22,16 @@ class EngineManufacturersListScraper(F1TableScraper):
     """
 
     schema_columns = build_columns(
-        column("Manufacturer", "manufacturer", EngineManufacturerNameStatusColumn()),
-        column("Engines built in", "engines_built_in", LinksListColumn()),
+        build_name_status_fragment(
+            header="Manufacturer",
+            output_key="manufacturer",
+            column_type=EngineManufacturerNameStatusColumn(),
+        ),
+        build_entity_metadata_columns(
+            [
+                entity_column("Engines built in", "engines_built_in", LinksListColumn()),
+            ],
+        ),
         build_base_stats_columns(column_overrides={"points": FloatColumn()}),
     )
 

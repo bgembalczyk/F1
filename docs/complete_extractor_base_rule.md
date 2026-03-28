@@ -17,3 +17,23 @@ Każdy nowy complete extractor (flow: lista + szczegóły) **musi** dziedziczyć
 - Wspólna obsługa adapterów:
   - `IterableSourceAdapter` (jedna lista),
   - `MultiIterableSourceAdapter` (wiele list).
+
+## Oficjalny kontrakt hooków dla scraperów szczegółów
+
+Dla klas dziedziczących po `SingleWikiArticleScraperBase` i
+`SingleWikiArticleSectionAdapterBase` obowiązuje wyłącznie poniższy słownik
+hooków (`SingleWikiArticleScraperBase.STANDARD_HOOKS`):
+
+- `_build_infobox_payload`
+- `_build_tables_payload`
+- `_build_sections_payload`
+- `_assemble_record`
+
+Nowe klasy domenowe powinny implementować tylko te nazwy. Wprowadzanie aliasów
+(np. `build_infobox_payload`, `_prepare_infobox_payload`, `assemble_record`)
+jest zabronione, chyba że w kodzie dodano jawne uzasadnienie komentarzem
+`hook-name-allow: ...`.
+
+Reguła jest automatycznie egzekwowana przez skrypt:
+
+- `python scripts/check_single_wiki_hook_names.py`

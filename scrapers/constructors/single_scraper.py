@@ -8,14 +8,14 @@ from scrapers.base.single_wiki_article import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.single_wiki_article import TablesPayloadDTO
+from scrapers.constructors.domain_record_service import DomainRecordService
 from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
-from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
-from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.postprocess.contract import (
     ConstructorSectionContractPostProcessor,
 )
+from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
+from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
-from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
@@ -24,6 +24,7 @@ if TYPE_CHECKING:
     from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.adapter import SectionAdapter
     from scrapers.base.sections.interface import SectionServiceFactory
+    from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
 
 
 class ConstructorSectionServiceFactory(
@@ -60,6 +61,7 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
             SectionServiceFactory[ConstructorSectionExtractionService] | None
         ) = None,
         assembler: ConstructorRecordAssembler | None = None,
+        domain_record_service: DomainRecordService | None = None,
     ) -> None:
         super().__init__(options=options)
         self._infobox_service = infobox_service or ConstructorInfoboxExtractionService(
@@ -68,18 +70,16 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         self._sections_service_factory = (
             sections_service_factory or ConstructorSectionServiceFactory()
         )
-        self._assembler = assembler or ConstructorRecordAssembler()
-        self.article_tables_parser = ArticleTablesParser()
-
-    def _build_post_processor(self) -> ConstructorSectionContractPostProcessor:
-        return ConstructorSectionContractPostProcessor()
+        self._domain_record_service = domain_record_service or DomainRecordService(
+            assembler=assembler,
+        )
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         infoboxes = self._infobox_service.extract(soup, url=self.url).as_list()
         return InfoboxPayloadDTO(infoboxes)
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
-        return TablesPayloadDTO(self.article_tables_parser.parse(soup))
+        return TablesPayloadDTO(self._domain_record_service.extract_tables(soup))
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
         sections_service = self._sections_service_factory.create(
@@ -98,11 +98,9 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
         _ = soup
-        return self._assembler.assemble(
-            payload=ConstructorRecordDTO(
-                url=self.url,
-                infoboxes=infobox_payload.data,
-                tables=tables_payload.data,
-                sections=sections_payload.data,
-            ),
+        return self._domain_record_service.assemble_record(
+            url=self.url,
+            infoboxes=infobox_payload.data,
+            tables=tables_payload.data,
+            sections=sections_payload.data,
         )

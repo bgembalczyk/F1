@@ -3,8 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.factory import ValidatingSectionServiceFactory
 from scrapers.base.single_wiki_article import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article import SectionsPayloadDTO
@@ -13,23 +11,29 @@ from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
+from scrapers.circuits.domain_record_service import DomainRecordService
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
-from scrapers.circuits.helpers.lap_record import collect_lap_records
-from scrapers.circuits.helpers.lap_record import is_lap_record_table
-from scrapers.circuits.helpers.layout import detect_layout_name
+from scrapers.circuits.helpers.lap_record import (
+    is_lap_record_table as _is_lap_record_table,
+)
+from scrapers.circuits.helpers.layout import detect_layout_name as _detect_layout_name
 from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
+from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
-from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
 from scrapers.circuits.sections.service import CircuitSectionExtractionService
-from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
     from scrapers.base.infobox.service import InfoboxExtractionService
+    from scrapers.base.options import ScraperOptions
     from scrapers.base.sections.adapter import SectionAdapter
     from scrapers.base.sections.interface import SectionServiceFactory
+    from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
+
+is_lap_record_table = _is_lap_record_table
+detect_layout_name = _detect_layout_name
 
 
 class CircuitSectionServiceFactory(
@@ -66,6 +70,7 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
             SectionServiceFactory[CircuitSectionExtractionService] | None
         ) = None,
         assembler: CircuitRecordAssembler | None = None,
+        domain_record_service: DomainRecordService | None = None,
     ) -> None:
         super().__init__(
             options=options,
@@ -73,17 +78,15 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
                 domain="circuits",
             ),
         )
-        self.article_tables_parser = ArticleTablesParser(include_source_table=True)
         self._infobox_service = infobox_service or CircuitInfoboxExtractionService(
             options=self._options,
         )
         self._sections_service_factory = (
             sections_service_factory or CircuitSectionServiceFactory()
         )
-        self._assembler = assembler or CircuitRecordAssembler()
-
-    def _build_post_processor(self) -> CircuitSectionContractPostProcessor:
-        return CircuitSectionContractPostProcessor()
+        self._domain_record_service = domain_record_service or DomainRecordService(
+            assembler=assembler,
+        )
 
     def _should_parse_article(self, soup: BeautifulSoup) -> bool:
         return is_circuit_like_article(soup)
@@ -108,36 +111,16 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         )
 
     def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
-        lap_scraper = LapRecordsTableScraper(
-            options=ScraperOptions(
+        return TablesPayloadDTO(
+            self._domain_record_service.collect_lap_record_rows(
+                soup=soup,
+                url=self.url,
                 include_urls=self.include_urls,
                 fetcher=self.fetcher,
                 policy=self.policy,
                 debug_dir=self.debug_dir,
             ),
         )
-        lap_scraper.url = self.url
-        all_records: list[dict[str, Any]] = []
-
-        for table_data in self.article_tables_parser.parse(soup):
-            table = table_data.get("_table")
-            if table is None:
-                continue
-
-            headers = table_data["headers"]
-            table_type = table_data.get("table_type")
-            if table_type != "lap_records" and not is_lap_record_table(
-                headers,
-                lap_scraper,
-            ):
-                continue
-
-            base_layout = detect_layout_name(table, headers)
-            all_records.extend(
-                collect_lap_records(table, headers, base_layout, lap_scraper),
-            )
-
-        return TablesPayloadDTO(all_records)
 
     def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
         sections_service = self._sections_service_factory.create(
@@ -156,11 +139,9 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
         _ = soup
-        return self._assembler.assemble(
-            payload=CircuitRecordDTO(
-                url=self._original_url or self.url,
-                infobox=infobox_payload.data,
-                lap_record_rows=tables_payload.data,
-                sections=sections_payload.data,
-            ),
+        return self._domain_record_service.assemble_record(
+            source_url=self._original_url or self.url,
+            infobox=infobox_payload.data,
+            lap_record_rows=tables_payload.data,
+            sections=sections_payload.data,
         )

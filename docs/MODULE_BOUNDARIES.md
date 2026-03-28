@@ -105,17 +105,63 @@ Checklistę operacyjną merge-gate utrzymujemy również w `docs/CHANGES_CHECKLI
 
 Jedynym canonical launcherem jest teraz `python -m scrapers.cli`.
 
+### 7.1 Harmonogram deprecacji (2 wersje przejściowe)
+
+- **R0 (aktualna wersja):** legacy moduły działają, ale emitują `DeprecationWarning`.
+- **R1 (kolejna wersja):** legacy moduły nadal działają, warning pozostaje obowiązkowy.
+- **R2 (druga wersja przejściowa):** legacy moduły są usuwane.
+
+Runtime warning ma teraz jawny komunikat o oknie migracji:
+- `scheduled for removal after 2 transitional releases`
+- oraz wskazanie canonical komendy `python -m scrapers.cli run <new_module>`.
+
+### 7.2 Deprecated moduły i zamienniki (CLI/API)
+
+#### Domenowe list-entrypointy (preferowane nowe API)
+
+- `scrapers.circuits.list_scraper` -> `scrapers.circuits.entrypoint`
+- `scrapers.constructors.current_constructors_list` -> `scrapers.constructors.entrypoint`
+- `scrapers.drivers.list_scraper` -> `scrapers.drivers.entrypoint`
+- `scrapers.grands_prix.list_scraper` -> `scrapers.grands_prix.entrypoint`
+- `scrapers.seasons.list_scraper` -> `scrapers.seasons.entrypoint`
+
+W praktyce oznacza to migrację:
+- z `python -m scrapers.cli run scrapers.<domain>.list_scraper`
+- na `python -m scrapers.cli run scrapers.<domain>.entrypoint`
+
+#### Pozostałe legacy moduły (bez nowego modułu API, canonical przez `scrapers.cli run`)
+
+- `scrapers.circuits.complete_scraper`
+- `scrapers.constructors.former_constructors_list`
+- `scrapers.constructors.indianapolis_only_constructors_list`
+- `scrapers.constructors.privateer_teams_list`
+- `scrapers.constructors.complete_scraper`
+- `scrapers.drivers.female_drivers_list`
+- `scrapers.drivers.fatalities_list_scraper`
+- `scrapers.drivers.complete_scraper`
+- `scrapers.engines.engine_manufacturers_list`
+- `scrapers.engines.indianapolis_only_engine_manufacturers_list`
+- `scrapers.engines.engine_regulation`
+- `scrapers.engines.engine_restrictions`
+- `scrapers.engines.complete_scraper`
+- `scrapers.grands_prix.complete_scraper`
+- `scrapers.grands_prix.red_flagged_races_scraper.non_championship`
+- `scrapers.grands_prix.red_flagged_races_scraper.world_championship`
+- `scrapers.seasons.complete_scraper`
+- `scrapers.sponsorship_liveries.scraper`
+- `scrapers.tyres.list_scraper`
+
 ### Mapa `old_command -> new_command`
 
 - `python main.py --mode <layer0|layer1|full>` -> `python -m scrapers.cli wiki --mode <layer0|layer1|full>`
-- `python -m scrapers.circuits.list_scraper` -> `python -m scrapers.cli run scrapers.circuits.list_scraper`
+- `python -m scrapers.circuits.list_scraper` -> `python -m scrapers.cli run scrapers.circuits.entrypoint`
 - `python -m scrapers.circuits.complete_scraper` -> `python -m scrapers.cli run scrapers.circuits.complete_scraper`
-- `python -m scrapers.constructors.current_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.current_constructors_list`
+- `python -m scrapers.constructors.current_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.entrypoint`
 - `python -m scrapers.constructors.former_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.former_constructors_list`
 - `python -m scrapers.constructors.indianapolis_only_constructors_list` -> `python -m scrapers.cli run scrapers.constructors.indianapolis_only_constructors_list`
 - `python -m scrapers.constructors.privateer_teams_list` -> `python -m scrapers.cli run scrapers.constructors.privateer_teams_list`
 - `python -m scrapers.constructors.complete_scraper` -> `python -m scrapers.cli run scrapers.constructors.complete_scraper`
-- `python -m scrapers.drivers.list_scraper` -> `python -m scrapers.cli run scrapers.drivers.list_scraper`
+- `python -m scrapers.drivers.list_scraper` -> `python -m scrapers.cli run scrapers.drivers.entrypoint`
 - `python -m scrapers.drivers.female_drivers_list` -> `python -m scrapers.cli run scrapers.drivers.female_drivers_list`
 - `python -m scrapers.drivers.fatalities_list_scraper` -> `python -m scrapers.cli run scrapers.drivers.fatalities_list_scraper`
 - `python -m scrapers.drivers.complete_scraper` -> `python -m scrapers.cli run scrapers.drivers.complete_scraper`
@@ -124,14 +170,14 @@ Jedynym canonical launcherem jest teraz `python -m scrapers.cli`.
 - `python -m scrapers.engines.engine_regulation` -> `python -m scrapers.cli run scrapers.engines.engine_regulation`
 - `python -m scrapers.engines.engine_restrictions` -> `python -m scrapers.cli run scrapers.engines.engine_restrictions`
 - `python -m scrapers.engines.complete_scraper` -> `python -m scrapers.cli run scrapers.engines.complete_scraper`
-- `python -m scrapers.grands_prix.list_scraper` -> `python -m scrapers.cli run scrapers.grands_prix.list_scraper`
+- `python -m scrapers.grands_prix.list_scraper` -> `python -m scrapers.cli run scrapers.grands_prix.entrypoint`
 - `python -m scrapers.grands_prix.complete_scraper` -> `python -m scrapers.cli run scrapers.grands_prix.complete_scraper`
 - `python -m scrapers.grands_prix.red_flagged_races_scraper.non_championship` -> `python -m scrapers.cli run scrapers.grands_prix.red_flagged_races_scraper.non_championship`
 - `python -m scrapers.grands_prix.red_flagged_races_scraper.world_championship` -> `python -m scrapers.cli run scrapers.grands_prix.red_flagged_races_scraper.world_championship`
 - `python -m scrapers.points.sprint_qualifying_points` -> `python -m scrapers.cli run scrapers.points.sprint_qualifying_points`
 - `python -m scrapers.points.points_scoring_systems_history` -> `python -m scrapers.cli run scrapers.points.points_scoring_systems_history`
 - `python -m scrapers.points.shortened_race_points` -> `python -m scrapers.cli run scrapers.points.shortened_race_points`
-- `python -m scrapers.seasons.list_scraper` -> `python -m scrapers.cli run scrapers.seasons.list_scraper`
+- `python -m scrapers.seasons.list_scraper` -> `python -m scrapers.cli run scrapers.seasons.entrypoint`
 - `python -m scrapers.seasons.complete_scraper` -> `python -m scrapers.cli run scrapers.seasons.complete_scraper`
 - `python -m scrapers.sponsorship_liveries.scraper` -> `python -m scrapers.cli run scrapers.sponsorship_liveries.scraper`
 - `python -m scrapers.tyres.list_scraper` -> `python -m scrapers.cli run scrapers.tyres.list_scraper`
@@ -171,3 +217,75 @@ Konfiguracja bramek znajduje się w plikach:
 - `.pylintrc`
 - `importlinter.ini`
 - `.github/workflows/static-quality-gates.yml`
+
+## 9. Standard deklaracji konfiguracji scraperów (build_scraper_config + schema DSL)
+
+Ujednolicamy jeden standard dla deklaracji `CONFIG` w scraperach tabelowych:
+
+- `CONFIG` budujemy przez `build_scraper_config(...)`.
+- Schemat deklarujemy przez DSL (`column(...)` + `TableSchemaDSL(...)`) albo przez helper zwracający schema DSL.
+- Nie deklarujemy już ręcznie `CONFIG = ScraperConfig(...)` na poziomie klasy.
+- Nie używamy aliasu `build_scraper_config` z `scrapers.base.table.builders` (deprecated).
+
+### Moduły zmanualizowane wcześniej (`CONFIG = ScraperConfig(...)`) i zmigrowane do standardu
+
+- `scrapers/drivers/female_drivers_list.py`
+- `scrapers/drivers/fatalities_list_scraper.py`
+- `scrapers/engines/engine_regulation.py`
+- `scrapers/engines/engine_restrictions.py`
+- `scrapers/grands_prix/red_flagged_races_scraper/non_championship.py`
+- `scrapers/grands_prix/red_flagged_races_scraper/world_championship.py`
+- `scrapers/points/sprint_qualifying_points.py`
+- `scrapers/points/shortened_race_points.py`
+- `scrapers/points/points_scoring_systems_history.py`
+- `scrapers/tyres/list_scraper.py`
+- `scrapers/base/helpers/tables/lap_records.py`
+
+Dodatkowo import `build_scraper_config` został ujednolicony do canonical path (`scrapers.base.table.config`) także w modułach używających wcześniej aliasu z `builders`.
+
+### Wymuszenie review/CI
+
+Nowa reguła CI (`tests/test_scraper_config_ci_meta.py`) blokuje merge gdy:
+
+- nowy scraper deklaruje klasowe `CONFIG = ScraperConfig(...)` zamiast `build_scraper_config(...)`,
+- nowy scraper importuje `build_scraper_config` z deprecated aliasu `scrapers.base.table.builders`.
+
+## 10. Szablon „new scraper” (gotowy przykład DSL: lista + sekcja)
+
+```python
+from scrapers.base.records import record_from_mapping
+from scrapers.base.table.columns.types import IntColumn, UrlColumn, AutoColumn
+from scrapers.base.table.config import build_scraper_config
+from scrapers.base.table.dsl.column import column
+from scrapers.base.table.dsl.table_schema import TableSchemaDSL
+
+# --- wariant list scraper (SeedListTableScraper/F1TableScraper) ---
+schema_columns = [
+    column("Season", "season", UrlColumn()),
+    column("Races", "races", IntColumn()),
+    column("Notes", "notes", AutoColumn()),
+]
+
+CONFIG = build_scraper_config(
+    url="https://en.wikipedia.org/wiki/Example",
+    section_id="Example_section",
+    expected_headers=["Season", "Races"],
+    schema=TableSchemaDSL(columns=schema_columns),
+    record_factory=record_from_mapping,
+)
+
+# --- wariant parsera sekcji (lokalna konfiguracja parse_table) ---
+section_schema = TableSchemaDSL(
+    columns=[
+        column("Grand Prix", "grand_prix", UrlColumn()),
+        column("Winner", "winner", AutoColumn()),
+    ]
+)
+
+section_config = build_scraper_config(
+    url="https://en.wikipedia.org/wiki/Example_section",
+    expected_headers=["Grand Prix", "Winner"],
+    schema=section_schema,
+    record_factory=record_from_mapping,
+)
+```
