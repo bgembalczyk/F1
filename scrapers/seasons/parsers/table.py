@@ -2,8 +2,8 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.options import ScraperOptions
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import PointsColumn
 from scrapers.base.table.columns.types import PositionColumn
@@ -48,6 +48,8 @@ class SeasonTableParser:
         subject_key: str,
         subject_column: Any,
         season_year: int | None = None,
+        star_mark_note: str | None = None,
+        include_car_no_column: bool = True,
     ) -> list[dict[str, Any]]:
         schema_columns = [
             column("Pos.", "pos", PositionColumn()),
@@ -58,16 +60,20 @@ class SeasonTableParser:
             column("Pts", "points", PointsColumn()),
             column("No.", "no", IntColumn()),
             column("No", "no", IntColumn()),
-            # Handle "Car<br>no." which becomes "Car no." after text extraction
-            column("Car no.", "no", IntColumn()),
         ]
+        if include_car_no_column:
+            # Handle "Car<br>no." which becomes "Car no." after text extraction
+            schema_columns.append(column("Car no.", "no", IntColumn()))
         for section_id in section_ids:
             config = ScraperConfig(
                 url=self.url,
                 section_id=section_id,
                 expected_headers=[subject_header],
                 schema=TableSchemaDSL(columns=schema_columns),
-                default_column=RaceResultColumn(season_year=season_year),
+                default_column=RaceResultColumn(
+                    season_year=season_year,
+                    star_mark_note=star_mark_note,
+                ),
                 record_factory=RECORD_FACTORIES.mapping(),
             )
             scraper = F1StandingsScraper(options=self._options, config=config)

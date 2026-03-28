@@ -1,6 +1,7 @@
-from scrapers.base.helpers.runner import run_and_export
-from scrapers.base.options import ScraperOptions
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.helpers.runner import run_and_export
+from scrapers.base.helpers.transformers import append_transformer
+from scrapers.base.options import ScraperOptions
 from scrapers.base.run_config import RunConfig
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import IntColumn
@@ -66,12 +67,11 @@ class PointsScoringSystemsHistoryScraper(BasePointsScraper):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = options or ScraperOptions()
-        options.transformers = [
-            *list(options.transformers or []),
-            PointsScoringSystemsHistoryTransformer(),
-        ]
-        super().__init__(options=options, config=config)
+        transformer = PointsScoringSystemsHistoryTransformer()
+        super().__init__(
+            options=append_transformer(options, transformer),
+            config=config,
+        )
 
 
 def run_list_scraper(*, run_config: RunConfig) -> None:

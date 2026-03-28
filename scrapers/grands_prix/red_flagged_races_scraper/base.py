@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.helpers.transformers import append_transformer
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.base.table.columns.types import DriverColumn
@@ -84,12 +85,10 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
         options: ScraperOptions | None = None,
         config=None,
     ) -> None:
-        options = options or ScraperOptions()
-        options.transformers = [
-            *list(options.transformers or []),
-            FailedToMakeRestartTransformer(),
-        ]
-        super().__init__(options=options, config=config)
+        super().__init__(
+            options=append_transformer(options, FailedToMakeRestartTransformer()),
+            config=config,
+        )
 
     def _resolved_alternative_section_ids(self) -> list[str]:
         if self.section_id is None:
