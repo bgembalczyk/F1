@@ -207,7 +207,9 @@ def main() -> int:
     count = len(new_duplicates)
     markdown = build_markdown(new_duplicates, args.warn_threshold, args.fail_threshold)
 
-    Path(args.output_md).write_text(markdown, encoding="utf-8")
+    output_md_path = Path(args.output_md)
+    output_md_path.parent.mkdir(parents=True, exist_ok=True)
+    output_md_path.write_text(markdown, encoding="utf-8")
 
     status = "ok"
     if count >= args.fail_threshold:
@@ -216,6 +218,7 @@ def main() -> int:
         status = "warn"
 
     output_path = Path(args.github_output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("a", encoding="utf-8") as fh:
         fh.write(f"duplicate_count={count}\n")
         fh.write(f"duplicate_status={status}\n")
