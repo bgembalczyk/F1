@@ -133,3 +133,10 @@ Poniższa lista jest checklistą jakości dla każdego merge'a, który dodaje/zm
 - `ADR-0002` — kontrakt parserów sekcji.
 - `ADR-0003` — strategia DI.
 - `ADR-0004` — nazewnictwo hooków.
+
+
+## 📘 Extension guide (nowe scrapery)
+
+- [x] W repo dostępny jest przewodnik rozszerzania scraperów: `docs/architecture/scraper-extension-guide.md`.
+- [x] README scraperów linkuje do przewodnika (`scrapers/README.md`).
+- [x] Checklista PR zawiera odwołanie do przewodnika (`docs/MODULE_BOUNDARIES.md`, sekcja 6.1).

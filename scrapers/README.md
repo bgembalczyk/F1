@@ -23,3 +23,10 @@ Reviewer musi potwierdzić:
 - użycie jednolitego kontraktu `SCRAPER_TEMPLATE_CONFIG`,
 - użycie docelowych hooków bazowych (`SingleWikiArticleScraperBase` hooks dla single, `build_scraper_config` + schema DSL dla list),
 - usunięcie placeholderów `TODO` przed mergem.
+
+
+## Extension guide
+
+Szczegółowy przewodnik rozszerzania (hooki obowiązkowe, punkty rozszerzeń, antywzorce, minimalne przykłady):
+
+- `docs/architecture/scraper-extension-guide.md`
