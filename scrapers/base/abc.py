@@ -2,6 +2,7 @@ from abc import ABC
 from collections.abc import Callable
 from collections.abc import Sequence
 from pathlib import Path
+import warnings
 from typing import TypeVar
 from uuid import uuid4
 
@@ -147,13 +148,13 @@ class ABCScraper(ABC):
         if data is None:
             return self._store_empty_data()
 
-        return self._finalize_fetch(run_id, data)
+        return self._assemble_fetch_result(run_id, data)
 
     def _store_empty_data(self) -> list[ExportRecord]:
         self._data = []
         return self._data
 
-    def _finalize_fetch(
+    def _assemble_fetch_result(
         self,
         run_id: str,
         data: list[ExportRecord],
@@ -161,6 +162,19 @@ class ABCScraper(ABC):
         self._data = data
         self.logger.debug("Scrape run %s finished", run_id)
         return self._data
+
+    def _finalize_fetch(
+        self,
+        run_id: str,
+        data: list[ExportRecord],
+    ) -> list[ExportRecord]:
+        warnings.warn(
+            "ABCScraper._finalize_fetch() is deprecated; use "
+            "_assemble_fetch_result() instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self._assemble_fetch_result(run_id, data)
 
     def _validate_fetch_url(self) -> None:
         if getattr(self, "url", None):
