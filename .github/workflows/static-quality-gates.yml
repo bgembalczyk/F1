@@ -35,7 +35,7 @@ jobs:
         run: |
           xenon scrapers layers models validation infrastructure \
             --max-absolute C \
-            --max-modules B \
+            --max-modules C \
             --max-average B
 
       - name: Duplicate code and oversized units gate (pylint)

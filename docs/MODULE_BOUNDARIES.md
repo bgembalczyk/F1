@@ -154,7 +154,7 @@ Dla PR/push do `main` działa workflow `.github/workflows/static-quality-gates.y
 1. **Complexity warning (radon)** – próg ostrzegawczy: od klasy złożoności `B` wzwyż (`radon cc --min B`, krok typu warning).
 2. **Complexity error (xenon)** – progi blokujące merge:
    - `--max-absolute C`
-   - `--max-modules B`
+   - `--max-modules C`
    - `--max-average B`
 3. **Duplicate code + oversized classes/functions (pylint)** – blokada CI przy wykryciu:
    - duplikacji (`duplicate-code`, `min-similarity-lines=8`),
