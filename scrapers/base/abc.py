@@ -25,6 +25,7 @@ from scrapers.base.scraper_components import PipelineOrchestrator
 from scrapers.base.scraper_components import QualityReportService
 from scrapers.base.scraper_components import RuntimeInitializer
 from scrapers.base.transformers.helpers import apply_transformers
+from scrapers.base.transformers.stages import TransformerStage
 from scrapers.base.validation_runner import ValidationRunner
 from validation.validator_base import ExportRecord
 
@@ -192,11 +193,91 @@ class ABCScraper(ABC):
         self.logger.debug("Scrape run %s started for url=%s", run_id, self.url)
         return run_id
 
+    def _download_with_error_handling(self, run_id: str) -> str | None:
+        try:
+            self.logger.debug("Scrape run %s: start download", run_id)
+            html = self._download()
+            self.logger.debug("Scrape run %s: finish download", run_id)
+            self._write_step_quality_report(step_name="download", records=[])
+        except ScraperError as error:
+            return self._handle_fetch_error(error, error)
+        except (RuntimeError, ValueError, OSError) as exc:
+            error = self._wrap_network_error(exc)
+            return self._handle_fetch_error(exc, error)
+        else:
+            return html
+
+    def _parse_pipeline_with_error_handling(
+        self,
+        run_id: str,
+        html: str,
+    ) -> list[ExportRecord] | None:
+        try:
+            return self._run_parse_pipeline(run_id, html)
+        except ScraperError as error:
+            return self._handle_fetch_error(error, error)
+        except (AttributeError, KeyError, RuntimeError, TypeError, ValueError) as exc:
+            error = self._wrap_parse_error(exc)
+            return self._handle_fetch_error(exc, error)
+
+    def _build_pipeline_runner(self) -> ScraperPipelineRunner:
+        return ScraperPipelineRunner(
+            logger=self.logger,
+            write_step_quality_report=self._write_pipeline_quality_report,
+            parse_records=self.parse,
+            normalize_records=self._normalize_pipeline_records,
+            pre_validate_transform_records=lambda records: self._apply_transformers_for_stage(
+                records,
+                TransformerStage.PRE_VALIDATE,
+            ),
+            enrich_records=lambda records: self._apply_transformers_for_stage(
+                records,
+                TransformerStage.ENRICH,
+            ),
+            validate_records=self.validate_records,
+            post_validate_transform_records=lambda records: self._apply_transformers_for_stage(
+                records,
+                TransformerStage.POST_VALIDATE,
+            ),
+            post_process_records=self.post_process_records,
+        )
+
+    def _run_parse_pipeline(self, run_id: str, html: str) -> list[ExportRecord]:
+        return self._pipeline_runner.run(run_id=run_id, html=html)
+
     def _normalize_pipeline_records(
         self,
         records: list[RawRecord],
     ) -> list[NormalizedRecord]:
         return self._record_normalizer.normalize(records)
+
+    def _apply_transformers_for_stage(
+        self,
+        records: list[ExportRecord],
+        stage: TransformerStage,
+    ) -> list[ExportRecord]:
+        scoped = [
+            transformer
+            for transformer in self.transformers
+            if getattr(transformer, "stage", TransformerStage.ENRICH) == stage
+        ]
+        if not scoped:
+            return records
+        return apply_transformers(scoped, records, logger=self.logger)
+
+    def _write_pipeline_quality_report(
+        self,
+        step_name: str,
+        records: list[dict[str, object]],
+    ) -> None:
+        self._write_step_quality_report(step_name=step_name, records=records)
+
+    def _handle_fetch_error(self, exc: Exception, error: ScraperError):
+        if self._handle_scraper_error(error):
+            return
+        if error is exc:
+            raise exc
+        raise error from exc
 
     def get_data(self) -> list[ExportRecord]:
         """Zwróć dane - jeśli jeszcze nie ma, uruchom fetch()."""

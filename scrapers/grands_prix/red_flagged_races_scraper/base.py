@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
-from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.base.table.columns.types import DriverColumn
 from scrapers.base.table.columns.types import DriverListColumn
@@ -16,9 +15,6 @@ from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.scraper import F1TableScraper
-from scrapers.base.transformers.failed_to_make_restart import (
-    FailedToMakeRestartTransformer,
-)
 from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
 
 logger = logging.getLogger(__name__)
@@ -42,6 +38,8 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
     # Subclasses can override to provide fallback section IDs
     alternative_section_ids: list[str] = []
     section_domain: str = "grands_prix"
+    options_profile = "seed_soft"
+    options_domain = "grands_prix"
 
     @staticmethod
     def build_common_red_flag_columns(race_name_header: str = "Grand Prix"):
@@ -77,19 +75,6 @@ class RedFlaggedRacesBaseScraper(F1TableScraper):
             ),
             column("Ref.", "ref", SkipColumn()),
         ]
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-        config=None,
-    ) -> None:
-        options = options or ScraperOptions()
-        options.transformers = [
-            *list(options.transformers or []),
-            FailedToMakeRestartTransformer(),
-        ]
-        super().__init__(options=options, config=config)
 
     def _resolved_alternative_section_ids(self) -> list[str]:
         if self.section_id is None:
