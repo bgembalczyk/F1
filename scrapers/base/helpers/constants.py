@@ -50,3 +50,8 @@ DATE_FORMATS = [
     "%B %d, %Y",  # June 7, 2019
     "%b %d, %Y",  # Jun 7, 2019
 ]
+
+DATE_ISO_FULL_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
+DATE_ISO_MONTH_RE = re.compile(r"\d{4}-\d{2}")
+DATE_ISO_YEAR_RE = re.compile(r"\d{4}")
+YEAR_RE = re.compile(r"\b(1[89]\d{2}|20\d{2})\b")
