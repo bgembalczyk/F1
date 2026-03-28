@@ -3,6 +3,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from models.validation.engine_regulation import EngineRegulation
+from scrapers.base.source_catalog import ENGINE_PROGRESS
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.records import record_from_mapping
@@ -53,8 +54,8 @@ class EngineRegulationScraper(BaseEngineTableScraper):
     ]
 
     CONFIG = build_scraper_config(
-        url="https://en.wikipedia.org/wiki/Formula_One_engines#Engine_regulation_progression_by_era",
-        section_id="Engine_regulation_progression_by_era",
+        url=ENGINE_PROGRESS.url(),
+        section_id=ENGINE_PROGRESS.section_id,
         expected_headers=["Years", "Operating principle"],
         model_class=EngineRegulation,
         schema=TableSchemaDSL(columns=schema_columns),

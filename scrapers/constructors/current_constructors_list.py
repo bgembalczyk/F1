@@ -1,6 +1,7 @@
 """DEPRECATED ENTRYPOINT: use scrapers.constructors.entrypoint.run_list_scraper."""
 
 from models.records.factories.build import RECORD_BUILDERS
+from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 from scrapers.base.table.builders import build_scraper_config
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.config import build_scraper_config
@@ -51,7 +52,7 @@ class CurrentConstructorsListScraper(BaseConstructorListScraper):
     )
 
     CONFIG = build_scraper_config(
-        url="https://en.wikipedia.org/wiki/List_of_Formula_One_constructors",
+        url=CONSTRUCTORS_LIST.base_url,
         section_id=f"Constructors_for_the_{CURRENT_YEAR}_season",
         expected_headers=CURRENT_CONSTRUCTORS_EXPECTED_HEADERS,
         columns=schema_columns,
