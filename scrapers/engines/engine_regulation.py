@@ -17,7 +17,6 @@ from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
 from scrapers.engines.columns.configuration import EngineConfigurationColumn
 from scrapers.engines.columns.nested_text import NestedTextColumn
 from scrapers.engines.columns.nested_unit_list import NestedUnitListColumn
-from scrapers.seasons.columns.seasons import SeasonsColumn
 
 
 class EngineRegulationScraper(BaseEngineTableScraper):

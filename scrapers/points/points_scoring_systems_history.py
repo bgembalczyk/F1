@@ -22,7 +22,7 @@ from scrapers.points.constants import POINTS_FASTEST_LAP_HEADER
 from scrapers.points.constants import POINTS_NOTES_HEADER
 from scrapers.points.constants import POINTS_SCORING_HISTORY_EXPECTED_HEADERS
 from scrapers.points.constants import POINTS_SEASONS_HEADER
-from scrapers.seasons.columns.seasons import SeasonsColumn
+from scrapers.base.table.columns.types import SeasonsColumn
 
 
 class PointsScoringSystemsHistoryScraper(BasePointsScraper):
