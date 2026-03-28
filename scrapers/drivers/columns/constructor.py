@@ -1,4 +1,5 @@
 """DOMAIN-SPECIFIC: drivers column rule (constructor split) localized for drivers domain."""
+# pylint: disable=duplicate-code
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.constructor_parsing import (
