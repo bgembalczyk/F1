@@ -8,10 +8,16 @@ from decimal import Decimal
 from typing import Any
 
 from models.value_objects.time_types import DateValue
-from scrapers.base.helpers.constants import DATE_FORMATS
-from scrapers.base.helpers.constants import DATE_RANGE_SPLIT
-from scrapers.base.helpers.constants import TIME_KEY_RE
-from scrapers.base.helpers.constants import TIME_SECONDS_RE
+from scrapers.base.helpers.constants import (
+    DATE_FORMATS,
+    DATE_ISO_FULL_RE,
+    DATE_ISO_MONTH_RE,
+    DATE_ISO_YEAR_RE,
+    DATE_RANGE_SPLIT,
+    TIME_KEY_RE,
+    TIME_SECONDS_RE,
+    YEAR_RE,
+)
 from scrapers.base.helpers.value_objects.normalized_time import NormalizedTime
 
 
@@ -126,20 +132,20 @@ def parse_date_iso(base: str) -> str | None:
     if parsed_month is not None:
         return parsed_month.strftime("%Y-%m")
 
-    if re.fullmatch(r"\d{4}", base):
+    if DATE_ISO_YEAR_RE.fullmatch(base):
         return base
 
     return None
 
 
 def parse_date_parts(value: str) -> tuple[int | None, int | None, int | None]:
-    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+    if DATE_ISO_FULL_RE.fullmatch(value):
         year, month, day = value.split("-")
         return int(year), int(month), int(day)
-    if re.fullmatch(r"\d{4}-\d{2}", value):
+    if DATE_ISO_MONTH_RE.fullmatch(value):
         year, month = value.split("-")
         return int(year), int(month), None
-    if re.fullmatch(r"\d{4}", value):
+    if DATE_ISO_YEAR_RE.fullmatch(value):
         return int(value), None, None
     return None, None, None
 
@@ -149,9 +155,9 @@ def parse_date_text(text: str) -> DateValue:
     if not stripped:
         return DateValue(raw=None, iso=None, year=None, month=None, day=None)
 
-    iso_full = re.findall(r"\d{4}-\d{2}-\d{2}", stripped)
-    iso_month = re.findall(r"\d{4}-\d{2}", stripped)
-    years = re.findall(r"\b(1[89]\d{2}|20\d{2})\b", stripped)
+    iso_full = DATE_ISO_FULL_RE.findall(stripped)
+    iso_month = DATE_ISO_MONTH_RE.findall(stripped)
+    years = YEAR_RE.findall(stripped)
 
     iso: str | list[str] | None = None
     if iso_full:
