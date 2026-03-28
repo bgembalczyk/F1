@@ -49,3 +49,7 @@ jobs:
       - name: Strict typing regression gate (mypy)
         run: |
           mypy --config-file mypy.ini
+
+      - name: Domain contracts gate (pytest)
+        run: |
+          pytest -q tests/test_domain_role_contracts.py tests/test_domain_role_contracts_ci_meta.py

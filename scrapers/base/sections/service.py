@@ -21,6 +21,7 @@ if TYPE_CHECKING:
     from scrapers.base.sections.adapter import SectionAdapterEntry
 
 
+
 class SectionExtractionService(Protocol):
     def extract(self, soup: BeautifulSoup) -> list[dict[str, Any]]: ...
 
