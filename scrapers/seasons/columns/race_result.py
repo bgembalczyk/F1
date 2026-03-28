@@ -12,6 +12,10 @@ from scrapers.base.table.columns.constants import MARKS_RE
 from scrapers.base.table.columns.constants import SPLIT_RESULTS_RE
 from scrapers.base.table.columns.types.base import BaseColumn
 
+HEX_COLOR_RE = re.compile(r"#?([0-9a-f]{6}|[0-9a-f]{3})", re.I)
+DIGITS_RE = re.compile(r"\d+")
+LETTERS_RE = re.compile(r"[A-Za-z]")
+
 
 class RaceResultColumn(BaseColumn):
     _BACKGROUND_TO_RESULT = {
@@ -123,7 +127,7 @@ class RaceResultColumn(BaseColumn):
     def _map_background(self, background: str | None) -> str | None:
         if not background:
             return None
-        match = re.search(r"#?([0-9a-f]{6}|[0-9a-f]{3})", background, re.I)
+        match = HEX_COLOR_RE.search(background)
         if not match:
             return None
         value = match.group(1).lower()
@@ -254,14 +258,14 @@ class RaceResultColumn(BaseColumn):
             sup_text = clean_wiki_text(sup.get_text(" ", strip=True))
             if sup_text:
                 sup_texts.append(sup_text)
-                footnotes.extend(re.findall(r"\d+", sup_text))
+                footnotes.extend(DIGITS_RE.findall(sup_text))
 
         sprint_position = None
         pole_position = False
         fastest_lap = False
 
         for token in " ".join(sup_texts).split():
-            letters = re.findall(r"[A-Za-z]", token)
+            letters = LETTERS_RE.findall(token)
             for letter in letters:
                 upper = letter.upper()
                 if upper == "P":
