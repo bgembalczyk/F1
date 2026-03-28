@@ -1,7 +1,6 @@
 """DEPRECATED ENTRYPOINT: use scrapers.drivers.entrypoint.run_list_scraper."""
 
 from models.records.factories.build import RECORD_BUILDERS
-from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.builders import build_name_status_fragment
@@ -11,9 +10,6 @@ from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
-from scrapers.base.transformers.drivers_championships import (
-    DriversChampionshipsTransformer,
-)
 from scrapers.drivers.columns.driver_name_status import DriverNameStatusColumn
 from scrapers.drivers.constants import DRIVER_CHAMPIONSHIPS_HEADER
 from scrapers.drivers.constants import DRIVER_FASTEST_LAPS_HEADER
@@ -104,14 +100,6 @@ class F1DriversListScraper(SeedListTableScraper):
         columns=schema_columns,
         record_factory=RECORD_BUILDERS.driver,
     )
-
-    def extend_options(self, options: ScraperOptions) -> ScraperOptions:
-        options.transformers = [
-            *list(options.transformers or []),
-            DriversChampionshipsTransformer(),
-        ]
-        return options
-
 
 if __name__ == "__main__":
     from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint

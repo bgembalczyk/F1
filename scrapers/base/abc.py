@@ -28,6 +28,7 @@ from scrapers.base.records import NormalizedRecord
 from scrapers.base.records import RawRecord
 from scrapers.base.results import ScrapeResult
 from scrapers.base.transformers.helpers import apply_transformers
+from scrapers.base.transformers.stages import TransformerStage
 from scrapers.base.validation_runner import ValidationRunner
 from validation.validator_base import ExportRecord
 from validation.validator_base import RecordValidator
@@ -222,8 +223,19 @@ class ABCScraper(ABC):
             write_step_quality_report=self._write_pipeline_quality_report,
             parse_records=self.parse,
             normalize_records=self._normalize_pipeline_records,
-            transform_records=self._apply_transformers,
+            pre_validate_transform_records=lambda records: self._apply_transformers_for_stage(
+                records,
+                TransformerStage.PRE_VALIDATE,
+            ),
+            enrich_records=lambda records: self._apply_transformers_for_stage(
+                records,
+                TransformerStage.ENRICH,
+            ),
             validate_records=self.validate_records,
+            post_validate_transform_records=lambda records: self._apply_transformers_for_stage(
+                records,
+                TransformerStage.POST_VALIDATE,
+            ),
             post_process_records=self.post_process_records,
         )
 
@@ -235,6 +247,20 @@ class ABCScraper(ABC):
         records: list[RawRecord],
     ) -> list[NormalizedRecord]:
         return self._record_normalizer.normalize(records)
+
+    def _apply_transformers_for_stage(
+        self,
+        records: list[ExportRecord],
+        stage: TransformerStage,
+    ) -> list[ExportRecord]:
+        scoped = [
+            transformer
+            for transformer in self.transformers
+            if getattr(transformer, "stage", TransformerStage.ENRICH) == stage
+        ]
+        if not scoped:
+            return records
+        return apply_transformers(scoped, records, logger=self.logger)
 
     def _write_pipeline_quality_report(
         self,
