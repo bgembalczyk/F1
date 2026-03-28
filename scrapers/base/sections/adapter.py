@@ -6,7 +6,9 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
+from scrapers.base.single_wiki_article.section_selection_strategy import (
+    WikipediaSectionByIdSelectionStrategy,
+)
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
 from scrapers.base.sections.serializer import serialize_section_result
 from scrapers.wiki.parsers.section_detection import find_section_heading
@@ -24,10 +26,12 @@ class SectionAdapterEntry:
     parser: SectionParser
 
 
-class SectionAdapter(WikipediaSectionByIdMixin):
+class SectionAdapter:
     @classmethod
     def _extract_section_from_heading(cls, heading_match) -> BeautifulSoup | None:
-        return cls.extract_section_by_heading(heading_match.heading)
+        return WikipediaSectionByIdSelectionStrategy.extract_section_by_heading(
+            heading_match.heading,
+        )
 
     def parse_sections(
         self,
