@@ -12,6 +12,8 @@ from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembl
 from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
 from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 from scrapers.constructors.single_scraper import SingleConstructorScraper
+from scrapers.drivers.composition import DriverScraperDependencies
+from scrapers.drivers.domain_record_service import DomainRecordService
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
 from scrapers.drivers.postprocess.assembler import DriverRecordDTO
@@ -167,17 +169,31 @@ def test_orchestration_integration_single_driver_uses_injected_dependencies() ->
             return _InfoboxResult()
 
     class _SectionsStub:
-        def __init__(self, _options: ScraperOptions, _url: str) -> None:
-            pass
-
         def extract(self, _soup: BeautifulSoup):
             return [{"section_id": "Career_results", "section": "Career"}]
 
+    class _SectionsFactoryStub:
+        def create(
+            self,
+            *,
+            adapter,
+            options: ScraperOptions | None = None,
+            url: str | None = None,
+        ) -> _SectionsStub:
+            _ = adapter
+            assert options is not None
+            assert url == "https://example.com/driver"
+            return _SectionsStub()
+
     scraper = SingleDriverScraper(
         options=ScraperOptions(include_urls=True),
-        infobox_service=_InfoboxStub(),
-        sections_service_factory=lambda options, url: _SectionsStub(options, url),
-        assembler=DriverRecordAssembler(),
+        dependencies=DriverScraperDependencies(
+            infobox_service=_InfoboxStub(),
+            sections_service_factory=_SectionsFactoryStub(),
+            domain_record_service=DomainRecordService(
+                assembler=DriverRecordAssembler(),
+            ),
+        ),
     )
     scraper.url = "https://example.com/driver"
     result = scraper._parse_soup(_soup("<html></html>"))[0]  # noqa: SLF001

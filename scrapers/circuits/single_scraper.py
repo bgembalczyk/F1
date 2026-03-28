@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.sections.factory import ValidatingSectionServiceFactory
 from scrapers.base.single_wiki_article import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
@@ -11,53 +10,24 @@ from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
-from scrapers.circuits.domain_record_service import DomainRecordService
+from scrapers.circuits.composition import CircuitScraperCompositionFactory
+from scrapers.circuits.composition import CircuitScraperDependencies
 from scrapers.circuits.helpers.article_validation import is_circuit_like_article
 from scrapers.circuits.helpers.lap_record import (
     is_lap_record_table as _is_lap_record_table,
 )
 from scrapers.circuits.helpers.layout import detect_layout_name as _detect_layout_name
-from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
-from scrapers.circuits.sections.service import CircuitSectionExtractionService
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.infobox.service import InfoboxExtractionService
     from scrapers.base.options import ScraperOptions
-    from scrapers.base.sections.adapter import SectionAdapter
-    from scrapers.base.sections.interface import SectionServiceFactory
-    from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
 
 is_lap_record_table = _is_lap_record_table
 detect_layout_name = _detect_layout_name
-
-
-class CircuitSectionServiceFactory(
-    ValidatingSectionServiceFactory[CircuitSectionExtractionService],
-):
-    def create(
-        self,
-        *,
-        adapter: SectionAdapter,
-        options: ScraperOptions | None = None,
-        url: str | None = None,
-    ) -> CircuitSectionExtractionService:
-        self._validate_dependencies(
-            adapter=adapter,
-            options=options,
-            url=url,
-            require_options=True,
-            require_url=True,
-        )
-        return CircuitSectionExtractionService(
-            adapter=adapter,
-            options=options,
-            url=url,
-        )
 
 
 class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
@@ -65,12 +35,8 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
         self,
         *,
         options: ScraperOptions | None = None,
-        infobox_service: InfoboxExtractionService | None = None,
-        sections_service_factory: (
-            SectionServiceFactory[CircuitSectionExtractionService] | None
-        ) = None,
-        assembler: CircuitRecordAssembler | None = None,
-        domain_record_service: DomainRecordService | None = None,
+        dependencies: CircuitScraperDependencies | None = None,
+        composition_factory: CircuitScraperCompositionFactory | None = None,
     ) -> None:
         super().__init__(
             options=options,
@@ -78,15 +44,15 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
                 domain="circuits",
             ),
         )
-        self._infobox_service = infobox_service or CircuitInfoboxExtractionService(
-            options=self._options,
-        )
-        self._sections_service_factory = (
-            sections_service_factory or CircuitSectionServiceFactory()
-        )
-        self._domain_record_service = domain_record_service or DomainRecordService(
-            assembler=assembler,
-        )
+        resolved_dependencies = dependencies
+        if resolved_dependencies is None:
+            resolved_dependencies = (
+                composition_factory or CircuitScraperCompositionFactory()
+            ).build(options=self._options)
+
+        self._infobox_service = resolved_dependencies.infobox_service
+        self._sections_service_factory = resolved_dependencies.sections_service_factory
+        self._domain_record_service = resolved_dependencies.domain_record_service
 
     def _should_parse_article(self, soup: BeautifulSoup) -> bool:
         return is_circuit_like_article(soup)

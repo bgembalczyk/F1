@@ -3,52 +3,22 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from typing import Any
 
-from scrapers.base.sections.factory import ValidatingSectionServiceFactory
 from scrapers.base.single_wiki_article import InfoboxPayloadDTO
 from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
 from scrapers.base.single_wiki_article import TablesPayloadDTO
-from scrapers.constructors.domain_record_service import DomainRecordService
-from scrapers.constructors.infobox.service import ConstructorInfoboxExtractionService
+from scrapers.constructors.composition import ConstructorScraperCompositionFactory
+from scrapers.constructors.composition import ConstructorScraperDependencies
 from scrapers.constructors.postprocess.contract import (
     ConstructorSectionContractPostProcessor,
 )
 from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
 from scrapers.constructors.postprocess.assembler import ConstructorRecordDTO
-from scrapers.constructors.sections.service import ConstructorSectionExtractionService
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.infobox.service import InfoboxExtractionService
     from scrapers.base.options import ScraperOptions
-    from scrapers.base.sections.adapter import SectionAdapter
-    from scrapers.base.sections.interface import SectionServiceFactory
-    from scrapers.constructors.postprocess.assembler import ConstructorRecordAssembler
-
-
-class ConstructorSectionServiceFactory(
-    ValidatingSectionServiceFactory[ConstructorSectionExtractionService],
-):
-    def create(
-        self,
-        *,
-        adapter: SectionAdapter,
-        options: ScraperOptions | None = None,
-        url: str | None = None,
-    ) -> ConstructorSectionExtractionService:
-        self._validate_dependencies(
-            adapter=adapter,
-            options=options,
-            url=url,
-            require_options=True,
-            require_url=True,
-        )
-        return ConstructorSectionExtractionService(
-            adapter=adapter,
-            options=options,
-            url=url,
-        )
 
 
 class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
@@ -56,23 +26,19 @@ class SingleConstructorScraper(SingleWikiArticleSectionAdapterBase):
         self,
         *,
         options: ScraperOptions | None = None,
-        infobox_service: InfoboxExtractionService | None = None,
-        sections_service_factory: (
-            SectionServiceFactory[ConstructorSectionExtractionService] | None
-        ) = None,
-        assembler: ConstructorRecordAssembler | None = None,
-        domain_record_service: DomainRecordService | None = None,
+        dependencies: ConstructorScraperDependencies | None = None,
+        composition_factory: ConstructorScraperCompositionFactory | None = None,
     ) -> None:
         super().__init__(options=options)
-        self._infobox_service = infobox_service or ConstructorInfoboxExtractionService(
-            options=self._options,
-        )
-        self._sections_service_factory = (
-            sections_service_factory or ConstructorSectionServiceFactory()
-        )
-        self._domain_record_service = domain_record_service or DomainRecordService(
-            assembler=assembler,
-        )
+        resolved_dependencies = dependencies
+        if resolved_dependencies is None:
+            resolved_dependencies = (
+                composition_factory or ConstructorScraperCompositionFactory()
+            ).build(options=self._options)
+
+        self._infobox_service = resolved_dependencies.infobox_service
+        self._sections_service_factory = resolved_dependencies.sections_service_factory
+        self._domain_record_service = resolved_dependencies.domain_record_service
 
     def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         infoboxes = self._infobox_service.extract(soup, url=self.url).as_list()
