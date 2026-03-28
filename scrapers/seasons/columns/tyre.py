@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: seasons column rule moved out of base layer."""
+
 import re
 
 from scrapers.base.helpers.links import normalize_links

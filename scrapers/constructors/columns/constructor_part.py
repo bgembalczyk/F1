@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: constructors column rule moved out of base layer."""
+
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.helpers.constructor_parsing import (
     ConstructorParsingHelpers,
