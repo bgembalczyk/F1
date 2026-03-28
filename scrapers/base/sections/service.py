@@ -5,7 +5,6 @@ from abc import abstractmethod
 import logging
 from typing import TYPE_CHECKING
 from typing import Any
-from typing import Protocol
 
 from models.value_objects import EntityName
 from models.value_objects import SectionId
