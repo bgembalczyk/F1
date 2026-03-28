@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: seasons column rule moved out of base layer."""
+
 from typing import Any
 
 from scrapers.base.helpers.cell_splitting import split_cell_on_br

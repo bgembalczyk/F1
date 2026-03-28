@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: seasons column rule moved out of base layer."""
+
 from scrapers.base.helpers.parsing import parse_int_from_text
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
