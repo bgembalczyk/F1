@@ -1,4 +1,6 @@
 from scrapers.base.records import record_from_mapping
+from scrapers.base.source_catalog import RED_FLAGGED_RACES
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import DriverColumn
 from scrapers.base.table.columns.types import DriverListColumn
 from scrapers.base.table.columns.types import IntColumn
@@ -43,8 +45,8 @@ class RedFlaggedWorldChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
     ]
 
     CONFIG = build_scraper_config(
-        url="https://en.wikipedia.org/wiki/List_of_red-flagged_Formula_One_races",
-        section_id="Red-flagged_races",
+        url=RED_FLAGGED_RACES.base_url,
+        section_id=RED_FLAGGED_RACES.section_id,
         expected_headers=[
             "Year",
             "Grand Prix",
@@ -54,7 +56,7 @@ class RedFlaggedWorldChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
             "Incident that prompted red flag",
         ],
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
 

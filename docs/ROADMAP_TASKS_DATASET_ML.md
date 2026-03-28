@@ -116,3 +116,20 @@
   - Metryka wyjściowa: min. 80% wpisów generowanych automatycznie (konwencja + metadane), 0 incydentów brakującej rejestracji przez 2 kolejne iteracje.
   - Kryterium ukończenia: generator/rejestr auto-discovery działa dla parserów L0/L1, ma walidację konfliktów nazw i test CI blokujący niejawne komponenty.
   - Skąd bierzemy kolejne punkty startowe: backlog komponentów do auto-rejestracji budujemy z aktualnego `step_registry` i listy modułów domenowych używanych przez checkpointy iteracyjne.
+- [ ] D5. Zasada mikro-refactoru w każdym PR funkcjonalnym jako merge gate.
+  - Definicja: każdy PR funkcjonalny zawiera co najmniej 1 mikro-refactor redukujący duplikację lub wzmacniający kontrakt OOP.
+  - Kryterium ukończenia: szablon PR wymusza sekcję „Refactor included”, a review blokuje merge PR bez tej sekcji.
+  - Skąd bierzemy kolejne punkty startowe: kandydatów do mikro-refactoru bierzemy z bieżącego diffu PR i z raportu duplikacji (`scripts/analysis/duplication_report.md`).
+- [ ] D6. Metryka trendu duplikacji per sprint (`removed_duplication` / `added_duplication`).
+  - Definicja metryki: dla każdego sprintu raportujemy bilans `usunięto - dodano` (linie/bloki duplikacji) oraz trend kroczący z 3 sprintów.
+  - Kryterium ukończenia: istnieje tabela trendu w dokumentacji i jest aktualizowana przy zamknięciu każdego sprintu.
+  - Skąd bierzemy kolejne punkty startowe: dane wejściowe z sekcji „Refactor included” w PR oraz z wyników CI/static gates.
+- [ ] D7. Przegląd sprintowy efektów refaktoryzacji i aktualizacja priorytetów backlogu D1-D6.
+  - Cadence: 1x na sprint podczas review technicznego.
+  - Kryterium ukończenia: po każdym sprincie istnieje notatka decyzji z listą „keep / increase / deprioritize” dla zadań refaktorowych.
+  - Skąd bierzemy kolejne punkty startowe: trend metryki D6 + incydenty jakościowe z ostatniego sprintu.
+
+## Cadence operacyjny (refactor governance)
+- Każdy PR funkcjonalny: obowiązkowo sekcja „Refactor included” i minimum jeden mikro-refactor.
+- Każdy sprint: podsumowanie metryki trendu duplikacji (`removed`/`added`) oraz decyzja o aktualizacji priorytetów refaktorów.
+- Raz na kwartał: rewizja progów jakości (np. minimalny bilans netto i progi duplicate-code w CI).

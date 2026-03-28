@@ -1,9 +1,5 @@
-from bs4 import BeautifulSoup
+"""Backward-compatible import path for circuit section helpers."""
 
-from scrapers.base.helpers.article_validation import has_category_keyword
-from scrapers.circuits.helpers.constants import CIRCUIT_KEYWORDS
+from scrapers.circuits.helpers.sections import is_circuit_like_article
 
-
-def is_circuit_like_article(soup: BeautifulSoup) -> bool:
-    """Sprawdza po kategoriach, czy artykuł wygląda na tor (BeautifulSoup -> bool)."""
-    return has_category_keyword(soup, CIRCUIT_KEYWORDS)
+__all__ = ["is_circuit_like_article"]

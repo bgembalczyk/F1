@@ -6,7 +6,7 @@ from typing import Any
 from bs4 import Tag
 
 from scrapers.base.helpers.table_parsing import TableParsingHelper
-from scrapers.base.records import record_from_mapping
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.sections.section_table_parser_base import SectionTableParserBase
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.config import ScraperConfig
@@ -97,7 +97,7 @@ class DriverResultsSectionParser(SectionTableParserBase):
             expected_headers=None,
             schema=schema,
             default_column=AutoColumn(),
-            record_factory=record_from_mapping,
+            record_factory=RECORD_FACTORIES.mapping(),
         )
         return TablePipeline(
             config=config,

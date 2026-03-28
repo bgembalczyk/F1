@@ -3,7 +3,7 @@ from typing import Any
 from bs4 import BeautifulSoup
 
 from scrapers.base.options import ScraperOptions
-from scrapers.base.records import record_from_mapping
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.base.table.columns.types import PointsColumn
 from scrapers.base.table.columns.types import PositionColumn
@@ -68,7 +68,7 @@ class SeasonTableParser:
                 expected_headers=[subject_header],
                 schema=TableSchemaDSL(columns=schema_columns),
                 default_column=RaceResultColumn(season_year=season_year),
-                record_factory=record_from_mapping,
+                record_factory=RECORD_FACTORIES.mapping(),
             )
             scraper = F1StandingsScraper(options=self._options, config=config)
             try:
@@ -95,7 +95,7 @@ class SeasonTableParser:
                 expected_headers=expected_headers,
                 schema=schema,
                 default_column=default_column,
-                record_factory=record_from_mapping,
+                record_factory=RECORD_FACTORIES.mapping(),
             )
             pipeline = TablePipeline(
                 config=config,
@@ -151,7 +151,7 @@ class SeasonTableParser:
             expected_headers=expected_headers,
             schema=schema,
             default_column=default_column,
-            record_factory=record_from_mapping,
+            record_factory=RECORD_FACTORIES.mapping(),
         )
         pipeline = TablePipeline(
             config=config,

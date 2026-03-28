@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.constants import UNIT_RE
 from scrapers.base.helpers.parsing import parse_float_from_text
+from scrapers.base.helpers.parsing import parse_numeric_value
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.parsers.unit_value import UnitValue
 from scrapers.base.table.columns.context import ColumnContext
@@ -42,18 +43,6 @@ def parse_points_from_cell(ctx: ColumnContext) -> NumericValue:
     return parse_float_from_text(text)
 
 
-def parse_number(value: str | None) -> NumericValue:
-    if value is None:
-        return None
-    cleaned = value.replace(",", "").strip()
-    if not cleaned:
-        return None
-    try:
-        return float(cleaned)
-    except ValueError:
-        return None
-
-
 def normalize_unit(unit: str) -> str:
     normalized = unit.strip().lower()
     if normalized in {"l", "litre", "litres"}:
@@ -68,7 +57,7 @@ def parse_unit_list(text: str) -> list[UnitValue]:
         return []
     return [
         {
-            "value": parse_number(match.group("value")),
+            "value": parse_numeric_value(match.group("value")),
             "unit": normalize_unit(match.group("unit")),
         }
         for match in UNIT_RE.finditer(text)
