@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: circuits column rule (seasons parsing) localized for circuits domain."""
+
 from typing import Any
 
 from models.services.season_service import parse_seasons

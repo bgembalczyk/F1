@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: drivers column rule (tyre semantics) localized for drivers domain."""
+
 import re
 
 from scrapers.base.helpers.links import normalize_links

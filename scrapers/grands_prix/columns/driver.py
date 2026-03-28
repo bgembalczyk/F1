@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: grands_prix column rule (driver parsing) localized for grands_prix domain."""
+
 from typing import TYPE_CHECKING
 from typing import Any
 

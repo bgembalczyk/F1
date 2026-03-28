@@ -2,8 +2,8 @@ from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.source_catalog import FEMALE_DRIVERS_LIST
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import LinksListColumn
-from scrapers.base.table.columns.types import PointsColumn
-from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.drivers.columns.points import PointsColumn
+from scrapers.drivers.columns.seasons import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import ScraperConfig

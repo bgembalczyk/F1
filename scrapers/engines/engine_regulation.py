@@ -6,6 +6,8 @@ from models.validation.engine_regulation import EngineRegulation
 from scrapers.base.source_catalog import ENGINE_PROGRESS
 from scrapers.base.helpers.multi_level_headers import MultiLevelHeaderBuilder
 from scrapers.base.helpers.tables.header import is_repeated_header_row
+from scrapers.base.records import record_from_mapping
+from scrapers.seasons.columns.seasons import SeasonsColumn
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import TextColumn

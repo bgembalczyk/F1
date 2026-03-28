@@ -1,3 +1,5 @@
+"""DOMAIN-SPECIFIC: drivers column rule moved out of base layer."""
+
 from typing import Any
 
 from scrapers.base.helpers.links import normalize_links

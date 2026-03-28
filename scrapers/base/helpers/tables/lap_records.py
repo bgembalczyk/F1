@@ -10,7 +10,7 @@ from scrapers.base.helpers.value_objects.lap_record import LapRecord
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import DateColumn
-from scrapers.base.table.columns.types import DriverColumn
+from scrapers.drivers.columns.driver import DriverColumn
 from scrapers.base.table.columns.types import TimeColumn
 from scrapers.base.table.columns.types import UrlColumn
 from scrapers.base.table.config import build_scraper_config
