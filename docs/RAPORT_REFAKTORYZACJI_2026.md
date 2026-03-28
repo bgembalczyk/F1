@@ -111,7 +111,7 @@ Przeprowadzono kompleksową refaktoryzację projektu F1 w celu poprawy zgodnośc
 
 **Problem:** Funkcje w `factories.py` powielały tę samą logikę normalizacji (int, float, link, seasons).
 
-**Rozwiązanie:** 
+**Rozwiązanie:**
 - `FieldNormalizer` - service class z metodami normalizacji
 - `BaseRecordFactory` - klasa bazowa dla fabryk rekordów
 

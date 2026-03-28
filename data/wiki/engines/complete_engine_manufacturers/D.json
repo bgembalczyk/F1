@@ -1,0 +1,1142 @@
+[
+  {
+    "manufacturer": {
+      "text": "De Tomaso",
+      "url": "https://en.wikipedia.org/wiki/De_Tomaso"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "Italy",
+        "url": "https://en.wikipedia.org/wiki/Italy"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1962,
+        "url": "https://en.wikipedia.org/wiki/1962_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 1,
+    "races_started": 0,
+    "wins": 0,
+    "points": 0.0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 0,
+    "wcc": 0,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/De_Tomaso",
+      "infoboxes": [
+        {
+          "title": "De Tomaso Automobili Ltd.",
+          "rows": {
+            "Formerly": {
+              "text": "De Tomaso Modena SpA",
+              "links": []
+            },
+            "Company type": {
+              "text": "Private",
+              "links": [
+                {
+                  "text": "Private",
+                  "url": "https://en.wikipedia.org/wiki/Privately_held_company"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive_industry"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "1959 ; 67 years ago ( 1959 )",
+              "links": []
+            },
+            "Founder": {
+              "text": "Alejandro de Tomaso",
+              "links": [
+                {
+                  "text": "Alejandro de Tomaso",
+                  "url": "https://en.wikipedia.org/wiki/Alejandro_de_Tomaso"
+                }
+              ]
+            },
+            "Fate": {
+              "text": "Filed for bankruptcy in 2012; [ 1 ] Company sold to Ideal Team Ventures in 2014 [ 2 ]",
+              "links": []
+            },
+            "Headquarters": {
+              "text": "Modena , Italy (1959–2004)",
+              "links": [
+                {
+                  "text": "Modena",
+                  "url": "https://en.wikipedia.org/wiki/Modena"
+                }
+              ]
+            },
+            "Area served": {
+              "text": "Worldwide",
+              "links": []
+            },
+            "Key people": {
+              "text": "Norman Choi (Chairman) [ 3 ] [ 4 ]",
+              "links": []
+            },
+            "Products": {
+              "text": "Supercars",
+              "links": [
+                {
+                  "text": "Supercars",
+                  "url": "https://en.wikipedia.org/wiki/Supercar"
+                }
+              ]
+            },
+            "Owner": {
+              "text": "Ideal Team Ventures Limited",
+              "links": []
+            },
+            "Parent": {
+              "text": "Ford (1971–1974)",
+              "links": [
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
+            },
+            "Subsidiaries": {
+              "text": "Maserati (1976–1993) Innocenti (1976–1993) Moto Guzzi (1973–2000) Benelli (1972–1995)",
+              "links": [
+                {
+                  "text": "Maserati",
+                  "url": "https://en.wikipedia.org/wiki/Maserati"
+                },
+                {
+                  "text": "Innocenti",
+                  "url": "https://en.wikipedia.org/wiki/Innocenti"
+                },
+                {
+                  "text": "Moto Guzzi",
+                  "url": "https://en.wikipedia.org/wiki/Moto_Guzzi"
+                },
+                {
+                  "text": "Benelli",
+                  "url": "https://en.wikipedia.org/wiki/Benelli_(motorcycles)"
+                }
+              ]
+            },
+            "Website": {
+              "text": "detomaso-automobili.com",
+              "links": [
+                {
+                  "text": "detomaso-automobili.com",
+                  "url": "https://detomaso-automobili.com/"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "De Tomaso as a Formula One chassis constructor",
+          "rows": {
+            "Engines": {
+              "text": "OSCA , Alfa Romeo , De Tomaso, Ferrari , Ford",
+              "links": [
+                {
+                  "text": "OSCA",
+                  "url": "https://en.wikipedia.org/wiki/O.S.C.A."
+                },
+                {
+                  "text": "Alfa Romeo",
+                  "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One"
+                },
+                {
+                  "text": "Ferrari",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Ferrari"
+                },
+                {
+                  "text": "Ford",
+                  "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+                }
+              ]
+            },
+            "Entrants": {
+              "text": "Scuderia Serenissima , Scuderia Settecolli, Frank Williams Racing Cars",
+              "links": [
+                {
+                  "text": "Scuderia Serenissima",
+                  "url": "https://en.wikipedia.org/wiki/Scuderia_Serenissima"
+                },
+                {
+                  "text": "Frank Williams Racing Cars",
+                  "url": "https://en.wikipedia.org/wiki/Frank_Williams_Racing_Cars"
+                }
+              ]
+            },
+            "First entry": {
+              "text": "1961 French Grand Prix",
+              "links": [
+                {
+                  "text": "1961 French Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1961_French_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "1970 United States Grand Prix",
+              "links": [
+                {
+                  "text": "1970 United States Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "15 (10 starts)",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Points": {
+              "text": "0",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1961",
+              "Entrant": "",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "MON",
+              "2": "NED",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": "De Tomaso F1/002",
+              "Engine": "O.S.C.A. S4",
+              "Tyres": "D",
+              "Drivers": "Roberto Lippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Scuderia Serenissima",
+              "Chassis": "De Tomaso F1/001",
+              "Engine": "O.S.C.A. S4",
+              "Tyres": "D",
+              "Drivers": "Giorgio Scarlatti",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "Ret",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Scuderia Serenissima",
+              "Chassis": "De Tomaso F1/003",
+              "Engine": "Alfa Romeo I4",
+              "Tyres": "D",
+              "Drivers": "Nino Vaccarella",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1961",
+              "Entrant": "Isobele de Tomaso",
+              "Chassis": "De Tomaso F1/004",
+              "Engine": "Alfa Romeo I4",
+              "Tyres": "D",
+              "Drivers": "Roberto Bussinello",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "Ret",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1962",
+              "Entrant": "",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "NED",
+              "2": "MON",
+              "3": "BEL",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "RSA",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1962",
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": "De Tomaso F1/002",
+              "Engine": "O.S.C.A. I4",
+              "Tyres": "D",
+              "Drivers": "Roberto Lippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1962",
+              "Entrant": "Scuderia de Tomaso",
+              "Chassis": "De Tomaso 801",
+              "Engine": "De Tomaso Flat-8",
+              "Tyres": "D",
+              "Drivers": "Nasif Estéfano",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1963",
+              "Entrant": "",
+              "Chassis": "",
+              "Engine": "",
+              "Tyres": "",
+              "Drivers": "",
+              "1": "MON",
+              "2": "BEL",
+              "3": "NED",
+              "4": "FRA",
+              "5": "GBR",
+              "6": "GER",
+              "7": "ITA",
+              "8": "USA",
+              "9": "MEX",
+              "10": "RSA",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1963",
+              "Entrant": "Scuderia Settecolli",
+              "Chassis": "De Tomaso F1/002",
+              "Engine": "Ferrari V6",
+              "Tyres": "D",
+              "Drivers": "Roberto Lippi",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNQ",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1970",
+              "Entrant": "Frank Williams Racing Cars",
+              "Chassis": "De Tomaso 505/38",
+              "Engine": "Cosworth V8",
+              "Tyres": "D",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "ESP",
+              "3": "MON",
+              "4": "BEL",
+              "5": "NED",
+              "6": "FRA",
+              "7": "GBR",
+              "8": "GER",
+              "9": "AUT",
+              "10": "ITA",
+              "11": "CAN",
+              "12": "USA",
+              "13": "MEX",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1970",
+              "Entrant": "Frank Williams Racing Cars",
+              "Chassis": "De Tomaso 505/38",
+              "Engine": "Cosworth V8",
+              "Tyres": "D",
+              "Drivers": "Piers Courage",
+              "1": "Ret",
+              "2": "DNS",
+              "3": "NC",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1970",
+              "Entrant": "Frank Williams Racing Cars",
+              "Chassis": "De Tomaso 505/38",
+              "Engine": "Cosworth V8",
+              "Tyres": "D",
+              "Drivers": "Brian Redman",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "DNS",
+              "8": "DNQ",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            },
+            {
+              "Year": "1970",
+              "Entrant": "Frank Williams Racing Cars",
+              "Chassis": "De Tomaso 505/38",
+              "Engine": "Cosworth V8",
+              "Tyres": "D",
+              "Drivers": "Tim Schenken",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "NC",
+              "12": "Ret",
+              "13": "",
+              "Points": "0",
+              "WCC": "-"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": "DeSoto",
+    "manufacturer_url": "https://en.wikipedia.org/wiki/DeSoto_(automobile)",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/DeSoto_(automobile)",
+      "infoboxes": [
+        {
+          "title": "DeSoto",
+          "rows": {
+            "Product type": {
+              "text": "Automobile , trucks",
+              "links": [
+                {
+                  "text": "Automobile",
+                  "url": "https://en.wikipedia.org/wiki/Automobile"
+                },
+                {
+                  "text": "trucks",
+                  "url": "https://en.wikipedia.org/wiki/Truck"
+                }
+              ]
+            },
+            "Produced by": {
+              "text": "Chrysler Corporation",
+              "links": []
+            },
+            "Introduced": {
+              "text": "1928 by Walter Chrysler",
+              "links": [
+                {
+                  "text": "Walter Chrysler",
+                  "url": "https://en.wikipedia.org/wiki/Walter_Chrysler"
+                }
+              ]
+            },
+            "Discontinued": {
+              "text": "1961 ; 65 years ago ( 1961 )",
+              "links": []
+            },
+            "Related brands": {
+              "text": "Plymouth",
+              "links": [
+                {
+                  "text": "Plymouth",
+                  "url": "https://en.wikipedia.org/wiki/Plymouth_(automobile)"
+                }
+              ]
+            },
+            "Markets": {
+              "text": "North America",
+              "links": []
+            },
+            "Previous owners": {
+              "text": "Chrysler Corporation",
+              "links": [
+                {
+                  "text": "Chrysler Corporation",
+                  "url": "https://en.wikipedia.org/wiki/Chrysler"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": null
+    }
+  },
+  {
+    "manufacturer": "Dodge",
+    "manufacturer_url": "https://en.wikipedia.org/wiki/Dodge",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Dodge",
+      "infoboxes": [
+        {
+          "title": "Dodge",
+          "rows": {
+            "Company type": {
+              "text": "Private (1900–1928) Division (1928–present)",
+              "links": [
+                {
+                  "text": "Private",
+                  "url": "https://en.wikipedia.org/wiki/Privately_held_company"
+                },
+                {
+                  "text": "Division",
+                  "url": "https://en.wikipedia.org/wiki/Division_(business)"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive_industry"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "December 14, 1900 ; 125 years ago ( 1900-12-14 ) (as Dodge Brothers Company) Detroit , Michigan, U.S.",
+              "links": [
+                {
+                  "text": "Detroit",
+                  "url": "https://en.wikipedia.org/wiki/Detroit"
+                }
+              ]
+            },
+            "Founders": {
+              "text": "John Francis Dodge Horace Elgin Dodge",
+              "links": [
+                {
+                  "text": "John Francis Dodge",
+                  "url": "https://en.wikipedia.org/wiki/John_Francis_Dodge"
+                },
+                {
+                  "text": "Horace Elgin Dodge",
+                  "url": "https://en.wikipedia.org/wiki/Horace_Elgin_Dodge"
+                }
+              ]
+            },
+            "Fate": {
+              "text": "Acquired by Chrysler Corporation in 1928",
+              "links": [
+                {
+                  "text": "Chrysler Corporation",
+                  "url": "https://en.wikipedia.org/wiki/Chrysler"
+                }
+              ]
+            },
+            "Headquarters": {
+              "text": "Auburn Hills, Michigan , U.S.",
+              "links": [
+                {
+                  "text": "Auburn Hills, Michigan",
+                  "url": "https://en.wikipedia.org/wiki/Auburn_Hills,_Michigan"
+                }
+              ]
+            },
+            "Area served": {
+              "text": "North America South America Europe Middle East Angola Brunei Egypt Philippines",
+              "links": []
+            },
+            "Key people": {
+              "text": "Matt McAlear, CEO of Dodge brand [ 1 ]",
+              "links": []
+            },
+            "Products": {
+              "text": "Muscle cars, SUVs",
+              "links": []
+            },
+            "Parent": {
+              "text": "Stellantis North America",
+              "links": [
+                {
+                  "text": "Stellantis North America",
+                  "url": "https://en.wikipedia.org/wiki/Chrysler"
+                }
+              ]
+            },
+            "Website": {
+              "text": "dodge.com",
+              "links": [
+                {
+                  "text": "dodge.com",
+                  "url": "https://www.dodge.com/"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Model",
+            "Year"
+          ],
+          "rows": [
+            {
+              "Model": "Attitude",
+              "Year": "2006-present (Mexico only)"
+            },
+            {
+              "Model": "Charger",
+              "Year": "1966-1978; 1983-87; 2006-present"
+            },
+            {
+              "Model": "Durango",
+              "Year": "1998-2009; 2011-present"
+            },
+            {
+              "Model": "Journey",
+              "Year": "2021-present (Mexico only)"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Model",
+            "Year"
+          ],
+          "rows": [
+            {
+              "Model": "50 series",
+              "Year": "1979-1993"
+            },
+            {
+              "Model": "100 \"Commando\"",
+              "Year": "1970-1980"
+            },
+            {
+              "Model": "100 \"Kew\"",
+              "Year": "1949-1957"
+            },
+            {
+              "Model": "300",
+              "Year": "1957-1965"
+            },
+            {
+              "Model": "330",
+              "Year": "1963-1964"
+            },
+            {
+              "Model": "400",
+              "Year": "1982-1983"
+            },
+            {
+              "Model": "440",
+              "Year": "1962-1964"
+            },
+            {
+              "Model": "500",
+              "Year": "1964-unknown"
+            },
+            {
+              "Model": "600",
+              "Year": "1983-1988"
+            },
+            {
+              "Model": "A100",
+              "Year": "1964-1970"
+            },
+            {
+              "Model": "Attitude",
+              "Year": "2006"
+            },
+            {
+              "Model": "Aries",
+              "Year": "1981-1989"
+            },
+            {
+              "Model": "Aspen",
+              "Year": "1976-1980"
+            },
+            {
+              "Model": "Avenger",
+              "Year": "1995-2000; 2008-2014"
+            },
+            {
+              "Model": "B Series",
+              "Year": "1948-1953"
+            },
+            {
+              "Model": "C Series",
+              "Year": "1950-1960"
+            },
+            {
+              "Model": "Caliber",
+              "Year": "2006-2012"
+            },
+            {
+              "Model": "Challenger (E-body)",
+              "Year": "1970-1974"
+            },
+            {
+              "Model": "Challenger",
+              "Year": "1970-74; 1978-83; 2008-2023"
+            },
+            {
+              "Model": "Challenger (Mitsubishi)",
+              "Year": "1978-1983"
+            },
+            {
+              "Model": "Charger (B-body)",
+              "Year": "1966-1978"
+            },
+            {
+              "Model": "Charger (Sedan)",
+              "Year": "2006-2023; 2026-"
+            },
+            {
+              "Model": "Charger (L-body)",
+              "Year": "1981-1987"
+            },
+            {
+              "Model": "Colt",
+              "Year": "1971-1994"
+            },
+            {
+              "Model": "Crusader",
+              "Year": "1951-1958"
+            },
+            {
+              "Model": "Coronet",
+              "Year": "1949-1959; 1965-1976"
+            },
+            {
+              "Model": "Custom",
+              "Year": "1946-1948"
+            },
+            {
+              "Model": "Custom 880",
+              "Year": "1962-1965"
+            },
+            {
+              "Model": "Custom Royal",
+              "Year": "1955-1959"
+            },
+            {
+              "Model": "D5/D6/D7",
+              "Year": "1937"
+            },
+            {
+              "Model": "D8/D9/D10",
+              "Year": "1938"
+            },
+            {
+              "Model": "D Series",
+              "Year": "1961-1993"
+            },
+            {
+              "Model": "Dakota",
+              "Year": "1987-2011"
+            },
+            {
+              "Model": "Dart (original)",
+              "Year": "1960-1976"
+            },
+            {
+              "Model": "Dart (PF)",
+              "Year": "2013-2016"
+            },
+            {
+              "Model": "Daytona",
+              "Year": "1984-1993"
+            },
+            {
+              "Model": "Deluxe",
+              "Year": "1946-1948"
+            },
+            {
+              "Model": "Diplomat",
+              "Year": "1977-1989"
+            },
+            {
+              "Model": "Dynasty",
+              "Year": "1988-1993"
+            },
+            {
+              "Model": "Fast Four",
+              "Year": "1927-1928"
+            },
+            {
+              "Model": "Grand Caravan",
+              "Year": "1984-2020"
+            },
+            {
+              "Model": "Hornet",
+              "Year": "2022-2025 (U.S. and Canada only)"
+            },
+            {
+              "Model": "Intrepid",
+              "Year": "1993-2004"
+            },
+            {
+              "Model": "Journey",
+              "Year": "2009-2020"
+            },
+            {
+              "Model": "Kingsway",
+              "Year": "1946-1959"
+            },
+            {
+              "Model": "La Femme",
+              "Year": "1955-1956"
+            },
+            {
+              "Model": "Lancer",
+              "Year": "1955-1959; 1961-1962; 1985-1989"
+            },
+            {
+              "Model": "Magnum",
+              "Year": "1978-1979; 2005-2008"
+            },
+            {
+              "Model": "Matador",
+              "Year": "1960"
+            },
+            {
+              "Model": "Mayfair",
+              "Year": "1953-1959"
+            },
+            {
+              "Model": "Meadowbrook",
+              "Year": "1949-1954"
+            },
+            {
+              "Model": "Mirada",
+              "Year": "1980-1983"
+            },
+            {
+              "Model": "Monaco",
+              "Year": "1965-1978; 1990-1992"
+            },
+            {
+              "Model": "Neon",
+              "Year": "1995-2005"
+            },
+            {
+              "Model": "Nitro",
+              "Year": "2006-2012"
+            },
+            {
+              "Model": "Omni",
+              "Year": "1978-1990"
+            },
+            {
+              "Model": "Omni 024",
+              "Year": "1979-1982"
+            },
+            {
+              "Model": "Omni (GLH)",
+              "Year": "1984-1986"
+            },
+            {
+              "Model": "Phoenix",
+              "Year": "1960-1973"
+            },
+            {
+              "Model": "Polara",
+              "Year": "1960-1973"
+            },
+            {
+              "Model": "Power Wagon",
+              "Year": "1945-1980"
+            },
+            {
+              "Model": "Raider",
+              "Year": "1987-1989"
+            },
+            {
+              "Model": "Ram 50",
+              "Year": "1979-1996"
+            },
+            {
+              "Model": "Ram Pickup",
+              "Year": "1981-2009"
+            },
+            {
+              "Model": "Ram SRT 10",
+              "Year": "2004-2006"
+            },
+            {
+              "Model": "Ram Van",
+              "Year": "1971-2003"
+            },
+            {
+              "Model": "Ramcharger",
+              "Year": "1974-2001"
+            },
+            {
+              "Model": "Rampage",
+              "Year": "1982-1984"
+            },
+            {
+              "Model": "Regent",
+              "Year": "1951-1960"
+            },
+            {
+              "Model": "Royal",
+              "Year": "1954-1959"
+            },
+            {
+              "Model": "Shadow",
+              "Year": "1987-1994"
+            },
+            {
+              "Model": "Sierra",
+              "Year": "1955-1956"
+            },
+            {
+              "Model": "Spirit",
+              "Year": "1989-1995"
+            },
+            {
+              "Model": "Sprinter",
+              "Year": "2004-2009"
+            },
+            {
+              "Model": "SRT-4",
+              "Year": "2003-2005"
+            },
+            {
+              "Model": "St. Regis",
+              "Year": "1979-1981"
+            },
+            {
+              "Model": "Stealth",
+              "Year": "1991-1996"
+            },
+            {
+              "Model": "Stratus",
+              "Year": "1995-2006"
+            },
+            {
+              "Model": "Town Panel / Wagon",
+              "Year": "1954-1966"
+            },
+            {
+              "Model": "Travco",
+              "Year": "1964-late 1980s"
+            },
+            {
+              "Model": "Victory",
+              "Year": "1928-1929"
+            },
+            {
+              "Model": "Viscount",
+              "Year": "1959"
+            },
+            {
+              "Model": "Vision",
+              "Year": "2015-2019"
+            },
+            {
+              "Model": "Viper",
+              "Year": "1992-2010; 2012-2017"
+            },
+            {
+              "Model": "Wayfarer",
+              "Year": "1949-1952"
+            },
+            {
+              "Model": "WC series",
+              "Year": "1940-1945"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  },
+  {
+    "manufacturer": "Duray",
+    "details": null
+  }
+]

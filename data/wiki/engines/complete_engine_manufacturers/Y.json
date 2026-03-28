@@ -1,0 +1,1503 @@
+[
+  {
+    "manufacturer": {
+      "text": "Yamaha",
+      "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company"
+    },
+    "manufacturer_status": "former",
+    "engines_built_in": [
+      {
+        "text": "Japan",
+        "url": "https://en.wikipedia.org/wiki/Japan"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1989,
+        "url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship"
+      },
+      {
+        "year": 1991,
+        "url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      },
+      {
+        "year": 1994,
+        "url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship"
+      },
+      {
+        "year": 1995,
+        "url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship"
+      },
+      {
+        "year": 1996,
+        "url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship"
+      },
+      {
+        "year": 1997,
+        "url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship"
+      }
+    ],
+    "races_entered": 130,
+    "races_started": 116,
+    "wins": 0,
+    "points": 36.0,
+    "poles": 0,
+    "fastest_laps": 0,
+    "podiums": 2,
+    "wcc": 0,
+    "wdc": 0,
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Yamaha_Motor_Company",
+      "infoboxes": [
+        {
+          "title": "Yamaha Motor Co., Ltd.",
+          "rows": {
+            "Native name": {
+              "text": "ヤマハ発動機株式会社",
+              "links": []
+            },
+            "Romanized name": {
+              "text": "Yamaha Hatsudōki Kabushiki-gaisha",
+              "links": []
+            },
+            "Company type": {
+              "text": "Public",
+              "links": [
+                {
+                  "text": "Public",
+                  "url": "https://en.wikipedia.org/wiki/Public_company"
+                }
+              ]
+            },
+            "Traded as": {
+              "text": "TYO : 7272",
+              "links": [
+                {
+                  "text": "TYO",
+                  "url": "https://en.wikipedia.org/wiki/Tokyo_Stock_Exchange"
+                },
+                {
+                  "text": "7272",
+                  "url": "https://www2.jpx.co.jp/tseHpFront/StockSearch.do?callJorEFlg=1&method=topsearch&topSearchStr=7272"
+                }
+              ]
+            },
+            "Industry": {
+              "text": "Automotive",
+              "links": [
+                {
+                  "text": "Automotive",
+                  "url": "https://en.wikipedia.org/wiki/Automotive_industry"
+                }
+              ]
+            },
+            "Founded": {
+              "text": "July 1, 1955 ; 70 years ago ( 1955-07-01 )",
+              "links": []
+            },
+            "Founder": {
+              "text": "Genichi Kawakami",
+              "links": [
+                {
+                  "text": "Genichi Kawakami",
+                  "url": "https://en.wikipedia.org/wiki/Genichi_Kawakami"
+                }
+              ]
+            },
+            "Headquarters": {
+              "text": "Iwata, Shizuoka , Japan",
+              "links": [
+                {
+                  "text": "Iwata, Shizuoka",
+                  "url": "https://en.wikipedia.org/wiki/Iwata,_Shizuoka"
+                }
+              ]
+            },
+            "Area served": {
+              "text": "Worldwide",
+              "links": []
+            },
+            "Key people": {
+              "text": "Katsuaki Watanabe ( chairman & Director ) Motofumi Shitara ( president & Representative Director )",
+              "links": [
+                {
+                  "text": "chairman",
+                  "url": "https://en.wikipedia.org/wiki/Chairman"
+                },
+                {
+                  "text": "Director",
+                  "url": "https://en.wikipedia.org/wiki/Director_(business)"
+                },
+                {
+                  "text": "president",
+                  "url": "https://en.wikipedia.org/wiki/President_(corporate_title)"
+                },
+                {
+                  "text": "Representative Director",
+                  "url": "https://en.wikipedia.org/wiki/Representative_director_(Japan)"
+                }
+              ]
+            },
+            "Products": {
+              "text": "Motorcycles , commuter vehicles & scooters , recreational vehicles, boats, marine engines, small tractors, personal watercraft , electrically power assisted bicycles, automobile engines, golf carts , cycling components",
+              "links": [
+                {
+                  "text": "Motorcycles",
+                  "url": "https://en.wikipedia.org/wiki/Motorcycle"
+                },
+                {
+                  "text": "scooters",
+                  "url": "https://en.wikipedia.org/wiki/Scooter_(motorcycle)"
+                },
+                {
+                  "text": "personal watercraft",
+                  "url": "https://en.wikipedia.org/wiki/Personal_watercraft"
+                },
+                {
+                  "text": "golf carts",
+                  "url": "https://en.wikipedia.org/wiki/Golf_cart"
+                }
+              ]
+            },
+            "Revenue": {
+              "text": "2.414 trillion (2023)",
+              "links": []
+            },
+            "Owners": {
+              "text": "The Master Trust Bank of Japan (18.03%) Custody Bank of Japan (5.84%) Yamaha Corporation (4.73%) Toyota Motor Corporation (3.78%) SMBC Nikko Securities (3.37%) (as of December 31, 2023) [ 1 ]",
+              "links": [
+                {
+                  "text": "Yamaha Corporation",
+                  "url": "https://en.wikipedia.org/wiki/Yamaha_Corporation"
+                },
+                {
+                  "text": "Toyota Motor Corporation",
+                  "url": "https://en.wikipedia.org/wiki/Toyota"
+                }
+              ]
+            },
+            "Number of employees": {
+              "text": "52,664 (as of December 31, 2014)",
+              "links": []
+            },
+            "Subsidiaries": {
+              "text": "MBK Sugo Co., Ltd. MTT",
+              "links": [
+                {
+                  "text": "MBK",
+                  "url": "https://en.wikipedia.org/wiki/MBK_(Scooter_manufacturer)"
+                },
+                {
+                  "text": "Sugo Co., Ltd.",
+                  "url": "https://en.wikipedia.org/wiki/Sportsland_Sugo"
+                }
+              ]
+            },
+            "Website": {
+              "text": "global .yamaha-motor .com",
+              "links": [
+                {
+                  "text": "global.yamaha-motor.com",
+                  "url": "https://global.yamaha-motor.com/"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Yamaha Superbike",
+          "rows": {
+            "2024 name": {
+              "text": "Pata Yamaha Prometeon WorldSBK",
+              "links": []
+            },
+            "Base": {
+              "text": "Shizuoka , Japan",
+              "links": [
+                {
+                  "text": "Shizuoka",
+                  "url": "https://en.wikipedia.org/wiki/Shizuoka_(city)"
+                }
+              ]
+            },
+            "Team principal/s": {
+              "text": "Paul Denning, Project Director Team Manager",
+              "links": []
+            },
+            "Race riders": {
+              "text": "55 Andrea Locatelli 97 Xavi Vierge",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Italy"
+                },
+                {
+                  "text": "Andrea Locatelli",
+                  "url": "https://en.wikipedia.org/wiki/Andrea_Locatelli_(motorcyclist)"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Spain"
+                },
+                {
+                  "text": "Xavi Vierge",
+                  "url": "https://en.wikipedia.org/wiki/Xavi_Vierge"
+                }
+              ]
+            },
+            "Motorcycle": {
+              "text": "Yamaha YZF-R1 (2019→)",
+              "links": [
+                {
+                  "text": "Yamaha YZF-R1",
+                  "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R1"
+                }
+              ]
+            },
+            "Tyres": {
+              "text": "Pirelli",
+              "links": [
+                {
+                  "text": "Pirelli",
+                  "url": "https://en.wikipedia.org/wiki/Pirelli"
+                }
+              ]
+            },
+            "Riders' Championships": {
+              "text": "2009 Ben Spies 2021 Toprak Razgatlıoğlu",
+              "links": [
+                {
+                  "text": "2009",
+                  "url": "https://en.wikipedia.org/wiki/2009_Superbike_World_Championship"
+                },
+                {
+                  "text": "Ben Spies",
+                  "url": "https://en.wikipedia.org/wiki/Ben_Spies"
+                },
+                {
+                  "text": "2021",
+                  "url": "https://en.wikipedia.org/wiki/2021_Superbike_World_Championship"
+                },
+                {
+                  "text": "Toprak Razgatlıoğlu",
+                  "url": "https://en.wikipedia.org/wiki/Toprak_Razgatl%C4%B1o%C4%9Flu"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Yamaha as a Formula One engine manufacturer",
+          "rows": {
+            "First entry": {
+              "text": "1989 Brazilian Grand Prix",
+              "links": [
+                {
+                  "text": "1989 Brazilian Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1989_Brazilian_Grand_Prix"
+                }
+              ]
+            },
+            "Last entry": {
+              "text": "1997 European Grand Prix",
+              "links": [
+                {
+                  "text": "1997 European Grand Prix",
+                  "url": "https://en.wikipedia.org/wiki/1997_European_Grand_Prix"
+                }
+              ]
+            },
+            "Races entered": {
+              "text": "130 (116 starts)",
+              "links": []
+            },
+            "Chassis": {
+              "text": "Zakspeed , Brabham , Jordan , Tyrrell , Arrows",
+              "links": [
+                {
+                  "text": "Zakspeed",
+                  "url": "https://en.wikipedia.org/wiki/Zakspeed"
+                },
+                {
+                  "text": "Brabham",
+                  "url": "https://en.wikipedia.org/wiki/Brabham"
+                },
+                {
+                  "text": "Jordan",
+                  "url": "https://en.wikipedia.org/wiki/Jordan_Grand_Prix"
+                },
+                {
+                  "text": "Tyrrell",
+                  "url": "https://en.wikipedia.org/wiki/Tyrrell_Racing"
+                },
+                {
+                  "text": "Arrows",
+                  "url": "https://en.wikipedia.org/wiki/Arrows_Grand_Prix_International"
+                }
+              ]
+            },
+            "Constructors' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Drivers' Championships": {
+              "text": "0",
+              "links": []
+            },
+            "Race victories": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "2",
+              "links": []
+            },
+            "Points": {
+              "text": "36",
+              "links": []
+            },
+            "Pole positions": {
+              "text": "0",
+              "links": []
+            },
+            "Fastest laps": {
+              "text": "0",
+              "links": []
+            }
+          }
+        },
+        {
+          "title": "Lola Yamaha Abt Formula E Team",
+          "rows": {
+            "Current series": {
+              "text": "Formula E",
+              "links": [
+                {
+                  "text": "Formula E",
+                  "url": "https://en.wikipedia.org/wiki/Formula_E"
+                }
+              ]
+            },
+            "Current drivers": {
+              "text": "0 11. Lucas di Grassi 0 22. Zane Maloney",
+              "links": [
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Brazil"
+                },
+                {
+                  "text": "Lucas di Grassi",
+                  "url": "https://en.wikipedia.org/wiki/Lucas_di_Grassi"
+                },
+                {
+                  "text": "",
+                  "url": "https://en.wikipedia.org/wiki/Barbados"
+                },
+                {
+                  "text": "Zane Maloney",
+                  "url": "https://en.wikipedia.org/wiki/Zane_Maloney"
+                }
+              ]
+            },
+            "Races": {
+              "text": "0",
+              "links": []
+            },
+            "Wins": {
+              "text": "0",
+              "links": []
+            },
+            "Podiums": {
+              "text": "1",
+              "links": []
+            },
+            "Points": {
+              "text": "30",
+              "links": []
+            },
+            "First entry": {
+              "text": "2024 São Paulo ePrix (December)",
+              "links": [
+                {
+                  "text": "2024 São Paulo ePrix (December)",
+                  "url": "https://en.wikipedia.org/wiki/2024_S%C3%A3o_Paulo_ePrix_(December)"
+                }
+              ]
+            },
+            "Website": {
+              "text": "lola-cars .co .uk",
+              "links": [
+                {
+                  "text": "lola-cars.co.uk",
+                  "url": "https://lola-cars.co.uk/"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Year",
+            "Bike",
+            "Team",
+            "Tyres",
+            "No.",
+            "Riders",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "R1",
+            "SR",
+            "R2",
+            "Points",
+            "RC",
+            "Points",
+            "TC",
+            "Points",
+            "MC"
+          ],
+          "rows": [
+            {
+              "Year": "2019",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha WorldSBK Team",
+              "Tyres": "P",
+              "No.": "22",
+              "Riders": "Alex Lowes",
+              "R1": "QAT 3",
+              "SR": "QAT 3",
+              "R2": "QAT 4",
+              "Points": "451",
+              "RC": "3rd",
+              "TC": "3rd",
+              "MC": "3rd"
+            },
+            {
+              "Year": "2019",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha WorldSBK Team",
+              "Tyres": "P",
+              "No.": "60",
+              "Riders": "Michael van der Mark",
+              "R1": "QAT 6",
+              "SR": "QAT 6",
+              "R2": "QAT 7",
+              "Points": "451",
+              "RC": "4th",
+              "TC": "3rd",
+              "MC": "3rd"
+            },
+            {
+              "Year": "2020",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha WorldSBK Official Team",
+              "Tyres": "P",
+              "No.": "54",
+              "Riders": "Toprak Razgatlıoğlu",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "330",
+              "RC": "4th",
+              "TC": "3rd",
+              "MC": "3rd"
+            },
+            {
+              "Year": "2020",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha WorldSBK Official Team",
+              "Tyres": "P",
+              "No.": "60",
+              "Riders": "Michael van der Mark",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "330",
+              "RC": "5th",
+              "TC": "3rd",
+              "MC": "3rd"
+            },
+            {
+              "Year": "2021",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha with Brixx WorldSBK",
+              "Tyres": "P",
+              "No.": "54",
+              "Riders": "Toprak Razgatlıoğlu",
+              "R1": "INA 2",
+              "SR": "INA C",
+              "R2": "INA 4",
+              "Points": "607",
+              "RC": "1st",
+              "TC": "1st",
+              "MC": "1st"
+            },
+            {
+              "Year": "2021",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha with Brixx WorldSBK",
+              "Tyres": "P",
+              "No.": "55",
+              "Riders": "Andrea Locatelli",
+              "R1": "INA 4",
+              "SR": "INA C",
+              "R2": "INA 8",
+              "Points": "607",
+              "RC": "4th",
+              "TC": "1st",
+              "MC": "1st"
+            },
+            {
+              "Year": "2022",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha with Brixx WorldSBK",
+              "Tyres": "P",
+              "No.": "1",
+              "Riders": "Toprak Razgatlıoğlu",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "577",
+              "RC": "2nd",
+              "TC": "2nd",
+              "MC": "2nd"
+            },
+            {
+              "Year": "2022",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha with Brixx WorldSBK",
+              "Tyres": "P",
+              "No.": "55",
+              "Riders": "Andrea Locatelli",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "577",
+              "RC": "5th",
+              "TC": "2nd",
+              "MC": "2nd"
+            },
+            {
+              "Year": "2023",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha Prometeon WorldSBK",
+              "Tyres": "P",
+              "No.": "54",
+              "Riders": "Toprak Razgatlıoğlu",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "581",
+              "RC": "2nd",
+              "TC": "2nd",
+              "MC": "2nd"
+            },
+            {
+              "Year": "2023",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha Prometeon WorldSBK",
+              "Tyres": "P",
+              "No.": "55",
+              "Riders": "Andrea Locatelli",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "581",
+              "RC": "4th",
+              "TC": "2nd",
+              "MC": "2nd"
+            },
+            {
+              "Year": "2024",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha Prometeon WorldSBK",
+              "Tyres": "P",
+              "No.": "55",
+              "Riders": "Andrea Locatelli",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "307",
+              "RC": "7th",
+              "TC": "4th",
+              "MC": "4th"
+            },
+            {
+              "Year": "2024",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha Prometeon WorldSBK",
+              "Tyres": "P",
+              "No.": "59",
+              "Riders": "Niccolò Canepa",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "307",
+              "RC": "33rd",
+              "TC": "4th",
+              "MC": "4th"
+            },
+            {
+              "Year": "2024",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "Pata Yamaha Prometeon WorldSBK",
+              "Tyres": "P",
+              "No.": "65",
+              "Riders": "Jonathan Rea",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "307",
+              "RC": "13th",
+              "TC": "4th",
+              "MC": "4th"
+            },
+            {
+              "Year": "2025",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "PATA Maxus Yamaha WorldSBK",
+              "Tyres": "P",
+              "No.": "20",
+              "Riders": "Jason O'Halloran",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "340",
+              "RC": "28th",
+              "TC": "3rd",
+              "MC": "3rd"
+            },
+            {
+              "Year": "2025",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "PATA Maxus Yamaha WorldSBK",
+              "Tyres": "P",
+              "No.": "55",
+              "Riders": "Andrea Locatelli",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "340",
+              "RC": "4th",
+              "TC": "3rd",
+              "MC": "3rd"
+            },
+            {
+              "Year": "2025",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "PATA Maxus Yamaha WorldSBK",
+              "Tyres": "P",
+              "No.": "65",
+              "Riders": "Jonathan Rea",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "340",
+              "RC": "16th",
+              "TC": "3rd",
+              "MC": "3rd"
+            },
+            {
+              "Year": "2026",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "PATA Maxus Yamaha",
+              "Tyres": "P",
+              "No.": "55",
+              "Riders": "Andrea Locatelli",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "",
+              "RC": "",
+              "TC": "",
+              "MC": ""
+            },
+            {
+              "Year": "2026",
+              "Bike": "Yamaha YZF-R1",
+              "Team": "PATA Maxus Yamaha",
+              "Tyres": "P",
+              "No.": "97",
+              "Riders": "Xavi Vierge",
+              "R1": "",
+              "SR": "",
+              "R2": "",
+              "Points": "",
+              "RC": "",
+              "TC": "",
+              "MC": ""
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Year",
+            "Entrant",
+            "Chassis",
+            "Engine",
+            "Tyres",
+            "Drivers",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "Points",
+            "WCC"
+          ],
+          "rows": [
+            {
+              "Year": "1989",
+              "Entrant": "West Zakspeed Racing",
+              "Chassis": "Zakspeed 891",
+              "Engine": "Yamaha OX88 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "SMR",
+              "3": "MON",
+              "4": "MEX",
+              "5": "USA",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "West Zakspeed Racing",
+              "Chassis": "Zakspeed 891",
+              "Engine": "Yamaha OX88 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Bernd Schneider",
+              "1": "Ret",
+              "2": "DNPQ",
+              "3": "DNPQ",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "DNPQ",
+              "9": "DNPQ",
+              "10": "DNPQ",
+              "11": "DNPQ",
+              "12": "DNPQ",
+              "13": "DNPQ",
+              "14": "DNPQ",
+              "15": "Ret",
+              "16": "DNPQ",
+              "17": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1989",
+              "Entrant": "West Zakspeed Racing",
+              "Chassis": "Zakspeed 891",
+              "Engine": "Yamaha OX88 3.5 V8",
+              "Tyres": "P",
+              "Drivers": "Aguri Suzuki",
+              "1": "DNPQ",
+              "2": "DNPQ",
+              "3": "DNPQ",
+              "4": "DNPQ",
+              "5": "DNPQ",
+              "6": "DNPQ",
+              "7": "DNPQ",
+              "8": "DNPQ",
+              "9": "DNPQ",
+              "10": "DNPQ",
+              "11": "DNPQ",
+              "12": "DNPQ",
+              "13": "DNPQ",
+              "14": "DNPQ",
+              "15": "DNPQ",
+              "16": "DNPQ",
+              "17": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Brabham",
+              "Chassis": "Brabham BT59Y Brabham BT60Y",
+              "Engine": "Yamaha OX99 3.5 V12",
+              "Tyres": "P",
+              "Drivers": "",
+              "1": "USA",
+              "2": "BRA",
+              "3": "SMR",
+              "4": "MON",
+              "5": "CAN",
+              "6": "MEX",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "ESP",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
+              "Points": "3",
+              "WCC": "9th"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Brabham",
+              "Chassis": "Brabham BT59Y Brabham BT60Y",
+              "Engine": "Yamaha OX99 3.5 V12",
+              "Tyres": "P",
+              "Drivers": "Martin Brundle",
+              "1": "11",
+              "2": "12",
+              "3": "11",
+              "4": "EX",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "11",
+              "10": "Ret",
+              "11": "9",
+              "12": "13",
+              "13": "12",
+              "14": "10",
+              "15": "5",
+              "16": "DNQ",
+              "17": "",
+              "Points": "3",
+              "WCC": "9th"
+            },
+            {
+              "Year": "1991",
+              "Entrant": "Brabham",
+              "Chassis": "Brabham BT59Y Brabham BT60Y",
+              "Engine": "Yamaha OX99 3.5 V12",
+              "Tyres": "P",
+              "Drivers": "Mark Blundell",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "8",
+              "4": "Ret",
+              "5": "DNQ",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "12",
+              "10": "Ret",
+              "11": "6",
+              "12": "12",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "DNPQ",
+              "16": "17",
+              "17": "",
+              "Points": "3",
+              "WCC": "9th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Sasol Jordan Yamaha",
+              "Chassis": "Jordan 192",
+              "Engine": "Yamaha OX99 3.5 V12",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "MEX",
+              "3": "BRA",
+              "4": "ESP",
+              "5": "SMR",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
+              "Points": "1",
+              "WCC": "11th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Sasol Jordan Yamaha",
+              "Chassis": "Jordan 192",
+              "Engine": "Yamaha OX99 3.5 V12",
+              "Tyres": "G",
+              "Drivers": "Stefano Modena",
+              "1": "DNQ",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "DNQ",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "DNQ",
+              "11": "Ret",
+              "12": "15",
+              "13": "DNQ",
+              "14": "13",
+              "15": "7",
+              "16": "6",
+              "17": "",
+              "Points": "1",
+              "WCC": "11th"
+            },
+            {
+              "Year": "1992",
+              "Entrant": "Sasol Jordan Yamaha",
+              "Chassis": "Jordan 192",
+              "Engine": "Yamaha OX99 3.5 V12",
+              "Tyres": "G",
+              "Drivers": "Maurício Gugelmin",
+              "1": "11",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "7",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "15",
+              "11": "10",
+              "12": "14",
+              "13": "Ret",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "Ret",
+              "17": "",
+              "Points": "1",
+              "WCC": "11th"
+            },
+            {
+              "Year": "1993",
+              "Entrant": "Tyrrell",
+              "Chassis": "Tyrrell 020C Tyrrell 021",
+              "Engine": "Yamaha OX10A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "RSA",
+              "2": "BRA",
+              "3": "EUR",
+              "4": "SMR",
+              "5": "ESP",
+              "6": "MON",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "POR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1993",
+              "Entrant": "Tyrrell",
+              "Chassis": "Tyrrell 020C Tyrrell 021",
+              "Engine": "Yamaha OX10A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "17",
+              "8": "Ret",
+              "9": "13",
+              "10": "Ret",
+              "11": "10",
+              "12": "15",
+              "13": "14",
+              "14": "Ret",
+              "15": "Ret",
+              "16": "Ret",
+              "17": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1993",
+              "Entrant": "Tyrrell",
+              "Chassis": "Tyrrell 020C Tyrrell 021",
+              "Engine": "Yamaha OX10A 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Andrea de Cesaris",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "DSQ",
+              "6": "10",
+              "7": "Ret",
+              "8": "15",
+              "9": "NC",
+              "10": "Ret",
+              "11": "11",
+              "12": "Ret",
+              "13": "13",
+              "14": "12",
+              "15": "Ret",
+              "16": "13",
+              "17": "",
+              "Points": "0",
+              "WCC": "NC"
+            },
+            {
+              "Year": "1994",
+              "Entrant": "Tyrrell",
+              "Chassis": "Tyrrell 022",
+              "Engine": "Yamaha OX10B 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "PAC",
+              "3": "SMR",
+              "4": "MON",
+              "5": "ESP",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "EUR",
+              "15": "JPN",
+              "16": "AUS",
+              "17": "",
+              "Points": "13",
+              "WCC": "7th"
+            },
+            {
+              "Year": "1994",
+              "Entrant": "Tyrrell",
+              "Chassis": "Tyrrell 022",
+              "Engine": "Yamaha OX10B 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
+              "1": "5",
+              "2": "Ret",
+              "3": "5",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "6",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "7",
+              "15": "Ret",
+              "16": "Ret",
+              "17": "",
+              "Points": "13",
+              "WCC": "7th"
+            },
+            {
+              "Year": "1994",
+              "Entrant": "Tyrrell",
+              "Chassis": "Tyrrell 022",
+              "Engine": "Yamaha OX10B 3.5 V10",
+              "Tyres": "G",
+              "Drivers": "Mark Blundell",
+              "1": "Ret",
+              "2": "Ret",
+              "3": "9",
+              "4": "Ret",
+              "5": "3",
+              "6": "10",
+              "7": "10",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "5",
+              "11": "5",
+              "12": "Ret",
+              "13": "Ret",
+              "14": "13",
+              "15": "Ret",
+              "16": "Ret",
+              "17": "",
+              "Points": "13",
+              "WCC": "7th"
+            },
+            {
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
+              "Engine": "Yamaha OX10C 3.0 V10",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "BRA",
+              "2": "ARG",
+              "3": "SMR",
+              "4": "ESP",
+              "5": "MON",
+              "6": "CAN",
+              "7": "FRA",
+              "8": "GBR",
+              "9": "GER",
+              "10": "HUN",
+              "11": "BEL",
+              "12": "ITA",
+              "13": "POR",
+              "14": "EUR",
+              "15": "PAC",
+              "16": "JPN",
+              "17": "AUS",
+              "Points": "5",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
+              "Engine": "Yamaha OX10C 3.0 V10",
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
+              "1": "Ret",
+              "2": "8",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "7",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "10",
+              "13": "Ret",
+              "14": "",
+              "15": "14",
+              "16": "Ret",
+              "17": "Ret",
+              "Points": "5",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
+              "Engine": "Yamaha OX10C 3.0 V10",
+              "Tyres": "G",
+              "Drivers": "Gabriele Tarquini",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "",
+              "5": "",
+              "6": "",
+              "7": "",
+              "8": "",
+              "9": "",
+              "10": "",
+              "11": "",
+              "12": "",
+              "13": "",
+              "14": "14",
+              "15": "",
+              "16": "",
+              "17": "",
+              "Points": "5",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1995",
+              "Entrant": "Nokia Tyrrell Yamaha",
+              "Chassis": "Tyrrell 023",
+              "Engine": "Yamaha OX10C 3.0 V10",
+              "Tyres": "G",
+              "Drivers": "Mika Salo",
+              "1": "7",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "10",
+              "5": "Ret",
+              "6": "7",
+              "7": "15",
+              "8": "8",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "8",
+              "12": "5",
+              "13": "13",
+              "14": "10",
+              "15": "12",
+              "16": "6",
+              "17": "5",
+              "Points": "5",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1996",
+              "Entrant": "Tyrrell Yamaha",
+              "Chassis": "Tyrrell 024",
+              "Engine": "Yamaha OX11A 3.0 V10",
+              "Tyres": "G",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "EUR",
+              "5": "SMR",
+              "6": "MON",
+              "7": "ESP",
+              "8": "CAN",
+              "9": "FRA",
+              "10": "GBR",
+              "11": "GER",
+              "12": "HUN",
+              "13": "BEL",
+              "14": "ITA",
+              "15": "POR",
+              "16": "JPN",
+              "17": "",
+              "Points": "5",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1996",
+              "Entrant": "Tyrrell Yamaha",
+              "Chassis": "Tyrrell 024",
+              "Engine": "Yamaha OX11A 3.0 V10",
+              "Tyres": "G",
+              "Drivers": "Ukyo Katayama",
+              "1": "11",
+              "2": "9",
+              "3": "Ret",
+              "4": "DSQ",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "Ret",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "7",
+              "13": "8",
+              "14": "10",
+              "15": "12",
+              "16": "Ret",
+              "17": "",
+              "Points": "5",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1996",
+              "Entrant": "Tyrrell Yamaha",
+              "Chassis": "Tyrrell 024",
+              "Engine": "Yamaha OX11A 3.0 V10",
+              "Tyres": "G",
+              "Drivers": "Mika Salo",
+              "1": "6",
+              "2": "5",
+              "3": "Ret",
+              "4": "DSQ",
+              "5": "Ret",
+              "6": "5",
+              "7": "DSQ",
+              "8": "Ret",
+              "9": "10",
+              "10": "7",
+              "11": "9",
+              "12": "Ret",
+              "13": "7",
+              "14": "Ret",
+              "15": "11",
+              "16": "Ret",
+              "17": "",
+              "Points": "5",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1997",
+              "Entrant": "Danka Arrows Yamaha",
+              "Chassis": "Arrows A18",
+              "Engine": "Yamaha OX11C/D 3.0 V10",
+              "Tyres": "B",
+              "Drivers": "",
+              "1": "AUS",
+              "2": "BRA",
+              "3": "ARG",
+              "4": "SMR",
+              "5": "MON",
+              "6": "ESP",
+              "7": "CAN",
+              "8": "FRA",
+              "9": "GBR",
+              "10": "GER",
+              "11": "HUN",
+              "12": "BEL",
+              "13": "ITA",
+              "14": "AUT",
+              "15": "LUX",
+              "16": "JPN",
+              "17": "EUR",
+              "Points": "9",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1997",
+              "Entrant": "Danka Arrows Yamaha",
+              "Chassis": "Arrows A18",
+              "Engine": "Yamaha OX11C/D 3.0 V10",
+              "Tyres": "B",
+              "Drivers": "Damon Hill",
+              "1": "DNS",
+              "2": "17",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "9",
+              "8": "12",
+              "9": "6",
+              "10": "8",
+              "11": "2",
+              "12": "13",
+              "13": "Ret",
+              "14": "7",
+              "15": "8",
+              "16": "12",
+              "17": "Ret",
+              "Points": "9",
+              "WCC": "8th"
+            },
+            {
+              "Year": "1997",
+              "Entrant": "Danka Arrows Yamaha",
+              "Chassis": "Arrows A18",
+              "Engine": "Yamaha OX11C/D 3.0 V10",
+              "Tyres": "B",
+              "Drivers": "Pedro Diniz",
+              "1": "10",
+              "2": "Ret",
+              "3": "Ret",
+              "4": "Ret",
+              "5": "Ret",
+              "6": "Ret",
+              "7": "8",
+              "8": "Ret",
+              "9": "Ret",
+              "10": "Ret",
+              "11": "Ret",
+              "12": "7",
+              "13": "Ret",
+              "14": "13",
+              "15": "5",
+              "16": "13",
+              "17": "Ret",
+              "Points": "9",
+              "WCC": "8th"
+            }
+          ],
+          "table_type": "wiki_table"
+        },
+        {
+          "headers": [
+            "Lola Yamaha Abt Formula E Team"
+          ],
+          "rows": [
+            {
+              "Lola Yamaha Abt Formula E Team": "2024-25"
+            },
+            {
+              "Lola Yamaha Abt Formula E Team": "2024-25"
+            },
+            {
+              "Lola Yamaha Abt Formula E Team": "2024-25"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  }
+]

@@ -1,14 +1,14 @@
-from typing import Any, Dict, List
+from typing import Any
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import Tag
 
-from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.debug_dumps import write_infobox_dump
+from scrapers.base.helpers.text_normalization import clean_infobox_text
+from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
+from scrapers.base.helpers.transformers import build_transformers
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.logging import get_logger
 from scrapers.base.options import ScraperOptions
-from scrapers.base.helpers.transformers import build_transformers
-from scrapers.base.helpers.transformer_utils import apply_transformers_with_factory
 from scrapers.drivers.infobox.parsers.career import InfoboxCareerParser
 from scrapers.drivers.infobox.parsers.cell import InfoboxCellParser
 from scrapers.drivers.infobox.parsers.general import InfoboxGeneralParser
@@ -16,10 +16,11 @@ from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.section_collector import InfoboxSectionCollector
 from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
+from scrapers.wiki.parsers.elements.infobox import InfoboxParser
 
 
-class DriverInfoboxScraper:
-    _IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
+class DriverInfoboxParser(InfoboxParser):
+    IGNORED_SECTIONS = {"Awards", "Medal record", "Signature"}
 
     def __init__(
         self,
@@ -55,14 +56,10 @@ class DriverInfoboxScraper:
         self._career_parser = InfoboxCareerParser(self._cell_parser)
         self._section_collector = InfoboxSectionCollector()
 
-    def parse(self, soup: BeautifulSoup) -> List[Any]:
+    def parse(self, element: Tag) -> list[Any]:
         self.logger.debug("Infobox parse start (run_id=%s)", self.run_id)
-        table = InfoboxHtmlParser.find_infobox(soup)
-        if table is None:
-            self.logger.debug("Infobox not found (run_id=%s)", self.run_id)
-            return []
-        rows_count = len(table.find_all("tr"))
-        sections = self._section_collector.collect(table)
+        rows_count = len(element.find_all("tr"))
+        sections = self._section_collector.collect(element)
         total_rows = sum(len(section.get("rows", [])) for section in sections)
         self.logger.debug(
             "Infobox detected %d row(s) and %d section(s) (run_id=%s)",
@@ -71,12 +68,12 @@ class DriverInfoboxScraper:
             self.run_id,
         )
         try:
-            parsed = self._parse_infobox_with_sections(table, sections)
+            parsed = self._parse_infobox_with_sections(element, sections)
         except Exception:
             if self.debug_dir is not None:
                 dump_path = write_infobox_dump(
                     self.debug_dir,
-                    html=str(table),
+                    html=str(element),
                     url=self.url,
                     run_id=self.run_id,
                 )
@@ -94,14 +91,19 @@ class DriverInfoboxScraper:
         )
         return [self._apply_transformers(parsed)]
 
-    def _apply_transformers(self, record: Dict[str, Any]) -> Any:
+    def _apply_transformers(self, record: dict[str, Any]) -> Any:
         return apply_transformers_with_factory(
-            self.transformers, record, self.record_factory, self.logger
+            self.transformers,
+            record,
+            self.record_factory,
+            self.logger,
         )
 
     def _parse_infobox_with_sections(
-        self, table: Tag, sections: List[Dict[str, Any]]
-    ) -> Dict[str, Any]:
+        self,
+        table: Tag,
+        sections: list[dict[str, Any]],
+    ) -> dict[str, Any]:
         general_section = sections[0] if sections else {"rows": []}
 
         parsed = {
@@ -115,10 +117,10 @@ class DriverInfoboxScraper:
 
         for section in sections[1:]:
             title = section.get("title") or ""
-            if title in self._IGNORED_SECTIONS:
+            if title in self.IGNORED_SECTIONS:
                 continue
             if title == "Championship titles":
-                # Parse championship titles and also check for major victories in full_data
+                # Parse championship titles and inspect full_data for major victories
                 champ_data = self._titles_parser.parse_titles(section["rows"])
                 parsed["championship_titles"] = champ_data
 
@@ -134,24 +136,25 @@ class DriverInfoboxScraper:
                         # Check if this contains "Major victories"
                         if "major victories" in full_data_text.lower():
                             # Parse major victories from this cell
-                            major_vics = self._titles_parser.parse_major_victories_from_full_data(
-                                full_data_cell
+                            parse_fn = (
+                                self._titles_parser.parse_major_victories_from_full_data
                             )
+                            major_vics = parse_fn(full_data_cell)
                             parsed["major_victories"].extend(major_vics)
                 continue
             if title == "Major victories":
                 parsed["major_victories"] = self._titles_parser.parse_titles(
-                    section["rows"]
+                    section["rows"],
                 )
                 continue
             if title.endswith("career"):
                 parsed["career"].append(
-                    self._career_parser.parse_section(title, section)
+                    self._career_parser.parse_section(title, section),
                 )
                 continue
             if title == "Previous series":
                 parsed["previous_series"] = self._titles_parser.parse_previous_series(
-                    section["rows"]
+                    section["rows"],
                 )
                 continue
 

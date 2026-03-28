@@ -1,6 +1,7 @@
 import json
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime
+from datetime import timezone
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
@@ -24,6 +25,7 @@ def write_infobox_dump(
 ) -> Path:
     debug_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    _ = url
     safe_run_id = run_id or "unknown"
     filename = f"infobox_{safe_run_id}_{timestamp}.html"
     dump_path = debug_dir / filename

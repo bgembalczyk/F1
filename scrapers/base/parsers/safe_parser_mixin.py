@@ -1,8 +1,9 @@
 """Base class for parsers with safe error handling."""
 
-from typing import Any, Callable, Optional, TypeVar
+from collections.abc import Callable
+from typing import Any
+from typing import TypeVar
 
-from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.errors import ScraperError
 
 _T = TypeVar("_T")
@@ -11,10 +12,11 @@ _T = TypeVar("_T")
 class SafeParserMixin:
     """
     Mixin class providing safe parsing functionality.
-    
+
     Classes that use this mixin should have:
     - self.error_handler: ErrorHandler instance
-    - self._url_provider: Optional[Callable[[], Optional[str]]] for getting the current URL
+    - self._url_provider: Optional[Callable[[], Optional[str]]] for
+          getting the current URL
     """
 
     def _safe_parse(
@@ -22,7 +24,7 @@ class SafeParserMixin:
         fn: Callable[..., _T],
         *args: Any,
         **kwargs: Any,
-    ) -> Optional[_T]:
+    ) -> _T | None:
         """
         Safely executes a parsing function, handling errors gracefully.
 
@@ -36,7 +38,8 @@ class SafeParserMixin:
             **kwargs: Keyword arguments to pass to the function.
 
         Returns:
-            The result of the function call, or None if an error occurred and was handled.
+            The result of the function call, or None if an error
+            occurred and was handled.
 
         Raises:
             Exception: If the error handler indicates the error should not be ignored.

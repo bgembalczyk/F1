@@ -1,24 +1,18 @@
 import re
 from typing import Any
-from typing import Dict
-from typing import List
 
 from bs4 import Tag
 
 from models.records.link import LinkRecord
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.time import parse_date_text
 from scrapers.base.infobox.schema import InfoboxSchema
+from scrapers.drivers.infobox.parsers.constants import DATE_PATTERN
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 
 
 class InfoboxGeneralParser:
-    # Date pattern for matching common date formats
-    _DATE_PATTERN = (
-        r"\b\d{1,2}\s+[A-Za-z]+\s+\d{4}|\b[A-Za-z]+\s+\d{1,2},\s*\d{4}|\b\d{4}\b"
-    )
-
     def __init__(
         self,
         *,
@@ -32,8 +26,8 @@ class InfoboxGeneralParser:
         self._schema = schema
         self._logger = logger
 
-    def parse(self, rows: List[Dict[str, Any]]) -> Dict[str, Any]:
-        data: Dict[str, Any] = {}
+    def parse(self, rows: list[dict[str, Any]]) -> dict[str, Any]:
+        data: dict[str, Any] = {}
         present_keys: set[str] = set()
         for row in rows:
             label = row.get("label")
@@ -60,7 +54,7 @@ class InfoboxGeneralParser:
         self._schema.log_missing(present_keys, logger=self._logger)
         return data
 
-    def _parse_date_place(self, cell: Tag) -> Dict[str, Any]:
+    def _parse_date_place(self, cell: Tag) -> dict[str, Any]:
         date_text = self._extract_date_text(cell)
         place = self._extract_place(cell)
         date_value = self._normalize_date_value(date_text)
@@ -77,7 +71,7 @@ class InfoboxGeneralParser:
 
         if bday_span:
             return clean_infobox_text(bday_span.get_text(strip=True)) or ""
-        elif dday_span:
+        if dday_span:
             return clean_infobox_text(dday_span.get_text(strip=True)) or ""
 
         # Try to find hidden span with ISO date format (style="display:none")
@@ -91,7 +85,8 @@ class InfoboxGeneralParser:
     def _extract_iso_date_from_hidden_span(self, cell: Tag) -> str | None:
         """Extract ISO date from hidden span elements."""
         hidden_spans = cell.find_all(
-            "span", style=lambda x: x and "display:none" in x
+            "span",
+            style=lambda x: x and "display:none" in x,
         )
         for span in hidden_spans:
             span_text = span.get_text(strip=True)
@@ -110,7 +105,7 @@ class InfoboxGeneralParser:
         filtered_parts = []
         for part in parts:
             # Skip parts that look like names (no date pattern and no numbers)
-            if not re.search(self._DATE_PATTERN, part):
+            if not re.search(DATE_PATTERN, part):
                 # This might be the original name, skip it
                 continue
             filtered_parts.append(part)
@@ -118,16 +113,15 @@ class InfoboxGeneralParser:
         date_text = filtered_parts[0] if filtered_parts else ""
         return re.sub(r"\s*\([^)]*\)", "", date_text).strip()
 
-    def _extract_place(self, cell: Tag) -> List[str | LinkRecord]:
+    def _extract_place(self, cell: Tag) -> list[str | LinkRecord]:
         """Extract place information from cell."""
         # Extract place from birthplace/deathplace element (div or span) if available
         place_span = cell.find(class_="birthplace") or cell.find(class_="deathplace")
         if place_span:
             return self._extract_place_from_span(place_span)
-        else:
-            return self._extract_place_from_text(cell)
+        return self._extract_place_from_text(cell)
 
-    def _extract_place_from_span(self, place_span: Tag) -> List[str | LinkRecord]:
+    def _extract_place_from_span(self, place_span: Tag) -> list[str | LinkRecord]:
         """Extract place from birthplace/deathplace span element."""
         place_text = clean_infobox_text(place_span.get_text(" ", strip=True)) or ""
 
@@ -135,7 +129,7 @@ class InfoboxGeneralParser:
             links = self._link_extractor.extract_links(place_span)
             if links:
                 # Build place from links and remaining text
-                place: List[str | LinkRecord] = []
+                place: list[str | LinkRecord] = []
                 remaining_text = place_text
 
                 # Remove link texts from remaining_text to find non-linked parts
@@ -155,14 +149,12 @@ class InfoboxGeneralParser:
                     ]
                     place.extend(remaining_parts)
                 return place
-            else:
-                # No links, just split by comma
-                return [p.strip() for p in place_text.split(",") if p.strip()]
-        else:
-            # No URL extraction, just split by comma
+            # No links, just split by comma
             return [p.strip() for p in place_text.split(",") if p.strip()]
+        # No URL extraction, just split by comma
+        return [p.strip() for p in place_text.split(",") if p.strip()]
 
-    def _extract_place_from_text(self, cell: Tag) -> List[str | LinkRecord]:
+    def _extract_place_from_text(self, cell: Tag) -> list[str | LinkRecord]:
         """Fallback method to extract place from cell text."""
         text = clean_infobox_text(cell.get_text("\n", strip=True)) or ""
         parts = [p.strip() for p in text.split("\n") if p.strip()]
@@ -170,7 +162,7 @@ class InfoboxGeneralParser:
         # Find the part with the date and take everything after it
         place_text = ""
         for i, part in enumerate(parts):
-            if re.search(self._DATE_PATTERN, part):
+            if re.search(DATE_PATTERN, part):
                 # Found date part, check if place is on same line or next lines
                 match = re.match(
                     r"^(?:[0-9]{1,2}\s+[A-Za-z]+\s+\d{4}|[A-Za-z]+\s+\d{1,2},\s*\d{4}|\d{4})(?:\s*\([^)]*\))?\s*(.*)$",
@@ -188,7 +180,7 @@ class InfoboxGeneralParser:
         place_text = re.sub(r"\s*\(aged\s+\d+\)", "", place_text, flags=re.IGNORECASE)
 
         place_parts = [p.strip() for p in place_text.split(",") if p.strip()]
-        place: List[str | LinkRecord] = place_parts
+        place: list[str | LinkRecord] = place_parts
 
         if self._include_urls and place_parts:
             # Extract links from cell (not from span since we don't have one)
@@ -202,26 +194,23 @@ class InfoboxGeneralParser:
 
     def _normalize_date_value(self, date_text: str) -> str | None:
         """Normalize date text to standard format."""
-        try:
-            parsed_date = parse_date_text(date_text or "")
-        except (TypeError, ValueError) as exc:
-            raise DomainParseError(
-                f"Nie udało się sparsować daty miejsca: {date_text!r}.",
-                cause=exc,
-            ) from exc
+        parsed_date = ErrorHandler.run_domain_parse(
+            lambda: parse_date_text(date_text or ""),
+            message=f"Nie udało się sparsować daty miejsca: {date_text!r}.",
+            parser_name=self.__class__.__name__,
+        )
 
         iso = parsed_date.iso
         if isinstance(iso, list):
             return iso[0] if iso else None
-        elif isinstance(iso, str):
+        if isinstance(iso, str):
             return iso
-        else:
-            return parsed_date.raw or date_text or None
+        return parsed_date.raw or date_text or None
 
-    def _parse_relations(self, cell: Tag) -> List[Dict[str, Any]]:
+    def _parse_relations(self, cell: Tag) -> list[dict[str, Any]]:
         links = self._link_extractor.extract_links(cell)
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        entries: List[Dict[str, Any]] = []
+        entries: list[dict[str, Any]] = []
         for link in links:
             relation = None
             pattern = rf"{re.escape(link.get('text') or '')}\s*\(([^)]+)\)"

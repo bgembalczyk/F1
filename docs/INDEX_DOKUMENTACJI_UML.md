@@ -6,6 +6,8 @@
 1. **[uml_current_process_flow.puml](uml_current_process_flow.puml)** - Diagram przepływu procesu (obecny stan)
 2. **[uml_current_class_structure.puml](uml_current_class_structure.puml)** - Struktura i hierarchia klas (obecny stan)
 3. **[uml_proposed_class_structure.puml](uml_proposed_class_structure.puml)** - Proponowana uporządkowana struktura klas
+4. **[uml_wiki_parser_hierarchy.puml](uml_wiki_parser_hierarchy.puml)** - Hierarchia klas WikiScrapera i WikiParserów
+5. **[uml_future_dataset_pipeline.puml](uml_future_dataset_pipeline.puml)** - Docelowa wizja iteracyjnego pipeline warstw 0/1 (Wikipedia → kolejne checkpointy → ML-ready)
 
 ### Dokumentacja README
 4. **[UML_DIAGRAMS_README.md](UML_DIAGRAMS_README.md)** - Kompleksowa dokumentacja w języku angielskim
@@ -34,8 +36,8 @@
 ## 📊 Szczegóły Diagramów
 
 ### 1. Diagram Przepływu Procesu (Current Process Flow)
-**Plik**: `uml_current_process_flow.puml`  
-**Rozmiar**: 167 linii, 4.7KB  
+**Plik**: `uml_current_process_flow.puml`
+**Rozmiar**: 167 linii, 4.7KB
 **Pokazuje**:
 - Jak dane przepływają przez system od początku do końca
 - Interakcje między komponentami
@@ -51,8 +53,8 @@
 ---
 
 ### 2. Struktura i Hierarchia Klas - Obecny Stan (Current Class Structure)
-**Plik**: `uml_current_class_structure.puml`  
-**Rozmiar**: 406 linii, 11KB  
+**Plik**: `uml_current_class_structure.puml`
+**Rozmiar**: 406 linii, 11KB
 **Pokazuje**:
 - Hierarchię bazowych scraperów (F1Scraper → F1ListScraper/F1TableScraper/CompositeScraper)
 - 30+ konkretnych implementacji scraperów
@@ -72,9 +74,28 @@
 
 ---
 
+### 4. Hierarchia WikiScraper i WikiParserów
+**Plik**: `uml_wiki_parser_hierarchy.puml`
+
+**Pokazuje**:
+- Klasę `WikiScraper` (pobiera HTML – jest scraperem; używa http_client z opcjonalnym cache)
+- Abstrakcyjną klasę bazową `WikiParser`
+- Parsery poziomu strony: `HeaderParser`, `BodyContentParser`, `CategoryLinksParser`, `ContentTextParser`
+- Parsery sekcji: `SectionParser` → `SubSectionParser` → `SubSubSectionParser` → `SubSubSubSectionParser`
+- Parsery elementów HTML: `InfoboxParser`, `ParagraphParser`, `FigureParser`, `ListParser`, `TableParser`, `NavBoxParser`, `ReferencesWrapParser`
+- Mixin `WikiElementParserMixin` dostarczający narzędzia elementarne do parserów sekcji
+
+**Zasady architektury** widoczne w diagramie:
+- Klasa pobierająca HTML = **Scraper** (http_client obsługuje cache)
+- Klasa obsługująca wiele scraperów = **DataExtractor**
+- Sekcje zaczynające się bez nagłówka noszą nazwę `(Top)`
+- Każdy poziom sekcji deleguje parsowanie do niższego poziomu
+
+---
+
 ### 3. Proponowana Struktura - Ulepszona (Proposed Class Structure)
-**Plik**: `uml_proposed_class_structure.puml`  
-**Rozmiar**: 629 linii, 16KB  
+**Plik**: `uml_proposed_class_structure.puml`
+**Rozmiar**: 629 linii, 16KB
 **Pokazuje**:
 - Architekturę zgodną z zasadami SOLID
 - Interfejsy dla wszystkich głównych komponentów
@@ -95,7 +116,7 @@
 ## 📚 Dokumentacja
 
 ### README po Angielsku
-**Plik**: `UML_DIAGRAMS_README.md`  
+**Plik**: `UML_DIAGRAMS_README.md`
 **Rozmiar**: 282 linie, 9.8KB
 
 **Zawiera**:
@@ -109,7 +130,7 @@
 ---
 
 ### README po Polsku
-**Plik**: `UML_DIAGRAMS_README_PL.md`  
+**Plik**: `UML_DIAGRAMS_README_PL.md`
 **Rozmiar**: 227 linii, 7.9KB
 
 **Zawiera**:
@@ -121,7 +142,7 @@
 ---
 
 ### Podsumowanie Analizy
-**Plik**: `ANALIZA_STRUKTURY_PODSUMOWANIE.md`  
+**Plik**: `ANALIZA_STRUKTURY_PODSUMOWANIE.md`
 **Rozmiar**: 275 linii, 8.0KB
 
 **Zawiera**:
@@ -254,9 +275,9 @@ Nowe klasy bazowe, migracja scraperów, usunięcie starych klas
 
 ## 👤 Informacje
 
-**Analiza wykonana**: 2026-01-08  
-**Narzędzie**: GitHub Copilot  
-**Format diagramów**: PlantUML  
+**Analiza wykonana**: 2026-01-08
+**Narzędzie**: GitHub Copilot
+**Format diagramów**: PlantUML
 **Języki dokumentacji**: English, Polski
 
 ---

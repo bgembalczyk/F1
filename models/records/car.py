@@ -2,8 +2,9 @@ from typing import Any
 
 from models.records.link import LINK_SCHEMA
 from models.records.link import LinkRecord
-from validation.records import RecordSchema
-from validation.records import BaseDomainRecordValidator, ValidationIssue
+from validation.issue import ValidationIssue
+from validation.schemas import RecordSchema
+from validation.validator_base import RecordValidator
 
 
 class CarRecord(LinkRecord, total=False):
@@ -19,4 +20,4 @@ CAR_SCHEMA = RecordSchema(
 
 
 def validate_car_record(record: dict[str, Any]) -> list[ValidationIssue]:
-    return BaseDomainRecordValidator.validate_schema(record, CAR_SCHEMA)
+    return RecordValidator.validate_schema(record, CAR_SCHEMA)

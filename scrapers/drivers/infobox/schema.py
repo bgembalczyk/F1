@@ -1,4 +1,5 @@
-from scrapers.base.infobox.dsl import InfoboxSchemaDSL, field
+from scrapers.base.infobox.dsl import InfoboxSchemaDSL
+from scrapers.base.infobox.dsl import field
 
 DRIVER_GENERAL_SCHEMA = InfoboxSchemaDSL(
     name="driver.general",

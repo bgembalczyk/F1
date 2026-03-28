@@ -1,69 +1,25 @@
-from pathlib import Path
-from typing import Any, Dict, List, Optional
-
-from bs4 import BeautifulSoup
-
-from scrapers.base.composite_scraper import (
-    CompositeScraper,
-    CompositeScraperChildren,
-)
-from scrapers.base.options import ScraperOptions
-from scrapers.base.source_adapter import IterableSourceAdapter
+from complete_extractor.base import CompleteExtractorBase
+from complete_extractor.domain_config import CompleteExtractorDomainConfig
 from scrapers.drivers.list_scraper import F1DriversListScraper
 from scrapers.drivers.single_scraper import SingleDriverScraper
+from scrapers.wiki.component_metadata import COMPLETE_SCRAPER_KIND
+from scrapers.wiki.component_metadata import build_component_metadata
 
 
-class CompleteDriverScraper(CompositeScraper):
+class CompleteDriverDataExtractor(CompleteExtractorBase):
+    COMPONENT_METADATA = build_component_metadata(
+        domain="drivers",
+        kind=COMPLETE_SCRAPER_KIND,
+    )
     url = F1DriversListScraper.CONFIG.url
-
-    def __init__(
-        self,
-        *,
-        options: ScraperOptions | None = None,
-    ) -> None:
-        options = options or ScraperOptions()
-
-        # Ten scraper zawsze potrzebuje URL-i (bo potem dociąga szczegóły)
-        options.include_urls = True
-
-        super().__init__(options=options)
-
-    def build_children(self) -> CompositeScraperChildren:
-        list_scraper = F1DriversListScraper(
-            options=ScraperOptions(
-                include_urls=True,
-                policy=self.http_policy,
-                source_adapter=self.source_adapter,
-            )
-        )
-        single_scraper = SingleDriverScraper(
-            options=ScraperOptions(
-                policy=self.http_policy,
-                source_adapter=self.source_adapter,
-            )
-        )
-        drivers_adapter = IterableSourceAdapter(list_scraper.fetch)
-
-        return CompositeScraperChildren(
-            list_scraper=list_scraper,
-            single_scraper=single_scraper,
-            records_adapter=drivers_adapter,
-        )
-
-    def get_detail_url(self, record: Dict[str, Any]) -> Optional[str]:
-        driver_link = record.get("driver")
-        if isinstance(driver_link, dict):
-            return driver_link.get("url")
-        return None
-
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
-        raise NotImplementedError("Use fetch() bezpośrednio dla pełnego scrapingu")
+    DOMAIN_CONFIG = CompleteExtractorDomainConfig(
+        list_scraper_cls=F1DriversListScraper,
+        single_scraper_cls=SingleDriverScraper,
+        detail_url_field_path="driver.url",
+    )
 
 
 if __name__ == "__main__":
-    from scrapers.drivers.helpers.export import export_complete_drivers
+    from scrapers.base.deprecated_entrypoint import run_deprecated_entrypoint
 
-    export_complete_drivers(
-        output_dir=Path("../../data/wiki/drivers/complete_drivers"),
-        include_urls=True,
-    )
+    run_deprecated_entrypoint()

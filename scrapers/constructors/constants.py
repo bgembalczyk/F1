@@ -1,3 +1,10 @@
+from datetime import datetime
+from datetime import timezone
+
+from scrapers.base.constants.shared_headers import SHARED_PODIUMS_HEADER
+from scrapers.base.constants.shared_headers import SHARED_POINTS_HEADER
+from scrapers.base.constants.shared_headers import SHARED_SEASONS_HEADER
+
 CONSTRUCTOR_NAME_HEADER = "Constructor"
 CONSTRUCTOR_ENGINE_HEADER = "Engine"
 CONSTRUCTOR_LICENSED_IN_HEADER = "Licensed in"
@@ -8,14 +15,16 @@ CONSTRUCTOR_WCC_HEADER = "WCC"  # World Constructors' Championship.
 CONSTRUCTOR_WDC_HEADER = "WDC"  # World Drivers' Championship.
 CONSTRUCTOR_ANTECEDENT_TEAMS_HEADER = "Antecedent teams"  # Poprzednie zespoły.
 
-CONSTRUCTOR_SEASONS_HEADER = "Seasons"
+CONSTRUCTOR_SEASONS_HEADER = SHARED_SEASONS_HEADER
 CONSTRUCTOR_RACES_ENTERED_HEADER = "Races Entered"
 CONSTRUCTOR_RACES_STARTED_HEADER = "Races Started"
 CONSTRUCTOR_WINS_HEADER = "Wins"
-CONSTRUCTOR_POINTS_HEADER = "Points"
+CONSTRUCTOR_POINTS_HEADER = SHARED_POINTS_HEADER
 CONSTRUCTOR_POLES_HEADER = "Poles"
 CONSTRUCTOR_FASTEST_LAPS_HEADER = "FL"  # Fastest laps.
-CONSTRUCTOR_PODIUMS_HEADER = "Podiums"
+CONSTRUCTOR_PODIUMS_HEADER = SHARED_PODIUMS_HEADER
+
+CURRENT_YEAR = datetime.now(tz=timezone.utc).year
 
 CURRENT_CONSTRUCTORS_EXPECTED_HEADERS = [
     CONSTRUCTOR_NAME_HEADER,

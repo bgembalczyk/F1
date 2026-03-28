@@ -1,11 +1,13 @@
 import logging
-from typing import Optional, Sequence
+from collections.abc import Sequence
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4 import Tag
 
 from scrapers.base.helpers.html_utils import find_section_elements
 from scrapers.base.helpers.tables.header import is_repeated_header_row
 from scrapers.base.helpers.text import clean_wiki_text
+from scrapers.base.table.constants import HEADER_ROWS_WITH_SUBHEADERS
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.row import TableRow
 
@@ -21,10 +23,11 @@ class HtmlTableParser:
     def __init__(
         self,
         *,
-        section_id: Optional[str] = None,
-        fragment: Optional[str] = None,
+        section_id: str | None = None,
+        fragment: str | None = None,
         expected_headers: Sequence[str] | None = None,
         table_css_class: str = "wikitable",
+        section_domain: str | None = None,
         strip_lang_suffix: bool = True,
         strip_refs: bool = True,
         normalize_dashes: bool = True,
@@ -33,12 +36,13 @@ class HtmlTableParser:
         self.fragment = fragment
         self.expected_headers = expected_headers
         self.table_css_class = table_css_class
+        self.section_domain = section_domain
         self.strip_lang_suffix = strip_lang_suffix
         self.strip_refs = strip_refs
         self.normalize_dashes = normalize_dashes
 
     def parse(self, soup: BeautifulSoup) -> list[TableRow]:
-        table = self._find_table(soup)
+        table = self.find_table(soup)
         return self.parse_table(table)
 
     def parse_table(self, table: Tag) -> list[TableRow]:
@@ -61,14 +65,14 @@ class HtmlTableParser:
                 )
                 for c in cells
             ]
-            if self._is_footer_row(cells, cleaned_cells, headers):
+            if self.is_footer_row(cells, cleaned_cells, headers):
                 logger.debug("Pomijam wiersz stopki w tabeli.")
                 continue
             if is_repeated_header_row(cleaned_cells, headers):
                 logger.debug("Pomijam powtórzony wiersz nagłówka w tabeli.")
                 continue
 
-            expanded_cells = self._expand_row_cells(
+            expanded_cells = self.expand_row_cells(
                 cells,
                 headers,
                 pending_rowspans,
@@ -79,15 +83,19 @@ class HtmlTableParser:
                     cells=expanded_cells,
                     raw_tr=tr,
                     header_cells=header_cells,
-                )
+                ),
             )
 
         return records
 
-    def _find_table(self, soup: BeautifulSoup) -> Tag:
+    def find_table(self, soup: BeautifulSoup) -> Tag:
         section_id = self.section_id or self._normalize_fragment(self.fragment)
         candidate_tables = find_section_elements(
-            soup, section_id, ["table"], class_=self.table_css_class
+            soup,
+            section_id,
+            ["table"],
+            class_=self.table_css_class,
+            domain=self.section_domain,
         )
 
         for table in candidate_tables:
@@ -99,7 +107,8 @@ class HtmlTableParser:
             if self._headers_match(headers):
                 return table
 
-        raise RuntimeError("Nie znaleziono pasującej tabeli.")
+        msg = "Nie znaleziono pasującej tabeli."
+        raise RuntimeError(msg)
 
     def _headers_match(self, headers: Sequence[str]) -> bool:
         if not self.expected_headers:
@@ -110,14 +119,14 @@ class HtmlTableParser:
         return all(h in header_set for h in expected)
 
     @staticmethod
-    def _normalize_fragment(fragment: Optional[str]) -> Optional[str]:
+    def _normalize_fragment(fragment: str | None) -> str | None:
         if not fragment:
             return None
         normalized = fragment.lstrip("#").strip()
         return normalized or None
 
     @staticmethod
-    def _is_footer_row(
+    def is_footer_row(
         cells: Sequence[Tag],
         cleaned_cells: Sequence[str],
         headers: Sequence[str],
@@ -137,7 +146,7 @@ class HtmlTableParser:
             return True
 
     @staticmethod
-    def _expand_row_cells(
+    def expand_row_cells(
         cells: Sequence[Tag],
         headers: Sequence[str],
         pending_rowspans: dict[int, dict[str, object]],
@@ -147,7 +156,10 @@ class HtmlTableParser:
 
         for cell in cells:
             col_index = HtmlTableParser._consume_pending(
-                expanded, col_index, headers, pending_rowspans
+                expanded,
+                col_index,
+                headers,
+                pending_rowspans,
             )
             if col_index >= len(headers):
                 break
@@ -163,7 +175,7 @@ class HtmlTableParser:
             except ValueError:
                 rowspan_value = 1
 
-            for offset in range(colspan_value):
+            for _offset in range(colspan_value):
                 if col_index >= len(headers):
                     break
                 expanded.append(cell)
@@ -185,7 +197,10 @@ class HtmlTableParser:
         headers: Sequence[str],
         pending_rowspans: dict[int, dict[str, object]],
     ) -> int:
-        """Konsumuje oczekujące rowspany dla kolumny. Zwraca zaktualizowany col_index."""
+        """Konsumuje oczekujące rowspany dla kolumny.
+
+        Zwraca zaktualizowany ``col_index``.
+        """
         while col_index < len(headers) and col_index in pending_rowspans:
             pending = pending_rowspans[col_index]
             cell = pending["cell"]
@@ -202,51 +217,39 @@ class HtmlTableParser:
             col_index += 1
         return col_index
 
-    def _extract_headers(self, table: Tag) -> tuple[list[str], list[Tag], int]:
-        rows = table.find_all("tr")
-        if not rows:
-            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
-
-        first_row = rows[0]
-        first_cells = first_row.find_all(["th", "td"])
-        if not first_cells:
-            raise RuntimeError("Nie znaleziono wiersza nagłówkowego w tabeli.")
-
-        first_headers = [
+    def _clean_cells(self, cells: Sequence[Tag]) -> list[str]:
+        return [
             clean_wiki_text(
                 c.get_text(" ", strip=True),
                 strip_lang_suffix=self.strip_lang_suffix,
                 strip_refs=self.strip_refs,
                 normalize_dashes=self.normalize_dashes,
             )
-            for c in first_cells
+            for c in cells
         ]
 
-        if len(rows) < 2:
-            return first_headers, first_cells, 1
+    @staticmethod
+    def _has_multirow_header(
+        first_cells: Sequence[Tag],
+        second_cells: Sequence[Tag],
+    ) -> bool:
+        return (
+            bool(second_cells)
+            and all(cell.name == "th" for cell in second_cells)
+            and any(int(cell.get("colspan") or 1) > 1 for cell in first_cells)
+        )
 
-        second_row = rows[1]
-        second_cells = second_row.find_all(["th", "td"])
-        if not second_cells or not all(cell.name == "th" for cell in second_cells):
-            return first_headers, first_cells, 1
-
-        if not any(int(cell.get("colspan") or 1) > 1 for cell in first_cells):
-            return first_headers, first_cells, 1
-
-        second_headers = [
-            clean_wiki_text(
-                c.get_text(" ", strip=True),
-                strip_lang_suffix=self.strip_lang_suffix,
-                strip_refs=self.strip_refs,
-                normalize_dashes=self.normalize_dashes,
-            )
-            for c in second_cells
-        ]
-
+    @staticmethod
+    def _combine_header_rows(
+        first_cells: Sequence[Tag],
+        first_headers: Sequence[str],
+        second_cells: Sequence[Tag],
+        second_headers: Sequence[str],
+    ) -> tuple[list[str], list[Tag]]:
         combined: list[str] = []
         combined_cells: list[Tag] = []
         second_index = 0
-        for cell, header in zip(first_cells, first_headers):
+        for cell, header in zip(first_cells, first_headers, strict=False):
             try:
                 colspan_value = int(cell.get("colspan") or 1)
             except ValueError:
@@ -270,4 +273,89 @@ class HtmlTableParser:
                     combined_cells.append(cell)
                 second_index += 1
 
-        return combined, combined_cells, 2
+        return combined, combined_cells
+
+    def clean_cells(self, cells: Sequence[Tag]) -> list[str]:
+        return self._clean_cells(cells)
+
+    @staticmethod
+    def has_multirow_header(
+        first_cells: Sequence[Tag],
+        second_cells: Sequence[Tag],
+    ) -> bool:
+        return HtmlTableParser._has_multirow_header(first_cells, second_cells)
+
+    @staticmethod
+    def combine_header_rows(
+        first_cells: Sequence[Tag],
+        first_headers: Sequence[str],
+        second_cells: Sequence[Tag],
+        second_headers: Sequence[str],
+    ) -> tuple[list[str], list[Tag]]:
+        return HtmlTableParser._combine_header_rows(
+            first_cells,
+            first_headers,
+            second_cells,
+            second_headers,
+        )
+
+    def _extract_headers(self, table: Tag) -> tuple[list[str], list[Tag], int]:
+        rows = table.find_all("tr")
+        if not rows:
+            msg = "Nie znaleziono wiersza nagłówkowego w tabeli."
+            raise RuntimeError(msg)
+
+        first_row = rows[0]
+        first_cells = first_row.find_all(["th", "td"])
+        if not first_cells:
+            msg = "Nie znaleziono wiersza nagłówkowego w tabeli."
+            raise RuntimeError(msg)
+
+        first_headers = self._clean_cells(first_cells)
+
+        if len(rows) < HEADER_ROWS_WITH_SUBHEADERS:
+            headers, header_cells = self._drop_blank_headers(
+                first_headers,
+                list(first_cells),
+            )
+            return headers, header_cells, 1
+
+        second_row = rows[1]
+        second_cells = second_row.find_all(["th", "td"])
+        if not self._has_multirow_header(first_cells, second_cells):
+            headers, header_cells = self._drop_blank_headers(
+                first_headers,
+                list(first_cells),
+            )
+            return headers, header_cells, 1
+
+        second_headers = self._clean_cells(second_cells)
+        combined, combined_cells = self._combine_header_rows(
+            first_cells,
+            first_headers,
+            second_cells,
+            second_headers,
+        )
+        headers, header_cells = self._drop_blank_headers(combined, combined_cells)
+        return headers, header_cells, HEADER_ROWS_WITH_SUBHEADERS
+
+    @staticmethod
+    def _drop_blank_headers(
+        headers: Sequence[str],
+        cells: list[Tag],
+    ) -> tuple[list[str], list[Tag]]:
+        """Remove header/cell pairs where the header text is blank or whitespace-only.
+
+        Wikipedia standings tables sometimes contain empty <th> cells as visual
+        separators between groups of race columns.  These cells have no
+        corresponding data cell in body rows, so keeping them shifts every
+        subsequent column by one position.  Dropping them restores correct
+        alignment.
+        """
+        filtered_headers: list[str] = []
+        filtered_cells: list[Tag] = []
+        for header, cell in zip(headers, cells, strict=False):
+            if header.strip():
+                filtered_headers.append(header)
+                filtered_cells.append(cell)
+        return filtered_headers, filtered_cells

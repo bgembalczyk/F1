@@ -20,7 +20,7 @@ def test_exporter_normalizes_keys_and_drops_empty_fields(tmp_path) -> None:
         {"driver_name": "Lewis", "wins": 103},
     ]
     assert {frozenset(item.keys()) for item in normalized} == {
-        frozenset(["driver_name", "wins"])
+        frozenset(["driver_name", "wins"]),
     }
 
 
@@ -57,5 +57,5 @@ def test_exporter_json_matches_for_list_and_result(tmp_path) -> None:
     result.to_json(output_result)
 
     assert output_list.read_text(encoding="utf-8") == output_result.read_text(
-        encoding="utf-8"
+        encoding="utf-8",
     )

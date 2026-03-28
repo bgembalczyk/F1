@@ -1532,6 +1532,57 @@
         {
           "entrant": [
             {
+              "name": "Brian Raubenheimer",
+              "title_sponsors": []
+            }
+          ],
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Lotus",
+              "url": "https://en.wikipedia.org/wiki/Team_Lotus"
+            },
+            "engine_constructor": {
+              "text": "Ford",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            }
+          },
+          "chassis": [
+            {
+              "text": "20",
+              "url": "https://en.wikipedia.org/wiki/Lotus_20"
+            }
+          ],
+          "engine": {
+            "model": {
+              "text": "Ford 109E",
+              "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company"
+            },
+            "displacement_l": 1.5,
+            "type": "L4",
+            "layout": "L",
+            "cylinders": 4
+          },
+          "tyre": [
+            {
+              "text": "Dunlop",
+              "url": "https://en.wikipedia.org/wiki/Dunlop_Tyres"
+            }
+          ],
+          "race_drivers": [
+            {
+              "driver": {
+                "text": "Brian Raubenheimer",
+                "url": "https://en.wikipedia.org/wiki/Brian_Raubenheimer"
+              },
+              "rounds": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "entrant": [
+            {
               "name": "Honda R & D Company",
               "title_sponsors": [
                 {
@@ -5985,6 +6036,34 @@
               {
                 "position": "DNPQ",
                 "background": "Did not qualify"
+              }
+            ]
+          },
+          "mon": null,
+          "bel": null,
+          "fra": null,
+          "gbr": null,
+          "ned": null,
+          "ger": null,
+          "ita": null,
+          "usa": null,
+          "mex": null,
+          "points": 0.0
+        },
+        {
+          "pos": null,
+          "driver": {
+            "text": "Brian Raubenheimer",
+            "url": "https://en.wikipedia.org/wiki/Brian_Raubenheimer"
+          },
+          "rsa": {
+            "round": {
+              "text": "RSA",
+              "url": "https://en.wikipedia.org/wiki/1965_South_African_Grand_Prix"
+            },
+            "results": [
+              {
+                "position": "WD"
               }
             ]
           },

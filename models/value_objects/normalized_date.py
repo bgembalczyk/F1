@@ -1,10 +1,10 @@
+from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
-from typing import Mapping
 
+from models.value_objects.base import ValueObject
 from models.value_objects.helpers import normalize_iso
 from models.value_objects.helpers import normalize_text
-from models.value_objects.base import ValueObject
 
 
 @dataclass(frozen=True)

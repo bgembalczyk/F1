@@ -2418,7 +2418,10 @@
             }
           },
           "chassis": [
-            "C"
+            {
+              "text": "C",
+              "url": "https://en.wikipedia.org/wiki/Connaught_C"
+            }
           ],
           "engine": {
             "model": {

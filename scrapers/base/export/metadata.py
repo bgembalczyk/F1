@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Any, Dict
+from typing import Any
 
 from scrapers.base.results import ScrapeResult
 
@@ -19,7 +19,7 @@ class ExportMetadata:
             records_count=len(result.data),
         )
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         return {
             "source_url": self.source_url,
             "timestamp": self.timestamp.isoformat(),

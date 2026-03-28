@@ -1,4 +1,5 @@
-from scrapers.base.ABC import F1Scraper
+# ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
+from scrapers.base.abc import ABCScraper
 from scrapers.base.options import ScraperOptions
 
 
@@ -22,7 +23,7 @@ class KeepOnlyPostProcessor:
         return [record for record in records if record.get("keep")]
 
 
-class DummyScraper(F1Scraper):
+class DummyScraper(ABCScraper):
     url = "https://example.com"
 
     def _parse_soup(self, soup):

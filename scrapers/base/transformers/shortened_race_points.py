@@ -14,12 +14,12 @@ class ShortenedRacePointsTransformer(RecordTransformer):
                     {
                         "seasons": seasons,
                         "race_length_points": [],
-                    }
+                    },
                 )
                 index[key] = len(grouped) - 1
 
             grouped[index[key]]["race_length_points"].append(
-                {key: value for key, value in record.items() if key != "seasons"}
+                {key: value for key, value in record.items() if key != "seasons"},
             )
 
         return grouped

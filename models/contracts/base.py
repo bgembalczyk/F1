@@ -1,5 +1,19 @@
-from dataclasses import dataclass, field, fields
-from typing import Any, Iterator, Mapping, MutableMapping
+from collections.abc import Iterator
+from collections.abc import Mapping
+from collections.abc import MutableMapping
+from dataclasses import dataclass
+from dataclasses import field
+from dataclasses import fields
+from typing import Any
+from typing import Protocol
+
+
+class RecordContract(Protocol):
+    @classmethod
+    def can_handle(cls, record: Mapping[str, Any]) -> bool: ...
+
+    @classmethod
+    def from_record(cls, record: Mapping[str, Any]) -> "DataContract": ...
 
 
 @dataclass(slots=True)
@@ -7,14 +21,21 @@ class DataContract(MutableMapping[str, Any]):
     _extra: dict[str, Any] = field(default_factory=dict, init=False, repr=False)
 
     @classmethod
+    def can_handle(cls, record: Mapping[str, Any]) -> bool:
+        del record
+        return False
+
+    @classmethod
     def from_record(cls, record: Mapping[str, Any]) -> "DataContract":
         field_names = {field.name for field in fields(cls) if field.init}
         field_names.discard("_extra")
         kwargs = {key: value for key, value in record.items() if key in field_names}
         instance = cls(**kwargs)  # type: ignore[arg-type]
-        instance._extra.update(
-            {key: value for key, value in record.items() if key not in field_names}
-        )
+        extra_items = {
+            key: value for key, value in record.items() if key not in field_names
+        }
+        for key, value in extra_items.items():
+            instance[key] = value
         return instance
 
     def _field_names(self) -> set[str]:

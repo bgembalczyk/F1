@@ -1,13 +1,17 @@
 import re
+from collections.abc import Callable
+from collections.abc import Iterable
+from typing import TYPE_CHECKING
 from typing import Any
-from typing import Callable, TypeVar, Iterable
-from typing import Dict
+from typing import TypeVar
 
 from scrapers.base.constants import ANGLE_RE
 from scrapers.base.constants import CONFIG_TYPE_RE
 from scrapers.base.constants import MAX_CYLINDERS_RE
 from scrapers.base.constants import RANGE_RE
-from scrapers.base.table.columns.context import ColumnContext
+
+if TYPE_CHECKING:
+    from scrapers.base.table.columns.context import ColumnContext
 
 T = TypeVar("T")
 
@@ -56,7 +60,10 @@ def parse_numeric_value(value: str | None) -> float | None:
 
 
 def parse_int_from_text(text: str) -> int | None:
-    """Wyciąga pierwszą sensowną liczbę całkowitą z tekstu (ignoruje przecinki 1,234)."""
+    """Wyciąga pierwszą sensowną liczbę całkowitą z tekstu.
+
+    Ignoruje przecinki, np. 1,234.
+    """
     return parse_number(
         text,
         pattern=r"[-+]?\d[\d,]*",
@@ -66,7 +73,10 @@ def parse_int_from_text(text: str) -> int | None:
 
 
 def parse_float_from_text(text: str) -> float | None:
-    """Wyciąga pierwszą sensowną liczbę zmiennoprzecinkową z tekstu (ignoruje przecinki 1,234.5)."""
+    """Wyciąga pierwszą sensowną liczbę zmiennoprzecinkową z tekstu.
+
+    Ignoruje przecinki, np. 1,234.5.
+    """
     return parse_number(
         text,
         pattern=r"[-+]?\d[\d,]*\.?\d*",
@@ -86,7 +96,7 @@ def parse_number_with_unit(text: str | None, *, unit: str) -> float | None:
     )
 
 
-def parse_configuration(ctx: ColumnContext) -> Dict[str, Any] | None:
+def parse_configuration(ctx: "ColumnContext") -> dict[str, Any] | None:
     text = ctx.clean_text or ""
     if not text:
         return None
@@ -103,7 +113,10 @@ def parse_configuration(ctx: ColumnContext) -> Dict[str, Any] | None:
     angle = None
     angle_match = ANGLE_RE.search(base_text)
     if angle_match:
-        angle = {"value": parse_numeric_value(angle_match.group("value")), "unit": "deg"}
+        angle = {
+            "value": parse_numeric_value(angle_match.group("value")),
+            "unit": "deg",
+        }
         base_text = ANGLE_RE.sub("", base_text).strip()
 
     type_match = CONFIG_TYPE_RE.search(base_text)
@@ -133,7 +146,10 @@ def parse_numeric_range(text: str) -> dict[str, Any] | None:
 
 
 def parse_unit_value(
-    text: str, unit: str, *, output_unit: str | None = None
+    text: str,
+    unit: str,
+    *,
+    output_unit: str | None = None,
 ) -> dict[str, Any] | None:
     match = re.search(
         rf"([-+]?\d[\d,]*(?:\.\d+)?)\s*{re.escape(unit)}\b",
@@ -149,10 +165,16 @@ def parse_unit_value(
 
 
 def parse_range_with_unit(
-    text: str, unit: str, *, output_unit: str | None = None
+    text: str,
+    unit: str,
+    *,
+    output_unit: str | None = None,
 ) -> dict[str, Any] | None:
     match = re.search(
-        rf"(?P<min>[-+]?\d[\d,]*(?:\.\d+)?)\s*[–-]\s*(?P<max>[-+]?\d[\d,]*(?:\.\d+)?)\s*{re.escape(unit)}\b",
+        (
+            rf"(?P<min>[-+]?\d[\d,]*(?:\.\d+)?)\s*[-\u2013]\s*"
+            rf"(?P<max>[-+]?\d[\d,]*(?:\.\d+)?)\s*{re.escape(unit)}\b"
+        ),
         text,
         flags=re.IGNORECASE,
     )

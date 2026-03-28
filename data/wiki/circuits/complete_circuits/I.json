@@ -1,0 +1,2132 @@
+[
+  {
+    "name": {
+      "list": [
+        "Indianapolis Motor Speedway"
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway",
+    "circuit_status": "former",
+    "type": "Race circuit",
+    "direction": "Clockwise",
+    "grands_prix": [
+      {
+        "text": "Indianapolis 500",
+        "url": "https://en.wikipedia.org/wiki/Indianapolis_500"
+      },
+      {
+        "text": "United States Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/United_States_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1950,
+        "url": "https://en.wikipedia.org/wiki/1950_Formula_One_World_Championship"
+      },
+      {
+        "year": 1951,
+        "url": "https://en.wikipedia.org/wiki/1951_Formula_One_World_Championship"
+      },
+      {
+        "year": 1952,
+        "url": "https://en.wikipedia.org/wiki/1952_Formula_One_World_Championship"
+      },
+      {
+        "year": 1953,
+        "url": "https://en.wikipedia.org/wiki/1953_Formula_One_World_Championship"
+      },
+      {
+        "year": 1954,
+        "url": "https://en.wikipedia.org/wiki/1954_Formula_One_World_Championship"
+      },
+      {
+        "year": 1955,
+        "url": "https://en.wikipedia.org/wiki/1955_Formula_One_World_Championship"
+      },
+      {
+        "year": 1956,
+        "url": "https://en.wikipedia.org/wiki/1956_Formula_One_World_Championship"
+      },
+      {
+        "year": 1957,
+        "url": "https://en.wikipedia.org/wiki/1957_Formula_One_World_Championship"
+      },
+      {
+        "year": 1958,
+        "url": "https://en.wikipedia.org/wiki/1958_Formula_One_World_Championship"
+      },
+      {
+        "year": 1959,
+        "url": "https://en.wikipedia.org/wiki/1959_Formula_One_World_Championship"
+      },
+      {
+        "year": 1960,
+        "url": "https://en.wikipedia.org/wiki/1960_Formula_One_World_Championship"
+      },
+      {
+        "year": 2000,
+        "url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship"
+      },
+      {
+        "year": 2001,
+        "url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship"
+      },
+      {
+        "year": 2002,
+        "url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship"
+      },
+      {
+        "year": 2003,
+        "url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship"
+      },
+      {
+        "year": 2004,
+        "url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship"
+      },
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      },
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 19,
+    "location": {
+      "places": [
+        {
+          "text": "Speedway",
+          "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
+        },
+        {
+          "text": "Speedway, Indiana",
+          "url": "https://en.wikipedia.org/wiki/Speedway,_Indiana"
+        },
+        {
+          "text": "United States",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        }
+      ],
+      "coordinates": {
+        "lat": 39.79833,
+        "lon": -86.23278
+      }
+    },
+    "fia_grade": 1,
+    "history": [
+      {
+        "event": "opened",
+        "date": "1909"
+      },
+      {
+        "event": "reopened",
+        "date": "1909"
+      },
+      {
+        "event": "broke_ground",
+        "date": "1909"
+      },
+      {
+        "event": "broke_ground",
+        "date": "1909"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Rectangular Oval Track",
+        "years": "1909–present",
+        "length_km": 4.023,
+        "length_mi": 2.5,
+        "turns": 4,
+        "surface": {
+          "values": [
+            "Asphalt",
+            "Brick"
+          ],
+          "text": "Asphalt and brick (start-finish line)",
+          "note": "start-finish line"
+        },
+        "banking": {
+          "value": 9.2,
+          "unit": "deg",
+          "note": "Turns:  Straights: 0°"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "1996 Indianapolis 500",
+              "url": "https://en.wikipedia.org/wiki/1996_Indianapolis_500"
+            },
+            "driver": {
+              "text": "Eddie Cheever",
+              "url": "https://en.wikipedia.org/wiki/Eddie_Cheever"
+            },
+            "vehicle": {
+              "text": "Lola T95/00",
+              "url": "https://en.wikipedia.org/wiki/Lola_T95/00"
+            },
+            "time": 38.119,
+            "year": "1996",
+            "series": {
+              "text": "IndyCar",
+              "url": "https://en.wikipedia.org/wiki/IndyCar_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "1992 Indianapolis 500",
+              "url": "https://en.wikipedia.org/wiki/1992_Indianapolis_500"
+            },
+            "driver": {
+              "text": "Michael Andretti",
+              "url": "https://en.wikipedia.org/wiki/Michael_Andretti"
+            },
+            "vehicle": {
+              "text": "Lola T92/00",
+              "url": "https://en.wikipedia.org/wiki/Lola_T92/00"
+            },
+            "time": 39.281,
+            "year": "1992",
+            "series": {
+              "text": "CART",
+              "url": "https://en.wikipedia.org/wiki/Championship_Auto_Racing_Teams"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 Freedom 100",
+              "url": "https://en.wikipedia.org/wiki/2017_Indy_Lights"
+            },
+            "driver": {
+              "text": "Santiago Urrutia",
+              "url": "https://en.wikipedia.org/wiki/Santiago_Urrutia"
+            },
+            "vehicle": {
+              "text": "Dallara IL-15",
+              "url": "https://en.wikipedia.org/wiki/Dallara_IL-15"
+            },
+            "time": 45.4307,
+            "year": "2017",
+            "series": {
+              "text": "Indy Lights",
+              "url": "https://en.wikipedia.org/wiki/Indy_NXT"
+            }
+          },
+          {
+            "event": {
+              "text": "2018 Brickyard 400",
+              "url": "https://en.wikipedia.org/wiki/2018_Brickyard_400"
+            },
+            "driver": {
+              "text": "Kevin Harvick",
+              "url": "https://en.wikipedia.org/wiki/Kevin_Harvick"
+            },
+            "vehicle": {
+              "text": "Ford Fusion",
+              "url": "https://en.wikipedia.org/wiki/Ford_Fusion_(Americas)#NASCAR"
+            },
+            "time": 48.638,
+            "year": "2018",
+            "series": {
+              "text": "NASCAR Cup",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_Cup_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2018 Lilly Diabetes 250",
+              "url": "https://en.wikipedia.org/wiki/2018_Lilly_Diabetes_250"
+            },
+            "driver": {
+              "text": "Tyler Reddick",
+              "url": "https://en.wikipedia.org/wiki/Tyler_Reddick"
+            },
+            "vehicle": {
+              "text": "Chevrolet Camaro SS",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(sixth_generation)#NASCAR"
+            },
+            "time": 52.878,
+            "year": "2018",
+            "series": {
+              "text": "NASCAR Xfinity",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_Xfinity_Series"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Grand Prix Road Course",
+        "years": "2014–present",
+        "length_km": 3.925,
+        "length_mi": 2.439,
+        "turns": 14,
+        "surface": {
+          "values": [
+            "Asphalt",
+            "Brick"
+          ],
+          "text": "Asphalt and brick (start-finish line)",
+          "note": "start-finish line"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2017 IndyCar Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2017_IndyCar_Grand_Prix"
+            },
+            "driver": {
+              "text": "Josef Newgarden",
+              "url": "https://en.wikipedia.org/wiki/Josef_Newgarden"
+            },
+            "vehicle": {
+              "text": "Dallara DW12",
+              "url": "https://en.wikipedia.org/wiki/Dallara_DW12"
+            },
+            "time": 69.3888,
+            "year": "2017",
+            "series": {
+              "text": "IndyCar",
+              "url": "https://en.wikipedia.org/wiki/IndyCar_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 IMSA Battle on the Bricks",
+              "url": "https://en.wikipedia.org/wiki/2023_IMSA_Battle_on_the_Bricks"
+            },
+            "driver": {
+              "text": "Matt Campbell",
+              "url": "https://en.wikipedia.org/wiki/Matt_Campbell_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Porsche 963",
+              "url": "https://en.wikipedia.org/wiki/Porsche_963"
+            },
+            "time": 75.524,
+            "year": "2023",
+            "series": {
+              "text": "LMDh",
+              "url": "https://en.wikipedia.org/wiki/LMDh"
+            }
+          },
+          {
+            "event": {
+              "text": "2019 Indy Lights Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2019_Indy_Lights"
+            },
+            "driver": {
+              "text": "Oliver Askew",
+              "url": "https://en.wikipedia.org/wiki/Oliver_Askew"
+            },
+            "vehicle": {
+              "text": "Dallara IL-15",
+              "url": "https://en.wikipedia.org/wiki/Dallara_IL-15"
+            },
+            "time": 75.6953,
+            "year": "2019",
+            "series": {
+              "text": "Indy Lights",
+              "url": "https://en.wikipedia.org/wiki/Indy_NXT"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 IMSA Battle on the Bricks",
+              "url": "https://en.wikipedia.org/wiki/2023_IMSA_Battle_on_the_Bricks"
+            },
+            "driver": {
+              "text": "Mikkel Jensen",
+              "url": "https://en.wikipedia.org/wiki/Mikkel_Jensen_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Oreca 07",
+              "url": "https://en.wikipedia.org/wiki/Oreca_07"
+            },
+            "time": 76.619,
+            "year": "2023",
+            "series": {
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 IMSA Battle on the Bricks",
+              "url": "https://en.wikipedia.org/wiki/2025_IMSA_Battle_on_the_Bricks"
+            },
+            "driver": {
+              "text": "Ross Gunn",
+              "url": "https://en.wikipedia.org/wiki/Ross_Gunn_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Aston Martin Valkyrie AMR-LMH",
+              "url": "https://en.wikipedia.org/wiki/Aston_Martin_Valkyrie_AMR-LMH"
+            },
+            "time": 77.369,
+            "year": "2025",
+            "series": {
+              "text": "LMH",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Hypercar"
+            }
+          },
+          {
+            "event": {
+              "text": "2019 Indy Pro 2000 Grand Prix of Indianapolis",
+              "url": "https://en.wikipedia.org/wiki/2019_Indy_Pro_2000_Championship"
+            },
+            "driver": {
+              "text": "Kyle Kirkwood",
+              "url": "https://en.wikipedia.org/wiki/Kyle_Kirkwood"
+            },
+            "vehicle": {
+              "text": "Tatuus PM-18",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014#USF2000_and_Pro_Mazda"
+            },
+            "time": 79.3332,
+            "year": "2019",
+            "series": {
+              "text": "Indy Pro 2000",
+              "url": "https://en.wikipedia.org/wiki/USF_Pro_2000_Championship"
+            }
+          },
+          {
+            "event": {
+              "text": "2014 Brickyard Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2014_Brickyard_Grand_Prix"
+            },
+            "driver": {
+              "text": "Ryan Dalziel",
+              "url": "https://en.wikipedia.org/wiki/Ryan_Dalziel"
+            },
+            "vehicle": {
+              "text": "Riley MkXXVI",
+              "url": "https://en.wikipedia.org/wiki/Riley_MkXI"
+            },
+            "time": 79.55,
+            "year": "2014",
+            "series": {
+              "text": "DP",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype"
+            }
+          },
+          {
+            "event": {
+              "text": "2014 Brickyard Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2014_Brickyard_Grand_Prix"
+            },
+            "driver": {
+              "text": "Jack Hawksworth",
+              "url": "https://en.wikipedia.org/wiki/Jack_Hawksworth"
+            },
+            "vehicle": {
+              "text": "Oreca FLM09",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge#Oreca_FLM09"
+            },
+            "time": 81.087,
+            "year": "2014",
+            "series": {
+              "text": "LMPC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype_Challenge"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 IMSA Battle on the Bricks",
+              "url": "https://en.wikipedia.org/wiki/2023_IMSA_Battle_on_the_Bricks"
+            },
+            "driver": {
+              "text": "Wayne Boyd",
+              "url": "https://en.wikipedia.org/wiki/Wayne_Boyd"
+            },
+            "vehicle": {
+              "text": "Duqueine D-08",
+              "url": "https://en.wikipedia.org/wiki/Duqueine_D-08"
+            },
+            "time": 81.42,
+            "year": "2023",
+            "series": {
+              "text": "LMP3",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP3"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 Indianapolis Atlantic Championship round",
+              "url": "https://en.wikipedia.org/wiki/2017_Atlantic_Championship"
+            },
+            "driver": {
+              "text": "Keith Grant",
+              "url": "https://en.wikipedia.org/wiki/Keith_Grant"
+            },
+            "vehicle": {
+              "text": "Swift 016.a",
+              "url": "https://en.wikipedia.org/wiki/Swift_016.a"
+            },
+            "time": 81.999,
+            "year": "2017",
+            "series": {
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
+            }
+          },
+          {
+            "event": {
+              "text": "2022 Indianapolis 8 Hours",
+              "url": "https://en.wikipedia.org/wiki/2022_Indianapolis_8_Hours"
+            },
+            "driver": {
+              "text": "Raffaele Marciello",
+              "url": "https://en.wikipedia.org/wiki/Raffaele_Marciello"
+            },
+            "vehicle": {
+              "text": "Mercedes-AMG GT3 Evo",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_GT#AMG_GT3_Evo_(2020–present)"
+            },
+            "time": 82.439,
+            "year": "2022",
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Indianapolis FR Americas round",
+              "url": "https://en.wikipedia.org/wiki/2025_Formula_Regional_Americas_Championship"
+            },
+            "driver": {
+              "text": "Nicolas Ambiado"
+            },
+            "vehicle": {
+              "text": "Ligier JS F3",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS_F3"
+            },
+            "time": 82.611,
+            "year": "2025",
+            "series": {
+              "text": "Formula Regional",
+              "url": "https://en.wikipedia.org/wiki/Formula_Regional"
+            }
+          },
+          {
+            "event": {
+              "text": "2014 Brickyard Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2014_Brickyard_Grand_Prix"
+            },
+            "driver": {
+              "text": "Giancarlo Fisichella",
+              "url": "https://en.wikipedia.org/wiki/Giancarlo_Fisichella"
+            },
+            "vehicle": {
+              "text": "Ferrari 458 Italia GT2",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_458#458_Italia_GT2"
+            },
+            "time": 83.248,
+            "year": "2014",
+            "series": {
+              "text": "LM GTE",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Indianapolis Trans-Am round"
+            },
+            "driver": {
+              "text": "Matthew Brabham",
+              "url": "https://en.wikipedia.org/wiki/Matthew_Brabham"
+            },
+            "vehicle": {
+              "text": "Ford Mustang Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang_(sixth_generation)#Motorsport"
+            },
+            "time": 84.515,
+            "year": "2023",
+            "series": {
+              "text": "TA1",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series#TA"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Indianapolis Ferrari Challenge North America round"
+            },
+            "driver": {
+              "text": "Massimo Perrina"
+            },
+            "vehicle": {
+              "text": "Ferrari 296 Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_296#296_Challenge"
+            },
+            "time": 84.561,
+            "year": "2025",
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            }
+          },
+          {
+            "event": {
+              "text": "2019 USF2000 Grand Prix of Indianapolis",
+              "url": "https://en.wikipedia.org/wiki/2019_U.S._F2000_National_Championship"
+            },
+            "driver": {
+              "text": "Braden Eves",
+              "url": "https://en.wikipedia.org/wiki/Braden_Eves"
+            },
+            "vehicle": {
+              "text": "Tatuus USF-17",
+              "url": "https://en.wikipedia.org/wiki/Tatuus_F4-T014#USF2000_and_Pro_Mazda"
+            },
+            "time": 84.744,
+            "year": "2019",
+            "series": {
+              "text": "US F2000",
+              "url": "https://en.wikipedia.org/wiki/USF2000_Championship"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Indianapolis Lamborghini Super Trofeo North America round",
+              "url": "https://en.wikipedia.org/wiki/2023_Lamborghini_Super_Trofeo_North_America"
+            },
+            "driver": {
+              "text": "Ryan Norman",
+              "url": "https://en.wikipedia.org/wiki/Ryan_Norman"
+            },
+            "vehicle": {
+              "text": "Lamborghini Huracán Super Trofeo Evo2",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Hurac%C3%A1n#Huracán_LP_620-2_Super_Trofeo_EVO2_(2022–present)"
+            },
+            "time": 84.845,
+            "year": "2023",
+            "series": {
+              "text": "Lamborghini Super Trofeo",
+              "url": "https://en.wikipedia.org/wiki/Lamborghini_Super_Trofeo"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Indianapolis Porsche Carrera Cup North America round",
+              "url": "https://en.wikipedia.org/wiki/2023_Porsche_Carrera_Cup_North_America"
+            },
+            "driver": {
+              "text": "Riley Dickinson",
+              "url": "https://en.wikipedia.org/wiki/Riley_Dickinson"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (992) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
+            },
+            "time": 85.516,
+            "year": "2023",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Indianapolis McLaren Trophy America round",
+              "url": "https://en.wikipedia.org/wiki/2025_McLaren_Trophy_America"
+            },
+            "driver": {
+              "text": "Jesse Lazare"
+            },
+            "vehicle": {
+              "text": "McLaren Artura Trophy",
+              "url": "https://en.wikipedia.org/wiki/McLaren_Artura#Trophy"
+            },
+            "time": 86.643,
+            "year": "2025",
+            "series": {
+              "text": "McLaren Trophy",
+              "url": "https://en.wikipedia.org/wiki/McLaren_Artura#Trophy"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 Indianapolis GT America round",
+              "url": "https://en.wikipedia.org/wiki/2024_GT_America_Series"
+            },
+            "driver": {
+              "text": "Dan Knox"
+            },
+            "vehicle": {
+              "text": "Mercedes-AMG GT2",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-AMG_GT#AMG_GT2_(2023–present)"
+            },
+            "time": 87.599,
+            "year": "2024",
+            "series": {
+              "text": "SRO GT2",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT2"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Verizon 200 at the Brickyard",
+              "url": "https://en.wikipedia.org/wiki/2023_Verizon_200_at_the_Brickyard"
+            },
+            "driver": {
+              "text": "Chase Elliott",
+              "url": "https://en.wikipedia.org/wiki/Chase_Elliott"
+            },
+            "vehicle": {
+              "text": "Chevrolet Camaro ZL1",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(sixth_generation)#Motorsports"
+            },
+            "time": 89.168,
+            "year": "2023",
+            "series": {
+              "text": "NASCAR Cup",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_Cup_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Indianapolis Motor Speedway 240",
+              "url": "https://en.wikipedia.org/wiki/2023_Michelin_Pilot_Challenge"
+            },
+            "driver": {
+              "text": "Jesse Lazare"
+            },
+            "vehicle": {
+              "text": "McLaren Artura GT4",
+              "url": "https://en.wikipedia.org/wiki/McLaren_Artura#GT4"
+            },
+            "time": 90.035,
+            "year": "2023",
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            }
+          },
+          {
+            "event": {
+              "text": "2020 Pennzoil 150",
+              "url": "https://en.wikipedia.org/wiki/2020_Pennzoil_150"
+            },
+            "driver": {
+              "text": "Austin Cindric",
+              "url": "https://en.wikipedia.org/wiki/Austin_Cindric"
+            },
+            "vehicle": {
+              "text": "Ford Mustang GT NASCAR",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang_(sixth_generation)#Motorsport"
+            },
+            "time": 90.522,
+            "year": "2020",
+            "series": {
+              "text": "NASCAR Xfinity",
+              "url": "https://en.wikipedia.org/wiki/NASCAR_Xfinity_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 Indianapolis F2000 Championship round",
+              "url": "https://en.wikipedia.org/wiki/2017_F2000_Championship_Series"
+            },
+            "driver": {
+              "text": "John LaRue",
+              "url": "https://en.wikipedia.org/wiki/John_LaRue"
+            },
+            "vehicle": {
+              "text": "Citation F2000"
+            },
+            "time": 90.535,
+            "year": "2017",
+            "series": {
+              "text": "Formula 2000",
+              "url": "https://en.wikipedia.org/wiki/F2000_Championship_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 Indianapolis F4 United States round",
+              "url": "https://en.wikipedia.org/wiki/2017_Formula_4_United_States_Championship"
+            },
+            "driver": {
+              "text": "Kyle Kirkwood",
+              "url": "https://en.wikipedia.org/wiki/Kyle_Kirkwood"
+            },
+            "vehicle": {
+              "text": "Crawford F4-16",
+              "url": "https://en.wikipedia.org/wiki/Ligier_Automotive#Models"
+            },
+            "time": 91.331,
+            "year": "2017",
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Indianapolis Motor Speedway 120",
+              "url": "https://en.wikipedia.org/wiki/2025_Michelin_Pilot_Challenge"
+            },
+            "driver": {
+              "text": "Tyler Gonzalez",
+              "url": "https://en.wikipedia.org/wiki/Tyler_Gonzalez"
+            },
+            "vehicle": {
+              "text": "Cupra León VZ TCR",
+              "url": "https://en.wikipedia.org/wiki/SEAT_Le%C3%B3n#León_Cup_Racer_and_León_TCR"
+            },
+            "time": 91.473,
+            "year": "2025",
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 Indianapolis Trans-Am round",
+              "url": "https://en.wikipedia.org/wiki/2017_Trans-Am_Series"
+            },
+            "driver": {
+              "text": "Dillon Machavern"
+            },
+            "vehicle": {
+              "text": "Ford Mustang Trans-Am",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang_(sixth_generation)#Motorsport"
+            },
+            "time": 91.557,
+            "year": "2017",
+            "series": {
+              "text": "TA2",
+              "url": "https://en.wikipedia.org/wiki/Trans-Am_Series#TA2"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 Indianapolis Mustang Challenge round",
+              "url": "https://en.wikipedia.org/wiki/2024_IMSA_Ford_Mustang_Challenge"
+            },
+            "driver": {
+              "text": "Tyler Maxson",
+              "url": "https://en.wikipedia.org/wiki/Tyler_Maxson"
+            },
+            "vehicle": {
+              "text": "Ford Mustang Dark Horse R",
+              "url": "https://en.wikipedia.org/wiki/Ford_Mustang_(seventh_generation)#Dark_Horse_R"
+            },
+            "time": 94.927,
+            "year": "2024",
+            "series": {
+              "text": "Mustang Challenge",
+              "url": "https://en.wikipedia.org/wiki/IMSA_Ford_Mustang_Challenge"
+            }
+          },
+          {
+            "event": {
+              "text": "2017 Indianapolis F1600 Championship round"
+            },
+            "driver": {
+              "text": "David Osborne"
+            },
+            "vehicle": {
+              "text": "Mygale SJ 2012",
+              "url": "https://en.wikipedia.org/wiki/Mygale#Racing_cars"
+            },
+            "time": 95.031,
+            "year": "2017",
+            "series": {
+              "text": "Formula 1600",
+              "url": "https://en.wikipedia.org/wiki/F1600_Championship_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 Indianapolis Toyota GR Cup North America round"
+            },
+            "driver": {
+              "text": "Spike Kohlhecker"
+            },
+            "vehicle": {
+              "text": "Toyota GR86",
+              "url": "https://en.wikipedia.org/wiki/Toyota_86#Motorsport"
+            },
+            "time": 99.748,
+            "year": "2025",
+            "series": {
+              "text": "Toyota GR Cup",
+              "url": "https://en.wikipedia.org/wiki/Toyota_86#Toyota_Gazoo_Racing_GR86/BRZ_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2020 Indianapolis Mazda MX-5 Cup round"
+            },
+            "driver": {
+              "text": "Michael Carter"
+            },
+            "vehicle": {
+              "text": "Mazda MX-5 (ND)",
+              "url": "https://en.wikipedia.org/wiki/Mazda_MX-5_(ND)"
+            },
+            "time": 100.8962,
+            "year": "2020",
+            "series": {
+              "text": "Mazda MX-5 Cup",
+              "url": "https://en.wikipedia.org/wiki/Global_MX-5_Cup"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Modified Motorcycle Course",
+        "years": "2014–present",
+        "length_km": 4.17,
+        "length_mi": 2.591,
+        "turns": 16,
+        "surface": {
+          "values": [
+            "Asphalt",
+            "Brick"
+          ],
+          "text": "Asphalt and brick"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2015 Indianapolis motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2015_Indianapolis_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Marc Márquez",
+              "url": "https://en.wikipedia.org/wiki/Marc_M%C3%A1rquez"
+            },
+            "vehicle": {
+              "text": "Honda RC213V",
+              "url": "https://en.wikipedia.org/wiki/Honda_RC213V"
+            },
+            "time": 92.625,
+            "year": "2015",
+            "series": {
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
+            }
+          },
+          {
+            "event": {
+              "text": "2021 SCCA National Championship Runoffs Formula Atlantic round",
+              "url": "https://en.wikipedia.org/wiki/SCCA_National_Championship_Runoffs"
+            },
+            "driver": {
+              "text": "James French",
+              "url": "https://en.wikipedia.org/wiki/James_French_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Ralt RT41",
+              "url": "https://en.wikipedia.org/wiki/Ralt_RT-40"
+            },
+            "time": 90.65,
+            "year": "2021",
+            "series": {
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
+            }
+          },
+          {
+            "event": {
+              "text": "2021 Indianapolis 8 Hours",
+              "url": "https://en.wikipedia.org/wiki/2021_Indianapolis_8_Hours"
+            },
+            "driver": {
+              "text": "Alessandro Pier Guidi",
+              "url": "https://en.wikipedia.org/wiki/Alessandro_Pier_Guidi"
+            },
+            "vehicle": {
+              "text": "Ferrari 488 GT3 Evo 2020",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_488#488_GT3"
+            },
+            "time": 94.089,
+            "year": "2021",
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            }
+          },
+          {
+            "event": {
+              "text": "2021 Indianapolis Porsche Carrera Cup North America round",
+              "url": "https://en.wikipedia.org/wiki/2021_Porsche_Carrera_Cup_North_America"
+            },
+            "driver": {
+              "text": "Parker Thompson",
+              "url": "https://en.wikipedia.org/wiki/Parker_Thompson"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (992) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#992_GT3_Cup_(2021–)"
+            },
+            "time": 97.294,
+            "year": "2021",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2021 Indianapolis GT America round",
+              "url": "https://en.wikipedia.org/wiki/2021_GT_America_Series"
+            },
+            "driver": {
+              "text": "Elias Sabo"
+            },
+            "vehicle": {
+              "text": "Audi R8 LMS GT2",
+              "url": "https://en.wikipedia.org/wiki/Audi_R8_(Type_4S)#R8_LMS_(GT2)"
+            },
+            "time": 100.519,
+            "year": "2021",
+            "series": {
+              "text": "SRO GT2",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT2"
+            }
+          },
+          {
+            "event": {
+              "text": "2021 Indianapolis 8 Hours",
+              "url": "https://en.wikipedia.org/wiki/2021_Indianapolis_8_Hours"
+            },
+            "driver": {
+              "text": "Andrew Davis"
+            },
+            "vehicle": {
+              "text": "Aston Martin Vantage GT4",
+              "url": "https://en.wikipedia.org/wiki/Aston_Martin_Vantage_(2018)#GT4"
+            },
+            "time": 102.675,
+            "year": "2021",
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            }
+          },
+          {
+            "event": {
+              "text": "2021 Indianapolis Skip Barber Formula Series round",
+              "url": "https://en.wikipedia.org/wiki/Skip_Barber_Racing_School"
+            },
+            "driver": {
+              "text": "Nathan Byrd",
+              "url": "https://en.wikipedia.org/wiki/Nathan_Byrd"
+            },
+            "vehicle": {
+              "text": "Mygale M14-F4",
+              "url": "https://en.wikipedia.org/wiki/Mygale_M14-F4"
+            },
+            "time": 104.967,
+            "year": "2021",
+            "series": {
+              "text": "Formula 4",
+              "url": "https://en.wikipedia.org/wiki/Formula_4"
+            }
+          },
+          {
+            "event": {
+              "text": "2021 Indianapolis TC America Series round",
+              "url": "https://en.wikipedia.org/wiki/2021_TC_America_Series"
+            },
+            "driver": {
+              "text": "Jacob Ruud"
+            },
+            "vehicle": {
+              "text": "BMW M2 ClubSport Racing",
+              "url": "https://en.wikipedia.org/wiki/BMW_M2#BMW_M2_CS_Racing"
+            },
+            "time": 108.351,
+            "year": "2021",
+            "series": {
+              "text": "TCX",
+              "url": "https://en.wikipedia.org/wiki/TC_America_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2021 SCCA National Championship Runoffs Spec Miata round",
+              "url": "https://en.wikipedia.org/wiki/SCCA_National_Championship_Runoffs"
+            },
+            "driver": {
+              "text": "Brian Henderson",
+              "url": "https://en.wikipedia.org/wiki/Brian_Henderson_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Mazda Miata",
+              "url": "https://en.wikipedia.org/wiki/Mazda_MX-5_(NB)"
+            },
+            "time": 118.837,
+            "year": "2021",
+            "series": {
+              "text": "Spec Miata",
+              "url": "https://en.wikipedia.org/wiki/Spec_Miata"
+            }
+          },
+          {
+            "event": {
+              "text": "2020 MotoAmerica Superbikes at the Brickyard",
+              "url": "https://en.wikipedia.org/wiki/2020_MotoAmerica_season"
+            },
+            "driver": {
+              "text": "Lorenzo Zanetti",
+              "url": "https://en.wikipedia.org/wiki/Lorenzo_Zanetti"
+            },
+            "vehicle": {
+              "text": "Ducati Panigale V4 R",
+              "url": "https://en.wikipedia.org/wiki/Ducati_Panigale_V4#Panigale_V4_R"
+            },
+            "time": 96.825,
+            "year": "2020",
+            "series": {
+              "text": "Superbike",
+              "url": "https://en.wikipedia.org/wiki/Superbike_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "2014 Indianapolis motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2014_Indianapolis_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Mika Kallio",
+              "url": "https://en.wikipedia.org/wiki/Mika_Kallio"
+            },
+            "vehicle": {
+              "text": "Kalex Moto2",
+              "url": "https://en.wikipedia.org/wiki/Kalex"
+            },
+            "time": 97.275,
+            "year": "2014",
+            "series": {
+              "text": "Moto2",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Moto2_class"
+            }
+          },
+          {
+            "event": {
+              "text": "2015 MotoAmerica Superbike Championship Indy",
+              "url": "https://en.wikipedia.org/wiki/MotoAmerica"
+            },
+            "driver": {
+              "text": "Joe Roberts",
+              "url": "https://en.wikipedia.org/wiki/Joe_Roberts_(motorcyclist)"
+            },
+            "vehicle": {
+              "text": "Yamaha YZF-R6",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R6"
+            },
+            "time": 100.064,
+            "year": "2015",
+            "series": {
+              "text": "Supersport",
+              "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
+            }
+          },
+          {
+            "event": {
+              "text": "2014 Indianapolis motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2014_Indianapolis_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Álex Rins",
+              "url": "https://en.wikipedia.org/wiki/%C3%81lex_Rins"
+            },
+            "vehicle": {
+              "text": "Honda NSF250RW",
+              "url": "https://en.wikipedia.org/wiki/Honda_NSF250R"
+            },
+            "time": 100.8,
+            "year": "2014",
+            "series": {
+              "text": "Moto3",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Moto3_class"
+            }
+          },
+          {
+            "event": {
+              "text": "2020 MotoAmerica Superbikes at the Brickyard",
+              "url": "https://en.wikipedia.org/wiki/2020_MotoAmerica_season"
+            },
+            "driver": {
+              "text": "Rocco Landers"
+            },
+            "vehicle": {
+              "text": "Suzuki SV650",
+              "url": "https://en.wikipedia.org/wiki/Suzuki_SV650"
+            },
+            "time": 105.144,
+            "year": "2020",
+            "series": {
+              "text": "Twins Cup",
+              "url": "https://en.wikipedia.org/wiki/MotoAmerica#Twins_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2020 MotoAmerica Superbikes at the Brickyard",
+              "url": "https://en.wikipedia.org/wiki/2020_MotoAmerica_season"
+            },
+            "driver": {
+              "text": "Rocco Landers"
+            },
+            "vehicle": {
+              "text": "Kawasaki Ninja 400",
+              "url": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_400"
+            },
+            "time": 110.489,
+            "year": "2020",
+            "series": {
+              "text": "Supersport 300",
+              "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "SCCA Runoffs Road Course",
+        "years": "2014–present",
+        "length_km": 4.166,
+        "length_mi": 2.589,
+        "turns": 15,
+        "surface": {
+          "values": [
+            "Asphalt",
+            "Brick"
+          ],
+          "text": "Asphalt and brick (start-finish line)",
+          "note": "start-finish line"
+        },
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "James French",
+              "url": "https://en.wikipedia.org/wiki/James_French_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Ralt RT41",
+              "url": "https://en.wikipedia.org/wiki/Ralt_RT-40"
+            },
+            "time": 90.65,
+            "year": "2021",
+            "series": {
+              "text": "Formula Atlantic",
+              "url": "https://en.wikipedia.org/wiki/Formula_Atlantic"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Original Motorcycle Course",
+        "years": "2008–2013",
+        "length_km": 4.218,
+        "length_mi": 2.621,
+        "turns": 16,
+        "surface": {
+          "values": [
+            "Asphalt",
+            "Brick"
+          ],
+          "text": "Asphalt and brick"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2013 Indianapolis motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2013_Indianapolis_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Marc Márquez",
+              "url": "https://en.wikipedia.org/wiki/Marc_M%C3%A1rquez"
+            },
+            "vehicle": {
+              "text": "Honda RC213V",
+              "url": "https://en.wikipedia.org/wiki/Honda_RC213V"
+            },
+            "time": 99.044,
+            "year": "2013",
+            "series": {
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
+            }
+          },
+          {
+            "event": {
+              "text": "2012 Indianapolis motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2012_Indianapolis_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Marc Márquez",
+              "url": "https://en.wikipedia.org/wiki/Marc_M%C3%A1rquez"
+            },
+            "vehicle": {
+              "text": "Suter MMXII",
+              "url": "https://en.wikipedia.org/wiki/Eskil_Suter"
+            },
+            "time": 103.304,
+            "year": "2012",
+            "series": {
+              "text": "Moto2",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Moto2_class"
+            }
+          },
+          {
+            "event": {
+              "text": "2009 Indianapolis motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2009_Indianapolis_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Marco Simoncelli",
+              "url": "https://en.wikipedia.org/wiki/Marco_Simoncelli"
+            },
+            "vehicle": {
+              "text": "Gilera RSA 250",
+              "url": "https://en.wikipedia.org/wiki/Gilera#Motorcycles"
+            },
+            "time": 104.72,
+            "year": "2009",
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "2013 Indianapolis motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2013_Indianapolis_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Maverick Viñales",
+              "url": "https://en.wikipedia.org/wiki/Maverick_Vi%C3%B1ales"
+            },
+            "vehicle": {
+              "text": "KTM RC250GP",
+              "url": "https://en.wikipedia.org/wiki/KTM_RC250GP"
+            },
+            "time": 107.433,
+            "year": "2013",
+            "series": {
+              "text": "Moto3",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Moto3_class"
+            }
+          },
+          {
+            "event": {
+              "text": "2011 Indianapolis motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2011_Indianapolis_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Nicolás Terol",
+              "url": "https://en.wikipedia.org/wiki/Nicol%C3%A1s_Terol"
+            },
+            "vehicle": {
+              "text": "Aprilia RSA 125",
+              "url": "https://en.wikipedia.org/wiki/Aprilia_RS125R"
+            },
+            "time": 108.38,
+            "year": "2011",
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Grand Prix Road Course",
+        "years": "2008–2013",
+        "length_km": 4.078,
+        "length_mi": 2.534,
+        "turns": 13,
+        "surface": {
+          "values": [
+            "Asphalt",
+            "Brick"
+          ],
+          "text": "Asphalt and brick (start-finish line)",
+          "note": "start-finish line"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2013 Brickyard Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2013_Brickyard_Grand_Prix"
+            },
+            "driver": {
+              "text": "Scott Pruett",
+              "url": "https://en.wikipedia.org/wiki/Scott_Pruett"
+            },
+            "vehicle": {
+              "text": "Riley MkXXVI",
+              "url": "https://en.wikipedia.org/wiki/Riley_MkXI"
+            },
+            "time": 82.191,
+            "year": "2013",
+            "series": {
+              "text": "DP",
+              "url": "https://en.wikipedia.org/wiki/Daytona_Prototype"
+            }
+          },
+          {
+            "event": {
+              "text": "2013 Brickyard Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2013_Brickyard_Grand_Prix"
+            },
+            "driver": {
+              "text": "Patrick Long",
+              "url": "https://en.wikipedia.org/wiki/Patrick_Long"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (997) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#997_GT3_Cup_(2005–2008)"
+            },
+            "time": 88.858,
+            "year": "2013",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2013 Brickyard Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2013_Brickyard_Grand_Prix"
+            },
+            "driver": {
+              "text": "Joel Miller",
+              "url": "https://en.wikipedia.org/wiki/Joel_Miller_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Mazda6 GX (Prep 2)",
+              "url": "https://en.wikipedia.org/wiki/Mazda6_(GJ)#Motorsport"
+            },
+            "time": 93.999,
+            "year": "2013",
+            "series": {
+              "text": "Group GX",
+              "url": "https://en.wikipedia.org/wiki/Rolex_Sports_Car_Series"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Grand Prix Road Course",
+        "years": "2000–2007",
+        "length_km": 4.192,
+        "length_mi": 2.605,
+        "turns": 13,
+        "surface": {
+          "values": [
+            "Asphalt",
+            "Brick"
+          ],
+          "text": "Asphalt and brick (start-finish line)",
+          "note": "start-finish line"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2004 United States Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2004_United_States_Grand_Prix"
+            },
+            "driver": {
+              "text": "Rubens Barrichello",
+              "url": "https://en.wikipedia.org/wiki/Rubens_Barrichello"
+            },
+            "vehicle": {
+              "text": "Ferrari F2004",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_F2004"
+            },
+            "time": 70.399,
+            "year": "2004",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "2005 Grand Prix of Indianapolis",
+              "url": "https://en.wikipedia.org/wiki/2005_Infiniti_Pro_Series"
+            },
+            "driver": {
+              "text": "Marco Andretti",
+              "url": "https://en.wikipedia.org/wiki/Marco_Andretti"
+            },
+            "vehicle": {
+              "text": "Dallara IPS",
+              "url": "https://en.wikipedia.org/wiki/Dallara_IPS"
+            },
+            "time": 85.911,
+            "year": "2005",
+            "series": {
+              "text": "Indy Pro Series",
+              "url": "https://en.wikipedia.org/wiki/Indy_NXT"
+            }
+          },
+          {
+            "event": {
+              "text": "2005 2nd Indianapolis Porsche Supercup round",
+              "url": "https://en.wikipedia.org/wiki/2005_Porsche_Supercup"
+            },
+            "driver": {
+              "text": "David Saelens",
+              "url": "https://en.wikipedia.org/wiki/David_Saelens"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (997) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#997_GT3_Cup_(2005–2008)"
+            },
+            "time": 95.723,
+            "year": "2005",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2004 Indianapolis Formula BMW USA round",
+              "url": "https://en.wikipedia.org/wiki/2004_Formula_BMW_USA_season"
+            },
+            "driver": {
+              "text": "Matt Jaskol",
+              "url": "https://en.wikipedia.org/wiki/Matt_Jaskol"
+            },
+            "vehicle": {
+              "text": "Mygale FB02",
+              "url": "https://en.wikipedia.org/wiki/Mygale_FB02"
+            },
+            "time": 97.082,
+            "year": "2004",
+            "series": {
+              "text": "Formula BMW",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+            }
+          },
+          {
+            "event": {
+              "text": "2000 Indianapolis Ferrari Challenge North America round",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge#Ferrari_Challenge_North_America"
+            },
+            "driver": {
+              "text": "Lewis Bakes"
+            },
+            "vehicle": {
+              "text": "Ferrari 360 Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_360#360_Challenge"
+            },
+            "time": 113.763,
+            "year": "2000",
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": {
+      "list": [
+        "Intercity Istanbul Park",
+        "TOSFED İstanbul Park"
+      ],
+      "former_names": [
+        {
+          "name": "İstanbul Park",
+          "periods": [
+            {
+              "from": "2005-08",
+              "to": "2012-09"
+            },
+            {
+              "from": "2024-04",
+              "to": "2025-05"
+            }
+          ]
+        },
+        {
+          "name": "Intercity İstanbul Park",
+          "periods": [
+            {
+              "from": "2012-10",
+              "to": "2024-03"
+            }
+          ]
+        }
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Istanbul_Park",
+    "circuit_status": "former",
+    "type": "Race circuit",
+    "direction": "Anti-clockwise",
+    "grands_prix": [
+      {
+        "text": "Turkish Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Turkish_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 2005,
+        "url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship"
+      },
+      {
+        "year": 2006,
+        "url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship"
+      },
+      {
+        "year": 2007,
+        "url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship"
+      },
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      },
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2020,
+        "url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship"
+      },
+      {
+        "year": 2021,
+        "url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 9,
+    "location": {
+      "places": [
+        {
+          "text": "Istanbul",
+          "url": "https://en.wikipedia.org/wiki/Istanbul"
+        },
+        {
+          "text": "Tuzla",
+          "url": "https://en.wikipedia.org/wiki/Tuzla,_Istanbul"
+        },
+        {
+          "text": "Turkey",
+          "url": "https://en.wikipedia.org/wiki/Turkey"
+        }
+      ],
+      "coordinates": {
+        "lat": 40.95167,
+        "lon": 29.405
+      }
+    },
+    "fia_grade": 1,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "2003-09-23"
+      },
+      {
+        "event": "opened",
+        "date": "2005-08-19"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "2005–present",
+        "length_km": 5.338,
+        "length_mi": 3.317,
+        "turns": 14,
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2005 Turkish Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2005_Turkish_Grand_Prix"
+            },
+            "driver": {
+              "text": "Juan Pablo Montoya",
+              "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Montoya"
+            },
+            "vehicle": {
+              "text": "McLaren MP4-20",
+              "url": "https://en.wikipedia.org/wiki/McLaren_MP4-20"
+            },
+            "time": 84.77,
+            "year": "2005",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "2008 Istanbul GP2 Series round",
+              "url": "https://en.wikipedia.org/wiki/2008_Istanbul_Park_GP2_Series_round"
+            },
+            "driver": {
+              "text": "Andreas Zuber",
+              "url": "https://en.wikipedia.org/wiki/Andreas_Zuber"
+            },
+            "vehicle": {
+              "text": "Dallara GP2/08",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP2/08"
+            },
+            "time": 93.482,
+            "year": "2008",
+            "series": {
+              "text": "GP2",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2006 1000 km of Istanbul",
+              "url": "https://en.wikipedia.org/wiki/2006_1000_km_of_Istanbul"
+            },
+            "driver": {
+              "text": "Emmanuel Collard",
+              "url": "https://en.wikipedia.org/wiki/Emmanuel_Collard"
+            },
+            "vehicle": {
+              "text": "Pescarolo C60 Hybrid",
+              "url": "https://en.wikipedia.org/wiki/Courage_C60"
+            },
+            "time": 101.281,
+            "year": "2006",
+            "series": {
+              "text": "LMP1",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP1"
+            }
+          },
+          {
+            "event": {
+              "text": "2006 Istanbul Formula Renault 3.5 Series round",
+              "url": "https://en.wikipedia.org/wiki/2006_Formula_Renault_3.5_Series"
+            },
+            "driver": {
+              "text": "Pastor Maldonado",
+              "url": "https://en.wikipedia.org/wiki/Pastor_Maldonado"
+            },
+            "vehicle": {
+              "text": "Dallara T05",
+              "url": "https://en.wikipedia.org/wiki/Dallara_T05"
+            },
+            "time": 101.342,
+            "year": "2006",
+            "series": {
+              "text": "Formula Renault 3.5",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_3.5L"
+            }
+          },
+          {
+            "event": {
+              "text": "2006 1000 km of Istanbul",
+              "url": "https://en.wikipedia.org/wiki/2006_1000_km_of_Istanbul"
+            },
+            "driver": {
+              "text": "João Barbosa",
+              "url": "https://en.wikipedia.org/wiki/Jo%C3%A3o_Barbosa"
+            },
+            "vehicle": {
+              "text": "Radical SR9",
+              "url": "https://en.wikipedia.org/wiki/Radical_SR9"
+            },
+            "time": 103.031,
+            "year": "2006",
+            "series": {
+              "text": "LMP2",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#LMP2"
+            }
+          },
+          {
+            "event": {
+              "text": "2006 Istanbul F3000 Masters round",
+              "url": "https://en.wikipedia.org/wiki/2006_F3000_International_Masters"
+            },
+            "driver": {
+              "text": "Tomáš Kostka",
+              "url": "https://en.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Kostka"
+            },
+            "vehicle": {
+              "text": "Lola B02/50",
+              "url": "https://en.wikipedia.org/wiki/Lola_B02/50"
+            },
+            "time": 105.708,
+            "year": "2006",
+            "series": {
+              "text": "Formula 3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
+            }
+          },
+          {
+            "event": {
+              "text": "2011 Istanbul GP3 Series round",
+              "url": "https://en.wikipedia.org/wiki/2011_Istanbul_Park_GP3_Series_round"
+            },
+            "driver": {
+              "text": "Andrea Caldarelli",
+              "url": "https://en.wikipedia.org/wiki/Andrea_Caldarelli"
+            },
+            "vehicle": {
+              "text": "Dallara GP3/10",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP3/10"
+            },
+            "time": 107.227,
+            "year": "2011",
+            "series": {
+              "text": "GP3",
+              "url": "https://en.wikipedia.org/wiki/GP3_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2006 1000 km of Istanbul",
+              "url": "https://en.wikipedia.org/wiki/2006_1000_km_of_Istanbul"
+            },
+            "driver": {
+              "text": "Pedro Lamy",
+              "url": "https://en.wikipedia.org/wiki/Pedro_Lamy"
+            },
+            "vehicle": {
+              "text": "Aston Martin DBR9",
+              "url": "https://en.wikipedia.org/wiki/Aston_Martin_DBR9"
+            },
+            "time": 109.469,
+            "year": "2006",
+            "series": {
+              "text": "GT1 (GTS)",
+              "url": "https://en.wikipedia.org/wiki/Group_GT1#GTS_\"GT1\"_(2000–2009)"
+            }
+          },
+          {
+            "event": {
+              "text": "2006 Turkish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2006_Turkish_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Toni Elías",
+              "url": "https://en.wikipedia.org/wiki/Toni_El%C3%ADas"
+            },
+            "vehicle": {
+              "text": "Honda RC211V",
+              "url": "https://en.wikipedia.org/wiki/Honda_RC211V"
+            },
+            "time": 112.877,
+            "year": "2006",
+            "series": {
+              "text": "MotoGP",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#MotoGP_class"
+            }
+          },
+          {
+            "event": {
+              "text": "2006 Istanbul Eurocup Formula Renault 2.0 round",
+              "url": "https://en.wikipedia.org/wiki/2006_Eurocup_Formula_Renault_2.0"
+            },
+            "driver": {
+              "text": "Dani Clos",
+              "url": "https://en.wikipedia.org/wiki/Dani_Clos"
+            },
+            "vehicle": {
+              "text": "Tatuus FR2000",
+              "url": "https://en.wikipedia.org/wiki/Tatuus#Racecars"
+            },
+            "time": 115.524,
+            "year": "2006",
+            "series": {
+              "text": "Formula Renault 2.0",
+              "url": "https://en.wikipedia.org/wiki/Formula_Renault#Formula_Renault_2.0"
+            }
+          },
+          {
+            "event": {
+              "text": "2005 FIA GT Istanbul 2 Hours",
+              "url": "https://en.wikipedia.org/wiki/2005_FIA_GT_Istanbul_2_Hours"
+            },
+            "driver": {
+              "text": "Mike Rockenfeller",
+              "url": "https://en.wikipedia.org/wiki/Mike_Rockenfeller"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (996) GT3-RSR",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#996_GT3_RSR_(2004)"
+            },
+            "time": 115.658,
+            "year": "2005",
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            }
+          },
+          {
+            "event": {
+              "text": "2013 Istanbul World SBK round",
+              "url": "https://en.wikipedia.org/wiki/2013_%C4%B0stanbul_Park_Superbike_World_Championship_round"
+            },
+            "driver": {
+              "text": "Tom Sykes",
+              "url": "https://en.wikipedia.org/wiki/Tom_Sykes"
+            },
+            "vehicle": {
+              "text": "Kawasaki ZX-10R",
+              "url": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_ZX-10R"
+            },
+            "time": 115.673,
+            "year": "2013",
+            "series": {
+              "text": "World SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_World_Championship"
+            }
+          },
+          {
+            "event": {
+              "text": "2005 Turkish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2005_Turkish_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Dani Pedrosa",
+              "url": "https://en.wikipedia.org/wiki/Dani_Pedrosa"
+            },
+            "vehicle": {
+              "text": "Honda RS250R",
+              "url": "https://en.wikipedia.org/wiki/Honda_RS250R"
+            },
+            "time": 117.595,
+            "year": "2005",
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            }
+          },
+          {
+            "event": {
+              "text": "2008 Istanbul Porsche Supercup round",
+              "url": "https://en.wikipedia.org/wiki/2008_Porsche_Supercup"
+            },
+            "driver": {
+              "text": "Jaap van Lagen",
+              "url": "https://en.wikipedia.org/wiki/Jaap_van_Lagen"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (997) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#997_GT3_Cup_(2005–2008)"
+            },
+            "time": 118.612,
+            "year": "2008",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2013 Istanbul World SSP round",
+              "url": "https://en.wikipedia.org/wiki/2013_%C4%B0stanbul_Park_Superbike_World_Championship_round"
+            },
+            "driver": {
+              "text": "Sam Lowes",
+              "url": "https://en.wikipedia.org/wiki/Sam_Lowes"
+            },
+            "vehicle": {
+              "text": "Yamaha YZF-R6",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R6"
+            },
+            "time": 119.157,
+            "year": "2013",
+            "series": {
+              "text": "World SSP",
+              "url": "https://en.wikipedia.org/wiki/Supersport_World_Championship"
+            }
+          },
+          {
+            "event": {
+              "text": "2025 4th Istanbul Turkish Circuit Championship round"
+            },
+            "driver": {
+              "text": "Zekai Özen"
+            },
+            "vehicle": {
+              "text": "Audi RS 3 LMS TCR",
+              "url": "https://en.wikipedia.org/wiki/Audi_RS_3_LMS"
+            },
+            "time": 121.559,
+            "year": "2025",
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            }
+          },
+          {
+            "event": {
+              "text": "2005 Istanbul DTM round",
+              "url": "https://en.wikipedia.org/wiki/2005_Istanbul_DTM_round"
+            },
+            "driver": {
+              "text": "Mika Hakkinen",
+              "url": "https://en.wikipedia.org/wiki/Mika_Hakkinen"
+            },
+            "vehicle": {
+              "text": "Mercedes-Benz AMG C-Class",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_AMG_C-Class_DTM_(W203)"
+            },
+            "time": 120.13,
+            "year": "2005",
+            "series": {
+              "text": "DTM",
+              "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
+            }
+          },
+          {
+            "event": {
+              "text": "2014 Istanbul Ferrari Challenge Europe round",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge#Ferrari_Challenge_Europe"
+            },
+            "driver": {
+              "text": "Dario Caso"
+            },
+            "vehicle": {
+              "text": "Ferrari 458 Challenge Evo",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_458#458_Challenge"
+            },
+            "time": 120.718,
+            "year": "2014",
+            "series": {
+              "text": "Ferrari Challenge",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_Challenge"
+            }
+          },
+          {
+            "event": {
+              "text": "2006 Istanbul Eurocup Mégane Trophy round",
+              "url": "https://en.wikipedia.org/wiki/2006_Eurocup_M%C3%A9gane_Trophy"
+            },
+            "driver": {
+              "text": "César Campaniço",
+              "url": "https://en.wikipedia.org/wiki/C%C3%A9sar_Campani%C3%A7o"
+            },
+            "vehicle": {
+              "text": "Renault Mégane Renault Sport",
+              "url": "https://en.wikipedia.org/wiki/Renault_M%C3%A9gane_RS#Renault_Sport_Mégane_Trophy"
+            },
+            "time": 122.56,
+            "year": "2006",
+            "series": {
+              "text": "Eurocup Mégane Trophy",
+              "url": "https://en.wikipedia.org/wiki/Eurocup_M%C3%A9gane_Trophy"
+            }
+          },
+          {
+            "event": {
+              "text": "2006 Turkish motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2006_Turkish_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Joan Olivé",
+              "url": "https://en.wikipedia.org/wiki/Joan_Oliv%C3%A9"
+            },
+            "vehicle": {
+              "text": "Aprilia RS125R",
+              "url": "https://en.wikipedia.org/wiki/Aprilia_RS125R"
+            },
+            "time": 123.825,
+            "year": "2006",
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            }
+          },
+          {
+            "event": {
+              "text": "2005 FIA WTCC Race of Turkey",
+              "url": "https://en.wikipedia.org/wiki/2005_FIA_WTCC_Race_of_Turkey"
+            },
+            "driver": {
+              "text": "Gabriele Tarquini",
+              "url": "https://en.wikipedia.org/wiki/Gabriele_Tarquini"
+            },
+            "vehicle": {
+              "text": "Alfa Romeo 156 WTCC",
+              "url": "https://en.wikipedia.org/wiki/Alfa_Romeo_156#Motorsport"
+            },
+            "time": 125.771,
+            "year": "2005",
+            "series": {
+              "text": "Super 2000",
+              "url": "https://en.wikipedia.org/wiki/Super_2000#Touring_cars"
+            }
+          },
+          {
+            "event": {
+              "text": "2014 Istanbul Formula Alfa round",
+              "url": "https://en.wikipedia.org/wiki/Formula_Alfa"
+            },
+            "driver": {
+              "text": "Tornike Kiknavelidze"
+            },
+            "vehicle": {
+              "text": "AKKS Formula Alfa",
+              "url": "https://en.wikipedia.org/wiki/Formula_Alfa#Technical_information"
+            },
+            "time": 127.676,
+            "year": "2014",
+            "series": {
+              "text": "Formula Alfa",
+              "url": "https://en.wikipedia.org/wiki/Formula_Alfa"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 1st Istanbul Turkish Superbike Championship round"
+            },
+            "driver": {
+              "text": "Tolga Uprak",
+              "url": "https://en.wikipedia.org/wiki/Tolga_Uprak"
+            },
+            "vehicle": {
+              "text": "Yamaha YZF-R3",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R3"
+            },
+            "time": 133.924,
+            "year": "2024",
+            "series": {
+              "text": "Supersport 300",
+              "url": "https://en.wikipedia.org/wiki/Sports_motorcycle#Classes"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Intermediate Circuit",
+        "years": "2005–present",
+        "length_km": 3.925,
+        "length_mi": 2.439,
+        "turns": 13
+      },
+      {
+        "layout": "Rallycross Circuit",
+        "years": "2014–present",
+        "length_km": 1.346,
+        "length_mi": 0.836,
+        "turns": 14
+      }
+    ]
+  }
+]

@@ -1,5 +1,7 @@
-from dataclasses import dataclass, field
-from typing import Any, Mapping
+from collections.abc import Mapping
+from dataclasses import dataclass
+from dataclasses import field
+from typing import Any
 
 from models.contracts.base import DataContract
 from models.records.season import SeasonRecord
@@ -28,7 +30,13 @@ class PointsContract(DataContract):
     seasons: list[SeasonRecord] = field(default_factory=list)
 
     @classmethod
+    def can_handle(cls, record: Mapping[str, Any]) -> bool:
+        if "seasons" not in record:
+            return False
+        return any(key in record for key in POINTS_KEYS)
+
+    @classmethod
     def from_record(cls, record: Mapping[str, Any]) -> "PointsContract":
         payload = dict(record)
         payload.setdefault("seasons", [])
-        return super(PointsContract, cls).from_record(payload)
+        return DataContract.from_record.__func__(cls, payload)

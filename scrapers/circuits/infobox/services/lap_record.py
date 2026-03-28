@@ -1,10 +1,14 @@
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any
 
 from models.records.link import LinkRecord
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.wiki import is_wikipedia_redlink
 from scrapers.circuits.helpers.lap_record import extract_time
 from scrapers.circuits.helpers.lap_record import select_details_paren
+from scrapers.circuits.infobox.services.constants import MIN_DETAILS_FOR_CAR
+from scrapers.circuits.infobox.services.constants import MIN_DETAILS_FOR_DRIVER
+from scrapers.circuits.infobox.services.constants import MIN_DETAILS_FOR_SERIES
+from scrapers.circuits.infobox.services.constants import MIN_DETAILS_FOR_YEAR
 from scrapers.circuits.infobox.services.text_processing import CircuitTextProcessing
 from scrapers.circuits.models.services.lap_record_merging import merge_two_records
 from scrapers.circuits.models.services.lap_record_merging import normalize_lap_record
@@ -19,8 +23,10 @@ class CircuitLapRecordParser(CircuitTextProcessing):
     """Logika parsowania, porównywania i scalania lap record'ów."""
 
     def _wrap_entity_from_links(
-        self, entity_text: Optional[str], links: List[LinkRecord]
-    ) -> Optional[Dict[str, Any]]:
+        self,
+        entity_text: str | None,
+        links: list[LinkRecord],
+    ) -> dict[str, Any] | None:
         if not entity_text:
             return None
 
@@ -29,7 +35,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         if not cleaned:
             return None
 
-        obj: Dict[str, Any] = {"text": cleaned, "url": None}
+        obj: dict[str, Any] = {"text": cleaned, "url": None}
 
         link = self._find_link(cleaned, links) if links else None
 
@@ -47,8 +53,9 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         return obj
 
     def parse_lap_record(
-        self, row: Optional[Dict[str, Any]]
-    ) -> Optional[Dict[str, Any]]:
+        self,
+        row: dict[str, Any] | None,
+    ) -> dict[str, Any] | None:
         """
         Parsuje pojedynczą komórkę "Race lap record" z infoboksa.
         """
@@ -70,16 +77,19 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         return record or None
 
     def build_lap_record(
-        self, details: List[str], links: List[LinkRecord], time: Optional[float]
-    ) -> Dict[str, Any]:
-        record: Dict[str, Any] = {}
+        self,
+        details: list[str],
+        links: list[LinkRecord],
+        time: float | None,
+    ) -> dict[str, Any]:
+        record: dict[str, Any] = {}
         if time is not None:
             record["time"] = time
 
-        driver_text = details[0] if len(details) >= 1 else None
-        car_text = details[1] if len(details) >= 2 else None
-        year_text = details[2] if len(details) >= 3 else None
-        series_text = details[3] if len(details) >= 4 else None
+        driver_text = details[0] if len(details) >= MIN_DETAILS_FOR_DRIVER else None
+        car_text = details[1] if len(details) >= MIN_DETAILS_FOR_CAR else None
+        year_text = details[2] if len(details) >= MIN_DETAILS_FOR_YEAR else None
+        series_text = details[3] if len(details) >= MIN_DETAILS_FOR_SERIES else None
 
         record.update(
             {
@@ -89,7 +99,7 @@ class CircuitLapRecordParser(CircuitTextProcessing):
                 "series": self._wrap_entity_from_links(series_text, links)
                 if series_text
                 else None,
-            }
+            },
         )
 
         record = self.prune_nulls(record) or {}
@@ -101,8 +111,9 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         return record
 
     def _lap_record_key(
-        self, rec: Dict[str, Any]
-    ) -> Optional[Tuple[str, str, str, float]]:
+        self,
+        rec: dict[str, Any],
+    ) -> tuple[str, str, str, float] | None:
         """
         Buduje klucz do identyfikacji tego samego lap record.
         Klucz: (driver, vehicle, year, time)
@@ -110,13 +121,15 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         sanitizer = self._strip_lang_marker_tail_only
         return build_lap_record_key(
             rec,
-            year_extractor=lambda r: extract_year(r),
-            vehicle_getter=lambda r: self._get_vehicle_field(r),
+            year_extractor=extract_year,
+            vehicle_getter=self._get_vehicle_field,
             driver_normalizer=lambda value: normalize_lap_record_entity(
-                value, sanitizer=sanitizer
+                value,
+                sanitizer=sanitizer,
             ),
             vehicle_normalizer=lambda value: normalize_lap_record_entity(
-                value, sanitizer=sanitizer
+                value,
+                sanitizer=sanitizer,
             ),
         )
 
@@ -128,7 +141,9 @@ class CircuitLapRecordParser(CircuitTextProcessing):
         return bool(kl and kr and kl == kr)
 
     def _upsert_lap_record(
-        self, candidate: Optional[Dict[str, Any]], records: List[Dict[str, Any]]
+        self,
+        candidate: dict[str, Any] | None,
+        records: list[dict[str, Any]],
     ) -> None:
         if not candidate:
             return

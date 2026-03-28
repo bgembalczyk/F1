@@ -2910,7 +2910,10 @@
               }
             ]
           },
-          "points": 71.0
+          "points": {
+            "championship_points": 71.0,
+            "total_points": 73.0
+          }
         },
         {
           "pos": 3,
@@ -3111,7 +3114,10 @@
               }
             ]
           },
-          "points": 43.0
+          "points": {
+            "championship_points": 43.0,
+            "total_points": 44.0
+          }
         },
         {
           "pos": 4,

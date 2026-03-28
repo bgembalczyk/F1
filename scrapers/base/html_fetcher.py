@@ -1,9 +1,9 @@
 from infrastructure.http_client.interfaces.http_client_protocol import (
     HttpClientProtocol,
 )
+from infrastructure.http_client.policies.http import HttpPolicy
 from scrapers.base.cache_adapter import CacheBackend
 from scrapers.base.source_adapter import SourceAdapter
-from scrapers.base.options import HttpPolicy
 
 
 class HtmlFetcher(SourceAdapter):

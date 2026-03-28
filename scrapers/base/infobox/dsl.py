@@ -1,7 +1,10 @@
+from collections.abc import Iterable
+from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Any, Iterable, Mapping
+from typing import Any
 
-from scrapers.base.infobox.schema import InfoboxSchema, InfoboxSchemaField
+from scrapers.base.infobox.schema import InfoboxSchema
+from scrapers.base.infobox.schema import InfoboxSchemaField
 
 
 @dataclass(frozen=True)

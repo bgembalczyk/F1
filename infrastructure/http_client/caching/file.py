@@ -1,7 +1,6 @@
 import time
 from hashlib import sha256
 from pathlib import Path
-from typing import Optional
 
 from infrastructure.http_client.policies.response_cache import ResponseCache
 
@@ -14,7 +13,7 @@ class FileCache(ResponseCache):
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.ttl_seconds = max(0, int(ttl_seconds))
 
-    def get(self, url: str) -> Optional[str]:
+    def get(self, url: str) -> str | None:
         path = self._cache_path_for_url(url)
         if not self._is_cache_fresh(path):
             return None

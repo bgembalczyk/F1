@@ -1,0 +1,224 @@
+[
+  {
+    "name": {
+      "list": [
+        "Valencia Street Circuit"
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Valencia_Street_Circuit",
+    "circuit_status": "former",
+    "type": "Street circuit",
+    "direction": "Clockwise",
+    "grands_prix": [
+      {
+        "text": "European Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/European_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 2008,
+        "url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship"
+      },
+      {
+        "year": 2009,
+        "url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship"
+      },
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 5,
+    "location": {
+      "places": [
+        {
+          "text": "Valencia",
+          "url": "https://en.wikipedia.org/wiki/Valencia"
+        },
+        {
+          "text": "Spain"
+        }
+      ],
+      "coordinates": {
+        "lat": 39.458778,
+        "lon": -0.32556
+      }
+    },
+    "history": [
+      {
+        "event": "opened",
+        "date": "2008-07-26"
+      },
+      {
+        "event": "closed",
+        "date": "2013"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "2008–2012",
+        "length_km": 5.419,
+        "length_mi": 3.367,
+        "turns": 25,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2009 European Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/2009_European_Grand_Prix"
+            },
+            "driver": {
+              "text": "Timo Glock",
+              "url": "https://en.wikipedia.org/wiki/Timo_Glock"
+            },
+            "vehicle": {
+              "text": "Toyota TF109",
+              "url": "https://en.wikipedia.org/wiki/Toyota_TF109"
+            },
+            "time": 98.683,
+            "year": "2009",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "2009 Valencia GP2 Series round",
+              "url": "https://en.wikipedia.org/wiki/2009_Valencia_GP2_Series_round"
+            },
+            "driver": {
+              "text": "Nico Hülkenberg",
+              "url": "https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg"
+            },
+            "vehicle": {
+              "text": "Dallara GP2/08",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP2/08"
+            },
+            "time": 106.487,
+            "year": "2009",
+            "series": {
+              "text": "GP2",
+              "url": "https://en.wikipedia.org/wiki/GP2_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2010 Valencia GP3 Series round",
+              "url": "https://en.wikipedia.org/wiki/2010_Valencia_GP3_Series_round"
+            },
+            "driver": {
+              "text": "Esteban Gutierrez",
+              "url": "https://en.wikipedia.org/wiki/Esteban_Gutierrez"
+            },
+            "vehicle": {
+              "text": "Dallara GP3/10",
+              "url": "https://en.wikipedia.org/wiki/Dallara_GP3/10"
+            },
+            "time": 118.748,
+            "year": "2010",
+            "series": {
+              "text": "GP3",
+              "url": "https://en.wikipedia.org/wiki/GP3_Series"
+            }
+          },
+          {
+            "event": {
+              "text": "2008 2nd Valencia Spanish F3 round",
+              "url": "https://en.wikipedia.org/wiki/2008_Spanish_Formula_Three_Championship"
+            },
+            "driver": {
+              "text": "Natacha Gachnang",
+              "url": "https://en.wikipedia.org/wiki/Natacha_Gachnang"
+            },
+            "vehicle": {
+              "text": "Dallara F306",
+              "url": "https://en.wikipedia.org/wiki/List_of_Dallara_cars"
+            },
+            "time": 124.279,
+            "year": "2008",
+            "series": {
+              "text": "Formula Three",
+              "url": "https://en.wikipedia.org/wiki/Formula_Three"
+            }
+          },
+          {
+            "event": {
+              "text": "2008 2nd Valencia International GT Open round",
+              "url": "https://en.wikipedia.org/wiki/2008_International_GT_Open"
+            },
+            "driver": {
+              "text": "Richard Lietz",
+              "url": "https://en.wikipedia.org/wiki/Richard_Lietz"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (997 I) GT3 RSR",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#997_GT3_RSR_(2006–2012)"
+            },
+            "time": 127.423,
+            "year": "2008",
+            "series": {
+              "text": "GT2",
+              "url": "https://en.wikipedia.org/wiki/LM_GTE#History"
+            }
+          },
+          {
+            "event": {
+              "text": "2010 Valencia Porsche Supercup round",
+              "url": "https://en.wikipedia.org/wiki/2010_Porsche_Supercup"
+            },
+            "driver": {
+              "text": "René Rast",
+              "url": "https://en.wikipedia.org/wiki/Ren%C3%A9_Rast"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (997 II) GT3 Cup 3.8",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#997_GT3_Cup_3.8_(2009–2013)"
+            },
+            "time": 130.07,
+            "year": "2010",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2010 Valencia Formula BMW Europe round",
+              "url": "https://en.wikipedia.org/wiki/2010_Formula_BMW_Europe_season"
+            },
+            "driver": {
+              "text": "Robin Frijns",
+              "url": "https://en.wikipedia.org/wiki/Robin_Frijns"
+            },
+            "vehicle": {
+              "text": "Mygale FB02",
+              "url": "https://en.wikipedia.org/wiki/Mygale_FB02"
+            },
+            "time": 133.789,
+            "year": "2010",
+            "series": {
+              "text": "Formula BMW",
+              "url": "https://en.wikipedia.org/wiki/Formula_BMW"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

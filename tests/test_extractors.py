@@ -1,14 +1,14 @@
 import logging
-from pathlib import Path
 import sys
+from pathlib import Path
 
 import pytest
 from bs4 import BeautifulSoup
 
-from scrapers.base.extractors import InfoboxExtractor, TableExtractor
+from scrapers.base.extractors.infobox import InfoboxExtractor
+from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
-
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:

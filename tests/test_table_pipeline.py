@@ -1,10 +1,10 @@
+# ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
 from dataclasses import dataclass
 
 import pytest
+from bs4 import BeautifulSoup
 
 pytest.importorskip("bs4")
-
-from bs4 import BeautifulSoup
 
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.config import ScraperConfig
@@ -36,7 +36,7 @@ def test_table_pipeline_parses_rows_and_filters_repeated_headers():
         {
             "driver": "Max Verstappen",
             "time": "1:20.000",
-        }
+        },
     ]
 
 
@@ -81,7 +81,7 @@ def test_table_pipeline_normalize_cell_maps_header_and_cleans_text():
         include_urls=False,
     )
 
-    key, raw_text, clean_text = pipeline._normalize_cell("Driver", cell)
+    key, raw_text, clean_text = pipeline._normalize_cell("Driver", cell)  # noqa: SLF001
 
     assert key == "driver_name"
     assert raw_text == "Lewis Hamilton [1]"
@@ -101,7 +101,7 @@ def test_table_pipeline_extract_links_respects_include_urls_flag():
         include_urls=False,
     )
 
-    assert pipeline._extract_links(cell) == []
+    assert pipeline._extract_links(cell) == []  # noqa: SLF001
 
 
 def test_table_pipeline_applies_record_factory():

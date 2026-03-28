@@ -1,6 +1,6 @@
 from typing import TypedDict
 
-from validation.records import RecordSchema
+from validation.schemas import RecordSchema
 
 
 class CircuitBaseRecord(TypedDict, total=False):

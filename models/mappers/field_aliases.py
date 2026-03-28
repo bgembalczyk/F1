@@ -1,5 +1,5 @@
-from typing import Any, Mapping
-
+from collections.abc import Mapping
+from typing import Any
 
 FIELD_ALIASES: dict[str, dict[str, str]] = {
     "constructor": {
@@ -35,6 +35,7 @@ def apply_field_aliases(
         conflict_details = ", ".join(
             f"{alias}->{target}" for alias, target in conflicts
         )
-        raise ValueError(f"Konflikt aliasów dla {record_name}: {conflict_details}")
+        msg = f"Konflikt aliasów dla {record_name}: {conflict_details}"
+        raise ValueError(msg)
 
     return normalized

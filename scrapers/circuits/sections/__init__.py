@@ -1,0 +1,1 @@
+from scrapers.circuits.sections.adapter import circuit_section_entries

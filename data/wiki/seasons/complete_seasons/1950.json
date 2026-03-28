@@ -1538,7 +1538,7 @@
               "engine": {
                 "model": {
                   "text": "Speluzzi",
-                  "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
+                  "url": null
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
@@ -1589,7 +1589,7 @@
               "engine": {
                 "model": {
                   "text": "Speluzzi",
-                  "url": "https://en.wikipedia.org/wiki/Inline-four_engine"
+                  "url": null
                 },
                 "displacement_l": 1.5,
                 "type": "L4",
@@ -3071,6 +3071,35 @@
           "report": {
             "text": "Report",
             "url": "https://en.wikipedia.org/wiki/1950_Penya_Rhin_Grand_Prix"
+          }
+        },
+        {
+          "race_name": "Grand Prix of Chile",
+          "circuit": {
+            "text": "Pedro de Valdivia Norte",
+            "url": "https://en.wikipedia.org/wiki/Santiago_de_Chile"
+          },
+          "date": {
+            "text": "17 December 1950",
+            "iso": "1950-12-17"
+          },
+          "winning_driver": {
+            "text": "Juan Manuel Fangio",
+            "url": "https://en.wikipedia.org/wiki/Juan_Manuel_Fangio"
+          },
+          "constructor": {
+            "chassis_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            },
+            "engine_constructor": {
+              "text": "Maserati",
+              "url": "https://en.wikipedia.org/wiki/Maserati_in_motorsport"
+            }
+          },
+          "report": {
+            "text": "Report",
+            "url": "https://en.wikipedia.org/wiki/1950_Chilean_Grand_Prix"
           }
         }
       ],
@@ -6114,7 +6143,9 @@
       "jim_clark_trophy": null,
       "colin_chapman_trophy": null,
       "south_african_formula_one_championship": null,
-      "british_formula_one_championship": null
+      "british_formula_one_championship": null,
+      "regulation_changes": null,
+      "mid_season_changes": null
     }
   }
 ]

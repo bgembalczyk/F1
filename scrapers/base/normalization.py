@@ -1,56 +1,14 @@
-from enum import Enum
-from typing import Any, Callable, Mapping, Sequence
+from collections.abc import Sequence
+from typing import Any
 
 from models.contracts.helpers import map_record_to_contract
 from scrapers.base.helpers.text_normalization import drop_empty_fields
 from scrapers.base.helpers.text_normalization import normalize_record_keys
 from scrapers.base.logging import get_logger
-from validation.records import ExportRecord
-
-NormalizationRule = Callable[[ExportRecord], ExportRecord]
-
-
-class EmptyValuePolicy(Enum):
-    KEEP = "keep"
-    NORMALIZE = "normalize"
-
-    @classmethod
-    def from_flag(cls, normalize_empty_values: bool) -> "EmptyValuePolicy":
-        return cls.NORMALIZE if normalize_empty_values else cls.KEEP
-
-
-def normalize_empty(
-    value: Any,
-    *,
-    policy: EmptyValuePolicy = EmptyValuePolicy.NORMALIZE,
-) -> Any:
-    if policy is EmptyValuePolicy.KEEP:
-        return value
-    if isinstance(value, str):
-        return value if value.strip() else None
-    if isinstance(value, list | dict):
-        return value if value else None
-    return value
-
-
-def normalize_record_values(
-    record: Mapping[str, Any],
-    *,
-    policy: EmptyValuePolicy,
-) -> tuple[ExportRecord, int]:
-    if policy is EmptyValuePolicy.KEEP:
-        return dict(record), 0
-    normalized: ExportRecord = {}
-    normalized_empty_fields = 0
-    for key, value in record.items():
-        cleaned = normalize_empty(value, policy=policy)
-        if cleaned is None and (
-            (isinstance(value, str) and value.strip() == "")
-            or (isinstance(value, (list, dict)) and not value)
-        ):
-            normalized_empty_fields += 1
-        normalized[key] = cleaned
-    return normalized, normalized_empty_fields
+from scrapers.base.normalization_utils import EmptyValuePolicy
+from scrapers.base.normalization_utils import NormalizationRule
+from scrapers.base.normalization_utils import normalize_record_values
+from validation.validator_base import ExportRecord
 
 
 class RecordNormalizer:
@@ -63,7 +21,7 @@ class RecordNormalizer:
         normalization_rules: Sequence[NormalizationRule] | None = None,
     ) -> None:
         self._empty_value_policy = empty_value_policy or EmptyValuePolicy.from_flag(
-            normalize_empty_values
+            normalize_empty_values=normalize_empty_values,
         )
         self._normalize_empty_values = (
             self._empty_value_policy is EmptyValuePolicy.NORMALIZE

@@ -1,5 +1,7 @@
-from dataclasses import dataclass, field
-from typing import Any, Mapping
+from collections.abc import Mapping
+from dataclasses import dataclass
+from dataclasses import field
+from typing import Any
 
 from models.contracts.base import DataContract
 from models.records.driver_championships import DriversChampionshipsRecord
@@ -15,7 +17,7 @@ class DriverContract(DataContract):
     nationality: str | None = None
     seasons_competed: list[SeasonRecord] = field(default_factory=list)
     drivers_championships: DriversChampionshipsRecord | str | None = field(
-        default_factory=lambda: {"count": 0, "seasons": []}
+        default_factory=lambda: {"count": 0, "seasons": []},
     )
     race_entries: int | None = None
     race_starts: int | None = None
@@ -26,8 +28,14 @@ class DriverContract(DataContract):
     points: str | None = None
 
     @classmethod
+    def can_handle(cls, record: Mapping[str, Any]) -> bool:
+        has_driver = "driver" in record
+        has_driver_shape = "is_active" in record or "drivers_championships" in record
+        return has_driver and has_driver_shape
+
+    @classmethod
     def from_record(cls, record: Mapping[str, Any]) -> "DriverContract":
         payload = dict(record)
         payload.setdefault("seasons_competed", [])
         payload.setdefault("drivers_championships", {"count": 0, "seasons": []})
-        return super(DriverContract, cls).from_record(payload)
+        return DataContract.from_record.__func__(cls, payload)

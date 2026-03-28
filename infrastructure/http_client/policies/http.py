@@ -1,10 +1,7 @@
 from dataclasses import dataclass
 
-from infrastructure.http_client.policies.defaults import (
-    DEFAULT_HTTP_RETRIES,
-    DEFAULT_HTTP_TIMEOUT,
-)
-
+from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_RETRIES
+from infrastructure.http_client.policies.defaults import DEFAULT_HTTP_TIMEOUT
 from infrastructure.http_client.policies.response_cache import ResponseCache
 
 
@@ -16,6 +13,8 @@ class HttpPolicy:
 
     def __post_init__(self) -> None:
         if self.timeout <= 0:
-            raise ValueError("timeout must be greater than 0")
+            msg = "timeout must be greater than 0"
+            raise ValueError(msg)
         if self.retries < 0:
-            raise ValueError("retries must be >= 0")
+            msg = "retries must be >= 0"
+            raise ValueError(msg)

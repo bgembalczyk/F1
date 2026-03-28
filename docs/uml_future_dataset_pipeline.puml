@@ -1,0 +1,124 @@
+@startuml
+!theme plain
+
+title Future Vision - Iterative Layer 0/1 F1 Wikipedia Pipeline
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+package "Initial Seed Sources" {
+  [Wikipedia: Drivers list] as seed_drivers
+  [Wikipedia: Constructors list] as seed_constructors
+  [Wikipedia: Grand Prix list] as seed_gp
+  [Wikipedia: Circuits list] as seed_circuits
+  [Wikipedia: Seasons list] as seed_seasons
+}
+
+package "Layer 0" {
+  [WikiScraper] as scraper
+  [Table/List Parsers] as list_parsers
+  [Complete Extractor Base] as complete_extractor_base
+  [URL Resolver Strategy] as url_strategy
+  [Seed Mapper] as mapper
+  folder "data/raw" {
+    [drivers.json]
+    [constructors.json]
+    [grand_prix.json]
+    [circuits.json]
+    [seasons.json]
+  }
+}
+
+package "Layer 1" {
+  [Page Fetcher] as page_fetcher
+  [Infobox/Section Parsers] as page_parsers
+  [Auto Registry Factory] as auto_registry
+  [Normalizer] as normalizer
+  folder "data/normalized" {
+    [drivers_details.json]
+    [constructors_details.json]
+    [circuits_details.json]
+    [seasons_details.json]
+  }
+}
+
+package "Iteration Control (hardcoded)" {
+  [Checkpoint Config
+  (next_start_sources)] as checkpoint_cfg
+  [Step Registry
+  step->input->parser->output] as step_registry
+  [Unified CLI + Legacy Wrappers] as unified_cli
+}
+
+package "Future (later phase)" {
+  [Tokenizer]
+  [Feature Encoder]
+  [ML-ready datasets]
+  [External APIs enrichment]
+}
+
+seed_drivers --> scraper
+seed_constructors --> scraper
+seed_gp --> scraper
+seed_circuits --> scraper
+seed_seasons --> scraper
+
+scraper --> list_parsers
+list_parsers --> mapper
+list_parsers --> complete_extractor_base : shared complete contract
+list_parsers --> url_strategy : resolve canonical URLs
+complete_extractor_base --> mapper
+url_strategy --> mapper
+mapper --> drivers.json
+mapper --> constructors.json
+mapper --> grand_prix.json
+mapper --> circuits.json
+mapper --> seasons.json
+
+drivers.json --> checkpoint_cfg
+constructors.json --> checkpoint_cfg
+grand_prix.json --> checkpoint_cfg
+circuits.json --> checkpoint_cfg
+seasons.json --> checkpoint_cfg
+
+checkpoint_cfg --> page_fetcher : choose explicit next start points
+page_fetcher --> page_parsers
+page_parsers --> url_strategy : shared resolver strategy
+step_registry --> auto_registry : active components
+auto_registry --> page_parsers : parser/extractor discovery
+page_parsers --> normalizer
+normalizer --> drivers_details.json
+normalizer --> constructors_details.json
+normalizer --> circuits_details.json
+normalizer --> seasons_details.json
+
+drivers_details.json --> checkpoint_cfg
+constructors_details.json --> checkpoint_cfg
+circuits_details.json --> checkpoint_cfg
+seasons_details.json --> checkpoint_cfg
+
+checkpoint_cfg --> step_registry
+step_registry --> checkpoint_cfg : next hardcoded step (0 or 1)
+unified_cli --> step_registry : single entrypoint for L0/L1
+unified_cli ..> checkpoint_cfg : reads next_start_sources
+
+drivers_details.json --> Tokenizer
+constructors_details.json --> Tokenizer
+Tokenizer --> [Feature Encoder]
+[Feature Encoder] --> [ML-ready datasets]
+
+[External APIs enrichment] ..> normalizer : future merge
+
+note right of checkpoint_cfg
+  Only Layer 0 and Layer 1 are used.
+  They are repeated iteratively.
+  Each iteration explicitly states
+  where next start points come from.
+end note
+
+note bottom of unified_cli
+  Refactor stream (OOP/DRY) supports
+  Stage 0/1 execution, not a separate stage.
+end note
+
+@enduml

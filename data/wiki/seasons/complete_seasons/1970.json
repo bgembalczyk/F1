@@ -2754,14 +2754,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 1,
-                "background": "Winner"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -2769,9 +2761,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired",
-                "pole_position": true
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -2782,6 +2773,19 @@
             },
             "results": [
               {
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "pole_position": true
+              }
+            ]
+          },
+          "ita": {
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1970_Italian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "DNS",
                 "notes": [
                   "fatal_accident_before_race"
@@ -2789,21 +2793,10 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 45,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 45.0
         },
         {
           "pos": 2,
@@ -2897,16 +2890,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 2,
-                "background": "Second place",
-                "pole_position": true,
-                "fastest_lap": true
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -2914,8 +2897,9 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
+                "position": 2,
+                "background": "Second place",
+                "pole_position": true,
                 "fastest_lap": true
               }
             ]
@@ -2927,9 +2911,9 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired",
-                "pole_position": true
+                "position": 1,
+                "background": "Winner",
+                "fastest_lap": true
               }
             ]
           },
@@ -2940,8 +2924,9 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner"
+                "position": "Ret",
+                "background": "Not classified, retired",
+                "pole_position": true
               }
             ]
           },
@@ -2952,10 +2937,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position",
-                "pole_position": true,
-                "fastest_lap": true
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -2966,8 +2949,9 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
+                "position": 4,
+                "background": "Other points position",
+                "pole_position": true,
                 "fastest_lap": true
               }
             ]
@@ -2979,11 +2963,13 @@
             },
             "results": [
               {
-                "position": 40,
-                "pole_position": true
+                "position": 1,
+                "background": "Winner",
+                "fastest_lap": true
               }
             ]
-          }
+          },
+          "points": 40.0
         },
         {
           "pos": 3,
@@ -3020,14 +3006,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3035,9 +3013,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
-                "fastest_lap": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3048,8 +3025,8 @@
             },
             "results": [
               {
-                "position": 1,
-                "background": "Winner",
+                "position": 2,
+                "background": "Second place",
                 "fastest_lap": true
               }
             ]
@@ -3061,8 +3038,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
+                "position": 1,
+                "background": "Winner",
                 "fastest_lap": true
               }
             ]
@@ -3074,8 +3051,9 @@
             },
             "results": [
               {
-                "position": 13,
-                "background": "Other classified position"
+                "position": 2,
+                "background": "Second place",
+                "fastest_lap": true
               }
             ]
           },
@@ -3086,9 +3064,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place",
-                "pole_position": true
+                "position": 13,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3099,11 +3076,13 @@
             },
             "results": [
               {
-                "position": 33,
+                "position": 2,
+                "background": "Second place",
                 "pole_position": true
               }
             ]
-          }
+          },
+          "points": 33.0
         },
         {
           "pos": 4,
@@ -3173,14 +3152,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 3,
-                "background": "Third place"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3188,8 +3159,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -3200,8 +3171,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3212,8 +3183,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3224,8 +3195,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3236,8 +3207,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3248,11 +3219,12 @@
             },
             "results": [
               {
-                "position": 27,
-                "pole_position": true
+                "position": 3,
+                "background": "Third place"
               }
             ]
-          }
+          },
+          "points": 27.0
         },
         {
           "pos": 5,
@@ -3347,14 +3319,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3374,8 +3338,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3386,9 +3350,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired",
-                "pole_position": true
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -3400,7 +3363,8 @@
             "results": [
               {
                 "position": "Ret",
-                "background": "Not classified, retired"
+                "background": "Not classified, retired",
+                "pole_position": true
               }
             ]
           },
@@ -3423,11 +3387,12 @@
             },
             "results": [
               {
-                "position": 25,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 25.0
         },
         {
           "pos": 6,
@@ -3524,14 +3489,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3539,8 +3496,8 @@
             },
             "results": [
               {
-                "position": 13,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3551,8 +3508,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 13,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3575,8 +3532,8 @@
             },
             "results": [
               {
-                "position": 10,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3587,8 +3544,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3599,11 +3556,12 @@
             },
             "results": [
               {
-                "position": 25,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 25.0
         },
         {
           "pos": 7,
@@ -3695,14 +3653,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3710,8 +3660,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3722,8 +3672,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3734,8 +3684,8 @@
             },
             "results": [
               {
-                "position": 4,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3746,8 +3696,8 @@
             },
             "results": [
               {
-                "position": 2,
-                "background": "Second place"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -3758,8 +3708,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": 2,
+                "background": "Second place"
               }
             ]
           },
@@ -3770,11 +3720,12 @@
             },
             "results": [
               {
-                "position": 23,
-                "pole_position": true
+                "position": 6,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 23.0
         },
         {
           "pos": 8,
@@ -3867,14 +3818,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -3882,8 +3825,8 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -3894,7 +3837,7 @@
             },
             "results": [
               {
-                "position": 7,
+                "position": 8,
                 "background": "Other classified position"
               }
             ]
@@ -3906,8 +3849,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -3918,8 +3861,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -3930,7 +3873,7 @@
             },
             "results": [
               {
-                "position": 4,
+                "position": 5,
                 "background": "Other points position"
               }
             ]
@@ -3942,11 +3885,12 @@
             },
             "results": [
               {
-                "position": 23,
-                "pole_position": true
+                "position": 4,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 23.0
         },
         {
           "pos": 9,
@@ -4038,14 +3982,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4053,8 +3989,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4065,8 +4001,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -4077,8 +4013,8 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -4089,8 +4025,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4101,8 +4037,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4113,11 +4049,12 @@
             },
             "results": [
               {
-                "position": 16,
-                "pole_position": true
+                "position": 5,
+                "background": "Other points position"
               }
             ]
-          }
+          },
+          "points": 16.0
         },
         {
           "pos": 10,
@@ -4143,14 +4080,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 4,
-                "background": "Other points position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4158,8 +4087,8 @@
             },
             "results": [
               {
-                "position": 15,
-                "background": "Other classified position"
+                "position": 4,
+                "background": "Other points position"
               }
             ]
           },
@@ -4170,23 +4099,23 @@
             },
             "results": [
               {
+                "position": 15,
+                "background": "Other classified position"
+              }
+            ]
+          },
+          "ita": {
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1970_Italian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "DNS"
               }
             ]
           },
-          "ita": null,
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1970_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "background": "Winner"
-              }
-            ]
-          },
+          "can": null,
           "usa": {
             "round": {
               "text": "USA",
@@ -4194,8 +4123,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 1,
+                "background": "Winner"
               }
             ]
           },
@@ -4206,11 +4135,12 @@
             },
             "results": [
               {
-                "position": 12,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 12.0
         },
         {
           "pos": 11,
@@ -4302,14 +4232,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 5,
-                "background": "Other points position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4317,8 +4239,8 @@
             },
             "results": [
               {
-                "position": 3,
-                "background": "Third place"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -4329,8 +4251,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -4341,8 +4263,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -4353,8 +4275,8 @@
             },
             "results": [
               {
-                "position": 12,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4365,8 +4287,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 12,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4377,11 +4299,12 @@
             },
             "results": [
               {
-                "position": 10,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 10.0
         },
         {
           "pos": 12,
@@ -4473,14 +4396,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 6,
-                "background": "Other points position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4488,8 +4403,8 @@
             },
             "results": [
               {
-                "position": 14,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -4500,8 +4415,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 14,
+                "background": "Other classified position"
               }
             ]
           },
@@ -4512,8 +4427,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -4524,7 +4439,7 @@
             },
             "results": [
               {
-                "position": 8,
+                "position": 7,
                 "background": "Other classified position"
               }
             ]
@@ -4536,7 +4451,7 @@
             },
             "results": [
               {
-                "position": 9,
+                "position": 8,
                 "background": "Other classified position"
               }
             ]
@@ -4548,11 +4463,12 @@
             },
             "results": [
               {
-                "position": 8,
-                "pole_position": true
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 8.0
         },
         {
           "pos": 13,
@@ -4644,7 +4560,11 @@
               }
             ]
           },
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1970_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": "Ret",
@@ -4652,18 +4572,7 @@
               }
             ]
           },
-          "ger": null,
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1970_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "DNS"
-              }
-            ]
-          },
+          "aut": null,
           "ita": {
             "round": {
               "text": "ITA",
@@ -4671,8 +4580,7 @@
             },
             "results": [
               {
-                "position": "NC",
-                "background": "Not classified, finished"
+                "position": "DNS"
               }
             ]
           },
@@ -4683,8 +4591,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -4707,11 +4615,12 @@
             },
             "results": [
               {
-                "position": 7,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 7.0
         },
         {
           "pos": 14,
@@ -4759,24 +4668,13 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 6,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 6.0
         },
         {
           "pos": 15,
@@ -4791,22 +4689,10 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1970_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "background": "Third place"
-              }
-            ]
-          },
+          "can": null,
           "usa": {
             "round": {
               "text": "USA",
@@ -4814,8 +4700,8 @@
             },
             "results": [
               {
-                "position": "NC",
-                "background": "Not classified, finished"
+                "position": 3,
+                "background": "Third place"
               }
             ]
           },
@@ -4826,11 +4712,12 @@
             },
             "results": [
               {
-                "position": 4,
-                "pole_position": true
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
-          }
+          },
+          "points": 4.0
         },
         {
           "pos": 16,
@@ -4878,14 +4765,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -4898,22 +4777,23 @@
               }
             ]
           },
-          "aut": null,
-          "ita": null,
-          "can": null,
-          "usa": null,
-          "mex": {
+          "aut": {
             "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
+              "text": "AUT",
+              "url": "https://en.wikipedia.org/wiki/1970_Austrian_Grand_Prix"
             },
             "results": [
               {
-                "position": 4,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "ita": null,
+          "can": null,
+          "usa": null,
+          "mex": null,
+          "points": 4.0
         },
         {
           "pos": 17,
@@ -4950,11 +4830,11 @@
             ]
           },
           "gbr": null,
-          "": null,
-          "ger": {
+          "ger": null,
+          "aut": {
             "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1970_German_Grand_Prix"
+              "text": "AUT",
+              "url": "https://en.wikipedia.org/wiki/1970_Austrian_Grand_Prix"
             },
             "results": [
               {
@@ -4963,10 +4843,10 @@
               }
             ]
           },
-          "aut": {
+          "ita": {
             "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1970_Austrian_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1970_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -4975,21 +4855,10 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 3,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 3.0
         },
         {
           "pos": 18,
@@ -5059,14 +4928,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 9,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5074,8 +4935,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5098,8 +4959,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5110,8 +4971,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -5122,8 +4983,8 @@
             },
             "results": [
               {
-                "position": 8,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5134,11 +4995,12 @@
             },
             "results": [
               {
-                "position": 3,
-                "pole_position": true
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 3.0
         },
         {
           "pos": 19,
@@ -5230,14 +5092,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5257,25 +5111,26 @@
             },
             "results": [
               {
+                "position": "Ret",
+                "background": "Not classified, retired"
+              }
+            ]
+          },
+          "ita": {
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1970_Italian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "DNS"
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 2.0
         },
         {
           "pos": 20,
@@ -5367,14 +5222,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5382,8 +5229,8 @@
             },
             "results": [
               {
-                "position": 5,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5394,8 +5241,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 5,
+                "background": "Other points position"
               }
             ]
           },
@@ -5406,8 +5253,8 @@
             },
             "results": [
               {
-                "position": "NC",
-                "background": "Not classified, finished"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5418,8 +5265,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -5430,8 +5277,8 @@
             },
             "results": [
               {
-                "position": 7,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5442,11 +5289,12 @@
             },
             "results": [
               {
-                "position": 2,
-                "pole_position": true
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
-          }
+          },
+          "points": 2.0
         },
         {
           "pos": 21,
@@ -5494,24 +5342,13 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 2,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 2.0
         },
         {
           "pos": 22,
@@ -5559,14 +5396,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 7,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5574,8 +5403,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 7,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5586,8 +5415,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5598,8 +5427,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -5610,8 +5439,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5634,11 +5463,12 @@
             },
             "results": [
               {
-                "position": 1,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 1.0
         },
         {
           "pos": 23,
@@ -5664,14 +5494,6 @@
           },
           "fra": null,
           "gbr": null,
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5679,8 +5501,8 @@
             },
             "results": [
               {
-                "position": 10,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -5691,8 +5513,8 @@
             },
             "results": [
               {
-                "position": "NC",
-                "background": "Not classified, finished"
+                "position": 10,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5703,8 +5525,8 @@
             },
             "results": [
               {
-                "position": 6,
-                "background": "Other points position"
+                "position": "NC",
+                "background": "Not classified, finished"
               }
             ]
           },
@@ -5715,8 +5537,8 @@
             },
             "results": [
               {
-                "position": 14,
-                "background": "Other classified position"
+                "position": 6,
+                "background": "Other points position"
               }
             ]
           },
@@ -5727,8 +5549,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 14,
+                "background": "Other classified position"
               }
             ]
           },
@@ -5739,11 +5561,12 @@
             },
             "results": [
               {
-                "position": 1,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 1.0
         },
         {
           "pos": 24,
@@ -5791,24 +5614,13 @@
               }
             ]
           },
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 1.0
         },
         {
           "pos": 25,
@@ -5834,14 +5646,14 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "can": {
+          "can": null,
+          "usa": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1970_Canadian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -5850,19 +5662,8 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 1,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 1.0
         },
         {
           "pos": null,
@@ -5954,14 +5755,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": 8,
-                "background": "Other classified position"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -5969,7 +5762,7 @@
             },
             "results": [
               {
-                "position": 9,
+                "position": 8,
                 "background": "Other classified position"
               }
             ]
@@ -5981,8 +5774,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6005,8 +5798,8 @@
             },
             "results": [
               {
-                "position": 9,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -6017,8 +5810,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 9,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6029,11 +5822,12 @@
             },
             "results": [
               {
-                "position": 0,
-                "pole_position": true
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
-          }
+          },
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6103,19 +5897,10 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
-          "ger": null,
-          "aut": {
+          "ger": {
             "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1970_Austrian_Grand_Prix"
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1970_German_Grand_Prix"
             },
             "results": [
               {
@@ -6124,6 +5909,7 @@
               }
             ]
           },
+          "aut": null,
           "ita": {
             "round": {
               "text": "ITA",
@@ -6131,8 +5917,8 @@
             },
             "results": [
               {
-                "position": "NC",
-                "background": "Not classified, finished"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -6143,24 +5929,25 @@
             },
             "results": [
               {
+                "position": "NC",
+                "background": "Not classified, finished"
+              }
+            ]
+          },
+          "usa": {
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": 11,
                 "background": "Other classified position"
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6229,14 +6016,6 @@
               }
             ]
           },
-          "": {
-            "results": [
-              {
-                "position": "DNQ",
-                "background": "Did not qualify"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -6244,8 +6023,8 @@
             },
             "results": [
               {
-                "position": 12,
-                "background": "Other classified position"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
             ]
           },
@@ -6256,7 +6035,7 @@
             },
             "results": [
               {
-                "position": 8,
+                "position": 12,
                 "background": "Other classified position"
               }
             ]
@@ -6268,8 +6047,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 8,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6280,24 +6059,25 @@
             },
             "results": [
               {
+                "position": "Ret",
+                "background": "Not classified, retired"
+              }
+            ]
+          },
+          "usa": {
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "DNQ",
                 "background": "Did not qualify"
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6323,24 +6103,13 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6421,19 +6190,7 @@
               }
             ]
           },
-          "": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1970_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 11,
-                "background": "Other classified position"
-              }
-            ]
-          },
+          "ger": null,
           "aut": {
             "round": {
               "text": "AUT",
@@ -6441,8 +6198,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": 11,
+                "background": "Other classified position"
               }
             ]
           },
@@ -6453,8 +6210,8 @@
             },
             "results": [
               {
-                "position": 10,
-                "background": "Other classified position"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -6465,24 +6222,25 @@
             },
             "results": [
               {
+                "position": 10,
+                "background": "Other classified position"
+              }
+            ]
+          },
+          "usa": {
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "Ret",
                 "background": "Not classified, retired"
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6508,24 +6266,13 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6551,24 +6298,13 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6640,24 +6376,13 @@
           },
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6672,19 +6397,7 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1970_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Ret",
-                "background": "Not classified, retired"
-              }
-            ]
-          },
+          "ger": null,
           "aut": {
             "round": {
               "text": "AUT",
@@ -6704,8 +6417,8 @@
             },
             "results": [
               {
-                "position": "NC",
-                "background": "Not classified, finished"
+                "position": "Ret",
+                "background": "Not classified, retired"
               }
             ]
           },
@@ -6716,24 +6429,25 @@
             },
             "results": [
               {
+                "position": "NC",
+                "background": "Not classified, finished"
+              }
+            ]
+          },
+          "usa": {
+            "round": {
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "Ret",
                 "background": "Not classified, retired"
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6781,14 +6495,14 @@
               }
             ]
           },
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "can": {
+          "can": null,
+          "usa": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1970_Canadian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -6797,19 +6511,8 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6846,14 +6549,6 @@
             ]
           },
           "gbr": null,
-          "": {
-            "results": [
-              {
-                "position": "DNQ",
-                "background": "Did not qualify"
-              }
-            ]
-          },
           "ger": {
             "round": {
               "text": "GER",
@@ -6861,8 +6556,8 @@
             },
             "results": [
               {
-                "position": "Ret",
-                "background": "Not classified, retired"
+                "position": "DNQ",
+                "background": "Did not qualify"
               }
             ]
           },
@@ -6873,26 +6568,27 @@
             },
             "results": [
               {
+                "position": "Ret",
+                "background": "Not classified, retired"
+              }
+            ]
+          },
+          "ita": {
+            "round": {
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1970_Italian_Grand_Prix"
+            },
+            "results": [
+              {
                 "position": "DNQ",
                 "background": "Did not qualify"
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6907,12 +6603,12 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
-          "aut": {
+          "aut": null,
+          "ita": {
             "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1970_Austrian_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1970_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -6921,11 +6617,11 @@
               }
             ]
           },
-          "ita": null,
-          "can": {
+          "can": null,
+          "usa": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1970_Canadian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -6934,19 +6630,8 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -6961,14 +6646,14 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "can": {
+          "can": null,
+          "usa": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1970_Canadian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -6977,19 +6662,8 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7037,24 +6711,13 @@
             ]
           },
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7079,7 +6742,11 @@
               }
             ]
           },
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1970_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": "DNQ",
@@ -7087,23 +6754,12 @@
               }
             ]
           },
-          "ger": null,
           "aut": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7118,7 +6774,11 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": {
+          "ger": {
+            "round": {
+              "text": "GER",
+              "url": "https://en.wikipedia.org/wiki/1970_German_Grand_Prix"
+            },
             "results": [
               {
                 "position": "DNQ",
@@ -7126,23 +6786,12 @@
               }
             ]
           },
-          "ger": null,
           "aut": null,
           "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7157,12 +6806,12 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
-          "aut": {
+          "aut": null,
+          "ita": {
             "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1970_Austrian_Grand_Prix"
+              "text": "ITA",
+              "url": "https://en.wikipedia.org/wiki/1970_Italian_Grand_Prix"
             },
             "results": [
               {
@@ -7171,21 +6820,10 @@
               }
             ]
           },
-          "ita": null,
           "can": null,
           "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         },
         {
           "pos": null,
@@ -7200,14 +6838,14 @@
           "ned": null,
           "fra": null,
           "gbr": null,
-          "": null,
           "ger": null,
           "aut": null,
           "ita": null,
-          "can": {
+          "can": null,
+          "usa": {
             "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1970_Canadian_Grand_Prix"
+              "text": "USA",
+              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
             },
             "results": [
               {
@@ -7216,176 +6854,8 @@
               }
             ]
           },
-          "usa": null,
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": 0,
-                "pole_position": true
-              }
-            ]
-          }
-        },
-        {
-          "pos": null,
-          "driver": {
-            "text": "Driver",
-            "url": null
-          },
-          "rsa": {
-            "round": {
-              "text": "RSA",
-              "url": "https://en.wikipedia.org/wiki/1970_South_African_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "RSA"
-              }
-            ]
-          },
-          "esp": {
-            "round": {
-              "text": "ESP",
-              "url": "https://en.wikipedia.org/wiki/1970_Spanish_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ESP"
-              }
-            ]
-          },
-          "mon": {
-            "round": {
-              "text": "MON",
-              "url": "https://en.wikipedia.org/wiki/1970_Monaco_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "MON"
-              }
-            ]
-          },
-          "bel": {
-            "round": {
-              "text": "BEL",
-              "url": "https://en.wikipedia.org/wiki/1970_Belgian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "BEL"
-              }
-            ]
-          },
-          "ned": {
-            "round": {
-              "text": "NED",
-              "url": "https://en.wikipedia.org/wiki/1970_Dutch_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "NED"
-              }
-            ]
-          },
-          "fra": {
-            "round": {
-              "text": "FRA",
-              "url": "https://en.wikipedia.org/wiki/1970_French_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "FRA"
-              }
-            ]
-          },
-          "gbr": {
-            "round": {
-              "text": "GBR",
-              "url": "https://en.wikipedia.org/wiki/1970_British_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "GBR"
-              }
-            ]
-          },
-          "": {
-            "results": [
-              {
-                "position": "GER"
-              }
-            ]
-          },
-          "ger": {
-            "round": {
-              "text": "GER",
-              "url": "https://en.wikipedia.org/wiki/1970_German_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "AUT"
-              }
-            ]
-          },
-          "aut": {
-            "round": {
-              "text": "AUT",
-              "url": "https://en.wikipedia.org/wiki/1970_Austrian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "ITA"
-              }
-            ]
-          },
-          "ita": {
-            "round": {
-              "text": "ITA",
-              "url": "https://en.wikipedia.org/wiki/1970_Italian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "CAN"
-              }
-            ]
-          },
-          "can": {
-            "round": {
-              "text": "CAN",
-              "url": "https://en.wikipedia.org/wiki/1970_Canadian_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "USA"
-              }
-            ]
-          },
-          "usa": {
-            "round": {
-              "text": "USA",
-              "url": "https://en.wikipedia.org/wiki/1970_United_States_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "MEX"
-              }
-            ]
-          },
-          "mex": {
-            "round": {
-              "text": "MEX",
-              "url": "https://en.wikipedia.org/wiki/1970_Mexican_Grand_Prix"
-            },
-            "results": [
-              {
-                "position": "Pts."
-              }
-            ]
-          }
+          "mex": null,
+          "points": 0.0
         }
       ],
       "constructors_standings": null,

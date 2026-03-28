@@ -1,8 +1,15 @@
 import pytest
 
-from infrastructure.http_client.caching import WikipediaCachePolicy
-from scrapers.base.options import HttpPolicy, default_http_policy
-from scrapers.config import ScraperConfig, default_config, default_scraper_config
+from infrastructure.http_client.caching.wiki import WikipediaCachePolicy
+from scrapers.base.options import HttpPolicy
+from scrapers.base.options import default_http_policy
+from scrapers.config import DataPaths
+from scrapers.config import ScraperConfig
+from scrapers.config import default_config
+from scrapers.config import default_data_paths
+from scrapers.config import default_scraper_config
+
+DEFAULT_TIMEOUT = 10
 
 
 def test_http_policy_rejects_invalid_values():
@@ -18,7 +25,7 @@ def test_default_http_policy_builds_wikipedia_cache():
 
     assert isinstance(policy, HttpPolicy)
     assert isinstance(policy.cache, WikipediaCachePolicy)
-    assert policy.timeout == 10
+    assert policy.timeout == DEFAULT_TIMEOUT
 
 
 def test_default_scraper_config_includes_http_policy():
@@ -36,3 +43,19 @@ def test_default_config_is_scraper_config_alias():
     assert isinstance(first, ScraperConfig)
     assert isinstance(second, ScraperConfig)
     assert first is not second
+
+
+def test_default_data_paths_and_compatibility_resolution(tmp_path):
+    paths = default_data_paths(base_dir=tmp_path / "data")
+
+    assert isinstance(paths, DataPaths)
+    assert paths.raw == tmp_path / "data" / "raw"
+    assert paths.normalized == tmp_path / "data" / "normalized"
+    assert paths.checkpoints == tmp_path / "data" / "checkpoints"
+
+    legacy = paths.legacy_wiki_file("drivers", "f1_drivers.json")
+    legacy.parent.mkdir(parents=True, exist_ok=True)
+    legacy.write_text("[]", encoding="utf-8")
+
+    resolved = paths.resolve_compatible_input("drivers", "f1_drivers.json")
+    assert resolved == legacy

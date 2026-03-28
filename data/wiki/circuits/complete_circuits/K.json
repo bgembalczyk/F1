@@ -1,0 +1,1174 @@
+[
+  {
+    "name": {
+      "list": [
+        "Korea International Circuit"
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Korea_International_Circuit",
+    "circuit_status": "former",
+    "type": "Race circuit",
+    "direction": "Anti-clockwise",
+    "grands_prix": [
+      {
+        "text": "Korean Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/Korean_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship"
+      },
+      {
+        "year": 2011,
+        "url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship"
+      },
+      {
+        "year": 2012,
+        "url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship"
+      },
+      {
+        "year": 2013,
+        "url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 4,
+    "location": {
+      "places": [
+        {
+          "text": "Yeongam",
+          "url": "https://en.wikipedia.org/wiki/Yeongam"
+        },
+        {
+          "text": "South Jeolla Province",
+          "url": "https://en.wikipedia.org/wiki/South_Jeolla_Province"
+        },
+        {
+          "text": "South Korea",
+          "url": "https://en.wikipedia.org/wiki/South_Korea"
+        }
+      ],
+      "coordinates": {
+        "lat": 34.733,
+        "lon": 126.417
+      }
+    },
+    "fia_grade": 1,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "2009-09-02"
+      },
+      {
+        "event": "opened",
+        "date": "2010-10-11"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "2010–present",
+        "length_km": 5.615,
+        "length_mi": 3.489,
+        "turns": 18,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Sebastian Vettel",
+              "url": "https://en.wikipedia.org/wiki/Sebastian_Vettel"
+            },
+            "vehicle": {
+              "text": "Red Bull RB7",
+              "url": "https://en.wikipedia.org/wiki/Red_Bull_RB7"
+            },
+            "time": 99.605,
+            "year": "2011",
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "National Circuit",
+        "years": "2010–present",
+        "length_km": 3.045,
+        "length_mi": 1.892,
+        "turns": 11,
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Peter Terting",
+              "url": "https://en.wikipedia.org/wiki/Peter_Terting"
+            },
+            "vehicle": {
+              "text": "Hyundai i30 N TCR",
+              "url": "https://en.wikipedia.org/wiki/Hyundai_i30_N_TCR"
+            },
+            "time": 80.191,
+            "year": "2018",
+            "series": {
+              "text": "TCR",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            }
+          },
+          {
+            "event": {
+              "text": "2018 2nd Yeongam TCR Korea round",
+              "url": "https://en.wikipedia.org/wiki/2018_TCR_Korea_Touring_Car_Series"
+            },
+            "driver": {
+              "text": "Peter Terting",
+              "url": "https://en.wikipedia.org/wiki/Peter_Terting"
+            },
+            "vehicle": {
+              "text": "CUPRA León TCR",
+              "url": "https://en.wikipedia.org/wiki/SEAT_Le%C3%B3n#Leon_Cup_Racer_and_Leon_TCR"
+            },
+            "time": 80.191,
+            "year": "2018",
+            "series": {
+              "text": "TCR Touring Car",
+              "url": "https://en.wikipedia.org/wiki/TCR_Touring_Car"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Short Grand Prix Circuit",
+        "years": "2019–present",
+        "length_km": 3.312,
+        "length_mi": 2.058,
+        "turns": 13
+      }
+    ]
+  },
+  {
+    "name": {
+      "list": [
+        "Kyalami Grand Prix Circuit"
+      ]
+    },
+    "url": "https://en.wikipedia.org/wiki/Kyalami_Racing_Circuit",
+    "circuit_status": "former",
+    "type": "Race circuit",
+    "direction": "Anti-clockwise",
+    "grands_prix": [
+      {
+        "text": "South African Grand Prix",
+        "url": "https://en.wikipedia.org/wiki/South_African_Grand_Prix"
+      }
+    ],
+    "seasons": [
+      {
+        "year": 1967,
+        "url": "https://en.wikipedia.org/wiki/1967_Formula_One_World_Championship"
+      },
+      {
+        "year": 1968,
+        "url": "https://en.wikipedia.org/wiki/1968_Formula_One_World_Championship"
+      },
+      {
+        "year": 1969,
+        "url": "https://en.wikipedia.org/wiki/1969_Formula_One_World_Championship"
+      },
+      {
+        "year": 1970,
+        "url": "https://en.wikipedia.org/wiki/1970_Formula_One_World_Championship"
+      },
+      {
+        "year": 1971,
+        "url": "https://en.wikipedia.org/wiki/1971_Formula_One_World_Championship"
+      },
+      {
+        "year": 1972,
+        "url": "https://en.wikipedia.org/wiki/1972_Formula_One_World_Championship"
+      },
+      {
+        "year": 1973,
+        "url": "https://en.wikipedia.org/wiki/1973_Formula_One_World_Championship"
+      },
+      {
+        "year": 1974,
+        "url": "https://en.wikipedia.org/wiki/1974_Formula_One_World_Championship"
+      },
+      {
+        "year": 1975,
+        "url": "https://en.wikipedia.org/wiki/1975_Formula_One_World_Championship"
+      },
+      {
+        "year": 1976,
+        "url": "https://en.wikipedia.org/wiki/1976_Formula_One_World_Championship"
+      },
+      {
+        "year": 1977,
+        "url": "https://en.wikipedia.org/wiki/1977_Formula_One_World_Championship"
+      },
+      {
+        "year": 1978,
+        "url": "https://en.wikipedia.org/wiki/1978_Formula_One_World_Championship"
+      },
+      {
+        "year": 1979,
+        "url": "https://en.wikipedia.org/wiki/1979_Formula_One_World_Championship"
+      },
+      {
+        "year": 1980,
+        "url": "https://en.wikipedia.org/wiki/1980_Formula_One_World_Championship"
+      },
+      {
+        "year": 1982,
+        "url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship"
+      },
+      {
+        "year": 1983,
+        "url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship"
+      },
+      {
+        "year": 1984,
+        "url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship"
+      },
+      {
+        "year": 1985,
+        "url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship"
+      },
+      {
+        "year": 1992,
+        "url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship"
+      },
+      {
+        "year": 1993,
+        "url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship"
+      }
+    ],
+    "grands_prix_held": 20,
+    "location": {
+      "places": [
+        {
+          "text": "Midrand",
+          "url": "https://en.wikipedia.org/wiki/Midrand"
+        },
+        {
+          "text": "Gauteng"
+        },
+        {
+          "text": "South Africa"
+        }
+      ],
+      "coordinates": {
+        "lat": -25.99806,
+        "lon": 28.06889
+      }
+    },
+    "fia_grade": 2,
+    "history": [
+      {
+        "event": "broke_ground",
+        "date": "1961"
+      },
+      {
+        "event": "opened",
+        "date": "1961-11-04"
+      }
+    ],
+    "layouts": [
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "2015–present",
+        "length_km": 4.529,
+        "length_mi": 2.814,
+        "turns": 16,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "2024 Kyalami 9 Hours",
+              "url": "https://en.wikipedia.org/wiki/Kyalami_9_Hours#Kyalami"
+            },
+            "driver": {
+              "text": "Jonathan Thomas"
+            },
+            "vehicle": {
+              "text": "Nova Proto NP02",
+              "url": "https://en.wikipedia.org/wiki/Nova_Proto_NP02"
+            },
+            "time": 100.303,
+            "year": "2024",
+            "series": {
+              "text": "Sports car racing",
+              "url": "https://en.wikipedia.org/wiki/Sports_car_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Kyalami Festival of Motoring"
+            },
+            "driver": {
+              "text": "Michael Stephen"
+            },
+            "vehicle": {
+              "text": "Audi R8 LMS GT3",
+              "url": "https://en.wikipedia.org/wiki/Audi_R8_(Type_4S)#R8_LMS_(GT3)"
+            },
+            "time": 101.425,
+            "year": "2023",
+            "series": {
+              "text": "GT3",
+              "url": "https://en.wikipedia.org/wiki/Group_GT3"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Kyalami Wild Rose Gin Sports & GT round"
+            },
+            "driver": {
+              "text": "Mikaeel Pitamber"
+            },
+            "vehicle": {
+              "text": "Ligier JS53",
+              "url": "https://en.wikipedia.org/wiki/Ligier_JS53"
+            },
+            "time": 107.188,
+            "year": "2023",
+            "series": {
+              "text": "Group CN",
+              "url": "https://en.wikipedia.org/wiki/Group_CN"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 2nd Kyalami ZX10 Masters round"
+            },
+            "driver": {
+              "text": "Clinton Seller"
+            },
+            "vehicle": {
+              "text": "Kawasaki Ninja ZX-10R",
+              "url": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_ZX-10R"
+            },
+            "time": 107.562,
+            "year": "2024",
+            "series": {
+              "text": "Superbike",
+              "url": "https://en.wikipedia.org/wiki/Superbike_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Kyalami BMW M Performance Parts Race Series round"
+            },
+            "driver": {
+              "text": "Paulo Loureiro"
+            },
+            "vehicle": {
+              "text": "BMW 335i",
+              "url": "https://en.wikipedia.org/wiki/BMW_3_Series_(F30)"
+            },
+            "time": 108.495,
+            "year": "2023",
+            "series": {
+              "text": "Touring car racing",
+              "url": "https://en.wikipedia.org/wiki/Touring_car_racing"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 Kyalami Global Touring Car Championship round",
+              "url": "https://en.wikipedia.org/wiki/Global_Touring_Car_Championship"
+            },
+            "driver": {
+              "text": "Michael Stephen"
+            },
+            "vehicle": {
+              "text": "BMW 128TC",
+              "url": "https://en.wikipedia.org/wiki/BMW_1_Series_(F40)"
+            },
+            "time": 110.256,
+            "year": "2024",
+            "series": {
+              "text": "GTC",
+              "url": "https://en.wikipedia.org/wiki/Global_Touring_Car_Championship#GTC"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Kyalami Wild Rose Gin Sports & GT round"
+            },
+            "driver": {
+              "text": "Nicky Dicks"
+            },
+            "vehicle": {
+              "text": "Porsche 911 (991 II) GT3 Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_911_GT3#991_GT3_Cup_(2017–2020)"
+            },
+            "time": 111.774,
+            "year": "2023",
+            "series": {
+              "text": "Porsche Carrera Cup",
+              "url": "https://en.wikipedia.org/wiki/Porsche_Carrera_Cup"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 Kyalami Investchem F1600 round"
+            },
+            "driver": {
+              "text": "KC Ensor-Smith"
+            },
+            "vehicle": {
+              "text": "Mygale M13-SJ",
+              "url": "https://en.wikipedia.org/wiki/Mygale#Racing_cars"
+            },
+            "time": 111.927,
+            "year": "2024",
+            "series": {
+              "text": "Formula Ford",
+              "url": "https://en.wikipedia.org/wiki/Formula_Ford"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Kyalami Extreme Supercars round"
+            },
+            "driver": {
+              "text": "Joseph Ellerine"
+            },
+            "vehicle": {
+              "text": "Audi R8 LMS GT4",
+              "url": "https://en.wikipedia.org/wiki/Audi_R8_(Type_4S)#R8_LMS_GT4"
+            },
+            "time": 112.127,
+            "year": "2023",
+            "series": {
+              "text": "GT4",
+              "url": "https://en.wikipedia.org/wiki/SRO_GT4"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Kyalami Global Touring Car Championship round",
+              "url": "https://en.wikipedia.org/wiki/2023_Global_Touring_Car_Championship"
+            },
+            "driver": {
+              "text": "Jonathan Mogotsi"
+            },
+            "vehicle": {
+              "text": "Volkswagen Polo",
+              "url": "https://en.wikipedia.org/wiki/Volkswagen_Polo#Sixth_generation_(AW/BZ;_2017)"
+            },
+            "time": 114.958,
+            "year": "2023",
+            "series": {
+              "text": "SupaCup",
+              "url": "https://en.wikipedia.org/wiki/Global_Touring_Car_Championship#GTC2/GTC_Supacup"
+            }
+          },
+          {
+            "event": {
+              "text": "2023 Kyalami BMW M Performance Parts Race Series round"
+            },
+            "driver": {
+              "text": "Andreas Meier",
+              "url": "https://en.wikipedia.org/wiki/Andreas_Meier"
+            },
+            "vehicle": {
+              "text": "BMW E36 STC",
+              "url": "https://en.wikipedia.org/wiki/BMW_3_Series_(E36)#Motorsports"
+            },
+            "time": 117.48,
+            "year": "2023",
+            "series": {
+              "text": "Super Touring",
+              "url": "https://en.wikipedia.org/wiki/Super_Touring"
+            }
+          },
+          {
+            "event": {
+              "text": "2024 Kyalami Gazoo Racing SA Cup round"
+            },
+            "driver": {
+              "text": "Alex Shahini"
+            },
+            "vehicle": {
+              "text": "Toyota GR86",
+              "url": "https://en.wikipedia.org/wiki/Toyota_86#Second_generation_(ZN8/ZD8;_2021)"
+            },
+            "time": 127.105,
+            "year": "2024",
+            "series": {
+              "text": "Gazoo Cup",
+              "url": "https://en.wikipedia.org/wiki/Toyota_86#Motorsport"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "1992–1993 and 2009–2015",
+        "length_km": 4.261,
+        "length_mi": 2.648,
+        "turns": 13,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "1992 South African Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1992_South_African_Grand_Prix"
+            },
+            "driver": {
+              "text": "Nigel Mansell",
+              "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+            },
+            "vehicle": {
+              "text": "Williams FW14B",
+              "url": "https://en.wikipedia.org/wiki/Williams_FW14"
+            },
+            "time": 77.578,
+            "year": "1992",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "2010 Kyalami World SBK round",
+              "url": "https://en.wikipedia.org/wiki/2010_Kyalami_Superbike_World_Championship_round"
+            },
+            "driver": {
+              "text": "Michel Fabrizio",
+              "url": "https://en.wikipedia.org/wiki/Michel_Fabrizio"
+            },
+            "vehicle": {
+              "text": "Ducati 1098R",
+              "url": "https://en.wikipedia.org/wiki/Ducati_1098#Racing"
+            },
+            "time": 98.17,
+            "year": "2010",
+            "series": {
+              "text": "World SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_World_Championship"
+            }
+          },
+          {
+            "event": {
+              "text": "1992 South African motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1992_South_African_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Wayne Gardner",
+              "url": "https://en.wikipedia.org/wiki/Wayne_Gardner"
+            },
+            "vehicle": {
+              "text": "Honda NSR500",
+              "url": "https://en.wikipedia.org/wiki/Honda_NSR500"
+            },
+            "time": 99.952,
+            "year": "1992",
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            }
+          },
+          {
+            "event": {
+              "text": "2009 Kyalami World SSP round",
+              "url": "https://en.wikipedia.org/wiki/2009_Kyalami_Superbike_World_Championship_round"
+            },
+            "driver": {
+              "text": "Eugene Laverty",
+              "url": "https://en.wikipedia.org/wiki/Eugene_Laverty"
+            },
+            "vehicle": {
+              "text": "Honda CBR600RR",
+              "url": "https://en.wikipedia.org/wiki/Honda_CBR600RR"
+            },
+            "time": 101.053,
+            "year": "2009",
+            "series": {
+              "text": "World SSP",
+              "url": "https://en.wikipedia.org/wiki/Supersport_World_Championship"
+            }
+          },
+          {
+            "event": {
+              "text": "1992 South African motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1992_South_African_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Max Biaggi",
+              "url": "https://en.wikipedia.org/wiki/Max_Biaggi"
+            },
+            "vehicle": {
+              "text": "Aprilia RSV 250",
+              "url": "https://en.wikipedia.org/wiki/Aprilia_RSV_250"
+            },
+            "time": 102.094,
+            "year": "1992",
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            }
+          },
+          {
+            "event": {
+              "text": "1992 South African motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1992_South_African_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Carlos Giró Jr"
+            },
+            "vehicle": {
+              "text": "Aprilia RS125R",
+              "url": "https://en.wikipedia.org/wiki/Aprilia_RS125R"
+            },
+            "time": 108.687,
+            "year": "1992",
+            "series": {
+              "text": "125cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            }
+          },
+          {
+            "event": {
+              "text": "2008-09 A1 Grand Prix of Nations, South Africa",
+              "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_A1_Grand_Prix_of_Nations,_South_Africa"
+            },
+            "driver": {
+              "text": "Fairuz Fauzy",
+              "url": "https://en.wikipedia.org/wiki/Fairuz_Fauzy"
+            },
+            "vehicle": {
+              "text": "A1GP Powered by Ferrari car",
+              "url": "https://en.wikipedia.org/wiki/A1GP_Powered_by_Ferrari_car"
+            },
+            "time": 88.306,
+            "year": "2008",
+            "series": {
+              "text": "A1GP",
+              "url": "https://en.wikipedia.org/wiki/A1_Grand_Prix"
+            }
+          },
+          {
+            "event": {
+              "text": "1995 Birkin Cars/TVR Invitational Race",
+              "url": "https://en.wikipedia.org/wiki/1995_Birkin_Cars/TVR_Invitational_Race"
+            },
+            "driver": {
+              "text": "Kenny Bräck",
+              "url": "https://en.wikipedia.org/wiki/Kenny_Br%C3%A4ck"
+            },
+            "vehicle": {
+              "text": "Reynard 94D",
+              "url": "https://en.wikipedia.org/wiki/Reynard_94D"
+            },
+            "time": 89.855,
+            "year": "1995",
+            "series": {
+              "text": "F3000",
+              "url": "https://en.wikipedia.org/wiki/Formula_3000"
+            }
+          },
+          {
+            "event": {
+              "text": "1998 2 h 30 min Kyalami",
+              "url": "https://en.wikipedia.org/wiki/1998_International_Sports_Racing_Series"
+            },
+            "driver": {
+              "text": "Mauro Baldi",
+              "url": "https://en.wikipedia.org/wiki/Mauro_Baldi"
+            },
+            "vehicle": {
+              "text": "Ferrari 333 SP",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_333_SP"
+            },
+            "time": 94.776,
+            "year": "1998",
+            "series": {
+              "text": "WSC",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            }
+          },
+          {
+            "event": {
+              "text": "2005 Kyalami Grand Prix Masters",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_Masters#2005"
+            },
+            "driver": {
+              "text": "Nigel Mansell",
+              "url": "https://en.wikipedia.org/wiki/Nigel_Mansell"
+            },
+            "vehicle": {
+              "text": "Delta Motorsport GP Masters car"
+            },
+            "time": 96.39,
+            "year": "2005",
+            "series": {
+              "text": "GP Masters",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_Masters"
+            }
+          },
+          {
+            "event": {
+              "text": "1999 SportsRacing World Cup Kyalami",
+              "url": "https://en.wikipedia.org/wiki/1999_SportsRacing_World_Cup"
+            },
+            "driver": {
+              "text": "Éric Bernard",
+              "url": "https://en.wikipedia.org/wiki/%C3%89ric_Bernard"
+            },
+            "vehicle": {
+              "text": "Lola B98/10",
+              "url": "https://en.wikipedia.org/wiki/Lola_B98/10"
+            },
+            "time": 96.756,
+            "year": "1999",
+            "series": {
+              "text": "LMP900",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            }
+          },
+          {
+            "event": {
+              "text": "2002 Kyalami World SBK round",
+              "url": "https://en.wikipedia.org/wiki/2002_Superbike_World_Championship"
+            },
+            "driver": {
+              "text": "Noriyuki Haga",
+              "url": "https://en.wikipedia.org/wiki/Noriyuki_Haga"
+            },
+            "vehicle": {
+              "text": "Aprilia RSV 1000",
+              "url": "https://en.wikipedia.org/wiki/Aprilia_RSV_Mille"
+            },
+            "time": 102.178,
+            "year": "2002",
+            "series": {
+              "text": "World SBK",
+              "url": "https://en.wikipedia.org/wiki/Superbike_World_Championship"
+            }
+          },
+          {
+            "event": {
+              "text": "2000 Vodacom Speed Festival Kyalami",
+              "url": "https://en.wikipedia.org/wiki/2000_SportsRacing_World_Cup_Kyalami"
+            },
+            "driver": {
+              "text": "Mark Smithson"
+            },
+            "vehicle": {
+              "text": "Pilbeam MP84",
+              "url": "https://en.wikipedia.org/wiki/Pilbeam_MP84"
+            },
+            "time": 103.07,
+            "year": "2000",
+            "series": {
+              "text": "LMP675",
+              "url": "https://en.wikipedia.org/wiki/Le_Mans_Prototype#History"
+            }
+          },
+          {
+            "event": {
+              "text": "2000 Vodacom Speed Festival Kyalami",
+              "url": "https://en.wikipedia.org/wiki/2000_SportsRacing_World_Cup_Kyalami"
+            },
+            "driver": {
+              "text": "Sarel van der Merwe",
+              "url": "https://en.wikipedia.org/wiki/Sarel_van_der_Merwe"
+            },
+            "vehicle": {
+              "text": "Chevrolet Camaro",
+              "url": "https://en.wikipedia.org/wiki/Chevrolet_Camaro_(fourth_generation)"
+            },
+            "time": 106.23,
+            "year": "2000",
+            "series": {
+              "text": "WesBank V8 Challenge"
+            }
+          },
+          {
+            "event": {
+              "text": "2002 Kyalami World SSP round",
+              "url": "https://en.wikipedia.org/wiki/Supersport_World_Championship"
+            },
+            "driver": {
+              "text": "James Whitham",
+              "url": "https://en.wikipedia.org/wiki/James_Whitham"
+            },
+            "vehicle": {
+              "text": "Yamaha YZF-R6",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_YZF-R6"
+            },
+            "time": 106.975,
+            "year": "2002",
+            "series": {
+              "text": "World SSP",
+              "url": "https://en.wikipedia.org/wiki/Supersport_World_Championship"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "1994–2009",
+        "length_km": 4.2606,
+        "length_mi": 2.6474,
+        "turns": 13,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Fairuz Fauzy",
+              "url": "https://en.wikipedia.org/wiki/Fairuz_Fauzy"
+            },
+            "vehicle": {
+              "text": "A1GP Ferrari",
+              "url": "https://en.wikipedia.org/wiki/A1GP_Powered_by_Ferrari_car"
+            },
+            "time": 88.306,
+            "year": "2009",
+            "series": {
+              "text": "A1 GP",
+              "url": "https://en.wikipedia.org/wiki/A1_Grand_Prix"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "1989–1991",
+        "length_km": 3.888,
+        "length_mi": 2.416,
+        "turns": 11,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "1990 Yellow Pages 200"
+            },
+            "driver": {
+              "text": "Roland Asch",
+              "url": "https://en.wikipedia.org/wiki/Roland_Asch"
+            },
+            "vehicle": {
+              "text": "Mercedes 190E 2.5-16 Evo2",
+              "url": "https://en.wikipedia.org/wiki/Mercedes-Benz_W201#Evolution_II"
+            },
+            "time": 90.66,
+            "year": "1990",
+            "series": {
+              "text": "Group A",
+              "url": "https://en.wikipedia.org/wiki/Group_A#Touring_car_racing"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Grand Prix Circuit",
+        "years": "1968–1988",
+        "length_km": 4.104,
+        "length_mi": 2.55,
+        "turns": 9,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
+        "race_lap_records": [
+          {
+            "event": {
+              "text": "1985 South African Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1985_South_African_Grand_Prix"
+            },
+            "driver": {
+              "text": "Keke Rosberg",
+              "url": "https://en.wikipedia.org/wiki/Keke_Rosberg"
+            },
+            "vehicle": {
+              "text": "Williams FW10",
+              "url": "https://en.wikipedia.org/wiki/Williams_FW10"
+            },
+            "time": 68.149,
+            "year": "1985",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "1986 Southern Sun 500",
+              "url": "https://en.wikipedia.org/wiki/Kyalami_9_Hours#Kyalami"
+            },
+            "driver": {
+              "text": "Jochen Mass",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+            },
+            "vehicle": {
+              "text": "Porsche 956",
+              "url": "https://en.wikipedia.org/wiki/Porsche_956"
+            },
+            "time": 71.17,
+            "year": "1986",
+            "series": {
+              "text": "Group C1",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
+            }
+          },
+          {
+            "event": {
+              "text": "1974 Kyalami 6 Hours",
+              "url": "https://en.wikipedia.org/wiki/1974_World_Sportscar_Championship"
+            },
+            "driver": {
+              "text": "Gérard Larrousse",
+              "url": "https://en.wikipedia.org/wiki/G%C3%A9rard_Larrousse"
+            },
+            "vehicle": {
+              "text": "Matra-Simca MS670C",
+              "url": "https://en.wikipedia.org/wiki/Matra-Simca_MS670#1974"
+            },
+            "time": 79.3,
+            "year": "1974",
+            "series": {
+              "text": "Group 5",
+              "url": "https://en.wikipedia.org/wiki/Group_5_(motorsport)#3rd_Generation_Group_5_–_\"Sports_Cars\"_(1972_to_1975)"
+            }
+          },
+          {
+            "event": {
+              "text": "1971 Kyalami 9 Hours",
+              "url": "https://en.wikipedia.org/wiki/Kyalami_9_Hours#Kyalami"
+            },
+            "driver": {
+              "text": "Mario Andretti",
+              "url": "https://en.wikipedia.org/wiki/Mario_Andretti"
+            },
+            "vehicle": {
+              "text": "Ferrari 312 PB",
+              "url": "https://en.wikipedia.org/wiki/Ferrari_312_PB"
+            },
+            "time": 80.1,
+            "year": "1971",
+            "series": {
+              "text": "Group 6",
+              "url": "https://en.wikipedia.org/wiki/Group_6_(motorsport)#Group_6_Prototype-Sports_Cars_(1966_to_1971)"
+            }
+          },
+          {
+            "event": {
+              "text": "1987 Kyalami Group C2 race"
+            },
+            "driver": {
+              "text": "Wayne Taylor",
+              "url": "https://en.wikipedia.org/wiki/Wayne_Taylor"
+            },
+            "vehicle": {
+              "text": "Tiga GC287",
+              "url": "https://en.wikipedia.org/wiki/Tiga_GC287"
+            },
+            "time": 80.68,
+            "year": "1987",
+            "series": {
+              "text": "Group C2",
+              "url": "https://en.wikipedia.org/wiki/Group_C"
+            }
+          },
+          {
+            "event": {
+              "text": "1973 Highveld 100",
+              "url": "https://en.wikipedia.org/wiki/South_African_Formula_One_Championship"
+            },
+            "driver": {
+              "text": "John Love",
+              "url": "https://en.wikipedia.org/wiki/John_Love_(racing_driver)"
+            },
+            "vehicle": {
+              "text": "Chevron B25",
+              "url": "https://en.wikipedia.org/wiki/Chevron_Cars_Ltd#Cars"
+            },
+            "time": 82.97,
+            "year": "1973",
+            "series": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            }
+          },
+          {
+            "event": {
+              "text": "1985 South African motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1985_South_African_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Freddie Spencer",
+              "url": "https://en.wikipedia.org/wiki/Freddie_Spencer"
+            },
+            "vehicle": {
+              "text": "Honda NSR500",
+              "url": "https://en.wikipedia.org/wiki/Honda_NSR500"
+            },
+            "time": 84.91,
+            "year": "1985",
+            "series": {
+              "text": "500cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            }
+          },
+          {
+            "event": {
+              "text": "1979 1000 km of Kyalami",
+              "url": "https://en.wikipedia.org/wiki/Kyalami_9_Hours#Kyalami"
+            },
+            "driver": {
+              "text": "Jochen Mass",
+              "url": "https://en.wikipedia.org/wiki/Jochen_Mass"
+            },
+            "vehicle": {
+              "text": "BMW M1",
+              "url": "https://en.wikipedia.org/wiki/BMW_M1"
+            },
+            "time": 85.34,
+            "year": "1979",
+            "series": {
+              "text": "Group 4",
+              "url": "https://en.wikipedia.org/wiki/Group_4_(motorsport)"
+            }
+          },
+          {
+            "event": {
+              "text": "1975 1000 km of Kyalami",
+              "url": "https://en.wikipedia.org/wiki/Kyalami_9_Hours#Kyalami"
+            },
+            "driver": {
+              "text": "Hans-Joachim Stuck",
+              "url": "https://en.wikipedia.org/wiki/Hans-Joachim_Stuck"
+            },
+            "vehicle": {
+              "text": "BMW 3.0 CSL",
+              "url": "https://en.wikipedia.org/wiki/BMW_E9#3.0_CSL"
+            },
+            "time": 87.4,
+            "year": "1975",
+            "series": {
+              "text": "Group 2",
+              "url": "https://en.wikipedia.org/wiki/Group_2_(motorsport)"
+            }
+          },
+          {
+            "event": {
+              "text": "1985 South African motorcycle Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1985_South_African_motorcycle_Grand_Prix"
+            },
+            "driver": {
+              "text": "Mario Rademeyer"
+            },
+            "vehicle": {
+              "text": "Yamaha TZ 250",
+              "url": "https://en.wikipedia.org/wiki/Yamaha_TZ_250"
+            },
+            "time": 88.14,
+            "year": "1985",
+            "series": {
+              "text": "250cc",
+              "url": "https://en.wikipedia.org/wiki/Grand_Prix_motorcycle_racing#Pre-MotoGP_era"
+            }
+          },
+          {
+            "event": {
+              "text": "1967 Rand Spring Trophy",
+              "url": "https://en.wikipedia.org/wiki/South_African_Formula_One_Championship"
+            },
+            "driver": {
+              "text": "Dave Charlton",
+              "url": "https://en.wikipedia.org/wiki/Dave_Charlton"
+            },
+            "vehicle": {
+              "text": "Brabham BT11",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
+            },
+            "time": 87.6,
+            "year": "1967",
+            "series": {
+              "text": "Formula One",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          },
+          {
+            "event": {
+              "text": "1961 Rand Grand Prix",
+              "url": "https://en.wikipedia.org/wiki/1961_Rand_Grand_Prix"
+            },
+            "driver": {
+              "text": "Jo Bonnier",
+              "url": "https://en.wikipedia.org/wiki/Jo_Bonnier"
+            },
+            "vehicle": {
+              "text": "Porsche 718/2",
+              "url": "https://en.wikipedia.org/wiki/Porsche_718#718/2"
+            },
+            "time": 99.1,
+            "year": "1961",
+            "series": {
+              "text": "Formula Two",
+              "url": "https://en.wikipedia.org/wiki/Formula_Two"
+            }
+          }
+        ]
+      },
+      {
+        "layout": "Original Grand Prix Circuit",
+        "years": "1961–1967",
+        "length_km": 4.094,
+        "length_mi": 2.544,
+        "turns": 9,
+        "surface": {
+          "values": [
+            "Asphalt"
+          ],
+          "text": "Asphalt"
+        },
+        "race_lap_records": [
+          {
+            "driver": {
+              "text": "Dave Charlton",
+              "url": "https://en.wikipedia.org/wiki/Dave_Charlton"
+            },
+            "vehicle": {
+              "text": "Brabham BT11",
+              "url": "https://en.wikipedia.org/wiki/Brabham_BT11"
+            },
+            "time": 87.6,
+            "year": "1967",
+            "series": {
+              "text": "F1",
+              "url": "https://en.wikipedia.org/wiki/Formula_One"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

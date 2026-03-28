@@ -1,35 +1,39 @@
 from abc import ABC
-from dataclasses import fields, is_dataclass
-from typing import Any, List, Optional
+from dataclasses import fields
+from dataclasses import is_dataclass
+from typing import Any
 
 from bs4 import BeautifulSoup
 
+from scrapers.base.extractors.table import TableExtractor
+from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.ABC import F1Scraper
-from scrapers.base.table.columns.types.auto import AutoColumn
+from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
 from scrapers.base.table.config import ScraperConfig
-from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.table.row import TableRow
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
+from scrapers.wiki.scraper import WikiScraper
 
 
-class F1TableScraper(F1Scraper, ABC):
+class F1TableScraper(WikiScraper, ABC):
     """
     Scraper oparty o pojedynczą tabelę 'wikitable'.
 
     Konfiguracja przez ScraperConfig:
 
-    - section_id       – id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
-                         jeśli None – szukamy po całej stronie.
-    - expected_headers – lista nagłówków, które MUSZĄ wystąpić w tabeli (podzbiór).
-    - column_map       – mapowanie "nagłówek z tabeli" -> "klucz w dict".
-    - columns          – mapowanie klucza/nagłówka -> BaseColumn / spec kolumny
+    - section_id       - id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
+                         jeśli None - szukamy po całej stronie.
+    - expected_headers - lista nagłówków, które MUSZĄ wystąpić w tabeli (podzbiór).
+    - column_map       - mapowanie "nagłówek z tabeli" -> "klucz w dict".
+    - columns          - mapowanie klucza/nagłówka -> BaseColumn / spec kolumny
                          (MultiColumn / FuncColumn / TextColumn / IntColumn / ...).
     """
 
     CONFIG: ScraperConfig | None = None
+    options_domain: str | None = None
+    options_profile: str | None = None
 
     # domyślna kolumna dla pól, które nie mają przypisanej logiki
     default_column: BaseColumn = AutoColumn()
@@ -40,13 +44,30 @@ class F1TableScraper(F1Scraper, ABC):
         options: ScraperOptions | None = None,
         config: ScraperConfig | None = None,
     ) -> None:
-        options = options or ScraperOptions()
+        if options is None:
+            if self.options_profile is None:
+                options = ScraperOptions()
+            else:
+                options = build_scraper_options(
+                    domain=self.options_domain,
+                    profile=self.options_profile,
+                    scraper_cls=type(self),
+                )
+        elif self.options_profile is not None:
+            options = build_scraper_options(
+                domain=self.options_domain,
+                profile=self.options_profile,
+                options=options,
+                scraper_cls=type(self),
+            )
+        options = self.extend_options(options)
 
         super().__init__(options=options)
 
         resolved_config = config or self.CONFIG
         if resolved_config is None:
-            raise ValueError("ScraperConfig must be provided for F1TableScraper.")
+            msg = "ScraperConfig must be provided for F1TableScraper."
+            raise ValueError(msg)
 
         self.config = resolved_config
         self.url = resolved_config.url
@@ -68,14 +89,18 @@ class F1TableScraper(F1Scraper, ABC):
         if self.validator is not None and self.validator.record_factory is None:
             self.validator.set_record_factory(self.record_factory)
 
-    def _parse_soup(self, soup: BeautifulSoup) -> List[Any]:
+    def extend_options(self, options: ScraperOptions) -> ScraperOptions:
+        return options
+
+    def _parse_soup(self, soup: BeautifulSoup) -> list[Any]:
         """
-        Parsuje tabelę przez HtmlTableParser (wybór tabeli + mapowanie nagłówków -> komórki).
+        Parsuje tabelę przez HtmlTableParser
+        (wybór tabeli + mapowanie nagłówków -> komórki).
         """
         self.extractor.set_run_id(getattr(self, "_run_id", None))
         return self.extractor.extract(soup)
 
-    def parse_row(self, row: TableRow) -> Optional[Any]:
+    def parse_row(self, row: TableRow) -> Any | None:
         """
         Dla każdej komórki:
         - ustala nagłówek i klucz,
@@ -106,7 +131,7 @@ class F1TableScraper(F1Scraper, ABC):
 
         return None
 
-    def _apply_transformers(self, records: List[Any]) -> List[Any]:
+    def _apply_transformers(self, records: list[Any]) -> list[Any]:
         transformers = list(self.transformers)
         if self.record_factory is not None:
             transformers.append(RecordFactoryTransformer(self.record_factory))

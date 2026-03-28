@@ -1,5 +1,6 @@
 import re
-from typing import Callable, Any
+from collections.abc import Callable
+from typing import Any
 
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -10,12 +11,12 @@ class RegexColumn(BaseColumn):
     Kolumna wyciągająca fragment tekstu na podstawie regexa
     i opcjonalnie rzutująca go na typ.
 
-    pattern        – regex z grupą przechwytującą (domyślnie group=1)
-    group          – numer grupy przechwytującej
-    cast           – funkcja typu str -> Any (np. float, int)
-    default        – wartość gdy brak dopasowania lub błąd rzutowania
-    normalize_number – jeśli True, usuwa ',' z liczby przed castem
-    flags          – flagi regexa (domyślnie IGNORECASE)
+    pattern        - regex z grupą przechwytującą (domyślnie group=1)
+    group          - numer grupy przechwytującej
+    cast           - funkcja typu str -> Any (np. float, int)
+    default        - wartość gdy brak dopasowania lub błąd rzutowania
+    normalize_number - jeśli True, usuwa ',' z liczby przed castem
+    flags          - flagi regexa (domyślnie IGNORECASE)
     """
 
     def __init__(

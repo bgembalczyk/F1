@@ -1,8 +1,8 @@
 """Implementacje rate limiting."""
 
-import random
+import secrets
 import time
-from typing import Callable
+from collections.abc import Callable
 
 from infrastructure.http_client.policies.rate_limiter import RateLimiter
 
@@ -29,5 +29,6 @@ class MinDelayRateLimiter(RateLimiter):
         elapsed = now - self._last_request_ts
         delay = self.min_delay_seconds - elapsed
         if delay > 0:
-            time.sleep(delay + random.random() * self.jitter_seconds)
+            jitter = secrets.SystemRandom().random() * self.jitter_seconds
+            time.sleep(delay + jitter)
         self._last_request_ts = time.monotonic()

@@ -24,32 +24,30 @@ class ValidationIssue:
         )
 
     @classmethod
-    def custom(cls, message: str, *, code: str = "custom") -> "ValidationIssue":
-        return cls(code=code, message=message)
+    def custom(
+        cls,
+        message: str,
+        *,
+        code: str = "custom",
+        field: str | None = None,
+    ) -> "ValidationIssue":
+        return cls(code=code, field=field, message=message)
 
     def with_prefix(self, prefix: str) -> "ValidationIssue":
-        if self.code in {"missing", "null", "type"} and self.field:
-            new_field = f"{prefix}.{self.field}"
+        if self.field:
+            field = f"{prefix}.{self.field}"
             if self.code == "missing":
-                return ValidationIssue.missing(new_field)
+                return ValidationIssue.missing(field)
             if self.code == "null":
-                return ValidationIssue.null(new_field)
-            message = self.message
-            if message:
+                return ValidationIssue.null(field)
+            if self.code == "type":
+                message = self.message
                 token = f"Invalid type for {self.field}"
                 if message.startswith(token):
-                    message = message.replace(
-                        token,
-                        f"Invalid type for {new_field}",
-                        1,
-                    )
-            else:
-                message = f"Invalid type for {new_field}"
-            return ValidationIssue(code="type", field=new_field, message=message)
+                    message = message.replace(token, f"Invalid type for {field}", 1)
+                return ValidationIssue(code="type", field=field, message=message)
+            return ValidationIssue(code=self.code, field=field, message=self.message)
 
         message = self.message
-        if message:
-            message = f"{prefix}.{message}"
-        else:
-            message = prefix
+        message = f"{prefix}.{message}" if message else prefix
         return ValidationIssue(code=self.code, message=message)

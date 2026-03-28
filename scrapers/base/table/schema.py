@@ -1,5 +1,5 @@
+from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Mapping
 
 from scrapers.base.table.columns.types.base import BaseColumn
 
@@ -17,14 +17,17 @@ class TableSchemaBuilder:
 
     def map(self, header: str, key: str, column: BaseColumn) -> "TableSchemaBuilder":
         if not isinstance(header, str) or not header.strip():
-            raise ValueError(
-                "TableSchemaBuilder.map header must be a non-empty string."
+            msg = "TableSchemaBuilder.map header must be a non-empty string."
+            raise TypeError(
+                msg,
             )
         if not isinstance(key, str) or not key.strip():
-            raise ValueError("TableSchemaBuilder.map key must be a non-empty string.")
+            msg = "TableSchemaBuilder.map key must be a non-empty string."
+            raise ValueError(msg)
         if not isinstance(column, BaseColumn):
-            raise ValueError(
-                "TableSchemaBuilder.map column must be a BaseColumn instance."
+            msg = "TableSchemaBuilder.map column must be a BaseColumn instance."
+            raise TypeError(
+                msg,
             )
         self._column_map[header] = key
         self._columns[key] = column

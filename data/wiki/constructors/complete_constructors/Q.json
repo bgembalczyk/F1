@@ -1,0 +1,189 @@
+[
+  {
+    "constructor": "Quin Epperly",
+    "constructor_url": "https://en.wikipedia.org/wiki/Quin_Epperly",
+    "details": {
+      "url": "https://en.wikipedia.org/wiki/Quin_Epperly",
+      "infoboxes": [
+        {
+          "title": null,
+          "rows": {
+            "Born": {
+              "text": "Quincy David Epperly ( 1913-03-03 ) March 3, 1913 Floyd, Virginia , U.S.",
+              "links": [
+                {
+                  "text": "Floyd, Virginia",
+                  "url": "https://en.wikipedia.org/wiki/Floyd,_Virginia"
+                }
+              ]
+            },
+            "Died": {
+              "text": "January 7, 2001 (2001-01-07) (aged 87) San Luis Obispo, California , U.S.",
+              "links": [
+                {
+                  "text": "San Luis Obispo, California",
+                  "url": "https://en.wikipedia.org/wiki/San_Luis_Obispo,_California"
+                }
+              ]
+            },
+            "Occupation": {
+              "text": "Auto racing builder",
+              "links": []
+            }
+          }
+        }
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Season",
+            "Driver",
+            "Grid",
+            "Classification",
+            "Points",
+            "Note",
+            "Race Report"
+          ],
+          "rows": [
+            {
+              "Season": "1955",
+              "Driver": "Jim Rathmann",
+              "Grid": "20",
+              "Classification": "14",
+              "Points": "",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1957",
+              "Driver": "Jim Rathmann",
+              "Grid": "32",
+              "Classification": "2",
+              "Points": "7",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1958",
+              "Driver": "George Amick",
+              "Grid": "25",
+              "Classification": "2",
+              "Points": "6",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1958",
+              "Driver": "Tony Bettenhausen",
+              "Grid": "9",
+              "Classification": "4",
+              "Points": "4",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1958",
+              "Driver": "Jim Rathmann",
+              "Grid": "20",
+              "Classification": "5",
+              "Points": "2",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1959",
+              "Driver": "Tony Bettenhausen",
+              "Grid": "15",
+              "Classification": "4",
+              "Points": "3",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1959",
+              "Driver": "Paul Goldsmith",
+              "Grid": "16",
+              "Classification": "5",
+              "Points": "2",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1959",
+              "Driver": "Johnny Boyd",
+              "Grid": "11",
+              "Classification": "6",
+              "Points": "",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1960",
+              "Driver": "Paul Goldsmith",
+              "Grid": "26",
+              "Classification": "3",
+              "Points": "4",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1960",
+              "Driver": "Red Amick",
+              "Grid": "22",
+              "Classification": "11",
+              "Points": "",
+              "Note": "",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1960",
+              "Driver": "Wayne Weiler",
+              "Grid": "15",
+              "Classification": "24",
+              "Points": "",
+              "Note": "Accident",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1960",
+              "Driver": "Johnny Boyd",
+              "Grid": "13",
+              "Classification": "27",
+              "Points": "",
+              "Note": "Engine",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1960",
+              "Driver": "Wayne Weiler",
+              "Grid": "15",
+              "Classification": "24",
+              "Points": "",
+              "Note": "Accident",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1960",
+              "Driver": "A. J. Foyt",
+              "Grid": "16",
+              "Classification": "25",
+              "Points": "",
+              "Note": "Epperly modified Kurtis Chassis-Clutch",
+              "Race Report": "Report"
+            },
+            {
+              "Season": "1960",
+              "Driver": "Jim McWithey",
+              "Grid": "32",
+              "Classification": "29",
+              "Points": "",
+              "Note": "Brakes",
+              "Race Report": "Report"
+            }
+          ],
+          "table_type": "wiki_table"
+        }
+      ]
+    }
+  }
+]

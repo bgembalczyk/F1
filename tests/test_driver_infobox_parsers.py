@@ -1,3 +1,4 @@
+# ruff: noqa: E501, PLR2004, RUF001, RUF002, RUF003, SLF001, ARG001, ARG002, N802, B017, PT011, PT017, E402, PT001, PLC0415, RUF100
 """Tests for driver infobox parsers."""
 
 import pytest
@@ -8,21 +9,23 @@ from scrapers.drivers.infobox.parsers.general import InfoboxGeneralParser
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
 from scrapers.drivers.infobox.parsers.title import InfoboxTitlesParser
 from scrapers.drivers.infobox.schema import DRIVER_GENERAL_SCHEMA
+from tests.support.driver_infobox_assertions import assert_car_number_with_present
 
 
-@pytest.fixture
+@pytest.fixture()
 def link_extractor():
     return InfoboxLinkExtractor(
-        include_urls=True, wikipedia_base="https://en.wikipedia.org"
+        include_urls=True,
+        wikipedia_base="https://en.wikipedia.org",
     )
 
 
-@pytest.fixture
+@pytest.fixture()
 def cell_parser(link_extractor):
     return InfoboxCellParser(include_urls=True, link_extractor=link_extractor)
 
 
-@pytest.fixture
+@pytest.fixture()
 def general_parser(link_extractor):
     return InfoboxGeneralParser(
         include_urls=True,
@@ -32,7 +35,7 @@ def general_parser(link_extractor):
     )
 
 
-@pytest.fixture
+@pytest.fixture()
 def titles_parser(link_extractor):
     return InfoboxTitlesParser(link_extractor)
 
@@ -80,8 +83,8 @@ def test_best_finish_multiple_seasons(cell_parser):
     """Test that best finish extracts multiple seasons as a list."""
     html = """
     <td class="infobox-data">
-        6th (<a href="/wiki/2021_IndyCar_Series" title="2021 IndyCar Series">2021</a>, 
-        <a href="/wiki/2022_IndyCar_Series" title="2022 IndyCar Series">2022</a>, 
+        6th (<a href="/wiki/2021_IndyCar_Series" title="2021 IndyCar Series">2021</a>,
+        <a href="/wiki/2022_IndyCar_Series" title="2022 IndyCar Series">2022</a>,
         <a href="/wiki/2023_IndyCar_Series" title="2023 IndyCar Series">2023</a>)
     </td>
     """
@@ -100,8 +103,8 @@ def test_race_event_parsing(cell_parser):
     """Test that race events are parsed as a list of links."""
     html = """
     <td class="infobox-data">
-        <a href="/wiki/2019_IndyCar_Series" title="2019 IndyCar Series">2019</a> 
-        <a href="/wiki/2019_Firestone_Grand_Prix_of_St._Petersburg" title="2019 Firestone Grand Prix of St. Petersburg">Grand Prix of St. Petersburg</a> 
+        <a href="/wiki/2019_IndyCar_Series" title="2019 IndyCar Series">2019</a>
+        <a href="/wiki/2019_Firestone_Grand_Prix_of_St._Petersburg" title="2019 Firestone Grand Prix of St. Petersburg">Grand Prix of St. Petersburg</a>
         (<a href="/wiki/Grand_Prix_of_St._Petersburg" title="Grand Prix of St. Petersburg">St. Petersburg</a>)
     </td>
     """
@@ -155,8 +158,8 @@ def test_class_wins_parsing(cell_parser):
     html = """
     <td class="infobox-data">
         6 <small>
-            (<a href="/wiki/1969_24_Hours_of_Le_Mans" title="1969 24 Hours of Le Mans">1969</a>, 
-            <a href="/wiki/1975_24_Hours_of_Le_Mans" title="1975 24 Hours of Le Mans">1975</a>, 
+            (<a href="/wiki/1969_24_Hours_of_Le_Mans" title="1969 24 Hours of Le Mans">1969</a>,
+            <a href="/wiki/1975_24_Hours_of_Le_Mans" title="1975 24 Hours of Le Mans">1975</a>,
             <a href="/wiki/1976_24_Hours_of_Le_Mans" title="1976 24 Hours of Le Mans">1976</a>)
         </small>
     </td>
@@ -218,7 +221,7 @@ def test_year_range_in_single_link_not_expanded(link_extractor):
     not a range of years to expand.
     """
     html = """
-    <li><a href="/wiki/2018%E2%80%9319_MRF_Challenge_Formula_2000_Championship" 
+    <li><a href="/wiki/2018%E2%80%9319_MRF_Challenge_Formula_2000_Championship"
            title="2018–19 MRF Challenge Formula 2000 Championship">2018–2019</a></li>
     """
     cell = BeautifulSoup(html, "html.parser")
@@ -270,7 +273,7 @@ def test_championships_simple_links(cell_parser):
     """Test that championships treats parentheses content as simple list of links."""
     html = """
     <td class="infobox-data">
-        1 (<a href="/wiki/2021%E2%80%9322_Formula_E_World_Championship" 
+        1 (<a href="/wiki/2021%E2%80%9322_Formula_E_World_Championship"
              title="2021–22 Formula E World Championship">2021–22</a>)
     </td>
     """
@@ -336,9 +339,9 @@ def test_racing_licence_with_years(cell_parser):
     """Test racing licence parsing with year ranges."""
     html = """
     <td class="infobox-data">
-        <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a> 
+        <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a>
         <span style="font-size: 85%;">(until 2019)</span><br>
-        <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a> 
+        <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a>
         <span style="font-size: 85%;">(2020–)</span>
     </td>
     """
@@ -407,9 +410,9 @@ def test_parse_racing_licence_with_beautiful_soup(cell_parser):
     """
     html = """
     <td class="infobox-data">
-        <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a> 
+        <a href="/wiki/FIA_Gold_Categorisation" title="FIA Gold Categorisation">FIA Gold</a>
         <span style="font-size: 85%;">(until 2019)</span><br>
-        <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a> 
+        <a href="/wiki/FIA_Platinum_Categorisation" title="FIA Platinum Categorisation">FIA Platinum</a>
         <span style="font-size: 85%;">(2020–)</span>
     </td>
     """
@@ -429,23 +432,7 @@ def test_parse_racing_licence_with_beautiful_soup(cell_parser):
 
 def test_car_number_with_present(cell_parser):
     """Test that car number parsing handles 'present' as null end year."""
-    html = """
-    <td class="infobox-data">
-        27 (<a href="/wiki/2014%E2%80%9315_Formula_E_Championship" title="2014–15 Formula E Championship">2014–2015</a>)<br>
-        25 (<a href="/wiki/2015%E2%80%9316_Formula_E_Championship" title="2015–16 Formula E Championship">2015</a>–present)
-    </td>
-    """
-    cell = BeautifulSoup(html, "html.parser").find("td")
-    result = cell_parser.parse_car_numbers(cell)
-
-    assert len(result) == 2
-    assert result[0]["number"] == 27
-    assert result[0]["years"]["start"] == 2014
-    assert result[0]["years"]["end"] == 2015
-
-    assert result[1]["number"] == 25
-    assert result[1]["years"]["start"] == 2015
-    assert result[1]["years"]["end"] is None  # 'present' should be None
+    assert_car_number_with_present(cell_parser)
 
 
 def test_died_with_hidden_iso_date(general_parser):
