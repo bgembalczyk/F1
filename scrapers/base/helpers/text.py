@@ -71,21 +71,23 @@ def normalize_dashes(text: str) -> str:
     return re.sub(r"(?<=\w)\s*-\s*(?=\w)", "-", t)
 
 
+_LANG_ALT = "|".join(sorted(LANG_CODES, key=len, reverse=True))
+_LANG_SUFFIX_PAREN_RE = re.compile(rf"\s*\(\s*({_LANG_ALT})\s*\)\s*$", flags=re.IGNORECASE)
+_LANG_SUFFIX_NO_PAREN_RE = re.compile(rf"\s+({_LANG_ALT})\s*$", flags=re.IGNORECASE)
+
+
 def strip_lang_suffix(text: str) -> str:
     """Usuń tokeny językowe na końcu (np. "(es)", " es")."""
-    lang_alt = "|".join(sorted(LANG_CODES, key=len, reverse=True))
     t = text
 
     while True:
         before = t
 
         # Usuń tokeny w nawiasach: (es), (fr), etc.
-        t = re.sub(rf"\s*\(\s*({lang_alt})\s*\)\s*$", "", t, flags=re.IGNORECASE)
-        t = t.strip()
+        t = _LANG_SUFFIX_PAREN_RE.sub("", t).strip()
 
         # Usuń tokeny bez nawiasów: " es", " fr", etc.
-        t = re.sub(rf"\s+({lang_alt})\s*$", "", t, flags=re.IGNORECASE)
-        t = t.strip()
+        t = _LANG_SUFFIX_NO_PAREN_RE.sub("", t).strip()
 
         if t == before:
             break
