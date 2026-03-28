@@ -1,13 +1,14 @@
 from __future__ import annotations
 
-from dataclasses import asdict
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+from typing import Any
 
 from bs4 import BeautifulSoup
 
 from scrapers.base.mixins.wiki_sections import WikipediaSectionByIdMixin
 from scrapers.base.sections.resolve_candidates import resolve_section_candidates
+from scrapers.base.sections.serializer import serialize_section_result
 from scrapers.wiki.parsers.section_detection import find_section_heading
 from scrapers.wiki.parsers.section_profiles import profile_entry_aliases
 
@@ -76,6 +77,6 @@ class SectionAdapter(WikipediaSectionByIdMixin):
         entries: list[SectionAdapterEntry],
     ) -> list[dict[str, Any]]:
         return [
-            asdict(result)
+            serialize_section_result(result)
             for result in self.parse_sections(soup=soup, domain=domain, entries=entries)
         ]

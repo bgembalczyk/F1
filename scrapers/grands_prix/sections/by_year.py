@@ -6,6 +6,7 @@ from typing import Any
 from scrapers.base.helpers.normalize import normalize_auto_value
 from scrapers.base.records import record_from_mapping
 from scrapers.base.sections.interface import SectionParseResult
+from scrapers.base.sections.serializer import build_section_metadata
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.columns.types import DriverListColumn
 from scrapers.base.table.columns.types import UrlColumn
@@ -57,7 +58,7 @@ class GrandPrixByYearSectionParser:
             section_id="By_year",
             section_label="By year",
             records=records,
-            metadata={"parser": self.__class__.__name__},
+            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia"),
         )
 
     def _build_pipeline(self, section_id: str | None) -> TablePipeline:

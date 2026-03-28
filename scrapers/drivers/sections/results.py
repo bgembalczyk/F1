@@ -9,6 +9,7 @@ from bs4 import Tag
 from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.records import record_from_mapping
 from scrapers.base.sections.interface import SectionParseResult
+from scrapers.base.sections.serializer import build_section_metadata
 from scrapers.base.table.columns.types import AutoColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
@@ -59,7 +60,7 @@ class DriverResultsSectionParser:
             section_id="driver_results",
             section_label="Driver results",
             records=records,
-            metadata={"parser": self.__class__.__name__},
+            metadata=build_section_metadata(parser=self.__class__.__name__, source="wikipedia"),
         )
 
     def _parse_results_table_data(
