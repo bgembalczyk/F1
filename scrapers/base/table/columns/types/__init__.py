@@ -35,6 +35,16 @@ from scrapers.seasons.columns.entrant import EntrantColumn
 from scrapers.seasons.columns.points import PointsColumn
 from scrapers.seasons.columns.seasons import SeasonsColumn
 
+# Backward-compatible re-exports for domain-specific columns moved out of
+# scrapers.base.table.columns.types.
+from scrapers.seasons.columns.constructor import ConstructorColumn
+from scrapers.seasons.columns.driver import DriverColumn
+from scrapers.seasons.columns.driver_list import DriverListColumn
+from scrapers.seasons.columns.engine import EngineColumn
+from scrapers.seasons.columns.entrant import EntrantColumn
+from scrapers.seasons.columns.points import PointsColumn
+from scrapers.seasons.columns.seasons import SeasonsColumn
+
 __all__ = [
     "AutoColumn",
     "BaseColumn",
