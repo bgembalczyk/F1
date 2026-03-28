@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
-from typing import Any
 
 from scrapers.base.sections.factory import ValidatingSectionServiceFactory
+from scrapers.base.single_wiki_article import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.drivers.infobox.service import DriverInfoboxExtractionService
 from scrapers.drivers.postprocess.assembler import DriverRecordAssembler
+from scrapers.drivers.postprocess.assembler import DriverRecordDTO
 from scrapers.drivers.postprocess.contract import DriverSectionContractPostProcessor
 from scrapers.drivers.sections.service import DriverSectionExtractionService
 
@@ -66,27 +69,32 @@ class SingleDriverScraper(SingleWikiArticleSectionAdapterBase):
     def _build_post_processor(self) -> DriverSectionContractPostProcessor:
         return DriverSectionContractPostProcessor()
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> dict[str, Any]:
-        return self._infobox_service.extract(soup, url=self.url).primary_record
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
+        return InfoboxPayloadDTO(
+            self._infobox_service.extract(soup, url=self.url).primary_record,
+        )
 
-    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self._sections_service_factory.create(
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
+        records = self._sections_service_factory.create(
             adapter=self,
             options=self._options,
             url=self.url,
         ).extract(soup)
+        return SectionsPayloadDTO(records)
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: dict[str, Any],
-        tables_payload: list[dict[str, Any]],
-        sections_payload: list[dict[str, Any]],
-    ) -> dict[str, Any]:
+        infobox_payload: InfoboxPayloadDTO,
+        tables_payload: TablesPayloadDTO,
+        sections_payload: SectionsPayloadDTO,
+    ) -> dict[str, object]:
         _ = soup, tables_payload
         return self._assembler.assemble(
-            url=self.url,
-            infobox=infobox_payload,
-            career_results=sections_payload,
+            payload=DriverRecordDTO(
+                url=self.url,
+                infobox=infobox_payload.data,
+                career_results=sections_payload.data,
+            ),
         )

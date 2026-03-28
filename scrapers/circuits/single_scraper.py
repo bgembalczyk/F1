@@ -6,7 +6,10 @@ from typing import Any
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
 from scrapers.base.options import ScraperOptions
 from scrapers.base.sections.factory import ValidatingSectionServiceFactory
+from scrapers.base.single_wiki_article import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleSectionAdapterBase
+from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.base.single_wiki_article.section_selection_strategy import (
     WikipediaSectionByIdSelectionStrategy,
 )
@@ -16,6 +19,7 @@ from scrapers.circuits.helpers.lap_record import is_lap_record_table
 from scrapers.circuits.helpers.layout import detect_layout_name
 from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.postprocess.assembler import CircuitRecordAssembler
+from scrapers.circuits.postprocess.assembler import CircuitRecordDTO
 from scrapers.circuits.postprocess.contract import CircuitSectionContractPostProcessor
 from scrapers.circuits.sections.service import CircuitSectionExtractionService
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
@@ -84,10 +88,26 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
     def _should_parse_article(self, soup: BeautifulSoup) -> bool:
         return is_circuit_like_article(soup)
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> dict[str, Any]:
-        return self._infobox_service.extract(soup, url=self.url).primary_record
+    def _select_section(
+        self,
+        soup: BeautifulSoup,
+        fragment: str | None,
+    ) -> BeautifulSoup:
+        if not fragment:
+            return soup
 
-    def _build_tables_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+        section = self.extract_section_by_id(soup, fragment, domain="circuits")
+        return section or soup
+
+    def _prepare_article_soup(self, soup: BeautifulSoup) -> BeautifulSoup:
+        return self._select_section(soup, self._section_fragment)
+
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
+        return InfoboxPayloadDTO(
+            self._infobox_service.extract(soup, url=self.url).primary_record,
+        )
+
+    def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
         lap_scraper = LapRecordsTableScraper(
             options=ScraperOptions(
                 include_urls=self.include_urls,
@@ -117,41 +137,30 @@ class F1SingleCircuitScraper(SingleWikiArticleSectionAdapterBase):
                 collect_lap_records(table, headers, base_layout, lap_scraper),
             )
 
-        layouts: dict[str, list[dict[str, Any]]] = {}
-        for rec in all_records:
-            layout_name = rec.get("layout")
-            if not layout_name:
-                continue
+        return TablesPayloadDTO(all_records)
 
-            rec_copy = dict(rec)
-            rec_copy.pop("layout", None)
-            layouts.setdefault(layout_name, []).append(rec_copy)
-
-        return [
-            {"layout": layout_name, "lap_records": recs}
-            for layout_name, recs in layouts.items()
-        ]
-
-    def _build_sections_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
         sections_service = self._sections_service_factory.create(
             adapter=self,
             options=self._options,
             url=self.url,
         )
-        return sections_service.extract(soup)
+        return SectionsPayloadDTO(sections_service.extract(soup))
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: dict[str, Any],
-        tables_payload: list[dict[str, Any]],
-        sections_payload: list[dict[str, Any]],
+        infobox_payload: InfoboxPayloadDTO,
+        tables_payload: TablesPayloadDTO,
+        sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
         _ = soup
         return self._assembler.assemble(
-            url=self._original_url or self.url,
-            infobox=infobox_payload,
-            tables=tables_payload,
-            sections=sections_payload,
+            payload=CircuitRecordDTO(
+                url=self._original_url or self.url,
+                infobox=infobox_payload.data,
+                lap_record_rows=tables_payload.data,
+                sections=sections_payload.data,
+            ),
         )

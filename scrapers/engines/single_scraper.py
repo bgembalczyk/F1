@@ -4,7 +4,10 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.infobox.html_parser import InfoboxHtmlParser
 from scrapers.base.options import ScraperOptions
+from scrapers.base.single_wiki_article import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article import SectionsPayloadDTO
 from scrapers.base.single_wiki_article import SingleWikiArticleScraperBase
+from scrapers.base.single_wiki_article import TablesPayloadDTO
 from scrapers.wiki.parsers.elements.article_tables import ArticleTablesParser
 
 
@@ -22,29 +25,29 @@ class SingleEngineManufacturerScraper(SingleWikiArticleScraperBase):
         super().__init__(options=options)
         self.article_tables_parser = ArticleTablesParser()
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         parser = InfoboxHtmlParser()
         infoboxes: list[dict[str, Any]] = []
         for table in self.find_infoboxes(soup):
             parsed = parser.parse_element(table)
             if parsed["title"] is not None or parsed["rows"]:
                 infoboxes.append(parsed)
-        return infoboxes
+        return InfoboxPayloadDTO(infoboxes)
 
-    def _build_tables_payload(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
-        return self.article_tables_parser.parse(soup)
+    def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
+        return TablesPayloadDTO(self.article_tables_parser.parse(soup))
 
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: list[dict[str, Any]],
-        tables_payload: list[dict[str, Any]],
-        sections_payload: list[dict[str, Any]],
+        infobox_payload: InfoboxPayloadDTO,
+        tables_payload: TablesPayloadDTO,
+        sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
         _ = soup, sections_payload
         return {
             "url": self.url,
-            "infoboxes": infobox_payload,
-            "tables": tables_payload,
+            "infoboxes": infobox_payload.data,
+            "tables": tables_payload.data,
         }

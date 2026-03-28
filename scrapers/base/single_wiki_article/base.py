@@ -8,6 +8,9 @@ from scrapers.base.factory.runtime_factory import ScraperRuntimeFactory
 from scrapers.base.helpers.http import init_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.post_processors import RecordPostProcessor
+from scrapers.base.single_wiki_article.dto import InfoboxPayloadDTO
+from scrapers.base.single_wiki_article.dto import SectionsPayloadDTO
+from scrapers.base.single_wiki_article.dto import TablesPayloadDTO
 from scrapers.base.single_wiki_article.section_selection_strategy import SectionSelectionStrategy
 from scrapers.wiki.scraper import WikiScraper
 
@@ -142,28 +145,28 @@ class SingleWikiArticleScraperBase(WikiScraper, ABC):
         _ = soup
         return record
 
-    def _build_infobox_payload(self, soup: BeautifulSoup) -> Any:
+    def _build_infobox_payload(self, soup: BeautifulSoup) -> InfoboxPayloadDTO:
         """Build normalized infobox payload used by ``_assemble_record``."""
         _ = soup
-        return []
+        return InfoboxPayloadDTO()
 
-    def _build_tables_payload(self, soup: BeautifulSoup) -> Any:
+    def _build_tables_payload(self, soup: BeautifulSoup) -> TablesPayloadDTO:
         """Build normalized table payload used by ``_assemble_record``."""
         _ = soup
-        return []
+        return TablesPayloadDTO()
 
-    def _build_sections_payload(self, soup: BeautifulSoup) -> Any:
+    def _build_sections_payload(self, soup: BeautifulSoup) -> SectionsPayloadDTO:
         """Build normalized section payload used by ``_assemble_record``."""
         _ = soup
-        return []
+        return SectionsPayloadDTO()
 
     @abstractmethod
     def _assemble_record(
         self,
         *,
         soup: BeautifulSoup,
-        infobox_payload: Any,
-        tables_payload: Any,
-        sections_payload: Any,
+        infobox_payload: InfoboxPayloadDTO,
+        tables_payload: TablesPayloadDTO,
+        sections_payload: SectionsPayloadDTO,
     ) -> dict[str, Any]:
         """Compose final domain record from template-method payload hooks."""
