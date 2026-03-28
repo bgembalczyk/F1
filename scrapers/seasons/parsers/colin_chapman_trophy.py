@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.records import record_from_mapping
 from scrapers.seasons.columns.constructor import ConstructorColumn
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.table.columns.types import ConstructorColumn
 from scrapers.base.table.columns.types import IntColumn
 from scrapers.points.columns.points import PointsColumn
 from scrapers.seasons.columns.position import PositionColumn
@@ -57,7 +59,7 @@ class ColinChapmanTrophyParser:
                 season_year=season_year,
                 star_mark_note="single_car_entry_no_points",
             ),
-            record_factory=record_from_mapping,
+            record_factory=RECORD_FACTORIES.mapping(),
         )
 
         scraper = F1StandingsScraper(options=self._table_parser.options, config=config)

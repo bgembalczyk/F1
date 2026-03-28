@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from scrapers.base.sections.factory import ValidatingSectionServiceFactory
-from scrapers.circuits.domain_record_service import DomainRecordService
+from scrapers.circuits.services.domain_record import DomainRecordService
 from scrapers.circuits.infobox.service import CircuitInfoboxExtractionService
 from scrapers.circuits.sections.service import CircuitSectionExtractionService
 

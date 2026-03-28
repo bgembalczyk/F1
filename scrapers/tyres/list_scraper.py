@@ -1,5 +1,8 @@
 from scrapers.base.records import record_from_mapping
 from scrapers.seasons.columns.seasons import SeasonsColumn
+from scrapers.base.source_catalog import TYRES
+from scrapers.base.factory.record_factory import RECORD_FACTORIES
+from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.columns.types import SkipColumn
 from scrapers.base.table.config import build_scraper_config
 from scrapers.base.table.dsl.column import column
@@ -26,15 +29,15 @@ class TyreManufacturersBySeasonScraper(F1TableScraper):
     ]
 
     CONFIG = build_scraper_config(
-        url="https://en.wikipedia.org/wiki/Formula_One_tyres#Tyre_manufacturers_by_season",
-        section_id="Tyre_manufacturers_by_season",
+        url=TYRES.url(),
+        section_id=TYRES.section_id,
         expected_headers=[
             "Season",
             "Manufacturer 1",
             "Wins",
         ],
         schema=TableSchemaDSL(columns=schema_columns),
-        record_factory=record_from_mapping,
+        record_factory=RECORD_FACTORIES.mapping(),
     )
 
 

@@ -2,9 +2,10 @@ from scrapers.base.list.indianapolis_only_scraper import IndianapolisOnlyListCon
 from scrapers.base.list.indianapolis_only_scraper import (
     build_indianapolis_only_list_scraper,
 )
+from scrapers.base.source_catalog import CONSTRUCTORS_LIST
 
 CONFIG = IndianapolisOnlyListConfig(
-    url="https://en.wikipedia.org/wiki/List_of_Formula_One_constructors",
+    url=CONSTRUCTORS_LIST.base_url,
     record_key="constructor",
     url_key="constructor_url",
     domain_name="constructors",

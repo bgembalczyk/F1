@@ -97,9 +97,7 @@ class WikipediaInfoboxScraper:
         if self.record_factory is None:
             return record
         try:
-            if isinstance(self.record_factory, type):
-                return self.record_factory(**record)
-            return self.record_factory(record)
+            return self.record_factory.create(record)
         except (AttributeError, KeyError, TypeError, ValueError):
             self.logger.warning(
                 "Infobox record_factory failed. Falling back to raw record: %s",
