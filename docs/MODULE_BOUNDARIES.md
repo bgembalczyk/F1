@@ -100,6 +100,43 @@ Wymuszenie CI:
 
 Checklistę operacyjną merge-gate utrzymujemy również w `docs/CHANGES_CHECKLIST.md`.
 
+### 6.1 Checklista PR (obowiązkowa dla zmian scraperów)
+
+Każdy PR obejmujący kod scraperów przechodzi przez poniższą checklistę architektoniczną:
+
+- [ ] **SRP (Single Responsibility Principle):** nowe/zmienione klasy i moduły mają pojedynczą odpowiedzialność.
+- [ ] **Brak duplikacji logiki:** logika nie jest kopiowana pomiędzy domenami i modułami.
+- [ ] **Użycie wspólnych abstrakcji:** preferowane są istniejące komponenty bazowe (`scrapers/base/*`) lub rozszerzenie wspólnego API.
+- [ ] **Brak nowych `Any` w domenie:** nowe adnotacje typów w kodzie domenowym nie wprowadzają kolejnych `Any` (chyba że istnieje formalnie udokumentowany wyjątek techniczny).
+
+### 6.2 „Architecture impact” dla zmian w `scrapers/base/`
+
+Jeżeli PR modyfikuje pliki pod `scrapers/base/`, opis PR **musi** zawierać sekcję:
+
+`Architecture impact`:
+- co zostało zmienione w warstwie bazowej,
+- które domeny (`drivers`, `constructors`, `circuits`, `seasons`, `grands_prix`, inne) są dotknięte,
+- czy zmiana jest kompatybilna wstecz,
+- czy wymagane są działania migracyjne.
+
+Brak sekcji `Architecture impact` dla zmian w `scrapers/base/` traktujemy jako niekompletny PR.
+
+### 6.3 Reguła implementacji nowej funkcjonalności
+
+Nowa funkcjonalność powinna być projektowana w następującej kolejności:
+
+1. **Najpierw** sprawdzić możliwość osadzenia jej we wspólnych komponentach bazowych (kontrakty, helpery, parsery, DSL, adaptery).
+2. Jeżeli krok 1 nie jest zasadny (np. przypadek specyficzny dla jednej domeny), dopiero wtedy tworzyć implementację lokalną.
+3. Decyzję o lokalnej implementacji należy uzasadnić w opisie PR (krótka notatka dlaczego nie użyto/nie rozszerzono warstwy bazowej).
+
+### 6.4 Przegląd „duplikacja tygodnia” (rytuał sprintowy)
+
+Minimum raz na sprint wykonujemy krótki przegląd duplikacji (`duplikacja tygodnia`):
+
+- identyfikujemy 1–3 najwyżej priorytetowe duplikacje logiki,
+- tworzymy zadania porządkowe (cleanup/refactor) w backlogu,
+- przypisujemy orientacyjny termin domknięcia (najlepiej w tym samym lub kolejnym sprincie).
+
 
 ## 7. Canonical launcher CLI i mapa kompatybilności
 
