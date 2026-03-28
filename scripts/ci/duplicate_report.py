@@ -61,7 +61,7 @@ def _build_added_lines_map(
         "--",
         *changed_files,
     ]
-    proc = subprocess.run(  # noqa: S603
+    proc = subprocess.run(
         diff_cmd,
         check=False,
         capture_output=True,

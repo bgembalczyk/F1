@@ -11,7 +11,6 @@ if TYPE_CHECKING:
     from scrapers.seasons.parsers.standings import SeasonStandingsParser
 
 
-
 class SeasonDriversStandingsSectionParser:
     def __init__(self, parser: SeasonStandingsParser, season_year: int | None) -> None:
         self._parser = parser

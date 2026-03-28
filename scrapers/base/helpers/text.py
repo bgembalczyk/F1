@@ -74,7 +74,10 @@ def normalize_dashes(text: str) -> str:
 
 
 _LANG_ALT = "|".join(sorted(LANG_CODES, key=len, reverse=True))
-_LANG_SUFFIX_PAREN_RE = re.compile(rf"\s*\(\s*({_LANG_ALT})\s*\)\s*$", flags=re.IGNORECASE)
+_LANG_SUFFIX_PAREN_RE = re.compile(
+    rf"\s*\(\s*({_LANG_ALT})\s*\)\s*$",
+    flags=re.IGNORECASE,
+)
 _LANG_SUFFIX_NO_PAREN_RE = re.compile(rf"\s+({_LANG_ALT})\s*$", flags=re.IGNORECASE)
 
 

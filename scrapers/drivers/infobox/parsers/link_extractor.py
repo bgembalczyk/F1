@@ -169,7 +169,7 @@ class InfoboxLinkExtractor:
         return [
             link
             for link in links
-            if _YEAR_RANGE_STRICT_RE.fullmatch((link.get("text") or ""))
+            if _YEAR_RANGE_STRICT_RE.fullmatch(link.get("text") or "")
         ]
 
     def _extract_years_from_list_items(
