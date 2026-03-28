@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from scrapers.seasons.domain_record_service import DomainRecordService
+from scrapers.seasons.services.domain_record import DomainRecordService
 from scrapers.seasons.pipeline import SeasonParserSetBuilder
 from scrapers.seasons.pipeline import SeasonSectionPipeline
 from scrapers.seasons.pipeline import SeasonYearResolver
