@@ -3,8 +3,8 @@
 from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_scraper_config
-from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
+from scrapers.base.table.columns.types import AutoColumn
+from scrapers.base.table.columns.types import LinksListColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.constructors.base_constructor_list_scraper import (
     BaseConstructorListScraper,

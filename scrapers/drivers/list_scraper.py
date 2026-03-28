@@ -5,8 +5,8 @@ from scrapers.base.options import ScraperOptions
 from scrapers.base.table.builders import build_columns
 from scrapers.base.table.builders import build_metric_columns
 from scrapers.base.table.builders import metric_column
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
-from scrapers.base.table.columns.types.text import TextColumn
+from scrapers.base.table.columns.types import SeasonsColumn
+from scrapers.base.table.columns.types import TextColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.base.transformers.drivers_championships import (

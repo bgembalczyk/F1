@@ -2,9 +2,9 @@
 
 from models.records.factories.build import RECORD_BUILDERS
 from scrapers.base.table.builders import build_columns
-from scrapers.base.table.columns.types.int import IntColumn
-from scrapers.base.table.columns.types.links_list import LinksListColumn
-from scrapers.base.table.columns.types.seasons import SeasonsColumn
+from scrapers.base.table.columns.types import IntColumn
+from scrapers.base.table.columns.types import LinksListColumn
+from scrapers.base.table.columns.types import SeasonsColumn
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.seed_list_scraper import SeedListTableScraper
 from scrapers.grands_prix.columns.race_title_status import RaceTitleStatusColumn
