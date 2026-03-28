@@ -1,6 +1,6 @@
 # Stopniowe zaostrzanie progów duplikacji w CI
 
-Workflow `static-quality-gates.yml` wykorzystuje `jscpd` tylko dla **plików Python zmienionych w PR**. Dzięki temu na starcie nie blokujemy merge przez dług historyczny, a jednocześnie nie dopuszczamy do dokładania nowych duplikatów.
+Workflow `static-quality-gates.yml` wykorzystuje `jscpd` dla **plików Python zmienionych w PR**, a następnie filtruje wynik do duplikatów dotykających **linii dodanych w danym PR**. Dzięki temu na starcie nie blokujemy merge przez dług historyczny, a jednocześnie nie dopuszczamy do dokładania nowych duplikatów.
 
 ## Aktualna konfiguracja (etap startowy)
 

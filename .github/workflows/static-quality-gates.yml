@@ -66,6 +66,7 @@ jobs:
           else
             BASE_SHA="${{ github.event.before }}"
           fi
+          echo "base_sha=$BASE_SHA" >> "$GITHUB_OUTPUT"
 
           mapfile -t PY_FILES < <(git diff --name-only "$BASE_SHA" "${{ github.sha }}" -- '*.py')
           if [[ ${#PY_FILES[@]} -eq 0 ]]; then
@@ -102,6 +103,9 @@ jobs:
             --output-md .jscpd-report/pr-comment.md \
             --warn-threshold "$NEW_DUPLICATES_WARN_THRESHOLD" \
             --fail-threshold "$NEW_DUPLICATES_FAIL_THRESHOLD" \
+            --base-sha "${{ steps.changed-py.outputs.base_sha }}" \
+            --head-sha "${{ github.sha }}" \
+            --changed-files "${{ steps.changed-py.outputs.changed_files }}" \
             --github-output "$GITHUB_OUTPUT"
 
       - name: Publish duplicate report as PR comment

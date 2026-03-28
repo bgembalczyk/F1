@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -31,6 +33,78 @@ def _line_range(meta: dict[str, Any]) -> str:
     if start and end:
         return f"L{start}-L{end}"
     return "line ?"
+
+
+def _as_int(value: Any) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _build_added_lines_map(base_sha: str, head_sha: str, changed_files: list[str]) -> dict[str, set[int]]:
+    if not base_sha or not head_sha or not changed_files:
+        return {}
+
+    diff_cmd = [
+        "git",
+        "diff",
+        "--unified=0",
+        "--no-color",
+        base_sha,
+        head_sha,
+        "--",
+        *changed_files,
+    ]
+    proc = subprocess.run(diff_cmd, check=False, capture_output=True, text=True)
+    if proc.returncode != 0:
+        return {}
+
+    added: dict[str, set[int]] = {}
+    current_file: str | None = None
+    hunk_re = re.compile(r"^@@ -\\d+(?:,\\d+)? \\+(\\d+)(?:,(\\d+))? @@")
+
+    for raw_line in proc.stdout.splitlines():
+        if raw_line.startswith("+++ b/"):
+            current_file = raw_line[6:]
+            added.setdefault(current_file, set())
+            continue
+
+        if not raw_line.startswith("@@") or not current_file:
+            continue
+
+        match = hunk_re.match(raw_line)
+        if not match:
+            continue
+
+        start = _as_int(match.group(1))
+        count = _as_int(match.group(2) or 1)
+        if count <= 0:
+            continue
+
+        for line_no in range(start, start + count):
+            added[current_file].add(line_no)
+
+    return added
+
+
+def _is_new_duplicate(duplicate: dict[str, Any], added_lines: dict[str, set[int]]) -> bool:
+    for side in ("first", "second"):
+        file_meta = duplicate[side]
+        file_name = str(file_meta.get("name", ""))
+        start = _as_int(file_meta.get("start"))
+        end = _as_int(file_meta.get("end"))
+        if not file_name or start <= 0 or end <= 0:
+            continue
+
+        changed_line_set = added_lines.get(file_name, set())
+        if not changed_line_set:
+            continue
+
+        for line_no in range(start, end + 1):
+            if line_no in changed_line_set:
+                return True
+    return False
 
 
 def build_markdown(duplicates: list[dict[str, Any]], warn_threshold: int, fail_threshold: int) -> str:
@@ -84,6 +158,9 @@ def main() -> int:
     parser.add_argument("--output-md", required=True)
     parser.add_argument("--warn-threshold", type=int, required=True)
     parser.add_argument("--fail-threshold", type=int, required=True)
+    parser.add_argument("--base-sha", default="")
+    parser.add_argument("--head-sha", default="")
+    parser.add_argument("--changed-files", default="")
     parser.add_argument("--github-output", required=True)
     args = parser.parse_args()
 
@@ -95,8 +172,15 @@ def main() -> int:
         raw_duplicates = payload.get("duplicates") or payload.get("clones") or []
         duplicates = [_normalize_dup(item) for item in raw_duplicates]
 
-    count = len(duplicates)
-    markdown = build_markdown(duplicates, args.warn_threshold, args.fail_threshold)
+    changed_files = [part for part in args.changed_files.split(",") if part]
+    added_lines_map = _build_added_lines_map(args.base_sha, args.head_sha, changed_files)
+    if changed_files and not added_lines_map:
+        new_duplicates = duplicates
+    else:
+        new_duplicates = [dup for dup in duplicates if _is_new_duplicate(dup, added_lines_map)]
+
+    count = len(new_duplicates)
+    markdown = build_markdown(new_duplicates, args.warn_threshold, args.fail_threshold)
 
     Path(args.output_md).write_text(markdown, encoding="utf-8")
 
