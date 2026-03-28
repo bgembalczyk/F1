@@ -5,7 +5,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 
 
@@ -28,7 +28,14 @@ class FinishedSeasonParser:
             DomainParseError: If parsing fails
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        try:
+        return ErrorHandler.run_domain_parse(
+            lambda: FinishedSeasonParser._parse_finished_last_season_payload(text),
+            message=f"Nie udało się sparsować ostatniego sezonu: {text!r}.",
+            parser_name=FinishedSeasonParser.__name__,
+        )
+
+    @staticmethod
+    def _parse_finished_last_season_payload(text: str) -> dict[str, Any]:
             result: dict[str, Any] = {"position": None, "points": None}
 
             # Extract position (before parentheses)
@@ -48,9 +55,3 @@ class FinishedSeasonParser:
                     result["points"] = float(points_str)
 
             return result
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować ostatniego sezonu: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc

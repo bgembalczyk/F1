@@ -5,7 +5,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.drivers.infobox.parsers.constants import MIN_VALID_CAR_NUMBER_YEAR
 from scrapers.drivers.infobox.parsers.year import YearParser
@@ -45,14 +45,11 @@ class CarNumbersParser:
         )
         for match in pattern.finditer(normalized):
             prefix = match.group("prefix") or ""
-            try:
-                number = int(match.group("number"))
-            except (TypeError, ValueError) as exc:
-                msg = f"Nie udało się sparsować numeru samochodu: {raw_text!r}."
-                raise DomainParseError(
-                    msg,
-                    cause=exc,
-                ) from exc
+            number = ErrorHandler.run_domain_parse(
+                lambda: int(match.group("number")),
+                message=f"Nie udało się sparsować numeru samochodu: {raw_text!r}.",
+                parser_name=CarNumbersParser.__name__,
+            )
             if number >= MIN_VALID_CAR_NUMBER_YEAR and not prefix:
                 continue
             years_text = match.group("years") or ""

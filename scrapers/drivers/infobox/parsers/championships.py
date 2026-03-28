@@ -5,7 +5,7 @@ from typing import Any
 
 from bs4 import Tag
 
-from scrapers.base.errors import DomainParseError
+from scrapers.base.error_handler import ErrorHandler
 from scrapers.base.helpers.text_normalization import clean_infobox_text
 from scrapers.base.helpers.year_extraction import YearExtractor
 from scrapers.drivers.infobox.parsers.link_extractor import InfoboxLinkExtractor
@@ -39,7 +39,13 @@ class ChampionshipsParser:
             DomainParseError: If parsing fails
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        try:
+        return ErrorHandler.run_domain_parse(
+            lambda: self._parse_championships_payload(cell, text),
+            message=f"Nie udało się sparsować mistrzostw: {text!r}.",
+            parser_name=self.__class__.__name__,
+        )
+
+    def _parse_championships_payload(self, cell: Tag, text: str) -> dict[str, Any]:
             # Extract count
             count_match = re.search(r"^(\d+)", text)
             count = int(count_match.group(1)) if count_match else 0
@@ -48,12 +54,6 @@ class ChampionshipsParser:
             championships = self._link_extractor.extract_links(cell)
 
             return {"count": count, "championships": championships}
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować mistrzostw: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc
 
     def parse_class_wins(self, cell: Tag) -> dict[str, Any]:
         """Parse class wins count with year and link information.
@@ -71,7 +71,13 @@ class ChampionshipsParser:
             DomainParseError: If parsing fails
         """
         text = clean_infobox_text(cell.get_text(" ", strip=True)) or ""
-        try:
+        return ErrorHandler.run_domain_parse(
+            lambda: self._parse_class_wins_payload(cell, text),
+            message=f"Nie udało się sparsować zwycięstw klasowych: {text!r}.",
+            parser_name=self.__class__.__name__,
+        )
+
+    def _parse_class_wins_payload(self, cell: Tag, text: str) -> dict[str, Any]:
             # Extract count
             count_match = re.search(r"^(\d+)", text)
             count = int(count_match.group(1)) if count_match else 0
@@ -103,9 +109,3 @@ class ChampionshipsParser:
                         wins.append({"year": year, "url": year_to_url.get(year)})
 
             return {"count": count, "wins": wins}
-        except (TypeError, ValueError) as exc:
-            msg = f"Nie udało się sparsować zwycięstw klasowych: {text!r}."
-            raise DomainParseError(
-                msg,
-                cause=exc,
-            ) from exc

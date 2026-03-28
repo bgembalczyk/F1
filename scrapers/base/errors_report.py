@@ -13,7 +13,11 @@ class ErrorReport:
     timestamp: str
     error_type: str
     message: str
+    category: str | None
+    behavior: str | None
     url: str | None
+    section_id: str | None
+    parser_name: str | None
     critical: bool | None
     cause_type: str | None = None
     cause_message: str | None = None
@@ -29,21 +33,33 @@ class ErrorReport:
         timestamp = datetime.now(timezone.utc).isoformat()
         if isinstance(error, ScraperError):
             url = error.url
+            section_id = error.section_id
+            parser_name = error.parser_name
+            category = error.category.value
+            behavior = error.behavior.value
             critical = error.critical
             cause = error.cause
         else:
             url = None
+            section_id = None
+            parser_name = None
+            category = None
+            behavior = None
             critical = None
             cause = None
         return cls(
             timestamp=timestamp,
             error_type=type(error).__name__,
             message=str(error),
+            category=category,
+            behavior=behavior,
             url=url,
+            section_id=section_id,
+            parser_name=parser_name,
             critical=critical,
             cause_type=type(cause).__name__ if cause is not None else None,
             cause_message=str(cause) if cause is not None else None,
-            run_id=run_id,
+            run_id=run_id or (error.run_id if isinstance(error, ScraperError) else None),
         )
 
 
