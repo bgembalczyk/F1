@@ -7,7 +7,7 @@ from scrapers.base.table.columns.types.constructor import ConstructorColumn
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.seasons.columns.race_result import RaceResultColumn
@@ -48,7 +48,7 @@ class ColinChapmanTrophyParser:
             column("Car no.", "no", IntColumn()),
         ]
 
-        config = ScraperConfig(
+        config = TableScraperConfig(
             url=self._table_parser.url,
             section_id="Colin_Chapman_Trophy",
             expected_headers=["Constructor"],

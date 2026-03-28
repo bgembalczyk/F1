@@ -10,7 +10,7 @@ from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.row import TableRow
 from scrapers.base.transformers.helpers import apply_transformers
 from scrapers.base.transformers.record_factory import RecordFactoryTransformer
@@ -21,7 +21,7 @@ class F1TableScraper(WikiScraper, ABC):
     """
     Scraper oparty o pojedynczą tabelę 'wikitable'.
 
-    Konfiguracja przez ScraperConfig:
+    Konfiguracja przez TableScraperConfig:
 
     - section_id       - id nagłówka sekcji (np. "Constructors_for_the_2025_season"),
                          jeśli None - szukamy po całej stronie.
@@ -31,7 +31,7 @@ class F1TableScraper(WikiScraper, ABC):
                          (MultiColumn / FuncColumn / TextColumn / IntColumn / ...).
     """
 
-    CONFIG: ScraperConfig | None = None
+    CONFIG: TableScraperConfig | None = None
     options_domain: str | None = None
     options_profile: str | None = None
 
@@ -42,7 +42,7 @@ class F1TableScraper(WikiScraper, ABC):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+        config: TableScraperConfig | None = None,
     ) -> None:
         if options is None:
             if self.options_profile is None:
@@ -64,7 +64,7 @@ class F1TableScraper(WikiScraper, ABC):
 
         resolved_config = config or self.CONFIG
         if resolved_config is None:
-            msg = "ScraperConfig must be provided for F1TableScraper."
+            msg = "TableScraperConfig must be provided for F1TableScraper."
             raise ValueError(msg)
 
         self.config = resolved_config

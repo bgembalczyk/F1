@@ -7,7 +7,7 @@ from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.points import PointsColumn
 from scrapers.base.table.columns.types.position import PositionColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.parser import HtmlTableParser
@@ -62,7 +62,7 @@ class SeasonTableParser:
             column("Car no.", "no", IntColumn()),
         ]
         for section_id in section_ids:
-            config = ScraperConfig(
+            config = TableScraperConfig(
                 url=self.url,
                 section_id=section_id,
                 expected_headers=[subject_header],
@@ -89,7 +89,7 @@ class SeasonTableParser:
         default_column: Any | None = None,
     ) -> list[dict[str, Any]]:
         for section_id in section_ids:
-            config = ScraperConfig(
+            config = TableScraperConfig(
                 url=self.url,
                 section_id=section_id,
                 expected_headers=expected_headers,
@@ -145,7 +145,7 @@ class SeasonTableParser:
         ):
             return []
 
-        config = ScraperConfig(
+        config = TableScraperConfig(
             url=self.url,
             section_id="adapter_section",
             expected_headers=expected_headers,

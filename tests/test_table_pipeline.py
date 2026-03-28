@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 pytest.importorskip("bs4")
 
 from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
 
 
@@ -20,7 +20,7 @@ def test_table_pipeline_parses_rows_and_filters_repeated_headers():
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    config = ScraperConfig(
+    config = TableScraperConfig(
         url="https://example.com",
         expected_headers=["Driver", "Time"],
         column_map={"Driver": "driver"},
@@ -51,7 +51,7 @@ def test_table_pipeline_maps_columns_for_cells():
     cells = soup.find_all("td")
     headers = ["Driver", "Team"]
 
-    config = ScraperConfig(
+    config = TableScraperConfig(
         url="https://example.com",
         column_map={"Driver": "driver_name"},
         columns={"driver_name": AutoColumn(), "team": AutoColumn()},
@@ -71,7 +71,7 @@ def test_table_pipeline_normalize_cell_maps_header_and_cleans_text():
     html = "<table><tr><td>Lewis Hamilton [1]</td></tr></table>"
     soup = BeautifulSoup(html, "html.parser")
     cell = soup.find("td")
-    config = ScraperConfig(
+    config = TableScraperConfig(
         url="https://example.com",
         column_map={"Driver": "driver_name"},
         columns={"driver_name": AutoColumn()},
@@ -92,7 +92,7 @@ def test_table_pipeline_extract_links_respects_include_urls_flag():
     html = '<table><tr><td><a href="/wiki/Lewis">Lewis</a></td></tr></table>'
     soup = BeautifulSoup(html, "html.parser")
     cell = soup.find("td")
-    config = ScraperConfig(
+    config = TableScraperConfig(
         url="https://example.com",
         columns={"driver": AutoColumn()},
     )
@@ -117,7 +117,7 @@ def test_table_pipeline_applies_record_factory():
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    config = ScraperConfig(
+    config = TableScraperConfig(
         url="https://example.com",
         expected_headers=["Driver", "Time"],
         columns={"driver": AutoColumn(), "time": AutoColumn()},

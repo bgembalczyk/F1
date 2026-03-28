@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.sections.table_section_parser import TableSectionParser
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from tests._section_parser_fixture_pattern import SectionContractFixture
 from tests._section_parser_fixture_pattern import assert_section_contract_template
 
@@ -40,7 +40,7 @@ def test_table_section_parser_returns_section_parse_result_contract() -> None:
     </div>
     """
     parser = TableSectionParser(
-        config=ScraperConfig(
+        config=TableScraperConfig(
             url="https://example.test/results",
             expected_headers=("year", "champion"),
             column_map={"year": "year", "champion": "champion"},

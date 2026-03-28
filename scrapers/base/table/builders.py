@@ -11,7 +11,7 @@ from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 
 if TYPE_CHECKING:
     from scrapers.base.table.columns.types.base import BaseColumn
-    from scrapers.base.table.config import ScraperConfig
+    from scrapers.base.table.config import TableScraperConfig
 
 
 @dataclass(frozen=True)
@@ -95,10 +95,10 @@ def build_scraper_config(
     table_css_class: str = "wikitable",
     record_factory=None,
     model_class: type | None = None,
-) -> ScraperConfig:
-    from scrapers.base.table.config import ScraperConfig
+) -> TableScraperConfig:
+    from scrapers.base.table.config import TableScraperConfig
 
-    return ScraperConfig(
+    return TableScraperConfig(
         url=url,
         section_id=section_id,
         expected_headers=expected_headers,

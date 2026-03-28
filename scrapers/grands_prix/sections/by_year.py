@@ -9,7 +9,7 @@ from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.parser import HtmlTableParser
@@ -70,7 +70,7 @@ class GrandPrixByYearSectionParser:
                 column("Location", "location", LocationColumn()),
             ],
         )
-        config = ScraperConfig(
+        config = TableScraperConfig(
             url=self._url,
             section_id=section_id,
             expected_headers=["Year", "Driver", "Constructor", "Report"],

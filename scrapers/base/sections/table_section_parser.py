@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
-    from scrapers.base.table.config import ScraperConfig
+    from scrapers.base.table.config import TableScraperConfig
 
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.table.parser import HtmlTableParser
@@ -19,7 +19,7 @@ class TableSectionParser:
     def __init__(
         self,
         *,
-        config: ScraperConfig,
+        config: TableScraperConfig,
         section_id: str,
         section_label: str,
         domain: str,

@@ -5,7 +5,7 @@ from bs4 import Tag
 from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.options import ScraperOptions
 from scrapers.base.table.columns.types.position import PositionColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.wiki.parsers.elements.table import TableParser
 
 
@@ -25,7 +25,7 @@ class F1StandingsScraper(TableParser):
         self,
         *,
         options: ScraperOptions,
-        config: ScraperConfig,
+        config: TableScraperConfig,
         position_key: str = "pos",
     ) -> None:
         self.position_key = position_key

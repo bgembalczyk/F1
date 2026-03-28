@@ -8,14 +8,14 @@ if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
     from scrapers.base.sections.interface import SectionParseResult
-    from scrapers.base.table.config import ScraperConfig
+    from scrapers.base.table.config import TableScraperConfig
 
 
 class ConstructorsListSectionParser:
     def __init__(
         self,
         *,
-        config: ScraperConfig,
+        config: TableScraperConfig,
         section_label: str | None = None,
         include_urls: bool,
         normalize_empty_values: bool,

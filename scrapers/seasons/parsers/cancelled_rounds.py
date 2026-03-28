@@ -7,7 +7,7 @@ from scrapers.base.helpers.html_utils import find_section_tables
 from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.parser import HtmlTableParser
@@ -129,7 +129,7 @@ class CancelledRoundsParser:
         schema: TableSchemaDSL,
         section_id: str,
     ) -> list[dict[str, Any]]:
-        config = ScraperConfig(
+        config = TableScraperConfig(
             url=self._table_parser.url,
             section_id=section_id,
             expected_headers=EXPECTED_HEADERS,

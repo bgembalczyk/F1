@@ -3,7 +3,7 @@ from scrapers.base.helpers.config_factory import ScraperCommonConfig
 from scrapers.base.helpers.config_factory import build_config
 from scrapers.base.helpers.config_factory import build_scraper_options
 from scrapers.base.options import ScraperOptions
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from scrapers.circuits.list_scraper import CircuitsListScraper
 from scrapers.drivers.list_scraper import F1DriversListScraper
@@ -32,7 +32,7 @@ class DummyStrictTableScraper(F1TableScraper):
 
 
 def test_table_scraper_with_options():
-    config = ScraperConfig(url="https://example.com")
+    config = TableScraperConfig(url="https://example.com")
     options = ScraperOptions(source_adapter=DummySourceAdapter("<html></html>"))
 
     scraper = DummyTableScraper(options=options, config=config)
@@ -41,7 +41,7 @@ def test_table_scraper_with_options():
 
 
 def test_table_scraper_with_include_urls_option():
-    config = ScraperConfig(url="https://example.com")
+    config = TableScraperConfig(url="https://example.com")
     options = ScraperOptions(
         include_urls=False,
         source_adapter=DummySourceAdapter("<html></html>"),
@@ -115,7 +115,7 @@ def test_build_scraper_options_uses_profile():
 
 
 def test_table_scraper_profile_applied_in_base_class():
-    config = ScraperConfig(url="https://example.com")
+    config = TableScraperConfig(url="https://example.com")
     options = ScraperOptions(source_adapter=DummySourceAdapter("<html></html>"))
 
     scraper = DummyStrictTableScraper(options=options, config=config)

@@ -10,7 +10,7 @@ from scrapers.base.helpers.table_parsing import TableParsingHelper
 from scrapers.base.records import record_from_mapping
 from scrapers.base.sections.interface import SectionParseResult
 from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.pipeline import TablePipeline
 from scrapers.drivers.sections.constants import UNKNOWN_VALUE
 from scrapers.drivers.sections.driver_results_schema_factory import (
@@ -86,7 +86,7 @@ class DriverResultsSectionParser:
         return TableParsingHelper.parse_table_with_pipeline(table, pipeline)
 
     def _build_pipeline(self, *, schema: TableSchemaDSL) -> TablePipeline:
-        config = ScraperConfig(
+        config = TableScraperConfig(
             url=self._url,
             section_id=None,
             expected_headers=None,

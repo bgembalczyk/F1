@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 from scrapers.base.helpers.tables.lap_records import LapRecordsTableScraper
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.pipeline import TablePipeline
 
@@ -15,7 +15,7 @@ def test_normalize_header_consistent_between_pipeline_and_lap_records() -> None:
     assert cell is not None
 
     pipeline = TablePipeline(
-        config=ScraperConfig(url="https://example.com"),
+        config=TableScraperConfig(url="https://example.com"),
         include_urls=False,
     )
     key, _, _ = pipeline._normalize_cell(header, cell)  # noqa: SLF001

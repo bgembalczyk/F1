@@ -9,7 +9,7 @@ from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.seasons import SeasonsColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.unit import UnitColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.engines.base_engine_table_scraper import BaseEngineTableScraper
@@ -52,7 +52,7 @@ class EngineRegulationScraper(BaseEngineTableScraper):
         ),
     ]
 
-    CONFIG = ScraperConfig(
+    CONFIG = TableScraperConfig(
         url="https://en.wikipedia.org/wiki/Formula_One_engines#Engine_regulation_progression_by_era",
         section_id="Engine_regulation_progression_by_era",
         expected_headers=["Years", "Operating principle"],

@@ -4,6 +4,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from dataclasses import field
 from typing import Any
+import warnings
 
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
@@ -13,7 +14,14 @@ from scrapers.base.table.schema import TableSchemaBuilder
 
 
 @dataclass(frozen=True)
-class ScraperConfig:
+class TableScraperConfig:
+    """Table extraction contract for a single source page/section.
+
+    This config defines *what* should be extracted from HTML tables:
+    source URL, optional section, expected headers, mapping/schema rules,
+    column types and record factory/model binding.
+    """
+
     url: str
     section_id: str | None = None
     expected_headers: Sequence[str] | None = None
@@ -40,34 +48,47 @@ class ScraperConfig:
 
     def validate(self) -> None:
         if not isinstance(self.url, str) or not self.url.strip():
-            msg = "ScraperConfig.url must be a non-empty string."
+            msg = "TableScraperConfig.url must be a non-empty string."
             raise ValueError(msg)
 
         if not isinstance(self.column_map, Mapping):
-            msg = "ScraperConfig.column_map must be a mapping."
+            msg = "TableScraperConfig.column_map must be a mapping."
             raise TypeError(msg)
 
         for key, value in self.column_map.items():
             if not isinstance(key, str) or not isinstance(value, str):
-                msg = "ScraperConfig.column_map must map str keys to str values."
+                msg = "TableScraperConfig.column_map must map str keys to str values."
                 raise TypeError(
                     msg,
                 )
 
         if not isinstance(self.columns, Mapping):
-            msg = "ScraperConfig.columns must be a mapping."
+            msg = "TableScraperConfig.columns must be a mapping."
             raise TypeError(msg)
 
         for key, value in self.columns.items():
             if not isinstance(key, str):
-                msg = "ScraperConfig.columns must use str keys."
+                msg = "TableScraperConfig.columns must use str keys."
                 raise TypeError(msg)
             if not isinstance(value, BaseColumn):
-                msg = "ScraperConfig.columns must map str keys to BaseColumn values."
+                msg = "TableScraperConfig.columns must map str keys to BaseColumn values."
                 raise TypeError(
                     msg,
                 )
 
         if self.record_factory is not None and not callable(self.record_factory):
-            msg = "ScraperConfig.record_factory must be callable."
+            msg = "TableScraperConfig.record_factory must be callable."
             raise TypeError(msg)
+
+
+@dataclass(frozen=True)
+class ScraperConfig(TableScraperConfig):
+    """Deprecated alias for TableScraperConfig."""
+
+    def __post_init__(self) -> None:
+        warnings.warn(
+            "ScraperConfig is deprecated; use TableScraperConfig instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        super().__post_init__()

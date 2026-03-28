@@ -11,7 +11,7 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.scraper import F1TableScraper
@@ -42,7 +42,7 @@ class F1FatalitiesListScraper(F1TableScraper):
     - championship: znacznik † w kolumnie Event (False)
     """
 
-    CONFIG = ScraperConfig(
+    CONFIG = TableScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_Formula_One_fatalities#Detail_by_driver",
         section_id=FATALITIES_SECTION_ID,
         expected_headers=FATALITIES_HEADERS,
@@ -65,7 +65,7 @@ class F1FatalitiesListScraper(F1TableScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+        config: TableScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
         options.transformers = [

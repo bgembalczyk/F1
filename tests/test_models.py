@@ -10,7 +10,7 @@ from models.validation.constants import MANUFACTURER_STATUS_FORMER
 from models.validation.engine_manufacturer import EngineManufacturer
 from models.value_objects.link_utils import normalize_link
 from scrapers.base.options import ScraperOptions
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.scraper import F1TableScraper
 from tests.support.compat_stubs import ensure_bs4_stub
 from tests.support.compat_stubs import ensure_certifi_stub
@@ -89,9 +89,9 @@ def test_validated_model_model_validate_uses_schema_before_instantiation():
 def test_scraper_config_validates_on_init():
     with pytest.raises(
         ValueError,
-        match=r"ScraperConfig\.url must be a non-empty string\.",
+        match=r"TableScraperConfig\.url must be a non-empty string\.",
     ):
-        ScraperConfig(url="")
+        TableScraperConfig(url="")
 
 
 def test_table_scraper_instantiates_model_and_filters_unknown_fields():

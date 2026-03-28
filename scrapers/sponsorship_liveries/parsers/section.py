@@ -9,7 +9,7 @@ from scrapers.base.helpers.text import clean_wiki_text
 from scrapers.base.records import record_from_mapping
 from scrapers.base.table.columns.types.driver_list import DriverListColumn
 from scrapers.base.table.columns.types.text import TextColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.base.table.headers import normalize_header
@@ -60,7 +60,7 @@ class SponsorshipSectionParser:
             )
 
         schema_columns = self._schema_columns(_seasons_col)
-        config = ScraperConfig(
+        config = TableScraperConfig(
             url=self._url,
             schema=TableSchemaDSL(columns=schema_columns),
             record_factory=record_from_mapping,

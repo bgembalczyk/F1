@@ -22,7 +22,7 @@ from scrapers.base.normalization_utils import normalize_empty
 from scrapers.base.table.columns.context import ColumnContext
 from scrapers.base.table.columns.types.auto import AutoColumn
 from scrapers.base.table.columns.types.base import BaseColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.headers import normalize_header
 from scrapers.base.table.parser import HtmlTableParser
 from scrapers.base.table.sentinels import SKIP_SENTINEL
@@ -31,7 +31,7 @@ from scrapers.base.table.sentinels import SKIP_SENTINEL
 class TablePipeline:
     """
     Pipeline parsowania tabel:
-    - wybór tabeli na podstawie ScraperConfig,
+    - wybór tabeli na podstawie TableScraperConfig,
     - parsowanie wierszy,
     - filtrowanie powtarzających się header-row,
     - mapowanie kolumn.
@@ -40,7 +40,7 @@ class TablePipeline:
     def __init__(
         self,
         *,
-        config: ScraperConfig,
+        config: TableScraperConfig,
         include_urls: bool,
         normalize_empty_values: bool = True,
         model_fields: set[str] | None = None,

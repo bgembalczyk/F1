@@ -5,7 +5,7 @@ from scrapers.base.table.columns.types.int import IntColumn
 from scrapers.base.table.columns.types.skip import SkipColumn
 from scrapers.base.table.columns.types.text import TextColumn
 from scrapers.base.table.columns.types.url import UrlColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL
 from scrapers.grands_prix.columns.restart_status import RestartStatusColumn
@@ -41,7 +41,7 @@ class RedFlaggedNonChampionshipRacesScraper(RedFlaggedRacesBaseScraper):
         column("Ref.", "ref", SkipColumn()),
     ]
 
-    CONFIG = ScraperConfig(
+    CONFIG = TableScraperConfig(
         url="https://en.wikipedia.org/wiki/List_of_red-flagged_Formula_One_races",
         section_id="Non-championship_races",
         expected_headers=[

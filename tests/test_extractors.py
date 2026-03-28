@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from scrapers.base.extractors.infobox import InfoboxExtractor
 from scrapers.base.extractors.table import TableExtractor
 from scrapers.base.table.columns.types.auto import AutoColumn
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -27,7 +27,7 @@ def test_table_extractor_extracts_records_and_logs(
     </table>
     """
     soup = BeautifulSoup(html, "html.parser")
-    config = ScraperConfig(
+    config = TableScraperConfig(
         url="https://example.com",
         expected_headers=["Driver", "Time"],
         columns={"driver": AutoColumn(), "time": AutoColumn()},

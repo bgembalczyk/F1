@@ -2,7 +2,7 @@ from scrapers.base.helpers.runner import run_and_export
 from scrapers.base.options import ScraperOptions
 from scrapers.base.records import record_from_mapping
 from scrapers.base.run_config import RunConfig
-from scrapers.base.table.config import ScraperConfig
+from scrapers.base.table.config import TableScraperConfig
 from scrapers.base.transformers.shortened_race_points import (
     ShortenedRacePointsTransformer,
 )
@@ -17,7 +17,7 @@ class ShortenedRacePointsScraper(BasePointsScraper):
     https://en.wikipedia.org/wiki/List_of_Formula_One_World_Championship_points_scoring_systems
     """
 
-    CONFIG = ScraperConfig(
+    CONFIG = TableScraperConfig(
         url=BasePointsScraper.BASE_URL,
         section_id="Shortened_races",
         expected_headers=SHORTENED_RACE_EXPECTED_HEADERS,
@@ -29,7 +29,7 @@ class ShortenedRacePointsScraper(BasePointsScraper):
         self,
         *,
         options: ScraperOptions | None = None,
-        config: ScraperConfig | None = None,
+        config: TableScraperConfig | None = None,
     ) -> None:
         options = options or ScraperOptions()
         options.transformers = [
