@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 from scrapers.base.options import ScraperOptions
 from scrapers.base.factory.record_factory import RECORD_FACTORIES
 from scrapers.base.table.columns.types import IntColumn
-from scrapers.base.table.columns.types import PointsColumn
-from scrapers.base.table.columns.types import PositionColumn
+from scrapers.points.columns.points import PointsColumn
+from scrapers.seasons.columns.position import PositionColumn
 from scrapers.base.table.config import ScraperConfig
 from scrapers.base.table.dsl.column import column
 from scrapers.base.table.dsl.table_schema import TableSchemaDSL

@@ -1,4 +1,4 @@
-from scrapers.base.table.columns.types import ConstructorPartColumn
+from scrapers.constructors.columns.constructor_part import ConstructorPartColumn
 from scrapers.base.table.columns.types import MultiColumn
 
 
